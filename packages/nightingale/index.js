@@ -1,8 +1,8 @@
-var S = require('springboktools');
-module.exports = S.newClass(function(){
-	this.ctor = function(){ };
+/*#if NODE */ var S = require('springboktools'); /*#/if */
+S.Logger = S.newClass(function(){
+	var res = {
+		ctor: function(){ },
 	
-	this.prototype = {
 		color: function(color,message){ this.write(color ? this._colored(message,color) : message); return this; },
 		add: function(message,color){ return this.log(message,color).nl(); },
 		log: function(message,color){ this.time().write(color ? this._colored(message,color) : message); return this.nl(); },
@@ -12,20 +12,21 @@ module.exports = S.newClass(function(){
 	};
 	
 	'blue green red'.split(' ').forEach(function(mName){
-		this.prototype[mName] = function(message){ this.color(message); };
-	}.bind(this));
+		res[mName] = function(message){ this.color(message); };
+	});
 	
-	this.prototype.info = function(message){ return this.log('[info] '+message); };
-	this.prototype.warn = function(message){ return this.log('[warn] '+message,'orange'); };
-	this.prototype.error = function(message){ return this.log('[error] '+message,'red'); };
-	this.prototype.fatal = function(message){ return this.log('[fatal] '+message,'red'); };
-	this.prototype.debug = function(message){ return this.log('[debug] '+message,'blue'); };
+	res.info = function(message){ return this.log('[info] '+message); };
+	res.warn = function(message){ return this.log('[warn] '+message,'orange'); };
+	res.error = function(message){ return this.log('[error] '+message,'red'); };
+	res.fatal = function(message){ return this.log('[fatal] '+message,'red'); };
+	res.debug = function(message){ return this.log('[debug] '+message,'blue'); };
 	
 	
-	this.prototype.alert = function(message,title){
+	res.alert = function(message,title){
 		return this.log('[alert] '+message,'purple');
 	};
-	this.prototype.success = function(message,title){
+	res.success = function(message,title){
 		return this.log('[success] '+message,'green');
 	};
+	return res;
 });
