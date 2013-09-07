@@ -1,0 +1,17 @@
+{
+  "name": "springbokjs-logger",
+  "description": "SpringbokJS Logger",
+  "version": "0.0.1",
+  "homepage": "www.springbokjs.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/christophehurpeau/springbokjs-logger.git"
+  },
+  "author": {
+    "name": "Christophe Hurpeau"
+  },
+  "dependencies": {
+		"springboktools":">=0.2",
+	},
+  "devDependencies": {}
+}
