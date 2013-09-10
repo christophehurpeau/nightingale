@@ -1,4 +1,4 @@
-/*#if NODE */ var S = require('springboktools'); require('./index'); /*#/if */
+/*#if NODE */ var S = require('springbokjs-utils'); require('./index'); /*#/if */
 S.LoggerConsole = S.Logger.extend(function(_super_){
 	return {
 		static: {

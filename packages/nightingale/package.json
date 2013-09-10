@@ -11,7 +11,7 @@
     "name": "Christophe Hurpeau"
   },
   "dependencies": {
-		"springboktools":">=0.2",
+		"springbokjs-utils":">=0.2.2"
 	},
-  "devDependencies": {}
+	"devDependencies": {}
 }

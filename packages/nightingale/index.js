@@ -1,4 +1,4 @@
-/*#if NODE */ var S = require('springboktools'); /*#/if */
+/*#if NODE */ var S = require('springbokjs-utils'); /*#/if */
 S.Logger = S.newClass(function(){
 	var res = {
 		ctor: function(){ },
