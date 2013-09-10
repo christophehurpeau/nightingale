@@ -20,8 +20,9 @@ S.LoggerConsole = S.Logger.extend(function(_super_){
 		},
 		
 		_colored:function(str,color){ return "\033["+this.self.colors[color]+"m"+str+"\033[0m"; },
-		_write: function(logLevel,str){
+		write: function(str,logLevel){
 			process[ logLevel === 'error' || logLevel === 'fatal' ? 'stderr' : 'stdout' ].write(str);
 		},
 	};
 });
+/*#if NODE */ module.exports = S.LoggerConsole; /*#/if */

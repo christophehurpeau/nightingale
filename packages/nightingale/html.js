@@ -28,3 +28,4 @@ S.LoggerHtml.extend(function(_super_){
 		nl:function(){ this.html+='<br/>'; return this;},
 	};
 });
+/*#if NODE */ module.exports = S.LoggerHtml; /*#/if */

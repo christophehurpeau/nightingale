@@ -1,25 +1,36 @@
-/*#if NODE */ var S = require('springbokjs-utils'); /*#/if */
+/*#if NODE */ var S = require('springbokjs-utils'); var util = require('util'); /*#/if */
 S.Logger = S.newClass(function(){
 	var res = {
 		ctor: function(){ },
 	
-		color: function(color,message){ this.write(color ? this._colored(message,color) : message); return this; },
-		add: function(message,color){ return this.log(message,color).nl(); },
-		log: function(message,color){ this.time().write(color ? this._colored(message,color) : message); return this.nl(); },
-		nl: function(){ this.write("\n"); return this; },
+		color: function(color,message,logLevel){ this.write(color ? this._colored(message,color) : message,logLevel); return this; },
+		add: function(message,color,logLevel){ return this.color(color,message,logLevel); },
+		log: function(message,color,logLevel){ this.prefix(logLevel).write(color ? this._colored(message,color) : message,logLevel); return this.nl(logLevel); },
+		nl: function(logLevel){ this.write("\n",logLevel); return this; },
 		
-		time: function(color){ this.add(color, new Date().toFormat('HH24:MI:SS')); },
+		writable:{
+			prefix: function(logLevel){
+				this.time(logLevel);
+				this._prefix && this.add(this._prefix, this._prefixColor || 'grayLight',logLevel);
+				return this;
+			},
+		},
+		
+		time: function(color){ this.color(color||'gray', new Date().toTimeString().split(' ')[0]/*new Date().toFormat('HH24:MI:SS')*/+' '); return this; },
 	};
 	
 	'blue green red'.split(' ').forEach(function(mName){
 		res[mName] = function(message){ this.color(message); };
 	});
 	
-	res.info = function(message){ return this.log('[info] '+message); };
-	res.warn = function(message){ return this.log('[warn] '+message,'orange'); };
-	res.error = function(message){ return this.log('[error] '+message,'red'); };
-	res.fatal = function(message){ return this.log('[fatal] '+message,'red'); };
-	res.debug = function(message){ return this.log('[debug] '+message,'blue'); };
+	res.info = function(message){ return this.log('[info ] '+message); };
+	res.warn = function(message){ return this.log('[warn ] '+message,'orange'); };
+	res.error = function(message){ return this.log('[error] '+message,'red','error'); };
+	res.fatal = function(message){ return this.log('[fatal] '+message,'red','fatal'); };
+	res.debug = function(message){
+		/*#if NODE */ message = util.inspect(message); /*#/if*/
+		return this.log('[debug] '+message,'cyan');
+	};
 	
 	
 	res.alert = function(message,title){
@@ -30,3 +41,4 @@ S.Logger = S.newClass(function(){
 	};
 	return res;
 });
+/*#if NODE */ module.exports = S.Logger; /*#/if */
