@@ -8,6 +8,10 @@ S.Logger = S.newClass(function(){
 		log: function(message,color,logLevel){ this.prefix(logLevel).write(color ? this._colored(message,color) : message,logLevel); return this.nl(logLevel); },
 		nl: function(logLevel){ this.write("\n",logLevel); return this; },
 		
+		setPrefix: function(prefix,prefixColor){
+			this._prefix = prefix;
+			if(prefixColor) this._prefixColor = prefixColor;
+		},
 		writable:{
 			prefix: function(logLevel){
 				this.time(logLevel);
@@ -30,6 +34,10 @@ S.Logger = S.newClass(function(){
 	res.debug = function(message){
 		/*#if NODE */ message = util.inspect(message); /*#/if*/
 		return this.log('[debug] '+message,'cyan');
+	};
+	res.debugVar = function(varName,varValue){
+		/*#if NODE */ varValue = util.inspect(varValue); /*#/if*/
+		return this.log('[debug] '+varName+' = '+varValue,'cyan');
 	};
 	
 	
