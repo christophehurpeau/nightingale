@@ -5,15 +5,15 @@ S.LoggerHtml.extend(function(_super_){
 			writable:{
 				/* http://www.pixelbeat.org/docs/terminal_colours/ */
 				colors: {
-					gray:'gray',grayLight:'silver',white:'white',
-					red:'red',redLight:'red',redUnderlined:'red;text-decoration:underline',
-					orange:'orange',
-					blue:'#4682B4', blueLight:'blue',
-					green:'green',greenLight:'lime',
-					cyan:'cyan', cyanLight:'cyan',
-					purple:'purple', purpleLight:'purple',
-					brown:'brown',
-					yellow:'yellow',
+					black:'black',
+					grayBold:'gray;font-size:bold',
+					grayLight:'silver',whiteBold:'white;font-size:bold',
+					red:'red',redBold:'red;font-size:bold',redUnderlined:'red;text-decoration:underline',
+					blue:'#4682B4', blueBold:'blue;font-size:bold',
+					green:'green',greenBold:'lime;font-size:bold',
+					cyan:'cyan', cyanBold:'cyan;font-size:bold',
+					purple:'purple', purpleBold:'purple;font-size:bold',
+					yellow:'yellow', yellowBold:'brown;font-size:bold',
 				},
 			}
 		},

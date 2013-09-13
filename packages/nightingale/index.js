@@ -5,7 +5,7 @@ S.Logger = S.newClass(function(){
 	
 		color: function(color,message,logLevel){ this.write(color ? this._colored(message,color) : message,logLevel); return this; },
 		add: function(message,color,logLevel){ return this.color(color,message,logLevel); },
-		log: function(message,color,logLevel){ this.prefix(logLevel).write(color ? this._colored(message,color) : message,logLevel); return this.nl(logLevel); },
+		log: function(message,color,logLevel){ this.prefix(logLevel).color(color ,message,logLevel).nl(logLevel); },
 		nl: function(logLevel){ this.write("\n",logLevel); return this; },
 		
 		setPrefix: function(prefix,prefixColor){
@@ -20,7 +20,7 @@ S.Logger = S.newClass(function(){
 			},
 		},
 		
-		time: function(color){ this.color(color||'gray', new Date().toTimeString().split(' ')[0]/*new Date().toFormat('HH24:MI:SS')*/+' '); return this; },
+		time: function(color){ this.color(color||'grayBold', new Date().toTimeString().split(' ')[0]/*new Date().toFormat('HH24:MI:SS')*/+' '); return this; },
 	};
 	
 	'blue green red'.split(' ').forEach(function(mName){
@@ -28,9 +28,9 @@ S.Logger = S.newClass(function(){
 	});
 	
 	res.info = function(message){ return this.log('[info ] '+message); };
-	res.warn = function(message){ return this.log('[warn ] '+message,'orange'); };
-	res.error = function(message){ return this.log('[error] '+message,'red','error'); };
-	res.fatal = function(message){ return this.log('[fatal] '+message,'red','fatal'); };
+	res.warn = function(message){ return this.log('[warn ] '+message,'red'); };
+	res.error = function(message){ return this.log('[error] '+message,'redBold','error'); };
+	res.fatal = function(message){ return this.log('[fatal] '+message,'redBold','fatal'); };
 	res.debug = function(message){
 		/*#if NODE */ message = util.inspect(message); /*#/if*/
 		return this.log('[debug] '+message,'cyan');
@@ -42,10 +42,10 @@ S.Logger = S.newClass(function(){
 	
 	
 	res.alert = function(message,title){
-		return this.log('[alert] '+message,'purple');
+		return this.log('[alert] '+message,'purpleBold');
 	};
 	res.success = function(message,title){
-		return this.log('[success] '+message,'green');
+		return this.log('[success] '+message,'greenBold');
 	};
 	return res;
 });
