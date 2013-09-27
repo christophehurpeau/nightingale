@@ -1,17 +1,14 @@
 {
   "name": "springbokjs-logger",
   "description": "SpringbokJS Logger",
+  "keywords": ["springbokjs","logger"],
   "version": "0.0.5",
-  "homepage": "www.springbokjs.com",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/christophehurpeau/springbokjs-logger.git"
-  },
-  "author": {
-    "name": "Christophe Hurpeau"
-  },
+	"homepage":"springbokjs.org",
+  "license": "MIT",
+  "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
+	"repository": "git://github.com/christophehurpeau/springbokjs-logger.git",
+	
   "dependencies": {
-		"springbokjs-utils":">=0.2.2"
-	},
-	"devDependencies": {}
+		"springbokjs-utils":"0.2.x"
+	}
 }
