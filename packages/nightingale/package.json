@@ -1,14 +1,26 @@
 {
   "name": "springbokjs-logger",
   "description": "SpringbokJS Logger",
-  "keywords": ["springbokjs","logger"],
-  "version": "0.0.5",
-	"homepage":"springbokjs.org",
+  "keywords": [
+    "springbokjs",
+    "logger"
+  ],
+  "version": "1.0.0",
+  "homepage": "springbokjs.org",
   "license": "MIT",
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
-	"repository": "git://github.com/christophehurpeau/springbokjs-logger.git",
-	
+  "repository": "git://github.com/christophehurpeau/springbokjs-logger.git",
+  "main": "./lib/index.js",
+  "scripts": {
+    "test": "node_modules/.bin/mocha -u tdd"
+  },
   "dependencies": {
-		"springbokjs-utils":"0.2.x"
-	}
+    "ansi-styles": "^1.0.0",
+    "springbokjs-utils": "^0.3.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.6.2",
+    "proclaim": "^2.0.0",
+    "springbokjs-library": "^1.0.3"
+  }
 }
