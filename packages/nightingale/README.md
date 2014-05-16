@@ -14,4 +14,5 @@ var logger = new LoggerConsole();
 logger.setPrefix('[app] ');
 logger.log('This is a log');
 logger.warn('This is a warning !');
+logger.write('test ' + logger.blue.bold('This is blue and bold')).write(' keep writing log').nl();
 ```
