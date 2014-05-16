@@ -22,6 +22,6 @@ mv docs-tmp docs
 date > date.txt
 git add docs
 git commit -m"auto commit from drone.io"
-git remote set-url origin git@github.com:christophehurpeau/springbokjs-router.git
+git remote set-url origin git@github.com:christophehurpeau/springbokjs-logger.git
 git push origin gh-pages
 
