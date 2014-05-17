@@ -45,8 +45,7 @@ Logger.extendPrototype({
     return this.log(this.red.bold('[fatal] ' + message), 'fatal');
   },
   debug: function(message) {
-    message = util.inspect(message);
-    return this.log(this.cyan('[debug] ' + message));
+    return this.log(this.gray('[debug] ' + message));
   },
   debugVar: function(varName, varValue) {
     varValue = util.inspect(varValue);

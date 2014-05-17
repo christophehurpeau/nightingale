@@ -126,8 +126,7 @@ Logger.extendPrototype(/** @lends Logger.prototype */{
      * @return {Logger}
      */
 	debug(message) {
-        /*#if NODE */ message = util.inspect(message); /*#/if*/
-		return this.log(this.cyan('[debug] '+ message));
+		return this.log(this.gray('[debug] '+ message));
 	},
 
     /**
