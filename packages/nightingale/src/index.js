@@ -11,7 +11,7 @@ var util = require('util');
 var Logger = S.newClass();
 module.exports = Logger;
 
-Logger.extendPrototype(/** @lends Logger.prototype */{
+Logger.extendPrototype(/** @lends Logger.prototype */ {
     /**
      * Log a message
      *
@@ -159,21 +159,21 @@ Logger.extendPrototype(/** @lends Logger.prototype */{
      */
 	success(message) {
 		return this.log(this.green.bold('[success] ' + message));
-	},
+	}
 });
 
-Logger._inject = function(object) {
-    var injectStyle1 = function(prototype, styleName2) {
-        'bold italic underline inverse strikethrough'.split(' ').forEach(function(styleName) {
-            prototype[styleName] = function(message) {
+Logger._inject = (object) => {
+    var injectStyle1 = (prototype, styleName2) => {
+        'bold italic underline inverse strikethrough'.split(' ').forEach((styleName) => {
+            prototype[styleName] = (message) => {
                 return object.style([styleName , styleName2], message);
             };
         });
     };
     injectStyle1(object.prototype);
 
-    'black red green yellow blue magenta cyan white gray'.split(' ').forEach(function(styleName) {
-        object.prototype[styleName] = function(message) {
+    'black red green yellow blue magenta cyan white gray'.split(' ').forEach((styleName) => {
+        object.prototype[styleName] = (message) => {
             return object.style([styleName], message);
         };
         injectStyle1(object.prototype[styleName], styleName);

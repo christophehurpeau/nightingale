@@ -5,22 +5,22 @@
     "springbokjs",
     "logger"
   ],
-  "version": "1.0.2",
+  "version": "1.0.3",
   "homepage": "springbokjs.org",
   "license": "MIT",
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
   "repository": "git://github.com/christophehurpeau/springbokjs-logger.git",
   "main": "./lib/index.js",
   "scripts": {
-    "test": "node_modules/.bin/mocha -u tdd"
+    "test": "node_modules/.bin/mocha -u tdd tests/lib"
   },
   "dependencies": {
     "ansi-styles": "^1.0.0",
-    "springbokjs-utils": "^0.3.0"
+    "springbokjs-utils": "^0.3.9"
   },
   "devDependencies": {
     "gulp": "^3.6.2",
-    "mocha": "^1.18.2",
+    "mocha": "^1.19.0",
     "proclaim": "^2.0.0",
     "springbokjs-library": "^1.0.3"
   }
