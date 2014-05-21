@@ -130,14 +130,25 @@ Logger.extendPrototype(/** @lends Logger.prototype */ {
 	},
 
     /**
+     * Log an debug message
+     *
+     * @param {*} value
+     * @return {Logger}
+     */
+    inspect(value) {
+        value = util.inspect(value);
+        return this.log(this.gray('[debug] '+ value));
+    },
+
+    /**
      * Log an debugged var
      *
      * @param {String} message
      * @param {*} varValue
      * @return {Logger}
      */
-    debugVar(varName, varValue){
-		/*#if NODE */ varValue = util.inspect(varValue); /*#/if*/
+    inspectVar(varName, varValue){
+		varValue = util.inspect(varValue);
 		return this.log(this.cyan('[debug] ' + varName + ' = ' + varValue));
 	},
 
