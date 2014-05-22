@@ -47,7 +47,11 @@ Logger.extendPrototype({
   debug: function(message) {
     return this.log(this.gray('[debug] ' + message));
   },
-  debugVar: function(varName, varValue) {
+  inspect: function(value) {
+    value = util.inspect(value);
+    return this.log(this.gray('[debug] ' + value));
+  },
+  inspectVar: function(varName, varValue) {
     varValue = util.inspect(varValue);
     return this.log(this.cyan('[debug] ' + varName + ' = ' + varValue));
   },
@@ -58,19 +62,19 @@ Logger.extendPrototype({
     return this.log(this.green.bold('[success] ' + message));
   }
 });
-Logger._inject = function(object) {
-  var injectStyle1 = function(prototype, styleName2) {
-    'bold italic underline inverse strikethrough'.split(' ').forEach(function(styleName) {
-      prototype[styleName] = function(message) {
+Logger._inject = (function(object) {
+  var injectStyle1 = (function(prototype, styleName2) {
+    'bold italic underline inverse strikethrough'.split(' ').forEach((function(styleName) {
+      prototype[styleName] = (function(message) {
         return object.style([styleName, styleName2], message);
-      };
-    });
-  };
-  injectStyle1(object.prototype);
-  'black red green yellow blue magenta cyan white gray'.split(' ').forEach(function(styleName) {
-    object.prototype[styleName] = function(message) {
-      return object.style([styleName], message);
-    };
-    injectStyle1(object.prototype[styleName], styleName);
+      });
+    }));
   });
-};
+  injectStyle1(object.prototype);
+  'black red green yellow blue magenta cyan white gray'.split(' ').forEach((function(styleName) {
+    object.prototype[styleName] = (function(message) {
+      return object.style([styleName], message);
+    });
+    injectStyle1(object.prototype[styleName], styleName);
+  }));
+});

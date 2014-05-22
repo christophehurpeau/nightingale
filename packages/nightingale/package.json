@@ -5,7 +5,7 @@
     "springbokjs",
     "logger"
   ],
-  "version": "1.0.4",
+  "version": "1.1.0",
   "homepage": "springbokjs.org",
   "license": "MIT",
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
