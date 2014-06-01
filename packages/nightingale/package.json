@@ -5,7 +5,7 @@
     "springbokjs",
     "logger"
   ],
-  "version": "1.1.0",
+  "version": "1.2.0",
   "homepage": "springbokjs.org",
   "license": "MIT",
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
@@ -15,13 +15,12 @@
     "test": "node_modules/.bin/mocha -u tdd tests/lib"
   },
   "dependencies": {
-    "ansi-styles": "^1.0.0",
-    "springbokjs-utils": "^0.3.10"
+    "ansi-styles": "^1.0.0"
   },
   "devDependencies": {
-    "gulp": "^3.6.2",
-    "mocha": "^1.19.0",
+    "gulp": "^3.7.0",
+    "mocha": "^1.20.0",
     "proclaim": "^2.0.0",
-    "springbokjs-library": "^2.0.0"
+    "springbokjs-library": "^2.2.2"
   }
 }

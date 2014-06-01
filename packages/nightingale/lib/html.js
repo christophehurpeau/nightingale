@@ -1,8 +1,7 @@
 "use strict";
-var __moduleName = "html";
+var $__Object$defineProperty = Object.defineProperty;
+var $__Object$create = Object.create;
 var Logger = require('./index');
-var LoggerHtml = Logger.extend();
-module.exports = LoggerHtml;
 var htmlStyles = {
   bold: 'font-size: bold',
   italic: 'font-style: italic',
@@ -27,19 +26,32 @@ var htmlStyles = {
   bgCyan: 'background: cyan',
   bgWhite: 'background: white'
 };
-LoggerHtml.extendPrototype({
-  construct: function() {
+var LoggerHtml = function($__super) {
+  function LoggerHtml() {
     this.html = '';
-  },
-  write: function(html) {
-    this.html += html;
-    return this;
-  },
-  nl: function() {
-    this.html += '<br/>';
-    return this;
   }
-});
+  LoggerHtml.__proto__ = ($__super !== null ? $__super : Function.prototype);
+  LoggerHtml.prototype = $__Object$create(($__super !== null ? $__super.prototype : null));
+  $__Object$defineProperty(LoggerHtml.prototype, "constructor", {value: LoggerHtml});
+  $__Object$defineProperty(LoggerHtml.prototype, "write", {
+    value: function(html) {
+      this.html += html;
+      return this;
+    },
+    enumerable: false,
+    writable: true
+  });
+  $__Object$defineProperty(LoggerHtml.prototype, "nl", {
+    value: function() {
+      this.html += '<br/>';
+      return this;
+    },
+    enumerable: false,
+    writable: true
+  });
+  return LoggerHtml;
+}(Logger);
+module.exports = LoggerHtml;
 LoggerHtml.style = function(styles, string) {
   if (!styles.length || !string) {
     return string;

@@ -1,4 +1,3 @@
-var S = require('springbokjs-utils');
 /*#if NODE */
 var util = require('util');
 /*#/if */
@@ -8,10 +7,7 @@ var util = require('util');
  *
  * @class
  */
-var Logger = S.newClass();
-module.exports = Logger;
-
-Logger.extendPrototype(/** @lends Logger.prototype */ {
+class Logger {
     /**
      * Log a message
      *
@@ -21,7 +17,7 @@ Logger.extendPrototype(/** @lends Logger.prototype */ {
      */
 	log(message, logLevel) {
         this.prefix(logLevel).write(message, logLevel).nl(logLevel);
-    },
+    }
 
     /**
      * Add a new line
@@ -32,7 +28,7 @@ Logger.extendPrototype(/** @lends Logger.prototype */ {
 	nl(logLevel) {
         this.write("\n", logLevel);
         return this;
-    },
+    }
 
     /**
      * Set the logger prefix
@@ -45,23 +41,22 @@ Logger.extendPrototype(/** @lends Logger.prototype */ {
             color = this.gray;
         }
 		this._prefix = color(prefix);
-	},
-	writable: /** @lends Logger.prototype */{
-        /**
-         * Write the current prefix, if exists
-         * @see setPrefix
-         *
-         * @param {String} logLevel
-         * @return {Logger}
-         */
-		prefix(logLevel) {
-			this.time(logLevel);
-            if (this._prefix) {
-                this.write(this._prefix, logLevel);
-            }
-			return this;
-		},
-	},
+	}
+
+    /**
+     * Write the current prefix, if exists
+     * @see setPrefix
+     *
+     * @param {String} logLevel
+     * @return {Logger}
+     */
+	prefix(logLevel) {
+		this.time(logLevel);
+        if (this._prefix) {
+            this.write(this._prefix, logLevel);
+        }
+		return this;
+	}
 
     /**
      * Write the current time
@@ -77,7 +72,7 @@ Logger.extendPrototype(/** @lends Logger.prototype */ {
         this.write(color.bold(new Date().toTimeString().split(' ')[0]
                                 /*new Date().toFormat('HH24:MI:SS')*/)+' ');
         return this;
-    },
+    }
 
     /**
      * Log an info message
@@ -87,7 +82,7 @@ Logger.extendPrototype(/** @lends Logger.prototype */ {
      */
     info(message) {
         return this.log('[info ] ' + message);
-    },
+    }
 
     /**
      * Log an warn message
@@ -97,17 +92,17 @@ Logger.extendPrototype(/** @lends Logger.prototype */ {
      */
 	warn(message) {
         return this.log(this.red('[warn ] ' + message));
-    },
+    }
 
     /**
      * Log an error message
      *
-     * @param {String} message
+     * @param {String|Error} message
      * @return {Logger}
      */
 	error(message) {
-        return this.log(this.red.bold('[error] ' + message), 'error');
-    },
+        return this.log(this.red.bold('[error] ' + (message.stack || message.message || message)), 'error');
+    }
 
     /**
      * Log an fatal message
@@ -117,7 +112,7 @@ Logger.extendPrototype(/** @lends Logger.prototype */ {
      */
 	fatal(message) {
         return this.log(this.red.bold('[fatal] ' + message), 'fatal');
-    },
+    }
 
     /**
      * Log an debug message
@@ -127,7 +122,7 @@ Logger.extendPrototype(/** @lends Logger.prototype */ {
      */
 	debug(message) {
 		return this.log(this.gray('[debug] '+ message));
-	},
+	}
 
     /**
      * Log an debug message
@@ -138,7 +133,7 @@ Logger.extendPrototype(/** @lends Logger.prototype */ {
     inspect(value) {
         value = util.inspect(value);
         return this.log(this.gray('[debug] '+ value));
-    },
+    }
 
     /**
      * Log an debugged var
@@ -150,7 +145,7 @@ Logger.extendPrototype(/** @lends Logger.prototype */ {
     inspectVar(varName, varValue){
 		varValue = util.inspect(varValue);
 		return this.log(this.cyan('[debug] ' + varName + ' = ' + varValue));
-	},
+	}
 
     /**
      * Log an alert message
@@ -160,7 +155,7 @@ Logger.extendPrototype(/** @lends Logger.prototype */ {
      */
 	alert(message) {
 		return this.log(this.purple.bold('[alert] ' + message));
-	},
+	}
 
     /**
      * Log an sucess message
@@ -171,7 +166,8 @@ Logger.extendPrototype(/** @lends Logger.prototype */ {
 	success(message) {
 		return this.log(this.green.bold('[success] ' + message));
 	}
-});
+}
+module.exports = Logger;
 
 Logger._inject = (object) => {
     var injectStyle1 = (prototype, styleName2) => {

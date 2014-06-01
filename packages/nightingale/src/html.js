@@ -1,7 +1,4 @@
-//var S = require('springbokjs-utils');
 var Logger = require('./index');
-var LoggerHtml = Logger.extend();
-module.exports = LoggerHtml;
 
 var htmlStyles = {
     //text style
@@ -34,19 +31,21 @@ var htmlStyles = {
 
 };
 
-LoggerHtml.extendPrototype({
-    construct: function() {
+class LoggerHtml extends Logger {
+    constructor() {
         this.html = '';
-    },
-    write: function(html) {
+    }
+    write(html) {
         this.html += html;
         return this;
-    },
-    nl: function(){
+    }
+    nl(){
         this.html += '<br/>';
         return this;
-    },
-});
+    }
+}
+module.exports = LoggerHtml;
+
 LoggerHtml.style = function(styles, string) {
     if (!styles.length || !string) {
         return string;

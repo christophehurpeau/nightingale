@@ -1,16 +1,16 @@
-//var S = require('springbokjs-utils');
 var Logger = require('./index');
-var LoggerConsole = Logger.extend();
-module.exports = LoggerConsole;
 
 var ansi = require('ansi-styles');
 
-LoggerConsole.extendPrototype({
-	write: function(str, logLevel) {
-		process[ logLevel === 'error' || logLevel === 'fatal' ? 'stderr' : 'stdout' ].write(str);
+class LoggerConsole extends Logger {
+    write(str, logLevel) {
+        process[ logLevel === 'error' || logLevel === 'fatal' ? 'stderr' : 'stdout' ].write(str);
         return this;
-	},
-});
+    }
+}
+module.exports = LoggerConsole;
+
+
 LoggerConsole.style = function(styles, string) {
     if (!styles.length || !string) {
         return string;
