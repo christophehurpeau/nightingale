@@ -1,4 +1,4 @@
-var Logger = require('./index');
+var Logger = require('./index').Logger;
 
 var htmlStyles = {
     //text style
@@ -31,8 +31,9 @@ var htmlStyles = {
 
 };
 
-class LoggerHtml extends Logger {
+export class LoggerHtml extends Logger {
     constructor() {
+        super();
         this.html = '';
     }
     write(html) {
@@ -44,7 +45,7 @@ class LoggerHtml extends Logger {
         return this;
     }
 }
-module.exports = LoggerHtml;
+
 
 LoggerHtml.style = function(styles, string) {
     if (!styles.length || !string) {

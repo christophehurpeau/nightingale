@@ -1,7 +1,14 @@
 "use strict";
+Object.defineProperties(exports, {
+  LoggerHtml: {get: function() {
+      return LoggerHtml;
+    }},
+  __esModule: {value: true}
+});
+var $__Object$getPrototypeOf = Object.getPrototypeOf;
 var $__Object$defineProperty = Object.defineProperty;
 var $__Object$create = Object.create;
-var Logger = require('./index');
+var Logger = require('./index').Logger;
 var htmlStyles = {
   bold: 'font-size: bold',
   italic: 'font-style: italic',
@@ -28,6 +35,7 @@ var htmlStyles = {
 };
 var LoggerHtml = function($__super) {
   function LoggerHtml() {
+    $__Object$getPrototypeOf(LoggerHtml.prototype).constructor.call(this);
     this.html = '';
   }
   LoggerHtml.__proto__ = ($__super !== null ? $__super : Function.prototype);
@@ -51,7 +59,7 @@ var LoggerHtml = function($__super) {
   });
   return LoggerHtml;
 }(Logger);
-module.exports = LoggerHtml;
+;
 LoggerHtml.style = function(styles, string) {
   if (!styles.length || !string) {
     return string;

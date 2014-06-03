@@ -1,6 +1,6 @@
 "use strict";
 var lib = '../../lib/';
-var Logger = require(lib + 'console');
+var Logger = require(lib + 'console').LoggerConsole;
 var assert = require('proclaim');
 var expect = assert.strictEqual;
 var logger = new Logger();

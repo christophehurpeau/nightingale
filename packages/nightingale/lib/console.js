@@ -1,8 +1,14 @@
 "use strict";
+Object.defineProperties(exports, {
+  LoggerConsole: {get: function() {
+      return LoggerConsole;
+    }},
+  __esModule: {value: true}
+});
 var $__Object$defineProperty = Object.defineProperty;
 var $__Object$create = Object.create;
 var $__Object$getPrototypeOf = Object.getPrototypeOf;
-var Logger = require('./index');
+var Logger = require('./index').Logger;
 var ansi = require('ansi-styles');
 var LoggerConsole = function($__super) {
   function LoggerConsole() {
@@ -23,7 +29,7 @@ var LoggerConsole = function($__super) {
   });
   return LoggerConsole;
 }(Logger);
-module.exports = LoggerConsole;
+;
 LoggerConsole.style = function(styles, string) {
   if (!styles.length || !string) {
     return string;

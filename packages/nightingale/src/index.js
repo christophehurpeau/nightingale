@@ -7,7 +7,16 @@ var util = require('util');
  *
  * @class
  */
-class Logger {
+export class Logger {
+    constructor() {
+        Object.getOwnPropertyNames(Logger.prototype).forEach((key) => {
+            if (key === 'constructor') {
+                return;
+            }
+            this[key] = Logger.prototype[key].bind(this);
+        });
+    }
+
     /**
      * Log a message
      *
@@ -51,7 +60,7 @@ class Logger {
      * @return {Logger}
      */
 	prefix(logLevel) {
-		this.time(logLevel);
+		this.now(logLevel);
         if (this._prefix) {
             this.write(this._prefix, logLevel);
         }
@@ -65,7 +74,7 @@ class Logger {
      * @param {Function} color
      * @return {Logger}
      */
-	time(color) {
+	now(color) {
         if (!color) {
             color = this.gray;
         }
@@ -166,8 +175,37 @@ class Logger {
 	success(message) {
 		return this.log(this.green.bold('[success] ' + message));
 	}
+
+    /**
+     * Stores current time in milliseconds
+     * in the timers map
+     *
+     * @param {string} timer name
+     */
+    time(name) {
+        if (name) {
+            if (!this._timers) {
+                this._timers = {};
+            }
+            this._timers[name] = Date.now();
+        }
+    }
+
+    /**
+    * Finds difference between when this method
+    * was called and when the respective time method
+    * was called, then logs out the difference
+    * and deletes the original record
+    *
+    * @param {string} timer name
+    */
+  timeEnd( name ) {
+    if (this._timers && this._timers[name]) {
+      this.log(name + ': ' + (Date.now() - this._timers[name]) + 'ms');
+      delete this._timers[name];
+    }
+  }
 }
-module.exports = Logger;
 
 Logger._inject = (object) => {
     var injectStyle1 = (prototype, styleName2) => {

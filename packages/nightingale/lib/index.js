@@ -1,8 +1,21 @@
 "use strict";
+Object.defineProperties(exports, {
+  Logger: {get: function() {
+      return Logger;
+    }},
+  __esModule: {value: true}
+});
 var $__Object$defineProperty = Object.defineProperty;
 var util = require('util');
 var Logger = function() {
-  function Logger() {}
+  function Logger() {
+    Object.getOwnPropertyNames(Logger.prototype).forEach(function(key) {
+      if (key === 'constructor') {
+        return;
+      }
+      this[key] = Logger.prototype[key].bind(this);
+    }.bind(this));
+  }
   $__Object$defineProperty(Logger.prototype, "log", {
     value: function(message, logLevel) {
       this.prefix(logLevel).write(message, logLevel).nl(logLevel);
@@ -30,7 +43,7 @@ var Logger = function() {
   });
   $__Object$defineProperty(Logger.prototype, "prefix", {
     value: function(logLevel) {
-      this.time(logLevel);
+      this.now(logLevel);
       if (this._prefix) {
         this.write(this._prefix, logLevel);
       }
@@ -39,7 +52,7 @@ var Logger = function() {
     enumerable: false,
     writable: true
   });
-  $__Object$defineProperty(Logger.prototype, "time", {
+  $__Object$defineProperty(Logger.prototype, "now", {
     value: function(color) {
       if (!color) {
         color = this.gray;
@@ -115,9 +128,31 @@ var Logger = function() {
     enumerable: false,
     writable: true
   });
+  $__Object$defineProperty(Logger.prototype, "time", {
+    value: function(name) {
+      if (name) {
+        if (!this._timers) {
+          this._timers = {};
+        }
+        this._timers[name] = Date.now();
+      }
+    },
+    enumerable: false,
+    writable: true
+  });
+  $__Object$defineProperty(Logger.prototype, "timeEnd", {
+    value: function(name) {
+      if (this._timers && this._timers[name]) {
+        this.log(name + ': ' + (Date.now() - this._timers[name]) + 'ms');
+        delete this._timers[name];
+      }
+    },
+    enumerable: false,
+    writable: true
+  });
   return Logger;
 }();
-module.exports = Logger;
+;
 Logger._inject = function(object) {
   var injectStyle1 = function(prototype, styleName2) {
     'bold italic underline inverse strikethrough'.split(' ').forEach(function(styleName) {
