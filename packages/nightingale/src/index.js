@@ -90,7 +90,7 @@ export class Logger {
      * @return {Logger}
      */
     info(message) {
-        return this.log('[info ] ' + message);
+        return this.log('→ ' + message);
     }
 
     /**
@@ -100,7 +100,7 @@ export class Logger {
      * @return {Logger}
      */
 	warn(message) {
-        return this.log(this.red('[warn ] ' + message));
+        return this.log(this.red('! ' + message));
     }
 
     /**
@@ -110,7 +110,7 @@ export class Logger {
      * @return {Logger}
      */
 	error(message) {
-        return this.log(this.red.bold('[error] ' + (message.stack || message.message || message)), 'error');
+        return this.log(this.red.bold('✖ ' + (message.stack || message.message || message)), 'error');
     }
 
     /**
@@ -120,7 +120,7 @@ export class Logger {
      * @return {Logger}
      */
 	fatal(message) {
-        return this.log(this.red.bold('[fatal] ' + message), 'fatal');
+        return this.log(this.red.bold('† ' + message), 'fatal');
     }
 
     /**
@@ -130,7 +130,7 @@ export class Logger {
      * @return {Logger}
      */
 	debug(message) {
-		return this.log(this.gray('[debug] '+ message));
+		return this.log(this.gray('• '+ message));
 	}
 
     /**
@@ -141,7 +141,7 @@ export class Logger {
      */
     inspect(value) {
         value = util.inspect(value);
-        return this.log(this.gray('[debug] '+ value));
+        return this.log(this.gray('• '+ value));
     }
 
     /**
@@ -153,7 +153,7 @@ export class Logger {
      */
     inspectVar(varName, varValue){
 		varValue = util.inspect(varValue);
-		return this.log(this.cyan('[debug] ' + varName + ' = ' + varValue));
+		return this.log(this.cyan('• ' + varName + ' = ' + varValue));
 	}
 
     /**
@@ -163,7 +163,7 @@ export class Logger {
      * @return {Logger}
      */
 	alert(message) {
-		return this.log(this.purple.bold('[alert] ' + message));
+		return this.log(this.purple.bold('» ' + message));
 	}
 
     /**
@@ -173,7 +173,7 @@ export class Logger {
      * @return {Logger}
      */
 	success(message) {
-		return this.log(this.green.bold('[success] ' + message));
+		return this.log(this.green.bold('✔ ' + message));
 	}
 
     /**
