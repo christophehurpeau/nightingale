@@ -34,6 +34,7 @@ var htmlStyles = {
   bgWhite: 'background: white'
 };
 var LoggerHtml = function($__super) {
+  "use strict";
   function LoggerHtml() {
     $__Object$getPrototypeOf(LoggerHtml.prototype).constructor.call(this);
     this.html = '';
@@ -59,7 +60,6 @@ var LoggerHtml = function($__super) {
   });
   return LoggerHtml;
 }(Logger);
-;
 LoggerHtml.style = function(styles, string) {
   if (!styles.length || !string) {
     return string;

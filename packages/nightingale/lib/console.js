@@ -11,6 +11,7 @@ var $__Object$getPrototypeOf = Object.getPrototypeOf;
 var Logger = require('./index').Logger;
 var ansi = require('ansi-styles');
 var LoggerConsole = function($__super) {
+  "use strict";
   function LoggerConsole() {
     var $__0 = $__Object$getPrototypeOf(LoggerConsole.prototype);
     if ($__0 !== null)
@@ -29,7 +30,6 @@ var LoggerConsole = function($__super) {
   });
   return LoggerConsole;
 }(Logger);
-;
 LoggerConsole.style = function(styles, string) {
   if (!styles.length || !string) {
     return string;

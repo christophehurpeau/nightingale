@@ -8,6 +8,7 @@ Object.defineProperties(exports, {
 var $__Object$defineProperty = Object.defineProperty;
 var util = require('util');
 var Logger = function() {
+  "use strict";
   function Logger() {
     Object.getOwnPropertyNames(Logger.prototype).forEach(function(key) {
       if (key === 'constructor') {
@@ -65,35 +66,35 @@ var Logger = function() {
   });
   $__Object$defineProperty(Logger.prototype, "info", {
     value: function(message) {
-      return this.log('[info ] ' + message);
+      return this.log('→ ' + message);
     },
     enumerable: false,
     writable: true
   });
   $__Object$defineProperty(Logger.prototype, "warn", {
     value: function(message) {
-      return this.log(this.red('[warn ] ' + message));
+      return this.log(this.red('! ' + message));
     },
     enumerable: false,
     writable: true
   });
   $__Object$defineProperty(Logger.prototype, "error", {
     value: function(message) {
-      return this.log(this.red.bold('[error] ' + (message.stack || message.message || message)), 'error');
+      return this.log(this.red.bold('✖ ' + (message.stack || message.message || message)), 'error');
     },
     enumerable: false,
     writable: true
   });
   $__Object$defineProperty(Logger.prototype, "fatal", {
     value: function(message) {
-      return this.log(this.red.bold('[fatal] ' + message), 'fatal');
+      return this.log(this.red.bold('† ' + message), 'fatal');
     },
     enumerable: false,
     writable: true
   });
   $__Object$defineProperty(Logger.prototype, "debug", {
     value: function(message) {
-      return this.log(this.gray('[debug] ' + message));
+      return this.log(this.gray('• ' + message));
     },
     enumerable: false,
     writable: true
@@ -101,7 +102,7 @@ var Logger = function() {
   $__Object$defineProperty(Logger.prototype, "inspect", {
     value: function(value) {
       value = util.inspect(value);
-      return this.log(this.gray('[debug] ' + value));
+      return this.log(this.gray('• ' + value));
     },
     enumerable: false,
     writable: true
@@ -109,21 +110,21 @@ var Logger = function() {
   $__Object$defineProperty(Logger.prototype, "inspectVar", {
     value: function(varName, varValue) {
       varValue = util.inspect(varValue);
-      return this.log(this.cyan('[debug] ' + varName + ' = ' + varValue));
+      return this.log(this.cyan('• ' + varName + ' = ' + varValue));
     },
     enumerable: false,
     writable: true
   });
   $__Object$defineProperty(Logger.prototype, "alert", {
     value: function(message) {
-      return this.log(this.purple.bold('[alert] ' + message));
+      return this.log(this.purple.bold('» ' + message));
     },
     enumerable: false,
     writable: true
   });
   $__Object$defineProperty(Logger.prototype, "success", {
     value: function(message) {
-      return this.log(this.green.bold('[success] ' + message));
+      return this.log(this.green.bold('✔ ' + message));
     },
     enumerable: false,
     writable: true
@@ -152,7 +153,6 @@ var Logger = function() {
   });
   return Logger;
 }();
-;
 Logger._inject = function(object) {
   var injectStyle1 = function(prototype, styleName2) {
     'bold italic underline inverse strikethrough'.split(' ').forEach(function(styleName) {
