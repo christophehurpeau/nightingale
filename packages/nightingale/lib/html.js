@@ -69,3 +69,5 @@ LoggerHtml.style = function(styles, string) {
   }).join('; ') + '">' + string + '</span>';
 };
 Logger._inject(LoggerHtml);
+
+//# sourceMappingURL=html.js.map

@@ -169,3 +169,5 @@ Logger._inject = function(object) {
     injectStyle1(object.prototype[styleName], styleName);
   });
 };
+
+//# sourceMappingURL=index.js.map

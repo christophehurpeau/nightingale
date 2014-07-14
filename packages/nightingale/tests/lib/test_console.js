@@ -7,3 +7,5 @@ var logger = new Logger();
 test('blue bold color', function() {
   expect(logger.blue.bold('test'), '\x1b[34m\x1b[1mtest\x1b[22m\x1b[39m');
 });
+
+//# sourceMappingURL=test_console.js.map

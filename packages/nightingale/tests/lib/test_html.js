@@ -7,3 +7,5 @@ var logger = new Logger();
 test('blue blold color', function() {
   expect(logger.blue.bold('test'), '<span style="font-size: bold; color: #4682B4">test</span>');
 });
+
+//# sourceMappingURL=test_html.js.map

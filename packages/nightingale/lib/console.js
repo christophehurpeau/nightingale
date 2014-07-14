@@ -40,3 +40,5 @@ LoggerConsole.style = function(styles, string) {
   }, string);
 };
 Logger._inject(LoggerConsole);
+
+//# sourceMappingURL=console.js.map

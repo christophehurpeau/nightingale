@@ -15,8 +15,8 @@ logger.warn('This is a warning !');
 logger.write('test ' + logger.blue.bold('This is blue and bold')).write(' keep writing log').nl();
 ```
 
-[npm-image]: https://img.shields.io/npm/v/springbokjs-library.svg?style=flat
-[npm-url]: https://npmjs.org/package/springbokjs-library
+[npm-image]: https://img.shields.io/npm/v/springbokjs-logger.svg?style=flat
+[npm-url]: https://npmjs.org/package/springbokjs-logger
 [droneio-image]: https://drone.io/github.com/christophehurpeau/springbokjs-logger/status.png
 [droneio-url]: https://drone.io/github.com/christophehurpeau/springbokjs-logger/latest
 [coveralls-image]: https://img.shields.io/coveralls/christophehurpeau/springbokjs-logger.svg?style=flat
