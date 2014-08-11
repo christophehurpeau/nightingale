@@ -2,7 +2,7 @@
 # Then click on "View Key" and paste it on github
 
 sudo apt-get install jscoverage
-npm -d install
+npm install
 
 echo "\n> Ensure that the code is warning free"
 node_modules/.bin/gulp lint || exit 1
@@ -18,7 +18,7 @@ node_modules/.bin/gulp docs || exit 1
 
 echo "\n> Copy docs up to github gh-pages branch"
 mv docs docs-tmp
-git checkout gh-pages
+git checkout -f gh-pages
 rm -Rf docs
 mv docs-tmp docs
 date > date.txt
