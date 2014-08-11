@@ -45,7 +45,7 @@ export class Logger {
      * @param {String} prefix
      * @return {Logger}
      */
-	setPrefix(prefix, color) {
+    setPrefix(prefix, color) {
         if (!color) {
             color = this.gray;
         }
@@ -59,13 +59,13 @@ export class Logger {
      * @param {String} logLevel
      * @return {Logger}
      */
-	prefix(logLevel) {
-		this.now(logLevel);
+    prefix(logLevel) {
+        this.now(logLevel);
         if (this._prefix) {
             this.write(this._prefix, logLevel);
         }
-		return this;
-	}
+        return this;
+    }
 
     /**
      * Write the current time
@@ -74,7 +74,7 @@ export class Logger {
      * @param {Function} color
      * @return {Logger}
      */
-	now(color) {
+    now(color) {
         if (!color) {
             color = this.gray;
         }
@@ -99,8 +99,8 @@ export class Logger {
      * @param {String} message
      * @return {Logger}
      */
-	warn(message) {
-        return this.log(this.red('! ' + message));
+    warn(message) {
+        return this.log(this.yellow('⚠ ' + message));
     }
 
     /**
@@ -120,7 +120,7 @@ export class Logger {
      * @return {Logger}
      */
 	fatal(message) {
-        return this.log(this.red.bold('† ' + message), 'fatal');
+        return this.log(this.red.bold('! ' + message), 'fatal');
     }
 
     /**
