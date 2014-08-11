@@ -24,7 +24,7 @@ export class Logger {
      * @param {String} logLevel
      * @return {Logger}
      */
-	log(message, logLevel) {
+    log(message, logLevel) {
         this.prefix(logLevel).write(message, logLevel).nl(logLevel);
     }
 
@@ -34,7 +34,7 @@ export class Logger {
      * @param {String} logLevel
      * @return {Logger}
      */
-	nl(logLevel) {
+    nl(logLevel) {
         this.write("\n", logLevel);
         return this;
     }
@@ -49,8 +49,8 @@ export class Logger {
         if (!color) {
             color = this.gray;
         }
-		this._prefix = color(prefix);
-	}
+        this._prefix = color(prefix);
+    }
 
     /**
      * Write the current prefix, if exists
@@ -60,7 +60,7 @@ export class Logger {
      * @return {Logger}
      */
     prefix(logLevel) {
-        this.now(logLevel);
+        this.now(undefined, logLevel);
         if (this._prefix) {
             this.write(this._prefix, logLevel);
         }
@@ -74,12 +74,12 @@ export class Logger {
      * @param {Function} color
      * @return {Logger}
      */
-    now(color) {
+    now(color, logLevel) {
         if (!color) {
             color = this.gray;
         }
         this.write(color.bold(new Date().toTimeString().split(' ')[0]
-                                /*new Date().toFormat('HH24:MI:SS')*/)+' ');
+                                /*new Date().toFormat('HH24:MI:SS')*/)+' ', logLevel);
         return this;
     }
 
@@ -109,8 +109,18 @@ export class Logger {
      * @param {String|Error} message
      * @return {Logger}
      */
-	error(message) {
+    error(message) {
         return this.log(this.red.bold('✖ ' + (message.stack || message.message || message)), 'error');
+    }
+
+    /**
+     * Log an alert message
+     *
+     * @param {String} message
+     * @return {Logger}
+     */
+    alert(message) {
+        return this.log(this.red.bold('! ' + message));
     }
 
     /**
@@ -119,8 +129,8 @@ export class Logger {
      * @param {String} message
      * @return {Logger}
      */
-	fatal(message) {
-        return this.log(this.red.bold('! ' + message), 'fatal');
+    fatal(message) {
+        return this.log(this.bgRed.white.bold('‼ ' + message), 'fatal');
     }
 
     /**
@@ -129,9 +139,9 @@ export class Logger {
      * @param {String} message
      * @return {Logger}
      */
-	debug(message) {
-		return this.log(this.gray('• '+ message));
-	}
+    debug(message) {
+        return this.log(this.gray('• '+ message));
+    }
 
     /**
      * Log an debug message
@@ -152,19 +162,9 @@ export class Logger {
      * @return {Logger}
      */
     inspectVar(varName, varValue){
-		varValue = util.inspect(varValue);
-		return this.log(this.cyan('• ' + varName + ' = ' + varValue));
-	}
-
-    /**
-     * Log an alert message
-     *
-     * @param {String} message
-     * @return {Logger}
-     */
-	alert(message) {
-		return this.log(this.purple.bold('» ' + message));
-	}
+        varValue = util.inspect(varValue);
+        return this.log(this.cyan('• ' + varName + ' = ' + varValue));
+    }
 
     /**
      * Log an sucess message
@@ -172,9 +172,9 @@ export class Logger {
      * @param {String} message
      * @return {Logger}
      */
-	success(message) {
-		return this.log(this.green.bold('✔ ' + message));
-	}
+    success(message) {
+        return this.log(this.green.bold('✔ ' + message));
+    }
 
     /**
      * Stores current time in milliseconds
@@ -199,29 +199,51 @@ export class Logger {
     *
     * @param {string} timer name
     */
-  timeEnd( name ) {
-    if (this._timers && this._timers[name]) {
-      this.log(name + ': ' + (Date.now() - this._timers[name]) + 'ms');
-      delete this._timers[name];
+    timeEnd( name ) {
+        if (this._timers && this._timers[name]) {
+            this.log(name + ': ' + (Date.now() - this._timers[name]) + 'ms');
+            delete this._timers[name];
+        }
     }
-  }
 }
 
 Logger._inject = (object) => {
-    var injectStyle1 = (prototype, styleName2) => {
+    var injectStyle = (target, styleNames) => {
         'bold italic underline inverse strikethrough'.split(' ').forEach((styleName) => {
-            prototype[styleName] = (message) => {
-                return object.style([styleName , styleName2], message);
+            var styleNames2 = styleNames.slice();
+            styleNames2.push(styleName);
+            target[styleName] = (message) => {
+                return object.style(styleNames2, message);
             };
         });
     };
-    injectStyle1(object.prototype);
+    injectStyle(object.prototype, []);
 
-    'black red green yellow blue magenta cyan white gray'.split(' ').forEach((styleName) => {
+    var colors = 'black red green yellow blue magenta cyan white gray'.split(' ');
+    var injectColor = (target, styleNames) => {
+        colors.forEach((styleName) => {
+            var styleNames2 = styleNames.slice();
+            styleNames2.push(styleName);
+            target[styleName] = (message) => {
+                return object.style(styleNames2, message);
+            };
+        });
+    };
+
+    injectColor(object.prototype, []);
+    colors.forEach((styleName) => {
+        injectStyle(object.prototype[styleName], [styleName]);
+    });
+
+    'bgBlack bgRed bgGreen bgYellow bgBlue bgMagenta bgCyan bgWhite bgGray'.split(' ').forEach((styleName) => {
         object.prototype[styleName] = (message) => {
             return object.style([styleName], message);
         };
-        injectStyle1(object.prototype[styleName], styleName);
+        injectColor(object.prototype[styleName], [styleName]);
+        injectStyle(object.prototype[styleName], [styleName]);
+        colors.forEach((styleNameColor) => {
+            injectStyle(object.prototype[styleName][styleNameColor], [styleName, styleNameColor]);
+        });
     });
 };
 

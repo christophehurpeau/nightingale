@@ -44,7 +44,7 @@ var Logger = function() {
   });
   $__Object$defineProperty(Logger.prototype, "prefix", {
     value: function(logLevel) {
-      this.now(logLevel);
+      this.now(undefined, logLevel);
       if (this._prefix) {
         this.write(this._prefix, logLevel);
       }
@@ -54,11 +54,11 @@ var Logger = function() {
     writable: true
   });
   $__Object$defineProperty(Logger.prototype, "now", {
-    value: function(color) {
+    value: function(color, logLevel) {
       if (!color) {
         color = this.gray;
       }
-      this.write(color.bold(new Date().toTimeString().split(' ')[0]) + ' ');
+      this.write(color.bold(new Date().toTimeString().split(' ')[0]) + ' ', logLevel);
       return this;
     },
     enumerable: false,
@@ -73,7 +73,7 @@ var Logger = function() {
   });
   $__Object$defineProperty(Logger.prototype, "warn", {
     value: function(message) {
-      return this.log(this.red('! ' + message));
+      return this.log(this.yellow('⚠ ' + message));
     },
     enumerable: false,
     writable: true
@@ -85,9 +85,16 @@ var Logger = function() {
     enumerable: false,
     writable: true
   });
+  $__Object$defineProperty(Logger.prototype, "alert", {
+    value: function(message) {
+      return this.log(this.red.bold('! ' + message));
+    },
+    enumerable: false,
+    writable: true
+  });
   $__Object$defineProperty(Logger.prototype, "fatal", {
     value: function(message) {
-      return this.log(this.red.bold('† ' + message), 'fatal');
+      return this.log(this.bgRed.white.bold('‼ ' + message), 'fatal');
     },
     enumerable: false,
     writable: true
@@ -111,13 +118,6 @@ var Logger = function() {
     value: function(varName, varValue) {
       varValue = util.inspect(varValue);
       return this.log(this.cyan('• ' + varName + ' = ' + varValue));
-    },
-    enumerable: false,
-    writable: true
-  });
-  $__Object$defineProperty(Logger.prototype, "alert", {
-    value: function(message) {
-      return this.log(this.purple.bold('» ' + message));
     },
     enumerable: false,
     writable: true
@@ -154,19 +154,39 @@ var Logger = function() {
   return Logger;
 }();
 Logger._inject = function(object) {
-  var injectStyle1 = function(prototype, styleName2) {
+  var injectStyle = function(target, styleNames) {
     'bold italic underline inverse strikethrough'.split(' ').forEach(function(styleName) {
-      prototype[styleName] = function(message) {
-        return object.style([styleName, styleName2], message);
+      var styleNames2 = styleNames.slice();
+      styleNames2.push(styleName);
+      target[styleName] = function(message) {
+        return object.style(styleNames2, message);
       };
     });
   };
-  injectStyle1(object.prototype);
-  'black red green yellow blue magenta cyan white gray'.split(' ').forEach(function(styleName) {
+  injectStyle(object.prototype, []);
+  var colors = 'black red green yellow blue magenta cyan white gray'.split(' ');
+  var injectColor = function(target, styleNames) {
+    colors.forEach(function(styleName) {
+      var styleNames2 = styleNames.slice();
+      styleNames2.push(styleName);
+      target[styleName] = function(message) {
+        return object.style(styleNames2, message);
+      };
+    });
+  };
+  injectColor(object.prototype, []);
+  colors.forEach(function(styleName) {
+    injectStyle(object.prototype[styleName], [styleName]);
+  });
+  'bgBlack bgRed bgGreen bgYellow bgBlue bgMagenta bgCyan bgWhite bgGray'.split(' ').forEach(function(styleName) {
     object.prototype[styleName] = function(message) {
       return object.style([styleName], message);
     };
-    injectStyle1(object.prototype[styleName], styleName);
+    injectColor(object.prototype[styleName], [styleName]);
+    injectStyle(object.prototype[styleName], [styleName]);
+    colors.forEach(function(styleNameColor) {
+      injectStyle(object.prototype[styleName][styleNameColor], [styleName, styleNameColor]);
+    });
   });
 };
 

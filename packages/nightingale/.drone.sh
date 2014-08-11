@@ -1,5 +1,7 @@
 # Go to project > Repository and set the branch filter
 # Then click on "View Key" and paste it on github
+
+sudo apt-get install jscoverage
 npm -d install
 
 echo "\n> Ensure that the code is warning free"
