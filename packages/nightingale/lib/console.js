@@ -30,6 +30,7 @@ var LoggerConsole = function($__super) {
   });
   return LoggerConsole;
 }(Logger);
+;
 LoggerConsole.style = function(styles, string) {
   if (!styles.length || !string) {
     return string;

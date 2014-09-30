@@ -60,6 +60,7 @@ var LoggerHtml = function($__super) {
   });
   return LoggerHtml;
 }(Logger);
+;
 LoggerHtml.style = function(styles, string) {
   if (!styles.length || !string) {
     return string;

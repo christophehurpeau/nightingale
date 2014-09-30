@@ -153,9 +153,13 @@ var Logger = function() {
   });
   return Logger;
 }();
+;
 Logger._inject = function(object) {
+  var styles = 'bold italic underline inverse strikethrough'.split(' ');
+  var colors = 'black red green yellow blue magenta cyan white gray'.split(' ');
+  var bgColors = 'bgBlack bgRed bgGreen bgYellow bgBlue bgMagenta bgCyan bgWhite bgGray'.split(' ');
   var injectStyle = function(target, styleNames) {
-    'bold italic underline inverse strikethrough'.split(' ').forEach(function(styleName) {
+    styles.forEach(function(styleName) {
       var styleNames2 = styleNames.slice();
       styleNames2.push(styleName);
       target[styleName] = function(message) {
@@ -164,7 +168,6 @@ Logger._inject = function(object) {
     });
   };
   injectStyle(object.prototype, []);
-  var colors = 'black red green yellow blue magenta cyan white gray'.split(' ');
   var injectColor = function(target, styleNames) {
     colors.forEach(function(styleName) {
       var styleNames2 = styleNames.slice();
@@ -178,7 +181,7 @@ Logger._inject = function(object) {
   colors.forEach(function(styleName) {
     injectStyle(object.prototype[styleName], [styleName]);
   });
-  'bgBlack bgRed bgGreen bgYellow bgBlue bgMagenta bgCyan bgWhite bgGray'.split(' ').forEach(function(styleName) {
+  bgColors.forEach(function(styleName) {
     object.prototype[styleName] = function(message) {
       return object.style([styleName], message);
     };

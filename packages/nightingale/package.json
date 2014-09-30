@@ -5,7 +5,7 @@
     "springbokjs",
     "logger"
   ],
-  "version": "1.5.2",
+  "version": "1.6.0",
   "homepage": "http://springbokjs.org",
   "license": "MIT",
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
@@ -21,6 +21,6 @@
     "gulp": "^3.8",
     "mocha": "^1.21.4",
     "proclaim": "^2.0.0",
-    "springbokjs-library": "^2.5.3"
+    "springbokjs-library": "^2.7.0"
   }
 }

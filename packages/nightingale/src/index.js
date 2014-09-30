@@ -140,7 +140,7 @@ export class Logger {
      * @return {Logger}
      */
     debug(message) {
-        return this.log(this.gray('• '+ message));
+        return this.log(this.gray('• ' + message));
     }
 
     /**
@@ -151,7 +151,7 @@ export class Logger {
      */
     inspect(value) {
         value = util.inspect(value);
-        return this.log(this.gray('• '+ value));
+        return this.log(this.gray('• ' + value));
     }
 
     /**
@@ -180,7 +180,7 @@ export class Logger {
      * Stores current time in milliseconds
      * in the timers map
      *
-     * @param {string} timer name
+     * @param {string} name timer name
      */
     time(name) {
         if (name) {
@@ -197,9 +197,9 @@ export class Logger {
     * was called, then logs out the difference
     * and deletes the original record
     *
-    * @param {string} timer name
+    * @param {string} name timer name
     */
-    timeEnd( name ) {
+    timeEnd(name) {
         if (this._timers && this._timers[name]) {
             this.log(name + ': ' + (Date.now() - this._timers[name]) + 'ms');
             delete this._timers[name];
@@ -208,8 +208,12 @@ export class Logger {
 }
 
 Logger._inject = (object) => {
+    var styles = 'bold italic underline inverse strikethrough'.split(' ');
+    var colors = 'black red green yellow blue magenta cyan white gray'.split(' ');
+    var bgColors = 'bgBlack bgRed bgGreen bgYellow bgBlue bgMagenta bgCyan bgWhite bgGray'.split(' ');
+
     var injectStyle = (target, styleNames) => {
-        'bold italic underline inverse strikethrough'.split(' ').forEach((styleName) => {
+        styles.forEach((styleName) => {
             var styleNames2 = styleNames.slice();
             styleNames2.push(styleName);
             target[styleName] = (message) => {
@@ -219,7 +223,6 @@ Logger._inject = (object) => {
     };
     injectStyle(object.prototype, []);
 
-    var colors = 'black red green yellow blue magenta cyan white gray'.split(' ');
     var injectColor = (target, styleNames) => {
         colors.forEach((styleName) => {
             var styleNames2 = styleNames.slice();
@@ -235,7 +238,7 @@ Logger._inject = (object) => {
         injectStyle(object.prototype[styleName], [styleName]);
     });
 
-    'bgBlack bgRed bgGreen bgYellow bgBlue bgMagenta bgCyan bgWhite bgGray'.split(' ').forEach((styleName) => {
+    bgColors.forEach((styleName) => {
         object.prototype[styleName] = (message) => {
             return object.style([styleName], message);
         };
