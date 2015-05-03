@@ -5,7 +5,7 @@
     "springbokjs",
     "logger"
   ],
-  "version": "2.0.2",
+  "version": "2.0.3",
   "homepage": "https://github.com/christophehurpeau/springbokjs-logger",
   "license": "MIT",
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
@@ -19,8 +19,8 @@
   },
   "devDependencies": {
     "gulp": "^3.8",
-    "mocha": "^2.2.1",
-    "proclaim": "^2.0.0",
-    "springbokjs-library": "^3.5.2"
+    "mocha": "^2.2.4",
+    "proclaim": "^3.2.1",
+    "springbokjs-library": "^4.0.1"
   }
 }

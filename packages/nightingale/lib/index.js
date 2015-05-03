@@ -1,9 +1,12 @@
 "use strict";
 
-var _prototypeProperties = function (child, staticProps, instanceProps) { if (staticProps) Object.defineProperties(child, staticProps); if (instanceProps) Object.defineProperties(child.prototype, instanceProps); };
+var _createClass = (function () { function defineProperties(target, props) { for (var key in props) { var prop = props[key]; prop.configurable = true; if (prop.value) prop.writable = true; } Object.defineProperties(target, props); } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
 var _classCallCheck = function (instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } };
 
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 /*#if NODE */
 var util = require("util");
 /*#/if */
@@ -13,9 +16,11 @@ var util = require("util");
  *
  * @class
  */
+
 var Logger = exports.Logger = (function () {
     function Logger() {
         var _this = this;
+
         _classCallCheck(this, Logger);
 
         Object.getOwnPropertyNames(Logger.prototype).forEach(function (key) {
@@ -26,7 +31,7 @@ var Logger = exports.Logger = (function () {
         });
     }
 
-    _prototypeProperties(Logger, null, {
+    _createClass(Logger, {
         log: {
 
             /**
@@ -36,11 +41,10 @@ var Logger = exports.Logger = (function () {
              * @param {String} logLevel
              * @return {Logger}
              */
+
             value: function log(message, logLevel) {
                 this.prefix(logLevel).write(message, logLevel).nl(logLevel);
-            },
-            writable: true,
-            configurable: true
+            }
         },
         nl: {
 
@@ -50,12 +54,11 @@ var Logger = exports.Logger = (function () {
              * @param {String} logLevel
              * @return {Logger}
              */
+
             value: function nl(logLevel) {
                 this.write("\n", logLevel);
                 return this;
-            },
-            writable: true,
-            configurable: true
+            }
         },
         setPrefix: {
 
@@ -65,14 +68,13 @@ var Logger = exports.Logger = (function () {
              * @param {String} prefix
              * @return {Logger}
              */
+
             value: function setPrefix(prefix, color) {
                 if (!color) {
                     color = this.gray;
                 }
                 this._prefix = color(prefix);
-            },
-            writable: true,
-            configurable: true
+            }
         },
         prefix: {
 
@@ -83,15 +85,14 @@ var Logger = exports.Logger = (function () {
              * @param {String} logLevel
              * @return {Logger}
              */
+
             value: function prefix(logLevel) {
                 this.now(undefined, logLevel);
                 if (this._prefix) {
                     this.write(this._prefix, logLevel);
                 }
                 return this;
-            },
-            writable: true,
-            configurable: true
+            }
         },
         now: {
 
@@ -102,6 +103,7 @@ var Logger = exports.Logger = (function () {
              * @param {Function} color
              * @return {Logger}
              */
+
             value: function now(color, logLevel) {
                 if (!color) {
                     color = this.gray;
@@ -109,9 +111,7 @@ var Logger = exports.Logger = (function () {
                 this.write(color.bold(new Date().toTimeString().split(" ")[0]
                 /*new Date().toFormat('HH24:MI:SS')*/) + " ", logLevel);
                 return this;
-            },
-            writable: true,
-            configurable: true
+            }
         },
         info: {
 
@@ -121,11 +121,10 @@ var Logger = exports.Logger = (function () {
              * @param {String} message
              * @return {Logger}
              */
+
             value: function info(message) {
                 return this.log("→ " + message);
-            },
-            writable: true,
-            configurable: true
+            }
         },
         warn: {
 
@@ -135,11 +134,10 @@ var Logger = exports.Logger = (function () {
              * @param {String} message
              * @return {Logger}
              */
+
             value: function warn(message) {
                 return this.log(this.yellow("⚠ " + message));
-            },
-            writable: true,
-            configurable: true
+            }
         },
         error: {
 
@@ -149,11 +147,10 @@ var Logger = exports.Logger = (function () {
              * @param {String|Error} message
              * @return {Logger}
              */
+
             value: function error(message) {
                 return this.log(this.red.bold("✖ " + (message.stack || message.message || message)), "error");
-            },
-            writable: true,
-            configurable: true
+            }
         },
         alert: {
 
@@ -163,11 +160,10 @@ var Logger = exports.Logger = (function () {
              * @param {String} message
              * @return {Logger}
              */
+
             value: function alert(message) {
                 return this.log(this.red.bold("! " + message));
-            },
-            writable: true,
-            configurable: true
+            }
         },
         fatal: {
 
@@ -177,11 +173,10 @@ var Logger = exports.Logger = (function () {
              * @param {String} message
              * @return {Logger}
              */
+
             value: function fatal(message) {
                 return this.log(this.bgRed.white.bold("‼ " + message), "fatal");
-            },
-            writable: true,
-            configurable: true
+            }
         },
         debug: {
 
@@ -191,11 +186,10 @@ var Logger = exports.Logger = (function () {
              * @param {String} message
              * @return {Logger}
              */
+
             value: function debug(message) {
                 return this.log(this.gray("• " + message));
-            },
-            writable: true,
-            configurable: true
+            }
         },
         inspect: {
 
@@ -205,12 +199,11 @@ var Logger = exports.Logger = (function () {
              * @param {*} value
              * @return {Logger}
              */
+
             value: function inspect(value) {
-                value = util.inspect(value);
+                value = util.inspect(value, { depth: 6 });
                 return this.log(this.gray("• " + value));
-            },
-            writable: true,
-            configurable: true
+            }
         },
         inspectVar: {
 
@@ -221,12 +214,11 @@ var Logger = exports.Logger = (function () {
              * @param {*} varValue
              * @return {Logger}
              */
+
             value: function inspectVar(varName, varValue) {
-                varValue = util.inspect(varValue);
+                varValue = util.inspect(varValue, { depth: 6 });
                 return this.log(this.cyan("• " + varName + " = " + varValue));
-            },
-            writable: true,
-            configurable: true
+            }
         },
         success: {
 
@@ -236,11 +228,10 @@ var Logger = exports.Logger = (function () {
              * @param {String} message
              * @return {Logger}
              */
+
             value: function success(message) {
                 return this.log(this.green.bold("✔ " + message));
-            },
-            writable: true,
-            configurable: true
+            }
         },
         time: {
 
@@ -250,6 +241,7 @@ var Logger = exports.Logger = (function () {
              *
              * @param {string} name timer name
              */
+
             value: function time(name) {
                 if (name) {
                     if (!this._timers) {
@@ -257,9 +249,7 @@ var Logger = exports.Logger = (function () {
                     }
                     this._timers[name] = Date.now();
                 }
-            },
-            writable: true,
-            configurable: true
+            }
         },
         timeEnd: {
 
@@ -271,20 +261,18 @@ var Logger = exports.Logger = (function () {
             *
             * @param {string} name timer name
             */
+
             value: function timeEnd(name) {
                 if (this._timers && this._timers[name]) {
                     this.log(name + ": " + (Date.now() - this._timers[name]) + "ms");
                     delete this._timers[name];
                 }
-            },
-            writable: true,
-            configurable: true
+            }
         }
     });
 
     return Logger;
 })();
-
 
 Logger._inject = function (object) {
     var styles = "bold italic underline inverse strikethrough".split(" ");
@@ -329,11 +317,7 @@ Logger._inject = function (object) {
     });
 };
 
-
 // logger.black.bold('Hello');
 
 //Logger.blue.bold('test');
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
 //# sourceMappingURL=index.js.map

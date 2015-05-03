@@ -150,7 +150,7 @@ export class Logger {
      * @return {Logger}
      */
     inspect(value) {
-        value = util.inspect(value);
+        value = util.inspect(value, { depth: 6 });
         return this.log(this.gray('• ' + value));
     }
 
@@ -162,7 +162,7 @@ export class Logger {
      * @return {Logger}
      */
     inspectVar(varName, varValue){
-        varValue = util.inspect(varValue);
+        varValue = util.inspect(varValue, { depth: 6 });
         return this.log(this.cyan('• ' + varName + ' = ' + varValue));
     }
 

@@ -1,6 +1,6 @@
 "use strict";
 
-var _prototypeProperties = function (child, staticProps, instanceProps) { if (staticProps) Object.defineProperties(child, staticProps); if (instanceProps) Object.defineProperties(child.prototype, instanceProps); };
+var _createClass = (function () { function defineProperties(target, props) { for (var key in props) { var prop = props[key]; prop.configurable = true; if (prop.value) prop.writable = true; } Object.defineProperties(target, props); } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
 var _get = function get(object, property, receiver) { var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc && desc.writable) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
 
@@ -8,6 +8,9 @@ var _inherits = function (subClass, superClass) { if (typeof superClass !== "fun
 
 var _classCallCheck = function (instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } };
 
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 var Logger = require("./index").Logger;
 
 var htmlStyles = {
@@ -41,7 +44,7 @@ var htmlStyles = {
 
 };
 
-var LoggerHtml = exports.LoggerHtml = (function (Logger) {
+var LoggerHtml = exports.LoggerHtml = (function (_Logger) {
     function LoggerHtml() {
         _classCallCheck(this, LoggerHtml);
 
@@ -49,31 +52,25 @@ var LoggerHtml = exports.LoggerHtml = (function (Logger) {
         this.html = "";
     }
 
-    _inherits(LoggerHtml, Logger);
+    _inherits(LoggerHtml, _Logger);
 
-    _prototypeProperties(LoggerHtml, null, {
+    _createClass(LoggerHtml, {
         write: {
             value: function write(html) {
                 this.html += html;
                 return this;
-            },
-            writable: true,
-            configurable: true
+            }
         },
         nl: {
             value: function nl() {
                 this.html += "<br/>";
                 return this;
-            },
-            writable: true,
-            configurable: true
+            }
         }
     });
 
     return LoggerHtml;
 })(Logger);
-
-
 
 LoggerHtml.style = function (styles, string) {
     if (!styles.length || !string) {
@@ -84,7 +81,4 @@ LoggerHtml.style = function (styles, string) {
     }).join("; ") + "\">" + string + "</span>";
 };
 Logger._inject(LoggerHtml);
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
 //# sourceMappingURL=html.js.map
