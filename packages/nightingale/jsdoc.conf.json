@@ -1,0 +1,8 @@
+{
+    "opts": {
+        "template": "node_modules/jaguarjs-jsdoc"
+    },
+    "templates" : {
+        "applicationName" : "nightingale"
+    }
+}

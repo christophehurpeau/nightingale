@@ -1,1 +1,1 @@
-module.exports = require('./lib/console').LoggerConsole;
+module.exports = require('./lib/console');

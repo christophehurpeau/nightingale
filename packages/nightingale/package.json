@@ -1,26 +1,39 @@
 {
-  "name": "springbokjs-logger",
-  "description": "SpringbokJS Logger",
+  "name": "nightingale",
+  "description": "Logger for browser and node",
   "keywords": [
-    "springbokjs",
     "logger"
   ],
-  "version": "2.0.3",
-  "homepage": "https://github.com/christophehurpeau/springbokjs-logger",
+  "version": "1.0.0",
+  "homepage": "https://github.com/christophehurpeau/nightingale",
   "license": "MIT",
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
-  "repository": "git://github.com/christophehurpeau/springbokjs-logger.git",
+  "repository": "christophehurpeau/nightingale",
   "main": "./lib/index.js",
   "scripts": {
-    "test": "node_modules/.bin/mocha -u tdd tests/lib"
+    "test": "make tests",
+    "build": "make build",
+    "postpublish": "make post-publish",
+    "prepublish": "make pre-publish",
+    "preversion": "make pre-version",
+    "version": "make version",
+    "watch": "make watch"
   },
   "dependencies": {
-    "ansi-styles": "^2.0.1"
+    "ansi-styles": "^2.1.0",
+    "babel-runtime": "^5.8.24"
   },
   "devDependencies": {
-    "gulp": "^3.8",
-    "mocha": "^2.2.4",
-    "proclaim": "^3.2.1",
-    "springbokjs-library": "^4.0.1"
+    "karma": "^0.13.10",
+    "karma-chrome-launcher": "^0.2.0",
+    "karma-firefox-launcher": "^0.1.6",
+    "karma-ievms": "^0.1.0",
+    "karma-mocha": "^0.2.0",
+    "karma-phantomjs-launcher": "^0.2.1",
+    "karma-proclaim": "^1.0.0",
+    "mocha": "^2.3.3",
+    "phantomjs": "^1.9.18",
+    "proclaim": "^3.3.2",
+    "springbokjs-library": "^10.2.0"
   }
 }

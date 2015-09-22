@@ -1,1 +1,1 @@
-module.exports = require('./lib/html').LoggerHtml;
+module.exports = require('./lib/html');

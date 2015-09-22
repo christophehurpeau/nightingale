@@ -1,0 +1,46 @@
+machine:
+  node:
+    version: 4.1.0
+
+general:
+  branches:
+    ignore:
+      - gh-pages
+
+dependencies:
+  pre:
+    - npm install -g npm@3.x-latest
+  cache_directories:
+    - node_modules
+  override:
+    - rm -Rf node_modules
+    - npm prune && npm install --no-spin
+    - npm install codeclimate-test-reporter xunit-file
+
+
+test:
+  pre:
+    - mkdir -p $CIRCLE_TEST_REPORTS/junit/
+  override:
+    - make lint
+    - make build
+    - node_modules/.bin/mocha --harmony --recursive --reporter xunit-file -u tdd tests/lib > $CIRCLE_TEST_REPORTS/junit/xunit.xml
+    - make docs
+    # - CODECLIMATE_REPO_TOKEN= node_modules/.bin/codeclimate-test-reporter < coverage/lcov.info
+
+deployment:
+  docs:
+    branch: master
+    commands:
+      - git config user.email "builds@circleci.com"
+      - git config user.name "CircleCi"
+      - mv coverage coverage-tmp
+      - mv docs docs-tmp
+      - git checkout -f gh-pages
+      - rm -Rf docs coverage
+      - mv docs-tmp docs
+      - mv coverage-tmp coverage
+      - date > date.txt
+      - git add -f docs coverage
+      - git commit -m"auto commit from circleci"
+      - git push origin gh-pages

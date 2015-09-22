@@ -1,23 +1,60 @@
-springbokjs-logger [![NPM version][npm-image]][npm-url] [![Drone.io Status][droneio-image]][droneio-url] [![Test coverage][coveralls-image]][coveralls-url]
+nightingale [![NPM version][npm-image]][npm-url] [![Build Status][build-status-image]][build-status-url] [![Coverage][coverage-image]][coverage-url]
 ==================
 
-See the [auto-generated docs](http://christophehurpeau.github.io/springbokjs-logger/docs/)
+The nightingale is a bird best known for its powerful and beautiful song.
+
+See the [API](http://christophehurpeau.github.io/nightingale/docs/)
+
+### Install
+
+```
+npm install --save nightingale
+```
 
 ### How to use
 
-
 ```js
-var LoggerConsole = require('springbokjs-logger/console');
-var logger = new LoggerConsole();
+import { Logger, LogLevel } from 'nightingale';
+import ConsoleHandler from 'nightingale/handlers/ConsoleHandler';
+
+const logger = new Logger([ new ConsoleHandler(LogLevel.TRACE) ]);
+
 logger.setPrefix('[app] ');
 logger.log('This is a log');
 logger.warn('This is a warning !');
-logger.write('test ' + logger.blue.bold('This is blue and bold')).write(' keep writing log').nl();
+logger.success('Listening', { port: 3000 }, { port: ['yellow'] });
 ```
 
-[npm-image]: https://img.shields.io/npm/v/springbokjs-logger.svg?style=flat
-[npm-url]: https://npmjs.org/package/springbokjs-logger
-[droneio-image]: https://drone.io/github.com/christophehurpeau/springbokjs-logger/status.png
-[droneio-url]: https://drone.io/github.com/christophehurpeau/springbokjs-logger/latest
-[coveralls-image]: https://img.shields.io/coveralls/christophehurpeau/springbokjs-logger.svg?style=flat
-[coveralls-url]: https://coveralls.io/r/christophehurpeau/springbokjs-logger?branch=master
+### [Logger](http://christophehurpeau.github.io/nightingale/docs/Logger.html)
+
+The class with all the methods you call to log things. Contains handlers.
+
+### Handler
+
+How a log is processed: has a layout and an output.
+Also define a minimum level.
+
+- [ConsoleHandler](http://christophehurpeau.github.io/nightingale/docs/ConsoleHandler.html)
+- [StringHandler](http://christophehurpeau.github.io/nightingale/docs/StringHandler.html)
+
+### Layout
+
+How the log is sent to its output.
+
+### Formatter
+
+How the a line is formatted, with its colors.
+
+### Output
+
+Where the log is sent: console, file, ...
+
+- [OutputString](http://christophehurpeau.github.io/nightingale/docs/OutputString.html)
+- [OutputFile](http://christophehurpeau.github.io/nightingale/docs/OutputFile.html)
+
+[npm-image]: https://img.shields.io/npm/v/nightingale.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/nightingale
+[build-status-image]: https://img.shields.io/circleci/project/christophehurpeau/nightingale/master.svg?style=flat-square
+[build-status-url]: https://circleci.com/gh/christophehurpeau/nightingale
+[coverage-image]: http://img.shields.io/badge/coverage-0%-green.svg?style=flat-square
+[coverage-url]: http://christophehurpeau.github.io/nightingale/coverage/lcov-report/
