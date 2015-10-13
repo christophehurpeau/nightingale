@@ -17,9 +17,14 @@ npm install --save nightingale
 import { Logger, LogLevel } from 'nightingale';
 import ConsoleHandler from 'nightingale/handlers/ConsoleHandler';
 
-const logger = new Logger([ new ConsoleHandler(LogLevel.TRACE) ]);
+const logger = new Logger([ new ConsoleHandler(LogLevel.ALL) ]);
+logger.setPrefix('[app]');
 
-logger.setPrefix('[app] ');
+// or
+import { ConsoleLogger, LogLevel } from 'nightingale';
+const logger = new ConsoleLogger('app', LogLevel.ALL);
+
+
 logger.log('This is a log');
 logger.warn('This is a warning !');
 logger.success('Listening', { port: 3000 }, { port: ['yellow'] });
@@ -28,6 +33,12 @@ logger.success('Listening', { port: 3000 }, { port: ['yellow'] });
 ### [Logger](http://christophehurpeau.github.io/nightingale/docs/Logger.html)
 
 The class with all the methods you call to log things. Contains handlers.
+
+### Debug
+
+```
+DEBUG=worker1 node example/debug
+```
 
 ### Handler
 

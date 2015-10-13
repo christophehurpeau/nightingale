@@ -1,7 +1,16 @@
 import util from 'util';
 import LogLevel from './LogLevel';
 
+/**
+ * Interface that allows you to log records.
+ * This records are treated by handlers
+ */
 export default class Logger {
+    /**
+     * Create a new Logger
+     *
+     * @param {Handler[]} handlers
+     */
     constructor(handlers) {
         this.handlers = handlers;
 
@@ -26,6 +35,13 @@ export default class Logger {
         return this;
     }
 
+    /**
+     * Handle a record
+     *
+     * Use this only if you know what you are doing.
+     *
+     * @param {Object} record
+     */
     addRecord(record) {
         for (let i = 0, length = this.handlers.length; i < length; i++) {
             let handler = this.handlers[i];
@@ -40,8 +56,8 @@ export default class Logger {
      *
      * @param {String} message
      * @param {Object} context
-     * @param {int=} logLevel
-     * @param {Object=} options
+     * @param {int} [logLevel]
+     * @param {Object} [options]
      * @return {Logger}
      */
     log(message, context, logLevel = LogLevel.INFO, options = undefined) {
@@ -66,7 +82,7 @@ export default class Logger {
      * Set the logger prefix
      *
      * @param {String} prefix
-     * @param {*} styles
+     * @param {*} [styles]
      */
     setPrefix(prefix, styles) {
         this._prefix = prefix;
@@ -76,8 +92,8 @@ export default class Logger {
      * Log an debug message
      *
      * @param {String} message
-     * @param {Object=} context
-     * @param {Object=} contextStyles
+     * @param {Object} [context]
+     * @param {Object} [contextStyles]
      * @return {Logger}
      */
     debug(message, context, contextStyles) {
@@ -88,8 +104,8 @@ export default class Logger {
      * Log an info message
      *
      * @param {String} message
-     * @param {Object=} context
-     * @param {Object=} contextStyles
+     * @param {Object} [context]
+     * @param {Object} [contextStyles]
      * @return {Logger}
      */
     info(message, context, contextStyles) {
@@ -100,8 +116,8 @@ export default class Logger {
      * Log an warn message
      *
      * @param {String} message
-     * @param {Object=} context
-     * @param {Object=} contextStyles
+     * @param {Object} [context]
+     * @param {Object} [contextStyles]
      * @return {Logger}
      */
     warn(message, context, contextStyles) {
@@ -112,8 +128,8 @@ export default class Logger {
      * Log an error message
      *
      * @param {String|Error} message
-     * @param {Object=} context
-     * @param {Object=} contextStyles
+     * @param {Object} [context]
+     * @param {Object} [contextStyles]
      * @return {Logger}
      */
     error(message, context, contextStyles) {
@@ -124,8 +140,8 @@ export default class Logger {
      * Log an alert message
      *
      * @param {String} message
-     * @param {Object=} context
-     * @param {Object=} contextStyles
+     * @param {Object} [context]
+     * @param {Object} [contextStyles]
      * @return {Logger}
      */
     alert(message, context, contextStyles) {
@@ -136,8 +152,8 @@ export default class Logger {
      * Log an fatal message
      *
      * @param {String} message
-     * @param {Object=} context
-     * @param {Object=} contextStyles
+     * @param {Object} [context]
+     * @param {Object} [contextStyles]
      * @return {Logger}
      */
     fatal(message, context, contextStyles) {
@@ -148,8 +164,8 @@ export default class Logger {
      * Log an debug message
      *
      * @param {*} value
-     * @param {Object=} context
-     * @param {Object=} contextStyles
+     * @param {Object} [context]
+     * @param {Object} [contextStyles]
      * @return {Logger}
      */
     inspect(value, context, contextStyles) {
@@ -162,8 +178,8 @@ export default class Logger {
      *
      * @param {String} varName
      * @param {*} varValue
-     * @param {Object=} context
-     * @param {Object=} contextStyles
+     * @param {Object} [context]
+     * @param {Object} [contextStyles]
      * @return {Logger}
      */
     inspectVar(varName, varValue, context, contextStyles) {
@@ -175,8 +191,8 @@ export default class Logger {
      * Log an sucess message
      *
      * @param {String} message
-     * @param {Object=} context
-     * @param {Object=} contextStyles
+     * @param {Object} [context]
+     * @param {Object} [contextStyles]
      * @return {Logger}
      */
     success(message, context, contextStyles) {
@@ -213,8 +229,8 @@ export default class Logger {
     *
     * @param {Number=} time return of previous call to time()
     * @param {string} name timer name
-     * @param {Object=} context
-     * @param {Object=} contextStyles
+     * @param {Object} [context]
+     * @param {Object} [contextStyles]
     */
     timeEnd(time, name, context, contextStyles) {
         const now = Date.now();

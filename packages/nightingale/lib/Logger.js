@@ -22,9 +22,19 @@ var _LogLevel = require('./LogLevel');
 
 var _LogLevel2 = _interopRequireDefault(_LogLevel);
 
+/**
+ * Interface that allows you to log records.
+ * This records are treated by handlers
+ */
 /** @class Logger 
 * @param handlers */
 let Logger = (function () {
+    /**
+     * Create a new Logger
+     *
+     * @param {Handler[]} handlers
+     */
+
     function Logger(handlers) {
         var _this = this;
 
@@ -60,12 +70,21 @@ let Logger = (function () {
             this.output.write(message, logLevel);
             return this;
         }
-    }, {
-        key: 'addRecord',
-        /** @memberof Logger 
+
+        /**
+         * Handle a record
+         *
+         * Use this only if you know what you are doing.
+         *
+         * @param {Object} record
+         
+        * @memberof Logger 
         * @instance 
         * @method addRecord 
-        * @param record */value: function addRecord(record) {
+        * @param record */
+    }, {
+        key: 'addRecord',
+        value: function addRecord(record) {
             for (let i = 0, length = this.handlers.length; i < length; i++) {
                 let handler = this.handlers[i];
                 if (handler.handle(record) === false) {
@@ -79,8 +98,8 @@ let Logger = (function () {
          *
          * @param {String} message
          * @param {Object} context
-         * @param {int=} logLevel
-         * @param {Object=} options
+         * @param {int} [logLevel]
+         * @param {Object} [options]
          * @return {Logger}
          
         * @memberof Logger 
@@ -117,7 +136,7 @@ let Logger = (function () {
          * Set the logger prefix
          *
          * @param {String} prefix
-         * @param {*} styles
+         * @param {*} [styles]
          
         * @memberof Logger 
         * @instance 
@@ -134,8 +153,8 @@ let Logger = (function () {
          * Log an debug message
          *
          * @param {String} message
-         * @param {Object=} context
-         * @param {Object=} contextStyles
+         * @param {Object} [context]
+         * @param {Object} [contextStyles]
          * @return {Logger}
          
         * @memberof Logger 
@@ -154,8 +173,8 @@ let Logger = (function () {
          * Log an info message
          *
          * @param {String} message
-         * @param {Object=} context
-         * @param {Object=} contextStyles
+         * @param {Object} [context]
+         * @param {Object} [contextStyles]
          * @return {Logger}
          
         * @memberof Logger 
@@ -174,8 +193,8 @@ let Logger = (function () {
          * Log an warn message
          *
          * @param {String} message
-         * @param {Object=} context
-         * @param {Object=} contextStyles
+         * @param {Object} [context]
+         * @param {Object} [contextStyles]
          * @return {Logger}
          
         * @memberof Logger 
@@ -194,8 +213,8 @@ let Logger = (function () {
          * Log an error message
          *
          * @param {String|Error} message
-         * @param {Object=} context
-         * @param {Object=} contextStyles
+         * @param {Object} [context]
+         * @param {Object} [contextStyles]
          * @return {Logger}
          
         * @memberof Logger 
@@ -214,8 +233,8 @@ let Logger = (function () {
          * Log an alert message
          *
          * @param {String} message
-         * @param {Object=} context
-         * @param {Object=} contextStyles
+         * @param {Object} [context]
+         * @param {Object} [contextStyles]
          * @return {Logger}
          
         * @memberof Logger 
@@ -234,8 +253,8 @@ let Logger = (function () {
          * Log an fatal message
          *
          * @param {String} message
-         * @param {Object=} context
-         * @param {Object=} contextStyles
+         * @param {Object} [context]
+         * @param {Object} [contextStyles]
          * @return {Logger}
          
         * @memberof Logger 
@@ -254,8 +273,8 @@ let Logger = (function () {
          * Log an debug message
          *
          * @param {*} value
-         * @param {Object=} context
-         * @param {Object=} contextStyles
+         * @param {Object} [context]
+         * @param {Object} [contextStyles]
          * @return {Logger}
          
         * @memberof Logger 
@@ -276,8 +295,8 @@ let Logger = (function () {
          *
          * @param {String} varName
          * @param {*} varValue
-         * @param {Object=} context
-         * @param {Object=} contextStyles
+         * @param {Object} [context]
+         * @param {Object} [contextStyles]
          * @return {Logger}
          
         * @memberof Logger 
@@ -298,8 +317,8 @@ let Logger = (function () {
          * Log an sucess message
          *
          * @param {String} message
-         * @param {Object=} context
-         * @param {Object=} contextStyles
+         * @param {Object} [context]
+         * @param {Object} [contextStyles]
          * @return {Logger}
          
         * @memberof Logger 
@@ -350,8 +369,8 @@ let Logger = (function () {
         *
         * @param {Number=} time return of previous call to time()
         * @param {string} name timer name
-         * @param {Object=} context
-         * @param {Object=} contextStyles
+         * @param {Object} [context]
+         * @param {Object} [contextStyles]
         
         * @memberof Logger 
         * @instance 

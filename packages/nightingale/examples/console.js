@@ -1,11 +1,9 @@
 import Logger from '../lib/Logger';
-import Handler from '../lib/Handler';
-// import LogLevel from '../lib/LogLevel';
-
+import LogLevel from '../lib/LogLevel';
 import ConsoleHandler from '../lib/handlers/ConsoleHandler';
 
-var logger = new Logger([
-    new ConsoleHandler(0)
+const logger = new Logger([
+    new ConsoleHandler(LogLevel.ALL),
 ]);
 
 logger.log('log()');

@@ -49,6 +49,10 @@ function displayObject(object, contextStyles) {
     }).join(', ') + ' }';
 }
 
+/**
+ * @param {Object} record
+ * @returns {string}
+ */
 export function format(record) {
     let string = '';
     if (record.prefix) {
@@ -69,7 +73,7 @@ export function format(record) {
 
     if (record.message) {
         if (message && message.length !== 0) {
-            message +=  ' ' + record.message;
+            message += ' ' + record.message;
         } else {
             message = record.message;
         }

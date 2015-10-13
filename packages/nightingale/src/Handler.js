@@ -1,5 +1,10 @@
 import levels from './levels';
 
+/**
+ * Abstract class that handles a record.
+ *
+ * Has a min level to discard record lower that this level.
+ */
 export default class Handler {
     /**
      * @param {int} minLevel

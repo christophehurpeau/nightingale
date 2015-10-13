@@ -36,6 +36,10 @@ export function style(styles, string) {
     }).join('; ') + '">' + string + '</span>';
 }
 
+/**
+ * @param {Object} record
+ * @returns {string}
+ */
 export function format(record) {
     let string = '';
     if (record.prefix) {

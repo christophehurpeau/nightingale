@@ -18,6 +18,10 @@ var _Handler2 = require('../Handler');
 
 var _Handler3 = _interopRequireDefault(_Handler2);
 
+var _LogLevel = require('../LogLevel');
+
+var _LogLevel2 = _interopRequireDefault(_LogLevel);
+
 var _layoutsLayoutDefault = require('../layouts/LayoutDefault');
 
 var _layoutsLayoutDefault2 = _interopRequireDefault(_layoutsLayoutDefault);
@@ -30,17 +34,23 @@ var _outputsOutputConsole = require('../outputs/outputConsole');
 
 var outputConsole = _interopRequireWildcard(_outputsOutputConsole);
 
+const debugValues = process.env.DEBUG && process.env.DEBUG.split(',') || [];
+
 /** @class ConsoleHandler 
 * @param minLevel */
 let ConsoleHandler = (function (_Handler) {
     _inherits(ConsoleHandler, _Handler);
 
     /**
-     * @param {int} minLevel
+     * @param {int|string} minLevel if int, see {@link LogLevel} ; if string, based on process.env.DEBUG
      */
 
     function ConsoleHandler(minLevel) {
         _classCallCheck(this, ConsoleHandler);
+
+        if (typeof minLevel === 'string') {
+            minLevel = debugValues.indexOf(minLevel) !== -1 ? _LogLevel2.default.ALL : _LogLevel2.default.WARN;
+        }
 
         _get(Object.getPrototypeOf(ConsoleHandler.prototype), 'constructor', this).call(this, minLevel, new _layoutsLayoutDefault2.default(formatterANSI), outputConsole);
     }

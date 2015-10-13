@@ -77,6 +77,10 @@ function displayObject(object, contextStyles) {
     }).join(', ') + ' }';
 }
 
+/**
+ * @param {Object} record
+ * @returns {string}
+ */
 /** @function 
 * @param record */
 function format(record) {

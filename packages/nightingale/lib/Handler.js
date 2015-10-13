@@ -14,6 +14,11 @@ var _levels = require('./levels');
 
 var _levels2 = _interopRequireDefault(_levels);
 
+/**
+ * Abstract class that handles a record.
+ *
+ * Has a min level to discard record lower that this level.
+ */
 /** @class Handler 
 * @param minLevel 
 * @param layout 

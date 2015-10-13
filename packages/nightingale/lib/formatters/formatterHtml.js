@@ -47,6 +47,10 @@ function style(styles, string) {
     }).join('; ') + '">' + string + '</span>';
 }
 
+/**
+ * @param {Object} record
+ * @returns {string}
+ */
 /** @function 
 * @param record */
 function format(record) {

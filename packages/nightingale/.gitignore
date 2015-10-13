@@ -1,6 +1,7 @@
 /docs
 /dist
-/lib-cov
+/coverage
+/build
 node_modules
 
 /.settings
@@ -16,5 +17,6 @@ node_modules
 *.old
 *~
 .#*
+.*.swp
 .DS_Store
 ,*

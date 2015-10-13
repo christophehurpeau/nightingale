@@ -12,6 +12,10 @@ function style(styles, string) {
     return string;
 }
 
+/**
+ * @param {Object} record
+ * @returns {Object}
+ */
 /** @function 
 * @param record */
 function format(record) {

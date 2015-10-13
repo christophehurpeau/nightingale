@@ -10,6 +10,10 @@ var _Logger = require('./Logger');
 
 exports.Logger = _interopRequire(_Logger);
 
+var _ConsoleLogger = require('./ConsoleLogger');
+
+exports.ConsoleLogger = _interopRequire(_ConsoleLogger);
+
 var _LogLevel = require('./LogLevel');
 
 exports.LogLevel = _interopRequire(_LogLevel);

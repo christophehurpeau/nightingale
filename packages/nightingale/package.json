@@ -21,11 +21,11 @@
   },
   "dependencies": {
     "ansi-styles": "^2.1.0",
-    "babel-runtime": "^5.8.24"
+    "babel-runtime": "^5.8.25"
   },
   "devDependencies": {
     "karma": "^0.13.10",
-    "karma-chrome-launcher": "^0.2.0",
+    "karma-chrome-launcher": "^0.2.1",
     "karma-firefox-launcher": "^0.1.6",
     "karma-ievms": "^0.1.0",
     "karma-mocha": "^0.2.0",
@@ -34,6 +34,6 @@
     "mocha": "^2.3.3",
     "phantomjs": "^1.9.18",
     "proclaim": "^3.3.2",
-    "springbokjs-library": "^10.2.0"
+    "springbokjs-library": "^11.2.0"
   }
 }
