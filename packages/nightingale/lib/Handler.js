@@ -52,7 +52,7 @@ let Handler = (function () {
     _createClass(Handler, [{
         key: 'handle',
         value: function handle(record) {
-            if (record.value < this.minLevel) {
+            if (record.level < this.minLevel) {
                 return;
             }
 

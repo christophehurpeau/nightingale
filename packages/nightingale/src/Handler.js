@@ -22,7 +22,7 @@ export default class Handler {
      * @param {Object} record
      */
     handle(record) {
-        if (record.value < this.minLevel) {
+        if (record.level < this.minLevel) {
             return;
         }
 
