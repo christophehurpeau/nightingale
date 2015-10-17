@@ -15,7 +15,7 @@ npm install --save nightingale
 
 ```js
 import { Logger, LogLevel } from 'nightingale';
-import ConsoleHandler from 'nightingale/handlers/ConsoleHandler';
+import ConsoleHandler from 'nightingale/lib/handlers/ConsoleHandler';
 
 const logger = new Logger([ new ConsoleHandler(LogLevel.ALL) ]);
 logger.setPrefix('[app]');
