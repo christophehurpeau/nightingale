@@ -161,14 +161,16 @@ export default class Logger {
     }
 
     /**
-     * Log an debug message
+     * Log an inspected value
      *
      * @param {*} value
      * @param {Object} [context]
      * @param {Object} [contextStyles]
      * @return {Logger}
      */
-    inspect(value, context, contextStyles) {
+    inspectValue(value, context, contextStyles) {
+        // Note: inspect is a special function for node:
+        // https://github.com/nodejs/node/blob/a1bda1b4deb08dfb3e06cb778f0db40023b18318/lib/util.js#L210
         value = util.inspect(value, { depth: 6 });
         return this.log(value, context, LogLevel.DEBUG, { contextStyles, styles: ['gray'] });
     }

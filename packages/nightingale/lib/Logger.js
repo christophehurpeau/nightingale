@@ -270,7 +270,7 @@ let Logger = (function () {
         }
 
         /**
-         * Log an debug message
+         * Log an inspected value
          *
          * @param {*} value
          * @param {Object} [context]
@@ -279,13 +279,15 @@ let Logger = (function () {
          
         * @memberof Logger 
         * @instance 
-        * @method inspect 
+        * @method inspectValue 
         * @param value 
         * @param context 
         * @param contextStyles */
     }, {
-        key: 'inspect',
-        value: function inspect(value, context, contextStyles) {
+        key: 'inspectValue',
+        value: function inspectValue(value, context, contextStyles) {
+            // Note: inspect is a special function for node:
+            // https://github.com/nodejs/node/blob/a1bda1b4deb08dfb3e06cb778f0db40023b18318/lib/util.js#L210
             value = _util2.default.inspect(value, { depth: 6 });
             return this.log(value, context, _LogLevel2.default.DEBUG, { contextStyles, styles: ['gray'] });
         }
