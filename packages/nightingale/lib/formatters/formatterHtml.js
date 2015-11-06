@@ -37,7 +37,7 @@ const htmlStyles = {
 * @param styles 
 * @param string */
 function style(styles, string) {
-    if (!styles.length || !string) {
+    if (!styles || !styles.length || !string) {
         return string;
     }
 
