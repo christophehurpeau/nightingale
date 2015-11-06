@@ -22,7 +22,7 @@ levelToStyles[LogLevel.FATAL] = ['bgRed', 'white'];
 levelToStyles[LogLevel.EMERGENCY] = ['bgRed', 'white'];
 
 export function style(styles, string) {
-    if (!styles.length || !string) {
+    if (!styles || !styles.length || !string) {
         return string;
     }
 
