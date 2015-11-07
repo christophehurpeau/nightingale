@@ -49,7 +49,12 @@ let ConsoleHandler = (function (_Handler) {
         _classCallCheck(this, ConsoleHandler);
 
         if (typeof minLevel === 'string') {
-            minLevel = debugValues.indexOf(minLevel) !== -1 ? _LogLevel2.default.ALL : _LogLevel2.default.WARN;
+            let debug = debugValues[0] === '*' || debugValues.indexOf(minLevel) !== -1;
+            if (!debug && minLevel.includes('.')) {
+                debug = debugValues.indexOf(minLevel.split('.')[0]) !== -1;
+            }
+
+            minLevel = debug ? _LogLevel2.default.ALL : _LogLevel2.default.WARN;
         }
 
         _get(Object.getPrototypeOf(ConsoleHandler.prototype), 'constructor', this).call(this, minLevel, new _layoutsLayoutDefault2.default(formatterANSI), outputConsole);

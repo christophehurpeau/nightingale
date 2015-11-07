@@ -3,8 +3,8 @@ import LogLevel from '../lib/LogLevel';
 
 const appLogger = new ConsoleLogger('app', LogLevel.ALL);
 
-const worker1Logger = new ConsoleLogger('worker1');
-const worker2Logger = new ConsoleLogger('worker2');
+const worker1Logger = new ConsoleLogger('app.worker1');
+const worker2Logger = new ConsoleLogger('app.worker2');
 
 [appLogger, worker1Logger, worker2Logger].forEach((logger) => {
     setTimeout(() => logger.log('log()'), Math.floor(Math.random() * 100));
