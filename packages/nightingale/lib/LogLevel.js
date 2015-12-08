@@ -1,3 +1,8 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 /**
  * List of levels
  *
@@ -17,14 +22,7 @@
  * </ul>
  *
  */
-"use strict";
-
-var _Object$freeze = require("babel-runtime/core-js/object/freeze").default;
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-const LogLevel = _Object$freeze({
+const LogLevel = Object.freeze({
   /** @type {Number} Log everything. Not a level. */
   ALL: 0,
 
@@ -51,5 +49,4 @@ const LogLevel = _Object$freeze({
   EMERGENCY: 600
 });
 exports.default = LogLevel;
-module.exports = exports.default;
 //# sourceMappingURL=LogLevel.js.map

@@ -18,7 +18,7 @@ export default class Handler {
 
         levels.forEach((level) => {
             if (level.value < minLevel) {
-                this[level.lcKey] = function() {};
+                this[level.lcKey] = function () {};
             }
         });
     }

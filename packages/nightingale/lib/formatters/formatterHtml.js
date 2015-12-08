@@ -1,49 +1,24 @@
 'use strict';
 
-Object.defineProperty(exports, '__esModule', {
+Object.defineProperty(exports, "__esModule", {
     value: true
 });
 exports.style = style;
 exports.format = format;
-const htmlStyles = {
-    // text style
-    bold: 'font-weight: bold',
-    italic: 'font-style: italic',
-    underline: 'text-decoration: underline',
-    inverse: 'unicode-bidi: bidi-override; direction: rtl',
-    strikethrough: 'text-decoration: line-through',
 
-    black: 'color: black',
-    red: 'color: red',
-    green: 'color: green',
-    yellow: 'color: yellow',
-    blue: 'color: #4682B4',
-    magenta: 'color: magenta',
-    cyan: 'color: cyan',
-    white: 'color: white',
-    gray: 'color: gray',
+var _styleToHtmlStyle = require('./_styleToHtmlStyle');
 
-    bgBlack: 'background: black',
-    bgRed: 'background: red',
-    bgGreen: 'background: green',
-    bgYellow: 'background: yellow',
-    bgBlue: 'background: blue',
-    bgMagenta: 'background: magenta',
-    bgCyan: 'background: cyan',
-    bgWhite: 'background: white'
-};
+var _styleToHtmlStyle2 = _interopRequireDefault(_styleToHtmlStyle);
 
-/** @function 
-* @param styles 
-* @param string */
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 function style(styles, string) {
     if (!styles || !styles.length || !string) {
         return string;
     }
 
-    return '<span style="' + styles.map( /** @function 
-                                         * @param styleName */function (styleName) {
-        return htmlStyles[styleName];
+    return '<span style="' + styles.map(function (styleName) {
+        return _styleToHtmlStyle2.default[styleName];
     }).join('; ') + '">' + string + '</span>';
 }
 
@@ -51,8 +26,6 @@ function style(styles, string) {
  * @param {Object} record
  * @returns {string}
  */
-/** @function 
-* @param record */
 function format(record) {
     let string = '';
     if (record.prefix) {

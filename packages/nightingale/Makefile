@@ -1,2 +1,2 @@
-include node_modules/springbokjs-library/tasks.mk
+include node_modules/springbokjs-library/lib-node5-browser.mk
 

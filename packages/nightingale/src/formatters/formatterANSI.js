@@ -1,32 +1,13 @@
-import LogLevel from '../LogLevel';
 import ansi from 'ansi-styles';
-
-const levelToSymbol = {};
-levelToSymbol[LogLevel.TRACE] = '•';
-levelToSymbol[LogLevel.DEBUG] = '•';
-levelToSymbol[LogLevel.INFO] = '→';
-levelToSymbol[LogLevel.WARN] = '⚠';
-levelToSymbol[LogLevel.ERROR] = '✖';
-levelToSymbol[LogLevel.CRITICAL] = '!';
-levelToSymbol[LogLevel.FATAL] = '‼';
-levelToSymbol[LogLevel.EMERGENCY] = '‼';
-
-const levelToStyles = {};
-levelToStyles[LogLevel.TRACE] = ['gray'];
-levelToStyles[LogLevel.DEBUG] = ['gray'];
-// levelToStyles[LogLevel.INFO] = ['gray'];
-levelToStyles[LogLevel.WARN] = ['yellow'];
-levelToStyles[LogLevel.ERROR] = ['red', 'bold'];
-levelToStyles[LogLevel.CRITICAL] = ['red', 'bold'];
-levelToStyles[LogLevel.FATAL] = ['bgRed', 'white'];
-levelToStyles[LogLevel.EMERGENCY] = ['bgRed', 'white'];
+import levelToSymbol from './_levelToSymbol';
+import levelToStyles from './_levelToStyles';
 
 export function style(styles, string) {
     if (!styles || !styles.length || !string) {
         return string;
     }
 
-    return styles.reduce(function(string, styleName) {
+    return styles.reduce(function (string, styleName) {
         let style = ansi[styleName];
 
         if (!style) {

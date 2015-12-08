@@ -10,18 +10,21 @@
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
   "repository": "christophehurpeau/nightingale",
   "main": "./lib/index.js",
+  "browser": "./lib/browser.js",
+  "jspm": {
+    "main": "browser/lib/browser.js",
+    "lib": "browser/"
+  },
   "scripts": {
     "test": "make tests",
     "build": "make build",
     "postpublish": "make post-publish",
-    "prepublish": "make pre-publish",
     "preversion": "make pre-version",
     "version": "make version",
     "watch": "make watch"
   },
   "dependencies": {
-    "ansi-styles": "^2.1.0",
-    "babel-runtime": "^5.8.25"
+    "ansi-styles": "^2.1.0"
   },
   "devDependencies": {
     "karma": "^0.13.10",
@@ -34,6 +37,6 @@
     "mocha": "^2.3.3",
     "phantomjs": "^1.9.18",
     "proclaim": "^3.3.2",
-    "springbokjs-library": "^11.2.0"
+    "springbokjs-library": "^12.2.1"
   }
 }

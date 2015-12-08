@@ -1,10 +1,6 @@
 'use strict';
 
-var _Object$keys = require('babel-runtime/core-js/object/keys').default;
-
-var _interopRequireDefault = require('babel-runtime/helpers/interop-require-default').default;
-
-Object.defineProperty(exports, '__esModule', {
+Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
@@ -12,7 +8,9 @@ var _LogLevel = require('./LogLevel');
 
 var _LogLevel2 = _interopRequireDefault(_LogLevel);
 
-const levels = _Object$keys(_LogLevel2.default).map(function (key) {
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+const levels = Object.keys(_LogLevel2.default).map(key => {
     return {
         key: key,
         lcKey: key.toLowerCase(),
@@ -21,5 +19,4 @@ const levels = _Object$keys(_LogLevel2.default).map(function (key) {
 });
 
 exports.default = levels;
-module.exports = exports.default;
 //# sourceMappingURL=levels.js.map

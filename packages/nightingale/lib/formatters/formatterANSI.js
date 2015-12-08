@@ -1,54 +1,31 @@
 'use strict';
 
-var _Object$keys = require('babel-runtime/core-js/object/keys').default;
-
-var _interopRequireDefault = require('babel-runtime/helpers/interop-require-default').default;
-
-Object.defineProperty(exports, '__esModule', {
+Object.defineProperty(exports, "__esModule", {
     value: true
 });
 exports.style = style;
 exports.format = format;
 
-var _LogLevel = require('../LogLevel');
-
-var _LogLevel2 = _interopRequireDefault(_LogLevel);
-
 var _ansiStyles = require('ansi-styles');
 
 var _ansiStyles2 = _interopRequireDefault(_ansiStyles);
 
-const levelToSymbol = {};
-levelToSymbol[_LogLevel2.default.TRACE] = '•';
-levelToSymbol[_LogLevel2.default.DEBUG] = '•';
-levelToSymbol[_LogLevel2.default.INFO] = '→';
-levelToSymbol[_LogLevel2.default.WARN] = '⚠';
-levelToSymbol[_LogLevel2.default.ERROR] = '✖';
-levelToSymbol[_LogLevel2.default.CRITICAL] = '!';
-levelToSymbol[_LogLevel2.default.FATAL] = '‼';
-levelToSymbol[_LogLevel2.default.EMERGENCY] = '‼';
+var _levelToSymbol = require('./_levelToSymbol');
 
-const levelToStyles = {};
-levelToStyles[_LogLevel2.default.TRACE] = ['gray'];
-levelToStyles[_LogLevel2.default.DEBUG] = ['gray'];
-// levelToStyles[LogLevel.INFO] = ['gray'];
-levelToStyles[_LogLevel2.default.WARN] = ['yellow'];
-levelToStyles[_LogLevel2.default.ERROR] = ['red', 'bold'];
-levelToStyles[_LogLevel2.default.CRITICAL] = ['red', 'bold'];
-levelToStyles[_LogLevel2.default.FATAL] = ['bgRed', 'white'];
-levelToStyles[_LogLevel2.default.EMERGENCY] = ['bgRed', 'white'];
+var _levelToSymbol2 = _interopRequireDefault(_levelToSymbol);
 
-/** @function 
-* @param styles 
-* @param string */
+var _levelToStyles = require('./_levelToStyles');
+
+var _levelToStyles2 = _interopRequireDefault(_levelToStyles);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 function style(styles, string) {
     if (!styles || !styles.length || !string) {
         return string;
     }
 
-    return styles.reduce( /** @function 
-                          * @param string 
-                          * @param styleName */function (string, styleName) {
+    return styles.reduce(function (string, styleName) {
         let style = _ansiStyles2.default[styleName];
 
         if (!style) {
@@ -59,21 +36,15 @@ function style(styles, string) {
     }, string);
 }
 
-/** @function 
-* @param object 
-* @param contextStyles */
-
 function displayObject(object, contextStyles) {
-    var _this = this;
-
-    const keys = _Object$keys(object);
+    const keys = Object.keys(object);
 
     if (keys.length === 0) {
         return;
     }
 
-    return '{ ' + keys.map(function (key) {
-        return key + ': ' + _this.style(contextStyles && contextStyles[key], JSON.stringify(object[key]));
+    return '{ ' + keys.map(key => {
+        return key + ': ' + this.style(contextStyles && contextStyles[key], JSON.stringify(object[key]));
     }).join(', ') + ' }';
 }
 
@@ -81,8 +52,6 @@ function displayObject(object, contextStyles) {
  * @param {Object} record
  * @returns {string}
  */
-/** @function 
-* @param record */
 function format(record) {
     let string = '';
     if (record.prefix) {
@@ -98,8 +67,8 @@ function format(record) {
         /* new Date().toFormat('HH24:MI:SS') */
     }
 
-    let message = record.symbol || levelToSymbol[record.level];
-    let styles = record.styles || levelToStyles[record.level];
+    let message = record.symbol || _levelToSymbol2.default[record.level];
+    let styles = record.styles || _levelToStyles2.default[record.level];
 
     if (record.message) {
         if (message && message.length !== 0) {

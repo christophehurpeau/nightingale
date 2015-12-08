@@ -30,6 +30,27 @@ logger.warn('This is a warning !');
 logger.success('Listening', { port: 3000 }, { port: ['yellow'] });
 ```
 
+### How to use on browser
+
+![browser log example](http://static.hurpeau.com/images/npm/nightingale/log_in_firefox.png)
+
+```js
+import { Logger, LogLevel } from 'nightingale';
+import BrowserConsoleHandler from 'nightingale/lib/handlers/BrowserConsoleHandler';
+
+const logger = new Logger([ new BrowserConsoleHandler(LogLevel.ALL) ]);
+logger.setPrefix('[app]');
+
+// or
+import { BrowserConsoleLogger, LogLevel } from 'nightingale';
+const logger = new BrowserConsoleLogger('app', LogLevel.ALL);
+
+logger.log('This is a log');
+logger.warn('This is a warning !');
+logger.success('Listening', { port: 3000 }, { port: ['yellow'] });
+```
+
+
 ### [Logger](http://christophehurpeau.github.io/nightingale/docs/Logger.html)
 
 The class with all the methods you call to log things. Contains handlers.
