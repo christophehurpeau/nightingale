@@ -1,3 +1,7 @@
+### v2.0.0
+
+- [`a7d6473`](https://github.com/christophehurpeau/nightingale/commit/a7d6473e9f482066eeb23d3745daf0de3727b19f) browser output and update springbokjs-library (Christophe Hurpeau)
+
 ### v1.2.0
 
 - [`84a8f79`](https://github.com/christophehurpeau/nightingale/commit/84a8f79ed312f8e654a36e222bc4d9881fa32d7c) DEBUG=* and DEBUG=app where name = app.something (Christophe Hurpeau)
