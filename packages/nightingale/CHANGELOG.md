@@ -1,3 +1,7 @@
+### v2.1.0
+
+- [`267e2b3`](https://github.com/christophehurpeau/nightingale/commit/267e2b3a5b894f12d147f8595f3e4a5ab931310d) use alouette (Christophe Hurpeau)
+
 ### v2.0.0
 
 - [`a7d6473`](https://github.com/christophehurpeau/nightingale/commit/a7d6473e9f482066eeb23d3745daf0de3727b19f) browser output and update springbokjs-library (Christophe Hurpeau)
