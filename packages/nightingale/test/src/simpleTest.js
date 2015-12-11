@@ -1,8 +1,8 @@
-var Logger = require('../lib/').Logger;
-var LogLevel = require('../lib/').LogLevel;
-var ConsoleHandler = require('../lib/handlers/ConsoleHandler');
+const Logger = require('../../lib/').Logger;
+const LogLevel = require('../../lib/').LogLevel;
+import ConsoleHandler from '../../lib/handlers/ConsoleHandler';
 
-var logger = new Logger([ new ConsoleHandler(LogLevel.TRACE) ]);
+const logger = new Logger([new ConsoleHandler(LogLevel.TRACE)]);
 
 logger.log.call(null, 'test');
 

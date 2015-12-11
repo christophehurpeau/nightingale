@@ -3,6 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+exports.default = undefined;
 
 var _Handler = require('../Handler');
 
@@ -24,7 +25,7 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-class StringHandler extends _Handler2.default {
+let StringHandler = class StringHandler extends _Handler2.default {
     /**
      * @param {int} minLevel
      */
@@ -36,6 +37,6 @@ class StringHandler extends _Handler2.default {
         return this.output.string;
     }
 
-}
+};
 exports.default = StringHandler;
 //# sourceMappingURL=StringHandler.js.map

@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-class LayoutHTML {
+let LayoutHTML = class LayoutHTML {
     constructor(formatter) {
         this.formatter = formatter;
     }
@@ -11,6 +11,6 @@ class LayoutHTML {
     format(record) {
         return '</div>' + this.formatter.format(record) + '</div>\n';
     }
-}
+};
 exports.default = LayoutHTML;
 //# sourceMappingURL=LayoutHTML.js.map

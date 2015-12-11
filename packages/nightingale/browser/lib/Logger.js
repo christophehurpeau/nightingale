@@ -5,6 +5,7 @@ var _createClass = (function () { function defineProperties(target, props) { for
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+exports.default = undefined;
 
 var _util = require('util');
 
@@ -14,7 +15,11 @@ var _LogLevel = require('./LogLevel');
 
 var _LogLevel2 = _interopRequireDefault(_LogLevel);
 
+var _alouette = require('alouette');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _typeof(obj) { return obj && typeof Symbol !== "undefined" && obj.constructor === Symbol ? "symbol" : typeof obj; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -183,7 +188,13 @@ var Logger = (function () {
     }, {
         key: 'error',
         value: function error(message, context, contextStyles) {
-            return this.log(message.stack || message.message || message, context, _LogLevel2.default.ERROR, { contextStyles: contextStyles });
+            if ((typeof message === 'undefined' ? 'undefined' : _typeof(message)) !== 'object') {
+                message = message.message || message;
+            } else {
+                var parsedError = (0, _alouette.parse)(message);
+                message = parsedError.toString();
+            }
+            return this.log(message, context, _LogLevel2.default.ERROR, { contextStyles: contextStyles });
         }
 
         /**

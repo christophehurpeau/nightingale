@@ -3,6 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+exports.default = undefined;
 
 var _Handler = require('../Handler');
 
@@ -37,7 +38,7 @@ const debugValues = (querystring => {
     return decodeURI(querystring.replace(new RegExp('^(?:.*[&\\?]' + 'DEBUG' + '(?:\\=([^&]*))?)?.*$', 'i'), '$1')).split(',');
 })(location.search);
 
-class BrowserConsoleHandler extends _Handler2.default {
+let BrowserConsoleHandler = class BrowserConsoleHandler extends _Handler2.default {
     /**
      * @param {int|string} minLevel if int, see {@link LogLevel} ; if string, based on process.env.DEBUG
      */
@@ -53,6 +54,6 @@ class BrowserConsoleHandler extends _Handler2.default {
 
         super(minLevel, new _LayoutBrowserConsole2.default(formatterBrowserConsole), outputConsole);
     }
-}
+};
 exports.default = BrowserConsoleHandler;
 //# sourceMappingURL=BrowserConsoleHandler.js.map

@@ -3,6 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+exports.default = undefined;
 
 var _Handler = require('../Handler');
 
@@ -30,7 +31,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 const debugValues = process.env.DEBUG && process.env.DEBUG.split(',') || [];
 
-class ConsoleHandler extends _Handler2.default {
+let ConsoleHandler = class ConsoleHandler extends _Handler2.default {
     /**
      * @param {int|string} minLevel if int, see {@link LogLevel} ; if string, based on process.env.DEBUG
      */
@@ -46,6 +47,6 @@ class ConsoleHandler extends _Handler2.default {
 
         super(minLevel, new _LayoutDefault2.default(formatterANSI), outputConsole);
     }
-}
+};
 exports.default = ConsoleHandler;
 //# sourceMappingURL=ConsoleHandler.js.map

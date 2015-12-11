@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-class OutputString {
+let OutputString = class OutputString {
     constructor() {
         this._buffer = '';
     }
@@ -16,6 +16,6 @@ class OutputString {
         this._buffer += str;
         return this;
     }
-}
+};
 exports.default = OutputString;
 //# sourceMappingURL=OutputString.js.map

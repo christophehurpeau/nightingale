@@ -3,6 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+exports.default = undefined;
 
 var _levels = require('./levels');
 
@@ -15,7 +16,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  *
  * Has a min level to discard record lower that this level.
  */
-class Handler {
+let Handler = class Handler {
     /**
      * @param {int} minLevel
      * @param {Layout} layout
@@ -44,6 +45,6 @@ class Handler {
         const formatted = this.layout.format(record);
         this.output.write(formatted);
     }
-}
+};
 exports.default = Handler;
 //# sourceMappingURL=Handler.js.map

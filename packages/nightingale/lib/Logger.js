@@ -3,6 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+exports.default = undefined;
 
 var _util = require('util');
 
@@ -12,13 +13,15 @@ var _LogLevel = require('./LogLevel');
 
 var _LogLevel2 = _interopRequireDefault(_LogLevel);
 
+var _alouette = require('alouette');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
  * Interface that allows you to log records.
  * This records are treated by handlers
  */
-class Logger {
+let Logger = class Logger {
     /**
      * Create a new Logger
      *
@@ -149,7 +152,13 @@ class Logger {
      * @return {Logger}
      */
     error(message, context, contextStyles) {
-        return this.log(message.stack || message.message || message, context, _LogLevel2.default.ERROR, { contextStyles });
+        if (typeof message !== 'object') {
+            message = message.message || message;
+        } else {
+            let parsedError = (0, _alouette.parse)(message);
+            message = parsedError.toString();
+        }
+        return this.log(message, context, _LogLevel2.default.ERROR, { contextStyles });
     }
 
     /**
@@ -273,6 +282,6 @@ class Logger {
         const message = (name ? name + ': ' : '') + (seconds ? seconds + 's and ' : '') + ms + 'ms';
         this.log(message, context, _LogLevel2.default.INFO, { contextStyles });
     }
-}
+};
 exports.default = Logger;
 //# sourceMappingURL=Logger.js.map

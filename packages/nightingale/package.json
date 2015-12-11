@@ -16,7 +16,7 @@
     "lib": "browser/"
   },
   "scripts": {
-    "test": "make tests",
+    "test": "make test",
     "build": "make build",
     "postpublish": "make post-publish",
     "preversion": "make pre-version",
@@ -24,6 +24,7 @@
     "watch": "make watch"
   },
   "dependencies": {
+    "alouette": "^3.3.0",
     "ansi-styles": "^2.1.0"
   },
   "devDependencies": {
@@ -37,6 +38,6 @@
     "mocha": "^2.3.3",
     "phantomjs": "^1.9.18",
     "proclaim": "^3.3.2",
-    "springbokjs-library": "^12.2.1"
+    "springbokjs-library": "^12.3.0"
   }
 }

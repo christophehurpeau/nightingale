@@ -3,6 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+exports.default = undefined;
 
 var _Logger = require('./Logger');
 
@@ -17,7 +18,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 /**
  * A simplified way of creating a {@link Logger} with a {@link ConsoleHandler}
  */
-class ConsoleLogger extends _Logger2.default {
+let ConsoleLogger = class ConsoleLogger extends _Logger2.default {
 
     /**
      * Creates a new ConsoleLogger with a prefix.
@@ -32,6 +33,6 @@ class ConsoleLogger extends _Logger2.default {
 
         this.setPrefix(`[${ name }]`);
     }
-}
+};
 exports.default = ConsoleLogger;
 //# sourceMappingURL=ConsoleLogger.js.map

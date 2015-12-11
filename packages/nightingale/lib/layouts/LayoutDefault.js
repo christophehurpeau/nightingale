@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-class LayoutDefault {
+let LayoutDefault = class LayoutDefault {
     constructor(formatter) {
         this.formatter = formatter;
     }
@@ -11,6 +11,6 @@ class LayoutDefault {
     format(record) {
         return this.formatter.format(record) + '\n';
     }
-}
+};
 exports.default = LayoutDefault;
 //# sourceMappingURL=LayoutDefault.js.map

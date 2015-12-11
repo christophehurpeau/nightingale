@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-class WebProcessor {
+let WebProcessor = class WebProcessor {
     constructor(request) {
         this.request = request;
     }
@@ -16,6 +16,6 @@ class WebProcessor {
         record.extra.referrer = this.request.referrer;
         record.extra.ip = this.request.headers['x-forwarded-for'] || this.request.connection.remoteAddress;
     }
-}
+};
 exports.default = WebProcessor;
 //# sourceMappingURL=WebProcessor.js.map

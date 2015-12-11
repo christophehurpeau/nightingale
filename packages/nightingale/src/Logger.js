@@ -1,5 +1,6 @@
 import util from 'util';
 import LogLevel from './LogLevel';
+import { parse as parseError } from 'alouette';
 
 /**
  * Interface that allows you to log records.
@@ -133,7 +134,13 @@ export default class Logger {
      * @return {Logger}
      */
     error(message, context, contextStyles) {
-        return this.log(message.stack || message.message || message, context, LogLevel.ERROR, { contextStyles });
+        if (typeof message !== 'object') {
+            message = message.message || message;
+        } else {
+            let parsedError = parseError(message);
+            message = parsedError.toString();
+        }
+        return this.log(message, context, LogLevel.ERROR, { contextStyles });
     }
 
     /**
