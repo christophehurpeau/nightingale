@@ -6,8 +6,8 @@ var _ConsoleHandler2 = _interopRequireDefault(_ConsoleHandler);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-const Logger = require('../../lib/').Logger;
-const LogLevel = require('../../lib/').LogLevel;
+const Logger = require('../../lib/node').Logger;
+const LogLevel = require('../../lib/node').LogLevel;
 
 const logger = new Logger([new _ConsoleHandler2.default(LogLevel.TRACE)]);
 

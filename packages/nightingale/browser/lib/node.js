@@ -4,12 +4,12 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _Logger = require('./Logger');
+var _NodeLogger = require('./NodeLogger');
 
 Object.defineProperty(exports, 'Logger', {
   enumerable: true,
   get: function get() {
-    return _Logger.default;
+    return _NodeLogger.default;
   }
 });
 
@@ -30,4 +30,4 @@ Object.defineProperty(exports, 'LogLevel', {
     return _LogLevel.default;
   }
 });
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=node.js.map

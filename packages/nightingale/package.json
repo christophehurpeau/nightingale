@@ -9,7 +9,7 @@
   "license": "MIT",
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
   "repository": "christophehurpeau/nightingale",
-  "main": "./lib/index.js",
+  "main": "./lib/node.js",
   "browser": "./lib/browser.js",
   "jspm": {
     "main": "browser/lib/browser.js",

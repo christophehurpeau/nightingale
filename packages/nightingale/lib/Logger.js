@@ -13,8 +13,6 @@ var _LogLevel = require('./LogLevel');
 
 var _LogLevel2 = _interopRequireDefault(_LogLevel);
 
-var _alouette = require('alouette');
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
@@ -152,12 +150,7 @@ let Logger = class Logger {
      * @return {Logger}
      */
     error(message, context, contextStyles) {
-        if (typeof message !== 'object') {
-            message = message.message || message;
-        } else {
-            let parsedError = (0, _alouette.parse)(message);
-            message = parsedError.toString();
-        }
+        message = message.stack || message.message || message;
         return this.log(message, context, _LogLevel2.default.ERROR, { contextStyles });
     }
 

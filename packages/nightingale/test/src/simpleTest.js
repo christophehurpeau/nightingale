@@ -1,5 +1,5 @@
-const Logger = require('../../lib/').Logger;
-const LogLevel = require('../../lib/').LogLevel;
+const Logger = require('../../lib/node').Logger;
+const LogLevel = require('../../lib/node').LogLevel;
 import ConsoleHandler from '../../lib/handlers/ConsoleHandler';
 
 const logger = new Logger([new ConsoleHandler(LogLevel.TRACE)]);
