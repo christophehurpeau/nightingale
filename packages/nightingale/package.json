@@ -13,7 +13,9 @@
   "browser": "./lib/browser.js",
   "jspm": {
     "main": "browser/lib/browser.js",
-    "lib": "browser/"
+    "directories": {
+      "lib": "browser"
+    }
   },
   "scripts": {
     "test": "make test",
