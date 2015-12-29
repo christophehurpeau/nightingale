@@ -1,3 +1,7 @@
+### v2.1.2
+
+- [`70ebab9`](https://github.com/christophehurpeau/nightingale/commit/70ebab975c074ea27e082a6e1748ee1e7c75c4da) use alouette only in node (Christophe Hurpeau)
+
 ### v2.1.1
 
 - [`c4159ba`](https://github.com/christophehurpeau/nightingale/commit/c4159bace53c3948f024b99fd0985b0934d93361) jspm config (Christophe Hurpeau)
