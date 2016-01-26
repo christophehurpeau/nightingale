@@ -21,19 +21,29 @@ var _OutputString = require('../outputs/OutputString');
 
 var _OutputString2 = _interopRequireDefault(_OutputString);
 
+/**
+ * @function
+ * @param obj
+*/
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
+/**
+ * @function
+ * @param obj
+*/
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 let StringHandler = class StringHandler extends _Handler2.default {
     /**
      * @param {int} minLevel
-     */
+    */
     constructor(minLevel) {
         super(minLevel, new _LayoutDefault2.default(formatterRaw), new _OutputString2.default());
     }
 
-    get string() {
+    /**
+     * @member string
+    */get string() {
         return this.output.string;
     }
 

@@ -1,5 +1,8 @@
-nightingale [![NPM version][npm-image]][npm-url] [![Build Status][build-status-image]][build-status-url] [![Coverage][coverage-image]][coverage-url]
-==================
+# nightingale [![NPM version][npm-image]][npm-url]
+
+Logger for browser and node
+
+[![Build Status][build-status-image]][build-status-url] [![Coverage][coverage-image]][coverage-url]
 
 The nightingale is a bird best known for its powerful and beautiful song.
 
@@ -88,5 +91,5 @@ Where the log is sent: console, file, ...
 [npm-url]: https://npmjs.org/package/nightingale
 [build-status-image]: https://img.shields.io/circleci/project/christophehurpeau/nightingale/master.svg?style=flat-square
 [build-status-url]: https://circleci.com/gh/christophehurpeau/nightingale
-[coverage-image]: http://img.shields.io/badge/coverage-0%-green.svg?style=flat-square
+[coverage-image]: https://img.shields.io/coveralls/christophehurpeau/nightingale/master.svg?style=flat-square
 [coverage-url]: http://christophehurpeau.github.io/nightingale/coverage/lcov-report/

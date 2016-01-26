@@ -5,9 +5,7 @@ export function style(styles, string) {
         return string;
     }
 
-    return '<span style="' + styles.map(function (styleName) {
-        return htmlStyles[styleName];
-    }).join('; ') + '">' + string + '</span>';
+    return `<span style="${styles.map(styleName => htmlStyles[styleName]).join('; ')}">${string}</span>`;
 }
 
 /**
@@ -17,11 +15,11 @@ export function style(styles, string) {
 export function format(record) {
     let string = '';
     if (record.prefix) {
-        string += record.prefix + ' ';
+        string += `${record.prefix} `;
     }
 
     if (record.datetime) {
-        string += this.style('bold', record.datetime.toFormat('HH24:MI:SS') + ' ');
+        string += this.style('bold', `${record.datetime.toFormat('HH24:MI:SS')} `);
         /* toTimeString().split(' ')[0] */
     }
 

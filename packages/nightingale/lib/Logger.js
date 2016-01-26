@@ -13,6 +13,10 @@ var _LogLevel = require('./LogLevel');
 
 var _LogLevel2 = _interopRequireDefault(_LogLevel);
 
+/**
+ * @function
+ * @param obj
+*/
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
@@ -24,7 +28,7 @@ let Logger = class Logger {
      * Create a new Logger
      *
      * @param {Handler[]} handlers
-     */
+    */
     constructor(handlers) {
         this.handlers = handlers;
 
@@ -40,10 +44,10 @@ let Logger = class Logger {
     /**
      * Write a message
      *
-     * @param {String} message
-     * @param {String} logLevel
+     * @param {string} message
+     * @param {string} logLevel
      * @return {Logger}
-     */
+    */
     write(message, logLevel) {
         this.output.write(message, logLevel);
         return this;
@@ -55,7 +59,7 @@ let Logger = class Logger {
      * Use this only if you know what you are doing.
      *
      * @param {Object} record
-     */
+    */
     addRecord(record) {
         for (let i = 0, length = this.handlers.length; i < length; i++) {
             let handler = this.handlers[i];
@@ -68,12 +72,12 @@ let Logger = class Logger {
     /**
      * Log a message
      *
-     * @param {String} message
+     * @param {string} message
      * @param {Object} context
      * @param {int} [logLevel]
      * @param {Object} [options]
      * @return {Logger}
-     */
+    */
     log(message, context) {
         let logLevel = arguments.length <= 2 || arguments[2] === undefined ? _LogLevel2.default.INFO : arguments[2];
         let options = arguments.length <= 3 || arguments[3] === undefined ? undefined : arguments[3];
@@ -98,9 +102,9 @@ let Logger = class Logger {
     /**
      * Set the logger prefix
      *
-     * @param {String} prefix
+     * @param {string} prefix
      * @param {*} [styles]
-     */
+    */
     setPrefix(prefix, styles) {
         this._prefix = prefix;
     }
@@ -108,11 +112,11 @@ let Logger = class Logger {
     /**
      * Log an debug message
      *
-     * @param {String} message
+     * @param {string} message
      * @param {Object} [context]
      * @param {Object} [contextStyles]
      * @return {Logger}
-     */
+    */
     debug(message, context, contextStyles) {
         return this.log(message, context, _LogLevel2.default.DEBUG, { contextStyles });
     }
@@ -120,11 +124,11 @@ let Logger = class Logger {
     /**
      * Log an info message
      *
-     * @param {String} message
+     * @param {string} message
      * @param {Object} [context]
      * @param {Object} [contextStyles]
      * @return {Logger}
-     */
+    */
     info(message, context, contextStyles) {
         return this.log(message, context, _LogLevel2.default.INFO, { contextStyles });
     }
@@ -132,11 +136,11 @@ let Logger = class Logger {
     /**
      * Log an warn message
      *
-     * @param {String} message
+     * @param {string} message
      * @param {Object} [context]
      * @param {Object} [contextStyles]
      * @return {Logger}
-     */
+    */
     warn(message, context, contextStyles) {
         return this.log(message, context, _LogLevel2.default.WARN, { contextStyles });
     }
@@ -144,11 +148,11 @@ let Logger = class Logger {
     /**
      * Log an error message
      *
-     * @param {String|Error} message
+     * @param {string|Error} message
      * @param {Object} [context]
      * @param {Object} [contextStyles]
      * @return {Logger}
-     */
+    */
     error(message, context, contextStyles) {
         message = message.stack || message.message || message;
         return this.log(message, context, _LogLevel2.default.ERROR, { contextStyles });
@@ -157,11 +161,11 @@ let Logger = class Logger {
     /**
      * Log an alert message
      *
-     * @param {String} message
+     * @param {string} message
      * @param {Object} [context]
      * @param {Object} [contextStyles]
      * @return {Logger}
-     */
+    */
     alert(message, context, contextStyles) {
         return this.log(message, context, _LogLevel2.default.ALERT, { contextStyles });
     }
@@ -169,11 +173,11 @@ let Logger = class Logger {
     /**
      * Log an fatal message
      *
-     * @param {String} message
+     * @param {string} message
      * @param {Object} [context]
      * @param {Object} [contextStyles]
      * @return {Logger}
-     */
+    */
     fatal(message, context, contextStyles) {
         return this.log(message, context, _LogLevel2.default.FATAL, { contextStyles });
     }
@@ -185,7 +189,7 @@ let Logger = class Logger {
      * @param {Object} [context]
      * @param {Object} [contextStyles]
      * @return {Logger}
-     */
+    */
     inspectValue(value, context, contextStyles) {
         // Note: inspect is a special function for node:
         // https://github.com/nodejs/node/blob/a1bda1b4deb08dfb3e06cb778f0db40023b18318/lib/util.js#L210
@@ -196,25 +200,25 @@ let Logger = class Logger {
     /**
      * Log an debugged var
      *
-     * @param {String} varName
+     * @param {string} varName
      * @param {*} varValue
      * @param {Object} [context]
      * @param {Object} [contextStyles]
      * @return {Logger}
-     */
+    */
     inspectVar(varName, varValue, context, contextStyles) {
         varValue = _util2.default.inspect(varValue, { depth: 6 });
-        return this.log(varName + ' = ' + varValue, context, _LogLevel2.default.DEBUG, { contextStyles, styles: ['cyan'] });
+        return this.log(`${ varName } = ${ varValue }`, context, _LogLevel2.default.DEBUG, { contextStyles, styles: ['cyan'] });
     }
 
     /**
      * Log an sucess message
      *
-     * @param {String} message
+     * @param {string} message
      * @param {Object} [context]
      * @param {Object} [contextStyles]
      * @return {Logger}
-     */
+    */
     success(message, context, contextStyles) {
         return this.log(message, context, _LogLevel2.default.INFO, {
             contextStyles,
@@ -228,7 +232,7 @@ let Logger = class Logger {
      * in the timers map
      *
      * @param {string} name timer name
-     */
+    */
     time(name) {
         if (name) {
             if (!this._timers) {
@@ -247,7 +251,7 @@ let Logger = class Logger {
     * was called, then logs out the difference
     * and deletes the original record
     *
-    * @param {Number=} time return of previous call to time()
+    * @param {number=} time return of previous call to time()
     * @param {string} name timer name
      * @param {Object} [context]
      * @param {Object} [contextStyles]
@@ -272,8 +276,82 @@ let Logger = class Logger {
         const seconds = diffTime > 1000 && Math.floor(diffTime / 1000);
         const ms = diffTime - seconds * 1000;
 
-        const message = (name ? name + ': ' : '') + (seconds ? seconds + 's and ' : '') + ms + 'ms';
+        const message = `${ name ? `${ name }: ` : '' }${ seconds ? `${ seconds }s and ` : '' }${ ms }ms`;
         this.log(message, context, _LogLevel2.default.INFO, { contextStyles });
+    }
+
+    /**
+     * Log an enter in a function
+     *
+     * @example
+     * class A {
+     *   method(arg1) {
+     *     logger.enter(method, { arg1 });
+     *     // Do your stuff
+     *   }
+     * }
+     *
+     * @param {Function} fn
+     * @param {Object} [context]
+     * @param {Object} [contextStyles]
+     * @return {Logger}
+    */
+    enter(fn, context, contextStyles) {
+        return this.log(`enter ${ fn.name }`, context, _LogLevel2.default.DEBUG, { contextStyles });
+    }
+
+    /**
+     * Log an exit in a function
+     *
+     * @example
+     * const logger = new ConsoleLogger('myNamespace.A');
+     * class A {
+     *   method(arg1) {
+     *     // Do your stuff
+     *     logger.exit(method, { arg1 });
+     *   }
+     * }
+     *
+     *
+     * @param {Function} fn
+     * @param {Object} [context]
+     * @param {Object} [contextStyles]
+     * @return {Logger}
+    */
+    exit(fn, context, contextStyles) {
+        return this.log(`exit ${ fn.name }`, context, _LogLevel2.default.DEBUG, { contextStyles });
+    }
+
+    /**
+     * Wrap around a function to log enter and exit of a function
+     *
+     * @example
+     * const logger = new ConsoleLogger('myNamespace.A');
+     * class A {
+     *   method() {
+     *     logger.wrap(method, () => {
+     *       // Do your stuff
+     *     });
+     *   }
+     * }
+     *
+     * @param {Function} fn
+     * @param {Object} [context]
+     * @param {Object} [contextStyles]
+     * @param {Function} callback
+    */
+    wrap(fn, context, contextStyles, callback) {
+        if (typeof context === 'function') {
+            callback = context;
+            context = undefined;
+        } else if (typeof contextStyles === 'function') {
+            callback = contextStyles;
+            contextStyles = undefined;
+        }
+
+        this.enter(fn, context, contextStyles);
+        callback();
+        this.exit(fn);
     }
 };
 exports.default = Logger;

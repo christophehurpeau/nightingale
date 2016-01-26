@@ -4,6 +4,6 @@ export default class LayoutDefault {
     }
 
     format(record) {
-        return this.formatter.format(record) + '\n';
+        return `${this.formatter.format(record)}\n`;
     }
 }

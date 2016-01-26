@@ -4,6 +4,6 @@ export default class LayoutHTML {
     }
 
     format(record) {
-        return '</div>' + this.formatter.format(record) + '</div>\n';
+        return `</div>${this.formatter.format(record)}</div>\n`;
     }
 }

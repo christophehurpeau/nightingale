@@ -18,9 +18,17 @@ var _levelToStyles = require('./_levelToStyles');
 
 var _levelToStyles2 = _interopRequireDefault(_levelToStyles);
 
+/**
+ * @function
+ * @param obj
+*/
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function style(styles, string) {
+/**
+ * @function
+ * @param styles
+ * @param string
+*/function style(styles, string) {
     if (!styles || !styles.length || !string) {
         return string;
     }
@@ -36,7 +44,11 @@ function style(styles, string) {
     }, string);
 }
 
-function displayObject(object, contextStyles) {
+/**
+ * @function
+ * @param object
+ * @param contextStyles
+*/function displayObject(object, contextStyles) {
     var _this = this;
 
     var keys = Object.keys(object);
@@ -54,7 +66,10 @@ function displayObject(object, contextStyles) {
  * @param {Object} record
  * @returns {string}
  */
-function format(record) {
+/**
+ * @function
+ * @param record
+*/function format(record) {
     var string = '';
     if (record.prefix) {
         string += this.style(['gray'], record.prefix);

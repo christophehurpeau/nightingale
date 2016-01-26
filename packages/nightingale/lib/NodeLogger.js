@@ -11,17 +11,21 @@ var _Logger2 = _interopRequireDefault(_Logger);
 
 var _alouette = require('alouette');
 
+/**
+ * @function
+ * @param obj
+*/
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 let NodeLogger = class NodeLogger extends _Logger2.default {
     /**
      * Log an error message
      *
-     * @param {String|Error} message
+     * @param {string|Error} message
      * @param {Object} [context]
      * @param {Object} [contextStyles]
      * @return {Logger}
-     */
+    */
     error(message, context, contextStyles) {
         if (typeof message !== 'object') {
             message = message.message || message;

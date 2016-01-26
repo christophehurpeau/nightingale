@@ -8,11 +8,16 @@ exports.default = undefined;
 var _fs = require('fs');
 
 let OutputFile = class OutputFile {
+    /**
+     * @param path
+    */
     constructor(path) {
         this._stream = (0, _fs.createWriteStream)(path);
     }
 
-    write(string) {
+    /**
+     * @param string
+    */write(string) {
         this._stream.write(string);
     }
 };

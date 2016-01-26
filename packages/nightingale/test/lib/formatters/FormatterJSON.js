@@ -17,4 +17,4 @@ test('Formatter JSON format', () => {
 
     (0, _proclaim.deepEqual)((0, _formatterJSON.format)(record), record);
 });
-//# sourceMappingURL=FormatterJSON.js.map
+//# sourceMappingURL=formatterJSON.js.map

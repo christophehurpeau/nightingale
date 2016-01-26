@@ -1,0 +1,13 @@
+<testsuite name="Mocha Tests" tests="11" failures="0" errors="0" skipped="0" timestamp="2016-01-26T19:02:04" time="0.008">
+<testcase classname="" name="Logger: log method" time="0"/>
+<testcase classname="" name="Logger: info method" time="0.001"/>
+<testcase classname="" name="Logger: warn method" time="0"/>
+<testcase classname="" name="Logger: error method" time="0"/>
+<testcase classname="" name="Logger: alert method" time="0"/>
+<testcase classname="" name="Logger: fatal method" time="0"/>
+<testcase classname="" name="Logger: debug method" time="0"/>
+<testcase classname="" name="Logger: success method" time="0"/>
+<testcase classname="" name="Formatter HTML: blue bold color" time="0.001"/>
+<testcase classname="" name="Formatter JSON format" time="0.001"/>
+<testcase classname="" name="Formatter ANSI: blue bold color" time="0"/>
+</testsuite>

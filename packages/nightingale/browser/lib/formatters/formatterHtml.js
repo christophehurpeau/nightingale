@@ -10,9 +10,17 @@ var _styleToHtmlStyle = require('./_styleToHtmlStyle');
 
 var _styleToHtmlStyle2 = _interopRequireDefault(_styleToHtmlStyle);
 
+/**
+ * @function
+ * @param obj
+*/
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function style(styles, string) {
+/**
+ * @function
+ * @param styles
+ * @param string
+*/function style(styles, string) {
     if (!styles || !styles.length || !string) {
         return string;
     }
@@ -26,7 +34,10 @@ function style(styles, string) {
  * @param {Object} record
  * @returns {string}
  */
-function format(record) {
+/**
+ * @function
+ * @param record
+*/function format(record) {
     var string = '';
     if (record.prefix) {
         string += record.prefix + ' ';

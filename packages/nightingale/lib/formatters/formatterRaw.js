@@ -8,12 +8,18 @@ var _formatterANSI = require('./formatterANSI');
 
 Object.defineProperty(exports, 'format', {
     enumerable: true,
-    get: function get() {
+    get: /**
+          * @function
+         */function get() {
         return _formatterANSI.format;
     }
 });
 exports.style = style;
-function style(styles, string) {
+/**
+ * @function
+ * @param styles
+ * @param string
+*/function style(styles, string) {
     return string;
 }
 //# sourceMappingURL=formatterRaw.js.map

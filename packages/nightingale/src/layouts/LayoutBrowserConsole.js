@@ -1,4 +1,4 @@
-export default class LayoutDefault {
+export default class LayoutBrowserConsole {
     constructor(formatter) {
         this.formatter = formatter;
     }

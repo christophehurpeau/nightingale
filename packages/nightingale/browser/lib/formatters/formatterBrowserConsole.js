@@ -17,9 +17,22 @@ var _styleToHtmlStyle = require('./_styleToHtmlStyle');
 
 var _styleToHtmlStyle2 = _interopRequireDefault(_styleToHtmlStyle);
 
+/**
+ * @function
+ * @param obj
+*/
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+/**
+ * @function
+ * @param arr
+*/
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+/**
+ * @function
+ * @param styles
+*/
 
 function style(styles) {
     return styles.map(function (styleName) {
@@ -27,7 +40,12 @@ function style(styles) {
     }).join('; ');
 }
 
-function displayObject(object, contextStyles, args) {
+/**
+ * @function
+ * @param object
+ * @param contextStyles
+ * @param args
+*/function displayObject(object, contextStyles, args) {
     var keys = Object.keys(object);
 
     if (keys.length === 0) {
@@ -43,7 +61,7 @@ function displayObject(object, contextStyles, args) {
         args.push(style((_ref = ['reset']).concat.apply(_ref, _toConsumableArray(styles))));
         args.push(style(['reset', 'gray']));
 
-        return '%c' + key + ': ' + '%c' + JSON.stringify(object[key]) + '%c';
+        return '%c' + key + ': %c' + JSON.stringify(object[key]) + '%c';
     }).join(', ') + ' }';
 }
 
@@ -51,7 +69,10 @@ function displayObject(object, contextStyles, args) {
  * @param {Object} record
  * @returns {Object}
  */
-function format(record) {
+/**
+ * @function
+ * @param record
+*/function format(record) {
     var string = '';
     var args = [];
 

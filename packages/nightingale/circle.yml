@@ -1,6 +1,6 @@
 machine:
   node:
-    version: 4.1.0
+    version: 5.5.0
 
 general:
   branches:
@@ -8,15 +8,10 @@ general:
       - gh-pages
 
 dependencies:
-  pre:
-    - npm install -g npm@3.x-latest
   cache_directories:
     - node_modules
   override:
-    - rm -Rf node_modules
     - npm prune && npm install --no-spin
-    - npm install codeclimate-test-reporter xunit-file
-
 
 test:
   pre:
@@ -24,9 +19,12 @@ test:
   override:
     - make lint
     - make build
-    - node_modules/.bin/mocha --harmony --recursive --reporter xunit-file -u tdd tests/lib > $CIRCLE_TEST_REPORTS/junit/xunit.xml
+    - XUNIT_FILE=$CIRCLE_TEST_REPORTS/junit/xunit.xml node_modules/.bin/mocha --harmony --recursive --reporter xunit-file -u tdd test/lib
     - make docs
-    # - CODECLIMATE_REPO_TOKEN= node_modules/.bin/codeclimate-test-reporter < coverage/lcov.info
+  post:
+    - export COVERALLS_SERVICE_JOB_ID=$CIRCLE_BUILD_NUM && export COVERALLS_SERVICE_NAME=circleci && export COVERALLS_REPO_TOKEN=l63cvQqfcemShCEnR2X4JmpINNFpiIv56 && export COVERALLS_GIT_COMMIT=$CIRCLE_SHA1 && export COVERALLS_GIT_BRANCH=$CIRCLE_BRANCH && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+    - cp -R coverage $CIRCLE_ARTIFACTS/
+    - cp -R docs $CIRCLE_ARTIFACTS/
 
 deployment:
   docs:
@@ -34,12 +32,10 @@ deployment:
     commands:
       - git config user.email "builds@circleci.com"
       - git config user.name "CircleCi"
-      - mv coverage coverage-tmp
-      - mv docs docs-tmp
+      - mv coverage coverage-tmp ; mv docs docs-tmp
       - git checkout -f gh-pages
       - rm -Rf docs coverage
-      - mv docs-tmp docs
-      - mv coverage-tmp coverage
+      - mv docs-tmp docs ; mv coverage-tmp coverage
       - date > date.txt
       - git add -f docs coverage
       - git commit -m"auto commit from circleci"

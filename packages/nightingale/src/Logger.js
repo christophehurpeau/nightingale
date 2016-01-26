@@ -26,8 +26,8 @@ export default class Logger {
     /**
      * Write a message
      *
-     * @param {String} message
-     * @param {String} logLevel
+     * @param {string} message
+     * @param {string} logLevel
      * @return {Logger}
      */
     write(message, logLevel) {
@@ -54,7 +54,7 @@ export default class Logger {
     /**
      * Log a message
      *
-     * @param {String} message
+     * @param {string} message
      * @param {Object} context
      * @param {int} [logLevel]
      * @param {Object} [options]
@@ -81,7 +81,7 @@ export default class Logger {
     /**
      * Set the logger prefix
      *
-     * @param {String} prefix
+     * @param {string} prefix
      * @param {*} [styles]
      */
     setPrefix(prefix, styles) {
@@ -91,7 +91,7 @@ export default class Logger {
     /**
      * Log an debug message
      *
-     * @param {String} message
+     * @param {string} message
      * @param {Object} [context]
      * @param {Object} [contextStyles]
      * @return {Logger}
@@ -103,7 +103,7 @@ export default class Logger {
     /**
      * Log an info message
      *
-     * @param {String} message
+     * @param {string} message
      * @param {Object} [context]
      * @param {Object} [contextStyles]
      * @return {Logger}
@@ -115,7 +115,7 @@ export default class Logger {
     /**
      * Log an warn message
      *
-     * @param {String} message
+     * @param {string} message
      * @param {Object} [context]
      * @param {Object} [contextStyles]
      * @return {Logger}
@@ -127,7 +127,7 @@ export default class Logger {
     /**
      * Log an error message
      *
-     * @param {String|Error} message
+     * @param {string|Error} message
      * @param {Object} [context]
      * @param {Object} [contextStyles]
      * @return {Logger}
@@ -140,7 +140,7 @@ export default class Logger {
     /**
      * Log an alert message
      *
-     * @param {String} message
+     * @param {string} message
      * @param {Object} [context]
      * @param {Object} [contextStyles]
      * @return {Logger}
@@ -152,7 +152,7 @@ export default class Logger {
     /**
      * Log an fatal message
      *
-     * @param {String} message
+     * @param {string} message
      * @param {Object} [context]
      * @param {Object} [contextStyles]
      * @return {Logger}
@@ -179,7 +179,7 @@ export default class Logger {
     /**
      * Log an debugged var
      *
-     * @param {String} varName
+     * @param {string} varName
      * @param {*} varValue
      * @param {Object} [context]
      * @param {Object} [contextStyles]
@@ -187,13 +187,13 @@ export default class Logger {
      */
     inspectVar(varName, varValue, context, contextStyles) {
         varValue = util.inspect(varValue, { depth: 6 });
-        return this.log(varName + ' = ' + varValue, context, LogLevel.DEBUG, { contextStyles, styles: ['cyan'] });
+        return this.log(`${varName} = ${varValue}`, context, LogLevel.DEBUG, { contextStyles, styles: ['cyan'] });
     }
 
     /**
      * Log an sucess message
      *
-     * @param {String} message
+     * @param {string} message
      * @param {Object} [context]
      * @param {Object} [contextStyles]
      * @return {Logger}
@@ -230,7 +230,7 @@ export default class Logger {
     * was called, then logs out the difference
     * and deletes the original record
     *
-    * @param {Number=} time return of previous call to time()
+    * @param {number=} time return of previous call to time()
     * @param {string} name timer name
      * @param {Object} [context]
      * @param {Object} [contextStyles]
@@ -255,7 +255,81 @@ export default class Logger {
         const seconds = diffTime > 1000 && Math.floor(diffTime / 1000);
         const ms = diffTime - seconds * 1000;
 
-        const message = (name ? name + ': ' : '') + (seconds ? seconds + 's and ' : '') + ms + 'ms';
+        const message = `${name ? `${name}: ` : ''}${seconds ? `${seconds}s and ` : ''}${ms}ms`;
         this.log(message, context, LogLevel.INFO, { contextStyles });
+    }
+
+    /**
+     * Log an enter in a function
+     *
+     * @example
+     * class A {
+     *   method(arg1) {
+     *     logger.enter(method, { arg1 });
+     *     // Do your stuff
+     *   }
+     * }
+     *
+     * @param {Function} fn
+     * @param {Object} [context]
+     * @param {Object} [contextStyles]
+     * @return {Logger}
+     */
+    enter(fn, context, contextStyles) {
+        return this.log(`enter ${fn.name}`, context, LogLevel.DEBUG, { contextStyles });
+    }
+
+    /**
+     * Log an exit in a function
+     *
+     * @example
+     * const logger = new ConsoleLogger('myNamespace.A');
+     * class A {
+     *   method(arg1) {
+     *     // Do your stuff
+     *     logger.exit(method, { arg1 });
+     *   }
+     * }
+     *
+     *
+     * @param {Function} fn
+     * @param {Object} [context]
+     * @param {Object} [contextStyles]
+     * @return {Logger}
+     */
+    exit(fn, context, contextStyles) {
+        return this.log(`exit ${fn.name}`, context, LogLevel.DEBUG, { contextStyles });
+    }
+
+    /**
+     * Wrap around a function to log enter and exit of a function
+     *
+     * @example
+     * const logger = new ConsoleLogger('myNamespace.A');
+     * class A {
+     *   method() {
+     *     logger.wrap(method, () => {
+     *       // Do your stuff
+     *     });
+     *   }
+     * }
+     *
+     * @param {Function} fn
+     * @param {Object} [context]
+     * @param {Object} [contextStyles]
+     * @param {Function} callback
+     */
+    wrap(fn, context, contextStyles, callback) {
+        if (typeof context === 'function') {
+            callback = context;
+            context = undefined;
+        } else if (typeof contextStyles === 'function') {
+            callback = contextStyles;
+            contextStyles = undefined;
+        }
+
+        this.enter(fn, context, contextStyles);
+        callback();
+        this.exit(fn);
     }
 }

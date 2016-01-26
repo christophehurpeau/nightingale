@@ -8,6 +8,10 @@ var _LogLevel = require('../LogLevel');
 
 var _LogLevel2 = _interopRequireDefault(_LogLevel);
 
+/**
+ * @function
+ * @param obj
+*/
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var levelToStyles = {};

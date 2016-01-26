@@ -25,31 +25,58 @@ var _outputBrowserConsole = require('../outputs/outputBrowserConsole');
 
 var outputConsole = _interopRequireWildcard(_outputBrowserConsole);
 
+/**
+ * @function
+ * @param obj
+*/
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
+/**
+ * @function
+ * @param obj
+*/
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+/**
+ * @function
+ * @param instance
+ * @param Constructor
+*/
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
+/**
+ * @function
+ * @param self
+ * @param call
+*/
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
+/**
+ * @function
+ * @param subClass
+ * @param superClass
+*/
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var debugValues = (function (querystring) {
+var debugValues = function (querystring) {
     if (!querystring) {
         return [];
     }
 
     // https://developer.mozilla.org/en-US/docs/Web/API/URLUtils/search#Get_the_value_of_a_single_search_param
     return decodeURI(querystring.replace(new RegExp('^(?:.*[&\\?]' + 'DEBUG' + '(?:\\=([^&]*))?)?.*$', 'i'), '$1')).split(',');
-})(location.search);
+}(location.search);
 
-var BrowserConsoleHandler = (function (_Handler) {
+var BrowserConsoleHandler = /**
+                             * @function
+                             * @param _Handler
+                            */function (_Handler) {
     _inherits(BrowserConsoleHandler, _Handler);
 
     /**
      * @param {int|string} minLevel if int, see {@link LogLevel} ; if string, based on process.env.DEBUG
-     */
+    * @function
+    */
 
     function BrowserConsoleHandler(minLevel) {
         _classCallCheck(this, BrowserConsoleHandler);
@@ -67,7 +94,7 @@ var BrowserConsoleHandler = (function (_Handler) {
     }
 
     return BrowserConsoleHandler;
-})(_Handler3.default);
+}(_Handler3.default);
 
 exports.default = BrowserConsoleHandler;
 //# sourceMappingURL=BrowserConsoleHandler.js.map

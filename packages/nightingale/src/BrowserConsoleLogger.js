@@ -4,8 +4,7 @@ import BrowserConsoleHandler from './handlers/BrowserConsoleHandler';
 /**
  * A simplified way of creating a {@link Logger} with a {@link ConsoleHandler}
  */
-export default class ConsoleLogger extends Logger {
-
+export default class BrowserConsoleLogger extends Logger {
     /**
      * Creates a new ConsoleLogger with a prefix.
      *

@@ -12,6 +12,10 @@ var _proclaim = require('proclaim');
 
 var _proclaim2 = _interopRequireDefault(_proclaim);
 
+/**
+ * @function
+ * @param obj
+*/
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 test('Logger: log method', () => {

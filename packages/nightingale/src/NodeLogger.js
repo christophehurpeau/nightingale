@@ -5,7 +5,7 @@ export default class NodeLogger extends Logger {
     /**
      * Log an error message
      *
-     * @param {String|Error} message
+     * @param {string|Error} message
      * @param {Object} [context]
      * @param {Object} [contextStyles]
      * @return {Logger}

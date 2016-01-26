@@ -5,10 +5,10 @@
 node_modules
 
 /.settings
-.project
+/.project
 *.sublime-project
 *.sublime-workspace
-.idea
+/.idea
 
 #*
 *$

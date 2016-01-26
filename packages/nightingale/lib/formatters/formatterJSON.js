@@ -5,7 +5,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.style = style;
 exports.format = format;
-function style(styles, string) {
+/**
+ * @function
+ * @param styles
+ * @param string
+*/function style(styles, string) {
     return string;
 }
 
@@ -13,7 +17,10 @@ function style(styles, string) {
  * @param {Object} record
  * @returns {Object}
  */
-function format(record) {
+/**
+ * @function
+ * @param record
+*/function format(record) {
     return {
         level: record.level,
         datetime: record.datetime,

@@ -3,9 +3,7 @@ import levelToStyles from './_levelToStyles';
 import htmlStyles from './_styleToHtmlStyle';
 
 function style(styles) {
-    return styles.map(function (styleName) {
-        return htmlStyles[styleName];
-    }).join('; ');
+    return styles.map(styleName => htmlStyles[styleName]).join('; ');
 }
 
 function displayObject(object, contextStyles, args) {
@@ -16,14 +14,14 @@ function displayObject(object, contextStyles, args) {
     }
 
     args.push(style(['reset', 'gray']));
-    return '%c{ ' + keys.map(key => {
+    return `%c{ ${keys.map(key => {
         const styles = contextStyles && contextStyles[key];
         args.push(style(['reset', 'gray', 'bold']));
         args.push(style(['reset'].concat(...styles)));
         args.push(style(['reset', 'gray']));
 
-        return '%c' + key + ': ' + '%c' + JSON.stringify(object[key]) + '%c';
-    }).join(', ') + ' }';
+        return `%c${key}: %c${JSON.stringify(object[key])}%c`;
+    }).join(', ')} }`;
 }
 
 /**
@@ -45,7 +43,7 @@ export function format(record) {
         }
 
         args.push(style(['gray', 'bold']));
-        string += '%c' + record.datetime.toTimeString().split(' ')[0];
+        string += `%c${record.datetime.toTimeString().split(' ')[0]}`;
     }
 
     let message = record.symbol || levelToSymbol[record.level];
@@ -53,14 +51,14 @@ export function format(record) {
 
     if (record.message) {
         if (message && message.length !== 0) {
-            message += ' ' + record.message;
+            message += ` ${record.message}`;
         } else {
             message = record.message;
         }
     }
 
     if (styles) {
-        message = '%c' + message;
+        message = `%c${message}`;
         args.push(style(styles));
     }
 

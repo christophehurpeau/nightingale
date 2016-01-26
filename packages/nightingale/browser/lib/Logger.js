@@ -1,6 +1,17 @@
 'use strict';
 
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+var _createClass = /**
+                    * @function
+                   */ function () { /**
+                                     * @function
+                                     * @param target
+                                     * @param props
+                                    */ function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return (/**
+                                                                                                                                                                                                                                                                                                                                                                            * @function
+                                                                                                                                                                                                                                                                                                                                                                            * @param Constructor
+                                                                                                                                                                                                                                                                                                                                                                            * @param protoProps
+                                                                                                                                                                                                                                                                                                                                                                            * @param staticProps
+                                                                                                                                                                                                                                                                                                                                                                           */ function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; } ); }();
 
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -15,8 +26,17 @@ var _LogLevel = require('./LogLevel');
 
 var _LogLevel2 = _interopRequireDefault(_LogLevel);
 
+/**
+ * @function
+ * @param obj
+*/
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+/**
+ * @function
+ * @param instance
+ * @param Constructor
+*/
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
@@ -24,12 +44,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
  * This records are treated by handlers
  */
 
-var Logger = (function () {
+var Logger = /**
+              * @function
+             */function () {
     /**
      * Create a new Logger
      *
      * @param {Handler[]} handlers
-     */
+    * @function
+    */
 
     function Logger(handlers) {
         var _this = this;
@@ -50,14 +73,18 @@ var Logger = (function () {
     /**
      * Write a message
      *
-     * @param {String} message
-     * @param {String} logLevel
+     * @param {string} message
+     * @param {string} logLevel
      * @return {Logger}
      */
 
     _createClass(Logger, [{
         key: 'write',
-        value: function write(message, logLevel) {
+        value: /**
+                * @function
+                * @param message
+                * @param logLevel
+               */function write(message, logLevel) {
             this.output.write(message, logLevel);
             return this;
         }
@@ -72,7 +99,10 @@ var Logger = (function () {
 
     }, {
         key: 'addRecord',
-        value: function addRecord(record) {
+        value: /**
+                * @function
+                * @param record
+               */function addRecord(record) {
             for (var i = 0, length = this.handlers.length; i < length; i++) {
                 var handler = this.handlers[i];
                 if (handler.handle(record) === false) {
@@ -84,7 +114,7 @@ var Logger = (function () {
         /**
          * Log a message
          *
-         * @param {String} message
+         * @param {string} message
          * @param {Object} context
          * @param {int} [logLevel]
          * @param {Object} [options]
@@ -93,7 +123,13 @@ var Logger = (function () {
 
     }, {
         key: 'log',
-        value: function log(message, context) {
+        value: /**
+                * @function
+                * @param message
+                * @param context
+                * @param logLevel
+                * @param options
+               */function log(message, context) {
             var logLevel = arguments.length <= 2 || arguments[2] === undefined ? _LogLevel2.default.INFO : arguments[2];
             var options = arguments.length <= 3 || arguments[3] === undefined ? undefined : arguments[3];
 
@@ -117,20 +153,24 @@ var Logger = (function () {
         /**
          * Set the logger prefix
          *
-         * @param {String} prefix
+         * @param {string} prefix
          * @param {*} [styles]
          */
 
     }, {
         key: 'setPrefix',
-        value: function setPrefix(prefix, styles) {
+        value: /**
+                * @function
+                * @param prefix
+                * @param styles
+               */function setPrefix(prefix, styles) {
             this._prefix = prefix;
         }
 
         /**
          * Log an debug message
          *
-         * @param {String} message
+         * @param {string} message
          * @param {Object} [context]
          * @param {Object} [contextStyles]
          * @return {Logger}
@@ -138,14 +178,19 @@ var Logger = (function () {
 
     }, {
         key: 'debug',
-        value: function debug(message, context, contextStyles) {
+        value: /**
+                * @function
+                * @param message
+                * @param context
+                * @param contextStyles
+               */function debug(message, context, contextStyles) {
             return this.log(message, context, _LogLevel2.default.DEBUG, { contextStyles: contextStyles });
         }
 
         /**
          * Log an info message
          *
-         * @param {String} message
+         * @param {string} message
          * @param {Object} [context]
          * @param {Object} [contextStyles]
          * @return {Logger}
@@ -153,14 +198,19 @@ var Logger = (function () {
 
     }, {
         key: 'info',
-        value: function info(message, context, contextStyles) {
+        value: /**
+                * @function
+                * @param message
+                * @param context
+                * @param contextStyles
+               */function info(message, context, contextStyles) {
             return this.log(message, context, _LogLevel2.default.INFO, { contextStyles: contextStyles });
         }
 
         /**
          * Log an warn message
          *
-         * @param {String} message
+         * @param {string} message
          * @param {Object} [context]
          * @param {Object} [contextStyles]
          * @return {Logger}
@@ -168,14 +218,19 @@ var Logger = (function () {
 
     }, {
         key: 'warn',
-        value: function warn(message, context, contextStyles) {
+        value: /**
+                * @function
+                * @param message
+                * @param context
+                * @param contextStyles
+               */function warn(message, context, contextStyles) {
             return this.log(message, context, _LogLevel2.default.WARN, { contextStyles: contextStyles });
         }
 
         /**
          * Log an error message
          *
-         * @param {String|Error} message
+         * @param {string|Error} message
          * @param {Object} [context]
          * @param {Object} [contextStyles]
          * @return {Logger}
@@ -183,7 +238,12 @@ var Logger = (function () {
 
     }, {
         key: 'error',
-        value: function error(message, context, contextStyles) {
+        value: /**
+                * @function
+                * @param message
+                * @param context
+                * @param contextStyles
+               */function error(message, context, contextStyles) {
             message = message.stack || message.message || message;
             return this.log(message, context, _LogLevel2.default.ERROR, { contextStyles: contextStyles });
         }
@@ -191,7 +251,7 @@ var Logger = (function () {
         /**
          * Log an alert message
          *
-         * @param {String} message
+         * @param {string} message
          * @param {Object} [context]
          * @param {Object} [contextStyles]
          * @return {Logger}
@@ -199,14 +259,19 @@ var Logger = (function () {
 
     }, {
         key: 'alert',
-        value: function alert(message, context, contextStyles) {
+        value: /**
+                * @function
+                * @param message
+                * @param context
+                * @param contextStyles
+               */function alert(message, context, contextStyles) {
             return this.log(message, context, _LogLevel2.default.ALERT, { contextStyles: contextStyles });
         }
 
         /**
          * Log an fatal message
          *
-         * @param {String} message
+         * @param {string} message
          * @param {Object} [context]
          * @param {Object} [contextStyles]
          * @return {Logger}
@@ -214,7 +279,12 @@ var Logger = (function () {
 
     }, {
         key: 'fatal',
-        value: function fatal(message, context, contextStyles) {
+        value: /**
+                * @function
+                * @param message
+                * @param context
+                * @param contextStyles
+               */function fatal(message, context, contextStyles) {
             return this.log(message, context, _LogLevel2.default.FATAL, { contextStyles: contextStyles });
         }
 
@@ -229,7 +299,12 @@ var Logger = (function () {
 
     }, {
         key: 'inspectValue',
-        value: function inspectValue(value, context, contextStyles) {
+        value: /**
+                * @function
+                * @param value
+                * @param context
+                * @param contextStyles
+               */function inspectValue(value, context, contextStyles) {
             // Note: inspect is a special function for node:
             // https://github.com/nodejs/node/blob/a1bda1b4deb08dfb3e06cb778f0db40023b18318/lib/util.js#L210
             value = _util2.default.inspect(value, { depth: 6 });
@@ -239,7 +314,7 @@ var Logger = (function () {
         /**
          * Log an debugged var
          *
-         * @param {String} varName
+         * @param {string} varName
          * @param {*} varValue
          * @param {Object} [context]
          * @param {Object} [contextStyles]
@@ -248,7 +323,13 @@ var Logger = (function () {
 
     }, {
         key: 'inspectVar',
-        value: function inspectVar(varName, varValue, context, contextStyles) {
+        value: /**
+                * @function
+                * @param varName
+                * @param varValue
+                * @param context
+                * @param contextStyles
+               */function inspectVar(varName, varValue, context, contextStyles) {
             varValue = _util2.default.inspect(varValue, { depth: 6 });
             return this.log(varName + ' = ' + varValue, context, _LogLevel2.default.DEBUG, { contextStyles: contextStyles, styles: ['cyan'] });
         }
@@ -256,7 +337,7 @@ var Logger = (function () {
         /**
          * Log an sucess message
          *
-         * @param {String} message
+         * @param {string} message
          * @param {Object} [context]
          * @param {Object} [contextStyles]
          * @return {Logger}
@@ -264,7 +345,12 @@ var Logger = (function () {
 
     }, {
         key: 'success',
-        value: function success(message, context, contextStyles) {
+        value: /**
+                * @function
+                * @param message
+                * @param context
+                * @param contextStyles
+               */function success(message, context, contextStyles) {
             return this.log(message, context, _LogLevel2.default.INFO, {
                 contextStyles: contextStyles,
                 symbol: '✔',
@@ -281,7 +367,10 @@ var Logger = (function () {
 
     }, {
         key: 'time',
-        value: function time(name) {
+        value: /**
+                * @function
+                * @param name
+               */function time(name) {
             if (name) {
                 if (!this._timers) {
                     this._timers = {};
@@ -299,7 +388,7 @@ var Logger = (function () {
         * was called, then logs out the difference
         * and deletes the original record
         *
-        * @param {Number=} time return of previous call to time()
+        * @param {number=} time return of previous call to time()
         * @param {string} name timer name
          * @param {Object} [context]
          * @param {Object} [contextStyles]
@@ -307,7 +396,13 @@ var Logger = (function () {
 
     }, {
         key: 'timeEnd',
-        value: function timeEnd(time, name, context, contextStyles) {
+        value: /**
+                * @function
+                * @param time
+                * @param name
+                * @param context
+                * @param contextStyles
+               */function timeEnd(time, name, context, contextStyles) {
             var now = Date.now();
 
             if (typeof time !== 'number') {
@@ -327,13 +422,112 @@ var Logger = (function () {
             var seconds = diffTime > 1000 && Math.floor(diffTime / 1000);
             var ms = diffTime - seconds * 1000;
 
-            var message = (name ? name + ': ' : '') + (seconds ? seconds + 's and ' : '') + ms + 'ms';
+            var message = '' + (name ? name + ': ' : '') + (seconds ? seconds + 's and ' : '') + ms + 'ms';
             this.log(message, context, _LogLevel2.default.INFO, { contextStyles: contextStyles });
+        }
+
+        /**
+         * Log an enter in a function
+         *
+         * @example
+         * class A {
+         *   method(arg1) {
+         *     logger.enter(method, { arg1 });
+         *     // Do your stuff
+         *   }
+         * }
+         *
+         * @param {Function} fn
+         * @param {Object} [context]
+         * @param {Object} [contextStyles]
+         * @return {Logger}
+         */
+
+    }, {
+        key: 'enter',
+        value: /**
+                * @function
+                * @param fn
+                * @param context
+                * @param contextStyles
+               */function enter(fn, context, contextStyles) {
+            return this.log('enter ' + fn.name, context, _LogLevel2.default.DEBUG, { contextStyles: contextStyles });
+        }
+
+        /**
+         * Log an exit in a function
+         *
+         * @example
+         * const logger = new ConsoleLogger('myNamespace.A');
+         * class A {
+         *   method(arg1) {
+         *     // Do your stuff
+         *     logger.exit(method, { arg1 });
+         *   }
+         * }
+         *
+         *
+         * @param {Function} fn
+         * @param {Object} [context]
+         * @param {Object} [contextStyles]
+         * @return {Logger}
+         */
+
+    }, {
+        key: 'exit',
+        value: /**
+                * @function
+                * @param fn
+                * @param context
+                * @param contextStyles
+               */function exit(fn, context, contextStyles) {
+            return this.log('exit ' + fn.name, context, _LogLevel2.default.DEBUG, { contextStyles: contextStyles });
+        }
+
+        /**
+         * Wrap around a function to log enter and exit of a function
+         *
+         * @example
+         * const logger = new ConsoleLogger('myNamespace.A');
+         * class A {
+         *   method() {
+         *     logger.wrap(method, () => {
+         *       // Do your stuff
+         *     });
+         *   }
+         * }
+         *
+         * @param {Function} fn
+         * @param {Object} [context]
+         * @param {Object} [contextStyles]
+         * @param {Function} callback
+         */
+
+    }, {
+        key: 'wrap',
+        value: /**
+                * @function
+                * @param fn
+                * @param context
+                * @param contextStyles
+                * @param callback
+               */function wrap(fn, context, contextStyles, callback) {
+            if (typeof context === 'function') {
+                callback = context;
+                context = undefined;
+            } else if (typeof contextStyles === 'function') {
+                callback = contextStyles;
+                contextStyles = undefined;
+            }
+
+            this.enter(fn, context, contextStyles);
+            callback();
+            this.exit(fn);
         }
     }]);
 
     return Logger;
-})();
+}();
 
 exports.default = Logger;
 //# sourceMappingURL=Logger.js.map

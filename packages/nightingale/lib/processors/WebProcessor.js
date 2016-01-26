@@ -4,11 +4,16 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 let WebProcessor = class WebProcessor {
+    /**
+     * @param request
+    */
     constructor(request) {
         this.request = request;
     }
 
-    process(record) {
+    /**
+     * @param record
+    */process(record) {
         record.extra = record.extra || {};
         record.extra.url = this.request.url;
         record.extra.method = this.request.method;

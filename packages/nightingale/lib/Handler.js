@@ -9,6 +9,10 @@ var _levels = require('./levels');
 
 var _levels2 = _interopRequireDefault(_levels);
 
+/**
+ * @function
+ * @param obj
+*/
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
@@ -21,7 +25,7 @@ let Handler = class Handler {
      * @param {int} minLevel
      * @param {Layout} layout
      * @param {Output} output
-     */
+    */
     constructor(minLevel, layout, output) {
         this.minLevel = minLevel;
         this.layout = layout;
@@ -29,14 +33,16 @@ let Handler = class Handler {
 
         _levels2.default.forEach(level => {
             if (level.value < minLevel) {
-                this[level.lcKey] = function () {};
+                this[level.lcKey] = /**
+                                     * @function
+                                    */function () {};
             }
         });
     }
 
     /**
      * @param {Object} record
-     */
+    */
     handle(record) {
         if (record.level < this.minLevel) {
             return;

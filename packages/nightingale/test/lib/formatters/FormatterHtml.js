@@ -9,4 +9,4 @@ var _proclaim = require('proclaim');
 test('Formatter HTML: blue bold color', () => {
     (0, _proclaim.strictEqual)((0, _formatterHtml.style)(['blue', 'bold'], 'test'), '<span style="color: #4682B4; font-weight: bold">test</span>');
 });
-//# sourceMappingURL=FormatterHtml.js.map
+//# sourceMappingURL=formatterHtml.js.map

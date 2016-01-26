@@ -4,6 +4,10 @@ var _ConsoleHandler = require('../../lib/handlers/ConsoleHandler');
 
 var _ConsoleHandler2 = _interopRequireDefault(_ConsoleHandler);
 
+/**
+ * @function
+ * @param obj
+*/
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const Logger = require('../../lib/node').Logger;

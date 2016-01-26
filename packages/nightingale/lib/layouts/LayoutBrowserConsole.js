@@ -3,14 +3,19 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-let LayoutDefault = class LayoutDefault {
+let LayoutBrowserConsole = class LayoutBrowserConsole {
+    /**
+     * @param formatter
+    */
     constructor(formatter) {
         this.formatter = formatter;
     }
 
-    format(record) {
+    /**
+     * @param record
+    */format(record) {
         return this.formatter.format(record);
     }
 };
-exports.default = LayoutDefault;
+exports.default = LayoutBrowserConsole;
 //# sourceMappingURL=LayoutBrowserConsole.js.map

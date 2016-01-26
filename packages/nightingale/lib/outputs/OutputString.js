@@ -8,11 +8,16 @@ let OutputString = class OutputString {
         this._buffer = '';
     }
 
-    get string() {
+    /**
+     * @member string
+    */get string() {
         return this._buffer;
     }
 
-    write(str, logLevel) {
+    /**
+     * @param str
+     * @param logLevel
+    */write(str, logLevel) {
         this._buffer += str;
         return this;
     }

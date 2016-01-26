@@ -18,41 +18,56 @@ var _levelToStyles = require('./_levelToStyles');
 
 var _levelToStyles2 = _interopRequireDefault(_levelToStyles);
 
+/**
+ * @function
+ * @param obj
+*/
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function style(styles, string) {
+/**
+ * @function
+ * @param styles
+ * @param string
+*/function style(styles, string) {
     if (!styles || !styles.length || !string) {
         return string;
     }
 
-    return styles.reduce(function (string, styleName) {
+    return styles.reduce((string, styleName) => {
         let style = _ansiStyles2.default[styleName];
 
         if (!style) {
-            throw new Error('Unknown style: ' + styleName);
+            throw new Error(`Unknown style: ${ styleName }`);
         }
 
         return style.open + string + style.close;
     }, string);
 }
 
-function displayObject(object, contextStyles) {
+/**
+ * @function
+ * @param object
+ * @param contextStyles
+*/function displayObject(object, contextStyles) {
     const keys = Object.keys(object);
 
     if (keys.length === 0) {
         return;
     }
 
-    return '{ ' + keys.map(key => {
-        return key + ': ' + this.style(contextStyles && contextStyles[key], JSON.stringify(object[key]));
-    }).join(', ') + ' }';
+    return `{ ${ keys.map(key => {
+        return `${ key }: ${ this.style(contextStyles && contextStyles[key], JSON.stringify(object[key])) }`;
+    }).join(', ') } }`;
 }
 
 /**
  * @param {Object} record
  * @returns {string}
  */
-function format(record) {
+/**
+ * @function
+ * @param record
+*/function format(record) {
     let string = '';
     if (record.prefix) {
         string += this.style(['gray'], record.prefix);
@@ -72,7 +87,7 @@ function format(record) {
 
     if (record.message) {
         if (message && message.length !== 0) {
-            message += ' ' + record.message;
+            message += ` ${ record.message }`;
         } else {
             message = record.message;
         }
