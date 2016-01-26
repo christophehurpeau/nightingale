@@ -1,3 +1,7 @@
+### v2.2.0
+
+- [`b5f09be`](https://github.com/christophehurpeau/nightingale/commit/b5f09beeaba6007c53501bd69eaf9bfe842528f3) upgrade dependencies, jsdoc, lint, coveralls (Christophe Hurpeau)
+
 ### v2.1.2
 
 - [`70ebab9`](https://github.com/christophehurpeau/nightingale/commit/70ebab975c074ea27e082a6e1748ee1e7c75c4da) use alouette only in node (Christophe Hurpeau)
