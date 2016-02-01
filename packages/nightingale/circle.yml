@@ -11,7 +11,7 @@ dependencies:
   cache_directories:
     - node_modules
   override:
-    - npm prune && npm install --no-spin
+    - npm prune && npm install --no-progress
 
 test:
   pre:
@@ -30,8 +30,7 @@ deployment:
   docs:
     branch: master
     commands:
-      - git config user.email "builds@circleci.com"
-      - git config user.name "CircleCi"
+      - git config user.email "builds@circleci.com" ; git config user.name "CircleCi"
       - mv coverage coverage-tmp ; mv docs docs-tmp
       - git checkout -f gh-pages
       - rm -Rf docs coverage

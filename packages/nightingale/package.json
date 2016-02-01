@@ -23,10 +23,11 @@
     "postpublish": "make post-publish",
     "preversion": "make pre-version",
     "version": "make version",
-    "watch": "make watch"
+    "watch": "make watch",
+    "lint": "make lint"
   },
   "dependencies": {
-    "alouette": "^3.3.0",
+    "alouette": "^3.4.0",
     "ansi-styles": "^2.1.0"
   },
   "devDependencies": {
@@ -38,10 +39,10 @@
     "karma-mocha": "^0.2.1",
     "karma-phantomjs-launcher": "^0.2.3",
     "karma-proclaim": "^1.0.0",
-    "mocha": "^2.3.4",
+    "mocha": "^2.4.5",
     "phantomjs": "^1.9.19",
     "proclaim": "^3.4.0",
-    "springbokjs-library": "^13.4.1",
+    "springbokjs-library": "^14.0.1",
     "xunit-file": "0.0.9"
   }
 }

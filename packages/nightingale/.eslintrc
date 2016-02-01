@@ -1,1 +1,3 @@
-node_modules/springbokjs-library/.eslintrc
+{
+  "extends": "partridge/babel"
+}
