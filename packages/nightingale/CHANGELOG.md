@@ -1,3 +1,7 @@
+### v2.3.0
+
+- [`15e77f3`](https://github.com/christophehurpeau/nightingale/commit/15e77f38c6aede090e9dca2d5ceadeeff322dc20) upgrade dependencies, lint (Christophe Hurpeau)
+
 ### v2.2.0
 
 - [`b5f09be`](https://github.com/christophehurpeau/nightingale/commit/b5f09beeaba6007c53501bd69eaf9bfe842528f3) upgrade dependencies, jsdoc, lint, coveralls (Christophe Hurpeau)
