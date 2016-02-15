@@ -1,3 +1,7 @@
+### v3.0.3
+
+- [`3af8094`](https://github.com/christophehurpeau/nightingale/commit/3af80947085d2fe4e7ed7301821110debd743a53) fix when contextStyles is undefined (Christophe Hurpeau)
+
 ### v3.0.2
 
 - [`2a26228`](https://github.com/christophehurpeau/nightingale/commit/2a2622876c4b4dc8d4fa5fddbb86a16a080f5c86) fix debugFromLocalStorage in browser (Christophe Hurpeau)
