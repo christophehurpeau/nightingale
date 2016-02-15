@@ -47,8 +47,8 @@ let ConsoleHandler = class ConsoleHandler extends _Handler2.default {
     constructor(minLevel, name) {
         if (name) {
             let debug = debugValues[0] === '*' || debugValues.indexOf(name) !== -1;
-            if (!debug && minLevel.includes('.')) {
-                debug = debugValues.indexOf(minLevel.split('.')[0]) !== -1;
+            if (!debug && name.includes('.')) {
+                debug = debugValues.indexOf(name.split('.')[0]) !== -1;
             }
 
             minLevel = debug ? _LogLevel2.default.ALL : minLevel || _LogLevel2.default.WARN;
