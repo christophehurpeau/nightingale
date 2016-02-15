@@ -15,7 +15,7 @@ function displayObject(object, contextStyles, args) {
 
     args.push(style(['reset', 'gray']));
     return `%c{ ${keys.map(key => {
-        const styles = contextStyles && contextStyles[key];
+        const styles = contextStyles && contextStyles[key] || [];
         args.push(style(['reset', 'gray', 'bold']));
         args.push(style(['reset'].concat(...styles)));
         args.push(style(['reset', 'gray']));

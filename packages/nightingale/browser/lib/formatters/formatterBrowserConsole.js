@@ -56,7 +56,7 @@ function style(styles) {
     return '%c{ ' + keys.map(function (key) {
         var _ref;
 
-        var styles = contextStyles && contextStyles[key];
+        var styles = contextStyles && contextStyles[key] || [];
         args.push(style(['reset', 'gray', 'bold']));
         args.push(style((_ref = ['reset']).concat.apply(_ref, _toConsumableArray(styles))));
         args.push(style(['reset', 'gray']));
