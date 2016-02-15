@@ -6,17 +6,19 @@ import ConsoleHandler from './handlers/ConsoleHandler';
  *
  *  Creates a new ConsoleLogger with a prefix.
  *
- * If no min level is specified, the min level is ALL if name is in `process.env.DEBUG`, else WARN
+ * the min level is ALL if name is in `process.env.DEBUG`
  *
  * @param {string} name
- * @param {int} [minLevel]
+ * @param {int} [defaultMinLevel] default is WARN
  */
 export default class ConsoleLogger extends Logger {
-    constructor(name, minLevel) {
+    constructor(name, defaultMinLevel) {
         super([
-            new ConsoleHandler(minLevel != null ? minLevel : name),
+            new ConsoleHandler(defaultMinLevel, name),
         ]);
 
-        this.setPrefix(`[${name}]`);
+        if (name) {
+            this.setPrefix(`[${name}]`);
+        }
     }
 }

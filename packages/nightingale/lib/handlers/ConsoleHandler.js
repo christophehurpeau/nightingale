@@ -41,16 +41,17 @@ const debugValues = process.env.DEBUG && process.env.DEBUG.split(',') || [];
 
 let ConsoleHandler = class ConsoleHandler extends _Handler2.default {
     /**
-     * @param {int|string} minLevel if int, see {@link LogLevel} ; if string, based on process.env.DEBUG
+     * @param {int} minLevel see {@link LogLevel}
+     * @param {string} [name] based on process.env.DEBUG to determine the minimum level displayed
     */
-    constructor(minLevel) {
-        if (typeof minLevel === 'string') {
-            let debug = debugValues[0] === '*' || debugValues.indexOf(minLevel) !== -1;
+    constructor(minLevel, name) {
+        if (name) {
+            let debug = debugValues[0] === '*' || debugValues.indexOf(name) !== -1;
             if (!debug && minLevel.includes('.')) {
                 debug = debugValues.indexOf(minLevel.split('.')[0]) !== -1;
             }
 
-            minLevel = debug ? _LogLevel2.default.ALL : _LogLevel2.default.WARN;
+            minLevel = debug ? _LogLevel2.default.ALL : minLevel || _LogLevel2.default.WARN;
         }
 
         super(minLevel, new _LayoutDefault2.default(formatterANSI), outputConsole);

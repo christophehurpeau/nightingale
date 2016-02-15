@@ -53,19 +53,21 @@ var BrowserConsoleLogger = /**
     /**
      * Creates a new ConsoleLogger with a prefix.
      *
-     * If no min level is specified, the min level is ALL if name is in `process.env.DEBUG`, else WARN
+     * the min level is ALL if name is in `process.env.DEBUG`
      *
      * @param {string} name
-     * @param {int} [minLevel]
+     * @param {int} [defaultMinLevel] default is WARN
     * @function
     */
 
-    function BrowserConsoleLogger(name, minLevel) {
+    function BrowserConsoleLogger(name, defaultMinLevel) {
         _classCallCheck(this, BrowserConsoleLogger);
 
-        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(BrowserConsoleLogger).call(this, [new _BrowserConsoleHandler2.default(minLevel != null ? minLevel : name)]));
+        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(BrowserConsoleLogger).call(this, [new _BrowserConsoleHandler2.default(defaultMinLevel, name)]));
 
-        _this.setPrefix('[' + name + ']');
+        if (name) {
+            _this.setPrefix('[' + name + ']');
+        }
         return _this;
     }
 

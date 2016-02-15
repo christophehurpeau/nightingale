@@ -67,20 +67,21 @@ var ConsoleHandler = /**
     _inherits(ConsoleHandler, _Handler);
 
     /**
-     * @param {int|string} minLevel if int, see {@link LogLevel} ; if string, based on process.env.DEBUG
+     * @param {int} minLevel see {@link LogLevel}
+     * @param {string} [name] based on process.env.DEBUG to determine the minimum level displayed
     * @function
     */
 
-    function ConsoleHandler(minLevel) {
+    function ConsoleHandler(minLevel, name) {
         _classCallCheck(this, ConsoleHandler);
 
-        if (typeof minLevel === 'string') {
-            var debug = debugValues[0] === '*' || debugValues.indexOf(minLevel) !== -1;
+        if (name) {
+            var debug = debugValues[0] === '*' || debugValues.indexOf(name) !== -1;
             if (!debug && minLevel.includes('.')) {
                 debug = debugValues.indexOf(minLevel.split('.')[0]) !== -1;
             }
 
-            minLevel = debug ? _LogLevel2.default.ALL : _LogLevel2.default.WARN;
+            minLevel = debug ? _LogLevel2.default.ALL : minLevel || _LogLevel2.default.WARN;
         }
 
         return _possibleConstructorReturn(this, Object.getPrototypeOf(ConsoleHandler).call(this, minLevel, new _LayoutDefault2.default(formatterANSI), outputConsole));

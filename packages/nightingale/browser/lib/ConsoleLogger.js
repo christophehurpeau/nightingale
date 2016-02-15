@@ -45,10 +45,10 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
  *
  *  Creates a new ConsoleLogger with a prefix.
  *
- * If no min level is specified, the min level is ALL if name is in `process.env.DEBUG`, else WARN
+ * the min level is ALL if name is in `process.env.DEBUG`
  *
  * @param {string} name
- * @param {int} [minLevel]
+ * @param {int} [defaultMinLevel] default is WARN
  */
 
 var ConsoleLogger = /**
@@ -60,14 +60,16 @@ var ConsoleLogger = /**
     /**
      * @function
      * @param name
-     * @param minLevel
+     * @param defaultMinLevel
     */
-    function ConsoleLogger(name, minLevel) {
+    function ConsoleLogger(name, defaultMinLevel) {
         _classCallCheck(this, ConsoleLogger);
 
-        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(ConsoleLogger).call(this, [new _ConsoleHandler2.default(minLevel != null ? minLevel : name)]));
+        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(ConsoleLogger).call(this, [new _ConsoleHandler2.default(defaultMinLevel, name)]));
 
-        _this.setPrefix('[' + name + ']');
+        if (name) {
+            _this.setPrefix('[' + name + ']');
+        }
         return _this;
     }
 

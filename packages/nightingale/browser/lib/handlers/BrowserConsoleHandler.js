@@ -64,7 +64,7 @@ var debugValues = function (querystring) {
     }
 
     // https://developer.mozilla.org/en-US/docs/Web/API/URLUtils/search#Get_the_value_of_a_single_search_param
-    return decodeURI(querystring.replace(new RegExp('^(?:.*[&\\?]' + 'DEBUG' + '(?:\\=([^&]*))?)?.*$', 'i'), '$1')).split(',');
+    return decodeURI(querystring.replace(new RegExp('^(?:.*[&\\?]' + 'DEBUG' + '(?:\\=([^&]*))?)?.*$', 'i'), '$1')).split(',').concat(global.localStorage && localStorage.DEBUG && localStorage.DEBUG.split(',') || []);
 }(location.search);
 
 var BrowserConsoleHandler = /**
@@ -74,20 +74,21 @@ var BrowserConsoleHandler = /**
     _inherits(BrowserConsoleHandler, _Handler);
 
     /**
-     * @param {int|string} minLevel if int, see {@link LogLevel} ; if string, based on process.env.DEBUG
+     * @param {int} minLevel see {@link LogLevel}
+      * @param {string} [name] based on localStorage.DEBUG or querystring to determine the minimum level displayed
     * @function
     */
 
-    function BrowserConsoleHandler(minLevel) {
+    function BrowserConsoleHandler(minLevel, name) {
         _classCallCheck(this, BrowserConsoleHandler);
 
-        if (typeof minLevel === 'string') {
-            var debug = debugValues[0] === '*' || debugValues.indexOf(minLevel) !== -1;
+        if (name) {
+            var debug = debugValues[0] === '*' || debugValues.indexOf(name) !== -1;
             if (!debug && minLevel.includes('.')) {
                 debug = debugValues.indexOf(minLevel.split('.')[0]) !== -1;
             }
 
-            minLevel = debug ? _LogLevel2.default.ALL : _LogLevel2.default.WARN;
+            minLevel = debug ? _LogLevel2.default.ALL : minLevel || _LogLevel2.default.WARN;
         }
 
         return _possibleConstructorReturn(this, Object.getPrototypeOf(BrowserConsoleHandler).call(this, minLevel, new _LayoutBrowserConsole2.default(formatterBrowserConsole), outputConsole));

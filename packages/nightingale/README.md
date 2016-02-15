@@ -64,6 +64,11 @@ The class with all the methods you call to log things. Contains handlers.
 DEBUG=worker1 node example/debug
 ```
 
+#### In browser
+
+- via url : `?DEBUG=worker1`
+- via localStorage (in a console): `localStorage.DEBUG='worker1'`
+
 ### Handler
 
 How a log is processed: has a layout and an output.

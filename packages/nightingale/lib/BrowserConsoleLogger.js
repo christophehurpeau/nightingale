@@ -26,15 +26,17 @@ let BrowserConsoleLogger = class BrowserConsoleLogger extends _Logger2.default {
     /**
      * Creates a new ConsoleLogger with a prefix.
      *
-     * If no min level is specified, the min level is ALL if name is in `process.env.DEBUG`, else WARN
+     * the min level is ALL if name is in `process.env.DEBUG`
      *
      * @param {string} name
-     * @param {int} [minLevel]
+     * @param {int} [defaultMinLevel] default is WARN
     */
-    constructor(name, minLevel) {
-        super([new _BrowserConsoleHandler2.default(minLevel != null ? minLevel : name)]);
+    constructor(name, defaultMinLevel) {
+        super([new _BrowserConsoleHandler2.default(defaultMinLevel, name)]);
 
-        this.setPrefix(`[${ name }]`);
+        if (name) {
+            this.setPrefix(`[${ name }]`);
+        }
     }
 };
 exports.default = BrowserConsoleLogger;
