@@ -1,3 +1,15 @@
+### v3.0.0
+
+```
+import { ConsoleLogger, LogLevel } from 'nightingale';
+const logger = new ConsoleLogger('app', LogLevel.INFO);
+```
+
+If `DEBUG=app`, logger's min level stayed at `INFO`. Now, it display all log !
+
+- [`54e293d`](https://github.com/christophehurpeau/nightingale/commit/54e293da0f159a28e844b6d3aaf1300c8e473c2c) browser localStorage.DEBUG, minLevel is now ignored if the logger`s name is in the debug (Christophe Hurpeau)
+
+
 ### v2.3.0
 
 - [`15e77f3`](https://github.com/christophehurpeau/nightingale/commit/15e77f38c6aede090e9dca2d5ceadeeff322dc20) upgrade dependencies, lint (Christophe Hurpeau)
