@@ -38,12 +38,17 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const debugValues = (querystring => {
+    let debugFromLocalStorage = global.localStorage && localStorage.DEBUG && localStorage.DEBUG || [];
+    if (typeof debugFromLocalStorage === 'string') {
+        debugFromLocalStorage = debugFromLocalStorage.split(',');
+    }
+
     if (!querystring) {
-        return [];
+        return debugFromLocalStorage;
     }
 
     // https://developer.mozilla.org/en-US/docs/Web/API/URLUtils/search#Get_the_value_of_a_single_search_param
-    return decodeURI(querystring.replace(new RegExp('^(?:.*[&\\?]' + 'DEBUG' + '(?:\\=([^&]*))?)?.*$', 'i'), '$1')).split(',').concat(global.localStorage && localStorage.DEBUG && localStorage.DEBUG.split(',') || []);
+    return debugFromLocalStorage.concat(decodeURI(querystring.replace(new RegExp('^(?:.*[&\\?]' + 'DEBUG' + '(?:\\=([^&]*))?)?.*$', 'i'), '$1')).split(','));
 })(location.search);
 
 let BrowserConsoleHandler = class BrowserConsoleHandler extends _Handler2.default {

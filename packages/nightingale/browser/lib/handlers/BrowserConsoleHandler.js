@@ -59,12 +59,17 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var debugValues = function (querystring) {
+    var debugFromLocalStorage = global.localStorage && localStorage.DEBUG && localStorage.DEBUG || [];
+    if (typeof debugFromLocalStorage === 'string') {
+        debugFromLocalStorage = debugFromLocalStorage.split(',');
+    }
+
     if (!querystring) {
-        return [];
+        return debugFromLocalStorage;
     }
 
     // https://developer.mozilla.org/en-US/docs/Web/API/URLUtils/search#Get_the_value_of_a_single_search_param
-    return decodeURI(querystring.replace(new RegExp('^(?:.*[&\\?]' + 'DEBUG' + '(?:\\=([^&]*))?)?.*$', 'i'), '$1')).split(',').concat(global.localStorage && localStorage.DEBUG && localStorage.DEBUG.split(',') || []);
+    return debugFromLocalStorage.concat(decodeURI(querystring.replace(new RegExp('^(?:.*[&\\?]' + 'DEBUG' + '(?:\\=([^&]*))?)?.*$', 'i'), '$1')).split(','));
 }(location.search);
 
 var BrowserConsoleHandler = /**

@@ -5,17 +5,22 @@ import * as formatterBrowserConsole from '../formatters/formatterBrowserConsole'
 import * as outputConsole from '../outputs/outputBrowserConsole';
 
 const debugValues = ((querystring) => {
+    let debugFromLocalStorage = global.localStorage && localStorage.DEBUG && localStorage.DEBUG || [];
+    if (typeof debugFromLocalStorage === 'string') {
+        debugFromLocalStorage = debugFromLocalStorage.split(',');
+    }
+
     if (!querystring) {
-        return [];
+        return debugFromLocalStorage;
     }
 
     // https://developer.mozilla.org/en-US/docs/Web/API/URLUtils/search#Get_the_value_of_a_single_search_param
-    return decodeURI(
+    return debugFromLocalStorage.concat(decodeURI(
         querystring.replace(
             new RegExp('^(?:.*[&\\?]' + 'DEBUG' + '(?:\\=([^&]*))?)?.*$', 'i'),
             '$1'
         )
-    ).split(',').concat(global.localStorage && localStorage.DEBUG && localStorage.DEBUG.split(',') || []);
+    ).split(','));
 })(location.search);
 
 export default class BrowserConsoleHandler extends Handler {
