@@ -1,3 +1,7 @@
+### v3.0.1
+
+- [`9bd710a`](https://github.com/christophehurpeau/nightingale/commit/9bd710a84875a3c44b51f3134ea02650bd57d04c) fix previous commit :/ (Christophe Hurpeau)
+
 ### v3.0.0
 
 ```
