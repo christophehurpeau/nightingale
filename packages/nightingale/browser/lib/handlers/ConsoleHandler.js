@@ -75,7 +75,7 @@ var ConsoleHandler = /**
     function ConsoleHandler(minLevel, name) {
         _classCallCheck(this, ConsoleHandler);
 
-        if (name) {
+        if (name && minLevel !== _LogLevel2.default.ALL) {
             var debug = debugValues[0] === '*' || debugValues.indexOf(name) !== -1;
             if (!debug && name.includes('.')) {
                 debug = debugValues.indexOf(name.split('.')[0]) !== -1;

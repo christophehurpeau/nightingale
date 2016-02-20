@@ -45,7 +45,7 @@ let ConsoleHandler = class ConsoleHandler extends _Handler2.default {
      * @param {string} [name] based on process.env.DEBUG to determine the minimum level displayed
     */
     constructor(minLevel, name) {
-        if (name) {
+        if (name && minLevel !== _LogLevel2.default.ALL) {
             let debug = debugValues[0] === '*' || debugValues.indexOf(name) !== -1;
             if (!debug && name.includes('.')) {
                 debug = debugValues.indexOf(name.split('.')[0]) !== -1;
