@@ -1,3 +1,7 @@
+### v3.0.4
+
+- [`aea18e7`](https://github.com/christophehurpeau/nightingale/commit/aea18e71c21cf655d03ab22e92348491c65551d6) fix minLevel when is set to LogLevel.ALL (Christophe Hurpeau)
+
 ### v3.0.3
 
 - [`3af8094`](https://github.com/christophehurpeau/nightingale/commit/3af80947085d2fe4e7ed7301821110debd743a53) fix when contextStyles is undefined (Christophe Hurpeau)
