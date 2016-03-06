@@ -1,3 +1,9 @@
+### v3.0.5
+
+- [`d207afe`](https://github.com/christophehurpeau/nightingale/commit/d207afe89c1759f451626285370b7e155f6040e7) springbokjs-library@15 (Christophe Hurpeau)
+- [`21cd404`](https://github.com/christophehurpeau/nightingale/commit/21cd4041004597a9f0f0d2cd9fe62886b3ab2896) fix browser main field in package.json (Christophe Hurpeau)
+- [`b4cfcdb`](https://github.com/christophehurpeau/nightingale/commit/b4cfcdb935d2f528240a2dd5a4b736cc19f140ac) build (Christophe Hurpeau)
+
 ### v3.0.4
 
 - [`aea18e7`](https://github.com/christophehurpeau/nightingale/commit/aea18e71c21cf655d03ab22e92348491c65551d6) fix minLevel when is set to LogLevel.ALL (Christophe Hurpeau)
