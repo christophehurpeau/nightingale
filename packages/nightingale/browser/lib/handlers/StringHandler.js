@@ -1,5 +1,10 @@
 'use strict';
 
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = undefined;
+
 var _createClass = /**
                     * @function
                    */ function () { /**
@@ -12,11 +17,6 @@ var _createClass = /**
                                                                                                                                                                                                                                                                                                                                                                             * @param protoProps
                                                                                                                                                                                                                                                                                                                                                                             * @param staticProps
                                                                                                                                                                                                                                                                                                                                                                            */ function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; } ); }();
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.default = undefined;
 
 var _Handler2 = require('../Handler');
 
@@ -40,10 +40,6 @@ var _OutputString2 = _interopRequireDefault(_OutputString);
 */
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
-/**
- * @function
- * @param obj
-*/
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**

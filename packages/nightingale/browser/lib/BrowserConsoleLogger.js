@@ -13,10 +13,6 @@ var _BrowserConsoleHandler = require('./handlers/BrowserConsoleHandler');
 
 var _BrowserConsoleHandler2 = _interopRequireDefault(_BrowserConsoleHandler);
 
-/**
- * @function
- * @param obj
-*/
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**

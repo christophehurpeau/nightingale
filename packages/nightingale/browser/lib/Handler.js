@@ -1,5 +1,10 @@
 'use strict';
 
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = undefined;
+
 var _createClass = /**
                     * @function
                    */ function () { /**
@@ -13,19 +18,10 @@ var _createClass = /**
                                                                                                                                                                                                                                                                                                                                                                             * @param staticProps
                                                                                                                                                                                                                                                                                                                                                                            */ function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; } ); }();
 
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.default = undefined;
-
 var _levels = require('./levels');
 
 var _levels2 = _interopRequireDefault(_levels);
 
-/**
- * @function
- * @param obj
-*/
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
@@ -72,6 +68,7 @@ var Handler = /**
     /**
      * @param {Object} record
      */
+
 
     _createClass(Handler, [{
         key: 'handle',

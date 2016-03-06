@@ -17,10 +17,6 @@ var _styleToHtmlStyle = require('./_styleToHtmlStyle');
 
 var _styleToHtmlStyle2 = _interopRequireDefault(_styleToHtmlStyle);
 
-/**
- * @function
- * @param obj
-*/
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**

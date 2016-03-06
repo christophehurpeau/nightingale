@@ -13,6 +13,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 const Logger = require('../../lib/node').Logger;
 const LogLevel = require('../../lib/node').LogLevel;
 
+
 const logger = new Logger([new _ConsoleHandler2.default(LogLevel.TRACE)]);
 
 logger.log.call(null, 'test');

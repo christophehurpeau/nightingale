@@ -13,10 +13,6 @@ var _ConsoleHandler = require('./handlers/ConsoleHandler');
 
 var _ConsoleHandler2 = _interopRequireDefault(_ConsoleHandler);
 
-/**
- * @function
- * @param obj
-*/
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**

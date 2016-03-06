@@ -118,14 +118,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
     }
 
     if (record.extra) {
-        var stringObject = displayObject.call(this, record.extra);
+        var _stringObject = displayObject.call(this, record.extra);
 
-        if (stringObject) {
+        if (_stringObject) {
             if (string.length !== 0) {
                 string += ' ';
             }
 
-            string += stringObject;
+            string += _stringObject;
         }
     }
 
