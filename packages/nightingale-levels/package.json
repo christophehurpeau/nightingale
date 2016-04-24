@@ -1,0 +1,13 @@
+{
+  "name": "nightingale-levels",
+  "description": "Nightingale levels",
+  "keywords": [
+    "logger"
+  ],
+  "version": "1.0.0",
+  "homepage": "https://github.com/nightingalejs/nightingale",
+  "license": "ISC",
+  "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
+  "repository": "nightingalejs/nightingale-levels",
+  "main": "./index.js"
+}
