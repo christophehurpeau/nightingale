@@ -1,0 +1,33 @@
+{
+  "name": "nightingale-formatter",
+  "description": "Nightingale formatter",
+  "keywords": [
+    "nightingale",
+    "nightingale-formatter"
+  ],
+  "version": "1.0.0",
+  "homepage": "https://github.com/nightingalejs/nightingale",
+  "license": "ISC",
+  "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
+  "repository": "nightingalejs/nightingale-formatter",
+  "main": "./lib/index.js",
+  "browser": "./browser/lib/index.js",
+  "scripts": {
+    "test": "make test",
+    "build": "make build",
+    "postpublish": "make post-publish",
+    "preversion": "make pre-version",
+    "version": "make version",
+    "watch": "make watch",
+    "lint": "make lint"
+  },
+  "dependencies": {
+    "nightingale-levels": "^1.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.7.7",
+    "eslint": "^2.8.0",
+    "eslint-config-pob": "^5.0.0",
+    "springbokjs-library": "^17.0.0"
+  }
+}
