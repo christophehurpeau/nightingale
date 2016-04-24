@@ -13,7 +13,6 @@ export default class StringHandler extends AbstractHandler {
             this._buffer += string;
             this._buffer += '\n';
         };
-
     }
 
     get string() {

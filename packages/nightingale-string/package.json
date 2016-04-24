@@ -22,7 +22,6 @@
   },
   "dependencies": {
     "nightingale-handler": "^1.0.0",
-    "nightingale-string-output": "^1.0.0",
     "nightingale-raw-formatter": "^1.0.0"
   },
   "devDependencies": {

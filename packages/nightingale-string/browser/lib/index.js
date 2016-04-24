@@ -74,7 +74,6 @@ var StringHandler = /**
             _this._buffer += string;
             _this._buffer += '\n';
         };
-
         return _this;
     }
 
