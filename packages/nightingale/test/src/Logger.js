@@ -1,61 +1,69 @@
 /* global test */
 
-import Logger from '../../lib/Logger';
-import StringHandler from '../../lib/handlers/StringHandler';
-import assert from 'proclaim';
+import Logger, { configure, levels } from '../../lib';
+import StringHandler from 'nightingale-string';
+import { strictEqual } from 'assert';
 
 test('Logger: log method', () => {
-    let stringHandler = new StringHandler(0);
-    let logger = new Logger([stringHandler]);
+    let stringHandler = new StringHandler(levels.ALL);
+    configure([{ handlers: [stringHandler] }]);
+    let logger = new Logger();
     logger.log('log()');
-    assert.strictEqual(stringHandler.string.substr(9), '→ log()\n');
+    strictEqual(stringHandler.string.substr(9), '→ log()\n');
 });
 
 test('Logger: info method', () => {
-    let stringHandler = new StringHandler(0);
-    let logger = new Logger([stringHandler]);
+    let stringHandler = new StringHandler(levels.ALL);
+    configure([{ handlers: [stringHandler] }]);
+    let logger = new Logger();
     logger.info('info()');
-    assert.strictEqual(stringHandler.string.substr(9), '→ info()\n');
+    strictEqual(stringHandler.string.substr(9), '→ info()\n');
 });
 
 test('Logger: warn method', () => {
-    let stringHandler = new StringHandler(0);
-    let logger = new Logger([stringHandler]);
+    let stringHandler = new StringHandler(levels.ALL);
+    configure([{ handlers: [stringHandler] }]);
+    let logger = new Logger();
     logger.warn('warn()');
-    assert.strictEqual(stringHandler.string.substr(9), '⚠ warn()\n');
+    strictEqual(stringHandler.string.substr(9), '⚠ warn()\n');
 });
 
 test('Logger: error method', () => {
-    let stringHandler = new StringHandler(0);
-    let logger = new Logger([stringHandler]);
+    let stringHandler = new StringHandler(levels.ALL);
+    configure([{ handlers: [stringHandler] }]);
+    let logger = new Logger();
     logger.error('error()');
-    assert.strictEqual(stringHandler.string.substr(9), '✖ error()\n');
+    strictEqual(stringHandler.string.substr(9), '✖ error()\n');
 });
 
 test('Logger: alert method', () => {
-    let stringHandler = new StringHandler(0);
-    let logger = new Logger([stringHandler]);
+    let stringHandler = new StringHandler(levels.ALL);
+    configure([{ handlers: [stringHandler] }]);
+    let logger = new Logger();
     logger.alert('alert()');
-    assert.strictEqual(stringHandler.string.substr(9), '‼ alert()\n');
+    strictEqual(stringHandler.string.substr(9), '‼ alert()\n');
 });
 
 test('Logger: fatal method', () => {
-    let stringHandler = new StringHandler(0);
-    let logger = new Logger([stringHandler]);
+    let stringHandler = new StringHandler(levels.ALL);
+    configure([{ handlers: [stringHandler] }]);
+    let logger = new Logger();
     logger.fatal('fatal()');
-    assert.strictEqual(stringHandler.string.substr(9), '‼ fatal()\n');
+    strictEqual(stringHandler.string.substr(9), '‼ fatal()\n');
 });
 
 test('Logger: debug method', () => {
-    let stringHandler = new StringHandler(0);
-    let logger = new Logger([stringHandler]);
+    let stringHandler = new StringHandler(levels.ALL);
+    configure([{ handlers: [stringHandler] }]);
+    let logger = new Logger();
     logger.debug('debug()');
-    assert.strictEqual(stringHandler.string.substr(9), '• debug()\n');
+    strictEqual(stringHandler.string.substr(9), '• debug()\n');
 });
 
 test('Logger: success method', () => {
-    let stringHandler = new StringHandler(0);
-    let logger = new Logger([stringHandler]);
+    let stringHandler = new StringHandler(levels.ALL);
+    configure([{ handlers: [stringHandler] }]);
+    let logger = new Logger();
     logger.success('success()');
-    assert.strictEqual(stringHandler.string.substr(9), '✔ success()\n');
+    strictEqual(stringHandler.string.substr(9), '✔ success()\n');
 });

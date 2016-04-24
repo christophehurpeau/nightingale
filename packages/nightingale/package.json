@@ -5,18 +5,12 @@
     "logger"
   ],
   "version": "3.0.5",
-  "homepage": "https://github.com/christophehurpeau/nightingale",
-  "license": "MIT",
+  "homepage": "https://github.com/nightingalejs/nightingale",
+  "license": "ISC",
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
-  "repository": "christophehurpeau/nightingale",
-  "main": "./lib/node.js",
-  "browser": "./browser/lib/browser.js",
-  "jspm": {
-    "main": "browser/lib/browser.js",
-    "directories": {
-      "lib": "browser"
-    }
-  },
+  "repository": "nightingalejs/nightingale",
+  "main": "./lib/index.js",
+  "browser": "./browser/lib/index.js",
   "scripts": {
     "test": "make test",
     "build": "make build",
@@ -27,24 +21,26 @@
     "lint": "make lint"
   },
   "dependencies": {
-    "alouette": "^3.4.0",
-    "ansi-styles": "^2.1.0"
+    "minimatch": "^3.0.0",
+    "nightingale-levels": "^1.0.0"
   },
   "devDependencies": {
-    "coveralls": "^2.11.8",
-    "eslint": "^1.10.3",
-    "eslint-config-partridge": "^3.0.1",
-    "karma": "^0.13.19",
-    "karma-chrome-launcher": "^0.2.2",
+    "coveralls": "^2.11.9",
+    "eslint": "^2.8.0",
+    "eslint-config-pob": "^5.0.0",
+    "karma": "^0.13.22",
+    "karma-chrome-launcher": "^0.2.3",
     "karma-firefox-launcher": "^0.1.7",
     "karma-ievms": "^0.1.0",
-    "karma-mocha": "^0.2.1",
-    "karma-phantomjs-launcher": "^0.2.3",
+    "karma-mocha": "^0.2.2",
     "karma-proclaim": "^1.0.0",
     "mocha": "^2.4.5",
-    "phantomjs": "^1.9.19",
-    "proclaim": "^3.4.0",
-    "springbokjs-library": "^15.0.0",
+    "nightingale-console": "^1.0.0",
+    "nightingale-console-output": "^1.0.0",
+    "nightingale-handler": "^1.0.0",
+    "nightingale-json-formatter": "^1.0.0",
+    "nightingale-string": "^1.0.1",
+    "springbokjs-library": "^17.0.0",
     "xunit-file": "0.0.9"
   }
 }

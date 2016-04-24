@@ -1,1 +1,0 @@
-{"version":3,"sources":["../../../src/formatters/formatterRaw.js"],"names":[],"mappings":";;;;;;;;;;;;;8BAAS;;;QAEO;;;;;EAAT,SAAS,KAAT,CAAe,MAAf,EAAuB,MAAvB,EAA+B;AAClC,WAAO,MAAP,CADkC;CAA/B","file":"formatterRaw.js","sourcesContent":["export { format } from './formatterANSI';\n\nexport function style(styles, string) {\n    return string;\n}\n"]}

@@ -1,15 +1,17 @@
 import Logger, { configure, levels } from '../..';
-import ConsoleHandler from 'nightingale-console';
+import Handler from 'nightingale-handler';
+import jsonFormatter from 'nightingale-json-formatter';
+import consoleOutput from 'nightingale-console-output';
 
 configure([
     {
-        handlers: [new ConsoleHandler(levels.ALL)],
+        handlers: [new Handler(levels.ALL, jsonFormatter, consoleOutput)],
     },
 ]);
 
 const logger = new Logger('app');
 
-logger.log('test', { test: 'test', obj: { val: 1000 } });
+logger.log('test');
 
 const timeStarted = logger.time();
 setTimeout(logger.timeEnd(timeStarted), 2000);

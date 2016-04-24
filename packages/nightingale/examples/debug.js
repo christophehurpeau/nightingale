@@ -1,7 +1,16 @@
-import ConsoleLogger from '../lib/ConsoleLogger';
-import LogLevel from '../lib/LogLevel';
+import Logger, { configure, levels } from 'nightingale';
+import ConsoleHandler from 'nightingale-console';
 
-const appLogger = new ConsoleLogger('app', LogLevel.ALL);
+configure([
+    { handlers: [ new ConsoleHandler(levels.ALL) ] },
+    {
+        patterns: ['app.*'],
+        handlers: [ new ConsoleHandler(levels.ALL) ],
+    },
+]);
+
+
+const appLogger = new ConsoleLogger('app');
 
 const worker1Logger = new ConsoleLogger('app.worker1');
 const worker2Logger = new ConsoleLogger('app.worker2');

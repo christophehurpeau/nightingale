@@ -1,9 +1,10 @@
-import Logger from '../lib/Logger';
-import LogLevel from '../lib/LogLevel';
-import ConsoleHandler from '../lib/handlers/ConsoleHandler';
+import Logger, { configure, levels } from 'nightingale';
+import ConsoleHandler from 'nightingale-console';
 
-const logger = new Logger([
-    new ConsoleHandler(LogLevel.ALL),
+const logger = new Logger();
+
+configure([
+    { handlers: [ new ConsoleHandler(levels.ALL) ] },
 ]);
 
 logger.log('log()');

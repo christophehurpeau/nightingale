@@ -1,38 +1,21 @@
 import util from 'util';
-import LogLevel from './LogLevel';
+import levels from 'nightingale-levels';
+import { getForLogger } from './config';
 
 /**
  * Interface that allows you to log records.
  * This records are treated by handlers
  */
 export default class Logger {
+    key: string;
+
     /**
      * Create a new Logger
      *
-     * @param {Handler[]} handlers
+     * @param {string} key
      */
-    constructor(handlers) {
-        this.handlers = handlers;
-
-        Object.getOwnPropertyNames(Logger.prototype).forEach((key) => {
-            if (key === 'constructor') {
-                return;
-            }
-
-            this[key] = Logger.prototype[key].bind(this);
-        });
-    }
-
-    /**
-     * Write a message
-     *
-     * @param {string} message
-     * @param {string} logLevel
-     * @return {Logger}
-     */
-    write(message, logLevel) {
-        this.output.write(message, logLevel);
-        return this;
+    constructor(key) {
+        this.key = key;
     }
 
     /**
@@ -43,30 +26,41 @@ export default class Logger {
      * @param {Object} record
      */
     addRecord(record) {
-        for (let i = 0, length = this.handlers.length; i < length; i++) {
-            let handler = this.handlers[i];
-            if (handler.handle(record) === false) {
-                return;
-            }
+        let { handlers, processors } = getForLogger(this.key);
+        handlers = handlers.filter(handler => handler.isHandling(record.level));
+        if (handlers.length === 0) {
+            return;
         }
+
+        if (processors) {
+            processors.forEach(process => process(record, record.context));
+        }
+
+        handlers.some(handler => handler.handle(record) === false);
     }
 
     /**
      * Log a message
      *
      * @param {string} message
-     * @param {Object} context
-     * @param {int} [logLevel]
+     * @param {Object} metadata
+     * @param {int} [level]
      * @param {Object} [options]
      * @return {Logger}
      */
-    log(message, context, logLevel = LogLevel.INFO, options = undefined) {
+    log(message, metadata, level = levels.INFO, options = undefined) {
+        let context = metadata && metadata.context;
+        if (metadata) {
+            delete metadata.context;
+        }
+
         let record = {
-            level: logLevel,
-            prefix: this._prefix,
+            level: level,
+            key: this.key,
             datetime: new Date(),
             message: message,
             context: context,
+            metadata: metadata,
             extra: {},
         };
 
@@ -78,149 +72,214 @@ export default class Logger {
         return this;
     }
 
-    /**
-     * Set the logger prefix
-     *
-     * @param {string} prefix
-     * @param {*} [styles]
-     */
-    setPrefix(prefix, styles) {
-        this._prefix = prefix;
-    }
 
     /**
-     * Log an debug message
+     * Log a trace message
      *
      * @param {string} message
-     * @param {Object} [context]
-     * @param {Object} [contextStyles]
+     * @param {Object} [metadata]
+     * @param {Object} [metadataStyles]
      * @return {Logger}
      */
-    debug(message, context, contextStyles) {
-        return this.log(message, context, LogLevel.DEBUG, { contextStyles });
+    trace(message, metadata, metadataStyles) {
+        return this.log(message, metadata, levels.TRACE, { metadataStyles });
+    }
+
+
+    /**
+     * Log a debug message
+     *
+     * @param {string} message
+     * @param {Object} [metadata]
+     * @param {Object} [metadataStyles]
+     * @return {Logger}
+     */
+    debug(message, metadata, metadataStyles) {
+        return this.log(message, metadata, levels.DEBUG, { metadataStyles });
     }
 
     /**
      * Log an info message
      *
      * @param {string} message
-     * @param {Object} [context]
-     * @param {Object} [contextStyles]
+     * @param {Object} [metadata]
+     * @param {Object} [metadataStyles]
      * @return {Logger}
      */
-    info(message, context, contextStyles) {
-        return this.log(message, context, LogLevel.INFO, { contextStyles });
+    info(message, metadata, metadataStyles) {
+        return this.log(message, metadata, levels.INFO, { metadataStyles });
     }
 
     /**
-     * Log an warn message
+     * Log a warn message
      *
      * @param {string} message
-     * @param {Object} [context]
-     * @param {Object} [contextStyles]
+     * @param {Object} [metadata]
+     * @param {Object} [metadataStyles]
      * @return {Logger}
      */
-    warn(message, context, contextStyles) {
-        return this.log(message, context, LogLevel.WARN, { contextStyles });
+    warn(message, metadata, metadataStyles) {
+        return this.log(message, metadata, levels.WARN, { metadataStyles });
     }
 
     /**
      * Log an error message
      *
      * @param {string|Error} message
-     * @param {Object} [context]
-     * @param {Object} [contextStyles]
+     * @param {Object} [metadata]
+     * @param {Object} [metadataStyles]
      * @return {Logger}
      */
-    error(message, context, contextStyles) {
+    error(message, metadata, metadataStyles) {
         message = message.stack || message.message || message;
-        return this.log(message, context, LogLevel.ERROR, { contextStyles });
+        return this.log(message, metadata, levels.ERROR, { metadataStyles });
     }
 
     /**
      * Log an alert message
      *
      * @param {string} message
-     * @param {Object} [context]
-     * @param {Object} [contextStyles]
+     * @param {Object} [metadata]
+     * @param {Object} [metadataStyles]
      * @return {Logger}
      */
-    alert(message, context, contextStyles) {
-        return this.log(message, context, LogLevel.ALERT, { contextStyles });
+    alert(message, metadata, metadataStyles) {
+        return this.log(message, metadata, levels.ALERT, { metadataStyles });
     }
 
     /**
-     * Log an fatal message
+     * Log a fatal message
      *
      * @param {string} message
-     * @param {Object} [context]
-     * @param {Object} [contextStyles]
+     * @param {Object} [metadata]
+     * @param {Object} [metadataStyles]
      * @return {Logger}
      */
-    fatal(message, context, contextStyles) {
-        return this.log(message, context, LogLevel.FATAL, { contextStyles });
+    fatal(message, metadata, metadataStyles) {
+        return this.log(message, metadata, levels.FATAL, { metadataStyles });
     }
 
     /**
      * Log an inspected value
      *
      * @param {*} value
-     * @param {Object} [context]
-     * @param {Object} [contextStyles]
+     * @param {Object} [metadata]
+     * @param {Object} [metadataStyles]
      * @return {Logger}
      */
-    inspectValue(value, context, contextStyles) {
+    inspectValue(value, metadata, metadataStyles) {
         // Note: inspect is a special function for node:
         // https://github.com/nodejs/node/blob/a1bda1b4deb08dfb3e06cb778f0db40023b18318/lib/util.js#L210
         value = util.inspect(value, { depth: 6 });
-        return this.log(value, context, LogLevel.DEBUG, { contextStyles, styles: ['gray'] });
+        return this.log(value, metadata, levels.DEBUG, { metadataStyles, styles: ['gray'] });
     }
 
     /**
-     * Log an debugged var
+     * Log a debugged var
      *
      * @param {string} varName
      * @param {*} varValue
-     * @param {Object} [context]
-     * @param {Object} [contextStyles]
+     * @param {Object} [metadata]
+     * @param {Object} [metadataStyles]
      * @return {Logger}
      */
-    inspectVar(varName, varValue, context, contextStyles) {
+    inspectVar(varName, varValue, metadata, metadataStyles) {
         varValue = util.inspect(varValue, { depth: 6 });
-        return this.log(`${varName} = ${varValue}`, context, LogLevel.DEBUG, { contextStyles, styles: ['cyan'] });
+        return this.log(`${varName} = ${varValue}`, metadata, levels.DEBUG, { metadataStyles, styles: ['cyan'] });
     }
 
     /**
-     * Log an sucess message
+     * Alias for infoSuccess
      *
      * @param {string} message
-     * @param {Object} [context]
-     * @param {Object} [contextStyles]
+     * @param {Object} [metadata]
+     * @param {Object} [metadataStyles]
      * @return {Logger}
      */
-    success(message, context, contextStyles) {
-        return this.log(message, context, LogLevel.INFO, {
-            contextStyles,
+    success(message, metadata, metadataStyles) {
+        return this.infoSuccess(message, metadata, metadataStyles);
+    }
+
+    /**
+     * Log an info success message
+     *
+     * @param {string} message
+     * @param {Object} [metadata]
+     * @param {Object} [metadataStyles]
+     * @return {Logger}
+     */
+    infoSuccess(message, metadata, metadataStyles) {
+        return this.log(message, metadata, levels.INFO, {
+            metadataStyles,
             symbol: '✔',
             styles: ['green', 'bold'],
         });
     }
 
     /**
-     * Stores current time in milliseconds
-     * in the timers map
+     * Log an debug success message
      *
-     * @param {string} name timer name
+     * @param {string} message
+     * @param {Object} [metadata]
+     * @param {Object} [metadataStyles]
+     * @return {Logger}
      */
-    time(name) {
-        if (name) {
-            if (!this._timers) {
-                this._timers = {};
-            }
+    debugSuccess(message, metadata, metadataStyles) {
+        return this.log(message, metadata, levels.DEBUG, {
+            metadataStyles,
+            symbol: '✔',
+            styles: ['green'],
+        });
+    }
 
-            return this._timers[name] = Date.now();
-        }
+    /**
+     * Alias for infoFail
+     *
+     * @param {string} message
+     * @param {Object} [metadata]
+     * @param {Object} [metadataStyles]
+     * @return {Logger}
+     */
+    fail(message, metadata, metadataStyles) {
+        return this.infoSuccess(message, metadata, metadataStyles);
+    }
 
+    /**
+     * Log an info fail message
+     *
+     * @param {string} message
+     * @param {Object} [metadata]
+     * @param {Object} [metadataStyles]
+     * @return {Logger}
+     */
+    infoFail(message, metadata, metadataStyles) {
+        return this.log(message, metadata, levels.INFO, {
+            metadataStyles,
+            symbol: '✖',
+            styles: ['red', 'bold'],
+        });
+    }
+
+    /**
+     * Log an info fail message
+     *
+     * @param {string} message
+     * @param {Object} [metadata]
+     * @param {Object} [metadataStyles]
+     * @return {Logger}
+     */
+    debugFail(message, metadata, metadataStyles) {
+        return this.log(message, metadata, levels.DEBUG, {
+            metadataStyles,
+            symbol: '✖',
+            styles: ['red'],
+        });
+    }
+
+    /**
+     * @returns {*} time to pass to timeEnd
+     */
+    time() {
         return Date.now();
     }
 
@@ -231,32 +290,20 @@ export default class Logger {
     * and deletes the original record
     *
     * @param {number=} time return of previous call to time()
-    * @param {string} name timer name
-     * @param {Object} [context]
-     * @param {Object} [contextStyles]
+    * @param {string} [message]
+     * @param {Object} [metadata]
+     * @param {Object} [metadataStyles]
     */
-    timeEnd(time, name, context, contextStyles) {
+    timeEnd(time, message = '', metadata = {}, metadataStyles) {
         const now = Date.now();
-
-        if (typeof time !== 'number') {
-            contextStyles = context;
-            context = name;
-            name = time;
-
-            if (!this._timers || !this._timers[name]) {
-                return;
-            }
-
-            time = this._timers[name];
-            delete this._timers[name];
-        }
 
         const diffTime = now - time;
         const seconds = diffTime > 1000 && Math.floor(diffTime / 1000);
         const ms = diffTime - seconds * 1000;
 
-        const message = `${name ? `${name}: ` : ''}${seconds ? `${seconds}s and ` : ''}${ms}ms`;
-        this.log(message, context, LogLevel.INFO, { contextStyles });
+        metadata.timeMs = diffTime;
+        message = `${message ? `${message}: ` : ''}${seconds ? `${seconds}s and ` : ''}${ms}ms`;
+        this.log(message, metadata, levels.DEBUG, { metadataStyles });
     }
 
     /**
@@ -271,12 +318,12 @@ export default class Logger {
      * }
      *
      * @param {Function} fn
-     * @param {Object} [context]
-     * @param {Object} [contextStyles]
+     * @param {Object} [metadata]
+     * @param {Object} [metadataStyles]
      * @return {Logger}
      */
-    enter(fn, context, contextStyles) {
-        return this.log(`enter ${fn.name}`, context, LogLevel.DEBUG, { contextStyles });
+    enter(fn, metadata, metadataStyles) {
+        return this.log(`enter ${fn.name}`, metadata, levels.TRACE, { metadataStyles });
     }
 
     /**
@@ -293,12 +340,12 @@ export default class Logger {
      *
      *
      * @param {Function} fn
-     * @param {Object} [context]
-     * @param {Object} [contextStyles]
+     * @param {Object} [metadata]
+     * @param {Object} [metadataStyles]
      * @return {Logger}
      */
-    exit(fn, context, contextStyles) {
-        return this.log(`exit ${fn.name}`, context, LogLevel.DEBUG, { contextStyles });
+    exit(fn, metadata, metadataStyles) {
+        return this.log(`exit ${fn.name}`, metadata, levels.TRACE, { metadataStyles });
     }
 
     /**
@@ -315,20 +362,20 @@ export default class Logger {
      * }
      *
      * @param {Function} fn
-     * @param {Object} [context]
-     * @param {Object} [contextStyles]
+     * @param {Object} [metadata]
+     * @param {Object} [metadataStyles]
      * @param {Function} callback
      */
-    wrap(fn, context, contextStyles, callback) {
-        if (typeof context === 'function') {
-            callback = context;
-            context = undefined;
-        } else if (typeof contextStyles === 'function') {
-            callback = contextStyles;
-            contextStyles = undefined;
+    wrap(fn, metadata, metadataStyles, callback) {
+        if (typeof metadata === 'function') {
+            callback = metadata;
+            metadata = undefined;
+        } else if (typeof metadataStyles === 'function') {
+            callback = metadataStyles;
+            metadataStyles = undefined;
         }
 
-        this.enter(fn, context, contextStyles);
+        this.enter(fn, metadata, metadataStyles);
         callback();
         this.exit(fn);
     }

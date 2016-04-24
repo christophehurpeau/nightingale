@@ -1,8 +1,12 @@
 'use strict';
 
-var _ConsoleHandler = require('../../lib/handlers/ConsoleHandler');
+var _ = require('../..');
 
-var _ConsoleHandler2 = _interopRequireDefault(_ConsoleHandler);
+var _2 = _interopRequireDefault(_);
+
+var _nightingaleConsole = require('nightingale-console');
+
+var _nightingaleConsole2 = _interopRequireDefault(_nightingaleConsole);
 
 /**
  * @function
@@ -10,19 +14,16 @@ var _ConsoleHandler2 = _interopRequireDefault(_ConsoleHandler);
 */
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-const Logger = require('../../lib/node').Logger;
-const LogLevel = require('../../lib/node').LogLevel;
+(0, _.configure)([{
+    handlers: [new _nightingaleConsole2.default(_.levels.ALL)]
+}]);
 
+const logger = new _2.default('app');
 
-const logger = new Logger([new _ConsoleHandler2.default(LogLevel.TRACE)]);
-
-logger.log.call(null, 'test');
-
-logger.time('test');
-setTimeout(logger.timeEnd.bind(null, 'test'), 200);
+logger.log('test', { test: 'test', obj: { val: 1000 } });
 
 const timeStarted = logger.time();
-setTimeout(logger.timeEnd.bind(null, timeStarted), 2000);
+setTimeout(logger.timeEnd(timeStarted), 2000);
 
 logger.success('Listening', { port: 3000 }, { port: ['yellow'] });
 //# sourceMappingURL=simpleTest.js.map
