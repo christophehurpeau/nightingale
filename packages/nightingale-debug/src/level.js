@@ -12,8 +12,17 @@ export default function level(debugValue) {
         return (minLevel = levels.INFO) => minLevel;
     }
 
+    if (debugValue.some(value => value === '*')) {
+        return (minLevel) => levels.ALL;
+    }
+
     const minimatchPatterns = debugValue.map(pattern => new Minimatch(pattern));
 
-    return (minLevel = levels.INFO, key) => minLevel <= levels.TRACE ? minLevel :
-        (minimatchPatterns.some(p => p.match(key)) ? levels.ALL : minLevel);
+    return (minLevel = levels.INFO, key) => {
+        if (minLevel <= levels.TRACE || !key) {
+            return minLevel;
+        }
+
+        return minimatchPatterns.some(p => p.match(key)) ? levels.ALL : minLevel;
+    };
 }

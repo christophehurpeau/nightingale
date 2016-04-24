@@ -34,6 +34,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
         };
     }
 
+    if (debugValue.some(function (value) {
+        return value === '*';
+    })) {
+        return function (minLevel) {
+            return _nightingaleLevels2.default.ALL;
+        };
+    }
+
     var minimatchPatterns = debugValue.map(function (pattern) {
         return new _minimatch.Minimatch(pattern);
     });
@@ -41,7 +49,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
     return function () {
         var minLevel = arguments.length <= 0 || arguments[0] === undefined ? _nightingaleLevels2.default.INFO : arguments[0];
         var key = arguments[1];
-        return minLevel <= _nightingaleLevels2.default.TRACE ? minLevel : minimatchPatterns.some(function (p) {
+
+        if (minLevel <= _nightingaleLevels2.default.TRACE || !key) {
+            return minLevel;
+        }
+
+        return minimatchPatterns.some(function (p) {
             return p.match(key);
         }) ? _nightingaleLevels2.default.ALL : minLevel;
     };
