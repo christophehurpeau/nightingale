@@ -1,3 +1,7 @@
+### v4.0.0
+
+- [`44bec38`](https://github.com/nightingalejs/nightingale/commit/44bec38b7f5dcd1ab2afeaee87d0a4c78db6fd29) nightingale v4 (Christophe Hurpeau)
+
 ### v3.0.5
 
 - [`d207afe`](https://github.com/christophehurpeau/nightingale/commit/d207afe89c1759f451626285370b7e155f6040e7) springbokjs-library@15 (Christophe Hurpeau)
