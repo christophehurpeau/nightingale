@@ -3,10 +3,11 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-var hexColors = {
+const hexColors = {
     orange: 'ff5f00',
+    grayLight: '808080',
     'gray-light': '808080'
 };
 
 exports.default = hexColors;
-//# sourceMappingURL=_styleToHexColor.js.map
+//# sourceMappingURL=styleToHexColor.js.map

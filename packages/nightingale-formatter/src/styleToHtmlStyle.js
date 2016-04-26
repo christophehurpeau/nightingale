@@ -1,4 +1,4 @@
-import hexColors from './_styleToHexColor';
+import hexColors from './styleToHexColor';
 
 const htmlStyles = {
     reset: [
@@ -37,8 +37,9 @@ const htmlStyles = {
     bgCyan: 'background: cyan',
     bgWhite: 'background: white',
 
-    orange: `color: #${hexColors['orange']}`,
-    'gray-light': `color: #${hexColors['gray-light']}`,
+    orange: `color: #${hexColors.orange}`,
+    grayLight: `color: #${hexColors.grayLight}`,
+    'gray-light': `color: #${hexColors.grayLight}`,
 };
 
 export default htmlStyles;

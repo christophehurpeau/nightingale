@@ -1,1 +1,0 @@
-{"version":3,"sources":["../../src/_styleToHexColor.js"],"names":[],"mappings":";;;;;AAAA,IAAM,YAAY;AACd,YAAQ,QADM;AAEd,kBAAc;AAFA,CAAlB;;kBAKe,S","file":"_styleToHexColor.js","sourcesContent":["const hexColors = {\n    orange: 'ff5f00',\n    'gray-light': '808080',\n};\n\nexport default hexColors;\n"]}

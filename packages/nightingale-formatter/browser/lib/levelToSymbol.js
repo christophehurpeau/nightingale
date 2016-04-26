@@ -14,7 +14,7 @@ var _nightingaleLevels2 = _interopRequireDefault(_nightingaleLevels);
 */
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-const levelToSymbol = {};
+var levelToSymbol = {};
 levelToSymbol[_nightingaleLevels2.default.TRACE] = '•';
 levelToSymbol[_nightingaleLevels2.default.DEBUG] = '•';
 levelToSymbol[_nightingaleLevels2.default.INFO] = '→';
@@ -25,4 +25,4 @@ levelToSymbol[_nightingaleLevels2.default.FATAL] = '‼';
 levelToSymbol[_nightingaleLevels2.default.EMERGENCY] = '‼';
 
 exports.default = levelToSymbol;
-//# sourceMappingURL=_levelToSymbol.js.map
+//# sourceMappingURL=levelToSymbol.js.map

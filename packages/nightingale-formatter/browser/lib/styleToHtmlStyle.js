@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _styleToHexColor = require('./_styleToHexColor');
+var _styleToHexColor = require('./styleToHexColor');
 
 var _styleToHexColor2 = _interopRequireDefault(_styleToHexColor);
 
@@ -43,9 +43,10 @@ var htmlStyles = {
     bgCyan: 'background: cyan',
     bgWhite: 'background: white',
 
-    orange: 'color: #' + _styleToHexColor2.default['orange'],
-    'gray-light': 'color: #' + _styleToHexColor2.default['gray-light']
+    orange: 'color: #' + _styleToHexColor2.default.orange,
+    grayLight: 'color: #' + _styleToHexColor2.default.grayLight,
+    'gray-light': 'color: #' + _styleToHexColor2.default.grayLight
 };
 
 exports.default = htmlStyles;
-//# sourceMappingURL=_styleToHtmlStyle.js.map
+//# sourceMappingURL=styleToHtmlStyle.js.map
