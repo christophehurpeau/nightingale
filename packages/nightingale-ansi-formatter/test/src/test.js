@@ -1,3 +1,4 @@
+/* global test */
 import format, { style } from '../../';
 import { strictEqual } from 'assert';
 

@@ -42,7 +42,7 @@ const ansiStyles = {
     underline: _ansiStyles2.default.underline,
 
     // http://www.calmar.ws/vim/256-xterm-24bit-rgb-color-chart.html
-    orange: { open: _ansiStyles2.default.color.ansi256.hex(_nightingaleFormatter.styleToHexColor['orange']), close: _ansiStyles2.default.color.close },
+    orange: { open: _ansiStyles2.default.color.ansi256.hex(_nightingaleFormatter.styleToHexColor.orange), close: _ansiStyles2.default.color.close },
     'gray-light': { open: _ansiStyles2.default.color.ansi256.hex(_nightingaleFormatter.styleToHexColor['gray-light']), close: _ansiStyles2.default.color.close }
 };
 
@@ -66,36 +66,6 @@ const ansiStyles = {
     }, string);
 }
 
-// TODO create package
-/**
- * @function
- * @param object
- * @param metadataStyles
-*/function displayObject(object, metadataStyles) {
-    const keys = Object.keys(object);
-
-    if (keys.length === 0) {
-        return;
-    }
-
-    return `{ ${ keys.map(key => {
-        const value = object[key];
-        let styles = metadataStyles && metadataStyles[key];
-        if (!styles) {
-            switch (typeof value) {
-                case 'number':
-                    styles = ['yellow'];
-                    break;
-                case 'string':
-                    styles = ['orange'];
-                    break;
-
-            }
-        }
-        return `${ key }: ${ style(styles, value.constructor === Object ? displayObject(value) : JSON.stringify(value)) }`;
-    }).join(', ') } }`;
-}
-
 /**
  * @param {Object} record
  * @returns {string}
@@ -104,66 +74,7 @@ const ansiStyles = {
  * @function
  * @param record
 */function format(record) {
-    let string = '';
-    if (record.key) {
-        string += style(['gray-light'], record.key);
-    }
-
-    if (record.datetime) {
-        if (string.length !== 0) {
-            string += ' ';
-        }
-
-        string += style(['gray', 'bold'], record.datetime.toTimeString().split(' ')[0]);
-        /* new Date().toFormat('HH24:MI:SS') */
-    }
-
-    let message = record.symbol || _nightingaleFormatter.levelToSymbol[record.level];
-    let styles = record.styles || _nightingaleFormatter.levelToStyles[record.level];
-
-    if (record.message) {
-        if (message && message.length !== 0) {
-            message += ` ${ record.message }`;
-        } else {
-            message = record.message;
-        }
-    }
-
-    if (styles) {
-        message = style(styles, message);
-    }
-
-    if (string.length !== 0) {
-        string += ' ';
-    }
-
-    string += message;
-
-    if (record.metadata) {
-        const stringObject = displayObject(record.metadata, record.metadataStyles);
-
-        if (stringObject) {
-            if (string.length !== 0) {
-                string += ' ';
-            }
-
-            string += stringObject;
-        }
-    }
-
-    if (record.extra) {
-        const stringObject = displayObject(record.extra);
-
-        if (stringObject) {
-            if (string.length !== 0) {
-                string += ' ';
-            }
-
-            string += stringObject;
-        }
-    }
-
-    return string;
+    return (0, _nightingaleFormatter.formatRecordToString)(record, style);
 }
 
 // export style function

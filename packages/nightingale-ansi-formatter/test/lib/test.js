@@ -12,6 +12,9 @@ var _assert = require('assert');
 */
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+/* global test */
+
+
 test('style: blue bold color', () => {
     (0, _assert.strictEqual)((0, _.style)(['blue', 'bold'], 'test'), '\x1b[1m\x1b[34mtest\x1b[39m\x1b[22m');
 });

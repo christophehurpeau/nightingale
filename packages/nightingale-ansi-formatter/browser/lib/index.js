@@ -3,15 +3,6 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? /**
-                                                                                     * @function
-                                                                                     * @param obj
-                                                                                    */ function (obj) { return typeof obj; } : /**
-                                                                                                                                * @function
-                                                                                                                                * @param obj
-                                                                                                                               */ function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
-
 exports.style = style;
 exports.default = format;
 
@@ -51,7 +42,7 @@ var ansiStyles = {
     underline: _ansiStyles2.default.underline,
 
     // http://www.calmar.ws/vim/256-xterm-24bit-rgb-color-chart.html
-    orange: { open: _ansiStyles2.default.color.ansi256.hex(_nightingaleFormatter.styleToHexColor['orange']), close: _ansiStyles2.default.color.close },
+    orange: { open: _ansiStyles2.default.color.ansi256.hex(_nightingaleFormatter.styleToHexColor.orange), close: _ansiStyles2.default.color.close },
     'gray-light': { open: _ansiStyles2.default.color.ansi256.hex(_nightingaleFormatter.styleToHexColor['gray-light']), close: _ansiStyles2.default.color.close }
 };
 
@@ -75,36 +66,6 @@ var ansiStyles = {
     }, string);
 }
 
-// TODO create package
-/**
- * @function
- * @param object
- * @param metadataStyles
-*/function displayObject(object, metadataStyles) {
-    var keys = Object.keys(object);
-
-    if (keys.length === 0) {
-        return;
-    }
-
-    return '{ ' + keys.map(function (key) {
-        var value = object[key];
-        var styles = metadataStyles && metadataStyles[key];
-        if (!styles) {
-            switch (typeof value === 'undefined' ? 'undefined' : _typeof(value)) {
-                case 'number':
-                    styles = ['yellow'];
-                    break;
-                case 'string':
-                    styles = ['orange'];
-                    break;
-
-            }
-        }
-        return key + ': ' + style(styles, value.constructor === Object ? displayObject(value) : JSON.stringify(value));
-    }).join(', ') + ' }';
-}
-
 /**
  * @param {Object} record
  * @returns {string}
@@ -113,66 +74,7 @@ var ansiStyles = {
  * @function
  * @param record
 */function format(record) {
-    var string = '';
-    if (record.key) {
-        string += style(['gray-light'], record.key);
-    }
-
-    if (record.datetime) {
-        if (string.length !== 0) {
-            string += ' ';
-        }
-
-        string += style(['gray', 'bold'], record.datetime.toTimeString().split(' ')[0]);
-        /* new Date().toFormat('HH24:MI:SS') */
-    }
-
-    var message = record.symbol || _nightingaleFormatter.levelToSymbol[record.level];
-    var styles = record.styles || _nightingaleFormatter.levelToStyles[record.level];
-
-    if (record.message) {
-        if (message && message.length !== 0) {
-            message += ' ' + record.message;
-        } else {
-            message = record.message;
-        }
-    }
-
-    if (styles) {
-        message = style(styles, message);
-    }
-
-    if (string.length !== 0) {
-        string += ' ';
-    }
-
-    string += message;
-
-    if (record.metadata) {
-        var stringObject = displayObject(record.metadata, record.metadataStyles);
-
-        if (stringObject) {
-            if (string.length !== 0) {
-                string += ' ';
-            }
-
-            string += stringObject;
-        }
-    }
-
-    if (record.extra) {
-        var _stringObject = displayObject(record.extra);
-
-        if (_stringObject) {
-            if (string.length !== 0) {
-                string += ' ';
-            }
-
-            string += _stringObject;
-        }
-    }
-
-    return string;
+    return (0, _nightingaleFormatter.formatRecordToString)(record, style);
 }
 
 // export style function

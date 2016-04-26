@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "ansi-styles": "chalk/ansi-styles#47ccb63c5b9b296b39188717b0efc4123a036d47",
-    "nightingale-formatter": "^1.0.0"
+    "nightingale-formatter": "^1.1.0"
   },
   "devDependencies": {
     "babel-cli": "^6.7.7",
