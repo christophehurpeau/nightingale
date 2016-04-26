@@ -22,7 +22,7 @@
     "lint": "make lint"
   },
   "dependencies": {
-    "nightingale-formatter": "^1.0.0"
+    "nightingale-formatter": "^1.1.0"
   },
   "devDependencies": {
     "eslint": "^2.8.0",

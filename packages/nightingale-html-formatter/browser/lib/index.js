@@ -30,28 +30,6 @@ var _nightingaleFormatter = require('nightingale-formatter');
  * @function
  * @param record
 */function format(record) {
-    var string = '';
-    if (record.key) {
-        string += record.key + ' ';
-    }
-
-    if (record.datetime) {
-        string += this.style('bold', record.datetime.toFormat('HH24:MI:SS') + ' ');
-        /* toTimeString().split(' ')[0] */
-    }
-
-    if (record.message) {
-        string += record.message;
-    }
-
-    if (record.metadata) {
-        string += ' ' + JSON.stringify(record.metadata);
-    }
-
-    if (record.extra) {
-        string += ' ' + JSON.stringify(record.extra);
-    }
-
-    return '<div>' + string + '</div>\n';
+    return (0, _nightingaleFormatter.formatRecordToString)(record, style);
 }
 //# sourceMappingURL=index.js.map
