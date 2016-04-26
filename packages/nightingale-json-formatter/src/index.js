@@ -10,5 +10,5 @@ export default function format(record) {
         message: record.message,
         metadata: record.metadata,
         extra: record.extra,
-    }) + '\n';
+    });
 }

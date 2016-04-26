@@ -1,3 +1,4 @@
+/* global test */
 import format from '../../';
 import { deepStrictEqual } from 'assert';
 
@@ -10,5 +11,5 @@ test('format record', () => {
         extra: 'record.extra',
     };
 
-    deepStrictEqual(format(record), `${JSON.stringify(record)}\n`);
+    deepStrictEqual(format(record), JSON.stringify(record));
 });

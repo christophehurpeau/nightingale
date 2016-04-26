@@ -12,6 +12,9 @@ var _assert = require('assert');
 */
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+/* global test */
+
+
 test('format record', () => {
     const record = {
         level: 'record.level',
@@ -21,6 +24,6 @@ test('format record', () => {
         extra: 'record.extra'
     };
 
-    (0, _assert.deepStrictEqual)((0, _2.default)(record), `${ JSON.stringify(record) }\n`);
+    (0, _assert.deepStrictEqual)((0, _2.default)(record), JSON.stringify(record));
 });
 //# sourceMappingURL=test.js.map

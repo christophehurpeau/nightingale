@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -19,6 +19,6 @@ function format(record) {
         message: record.message,
         metadata: record.metadata,
         extra: record.extra
-    }) + '\n';
+    });
 }
 //# sourceMappingURL=index.js.map
