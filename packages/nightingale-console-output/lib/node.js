@@ -18,9 +18,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 /**
  * @function
  * @param string
- * @param logLevel
-*/function write(string, logLevel) {
-    const outKey = logLevel >= _nightingaleLevels2.default.ERROR ? 'stderr' : 'stdout';
+ * @param
+*/function write(string, _ref) {
+    let level = _ref.level;
+
+    const outKey = level >= _nightingaleLevels2.default.ERROR ? 'stderr' : 'stdout';
     process[outKey].write(`${ string }\n`);
 }
 //# sourceMappingURL=node.js.map

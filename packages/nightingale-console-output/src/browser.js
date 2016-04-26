@@ -3,11 +3,11 @@ import levels from 'nightingale-levels';
 
 const write = (() => {
     if (console.error) {
-        return function write(params, logLevel) {
-            console[logLevel >= LogLevel.ERROR ? 'error' : 'log'](...params);
+        return function write(params, { level }) {
+            console[level >= levels.ERROR ? 'error' : 'log'](...params);
         };
     } else {
-        return function write(params, logLevel) {
+        return function write(params) {
             console.log(...params);
         };
     }

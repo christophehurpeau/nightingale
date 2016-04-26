@@ -26,19 +26,20 @@ var write = function () {
         return (/**
                 * @function
                 * @param params
-                * @param logLevel
-               */function write(params, logLevel) {
+                * @param
+               */function write(params, _ref) {
                 var _console;
 
-                (_console = console)[logLevel >= LogLevel.ERROR ? 'error' : 'log'].apply(_console, _toConsumableArray(params));
+                var level = _ref.level;
+
+                (_console = console)[level >= _nightingaleLevels2.default.ERROR ? 'error' : 'log'].apply(_console, _toConsumableArray(params));
             }
         );
     } else {
         return (/**
                 * @function
                 * @param params
-                * @param logLevel
-               */function write(params, logLevel) {
+               */function write(params) {
                 var _console2;
 
                 (_console2 = console).log.apply(_console2, _toConsumableArray(params));

@@ -19,17 +19,18 @@ const write = (() => {
         return (/**
                 * @function
                 * @param params
-                * @param logLevel
-               */function write(params, logLevel) {
-                console[logLevel >= LogLevel.ERROR ? 'error' : 'log'](...params);
+                * @param
+               */function write(params, _ref) {
+                let level = _ref.level;
+
+                console[level >= _nightingaleLevels2.default.ERROR ? 'error' : 'log'](...params);
             }
         );
     } else {
         return (/**
                 * @function
                 * @param params
-                * @param logLevel
-               */function write(params, logLevel) {
+               */function write(params) {
                 console.log(...params);
             }
         );
