@@ -4,7 +4,7 @@ import ConsoleHandler from 'nightingale-console';
 const logger = new Logger();
 
 configure([
-    { handlers: [ new ConsoleHandler(levels.ALL) ] },
+    { handlers: [new ConsoleHandler(levels.ALL)] },
 ]);
 
 logger.log('log()');

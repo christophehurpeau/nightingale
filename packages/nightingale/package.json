@@ -22,7 +22,8 @@
   },
   "dependencies": {
     "minimatch": "^3.0.0",
-    "nightingale-levels": "^1.0.0"
+    "nightingale-levels": "^1.0.0",
+    "nightingale-logger": "^1.0.0"
   },
   "devDependencies": {
     "coveralls": "^2.11.9",

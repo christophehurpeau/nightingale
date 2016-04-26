@@ -4,14 +4,14 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _Logger = require('./Logger');
+var _nightingaleLogger = require('nightingale-logger');
 
 Object.defineProperty(exports, 'default', {
   enumerable: true,
   get: /**
         * @function
        */function get() {
-    return _interopRequireDefault(_Logger).default;
+    return _interopRequireDefault(_nightingaleLogger).default;
   }
 });
 
@@ -23,6 +23,22 @@ Object.defineProperty(exports, 'configure', {
         * @function
        */function get() {
     return _config.configure;
+  }
+});
+Object.defineProperty(exports, 'addGlobalProcessor', {
+  enumerable: true,
+  get: /**
+        * @function
+       */function get() {
+    return _config.addGlobalProcessor;
+  }
+});
+Object.defineProperty(exports, 'addGlobalHandler', {
+  enumerable: true,
+  get: /**
+        * @function
+       */function get() {
+    return _config.addGlobalHandler;
   }
 });
 

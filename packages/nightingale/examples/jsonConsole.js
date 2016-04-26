@@ -1,4 +1,4 @@
-import Logger, { configure, levels } from '../..';
+import Logger, { configure, levels } from '..';
 import Handler from 'nightingale-handler';
 import jsonFormatter from 'nightingale-json-formatter';
 import consoleOutput from 'nightingale-console-output';

@@ -6,7 +6,7 @@ Logger for browser and node
 
 The nightingale is a bird best known for its powerful and beautiful song.
 
-See the [API](http://christophehurpeau.github.io/nightingale/docs/)
+See the [Logger API](http://nightingalejs.github.io/nightingale-logger/docs/Logger.html)
 
 ## Install
 
@@ -57,7 +57,7 @@ You can configure several handlers with different `levels`, like console and sla
 ### In an library
 
 ```js
-import Logger from 'nightingale';
+import Logger from 'nightingale-logger';
 
 const logger = new Logger('mylib');
 
@@ -160,13 +160,6 @@ You can find outputs [on npm](https://www.npmjs.com/search?q=nightingale-output)
 - [console](https://npmjs.org/package/nightingale-console-output)
 - [file](https://npmjs.org/package/nightingale-file-output)
 
-[npm-image]: https://img.shields.io/npm/v/nightingale.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/nightingale
-[build-status-image]: https://img.shields.io/circleci/project/christophehurpeau/nightingale/master.svg?style=flat-square
-[build-status-url]: https://circleci.com/gh/christophehurpeau/nightingale
-[coverage-image]: https://img.shields.io/coveralls/christophehurpeau/nightingale/master.svg?style=flat-square
-[coverage-url]: http://christophehurpeau.github.io/nightingale/coverage/lcov-report/
-
 ### Processor
 
 Add extra data in the record
@@ -184,3 +177,29 @@ class MyCustomLogger extends Logger {
 
 const logger = new MyCustomLogger('app');
 ```
+
+## Global processors
+
+```js
+import { addGlobalProcessor } from 'nightingale';
+import errorProcessor from 'nightingale-error-processor';
+
+addGlobalProcessor(errorProcessor);
+```
+
+## Global handlers
+
+```js
+import { addGlobalHandler, levels } from 'nightingale';
+import ErrorHandler from 'nightingale-sentry';
+
+addGlobalHandler(new ErrorHandler(levels.ERROR));
+```
+
+
+[npm-image]: https://img.shields.io/npm/v/nightingale.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/nightingale
+[build-status-image]: https://img.shields.io/circleci/project/nightingalejs/nightingale/master.svg?style=flat-square
+[build-status-url]: https://circleci.com/gh/nightingalejs/nightingale
+[coverage-image]: https://img.shields.io/coveralls/nightingalejs/nightingale/master.svg?style=flat-square
+[coverage-url]: http://nightingalejs.github.io/nightingale/coverage/lcov-report/
