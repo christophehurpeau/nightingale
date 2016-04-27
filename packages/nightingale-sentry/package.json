@@ -1,0 +1,32 @@
+{
+  "name": "nightingale-sentry",
+  "description": "Sentry handler for nightingale",
+  "keywords": [
+    "nightingale",
+    "nightingale-handler"
+  ],
+  "version": "1.0.0",
+  "homepage": "https://github.com/nightingalejs/nightingale",
+  "license": "ISC",
+  "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
+  "repository": "nightingalejs/nightingale-sentry",
+  "main": "./lib/index.js",
+  "scripts": {
+    "test": "make test",
+    "build": "make build",
+    "postpublish": "make post-publish",
+    "preversion": "make pre-version",
+    "version": "make version",
+    "watch": "make watch",
+    "lint": "make lint"
+  },
+  "dependencies": {
+    "nightingale-handler": "^1.0.0",
+    "nightingale-sentry-output": "^1.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^2.8.0",
+    "eslint-config-pob": "^5.0.0",
+    "springbokjs-library": "^17.0.0"
+  }
+}
