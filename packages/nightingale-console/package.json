@@ -21,9 +21,9 @@
     "lint": "make lint"
   },
   "dependencies": {
-    "nightingale-ansi-formatter": "^1.0.0",
-    "nightingale-handler": "^1.0.0",
-    "nightingale-console-output": "^1.0.0"
+    "nightingale-ansi-formatter": "^1.1.0",
+    "nightingale-handler": "^1.0.1",
+    "nightingale-console-output": "^1.0.1"
   },
   "devDependencies": {
     "eslint": "^2.8.0",
