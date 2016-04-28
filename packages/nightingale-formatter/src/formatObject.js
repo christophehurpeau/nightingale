@@ -35,7 +35,7 @@ export default function formatObject(object, styleFn, objectStyles) {
             stringValue = JSON.stringify(value);
         }
 
-        if (stringValue.length > 80 || stringValue.indexOf('\n') !== -1) {
+        if (stringValue && (stringValue.length > 80 || stringValue.indexOf('\n') !== -1)) {
             brokeLine = breakLine = true;
         }
 
