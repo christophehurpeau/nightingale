@@ -1,3 +1,7 @@
+### v1.2.2
+
+- [`882342a`](https://github.com/nightingalejs/nightingale-formatter/commit/882342a66de2e6b7839009564135c3c590f79b5c) fix in formatObject when value is undefined (Christophe Hurpeau)
+
 ### v1.2.1
 
 - [`72c68ec`](https://github.com/nightingalejs/nightingale-formatter/commit/72c68ecd654b21123a066d4b75b49933a3a3f55b) fix in formatObject when value is undefined (Christophe Hurpeau)
