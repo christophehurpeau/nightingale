@@ -1,3 +1,7 @@
+### v1.2.1
+
+- [`72c68ec`](https://github.com/nightingalejs/nightingale-formatter/commit/72c68ecd654b21123a066d4b75b49933a3a3f55b) fix in formatObject when value is undefined (Christophe Hurpeau)
+
 ### v1.2.0
 
 - [`58af7d6`](https://github.com/nightingalejs/nightingale-formatter/commit/58af7d61ac518d0f28d26d969d183c465daa6fde) warn is in yellow (Christophe Hurpeau)
