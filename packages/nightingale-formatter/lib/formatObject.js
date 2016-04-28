@@ -38,7 +38,7 @@ exports.default = formatObject;
         }
 
         let stringValue;
-        if (value.constructor === Object) {
+        if (value && value.constructor === Object) {
             stringValue = formatObject(value, styleFn);
         } else if (value instanceof Error) {
             stringValue = value.stack || value.message;
