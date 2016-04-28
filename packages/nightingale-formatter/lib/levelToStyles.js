@@ -18,7 +18,7 @@ const levelToStyles = {
     [_nightingaleLevels2.default.TRACE]: ['gray'],
     [_nightingaleLevels2.default.DEBUG]: ['gray'],
     // [levels.INFO]: ['gray'],
-    [_nightingaleLevels2.default.WARN]: ['orange'],
+    [_nightingaleLevels2.default.WARN]: ['yellow'],
     [_nightingaleLevels2.default.ERROR]: ['red', 'bold'],
     [_nightingaleLevels2.default.CRITICAL]: ['red', 'bold'],
     [_nightingaleLevels2.default.FATAL]: ['bgRed', 'white'],

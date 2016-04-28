@@ -4,7 +4,7 @@ const levelToStyles = {
     [levels.TRACE]: ['gray'],
     [levels.DEBUG]: ['gray'],
     // [levels.INFO]: ['gray'],
-    [levels.WARN]: ['orange'],
+    [levels.WARN]: ['yellow'],
     [levels.ERROR]: ['red', 'bold'],
     [levels.CRITICAL]: ['red', 'bold'],
     [levels.FATAL]: ['bgRed', 'white'],
