@@ -22,6 +22,10 @@ var _nightingaleHandler = require('nightingale-handler');
 
 var _nightingaleHandler2 = _interopRequireDefault(_nightingaleHandler);
 
+var _nightingaleLevelNames = require('nightingale-level-names');
+
+var _nightingaleLevelNames2 = _interopRequireDefault(_nightingaleLevelNames);
+
 /**
  * @function
  * @param obj
@@ -47,7 +51,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
  * @param subClass
  * @param superClass
 */
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /* eslint camelcase:"off" */
+
 
 /**
  * @param {int} minLevel
@@ -83,6 +88,7 @@ var WinstonAdapterHandler = /**
 
             return new Promise(function (resolve, reject) {
                 _this2.winstonTransport.log(record.level, record.message, {
+                    level_name: _nightingaleLevelNames2.default.get(record.level),
                     key: record.key,
                     metadata: record.metadata,
                     extra: record.extra
