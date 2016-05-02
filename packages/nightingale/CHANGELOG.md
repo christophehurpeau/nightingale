@@ -1,3 +1,7 @@
+### v4.2.0
+
+- [`563f196`](https://github.com/nightingalejs/nightingale/commit/563f19664df31908c79accb59f5093db2c0ce717) nightingale-logger@1.1.0, nightingale-json-formatter@1.1.0 (Christophe Hurpeau)
+
 ### v4.1.0
 
 - [`025cf6a`](https://github.com/nightingalejs/nightingale/commit/025cf6ad56070e22b92f36fc5b9f5b75713190e2) nightingale-logger (Christophe Hurpeau)
