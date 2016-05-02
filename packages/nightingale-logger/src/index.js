@@ -310,19 +310,19 @@ export default class Logger {
     * and deletes the original record
     *
     * @param {number=} time return of previous call to time()
-    * @param {string} [message]
+    * @param {string} message
      * @param {Object} [metadata]
      * @param {Object} [metadataStyles]
     */
-    timeEnd(time, message = '', metadata = {}, metadataStyles) {
+    timeEnd(time, message, metadata = {}, metadataStyles) {
         const now = Date.now();
 
         const diffTime = now - time;
         const seconds = diffTime > 1000 && Math.floor(diffTime / 1000);
         const ms = diffTime - seconds * 1000;
 
+        metadata.readableTime = `${seconds ? `${seconds}s and ` : ''}${ms}ms`;
         metadata.timeMs = diffTime;
-        message = `${message ? `${message}: ` : ''}${seconds ? `${seconds}s and ` : ''}${ms}ms`;
         this.log(message, metadata, levels.DEBUG, { metadataStyles });
     }
 
@@ -342,8 +342,12 @@ export default class Logger {
      * @param {Object} [metadataStyles]
      * @return {Logger}
      */
-    enter(fn, metadata, metadataStyles) {
-        return this.log(`enter ${fn.name}`, metadata, levels.TRACE, { metadataStyles });
+    enter(fn, metadata = {}, metadataStyles) {
+        metadata = {
+            functionName: fn.name,
+            ...metadata,
+        };
+        return this.log('enter', metadata, levels.TRACE, { metadataStyles });
     }
 
     /**
@@ -365,7 +369,11 @@ export default class Logger {
      * @return {Logger}
      */
     exit(fn, metadata, metadataStyles) {
-        return this.log(`exit ${fn.name}`, metadata, levels.TRACE, { metadataStyles });
+        metadata = {
+            functionName: fn.name,
+            ...metadata,
+        };
+        return this.log('exit', metadata, levels.TRACE, { metadataStyles });
     }
 
     /**

@@ -5,6 +5,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = undefined;
 
+var _extends = Object.assign || /**
+                                 * @function
+                                 * @param target
+                                */ function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _createClass = /**
                     * @function
                    */ function () { /**
@@ -517,7 +522,7 @@ var Logger = /**
         * and deletes the original record
         *
         * @param {number=} time return of previous call to time()
-        * @param {string} [message]
+        * @param {string} message
          * @param {Object} [metadata]
          * @param {Object} [metadataStyles]
         */
@@ -527,11 +532,10 @@ var Logger = /**
         value: /**
                 * @function
                 * @param time
-                * @param [message]
+                * @param message
                 * @param metadata
                 * @param metadataStyles
-               */function timeEnd(time) {
-            var message = arguments.length <= 1 || arguments[1] === undefined ? '' : arguments[1];
+               */function timeEnd(time, message) {
             var metadata = arguments.length <= 2 || arguments[2] === undefined ? {} : arguments[2];
             var metadataStyles = arguments[3];
 
@@ -541,8 +545,8 @@ var Logger = /**
             var seconds = diffTime > 1000 && Math.floor(diffTime / 1000);
             var ms = diffTime - seconds * 1000;
 
+            metadata.readableTime = '' + (seconds ? seconds + 's and ' : '') + ms + 'ms';
             metadata.timeMs = diffTime;
-            message = '' + (message ? message + ': ' : '') + (seconds ? seconds + 's and ' : '') + ms + 'ms';
             this.log(message, metadata, _nightingaleLevels2.default.DEBUG, { metadataStyles: metadataStyles });
         }
 
@@ -570,8 +574,14 @@ var Logger = /**
                 * @param fn
                 * @param metadata
                 * @param metadataStyles
-               */function enter(fn, metadata, metadataStyles) {
-            return this.log('enter ' + fn.name, metadata, _nightingaleLevels2.default.TRACE, { metadataStyles: metadataStyles });
+               */function enter(fn) {
+            var metadata = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
+            var metadataStyles = arguments[2];
+
+            metadata = _extends({
+                functionName: fn.name
+            }, metadata);
+            return this.log('enter', metadata, _nightingaleLevels2.default.TRACE, { metadataStyles: metadataStyles });
         }
 
         /**
@@ -601,7 +611,10 @@ var Logger = /**
                 * @param metadata
                 * @param metadataStyles
                */function exit(fn, metadata, metadataStyles) {
-            return this.log('exit ' + fn.name, metadata, _nightingaleLevels2.default.TRACE, { metadataStyles: metadataStyles });
+            metadata = _extends({
+                functionName: fn.name
+            }, metadata);
+            return this.log('exit', metadata, _nightingaleLevels2.default.TRACE, { metadataStyles: metadataStyles });
         }
 
         /**

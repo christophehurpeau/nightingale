@@ -5,6 +5,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = undefined;
 
+var _extends = Object.assign || /**
+                                 * @function
+                                 * @param target
+                                */ function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _util = require('util');
 
 var _util2 = _interopRequireDefault(_util);
@@ -339,12 +344,11 @@ let Logger = class Logger {
     * and deletes the original record
     *
     * @param {number=} time return of previous call to time()
-    * @param {string} [message]
+    * @param {string} message
      * @param {Object} [metadata]
      * @param {Object} [metadataStyles]
     */
-    timeEnd(time) {
-        let message = arguments.length <= 1 || arguments[1] === undefined ? '' : arguments[1];
+    timeEnd(time, message) {
         let metadata = arguments.length <= 2 || arguments[2] === undefined ? {} : arguments[2];
         let metadataStyles = arguments[3];
 
@@ -354,8 +358,8 @@ let Logger = class Logger {
         const seconds = diffTime > 1000 && Math.floor(diffTime / 1000);
         const ms = diffTime - seconds * 1000;
 
+        metadata.readableTime = `${ seconds ? `${ seconds }s and ` : '' }${ ms }ms`;
         metadata.timeMs = diffTime;
-        message = `${ message ? `${ message }: ` : '' }${ seconds ? `${ seconds }s and ` : '' }${ ms }ms`;
         this.log(message, metadata, _nightingaleLevels2.default.DEBUG, { metadataStyles: metadataStyles });
     }
 
@@ -375,8 +379,14 @@ let Logger = class Logger {
      * @param {Object} [metadataStyles]
      * @return {Logger}
     */
-    enter(fn, metadata, metadataStyles) {
-        return this.log(`enter ${ fn.name }`, metadata, _nightingaleLevels2.default.TRACE, { metadataStyles: metadataStyles });
+    enter(fn) {
+        let metadata = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
+        let metadataStyles = arguments[2];
+
+        metadata = _extends({
+            functionName: fn.name
+        }, metadata);
+        return this.log('enter', metadata, _nightingaleLevels2.default.TRACE, { metadataStyles: metadataStyles });
     }
 
     /**
@@ -398,7 +408,10 @@ let Logger = class Logger {
      * @return {Logger}
     */
     exit(fn, metadata, metadataStyles) {
-        return this.log(`exit ${ fn.name }`, metadata, _nightingaleLevels2.default.TRACE, { metadataStyles: metadataStyles });
+        metadata = _extends({
+            functionName: fn.name
+        }, metadata);
+        return this.log('exit', metadata, _nightingaleLevels2.default.TRACE, { metadataStyles: metadataStyles });
     }
 
     /**
