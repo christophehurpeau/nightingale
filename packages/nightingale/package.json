@@ -23,11 +23,11 @@
   "dependencies": {
     "minimatch": "^3.0.0",
     "nightingale-levels": "^1.0.0",
-    "nightingale-logger": "^1.0.0"
+    "nightingale-logger": "^1.1.0"
   },
   "devDependencies": {
     "coveralls": "^2.11.9",
-    "eslint": "^2.8.0",
+    "eslint": "^2.9.0",
     "eslint-config-pob": "^5.0.0",
     "karma": "^0.13.22",
     "karma-chrome-launcher": "^0.2.3",
@@ -36,10 +36,10 @@
     "karma-mocha": "^0.2.2",
     "karma-proclaim": "^1.0.0",
     "mocha": "^2.4.5",
-    "nightingale-console": "^1.0.0",
-    "nightingale-console-output": "^1.0.0",
-    "nightingale-handler": "^1.0.0",
-    "nightingale-json-formatter": "^1.0.0",
+    "nightingale-console": "^1.1.0",
+    "nightingale-console-output": "^1.0.1",
+    "nightingale-handler": "^1.0.1",
+    "nightingale-json-formatter": "^1.1.0",
     "nightingale-string": "^1.0.1",
     "springbokjs-library": "^17.0.0",
     "xunit-file": "0.0.9"
