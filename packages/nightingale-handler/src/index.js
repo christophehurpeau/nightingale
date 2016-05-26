@@ -7,7 +7,7 @@ import findLevel from 'nightingale-debug';
  */
 export default class Handler {
     constructor(minLevel, formatter, output) {
-        this.minLevel = findLevel(minLevel);
+        this.minLevel = minLevel;
         this.format = formatter;
         this.write = output;
     }
@@ -20,7 +20,7 @@ export default class Handler {
         this.write(formatted, record);
     }
 
-    isHandling(level) {
-        return level >= this.minLevel;
+    isHandling(level, key) {
+        return level >= findLevel(this.minLevel, key);
     }
 }

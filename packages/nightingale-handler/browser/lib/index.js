@@ -53,7 +53,7 @@ var Handler = /**
     function Handler(minLevel, formatter, output) {
         _classCallCheck(this, Handler);
 
-        this.minLevel = (0, _nightingaleDebug2.default)(minLevel);
+        this.minLevel = minLevel;
         this.format = formatter;
         this.write = output;
     }
@@ -77,8 +77,9 @@ var Handler = /**
         value: /**
                 * @function
                 * @param level
-               */function isHandling(level) {
-            return level >= this.minLevel;
+                * @param key
+               */function isHandling(level, key) {
+            return level >= (0, _nightingaleDebug2.default)(this.minLevel, key);
         }
     }]);
 

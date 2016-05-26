@@ -27,7 +27,7 @@ let Handler = class Handler {
      * @param output
     */
     constructor(minLevel, formatter, output) {
-        this.minLevel = (0, _nightingaleDebug2.default)(minLevel);
+        this.minLevel = minLevel;
         this.format = formatter;
         this.write = output;
     }
@@ -42,8 +42,9 @@ let Handler = class Handler {
 
     /**
      * @param level
-    */isHandling(level) {
-        return level >= this.minLevel;
+     * @param key
+    */isHandling(level, key) {
+        return level >= (0, _nightingaleDebug2.default)(this.minLevel, key);
     }
 };
 exports.default = Handler;
