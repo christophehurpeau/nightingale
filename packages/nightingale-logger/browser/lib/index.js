@@ -72,7 +72,7 @@ var Logger = /**
      * Create a new Logger
      *
      * @param {string} key
-     * @param {string} displayName
+     * @param {string} [displayName]
     * @function
     */
 
@@ -92,6 +92,66 @@ var Logger = /**
         }
 
         /**
+         * Create a child logger
+         *
+         * @param {string} childSuffixKey
+         * @param {string} [childDisplayName]
+         * @returns {Logger}
+         */
+
+    }, {
+        key: 'child',
+        value: /**
+                * @function
+                * @param childSuffixKey
+                * @param childDisplayName
+               */function child(childSuffixKey, childDisplayName) {
+            return new Logger(this.key + '.' + childSuffixKey, childDisplayName);
+        }
+
+        /**
+         * Create a new Logger with the same key a this attached context
+         *
+         * @example
+         * const loggerMyService = new Logger('app.myService');
+         * function someAction(arg1) {
+         *     const logger = loggerMyService.context({ arg1 });
+         *     logger.info('starting');
+         *     // do stuff
+         *     logger.info('done');
+         * }
+         *
+         * @param {Object} context
+         * @returns {Logger}
+         */
+
+    }, {
+        key: 'context',
+        value: /**
+                * @function
+                * @param _context
+               */function context(_context) {
+            var logger = new Logger(this.key);
+            logger.setContext(_context);
+            return logger;
+        }
+
+        /**
+         * Set the context of this logger
+         *
+         * @param {Object} context
+         */
+
+    }, {
+        key: 'setContext',
+        value: /**
+                * @function
+                * @param context
+               */function setContext(context) {
+            this._context = context;
+        }
+
+        /**
          * Handle a record
          *
          * Use this only if you know what you are doing.
@@ -105,13 +165,15 @@ var Logger = /**
                 * @function
                 * @param record
                */function addRecord(record) {
+            var _this = this;
+
             var _getConfig = this.getConfig();
 
             var handlers = _getConfig.handlers;
             var processors = _getConfig.processors;
 
             handlers = handlers.filter(function (handler) {
-                return handler.isHandling(record.level);
+                return handler.isHandling(record.level, _this.key);
             });
             if (handlers.length === 0) {
                 return;
@@ -161,7 +223,7 @@ var Logger = /**
                 displayName: this.displayName,
                 datetime: new Date(),
                 message: message,
-                context: context,
+                context: context || this._context,
                 metadata: metadata,
                 extra: {}
             };

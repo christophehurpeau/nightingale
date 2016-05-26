@@ -23,7 +23,7 @@ export default class Logger {
      * Create a new Logger
      *
      * @param {string} key
-     * @param {string} displayName
+     * @param {string} [displayName]
      */
     constructor(key, displayName) {
         this.key = key;
@@ -35,6 +35,47 @@ export default class Logger {
     }
 
     /**
+     * Create a child logger
+     *
+     * @param {string} childSuffixKey
+     * @param {string} [childDisplayName]
+     * @returns {Logger}
+     */
+    child(childSuffixKey, childDisplayName) {
+        return new Logger(`${this.key}.${childSuffixKey}`, childDisplayName);
+    }
+
+    /**
+     * Create a new Logger with the same key a this attached context
+     *
+     * @example
+     * const loggerMyService = new Logger('app.myService');
+     * function someAction(arg1) {
+     *     const logger = loggerMyService.context({ arg1 });
+     *     logger.info('starting');
+     *     // do stuff
+     *     logger.info('done');
+     * }
+     *
+     * @param {Object} context
+     * @returns {Logger}
+     */
+    context(context) {
+        const logger = new Logger(this.key);
+        logger.setContext(context);
+        return logger;
+    }
+
+    /**
+     * Set the context of this logger
+     *
+     * @param {Object} context
+     */
+    setContext(context) {
+        this._context = context;
+    }
+
+    /**
      * Handle a record
      *
      * Use this only if you know what you are doing.
@@ -43,7 +84,7 @@ export default class Logger {
      */
     addRecord(record) {
         let { handlers, processors } = this.getConfig();
-        handlers = handlers.filter(handler => handler.isHandling(record.level));
+        handlers = handlers.filter(handler => handler.isHandling(record.level, this.key));
         if (handlers.length === 0) {
             return;
         }
@@ -76,7 +117,7 @@ export default class Logger {
             displayName: this.displayName,
             datetime: new Date(),
             message: message,
-            context: context,
+            context: context || this._context,
             metadata: metadata,
             extra: {},
         };

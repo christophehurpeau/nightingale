@@ -2,11 +2,11 @@
 
 Logger for browser and node
 
-[![Build Status][build-status-image]][build-status-url] [![Coverage][coverage-image]][coverage-url]
+[![Build Status][build-status-image]][build-status-url] [![Coverage][coverage-image]][coverage-url] [![API Doc][docklets-image]][docklets-url]
 
 To see the full documentation, go to [nightingalejs/nightingale](https://github.com/nightingalejs/nightingale)
 
-To see the Logger API, go to [http://nightingalejs.github.io/nightingale-logger](http://nightingalejs.github.io/nightingale-logger/docs/Logger.html)
+To see the Logger API, go to [docklets][docklets-url] or [http://nightingalejs.github.io/nightingale-logger](http://nightingalejs.github.io/nightingale-logger/docs/Logger.html)
 
 ```js
 import Logger from 'nightingale-logger';
@@ -24,3 +24,5 @@ logger.success('It works !');
 [build-status-url]: https://circleci.com/gh/nightingalejs/nightingale-logger
 [coverage-image]: https://img.shields.io/coveralls/nightingalejs/nightingale-logger/master.svg?style=flat-square
 [coverage-url]: http://nightingalejs.github.io/nightingale-logger/coverage/lcov-report/
+[docklets-image]: https://doclets.io/nightingalejs/nightingale-logger/master.svg
+[docklets-url]: https://doclets.io/nightingalejs/nightingale-logger/master

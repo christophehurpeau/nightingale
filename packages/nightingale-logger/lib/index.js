@@ -49,7 +49,7 @@ let Logger = class Logger {
      * Create a new Logger
      *
      * @param {string} key
-     * @param {string} displayName
+     * @param {string} [displayName]
     */
     constructor(key, displayName) {
         this.key = key;
@@ -58,6 +58,47 @@ let Logger = class Logger {
 
     getConfig() {
         return getConfigForLogger(this.key);
+    }
+
+    /**
+     * Create a child logger
+     *
+     * @param {string} childSuffixKey
+     * @param {string} [childDisplayName]
+     * @returns {Logger}
+    */
+    child(childSuffixKey, childDisplayName) {
+        return new Logger(`${ this.key }.${ childSuffixKey }`, childDisplayName);
+    }
+
+    /**
+     * Create a new Logger with the same key a this attached context
+     *
+     * @example
+     * const loggerMyService = new Logger('app.myService');
+     * function someAction(arg1) {
+     *     const logger = loggerMyService.context({ arg1 });
+     *     logger.info('starting');
+     *     // do stuff
+     *     logger.info('done');
+     * }
+     *
+     * @param {Object} context
+     * @returns {Logger}
+    */
+    context(context) {
+        const logger = new Logger(this.key);
+        logger.setContext(context);
+        return logger;
+    }
+
+    /**
+     * Set the context of this logger
+     *
+     * @param {Object} context
+    */
+    setContext(context) {
+        this._context = context;
     }
 
     /**
@@ -73,7 +114,7 @@ let Logger = class Logger {
         let handlers = _getConfig.handlers;
         let processors = _getConfig.processors;
 
-        handlers = handlers.filter(handler => handler.isHandling(record.level));
+        handlers = handlers.filter(handler => handler.isHandling(record.level, this.key));
         if (handlers.length === 0) {
             return;
         }
@@ -109,7 +150,7 @@ let Logger = class Logger {
             displayName: this.displayName,
             datetime: new Date(),
             message: message,
-            context: context,
+            context: context || this._context,
             metadata: metadata,
             extra: {}
         };
