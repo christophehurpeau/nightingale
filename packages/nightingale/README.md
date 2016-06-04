@@ -98,7 +98,7 @@ DEBUG=worker1 node example/debug
 - via url : `?DEBUG=worker1`
 - via localStorage (in a console): `localStorage.DEBUG='worker1'`
 
-Values are separated by `,`.
+Values are minimatch patterns and separated by `,`.
 
 ## Processors
 
@@ -196,6 +196,21 @@ import ErrorHandler from 'nightingale-sentry';
 addGlobalHandler(new ErrorHandler(levels.ERROR));
 ```
 
+## Context
+
+You can use context to add data to each log.
+
+```js
+import Logger from 'nightingale';
+const loggerMyService = new Logger('app.myService');
+
+export function someAction(arg1) {
+    const logger = loggerMyService.context({ arg1 });
+    logger.info('starting');
+    // do stuff
+    logger.info('done');
+}
+```
 
 [npm-image]: https://img.shields.io/npm/v/nightingale.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/nightingale

@@ -23,12 +23,12 @@
   "dependencies": {
     "minimatch": "^3.0.0",
     "nightingale-levels": "^1.0.0",
-    "nightingale-logger": "^1.1.0"
+    "nightingale-logger": "^1.1.1"
   },
   "devDependencies": {
     "coveralls": "^2.11.9",
     "eslint": "^2.9.0",
-    "eslint-config-pob": "^5.0.0",
+    "eslint-config-pob": "^6.1.0",
     "karma": "^0.13.22",
     "karma-chrome-launcher": "^0.2.3",
     "karma-firefox-launcher": "^0.1.7",
