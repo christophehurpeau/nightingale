@@ -1,3 +1,22 @@
+### v4.3.0
+
+You can use context to add data to each log.
+
+```js
+import Logger from 'nightingale';
+const loggerMyService = new Logger('app.myService');
+
+export function someAction(arg1) {
+    const logger = loggerMyService.context({ arg1 });
+    logger.info('starting');
+    // do stuff
+    logger.info('done');
+}
+```
+
+- [`9ce737f`](https://github.com/nightingalejs/nightingale/commit/9ce737f7e10c819c22108f52f0768be4cbc24cfc) nightingale-logger, context and child (Christophe Hurpeau)
+- [`f642e84`](https://github.com/nightingalejs/nightingale/commit/f642e8484bab9fdd48d06ea0bb0d2685552b2fc2) eslint dependencies (Christophe Hurpeau)
+
 ### v4.2.0
 
 - [`563f196`](https://github.com/nightingalejs/nightingale/commit/563f19664df31908c79accb59f5093db2c0ce717) nightingale-logger@1.1.0, nightingale-json-formatter@1.1.0 (Christophe Hurpeau)
