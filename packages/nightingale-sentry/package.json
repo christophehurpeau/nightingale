@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "nightingale-handler": "^1.0.0",
-    "nightingale-sentry-output": "^1.0.0"
+    "nightingale-sentry-output": "^1.0.1"
   },
   "devDependencies": {
     "eslint": "^2.8.0",
