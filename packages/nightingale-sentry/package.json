@@ -5,7 +5,7 @@
     "nightingale",
     "nightingale-handler"
   ],
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "https://github.com/nightingalejs/nightingale",
   "license": "ISC",
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
