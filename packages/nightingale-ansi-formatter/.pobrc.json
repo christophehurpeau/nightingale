@@ -1,0 +1,7 @@
+{
+  "envs": [
+    "node6"
+  ],
+  "react": false,
+  "testing": true
+}

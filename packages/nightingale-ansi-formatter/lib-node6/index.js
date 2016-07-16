@@ -12,10 +12,6 @@ var _ansiStyles2 = _interopRequireDefault(_ansiStyles);
 
 var _nightingaleFormatter = require('nightingale-formatter');
 
-/**
- * @function
- * @param obj
-*/
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const ansiStyles = {
@@ -46,11 +42,7 @@ const ansiStyles = {
     'gray-light': { open: _ansiStyles2.default.color.ansi256.hex(_nightingaleFormatter.styleToHexColor['gray-light']), close: _ansiStyles2.default.color.close }
 };
 
-/**
- * @function
- * @param styles
- * @param string
-*/function style(styles, string) {
+function style(styles, string) {
     if (!styles || !styles.length || !string) {
         return string;
     }
@@ -70,10 +62,7 @@ const ansiStyles = {
  * @param {Object} record
  * @returns {string}
  */
-/**
- * @function
- * @param record
-*/function format(record) {
+function format(record) {
     return (0, _nightingaleFormatter.formatRecordToString)(record, style);
 }
 
