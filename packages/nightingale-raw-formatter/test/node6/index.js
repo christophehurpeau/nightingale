@@ -6,10 +6,6 @@ var _2 = _interopRequireDefault(_);
 
 var _assert = require('assert');
 
-/**
- * @function
- * @param obj
-*/
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /* global test */
@@ -22,4 +18,4 @@ test('style: blue bold color', () => {
 test('format simple message', () => {
     (0, _assert.strictEqual)((0, _2.default)({ message: 'test' }), 'test');
 });
-//# sourceMappingURL=test.js.map
+//# sourceMappingURL=index.js.map

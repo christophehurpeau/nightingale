@@ -8,11 +8,7 @@ exports.default = format;
 
 var _nightingaleFormatter = require('nightingale-formatter');
 
-/**
- * @function
- * @param styles
- * @param string
-*/function style(styles, string) {
+function style(styles, string) {
     return string;
 }
 
@@ -20,10 +16,7 @@ var _nightingaleFormatter = require('nightingale-formatter');
  * @param {Object} record
  * @returns {string}
  */
-/**
- * @function
- * @param record
-*/function format(record) {
+function format(record) {
     return (0, _nightingaleFormatter.formatRecordToString)(record, style);
 }
 
