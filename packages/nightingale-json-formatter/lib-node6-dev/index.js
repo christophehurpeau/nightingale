@@ -5,12 +5,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = format;
 /**
- * @function
- * @param record
-*/ /**
-    * @param {Object} record
-    * @returns {string}
-    */
+ * @param {Object} record
+ * @returns {string}
+ */
 function format(record) {
     return JSON.stringify({
         key: record.key,

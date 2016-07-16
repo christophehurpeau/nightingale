@@ -1,6 +1,6 @@
 /* global test */
-import format from '../../';
 import { deepStrictEqual } from 'assert';
+import format from '../../';
 
 test('format record', () => {
     const record = {

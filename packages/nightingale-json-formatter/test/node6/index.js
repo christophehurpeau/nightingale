@@ -1,15 +1,11 @@
 'use strict';
 
+var _assert = require('assert');
+
 var _ = require('../../');
 
 var _2 = _interopRequireDefault(_);
 
-var _assert = require('assert');
-
-/**
- * @function
- * @param obj
-*/
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /* global test */
@@ -26,4 +22,4 @@ test('format record', () => {
 
     (0, _assert.deepStrictEqual)((0, _2.default)(record), JSON.stringify(record));
 });
-//# sourceMappingURL=test.js.map
+//# sourceMappingURL=index.js.map
