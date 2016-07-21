@@ -1,5 +1,7 @@
-import format, { style } from '../../';
+/* global test */
+
 import { strictEqual } from 'assert';
+import format, { style } from '../../';
 
 test('blue bold color', () => {
     strictEqual(
@@ -8,9 +10,6 @@ test('blue bold color', () => {
     );
 });
 
-
-
-
 test('format simple message', () => {
-    strictEqual(format({ message: 'test' }), '<div>test</div>\n');
+    strictEqual(format({ message: 'test' }), 'test');
 });
