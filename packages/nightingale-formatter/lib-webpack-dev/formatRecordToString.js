@@ -3,7 +3,7 @@ import levelToStyles from './levelToStyles';
 import formatObject from './formatObject';
 
 export default function formatRecordToString(record, style, options) {
-    let parts = [];
+    var parts = [];
 
     if (record.displayName) {
         parts.push(style(['gray-light'], record.displayName));
@@ -16,12 +16,12 @@ export default function formatRecordToString(record, style, options) {
         /* new Date().toFormat('HH24:MI:SS') */
     }
 
-    let message = record.symbol || levelToSymbol[record.level];
-    let styles = record.styles || levelToStyles[record.level];
+    var message = record.symbol || levelToSymbol[record.level];
+    var styles = record.styles || levelToStyles[record.level];
 
     if (record.message) {
         if (message) {
-            message += ` ${record.message}`;
+            message += ' ' + record.message;
         } else {
             message = record.message;
         }
@@ -34,12 +34,12 @@ export default function formatRecordToString(record, style, options) {
         parts.push(message);
     }
 
-    ['metadata', 'extra', 'context'].forEach(key => {
+    ['metadata', 'extra', 'context'].forEach(function (key) {
         if (!record[key]) {
             return;
         }
 
-        const stringObject = formatObject(record[key], style, record[`${key}Styles`]);
+        var stringObject = formatObject(record[key], style, record[key + 'Styles']);
 
         if (!stringObject) {
             return;
@@ -50,3 +50,4 @@ export default function formatRecordToString(record, style, options) {
 
     return parts.join(' ');
 }
+//# sourceMappingURL=formatRecordToString.js.map

@@ -1,33 +1,58 @@
 {
   "name": "nightingale-formatter",
+  "version": "1.2.2",
   "description": "Nightingale formatter",
   "keywords": [
     "nightingale",
     "nightingale-formatter"
   ],
-  "version": "1.2.2",
-  "homepage": "https://github.com/nightingalejs/nightingale",
-  "license": "ISC",
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
+  "license": "ISC",
   "repository": "nightingalejs/nightingale-formatter",
-  "main": "./lib/index.js",
-  "browser": "./browser/lib/index.js",
+  "homepage": "https://github.com/nightingalejs/nightingale",
+  "main": "./index.js",
+  "webpack:main": "./lib-webpack/index.js",
+  "webpack:main-dev": "./lib-webpack-dev/index.js",
+  "webpack:main-modern-browsers": "./lib-webpack-modern-browsers/index.js",
+  "webpack:main-modern-browsers-dev": "./lib-webpack-modern-browsers-dev/index.js",
   "scripts": {
-    "test": "make test",
-    "build": "make build",
-    "postpublish": "make post-publish",
-    "preversion": "make pre-version",
-    "version": "make version",
-    "watch": "make watch",
-    "lint": "make lint"
+    "build": "pob-build",
+    "build:dev": "pob-build",
+    "clean": "rm -Rf docs dist test/node6 coverage",
+    "generate:test-coverage": "rm -Rf coverage/ ; node --harmony --es_staging node_modules/istanbul/lib/cli.js cover node_modules/.bin/_mocha -- --recursive --reporter=spec -u tdd test/node6",
+    "lint": "eslint --ext .js,.jsx --fix -c .eslintrc.yml src/ test/src/",
+    "prepublish": "ln -s ../../git-hooks/pre-commit .git/hooks/pre-commit || echo",
+    "preversion": "npm run lint && npm run build && npm run build && pob-repository-check-clean",
+    "release": "pob-repository-check-clean && pob-release",
+    "test": "mocha --harmony --es_staging --recursive --bail -u tdd test/node6",
+    "version": "pob-version",
+    "watch": "pob-watch",
+    "watch:dev": "pob-watch"
   },
   "dependencies": {
     "nightingale-levels": "^1.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.7.7",
-    "eslint": "^2.8.0",
-    "eslint-config-pob": "^5.0.0",
-    "springbokjs-library": "^17.0.0"
+    "babel-eslint": "^6.0.4",
+    "babel-plugin-defines": "^3.0.0",
+    "babel-plugin-discard-module-references": "^1.0.0",
+    "babel-plugin-remove-dead-code": "^1.1.0",
+    "babel-plugin-typecheck": "^3.9.0",
+    "babel-preset-es2015-node6": "^0.2.0",
+    "babel-preset-es2015-webpack": "^6.4.1",
+    "babel-preset-flow": "^1.0.0",
+    "babel-preset-modern-browsers": "^5.0.2",
+    "babel-preset-modern-browsers-stage-1": "^1.0.0",
+    "babel-preset-stage-1": "^6.5.0",
+    "eslint": "^3.1.0",
+    "eslint-config-airbnb-base": "^4.0.2",
+    "eslint-config-pob": "^6.1.1",
+    "eslint-plugin-import": "^1.10.1",
+    "istanbul": "^0.4.3",
+    "mocha": "^2.4.5",
+    "pob-babel": "^2.0.0",
+    "pob-release": "^2.0.5",
+    "xunit-file": "^1.0.0"
   }
 }
