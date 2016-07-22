@@ -1,3 +1,7 @@
+### v4.3.1
+
+- [`23fe946`](https://github.com/nightingalejs/nightingale/commit/23fe946813b42d4a8e44496e4de07919e99a4650) fix configure `pattern` and `handler` (Christophe Hurpeau)
+
 ### v4.3.0
 
 You can use context to add data to each log.
