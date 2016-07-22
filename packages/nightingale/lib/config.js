@@ -38,7 +38,7 @@ if (!global.__NIGHTINGALE_CONFIG) {
             if (c.patterns) {
                 throw new Error('Cannot have pattern and patterns for the same config');
             }
-            c.patterns = c.pattern;
+            c.patterns = [c.pattern];
             delete c.pattern;
         }
 
@@ -46,7 +46,7 @@ if (!global.__NIGHTINGALE_CONFIG) {
             if (c.handlers) {
                 throw new Error('Cannot have handler and handlers for the same config');
             }
-            c.handlers = c.handler;
+            c.handlers = [c.handler];
             delete c.handler;
         }
 
