@@ -6,15 +6,9 @@ var _2 = _interopRequireDefault(_);
 
 var _assert = require('assert');
 
-/**
- * @function
- * @param obj
-*/
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /* global test */
-
-
 test('key argument', () => {
     const key = 'test';
     let logger = new _2.default(key);

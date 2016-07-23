@@ -3,12 +3,8 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.default = undefined;
 
-var _extends = Object.assign || /**
-                                 * @function
-                                 * @param target
-                                */ function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _util = require('util');
 
@@ -18,24 +14,15 @@ var _nightingaleLevels = require('nightingale-levels');
 
 var _nightingaleLevels2 = _interopRequireDefault(_nightingaleLevels);
 
-/**
- * @function
- * @param obj
-*/
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER) {
-    global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = /**
-                                                  * @function
-                                                 */function () {
+    global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = function () {
         return { handlers: [], processors: [] };
     };
 }
 
-/**
- * @function
- * @param key
-*/function getConfigForLogger(key) {
+function getConfigForLogger(key) {
     return global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key);
 }
 
@@ -43,14 +30,14 @@ if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER) {
  * Interface that allows you to log records.
  * This records are treated by handlers
  */
-let Logger = class Logger {
+class Logger {
 
     /**
      * Create a new Logger
      *
      * @param {string} key
      * @param {string} [displayName]
-    */
+     */
     constructor(key, displayName) {
         this.key = key;
         this.displayName = displayName;
@@ -66,7 +53,7 @@ let Logger = class Logger {
      * @param {string} childSuffixKey
      * @param {string} [childDisplayName]
      * @returns {Logger}
-    */
+     */
     child(childSuffixKey, childDisplayName) {
         return new Logger(`${ this.key }.${ childSuffixKey }`, childDisplayName);
     }
@@ -85,7 +72,7 @@ let Logger = class Logger {
      *
      * @param {Object} context
      * @returns {Logger}
-    */
+     */
     context(context) {
         const logger = new Logger(this.key);
         logger.setContext(context);
@@ -96,7 +83,7 @@ let Logger = class Logger {
      * Set the context of this logger
      *
      * @param {Object} context
-    */
+     */
     setContext(context) {
         this._context = context;
     }
@@ -107,7 +94,7 @@ let Logger = class Logger {
      * Use this only if you know what you are doing.
      *
      * @param {Object} record
-    */
+     */
     addRecord(record) {
         var _getConfig = this.getConfig();
 
@@ -116,6 +103,13 @@ let Logger = class Logger {
 
         handlers = handlers.filter(handler => handler.isHandling(record.level, this.key));
         if (handlers.length === 0) {
+            if (record.level > _nightingaleLevels2.default.ERROR) {
+                // eslint-disable-next-line no-console
+                console.log('[nightingale] no logger for > error level.', {
+                    key: record.key,
+                    message: record.message
+                });
+            }
             return;
         }
 
@@ -134,7 +128,7 @@ let Logger = class Logger {
      * @param {int} [level]
      * @param {Object} [options]
      * @return {Logger}
-    */
+     */
     log(message, metadata) {
         let level = arguments.length <= 2 || arguments[2] === undefined ? _nightingaleLevels2.default.INFO : arguments[2];
         let options = arguments.length <= 3 || arguments[3] === undefined ? undefined : arguments[3];
@@ -170,9 +164,9 @@ let Logger = class Logger {
      * @param {Object} [metadata]
      * @param {Object} [metadataStyles]
      * @return {Logger}
-    */
+     */
     trace(message, metadata, metadataStyles) {
-        return this.log(message, metadata, _nightingaleLevels2.default.TRACE, { metadataStyles: metadataStyles });
+        return this.log(message, metadata, _nightingaleLevels2.default.TRACE, { metadataStyles });
     }
 
     /**
@@ -182,9 +176,9 @@ let Logger = class Logger {
      * @param {Object} [metadata]
      * @param {Object} [metadataStyles]
      * @return {Logger}
-    */
+     */
     debug(message, metadata, metadataStyles) {
-        return this.log(message, metadata, _nightingaleLevels2.default.DEBUG, { metadataStyles: metadataStyles });
+        return this.log(message, metadata, _nightingaleLevels2.default.DEBUG, { metadataStyles });
     }
 
     /**
@@ -194,9 +188,9 @@ let Logger = class Logger {
      * @param {Object} [metadata]
      * @param {Object} [metadataStyles]
      * @return {Logger}
-    */
+     */
     info(message, metadata, metadataStyles) {
-        return this.log(message, metadata, _nightingaleLevels2.default.INFO, { metadataStyles: metadataStyles });
+        return this.log(message, metadata, _nightingaleLevels2.default.INFO, { metadataStyles });
     }
 
     /**
@@ -206,9 +200,9 @@ let Logger = class Logger {
      * @param {Object} [metadata]
      * @param {Object} [metadataStyles]
      * @return {Logger}
-    */
+     */
     warn(message, metadata, metadataStyles) {
-        return this.log(message, metadata, _nightingaleLevels2.default.WARN, { metadataStyles: metadataStyles });
+        return this.log(message, metadata, _nightingaleLevels2.default.WARN, { metadataStyles });
     }
 
     /**
@@ -218,7 +212,7 @@ let Logger = class Logger {
      * @param {Object} [metadata]
      * @param {Object} [metadataStyles]
      * @return {Logger}
-    */
+     */
     error(message) {
         let metadata = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
         let metadataStyles = arguments[2];
@@ -227,7 +221,7 @@ let Logger = class Logger {
             metadata.error = message;
             message = `${ metadata.error.name }: ${ metadata.error.message }`;
         }
-        return this.log(message, metadata, _nightingaleLevels2.default.ERROR, { metadataStyles: metadataStyles });
+        return this.log(message, metadata, _nightingaleLevels2.default.ERROR, { metadataStyles });
     }
 
     /**
@@ -237,9 +231,9 @@ let Logger = class Logger {
      * @param {Object} [metadata]
      * @param {Object} [metadataStyles]
      * @return {Logger}
-    */
+     */
     alert(message, metadata, metadataStyles) {
-        return this.log(message, metadata, _nightingaleLevels2.default.ALERT, { metadataStyles: metadataStyles });
+        return this.log(message, metadata, _nightingaleLevels2.default.ALERT, { metadataStyles });
     }
 
     /**
@@ -249,9 +243,9 @@ let Logger = class Logger {
      * @param {Object} [metadata]
      * @param {Object} [metadataStyles]
      * @return {Logger}
-    */
+     */
     fatal(message, metadata, metadataStyles) {
-        return this.log(message, metadata, _nightingaleLevels2.default.FATAL, { metadataStyles: metadataStyles });
+        return this.log(message, metadata, _nightingaleLevels2.default.FATAL, { metadataStyles });
     }
 
     /**
@@ -261,12 +255,12 @@ let Logger = class Logger {
      * @param {Object} [metadata]
      * @param {Object} [metadataStyles]
      * @return {Logger}
-    */
+     */
     inspectValue(value, metadata, metadataStyles) {
         // Note: inspect is a special function for node:
         // https://github.com/nodejs/node/blob/a1bda1b4deb08dfb3e06cb778f0db40023b18318/lib/util.js#L210
         value = _util2.default.inspect(value, { depth: 6 });
-        return this.log(value, metadata, _nightingaleLevels2.default.DEBUG, { metadataStyles: metadataStyles, styles: ['gray'] });
+        return this.log(value, metadata, _nightingaleLevels2.default.DEBUG, { metadataStyles, styles: ['gray'] });
     }
 
     /**
@@ -277,10 +271,10 @@ let Logger = class Logger {
      * @param {Object} [metadata]
      * @param {Object} [metadataStyles]
      * @return {Logger}
-    */
+     */
     inspectVar(varName, varValue, metadata, metadataStyles) {
         varValue = _util2.default.inspect(varValue, { depth: 6 });
-        return this.log(`${ varName } = ${ varValue }`, metadata, _nightingaleLevels2.default.DEBUG, { metadataStyles: metadataStyles, styles: ['cyan'] });
+        return this.log(`${ varName } = ${ varValue }`, metadata, _nightingaleLevels2.default.DEBUG, { metadataStyles, styles: ['cyan'] });
     }
 
     /**
@@ -290,7 +284,7 @@ let Logger = class Logger {
      * @param {Object} [metadata]
      * @param {Object} [metadataStyles]
      * @return {Logger}
-    */
+     */
     success(message, metadata, metadataStyles) {
         return this.infoSuccess(message, metadata, metadataStyles);
     }
@@ -302,10 +296,10 @@ let Logger = class Logger {
      * @param {Object} [metadata]
      * @param {Object} [metadataStyles]
      * @return {Logger}
-    */
+     */
     infoSuccess(message, metadata, metadataStyles) {
         return this.log(message, metadata, _nightingaleLevels2.default.INFO, {
-            metadataStyles: metadataStyles,
+            metadataStyles,
             symbol: '✔',
             styles: ['green', 'bold']
         });
@@ -318,10 +312,10 @@ let Logger = class Logger {
      * @param {Object} [metadata]
      * @param {Object} [metadataStyles]
      * @return {Logger}
-    */
+     */
     debugSuccess(message, metadata, metadataStyles) {
         return this.log(message, metadata, _nightingaleLevels2.default.DEBUG, {
-            metadataStyles: metadataStyles,
+            metadataStyles,
             symbol: '✔',
             styles: ['green']
         });
@@ -334,9 +328,9 @@ let Logger = class Logger {
      * @param {Object} [metadata]
      * @param {Object} [metadataStyles]
      * @return {Logger}
-    */
+     */
     fail(message, metadata, metadataStyles) {
-        return this.infoSuccess(message, metadata, metadataStyles);
+        return this.infoFail(message, metadata, metadataStyles);
     }
 
     /**
@@ -346,10 +340,10 @@ let Logger = class Logger {
      * @param {Object} [metadata]
      * @param {Object} [metadataStyles]
      * @return {Logger}
-    */
+     */
     infoFail(message, metadata, metadataStyles) {
         return this.log(message, metadata, _nightingaleLevels2.default.INFO, {
-            metadataStyles: metadataStyles,
+            metadataStyles,
             symbol: '✖',
             styles: ['red', 'bold']
         });
@@ -362,46 +356,85 @@ let Logger = class Logger {
      * @param {Object} [metadata]
      * @param {Object} [metadataStyles]
      * @return {Logger}
-    */
+     */
     debugFail(message, metadata, metadataStyles) {
         return this.log(message, metadata, _nightingaleLevels2.default.DEBUG, {
-            metadataStyles: metadataStyles,
+            metadataStyles,
             symbol: '✖',
             styles: ['red']
         });
     }
 
     /**
+     * @param {string} [message]
+     * @param {Object} [metadata]
+     * @param {Object} [metadataStyles]
+     * @param {number} [level = levels.DEBUG]
      * @returns {*} time to pass to timeEnd
      */
-    time() {
+    time(message, metadata, metadataStyles) {
+        let level = arguments.length <= 3 || arguments[3] === undefined ? _nightingaleLevels2.default.DEBUG : arguments[3];
+
+        if (message) {
+            this.log(message, metadata, level, { metadataStyles });
+        }
+
         return Date.now();
     }
 
+    infoTime(message, metadata, metadataStyles) {
+        return this.time(message, metadata, metadataStyles, _nightingaleLevels2.default.INFO);
+    }
+
     /**
-    * Finds difference between when this method
-    * was called and when the respective time method
-    * was called, then logs out the difference
-    * and deletes the original record
-    *
-    * @param {number=} time return of previous call to time()
-    * @param {string} message
+     * Finds difference between when this method
+     * was called and when the respective time method
+     * was called, then logs out the difference
+     * and deletes the original record
+     *
+     * @param {number=} time return of previous call to time()
+     * @param {string} message
      * @param {Object} [metadata]
      * @param {Object} [metadataStyles]
-    */
+     * @param {number} [level = levels.DEBUG]
+     */
     timeEnd(time, message) {
         let metadata = arguments.length <= 2 || arguments[2] === undefined ? {} : arguments[2];
         let metadataStyles = arguments[3];
+        let level = arguments.length <= 4 || arguments[4] === undefined ? _nightingaleLevels2.default.DEBUG : arguments[4];
+        let options = arguments[5];
 
         const now = Date.now();
 
         const diffTime = now - time;
-        const seconds = diffTime > 1000 && Math.floor(diffTime / 1000);
-        const ms = diffTime - seconds * 1000;
 
-        metadata.readableTime = `${ seconds ? `${ seconds }s and ` : '' }${ ms }ms`;
+        if (diffTime < 1000) {
+            metadata.readableTime = `${ diffTime }ms`;
+        } else {
+            const seconds = diffTime > 1000 && Math.floor(diffTime / 1000);
+            const ms = diffTime - NaN;
+            metadata.readableTime = `${ '' }${ ms }ms`;
+        }
+
         metadata.timeMs = diffTime;
-        this.log(message, metadata, _nightingaleLevels2.default.DEBUG, { metadataStyles: metadataStyles });
+        this.log(message, metadata, level, _extends({}, options, { metadataStyles }));
+    }
+
+    /**
+     * Like timeEnd, but with INFO level
+     */
+    infoTimeEnd(time, message, metadata, metadataStyles) {
+        return this.timeEnd(time, message, metadata, metadataStyles, _nightingaleLevels2.default.INFO);
+    }
+
+    /**
+     * Like timeEnd, but with INFO level
+     */
+    infoSuccessTimeEnd(time, message, metadata, metadataStyles) {
+        return this.timeEnd(time, message, metadata, metadataStyles, _nightingaleLevels2.default.INFO, {
+            symbol: '✔',
+            styles: ['green', 'bold']
+        });
     }
 
     /**
@@ -419,7 +452,7 @@ let Logger = class Logger {
      * @param {Object} [metadata]
      * @param {Object} [metadataStyles]
      * @return {Logger}
-    */
+     */
     enter(fn) {
         let metadata = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
         let metadataStyles = arguments[2];
@@ -427,7 +460,7 @@ let Logger = class Logger {
         metadata = _extends({
             functionName: fn.name
         }, metadata);
-        return this.log('enter', metadata, _nightingaleLevels2.default.TRACE, { metadataStyles: metadataStyles });
+        return this.log('enter', metadata, _nightingaleLevels2.default.TRACE, { metadataStyles });
     }
 
     /**
@@ -447,12 +480,12 @@ let Logger = class Logger {
      * @param {Object} [metadata]
      * @param {Object} [metadataStyles]
      * @return {Logger}
-    */
+     */
     exit(fn, metadata, metadataStyles) {
         metadata = _extends({
             functionName: fn.name
         }, metadata);
-        return this.log('exit', metadata, _nightingaleLevels2.default.TRACE, { metadataStyles: metadataStyles });
+        return this.log('exit', metadata, _nightingaleLevels2.default.TRACE, { metadataStyles });
     }
 
     /**
@@ -472,7 +505,7 @@ let Logger = class Logger {
      * @param {Object} [metadata]
      * @param {Object} [metadataStyles]
      * @param {Function} callback
-    */
+     */
     wrap(fn, metadata, metadataStyles, callback) {
         if (typeof metadata === 'function') {
             callback = metadata;
@@ -486,6 +519,6 @@ let Logger = class Logger {
         callback();
         this.exit(fn);
     }
-};
+}
 exports.default = Logger;
 //# sourceMappingURL=index.js.map

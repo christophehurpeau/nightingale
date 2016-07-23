@@ -3,25 +3,10 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.default = undefined;
 
-var _extends = Object.assign || /**
-                                 * @function
-                                 * @param target
-                                */ function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _createClass = /**
-                    * @function
-                   */ function () { /**
-                                     * @function
-                                     * @param target
-                                     * @param props
-                                    */ function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return (/**
-                                                                                                                                                                                                                                                                                                                                                                            * @function
-                                                                                                                                                                                                                                                                                                                                                                            * @param Constructor
-                                                                                                                                                                                                                                                                                                                                                                            * @param protoProps
-                                                                                                                                                                                                                                                                                                                                                                            * @param staticProps
-                                                                                                                                                                                                                                                                                                                                                                           */ function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; } ); }();
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _util = require('util');
 
@@ -31,31 +16,17 @@ var _nightingaleLevels = require('nightingale-levels');
 
 var _nightingaleLevels2 = _interopRequireDefault(_nightingaleLevels);
 
-/**
- * @function
- * @param obj
-*/
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/**
- * @function
- * @param instance
- * @param Constructor
-*/
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER) {
-    global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = /**
-                                                  * @function
-                                                 */function () {
+    global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = function () {
         return { handlers: [], processors: [] };
     };
 }
 
-/**
- * @function
- * @param key
-*/function getConfigForLogger(key) {
+function getConfigForLogger(key) {
     return global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key);
 }
 
@@ -64,18 +35,14 @@ if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER) {
  * This records are treated by handlers
  */
 
-var Logger = /**
-              * @function
-             */function () {
+var Logger = function () {
 
     /**
      * Create a new Logger
      *
      * @param {string} key
      * @param {string} [displayName]
-    * @function
-    */
-
+     */
     function Logger(key, displayName) {
         _classCallCheck(this, Logger);
 
@@ -85,9 +52,7 @@ var Logger = /**
 
     _createClass(Logger, [{
         key: 'getConfig',
-        value: /**
-                * @function
-               */function getConfig() {
+        value: function getConfig() {
             return getConfigForLogger(this.key);
         }
 
@@ -101,11 +66,7 @@ var Logger = /**
 
     }, {
         key: 'child',
-        value: /**
-                * @function
-                * @param childSuffixKey
-                * @param childDisplayName
-               */function child(childSuffixKey, childDisplayName) {
+        value: function child(childSuffixKey, childDisplayName) {
             return new Logger(this.key + '.' + childSuffixKey, childDisplayName);
         }
 
@@ -127,10 +88,7 @@ var Logger = /**
 
     }, {
         key: 'context',
-        value: /**
-                * @function
-                * @param _context
-               */function context(_context) {
+        value: function context(_context) {
             var logger = new Logger(this.key);
             logger.setContext(_context);
             return logger;
@@ -144,10 +102,7 @@ var Logger = /**
 
     }, {
         key: 'setContext',
-        value: /**
-                * @function
-                * @param context
-               */function setContext(context) {
+        value: function setContext(context) {
             this._context = context;
         }
 
@@ -161,10 +116,7 @@ var Logger = /**
 
     }, {
         key: 'addRecord',
-        value: /**
-                * @function
-                * @param record
-               */function addRecord(record) {
+        value: function addRecord(record) {
             var _this = this;
 
             var _getConfig = this.getConfig();
@@ -176,6 +128,13 @@ var Logger = /**
                 return handler.isHandling(record.level, _this.key);
             });
             if (handlers.length === 0) {
+                if (record.level > _nightingaleLevels2.default.ERROR) {
+                    // eslint-disable-next-line no-console
+                    console.log('[nightingale] no logger for > error level.', {
+                        key: record.key,
+                        message: record.message
+                    });
+                }
                 return;
             }
 
@@ -202,13 +161,7 @@ var Logger = /**
 
     }, {
         key: 'log',
-        value: /**
-                * @function
-                * @param message
-                * @param metadata
-                * @param level
-                * @param options
-               */function log(message, metadata) {
+        value: function log(message, metadata) {
             var level = arguments.length <= 2 || arguments[2] === undefined ? _nightingaleLevels2.default.INFO : arguments[2];
             var options = arguments.length <= 3 || arguments[3] === undefined ? undefined : arguments[3];
 
@@ -247,12 +200,7 @@ var Logger = /**
 
     }, {
         key: 'trace',
-        value: /**
-                * @function
-                * @param message
-                * @param metadata
-                * @param metadataStyles
-               */function trace(message, metadata, metadataStyles) {
+        value: function trace(message, metadata, metadataStyles) {
             return this.log(message, metadata, _nightingaleLevels2.default.TRACE, { metadataStyles: metadataStyles });
         }
 
@@ -267,12 +215,7 @@ var Logger = /**
 
     }, {
         key: 'debug',
-        value: /**
-                * @function
-                * @param message
-                * @param metadata
-                * @param metadataStyles
-               */function debug(message, metadata, metadataStyles) {
+        value: function debug(message, metadata, metadataStyles) {
             return this.log(message, metadata, _nightingaleLevels2.default.DEBUG, { metadataStyles: metadataStyles });
         }
 
@@ -287,12 +230,7 @@ var Logger = /**
 
     }, {
         key: 'info',
-        value: /**
-                * @function
-                * @param message
-                * @param metadata
-                * @param metadataStyles
-               */function info(message, metadata, metadataStyles) {
+        value: function info(message, metadata, metadataStyles) {
             return this.log(message, metadata, _nightingaleLevels2.default.INFO, { metadataStyles: metadataStyles });
         }
 
@@ -307,12 +245,7 @@ var Logger = /**
 
     }, {
         key: 'warn',
-        value: /**
-                * @function
-                * @param message
-                * @param metadata
-                * @param metadataStyles
-               */function warn(message, metadata, metadataStyles) {
+        value: function warn(message, metadata, metadataStyles) {
             return this.log(message, metadata, _nightingaleLevels2.default.WARN, { metadataStyles: metadataStyles });
         }
 
@@ -327,12 +260,7 @@ var Logger = /**
 
     }, {
         key: 'error',
-        value: /**
-                * @function
-                * @param message
-                * @param metadata
-                * @param metadataStyles
-               */function error(message) {
+        value: function error(message) {
             var metadata = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
             var metadataStyles = arguments[2];
 
@@ -354,12 +282,7 @@ var Logger = /**
 
     }, {
         key: 'alert',
-        value: /**
-                * @function
-                * @param message
-                * @param metadata
-                * @param metadataStyles
-               */function alert(message, metadata, metadataStyles) {
+        value: function alert(message, metadata, metadataStyles) {
             return this.log(message, metadata, _nightingaleLevels2.default.ALERT, { metadataStyles: metadataStyles });
         }
 
@@ -374,12 +297,7 @@ var Logger = /**
 
     }, {
         key: 'fatal',
-        value: /**
-                * @function
-                * @param message
-                * @param metadata
-                * @param metadataStyles
-               */function fatal(message, metadata, metadataStyles) {
+        value: function fatal(message, metadata, metadataStyles) {
             return this.log(message, metadata, _nightingaleLevels2.default.FATAL, { metadataStyles: metadataStyles });
         }
 
@@ -394,12 +312,7 @@ var Logger = /**
 
     }, {
         key: 'inspectValue',
-        value: /**
-                * @function
-                * @param value
-                * @param metadata
-                * @param metadataStyles
-               */function inspectValue(value, metadata, metadataStyles) {
+        value: function inspectValue(value, metadata, metadataStyles) {
             // Note: inspect is a special function for node:
             // https://github.com/nodejs/node/blob/a1bda1b4deb08dfb3e06cb778f0db40023b18318/lib/util.js#L210
             value = _util2.default.inspect(value, { depth: 6 });
@@ -418,13 +331,7 @@ var Logger = /**
 
     }, {
         key: 'inspectVar',
-        value: /**
-                * @function
-                * @param varName
-                * @param varValue
-                * @param metadata
-                * @param metadataStyles
-               */function inspectVar(varName, varValue, metadata, metadataStyles) {
+        value: function inspectVar(varName, varValue, metadata, metadataStyles) {
             varValue = _util2.default.inspect(varValue, { depth: 6 });
             return this.log(varName + ' = ' + varValue, metadata, _nightingaleLevels2.default.DEBUG, { metadataStyles: metadataStyles, styles: ['cyan'] });
         }
@@ -440,12 +347,7 @@ var Logger = /**
 
     }, {
         key: 'success',
-        value: /**
-                * @function
-                * @param message
-                * @param metadata
-                * @param metadataStyles
-               */function success(message, metadata, metadataStyles) {
+        value: function success(message, metadata, metadataStyles) {
             return this.infoSuccess(message, metadata, metadataStyles);
         }
 
@@ -460,12 +362,7 @@ var Logger = /**
 
     }, {
         key: 'infoSuccess',
-        value: /**
-                * @function
-                * @param message
-                * @param metadata
-                * @param metadataStyles
-               */function infoSuccess(message, metadata, metadataStyles) {
+        value: function infoSuccess(message, metadata, metadataStyles) {
             return this.log(message, metadata, _nightingaleLevels2.default.INFO, {
                 metadataStyles: metadataStyles,
                 symbol: '✔',
@@ -484,12 +381,7 @@ var Logger = /**
 
     }, {
         key: 'debugSuccess',
-        value: /**
-                * @function
-                * @param message
-                * @param metadata
-                * @param metadataStyles
-               */function debugSuccess(message, metadata, metadataStyles) {
+        value: function debugSuccess(message, metadata, metadataStyles) {
             return this.log(message, metadata, _nightingaleLevels2.default.DEBUG, {
                 metadataStyles: metadataStyles,
                 symbol: '✔',
@@ -508,13 +400,8 @@ var Logger = /**
 
     }, {
         key: 'fail',
-        value: /**
-                * @function
-                * @param message
-                * @param metadata
-                * @param metadataStyles
-               */function fail(message, metadata, metadataStyles) {
-            return this.infoSuccess(message, metadata, metadataStyles);
+        value: function fail(message, metadata, metadataStyles) {
+            return this.infoFail(message, metadata, metadataStyles);
         }
 
         /**
@@ -528,12 +415,7 @@ var Logger = /**
 
     }, {
         key: 'infoFail',
-        value: /**
-                * @function
-                * @param message
-                * @param metadata
-                * @param metadataStyles
-               */function infoFail(message, metadata, metadataStyles) {
+        value: function infoFail(message, metadata, metadataStyles) {
             return this.log(message, metadata, _nightingaleLevels2.default.INFO, {
                 metadataStyles: metadataStyles,
                 symbol: '✖',
@@ -552,12 +434,7 @@ var Logger = /**
 
     }, {
         key: 'debugFail',
-        value: /**
-                * @function
-                * @param message
-                * @param metadata
-                * @param metadataStyles
-               */function debugFail(message, metadata, metadataStyles) {
+        value: function debugFail(message, metadata, metadataStyles) {
             return this.log(message, metadata, _nightingaleLevels2.default.DEBUG, {
                 metadataStyles: metadataStyles,
                 symbol: '✖',
@@ -566,50 +443,88 @@ var Logger = /**
         }
 
         /**
+         * @param {string} [message]
+         * @param {Object} [metadata]
+         * @param {Object} [metadataStyles]
+         * @param {number} [level = levels.DEBUG]
          * @returns {*} time to pass to timeEnd
          */
 
     }, {
         key: 'time',
-        value: /**
-                * @function
-               */function time() {
+        value: function time(message, metadata, metadataStyles) {
+            var level = arguments.length <= 3 || arguments[3] === undefined ? _nightingaleLevels2.default.DEBUG : arguments[3];
+
+            if (message) {
+                this.log(message, metadata, level, { metadataStyles: metadataStyles });
+            }
+
             return Date.now();
+        }
+    }, {
+        key: 'infoTime',
+        value: function infoTime(message, metadata, metadataStyles) {
+            return this.time(message, metadata, metadataStyles, _nightingaleLevels2.default.INFO);
         }
 
         /**
-        * Finds difference between when this method
-        * was called and when the respective time method
-        * was called, then logs out the difference
-        * and deletes the original record
-        *
-        * @param {number=} time return of previous call to time()
-        * @param {string} message
+         * Finds difference between when this method
+         * was called and when the respective time method
+         * was called, then logs out the difference
+         * and deletes the original record
+         *
+         * @param {number=} time return of previous call to time()
+         * @param {string} message
          * @param {Object} [metadata]
          * @param {Object} [metadataStyles]
-        */
+         * @param {number} [level = levels.DEBUG]
+         */
 
     }, {
         key: 'timeEnd',
-        value: /**
-                * @function
-                * @param time
-                * @param message
-                * @param metadata
-                * @param metadataStyles
-               */function timeEnd(time, message) {
+        value: function timeEnd(time, message) {
             var metadata = arguments.length <= 2 || arguments[2] === undefined ? {} : arguments[2];
             var metadataStyles = arguments[3];
+            var level = arguments.length <= 4 || arguments[4] === undefined ? _nightingaleLevels2.default.DEBUG : arguments[4];
+            var options = arguments[5];
 
             var now = Date.now();
 
             var diffTime = now - time;
-            var seconds = diffTime > 1000 && Math.floor(diffTime / 1000);
-            var ms = diffTime - seconds * 1000;
 
-            metadata.readableTime = '' + (seconds ? seconds + 's and ' : '') + ms + 'ms';
+            if (diffTime < 1000) {
+                metadata.readableTime = diffTime + 'ms';
+            } else {
+                var seconds = diffTime > 1000 && Math.floor(diffTime / 1000);
+                var ms = diffTime - NaN;
+                metadata.readableTime = 'NaNms';
+            }
+
             metadata.timeMs = diffTime;
-            this.log(message, metadata, _nightingaleLevels2.default.DEBUG, { metadataStyles: metadataStyles });
+            this.log(message, metadata, level, _extends({}, options, { metadataStyles: metadataStyles }));
+        }
+
+        /**
+         * Like timeEnd, but with INFO level
+         */
+
+    }, {
+        key: 'infoTimeEnd',
+        value: function infoTimeEnd(time, message, metadata, metadataStyles) {
+            return this.timeEnd(time, message, metadata, metadataStyles, _nightingaleLevels2.default.INFO);
+        }
+
+        /**
+         * Like timeEnd, but with INFO level
+         */
+
+    }, {
+        key: 'infoSuccessTimeEnd',
+        value: function infoSuccessTimeEnd(time, message, metadata, metadataStyles) {
+            return this.timeEnd(time, message, metadata, metadataStyles, _nightingaleLevels2.default.INFO, {
+                symbol: '✔',
+                styles: ['green', 'bold']
+            });
         }
 
         /**
@@ -631,12 +546,7 @@ var Logger = /**
 
     }, {
         key: 'enter',
-        value: /**
-                * @function
-                * @param fn
-                * @param metadata
-                * @param metadataStyles
-               */function enter(fn) {
+        value: function enter(fn) {
             var metadata = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
             var metadataStyles = arguments[2];
 
@@ -667,12 +577,7 @@ var Logger = /**
 
     }, {
         key: 'exit',
-        value: /**
-                * @function
-                * @param fn
-                * @param metadata
-                * @param metadataStyles
-               */function exit(fn, metadata, metadataStyles) {
+        value: function exit(fn, metadata, metadataStyles) {
             metadata = _extends({
                 functionName: fn.name
             }, metadata);
@@ -700,13 +605,7 @@ var Logger = /**
 
     }, {
         key: 'wrap',
-        value: /**
-                * @function
-                * @param fn
-                * @param metadata
-                * @param metadataStyles
-                * @param callback
-               */function wrap(fn, metadata, metadataStyles, callback) {
+        value: function wrap(fn, metadata, metadataStyles, callback) {
             if (typeof metadata === 'function') {
                 callback = metadata;
                 metadata = undefined;
