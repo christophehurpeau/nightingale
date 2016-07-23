@@ -1,14 +1,14 @@
 'use strict';
 
-var _lib = require('../../lib');
-
-var _lib2 = _interopRequireDefault(_lib);
+var _assert = require('assert');
 
 var _nightingaleString = require('nightingale-string');
 
 var _nightingaleString2 = _interopRequireDefault(_nightingaleString);
 
-var _assert = require('assert');
+var _lib = require('../../lib');
+
+var _lib2 = _interopRequireDefault(_lib);
 
 /**
  * @function
@@ -18,7 +18,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 let TestableStringLogger = class TestableStringLogger extends _lib2.default {
     constructor() {
-        super();
+        super('');
         this.stringHandler = new _nightingaleString2.default(_lib.levels.ALL);
     }
 
@@ -35,6 +35,7 @@ let TestableStringLogger = class TestableStringLogger extends _lib2.default {
         return this.stringHandler.string;
     }
 }; /* global test */
+/* eslint import/no-extraneous-dependencies: 'off' */
 
 test('Logger: log method', () => {
     let logger = new TestableStringLogger();

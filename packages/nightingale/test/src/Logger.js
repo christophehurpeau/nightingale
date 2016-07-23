@@ -1,11 +1,12 @@
 /* global test */
-import Logger, { levels } from '../../lib';
-import StringHandler from 'nightingale-string';
+/* eslint import/no-extraneous-dependencies: 'off' */
 import { strictEqual } from 'assert';
+import StringHandler from 'nightingale-string';
+import Logger, { levels } from '../../lib';
 
 class TestableStringLogger extends Logger {
     constructor() {
-        super();
+        super('');
         this.stringHandler = new StringHandler(levels.ALL);
     }
 
