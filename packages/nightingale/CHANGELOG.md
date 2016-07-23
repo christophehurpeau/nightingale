@@ -1,3 +1,8 @@
+### v4.4.0
+
+- [`48b16cf`](https://github.com/nightingalejs/nightingale/commit/48b16cf6278427a74efb46c8bd371614bcf26887) update dependencies (Christophe Hurpeau)
+
+
 ### v4.3.1
 
 - [`23fe946`](https://github.com/nightingalejs/nightingale/commit/23fe946813b42d4a8e44496e4de07919e99a4650) fix configure `pattern` and `handler` (Christophe Hurpeau)
