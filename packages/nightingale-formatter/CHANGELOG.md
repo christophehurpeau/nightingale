@@ -1,3 +1,7 @@
+### v1.3.0
+
+- [`714bffc`](https://github.com/nightingalejs/nightingale-formatter/commit/714bffca41bedfeb93975237efa19d2dcc881e30) pob, rewrite, handle circular dependencies, tests (Christophe Hurpeau)
+
 ### v1.2.2
 
 - [`882342a`](https://github.com/nightingalejs/nightingale-formatter/commit/882342a66de2e6b7839009564135c3c590f79b5c) fix in formatObject when value is undefined (Christophe Hurpeau)
@@ -13,5 +17,3 @@
 ### v1.1.0
 
 formatRecordToString
-
-
