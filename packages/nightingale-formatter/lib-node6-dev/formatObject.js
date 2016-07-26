@@ -188,7 +188,7 @@ function formatObject(object, styleFn, objectStyles) {
     var _ref7$padding = _ref7.padding;
     let padding = _ref7$padding === undefined ? '  ' : _ref7$padding;
     var _ref7$maxDepth = _ref7.maxDepth;
-    let maxDepth = _ref7$maxDepth === undefined ? 5 : _ref7$maxDepth;
+    let maxDepth = _ref7$maxDepth === undefined ? 10 : _ref7$maxDepth;
 
     var _internalFormatObject = internalFormatObject(object, styleFn, objectStyles, { padding, maxDepth, depth: 0, objects: new Set() });
 

@@ -171,7 +171,7 @@ function internalFormatArray(array, styleFn, { padding, depth, maxDepth, objects
 
 export default function formatObject(object, styleFn, objectStyles, {
     padding = '  ',
-    maxDepth = 5,
+    maxDepth = 10,
 } = {}) {
     const { formattedValue: result } = internalFormatObject(
         object,
