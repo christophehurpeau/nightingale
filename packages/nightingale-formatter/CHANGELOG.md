@@ -1,3 +1,8 @@
+c### v1.3.1
+
+- [`a3c941d`](https://github.com/nightingalejs/nightingale-formatter/commit/a3c941d91fedbeb6fa980360450bd11b8f506de3) increase default maxDepth (Christophe Hurpeau)
+
+
 ### v1.3.0
 
 - [`714bffc`](https://github.com/nightingalejs/nightingale-formatter/commit/714bffca41bedfeb93975237efa19d2dcc881e30) pob, rewrite, handle circular dependencies, tests (Christophe Hurpeau)
