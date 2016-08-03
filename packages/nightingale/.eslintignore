@@ -1,1 +1,2 @@
-node_modules/springbokjs-library/.eslintignore
+!**/*.{js,jsx}
+**/*.min.{js,jsx}

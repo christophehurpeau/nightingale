@@ -1,1 +1,0 @@
-{"version":3,"sources":["../../src/index.js"],"names":[],"mappings":";;;;;;;;;;;;;sDAAS,O;;;;;;;;;;;mBACA,S;;;;;;;;mBAAW,kB;;;;;;;;mBAAoB,gB;;;;;;;;;;;sDAC/B,O","file":"index.js","sourcesContent":["export { default } from 'nightingale-logger';\nexport { configure, addGlobalProcessor, addGlobalHandler } from './config';\nexport { default as levels } from 'nightingale-levels';\n"]}

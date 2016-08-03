@@ -2,18 +2,20 @@
 
 Logger for browser and node
 
-[![Build Status][build-status-image]][build-status-url] [![Coverage][coverage-image]][coverage-url]
-
+[![Build Status][build-status-image]][build-status-url] [![Dependency Status][daviddm-image]][daviddm-url]
+ [![Coverage percentage][coverage-image]][coverage-url] [![Doclets Link][doclets-image]][doclets-url]
+             
 The nightingale is a bird best known for its powerful and beautiful song.
 
 See the [Logger API](http://nightingalejs.github.io/nightingale-logger/docs/Logger.html)
 
 ## Install
 
-```
-npm install --save nightingale
+```sh
+npm install --save nightingale  
 npm install --save nightingale-console # for console handler
 ```
+
 
 ## How to use
 
@@ -214,7 +216,12 @@ export function someAction(arg1) {
 
 [npm-image]: https://img.shields.io/npm/v/nightingale.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/nightingale
+[daviddm-image]: https://david-dm.org/nightingalejs/nightingale.svg?style=flat-square
+[daviddm-url]: https://david-dm.org/nightingalejs/nightingale
 [build-status-image]: https://img.shields.io/circleci/project/nightingalejs/nightingale/master.svg?style=flat-square
 [build-status-url]: https://circleci.com/gh/nightingalejs/nightingale
 [coverage-image]: https://img.shields.io/coveralls/nightingalejs/nightingale/master.svg?style=flat-square
-[coverage-url]: http://nightingalejs.github.io/nightingale/coverage/lcov-report/
+[coverage-url]: https://nightingalejs.github.io/nightingale/coverage/lcov-report/
+
+[doclets-image]: https://img.shields.io/badge/doclets.io-master-green.svg?style=flat-square
+[doclets-url]: https://doclets.io/nightingalejs/nightingale/master
