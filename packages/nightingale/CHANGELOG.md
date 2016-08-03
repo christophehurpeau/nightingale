@@ -1,3 +1,8 @@
+### v4.5.0
+
+- [`cbe90a8`](https://github.com/nightingalejs/nightingale/commit/cbe90a8b997deb9d0301f45723f149f24c699400) pob (Christophe Hurpeau)
+- [`0d5a533`](https://github.com/nightingalejs/nightingale/commit/0d5a533212aa811c3a56b390ac20044755a84686) add badge travisci (Christophe Hurpeau)
+
 ### v4.4.0
 
 - [`48b16cf`](https://github.com/nightingalejs/nightingale/commit/48b16cf6278427a74efb46c8bd371614bcf26887) update dependencies (Christophe Hurpeau)
@@ -113,4 +118,3 @@ If `DEBUG=app`, logger's min level stayed at `INFO`. Now, it display all log !
 ### v1.0.1
 
 - [`8f68ef0`](https://github.com/christophehurpeau/nightingale/commit/8f68ef08058b9dcb6413e3884b2576c427bec19f) fix min level in Handler (Christophe Hurpeau)
-
