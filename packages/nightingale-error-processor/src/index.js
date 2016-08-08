@@ -13,14 +13,20 @@ export default function errorProcessor(record, context) {
     if (!(error instanceof Error)) {
         return;
     }
+
     delete record.metadata.error;
     delete record.metadata.err;
 
-    try {
-        const parsedError = parseError(error);
-        record.metadata.error = parsedError;
-    } catch (err) {
-        console.log(err.stack || err.message || err);
+    if (error.originalError) {
+        // error was already parsed
         record.metadata.error = error;
+    } else {
+        try {
+            const parsedError = parseError(error);
+            record.metadata.error = parsedError;
+        } catch (err) {
+            console.log(err.stack || err.message || err);
+            record.metadata.error = error;
+        }
     }
 }

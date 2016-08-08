@@ -23,15 +23,21 @@ var _alouette = require('alouette');
     if (!(error instanceof Error)) {
         return;
     }
+
     delete record.metadata.error;
     delete record.metadata.err;
 
-    try {
-        var parsedError = (0, _alouette.parse)(error);
-        record.metadata.error = parsedError;
-    } catch (err) {
-        console.log(err.stack || err.message || err);
+    if (error.originalError) {
+        // error was already parsed
         record.metadata.error = error;
+    } else {
+        try {
+            var parsedError = (0, _alouette.parse)(error);
+            record.metadata.error = parsedError;
+        } catch (err) {
+            console.log(err.stack || err.message || err);
+            record.metadata.error = error;
+        }
     }
 } /* eslint no-console: "off" */
 //# sourceMappingURL=index.js.map
