@@ -10,7 +10,7 @@
   "license": "ISC",
   "repository": "nightingalejs/nightingale-ansi-formatter",
   "homepage": "https://github.com/nightingalejs/nightingale",
-  "main": "./lib/index.js",
+  "main": "./index.js",
   "scripts": {
     "build": "pob-build",
     "build:dev": "pob-build",
