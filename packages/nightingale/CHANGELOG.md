@@ -1,3 +1,7 @@
+### v4.6.0
+
+- [`aa0a783`](https://github.com/nightingalejs/nightingale/commit/aa0a78376d07f6a5ab3b34232bfed1e7ae67c3c2) config: function addConfig (Christophe Hurpeau)
+
 ### v4.5.0
 
 - [`cbe90a8`](https://github.com/nightingalejs/nightingale/commit/cbe90a8b997deb9d0301f45723f149f24c699400) pob (Christophe Hurpeau)
