@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.levels = exports.addGlobalHandler = exports.addGlobalProcessor = exports.configure = exports.default = undefined;
+exports.levels = exports.addGlobalHandler = exports.addGlobalProcessor = exports.addConfig = exports.configure = exports.default = undefined;
 
 var _config = require('./config');
 
@@ -11,6 +11,12 @@ Object.defineProperty(exports, 'configure', {
   enumerable: true,
   get: function get() {
     return _config.configure;
+  }
+});
+Object.defineProperty(exports, 'addConfig', {
+  enumerable: true,
+  get: function get() {
+    return _config.addConfig;
   }
 });
 Object.defineProperty(exports, 'addGlobalProcessor', {

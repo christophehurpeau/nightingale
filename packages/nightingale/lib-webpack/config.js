@@ -15,38 +15,61 @@ function clearCache() {
     global.__NIGHTINGALE_LOGGER_MAP_CACHE.clear();
 }
 
+function handleConfig(config) {
+    if (config.key) {
+        if (config.patterns) {
+            throw new Error('Cannot have key and patterns for the same config');
+        }
+        config.patterns = [config.key];
+        delete config.key;
+    }
+
+    if (config.pattern) {
+        if (config.patterns) {
+            throw new Error('Cannot have pattern and patterns for the same config');
+        }
+        config.patterns = [config.pattern];
+        delete config.pattern;
+    }
+
+    if (config.handler) {
+        if (config.handlers) {
+            throw new Error('Cannot have handler and handlers for the same config');
+        }
+        config.handlers = [config.handler];
+        delete config.handler;
+    }
+
+    if (config.patterns) {
+        config.minimatchPatterns = config.patterns.map(function (pattern) {
+            return new Minimatch(pattern);
+        });
+    }
+
+    return config;
+}
+
 export function configure(config) {
+    if (global.__NIGHTINGALE_CONFIG.length !== 0) {
+        // eslint-disable-next-line no-console
+        console.log('nightingale: warning: config overridden');
+    }
+
+    clearCache();
     global.__NIGHTINGALE_CONFIG = [];
     global.__NIGHTINGALE_CONFIG_DEFAULT = null;
 
-    config.reverse().forEach(function (c) {
-        if (c.pattern) {
-            if (c.patterns) {
-                throw new Error('Cannot have pattern and patterns for the same config');
-            }
-            c.patterns = [c.pattern];
-            delete c.pattern;
-        }
+    config.reverse().forEach(function (config) {
+        config = handleConfig(config);
 
-        if (c.handler) {
-            if (c.handlers) {
-                throw new Error('Cannot have handler and handlers for the same config');
-            }
-            c.handlers = [c.handler];
-            delete c.handler;
-        }
-
-        if (c.patterns) {
-            c.minimatchPatterns = c.patterns.map(function (pattern) {
-                return new Minimatch(pattern);
-            });
-            global.__NIGHTINGALE_CONFIG.push(c);
+        if (config.patterns) {
+            global.__NIGHTINGALE_CONFIG.push(config);
         } else {
             if (global.__NIGHTINGALE_CONFIG_DEFAULT) {
                 throw new Error('Config cannot contains more than 1 default declaration');
             }
 
-            global.__NIGHTINGALE_CONFIG_DEFAULT = c;
+            global.__NIGHTINGALE_CONFIG_DEFAULT = config;
         }
     });
 
@@ -56,6 +79,19 @@ export function configure(config) {
             processors: []
         };
     }
+}
+
+export function addConfig(config) {
+    var unshift = arguments.length <= 1 || arguments[1] === undefined ? true : arguments[1];
+
+    config = handleConfig(config);
+
+    if (!config.patterns) {
+        throw new Error('Config must have `pattern` or `patterns`');
+    }
+
+    clearCache();
+    global.__NIGHTINGALE_CONFIG[unshift ? 'unshift' : 'push'](config);
 }
 
 export function addGlobalProcessor(processor) {
