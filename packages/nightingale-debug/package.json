@@ -21,7 +21,7 @@
     "lint": "make lint"
   },
   "dependencies": {
-    "minimatch": "^3.0.0",
+    "minimatch": "^3.0.3",
     "nightingale-levels": "^1.0.0"
   },
   "devDependencies": {
