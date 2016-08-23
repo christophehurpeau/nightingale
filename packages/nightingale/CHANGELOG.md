@@ -1,3 +1,7 @@
+### v4.7.1
+
+- [`63b6986`](https://github.com/nightingalejs/nightingale/commit/63b6986715a74b1a4695d969fc2f7d1403d95a46) listenUnhandledErrors logger name (Christophe Hurpeau)
+
 ### v4.7.0
 
 - [`29f819d`](https://github.com/nightingalejs/nightingale/commit/29f819d57113e092c0e587a3d84374e459a01e22) listenUnhandledErrors (Christophe Hurpeau)
