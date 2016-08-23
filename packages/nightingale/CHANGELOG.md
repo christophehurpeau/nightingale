@@ -1,3 +1,7 @@
+### v4.7.0
+
+- [`29f819d`](https://github.com/nightingalejs/nightingale/commit/29f819d57113e092c0e587a3d84374e459a01e22) listenUnhandledErrors (Christophe Hurpeau)
+
 ### v4.6.0
 
 - [`aa0a783`](https://github.com/nightingalejs/nightingale/commit/aa0a78376d07f6a5ab3b34232bfed1e7ae67c3c2) config: function addConfig (Christophe Hurpeau)
