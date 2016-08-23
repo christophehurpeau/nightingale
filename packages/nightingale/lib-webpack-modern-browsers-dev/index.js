@@ -11,7 +11,7 @@ export { default as levels } from 'nightingale-levels';
  * @param {Logger} [logger]
  */
 export function listenUnhandledErrors(logger) {
-  if (!logger) logger = new Logger();
+  if (!logger) logger = new Logger('nightingale.listenUnhandledErrors', 'listenUnhandledErrors');
   process.on('uncaughtException', err => {
     return logger.error('uncaughtException', { err });
   });

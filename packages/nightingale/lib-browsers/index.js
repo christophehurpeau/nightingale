@@ -56,7 +56,7 @@ exports.default = _nightingaleLogger2.default;
  * @param {Logger} [logger]
  */
 function listenUnhandledErrors(logger) {
-  if (!logger) logger = new _nightingaleLogger2.default();
+  if (!logger) logger = new _nightingaleLogger2.default('nightingale.listenUnhandledErrors', 'listenUnhandledErrors');
   process.on('uncaughtException', function (err) {
     return logger.error('uncaughtException', { err: err });
   });
