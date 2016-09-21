@@ -12,11 +12,7 @@ export { default as levels } from 'nightingale-levels';
  */
 export function listenUnhandledErrors(logger) {
   if (!logger) logger = new Logger('nightingale.listenUnhandledErrors', 'listenUnhandledErrors');
-  process.on('uncaughtException', err => {
-    return logger.error('uncaughtException', { err });
-  });
-  process.on('unhandledRejection', err => {
-    return logger.error('unhandledRejection', { err });
-  });
+  process.on('uncaughtException', err => logger.error('uncaughtException', { err }));
+  process.on('unhandledRejection', err => logger.error('unhandledRejection', { err }));
 }
 //# sourceMappingURL=index.js.map

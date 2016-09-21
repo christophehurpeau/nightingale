@@ -57,11 +57,7 @@ exports.default = _nightingaleLogger2.default;
  */
 function listenUnhandledErrors(logger) {
   if (!logger) logger = new _nightingaleLogger2.default('nightingale.listenUnhandledErrors', 'listenUnhandledErrors');
-  process.on('uncaughtException', err => {
-    return logger.error('uncaughtException', { err });
-  });
-  process.on('unhandledRejection', err => {
-    return logger.error('unhandledRejection', { err });
-  });
+  process.on('uncaughtException', err => logger.error('uncaughtException', { err }));
+  process.on('unhandledRejection', err => logger.error('unhandledRejection', { err }));
 }
 //# sourceMappingURL=index.js.map

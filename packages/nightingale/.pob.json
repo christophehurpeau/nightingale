@@ -7,5 +7,6 @@
     "browsers"
   ],
   "react": false,
-  "testing": true
+  "testing": true,
+  "documentation": true
 }
