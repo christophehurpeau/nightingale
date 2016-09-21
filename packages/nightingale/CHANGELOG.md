@@ -1,3 +1,8 @@
+### v4.8.0
+
+- [`a645c25`](https://github.com/nightingalejs/nightingale/commit/a645c25e51740c9b6a000b401d19e92f3a8cf9f2) add logger.time() in example (Christophe Hurpeau)
+- [`9eb9b9d`](https://github.com/nightingalejs/nightingale/commit/9eb9b9d9915b456f0cf1af6b98bc3ae716404cc6) upgrade pob and update dependencies (Christophe Hurpeau)
+
 ### v4.7.1
 
 - [`63b6986`](https://github.com/nightingalejs/nightingale/commit/63b6986715a74b1a4695d969fc2f7d1403d95a46) listenUnhandledErrors logger name (Christophe Hurpeau)
