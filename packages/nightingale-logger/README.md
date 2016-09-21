@@ -8,6 +8,14 @@ To see the full documentation, go to [nightingalejs/nightingale](https://github.
 
 To see the Logger API, go to [docklets][docklets-url] or [http://nightingalejs.github.io/nightingale-logger](http://nightingalejs.github.io/nightingale-logger/docs/Logger.html)
 
+## Install
+
+```sh
+npm install --save nightingale-logger
+```
+
+## Usage
+
 ```js
 import Logger from 'nightingale-logger';
 
@@ -17,6 +25,7 @@ logger.info('This is a log');
 logger.warn('This is a warning !');
 logger.success('It works !');
 ```
+
 
 [npm-image]: https://img.shields.io/npm/v/nightingale-logger.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/nightingale-logger

@@ -10,8 +10,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 /* global test */
 test('key argument', () => {
-    const key = 'test';
-    let logger = new _2.default(key);
-    (0, _assert.strictEqual)(logger.key, key);
+  const key = 'test';
+  let logger = new _2.default(key);
+  (0, _assert.strictEqual)(logger.key, key);
 });
 //# sourceMappingURL=index.js.map

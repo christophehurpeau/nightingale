@@ -1,13 +1,28 @@
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-import _t from 'tcomb-forked';
+var _tcombForked = require('tcomb-forked');
+
+var _tcombForked2 = _interopRequireDefault(_tcombForked);
+
+var _util = require('util');
+
+var _util2 = _interopRequireDefault(_util);
+
+var _nightingaleLevels = require('nightingale-levels');
+
+var _nightingaleLevels2 = _interopRequireDefault(_nightingaleLevels);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-import util from 'util';
-import levels from 'nightingale-levels';
 
 if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER) {
   global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = function () {
@@ -33,9 +48,9 @@ var Logger = function () {
    * @param {string} [displayName]
    */
   function Logger(key, displayName) {
-    _assert(key, _t.String, 'key');
+    _assert(key, _tcombForked2.default.String, 'key');
 
-    _assert(displayName, _t.maybe(_t.String), 'displayName');
+    _assert(displayName, _tcombForked2.default.maybe(_tcombForked2.default.String), 'displayName');
 
     _classCallCheck(this, Logger);
 
@@ -60,9 +75,9 @@ var Logger = function () {
   }, {
     key: 'child',
     value: function child(childSuffixKey, childDisplayName) {
-      _assert(childSuffixKey, _t.String, 'childSuffixKey');
+      _assert(childSuffixKey, _tcombForked2.default.String, 'childSuffixKey');
 
-      _assert(childDisplayName, _t.maybe(_t.String), 'childDisplayName');
+      _assert(childDisplayName, _tcombForked2.default.maybe(_tcombForked2.default.String), 'childDisplayName');
 
       return new Logger(this.key + '.' + childSuffixKey, childDisplayName);
     }
@@ -86,7 +101,7 @@ var Logger = function () {
   }, {
     key: 'context',
     value: function context(_context) {
-      _assert(_context, _t.Object, '_context');
+      _assert(_context, _tcombForked2.default.Object, '_context');
 
       var logger = new Logger(this.key);
       logger.setContext(_context);
@@ -102,7 +117,7 @@ var Logger = function () {
   }, {
     key: 'setContext',
     value: function setContext(context) {
-      _assert(context, _t.Object, 'context');
+      _assert(context, _tcombForked2.default.Object, 'context');
 
       this._context = context;
     }
@@ -116,7 +131,7 @@ var Logger = function () {
   }, {
     key: 'extendsContext',
     value: function extendsContext(extendedContext) {
-      _assert(extendedContext, _t.Object, 'extendedContext');
+      _assert(extendedContext, _tcombForked2.default.Object, 'extendedContext');
 
       Object.assign(this._context, extendedContext);
     }
@@ -134,7 +149,7 @@ var Logger = function () {
     value: function addRecord(record) {
       var _this = this;
 
-      _assert(record, _t.Object, 'record');
+      _assert(record, _tcombForked2.default.Object, 'record');
 
       var _getConfig = this.getConfig();
 
@@ -145,7 +160,7 @@ var Logger = function () {
         return handler.isHandling(record.level, _this.key);
       });
       if (handlers.length === 0) {
-        if (record.level > levels.ERROR) {
+        if (record.level > _nightingaleLevels2.default.ERROR) {
           // eslint-disable-next-line no-console
           console.log('[nightingale] no logger for > error level.', {
             key: record.key,
@@ -179,16 +194,16 @@ var Logger = function () {
   }, {
     key: 'log',
     value: function log(message, metadata) {
-      var level = arguments.length <= 2 || arguments[2] === undefined ? levels.INFO : arguments[2];
+      var level = arguments.length <= 2 || arguments[2] === undefined ? _nightingaleLevels2.default.INFO : arguments[2];
       var options = arguments.length <= 3 || arguments[3] === undefined ? undefined : arguments[3];
 
-      _assert(message, _t.String, 'message');
+      _assert(message, _tcombForked2.default.String, 'message');
 
-      _assert(metadata, _t.maybe(_t.Object), 'metadata');
+      _assert(metadata, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadata');
 
-      _assert(level, _t.Number, 'level');
+      _assert(level, _tcombForked2.default.Number, 'level');
 
-      _assert(options, _t.maybe(_t.Object), 'options');
+      _assert(options, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'options');
 
       var context = metadata && metadata.context;
       if (metadata) {
@@ -226,7 +241,7 @@ var Logger = function () {
   }, {
     key: 'trace',
     value: function trace(message, metadata, metadataStyles) {
-      return this.log(message, metadata, levels.TRACE, { metadataStyles: metadataStyles });
+      return this.log(message, metadata, _nightingaleLevels2.default.TRACE, { metadataStyles: metadataStyles });
     }
 
     /**
@@ -241,7 +256,7 @@ var Logger = function () {
   }, {
     key: 'debug',
     value: function debug(message, metadata, metadataStyles) {
-      return this.log(message, metadata, levels.DEBUG, { metadataStyles: metadataStyles });
+      return this.log(message, metadata, _nightingaleLevels2.default.DEBUG, { metadataStyles: metadataStyles });
     }
 
     /**
@@ -256,7 +271,7 @@ var Logger = function () {
   }, {
     key: 'info',
     value: function info(message, metadata, metadataStyles) {
-      return this.log(message, metadata, levels.INFO, { metadataStyles: metadataStyles });
+      return this.log(message, metadata, _nightingaleLevels2.default.INFO, { metadataStyles: metadataStyles });
     }
 
     /**
@@ -271,7 +286,7 @@ var Logger = function () {
   }, {
     key: 'warn',
     value: function warn(message, metadata, metadataStyles) {
-      return this.log(message, metadata, levels.WARN, { metadataStyles: metadataStyles });
+      return this.log(message, metadata, _nightingaleLevels2.default.WARN, { metadataStyles: metadataStyles });
     }
 
     /**
@@ -293,7 +308,7 @@ var Logger = function () {
         metadata.error = message;
         message = metadata.error.name + ': ' + metadata.error.message;
       }
-      return this.log(message, metadata, levels.ERROR, { metadataStyles: metadataStyles });
+      return this.log(message, metadata, _nightingaleLevels2.default.ERROR, { metadataStyles: metadataStyles });
     }
 
     /**
@@ -308,7 +323,7 @@ var Logger = function () {
   }, {
     key: 'alert',
     value: function alert(message, metadata, metadataStyles) {
-      return this.log(message, metadata, levels.ALERT, { metadataStyles: metadataStyles });
+      return this.log(message, metadata, _nightingaleLevels2.default.ALERT, { metadataStyles: metadataStyles });
     }
 
     /**
@@ -323,7 +338,7 @@ var Logger = function () {
   }, {
     key: 'fatal',
     value: function fatal(message, metadata, metadataStyles) {
-      return this.log(message, metadata, levels.FATAL, { metadataStyles: metadataStyles });
+      return this.log(message, metadata, _nightingaleLevels2.default.FATAL, { metadataStyles: metadataStyles });
     }
 
     /**
@@ -340,8 +355,8 @@ var Logger = function () {
     value: function inspectValue(value, metadata, metadataStyles) {
       // Note: inspect is a special function for node:
       // https://github.com/nodejs/node/blob/a1bda1b4deb08dfb3e06cb778f0db40023b18318/lib/util.js#L210
-      value = util.inspect(value, { depth: 6 });
-      return this.log(value, metadata, levels.DEBUG, { metadataStyles: metadataStyles, styles: ['gray'] });
+      value = _util2.default.inspect(value, { depth: 6 });
+      return this.log(value, metadata, _nightingaleLevels2.default.DEBUG, { metadataStyles: metadataStyles, styles: ['gray'] });
     }
 
     /**
@@ -357,8 +372,8 @@ var Logger = function () {
   }, {
     key: 'inspectVar',
     value: function inspectVar(varName, varValue, metadata, metadataStyles) {
-      varValue = util.inspect(varValue, { depth: 6 });
-      return this.log(varName + ' = ' + varValue, metadata, levels.DEBUG, { metadataStyles: metadataStyles, styles: ['cyan'] });
+      varValue = _util2.default.inspect(varValue, { depth: 6 });
+      return this.log(varName + ' = ' + varValue, metadata, _nightingaleLevels2.default.DEBUG, { metadataStyles: metadataStyles, styles: ['cyan'] });
     }
 
     /**
@@ -388,7 +403,7 @@ var Logger = function () {
   }, {
     key: 'infoSuccess',
     value: function infoSuccess(message, metadata, metadataStyles) {
-      return this.log(message, metadata, levels.INFO, {
+      return this.log(message, metadata, _nightingaleLevels2.default.INFO, {
         metadataStyles: metadataStyles,
         symbol: '✔',
         styles: ['green', 'bold']
@@ -407,7 +422,7 @@ var Logger = function () {
   }, {
     key: 'debugSuccess',
     value: function debugSuccess(message, metadata, metadataStyles) {
-      return this.log(message, metadata, levels.DEBUG, {
+      return this.log(message, metadata, _nightingaleLevels2.default.DEBUG, {
         metadataStyles: metadataStyles,
         symbol: '✔',
         styles: ['green']
@@ -441,7 +456,7 @@ var Logger = function () {
   }, {
     key: 'infoFail',
     value: function infoFail(message, metadata, metadataStyles) {
-      return this.log(message, metadata, levels.INFO, {
+      return this.log(message, metadata, _nightingaleLevels2.default.INFO, {
         metadataStyles: metadataStyles,
         symbol: '✖',
         styles: ['red', 'bold']
@@ -460,7 +475,7 @@ var Logger = function () {
   }, {
     key: 'debugFail',
     value: function debugFail(message, metadata, metadataStyles) {
-      return this.log(message, metadata, levels.DEBUG, {
+      return this.log(message, metadata, _nightingaleLevels2.default.DEBUG, {
         metadataStyles: metadataStyles,
         symbol: '✖',
         styles: ['red']
@@ -478,7 +493,7 @@ var Logger = function () {
   }, {
     key: 'time',
     value: function time(message, metadata, metadataStyles) {
-      var level = arguments.length <= 3 || arguments[3] === undefined ? levels.DEBUG : arguments[3];
+      var level = arguments.length <= 3 || arguments[3] === undefined ? _nightingaleLevels2.default.DEBUG : arguments[3];
 
       if (message) {
         this.log(message, metadata, level, { metadataStyles: metadataStyles });
@@ -489,13 +504,13 @@ var Logger = function () {
   }, {
     key: 'infoTime',
     value: function infoTime(message, metadata, metadataStyles) {
-      _assert(message, _t.String, 'message');
+      _assert(message, _tcombForked2.default.String, 'message');
 
-      _assert(metadata, _t.maybe(_t.Object), 'metadata');
+      _assert(metadata, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadata');
 
-      _assert(metadataStyles, _t.maybe(_t.Object), 'metadataStyles');
+      _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
 
-      return this.time(message, metadata, metadataStyles, levels.INFO);
+      return this.time(message, metadata, metadataStyles, _nightingaleLevels2.default.INFO);
     }
 
     /**
@@ -516,7 +531,7 @@ var Logger = function () {
     value: function timeEnd(time, message) {
       var metadata = arguments.length <= 2 || arguments[2] === undefined ? {} : arguments[2];
       var metadataStyles = arguments[3];
-      var level = arguments.length <= 4 || arguments[4] === undefined ? levels.DEBUG : arguments[4];
+      var level = arguments.length <= 4 || arguments[4] === undefined ? _nightingaleLevels2.default.DEBUG : arguments[4];
       var options = arguments[5];
 
       var now = Date.now();
@@ -542,15 +557,15 @@ var Logger = function () {
   }, {
     key: 'infoTimeEnd',
     value: function infoTimeEnd(time, message, metadata, metadataStyles) {
-      _assert(time, _t.Number, 'time');
+      _assert(time, _tcombForked2.default.Number, 'time');
 
-      _assert(message, _t.String, 'message');
+      _assert(message, _tcombForked2.default.String, 'message');
 
-      _assert(metadata, _t.maybe(_t.Object), 'metadata');
+      _assert(metadata, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadata');
 
-      _assert(metadataStyles, _t.maybe(_t.Object), 'metadataStyles');
+      _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
 
-      return this.timeEnd(time, message, metadata, metadataStyles, levels.INFO);
+      return this.timeEnd(time, message, metadata, metadataStyles, _nightingaleLevels2.default.INFO);
     }
 
     /**
@@ -560,15 +575,15 @@ var Logger = function () {
   }, {
     key: 'infoSuccessTimeEnd',
     value: function infoSuccessTimeEnd(time, message, metadata, metadataStyles) {
-      _assert(time, _t.Number, 'time');
+      _assert(time, _tcombForked2.default.Number, 'time');
 
-      _assert(message, _t.String, 'message');
+      _assert(message, _tcombForked2.default.String, 'message');
 
-      _assert(metadata, _t.maybe(_t.Object), 'metadata');
+      _assert(metadata, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadata');
 
-      _assert(metadataStyles, _t.maybe(_t.Object), 'metadataStyles');
+      _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
 
-      return this.timeEnd(time, message, metadata, metadataStyles, levels.INFO, {
+      return this.timeEnd(time, message, metadata, metadataStyles, _nightingaleLevels2.default.INFO, {
         symbol: '✔',
         styles: ['green', 'bold']
       });
@@ -600,7 +615,7 @@ var Logger = function () {
       metadata = _extends({
         functionName: fn.name
       }, metadata);
-      return this.log('enter', metadata, levels.TRACE, { metadataStyles: metadataStyles });
+      return this.log('enter', metadata, _nightingaleLevels2.default.TRACE, { metadataStyles: metadataStyles });
     }
 
     /**
@@ -628,7 +643,7 @@ var Logger = function () {
       metadata = _extends({
         functionName: fn.name
       }, metadata);
-      return this.log('exit', metadata, levels.TRACE, { metadataStyles: metadataStyles });
+      return this.log('exit', metadata, _nightingaleLevels2.default.TRACE, { metadataStyles: metadataStyles });
     }
 
     /**
@@ -670,21 +685,21 @@ var Logger = function () {
   return Logger;
 }();
 
-export default Logger;
+exports.default = Logger;
 
 function _assert(x, type, name) {
   function message() {
-    return 'Invalid value ' + _t.stringify(x) + ' supplied to ' + name + ' (expected a ' + _t.getTypeName(type) + ')';
+    return 'Invalid value ' + _tcombForked2.default.stringify(x) + ' supplied to ' + name + ' (expected a ' + _tcombForked2.default.getTypeName(type) + ')';
   }
 
-  if (_t.isType(type)) {
+  if (_tcombForked2.default.isType(type)) {
     if (!type.is(x)) {
-      type(x, [name + ': ' + _t.getTypeName(type)]);
+      type(x, [name + ': ' + _tcombForked2.default.getTypeName(type)]);
 
-      _t.fail(message());
+      _tcombForked2.default.fail(message());
     }
   } else if (!(x instanceof type)) {
-    _t.fail(message());
+    _tcombForked2.default.fail(message());
   }
 
   return x;
