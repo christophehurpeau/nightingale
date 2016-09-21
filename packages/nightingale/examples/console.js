@@ -17,3 +17,6 @@ logger.debug('debug()');
 logger.inspect('inspect()');
 logger.inspectVar('varName', 'inspectVar()');
 logger.success('success()');
+
+const timeStarted = logger.time();
+setTimeout(logger.timeEnd(timeStarted), 2000);
