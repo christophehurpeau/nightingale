@@ -53,6 +53,7 @@
     "mocha": "^3.0.2",
     "pob-babel": "^8.0.3",
     "pob-release": "^2.1.2",
-    "tcomb-forked": "^3.2.13"
+    "tcomb-forked": "^3.2.13",
+    "xunit-file": "^1.0.0"
   }
 }

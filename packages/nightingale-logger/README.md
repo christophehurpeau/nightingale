@@ -2,7 +2,10 @@
 
 Logger for browser and node
 
-[![Build Status][build-status-image]][build-status-url] [![Coverage][coverage-image]][coverage-url] [![API Doc][docklets-image]][docklets-url]
+[![Build Status][build-status-image]][build-status-url]
+[![Travis Status][travisci-status-image]][travisci-status-url]
+[![Coverage][coverage-image]][coverage-url]
+[![API Doc][docklets-image]][docklets-url]
 
 To see the full documentation, go to [nightingalejs/nightingale](https://github.com/nightingalejs/nightingale)
 
@@ -31,7 +34,9 @@ logger.success('It works !');
 [npm-url]: https://npmjs.org/package/nightingale-logger
 [build-status-image]: https://img.shields.io/circleci/project/nightingalejs/nightingale-logger/master.svg?style=flat-square
 [build-status-url]: https://circleci.com/gh/nightingalejs/nightingale-logger
-[coverage-image]: https://img.shields.io/coveralls/nightingalejs/nightingale-logger/master.svg?style=flat-square
-[coverage-url]: http://nightingalejs.github.io/nightingale-logger/coverage/lcov-report/
+[travisci-status-image]: https://img.shields.io/travisci/project/nightingalejs/nightingale-logger/master.svg?style=flat-square
+[travisci-status-url]: https://travis-ci.org/nightingalejs/nightingale-logger
+[coverage-image]: https://codecov.io/gh/nightingalejs/nightingale-logger/branch/master/graph/badge.svg?style=flat-square
+[coverage-url]: https://codecov.io/gh/nightingalejs/nightingale-logger
 [docklets-image]: https://doclets.io/nightingalejs/nightingale-logger/master.svg
 [docklets-url]: https://doclets.io/nightingalejs/nightingale-logger/master
