@@ -1,3 +1,9 @@
+### v1.3.0
+
+- [`7b917b7`](https://github.com/nightingalejs/nightingale-logger/commit/7b917b71461288e316b428d278179e7df7b03b4c) extendsContext (Christophe Hurpeau)
+- [`34e9ca3`](https://github.com/nightingalejs/nightingale-logger/commit/34e9ca39730ff0f14579b988c63377159e819954) pob upgrade (Christophe Hurpeau)
+
+
 ### v1.2.0
 
 - [`97958a2`](https://github.com/nightingalejs/nightingale-logger/commit/97958a20859de7afc2611c4c3195be81ee9e4d8c) pob, infoTimeEnd, infoSuccessTimeEnd, infoTime, add console.log on error when no loggers (Christophe Hurpeau)
