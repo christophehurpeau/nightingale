@@ -107,6 +107,18 @@ var Logger = function () {
         }
 
         /**
+         * Extends existing context of this logger
+         *
+         * @param {Object} extendedContext
+         */
+
+    }, {
+        key: 'extendsContext',
+        value: function extendsContext(extendedContext) {
+            Object.assign(this._context, extendedContext);
+        }
+
+        /**
          * Handle a record
          *
          * Use this only if you know what you are doing.

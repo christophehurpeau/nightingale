@@ -76,6 +76,15 @@ export default class Logger {
     }
 
     /**
+     * Extends existing context of this logger
+     *
+     * @param {Object} extendedContext
+     */
+    extendsContext(extendedContext: Object) {
+        Object.assign(this._context, extendedContext);
+    }
+
+    /**
      * Handle a record
      *
      * Use this only if you know what you are doing.

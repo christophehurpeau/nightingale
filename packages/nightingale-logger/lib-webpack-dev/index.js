@@ -124,6 +124,22 @@ var Logger = function () {
         }
 
         /**
+         * Extends existing context of this logger
+         *
+         * @param {Object} extendedContext
+         */
+
+    }, {
+        key: 'extendsContext',
+        value: function extendsContext(extendedContext) {
+            if (!(extendedContext instanceof Object)) {
+                throw new TypeError('Value of argument "extendedContext" violates contract.\n\nExpected:\nObject\n\nGot:\n' + _inspect(extendedContext));
+            }
+
+            Object.assign(this._context, extendedContext);
+        }
+
+        /**
          * Handle a record
          *
          * Use this only if you know what you are doing.
