@@ -1,8 +1,5 @@
 {
     "opts": {
-        "template": "node_modules/jaguarjs-jsdoc"
-    },
-    "templates" : {
-        "applicationName" : "nightingale-logger"
+        "template": "node_modules/minami"
     }
 }
