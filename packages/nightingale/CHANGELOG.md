@@ -1,3 +1,7 @@
+### v4.9.0
+
+- [`3e1db31`](https://github.com/nightingalejs/nightingale/commit/3e1db31b00a2a85f69a322f90c34184eaf6e06b0) update dependencies (Christophe Hurpeau)
+
 ### v4.8.0
 
 - [`a645c25`](https://github.com/nightingalejs/nightingale/commit/a645c25e51740c9b6a000b401d19e92f3a8cf9f2) add logger.time() in example (Christophe Hurpeau)
