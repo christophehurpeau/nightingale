@@ -1,3 +1,8 @@
+### v1.4.0
+
+- [`309e2ac`](https://github.com/nightingalejs/nightingale-logger/commit/309e2ac5b565ffbd43123cb552152e687dc9b42b) fix circleci (Christophe Hurpeau)
+- [`9bde812`](https://github.com/nightingalejs/nightingale-logger/commit/9bde812e5c3e24aeaa100b0d420f7dce0ce1c493) update dependencies (Christophe Hurpeau)
+
 ### v1.3.0
 
 - [`7b917b7`](https://github.com/nightingalejs/nightingale-logger/commit/7b917b71461288e316b428d278179e7df7b03b4c) extendsContext (Christophe Hurpeau)
