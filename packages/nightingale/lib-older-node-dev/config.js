@@ -107,7 +107,7 @@ function configure(config) {
 }
 
 function addConfig(config) {
-  var unshift = arguments.length <= 1 || arguments[1] === undefined ? true : arguments[1];
+  var unshift = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
 
   _assert(config, Config, 'config');
 

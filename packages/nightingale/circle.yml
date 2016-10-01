@@ -20,15 +20,11 @@ test:
     - npm run preversion
     - npm run test
     - XUNIT_FILE=$CIRCLE_TEST_REPORTS/junit/xunit.xml node_modules/.bin/mocha --harmony --recursive --reporter xunit-file -u tdd test/node6
-
     - npm run generate:docs
   post:
-
     - bash <(curl -s https://codecov.io/bash)
     - cp -R coverage $CIRCLE_ARTIFACTS/
-
     - cp -R docs $CIRCLE_ARTIFACTS/
-
 
 deployment:
   docs:
