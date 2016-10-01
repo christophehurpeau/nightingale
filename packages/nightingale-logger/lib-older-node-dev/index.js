@@ -30,6 +30,7 @@ if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER) {
   };
 }
 
+/** @private */
 function getConfigForLogger(key) {
   return global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key);
 }

@@ -26,6 +26,7 @@ if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER) {
   };
 }
 
+/** @private */
 function getConfigForLogger(key) {
   return global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key);
 }
@@ -159,9 +160,9 @@ class Logger {
    * @return {Logger}
    */
   log(message, metadata) {
-    let level = _assert(arguments.length <= 2 || arguments[2] === undefined ? _nightingaleLevels2.default.INFO : arguments[2], _tcombForked2.default.Number, 'level');
+    let level = _assert(arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : _nightingaleLevels2.default.INFO, _tcombForked2.default.Number, 'level');
 
-    let options = _assert(arguments.length <= 3 || arguments[3] === undefined ? undefined : arguments[3], _tcombForked2.default.maybe(_tcombForked2.default.Object), 'options');
+    let options = _assert(arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : undefined, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'options');
 
     _assert(message, _tcombForked2.default.String, 'message');
 
@@ -252,7 +253,7 @@ class Logger {
    * @return {Logger}
    */
   error(message) {
-    let metadata = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
+    let metadata = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
     let metadataStyles = arguments[2];
 
     if (message instanceof Error) {
@@ -411,7 +412,7 @@ class Logger {
    * @returns {*} time to pass to timeEnd
    */
   time(message, metadata, metadataStyles) {
-    let level = arguments.length <= 3 || arguments[3] === undefined ? _nightingaleLevels2.default.DEBUG : arguments[3];
+    let level = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : _nightingaleLevels2.default.DEBUG;
 
     if (message) {
       this.log(message, metadata, level, { metadataStyles });
@@ -443,9 +444,9 @@ class Logger {
    * @param {number} [level = levels.DEBUG]
    */
   timeEnd(time, message) {
-    let metadata = arguments.length <= 2 || arguments[2] === undefined ? {} : arguments[2];
+    let metadata = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
     let metadataStyles = arguments[3];
-    let level = arguments.length <= 4 || arguments[4] === undefined ? _nightingaleLevels2.default.DEBUG : arguments[4];
+    let level = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : _nightingaleLevels2.default.DEBUG;
     let options = arguments[5];
 
     const now = Date.now();
@@ -514,7 +515,7 @@ class Logger {
    * @return {Logger}
    */
   enter(fn) {
-    let metadata = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
+    let metadata = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
     let metadataStyles = arguments[2];
 
     metadata = _extends({
