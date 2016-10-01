@@ -26,7 +26,6 @@ test:
     - cp -R coverage $CIRCLE_ARTIFACTS/
     - cp -R docs $CIRCLE_ARTIFACTS/
 
-
 deployment:
   docs:
     branch: master

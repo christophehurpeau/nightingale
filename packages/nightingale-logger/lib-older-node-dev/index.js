@@ -194,8 +194,8 @@ var Logger = function () {
   }, {
     key: 'log',
     value: function log(message, metadata) {
-      var level = arguments.length <= 2 || arguments[2] === undefined ? _nightingaleLevels2.default.INFO : arguments[2];
-      var options = arguments.length <= 3 || arguments[3] === undefined ? undefined : arguments[3];
+      var level = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : _nightingaleLevels2.default.INFO;
+      var options = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : undefined;
 
       _assert(message, _tcombForked2.default.String, 'message');
 
@@ -301,7 +301,7 @@ var Logger = function () {
   }, {
     key: 'error',
     value: function error(message) {
-      var metadata = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
+      var metadata = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
       var metadataStyles = arguments[2];
 
       if (message instanceof Error) {
@@ -493,7 +493,7 @@ var Logger = function () {
   }, {
     key: 'time',
     value: function time(message, metadata, metadataStyles) {
-      var level = arguments.length <= 3 || arguments[3] === undefined ? _nightingaleLevels2.default.DEBUG : arguments[3];
+      var level = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : _nightingaleLevels2.default.DEBUG;
 
       if (message) {
         this.log(message, metadata, level, { metadataStyles: metadataStyles });
@@ -529,9 +529,9 @@ var Logger = function () {
   }, {
     key: 'timeEnd',
     value: function timeEnd(time, message) {
-      var metadata = arguments.length <= 2 || arguments[2] === undefined ? {} : arguments[2];
+      var metadata = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
       var metadataStyles = arguments[3];
-      var level = arguments.length <= 4 || arguments[4] === undefined ? _nightingaleLevels2.default.DEBUG : arguments[4];
+      var level = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : _nightingaleLevels2.default.DEBUG;
       var options = arguments[5];
 
       var now = Date.now();
@@ -609,7 +609,7 @@ var Logger = function () {
   }, {
     key: 'enter',
     value: function enter(fn) {
-      var metadata = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
+      var metadata = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
       var metadataStyles = arguments[2];
 
       metadata = _extends({

@@ -161,8 +161,8 @@ var Logger = function () {
   }, {
     key: 'log',
     value: function log(message, metadata) {
-      var level = arguments.length <= 2 || arguments[2] === undefined ? levels.INFO : arguments[2];
-      var options = arguments.length <= 3 || arguments[3] === undefined ? undefined : arguments[3];
+      var level = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : levels.INFO;
+      var options = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : undefined;
 
       var context = metadata && metadata.context;
       if (metadata) {
@@ -260,7 +260,7 @@ var Logger = function () {
   }, {
     key: 'error',
     value: function error(message) {
-      var metadata = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
+      var metadata = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
       var metadataStyles = arguments[2];
 
       if (message instanceof Error) {
@@ -452,7 +452,7 @@ var Logger = function () {
   }, {
     key: 'time',
     value: function time(message, metadata, metadataStyles) {
-      var level = arguments.length <= 3 || arguments[3] === undefined ? levels.DEBUG : arguments[3];
+      var level = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : levels.DEBUG;
 
       if (message) {
         this.log(message, metadata, level, { metadataStyles: metadataStyles });
@@ -482,9 +482,9 @@ var Logger = function () {
   }, {
     key: 'timeEnd',
     value: function timeEnd(time, message) {
-      var metadata = arguments.length <= 2 || arguments[2] === undefined ? {} : arguments[2];
+      var metadata = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
       var metadataStyles = arguments[3];
-      var level = arguments.length <= 4 || arguments[4] === undefined ? levels.DEBUG : arguments[4];
+      var level = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : levels.DEBUG;
       var options = arguments[5];
 
       var now = Date.now();
@@ -546,7 +546,7 @@ var Logger = function () {
   }, {
     key: 'enter',
     value: function enter(fn) {
-      var metadata = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
+      var metadata = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
       var metadataStyles = arguments[2];
 
       metadata = _extends({
