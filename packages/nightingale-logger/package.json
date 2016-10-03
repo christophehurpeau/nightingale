@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "babel-eslint": "^7.0.0",
-    "babel-plugin-add-jsdoc-annotations": "^5.0.0",
+    "babel-plugin-add-jsdoc-annotations": "^5.1.0",
     "babel-preset-es2015": "^6.16.0",
     "babel-preset-es2015-node6": "^0.3.0",
     "babel-preset-jsdoc": "^0.4.0",
