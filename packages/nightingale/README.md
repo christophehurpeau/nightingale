@@ -2,12 +2,12 @@
 
 Logger for browser and node
 
-[![Circle ci Status][build-status-image]][build-status-url] 
-[![Travis ci Status][travisci-status-image]][travisci-status-url] 
+[![Circle ci Status][build-status-image]][build-status-url]
+[![Travis ci Status][travisci-status-image]][travisci-status-url]
 [![Dependency Status][daviddm-image]][daviddm-url]
-[![Coverage percentage][coverage-image]][coverage-url] 
+[![Coverage percentage][coverage-image]][coverage-url]
 [![Doclets Link][doclets-image]][doclets-url]
-             
+
 The nightingale is a bird best known for its powerful and beautiful song.
 
 See the [Logger API](http://nightingalejs.github.io/nightingale-logger/docs/Logger.html)
@@ -15,7 +15,7 @@ See the [Logger API](http://nightingalejs.github.io/nightingale-logger/docs/Logg
 ## Install
 
 ```sh
-npm install --save nightingale  
+npm install --save nightingale
 npm install --save nightingale-console # for console handler
 ```
 
@@ -154,7 +154,11 @@ You can find handlers [on npm](https://www.npmjs.com/search?q=nightingale-handle
 
 You can find formatters [on npm](https://www.npmjs.com/search?q=nightingale-formatter)
 
-How the a record is formatted, with its colors.
+How the record is formatted, with its colors.
+
+- [AnsiFormatter](https://npmjs.org/package/nightingale-ansi-formatter)
+- [JsonFormatter](https://npmjs.org/package/nightingale-json-formatter)
+- [MarkdownFormatter](https://npmjs.org/package/nightingale-markdown-formatter)
 
 ### Output
 
