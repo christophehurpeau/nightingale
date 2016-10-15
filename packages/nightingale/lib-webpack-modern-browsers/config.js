@@ -79,9 +79,7 @@ export function configure(config) {
   }
 }
 
-export function addConfig(config) {
-  var unshift = arguments.length <= 1 || arguments[1] === undefined ? true : arguments[1];
-
+export function addConfig(config, unshift = true) {
   config = handleConfig(config);
 
   if (!config.patterns) {
