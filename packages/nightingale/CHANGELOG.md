@@ -1,3 +1,8 @@
+### v4.10.0
+
+- [`32b1dcd`](https://github.com/nightingalejs/nightingale/commit/32b1dcdc30233260d03ff639d117a1ad89d2f660) docs(readme): formatter (Christophe Hurpeau)
+- [`f33d301`](https://github.com/nightingalejs/nightingale/commit/f33d3017abf8335deebdc6f0be0f5094f28d4c80) update dependencies (Christophe Hurpeau)
+
 ### v4.9.0
 
 - [`3e1db31`](https://github.com/nightingalejs/nightingale/commit/3e1db31b00a2a85f69a322f90c34184eaf6e06b0) update dependencies (Christophe Hurpeau)
