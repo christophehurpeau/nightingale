@@ -110,11 +110,7 @@ export default class Logger {
   addRecord(record) {
     _assert(record, _t.Object, 'record');
 
-    var _getConfig = this.getConfig();
-
-    var handlers = _getConfig.handlers;
-    var processors = _getConfig.processors;
-
+    var { handlers, processors } = this.getConfig();
     handlers = handlers.filter(handler => handler.isHandling(record.level, this.key));
     if (handlers.length === 0) {
       if (record.level > levels.ERROR) {
@@ -143,10 +139,7 @@ export default class Logger {
    * @param {Object} [options]
    * @return {Logger}
    */
-  log(message, metadata) {
-    var level = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : levels.INFO;
-    var options = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : undefined;
-
+  log(message, metadata, level = levels.INFO, options = undefined) {
     _assert(message, _t.String, 'message');
 
     _assert(metadata, _t.maybe(_t.Object), 'metadata');
@@ -235,10 +228,7 @@ export default class Logger {
    * @param {Object} [metadataStyles]
    * @return {Logger}
    */
-  error(message) {
-    var metadata = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-    var metadataStyles = arguments[2];
-
+  error(message, metadata = {}, metadataStyles) {
     if (message instanceof Error) {
       metadata.error = message;
       message = `${ metadata.error.name }: ${ metadata.error.message }`;
@@ -394,9 +384,7 @@ export default class Logger {
    * @param {number} [level = levels.DEBUG]
    * @returns {*} time to pass to timeEnd
    */
-  time(message, metadata, metadataStyles) {
-    var level = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : levels.DEBUG;
-
+  time(message, metadata, metadataStyles, level = levels.DEBUG) {
     if (message) {
       this.log(message, metadata, level, { metadataStyles });
     }
@@ -426,12 +414,7 @@ export default class Logger {
    * @param {Object} [metadataStyles]
    * @param {number} [level = levels.DEBUG]
    */
-  timeEnd(time, message) {
-    var metadata = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
-    var metadataStyles = arguments[3];
-    var level = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : levels.DEBUG;
-    var options = arguments[5];
-
+  timeEnd(time, message, metadata = {}, metadataStyles, level = levels.DEBUG, options) {
     var now = Date.now();
 
     var diffTime = now - time;
@@ -497,10 +480,7 @@ export default class Logger {
    * @param {Object} [metadataStyles]
    * @return {Logger}
    */
-  enter(fn) {
-    var metadata = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-    var metadataStyles = arguments[2];
-
+  enter(fn, metadata = {}, metadataStyles) {
     metadata = _extends({
       functionName: fn.name
     }, metadata);
