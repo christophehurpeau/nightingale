@@ -1,3 +1,10 @@
+### v1.5.0
+
+- [`e54efb4`](https://github.com/nightingalejs/nightingale-logger/commit/e54efb42e9eeda7133d4c0cc8b5a4e89cd77704d) jsdoc (Christophe Hurpeau)
+- [`5086743`](https://github.com/nightingalejs/nightingale-logger/commit/5086743eee4f10e5a41e4260b8dd1bb4fa4fb3cd) babel-plugin-add-jsdoc-annotations@5.1 (Christophe Hurpeau)
+- [`a9d6ae0`](https://github.com/nightingalejs/nightingale-logger/commit/a9d6ae0e612cc6e67e191d4ba7c035e2463aa795) build (Christophe Hurpeau)
+- [`a0d73fe`](https://github.com/nightingalejs/nightingale-logger/commit/a0d73fe789c342b0adf184f7ec22d14b177c9429) update dependencies (Christophe Hurpeau)
+
 ### v1.4.0
 
 - [`309e2ac`](https://github.com/nightingalejs/nightingale-logger/commit/309e2ac5b565ffbd43123cb552152e687dc9b42b) fix circleci (Christophe Hurpeau)
