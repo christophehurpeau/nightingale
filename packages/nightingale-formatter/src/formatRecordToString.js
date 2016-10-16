@@ -3,50 +3,50 @@ import levelToStyles from './levelToStyles';
 import formatObject from './formatObject';
 
 export default function formatRecordToString(record, style, options) {
-    let parts = [];
+  let parts = [];
 
-    if (record.displayName) {
-        parts.push(style(['gray-light'], record.displayName));
-    } else if (record.key) {
-        parts.push(style(['gray-light'], record.key));
-    }
+  if (record.displayName) {
+    parts.push(style(['gray-light'], record.displayName));
+  } else if (record.key) {
+    parts.push(style(['gray-light'], record.key));
+  }
 
-    if (record.datetime) {
-        parts.push(style(['gray', 'bold'], record.datetime.toTimeString().split(' ')[0]));
+  if (record.datetime) {
+    parts.push(style(['gray', 'bold'], record.datetime.toTimeString().split(' ')[0]));
         /* new Date().toFormat('HH24:MI:SS') */
-    }
+  }
 
-    let message = record.symbol || levelToSymbol[record.level];
-    let styles = record.styles || levelToStyles[record.level];
+  let message = record.symbol || levelToSymbol[record.level];
+  let styles = record.styles || levelToStyles[record.level];
 
-    if (record.message) {
-        if (message) {
-            message += ` ${record.message}`;
-        } else {
-            message = record.message;
-        }
-    }
-
+  if (record.message) {
     if (message) {
-        if (styles) {
-            message = style(styles, message);
-        }
-        parts.push(message);
+      message += ` ${record.message}`;
+    } else {
+      message = record.message;
+    }
+  }
+
+  if (message) {
+    if (styles) {
+      message = style(styles, message);
+    }
+    parts.push(message);
+  }
+
+  ['metadata', 'extra', 'context'].forEach(key => {
+    if (!record[key]) {
+      return;
     }
 
-    ['metadata', 'extra', 'context'].forEach(key => {
-        if (!record[key]) {
-            return;
-        }
+    const stringObject = formatObject(record[key], style, record[`${key}Styles`]);
 
-        const stringObject = formatObject(record[key], style, record[`${key}Styles`]);
+    if (!stringObject) {
+      return;
+    }
 
-        if (!stringObject) {
-            return;
-        }
+    parts.push(stringObject);
+  });
 
-        parts.push(stringObject);
-    });
-
-    return parts.join(' ');
+  return parts.join(' ');
 }

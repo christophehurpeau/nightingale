@@ -5,8 +5,6 @@ var _assert = require('assert');
 var _ = require('../..');
 
 /* global test */
-
-
 test('empty object should return empty string', () => {
     (0, _assert.strictEqual)((0, _.formatObject)({}), '');
 });
@@ -16,11 +14,11 @@ const styleFn = (styles, value) => styles && styles.length ? `[styles:${ styles.
 const noStyleFn = (styles, value) => value;
 
 test('simple object', () => {
-    (0, _assert.strictEqual)((0, _.formatObject)({ a: 1 }, styleFn), '{ [styles:gray-light,bold]a: [/styles][styles:yellow]1[/styles] }');
+    (0, _assert.strictEqual)((0, _.formatObject)({ a: 1 }, styleFn), '{ [styles:gray-light,bold]a:[/styles] [styles:yellow]1[/styles] }');
 });
 
 test('simple without prototype', () => {
-    (0, _assert.strictEqual)((0, _.formatObject)(Object.assign(Object.create(null), { a: 1 }), styleFn), '{ [styles:gray-light,bold]a: [/styles][styles:yellow]1[/styles] }');
+    (0, _assert.strictEqual)((0, _.formatObject)(Object.assign(Object.create(null), { a: 1 }), styleFn), '{ [styles:gray-light,bold]a:[/styles] [styles:yellow]1[/styles] }');
 });
 
 test('long object', () => {
