@@ -14,7 +14,7 @@ const mapToSentryLevel = {
 const createHandler = (ravenUrl) => {
   const ravenClient = new RavenClient(ravenUrl);
 
-  return function write(_, { level, metadata, extra }) {
+  return ({ level, metadata, extra }) => {
     let error = metadata && metadata.error;
 
     if (!error) {
