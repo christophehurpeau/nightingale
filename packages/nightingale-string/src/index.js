@@ -1,21 +1,13 @@
-import AbstractHandler from 'nightingale-handler';
-import formatterRaw from 'nightingale-raw-formatter';
+/* eslint-disable prefer-template */
+import formatterRaw from 'nightingale-raw-formatter/src';
 
-export default class StringHandler extends AbstractHandler {
-    /**
-     * @param {int} minLevel
-     */
-    constructor(minLevel) {
-        super(minLevel, formatterRaw);
-
-        this._buffer = '';
-        this.write = (string) => {
-            this._buffer += string;
-            this._buffer += '\n';
-        };
-    }
-
-    get string() {
-        return this._buffer;
-    }
+export default function (minLevel: number) {
+  this.minLevel = minLevel;
+  this._buffer = '';
+  this.handle = (record: Object) => {
+    this._buffer += formatterRaw(record) + '\n';
+  };
+  Object.defineProperty(this, 'string', {
+    get: () => this._buffer,
+  });
 }
