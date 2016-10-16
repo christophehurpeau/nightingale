@@ -3,5 +3,6 @@
     "node6"
   ],
   "react": false,
-  "testing": true
+  "testing": true,
+  "documentation": false
 }
