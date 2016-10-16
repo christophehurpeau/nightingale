@@ -1,11 +1,28 @@
 import util from 'util';
 import levels from 'nightingale-levels';
+import findLevel from 'nightingale-debug';
 
-if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
-  global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = function () {
+if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER) {
+  global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = function () {
     return { handlers: [], processors: [] };
   };
 }
+
+if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
+  global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = function (key, level) {
+    const { handlers, processors } = global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key);
+
+    return {
+      handlers: handlers.filter(handler => (
+        level >= findLevel(handler.minLevel, key) && (
+          !handler.isHandling || handler.isHandling(level, key)
+        )
+      )),
+      processors,
+    };
+  };
+}
+
 
 /** @private */
 function getConfigForLoggerRecord(key, recordLevel) {
@@ -38,7 +55,7 @@ export default class Logger {
 
   /** @private */
   getConfig() {
-    throw new Error('use getHandlersAndProcessors instead of getConfig');
+    return global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(this.key);
   }
 
   /**

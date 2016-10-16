@@ -30,6 +30,7 @@
     "watch": "pob-watch"
   },
   "dependencies": {
+    "nightingale-debug": "^1.0.2",
     "nightingale-levels": "^1.0.0"
   },
   "devDependencies": {

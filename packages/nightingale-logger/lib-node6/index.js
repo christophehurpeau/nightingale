@@ -14,11 +14,30 @@ var _nightingaleLevels = require('nightingale-levels');
 
 var _nightingaleLevels2 = _interopRequireDefault(_nightingaleLevels);
 
+var _nightingaleDebug = require('nightingale-debug');
+
+var _nightingaleDebug2 = _interopRequireDefault(_nightingaleDebug);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
-  global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = function () {
+if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER) {
+  global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = function () {
     return { handlers: [], processors: [] };
+  };
+}
+
+if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
+  global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = function (key, level) {
+    var _global$__NIGHTINGALE = global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key);
+
+    const handlers = _global$__NIGHTINGALE.handlers;
+    const processors = _global$__NIGHTINGALE.processors;
+
+
+    return {
+      handlers: handlers.filter(handler => level >= (0, _nightingaleDebug2.default)(handler.minLevel, key) && (!handler.isHandling || handler.isHandling(level, key))),
+      processors
+    };
   };
 }
 
@@ -51,7 +70,7 @@ class Logger {
 
   /** @private */
   getConfig() {
-    throw new Error('use getHandlersAndProcessors instead of getConfig');
+    return global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(this.key);
   }
 
   /**

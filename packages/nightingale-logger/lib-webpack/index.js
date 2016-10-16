@@ -6,10 +6,28 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 import util from 'util';
 import levels from 'nightingale-levels';
+import findLevel from 'nightingale-debug';
+
+if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER) {
+  global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = function () {
+    return { handlers: [], processors: [] };
+  };
+}
 
 if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
-  global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = function () {
-    return { handlers: [], processors: [] };
+  global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = function (key, level) {
+    var _global$__NIGHTINGALE = global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key);
+
+    var handlers = _global$__NIGHTINGALE.handlers;
+    var processors = _global$__NIGHTINGALE.processors;
+
+
+    return {
+      handlers: handlers.filter(function (handler) {
+        return level >= findLevel(handler.minLevel, key) && (!handler.isHandling || handler.isHandling(level, key));
+      }),
+      processors: processors
+    };
   };
 }
 
@@ -52,7 +70,7 @@ var Logger = function () {
   }, {
     key: 'getConfig',
     value: function getConfig() {
-      throw new Error('use getHandlersAndProcessors instead of getConfig');
+      return global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(this.key);
     }
 
     /**
