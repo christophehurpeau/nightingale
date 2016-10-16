@@ -1,7 +1,6 @@
-/* eslint no-console: 0 */
 import levels from 'nightingale-levels';
 
-const write = (() => {
+export default (() => {
   if (console.error) {
     return function write(params, { level }) {
       console[level >= levels.ERROR ? 'error' : 'log'](...params);
@@ -12,5 +11,4 @@ const write = (() => {
     };
   }
 })();
-
-export default write;
+//# sourceMappingURL=index.js.map
