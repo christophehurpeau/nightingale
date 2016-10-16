@@ -1,3 +1,9 @@
+### v0.3.0
+
+- [`1141530`](https://github.com/nightingalejs/nightingale-markdown-formatter/commit/1141530d22b03054db91fa1c147aec50372ed50f) chore: update dependencies (Christophe Hurpeau)
+- [`4bc33f6`](https://github.com/nightingalejs/nightingale-markdown-formatter/commit/4bc33f6bf4afbac38bc0b6174052aff6f117a9d1) chore(package): komet-karma@^0.2.3 (Christophe Hurpeau)
+
+
 ### v0.2.0
 
 - [`10818fa`](https://github.com/nightingalejs/nightingale-markdown-formatter/commit/10818fa3942295a58a6515ff1b35b300962c3614) first commit (Christophe Hurpeau)
