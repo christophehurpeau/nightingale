@@ -46,7 +46,7 @@
     "komet-karma": "^0.2.3",
     "mocha": "^3.1.0",
     "pob-babel": "^9.0.0",
-    "pob-release": "^2.1.2",
+    "pob-release": "^2.2.2",
     "tcomb-forked": "^3.4.0",
     "xunit-file": "^1.0.0"
   }
