@@ -1,32 +1,42 @@
 {
   "name": "nightingale-sentry",
+  "version": "1.0.1",
   "description": "Sentry handler for nightingale",
   "keywords": [
     "nightingale",
     "nightingale-handler"
   ],
-  "version": "1.0.1",
-  "homepage": "https://github.com/nightingalejs/nightingale",
-  "license": "ISC",
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
-  "repository": "nightingalejs/nightingale-sentry",
+  "license": "ISC",
+  "repository": "git@github.com:nightingalejs/nightingale-sentry.git",
+  "homepage": "https://github.com/nightingalejs/nightingale",
   "main": "./lib/index.js",
   "scripts": {
-    "test": "make test",
-    "build": "make build",
-    "postpublish": "make post-publish",
-    "preversion": "make pre-version",
-    "version": "make version",
-    "watch": "make watch",
-    "lint": "make lint"
+    "build": "pob-build",
+    "clean": "rm -Rf docs dist test/node6 coverage",
+    "lint": "eslint --ext .js,.jsx --fix src/",
+    "prepublish": "ln -s ../../git-hooks/pre-commit .git/hooks/pre-commit 2>/dev/null || true ; ln -s ../../git-hooks/post-checkout .git/hooks/post-checkout 2>/dev/null || true ; ln -s ../../git-hooks/post-merge .git/hooks/post-merge 2>/dev/null || true ; ln -s ../../git-hooks/prepare-commit-msg .git/hooks/prepare-commit-msg 2>/dev/null || true",
+    "preversion": "npm run lint && npm run build && pob-repository-check-clean",
+    "release": "pob-repository-check-clean && pob-release",
+    "version": "pob-version",
+    "watch": "pob-watch"
   },
   "dependencies": {
-    "nightingale-handler": "^1.0.0",
-    "nightingale-sentry-output": "^1.0.1"
+    "nightingale-levels": "^1.0.0",
+    "raven": "^0.12.1"
   },
   "devDependencies": {
-    "eslint": "^2.8.0",
-    "eslint-config-pob": "^5.0.0",
-    "springbokjs-library": "^17.0.0"
+    "babel-eslint": "^7.0.0",
+    "babel-preset-es2015-node6": "^0.3.0",
+    "eslint": "^3.6.1",
+    "eslint-config-airbnb-base": "^8.0.0",
+    "eslint-config-pob": "^7.6.0",
+    "eslint-plugin-babel": "^3.3.0",
+    "eslint-plugin-import": "^1.16.0",
+    "komet": "^0.1.3",
+    "komet-karma": "^0.2.3",
+    "pob-babel": "^9.0.0",
+    "pob-release": "^2.2.2",
+    "tcomb-forked": "^3.4.0"
   }
 }

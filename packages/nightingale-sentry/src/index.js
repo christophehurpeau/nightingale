@@ -1,11 +1,46 @@
-import AbstractHandler from 'nightingale-handler';
-import sentryOutput from 'nightingale-sentry-output';
+import { Client as RavenClient } from 'raven';
+import levels from 'nightingale-levels';
 
-/**
- * @param {int} minLevel
- */
-export default class SentryHandler extends AbstractHandler {
-    constructor(ravenUrl, minLevel) {
-        super(minLevel, () => {}, sentryOutput(ravenUrl));
+const mapToSentryLevel = {
+  [levels.TRACE]: 'debug',
+  [levels.DEBUG]: 'debug',
+  [levels.INFO]: 'info',
+  [levels.WARNING]: 'warning',
+  [levels.ERROR]: 'error',
+  [levels.FATAL]: 'fatal',
+  [levels.EMERGENCY]: 'fatal',
+};
+
+const createHandler = (ravenUrl) => {
+  const ravenClient = new RavenClient(ravenUrl);
+
+  return function write(_, { level, metadata, extra }) {
+    let error = metadata && metadata.error;
+
+    if (!error) {
+      return;
     }
+
+    const extraData = { ...metadata, extra };
+    delete extraData.error;
+
+    if (error.originalError) {
+      // error-processor
+      extraData.parsedStack = error.stackTrace.toArray();
+      error = error.originalError;
+    }
+
+    ravenClient.captureError(
+      error,
+      {
+        level: mapToSentryLevel[level] || 'error',
+        extra: extraData,
+      },
+    );
+  };
+};
+
+export default function SentryHandler(ravenUrl: string, minLevel: number) {
+  this.minLevel = minLevel;
+  this.handle = createHandler(ravenUrl);
 }
