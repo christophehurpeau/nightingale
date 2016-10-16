@@ -1,12 +1,9 @@
-import AbstractHandler from 'nightingale-handler';
-import formatterANSI from 'nightingale-ansi-formatter';
-import consoleOutput from 'nightingale-console-output';
+import formatterANSI from 'nightingale-ansi-formatter/src';
+import consoleOutput from 'nightingale-console-output/src';
 
-/**
- * @param {int} minLevel
- */
-export default class ConsoleHandler extends AbstractHandler {
-    constructor(minLevel) {
-        super(minLevel, formatterANSI, consoleOutput);
-    }
+const handle = (record: Object) => consoleOutput(formatterANSI(record), record);
+
+export default function ConsoleHandler(minLevel: number) {
+  this.minLevel = minLevel;
+  this.handle = handle;
 }

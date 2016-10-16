@@ -1,0 +1,27 @@
+# nightingale-console [![NPM version][npm-image]][npm-url]
+
+Console handler for nightingale
+
+[![Dependency Status][daviddm-image]][daviddm-url]
+
+## Install
+
+```sh
+npm install --save nightingale nightingale-console
+```
+
+## Usage
+
+```js
+import { configure, levels } from 'nightingale';
+import ConsoleHandler from 'nightingale-console';
+
+configure([
+  { handlers: [new ConsoleHandler(levels.INFO)] }
+]);
+```
+
+[npm-image]: https://img.shields.io/npm/v/nightingale-console.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/nightingale-console
+[daviddm-image]: https://david-dm.org/nightingalejs/nightingale-console.svg?style=flat-square
+[daviddm-url]: https://david-dm.org/nightingalejs/nightingale-console
