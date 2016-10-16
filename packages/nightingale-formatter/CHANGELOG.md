@@ -1,3 +1,7 @@
+### v1.4.0
+
+- [`fc58a2a`](https://github.com/nightingalejs/nightingale-formatter/commit/fc58a2a226bc286135e0ebdcdae6e83703b17816) refactor: pob update (Christophe Hurpeau)
+
 c### v1.3.1
 
 - [`a3c941d`](https://github.com/nightingalejs/nightingale-formatter/commit/a3c941d91fedbeb6fa980360450bd11b8f506de3) increase default maxDepth (Christophe Hurpeau)
