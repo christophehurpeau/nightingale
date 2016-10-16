@@ -1,13 +1,13 @@
 import { formatRecordToString, styleToHtmlStyle } from 'nightingale-formatter';
 
 export function style(styles, string) {
-    if (!styles || !styles.length || !string) {
-        return string;
-    }
+  if (!styles || !styles.length || !string) {
+    return string;
+  }
 
-    return '<span style="' + styles.map(function (styleName) {
-        return styleToHtmlStyle[styleName];
-    }).join('; ') + '">' + string + '</span>';
+  return '<span style="' + styles.map(function (styleName) {
+    return styleToHtmlStyle[styleName];
+  }).join('; ') + '">' + string + '</span>';
 }
 
 /**
@@ -15,6 +15,6 @@ export function style(styles, string) {
  * @returns {string}
  */
 export default function format(record) {
-    return formatRecordToString(record, style);
+  return formatRecordToString(record, style);
 }
 //# sourceMappingURL=index.js.map

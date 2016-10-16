@@ -1,0 +1,10 @@
+{
+  "envs": [
+    "node6",
+    "webpack-modern-browsers",
+    "webpack"
+  ],
+  "react": false,
+  "testing": true,
+  "documentation": false
+}
