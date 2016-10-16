@@ -1,13 +1,9 @@
-import AbstractHandler from 'nightingale-handler';
-import levels from 'nightingale-levels';
-import browserConsoleFormatter from 'nightingale-browser-console-formatter';
-import consoleOutput from 'nightingale-console-output';
+import browserConsoleFormatter from 'nightingale-browser-console-formatter/src';
+import consoleOutput from 'nightingale-console-output/src';
 
-/**
- * @param {int} minLevel
- */
-export default class BrowserConsoleHandler extends AbstractHandler {
-    constructor(minLevel) {
-        super(minLevel, browserConsoleFormatter, consoleOutput);
-    }
+const handle = (record: Object) => consoleOutput(browserConsoleFormatter(record), record);
+
+export default function BrowserConsoleHandler(minLevel: number) {
+  this.minLevel = minLevel;
+  this.handle = handle;
 }
