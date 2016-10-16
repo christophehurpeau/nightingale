@@ -1,3 +1,7 @@
+### v5.0.0-beta.2
+
+- [`078c60c`](https://github.com/nightingalejs/nightingale/commit/078c60cea13d71c051d033e84a09ba857fb976af) nightingale-logger 1.6 or 2.0 (Christophe Hurpeau)
+
 ### v5.0.0-beta.1
 
 - [`d3c49f7`](https://github.com/nightingalejs/nightingale/commit/d3c49f79d7ff7333e2a2ea9e8612bb933b2c0874) breaking: remove minimatch, configure refacto, getConfigForLoggerRecord (Christophe Hurpeau)
