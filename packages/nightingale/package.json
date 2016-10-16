@@ -33,7 +33,7 @@
   "dependencies": {
     "nightingale-debug": "^1.0.2",
     "nightingale-levels": "^1.0.0",
-    "nightingale-logger": "^2.0.0"
+    "nightingale-logger": "^1.6.0 || ^2.0.0"
   },
   "devDependencies": {
     "babel-eslint": "^7.0.0",
