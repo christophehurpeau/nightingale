@@ -1,0 +1,9 @@
+{
+  "envs": [
+    "webpack-modern-browsers",
+    "webpack"
+  ],
+  "react": false,
+  "testing": false,
+  "documentation": false
+}

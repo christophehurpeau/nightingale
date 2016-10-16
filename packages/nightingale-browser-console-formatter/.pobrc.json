@@ -1,8 +1,0 @@
-{
-  "envs": [
-    "webpack",
-    "webpack-modern-browsers"
-  ],
-  "react": false,
-  "testing": false
-}
