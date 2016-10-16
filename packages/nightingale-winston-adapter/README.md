@@ -5,7 +5,7 @@ Winston adapter handler for nightingale
 ## Install
 
 ```
-npm install --save nightingale-winston-adapter
+npm install --save nightingale nightingale-winston-adapter
 npm install --save winston-logstash # example with winston-logstash
 ```
 
