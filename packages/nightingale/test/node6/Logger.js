@@ -18,7 +18,7 @@ class TestableStringLogger extends _2.default {
     this.stringHandler = new _nightingaleString2.default(_.levels.ALL);
   }
 
-  getConfig() {
+  getHandlersAndProcessors() {
     return {
       handlers: [this.stringHandler],
       processors: []
@@ -28,55 +28,57 @@ class TestableStringLogger extends _2.default {
   get string() {
     return this.stringHandler.string;
   }
-} /* global test */
+} /* global suite, test */
 /* eslint import/no-extraneous-dependencies: "off" */
 
 
-test('Logger: log method', () => {
-  let logger = new TestableStringLogger();
-  logger.log('log()');
-  (0, _assert.strictEqual)(logger.string.substr(9), '→ log()\n');
-});
+suite('Logger', () => {
+  test('log method', () => {
+    let logger = new TestableStringLogger();
+    logger.log('log()');
+    (0, _assert.strictEqual)(logger.string.substr(9), '→ log()\n');
+  });
 
-test('Logger: info method', () => {
-  let logger = new TestableStringLogger();
-  logger.info('info()');
-  (0, _assert.strictEqual)(logger.string.substr(9), '→ info()\n');
-});
+  test('info method', () => {
+    let logger = new TestableStringLogger();
+    logger.info('info()');
+    (0, _assert.strictEqual)(logger.string.substr(9), '→ info()\n');
+  });
 
-test('Logger: warn method', () => {
-  let logger = new TestableStringLogger();
-  logger.warn('warn()');
-  (0, _assert.strictEqual)(logger.string.substr(9), '⚠ warn()\n');
-});
+  test('warn method', () => {
+    let logger = new TestableStringLogger();
+    logger.warn('warn()');
+    (0, _assert.strictEqual)(logger.string.substr(9), '⚠ warn()\n');
+  });
 
-test('Logger: error method', () => {
-  let logger = new TestableStringLogger();
-  logger.error('error()');
-  (0, _assert.strictEqual)(logger.string.substr(9), '✖ error()\n');
-});
+  test('error method', () => {
+    let logger = new TestableStringLogger();
+    logger.error('error()');
+    (0, _assert.strictEqual)(logger.string.substr(9), '✖ error()\n');
+  });
 
-test('Logger: alert method', () => {
-  let logger = new TestableStringLogger();
-  logger.alert('alert()');
-  (0, _assert.strictEqual)(logger.string.substr(9), '‼ alert()\n');
-});
+  test('alert method', () => {
+    let logger = new TestableStringLogger();
+    logger.alert('alert()');
+    (0, _assert.strictEqual)(logger.string.substr(9), '‼ alert()\n');
+  });
 
-test('Logger: fatal method', () => {
-  let logger = new TestableStringLogger();
-  logger.fatal('fatal()');
-  (0, _assert.strictEqual)(logger.string.substr(9), '‼ fatal()\n');
-});
+  test('fatal method', () => {
+    let logger = new TestableStringLogger();
+    logger.fatal('fatal()');
+    (0, _assert.strictEqual)(logger.string.substr(9), '‼ fatal()\n');
+  });
 
-test('Logger: debug method', () => {
-  let logger = new TestableStringLogger();
-  logger.debug('debug()');
-  (0, _assert.strictEqual)(logger.string.substr(9), '• debug()\n');
-});
+  test('debug method', () => {
+    let logger = new TestableStringLogger();
+    logger.debug('debug()');
+    (0, _assert.strictEqual)(logger.string.substr(9), '• debug()\n');
+  });
 
-test('Logger: success method', () => {
-  let logger = new TestableStringLogger();
-  logger.success('success()');
-  (0, _assert.strictEqual)(logger.string.substr(9), '✔ success()\n');
+  test('success method', () => {
+    let logger = new TestableStringLogger();
+    logger.success('success()');
+    (0, _assert.strictEqual)(logger.string.substr(9), '✔ success()\n');
+  });
 });
 //# sourceMappingURL=Logger.js.map

@@ -1,15 +1,15 @@
 import Logger from 'nightingale-logger';
 
-import _default from 'nightingale-logger';
-export { _default as default };
-
-export { configure, addConfig, addGlobalProcessor, addGlobalHandler } from './config';
-export { default as levels } from 'nightingale-levels';
+export default Logger;
+export { configure, addConfig } from './config';
+import _levels from 'nightingale-levels';
+export { _levels as levels };
 
 /**
  * listen to uncaughtException and unhandledRejection
  * @param {Logger} [logger]
  */
+
 export function listenUnhandledErrors(logger) {
   if (!logger) logger = new Logger('nightingale.listenUnhandledErrors', 'listenUnhandledErrors');
   process.on('uncaughtException', err => logger.error('uncaughtException', { err }));

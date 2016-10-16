@@ -30,20 +30,20 @@ import ConsoleHandler from 'nightingale-console';
 
 configure([
     {
-        // no patterns: default
         handlers: [new ConsoleHandler(levels.WARN)],
     },
     {
-        patterns: ['mylib', 'myotherlib'],
+        keys: ['mylib', 'myotherlib'],
         handlers: [new ConsoleHandler(levels.ALL)],
     },
     {
-        patterns: ['app'],
+        pattern: /^app\.server$/,
+        handlers: [new ConsoleHandler(levels.ALL)],
+        stop: true, // means the following config won't be used, if the pattern matches.
+    },
+    {
+        pattern: /^app(?!\.server)/,
         handlers: [new ConsoleHandler(levels.INFO)],
-    },
-    {
-        patterns: ['app.server'],
-        handlers: [new ConsoleHandler(levels.ALL)],
     },
 ]);
 
@@ -56,8 +56,8 @@ const logger = new Logger('app.server');
 logger.debug('This is a log'); // will be displayed
 ```
 
-`app.server` overrides the `app` config. [minimatch](https://www.npmjs.com/package/minimatch) is used.
 You can configure several handlers with different `levels`, like console and slack.
+
 
 ### In an library
 
@@ -81,7 +81,7 @@ import BrowserConsoleHandler from 'nightingale-browser-console';
 
 configure([
     {
-        patterns: ['app'],
+        key: 'app',
         handlers: [new BrowserConsoleHandler(logLevels.INFO)],
     }
 ]);
@@ -120,7 +120,7 @@ const logger = new Logger('app');
 
 configure([
     {
-        patterns: ['app'],
+        key: 'app',
         handlers: [new ConsoleHandler(levels.ALL)],
         processors: [webProcessor],
     }
@@ -190,10 +190,12 @@ const logger = new MyCustomLogger('app');
 ## Global processors
 
 ```js
-import { addGlobalProcessor } from 'nightingale';
+import { configure } from 'nightingale';
 import errorProcessor from 'nightingale-error-processor';
 
-addGlobalProcessor(errorProcessor);
+configure([
+  { processors: [errorProcessor] }
+]);
 ```
 
 ## Global handlers
@@ -202,7 +204,21 @@ addGlobalProcessor(errorProcessor);
 import { addGlobalHandler, levels } from 'nightingale';
 import ErrorHandler from 'nightingale-sentry';
 
-addGlobalHandler(new ErrorHandler(levels.ERROR));
+configure([
+  { handlers: [new ErrorHandler(levels.ERROR)] }
+]);
+```
+
+## Children
+
+You can create children.
+
+```js
+import Logger from 'nightingale';
+const loggerApp = new Logger('app');
+const loggerMyService = loggerApp.child('myService');
+// loggerMyService key is `app.myService`
+
 ```
 
 ## Context

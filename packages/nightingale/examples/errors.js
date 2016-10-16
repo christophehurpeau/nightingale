@@ -1,14 +1,13 @@
-import Logger, { configure, levels, addGlobalProcessor } from '..';
+import Logger, { configure, levels } from '..';
 import ConsoleHandler from 'nightingale-console';
 import errorProcessor from 'nightingale-error-processor';
 
 configure([
-    {
-        processors: [errorProcessor],
-        handlers: [new ConsoleHandler(levels.ALL)],
-    },
+  {
+    processors: [errorProcessor],
+    handlers: [new ConsoleHandler(levels.ALL)],
+  },
 ]);
-addGlobalProcessor(errorProcessor);
 
 const logger = new Logger('app');
 

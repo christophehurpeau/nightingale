@@ -5,33 +5,37 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.configure = configure;
 exports.addConfig = addConfig;
-exports.addGlobalProcessor = addGlobalProcessor;
-exports.addGlobalHandler = addGlobalHandler;
 
 var _tcombForked = require('tcomb-forked');
 
 var _tcombForked2 = _interopRequireDefault(_tcombForked);
 
-var _minimatch = require('minimatch');
+var _nightingaleDebug = require('nightingale-debug');
+
+var _nightingaleDebug2 = _interopRequireDefault(_nightingaleDebug);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const Config = _tcombForked2.default.interface({
-  pattern: _tcombForked2.default.maybe(_tcombForked2.default.String),
-  patterns: _tcombForked2.default.maybe(_tcombForked2.default.list(_tcombForked2.default.String)),
+  pattern: _tcombForked2.default.maybe(RegExp),
+  key: _tcombForked2.default.maybe(_tcombForked2.default.String),
+  keys: _tcombForked2.default.maybe(_tcombForked2.default.list(_tcombForked2.default.String)),
   handler: _tcombForked2.default.maybe(_tcombForked2.default.Object),
-  handlers: _tcombForked2.default.maybe(_tcombForked2.default.list(_tcombForked2.default.Object))
+  handlers: _tcombForked2.default.maybe(_tcombForked2.default.list(_tcombForked2.default.Object)),
+  processor: _tcombForked2.default.maybe(_tcombForked2.default.Any),
+  processors: _tcombForked2.default.maybe(_tcombForked2.default.list(_tcombForked2.default.Any))
 }, 'Config');
+
+if (global.__NIGHTINGALE_GLOBAL_HANDLERS) {
+  // eslint-disable-next-line no-console
+  console.log('nightingale: update all to ^5.0.0');
+  process.exit(1);
+}
 
 if (!global.__NIGHTINGALE_CONFIG) {
   global.__NIGHTINGALE_CONFIG = [];
-  global.__NIGHTINGALE_GLOBAL_PROCESSORS = [];
-  global.__NIGHTINGALE_GLOBAL_HANDLERS = [];
   global.__NIGHTINGALE_LOGGER_MAP_CACHE = new Map();
-  global.__NIGHTINGALE_CONFIG_DEFAULT = {
-    handlers: [],
-    processors: []
-  };
+  global.__NIGHTINGALE_CONFIG_DEFAULT = { handlers: [], processors: [] };
 }
 
 function clearCache() {
@@ -41,20 +45,23 @@ function clearCache() {
 function handleConfig(config) {
   _assert(config, Config, 'config');
 
-  if (config.key) {
-    if (config.patterns) {
-      throw new Error('Cannot have key and patterns for the same config');
+  if (config.keys) {
+    if (config.pattern) {
+      throw new Error('Cannot have key and pattern for the same config');
     }
-    config.patterns = [config.key];
+    if (config.key) {
+      throw new Error('Cannot have key and keys for the same config');
+    }
+  } else if (config.key) {
+    if (config.pattern) {
+      throw new Error('Cannot have key and pattern for the same config');
+    }
+    config.keys = [config.key];
     delete config.key;
   }
 
-  if (config.pattern) {
-    if (config.patterns) {
-      throw new Error('Cannot have pattern and patterns for the same config');
-    }
-    config.patterns = [config.pattern];
-    delete config.pattern;
+  if (config.patterns) {
+    throw new Error('config.patterns is no longer supported, use pattern');
   }
 
   if (config.handler) {
@@ -65,8 +72,12 @@ function handleConfig(config) {
     delete config.handler;
   }
 
-  if (config.patterns) {
-    config.minimatchPatterns = config.patterns.map(pattern => new _minimatch.Minimatch(pattern));
+  if (config.processor) {
+    if (config.processors) {
+      throw new Error('Cannot have processors and processors for the same config');
+    }
+    config.processors = [config.processor];
+    delete config.processor;
   }
 
   return config;
@@ -79,78 +90,58 @@ function configure(config) {
   }
 
   clearCache();
-  global.__NIGHTINGALE_CONFIG = [];
-  global.__NIGHTINGALE_CONFIG_DEFAULT = null;
-
-  config.reverse().forEach(config => {
-    config = handleConfig(config);
-
-    if (config.patterns) {
-      global.__NIGHTINGALE_CONFIG.push(config);
-    } else {
-      if (global.__NIGHTINGALE_CONFIG_DEFAULT) {
-        throw new Error('Config cannot contains more than 1 default declaration');
-      }
-
-      global.__NIGHTINGALE_CONFIG_DEFAULT = config;
-    }
-  });
-
-  if (!global.__NIGHTINGALE_CONFIG_DEFAULT) {
-    global.__NIGHTINGALE_CONFIG_DEFAULT = {
-      handlers: [],
-      processors: []
-    };
-  }
+  global.__NIGHTINGALE_CONFIG = config.map(handleConfig);
 }
 
 function addConfig(config) {
-  let unshift = arguments.length <= 1 || arguments[1] === undefined ? true : arguments[1];
+  let unshift = arguments.length <= 1 || arguments[1] === undefined ? false : arguments[1];
 
   _assert(config, Config, 'config');
 
   config = handleConfig(config);
-
-  if (!config.patterns) {
-    throw new Error('Config must have `pattern` or `patterns`');
-  }
-
-  clearCache();
   global.__NIGHTINGALE_CONFIG[unshift ? 'unshift' : 'push'](config);
-}
-
-function addGlobalProcessor(processor) {
   clearCache();
-  global.__NIGHTINGALE_GLOBAL_PROCESSORS.push(processor);
 }
 
-function addGlobalHandler(handler) {
-  clearCache();
-  global.__NIGHTINGALE_GLOBAL_HANDLERS.push(handler);
-}
+const configIsForKey = key => config => {
+  if (config.keys) return config.keys.includes(key);
+  if (config.pattern) return config.pattern.test(key);
+  return true;
+};
 
-global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = function (key) {
-  const globalProcessors = global.__NIGHTINGALE_GLOBAL_PROCESSORS;
-  const globalHandlers = global.__NIGHTINGALE_GLOBAL_HANDLERS;
+global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = function getConfigForLogger(key) {
   const globalCache = global.__NIGHTINGALE_LOGGER_MAP_CACHE;
 
   if (globalCache.has(key)) {
     return globalCache.get(key);
   }
 
-  let value = global.__NIGHTINGALE_CONFIG.find(c => c.minimatchPatterns.some(p => p.match(key)));
-  if (!value) {
-    value = global.__NIGHTINGALE_CONFIG_DEFAULT;
-  }
-
-  let loggerConfig = {
-    patterns: value.patterns,
-    handlers: value.handlers ? globalHandlers.concat(value.handlers) : globalHandlers,
-    processors: value.processors ? globalProcessors.concat(value.processors) : globalProcessors
+  const loggerConfig = {
+    handlers: [],
+    processors: []
   };
+
+  global.__NIGHTINGALE_CONFIG.filter(configIsForKey(key)).some(config => {
+    if (config.handlers) loggerConfig.handlers.push(...config.handlers);
+    if (config.processors) loggerConfig.processors.push(...config.processors);
+    return config.stop;
+  });
 
   globalCache.set(key, loggerConfig);
   return loggerConfig;
+};
+
+global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = function getConfigForLoggerRecord(key, level) {
+  var _global$__NIGHTINGALE = global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key);
+
+  const handlers = _global$__NIGHTINGALE.handlers;
+  const processors = _global$__NIGHTINGALE.processors;
+
+
+  return {
+    handlers: handlers.filter(handler => level >= (0, _nightingaleDebug2.default)(handler.minLevel, key) && (!handler.isHandling || handler.isHandling(level, key))),
+    processors
+  };
 };
 
 function _assert(x, type, name) {

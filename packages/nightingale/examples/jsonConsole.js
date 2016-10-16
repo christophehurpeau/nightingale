@@ -4,9 +4,9 @@ import jsonFormatter from 'nightingale-json-formatter';
 import consoleOutput from 'nightingale-console-output';
 
 configure([
-    {
-        handlers: [new Handler(levels.ALL, jsonFormatter, consoleOutput)],
-    },
+  {
+    handlers: [new Handler(levels.ALL, jsonFormatter, consoleOutput)],
+  },
 ]);
 
 const logger = new Logger('app');

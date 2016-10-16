@@ -2,17 +2,17 @@ import Logger, { configure, levels } from '..';
 import ConsoleHandler from 'nightingale-console';
 
 configure([
-    {
-        handlers: [new ConsoleHandler(levels.ALL)],
-    },
-    {
-        patterns: ['app'],
-        handlers: [new ConsoleHandler(levels.DEBUG)],
-    },
-    {
-        patterns: ['app.service.**'],
-        handlers: [new ConsoleHandler(levels.INFO)],
-    },
+  {
+    handlers: [new ConsoleHandler(levels.ALL)],
+  },
+  {
+    key: 'app',
+    handlers: [new ConsoleHandler(levels.DEBUG)],
+  },
+  {
+    pattern: /^app\.service\./,
+    handlers: [new ConsoleHandler(levels.INFO)],
+  },
 ]);
 
 const smthg = new Logger('smthg');
