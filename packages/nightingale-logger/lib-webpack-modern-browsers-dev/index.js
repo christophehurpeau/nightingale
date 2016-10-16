@@ -4,15 +4,15 @@ import _t from 'tcomb-forked';
 import util from 'util';
 import levels from 'nightingale-levels';
 
-if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER) {
-  global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = function () {
+if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
+  global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = function () {
     return { handlers: [], processors: [] };
   };
 }
 
 /** @private */
-function getConfigForLogger(key) {
-  return global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key);
+function getConfigForLoggerRecord(key, recordLevel) {
+  return global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD(key, recordLevel);
 }
 
 /**
@@ -36,8 +36,14 @@ export default class Logger {
     this.displayName = displayName;
   }
 
+  /** @private */
+  getHandlersAndProcessors(recordLevel) {
+    return getConfigForLoggerRecord(this.key, recordLevel);
+  }
+
+  /** @private */
   getConfig() {
-    return getConfigForLogger(this.key);
+    throw new Error('use getHandlersAndProcessors instead of getConfig');
   }
 
   /**
@@ -110,8 +116,8 @@ export default class Logger {
   addRecord(record) {
     _assert(record, _t.Object, 'record');
 
-    var { handlers, processors } = this.getConfig();
-    handlers = handlers.filter(handler => handler.isHandling(record.level, this.key));
+    var { handlers, processors } = this.getHandlersAndProcessors(record.level);
+
     if (handlers.length === 0) {
       if (record.level > levels.ERROR) {
         // eslint-disable-next-line no-console

@@ -20,15 +20,15 @@ var _nightingaleLevels2 = _interopRequireDefault(_nightingaleLevels);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER) {
-  global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = function () {
+if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
+  global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = function () {
     return { handlers: [], processors: [] };
   };
 }
 
 /** @private */
-function getConfigForLogger(key) {
-  return global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key);
+function getConfigForLoggerRecord(key, recordLevel) {
+  return global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD(key, recordLevel);
 }
 
 /**
@@ -52,8 +52,14 @@ class Logger {
     this.displayName = displayName;
   }
 
+  /** @private */
+  getHandlersAndProcessors(recordLevel) {
+    return getConfigForLoggerRecord(this.key, recordLevel);
+  }
+
+  /** @private */
   getConfig() {
-    return getConfigForLogger(this.key);
+    throw new Error('use getHandlersAndProcessors instead of getConfig');
   }
 
   /**
@@ -126,12 +132,12 @@ class Logger {
   addRecord(record) {
     _assert(record, _tcombForked2.default.Object, 'record');
 
-    var _getConfig = this.getConfig();
+    var _getHandlersAndProces = this.getHandlersAndProcessors(record.level);
 
-    let handlers = _getConfig.handlers;
-    let processors = _getConfig.processors;
+    let handlers = _getHandlersAndProces.handlers;
+    let processors = _getHandlersAndProces.processors;
 
-    handlers = handlers.filter(handler => handler.isHandling(record.level, this.key));
+
     if (handlers.length === 0) {
       if (record.level > _nightingaleLevels2.default.ERROR) {
         // eslint-disable-next-line no-console

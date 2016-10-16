@@ -24,15 +24,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER) {
-  global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = function () {
+if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
+  global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = function () {
     return { handlers: [], processors: [] };
   };
 }
 
 /** @private */
-function getConfigForLogger(key) {
-  return global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key);
+function getConfigForLoggerRecord(key, recordLevel) {
+  return global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD(key, recordLevel);
 }
 
 /**
@@ -59,10 +59,21 @@ var Logger = function () {
     this.displayName = displayName;
   }
 
+  /** @private */
+
+
   _createClass(Logger, [{
+    key: 'getHandlersAndProcessors',
+    value: function getHandlersAndProcessors(recordLevel) {
+      return getConfigForLoggerRecord(this.key, recordLevel);
+    }
+
+    /** @private */
+
+  }, {
     key: 'getConfig',
     value: function getConfig() {
-      return getConfigForLogger(this.key);
+      throw new Error('use getHandlersAndProcessors instead of getConfig');
     }
 
     /**
@@ -148,18 +159,14 @@ var Logger = function () {
   }, {
     key: 'addRecord',
     value: function addRecord(record) {
-      var _this = this;
-
       _assert(record, _tcombForked2.default.Object, 'record');
 
-      var _getConfig = this.getConfig();
+      var _getHandlersAndProces = this.getHandlersAndProcessors(record.level);
 
-      var handlers = _getConfig.handlers;
-      var processors = _getConfig.processors;
+      var handlers = _getHandlersAndProces.handlers;
+      var processors = _getHandlersAndProces.processors;
 
-      handlers = handlers.filter(function (handler) {
-        return handler.isHandling(record.level, _this.key);
-      });
+
       if (handlers.length === 0) {
         if (record.level > _nightingaleLevels2.default.ERROR) {
           // eslint-disable-next-line no-console
