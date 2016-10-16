@@ -1,7 +1,13 @@
-/* eslint no-console: "off" */
-import { parse as parseError } from 'alouette';
+'use strict';
 
-export default function errorProcessor(record, context) {
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = errorProcessor;
+
+var _alouette = require('alouette');
+
+function errorProcessor(record, context) {
   if (!record.metadata) {
     return;
   }
@@ -18,15 +24,16 @@ export default function errorProcessor(record, context) {
   delete record.metadata.err;
 
   if (error.originalError) {
-        // error was already parsed
+    // error was already parsed
     record.metadata.error = error;
   } else {
     try {
-      const parsedError = parseError(error);
+      const parsedError = (0, _alouette.parse)(error);
       record.metadata.error = parsedError;
     } catch (err) {
       console.log(err.stack || err.message || err);
       record.metadata.error = error;
     }
   }
-}
+} /* eslint no-console: "off" */
+//# sourceMappingURL=index.js.map
