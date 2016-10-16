@@ -1,3 +1,7 @@
+### v5.0.0-beta.1
+
+- [`d3c49f7`](https://github.com/nightingalejs/nightingale/commit/d3c49f79d7ff7333e2a2ea9e8612bb933b2c0874) breaking: remove minimatch, configure refacto, getConfigForLoggerRecord (Christophe Hurpeau)
+
 ### v4.10.0
 
 - [`32b1dcd`](https://github.com/nightingalejs/nightingale/commit/32b1dcdc30233260d03ff639d117a1ad89d2f660) docs(readme): formatter (Christophe Hurpeau)
