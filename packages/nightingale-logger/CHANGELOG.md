@@ -1,3 +1,7 @@
+### v1.6.0
+
+- [`73701de`](https://github.com/nightingalejs/nightingale-logger/commit/73701def89a457b6eb8bc91e8f799d2a8a1a34bf) nighingale v2 compatibility for nightingale-logger v1 (Christophe Hurpeau)
+
 ### v1.5.0
 
 - [`e54efb4`](https://github.com/nightingalejs/nightingale-logger/commit/e54efb42e9eeda7133d4c0cc8b5a4e89cd77704d) jsdoc (Christophe Hurpeau)
