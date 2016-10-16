@@ -1,7 +1,7 @@
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 exports.style = style;
 exports.default = format;
@@ -9,7 +9,7 @@ exports.default = format;
 var _nightingaleFormatter = require('nightingale-formatter');
 
 function style(styles, string) {
-    return string;
+  return string;
 }
 
 /**
@@ -17,7 +17,7 @@ function style(styles, string) {
  * @returns {string}
  */
 function format(record) {
-    return (0, _nightingaleFormatter.formatRecordToString)(record, style);
+  return (0, _nightingaleFormatter.formatRecordToString)(record, style);
 }
 
 // export style function

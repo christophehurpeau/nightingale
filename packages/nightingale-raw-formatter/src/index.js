@@ -1,7 +1,7 @@
 import { formatRecordToString } from 'nightingale-formatter';
 
 export function style(styles, string) {
-    return string;
+  return string;
 }
 
 /**
@@ -9,7 +9,7 @@ export function style(styles, string) {
  * @returns {string}
  */
 export default function format(record) {
-    return formatRecordToString(record, style);
+  return formatRecordToString(record, style);
 }
 
 // export style function
