@@ -1,11 +1,14 @@
+/git-hooks
 /examples
 /samples
 /docs
 /coverage
 /build
 /test
+/.pob.json
 circle.yml
 .codeclimate.yml
+jsdoc.config.json
 
 /.settings
 /.project
