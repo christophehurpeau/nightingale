@@ -26,6 +26,6 @@ const style = exports.style = args => (styles, string) => {
 function format(record) {
   const args = [];
   const string = (0, _nightingaleFormatter.formatRecordToString)(record, style(args));
-  return [string, args];
+  return [string, ...args];
 }
 //# sourceMappingURL=index.js.map

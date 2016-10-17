@@ -18,6 +18,6 @@ export var style = args => (styles, string) => {
 export default function format(record) {
   var args = [];
   var string = formatRecordToString(record, style(args));
-  return [string, args];
+  return [string, ...args];
 }
 //# sourceMappingURL=index.js.map

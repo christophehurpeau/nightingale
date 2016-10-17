@@ -18,5 +18,5 @@ export const style = args => (styles, string) => {
 export default function format(record) {
   const args = [];
   const string = formatRecordToString(record, style(args));
-  return [string, args];
+  return [string, ...args];
 }
