@@ -1,6 +1,6 @@
 import levels from 'nightingale-levels';
 
-var levelToStyles = {
+export default {
   [levels.TRACE]: ['gray'],
   [levels.DEBUG]: ['gray'],
   // [levels.INFO]: ['gray'],
@@ -10,6 +10,4 @@ var levelToStyles = {
   [levels.FATAL]: ['bgRed', 'white'],
   [levels.EMERGENCY]: ['bgRed', 'white']
 };
-
-export default levelToStyles;
 //# sourceMappingURL=levelToStyles.js.map

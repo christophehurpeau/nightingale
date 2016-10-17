@@ -1,45 +1,40 @@
 import hexColors from './styleToHexColor';
 
-const htmlStyles = {
-  reset: [
-    'font-weight: normal',
-    'font-style: normal',
-    'text-decoration: none',
-    'unicode-bidi: normal',
-    'direction: ltr',
-    'color: initial',
-    'background: initial',
-  ].join(';'),
+export default {
+  get reset() {
+    throw new Error();
+  },
 
-    // text style
-  bold: 'font-weight: bold',
-  italic: 'font-style: italic',
-  underline: 'text-decoration: underline',
-  inverse: 'unicode-bidi: bidi-override; direction: rtl',
-  strikethrough: 'text-decoration: line-through',
+  // text style
+  bold: { open: 'font-weight: bold', close: 'font-weight: normal' },
+  italic: { open: 'font-style: italic', close: 'font-style: normal' },
+  underline: { open: 'text-decoration: underline', close: 'text-decoration: none' },
+  inverse: {
+    open: 'unicode-bidi: bidi-override; direction: rtl',
+    close: 'unicode-bidi: normal; direction: ltr',
+  },
+  strikethrough: { open: 'text-decoration: line-through', close: 'text-decoration: none' },
 
-  black: 'color: black',
-  red: 'color: red',
-  green: 'color: green',
-  yellow: 'color: yellow',
-  blue: 'color: #4682B4',
-  magenta: 'color: magenta',
-  cyan: 'color: cyan',
-  white: 'color: white',
-  gray: 'color: gray',
+  black: { open: 'color: black', close: 'color: initial' },
+  red: { open: 'color: red', close: 'color: initial' },
+  green: { open: 'color: green', close: 'color: initial' },
+  yellow: { open: 'color: yellow', close: 'color: initial' },
+  blue: { open: 'color: #4682B4', close: 'color: initial' },
+  magenta: { open: 'color: magenta', close: 'color: initial' },
+  cyan: { open: 'color: cyan', close: 'color: initial' },
+  white: { open: 'color: white', close: 'color: initial' },
+  gray: { open: 'color: gray', close: 'color: initial' },
 
-  bgBlack: 'background: black',
-  bgRed: 'background: red',
-  bgGreen: 'background: green',
-  bgYellow: 'background: yellow',
-  bgBlue: 'background: blue',
-  bgMagenta: 'background: magenta',
-  bgCyan: 'background: cyan',
-  bgWhite: 'background: white',
+  bgBlack: { open: 'background: black', close: 'background: initial' },
+  bgRed: { open: 'background: red', close: 'background: initial' },
+  bgGreen: { open: 'background: green', close: 'background: initial' },
+  bgYellow: { open: 'background: yellow', close: 'background: initial' },
+  bgBlue: { open: 'background: blue', close: 'background: initial' },
+  bgMagenta: { open: 'background: magenta', close: 'background: initial' },
+  bgCyan: { open: 'background: cyan', close: 'background: initial' },
+  bgWhite: { open: 'background: white', close: 'background: initial' },
 
-  orange: `color: #${hexColors.orange}`,
-  grayLight: `color: #${hexColors.grayLight}`,
-  'gray-light': `color: #${hexColors.grayLight}`,
+  orange: { open: `color: #${hexColors.orange}`, close: 'color: initial' },
+  grayLight: { open: `color: #${hexColors.grayLight}`, close: 'color: initial' },
+  'gray-light': { open: `color: #${hexColors.grayLight}`, close: 'color: initial' },
 };
-
-export default htmlStyles;

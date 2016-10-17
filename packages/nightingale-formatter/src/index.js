@@ -1,6 +1,6 @@
-export { default as levelToStyles } from './levelToStyles';
-export { default as levelToSymbol } from './levelToSymbol';
-export { default as styleToHtmlStyle } from './styleToHtmlStyle';
-export { default as styleToHexColor } from './styleToHexColor';
-export { default as formatObject } from './formatObject';
-export { default as formatRecordToString } from './formatRecordToString';
+export levelToStyles from './levelToStyles';
+export levelToSymbol from './levelToSymbol';
+export styleToHtmlStyle from './styleToHtmlStyle';
+export styleToHexColor from './styleToHexColor';
+export formatObject from './formatObject';
+export formatRecordToString from './formatRecordToString';

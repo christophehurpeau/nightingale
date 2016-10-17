@@ -6,7 +6,12 @@ function tryStringify(arg) {
   }
 }
 
-function internalFormatValue(value, styleFn, styles, { padding, depth, maxDepth, objects }) {
+function internalFormatValue(value, styleFn, styles, _ref) {
+  var padding = _ref.padding;
+  var depth = _ref.depth;
+  var maxDepth = _ref.maxDepth;
+  var objects = _ref.objects;
+
   var typeofValue = typeof value;
 
   if (!styles) {
@@ -63,13 +68,29 @@ function internalFormatValue(value, styleFn, styles, { padding, depth, maxDepth,
   };
 }
 
-function internalFormatIterator(values, styleFn, objectStyles, { padding, depth, maxDepth, objects }, { prefix, suffix, prefixSuffixSpace = ' ' }) {
+function internalFormatIterator(values, styleFn, objectStyles, _ref2, _ref3) {
+  var padding = _ref2.padding;
+  var depth = _ref2.depth;
+  var maxDepth = _ref2.maxDepth;
+  var objects = _ref2.objects;
+  var prefix = _ref3.prefix;
+  var suffix = _ref3.suffix;
+  var _ref3$prefixSuffixSpa = _ref3.prefixSuffixSpace;
+  var prefixSuffixSpace = _ref3$prefixSuffixSpa === undefined ? ' ' : _ref3$prefixSuffixSpa;
+
   var breakLine = false;
 
-  values = values.map(({ key, value }, index) => {
+  values = values.map((_ref4, index) => {
+    var key = _ref4.key;
+    var value = _ref4.value;
+
     var nextDepth = depth + 1;
 
-    var { stringValue, formattedValue } = internalFormatValue(value, styleFn, key && objectStyles && objectStyles[key], { padding, depth: nextDepth, maxDepth, objects });
+    var _internalFormatValue = internalFormatValue(value, styleFn, key && objectStyles && objectStyles[key], { padding, depth: nextDepth, maxDepth, objects });
+
+    var stringValue = _internalFormatValue.stringValue;
+    var formattedValue = _internalFormatValue.formattedValue;
+
 
     if (stringValue && (stringValue.length > 80 || stringValue.indexOf('\n') !== -1)) {
       breakLine = true;
@@ -90,7 +111,12 @@ function internalFormatIterator(values, styleFn, objectStyles, { padding, depth,
   };
 }
 
-function internalFormatObject(object, styleFn, objectStyles, { padding, depth, maxDepth, objects }) {
+function internalFormatObject(object, styleFn, objectStyles, _ref5) {
+  var padding = _ref5.padding;
+  var depth = _ref5.depth;
+  var maxDepth = _ref5.maxDepth;
+  var objects = _ref5.objects;
+
   if (objects.has(object)) {
     return { stringValue: '{Circular object}', formattedValue: '{Circular object}' };
   }
@@ -112,7 +138,12 @@ function internalFormatObject(object, styleFn, objectStyles, { padding, depth, m
   return result;
 }
 
-function internalFormatArray(array, styleFn, { padding, depth, maxDepth, objects }) {
+function internalFormatArray(array, styleFn, _ref6) {
+  var padding = _ref6.padding;
+  var depth = _ref6.depth;
+  var maxDepth = _ref6.maxDepth;
+  var objects = _ref6.objects;
+
   if (objects.has(array)) {
     return { stringValue: '{Circular array}', formattedValue: '{Circular array}' };
   }
@@ -133,11 +164,18 @@ function internalFormatArray(array, styleFn, { padding, depth, maxDepth, objects
   return result;
 }
 
-export default function formatObject(object, styleFn, objectStyles, {
-  padding = '  ',
-  maxDepth = 10
-} = {}) {
-  var { formattedValue: result } = internalFormatObject(object, styleFn, objectStyles, { padding, maxDepth, depth: 0, objects: new Set() });
+export default function formatObject(object, styleFn, objectStyles) {
+  var _ref7 = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : {};
+
+  var _ref7$padding = _ref7.padding;
+  var padding = _ref7$padding === undefined ? '  ' : _ref7$padding;
+  var _ref7$maxDepth = _ref7.maxDepth;
+  var maxDepth = _ref7$maxDepth === undefined ? 10 : _ref7$maxDepth;
+
+  var _internalFormatObject = internalFormatObject(object, styleFn, objectStyles, { padding, maxDepth, depth: 0, objects: new Set() });
+
+  var result = _internalFormatObject.formattedValue;
+
 
   if (result === '{}') {
     return '';

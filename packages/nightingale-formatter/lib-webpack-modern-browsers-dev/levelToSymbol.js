@@ -1,14 +1,13 @@
 import levels from 'nightingale-levels';
 
-var levelToSymbol = {};
-levelToSymbol[levels.TRACE] = '•';
-levelToSymbol[levels.DEBUG] = '•';
-levelToSymbol[levels.INFO] = '→';
-levelToSymbol[levels.WARN] = '⚠';
-levelToSymbol[levels.ERROR] = '✖';
-levelToSymbol[levels.CRITICAL] = '!';
-levelToSymbol[levels.FATAL] = '‼';
-levelToSymbol[levels.EMERGENCY] = '‼';
-
-export default levelToSymbol;
+export default {
+  [levels.TRACE]: '•',
+  [levels.DEBUG]: '•',
+  [levels.INFO]: '→',
+  [levels.WARN]: '⚠',
+  [levels.ERROR]: '✖',
+  [levels.CRITICAL]: '!',
+  [levels.FATAL]: '‼',
+  [levels.EMERGENCY]: '‼'
+};
 //# sourceMappingURL=levelToSymbol.js.map
