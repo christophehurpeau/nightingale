@@ -1,6 +1,6 @@
 {
   "name": "nightingale-browser-console",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Browser console handler for nightingale",
   "keywords": [
     "nightingale",

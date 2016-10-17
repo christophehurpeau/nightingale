@@ -1,3 +1,7 @@
+### v0.4.0
+
+- [`a6f3f5d`](https://github.com/nightingalejs/nightingale-browser-console/commit/a6f3f5d62f3b9432b8fe29f1f451c94904ee8d47) chore(package): nightingale-browser-console-formatter@^1.3.1 (Christophe Hurpeau)
+
 ### v0.3.0
 
 - [`bb02d0b`](https://github.com/nightingalejs/nightingale-browser-console/commit/bb02d0b80fd29e92c41793a2354334c33beac030) chore(package): update dependencies (Christophe Hurpeau)
