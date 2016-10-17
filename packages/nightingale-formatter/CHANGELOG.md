@@ -1,3 +1,9 @@
+### v2.0.0
+
+- [`a2cdb66`](https://github.com/nightingalejs/nightingale-formatter/commit/a2cdb66fc5fcaee91b76d675d140626656f70f33) chore(package): komet-karma@^0.2.3 (Christophe Hurpeau)
+- [`cc1cb0d`](https://github.com/nightingalejs/nightingale-formatter/commit/cc1cb0da61c22df40de71be176ca050e39a261a7) chore(package): pob-release@^2.2.2 (Christophe Hurpeau)
+- [`28977d8`](https://github.com/nightingalejs/nightingale-formatter/commit/28977d86fb3ae2e0d943a337b08d370de1a75068) refactor: breaking: style to html styl open/close and remove reset (Christophe Hurpeau)
+
 ### v1.4.0
 
 - [`fc58a2a`](https://github.com/nightingalejs/nightingale-formatter/commit/fc58a2a226bc286135e0ebdcdae6e83703b17816) refactor: pob update (Christophe Hurpeau)
