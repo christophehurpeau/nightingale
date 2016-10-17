@@ -1,3 +1,7 @@
+### v5.0.0
+
+
+
 ### v5.0.0-beta.2
 
 - [`078c60c`](https://github.com/nightingalejs/nightingale/commit/078c60cea13d71c051d033e84a09ba857fb976af) nightingale-logger 1.6 or 2.0 (Christophe Hurpeau)
