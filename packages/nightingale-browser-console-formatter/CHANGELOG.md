@@ -1,3 +1,7 @@
+### v1.3.1
+
+- [`fe9edcc`](https://github.com/nightingalejs/nightingale-browser-console-formatter/commit/fe9edcc74af8bb3850ecea6637288fe055070d92) fix: console.log args (Christophe Hurpeau)
+
 ### v1.3.0
 
 - [`f5dfddf`](https://github.com/nightingalejs/nightingale-browser-console-formatter/commit/f5dfddf0a29b202022fa962d911b0f277c610494) chore(package): komet-karma@^0.2.3 (Christophe Hurpeau)
