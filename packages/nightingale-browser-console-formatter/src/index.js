@@ -1,4 +1,15 @@
-import { formatRecordToString, styleToHtmlStyle } from 'nightingale-formatter';
+import { formatRecordToString, styleToHtmlStyle } from 'nightingale-formatter/src';
+
+export const style = args => (styles, string) => {
+  if (!styles || !styles.length || !string) {
+    return string;
+  }
+
+  const htmlStyles = styles.map(styleName => styleToHtmlStyle[styleName]);
+  args.push(htmlStyles.map(s => s.open).join('; '));
+  args.push(htmlStyles.map(s => s.close).join('; '));
+  return `%c${string}%c`;
+};
 
 /**
  * @param {Object} record
@@ -6,15 +17,6 @@ import { formatRecordToString, styleToHtmlStyle } from 'nightingale-formatter';
  */
 export default function format(record) {
   const args = [];
-  const string = formatRecordToString(record, (styles, string) => {
-    if (!styles || !styles.length || !string) {
-      return string;
-    }
-
-    args.push(['reset'].concat(styles).map(styleName => styleToHtmlStyle[styleName]).join('; '));
-    args.push(styleToHtmlStyle.reset);
-    return `%c${string}%c`;
-  });
-
+  const string = formatRecordToString(record, style(args));
   return [string, args];
 }

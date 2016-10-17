@@ -1,2 +1,2 @@
 var production = process.env.NODE_ENV === 'production';
-throw new Error('Platform not supported: ' + process.version + '.');
+module.exports = require('./lib-node6' + (production ? '' : '-dev') + '/');
