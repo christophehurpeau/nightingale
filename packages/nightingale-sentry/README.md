@@ -7,15 +7,21 @@ Sentry handler for nightingale
 ## Install
 
 ```sh
-npm install --save nightingale-sentry
+npm install --save nightingale nightingale-sentry
 ```
 
 ## Usage
 
 ```js
-import nightingaleSentry from 'nightingale-sentry';
+import { configure, levels } from 'nightingale';
+import SentryHandler from 'nightingale-sentry';
 
-console.log(nightingaleSentry);
+configure([
+  {
+    handlers: [new SentryHandler(ravenUrl, levels.ERROR)]
+  }
+])
+
 ```
 
 [npm-image]: https://img.shields.io/npm/v/nightingale-sentry.svg?style=flat-square
