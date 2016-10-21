@@ -65,7 +65,9 @@ export function configure(config) {
   global.__NIGHTINGALE_CONFIG = config.map(handleConfig);
 }
 
-export function addConfig(config, unshift = false) {
+export function addConfig(config) {
+  var unshift = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+
   config = handleConfig(config);
   global.__NIGHTINGALE_CONFIG[unshift ? 'unshift' : 'push'](config);
   clearCache();
@@ -100,7 +102,11 @@ global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = function getConfigForLogger(key) {
 };
 
 global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = function getConfigForLoggerRecord(key, level) {
-  var { handlers, processors } = global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key);
+  var _global$__NIGHTINGALE = global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key);
+
+  var handlers = _global$__NIGHTINGALE.handlers;
+  var processors = _global$__NIGHTINGALE.processors;
+
 
   return {
     handlers: handlers.filter(handler => level >= findLevel(handler.minLevel, key) && (!handler.isHandling || handler.isHandling(level, key))),
