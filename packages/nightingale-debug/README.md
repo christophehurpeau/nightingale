@@ -66,7 +66,7 @@ localStorage.debug = '*,-app:*'; // debug everything except app and all its chil
 [daviddm-url]: https://david-dm.org/nightingalejs/nightingale-debug
 [build-status-image]: https://img.shields.io/circleci/project/nightingalejs/nightingale-debug/master.svg?style=flat-square
 [build-status-url]: https://circleci.com/gh/nightingalejs/nightingale-debug
-[travisci-status-image]: https://img.shields.io/travisci/project/nightingalejs/nightingale-debug/master.svg?style=flat-square
+[travisci-status-image]: https://img.shields.io/travis/nightingalejs/nightingale-debug/master.svg?style=flat-square
 [travisci-status-url]: https://travis-ci.org/nightingalejs/nightingale-debug
 [coverage-image]: https://img.shields.io/codecov/c/github/nightingalejs/nightingale-debug/master.svg?style=flat-square
 [coverage-url]: https://codecov.io/gh/nightingalejs/nightingale-debug
