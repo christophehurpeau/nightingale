@@ -4,5 +4,6 @@
   ],
   "react": false,
   "documentation": false,
-  "testing": false
+  "testing": false,
+  "examples": true
 }
