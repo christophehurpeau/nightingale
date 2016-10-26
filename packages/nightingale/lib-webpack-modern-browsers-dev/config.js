@@ -1,5 +1,4 @@
 import _t from 'tcomb-forked';
-import findLevel from 'nightingale-debug';
 
 var Config = _t.interface({
   pattern: _t.maybe(RegExp),
@@ -124,7 +123,7 @@ global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = function getConfigForLoggerR
 
 
   return {
-    handlers: handlers.filter(handler => level >= findLevel(handler.minLevel, key) && (!handler.isHandling || handler.isHandling(level, key))),
+    handlers: handlers.filter(handler => level >= handler.minLevel && (!handler.isHandling || handler.isHandling(level, key))),
     processors
   };
 };

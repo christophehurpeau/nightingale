@@ -1,5 +1,3 @@
-import findLevel from 'nightingale-debug';
-
 type Config = {
   pattern: ?RegExp,
   key: ?string,
@@ -114,9 +112,7 @@ global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = function getConfigForLoggerR
 
   return {
     handlers: handlers.filter(handler => (
-      level >= findLevel(handler.minLevel, key) && (
-        !handler.isHandling || handler.isHandling(level, key)
-      )
+      level >= handler.minLevel && (!handler.isHandling || handler.isHandling(level, key))
     )),
     processors,
   };

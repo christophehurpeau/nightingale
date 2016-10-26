@@ -6,11 +6,6 @@ Object.defineProperty(exports, "__esModule", {
 exports.configure = configure;
 exports.addConfig = addConfig;
 
-var _nightingaleDebug = require('nightingale-debug');
-
-var _nightingaleDebug2 = _interopRequireDefault(_nightingaleDebug);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 if (global.__NIGHTINGALE_GLOBAL_HANDLERS) {
   // eslint-disable-next-line no-console
@@ -121,7 +116,7 @@ global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = function getConfigForLoggerR
 
 
   return {
-    handlers: handlers.filter(handler => level >= (0, _nightingaleDebug2.default)(handler.minLevel, key) && (!handler.isHandling || handler.isHandling(level, key))),
+    handlers: handlers.filter(handler => level >= handler.minLevel && (!handler.isHandling || handler.isHandling(level, key))),
     processors
   };
 };

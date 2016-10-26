@@ -10,10 +10,6 @@ var _tcombForked = require('tcomb-forked');
 
 var _tcombForked2 = _interopRequireDefault(_tcombForked);
 
-var _nightingaleDebug = require('nightingale-debug');
-
-var _nightingaleDebug2 = _interopRequireDefault(_nightingaleDebug);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const Config = _tcombForked2.default.interface({
@@ -139,7 +135,7 @@ global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = function getConfigForLoggerR
 
 
   return {
-    handlers: handlers.filter(handler => level >= (0, _nightingaleDebug2.default)(handler.minLevel, key) && (!handler.isHandling || handler.isHandling(level, key))),
+    handlers: handlers.filter(handler => level >= handler.minLevel && (!handler.isHandling || handler.isHandling(level, key))),
     processors
   };
 };

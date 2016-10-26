@@ -10,10 +10,6 @@ var _tcombForked = require('tcomb-forked');
 
 var _tcombForked2 = _interopRequireDefault(_tcombForked);
 
-var _nightingaleDebug = require('nightingale-debug');
-
-var _nightingaleDebug2 = _interopRequireDefault(_nightingaleDebug);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
@@ -138,15 +134,13 @@ global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = function getConfigForLogger(key) {
 };
 
 global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = function getConfigForLoggerRecord(key, level) {
-  var _global$__NIGHTINGALE = global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key);
-
-  var handlers = _global$__NIGHTINGALE.handlers;
-  var processors = _global$__NIGHTINGALE.processors;
-
+  var _global$__NIGHTINGALE = global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key),
+      handlers = _global$__NIGHTINGALE.handlers,
+      processors = _global$__NIGHTINGALE.processors;
 
   return {
     handlers: handlers.filter(function (handler) {
-      return level >= (0, _nightingaleDebug2.default)(handler.minLevel, key) && (!handler.isHandling || handler.isHandling(level, key));
+      return level >= handler.minLevel && (!handler.isHandling || handler.isHandling(level, key));
     }),
     processors: processors
   };

@@ -1,4 +1,4 @@
-import findLevel from 'nightingale-debug';
+
 
 if (global.__NIGHTINGALE_GLOBAL_HANDLERS) {
   // eslint-disable-next-line no-console
@@ -109,7 +109,7 @@ global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = function getConfigForLoggerR
 
 
   return {
-    handlers: handlers.filter(handler => level >= findLevel(handler.minLevel, key) && (!handler.isHandling || handler.isHandling(level, key))),
+    handlers: handlers.filter(handler => level >= handler.minLevel && (!handler.isHandling || handler.isHandling(level, key))),
     processors
   };
 };
