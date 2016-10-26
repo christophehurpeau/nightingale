@@ -1,3 +1,9 @@
+### v3.0.0-beta.1
+
+- [`e89d21b`](https://github.com/nightingalejs/nightingale-logger/commit/e89d21b95272b62daebcc2e69d8adee3fd29fc8c) refactor: update pob (Christophe Hurpeau)
+- [`7bfadc9`](https://github.com/nightingalejs/nightingale-logger/commit/7bfadc9e900684afd5d7dc5cd752899a1fa67036) feat: update dependencies (Christophe Hurpeau)
+- [`8e6bf88`](https://github.com/nightingalejs/nightingale-logger/commit/8e6bf8854c642ed2862e2a4da73daf8c903f82d0) refactor: remove nightingale-debug, use : for child (Christophe Hurpeau)
+
 ### v1.6.0
 
 - [`73701de`](https://github.com/nightingalejs/nightingale-logger/commit/73701def89a457b6eb8bc91e8f799d2a8a1a34bf) nighingale v2 compatibility for nightingale-logger v1 (Christophe Hurpeau)
