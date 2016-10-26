@@ -34,7 +34,7 @@ logger.success('It works !');
 [npm-url]: https://npmjs.org/package/nightingale-logger
 [build-status-image]: https://img.shields.io/circleci/project/nightingalejs/nightingale-logger/master.svg?style=flat-square
 [build-status-url]: https://circleci.com/gh/nightingalejs/nightingale-logger
-[travisci-status-image]: https://img.shields.io/travisci/project/nightingalejs/nightingale-logger/master.svg?style=flat-square
+[travisci-status-image]: https://img.shields.io/travis/nightingalejs/nightingale-logger/master.svg?style=flat-square
 [travisci-status-url]: https://travis-ci.org/nightingalejs/nightingale-logger
 [coverage-image]: https://codecov.io/gh/nightingalejs/nightingale-logger/branch/master/graph/badge.svg?style=flat-square
 [coverage-url]: https://codecov.io/gh/nightingalejs/nightingale-logger
