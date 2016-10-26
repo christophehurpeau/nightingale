@@ -14,10 +14,6 @@ var _nightingaleLevels = require('nightingale-levels');
 
 var _nightingaleLevels2 = _interopRequireDefault(_nightingaleLevels);
 
-var _nightingaleDebug = require('nightingale-debug');
-
-var _nightingaleDebug2 = _interopRequireDefault(_nightingaleDebug);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER) {
@@ -35,7 +31,7 @@ if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
 
 
     return {
-      handlers: handlers.filter(handler => level >= (0, _nightingaleDebug2.default)(handler.minLevel, key) && (!handler.isHandling || handler.isHandling(level, key))),
+      handlers: handlers.filter(handler => level >= handler.minLevel && (!handler.isHandling || handler.isHandling(level, key))),
       processors
     };
   };
@@ -59,7 +55,8 @@ class Logger {
    * @param {string} [displayName]
    */
   constructor(key, displayName) {
-    this.key = key;
+    if (key.includes('.')) this.warn('nightingale: `.` in key is deprecated, replace with `:`');
+    this.key = key.replace('.', ':');
     this.displayName = displayName;
   }
 
@@ -81,7 +78,7 @@ class Logger {
    * @returns {Logger}
    */
   child(childSuffixKey, childDisplayName) {
-    return new Logger(`${ this.key }.${ childSuffixKey }`, childDisplayName);
+    return new Logger(`${ this.key }:${ childSuffixKey }`, childDisplayName);
   }
 
   /**

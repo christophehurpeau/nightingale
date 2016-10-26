@@ -20,10 +20,6 @@ var _nightingaleLevels = require('nightingale-levels');
 
 var _nightingaleLevels2 = _interopRequireDefault(_nightingaleLevels);
 
-var _nightingaleDebug = require('nightingale-debug');
-
-var _nightingaleDebug2 = _interopRequireDefault(_nightingaleDebug);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -42,7 +38,7 @@ if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
 
     return {
       handlers: handlers.filter(function (handler) {
-        return level >= (0, _nightingaleDebug2.default)(handler.minLevel, key) && (!handler.isHandling || handler.isHandling(level, key));
+        return level >= handler.minLevel && (!handler.isHandling || handler.isHandling(level, key));
       }),
       processors: processors
     };
@@ -74,7 +70,8 @@ var Logger = function () {
 
     _classCallCheck(this, Logger);
 
-    this.key = key;
+    if (key.includes('.')) this.warn('nightingale: `.` in key is deprecated, replace with `:`');
+    this.key = key.replace('.', ':');
     this.displayName = displayName;
   }
 
@@ -110,7 +107,7 @@ var Logger = function () {
 
       _assert(childDisplayName, _tcombForked2.default.maybe(_tcombForked2.default.String), 'childDisplayName');
 
-      return new Logger(this.key + '.' + childSuffixKey, childDisplayName);
+      return new Logger(this.key + ':' + childSuffixKey, childDisplayName);
     }
 
     /**

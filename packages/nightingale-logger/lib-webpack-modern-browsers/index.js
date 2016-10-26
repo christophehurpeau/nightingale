@@ -2,7 +2,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 import util from 'util';
 import levels from 'nightingale-levels';
-import findLevel from 'nightingale-debug';
 
 if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER) {
   global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = function () {
@@ -17,7 +16,7 @@ if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
         processors = _global$__NIGHTINGALE.processors;
 
     return {
-      handlers: handlers.filter(handler => level >= findLevel(handler.minLevel, key) && (!handler.isHandling || handler.isHandling(level, key))),
+      handlers: handlers.filter(handler => level >= handler.minLevel && (!handler.isHandling || handler.isHandling(level, key))),
       processors
     };
   };
@@ -41,7 +40,8 @@ export default class Logger {
    * @param {string} [displayName]
    */
   constructor(key, displayName) {
-    this.key = key;
+    if (key.includes('.')) this.warn('nightingale: `.` in key is deprecated, replace with `:`');
+    this.key = key.replace('.', ':');
     this.displayName = displayName;
   }
 
@@ -63,7 +63,7 @@ export default class Logger {
    * @returns {Logger}
    */
   child(childSuffixKey, childDisplayName) {
-    return new Logger(`${ this.key }.${ childSuffixKey }`, childDisplayName);
+    return new Logger(`${ this.key }:${ childSuffixKey }`, childDisplayName);
   }
 
   /**

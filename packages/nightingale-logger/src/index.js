@@ -1,6 +1,5 @@
 import util from 'util';
 import levels from 'nightingale-levels';
-import findLevel from 'nightingale-debug';
 
 if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER) {
   global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = function () {
@@ -14,9 +13,7 @@ if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
 
     return {
       handlers: handlers.filter(handler => (
-        level >= findLevel(handler.minLevel, key) && (
-          !handler.isHandling || handler.isHandling(level, key)
-        )
+        level >= handler.minLevel && (!handler.isHandling || handler.isHandling(level, key))
       )),
       processors,
     };
@@ -44,7 +41,8 @@ export default class Logger {
    * @param {string} [displayName]
    */
   constructor(key: string, displayName: ?string) {
-    this.key = key;
+    if (key.includes('.')) this.warn('nightingale: `.` in key is deprecated, replace with `:`');
+    this.key = key.replace('.', ':');
     this.displayName = displayName;
   }
 
@@ -66,7 +64,7 @@ export default class Logger {
    * @returns {Logger}
    */
   child(childSuffixKey: string, childDisplayName: ?string) {
-    return new Logger(`${this.key}.${childSuffixKey}`, childDisplayName);
+    return new Logger(`${this.key}:${childSuffixKey}`, childDisplayName);
   }
 
   /**

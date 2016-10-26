@@ -6,7 +6,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 import util from 'util';
 import levels from 'nightingale-levels';
-import findLevel from 'nightingale-debug';
 
 if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER) {
   global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = function () {
@@ -22,7 +21,7 @@ if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
 
     return {
       handlers: handlers.filter(function (handler) {
-        return level >= findLevel(handler.minLevel, key) && (!handler.isHandling || handler.isHandling(level, key));
+        return level >= handler.minLevel && (!handler.isHandling || handler.isHandling(level, key));
       }),
       processors: processors
     };
@@ -50,7 +49,8 @@ var Logger = function () {
   function Logger(key, displayName) {
     _classCallCheck(this, Logger);
 
-    this.key = key;
+    if (key.includes('.')) this.warn('nightingale: `.` in key is deprecated, replace with `:`');
+    this.key = key.replace('.', ':');
     this.displayName = displayName;
   }
 
@@ -82,7 +82,7 @@ var Logger = function () {
   }, {
     key: 'child',
     value: function child(childSuffixKey, childDisplayName) {
-      return new Logger(this.key + '.' + childSuffixKey, childDisplayName);
+      return new Logger(this.key + ':' + childSuffixKey, childDisplayName);
     }
 
     /**
