@@ -1,3 +1,10 @@
+### v6.0.0-beta.1
+
+- [`1a5f8a2`](https://github.com/nightingalejs/nightingale/commit/1a5f8a23d2c5f2805827339d69994f5b24f82d5d) update dependencies (Christophe Hurpeau)
+- [`bdf0507`](https://github.com/nightingalejs/nightingale/commit/bdf0507dab2352317e92f7661dda7f95fd052cbe) breaking: nightingale-logger@3 (beta) and remove nightingale-debug (Christophe Hurpeau)
+- [`ebb1b98`](https://github.com/nightingalejs/nightingale/commit/ebb1b98109b69cd131382c3916cfe80ddb418073) chore: pob update (Christophe Hurpeau)
+- [`47a2917`](https://github.com/nightingalejs/nightingale/commit/47a2917a6739a41f2202a6371862ca3d84b2f871) refactor: build (Christophe Hurpeau)
+
 ### v5.0.0
 
 
