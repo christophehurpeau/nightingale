@@ -102,11 +102,9 @@ global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = function getConfigForLogger(key) {
 };
 
 global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = function getConfigForLoggerRecord(key, level) {
-  var _global$__NIGHTINGALE = global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key);
-
-  var handlers = _global$__NIGHTINGALE.handlers;
-  var processors = _global$__NIGHTINGALE.processors;
-
+  var _global$__NIGHTINGALE = global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key),
+      handlers = _global$__NIGHTINGALE.handlers,
+      processors = _global$__NIGHTINGALE.processors;
 
   return {
     handlers: handlers.filter(handler => level >= handler.minLevel && (!handler.isHandling || handler.isHandling(level, key))),

@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/index.js"],"names":["test"],"mappings":";;AACA;;AAEAA,KAAK,IAAL,EAAW,MAAM;AAEf,2BADW,IACX,EAAgB,IAAhB;AACD,CAHD,E,CAHA","file":"index.js","sourcesContent":["/* global test */\nimport { strictEqual } from 'assert';\n\ntest('ok', () => {\n  const ok = 'ok';\n  strictEqual(ok, 'ok');\n});\n"]}
