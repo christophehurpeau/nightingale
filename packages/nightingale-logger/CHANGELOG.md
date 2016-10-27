@@ -1,3 +1,7 @@
+### v3.0.0-beta.2
+
+- [`162bb6a`](https://github.com/nightingalejs/nightingale-logger/commit/162bb6a5c2ac71d9796d9445aa9322e618f839ec) fix: warn without key (Christophe Hurpeau)
+
 ### v3.0.0-beta.1
 
 - [`e89d21b`](https://github.com/nightingalejs/nightingale-logger/commit/e89d21b95272b62daebcc2e69d8adee3fd29fc8c) refactor: update pob (Christophe Hurpeau)
