@@ -57,7 +57,9 @@ var Logger = function () {
 
     this.key = key.replace('.', ':');
     this.displayName = displayName;
-    if (key.includes('.')) this.warn('nightingale: `.` in key is deprecated, replace with `:`');
+    if (key.includes('.')) {
+      this.warn('nightingale: `.` in key is deprecated, replace with `:`', { key: key, displayName: displayName });
+    }
   }
 
   /** @private */
