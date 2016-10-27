@@ -55,9 +55,9 @@ class Logger {
    * @param {string} [displayName]
    */
   constructor(key, displayName) {
-    if (key.includes('.')) this.warn('nightingale: `.` in key is deprecated, replace with `:`');
     this.key = key.replace('.', ':');
     this.displayName = displayName;
+    if (key.includes('.')) this.warn('nightingale: `.` in key is deprecated, replace with `:`');
   }
 
   /** @private */
