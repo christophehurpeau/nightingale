@@ -1,3 +1,7 @@
+### v3.0.0-beta.3
+
+- [`5def4da`](https://github.com/nightingalejs/nightingale-logger/commit/5def4da48901c2947f89e8a579f5d518683f2aa5) feat: warn dot in key add key and diplayname (Christophe Hurpeau)
+
 ### v3.0.0-beta.2
 
 - [`162bb6a`](https://github.com/nightingalejs/nightingale-logger/commit/162bb6a5c2ac71d9796d9445aa9322e618f839ec) fix: warn without key (Christophe Hurpeau)
