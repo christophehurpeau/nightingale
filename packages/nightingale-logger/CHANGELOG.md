@@ -1,3 +1,7 @@
+### v3.0.0-beta.4
+
+- [`b3481cb`](https://github.com/nightingalejs/nightingale-logger/commit/b3481cb337efbfb128f68a54d46e037ddd2bf286) refactor: breaking: logger doesn't returns itself now (Christophe Hurpeau)
+
 ### v3.0.0-beta.3
 
 - [`5def4da`](https://github.com/nightingalejs/nightingale-logger/commit/5def4da48901c2947f89e8a579f5d518683f2aa5) feat: warn dot in key add key and diplayname (Christophe Hurpeau)
