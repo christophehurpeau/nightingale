@@ -161,7 +161,6 @@ export default class Logger {
    * @param {Object} metadata
    * @param {int} [level]
    * @param {Object} [options]
-   * @return {Logger}
    */
   log(message, metadata) {
     var level = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : levels.INFO;
@@ -196,7 +195,6 @@ export default class Logger {
     }
 
     this.addRecord(record);
-    return this;
   }
 
   /**
@@ -205,7 +203,6 @@ export default class Logger {
    * @param {string} message
    * @param {Object} [metadata]
    * @param {Object} [metadataStyles]
-   * @return {Logger}
    */
   trace(message, metadata, metadataStyles) {
     return this.log(message, metadata, levels.TRACE, { metadataStyles });
@@ -217,7 +214,6 @@ export default class Logger {
    * @param {string} message
    * @param {Object} [metadata]
    * @param {Object} [metadataStyles]
-   * @return {Logger}
    */
   debug(message, metadata, metadataStyles) {
     return this.log(message, metadata, levels.DEBUG, { metadataStyles });
@@ -229,7 +225,6 @@ export default class Logger {
    * @param {string} message
    * @param {Object} [metadata]
    * @param {Object} [metadataStyles]
-   * @return {Logger}
    */
   info(message, metadata, metadataStyles) {
     return this.log(message, metadata, levels.INFO, { metadataStyles });
@@ -241,7 +236,6 @@ export default class Logger {
    * @param {string} message
    * @param {Object} [metadata]
    * @param {Object} [metadataStyles]
-   * @return {Logger}
    */
   warn(message, metadata, metadataStyles) {
     return this.log(message, metadata, levels.WARN, { metadataStyles });
@@ -253,7 +247,6 @@ export default class Logger {
    * @param {string|Error} message
    * @param {Object} [metadata]
    * @param {Object} [metadataStyles]
-   * @return {Logger}
    */
   error(message) {
     var metadata = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
@@ -272,7 +265,6 @@ export default class Logger {
    * @param {string} message
    * @param {Object} [metadata]
    * @param {Object} [metadataStyles]
-   * @return {Logger}
    */
   alert(message, metadata, metadataStyles) {
     return this.log(message, metadata, levels.ALERT, { metadataStyles });
@@ -284,7 +276,6 @@ export default class Logger {
    * @param {string} message
    * @param {Object} [metadata]
    * @param {Object} [metadataStyles]
-   * @return {Logger}
    */
   fatal(message, metadata, metadataStyles) {
     return this.log(message, metadata, levels.FATAL, { metadataStyles });
@@ -296,7 +287,6 @@ export default class Logger {
    * @param {*} value
    * @param {Object} [metadata]
    * @param {Object} [metadataStyles]
-   * @return {Logger}
    */
   inspectValue(value, metadata, metadataStyles) {
     // Note: inspect is a special function for node:
@@ -312,7 +302,6 @@ export default class Logger {
    * @param {*} varValue
    * @param {Object} [metadata]
    * @param {Object} [metadataStyles]
-   * @return {Logger}
    */
   inspectVar(varName, varValue, metadata, metadataStyles) {
     varValue = util.inspect(varValue, { depth: 6 });
@@ -325,7 +314,6 @@ export default class Logger {
    * @param {string} message
    * @param {Object} [metadata]
    * @param {Object} [metadataStyles]
-   * @return {Logger}
    */
   success(message, metadata, metadataStyles) {
     return this.infoSuccess(message, metadata, metadataStyles);
@@ -337,7 +325,6 @@ export default class Logger {
    * @param {string} message
    * @param {Object} [metadata]
    * @param {Object} [metadataStyles]
-   * @return {Logger}
    */
   infoSuccess(message, metadata, metadataStyles) {
     return this.log(message, metadata, levels.INFO, {
@@ -353,7 +340,6 @@ export default class Logger {
    * @param {string} message
    * @param {Object} [metadata]
    * @param {Object} [metadataStyles]
-   * @return {Logger}
    */
   debugSuccess(message, metadata, metadataStyles) {
     return this.log(message, metadata, levels.DEBUG, {
@@ -369,7 +355,6 @@ export default class Logger {
    * @param {string} message
    * @param {Object} [metadata]
    * @param {Object} [metadataStyles]
-   * @return {Logger}
    */
   fail(message, metadata, metadataStyles) {
     return this.infoFail(message, metadata, metadataStyles);
@@ -381,7 +366,6 @@ export default class Logger {
    * @param {string} message
    * @param {Object} [metadata]
    * @param {Object} [metadataStyles]
-   * @return {Logger}
    */
   infoFail(message, metadata, metadataStyles) {
     return this.log(message, metadata, levels.INFO, {
@@ -397,7 +381,6 @@ export default class Logger {
    * @param {string} message
    * @param {Object} [metadata]
    * @param {Object} [metadataStyles]
-   * @return {Logger}
    */
   debugFail(message, metadata, metadataStyles) {
     return this.log(message, metadata, levels.DEBUG, {
@@ -515,7 +498,6 @@ export default class Logger {
    * @param {Function} fn
    * @param {Object} [metadata]
    * @param {Object} [metadataStyles]
-   * @return {Logger}
    */
   enter(fn) {
     var metadata = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
@@ -543,7 +525,6 @@ export default class Logger {
    * @param {Function} fn
    * @param {Object} [metadata]
    * @param {Object} [metadataStyles]
-   * @return {Logger}
    */
   exit(fn, metadata, metadataStyles) {
     metadata = _extends({

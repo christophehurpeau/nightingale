@@ -192,7 +192,6 @@ var Logger = function () {
      * @param {Object} metadata
      * @param {int} [level]
      * @param {Object} [options]
-     * @return {Logger}
      */
 
   }, {
@@ -222,7 +221,6 @@ var Logger = function () {
       }
 
       this.addRecord(record);
-      return this;
     }
 
     /**
@@ -231,7 +229,6 @@ var Logger = function () {
      * @param {string} message
      * @param {Object} [metadata]
      * @param {Object} [metadataStyles]
-     * @return {Logger}
      */
 
   }, {
@@ -246,7 +243,6 @@ var Logger = function () {
      * @param {string} message
      * @param {Object} [metadata]
      * @param {Object} [metadataStyles]
-     * @return {Logger}
      */
 
   }, {
@@ -261,7 +257,6 @@ var Logger = function () {
      * @param {string} message
      * @param {Object} [metadata]
      * @param {Object} [metadataStyles]
-     * @return {Logger}
      */
 
   }, {
@@ -276,7 +271,6 @@ var Logger = function () {
      * @param {string} message
      * @param {Object} [metadata]
      * @param {Object} [metadataStyles]
-     * @return {Logger}
      */
 
   }, {
@@ -291,7 +285,6 @@ var Logger = function () {
      * @param {string|Error} message
      * @param {Object} [metadata]
      * @param {Object} [metadataStyles]
-     * @return {Logger}
      */
 
   }, {
@@ -313,7 +306,6 @@ var Logger = function () {
      * @param {string} message
      * @param {Object} [metadata]
      * @param {Object} [metadataStyles]
-     * @return {Logger}
      */
 
   }, {
@@ -328,7 +320,6 @@ var Logger = function () {
      * @param {string} message
      * @param {Object} [metadata]
      * @param {Object} [metadataStyles]
-     * @return {Logger}
      */
 
   }, {
@@ -343,7 +334,6 @@ var Logger = function () {
      * @param {*} value
      * @param {Object} [metadata]
      * @param {Object} [metadataStyles]
-     * @return {Logger}
      */
 
   }, {
@@ -362,7 +352,6 @@ var Logger = function () {
      * @param {*} varValue
      * @param {Object} [metadata]
      * @param {Object} [metadataStyles]
-     * @return {Logger}
      */
 
   }, {
@@ -378,7 +367,6 @@ var Logger = function () {
      * @param {string} message
      * @param {Object} [metadata]
      * @param {Object} [metadataStyles]
-     * @return {Logger}
      */
 
   }, {
@@ -393,7 +381,6 @@ var Logger = function () {
      * @param {string} message
      * @param {Object} [metadata]
      * @param {Object} [metadataStyles]
-     * @return {Logger}
      */
 
   }, {
@@ -412,7 +399,6 @@ var Logger = function () {
      * @param {string} message
      * @param {Object} [metadata]
      * @param {Object} [metadataStyles]
-     * @return {Logger}
      */
 
   }, {
@@ -431,7 +417,6 @@ var Logger = function () {
      * @param {string} message
      * @param {Object} [metadata]
      * @param {Object} [metadataStyles]
-     * @return {Logger}
      */
 
   }, {
@@ -446,7 +431,6 @@ var Logger = function () {
      * @param {string} message
      * @param {Object} [metadata]
      * @param {Object} [metadataStyles]
-     * @return {Logger}
      */
 
   }, {
@@ -465,7 +449,6 @@ var Logger = function () {
      * @param {string} message
      * @param {Object} [metadata]
      * @param {Object} [metadataStyles]
-     * @return {Logger}
      */
 
   }, {
@@ -577,7 +560,6 @@ var Logger = function () {
      * @param {Function} fn
      * @param {Object} [metadata]
      * @param {Object} [metadataStyles]
-     * @return {Logger}
      */
 
   }, {
@@ -608,7 +590,6 @@ var Logger = function () {
      * @param {Function} fn
      * @param {Object} [metadata]
      * @param {Object} [metadataStyles]
-     * @return {Logger}
      */
 
   }, {
