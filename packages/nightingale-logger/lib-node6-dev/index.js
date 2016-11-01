@@ -63,11 +63,12 @@ class Logger {
 
     _assert(displayName, _tcombForked2.default.maybe(_tcombForked2.default.String), 'displayName');
 
-    this.key = key.replace('.', ':');
-    this.displayName = displayName;
     if (key.includes('.')) {
       this.warn('nightingale: `.` in key is deprecated, replace with `:`', { key, displayName });
+      key = key.replace(/\./g, ':');
     }
+    this.key = key;
+    this.displayName = displayName;
   }
 
   /** @private */
