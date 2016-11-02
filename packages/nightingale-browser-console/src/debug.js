@@ -16,5 +16,5 @@ export default function getDebugString() {
     ),
   );
 
-  return (debugFromLocalStorage && `${debugFromLocalStorage},`) + debugFromQueryString;
+  return (debugFromLocalStorage ? `${debugFromLocalStorage},` : '') + debugFromQueryString;
 }
