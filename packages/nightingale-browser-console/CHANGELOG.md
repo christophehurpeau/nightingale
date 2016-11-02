@@ -1,3 +1,8 @@
+### v0.5.0-beta.1
+
+- [`0fc6b43`](https://github.com/nightingalejs/nightingale-browser-console/commit/0fc6b435362d25efb391b9c2ad4094a08fec2db3) feat: use nightingale-debug (Christophe Hurpeau)
+- [`623daf8`](https://github.com/nightingalejs/nightingale-browser-console/commit/623daf87f4d4d30403fd6ec4dc997abe4c1b1016) refactor: update dependencies (Christophe Hurpeau)
+
 ### v0.4.0
 
 - [`a6f3f5d`](https://github.com/nightingalejs/nightingale-browser-console/commit/a6f3f5d62f3b9432b8fe29f1f451c94904ee8d47) chore(package): nightingale-browser-console-formatter@^1.3.1 (Christophe Hurpeau)
