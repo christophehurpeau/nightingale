@@ -1,3 +1,7 @@
+### v1.0.1
+
+
+
 ### v1.0.0
 
 - [`d03a725`](https://github.com/nightingalejs/nightingale-browser-console/commit/d03a7252dda24cc03a834b9855f37a91c1310479) fix: nightingale-browser-console-formatter@^1.3.2 (Christophe Hurpeau)
