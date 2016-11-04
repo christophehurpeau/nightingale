@@ -1,3 +1,7 @@
+### v2.0.1-beta.1
+
+- [`3086736`](https://github.com/nightingalejs/nightingale-formatter/commit/30867367ad5339f37ed04502d928bef0a5357484) fix(formatObject) fixes for browser-formatter (Christophe Hurpeau)
+
 ### v2.0.0
 
 - [`a2cdb66`](https://github.com/nightingalejs/nightingale-formatter/commit/a2cdb66fc5fcaee91b76d675d140626656f70f33) chore(package): komet-karma@^0.2.3 (Christophe Hurpeau)
