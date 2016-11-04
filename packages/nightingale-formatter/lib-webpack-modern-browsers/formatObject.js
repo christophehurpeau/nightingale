@@ -17,23 +17,23 @@ function internalFormatValue(value, styleFn, styles, _ref) {
   var typeofValue = typeof value;
 
   if (!styles) {
-    switch (typeofValue) {
-      case value == null:
-        styles = ['cyan'];
-        break;
-      case 'boolean':
-        styles = ['green'];
-        break;
-      case 'number':
-        styles = ['yellow'];
-        break;
-      case 'string':
-        styles = ['orange'];
-        break;
-      case 'date':
-        styles = ['magenta'];
-        break;
-
+    if (value == null) {
+      styles = ['cyan'];
+    } else {
+      switch (typeofValue) {
+        case 'boolean':
+          styles = ['green'];
+          break;
+        case 'number':
+          styles = ['yellow'];
+          break;
+        case 'string':
+          styles = ['orange'];
+          break;
+        case 'date':
+          styles = ['magenta'];
+          break;
+      }
     }
   }
 
