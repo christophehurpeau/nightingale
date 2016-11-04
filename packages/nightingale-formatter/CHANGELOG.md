@@ -1,3 +1,7 @@
+### v2.0.1
+
+
+
 ### v2.0.1-beta.1
 
 - [`3086736`](https://github.com/nightingalejs/nightingale-formatter/commit/30867367ad5339f37ed04502d928bef0a5357484) fix(formatObject) fixes for browser-formatter (Christophe Hurpeau)
