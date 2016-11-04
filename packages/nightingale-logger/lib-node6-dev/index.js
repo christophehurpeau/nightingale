@@ -20,30 +20,68 @@ var _nightingaleLevels2 = _interopRequireDefault(_nightingaleLevels);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+const RecordType = _tcombForked2.default.interface({
+  level: _tcombForked2.default.Number,
+  key: _tcombForked2.default.String,
+  displayName: _tcombForked2.default.maybe(_tcombForked2.default.String),
+  datetime: Date,
+  message: _tcombForked2.default.String,
+  context: _tcombForked2.default.maybe(_tcombForked2.default.Object),
+  metadata: _tcombForked2.default.maybe(_tcombForked2.default.Object),
+  extra: _tcombForked2.default.maybe(_tcombForked2.default.Object)
+}, 'RecordType');
+
+const HandlerType = _tcombForked2.default.interface({
+  minLevel: _tcombForked2.default.Number,
+  isHandling: _tcombForked2.default.maybe(_tcombForked2.default.Function),
+  handle: _tcombForked2.default.maybe(_tcombForked2.default.Function)
+}, 'HandlerType');
+
+const ProcessorType = _tcombForked2.default.Function;
+
+const ConfigForLoggerType = _tcombForked2.default.interface({
+  handlers: _tcombForked2.default.list(HandlerType),
+  processors: _tcombForked2.default.list(ProcessorType)
+}, 'ConfigForLoggerType');
+
 if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER) {
   global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = function () {
-    return { handlers: [], processors: [] };
+    return _assert(function () {
+      return { handlers: [], processors: [] };
+    }.apply(this, arguments), ConfigForLoggerType, 'return value');
   };
 }
 
 if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
-  global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = function (key, level) {
-    var _global$__NIGHTINGALE = global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key);
+  global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = (key, level) => {
+    _assert(key, _tcombForked2.default.String, 'key');
 
-    const handlers = _global$__NIGHTINGALE.handlers,
-          processors = _global$__NIGHTINGALE.processors;
+    _assert(level, _tcombForked2.default.Number, 'level');
+
+    return _assert((() => {
+      var _global$__NIGHTINGALE = global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key);
+
+      const handlers = _global$__NIGHTINGALE.handlers,
+            processors = _global$__NIGHTINGALE.processors;
 
 
-    return {
-      handlers: handlers.filter(handler => level >= handler.minLevel && (!handler.isHandling || handler.isHandling(level, key))),
-      processors
-    };
+      return {
+        handlers: handlers.filter(handler => level >= handler.minLevel && (!handler.isHandling || handler.isHandling(level, key))),
+        processors
+      };
+    })(), ConfigForLoggerType, 'return value');
   };
 }
 
 /** @private */
 function getConfigForLoggerRecord(key, recordLevel) {
-  return global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD(key, recordLevel);
+  _assert(key, _tcombForked2.default.String, 'key');
+
+  _assert(recordLevel, _tcombForked2.default.Number, 'recordLevel');
+
+  return _assert(function () {
+    return global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD(key, recordLevel);
+  }.apply(this, arguments), ConfigForLoggerType, 'return value');
 }
 
 /**
@@ -73,27 +111,31 @@ class Logger {
 
   /** @private */
   getHandlersAndProcessors(recordLevel) {
-    return getConfigForLoggerRecord(this.key, recordLevel);
+    _assert(recordLevel, _tcombForked2.default.Number, 'recordLevel');
+
+    return _assert(function () {
+      return getConfigForLoggerRecord(this.key, recordLevel);
+    }.apply(this, arguments), ConfigForLoggerType, 'return value');
   }
 
   /** @private */
   getConfig() {
-    return global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(this.key);
+    return _assert(function () {
+      return global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(this.key);
+    }.apply(this, arguments), ConfigForLoggerType, 'return value');
   }
 
   /**
    * Create a child logger
-   *
-   * @param {string} childSuffixKey
-   * @param {string} [childDisplayName]
-   * @returns {Logger}
    */
   child(childSuffixKey, childDisplayName) {
     _assert(childSuffixKey, _tcombForked2.default.String, 'childSuffixKey');
 
     _assert(childDisplayName, _tcombForked2.default.maybe(_tcombForked2.default.String), 'childDisplayName');
 
-    return new Logger(`${ this.key }:${ childSuffixKey }`, childDisplayName);
+    return _assert(function () {
+      return new Logger(`${ this.key }:${ childSuffixKey }`, childDisplayName);
+    }.apply(this, arguments), Logger, 'return value');
   }
 
   /**
@@ -108,15 +150,15 @@ class Logger {
      *     logger.info('done');
      * }
    *
-   * @param {Object} context
-   * @returns {Logger}
    */
   context(context) {
     _assert(context, _tcombForked2.default.Object, 'context');
 
-    const logger = new Logger(this.key);
-    logger.setContext(context);
-    return logger;
+    return _assert(function () {
+      const logger = new Logger(this.key);
+      logger.setContext(context);
+      return logger;
+    }.apply(this, arguments), Logger, 'return value');
   }
 
   /**
@@ -132,8 +174,6 @@ class Logger {
 
   /**
    * Extends existing context of this logger
-   *
-   * @param {Object} extendedContext
    */
   extendsContext(extendedContext) {
     _assert(extendedContext, _tcombForked2.default.Object, 'extendedContext');
@@ -145,8 +185,6 @@ class Logger {
    * Handle a record
    *
    * Use this only if you know what you are doing.
-   *
-   * @param {Object} record
    */
   addRecord(record) {
     _assert(record, _tcombForked2.default.Object, 'record');
@@ -177,11 +215,6 @@ class Logger {
 
   /**
    * Log a message
-   *
-   * @param {string} message
-   * @param {Object} metadata
-   * @param {int} [level]
-   * @param {Object} [options]
    */
   log(message, metadata) {
     let level = _assert(arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : _nightingaleLevels2.default.INFO, _tcombForked2.default.Number, 'level');
@@ -221,135 +254,159 @@ class Logger {
 
   /**
    * Log a trace message
-   *
-   * @param {string} message
-   * @param {Object} [metadata]
-   * @param {Object} [metadataStyles]
    */
   trace(message, metadata, metadataStyles) {
-    return this.log(message, metadata, _nightingaleLevels2.default.TRACE, { metadataStyles });
+    _assert(message, _tcombForked2.default.String, 'message');
+
+    _assert(metadata, _tcombForked2.default.Object, 'metadata');
+
+    _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
+
+    this.log(message, metadata, _nightingaleLevels2.default.TRACE, { metadataStyles });
   }
 
   /**
    * Log a debug message
-   *
-   * @param {string} message
-   * @param {Object} [metadata]
-   * @param {Object} [metadataStyles]
    */
   debug(message, metadata, metadataStyles) {
-    return this.log(message, metadata, _nightingaleLevels2.default.DEBUG, { metadataStyles });
+    _assert(message, _tcombForked2.default.String, 'message');
+
+    _assert(metadata, _tcombForked2.default.Object, 'metadata');
+
+    _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
+
+    this.log(message, metadata, _nightingaleLevels2.default.DEBUG, { metadataStyles });
   }
 
   /**
    * Log an info message
-   *
-   * @param {string} message
-   * @param {Object} [metadata]
-   * @param {Object} [metadataStyles]
    */
   info(message, metadata, metadataStyles) {
-    return this.log(message, metadata, _nightingaleLevels2.default.INFO, { metadataStyles });
+    _assert(message, _tcombForked2.default.String, 'message');
+
+    _assert(metadata, _tcombForked2.default.Object, 'metadata');
+
+    _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
+
+    this.log(message, metadata, _nightingaleLevels2.default.INFO, { metadataStyles });
   }
 
   /**
    * Log a warn message
-   *
-   * @param {string} message
-   * @param {Object} [metadata]
-   * @param {Object} [metadataStyles]
    */
   warn(message, metadata, metadataStyles) {
-    return this.log(message, metadata, _nightingaleLevels2.default.WARN, { metadataStyles });
+    _assert(message, _tcombForked2.default.String, 'message');
+
+    _assert(metadata, _tcombForked2.default.Object, 'metadata');
+
+    _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
+
+    this.log(message, metadata, _nightingaleLevels2.default.WARN, { metadataStyles });
   }
 
   /**
    * Log an error message
-   *
-   * @param {string|Error} message
-   * @param {Object} [metadata]
-   * @param {Object} [metadataStyles]
    */
   error(message) {
-    let metadata = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-    let metadataStyles = arguments[2];
+    let metadata = _assert(arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {}, _tcombForked2.default.Object, 'metadata');
+
+    let metadataStyles = _assert(arguments[2], _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
+
+    _assert(message, _tcombForked2.default.union([_tcombForked2.default.String, Error]), 'message');
+
+    _assert(metadata, _tcombForked2.default.Object, 'metadata');
+
+    _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
 
     if (message instanceof Error) {
       metadata.error = message;
       message = `${ metadata.error.name }: ${ metadata.error.message }`;
     }
-    return this.log(message, metadata, _nightingaleLevels2.default.ERROR, { metadataStyles });
+    this.log(message, metadata, _nightingaleLevels2.default.ERROR, { metadataStyles });
   }
 
   /**
    * Log an alert message
-   *
-   * @param {string} message
-   * @param {Object} [metadata]
-   * @param {Object} [metadataStyles]
    */
   alert(message, metadata, metadataStyles) {
-    return this.log(message, metadata, _nightingaleLevels2.default.ALERT, { metadataStyles });
+    _assert(message, _tcombForked2.default.String, 'message');
+
+    _assert(metadata, _tcombForked2.default.Object, 'metadata');
+
+    _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
+
+    this.log(message, metadata, _nightingaleLevels2.default.ALERT, { metadataStyles });
   }
 
   /**
    * Log a fatal message
-   *
-   * @param {string} message
-   * @param {Object} [metadata]
-   * @param {Object} [metadataStyles]
    */
   fatal(message, metadata, metadataStyles) {
-    return this.log(message, metadata, _nightingaleLevels2.default.FATAL, { metadataStyles });
+    _assert(message, _tcombForked2.default.String, 'message');
+
+    _assert(metadata, _tcombForked2.default.Object, 'metadata');
+
+    _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
+
+    this.log(message, metadata, _nightingaleLevels2.default.FATAL, { metadataStyles });
   }
 
   /**
    * Log an inspected value
-   *
-   * @param {*} value
-   * @param {Object} [metadata]
-   * @param {Object} [metadataStyles]
    */
   inspectValue(value, metadata, metadataStyles) {
+    _assert(value, _tcombForked2.default.Any, 'value');
+
+    _assert(metadata, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadata');
+
+    _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
+
     // Note: inspect is a special function for node:
     // https://github.com/nodejs/node/blob/a1bda1b4deb08dfb3e06cb778f0db40023b18318/lib/util.js#L210
     value = _util2.default.inspect(value, { depth: 6 });
-    return this.log(value, metadata, _nightingaleLevels2.default.DEBUG, { metadataStyles, styles: ['gray'] });
+    this.log(value, metadata, _nightingaleLevels2.default.DEBUG, { metadataStyles, styles: ['gray'] });
   }
 
   /**
    * Log a debugged var
-   *
-   * @param {string} varName
-   * @param {*} varValue
-   * @param {Object} [metadata]
-   * @param {Object} [metadataStyles]
    */
   inspectVar(varName, varValue, metadata, metadataStyles) {
+    _assert(varName, _tcombForked2.default.String, 'varName');
+
+    _assert(varValue, _tcombForked2.default.Any, 'varValue');
+
+    _assert(metadata, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadata');
+
+    _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
+
     varValue = _util2.default.inspect(varValue, { depth: 6 });
-    return this.log(`${ varName } = ${ varValue }`, metadata, _nightingaleLevels2.default.DEBUG, { metadataStyles, styles: ['cyan'] });
+    this.log(`${ varName } = ${ varValue }`, metadata, _nightingaleLevels2.default.DEBUG, { metadataStyles, styles: ['cyan'] });
   }
 
   /**
    * Alias for infoSuccess
-   *
-   * @param {string} message
-   * @param {Object} [metadata]
-   * @param {Object} [metadataStyles]
    */
   success(message, metadata, metadataStyles) {
-    return this.infoSuccess(message, metadata, metadataStyles);
+    _assert(message, _tcombForked2.default.String, 'message');
+
+    _assert(metadata, _tcombForked2.default.Object, 'metadata');
+
+    _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
+
+    this.infoSuccess(message, metadata, metadataStyles);
   }
 
   /**
    * Log an info success message
-   *
-   * @param {string} message
-   * @param {Object} [metadata]
-   * @param {Object} [metadataStyles]
    */
   infoSuccess(message, metadata, metadataStyles) {
-    return this.log(message, metadata, _nightingaleLevels2.default.INFO, {
+    _assert(message, _tcombForked2.default.String, 'message');
+
+    _assert(metadata, _tcombForked2.default.Object, 'metadata');
+
+    _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
+
+    this.log(message, metadata, _nightingaleLevels2.default.INFO, {
       metadataStyles,
       symbol: '✔',
       styles: ['green', 'bold']
@@ -358,13 +415,15 @@ class Logger {
 
   /**
    * Log an debug success message
-   *
-   * @param {string} message
-   * @param {Object} [metadata]
-   * @param {Object} [metadataStyles]
    */
   debugSuccess(message, metadata, metadataStyles) {
-    return this.log(message, metadata, _nightingaleLevels2.default.DEBUG, {
+    _assert(message, _tcombForked2.default.String, 'message');
+
+    _assert(metadata, _tcombForked2.default.Object, 'metadata');
+
+    _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
+
+    this.log(message, metadata, _nightingaleLevels2.default.DEBUG, {
       metadataStyles,
       symbol: '✔',
       styles: ['green']
@@ -373,24 +432,28 @@ class Logger {
 
   /**
    * Alias for infoFail
-   *
-   * @param {string} message
-   * @param {Object} [metadata]
-   * @param {Object} [metadataStyles]
    */
   fail(message, metadata, metadataStyles) {
-    return this.infoFail(message, metadata, metadataStyles);
+    _assert(message, _tcombForked2.default.String, 'message');
+
+    _assert(metadata, _tcombForked2.default.Object, 'metadata');
+
+    _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
+
+    this.infoFail(message, metadata, metadataStyles);
   }
 
   /**
    * Log an info fail message
-   *
-   * @param {string} message
-   * @param {Object} [metadata]
-   * @param {Object} [metadataStyles]
    */
   infoFail(message, metadata, metadataStyles) {
-    return this.log(message, metadata, _nightingaleLevels2.default.INFO, {
+    _assert(message, _tcombForked2.default.String, 'message');
+
+    _assert(metadata, _tcombForked2.default.Object, 'metadata');
+
+    _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
+
+    this.log(message, metadata, _nightingaleLevels2.default.INFO, {
       metadataStyles,
       symbol: '✖',
       styles: ['red', 'bold']
@@ -399,13 +462,15 @@ class Logger {
 
   /**
    * Log an debug fail message
-   *
-   * @param {string} message
-   * @param {Object} [metadata]
-   * @param {Object} [metadataStyles]
    */
   debugFail(message, metadata, metadataStyles) {
-    return this.log(message, metadata, _nightingaleLevels2.default.DEBUG, {
+    _assert(message, _tcombForked2.default.String, 'message');
+
+    _assert(metadata, _tcombForked2.default.Object, 'metadata');
+
+    _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
+
+    this.log(message, metadata, _nightingaleLevels2.default.DEBUG, {
       metadataStyles,
       symbol: '✖',
       styles: ['red']
@@ -413,30 +478,38 @@ class Logger {
   }
 
   /**
-   * @param {string} [message]
-   * @param {Object} [metadata]
-   * @param {Object} [metadataStyles]
-   * @param {number} [level = levels.DEBUG]
-   * @returns {*} time to pass to timeEnd
+   * @returns {number} time to pass to timeEnd
    */
   time(message, metadata, metadataStyles) {
-    let level = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : _nightingaleLevels2.default.DEBUG;
+    let level = _assert(arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : _nightingaleLevels2.default.DEBUG, _tcombForked2.default.Number, 'level');
 
-    if (message) {
-      this.log(message, metadata, level, { metadataStyles });
-    }
-
-    return Date.now();
-  }
-
-  infoTime(message, metadata, metadataStyles) {
-    _assert(message, _tcombForked2.default.String, 'message');
+    _assert(message, _tcombForked2.default.maybe(_tcombForked2.default.String), 'message');
 
     _assert(metadata, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadata');
 
     _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
 
-    return this.time(message, metadata, metadataStyles, _nightingaleLevels2.default.INFO);
+    _assert(level, _tcombForked2.default.Number, 'level');
+
+    return _assert(function () {
+      if (message) {
+        this.log(message, metadata, level, { metadataStyles });
+      }
+
+      return Date.now();
+    }.apply(this, arguments), _tcombForked2.default.Number, 'return value');
+  }
+
+  infoTime(message, metadata, metadataStyles) {
+    _assert(message, _tcombForked2.default.maybe(_tcombForked2.default.String), 'message');
+
+    _assert(metadata, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadata');
+
+    _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
+
+    return _assert(function () {
+      return this.time(message, metadata, metadataStyles, _nightingaleLevels2.default.INFO);
+    }.apply(this, arguments), _tcombForked2.default.Number, 'return value');
   }
 
   /**
@@ -444,22 +517,31 @@ class Logger {
    * was called and when the respective time method
    * was called, then logs out the difference
    * and deletes the original record
-   *
-   * @param {number=} time return of previous call to time()
-   * @param {string} message
-   * @param {Object} [metadata]
-   * @param {Object} [metadataStyles]
-   * @param {number} [level = levels.DEBUG]
    */
-  timeEnd(time, message) {
-    let metadata = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
-    let metadataStyles = arguments[3];
-    let level = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : _nightingaleLevels2.default.DEBUG;
-    let options = arguments[5];
+  timeEnd(startTime, message) {
+    let metadata = _assert(arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {}, _tcombForked2.default.Object, 'metadata');
+
+    let metadataStyles = _assert(arguments[3], _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
+
+    let level = _assert(arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : _nightingaleLevels2.default.DEBUG, _tcombForked2.default.Number, 'level');
+
+    let options = _assert(arguments[5], _tcombForked2.default.maybe(_tcombForked2.default.Object), 'options');
+
+    _assert(startTime, _tcombForked2.default.Number, 'startTime');
+
+    _assert(message, _tcombForked2.default.String, 'message');
+
+    _assert(metadata, _tcombForked2.default.Object, 'metadata');
+
+    _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
+
+    _assert(level, _tcombForked2.default.Number, 'level');
+
+    _assert(options, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'options');
 
     const now = Date.now();
 
-    const diffTime = now - time;
+    const diffTime = now - startTime;
 
     if (diffTime < 1000) {
       metadata.readableTime = `${ diffTime }ms`;
@@ -485,7 +567,7 @@ class Logger {
 
     _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
 
-    return this.timeEnd(time, message, metadata, metadataStyles, _nightingaleLevels2.default.INFO);
+    this.timeEnd(time, message, metadata, metadataStyles, _nightingaleLevels2.default.INFO);
   }
 
   /**
@@ -500,7 +582,7 @@ class Logger {
 
     _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
 
-    return this.timeEnd(time, message, metadata, metadataStyles, _nightingaleLevels2.default.INFO, {
+    this.timeEnd(time, message, metadata, metadataStyles, _nightingaleLevels2.default.INFO, {
       symbol: '✔',
       styles: ['green', 'bold']
     });
@@ -511,24 +593,24 @@ class Logger {
    *
    * @example
    * class A {
-     *   method(arg1) {
-     *     logger.enter(method, { arg1 });
-     *     // Do your stuff
-     *   }
-     * }
+   *   method(arg1) {
+   *     logger.enter(method, { arg1 });
+   *     // Do your stuff
+   *   }
+   * }
    *
-   * @param {Function} fn
-   * @param {Object} [metadata]
-   * @param {Object} [metadataStyles]
    */
-  enter(fn) {
-    let metadata = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-    let metadataStyles = arguments[2];
+  enter(fn, metadata, metadataStyles) {
+    _assert(fn, _tcombForked2.default.Function, 'fn');
+
+    _assert(metadata, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadata');
+
+    _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
 
     metadata = _extends({
       functionName: fn.name
     }, metadata);
-    return this.log('enter', metadata, _nightingaleLevels2.default.TRACE, { metadataStyles });
+    this.log('enter', metadata, _nightingaleLevels2.default.TRACE, { metadataStyles });
   }
 
   /**
@@ -537,22 +619,23 @@ class Logger {
    * @example
    * const logger = new ConsoleLogger('myNamespace.A');
    * class A {
-     *   method(arg1) {
-     *     // Do your stuff
-     *     logger.exit(method, { arg1 });
-     *   }
-     * }
-   *
-   *
-   * @param {Function} fn
-   * @param {Object} [metadata]
-   * @param {Object} [metadataStyles]
+   *   method(arg1) {
+   *     // Do your stuff
+   *     logger.exit(method, { arg1 });
+   *   }
+   * }
    */
   exit(fn, metadata, metadataStyles) {
+    _assert(fn, _tcombForked2.default.Function, 'fn');
+
+    _assert(metadata, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadata');
+
+    _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
+
     metadata = _extends({
       functionName: fn.name
     }, metadata);
-    return this.log('exit', metadata, _nightingaleLevels2.default.TRACE, { metadataStyles });
+    this.log('exit', metadata, _nightingaleLevels2.default.TRACE, { metadataStyles });
   }
 
   /**
@@ -574,6 +657,14 @@ class Logger {
    * @param {Function} callback
    */
   wrap(fn, metadata, metadataStyles, callback) {
+    _assert(fn, _tcombForked2.default.Function, 'fn');
+
+    _assert(metadata, _tcombForked2.default.union([_tcombForked2.default.maybe(_tcombForked2.default.Object), _tcombForked2.default.Function]), 'metadata');
+
+    _assert(metadataStyles, _tcombForked2.default.union([_tcombForked2.default.maybe(_tcombForked2.default.Object), _tcombForked2.default.Function]), 'metadataStyles');
+
+    _assert(callback, _tcombForked2.default.Function, 'callback');
+
     if (typeof metadata === 'function') {
       callback = metadata;
       metadata = undefined;

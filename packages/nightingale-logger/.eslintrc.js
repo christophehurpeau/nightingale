@@ -1,1 +1,5 @@
-exports.extends = 'pob/babel';
+exports.extends = 'pob/flow';
+
+exports.rules = {
+  'flowtype/no-weak-types': 'off',
+};

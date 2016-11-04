@@ -1,28 +1,54 @@
 import util from 'util';
 import levels from 'nightingale-levels';
 
+type RecordType = {
+  level: number,
+  key: string,
+  displayName: ?string,
+  datetime: Date,
+  message: string,
+  context: ?Object,
+  metadata: ?Object,
+  extra: ?Object,
+};
+
+type HandlerType = {
+  minLevel: number,
+  isHandling: ?() => boolean,
+  handle: ?(record: RecordType) => boolean,
+};
+
+type ProcessorType = (record: RecordType) => void;
+
+type ConfigForLoggerType = {
+  handlers: Array<HandlerType>,
+  processors: Array<ProcessorType>,
+};
+
 if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER) {
-  global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = function () {
+  global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = function (): ConfigForLoggerType {
     return { handlers: [], processors: [] };
   };
 }
 
 if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
-  global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = function (key, level) {
-    const { handlers, processors } = global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key);
+  global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = (
+    (key: string, level: number): ConfigForLoggerType => {
+      const { handlers, processors } = global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key);
 
-    return {
-      handlers: handlers.filter(handler => (
-        level >= handler.minLevel && (!handler.isHandling || handler.isHandling(level, key))
-      )),
-      processors,
-    };
-  };
+      return {
+        handlers: handlers.filter(handler => (
+          level >= handler.minLevel && (!handler.isHandling || handler.isHandling(level, key))
+        )),
+        processors,
+      };
+    }
+  );
 }
 
 
 /** @private */
-function getConfigForLoggerRecord(key, recordLevel) {
+function getConfigForLoggerRecord(key: string, recordLevel: number): ConfigForLoggerType {
   return global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD(key, recordLevel);
 }
 
@@ -50,23 +76,19 @@ export default class Logger {
   }
 
   /** @private */
-  getHandlersAndProcessors(recordLevel) {
+  getHandlersAndProcessors(recordLevel: number): ConfigForLoggerType {
     return getConfigForLoggerRecord(this.key, recordLevel);
   }
 
   /** @private */
-  getConfig() {
+  getConfig(): ConfigForLoggerType {
     return global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(this.key);
   }
 
   /**
    * Create a child logger
-   *
-   * @param {string} childSuffixKey
-   * @param {string} [childDisplayName]
-   * @returns {Logger}
    */
-  child(childSuffixKey: string, childDisplayName: ?string) {
+  child(childSuffixKey: string, childDisplayName: ?string): Logger {
     return new Logger(`${this.key}:${childSuffixKey}`, childDisplayName);
   }
 
@@ -82,10 +104,8 @@ export default class Logger {
      *     logger.info('done');
      * }
    *
-   * @param {Object} context
-   * @returns {Logger}
    */
-  context(context: Object) {
+  context(context: Object): Logger {
     const logger = new Logger(this.key);
     logger.setContext(context);
     return logger;
@@ -102,8 +122,6 @@ export default class Logger {
 
   /**
    * Extends existing context of this logger
-   *
-   * @param {Object} extendedContext
    */
   extendsContext(extendedContext: Object) {
     Object.assign(this._context, extendedContext);
@@ -113,8 +131,6 @@ export default class Logger {
    * Handle a record
    *
    * Use this only if you know what you are doing.
-   *
-   * @param {Object} record
    */
   addRecord(record: Object) {
     let { handlers, processors } = this.getHandlersAndProcessors(record.level);
@@ -139,11 +155,6 @@ export default class Logger {
 
   /**
    * Log a message
-   *
-   * @param {string} message
-   * @param {Object} metadata
-   * @param {int} [level]
-   * @param {Object} [options]
    */
   log(
     message: string,
@@ -177,133 +188,101 @@ export default class Logger {
 
   /**
    * Log a trace message
-   *
-   * @param {string} message
-   * @param {Object} [metadata]
-   * @param {Object} [metadataStyles]
    */
-  trace(message, metadata, metadataStyles) {
-    return this.log(message, metadata, levels.TRACE, { metadataStyles });
+  trace(message: string, metadata: Object, metadataStyles: ?Object) {
+    this.log(message, metadata, levels.TRACE, { metadataStyles });
   }
 
 
   /**
    * Log a debug message
-   *
-   * @param {string} message
-   * @param {Object} [metadata]
-   * @param {Object} [metadataStyles]
    */
-  debug(message, metadata, metadataStyles) {
-    return this.log(message, metadata, levels.DEBUG, { metadataStyles });
+  debug(message: string, metadata: Object, metadataStyles: ?Object) {
+    this.log(message, metadata, levels.DEBUG, { metadataStyles });
   }
 
   /**
    * Log an info message
-   *
-   * @param {string} message
-   * @param {Object} [metadata]
-   * @param {Object} [metadataStyles]
    */
-  info(message, metadata, metadataStyles) {
-    return this.log(message, metadata, levels.INFO, { metadataStyles });
+  info(message: string, metadata: Object, metadataStyles: ?Object) {
+    this.log(message, metadata, levels.INFO, { metadataStyles });
   }
 
   /**
    * Log a warn message
-   *
-   * @param {string} message
-   * @param {Object} [metadata]
-   * @param {Object} [metadataStyles]
    */
-  warn(message, metadata, metadataStyles) {
-    return this.log(message, metadata, levels.WARN, { metadataStyles });
+  warn(message: string, metadata: Object, metadataStyles: ?Object) {
+    this.log(message, metadata, levels.WARN, { metadataStyles });
   }
 
   /**
    * Log an error message
-   *
-   * @param {string|Error} message
-   * @param {Object} [metadata]
-   * @param {Object} [metadataStyles]
    */
-  error(message, metadata = {}, metadataStyles) {
+  error(message: string | Error, metadata: Object = {}, metadataStyles: ?Object) {
     if (message instanceof Error) {
       metadata.error = message;
       message = `${metadata.error.name}: ${metadata.error.message}`;
     }
-    return this.log(message, metadata, levels.ERROR, { metadataStyles });
+    this.log(message, metadata, levels.ERROR, { metadataStyles });
   }
 
   /**
    * Log an alert message
-   *
-   * @param {string} message
-   * @param {Object} [metadata]
-   * @param {Object} [metadataStyles]
    */
-  alert(message, metadata, metadataStyles) {
-    return this.log(message, metadata, levels.ALERT, { metadataStyles });
+  alert(message: string, metadata: Object, metadataStyles: ?Object) {
+    this.log(message, metadata, levels.ALERT, { metadataStyles });
   }
 
   /**
    * Log a fatal message
-   *
-   * @param {string} message
-   * @param {Object} [metadata]
-   * @param {Object} [metadataStyles]
    */
-  fatal(message, metadata, metadataStyles) {
-    return this.log(message, metadata, levels.FATAL, { metadataStyles });
+  fatal(message: string, metadata: Object, metadataStyles: ?Object) {
+    this.log(message, metadata, levels.FATAL, { metadataStyles });
   }
 
   /**
    * Log an inspected value
-   *
-   * @param {*} value
-   * @param {Object} [metadata]
-   * @param {Object} [metadataStyles]
    */
-  inspectValue(value, metadata, metadataStyles) {
-    // Note: inspect is a special function for node:
-    // https://github.com/nodejs/node/blob/a1bda1b4deb08dfb3e06cb778f0db40023b18318/lib/util.js#L210
-    value = util.inspect(value, { depth: 6 });
-    return this.log(value, metadata, levels.DEBUG, { metadataStyles, styles: ['gray'] });
+  inspectValue(value: any, metadata: ?Object, metadataStyles: ?Object) {
+    if (BROWSER) {
+      throw new Error('Not supported for the browser. Prefer `debugger;`');
+    } else {
+      // Note: inspect is a special function for node:
+      // https://github.com/nodejs/node/blob/a1bda1b4deb08dfb3e06cb778f0db40023b18318/lib/util.js#L210
+      value = util.inspect(value, { depth: 6 });
+      this.log(value, metadata, levels.DEBUG, { metadataStyles, styles: ['gray'] });
+    }
   }
 
   /**
    * Log a debugged var
-   *
-   * @param {string} varName
-   * @param {*} varValue
-   * @param {Object} [metadata]
-   * @param {Object} [metadataStyles]
    */
-  inspectVar(varName, varValue, metadata, metadataStyles) {
-    varValue = util.inspect(varValue, { depth: 6 });
-    return this.log(`${varName} = ${varValue}`, metadata, levels.DEBUG, { metadataStyles, styles: ['cyan'] });
+  inspectVar(varName: string, varValue: any, metadata: ?Object, metadataStyles: ?Object) {
+    if (BROWSER) {
+      throw new Error('Not supported for the browser. Prefer `debugger;`');
+    } else {
+      varValue = util.inspect(varValue, { depth: 6 });
+      this.log(
+        `${varName} = ${varValue}`,
+        metadata,
+        levels.DEBUG,
+        { metadataStyles, styles: ['cyan'] },
+      );
+    }
   }
 
   /**
    * Alias for infoSuccess
-   *
-   * @param {string} message
-   * @param {Object} [metadata]
-   * @param {Object} [metadataStyles]
    */
-  success(message, metadata, metadataStyles) {
-    return this.infoSuccess(message, metadata, metadataStyles);
+  success(message: string, metadata: Object, metadataStyles: ?Object) {
+    this.infoSuccess(message, metadata, metadataStyles);
   }
 
   /**
    * Log an info success message
-   *
-   * @param {string} message
-   * @param {Object} [metadata]
-   * @param {Object} [metadataStyles]
    */
-  infoSuccess(message, metadata, metadataStyles) {
-    return this.log(message, metadata, levels.INFO, {
+  infoSuccess(message: string, metadata: Object, metadataStyles: ?Object) {
+    this.log(message, metadata, levels.INFO, {
       metadataStyles,
       symbol: '✔',
       styles: ['green', 'bold'],
@@ -312,13 +291,9 @@ export default class Logger {
 
   /**
    * Log an debug success message
-   *
-   * @param {string} message
-   * @param {Object} [metadata]
-   * @param {Object} [metadataStyles]
    */
-  debugSuccess(message, metadata, metadataStyles) {
-    return this.log(message, metadata, levels.DEBUG, {
+  debugSuccess(message: string, metadata: Object, metadataStyles: ?Object) {
+    this.log(message, metadata, levels.DEBUG, {
       metadataStyles,
       symbol: '✔',
       styles: ['green'],
@@ -327,24 +302,16 @@ export default class Logger {
 
   /**
    * Alias for infoFail
-   *
-   * @param {string} message
-   * @param {Object} [metadata]
-   * @param {Object} [metadataStyles]
    */
-  fail(message, metadata, metadataStyles) {
-    return this.infoFail(message, metadata, metadataStyles);
+  fail(message: string, metadata: Object, metadataStyles: ?Object) {
+    this.infoFail(message, metadata, metadataStyles);
   }
 
   /**
    * Log an info fail message
-   *
-   * @param {string} message
-   * @param {Object} [metadata]
-   * @param {Object} [metadataStyles]
    */
-  infoFail(message, metadata, metadataStyles) {
-    return this.log(message, metadata, levels.INFO, {
+  infoFail(message: string, metadata: Object, metadataStyles: ?Object) {
+    this.log(message, metadata, levels.INFO, {
       metadataStyles,
       symbol: '✖',
       styles: ['red', 'bold'],
@@ -353,13 +320,9 @@ export default class Logger {
 
   /**
    * Log an debug fail message
-   *
-   * @param {string} message
-   * @param {Object} [metadata]
-   * @param {Object} [metadataStyles]
    */
-  debugFail(message, metadata, metadataStyles) {
-    return this.log(message, metadata, levels.DEBUG, {
+  debugFail(message: string, metadata: Object, metadataStyles: ?Object) {
+    this.log(message, metadata, levels.DEBUG, {
       metadataStyles,
       symbol: '✖',
       styles: ['red'],
@@ -367,13 +330,14 @@ export default class Logger {
   }
 
   /**
-   * @param {string} [message]
-   * @param {Object} [metadata]
-   * @param {Object} [metadataStyles]
-   * @param {number} [level = levels.DEBUG]
-   * @returns {*} time to pass to timeEnd
+   * @returns {number} time to pass to timeEnd
    */
-  time(message, metadata, metadataStyles, level = levels.DEBUG) {
+  time(
+    message: ?string,
+    metadata: ?Object,
+    metadataStyles: ?Object,
+    level: number = levels.DEBUG,
+  ): number {
     if (message) {
       this.log(message, metadata, level, { metadataStyles });
     }
@@ -381,7 +345,7 @@ export default class Logger {
     return Date.now();
   }
 
-  infoTime(message: string, metadata: ?Object, metadataStyles: ?Object) {
+  infoTime(message: ?string, metadata: ?Object, metadataStyles: ?Object): number {
     return this.time(message, metadata, metadataStyles, levels.INFO);
   }
 
@@ -390,17 +354,18 @@ export default class Logger {
    * was called and when the respective time method
    * was called, then logs out the difference
    * and deletes the original record
-   *
-   * @param {number=} time return of previous call to time()
-   * @param {string} message
-   * @param {Object} [metadata]
-   * @param {Object} [metadataStyles]
-   * @param {number} [level = levels.DEBUG]
    */
-  timeEnd(time, message, metadata = {}, metadataStyles, level = levels.DEBUG, options) {
+  timeEnd(
+    startTime: number,
+    message: string,
+    metadata: Object = {},
+    metadataStyles: ?Object,
+    level: number = levels.DEBUG,
+    options: ?Object,
+  ) {
     const now = Date.now();
 
-    const diffTime = now - time;
+    const diffTime = now - startTime;
 
     if (diffTime < 1000) {
       metadata.readableTime = `${diffTime}ms`;
@@ -418,14 +383,14 @@ export default class Logger {
    * Like timeEnd, but with INFO level
    */
   infoTimeEnd(time: number, message: string, metadata: ?Object, metadataStyles: ?Object) {
-    return this.timeEnd(time, message, metadata, metadataStyles, levels.INFO);
+    this.timeEnd(time, message, metadata, metadataStyles, levels.INFO);
   }
 
   /**
    * Like timeEnd, but with INFO level
    */
   infoSuccessTimeEnd(time: number, message: string, metadata: ?Object, metadataStyles: ?Object) {
-    return this.timeEnd(time, message, metadata, metadataStyles, levels.INFO, {
+    this.timeEnd(time, message, metadata, metadataStyles, levels.INFO, {
       symbol: '✔',
       styles: ['green', 'bold'],
     });
@@ -436,22 +401,19 @@ export default class Logger {
    *
    * @example
    * class A {
-     *   method(arg1) {
-     *     logger.enter(method, { arg1 });
-     *     // Do your stuff
-     *   }
-     * }
+   *   method(arg1) {
+   *     logger.enter(method, { arg1 });
+   *     // Do your stuff
+   *   }
+   * }
    *
-   * @param {Function} fn
-   * @param {Object} [metadata]
-   * @param {Object} [metadataStyles]
    */
-  enter(fn, metadata = {}, metadataStyles) {
+  enter(fn: Function, metadata: ?Object, metadataStyles: ?Object) {
     metadata = {
       functionName: fn.name,
       ...metadata,
     };
-    return this.log('enter', metadata, levels.TRACE, { metadataStyles });
+    this.log('enter', metadata, levels.TRACE, { metadataStyles });
   }
 
   /**
@@ -460,23 +422,18 @@ export default class Logger {
    * @example
    * const logger = new ConsoleLogger('myNamespace.A');
    * class A {
-     *   method(arg1) {
-     *     // Do your stuff
-     *     logger.exit(method, { arg1 });
-     *   }
-     * }
-   *
-   *
-   * @param {Function} fn
-   * @param {Object} [metadata]
-   * @param {Object} [metadataStyles]
+   *   method(arg1) {
+   *     // Do your stuff
+   *     logger.exit(method, { arg1 });
+   *   }
+   * }
    */
-  exit(fn, metadata, metadataStyles) {
+  exit(fn: Function, metadata: ?Object, metadataStyles: ?Object) {
     metadata = {
       functionName: fn.name,
       ...metadata,
     };
-    return this.log('exit', metadata, levels.TRACE, { metadataStyles });
+    this.log('exit', metadata, levels.TRACE, { metadataStyles });
   }
 
   /**
@@ -497,7 +454,12 @@ export default class Logger {
    * @param {Object} [metadataStyles]
    * @param {Function} callback
    */
-  wrap(fn, metadata, metadataStyles, callback) {
+  wrap(
+    fn: Function,
+    metadata: ?Object | Function,
+    metadataStyles: ?Object | Function,
+    callback: Function,
+  ) {
     if (typeof metadata === 'function') {
       callback = metadata;
       metadata = undefined;

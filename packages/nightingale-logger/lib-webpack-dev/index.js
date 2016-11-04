@@ -6,33 +6,70 @@ import _t from 'tcomb-forked';
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-import util from 'util';
 import levels from 'nightingale-levels';
+
+var RecordType = _t.interface({
+  level: _t.Number,
+  key: _t.String,
+  displayName: _t.maybe(_t.String),
+  datetime: Date,
+  message: _t.String,
+  context: _t.maybe(_t.Object),
+  metadata: _t.maybe(_t.Object),
+  extra: _t.maybe(_t.Object)
+}, 'RecordType');
+
+var HandlerType = _t.interface({
+  minLevel: _t.Number,
+  isHandling: _t.maybe(_t.Function),
+  handle: _t.maybe(_t.Function)
+}, 'HandlerType');
+
+var ProcessorType = _t.Function;
+
+var ConfigForLoggerType = _t.interface({
+  handlers: _t.list(HandlerType),
+  processors: _t.list(ProcessorType)
+}, 'ConfigForLoggerType');
 
 if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER) {
   global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = function () {
-    return { handlers: [], processors: [] };
+    return _assert(function () {
+      return { handlers: [], processors: [] };
+    }.apply(this, arguments), ConfigForLoggerType, 'return value');
   };
 }
 
 if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
   global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = function (key, level) {
-    var _global$__NIGHTINGALE = global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key),
-        handlers = _global$__NIGHTINGALE.handlers,
-        processors = _global$__NIGHTINGALE.processors;
+    _assert(key, _t.String, 'key');
 
-    return {
-      handlers: handlers.filter(function (handler) {
-        return level >= handler.minLevel && (!handler.isHandling || handler.isHandling(level, key));
-      }),
-      processors: processors
-    };
+    _assert(level, _t.Number, 'level');
+
+    return _assert(function () {
+      var _global$__NIGHTINGALE = global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key),
+          handlers = _global$__NIGHTINGALE.handlers,
+          processors = _global$__NIGHTINGALE.processors;
+
+      return {
+        handlers: handlers.filter(function (handler) {
+          return level >= handler.minLevel && (!handler.isHandling || handler.isHandling(level, key));
+        }),
+        processors: processors
+      };
+    }(), ConfigForLoggerType, 'return value');
   };
 }
 
 /** @private */
 function getConfigForLoggerRecord(key, recordLevel) {
-  return global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD(key, recordLevel);
+  _assert(key, _t.String, 'key');
+
+  _assert(recordLevel, _t.Number, 'recordLevel');
+
+  return _assert(function () {
+    return global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD(key, recordLevel);
+  }.apply(this, arguments), ConfigForLoggerType, 'return value');
 }
 
 /**
@@ -69,7 +106,11 @@ var Logger = function () {
   _createClass(Logger, [{
     key: 'getHandlersAndProcessors',
     value: function getHandlersAndProcessors(recordLevel) {
-      return getConfigForLoggerRecord(this.key, recordLevel);
+      _assert(recordLevel, _t.Number, 'recordLevel');
+
+      return _assert(function () {
+        return getConfigForLoggerRecord(this.key, recordLevel);
+      }.apply(this, arguments), ConfigForLoggerType, 'return value');
     }
 
     /** @private */
@@ -77,15 +118,13 @@ var Logger = function () {
   }, {
     key: 'getConfig',
     value: function getConfig() {
-      return global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(this.key);
+      return _assert(function () {
+        return global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(this.key);
+      }.apply(this, arguments), ConfigForLoggerType, 'return value');
     }
 
     /**
      * Create a child logger
-     *
-     * @param {string} childSuffixKey
-     * @param {string} [childDisplayName]
-     * @returns {Logger}
      */
 
   }, {
@@ -95,7 +134,9 @@ var Logger = function () {
 
       _assert(childDisplayName, _t.maybe(_t.String), 'childDisplayName');
 
-      return new Logger(this.key + ':' + childSuffixKey, childDisplayName);
+      return _assert(function () {
+        return new Logger(this.key + ':' + childSuffixKey, childDisplayName);
+      }.apply(this, arguments), Logger, 'return value');
     }
 
     /**
@@ -110,19 +151,29 @@ var Logger = function () {
        *     logger.info('done');
        * }
      *
-     * @param {Object} context
-     * @returns {Logger}
      */
 
   }, {
     key: 'context',
-    value: function context(_context) {
-      _assert(_context, _t.Object, '_context');
+    value: function (_context) {
+      function context(_x) {
+        return _context.apply(this, arguments);
+      }
 
-      var logger = new Logger(this.key);
-      logger.setContext(_context);
-      return logger;
-    }
+      context.toString = function () {
+        return _context.toString();
+      };
+
+      return context;
+    }(function (context) {
+      _assert(context, _t.Object, 'context');
+
+      return _assert(function () {
+        var logger = new Logger(this.key);
+        logger.setContext(context);
+        return logger;
+      }.apply(this, arguments), Logger, 'return value');
+    })
 
     /**
      * Set the context of this logger
@@ -140,8 +191,6 @@ var Logger = function () {
 
     /**
      * Extends existing context of this logger
-     *
-     * @param {Object} extendedContext
      */
 
   }, {
@@ -156,8 +205,6 @@ var Logger = function () {
      * Handle a record
      *
      * Use this only if you know what you are doing.
-     *
-     * @param {Object} record
      */
 
   }, {
@@ -193,11 +240,6 @@ var Logger = function () {
 
     /**
      * Log a message
-     *
-     * @param {string} message
-     * @param {Object} metadata
-     * @param {int} [level]
-     * @param {Object} [options]
      */
 
   }, {
@@ -239,66 +281,70 @@ var Logger = function () {
 
     /**
      * Log a trace message
-     *
-     * @param {string} message
-     * @param {Object} [metadata]
-     * @param {Object} [metadataStyles]
      */
 
   }, {
     key: 'trace',
     value: function trace(message, metadata, metadataStyles) {
-      return this.log(message, metadata, levels.TRACE, { metadataStyles: metadataStyles });
+      _assert(message, _t.String, 'message');
+
+      _assert(metadata, _t.Object, 'metadata');
+
+      _assert(metadataStyles, _t.maybe(_t.Object), 'metadataStyles');
+
+      this.log(message, metadata, levels.TRACE, { metadataStyles: metadataStyles });
     }
 
     /**
      * Log a debug message
-     *
-     * @param {string} message
-     * @param {Object} [metadata]
-     * @param {Object} [metadataStyles]
      */
 
   }, {
     key: 'debug',
     value: function debug(message, metadata, metadataStyles) {
-      return this.log(message, metadata, levels.DEBUG, { metadataStyles: metadataStyles });
+      _assert(message, _t.String, 'message');
+
+      _assert(metadata, _t.Object, 'metadata');
+
+      _assert(metadataStyles, _t.maybe(_t.Object), 'metadataStyles');
+
+      this.log(message, metadata, levels.DEBUG, { metadataStyles: metadataStyles });
     }
 
     /**
      * Log an info message
-     *
-     * @param {string} message
-     * @param {Object} [metadata]
-     * @param {Object} [metadataStyles]
      */
 
   }, {
     key: 'info',
     value: function info(message, metadata, metadataStyles) {
-      return this.log(message, metadata, levels.INFO, { metadataStyles: metadataStyles });
+      _assert(message, _t.String, 'message');
+
+      _assert(metadata, _t.Object, 'metadata');
+
+      _assert(metadataStyles, _t.maybe(_t.Object), 'metadataStyles');
+
+      this.log(message, metadata, levels.INFO, { metadataStyles: metadataStyles });
     }
 
     /**
      * Log a warn message
-     *
-     * @param {string} message
-     * @param {Object} [metadata]
-     * @param {Object} [metadataStyles]
      */
 
   }, {
     key: 'warn',
     value: function warn(message, metadata, metadataStyles) {
-      return this.log(message, metadata, levels.WARN, { metadataStyles: metadataStyles });
+      _assert(message, _t.String, 'message');
+
+      _assert(metadata, _t.Object, 'metadata');
+
+      _assert(metadataStyles, _t.maybe(_t.Object), 'metadataStyles');
+
+      this.log(message, metadata, levels.WARN, { metadataStyles: metadataStyles });
     }
 
     /**
      * Log an error message
-     *
-     * @param {string|Error} message
-     * @param {Object} [metadata]
-     * @param {Object} [metadataStyles]
      */
 
   }, {
@@ -307,100 +353,115 @@ var Logger = function () {
       var metadata = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
       var metadataStyles = arguments[2];
 
+      _assert(message, _t.union([_t.String, Error]), 'message');
+
+      _assert(metadata, _t.Object, 'metadata');
+
+      _assert(metadataStyles, _t.maybe(_t.Object), 'metadataStyles');
+
       if (message instanceof Error) {
         metadata.error = message;
         message = metadata.error.name + ': ' + metadata.error.message;
       }
-      return this.log(message, metadata, levels.ERROR, { metadataStyles: metadataStyles });
+      this.log(message, metadata, levels.ERROR, { metadataStyles: metadataStyles });
     }
 
     /**
      * Log an alert message
-     *
-     * @param {string} message
-     * @param {Object} [metadata]
-     * @param {Object} [metadataStyles]
      */
 
   }, {
     key: 'alert',
     value: function alert(message, metadata, metadataStyles) {
-      return this.log(message, metadata, levels.ALERT, { metadataStyles: metadataStyles });
+      _assert(message, _t.String, 'message');
+
+      _assert(metadata, _t.Object, 'metadata');
+
+      _assert(metadataStyles, _t.maybe(_t.Object), 'metadataStyles');
+
+      this.log(message, metadata, levels.ALERT, { metadataStyles: metadataStyles });
     }
 
     /**
      * Log a fatal message
-     *
-     * @param {string} message
-     * @param {Object} [metadata]
-     * @param {Object} [metadataStyles]
      */
 
   }, {
     key: 'fatal',
     value: function fatal(message, metadata, metadataStyles) {
-      return this.log(message, metadata, levels.FATAL, { metadataStyles: metadataStyles });
+      _assert(message, _t.String, 'message');
+
+      _assert(metadata, _t.Object, 'metadata');
+
+      _assert(metadataStyles, _t.maybe(_t.Object), 'metadataStyles');
+
+      this.log(message, metadata, levels.FATAL, { metadataStyles: metadataStyles });
     }
 
     /**
      * Log an inspected value
-     *
-     * @param {*} value
-     * @param {Object} [metadata]
-     * @param {Object} [metadataStyles]
      */
 
   }, {
     key: 'inspectValue',
     value: function inspectValue(value, metadata, metadataStyles) {
-      // Note: inspect is a special function for node:
-      // https://github.com/nodejs/node/blob/a1bda1b4deb08dfb3e06cb778f0db40023b18318/lib/util.js#L210
-      value = util.inspect(value, { depth: 6 });
-      return this.log(value, metadata, levels.DEBUG, { metadataStyles: metadataStyles, styles: ['gray'] });
+      _assert(value, _t.Any, 'value');
+
+      _assert(metadata, _t.maybe(_t.Object), 'metadata');
+
+      _assert(metadataStyles, _t.maybe(_t.Object), 'metadataStyles');
+
+      throw new Error('Not supported for the browser. Prefer `debugger;`');
     }
 
     /**
      * Log a debugged var
-     *
-     * @param {string} varName
-     * @param {*} varValue
-     * @param {Object} [metadata]
-     * @param {Object} [metadataStyles]
      */
 
   }, {
     key: 'inspectVar',
     value: function inspectVar(varName, varValue, metadata, metadataStyles) {
-      varValue = util.inspect(varValue, { depth: 6 });
-      return this.log(varName + ' = ' + varValue, metadata, levels.DEBUG, { metadataStyles: metadataStyles, styles: ['cyan'] });
+      _assert(varName, _t.String, 'varName');
+
+      _assert(varValue, _t.Any, 'varValue');
+
+      _assert(metadata, _t.maybe(_t.Object), 'metadata');
+
+      _assert(metadataStyles, _t.maybe(_t.Object), 'metadataStyles');
+
+      throw new Error('Not supported for the browser. Prefer `debugger;`');
     }
 
     /**
      * Alias for infoSuccess
-     *
-     * @param {string} message
-     * @param {Object} [metadata]
-     * @param {Object} [metadataStyles]
      */
 
   }, {
     key: 'success',
     value: function success(message, metadata, metadataStyles) {
-      return this.infoSuccess(message, metadata, metadataStyles);
+      _assert(message, _t.String, 'message');
+
+      _assert(metadata, _t.Object, 'metadata');
+
+      _assert(metadataStyles, _t.maybe(_t.Object), 'metadataStyles');
+
+      this.infoSuccess(message, metadata, metadataStyles);
     }
 
     /**
      * Log an info success message
-     *
-     * @param {string} message
-     * @param {Object} [metadata]
-     * @param {Object} [metadataStyles]
      */
 
   }, {
     key: 'infoSuccess',
     value: function infoSuccess(message, metadata, metadataStyles) {
-      return this.log(message, metadata, levels.INFO, {
+      _assert(message, _t.String, 'message');
+
+      _assert(metadata, _t.Object, 'metadata');
+
+      _assert(metadataStyles, _t.maybe(_t.Object), 'metadataStyles');
+
+      this.log(message, metadata, levels.INFO, {
         metadataStyles: metadataStyles,
         symbol: '✔',
         styles: ['green', 'bold']
@@ -409,16 +470,18 @@ var Logger = function () {
 
     /**
      * Log an debug success message
-     *
-     * @param {string} message
-     * @param {Object} [metadata]
-     * @param {Object} [metadataStyles]
      */
 
   }, {
     key: 'debugSuccess',
     value: function debugSuccess(message, metadata, metadataStyles) {
-      return this.log(message, metadata, levels.DEBUG, {
+      _assert(message, _t.String, 'message');
+
+      _assert(metadata, _t.Object, 'metadata');
+
+      _assert(metadataStyles, _t.maybe(_t.Object), 'metadataStyles');
+
+      this.log(message, metadata, levels.DEBUG, {
         metadataStyles: metadataStyles,
         symbol: '✔',
         styles: ['green']
@@ -427,30 +490,34 @@ var Logger = function () {
 
     /**
      * Alias for infoFail
-     *
-     * @param {string} message
-     * @param {Object} [metadata]
-     * @param {Object} [metadataStyles]
      */
 
   }, {
     key: 'fail',
     value: function fail(message, metadata, metadataStyles) {
-      return this.infoFail(message, metadata, metadataStyles);
+      _assert(message, _t.String, 'message');
+
+      _assert(metadata, _t.Object, 'metadata');
+
+      _assert(metadataStyles, _t.maybe(_t.Object), 'metadataStyles');
+
+      this.infoFail(message, metadata, metadataStyles);
     }
 
     /**
      * Log an info fail message
-     *
-     * @param {string} message
-     * @param {Object} [metadata]
-     * @param {Object} [metadataStyles]
      */
 
   }, {
     key: 'infoFail',
     value: function infoFail(message, metadata, metadataStyles) {
-      return this.log(message, metadata, levels.INFO, {
+      _assert(message, _t.String, 'message');
+
+      _assert(metadata, _t.Object, 'metadata');
+
+      _assert(metadataStyles, _t.maybe(_t.Object), 'metadataStyles');
+
+      this.log(message, metadata, levels.INFO, {
         metadataStyles: metadataStyles,
         symbol: '✖',
         styles: ['red', 'bold']
@@ -459,16 +526,18 @@ var Logger = function () {
 
     /**
      * Log an debug fail message
-     *
-     * @param {string} message
-     * @param {Object} [metadata]
-     * @param {Object} [metadataStyles]
      */
 
   }, {
     key: 'debugFail',
     value: function debugFail(message, metadata, metadataStyles) {
-      return this.log(message, metadata, levels.DEBUG, {
+      _assert(message, _t.String, 'message');
+
+      _assert(metadata, _t.Object, 'metadata');
+
+      _assert(metadataStyles, _t.maybe(_t.Object), 'metadataStyles');
+
+      this.log(message, metadata, levels.DEBUG, {
         metadataStyles: metadataStyles,
         symbol: '✖',
         styles: ['red']
@@ -476,11 +545,7 @@ var Logger = function () {
     }
 
     /**
-     * @param {string} [message]
-     * @param {Object} [metadata]
-     * @param {Object} [metadataStyles]
-     * @param {number} [level = levels.DEBUG]
-     * @returns {*} time to pass to timeEnd
+     * @returns {number} time to pass to timeEnd
      */
 
   }, {
@@ -488,22 +553,34 @@ var Logger = function () {
     value: function time(message, metadata, metadataStyles) {
       var level = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : levels.DEBUG;
 
-      if (message) {
-        this.log(message, metadata, level, { metadataStyles: metadataStyles });
-      }
-
-      return Date.now();
-    }
-  }, {
-    key: 'infoTime',
-    value: function infoTime(message, metadata, metadataStyles) {
-      _assert(message, _t.String, 'message');
+      _assert(message, _t.maybe(_t.String), 'message');
 
       _assert(metadata, _t.maybe(_t.Object), 'metadata');
 
       _assert(metadataStyles, _t.maybe(_t.Object), 'metadataStyles');
 
-      return this.time(message, metadata, metadataStyles, levels.INFO);
+      _assert(level, _t.Number, 'level');
+
+      return _assert(function () {
+        if (message) {
+          this.log(message, metadata, level, { metadataStyles: metadataStyles });
+        }
+
+        return Date.now();
+      }.apply(this, arguments), _t.Number, 'return value');
+    }
+  }, {
+    key: 'infoTime',
+    value: function infoTime(message, metadata, metadataStyles) {
+      _assert(message, _t.maybe(_t.String), 'message');
+
+      _assert(metadata, _t.maybe(_t.Object), 'metadata');
+
+      _assert(metadataStyles, _t.maybe(_t.Object), 'metadataStyles');
+
+      return _assert(function () {
+        return this.time(message, metadata, metadataStyles, levels.INFO);
+      }.apply(this, arguments), _t.Number, 'return value');
     }
 
     /**
@@ -511,25 +588,31 @@ var Logger = function () {
      * was called and when the respective time method
      * was called, then logs out the difference
      * and deletes the original record
-     *
-     * @param {number=} time return of previous call to time()
-     * @param {string} message
-     * @param {Object} [metadata]
-     * @param {Object} [metadataStyles]
-     * @param {number} [level = levels.DEBUG]
      */
 
   }, {
     key: 'timeEnd',
-    value: function timeEnd(time, message) {
+    value: function timeEnd(startTime, message) {
       var metadata = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
       var metadataStyles = arguments[3];
       var level = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : levels.DEBUG;
       var options = arguments[5];
 
+      _assert(startTime, _t.Number, 'startTime');
+
+      _assert(message, _t.String, 'message');
+
+      _assert(metadata, _t.Object, 'metadata');
+
+      _assert(metadataStyles, _t.maybe(_t.Object), 'metadataStyles');
+
+      _assert(level, _t.Number, 'level');
+
+      _assert(options, _t.maybe(_t.Object), 'options');
+
       var now = Date.now();
 
-      var diffTime = now - time;
+      var diffTime = now - startTime;
 
       if (diffTime < 1000) {
         metadata.readableTime = diffTime + 'ms';
@@ -558,7 +641,7 @@ var Logger = function () {
 
       _assert(metadataStyles, _t.maybe(_t.Object), 'metadataStyles');
 
-      return this.timeEnd(time, message, metadata, metadataStyles, levels.INFO);
+      this.timeEnd(time, message, metadata, metadataStyles, levels.INFO);
     }
 
     /**
@@ -576,7 +659,7 @@ var Logger = function () {
 
       _assert(metadataStyles, _t.maybe(_t.Object), 'metadataStyles');
 
-      return this.timeEnd(time, message, metadata, metadataStyles, levels.INFO, {
+      this.timeEnd(time, message, metadata, metadataStyles, levels.INFO, {
         symbol: '✔',
         styles: ['green', 'bold']
       });
@@ -587,27 +670,27 @@ var Logger = function () {
      *
      * @example
      * class A {
-       *   method(arg1) {
-       *     logger.enter(method, { arg1 });
-       *     // Do your stuff
-       *   }
-       * }
+     *   method(arg1) {
+     *     logger.enter(method, { arg1 });
+     *     // Do your stuff
+     *   }
+     * }
      *
-     * @param {Function} fn
-     * @param {Object} [metadata]
-     * @param {Object} [metadataStyles]
      */
 
   }, {
     key: 'enter',
-    value: function enter(fn) {
-      var metadata = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-      var metadataStyles = arguments[2];
+    value: function enter(fn, metadata, metadataStyles) {
+      _assert(fn, _t.Function, 'fn');
+
+      _assert(metadata, _t.maybe(_t.Object), 'metadata');
+
+      _assert(metadataStyles, _t.maybe(_t.Object), 'metadataStyles');
 
       metadata = _extends({
         functionName: fn.name
       }, metadata);
-      return this.log('enter', metadata, levels.TRACE, { metadataStyles: metadataStyles });
+      this.log('enter', metadata, levels.TRACE, { metadataStyles: metadataStyles });
     }
 
     /**
@@ -616,25 +699,26 @@ var Logger = function () {
      * @example
      * const logger = new ConsoleLogger('myNamespace.A');
      * class A {
-       *   method(arg1) {
-       *     // Do your stuff
-       *     logger.exit(method, { arg1 });
-       *   }
-       * }
-     *
-     *
-     * @param {Function} fn
-     * @param {Object} [metadata]
-     * @param {Object} [metadataStyles]
+     *   method(arg1) {
+     *     // Do your stuff
+     *     logger.exit(method, { arg1 });
+     *   }
+     * }
      */
 
   }, {
     key: 'exit',
     value: function exit(fn, metadata, metadataStyles) {
+      _assert(fn, _t.Function, 'fn');
+
+      _assert(metadata, _t.maybe(_t.Object), 'metadata');
+
+      _assert(metadataStyles, _t.maybe(_t.Object), 'metadataStyles');
+
       metadata = _extends({
         functionName: fn.name
       }, metadata);
-      return this.log('exit', metadata, levels.TRACE, { metadataStyles: metadataStyles });
+      this.log('exit', metadata, levels.TRACE, { metadataStyles: metadataStyles });
     }
 
     /**
@@ -659,6 +743,14 @@ var Logger = function () {
   }, {
     key: 'wrap',
     value: function wrap(fn, metadata, metadataStyles, callback) {
+      _assert(fn, _t.Function, 'fn');
+
+      _assert(metadata, _t.union([_t.maybe(_t.Object), _t.Function]), 'metadata');
+
+      _assert(metadataStyles, _t.union([_t.maybe(_t.Object), _t.Function]), 'metadataStyles');
+
+      _assert(callback, _t.Function, 'callback');
+
       if (typeof metadata === 'function') {
         callback = metadata;
         metadata = undefined;
