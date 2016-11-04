@@ -18,12 +18,11 @@ test('style: blue bold color', () => {
 });
 
 test('format simple message', () => {
-  var _format = (0, _2.default)({ message: 'test' });
+  var _format = (0, _2.default)({ message: 'test' }),
+      _format2 = _slicedToArray(_format, 2);
 
-  var _format2 = _slicedToArray(_format, 2);
-
-  const string = _format2[0];
-  const args = _format2[1];
+  const string = _format2[0],
+        args = _format2[1];
 
   (0, _assert.strictEqual)(string, 'test');
   (0, _assert.deepStrictEqual)(args, []);
