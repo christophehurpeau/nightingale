@@ -1,3 +1,7 @@
+### v2.0.2
+
+- [`a336f00`](https://github.com/nightingalejs/nightingale-formatter/commit/a336f00301fcf33bb0f6beedbc22ca2ce2fe9131) fix: colors works on firefox black background or chrome white background (Christophe Hurpeau)
+
 ### v2.0.1
 
 
