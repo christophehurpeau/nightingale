@@ -4,6 +4,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = formatObject;
+/* eslint-disable no-use-before-define */
+
 function tryStringify(arg) {
   try {
     return JSON.stringify(arg);
@@ -74,7 +76,9 @@ function internalFormatValue(value, styleFn, styles, _ref) {
   };
 }
 
-function internalFormatIterator(values, styleFn, objectStyles, _ref2, _ref3) {
+const separator = ',';
+
+const internalFormatIterator = (values, styleFn, objectStyles, _ref2, _ref3) => {
   let padding = _ref2.padding;
   let depth = _ref2.depth;
   let maxDepth = _ref2.maxDepth;
@@ -85,14 +89,18 @@ function internalFormatIterator(values, styleFn, objectStyles, _ref2, _ref3) {
   let prefixSuffixSpace = _ref3$prefixSuffixSpa === undefined ? ' ' : _ref3$prefixSuffixSpa;
 
   let breakLine = false;
+  const formattedSeparator = () => styleFn(['gray'], separator);
 
+  const valuesMaxIndex = values.length - 1;
   values = values.map((_ref4, index) => {
     let key = _ref4.key;
     let value = _ref4.value;
 
-    let nextDepth = depth + 1;
 
-    var _internalFormatValue = internalFormatValue(value, styleFn, key && objectStyles && objectStyles[key], { padding, depth: nextDepth, maxDepth, objects });
+    // key must be formatted before value (browser-formatter needs order)
+    const formattedKey = key ? `${ styleFn(['gray-light', 'bold'], `${ key }:`) } ` : '';
+
+    var _internalFormatValue = internalFormatValue(value, styleFn, key && objectStyles && objectStyles[key], { padding, depth: depth + 1, maxDepth, objects });
 
     let stringValue = _internalFormatValue.stringValue;
     let formattedValue = _internalFormatValue.formattedValue;
@@ -105,17 +113,18 @@ function internalFormatIterator(values, styleFn, objectStyles, _ref2, _ref3) {
     }
 
     return {
-      stringValue,
+      stringValue: stringValue + (index === valuesMaxIndex ? '' : separator),
       // eslint-disable-next-line no-useless-concat
-      formattedValue: (key ? `${ styleFn(['gray-light', 'bold'], `${ key }:`) } ` : '') + formattedValue
+      formattedValue: formattedKey + formattedValue + (index === valuesMaxIndex ? '' : formattedSeparator())
     };
   });
 
   return {
-    stringValue: prefix + values.map(breakLine ? v => `\n${ padding }${ v.stringValue }` : fv => fv.stringValue).join(breakLine ? ',\n' : ', ') + suffix,
-    formattedValue: `${ prefix }${ breakLine ? '' : prefixSuffixSpace }` + `${ values.map(breakLine ? v => `\n${ padding }${ v.formattedValue }` : v => v.formattedValue).join(`${ styleFn(['gray'], ',') }${ breakLine ? '' : ' ' }`) }` + `${ breakLine ? `,\n` : prefixSuffixSpace }${ suffix }`
+    stringValue: prefix + values.map(breakLine ? v => `\n${ padding }${ v.stringValue }` : fv => fv.stringValue).join(breakLine ? '\n' : ' ') + suffix,
+    // eslint-disable-next-line prefer-template
+    formattedValue: `${ prefix }${ breakLine ? '' : prefixSuffixSpace }` + values.map(breakLine ? v => `\n${ padding }${ v.formattedValue }` : v => v.formattedValue).join(breakLine ? '' : ' ') + `${ breakLine ? `,\n` : prefixSuffixSpace }${ suffix }`
   };
-}
+};
 
 function internalFormatObject(object, styleFn, objectStyles, _ref5) {
   let padding = _ref5.padding;

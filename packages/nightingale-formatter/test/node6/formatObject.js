@@ -59,8 +59,7 @@ suite('formatObject', () => {
   });
 
   test('object in array', () => {
-    const obj = { a: 1, b: 2 };
-    (0, _assert.strictEqual)((0, _.formatObject)({ a: [obj] }, noStyleFn), '{ a: [{ a: 1, b: 2 }] }');
+    (0, _assert.strictEqual)((0, _.formatObject)({ a: [{ a: 1, b: 2 }] }, noStyleFn), '{ a: [{ a: 1, b: 2 }] }');
   });
 
   test('objects in array', () => {

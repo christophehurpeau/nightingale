@@ -1,3 +1,5 @@
+/* eslint-disable no-use-before-define */
+
 function tryStringify(arg) {
   try {
     return JSON.stringify(arg);
@@ -68,24 +70,31 @@ function internalFormatValue(value, styleFn, styles, { padding, depth, maxDepth,
   };
 }
 
-function internalFormatIterator(
-    values,
-    styleFn,
-    objectStyles,
-    { padding, depth, maxDepth, objects },
-    { prefix, suffix, prefixSuffixSpace = ' ' },
-) {
-  let breakLine = false;
+const separator = ',';
 
+const internalFormatIterator = (
+  values,
+  styleFn,
+  objectStyles,
+  { padding, depth, maxDepth, objects },
+  { prefix, suffix, prefixSuffixSpace = ' ' },
+) => {
+  let breakLine = false;
+  const formattedSeparator = () => styleFn(['gray'], separator);
+
+  const valuesMaxIndex = values.length - 1;
   values = values.map(({ key, value }, index) => {
     let nextDepth = depth + 1;
 
+    // key must be formatted before value (browser-formatter needs order)
+    const formattedKey = key ? `${styleFn(['gray-light', 'bold'], `${key}:`)} ` : '';
+
     let { stringValue, formattedValue } = internalFormatValue(
-            value,
-            styleFn,
-            key && objectStyles && objectStyles[key],
-            { padding, depth: nextDepth, maxDepth, objects },
-        );
+      value,
+      styleFn,
+      key && objectStyles && objectStyles[key],
+      { padding, depth: nextDepth, maxDepth, objects },
+    );
 
     if (stringValue && (stringValue.length > 80 || stringValue.indexOf('\n') !== -1)) {
       breakLine = true;
@@ -94,27 +103,25 @@ function internalFormatIterator(
     }
 
     return {
-      stringValue,
-            // eslint-disable-next-line no-useless-concat
-      formattedValue: (key ? `${styleFn(['gray-light', 'bold'], `${key}:`)} ` : '')
-                            + formattedValue,
+      stringValue: stringValue + (index === valuesMaxIndex ? '' : separator),
+      // eslint-disable-next-line no-useless-concat
+      formattedValue: formattedKey + formattedValue + (index === valuesMaxIndex ? '' : formattedSeparator()),
+      // note: we need to format the separator for each values for browser-formatter
     };
   });
 
-
   return {
     stringValue: prefix + values
-            .map(
-                breakLine ? v => `\n${padding}${v.stringValue}`
-                : fv => fv.stringValue,
-            ).join(breakLine ? ',\n' : ', ') + suffix,
+      .map(breakLine ? v => `\n${padding}${v.stringValue}` : fv => fv.stringValue)
+      .join(breakLine ? '\n' : ' ')
+      + suffix,
+    // eslint-disable-next-line prefer-template
     formattedValue: `${prefix}${breakLine ? '' : prefixSuffixSpace}`
-            + `${values
-                    .map(breakLine ? v => `\n${padding}${v.formattedValue}` : v => v.formattedValue)
-                    .join(`${styleFn(['gray'], ',')}${breakLine ? '' : ' '}`)}`
-            + `${breakLine ? `,\n` : prefixSuffixSpace}${suffix}`,
+      + values.map(breakLine ? v => `\n${padding}${v.formattedValue}` : v => v.formattedValue)
+        .join(breakLine ? '' : ' ')
+      + `${breakLine ? `,\n` : prefixSuffixSpace}${suffix}`,
   };
-}
+};
 
 function internalFormatObject(
   object,
