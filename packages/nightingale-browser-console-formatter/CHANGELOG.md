@@ -1,3 +1,7 @@
+### v1.3.2
+
+- [`96b3138`](https://github.com/nightingalejs/nightingale-browser-console-formatter/commit/96b313835dd35893c9e139dca1e274563d32d74c) refactor: update dependencies (Christophe Hurpeau)
+
 ### v1.3.1
 
 - [`fe9edcc`](https://github.com/nightingalejs/nightingale-browser-console-formatter/commit/fe9edcc74af8bb3850ecea6637288fe055070d92) fix: console.log args (Christophe Hurpeau)
