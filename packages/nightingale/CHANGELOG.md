@@ -1,3 +1,7 @@
+### v6.0.0
+
+- [`f6643b4`](https://github.com/nightingalejs/nightingale/commit/f6643b4ff1b434fb2887eeade74e4601906bdbfd) chore(package): nightingale-logger@3.0.0 (Christophe Hurpeau)
+
 ### v6.0.0-rc.1
 
 - [`8252742`](https://github.com/nightingalejs/nightingale/commit/8252742515356b21d56cccf6303584a189684db5) chore(package): update dependencies (Christophe Hurpeau)
