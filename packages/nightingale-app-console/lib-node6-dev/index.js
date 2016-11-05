@@ -3,19 +3,9 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.logger = undefined;
+exports.logger = exports.levels = exports.addConfig = exports.configure = undefined;
 
 var _nightingale = require('nightingale');
-
-Object.keys(_nightingale).forEach(function (key) {
-  if (key === "default" || key === "__esModule") return;
-  Object.defineProperty(exports, key, {
-    enumerable: true,
-    get: function get() {
-      return _nightingale[key];
-    }
-  });
-});
 
 var _nightingale2 = _interopRequireDefault(_nightingale);
 
@@ -29,6 +19,9 @@ var _nightingaleErrorProcessor2 = _interopRequireDefault(_nightingaleErrorProces
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+exports.configure = _nightingale.configure;
+exports.addConfig = _nightingale.addConfig;
+exports.levels = _nightingale.levels;
 const logger = exports.logger = new _nightingale2.default('app');
 
 (0, _nightingale.listenUnhandledErrors)(logger);
@@ -36,7 +29,7 @@ const logger = exports.logger = new _nightingale2.default('app');
 (0, _nightingale.configure)([{
   processors: [_nightingaleErrorProcessor2.default]
 }, {
-  pattern: /^app.*$/,
+  pattern: /^app(:.*)?$/,
   handlers: [new _nightingaleConsole2.default(_nightingale.levels.DEBUG)],
   stop: true
 }, {
