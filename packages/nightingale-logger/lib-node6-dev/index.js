@@ -258,7 +258,7 @@ class Logger {
   trace(message, metadata, metadataStyles) {
     _assert(message, _tcombForked2.default.String, 'message');
 
-    _assert(metadata, _tcombForked2.default.Object, 'metadata');
+    _assert(metadata, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadata');
 
     _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
 
@@ -271,7 +271,7 @@ class Logger {
   debug(message, metadata, metadataStyles) {
     _assert(message, _tcombForked2.default.String, 'message');
 
-    _assert(metadata, _tcombForked2.default.Object, 'metadata');
+    _assert(metadata, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadata');
 
     _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
 
@@ -284,7 +284,7 @@ class Logger {
   info(message, metadata, metadataStyles) {
     _assert(message, _tcombForked2.default.String, 'message');
 
-    _assert(metadata, _tcombForked2.default.Object, 'metadata');
+    _assert(metadata, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadata');
 
     _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
 
@@ -297,7 +297,7 @@ class Logger {
   warn(message, metadata, metadataStyles) {
     _assert(message, _tcombForked2.default.String, 'message');
 
-    _assert(metadata, _tcombForked2.default.Object, 'metadata');
+    _assert(metadata, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadata');
 
     _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
 
@@ -331,7 +331,7 @@ class Logger {
   alert(message, metadata, metadataStyles) {
     _assert(message, _tcombForked2.default.String, 'message');
 
-    _assert(metadata, _tcombForked2.default.Object, 'metadata');
+    _assert(metadata, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadata');
 
     _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
 
@@ -344,7 +344,7 @@ class Logger {
   fatal(message, metadata, metadataStyles) {
     _assert(message, _tcombForked2.default.String, 'message');
 
-    _assert(metadata, _tcombForked2.default.Object, 'metadata');
+    _assert(metadata, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadata');
 
     _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
 
@@ -389,7 +389,7 @@ class Logger {
   success(message, metadata, metadataStyles) {
     _assert(message, _tcombForked2.default.String, 'message');
 
-    _assert(metadata, _tcombForked2.default.Object, 'metadata');
+    _assert(metadata, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadata');
 
     _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
 
@@ -402,7 +402,7 @@ class Logger {
   infoSuccess(message, metadata, metadataStyles) {
     _assert(message, _tcombForked2.default.String, 'message');
 
-    _assert(metadata, _tcombForked2.default.Object, 'metadata');
+    _assert(metadata, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadata');
 
     _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
 
@@ -419,7 +419,7 @@ class Logger {
   debugSuccess(message, metadata, metadataStyles) {
     _assert(message, _tcombForked2.default.String, 'message');
 
-    _assert(metadata, _tcombForked2.default.Object, 'metadata');
+    _assert(metadata, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadata');
 
     _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
 
@@ -436,7 +436,7 @@ class Logger {
   fail(message, metadata, metadataStyles) {
     _assert(message, _tcombForked2.default.String, 'message');
 
-    _assert(metadata, _tcombForked2.default.Object, 'metadata');
+    _assert(metadata, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadata');
 
     _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
 
@@ -449,7 +449,7 @@ class Logger {
   infoFail(message, metadata, metadataStyles) {
     _assert(message, _tcombForked2.default.String, 'message');
 
-    _assert(metadata, _tcombForked2.default.Object, 'metadata');
+    _assert(metadata, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadata');
 
     _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
 
@@ -466,7 +466,7 @@ class Logger {
   debugFail(message, metadata, metadataStyles) {
     _assert(message, _tcombForked2.default.String, 'message');
 
-    _assert(metadata, _tcombForked2.default.Object, 'metadata');
+    _assert(metadata, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadata');
 
     _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
 

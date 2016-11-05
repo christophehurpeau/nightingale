@@ -300,7 +300,7 @@ var Logger = function () {
     value: function trace(message, metadata, metadataStyles) {
       _assert(message, _tcombForked2.default.String, 'message');
 
-      _assert(metadata, _tcombForked2.default.Object, 'metadata');
+      _assert(metadata, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadata');
 
       _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
 
@@ -316,7 +316,7 @@ var Logger = function () {
     value: function debug(message, metadata, metadataStyles) {
       _assert(message, _tcombForked2.default.String, 'message');
 
-      _assert(metadata, _tcombForked2.default.Object, 'metadata');
+      _assert(metadata, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadata');
 
       _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
 
@@ -332,7 +332,7 @@ var Logger = function () {
     value: function info(message, metadata, metadataStyles) {
       _assert(message, _tcombForked2.default.String, 'message');
 
-      _assert(metadata, _tcombForked2.default.Object, 'metadata');
+      _assert(metadata, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadata');
 
       _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
 
@@ -348,7 +348,7 @@ var Logger = function () {
     value: function warn(message, metadata, metadataStyles) {
       _assert(message, _tcombForked2.default.String, 'message');
 
-      _assert(metadata, _tcombForked2.default.Object, 'metadata');
+      _assert(metadata, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadata');
 
       _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
 
@@ -387,7 +387,7 @@ var Logger = function () {
     value: function alert(message, metadata, metadataStyles) {
       _assert(message, _tcombForked2.default.String, 'message');
 
-      _assert(metadata, _tcombForked2.default.Object, 'metadata');
+      _assert(metadata, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadata');
 
       _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
 
@@ -403,7 +403,7 @@ var Logger = function () {
     value: function fatal(message, metadata, metadataStyles) {
       _assert(message, _tcombForked2.default.String, 'message');
 
-      _assert(metadata, _tcombForked2.default.Object, 'metadata');
+      _assert(metadata, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadata');
 
       _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
 
@@ -453,7 +453,7 @@ var Logger = function () {
     value: function success(message, metadata, metadataStyles) {
       _assert(message, _tcombForked2.default.String, 'message');
 
-      _assert(metadata, _tcombForked2.default.Object, 'metadata');
+      _assert(metadata, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadata');
 
       _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
 
@@ -469,7 +469,7 @@ var Logger = function () {
     value: function infoSuccess(message, metadata, metadataStyles) {
       _assert(message, _tcombForked2.default.String, 'message');
 
-      _assert(metadata, _tcombForked2.default.Object, 'metadata');
+      _assert(metadata, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadata');
 
       _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
 
@@ -489,7 +489,7 @@ var Logger = function () {
     value: function debugSuccess(message, metadata, metadataStyles) {
       _assert(message, _tcombForked2.default.String, 'message');
 
-      _assert(metadata, _tcombForked2.default.Object, 'metadata');
+      _assert(metadata, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadata');
 
       _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
 
@@ -509,7 +509,7 @@ var Logger = function () {
     value: function fail(message, metadata, metadataStyles) {
       _assert(message, _tcombForked2.default.String, 'message');
 
-      _assert(metadata, _tcombForked2.default.Object, 'metadata');
+      _assert(metadata, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadata');
 
       _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
 
@@ -525,7 +525,7 @@ var Logger = function () {
     value: function infoFail(message, metadata, metadataStyles) {
       _assert(message, _tcombForked2.default.String, 'message');
 
-      _assert(metadata, _tcombForked2.default.Object, 'metadata');
+      _assert(metadata, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadata');
 
       _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
 
@@ -545,7 +545,7 @@ var Logger = function () {
     value: function debugFail(message, metadata, metadataStyles) {
       _assert(message, _tcombForked2.default.String, 'message');
 
-      _assert(metadata, _tcombForked2.default.Object, 'metadata');
+      _assert(metadata, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadata');
 
       _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
 

@@ -189,7 +189,7 @@ export default class Logger {
   /**
    * Log a trace message
    */
-  trace(message: string, metadata: Object, metadataStyles: ?Object) {
+  trace(message: string, metadata: ?Object, metadataStyles: ?Object) {
     this.log(message, metadata, levels.TRACE, { metadataStyles });
   }
 
@@ -197,21 +197,21 @@ export default class Logger {
   /**
    * Log a debug message
    */
-  debug(message: string, metadata: Object, metadataStyles: ?Object) {
+  debug(message: string, metadata: ?Object, metadataStyles: ?Object) {
     this.log(message, metadata, levels.DEBUG, { metadataStyles });
   }
 
   /**
    * Log an info message
    */
-  info(message: string, metadata: Object, metadataStyles: ?Object) {
+  info(message: string, metadata: ?Object, metadataStyles: ?Object) {
     this.log(message, metadata, levels.INFO, { metadataStyles });
   }
 
   /**
    * Log a warn message
    */
-  warn(message: string, metadata: Object, metadataStyles: ?Object) {
+  warn(message: string, metadata: ?Object, metadataStyles: ?Object) {
     this.log(message, metadata, levels.WARN, { metadataStyles });
   }
 
@@ -229,14 +229,14 @@ export default class Logger {
   /**
    * Log an alert message
    */
-  alert(message: string, metadata: Object, metadataStyles: ?Object) {
+  alert(message: string, metadata: ?Object, metadataStyles: ?Object) {
     this.log(message, metadata, levels.ALERT, { metadataStyles });
   }
 
   /**
    * Log a fatal message
    */
-  fatal(message: string, metadata: Object, metadataStyles: ?Object) {
+  fatal(message: string, metadata: ?Object, metadataStyles: ?Object) {
     this.log(message, metadata, levels.FATAL, { metadataStyles });
   }
 
@@ -274,14 +274,14 @@ export default class Logger {
   /**
    * Alias for infoSuccess
    */
-  success(message: string, metadata: Object, metadataStyles: ?Object) {
+  success(message: string, metadata: ?Object, metadataStyles: ?Object) {
     this.infoSuccess(message, metadata, metadataStyles);
   }
 
   /**
    * Log an info success message
    */
-  infoSuccess(message: string, metadata: Object, metadataStyles: ?Object) {
+  infoSuccess(message: string, metadata: ?Object, metadataStyles: ?Object) {
     this.log(message, metadata, levels.INFO, {
       metadataStyles,
       symbol: '✔',
@@ -292,7 +292,7 @@ export default class Logger {
   /**
    * Log an debug success message
    */
-  debugSuccess(message: string, metadata: Object, metadataStyles: ?Object) {
+  debugSuccess(message: string, metadata: ?Object, metadataStyles: ?Object) {
     this.log(message, metadata, levels.DEBUG, {
       metadataStyles,
       symbol: '✔',
@@ -303,14 +303,14 @@ export default class Logger {
   /**
    * Alias for infoFail
    */
-  fail(message: string, metadata: Object, metadataStyles: ?Object) {
+  fail(message: string, metadata: ?Object, metadataStyles: ?Object) {
     this.infoFail(message, metadata, metadataStyles);
   }
 
   /**
    * Log an info fail message
    */
-  infoFail(message: string, metadata: Object, metadataStyles: ?Object) {
+  infoFail(message: string, metadata: ?Object, metadataStyles: ?Object) {
     this.log(message, metadata, levels.INFO, {
       metadataStyles,
       symbol: '✖',
@@ -321,7 +321,7 @@ export default class Logger {
   /**
    * Log an debug fail message
    */
-  debugFail(message: string, metadata: Object, metadataStyles: ?Object) {
+  debugFail(message: string, metadata: ?Object, metadataStyles: ?Object) {
     this.log(message, metadata, levels.DEBUG, {
       metadataStyles,
       symbol: '✖',

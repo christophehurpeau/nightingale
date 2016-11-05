@@ -237,7 +237,7 @@ export default class Logger {
   trace(message, metadata, metadataStyles) {
     _assert(message, _t.String, 'message');
 
-    _assert(metadata, _t.Object, 'metadata');
+    _assert(metadata, _t.maybe(_t.Object), 'metadata');
 
     _assert(metadataStyles, _t.maybe(_t.Object), 'metadataStyles');
 
@@ -250,7 +250,7 @@ export default class Logger {
   debug(message, metadata, metadataStyles) {
     _assert(message, _t.String, 'message');
 
-    _assert(metadata, _t.Object, 'metadata');
+    _assert(metadata, _t.maybe(_t.Object), 'metadata');
 
     _assert(metadataStyles, _t.maybe(_t.Object), 'metadataStyles');
 
@@ -263,7 +263,7 @@ export default class Logger {
   info(message, metadata, metadataStyles) {
     _assert(message, _t.String, 'message');
 
-    _assert(metadata, _t.Object, 'metadata');
+    _assert(metadata, _t.maybe(_t.Object), 'metadata');
 
     _assert(metadataStyles, _t.maybe(_t.Object), 'metadataStyles');
 
@@ -276,7 +276,7 @@ export default class Logger {
   warn(message, metadata, metadataStyles) {
     _assert(message, _t.String, 'message');
 
-    _assert(metadata, _t.Object, 'metadata');
+    _assert(metadata, _t.maybe(_t.Object), 'metadata');
 
     _assert(metadataStyles, _t.maybe(_t.Object), 'metadataStyles');
 
@@ -309,7 +309,7 @@ export default class Logger {
   alert(message, metadata, metadataStyles) {
     _assert(message, _t.String, 'message');
 
-    _assert(metadata, _t.Object, 'metadata');
+    _assert(metadata, _t.maybe(_t.Object), 'metadata');
 
     _assert(metadataStyles, _t.maybe(_t.Object), 'metadataStyles');
 
@@ -322,7 +322,7 @@ export default class Logger {
   fatal(message, metadata, metadataStyles) {
     _assert(message, _t.String, 'message');
 
-    _assert(metadata, _t.Object, 'metadata');
+    _assert(metadata, _t.maybe(_t.Object), 'metadata');
 
     _assert(metadataStyles, _t.maybe(_t.Object), 'metadataStyles');
 
@@ -363,7 +363,7 @@ export default class Logger {
   success(message, metadata, metadataStyles) {
     _assert(message, _t.String, 'message');
 
-    _assert(metadata, _t.Object, 'metadata');
+    _assert(metadata, _t.maybe(_t.Object), 'metadata');
 
     _assert(metadataStyles, _t.maybe(_t.Object), 'metadataStyles');
 
@@ -376,7 +376,7 @@ export default class Logger {
   infoSuccess(message, metadata, metadataStyles) {
     _assert(message, _t.String, 'message');
 
-    _assert(metadata, _t.Object, 'metadata');
+    _assert(metadata, _t.maybe(_t.Object), 'metadata');
 
     _assert(metadataStyles, _t.maybe(_t.Object), 'metadataStyles');
 
@@ -393,7 +393,7 @@ export default class Logger {
   debugSuccess(message, metadata, metadataStyles) {
     _assert(message, _t.String, 'message');
 
-    _assert(metadata, _t.Object, 'metadata');
+    _assert(metadata, _t.maybe(_t.Object), 'metadata');
 
     _assert(metadataStyles, _t.maybe(_t.Object), 'metadataStyles');
 
@@ -410,7 +410,7 @@ export default class Logger {
   fail(message, metadata, metadataStyles) {
     _assert(message, _t.String, 'message');
 
-    _assert(metadata, _t.Object, 'metadata');
+    _assert(metadata, _t.maybe(_t.Object), 'metadata');
 
     _assert(metadataStyles, _t.maybe(_t.Object), 'metadataStyles');
 
@@ -423,7 +423,7 @@ export default class Logger {
   infoFail(message, metadata, metadataStyles) {
     _assert(message, _t.String, 'message');
 
-    _assert(metadata, _t.Object, 'metadata');
+    _assert(metadata, _t.maybe(_t.Object), 'metadata');
 
     _assert(metadataStyles, _t.maybe(_t.Object), 'metadataStyles');
 
@@ -440,7 +440,7 @@ export default class Logger {
   debugFail(message, metadata, metadataStyles) {
     _assert(message, _t.String, 'message');
 
-    _assert(metadata, _t.Object, 'metadata');
+    _assert(metadata, _t.maybe(_t.Object), 'metadata');
 
     _assert(metadataStyles, _t.maybe(_t.Object), 'metadataStyles');
 
