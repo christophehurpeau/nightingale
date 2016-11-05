@@ -1,3 +1,7 @@
+### v3.0.1
+
+- [`e0b047d`](https://github.com/nightingalejs/nightingale-logger/commit/e0b047d8e8919dd6ac846d6718af1cdc01e44d1c) fix: getConfigForLoggerRecord key can be undefined (Christophe Hurpeau)
+
 ### v3.0.0
 
 
