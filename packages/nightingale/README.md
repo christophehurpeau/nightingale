@@ -58,6 +58,7 @@ logger.debug('This is a log'); // will be displayed
 
 You can configure several handlers with different `levels`, like console and slack.
 
+You can also use [nightingale-app-console](https://www.npmjs.com/package/nightingale-app-console).
 
 ### In an library
 
@@ -86,7 +87,6 @@ configure([
     }
 ]);
 ```
-
 
 ### [Logger](http://christophehurpeau.github.io/nightingale/docs/Logger.html)
 
