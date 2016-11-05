@@ -1,3 +1,7 @@
+### v3.0.0
+
+
+
 ### v3.0.0-rc.2
 
 - [`f3e52ab`](https://github.com/nightingalejs/nightingale-logger/commit/f3e52abc581332eb313852610e2d070a2fe2fc94) fix: metadata is optional (flow) (Christophe Hurpeau)
