@@ -63,7 +63,7 @@ if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
 
 /** @private */
 function getConfigForLoggerRecord(key, recordLevel) {
-  _assert(key, _t.String, 'key');
+  _assert(key, _t.maybe(_t.String), 'key');
 
   _assert(recordLevel, _t.Number, 'recordLevel');
 

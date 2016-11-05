@@ -79,7 +79,7 @@ if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
 
 /** @private */
 function getConfigForLoggerRecord(key, recordLevel) {
-  _assert(key, _tcombForked2.default.String, 'key');
+  _assert(key, _tcombForked2.default.maybe(_tcombForked2.default.String), 'key');
 
   _assert(recordLevel, _tcombForked2.default.Number, 'recordLevel');
 

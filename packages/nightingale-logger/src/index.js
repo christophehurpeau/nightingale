@@ -48,7 +48,7 @@ if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
 
 
 /** @private */
-function getConfigForLoggerRecord(key: string, recordLevel: number): ConfigForLoggerType {
+function getConfigForLoggerRecord(key: ?string, recordLevel: number): ConfigForLoggerType {
   return global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD(key, recordLevel);
 }
 
