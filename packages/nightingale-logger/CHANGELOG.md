@@ -1,3 +1,7 @@
+### v3.0.0-rc.1
+
+- [`39bfe4c`](https://github.com/nightingalejs/nightingale-logger/commit/39bfe4cecaf9902e4cf994d441d353998a1077ee) refactor: flow (Christophe Hurpeau)
+
 ### v3.0.0-beta.5
 
 - [`976199b`](https://github.com/nightingalejs/nightingale-logger/commit/976199b78247babc5557eb5930afe8718675e2b1) fix: key replace all dot not just the first one (Christophe Hurpeau)
