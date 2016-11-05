@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "nightingale-levels": "^1.0.0",
-    "nightingale-logger": "^3.0.0-rc.2"
+    "nightingale-logger": "^3.0.0"
   },
   "devDependencies": {
     "babel-eslint": "^7.1.0",
