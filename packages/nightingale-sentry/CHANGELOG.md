@@ -1,3 +1,7 @@
+### v2.1.0-beta.1
+
+- [`0b7eea0`](https://github.com/nightingalejs/nightingale-sentry/commit/0b7eea01bcd2e4bc4b27fcc60bc83eb0fd018053) feat: add user and tags (Christophe Hurpeau)
+
 ### v2.0.1
 
 - [`0b2eec9`](https://github.com/nightingalejs/nightingale-sentry/commit/0b2eec959fdae9e48df49e6dff814e4ca5976aca) fix: fix (Christophe Hurpeau)
