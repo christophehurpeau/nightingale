@@ -18,10 +18,14 @@ import SentryHandler from 'nightingale-sentry';
 
 configure([
   {
-    handlers: [new SentryHandler(ravenUrl, levels.ERROR)]
+    handlers: [
+      new SentryHandler(ravenUrl, levels.ERROR, {
+        // getUser: ({ context }) => context.user && { id: context.user.id },
+        // getTags: ({ context }) => context.tags,
+      }),
+    ],
   }
-])
-
+]);
 ```
 
 [npm-image]: https://img.shields.io/npm/v/nightingale-sentry.svg?style=flat-square

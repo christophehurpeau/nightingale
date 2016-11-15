@@ -26,13 +26,21 @@ const mapToSentryLevel = {
   [_nightingaleLevels2.default.EMERGENCY]: 'fatal'
 };
 
-const createHandler = ravenUrl => {
+const createHandler = function (ravenUrl) {
+  var _ref = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {},
+      _ref$getUser = _ref.getUser;
+
+  let getUser = _ref$getUser === undefined ? () => {} : _ref$getUser;
+  var _ref$getTags = _ref.getTags;
+  let getTags = _ref$getTags === undefined ? () => {} : _ref$getTags;
+
   const ravenClient = new _raven.Client(ravenUrl);
 
-  return (_ref) => {
-    let level = _ref.level;
-    let metadata = _ref.metadata;
-    let extra = _ref.extra;
+  return record => {
+    const key = record.key,
+          level = record.level,
+          metadata = record.metadata,
+          extra = record.extra;
 
     let error = metadata && metadata.error;
 
@@ -50,14 +58,17 @@ const createHandler = ravenUrl => {
     }
 
     ravenClient.captureError(error, {
+      logger: key,
       level: mapToSentryLevel[level] || 'error',
-      extra: extraData
+      extra: extraData,
+      user: getUser(record),
+      tags: getTags(record)
     });
   };
 };
 
-function SentryHandler(ravenUrl, minLevel) {
+function SentryHandler(ravenUrl, minLevel, options) {
   this.minLevel = minLevel;
-  this.handle = createHandler(ravenUrl);
+  this.handle = createHandler(ravenUrl, options);
 }
 //# sourceMappingURL=index.js.map
