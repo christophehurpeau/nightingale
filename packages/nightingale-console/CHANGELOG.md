@@ -1,3 +1,8 @@
+### v2.2.0
+
+- [`5797db6`](https://github.com/nightingalejs/nightingale-console/commit/5797db692f1161c5906ebefb49d6ef69ba489da3) docs: examples (Christophe Hurpeau)
+- [`0d60398`](https://github.com/nightingalejs/nightingale-console/commit/0d60398754a37d76e393b369f7662d52e06984ac) chore(package): update dependencies (Christophe Hurpeau)
+
 ### v2.1.0
 
 - [`94c15da`](https://github.com/nightingalejs/nightingale-console/commit/94c15da727efa92621846c7988e7006892179f9a) feat: use nightingale-debug (Christophe Hurpeau)
