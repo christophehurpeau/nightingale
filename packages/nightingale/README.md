@@ -15,6 +15,7 @@ See the [Logger API](http://nightingalejs.github.io/nightingale-logger/docs/Logg
 ## Install
 
 ```sh
+npm install --save-dev tcomb-forked # in dev mode
 npm install --save nightingale
 npm install --save nightingale-console # for console handler in nodejs
 npm install --save nightingale-browser-console # for console handler in browser
