@@ -255,7 +255,7 @@ export function someAction(arg1) {
 [daviddm-url]: https://david-dm.org/nightingalejs/nightingale
 [build-status-image]: https://img.shields.io/circleci/project/nightingalejs/nightingale/master.svg?style=flat-square
 [build-status-url]: https://circleci.com/gh/nightingalejs/nightingale
-[travisci-status-image]: https://img.shields.io/travisci/project/nightingalejs/nightingale/master.svg?style=flat-square
+[travisci-status-image]: https://img.shields.io/travis/nightingalejs/nightingale/master.svg?style=flat-square
 [travisci-status-url]: https://travis-ci.org/nightingalejs/nightingale
 [coverage-image]: https://img.shields.io/coveralls/nightingalejs/nightingale/master.svg?style=flat-square
 [coverage-url]: https://nightingalejs.github.io/nightingale/coverage/lcov-report/
