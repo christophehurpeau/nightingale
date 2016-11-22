@@ -16,13 +16,19 @@ See the [Logger API](http://nightingalejs.github.io/nightingale-logger/docs/Logg
 
 ```sh
 npm install --save nightingale
-npm install --save nightingale-console # for console handler
+npm install --save nightingale-console # for console handler in nodejs
+npm install --save nightingale-browser-console # for console handler in browser
 ```
 
+You can also use [nightingale-app-console](https://www.npmjs.com/package/nightingale-app-console).
 
 ## How to use
 
 ### In an application
+
+```sh
+npm install --save nightingale nightingale-console
+```
 
 ```js
 import Logger, { configure, levels } from 'nightingale';
@@ -58,9 +64,11 @@ logger.debug('This is a log'); // will be displayed
 
 You can configure several handlers with different `levels`, like console and slack.
 
-You can also use [nightingale-app-console](https://www.npmjs.com/package/nightingale-app-console).
+### In a library
 
-### In an library
+```sh
+npm install --save nightingale-logger
+```
 
 ```js
 import Logger from 'nightingale-logger';
@@ -72,7 +80,11 @@ logger.warn('This is a warning !');
 logger.success('It works !');
 ```
 
-### How to use on browser
+### In the browser
+
+```sh
+npm install --save nightingale nightingale-browser-console
+```
 
 ![browser log example](https://static.hurpeau.com/images/npm/nightingale/log_in_firefox.png)
 
@@ -88,7 +100,7 @@ configure([
 ]);
 ```
 
-### [Logger](http://christophehurpeau.github.io/nightingale/docs/Logger.html)
+### [Logger](https://nightingalejs.github.io/nightingale-logger/docs/Logger.html)
 
 The class with all the methods you call to log things.
 
