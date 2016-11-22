@@ -1,3 +1,7 @@
+### v3.1.0
+
+- [`3641ac2`](https://github.com/nightingalejs/nightingale-logger/commit/3641ac22976d215c75547a8a8b7c2a2fd0bfbdbe) refactor: update dependencies, add notice and critical (Christophe Hurpeau)
+
 ### v3.0.1
 
 - [`e0b047d`](https://github.com/nightingalejs/nightingale-logger/commit/e0b047d8e8919dd6ac846d6718af1cdc01e44d1c) fix: getConfigForLoggerRecord key can be undefined (Christophe Hurpeau)
