@@ -1,16 +1,17 @@
 # nightingale-levels
 
-<ul>
-    <li>ALL: Log everything. Not a level.</li>
-    <li>TRACE: Trace information</li>
-    <li>DEBUG: Detailed debug information</li>
-    <li>INFO: Normal but significant events</li>
-    <li>WARN: Exceptional occurrences that are not errors (Use of deprecated APIs)</li>
-    <li>WARNING: Alias for WARN</li>
-    <li>ERROR: Runtime errors that do not require immediate action but should be logged and monitored</li>
-    <li>CRITICAL: Critical conditions. Example: Application component unavailable, unexpected exception</li>
-    <li>FATAL: Action must be taken immediately. Example: Entire website down, database unavailable, etc
+Follows the logging levels described by [RFC 5424](https://tools.ietf.org/html/rfc5424)
+
+- *TRACE* (10): Trace information
+- *DEBUG* (100): Detailed debug information
+- *INFO* (200): Normal but significant events
+- *NOTICE* (250): Normal but significant events
+- *WARN* (300): Exceptional occurrences that are not errors (Use of deprecated APIs)
+- *WARNING* (300): Alias for WARN
+- *ERROR* (400): Runtime errors that do not require immediate action but should be logged and monitored
+- *CRITICAL* (500): Critical conditions. Example: Application component unavailable, unexpected exception
+- *FATAL* (550): Action must be taken immediately. Example: Entire website down, database unavailable
              This should trigger the SMS alerts and wake you up</li>
-    <li>ALERT: Alias for FATAL</li>
-    <li>EMERGENCY: Emergency: system is unusable</li>
-</ul>
+- *ALERT* (550): Alias for FATAL
+- *EMERGENCY* (600): Emergency: system is unusable
+- *ALL*: Log everything. Not a level.
