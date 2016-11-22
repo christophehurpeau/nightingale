@@ -24,15 +24,11 @@ if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER) {
 
 if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
   global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = (key, level) => {
-    var _global$__NIGHTINGALE = global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key);
-
-    const handlers = _global$__NIGHTINGALE.handlers,
-          processors = _global$__NIGHTINGALE.processors;
-
+    const { handlers, processors } = global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key);
 
     return {
       handlers: handlers.filter(handler => level >= handler.minLevel && (!handler.isHandling || handler.isHandling(level, key))),
-      processors
+      processors: processors
     };
   };
 }
@@ -86,11 +82,11 @@ class Logger {
    * @example
    * const loggerMyService = new Logger('app.myService');
    * function someAction(arg1) {
-     *     const logger = loggerMyService.context({ arg1 });
-     *     logger.info('starting');
-     *     // do stuff
-     *     logger.info('done');
-     * }
+   *     const logger = loggerMyService.context({ arg1 });
+   *     logger.info('starting');
+   *     // do stuff
+   *     logger.info('done');
+   * }
    *
    */
   context(context) {
@@ -121,11 +117,7 @@ class Logger {
    * Use this only if you know what you are doing.
    */
   addRecord(record) {
-    var _getHandlersAndProces = this.getHandlersAndProcessors(record.level);
-
-    let handlers = _getHandlersAndProces.handlers,
-        processors = _getHandlersAndProces.processors;
-
+    let { handlers, processors } = this.getHandlersAndProcessors(record.level);
 
     if (handlers.length === 0) {
       if (record.level > _nightingaleLevels2.default.ERROR) {
@@ -148,10 +140,7 @@ class Logger {
   /**
    * Log a message
    */
-  log(message, metadata) {
-    let level = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : _nightingaleLevels2.default.INFO;
-    let options = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : undefined;
-
+  log(message, metadata, level = _nightingaleLevels2.default.INFO, options = undefined) {
     let context = metadata && metadata.context;
     if (metadata) {
       delete metadata.context;
@@ -190,6 +179,13 @@ class Logger {
   }
 
   /**
+   * Notice an info message
+   */
+  notice(message, metadata, metadataStyles) {
+    this.log(message, metadata, _nightingaleLevels2.default.NOTICE, { metadataStyles });
+  }
+
+  /**
    * Log an info message
    */
   info(message, metadata, metadataStyles) {
@@ -206,10 +202,7 @@ class Logger {
   /**
    * Log an error message
    */
-  error(message) {
-    let metadata = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-    let metadataStyles = arguments[2];
-
+  error(message, metadata = {}, metadataStyles) {
     if (message instanceof Error) {
       metadata.error = message;
       message = `${ metadata.error.name }: ${ metadata.error.message }`;
@@ -218,10 +211,10 @@ class Logger {
   }
 
   /**
-   * Log an alert message
+   * Log an critical message
    */
-  alert(message, metadata, metadataStyles) {
-    this.log(message, metadata, _nightingaleLevels2.default.ALERT, { metadataStyles });
+  critical(message, metadata, metadataStyles) {
+    this.log(message, metadata, _nightingaleLevels2.default.CRITICAL, { metadataStyles });
   }
 
   /**
@@ -229,6 +222,13 @@ class Logger {
    */
   fatal(message, metadata, metadataStyles) {
     this.log(message, metadata, _nightingaleLevels2.default.FATAL, { metadataStyles });
+  }
+
+  /**
+   * Log an alert message
+   */
+  alert(message, metadata, metadataStyles) {
+    this.log(message, metadata, _nightingaleLevels2.default.ALERT, { metadataStyles });
   }
 
   /**
@@ -310,9 +310,7 @@ class Logger {
   /**
    * @returns {number} time to pass to timeEnd
    */
-  time(message, metadata, metadataStyles) {
-    let level = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : _nightingaleLevels2.default.DEBUG;
-
+  time(message, metadata, metadataStyles, level = _nightingaleLevels2.default.DEBUG) {
     if (message) {
       this.log(message, metadata, level, { metadataStyles });
     }
@@ -330,12 +328,7 @@ class Logger {
    * was called, then logs out the difference
    * and deletes the original record
    */
-  timeEnd(startTime, message) {
-    let metadata = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
-    let metadataStyles = arguments[3];
-    let level = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : _nightingaleLevels2.default.DEBUG;
-    let options = arguments[5];
-
+  timeEnd(startTime, message, metadata = {}, metadataStyles, level = _nightingaleLevels2.default.DEBUG, options) {
     const now = Date.now();
 
     const diffTime = now - startTime;

@@ -59,15 +59,11 @@ if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
     _assert(level, _tcombForked2.default.Number, 'level');
 
     return _assert((() => {
-      var _global$__NIGHTINGALE = global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key);
-
-      const handlers = _global$__NIGHTINGALE.handlers,
-            processors = _global$__NIGHTINGALE.processors;
-
+      const { handlers, processors } = global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key);
 
       return {
         handlers: handlers.filter(handler => level >= handler.minLevel && (!handler.isHandling || handler.isHandling(level, key))),
-        processors
+        processors: processors
       };
     })(), ConfigForLoggerType, 'return value');
   };
@@ -144,11 +140,11 @@ class Logger {
    * @example
    * const loggerMyService = new Logger('app.myService');
    * function someAction(arg1) {
-     *     const logger = loggerMyService.context({ arg1 });
-     *     logger.info('starting');
-     *     // do stuff
-     *     logger.info('done');
-     * }
+   *     const logger = loggerMyService.context({ arg1 });
+   *     logger.info('starting');
+   *     // do stuff
+   *     logger.info('done');
+   * }
    *
    */
   context(context) {
@@ -189,11 +185,7 @@ class Logger {
   addRecord(record) {
     _assert(record, _tcombForked2.default.Object, 'record');
 
-    var _getHandlersAndProces = this.getHandlersAndProcessors(record.level);
-
-    let handlers = _getHandlersAndProces.handlers,
-        processors = _getHandlersAndProces.processors;
-
+    let { handlers, processors } = this.getHandlersAndProcessors(record.level);
 
     if (handlers.length === 0) {
       if (record.level > _nightingaleLevels2.default.ERROR) {
@@ -216,11 +208,7 @@ class Logger {
   /**
    * Log a message
    */
-  log(message, metadata) {
-    let level = _assert(arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : _nightingaleLevels2.default.INFO, _tcombForked2.default.Number, 'level');
-
-    let options = _assert(arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : undefined, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'options');
-
+  log(message, metadata, level = _nightingaleLevels2.default.INFO, options = undefined) {
     _assert(message, _tcombForked2.default.String, 'message');
 
     _assert(metadata, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadata');
@@ -279,6 +267,19 @@ class Logger {
   }
 
   /**
+   * Notice an info message
+   */
+  notice(message, metadata, metadataStyles) {
+    _assert(message, _tcombForked2.default.String, 'message');
+
+    _assert(metadata, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadata');
+
+    _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
+
+    this.log(message, metadata, _nightingaleLevels2.default.NOTICE, { metadataStyles });
+  }
+
+  /**
    * Log an info message
    */
   info(message, metadata, metadataStyles) {
@@ -307,11 +308,7 @@ class Logger {
   /**
    * Log an error message
    */
-  error(message) {
-    let metadata = _assert(arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {}, _tcombForked2.default.Object, 'metadata');
-
-    let metadataStyles = _assert(arguments[2], _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
-
+  error(message, metadata = {}, metadataStyles) {
     _assert(message, _tcombForked2.default.union([_tcombForked2.default.String, Error]), 'message');
 
     _assert(metadata, _tcombForked2.default.Object, 'metadata');
@@ -326,16 +323,16 @@ class Logger {
   }
 
   /**
-   * Log an alert message
+   * Log an critical message
    */
-  alert(message, metadata, metadataStyles) {
+  critical(message, metadata, metadataStyles) {
     _assert(message, _tcombForked2.default.String, 'message');
 
     _assert(metadata, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadata');
 
     _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
 
-    this.log(message, metadata, _nightingaleLevels2.default.ALERT, { metadataStyles });
+    this.log(message, metadata, _nightingaleLevels2.default.CRITICAL, { metadataStyles });
   }
 
   /**
@@ -349,6 +346,19 @@ class Logger {
     _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
 
     this.log(message, metadata, _nightingaleLevels2.default.FATAL, { metadataStyles });
+  }
+
+  /**
+   * Log an alert message
+   */
+  alert(message, metadata, metadataStyles) {
+    _assert(message, _tcombForked2.default.String, 'message');
+
+    _assert(metadata, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadata');
+
+    _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
+
+    this.log(message, metadata, _nightingaleLevels2.default.ALERT, { metadataStyles });
   }
 
   /**
@@ -480,9 +490,7 @@ class Logger {
   /**
    * @returns {number} time to pass to timeEnd
    */
-  time(message, metadata, metadataStyles) {
-    let level = _assert(arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : _nightingaleLevels2.default.DEBUG, _tcombForked2.default.Number, 'level');
-
+  time(message, metadata, metadataStyles, level = _nightingaleLevels2.default.DEBUG) {
     _assert(message, _tcombForked2.default.maybe(_tcombForked2.default.String), 'message');
 
     _assert(metadata, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadata');
@@ -518,15 +526,7 @@ class Logger {
    * was called, then logs out the difference
    * and deletes the original record
    */
-  timeEnd(startTime, message) {
-    let metadata = _assert(arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {}, _tcombForked2.default.Object, 'metadata');
-
-    let metadataStyles = _assert(arguments[3], _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
-
-    let level = _assert(arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : _nightingaleLevels2.default.DEBUG, _tcombForked2.default.Number, 'level');
-
-    let options = _assert(arguments[5], _tcombForked2.default.maybe(_tcombForked2.default.Object), 'options');
-
+  timeEnd(startTime, message, metadata = {}, metadataStyles, level = _nightingaleLevels2.default.DEBUG, options) {
     _assert(startTime, _tcombForked2.default.Number, 'startTime');
 
     _assert(message, _tcombForked2.default.String, 'message');

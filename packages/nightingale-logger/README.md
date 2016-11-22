@@ -17,6 +17,10 @@ To see the Logger API, go to [docklets][docklets-url] or [http://nightingalejs.g
 npm install --save nightingale-logger
 ```
 
+## Levels
+
+[nightingale-levels](https://www.npmjs.com/package/nightingale-levels)
+
 ## Usage
 
 ```js

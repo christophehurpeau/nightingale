@@ -9,14 +9,14 @@ if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER) {
 }
 
 if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
-  global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = (key, level) => {
-    var _global$__NIGHTINGALE = global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key),
-        handlers = _global$__NIGHTINGALE.handlers,
-        processors = _global$__NIGHTINGALE.processors;
+  global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = function (key, level) {
+    var { handlers, processors } = global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key);
 
     return {
-      handlers: handlers.filter(handler => level >= handler.minLevel && (!handler.isHandling || handler.isHandling(level, key))),
-      processors
+      handlers: handlers.filter(function (handler) {
+        return level >= handler.minLevel && (!handler.isHandling || handler.isHandling(level, key));
+      }),
+      processors: processors
     };
   };
 }
@@ -70,11 +70,11 @@ export default class Logger {
    * @example
    * const loggerMyService = new Logger('app.myService');
    * function someAction(arg1) {
-     *     const logger = loggerMyService.context({ arg1 });
-     *     logger.info('starting');
-     *     // do stuff
-     *     logger.info('done');
-     * }
+   *     const logger = loggerMyService.context({ arg1 });
+   *     logger.info('starting');
+   *     // do stuff
+   *     logger.info('done');
+   * }
    *
    */
   context(context) {
@@ -105,9 +105,7 @@ export default class Logger {
    * Use this only if you know what you are doing.
    */
   addRecord(record) {
-    var _getHandlersAndProces = this.getHandlersAndProcessors(record.level),
-        handlers = _getHandlersAndProces.handlers,
-        processors = _getHandlersAndProces.processors;
+    var { handlers, processors } = this.getHandlersAndProcessors(record.level);
 
     if (handlers.length === 0) {
       if (record.level > levels.ERROR) {
@@ -121,19 +119,20 @@ export default class Logger {
     }
 
     if (processors) {
-      processors.forEach(process => process(record, record.context));
+      processors.forEach(function (process) {
+        return process(record, record.context);
+      });
     }
 
-    handlers.some(handler => handler.handle(record) === false);
+    handlers.some(function (handler) {
+      return handler.handle(record) === false;
+    });
   }
 
   /**
    * Log a message
    */
-  log(message, metadata) {
-    var level = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : levels.INFO;
-    var options = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : undefined;
-
+  log(message, metadata, level = levels.INFO, options = undefined) {
     var context = metadata && metadata.context;
     if (metadata) {
       delete metadata.context;
@@ -172,6 +171,13 @@ export default class Logger {
   }
 
   /**
+   * Notice an info message
+   */
+  notice(message, metadata, metadataStyles) {
+    this.log(message, metadata, levels.NOTICE, { metadataStyles });
+  }
+
+  /**
    * Log an info message
    */
   info(message, metadata, metadataStyles) {
@@ -188,10 +194,7 @@ export default class Logger {
   /**
    * Log an error message
    */
-  error(message) {
-    var metadata = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-    var metadataStyles = arguments[2];
-
+  error(message, metadata = {}, metadataStyles) {
     if (message instanceof Error) {
       metadata.error = message;
       message = `${ metadata.error.name }: ${ metadata.error.message }`;
@@ -200,10 +203,10 @@ export default class Logger {
   }
 
   /**
-   * Log an alert message
+   * Log an critical message
    */
-  alert(message, metadata, metadataStyles) {
-    this.log(message, metadata, levels.ALERT, { metadataStyles });
+  critical(message, metadata, metadataStyles) {
+    this.log(message, metadata, levels.CRITICAL, { metadataStyles });
   }
 
   /**
@@ -211,6 +214,13 @@ export default class Logger {
    */
   fatal(message, metadata, metadataStyles) {
     this.log(message, metadata, levels.FATAL, { metadataStyles });
+  }
+
+  /**
+   * Log an alert message
+   */
+  alert(message, metadata, metadataStyles) {
+    this.log(message, metadata, levels.ALERT, { metadataStyles });
   }
 
   /**
@@ -288,9 +298,7 @@ export default class Logger {
   /**
    * @returns {number} time to pass to timeEnd
    */
-  time(message, metadata, metadataStyles) {
-    var level = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : levels.DEBUG;
-
+  time(message, metadata, metadataStyles, level = levels.DEBUG) {
     if (message) {
       this.log(message, metadata, level, { metadataStyles });
     }
@@ -308,12 +316,7 @@ export default class Logger {
    * was called, then logs out the difference
    * and deletes the original record
    */
-  timeEnd(startTime, message) {
-    var metadata = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
-    var metadataStyles = arguments[3];
-    var level = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : levels.DEBUG;
-    var options = arguments[5];
-
+  timeEnd(startTime, message, metadata = {}, metadataStyles, level = levels.DEBUG, options) {
     var now = Date.now();
 
     var diffTime = now - startTime;

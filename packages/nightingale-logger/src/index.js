@@ -40,7 +40,7 @@ if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
         handlers: handlers.filter(handler => (
           level >= handler.minLevel && (!handler.isHandling || handler.isHandling(level, key))
         )),
-        processors,
+        processors: processors,
       };
     }
   );
@@ -98,11 +98,11 @@ export default class Logger {
    * @example
    * const loggerMyService = new Logger('app.myService');
    * function someAction(arg1) {
-     *     const logger = loggerMyService.context({ arg1 });
-     *     logger.info('starting');
-     *     // do stuff
-     *     logger.info('done');
-     * }
+   *     const logger = loggerMyService.context({ arg1 });
+   *     logger.info('starting');
+   *     // do stuff
+   *     logger.info('done');
+   * }
    *
    */
   context(context: Object): Logger {
@@ -202,6 +202,13 @@ export default class Logger {
   }
 
   /**
+   * Notice an info message
+   */
+  notice(message: string, metadata: ?Object, metadataStyles: ?Object) {
+    this.log(message, metadata, levels.NOTICE, { metadataStyles });
+  }
+
+  /**
    * Log an info message
    */
   info(message: string, metadata: ?Object, metadataStyles: ?Object) {
@@ -227,10 +234,10 @@ export default class Logger {
   }
 
   /**
-   * Log an alert message
+   * Log an critical message
    */
-  alert(message: string, metadata: ?Object, metadataStyles: ?Object) {
-    this.log(message, metadata, levels.ALERT, { metadataStyles });
+  critical(message: string, metadata: ?Object, metadataStyles: ?Object) {
+    this.log(message, metadata, levels.CRITICAL, { metadataStyles });
   }
 
   /**
@@ -238,6 +245,13 @@ export default class Logger {
    */
   fatal(message: string, metadata: ?Object, metadataStyles: ?Object) {
     this.log(message, metadata, levels.FATAL, { metadataStyles });
+  }
+
+  /**
+   * Log an alert message
+   */
+  alert(message: string, metadata: ?Object, metadataStyles: ?Object) {
+    this.log(message, metadata, levels.ALERT, { metadataStyles });
   }
 
   /**

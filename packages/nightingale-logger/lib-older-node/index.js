@@ -103,11 +103,11 @@ var Logger = function () {
      * @example
      * const loggerMyService = new Logger('app.myService');
      * function someAction(arg1) {
-       *     const logger = loggerMyService.context({ arg1 });
-       *     logger.info('starting');
-       *     // do stuff
-       *     logger.info('done');
-       * }
+     *     const logger = loggerMyService.context({ arg1 });
+     *     logger.info('starting');
+     *     // do stuff
+     *     logger.info('done');
+     * }
      *
      */
 
@@ -240,6 +240,16 @@ var Logger = function () {
     }
 
     /**
+     * Notice an info message
+     */
+
+  }, {
+    key: 'notice',
+    value: function notice(message, metadata, metadataStyles) {
+      this.log(message, metadata, _nightingaleLevels2.default.NOTICE, { metadataStyles: metadataStyles });
+    }
+
+    /**
      * Log an info message
      */
 
@@ -277,13 +287,13 @@ var Logger = function () {
     }
 
     /**
-     * Log an alert message
+     * Log an critical message
      */
 
   }, {
-    key: 'alert',
-    value: function alert(message, metadata, metadataStyles) {
-      this.log(message, metadata, _nightingaleLevels2.default.ALERT, { metadataStyles: metadataStyles });
+    key: 'critical',
+    value: function critical(message, metadata, metadataStyles) {
+      this.log(message, metadata, _nightingaleLevels2.default.CRITICAL, { metadataStyles: metadataStyles });
     }
 
     /**
@@ -294,6 +304,16 @@ var Logger = function () {
     key: 'fatal',
     value: function fatal(message, metadata, metadataStyles) {
       this.log(message, metadata, _nightingaleLevels2.default.FATAL, { metadataStyles: metadataStyles });
+    }
+
+    /**
+     * Log an alert message
+     */
+
+  }, {
+    key: 'alert',
+    value: function alert(message, metadata, metadataStyles) {
+      this.log(message, metadata, _nightingaleLevels2.default.ALERT, { metadataStyles: metadataStyles });
     }
 
     /**
