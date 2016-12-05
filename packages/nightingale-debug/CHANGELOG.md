@@ -1,3 +1,8 @@
+### v2.1.0
+
+- [`3f4713d`](https://github.com/nightingalejs/nightingale-debug/commit/3f4713d590e167a473ee86395d159cc21865ca21) chore(package): fix main in package.json (Christophe Hurpeau)
+- [`5d7ccdb`](https://github.com/nightingalejs/nightingale-debug/commit/5d7ccdbb023e12efd7453f9113750c336e56e9fd) refactor: update dependencies (Christophe Hurpeau)
+
 ### v2.0.1
 
 - [`c3145ee`](https://github.com/nightingalejs/nightingale-debug/commit/c3145ee7dfffdac6bb1e2d72ea6080fcc9134e32) docs: fix travis badge (Christophe Hurpeau)
