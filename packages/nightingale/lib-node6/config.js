@@ -7,12 +7,6 @@ exports.configure = configure;
 exports.addConfig = addConfig;
 
 
-if (global.__NIGHTINGALE_GLOBAL_HANDLERS) {
-  // eslint-disable-next-line no-console
-  console.log('nightingale: update all to ^5.0.0');
-  process.exit(1);
-}
-
 if (!global.__NIGHTINGALE_CONFIG) {
   global.__NIGHTINGALE_CONFIG = [];
   global.__NIGHTINGALE_LOGGER_MAP_CACHE = new Map();

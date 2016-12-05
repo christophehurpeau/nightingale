@@ -32,8 +32,8 @@
     "watch": "pob-watch"
   },
   "dependencies": {
-    "nightingale-levels": "^1.0.0",
-    "nightingale-logger": "^3.0.0"
+    "nightingale-levels": "^1.1.0",
+    "nightingale-logger": "^3.1.0"
   },
   "devDependencies": {
     "babel-eslint": "^7.1.0",
@@ -59,7 +59,7 @@
     "komet-karma": "^0.2.3",
     "minami": "^1.1.1",
     "mocha": "^3.1.2",
-    "nightingale-console": "^2.1.0",
+    "nightingale-console": "^2.2.0",
     "nightingale-console-output": "^1.2.0",
     "nightingale-json-formatter": "^1.2.0",
     "nightingale-string": "^2.0.0",

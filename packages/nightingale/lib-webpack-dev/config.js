@@ -14,8 +14,7 @@ var Config = _t.interface({
 
 if (global.__NIGHTINGALE_GLOBAL_HANDLERS) {
   // eslint-disable-next-line no-console
-  console.log('nightingale: update all to ^5.0.0');
-  process.exit(1);
+  throw new Error('nightingale: update all to ^5.0.0');
 }
 
 if (!global.__NIGHTINGALE_CONFIG) {

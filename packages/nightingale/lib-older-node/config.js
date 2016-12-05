@@ -8,12 +8,6 @@ exports.addConfig = addConfig;
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
-if (global.__NIGHTINGALE_GLOBAL_HANDLERS) {
-  // eslint-disable-next-line no-console
-  console.log('nightingale: update all to ^5.0.0');
-  process.exit(1);
-}
-
 if (!global.__NIGHTINGALE_CONFIG) {
   global.__NIGHTINGALE_CONFIG = [];
   global.__NIGHTINGALE_LOGGER_MAP_CACHE = new Map();
