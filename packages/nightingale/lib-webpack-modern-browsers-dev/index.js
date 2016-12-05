@@ -15,8 +15,12 @@ export function listenUnhandledErrors(logger) {
   _assert(logger, _t.maybe(Logger), 'logger');
 
   if (!logger) logger = new Logger('nightingale.listenUnhandledErrors', 'listenUnhandledErrors');
-  process.on('uncaughtException', err => logger.error('uncaughtException', { err }));
-  process.on('unhandledRejection', err => logger.error('unhandledRejection', { err }));
+  process.on('uncaughtException', function (err) {
+    return logger.error('uncaughtException', { err });
+  });
+  process.on('unhandledRejection', function (err) {
+    return logger.error('unhandledRejection', { err });
+  });
 }
 
 function _assert(x, type, name) {

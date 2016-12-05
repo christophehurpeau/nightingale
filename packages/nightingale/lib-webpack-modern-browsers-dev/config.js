@@ -76,9 +76,7 @@ export function configure(config) {
   global.__NIGHTINGALE_CONFIG = config.map(handleConfig);
 }
 
-export function addConfig(config) {
-  var unshift = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
-
+export function addConfig(config, unshift = false) {
   _assert(config, Config, 'config');
 
   config = handleConfig(config);
@@ -86,10 +84,12 @@ export function addConfig(config) {
   clearCache();
 }
 
-var configIsForKey = key => config => {
-  if (config.keys) return config.keys.includes(key);
-  if (config.pattern) return config.pattern.test(key);
-  return true;
+var configIsForKey = function configIsForKey(key) {
+  return function (config) {
+    if (config.keys) return config.keys.includes(key);
+    if (config.pattern) return config.pattern.test(key);
+    return true;
+  };
 };
 
 global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = function getConfigForLogger(key) {
@@ -104,7 +104,7 @@ global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = function getConfigForLogger(key) {
     processors: []
   };
 
-  global.__NIGHTINGALE_CONFIG.filter(configIsForKey(key)).some(config => {
+  global.__NIGHTINGALE_CONFIG.filter(configIsForKey(key)).some(function (config) {
     if (config.handlers) loggerConfig.handlers.push(...config.handlers);
     if (config.processors) loggerConfig.processors.push(...config.processors);
     return config.stop;
@@ -115,12 +115,12 @@ global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = function getConfigForLogger(key) {
 };
 
 global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = function getConfigForLoggerRecord(key, level) {
-  var _global$__NIGHTINGALE = global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key),
-      handlers = _global$__NIGHTINGALE.handlers,
-      processors = _global$__NIGHTINGALE.processors;
+  var { handlers, processors } = global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key);
 
   return {
-    handlers: handlers.filter(handler => level >= handler.minLevel && (!handler.isHandling || handler.isHandling(level, key))),
+    handlers: handlers.filter(function (handler) {
+      return level >= handler.minLevel && (!handler.isHandling || handler.isHandling(level, key));
+    }),
     processors
   };
 };
