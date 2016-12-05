@@ -1,3 +1,9 @@
+nr publish### v6.0.1
+
+- [`c554afd`](https://github.com/nightingalejs/nightingale/commit/c554afdee412d925ff270dba88106da215645cc2) docs: add link to nightingale-app-console (Christophe Hurpeau)
+- [`c802ba2`](https://github.com/nightingalejs/nightingale/commit/c802ba2fd0db20d71fe06e9c86d65f2e52788a56) fix: replace process.exit by throw new Error (Christophe Hurpeau)
+
+
 ### v6.0.0
 
 - [`f6643b4`](https://github.com/nightingalejs/nightingale/commit/f6643b4ff1b434fb2887eeade74e4601906bdbfd) chore(package): nightingale-logger@3.0.0 (Christophe Hurpeau)
