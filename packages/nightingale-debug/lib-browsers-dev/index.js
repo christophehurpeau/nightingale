@@ -83,7 +83,7 @@ function createFindDebugLevel(debugValue) {
 
   if (wilcard) {
     if (skips.length === 0) {
-      return function (minLevel) {
+      return function () {
         return _nightingaleLevels2.default.ALL;
       };
     } else {

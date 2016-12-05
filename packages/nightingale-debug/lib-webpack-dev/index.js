@@ -69,7 +69,7 @@ export default function createFindDebugLevel(debugValue) {
 
   if (wilcard) {
     if (skips.length === 0) {
-      return function (minLevel) {
+      return function () {
         return levels.ALL;
       };
     } else {

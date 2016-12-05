@@ -2,19 +2,25 @@ import levels from 'nightingale-levels';
 
 var specialRegexpChars = /[\\^$+?.()|[\]{}]/;
 
-var createTestFunctionFromRegexpString = value => {
+var createTestFunctionFromRegexpString = function createTestFunctionFromRegexpString(value) {
   if (!value.endsWith('/')) throw new Error('Invalid RegExp DEBUG value');
   var regexp = new RegExp(value.slice(1, -1));
-  return string => regexp.test(string);
+  return function (string) {
+    return regexp.test(string);
+  };
 };
 
-var createTestFunctionFromValue = value => {
+var createTestFunctionFromValue = function createTestFunctionFromValue(value) {
   if (value.endsWith(':*')) {
     value = value.slice(0, -2);
-    return string => string.startsWith(value);
+    return function (string) {
+      return string.startsWith(value);
+    };
   }
 
-  return string => string === value;
+  return function (string) {
+    return string === value;
+  };
 };
 
 export default function createFindDebugLevel(debugValue) {
@@ -36,7 +42,7 @@ export default function createFindDebugLevel(debugValue) {
   }
 
   if (debugValue) {
-    debugValue.forEach(value => {
+    debugValue.forEach(function (value) {
       if (specialRegexpChars.test(value)) {
         throw new Error(`Invalid debug value: "${ value }" (contains special chars)`);
       }
@@ -58,23 +64,35 @@ export default function createFindDebugLevel(debugValue) {
 
   if (wilcard) {
     if (skips.length === 0) {
-      return minLevel => levels.ALL;
+      return function () {
+        return levels.ALL;
+      };
     } else {
-      return (minLevel, key) => skips.some(skip => skip(key)) ? minLevel : levels.ALL;
+      return function (minLevel, key) {
+        return skips.some(function (skip) {
+          return skip(key);
+        }) ? minLevel : levels.ALL;
+      };
     }
   }
 
   if (debugValues.length === 0) {
-    return minLevel => minLevel;
+    return function (minLevel) {
+      return minLevel;
+    };
   }
 
-  return (minLevel, key) => {
+  return function (minLevel, key) {
     if (minLevel === levels.ALL || !key) {
       return minLevel;
     }
 
-    if (debugValues.some(debugValue => debugValue(key))) {
-      return skips.some(skip => skip(key)) ? minLevel : levels.ALL;
+    if (debugValues.some(function (debugValue) {
+      return debugValue(key);
+    })) {
+      return skips.some(function (skip) {
+        return skip(key);
+      }) ? minLevel : levels.ALL;
     }
 
     return minLevel;
