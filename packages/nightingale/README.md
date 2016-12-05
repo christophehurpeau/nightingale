@@ -90,13 +90,13 @@ npm install --save nightingale nightingale-browser-console
 ![browser log example](https://static.hurpeau.com/images/npm/nightingale/log_in_firefox.png)
 
 ```js
-import { configure, logLevels } from 'nightingale';
+import { configure, levels } from 'nightingale';
 import BrowserConsoleHandler from 'nightingale-browser-console';
 
 configure([
     {
         key: 'app',
-        handlers: [new BrowserConsoleHandler(logLevels.INFO)],
+        handlers: [new BrowserConsoleHandler(levels.INFO)],
     }
 ]);
 ```
