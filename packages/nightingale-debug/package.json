@@ -9,7 +9,7 @@
   "license": "ISC",
   "repository": "git@github.com:nightingalejs/nightingale-debug.git",
   "homepage": "https://github.com/nightingalejs/nightingale",
-  "main": "./lib/node.js",
+  "main": "./index.js",
   "browser": "./browser/lib/browser.js",
   "webpack:main": "./lib-webpack/index.js",
   "webpack:main-dev": "./lib-webpack-dev/index.js",
