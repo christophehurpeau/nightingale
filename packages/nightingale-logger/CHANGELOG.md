@@ -1,3 +1,9 @@
+### v3.1.1
+
+- [`55be859`](https://github.com/nightingalejs/nightingale-logger/commit/55be859755496de5189ec69043e6b562b92a1a14) update dependencies (Christophe Hurpeau)
+- [`c97f1e1`](https://github.com/nightingalejs/nightingale-logger/commit/c97f1e171782a47dffe874c0cf7a9767e3c076f9) fix: logger key warning (Christophe Hurpeau)
+- [`2582acc`](https://github.com/nightingalejs/nightingale-logger/commit/2582acc6e7d2eeb969f90affb3d548df509b495a) chore(package): update dependencies (Christophe Hurpeau)
+
 ### v3.1.0
 
 - [`3641ac2`](https://github.com/nightingalejs/nightingale-logger/commit/3641ac22976d215c75547a8a8b7c2a2fd0bfbdbe) refactor: update dependencies, add notice and critical (Christophe Hurpeau)
