@@ -11,10 +11,13 @@
   "repository": "git@github.com:nightingalejs/nightingale-sentry.git",
   "homepage": "https://github.com/nightingalejs/nightingale",
   "main": "./lib/index.js",
+  "webpack:node": "./lib-node6/index.js",
+  "webpack:node-dev": "./lib-node6-dev/index.js",
   "scripts": {
     "build": "pob-build",
     "clean": "rm -Rf docs dist test/node6 coverage",
-    "lint": "eslint --ext .js,.jsx --fix src/",
+    "lint": "eslint --ext .js,.jsx src/",
+    "prepare": "ln -s ../../git-hooks/pre-commit .git/hooks/pre-commit 2>/dev/null || true ; ln -s ../../git-hooks/post-checkout .git/hooks/post-checkout 2>/dev/null || true ; ln -s ../../git-hooks/post-merge .git/hooks/post-merge 2>/dev/null || true ; ln -s ../../git-hooks/prepare-commit-msg .git/hooks/prepare-commit-msg 2>/dev/null || true",
     "prepublish": "ln -s ../../git-hooks/pre-commit .git/hooks/pre-commit 2>/dev/null || true ; ln -s ../../git-hooks/post-checkout .git/hooks/post-checkout 2>/dev/null || true ; ln -s ../../git-hooks/post-merge .git/hooks/post-merge 2>/dev/null || true ; ln -s ../../git-hooks/prepare-commit-msg .git/hooks/prepare-commit-msg 2>/dev/null || true",
     "preversion": "npm run lint && npm run build && pob-repository-check-clean",
     "release": "pob-repository-check-clean && pob-release",
@@ -23,15 +26,15 @@
   },
   "dependencies": {
     "nightingale-levels": "^1.0.0",
-    "raven": "^0.12.1"
+    "raven": "^1.1.1"
   },
   "devDependencies": {
     "babel-eslint": "^7.1.0",
     "babel-preset-es2015-node6": "^0.4.0",
-    "eslint": "^3.10.1",
-    "eslint-config-airbnb-base": "^10.0.1",
-    "eslint-config-pob": "^9.0.1",
-    "eslint-plugin-babel": "^3.3.0",
+    "eslint": "^3.10.2",
+    "eslint-config-airbnb-base": "^11.0.0",
+    "eslint-config-pob": "^10.0.1",
+    "eslint-plugin-babel": "^4.0.0",
     "eslint-plugin-import": "^2.2.0",
     "komet": "^0.1.3",
     "komet-karma": "^0.2.3",
