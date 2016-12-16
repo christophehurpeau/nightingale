@@ -92,12 +92,13 @@ var Logger = function () {
 
     _classCallCheck(this, Logger);
 
-    if (key.includes('.')) {
-      this.warn('nightingale: `.` in key is deprecated, replace with `:`', { key: key, displayName: displayName });
-      key = key.replace(/\./g, ':');
-    }
     this.key = key;
     this.displayName = displayName;
+
+    if (key.includes('.')) {
+      this.warn('nightingale: `.` in key is deprecated, replace with `:`', { key: key, displayName: displayName });
+      this.key = key.replace(/\./g, ':');
+    }
   }
 
   /** @private */
