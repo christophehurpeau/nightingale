@@ -1,3 +1,18 @@
+<a name="6.0.2"></a>
+## [6.0.2](https://github.com/nightingalejs/nightingale/compare/v6.0.0...v6.0.2) (2017-01-05)
+
+
+### Bug Fixes
+
+* replace process.exit by throw new Error ([d6862d2](https://github.com/nightingalejs/nightingale/commit/d6862d2))
+* strict check config keys ([ffac7b7](https://github.com/nightingalejs/nightingale/commit/ffac7b7))
+
+
+### BREAKING CHANGES
+
+* can throw errors in dev mode
+
+
 nr publish### v6.0.1
 
 - [`c554afd`](https://github.com/nightingalejs/nightingale/commit/c554afdee412d925ff270dba88106da215645cc2) docs: add link to nightingale-app-console (Christophe Hurpeau)
