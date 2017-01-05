@@ -1,4 +1,5 @@
 type Config = {|
+  stop: ?boolean,
   pattern: ?RegExp,
   key: ?string,
   keys: ?Array<string>,

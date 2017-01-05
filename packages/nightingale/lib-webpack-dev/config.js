@@ -3,6 +3,7 @@ import _t from 'tcomb-forked';
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 var Config = _t.interface({
+  stop: _t.maybe(_t.Boolean),
   pattern: _t.maybe(RegExp),
   key: _t.maybe(_t.String),
   keys: _t.maybe(_t.list(_t.String)),

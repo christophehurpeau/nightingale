@@ -1,6 +1,7 @@
 import _t from 'tcomb-forked';
 
 var Config = _t.interface({
+  stop: _t.maybe(_t.Boolean),
   pattern: _t.maybe(RegExp),
   key: _t.maybe(_t.String),
   keys: _t.maybe(_t.list(_t.String)),

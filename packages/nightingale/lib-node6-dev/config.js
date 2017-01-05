@@ -13,6 +13,7 @@ var _tcombForked2 = _interopRequireDefault(_tcombForked);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const Config = _tcombForked2.default.interface({
+  stop: _tcombForked2.default.maybe(_tcombForked2.default.Boolean),
   pattern: _tcombForked2.default.maybe(RegExp),
   key: _tcombForked2.default.maybe(_tcombForked2.default.String),
   keys: _tcombForked2.default.maybe(_tcombForked2.default.list(_tcombForked2.default.String)),
