@@ -8,5 +8,6 @@
   ],
   "react": false,
   "testing": true,
-  "documentation": true
+  "documentation": true,
+  "doclets": true
 }

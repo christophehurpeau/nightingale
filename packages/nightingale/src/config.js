@@ -1,4 +1,4 @@
-type Config = {
+type Config = {|
   pattern: ?RegExp,
   key: ?string,
   keys: ?Array<string>,
@@ -6,7 +6,7 @@ type Config = {
   handlers: ?Array<Object>,
   processor: ?any,
   processors: ?Array<any>,
-};
+|};
 
 if (!PRODUCTION && global.__NIGHTINGALE_GLOBAL_HANDLERS) {
   // eslint-disable-next-line no-console

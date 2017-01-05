@@ -8,7 +8,10 @@ var Config = _t.interface({
   handlers: _t.maybe(_t.list(_t.Object)),
   processor: _t.maybe(_t.Any),
   processors: _t.maybe(_t.list(_t.Any))
-}, 'Config');
+}, {
+  name: 'Config',
+  strict: true
+});
 
 if (global.__NIGHTINGALE_GLOBAL_HANDLERS) {
   // eslint-disable-next-line no-console

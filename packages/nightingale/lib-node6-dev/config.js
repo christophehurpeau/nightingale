@@ -20,7 +20,10 @@ const Config = _tcombForked2.default.interface({
   handlers: _tcombForked2.default.maybe(_tcombForked2.default.list(_tcombForked2.default.Object)),
   processor: _tcombForked2.default.maybe(_tcombForked2.default.Any),
   processors: _tcombForked2.default.maybe(_tcombForked2.default.list(_tcombForked2.default.Any))
-}, 'Config');
+}, {
+  name: 'Config',
+  strict: true
+});
 
 if (global.__NIGHTINGALE_GLOBAL_HANDLERS) {
   // eslint-disable-next-line no-console
