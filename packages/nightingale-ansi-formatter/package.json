@@ -10,12 +10,18 @@
   "license": "ISC",
   "repository": "git@github.com:nightingalejs/nightingale-ansi-formatter.git",
   "homepage": "https://github.com/nightingalejs/nightingale",
+  "engines": {
+    "node": ">=6.5.0"
+  },
   "main": "./index.js",
+  "webpack:node": "./lib-webpack-node7/index.js",
+  "webpack:node-dev": "./lib-webpack-node7-dev/index.js",
   "scripts": {
     "build": "pob-build",
     "clean": "rm -Rf docs dist test/node6 coverage",
     "generate:test-coverage": "rm -Rf coverage/ ; NODE_ENV=production node --harmony --es_staging node_modules/istanbul/lib/cli.js cover node_modules/.bin/_mocha -- --recursive --reporter=spec -u tdd test/node6",
-    "lint": "eslint --ext .js,.jsx --fix src/ test/src/",
+    "lint": "eslint --ext .js,.jsx src/ test/src/",
+    "prepare": "ln -s ../../git-hooks/pre-commit .git/hooks/pre-commit 2>/dev/null || true ; ln -s ../../git-hooks/post-checkout .git/hooks/post-checkout 2>/dev/null || true ; ln -s ../../git-hooks/post-merge .git/hooks/post-merge 2>/dev/null || true ; ln -s ../../git-hooks/prepare-commit-msg .git/hooks/prepare-commit-msg 2>/dev/null || true",
     "prepublish": "ln -s ../../git-hooks/pre-commit .git/hooks/pre-commit 2>/dev/null || true ; ln -s ../../git-hooks/post-checkout .git/hooks/post-checkout 2>/dev/null || true ; ln -s ../../git-hooks/post-merge .git/hooks/post-merge 2>/dev/null || true ; ln -s ../../git-hooks/prepare-commit-msg .git/hooks/prepare-commit-msg 2>/dev/null || true",
     "preversion": "npm run lint && npm run build && pob-repository-check-clean",
     "release": "pob-repository-check-clean && pob-release",
@@ -25,24 +31,23 @@
   },
   "dependencies": {
     "ansi-styles": "github:chalk/ansi-styles#47ccb63c5b9b296b39188717b0efc4123a036d47",
-    "nightingale-formatter": "^1.4.0 || ^2.0.2"
+    "flow-runtime": "^0.6.1",
+    "nightingale-formatter": "^2.1.0"
   },
   "devDependencies": {
-    "babel-cli": "^6.18.0",
-    "babel-eslint": "^7.1.0",
-    "babel-preset-es2015-node6": "^0.4.0",
-    "eslint": "^3.10.2",
-    "eslint-config-airbnb-base": "^10.0.1",
-    "eslint-config-pob": "^9.0.1",
-    "eslint-plugin-babel": "^3.3.0",
+    "babel-eslint": "^7.1.1",
+    "babel-preset-latest-node": "^0.1.0",
+    "eslint": "^3.16.1",
+    "eslint-config-airbnb-base": "^11.1.0",
+    "eslint-config-pob": "^11.1.0",
+    "eslint-plugin-babel": "^4.1.0",
     "eslint-plugin-import": "^2.2.0",
     "istanbul": "^0.4.5",
-    "komet": "^0.1.3",
-    "komet-karma": "^0.2.3",
-    "mocha": "^3.1.2",
-    "pob-babel": "^12.8.0",
-    "pob-release": "^2.3.0",
-    "tcomb-forked": "^3.4.0",
+    "komet": "^0.1.4",
+    "komet-karma": "^0.2.5",
+    "mocha": "^3.2.0",
+    "pob-babel": "^16.1.0",
+    "pob-release": "^3.1.0",
     "xunit-file": "^1.0.0"
   }
 }
