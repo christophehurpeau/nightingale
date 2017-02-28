@@ -1,3 +1,12 @@
+<a name="1.1.0"></a>
+# [1.1.0](https://github.com/nightingalejs/nightingale-browser-console/compare/v1.0.1...v1.1.0) (2017-02-28)
+
+
+### Features
+
+* pob upgrade ([21b4756](https://github.com/nightingalejs/nightingale-browser-console/commit/21b4756))
+
+
 ### v1.0.1
 
 
