@@ -1,5 +1,7 @@
+/* eslint-disable max-lines */
 
-import levels from 'nightingale-levels'; /* eslint-disable max-lines */
+import util from 'util';
+import levels from 'nightingale-levels';
 
 import t from 'flow-runtime';
 const RecordType = t.type('RecordType', t.object(t.property('level', t.number()), t.property('key', t.string()), t.property('displayName', t.nullable(t.string())), t.property('datetime', t.ref('Date')), t.property('message', t.string()), t.property('context', t.nullable(t.object())), t.property('metadata', t.nullable(t.object())), t.property('extra', t.nullable(t.object()))));
@@ -17,7 +19,7 @@ if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER) {
 }
 
 if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
-  global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = function (key, level) {
+  global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = (key, level) => {
     let _keyType = t.string();
 
     let _levelType = t.number();
@@ -30,9 +32,7 @@ if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
     const { handlers, processors } = global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key);
 
     return _returnType2.assert({
-      handlers: handlers.filter(function (handler) {
-        return level >= handler.minLevel && (!handler.isHandling || handler.isHandling(level, key));
-      }),
+      handlers: handlers.filter(handler => level >= handler.minLevel && (!handler.isHandling || handler.isHandling(level, key))),
       processors: processors
     });
   };
@@ -188,14 +188,10 @@ export default class Logger {
     }
 
     if (processors) {
-      processors.forEach(function (process) {
-        return process(record, record.context);
-      });
+      processors.forEach(process => process(record, record.context));
     }
 
-    handlers.some(function (handler) {
-      return handler.handle(record) === false;
-    });
+    handlers.some(handler => handler.handle(record) === false);
   }
 
   /**
@@ -409,7 +405,10 @@ export default class Logger {
     t.param('metadata', _metadataType11).assert(metadata);
     t.param('metadataStyles', _metadataStylesType10).assert(metadataStyles);
 
-    throw new Error('Not supported for the browser. Prefer `debugger;`');
+    // Note: inspect is a special function for node:
+    // https://github.com/nodejs/node/blob/a1bda1b4deb08dfb3e06cb778f0db40023b18318/lib/util.js#L210
+    value = _valueType.assert(util.inspect(value, { depth: 6 }));
+    this.log(value, metadata, levels.DEBUG, { metadataStyles, styles: ['gray'] });
   }
 
   /**
@@ -429,7 +428,8 @@ export default class Logger {
     t.param('metadata', _metadataType12).assert(metadata);
     t.param('metadataStyles', _metadataStylesType11).assert(metadataStyles);
 
-    throw new Error('Not supported for the browser. Prefer `debugger;`');
+    varValue = _varValueType.assert(util.inspect(varValue, { depth: 6 }));
+    this.log(`${varName} = ${varValue}`, metadata, levels.DEBUG, { metadataStyles, styles: ['cyan'] });
   }
 
   /**

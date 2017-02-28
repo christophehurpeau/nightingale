@@ -1,0 +1,13 @@
+[ignore]
+<PROJECT_ROOT>/index.js
+<PROJECT_ROOT>/lib.*
+<PROJECT_ROOT>/node_modules/.*
+
+[include]
+
+[libs]
+
+[options]
+all=true
+module.use_strict=true
+esproposal.export_star_as=enable

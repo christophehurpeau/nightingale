@@ -1,6 +1,5 @@
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-import levels from 'nightingale-levels';
+import levels from 'nightingale-levels'; /* eslint-disable max-lines */
 
 if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER) {
   global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = function () {
@@ -10,7 +9,7 @@ if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER) {
 
 if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
   global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = function (key, level) {
-    var { handlers, processors } = global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key);
+    const { handlers, processors } = global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key);
 
     return {
       handlers: handlers.filter(function (handler) {
@@ -62,7 +61,7 @@ export default class Logger {
    * Create a child logger
    */
   child(childSuffixKey, childDisplayName) {
-    return new Logger(`${ this.key }:${ childSuffixKey }`, childDisplayName);
+    return new Logger(`${this.key}:${childSuffixKey}`, childDisplayName);
   }
 
   /**
@@ -79,7 +78,7 @@ export default class Logger {
    *
    */
   context(context) {
-    var logger = new Logger(this.key);
+    const logger = new Logger(this.key);
     logger.setContext(context);
     return logger;
   }
@@ -106,7 +105,7 @@ export default class Logger {
    * Use this only if you know what you are doing.
    */
   addRecord(record) {
-    var { handlers, processors } = this.getHandlersAndProcessors(record.level);
+    let { handlers, processors } = this.getHandlersAndProcessors(record.level);
 
     if (handlers.length === 0) {
       if (record.level > levels.ERROR) {
@@ -134,12 +133,12 @@ export default class Logger {
    * Log a message
    */
   log(message, metadata, level = levels.INFO, options = undefined) {
-    var context = metadata && metadata.context;
+    let context = metadata && metadata.context;
     if (metadata) {
       delete metadata.context;
     }
 
-    var record = {
+    let record = {
       level: level,
       key: this.key,
       displayName: this.displayName,
@@ -198,7 +197,7 @@ export default class Logger {
   error(message, metadata = {}, metadataStyles) {
     if (message instanceof Error) {
       metadata.error = message;
-      message = `${ metadata.error.name }: ${ metadata.error.message }`;
+      message = `${metadata.error.name}: ${metadata.error.message}`;
     }
     this.log(message, metadata, levels.ERROR, { metadataStyles });
   }
@@ -227,14 +226,14 @@ export default class Logger {
   /**
    * Log an inspected value
    */
-  inspectValue(value, metadata, metadataStyles) {
+  inspectValue() {
     throw new Error('Not supported for the browser. Prefer `debugger;`');
   }
 
   /**
    * Log a debugged var
    */
-  inspectVar(varName, varValue, metadata, metadataStyles) {
+  inspectVar() {
     throw new Error('Not supported for the browser. Prefer `debugger;`');
   }
 
@@ -318,20 +317,20 @@ export default class Logger {
    * and deletes the original record
    */
   timeEnd(startTime, message, metadata = {}, metadataStyles, level = levels.DEBUG, options) {
-    var now = Date.now();
+    const now = Date.now();
 
-    var diffTime = now - startTime;
+    const diffTime = now - startTime;
 
     if (diffTime < 1000) {
-      metadata.readableTime = `${ diffTime }ms`;
+      metadata.readableTime = `${diffTime}ms`;
     } else {
-      var seconds = diffTime > 1000 && Math.floor(diffTime / 1000);
+      const seconds = diffTime > 1000 && Math.floor(diffTime / 1000);
 
-      metadata.readableTime = `${ seconds ? `${ seconds }s and ` : '' }${ diffTime - seconds * 1000 }ms`;
+      metadata.readableTime = `${seconds ? `${seconds}s and ` : ''}${diffTime - seconds * 1000}ms`;
     }
 
     metadata.timeMs = diffTime;
-    this.log(message, metadata, level, _extends({}, options, { metadataStyles }));
+    this.log(message, metadata, level, Object.assign({}, options, { metadataStyles }));
   }
 
   /**
@@ -364,7 +363,7 @@ export default class Logger {
    *
    */
   enter(fn, metadata, metadataStyles) {
-    metadata = _extends({
+    metadata = Object.assign({
       functionName: fn.name
     }, metadata);
     this.log('enter', metadata, levels.TRACE, { metadataStyles });
@@ -383,7 +382,7 @@ export default class Logger {
    * }
    */
   exit(fn, metadata, metadataStyles) {
-    metadata = _extends({
+    metadata = Object.assign({
       functionName: fn.name
     }, metadata);
     this.log('exit', metadata, levels.TRACE, { metadataStyles });

@@ -4,84 +4,74 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _tcombForked = require('tcomb-forked');
-
-var _tcombForked2 = _interopRequireDefault(_tcombForked);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /* eslint-disable max-lines */
 
 var _nightingaleLevels = require('nightingale-levels');
 
 var _nightingaleLevels2 = _interopRequireDefault(_nightingaleLevels);
 
+var _flowRuntime = require('flow-runtime');
+
+var _flowRuntime2 = _interopRequireDefault(_flowRuntime);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var RecordType = _tcombForked2.default.interface({
-  level: _tcombForked2.default.Number,
-  key: _tcombForked2.default.String,
-  displayName: _tcombForked2.default.maybe(_tcombForked2.default.String),
-  datetime: Date,
-  message: _tcombForked2.default.String,
-  context: _tcombForked2.default.maybe(_tcombForked2.default.Object),
-  metadata: _tcombForked2.default.maybe(_tcombForked2.default.Object),
-  extra: _tcombForked2.default.maybe(_tcombForked2.default.Object)
-}, 'RecordType');
+var RecordType = _flowRuntime2.default.type('RecordType', _flowRuntime2.default.object(_flowRuntime2.default.property('level', _flowRuntime2.default.number()), _flowRuntime2.default.property('key', _flowRuntime2.default.string()), _flowRuntime2.default.property('displayName', _flowRuntime2.default.nullable(_flowRuntime2.default.string())), _flowRuntime2.default.property('datetime', _flowRuntime2.default.ref('Date')), _flowRuntime2.default.property('message', _flowRuntime2.default.string()), _flowRuntime2.default.property('context', _flowRuntime2.default.nullable(_flowRuntime2.default.object())), _flowRuntime2.default.property('metadata', _flowRuntime2.default.nullable(_flowRuntime2.default.object())), _flowRuntime2.default.property('extra', _flowRuntime2.default.nullable(_flowRuntime2.default.object()))));
 
-var HandlerType = _tcombForked2.default.interface({
-  minLevel: _tcombForked2.default.Number,
-  isHandling: _tcombForked2.default.maybe(_tcombForked2.default.Function),
-  handle: _tcombForked2.default.maybe(_tcombForked2.default.Function)
-}, 'HandlerType');
+var HandlerType = _flowRuntime2.default.type('HandlerType', _flowRuntime2.default.object(_flowRuntime2.default.property('minLevel', _flowRuntime2.default.number()), _flowRuntime2.default.property('isHandling', _flowRuntime2.default.nullable(_flowRuntime2.default.function(_flowRuntime2.default.return(_flowRuntime2.default.boolean())))), _flowRuntime2.default.property('handle', _flowRuntime2.default.nullable(_flowRuntime2.default.function(_flowRuntime2.default.param('record', RecordType), _flowRuntime2.default.return(_flowRuntime2.default.boolean()))))));
 
-var ProcessorType = _tcombForked2.default.Function;
+var ProcessorType = _flowRuntime2.default.type('ProcessorType', _flowRuntime2.default.function(_flowRuntime2.default.param('record', RecordType), _flowRuntime2.default.return(_flowRuntime2.default.void())));
 
-var ConfigForLoggerType = _tcombForked2.default.interface({
-  handlers: _tcombForked2.default.list(HandlerType),
-  processors: _tcombForked2.default.list(ProcessorType)
-}, 'ConfigForLoggerType');
+var ConfigForLoggerType = _flowRuntime2.default.type('ConfigForLoggerType', _flowRuntime2.default.object(_flowRuntime2.default.property('handlers', _flowRuntime2.default.array(HandlerType)), _flowRuntime2.default.property('processors', _flowRuntime2.default.array(ProcessorType))));
 
 if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER) {
   global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = function () {
-    return _assert(function () {
-      return { handlers: [], processors: [] };
-    }.apply(this, arguments), ConfigForLoggerType, 'return value');
+    var _returnType = _flowRuntime2.default.return(ConfigForLoggerType);
+
+    return _returnType.assert({ handlers: [], processors: [] });
   };
 }
 
 if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
   global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = function (key, level) {
-    _assert(key, _tcombForked2.default.String, 'key');
+    var _keyType = _flowRuntime2.default.string();
 
-    _assert(level, _tcombForked2.default.Number, 'level');
+    var _levelType = _flowRuntime2.default.number();
 
-    return _assert(function () {
-      var _global$__NIGHTINGALE = global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key),
-          handlers = _global$__NIGHTINGALE.handlers,
-          processors = _global$__NIGHTINGALE.processors;
+    var _returnType2 = _flowRuntime2.default.return(ConfigForLoggerType);
 
-      return {
-        handlers: handlers.filter(function (handler) {
-          return level >= handler.minLevel && (!handler.isHandling || handler.isHandling(level, key));
-        }),
-        processors: processors
-      };
-    }(), ConfigForLoggerType, 'return value');
+    _flowRuntime2.default.param('key', _keyType).assert(key);
+
+    _flowRuntime2.default.param('level', _levelType).assert(level);
+
+    var _global$__NIGHTINGALE = global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key),
+        handlers = _global$__NIGHTINGALE.handlers,
+        processors = _global$__NIGHTINGALE.processors;
+
+    return _returnType2.assert({
+      handlers: handlers.filter(function (handler) {
+        return level >= handler.minLevel && (!handler.isHandling || handler.isHandling(level, key));
+      }),
+      processors: processors
+    });
   };
 }
 
 /** @private */
 function getConfigForLoggerRecord(key, recordLevel) {
-  _assert(key, _tcombForked2.default.maybe(_tcombForked2.default.String), 'key');
+  var _keyType2 = _flowRuntime2.default.nullable(_flowRuntime2.default.string());
 
-  _assert(recordLevel, _tcombForked2.default.Number, 'recordLevel');
+  var _recordLevelType = _flowRuntime2.default.number();
 
-  return _assert(function () {
-    return global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD(key, recordLevel);
-  }.apply(this, arguments), ConfigForLoggerType, 'return value');
+  var _returnType3 = _flowRuntime2.default.return(ConfigForLoggerType);
+
+  _flowRuntime2.default.param('key', _keyType2).assert(key);
+
+  _flowRuntime2.default.param('recordLevel', _recordLevelType).assert(recordLevel);
+
+  return _returnType3.assert(global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD(key, recordLevel));
 }
 
 /**
@@ -98,11 +88,15 @@ var Logger = function () {
    * @param {string} [displayName]
    */
   function Logger(key, displayName) {
-    _assert(key, _tcombForked2.default.String, 'key');
-
-    _assert(displayName, _tcombForked2.default.maybe(_tcombForked2.default.String), 'displayName');
-
     _classCallCheck(this, Logger);
+
+    var _keyType3 = _flowRuntime2.default.string();
+
+    var _displayNameType = _flowRuntime2.default.nullable(_flowRuntime2.default.string());
+
+    _flowRuntime2.default.param('key', _keyType3).assert(key);
+
+    _flowRuntime2.default.param('displayName', _displayNameType).assert(displayName);
 
     this.key = key;
     this.displayName = displayName;
@@ -119,11 +113,13 @@ var Logger = function () {
   _createClass(Logger, [{
     key: 'getHandlersAndProcessors',
     value: function getHandlersAndProcessors(recordLevel) {
-      _assert(recordLevel, _tcombForked2.default.Number, 'recordLevel');
+      var _recordLevelType2 = _flowRuntime2.default.number();
 
-      return _assert(function () {
-        return getConfigForLoggerRecord(this.key, recordLevel);
-      }.apply(this, arguments), ConfigForLoggerType, 'return value');
+      var _returnType4 = _flowRuntime2.default.return(ConfigForLoggerType);
+
+      _flowRuntime2.default.param('recordLevel', _recordLevelType2).assert(recordLevel);
+
+      return _returnType4.assert(getConfigForLoggerRecord(this.key, recordLevel));
     }
 
     /** @private */
@@ -131,9 +127,9 @@ var Logger = function () {
   }, {
     key: 'getConfig',
     value: function getConfig() {
-      return _assert(function () {
-        return global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(this.key);
-      }.apply(this, arguments), ConfigForLoggerType, 'return value');
+      var _returnType5 = _flowRuntime2.default.return(ConfigForLoggerType);
+
+      return _returnType5.assert(global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(this.key));
     }
 
     /**
@@ -143,13 +139,17 @@ var Logger = function () {
   }, {
     key: 'child',
     value: function child(childSuffixKey, childDisplayName) {
-      _assert(childSuffixKey, _tcombForked2.default.String, 'childSuffixKey');
+      var _childSuffixKeyType = _flowRuntime2.default.string();
 
-      _assert(childDisplayName, _tcombForked2.default.maybe(_tcombForked2.default.String), 'childDisplayName');
+      var _childDisplayNameType = _flowRuntime2.default.nullable(_flowRuntime2.default.string());
 
-      return _assert(function () {
-        return new Logger(this.key + ':' + childSuffixKey, childDisplayName);
-      }.apply(this, arguments), Logger, 'return value');
+      var _returnType6 = _flowRuntime2.default.return(_flowRuntime2.default.ref(Logger));
+
+      _flowRuntime2.default.param('childSuffixKey', _childSuffixKeyType).assert(childSuffixKey);
+
+      _flowRuntime2.default.param('childDisplayName', _childDisplayNameType).assert(childDisplayName);
+
+      return _returnType6.assert(new Logger(this.key + ':' + childSuffixKey, childDisplayName));
     }
 
     /**
@@ -169,7 +169,7 @@ var Logger = function () {
   }, {
     key: 'context',
     value: function (_context) {
-      function context(_x) {
+      function context() {
         return _context.apply(this, arguments);
       }
 
@@ -179,13 +179,15 @@ var Logger = function () {
 
       return context;
     }(function (context) {
-      _assert(context, _tcombForked2.default.Object, 'context');
+      var _contextType = _flowRuntime2.default.object();
 
-      return _assert(function () {
-        var logger = new Logger(this.key);
-        logger.setContext(context);
-        return logger;
-      }.apply(this, arguments), Logger, 'return value');
+      var _returnType7 = _flowRuntime2.default.return(_flowRuntime2.default.ref(Logger));
+
+      _flowRuntime2.default.param('context', _contextType).assert(context);
+
+      var logger = new Logger(this.key);
+      logger.setContext(context);
+      return _returnType7.assert(logger);
     })
 
     /**
@@ -197,7 +199,9 @@ var Logger = function () {
   }, {
     key: 'setContext',
     value: function setContext(context) {
-      _assert(context, _tcombForked2.default.Object, 'context');
+      var _contextType2 = _flowRuntime2.default.object();
+
+      _flowRuntime2.default.param('context', _contextType2).assert(context);
 
       this._context = context;
     }
@@ -209,7 +213,9 @@ var Logger = function () {
   }, {
     key: 'extendsContext',
     value: function extendsContext(extendedContext) {
-      _assert(extendedContext, _tcombForked2.default.Object, 'extendedContext');
+      var _extendedContextType = _flowRuntime2.default.object();
+
+      _flowRuntime2.default.param('extendedContext', _extendedContextType).assert(extendedContext);
 
       Object.assign(this._context, extendedContext);
     }
@@ -223,7 +229,9 @@ var Logger = function () {
   }, {
     key: 'addRecord',
     value: function addRecord(record) {
-      _assert(record, _tcombForked2.default.Object, 'record');
+      var _recordType = _flowRuntime2.default.object();
+
+      _flowRuntime2.default.param('record', _recordType).assert(record);
 
       var _getHandlersAndProces = this.getHandlersAndProcessors(record.level),
           handlers = _getHandlersAndProces.handlers,
@@ -261,13 +269,21 @@ var Logger = function () {
       var level = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : _nightingaleLevels2.default.INFO;
       var options = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : undefined;
 
-      _assert(message, _tcombForked2.default.String, 'message');
+      var _messageType = _flowRuntime2.default.string();
 
-      _assert(metadata, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadata');
+      var _metadataType = _flowRuntime2.default.nullable(_flowRuntime2.default.object());
 
-      _assert(level, _tcombForked2.default.Number, 'level');
+      var _levelType2 = _flowRuntime2.default.number();
 
-      _assert(options, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'options');
+      var _optionsType = _flowRuntime2.default.nullable(_flowRuntime2.default.object());
+
+      _flowRuntime2.default.param('message', _messageType).assert(message);
+
+      _flowRuntime2.default.param('metadata', _metadataType).assert(metadata);
+
+      _flowRuntime2.default.param('level', _levelType2).assert(level);
+
+      _flowRuntime2.default.param('options', _optionsType).assert(options);
 
       var context = metadata && metadata.context;
       if (metadata) {
@@ -299,11 +315,17 @@ var Logger = function () {
   }, {
     key: 'trace',
     value: function trace(message, metadata, metadataStyles) {
-      _assert(message, _tcombForked2.default.String, 'message');
+      var _messageType2 = _flowRuntime2.default.string();
 
-      _assert(metadata, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadata');
+      var _metadataType2 = _flowRuntime2.default.nullable(_flowRuntime2.default.object());
 
-      _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
+      var _metadataStylesType = _flowRuntime2.default.nullable(_flowRuntime2.default.object());
+
+      _flowRuntime2.default.param('message', _messageType2).assert(message);
+
+      _flowRuntime2.default.param('metadata', _metadataType2).assert(metadata);
+
+      _flowRuntime2.default.param('metadataStyles', _metadataStylesType).assert(metadataStyles);
 
       this.log(message, metadata, _nightingaleLevels2.default.TRACE, { metadataStyles: metadataStyles });
     }
@@ -315,11 +337,17 @@ var Logger = function () {
   }, {
     key: 'debug',
     value: function debug(message, metadata, metadataStyles) {
-      _assert(message, _tcombForked2.default.String, 'message');
+      var _messageType3 = _flowRuntime2.default.string();
 
-      _assert(metadata, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadata');
+      var _metadataType3 = _flowRuntime2.default.nullable(_flowRuntime2.default.object());
 
-      _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
+      var _metadataStylesType2 = _flowRuntime2.default.nullable(_flowRuntime2.default.object());
+
+      _flowRuntime2.default.param('message', _messageType3).assert(message);
+
+      _flowRuntime2.default.param('metadata', _metadataType3).assert(metadata);
+
+      _flowRuntime2.default.param('metadataStyles', _metadataStylesType2).assert(metadataStyles);
 
       this.log(message, metadata, _nightingaleLevels2.default.DEBUG, { metadataStyles: metadataStyles });
     }
@@ -331,11 +359,17 @@ var Logger = function () {
   }, {
     key: 'notice',
     value: function notice(message, metadata, metadataStyles) {
-      _assert(message, _tcombForked2.default.String, 'message');
+      var _messageType4 = _flowRuntime2.default.string();
 
-      _assert(metadata, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadata');
+      var _metadataType4 = _flowRuntime2.default.nullable(_flowRuntime2.default.object());
 
-      _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
+      var _metadataStylesType3 = _flowRuntime2.default.nullable(_flowRuntime2.default.object());
+
+      _flowRuntime2.default.param('message', _messageType4).assert(message);
+
+      _flowRuntime2.default.param('metadata', _metadataType4).assert(metadata);
+
+      _flowRuntime2.default.param('metadataStyles', _metadataStylesType3).assert(metadataStyles);
 
       this.log(message, metadata, _nightingaleLevels2.default.NOTICE, { metadataStyles: metadataStyles });
     }
@@ -347,11 +381,17 @@ var Logger = function () {
   }, {
     key: 'info',
     value: function info(message, metadata, metadataStyles) {
-      _assert(message, _tcombForked2.default.String, 'message');
+      var _messageType5 = _flowRuntime2.default.string();
 
-      _assert(metadata, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadata');
+      var _metadataType5 = _flowRuntime2.default.nullable(_flowRuntime2.default.object());
 
-      _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
+      var _metadataStylesType4 = _flowRuntime2.default.nullable(_flowRuntime2.default.object());
+
+      _flowRuntime2.default.param('message', _messageType5).assert(message);
+
+      _flowRuntime2.default.param('metadata', _metadataType5).assert(metadata);
+
+      _flowRuntime2.default.param('metadataStyles', _metadataStylesType4).assert(metadataStyles);
 
       this.log(message, metadata, _nightingaleLevels2.default.INFO, { metadataStyles: metadataStyles });
     }
@@ -363,11 +403,17 @@ var Logger = function () {
   }, {
     key: 'warn',
     value: function warn(message, metadata, metadataStyles) {
-      _assert(message, _tcombForked2.default.String, 'message');
+      var _messageType6 = _flowRuntime2.default.string();
 
-      _assert(metadata, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadata');
+      var _metadataType6 = _flowRuntime2.default.nullable(_flowRuntime2.default.object());
 
-      _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
+      var _metadataStylesType5 = _flowRuntime2.default.nullable(_flowRuntime2.default.object());
+
+      _flowRuntime2.default.param('message', _messageType6).assert(message);
+
+      _flowRuntime2.default.param('metadata', _metadataType6).assert(metadata);
+
+      _flowRuntime2.default.param('metadataStyles', _metadataStylesType5).assert(metadataStyles);
 
       this.log(message, metadata, _nightingaleLevels2.default.WARN, { metadataStyles: metadataStyles });
     }
@@ -382,15 +428,21 @@ var Logger = function () {
       var metadata = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
       var metadataStyles = arguments[2];
 
-      _assert(message, _tcombForked2.default.union([_tcombForked2.default.String, Error]), 'message');
+      var _messageType7 = _flowRuntime2.default.union(_flowRuntime2.default.string(), _flowRuntime2.default.ref('Error'));
 
-      _assert(metadata, _tcombForked2.default.Object, 'metadata');
+      var _metadataType7 = _flowRuntime2.default.object();
 
-      _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
+      var _metadataStylesType6 = _flowRuntime2.default.nullable(_flowRuntime2.default.object());
+
+      _flowRuntime2.default.param('message', _messageType7).assert(message);
+
+      _flowRuntime2.default.param('metadata', _metadataType7).assert(metadata);
+
+      _flowRuntime2.default.param('metadataStyles', _metadataStylesType6).assert(metadataStyles);
 
       if (message instanceof Error) {
         metadata.error = message;
-        message = metadata.error.name + ': ' + metadata.error.message;
+        message = _messageType7.assert(metadata.error.name + ': ' + metadata.error.message);
       }
       this.log(message, metadata, _nightingaleLevels2.default.ERROR, { metadataStyles: metadataStyles });
     }
@@ -402,11 +454,17 @@ var Logger = function () {
   }, {
     key: 'critical',
     value: function critical(message, metadata, metadataStyles) {
-      _assert(message, _tcombForked2.default.String, 'message');
+      var _messageType8 = _flowRuntime2.default.string();
 
-      _assert(metadata, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadata');
+      var _metadataType8 = _flowRuntime2.default.nullable(_flowRuntime2.default.object());
 
-      _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
+      var _metadataStylesType7 = _flowRuntime2.default.nullable(_flowRuntime2.default.object());
+
+      _flowRuntime2.default.param('message', _messageType8).assert(message);
+
+      _flowRuntime2.default.param('metadata', _metadataType8).assert(metadata);
+
+      _flowRuntime2.default.param('metadataStyles', _metadataStylesType7).assert(metadataStyles);
 
       this.log(message, metadata, _nightingaleLevels2.default.CRITICAL, { metadataStyles: metadataStyles });
     }
@@ -418,11 +476,17 @@ var Logger = function () {
   }, {
     key: 'fatal',
     value: function fatal(message, metadata, metadataStyles) {
-      _assert(message, _tcombForked2.default.String, 'message');
+      var _messageType9 = _flowRuntime2.default.string();
 
-      _assert(metadata, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadata');
+      var _metadataType9 = _flowRuntime2.default.nullable(_flowRuntime2.default.object());
 
-      _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
+      var _metadataStylesType8 = _flowRuntime2.default.nullable(_flowRuntime2.default.object());
+
+      _flowRuntime2.default.param('message', _messageType9).assert(message);
+
+      _flowRuntime2.default.param('metadata', _metadataType9).assert(metadata);
+
+      _flowRuntime2.default.param('metadataStyles', _metadataStylesType8).assert(metadataStyles);
 
       this.log(message, metadata, _nightingaleLevels2.default.FATAL, { metadataStyles: metadataStyles });
     }
@@ -434,11 +498,17 @@ var Logger = function () {
   }, {
     key: 'alert',
     value: function alert(message, metadata, metadataStyles) {
-      _assert(message, _tcombForked2.default.String, 'message');
+      var _messageType10 = _flowRuntime2.default.string();
 
-      _assert(metadata, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadata');
+      var _metadataType10 = _flowRuntime2.default.nullable(_flowRuntime2.default.object());
 
-      _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
+      var _metadataStylesType9 = _flowRuntime2.default.nullable(_flowRuntime2.default.object());
+
+      _flowRuntime2.default.param('message', _messageType10).assert(message);
+
+      _flowRuntime2.default.param('metadata', _metadataType10).assert(metadata);
+
+      _flowRuntime2.default.param('metadataStyles', _metadataStylesType9).assert(metadataStyles);
 
       this.log(message, metadata, _nightingaleLevels2.default.ALERT, { metadataStyles: metadataStyles });
     }
@@ -450,11 +520,17 @@ var Logger = function () {
   }, {
     key: 'inspectValue',
     value: function inspectValue(value, metadata, metadataStyles) {
-      _assert(value, _tcombForked2.default.Any, 'value');
+      var _valueType = _flowRuntime2.default.any();
 
-      _assert(metadata, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadata');
+      var _metadataType11 = _flowRuntime2.default.nullable(_flowRuntime2.default.object());
 
-      _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
+      var _metadataStylesType10 = _flowRuntime2.default.nullable(_flowRuntime2.default.object());
+
+      _flowRuntime2.default.param('value', _valueType).assert(value);
+
+      _flowRuntime2.default.param('metadata', _metadataType11).assert(metadata);
+
+      _flowRuntime2.default.param('metadataStyles', _metadataStylesType10).assert(metadataStyles);
 
       throw new Error('Not supported for the browser. Prefer `debugger;`');
     }
@@ -466,13 +542,21 @@ var Logger = function () {
   }, {
     key: 'inspectVar',
     value: function inspectVar(varName, varValue, metadata, metadataStyles) {
-      _assert(varName, _tcombForked2.default.String, 'varName');
+      var _varNameType = _flowRuntime2.default.string();
 
-      _assert(varValue, _tcombForked2.default.Any, 'varValue');
+      var _varValueType = _flowRuntime2.default.any();
 
-      _assert(metadata, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadata');
+      var _metadataType12 = _flowRuntime2.default.nullable(_flowRuntime2.default.object());
 
-      _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
+      var _metadataStylesType11 = _flowRuntime2.default.nullable(_flowRuntime2.default.object());
+
+      _flowRuntime2.default.param('varName', _varNameType).assert(varName);
+
+      _flowRuntime2.default.param('varValue', _varValueType).assert(varValue);
+
+      _flowRuntime2.default.param('metadata', _metadataType12).assert(metadata);
+
+      _flowRuntime2.default.param('metadataStyles', _metadataStylesType11).assert(metadataStyles);
 
       throw new Error('Not supported for the browser. Prefer `debugger;`');
     }
@@ -484,11 +568,17 @@ var Logger = function () {
   }, {
     key: 'success',
     value: function success(message, metadata, metadataStyles) {
-      _assert(message, _tcombForked2.default.String, 'message');
+      var _messageType11 = _flowRuntime2.default.string();
 
-      _assert(metadata, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadata');
+      var _metadataType13 = _flowRuntime2.default.nullable(_flowRuntime2.default.object());
 
-      _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
+      var _metadataStylesType12 = _flowRuntime2.default.nullable(_flowRuntime2.default.object());
+
+      _flowRuntime2.default.param('message', _messageType11).assert(message);
+
+      _flowRuntime2.default.param('metadata', _metadataType13).assert(metadata);
+
+      _flowRuntime2.default.param('metadataStyles', _metadataStylesType12).assert(metadataStyles);
 
       this.infoSuccess(message, metadata, metadataStyles);
     }
@@ -500,11 +590,17 @@ var Logger = function () {
   }, {
     key: 'infoSuccess',
     value: function infoSuccess(message, metadata, metadataStyles) {
-      _assert(message, _tcombForked2.default.String, 'message');
+      var _messageType12 = _flowRuntime2.default.string();
 
-      _assert(metadata, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadata');
+      var _metadataType14 = _flowRuntime2.default.nullable(_flowRuntime2.default.object());
 
-      _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
+      var _metadataStylesType13 = _flowRuntime2.default.nullable(_flowRuntime2.default.object());
+
+      _flowRuntime2.default.param('message', _messageType12).assert(message);
+
+      _flowRuntime2.default.param('metadata', _metadataType14).assert(metadata);
+
+      _flowRuntime2.default.param('metadataStyles', _metadataStylesType13).assert(metadataStyles);
 
       this.log(message, metadata, _nightingaleLevels2.default.INFO, {
         metadataStyles: metadataStyles,
@@ -520,11 +616,17 @@ var Logger = function () {
   }, {
     key: 'debugSuccess',
     value: function debugSuccess(message, metadata, metadataStyles) {
-      _assert(message, _tcombForked2.default.String, 'message');
+      var _messageType13 = _flowRuntime2.default.string();
 
-      _assert(metadata, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadata');
+      var _metadataType15 = _flowRuntime2.default.nullable(_flowRuntime2.default.object());
 
-      _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
+      var _metadataStylesType14 = _flowRuntime2.default.nullable(_flowRuntime2.default.object());
+
+      _flowRuntime2.default.param('message', _messageType13).assert(message);
+
+      _flowRuntime2.default.param('metadata', _metadataType15).assert(metadata);
+
+      _flowRuntime2.default.param('metadataStyles', _metadataStylesType14).assert(metadataStyles);
 
       this.log(message, metadata, _nightingaleLevels2.default.DEBUG, {
         metadataStyles: metadataStyles,
@@ -540,11 +642,17 @@ var Logger = function () {
   }, {
     key: 'fail',
     value: function fail(message, metadata, metadataStyles) {
-      _assert(message, _tcombForked2.default.String, 'message');
+      var _messageType14 = _flowRuntime2.default.string();
 
-      _assert(metadata, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadata');
+      var _metadataType16 = _flowRuntime2.default.nullable(_flowRuntime2.default.object());
 
-      _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
+      var _metadataStylesType15 = _flowRuntime2.default.nullable(_flowRuntime2.default.object());
+
+      _flowRuntime2.default.param('message', _messageType14).assert(message);
+
+      _flowRuntime2.default.param('metadata', _metadataType16).assert(metadata);
+
+      _flowRuntime2.default.param('metadataStyles', _metadataStylesType15).assert(metadataStyles);
 
       this.infoFail(message, metadata, metadataStyles);
     }
@@ -556,11 +664,17 @@ var Logger = function () {
   }, {
     key: 'infoFail',
     value: function infoFail(message, metadata, metadataStyles) {
-      _assert(message, _tcombForked2.default.String, 'message');
+      var _messageType15 = _flowRuntime2.default.string();
 
-      _assert(metadata, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadata');
+      var _metadataType17 = _flowRuntime2.default.nullable(_flowRuntime2.default.object());
 
-      _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
+      var _metadataStylesType16 = _flowRuntime2.default.nullable(_flowRuntime2.default.object());
+
+      _flowRuntime2.default.param('message', _messageType15).assert(message);
+
+      _flowRuntime2.default.param('metadata', _metadataType17).assert(metadata);
+
+      _flowRuntime2.default.param('metadataStyles', _metadataStylesType16).assert(metadataStyles);
 
       this.log(message, metadata, _nightingaleLevels2.default.INFO, {
         metadataStyles: metadataStyles,
@@ -576,11 +690,17 @@ var Logger = function () {
   }, {
     key: 'debugFail',
     value: function debugFail(message, metadata, metadataStyles) {
-      _assert(message, _tcombForked2.default.String, 'message');
+      var _messageType16 = _flowRuntime2.default.string();
 
-      _assert(metadata, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadata');
+      var _metadataType18 = _flowRuntime2.default.nullable(_flowRuntime2.default.object());
 
-      _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
+      var _metadataStylesType17 = _flowRuntime2.default.nullable(_flowRuntime2.default.object());
+
+      _flowRuntime2.default.param('message', _messageType16).assert(message);
+
+      _flowRuntime2.default.param('metadata', _metadataType18).assert(metadata);
+
+      _flowRuntime2.default.param('metadataStyles', _metadataStylesType17).assert(metadataStyles);
 
       this.log(message, metadata, _nightingaleLevels2.default.DEBUG, {
         metadataStyles: metadataStyles,
@@ -598,34 +718,48 @@ var Logger = function () {
     value: function time(message, metadata, metadataStyles) {
       var level = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : _nightingaleLevels2.default.DEBUG;
 
-      _assert(message, _tcombForked2.default.maybe(_tcombForked2.default.String), 'message');
+      var _messageType17 = _flowRuntime2.default.nullable(_flowRuntime2.default.string());
 
-      _assert(metadata, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadata');
+      var _metadataType19 = _flowRuntime2.default.nullable(_flowRuntime2.default.object());
 
-      _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
+      var _metadataStylesType18 = _flowRuntime2.default.nullable(_flowRuntime2.default.object());
 
-      _assert(level, _tcombForked2.default.Number, 'level');
+      var _levelType3 = _flowRuntime2.default.number();
 
-      return _assert(function () {
-        if (message) {
-          this.log(message, metadata, level, { metadataStyles: metadataStyles });
-        }
+      var _returnType8 = _flowRuntime2.default.return(_flowRuntime2.default.number());
 
-        return Date.now();
-      }.apply(this, arguments), _tcombForked2.default.Number, 'return value');
+      _flowRuntime2.default.param('message', _messageType17).assert(message);
+
+      _flowRuntime2.default.param('metadata', _metadataType19).assert(metadata);
+
+      _flowRuntime2.default.param('metadataStyles', _metadataStylesType18).assert(metadataStyles);
+
+      _flowRuntime2.default.param('level', _levelType3).assert(level);
+
+      if (message) {
+        this.log(message, metadata, level, { metadataStyles: metadataStyles });
+      }
+
+      return _returnType8.assert(Date.now());
     }
   }, {
     key: 'infoTime',
     value: function infoTime(message, metadata, metadataStyles) {
-      _assert(message, _tcombForked2.default.maybe(_tcombForked2.default.String), 'message');
+      var _messageType18 = _flowRuntime2.default.nullable(_flowRuntime2.default.string());
 
-      _assert(metadata, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadata');
+      var _metadataType20 = _flowRuntime2.default.nullable(_flowRuntime2.default.object());
 
-      _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
+      var _metadataStylesType19 = _flowRuntime2.default.nullable(_flowRuntime2.default.object());
 
-      return _assert(function () {
-        return this.time(message, metadata, metadataStyles, _nightingaleLevels2.default.INFO);
-      }.apply(this, arguments), _tcombForked2.default.Number, 'return value');
+      var _returnType9 = _flowRuntime2.default.return(_flowRuntime2.default.number());
+
+      _flowRuntime2.default.param('message', _messageType18).assert(message);
+
+      _flowRuntime2.default.param('metadata', _metadataType20).assert(metadata);
+
+      _flowRuntime2.default.param('metadataStyles', _metadataStylesType19).assert(metadataStyles);
+
+      return _returnType9.assert(this.time(message, metadata, metadataStyles, _nightingaleLevels2.default.INFO));
     }
 
     /**
@@ -643,17 +777,29 @@ var Logger = function () {
       var level = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : _nightingaleLevels2.default.DEBUG;
       var options = arguments[5];
 
-      _assert(startTime, _tcombForked2.default.Number, 'startTime');
+      var _startTimeType = _flowRuntime2.default.number();
 
-      _assert(message, _tcombForked2.default.String, 'message');
+      var _messageType19 = _flowRuntime2.default.string();
 
-      _assert(metadata, _tcombForked2.default.Object, 'metadata');
+      var _metadataType21 = _flowRuntime2.default.object();
 
-      _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
+      var _metadataStylesType20 = _flowRuntime2.default.nullable(_flowRuntime2.default.object());
 
-      _assert(level, _tcombForked2.default.Number, 'level');
+      var _levelType4 = _flowRuntime2.default.number();
 
-      _assert(options, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'options');
+      var _optionsType2 = _flowRuntime2.default.nullable(_flowRuntime2.default.object());
+
+      _flowRuntime2.default.param('startTime', _startTimeType).assert(startTime);
+
+      _flowRuntime2.default.param('message', _messageType19).assert(message);
+
+      _flowRuntime2.default.param('metadata', _metadataType21).assert(metadata);
+
+      _flowRuntime2.default.param('metadataStyles', _metadataStylesType20).assert(metadataStyles);
+
+      _flowRuntime2.default.param('level', _levelType4).assert(level);
+
+      _flowRuntime2.default.param('options', _optionsType2).assert(options);
 
       var now = Date.now();
 
@@ -668,7 +814,7 @@ var Logger = function () {
       }
 
       metadata.timeMs = diffTime;
-      this.log(message, metadata, level, _extends({}, options, { metadataStyles: metadataStyles }));
+      this.log(message, metadata, level, Object.assign({}, options, { metadataStyles: metadataStyles }));
     }
 
     /**
@@ -678,13 +824,21 @@ var Logger = function () {
   }, {
     key: 'infoTimeEnd',
     value: function infoTimeEnd(time, message, metadata, metadataStyles) {
-      _assert(time, _tcombForked2.default.Number, 'time');
+      var _timeType = _flowRuntime2.default.number();
 
-      _assert(message, _tcombForked2.default.String, 'message');
+      var _messageType20 = _flowRuntime2.default.string();
 
-      _assert(metadata, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadata');
+      var _metadataType22 = _flowRuntime2.default.nullable(_flowRuntime2.default.object());
 
-      _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
+      var _metadataStylesType21 = _flowRuntime2.default.nullable(_flowRuntime2.default.object());
+
+      _flowRuntime2.default.param('time', _timeType).assert(time);
+
+      _flowRuntime2.default.param('message', _messageType20).assert(message);
+
+      _flowRuntime2.default.param('metadata', _metadataType22).assert(metadata);
+
+      _flowRuntime2.default.param('metadataStyles', _metadataStylesType21).assert(metadataStyles);
 
       this.timeEnd(time, message, metadata, metadataStyles, _nightingaleLevels2.default.INFO);
     }
@@ -696,13 +850,21 @@ var Logger = function () {
   }, {
     key: 'infoSuccessTimeEnd',
     value: function infoSuccessTimeEnd(time, message, metadata, metadataStyles) {
-      _assert(time, _tcombForked2.default.Number, 'time');
+      var _timeType2 = _flowRuntime2.default.number();
 
-      _assert(message, _tcombForked2.default.String, 'message');
+      var _messageType21 = _flowRuntime2.default.string();
 
-      _assert(metadata, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadata');
+      var _metadataType23 = _flowRuntime2.default.nullable(_flowRuntime2.default.object());
 
-      _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
+      var _metadataStylesType22 = _flowRuntime2.default.nullable(_flowRuntime2.default.object());
+
+      _flowRuntime2.default.param('time', _timeType2).assert(time);
+
+      _flowRuntime2.default.param('message', _messageType21).assert(message);
+
+      _flowRuntime2.default.param('metadata', _metadataType23).assert(metadata);
+
+      _flowRuntime2.default.param('metadataStyles', _metadataStylesType22).assert(metadataStyles);
 
       this.timeEnd(time, message, metadata, metadataStyles, _nightingaleLevels2.default.INFO, {
         symbol: '✔',
@@ -726,15 +888,21 @@ var Logger = function () {
   }, {
     key: 'enter',
     value: function enter(fn, metadata, metadataStyles) {
-      _assert(fn, _tcombForked2.default.Function, 'fn');
+      var _fnType = _flowRuntime2.default.function();
 
-      _assert(metadata, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadata');
+      var _metadataType24 = _flowRuntime2.default.nullable(_flowRuntime2.default.object());
 
-      _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
+      var _metadataStylesType23 = _flowRuntime2.default.nullable(_flowRuntime2.default.object());
 
-      metadata = _extends({
+      _flowRuntime2.default.param('fn', _fnType).assert(fn);
+
+      _flowRuntime2.default.param('metadata', _metadataType24).assert(metadata);
+
+      _flowRuntime2.default.param('metadataStyles', _metadataStylesType23).assert(metadataStyles);
+
+      metadata = _metadataType24.assert(Object.assign({
         functionName: fn.name
-      }, metadata);
+      }, metadata));
       this.log('enter', metadata, _nightingaleLevels2.default.TRACE, { metadataStyles: metadataStyles });
     }
 
@@ -754,15 +922,21 @@ var Logger = function () {
   }, {
     key: 'exit',
     value: function exit(fn, metadata, metadataStyles) {
-      _assert(fn, _tcombForked2.default.Function, 'fn');
+      var _fnType2 = _flowRuntime2.default.function();
 
-      _assert(metadata, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadata');
+      var _metadataType25 = _flowRuntime2.default.nullable(_flowRuntime2.default.object());
 
-      _assert(metadataStyles, _tcombForked2.default.maybe(_tcombForked2.default.Object), 'metadataStyles');
+      var _metadataStylesType24 = _flowRuntime2.default.nullable(_flowRuntime2.default.object());
 
-      metadata = _extends({
+      _flowRuntime2.default.param('fn', _fnType2).assert(fn);
+
+      _flowRuntime2.default.param('metadata', _metadataType25).assert(metadata);
+
+      _flowRuntime2.default.param('metadataStyles', _metadataStylesType24).assert(metadataStyles);
+
+      metadata = _metadataType25.assert(Object.assign({
         functionName: fn.name
-      }, metadata);
+      }, metadata));
       this.log('exit', metadata, _nightingaleLevels2.default.TRACE, { metadataStyles: metadataStyles });
     }
 
@@ -788,20 +962,28 @@ var Logger = function () {
   }, {
     key: 'wrap',
     value: function wrap(fn, metadata, metadataStyles, callback) {
-      _assert(fn, _tcombForked2.default.Function, 'fn');
+      var _fnType3 = _flowRuntime2.default.function();
 
-      _assert(metadata, _tcombForked2.default.union([_tcombForked2.default.maybe(_tcombForked2.default.Object), _tcombForked2.default.Function]), 'metadata');
+      var _metadataType26 = _flowRuntime2.default.union(_flowRuntime2.default.nullable(_flowRuntime2.default.object()), _flowRuntime2.default.function());
 
-      _assert(metadataStyles, _tcombForked2.default.union([_tcombForked2.default.maybe(_tcombForked2.default.Object), _tcombForked2.default.Function]), 'metadataStyles');
+      var _metadataStylesType25 = _flowRuntime2.default.union(_flowRuntime2.default.nullable(_flowRuntime2.default.object()), _flowRuntime2.default.function());
 
-      _assert(callback, _tcombForked2.default.Function, 'callback');
+      var _callbackType = _flowRuntime2.default.function();
+
+      _flowRuntime2.default.param('fn', _fnType3).assert(fn);
+
+      _flowRuntime2.default.param('metadata', _metadataType26).assert(metadata);
+
+      _flowRuntime2.default.param('metadataStyles', _metadataStylesType25).assert(metadataStyles);
+
+      _flowRuntime2.default.param('callback', _callbackType).assert(callback);
 
       if (typeof metadata === 'function') {
-        callback = metadata;
-        metadata = undefined;
+        callback = _callbackType.assert(metadata);
+        metadata = _metadataType26.assert(undefined);
       } else if (typeof metadataStyles === 'function') {
-        callback = metadataStyles;
-        metadataStyles = undefined;
+        callback = _callbackType.assert(metadataStyles);
+        metadataStyles = _metadataStylesType25.assert(undefined);
       }
 
       this.enter(fn, metadata, metadataStyles);
@@ -814,22 +996,4 @@ var Logger = function () {
 }();
 
 exports.default = Logger;
-
-function _assert(x, type, name) {
-  function message() {
-    return 'Invalid value ' + _tcombForked2.default.stringify(x) + ' supplied to ' + name + ' (expected a ' + _tcombForked2.default.getTypeName(type) + ')';
-  }
-
-  if (_tcombForked2.default.isType(type)) {
-    if (!type.is(x)) {
-      type(x, [name + ': ' + _tcombForked2.default.getTypeName(type)]);
-
-      _tcombForked2.default.fail(message());
-    }
-  } else if (!(x instanceof type)) {
-    _tcombForked2.default.fail(message());
-  }
-
-  return x;
-}
 //# sourceMappingURL=index.js.map

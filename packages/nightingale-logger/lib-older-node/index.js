@@ -4,9 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /* eslint-disable max-lines */
 
 var _util = require('util');
 
@@ -115,7 +113,7 @@ var Logger = function () {
   }, {
     key: 'context',
     value: function (_context) {
-      function context(_x) {
+      function context() {
         return _context.apply(this, arguments);
       }
 
@@ -466,7 +464,7 @@ var Logger = function () {
       }
 
       metadata.timeMs = diffTime;
-      this.log(message, metadata, level, _extends({}, options, { metadataStyles: metadataStyles }));
+      this.log(message, metadata, level, Object.assign({}, options, { metadataStyles: metadataStyles }));
     }
 
     /**
@@ -508,7 +506,7 @@ var Logger = function () {
   }, {
     key: 'enter',
     value: function enter(fn, metadata, metadataStyles) {
-      metadata = _extends({
+      metadata = Object.assign({
         functionName: fn.name
       }, metadata);
       this.log('enter', metadata, _nightingaleLevels2.default.TRACE, { metadataStyles: metadataStyles });
@@ -530,7 +528,7 @@ var Logger = function () {
   }, {
     key: 'exit',
     value: function exit(fn, metadata, metadataStyles) {
-      metadata = _extends({
+      metadata = Object.assign({
         functionName: fn.name
       }, metadata);
       this.log('exit', metadata, _nightingaleLevels2.default.TRACE, { metadataStyles: metadataStyles });
