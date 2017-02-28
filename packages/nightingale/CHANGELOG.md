@@ -1,3 +1,12 @@
+<a name="6.1.0"></a>
+# [6.1.0](https://github.com/nightingalejs/nightingale/compare/v6.0.3...v6.1.0) (2017-02-28)
+
+
+### Features
+
+* pob upgrade ([7621128](https://github.com/nightingalejs/nightingale/commit/7621128))
+
+
 <a name="6.0.3"></a>
 ## [6.0.3](https://github.com/nightingalejs/nightingale/compare/v6.0.2...v6.0.3) (2017-01-05)
 
