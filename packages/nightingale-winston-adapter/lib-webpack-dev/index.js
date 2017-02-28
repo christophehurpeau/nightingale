@@ -1,15 +1,15 @@
-import _t from 'tcomb-forked';
 /* eslint camelcase:"off" */
 import levelNames from 'nightingale-level-names';
 
-var WinstonTransportType = _t.interface({
-  log: _t.Function
-}, 'WinstonTransportType');
+import t from 'flow-runtime';
+var WinstonTransportType = t.type('WinstonTransportType', t.object(t.property('log', t.function())));
+
 
 export default function WinstonAdapterHandler(winstonTransport, minLevel) {
-  _assert(winstonTransport, WinstonTransportType, 'winstonTransport');
+  var _minLevelType = t.number();
 
-  _assert(minLevel, _t.Number, 'minLevel');
+  t.param('winstonTransport', WinstonTransportType).assert(winstonTransport);
+  t.param('minLevel', _minLevelType).assert(minLevel);
 
   this.minLevel = minLevel;
   this.handle = function (record) {
@@ -29,23 +29,5 @@ export default function WinstonAdapterHandler(winstonTransport, minLevel) {
       });
     });
   };
-}
-
-function _assert(x, type, name) {
-  function message() {
-    return 'Invalid value ' + _t.stringify(x) + ' supplied to ' + name + ' (expected a ' + _t.getTypeName(type) + ')';
-  }
-
-  if (_t.isType(type)) {
-    if (!type.is(x)) {
-      type(x, [name + ': ' + _t.getTypeName(type)]);
-
-      _t.fail(message());
-    }
-  } else if (!(x instanceof type)) {
-    _t.fail(message());
-  }
-
-  return x;
 }
 //# sourceMappingURL=index.js.map

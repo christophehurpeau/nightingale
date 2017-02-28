@@ -9,22 +9,9 @@ var _nightingaleLevelNames = require('nightingale-level-names');
 
 var _nightingaleLevelNames2 = _interopRequireDefault(_nightingaleLevelNames);
 
-var _flowRuntime = require('flow-runtime');
-
-var _flowRuntime2 = _interopRequireDefault(_flowRuntime);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/* eslint camelcase:"off" */
-const WinstonTransportType = _flowRuntime2.default.type('WinstonTransportType', _flowRuntime2.default.object(_flowRuntime2.default.property('log', _flowRuntime2.default.function())));
-
 function WinstonAdapterHandler(winstonTransport, minLevel) {
-  let _minLevelType = _flowRuntime2.default.number();
-
-  _flowRuntime2.default.param('winstonTransport', WinstonTransportType).assert(winstonTransport);
-
-  _flowRuntime2.default.param('minLevel', _minLevelType).assert(minLevel);
-
   this.minLevel = minLevel;
   this.handle = record => new Promise((resolve, reject) => {
     winstonTransport.log(record.level, record.message, {
@@ -41,5 +28,5 @@ function WinstonAdapterHandler(winstonTransport, minLevel) {
       resolve();
     });
   });
-}
+} /* eslint camelcase:"off" */
 //# sourceMappingURL=index.js.map
