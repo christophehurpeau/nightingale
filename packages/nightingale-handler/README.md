@@ -2,6 +2,7 @@
 
 Nightingale handler
 
+[![Dependency ci Status][dependencyci-image]][dependencyci-url]
 [![Dependency Status][daviddm-image]][daviddm-url]
 
 ## Install
@@ -24,3 +25,5 @@ export default createHandler(record => {
 [npm-url]: https://npmjs.org/package/nightingale-handler
 [daviddm-image]: https://david-dm.org/nightingalejs/nightingale-handler.svg?style=flat-square
 [daviddm-url]: https://david-dm.org/nightingalejs/nightingale-handler
+[dependencyci-image]: https://dependencyci.com/github/nightingalejs/nightingale-handler/badge?style=flat-square
+[dependencyci-url]: https://dependencyci.com/github/nightingalejs/nightingale-handler
