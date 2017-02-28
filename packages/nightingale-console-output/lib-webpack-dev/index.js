@@ -4,10 +4,10 @@ import levels from 'nightingale-levels';
 
 export default (function () {
   if (console.error) {
-    return function write(params, _ref) {
+    return function write(params, _ref2) {
       var _console;
 
-      var level = _ref.level;
+      var level = _ref2.level;
 
       (_console = console)[level >= levels.ERROR ? 'error' : 'log'].apply(_console, _toConsumableArray(params));
     };

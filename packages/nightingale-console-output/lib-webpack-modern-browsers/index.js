@@ -1,10 +1,8 @@
 import levels from 'nightingale-levels';
 
-export default (() => {
+export default (function () {
   if (console.error) {
-    return function write(params, _ref) {
-      var level = _ref.level;
-
+    return function write(params, { level }) {
       console[level >= levels.ERROR ? 'error' : 'log'](...params);
     };
   } else {
