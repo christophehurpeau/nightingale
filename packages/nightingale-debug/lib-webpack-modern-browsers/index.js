@@ -1,16 +1,16 @@
 import levels from 'nightingale-levels';
 
-var specialRegexpChars = /[\\^$+?.()|[\]{}]/;
+const specialRegexpChars = /[\\^$+?.()|[\]{}]/;
 
-var createTestFunctionFromRegexpString = function createTestFunctionFromRegexpString(value) {
+const createTestFunctionFromRegexpString = function createTestFunctionFromRegexpString(value) {
   if (!value.endsWith('/')) throw new Error('Invalid RegExp DEBUG value');
-  var regexp = new RegExp(value.slice(1, -1));
+  const regexp = new RegExp(value.slice(1, -1));
   return function (string) {
     return regexp.test(string);
   };
 };
 
-var createTestFunctionFromValue = function createTestFunctionFromValue(value) {
+const createTestFunctionFromValue = function createTestFunctionFromValue(value) {
   if (value.endsWith(':*')) {
     value = value.slice(0, -2);
     return function (string) {
@@ -26,9 +26,9 @@ var createTestFunctionFromValue = function createTestFunctionFromValue(value) {
 export default function createFindDebugLevel(debugValue) {
   debugValue = debugValue || '';
 
-  var wilcard = false;
-  var debugValues = [];
-  var skips = [];
+  let wilcard = false;
+  const debugValues = [];
+  const skips = [];
 
   if (!Array.isArray(debugValue)) {
     debugValue = debugValue.trim();
@@ -44,7 +44,7 @@ export default function createFindDebugLevel(debugValue) {
   if (debugValue) {
     debugValue.forEach(function (value) {
       if (specialRegexpChars.test(value)) {
-        throw new Error(`Invalid debug value: "${ value }" (contains special chars)`);
+        throw new Error(`Invalid debug value: "${value}" (contains special chars)`);
       }
 
       if (!value) return;

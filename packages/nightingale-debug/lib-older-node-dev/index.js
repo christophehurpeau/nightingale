@@ -5,19 +5,19 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = createFindDebugLevel;
 
-var _tcombForked = require('tcomb-forked');
-
-var _tcombForked2 = _interopRequireDefault(_tcombForked);
-
 var _nightingaleLevels = require('nightingale-levels');
 
 var _nightingaleLevels2 = _interopRequireDefault(_nightingaleLevels);
+
+var _flowRuntime = require('flow-runtime');
+
+var _flowRuntime2 = _interopRequireDefault(_flowRuntime);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var specialRegexpChars = /[\\^$+?.()|[\]{}]/;
 
-var DebugValueType = _tcombForked2.default.union([_tcombForked2.default.String, RegExp, _tcombForked2.default.list(_tcombForked2.default.union([_tcombForked2.default.String, RegExp]))], 'DebugValueType');
+var DebugValueType = _flowRuntime2.default.type('DebugValueType', _flowRuntime2.default.union(_flowRuntime2.default.string(), _flowRuntime2.default.ref('RegExp'), _flowRuntime2.default.array(_flowRuntime2.default.union(_flowRuntime2.default.string(), _flowRuntime2.default.ref('RegExp')))));
 
 var createTestFunctionFromRegexpString = function createTestFunctionFromRegexpString(value) {
   if (!value.endsWith('/')) throw new Error('Invalid RegExp DEBUG value');
@@ -41,22 +41,24 @@ var createTestFunctionFromValue = function createTestFunctionFromValue(value) {
 };
 
 function createFindDebugLevel(debugValue) {
-  _assert(debugValue, _tcombForked2.default.maybe(DebugValueType), 'debugValue');
+  var _debugValueType = _flowRuntime2.default.nullable(DebugValueType);
 
-  debugValue = debugValue || '';
+  _flowRuntime2.default.param('debugValue', _debugValueType).assert(debugValue);
+
+  debugValue = _debugValueType.assert(debugValue || '');
 
   var wilcard = false;
   var debugValues = [];
   var skips = [];
 
   if (!Array.isArray(debugValue)) {
-    debugValue = debugValue.trim();
+    debugValue = _debugValueType.assert(debugValue.trim());
 
     if (debugValue.startsWith('/')) {
       debugValues.push(createTestFunctionFromRegexpString(debugValue));
-      debugValue = null;
+      debugValue = _debugValueType.assert(null);
     } else {
-      debugValue = debugValue.split(/[\s,]+/);
+      debugValue = _debugValueType.assert(debugValue.split(/[\s,]+/));
     }
   }
 
@@ -97,7 +99,9 @@ function createFindDebugLevel(debugValue) {
 
   if (debugValues.length === 0) {
     return function (minLevel) {
-      _assert(minLevel, _tcombForked2.default.Number, 'minLevel');
+      var _minLevelType = _flowRuntime2.default.number();
+
+      _flowRuntime2.default.param('minLevel', _minLevelType).assert(minLevel);
 
       return minLevel;
     };
@@ -118,23 +122,5 @@ function createFindDebugLevel(debugValue) {
 
     return minLevel;
   };
-}
-
-function _assert(x, type, name) {
-  function message() {
-    return 'Invalid value ' + _tcombForked2.default.stringify(x) + ' supplied to ' + name + ' (expected a ' + _tcombForked2.default.getTypeName(type) + ')';
-  }
-
-  if (_tcombForked2.default.isType(type)) {
-    if (!type.is(x)) {
-      type(x, [name + ': ' + _tcombForked2.default.getTypeName(type)]);
-
-      _tcombForked2.default.fail(message());
-    }
-  } else if (!(x instanceof type)) {
-    _tcombForked2.default.fail(message());
-  }
-
-  return x;
 }
 //# sourceMappingURL=index.js.map

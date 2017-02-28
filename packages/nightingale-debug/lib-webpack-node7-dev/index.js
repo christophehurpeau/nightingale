@@ -1,42 +1,36 @@
 import levels from 'nightingale-levels';
 
 import t from 'flow-runtime';
-var specialRegexpChars = /[\\^$+?.()|[\]{}]/;
+const specialRegexpChars = /[\\^$+?.()|[\]{}]/;
 
-var DebugValueType = t.type('DebugValueType', t.union(t.string(), t.ref('RegExp'), t.array(t.union(t.string(), t.ref('RegExp')))));
+const DebugValueType = t.type('DebugValueType', t.union(t.string(), t.ref('RegExp'), t.array(t.union(t.string(), t.ref('RegExp')))));
 
 
-var createTestFunctionFromRegexpString = function createTestFunctionFromRegexpString(value) {
+const createTestFunctionFromRegexpString = value => {
   if (!value.endsWith('/')) throw new Error('Invalid RegExp DEBUG value');
-  var regexp = new RegExp(value.slice(1, -1));
-  return function (string) {
-    return regexp.test(string);
-  };
+  const regexp = new RegExp(value.slice(1, -1));
+  return string => regexp.test(string);
 };
 
-var createTestFunctionFromValue = function createTestFunctionFromValue(value) {
+const createTestFunctionFromValue = value => {
   if (value.endsWith(':*')) {
     value = value.slice(0, -2);
-    return function (string) {
-      return string.startsWith(value);
-    };
+    return string => string.startsWith(value);
   }
 
-  return function (string) {
-    return string === value;
-  };
+  return string => string === value;
 };
 
 export default function createFindDebugLevel(debugValue) {
-  var _debugValueType = t.nullable(DebugValueType);
+  let _debugValueType = t.nullable(DebugValueType);
 
   t.param('debugValue', _debugValueType).assert(debugValue);
 
   debugValue = _debugValueType.assert(debugValue || '');
 
-  var wilcard = false;
-  var debugValues = [];
-  var skips = [];
+  let wilcard = false;
+  const debugValues = [];
+  const skips = [];
 
   if (!Array.isArray(debugValue)) {
     debugValue = _debugValueType.assert(debugValue.trim());
@@ -50,9 +44,9 @@ export default function createFindDebugLevel(debugValue) {
   }
 
   if (debugValue) {
-    debugValue.forEach(function (value) {
+    debugValue.forEach(value => {
       if (specialRegexpChars.test(value)) {
-        throw new Error('Invalid debug value: "' + value + '" (contains special chars)');
+        throw new Error(`Invalid debug value: "${value}" (contains special chars)`);
       }
 
       if (!value) return;
@@ -72,38 +66,28 @@ export default function createFindDebugLevel(debugValue) {
 
   if (wilcard) {
     if (skips.length === 0) {
-      return function () {
-        return levels.ALL;
-      };
+      return () => levels.ALL;
     } else {
-      return function (minLevel, key) {
-        return skips.some(function (skip) {
-          return skip(key);
-        }) ? minLevel : levels.ALL;
-      };
+      return (minLevel, key) => skips.some(skip => skip(key)) ? minLevel : levels.ALL;
     }
   }
 
   if (debugValues.length === 0) {
-    return function (minLevel) {
-      var _minLevelType = t.number();
+    return minLevel => {
+      let _minLevelType = t.number();
 
       t.param('minLevel', _minLevelType).assert(minLevel);
       return minLevel;
     };
   }
 
-  return function (minLevel, key) {
+  return (minLevel, key) => {
     if (minLevel === levels.ALL || !key) {
       return minLevel;
     }
 
-    if (debugValues.some(function (debugValue) {
-      return debugValue(key);
-    })) {
-      return skips.some(function (skip) {
-        return skip(key);
-      }) ? minLevel : levels.ALL;
+    if (debugValues.some(debugValue => debugValue(key))) {
+      return skips.some(skip => skip(key)) ? minLevel : levels.ALL;
     }
 
     return minLevel;

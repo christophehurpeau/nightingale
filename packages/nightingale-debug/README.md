@@ -1,9 +1,9 @@
 # nightingale-debug [![NPM version][npm-image]][npm-url]
 
-Nightingale console debug
+Nightingale debug
 
-[![Circle ci Status][build-status-image]][build-status-url]
-[![Travis ci Status][travisci-status-image]][travisci-status-url]
+[![Build Status][circleci-status-image]][circleci-status-url]
+[![Travis Status][travisci-status-image]][travisci-status-url]
 [![Dependency ci Status][dependencyci-image]][dependencyci-url]
 [![Dependency Status][daviddm-image]][daviddm-url]
 [![Coverage percentage][coverage-image]][coverage-url]
@@ -60,13 +60,14 @@ localStorage.debug = '*,-app:*'; // debug everything except app and all its chil
 
 [npm-image]: https://img.shields.io/npm/v/nightingale-debug.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/nightingale-debug
-[dependencyci-image]: https://dependencyci.com/github/nightingalejs/nightingale-debug/badge?style=flat-square
-[dependencyci-url]: https://dependencyci.com/github/nightingalejs/nightingale-debug
 [daviddm-image]: https://david-dm.org/nightingalejs/nightingale-debug.svg?style=flat-square
 [daviddm-url]: https://david-dm.org/nightingalejs/nightingale-debug
-[build-status-image]: https://img.shields.io/circleci/project/nightingalejs/nightingale-debug/master.svg?style=flat-square
-[build-status-url]: https://circleci.com/gh/nightingalejs/nightingale-debug
+[dependencyci-image]: https://dependencyci.com/github/nightingalejs/nightingale-debug/badge?style=flat-square
+[dependencyci-url]: https://dependencyci.com/github/nightingalejs/nightingale-debug
+[circleci-status-image]: https://img.shields.io/circleci/project/nightingalejs/nightingale-debug/master.svg?style=flat-square
+[circleci-status-url]: https://circleci.com/gh/nightingalejs/nightingale-debug
 [travisci-status-image]: https://img.shields.io/travis/nightingalejs/nightingale-debug/master.svg?style=flat-square
 [travisci-status-url]: https://travis-ci.org/nightingalejs/nightingale-debug
 [coverage-image]: https://img.shields.io/codecov/c/github/nightingalejs/nightingale-debug/master.svg?style=flat-square
 [coverage-url]: https://codecov.io/gh/nightingalejs/nightingale-debug
+[docs-coverage-url]: https://nightingalejs.github.io/nightingale-debug/coverage/lcov-report/

@@ -1,19 +1,20 @@
-import _t from 'tcomb-forked';
 import levels from 'nightingale-levels';
 
-var specialRegexpChars = /[\\^$+?.()|[\]{}]/;
+import t from 'flow-runtime';
+const specialRegexpChars = /[\\^$+?.()|[\]{}]/;
 
-var DebugValueType = _t.union([_t.String, RegExp, _t.list(_t.union([_t.String, RegExp]))], 'DebugValueType');
+const DebugValueType = t.type('DebugValueType', t.union(t.string(), t.ref('RegExp'), t.array(t.union(t.string(), t.ref('RegExp')))));
 
-var createTestFunctionFromRegexpString = function createTestFunctionFromRegexpString(value) {
+
+const createTestFunctionFromRegexpString = function createTestFunctionFromRegexpString(value) {
   if (!value.endsWith('/')) throw new Error('Invalid RegExp DEBUG value');
-  var regexp = new RegExp(value.slice(1, -1));
+  const regexp = new RegExp(value.slice(1, -1));
   return function (string) {
     return regexp.test(string);
   };
 };
 
-var createTestFunctionFromValue = function createTestFunctionFromValue(value) {
+const createTestFunctionFromValue = function createTestFunctionFromValue(value) {
   if (value.endsWith(':*')) {
     value = value.slice(0, -2);
     return function (string) {
@@ -27,29 +28,31 @@ var createTestFunctionFromValue = function createTestFunctionFromValue(value) {
 };
 
 export default function createFindDebugLevel(debugValue) {
-  _assert(debugValue, _t.maybe(DebugValueType), 'debugValue');
+  let _debugValueType = t.nullable(DebugValueType);
 
-  debugValue = debugValue || '';
+  t.param('debugValue', _debugValueType).assert(debugValue);
 
-  var wilcard = false;
-  var debugValues = [];
-  var skips = [];
+  debugValue = _debugValueType.assert(debugValue || '');
+
+  let wilcard = false;
+  const debugValues = [];
+  const skips = [];
 
   if (!Array.isArray(debugValue)) {
-    debugValue = debugValue.trim();
+    debugValue = _debugValueType.assert(debugValue.trim());
 
     if (debugValue.startsWith('/')) {
       debugValues.push(createTestFunctionFromRegexpString(debugValue));
-      debugValue = null;
+      debugValue = _debugValueType.assert(null);
     } else {
-      debugValue = debugValue.split(/[\s,]+/);
+      debugValue = _debugValueType.assert(debugValue.split(/[\s,]+/));
     }
   }
 
   if (debugValue) {
     debugValue.forEach(function (value) {
       if (specialRegexpChars.test(value)) {
-        throw new Error(`Invalid debug value: "${ value }" (contains special chars)`);
+        throw new Error(`Invalid debug value: "${value}" (contains special chars)`);
       }
 
       if (!value) return;
@@ -83,8 +86,9 @@ export default function createFindDebugLevel(debugValue) {
 
   if (debugValues.length === 0) {
     return function (minLevel) {
-      _assert(minLevel, _t.Number, 'minLevel');
+      let _minLevelType = t.number();
 
+      t.param('minLevel', _minLevelType).assert(minLevel);
       return minLevel;
     };
   }
@@ -104,23 +108,5 @@ export default function createFindDebugLevel(debugValue) {
 
     return minLevel;
   };
-}
-
-function _assert(x, type, name) {
-  function message() {
-    return 'Invalid value ' + _t.stringify(x) + ' supplied to ' + name + ' (expected a ' + _t.getTypeName(type) + ')';
-  }
-
-  if (_t.isType(type)) {
-    if (!type.is(x)) {
-      type(x, [name + ': ' + _t.getTypeName(type)]);
-
-      _t.fail(message());
-    }
-  } else if (!(x instanceof type)) {
-    _t.fail(message());
-  }
-
-  return x;
 }
 //# sourceMappingURL=index.js.map

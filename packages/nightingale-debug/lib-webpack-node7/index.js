@@ -1,15 +1,4 @@
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = createFindDebugLevel;
-
-var _nightingaleLevels = require('nightingale-levels');
-
-var _nightingaleLevels2 = _interopRequireDefault(_nightingaleLevels);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+import levels from 'nightingale-levels';
 
 const specialRegexpChars = /[\\^$+?.()|[\]{}]/;
 
@@ -28,7 +17,7 @@ const createTestFunctionFromValue = value => {
   return string => string === value;
 };
 
-function createFindDebugLevel(debugValue) {
+export default function createFindDebugLevel(debugValue) {
   debugValue = debugValue || '';
 
   let wilcard = false;
@@ -69,9 +58,9 @@ function createFindDebugLevel(debugValue) {
 
   if (wilcard) {
     if (skips.length === 0) {
-      return () => _nightingaleLevels2.default.ALL;
+      return () => levels.ALL;
     } else {
-      return (minLevel, key) => skips.some(skip => skip(key)) ? minLevel : _nightingaleLevels2.default.ALL;
+      return (minLevel, key) => skips.some(skip => skip(key)) ? minLevel : levels.ALL;
     }
   }
 
@@ -80,12 +69,12 @@ function createFindDebugLevel(debugValue) {
   }
 
   return (minLevel, key) => {
-    if (minLevel === _nightingaleLevels2.default.ALL || !key) {
+    if (minLevel === levels.ALL || !key) {
       return minLevel;
     }
 
     if (debugValues.some(debugValue => debugValue(key))) {
-      return skips.some(skip => skip(key)) ? minLevel : _nightingaleLevels2.default.ALL;
+      return skips.some(skip => skip(key)) ? minLevel : levels.ALL;
     }
 
     return minLevel;
