@@ -1,3 +1,12 @@
+<a name="2.1.0"></a>
+# [2.1.0](https://github.com/nightingalejs/nightingale-formatter/compare/v2.0.2...v2.1.0) (2017-02-28)
+
+
+### Features
+
+* pob upgrade ([9b438a6](https://github.com/nightingalejs/nightingale-formatter/commit/9b438a6))
+
+
 ### v2.0.2
 
 - [`a336f00`](https://github.com/nightingalejs/nightingale-formatter/commit/a336f00301fcf33bb0f6beedbc22ca2ce2fe9131) fix: colors works on firefox black background or chrome white background (Christophe Hurpeau)
