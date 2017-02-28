@@ -13,7 +13,7 @@ function style(styles, string) {
     return string;
   }
 
-  return `<span style="${ styles.map(styleName => _nightingaleFormatter.styleToHtmlStyle[styleName]).join('; ') }">${ string }</span>`;
+  return `<span style="${styles.map(styleName => _nightingaleFormatter.styleToHtmlStyle[styleName]).join('; ')}">${string}</span>`;
 }
 
 /**
