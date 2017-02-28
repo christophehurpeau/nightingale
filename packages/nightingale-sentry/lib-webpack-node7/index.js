@@ -1,30 +1,18 @@
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = SentryHandler;
-
-var _raven = require('raven');
-
-var _nightingaleLevels = require('nightingale-levels');
-
-var _nightingaleLevels2 = _interopRequireDefault(_nightingaleLevels);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+import { Client as RavenClient } from 'raven';
+import levels from 'nightingale-levels';
 
 const mapToSentryLevel = {
-  [_nightingaleLevels2.default.TRACE]: 'debug',
-  [_nightingaleLevels2.default.DEBUG]: 'debug',
-  [_nightingaleLevels2.default.INFO]: 'info',
-  [_nightingaleLevels2.default.WARNING]: 'warning',
-  [_nightingaleLevels2.default.ERROR]: 'error',
-  [_nightingaleLevels2.default.FATAL]: 'fatal',
-  [_nightingaleLevels2.default.EMERGENCY]: 'fatal'
+  [levels.TRACE]: 'debug',
+  [levels.DEBUG]: 'debug',
+  [levels.INFO]: 'info',
+  [levels.WARNING]: 'warning',
+  [levels.ERROR]: 'error',
+  [levels.FATAL]: 'fatal',
+  [levels.EMERGENCY]: 'fatal'
 };
 
 const createHandler = (ravenUrl, { getUser = () => {}, getTags = () => {} } = {}) => {
-  const ravenClient = new _raven.Client(ravenUrl);
+  const ravenClient = new RavenClient(ravenUrl);
 
   return record => {
     const { key, level, metadata, extra } = record;
@@ -53,7 +41,7 @@ const createHandler = (ravenUrl, { getUser = () => {}, getTags = () => {} } = {}
   };
 };
 
-function SentryHandler(ravenUrl, minLevel, options) {
+export default function SentryHandler(ravenUrl, minLevel, options) {
   this.minLevel = minLevel;
   this.handle = createHandler(ravenUrl, options);
 }

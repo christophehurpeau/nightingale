@@ -10,9 +10,12 @@
   "license": "ISC",
   "repository": "git@github.com:nightingalejs/nightingale-sentry.git",
   "homepage": "https://github.com/nightingalejs/nightingale",
+  "engines": {
+    "node": ">=6.5.0"
+  },
   "main": "./lib/index.js",
-  "webpack:node": "./lib-node6/index.js",
-  "webpack:node-dev": "./lib-node6-dev/index.js",
+  "webpack:node": "./lib-webpack-node7/index.js",
+  "webpack:node-dev": "./lib-webpack-node7-dev/index.js",
   "scripts": {
     "build": "pob-build",
     "clean": "rm -Rf docs dist test/node6 coverage",
@@ -25,21 +28,21 @@
     "watch": "pob-watch"
   },
   "dependencies": {
+    "flow-runtime": "^0.6.1",
     "nightingale-levels": "^1.0.0",
     "raven": "^1.1.1"
   },
   "devDependencies": {
     "babel-eslint": "^7.1.0",
-    "babel-preset-es2015-node6": "^0.4.0",
-    "eslint": "^3.10.2",
-    "eslint-config-airbnb-base": "^11.0.0",
-    "eslint-config-pob": "^10.0.1",
-    "eslint-plugin-babel": "^4.0.0",
+    "babel-preset-latest-node": "^0.1.0",
+    "eslint": "^3.16.1",
+    "eslint-config-airbnb-base": "^11.1.0",
+    "eslint-config-pob": "^11.1.0",
+    "eslint-plugin-babel": "^4.1.0",
     "eslint-plugin-import": "^2.2.0",
-    "komet": "^0.1.3",
-    "komet-karma": "^0.2.3",
-    "pob-babel": "^12.7.1",
-    "pob-release": "^2.3.0",
-    "tcomb-forked": "^3.4.0"
+    "komet": "^0.1.4",
+    "komet-karma": "^0.2.5",
+    "pob-babel": "^16.1.0",
+    "pob-release": "^3.1.0"
   }
 }

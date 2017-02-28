@@ -29,8 +29,6 @@ configure([
 ]);
 ```
 
-
-
 [npm-image]: https://img.shields.io/npm/v/nightingale-sentry.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/nightingale-sentry
 [daviddm-image]: https://david-dm.org/nightingalejs/nightingale-sentry.svg?style=flat-square

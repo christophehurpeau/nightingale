@@ -1,8 +1,15 @@
 {
   "envs": [
-    "node6"
+    "node6",
+    "node7",
+    "webpack-node7"
   ],
   "react": false,
   "documentation": false,
-  "testing": false
+  "testing": false,
+  "entries": [
+    "index"
+  ],
+  "flow": false,
+  "doclets": false
 }
