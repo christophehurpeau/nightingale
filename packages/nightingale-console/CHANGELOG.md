@@ -1,3 +1,12 @@
+<a name="2.3.0"></a>
+# [2.3.0](https://github.com/nightingalejs/nightingale-console/compare/v2.2.0...v2.3.0) (2017-02-28)
+
+
+### Features
+
+* pob upgrade ([3eab20f](https://github.com/nightingalejs/nightingale-console/commit/3eab20f))
+
+
 ### v2.2.0
 
 - [`5797db6`](https://github.com/nightingalejs/nightingale-console/commit/5797db692f1161c5906ebefb49d6ef69ba489da3) docs: examples (Christophe Hurpeau)
