@@ -7,7 +7,7 @@ exports.default = errorProcessor;
 
 var _alouette = require('alouette');
 
-function errorProcessor(record, context) {
+function errorProcessor(record) {
   if (!record.metadata) {
     return;
   }

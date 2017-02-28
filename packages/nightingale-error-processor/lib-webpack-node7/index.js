@@ -1,7 +1,7 @@
 /* eslint no-console: "off" */
 import { parse as parseError } from 'alouette';
 
-export default function errorProcessor(record, context) {
+export default function errorProcessor(record) {
   if (!record.metadata) {
     return;
   }
@@ -30,3 +30,4 @@ export default function errorProcessor(record, context) {
     }
   }
 }
+//# sourceMappingURL=index.js.map

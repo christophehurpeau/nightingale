@@ -2,6 +2,7 @@
 
 Nightingale error processor
 
+[![Dependency ci Status][dependencyci-image]][dependencyci-url]
 [![Dependency Status][daviddm-image]][daviddm-url]
 
 ## Install
@@ -22,3 +23,5 @@ console.log(nightingaleErrorProcessor);
 [npm-url]: https://npmjs.org/package/nightingale-error-processor
 [daviddm-image]: https://david-dm.org/nightingalejs/nightingale-error-processor.svg?style=flat-square
 [daviddm-url]: https://david-dm.org/nightingalejs/nightingale-error-processor
+[dependencyci-image]: https://dependencyci.com/github/nightingalejs/nightingale-error-processor/badge?style=flat-square
+[dependencyci-url]: https://dependencyci.com/github/nightingalejs/nightingale-error-processor
