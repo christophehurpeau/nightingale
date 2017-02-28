@@ -2,6 +2,7 @@
 
 Browser console handler for nightingale
 
+[![Dependency ci Status][dependencyci-image]][dependencyci-url]
 [![Dependency Status][daviddm-image]][daviddm-url]
 
 ## Install
@@ -51,3 +52,5 @@ localStorage.debug = '*,-app:*'; // debug everything except app and all its chil
 [npm-url]: https://npmjs.org/package/nightingale-browser-console
 [daviddm-image]: https://david-dm.org/nightingalejs/nightingale-browser-console.svg?style=flat-square
 [daviddm-url]: https://david-dm.org/nightingalejs/nightingale-browser-console
+[dependencyci-image]: https://dependencyci.com/github/nightingalejs/nightingale-browser-console/badge?style=flat-square
+[dependencyci-url]: https://dependencyci.com/github/nightingalejs/nightingale-browser-console
