@@ -2,9 +2,8 @@
 
 nightingale default config and logger for app
 
+[![Dependency ci Status][dependencyci-image]][dependencyci-url]
 [![Dependency Status][daviddm-image]][daviddm-url]
-
-To read the full documentation on nightingale, go to [nightingale](https://npmjs.com/package/nightingale)
 
 ## Install
 
@@ -31,3 +30,5 @@ myServiceLogger.debug('started');
 [npm-url]: https://npmjs.org/package/nightingale-app-console
 [daviddm-image]: https://david-dm.org/nightingalejs/nightingale-app-console.svg?style=flat-square
 [daviddm-url]: https://david-dm.org/nightingalejs/nightingale-app-console
+[dependencyci-image]: https://dependencyci.com/github/nightingalejs/nightingale-app-console/badge?style=flat-square
+[dependencyci-url]: https://dependencyci.com/github/nightingalejs/nightingale-app-console

@@ -6,6 +6,7 @@ export { configure, addConfig, levels };
 
 export const logger = new Logger('app');
 
+Error.stackTraceLimit = Infinity;
 listenUnhandledErrors(logger);
 
 configure([
