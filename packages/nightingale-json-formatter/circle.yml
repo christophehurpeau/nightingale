@@ -1,6 +1,6 @@
 machine:
   node:
-    version: 6.6.0
+    version: 7.6.0
 
 general:
   branches:
@@ -9,18 +9,19 @@ general:
 
 dependencies:
   cache_directories:
+    - ~/.cache/yarn
     - node_modules
   override:
-    - npm prune && npm install --no-progress
+    - yarn
 
 test:
   pre:
     - mkdir -p $CIRCLE_TEST_REPORTS/junit/
   override:
-    - npm run preversion
-    - npm run test
+    - yarn run preversion
+    - yarn run test
     - XUNIT_FILE=$CIRCLE_TEST_REPORTS/junit/xunit.xml node_modules/.bin/mocha --harmony --recursive --reporter xunit-file -u tdd test/node6
-    - npm run generate:test-coverage
+    - yarn run generate:test-coverage
   post:
     - bash <(curl -s https://codecov.io/bash)
     - cp -R coverage $CIRCLE_ARTIFACTS/
