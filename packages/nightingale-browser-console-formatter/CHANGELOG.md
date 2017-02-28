@@ -1,3 +1,12 @@
+<a name="1.4.0"></a>
+# [1.4.0](https://github.com/nightingalejs/nightingale-browser-console-formatter/compare/v1.3.2...v1.4.0) (2017-02-28)
+
+
+### Features
+
+* pob upgrade ([91d046a](https://github.com/nightingalejs/nightingale-browser-console-formatter/commit/91d046a))
+
+
 ### v1.3.2
 
 - [`96b3138`](https://github.com/nightingalejs/nightingale-browser-console-formatter/commit/96b313835dd35893c9e139dca1e274563d32d74c) refactor: update dependencies (Christophe Hurpeau)
