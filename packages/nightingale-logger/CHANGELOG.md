@@ -1,3 +1,12 @@
+<a name="3.2.0"></a>
+# [3.2.0](https://github.com/nightingalejs/nightingale-logger/compare/v3.1.1...v3.2.0) (2017-02-28)
+
+
+### Features
+
+* pob upgrade ([1227649](https://github.com/nightingalejs/nightingale-logger/commit/1227649))
+
+
 ### v3.1.1
 
 - [`55be859`](https://github.com/nightingalejs/nightingale-logger/commit/55be859755496de5189ec69043e6b562b92a1a14) update dependencies (Christophe Hurpeau)
