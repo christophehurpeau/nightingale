@@ -1,18 +1,6 @@
-import _t from 'tcomb-forked';
+import t from 'flow-runtime';
+const Config = t.type('Config', t.exactObject(t.property('stop', t.nullable(t.boolean())), t.property('pattern', t.nullable(t.ref('RegExp'))), t.property('key', t.nullable(t.string())), t.property('keys', t.nullable(t.array(t.string()))), t.property('handler', t.nullable(t.object())), t.property('handlers', t.nullable(t.array(t.object()))), t.property('processor', t.nullable(t.any())), t.property('processors', t.nullable(t.array(t.any())))));
 
-var Config = _t.interface({
-  stop: _t.maybe(_t.Boolean),
-  pattern: _t.maybe(RegExp),
-  key: _t.maybe(_t.String),
-  keys: _t.maybe(_t.list(_t.String)),
-  handler: _t.maybe(_t.Object),
-  handlers: _t.maybe(_t.list(_t.Object)),
-  processor: _t.maybe(_t.Any),
-  processors: _t.maybe(_t.list(_t.Any))
-}, {
-  name: 'Config',
-  strict: true
-});
 
 if (global.__NIGHTINGALE_GLOBAL_HANDLERS) {
   // eslint-disable-next-line no-console
@@ -30,7 +18,7 @@ function clearCache() {
 }
 
 function handleConfig(config) {
-  _assert(config, Config, 'config');
+  t.param('config', Config).assert(config);
 
   if (config.keys) {
     if (config.pattern) {
@@ -81,14 +69,15 @@ export function configure(config) {
 }
 
 export function addConfig(config, unshift = false) {
-  _assert(config, Config, 'config');
+  let _configType2 = Config;
+  t.param('config', _configType2).assert(config);
 
-  config = handleConfig(config);
+  config = _configType2.assert(handleConfig(config));
   global.__NIGHTINGALE_CONFIG[unshift ? 'unshift' : 'push'](config);
   clearCache();
 }
 
-var configIsForKey = function configIsForKey(key) {
+const configIsForKey = function configIsForKey(key) {
   return function (config) {
     if (config.keys) return config.keys.includes(key);
     if (config.pattern) return config.pattern.test(key);
@@ -97,13 +86,13 @@ var configIsForKey = function configIsForKey(key) {
 };
 
 global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = function getConfigForLogger(key) {
-  var globalCache = global.__NIGHTINGALE_LOGGER_MAP_CACHE;
+  const globalCache = global.__NIGHTINGALE_LOGGER_MAP_CACHE;
 
   if (globalCache.has(key)) {
     return globalCache.get(key);
   }
 
-  var loggerConfig = {
+  const loggerConfig = {
     handlers: [],
     processors: []
   };
@@ -119,7 +108,7 @@ global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = function getConfigForLogger(key) {
 };
 
 global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = function getConfigForLoggerRecord(key, level) {
-  var { handlers, processors } = global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key);
+  const { handlers, processors } = global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key);
 
   return {
     handlers: handlers.filter(function (handler) {
@@ -128,22 +117,4 @@ global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = function getConfigForLoggerR
     processors
   };
 };
-
-function _assert(x, type, name) {
-  function message() {
-    return 'Invalid value ' + _t.stringify(x) + ' supplied to ' + name + ' (expected a ' + _t.getTypeName(type) + ')';
-  }
-
-  if (_t.isType(type)) {
-    if (!type.is(x)) {
-      type(x, [name + ': ' + _t.getTypeName(type)]);
-
-      _t.fail(message());
-    }
-  } else if (!(x instanceof type)) {
-    _t.fail(message());
-  }
-
-  return x;
-}
 //# sourceMappingURL=config.js.map

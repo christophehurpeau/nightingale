@@ -21,13 +21,13 @@ Object.defineProperty(exports, 'addConfig', {
 });
 exports.listenUnhandledErrors = listenUnhandledErrors;
 
-var _tcombForked = require('tcomb-forked');
-
-var _tcombForked2 = _interopRequireDefault(_tcombForked);
-
 var _nightingaleLogger = require('nightingale-logger');
 
 var _nightingaleLogger2 = _interopRequireDefault(_nightingaleLogger);
+
+var _flowRuntime = require('flow-runtime');
+
+var _flowRuntime2 = _interopRequireDefault(_flowRuntime);
 
 var _nightingaleLevels = require('nightingale-levels');
 
@@ -44,32 +44,16 @@ exports.levels = _nightingaleLevels2.default;
  */
 
 function listenUnhandledErrors(logger) {
-  _assert(logger, _tcombForked2.default.maybe(_nightingaleLogger2.default), 'logger');
+  var _loggerType = _flowRuntime2.default.nullable(_flowRuntime2.default.ref(_nightingaleLogger2.default));
 
-  if (!logger) logger = new _nightingaleLogger2.default('nightingale.listenUnhandledErrors', 'listenUnhandledErrors');
+  _flowRuntime2.default.param('logger', _loggerType).assert(logger);
+
+  if (!logger) logger = _loggerType.assert(new _nightingaleLogger2.default('nightingale.listenUnhandledErrors', 'listenUnhandledErrors'));
   process.on('uncaughtException', function (err) {
     return logger.error('uncaughtException', { err: err });
   });
   process.on('unhandledRejection', function (err) {
     return logger.error('unhandledRejection', { err: err });
   });
-}
-
-function _assert(x, type, name) {
-  function message() {
-    return 'Invalid value ' + _tcombForked2.default.stringify(x) + ' supplied to ' + name + ' (expected a ' + _tcombForked2.default.getTypeName(type) + ')';
-  }
-
-  if (_tcombForked2.default.isType(type)) {
-    if (!type.is(x)) {
-      type(x, [name + ': ' + _tcombForked2.default.getTypeName(type)]);
-
-      _tcombForked2.default.fail(message());
-    }
-  } else if (!(x instanceof type)) {
-    _tcombForked2.default.fail(message());
-  }
-
-  return x;
 }
 //# sourceMappingURL=index.js.map

@@ -17,11 +17,7 @@ export function listenUnhandledErrors(logger) {
   t.param('logger', _loggerType).assert(logger);
 
   if (!logger) logger = _loggerType.assert(new Logger('nightingale.listenUnhandledErrors', 'listenUnhandledErrors'));
-  process.on('uncaughtException', function (err) {
-    return logger.error('uncaughtException', { err });
-  });
-  process.on('unhandledRejection', function (err) {
-    return logger.error('unhandledRejection', { err });
-  });
+  process.on('uncaughtException', err => logger.error('uncaughtException', { err }));
+  process.on('unhandledRejection', err => logger.error('unhandledRejection', { err }));
 }
 //# sourceMappingURL=index.js.map

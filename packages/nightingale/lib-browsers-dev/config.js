@@ -6,27 +6,15 @@ Object.defineProperty(exports, "__esModule", {
 exports.configure = configure;
 exports.addConfig = addConfig;
 
-var _tcombForked = require('tcomb-forked');
+var _flowRuntime = require('flow-runtime');
 
-var _tcombForked2 = _interopRequireDefault(_tcombForked);
+var _flowRuntime2 = _interopRequireDefault(_flowRuntime);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
-var Config = _tcombForked2.default.interface({
-  stop: _tcombForked2.default.maybe(_tcombForked2.default.Boolean),
-  pattern: _tcombForked2.default.maybe(RegExp),
-  key: _tcombForked2.default.maybe(_tcombForked2.default.String),
-  keys: _tcombForked2.default.maybe(_tcombForked2.default.list(_tcombForked2.default.String)),
-  handler: _tcombForked2.default.maybe(_tcombForked2.default.Object),
-  handlers: _tcombForked2.default.maybe(_tcombForked2.default.list(_tcombForked2.default.Object)),
-  processor: _tcombForked2.default.maybe(_tcombForked2.default.Any),
-  processors: _tcombForked2.default.maybe(_tcombForked2.default.list(_tcombForked2.default.Any))
-}, {
-  name: 'Config',
-  strict: true
-});
+var Config = _flowRuntime2.default.type('Config', _flowRuntime2.default.exactObject(_flowRuntime2.default.property('stop', _flowRuntime2.default.nullable(_flowRuntime2.default.boolean())), _flowRuntime2.default.property('pattern', _flowRuntime2.default.nullable(_flowRuntime2.default.ref('RegExp'))), _flowRuntime2.default.property('key', _flowRuntime2.default.nullable(_flowRuntime2.default.string())), _flowRuntime2.default.property('keys', _flowRuntime2.default.nullable(_flowRuntime2.default.array(_flowRuntime2.default.string()))), _flowRuntime2.default.property('handler', _flowRuntime2.default.nullable(_flowRuntime2.default.object())), _flowRuntime2.default.property('handlers', _flowRuntime2.default.nullable(_flowRuntime2.default.array(_flowRuntime2.default.object()))), _flowRuntime2.default.property('processor', _flowRuntime2.default.nullable(_flowRuntime2.default.any())), _flowRuntime2.default.property('processors', _flowRuntime2.default.nullable(_flowRuntime2.default.array(_flowRuntime2.default.any())))));
 
 if (global.__NIGHTINGALE_GLOBAL_HANDLERS) {
   // eslint-disable-next-line no-console
@@ -44,7 +32,7 @@ function clearCache() {
 }
 
 function handleConfig(config) {
-  _assert(config, Config, 'config');
+  _flowRuntime2.default.param('config', Config).assert(config);
 
   if (config.keys) {
     if (config.pattern) {
@@ -96,10 +84,11 @@ function configure(config) {
 
 function addConfig(config) {
   var unshift = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+  var _configType2 = Config;
 
-  _assert(config, Config, 'config');
+  _flowRuntime2.default.param('config', _configType2).assert(config);
 
-  config = handleConfig(config);
+  config = _configType2.assert(handleConfig(config));
   global.__NIGHTINGALE_CONFIG[unshift ? 'unshift' : 'push'](config);
   clearCache();
 }
@@ -148,22 +137,4 @@ global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = function getConfigForLoggerR
     processors: processors
   };
 };
-
-function _assert(x, type, name) {
-  function message() {
-    return 'Invalid value ' + _tcombForked2.default.stringify(x) + ' supplied to ' + name + ' (expected a ' + _tcombForked2.default.getTypeName(type) + ')';
-  }
-
-  if (_tcombForked2.default.isType(type)) {
-    if (!type.is(x)) {
-      type(x, [name + ': ' + _tcombForked2.default.getTypeName(type)]);
-
-      _tcombForked2.default.fail(message());
-    }
-  } else if (!(x instanceof type)) {
-    _tcombForked2.default.fail(message());
-  }
-
-  return x;
-}
 //# sourceMappingURL=config.js.map

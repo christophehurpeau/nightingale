@@ -1,3 +1,10 @@
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.configure = configure;
+exports.addConfig = addConfig;
 
 
 if (!global.__NIGHTINGALE_CONFIG) {
@@ -49,7 +56,7 @@ function handleConfig(config) {
   return config;
 }
 
-export function configure(config) {
+function configure(config) {
   if (global.__NIGHTINGALE_CONFIG.length !== 0) {
     // eslint-disable-next-line no-console
     console.log('nightingale: warning: config overridden');
@@ -59,18 +66,16 @@ export function configure(config) {
   global.__NIGHTINGALE_CONFIG = config.map(handleConfig);
 }
 
-export function addConfig(config, unshift = false) {
+function addConfig(config, unshift = false) {
   config = handleConfig(config);
   global.__NIGHTINGALE_CONFIG[unshift ? 'unshift' : 'push'](config);
   clearCache();
 }
 
-const configIsForKey = function configIsForKey(key) {
-  return function (config) {
-    if (config.keys) return config.keys.includes(key);
-    if (config.pattern) return config.pattern.test(key);
-    return true;
-  };
+const configIsForKey = key => config => {
+  if (config.keys) return config.keys.includes(key);
+  if (config.pattern) return config.pattern.test(key);
+  return true;
 };
 
 global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = function getConfigForLogger(key) {
@@ -85,7 +90,7 @@ global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = function getConfigForLogger(key) {
     processors: []
   };
 
-  global.__NIGHTINGALE_CONFIG.filter(configIsForKey(key)).some(function (config) {
+  global.__NIGHTINGALE_CONFIG.filter(configIsForKey(key)).some(config => {
     if (config.handlers) loggerConfig.handlers.push(...config.handlers);
     if (config.processors) loggerConfig.processors.push(...config.processors);
     return config.stop;
@@ -99,9 +104,7 @@ global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = function getConfigForLoggerR
   const { handlers, processors } = global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key);
 
   return {
-    handlers: handlers.filter(function (handler) {
-      return level >= handler.minLevel && (!handler.isHandling || handler.isHandling(level, key));
-    }),
+    handlers: handlers.filter(handler => level >= handler.minLevel && (!handler.isHandling || handler.isHandling(level, key))),
     processors
   };
 };
