@@ -1,3 +1,12 @@
+<a name="1.4.0"></a>
+# [1.4.0](https://github.com/nightingalejs/nightingale-ansi-formatter/compare/v1.3.0...v1.4.0) (2017-02-28)
+
+
+### Features
+
+* pob upgrade ([ee174d2](https://github.com/nightingalejs/nightingale-ansi-formatter/commit/ee174d2))
+
+
 ### v1.3.0
 
 - [`15b7ed0`](https://github.com/nightingalejs/nightingale-ansi-formatter/commit/15b7ed00933a2879cdab356a7b3e98b2e7edb959) chore: update dependencies (Christophe Hurpeau)
