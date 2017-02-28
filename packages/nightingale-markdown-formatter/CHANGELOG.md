@@ -1,3 +1,12 @@
+<a name="0.4.0"></a>
+# [0.4.0](https://github.com/nightingalejs/nightingale-markdown-formatter/compare/v0.3.0...v0.4.0) (2017-02-28)
+
+
+### Features
+
+* pob upgrade ([3ac4662](https://github.com/nightingalejs/nightingale-markdown-formatter/commit/3ac4662))
+
+
 ### v0.3.0
 
 - [`1141530`](https://github.com/nightingalejs/nightingale-markdown-formatter/commit/1141530d22b03054db91fa1c147aec50372ed50f) chore: update dependencies (Christophe Hurpeau)
