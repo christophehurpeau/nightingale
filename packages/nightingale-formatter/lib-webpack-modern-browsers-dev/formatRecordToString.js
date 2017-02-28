@@ -2,8 +2,8 @@ import levelToSymbol from './levelToSymbol';
 import levelToStyles from './levelToStyles';
 import formatObject from './formatObject';
 
-export default function formatRecordToString(record, style, options) {
-  var parts = [];
+export default function formatRecordToString(record, style) {
+  let parts = [];
 
   if (record.displayName) {
     parts.push(style(['gray-light'], record.displayName));
@@ -16,12 +16,12 @@ export default function formatRecordToString(record, style, options) {
     /* new Date().toFormat('HH24:MI:SS') */
   }
 
-  var message = record.symbol || levelToSymbol[record.level];
-  var styles = record.styles || levelToStyles[record.level];
+  let message = record.symbol || levelToSymbol[record.level];
+  let styles = record.styles || levelToStyles[record.level];
 
   if (record.message) {
     if (message) {
-      message += ` ${ record.message }`;
+      message += ` ${record.message}`;
     } else {
       message = record.message;
     }
@@ -34,12 +34,12 @@ export default function formatRecordToString(record, style, options) {
     parts.push(message);
   }
 
-  ['metadata', 'extra', 'context'].forEach(key => {
+  ['metadata', 'extra', 'context'].forEach(function (key) {
     if (!record[key]) {
       return;
     }
 
-    var stringObject = formatObject(record[key], style, record[`${ key }Styles`]);
+    const stringObject = formatObject(record[key], style, record[`${key}Styles`]);
 
     if (!stringObject) {
       return;

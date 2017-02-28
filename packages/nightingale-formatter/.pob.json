@@ -1,10 +1,17 @@
 {
   "envs": [
     "node6",
+    "node7",
     "webpack-modern-browsers",
-    "webpack"
+    "webpack",
+    "webpack-node7"
   ],
   "react": false,
   "testing": true,
-  "documentation": false
+  "documentation": false,
+  "entries": [
+    "index"
+  ],
+  "flow": false,
+  "doclets": false
 }

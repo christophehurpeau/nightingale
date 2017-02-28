@@ -11,7 +11,7 @@ suite('formatObject', () => {
     (0, _assert.strictEqual)((0, _.formatObject)({}), '');
   });
 
-  const styleFn = (styles, value) => styles && styles.length ? `[styles:${ styles.join(',') }]${ value }[/styles]` : value;
+  const styleFn = (styles, value) => styles && styles.length ? `[styles:${styles.join(',')}]${value}[/styles]` : value;
 
   const noStyleFn = (styles, value) => value;
 
@@ -45,8 +45,9 @@ suite('formatObject', () => {
   });
 
   test('simple recursive object', () => {
-    let a = { a: 1 };
-    a.a = a;
+    let a = { a: 1, a: a
+    };
+
     (0, _assert.strictEqual)((0, _.formatObject)({ a }, noStyleFn), '{ a: { a: {Circular object} } }');
   });
 

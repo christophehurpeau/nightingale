@@ -34,8 +34,8 @@ export default {
   bgCyan: { open: 'background: #00cfd8', close: 'background: initial' },
   bgWhite: { open: 'background: white', close: 'background: initial' },
 
-  orange: { open: `color: #${ hexColors.orange }`, close: 'color: initial' },
-  grayLight: { open: `color: #${ hexColors.grayLight }`, close: 'color: initial' },
-  'gray-light': { open: `color: #${ hexColors.grayLight }`, close: 'color: initial' }
+  orange: { open: `color: #${hexColors.orange}`, close: 'color: initial' },
+  grayLight: { open: `color: #${hexColors.grayLight}`, close: 'color: initial' },
+  'gray-light': { open: `color: #${hexColors.grayLight}`, close: 'color: initial' }
 };
 //# sourceMappingURL=styleToHtmlStyle.js.map

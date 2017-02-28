@@ -44,8 +44,8 @@ exports.default = {
   bgCyan: { open: 'background: #00cfd8', close: 'background: initial' },
   bgWhite: { open: 'background: white', close: 'background: initial' },
 
-  orange: { open: `color: #${ _styleToHexColor2.default.orange }`, close: 'color: initial' },
-  grayLight: { open: `color: #${ _styleToHexColor2.default.grayLight }`, close: 'color: initial' },
-  'gray-light': { open: `color: #${ _styleToHexColor2.default.grayLight }`, close: 'color: initial' }
+  orange: { open: `color: #${_styleToHexColor2.default.orange}`, close: 'color: initial' },
+  grayLight: { open: `color: #${_styleToHexColor2.default.grayLight}`, close: 'color: initial' },
+  'gray-light': { open: `color: #${_styleToHexColor2.default.grayLight}`, close: 'color: initial' }
 };
 //# sourceMappingURL=styleToHtmlStyle.js.map

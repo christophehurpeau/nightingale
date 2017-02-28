@@ -2,7 +2,7 @@ import levelToSymbol from './levelToSymbol';
 import levelToStyles from './levelToStyles';
 import formatObject from './formatObject';
 
-export default function formatRecordToString(record, style, options) {
+export default function formatRecordToString(record, style) {
   var parts = [];
 
   if (record.displayName) {

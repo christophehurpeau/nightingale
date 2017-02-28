@@ -1,4 +1,4 @@
-/* eslint-disable no-use-before-define */
+/* eslint-disable no-use-before-define, max-lines */
 
 function tryStringify(arg) {
   try {
@@ -119,7 +119,7 @@ const internalFormatIterator = (
     formattedValue: `${prefix}${breakLine ? '' : prefixSuffixSpace}`
       + values.map(breakLine ? v => `\n${padding}${v.formattedValue}` : v => v.formattedValue)
         .join(breakLine ? '' : ' ')
-      + `${breakLine ? `,\n` : prefixSuffixSpace}${suffix}`,
+      + `${breakLine ? ',\n' : prefixSuffixSpace}${suffix}`,
   };
 };
 
@@ -132,7 +132,6 @@ function internalFormatObject(
   if (objects.has(object)) {
     return { stringValue: '{Circular object}', formattedValue: '{Circular object}' };
   }
-
 
   const keys = Object.keys(object);
   if (keys.length === 0) {
@@ -170,16 +169,15 @@ function internalFormatArray(array, styleFn, { padding, depth, maxDepth, objects
     };
   }
 
-
   objects.add(array);
 
   const result = internalFormatIterator(
-        array.map(value => ({ key: undefined, value })),
-        styleFn,
-        undefined,
-        { padding, depth, maxDepth, objects },
-        { prefix: '[', suffix: ']', prefixSuffixSpace: '' },
-    );
+    array.map(value => ({ key: undefined, value })),
+    styleFn,
+    undefined,
+    { padding, depth, maxDepth, objects },
+    { prefix: '[', suffix: ']', prefixSuffixSpace: '' },
+  );
 
   objects.delete(array);
 
@@ -191,11 +189,11 @@ export default function formatObject(object, styleFn, objectStyles, {
     maxDepth = 10,
 } = {}) {
   const { formattedValue: result } = internalFormatObject(
-        object,
-        styleFn,
-        objectStyles,
-        { padding, maxDepth, depth: 0, objects: new Set() },
-    );
+    object,
+    styleFn,
+    objectStyles,
+    { padding, maxDepth, depth: 0, objects: new Set() },
+  );
 
   if (result === '{}') {
     return '';

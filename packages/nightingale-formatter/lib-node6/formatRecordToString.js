@@ -19,7 +19,7 @@ var _formatObject2 = _interopRequireDefault(_formatObject);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function formatRecordToString(record, style, options) {
+function formatRecordToString(record, style) {
   let parts = [];
 
   if (record.displayName) {
@@ -38,7 +38,7 @@ function formatRecordToString(record, style, options) {
 
   if (record.message) {
     if (message) {
-      message += ` ${ record.message }`;
+      message += ` ${record.message}`;
     } else {
       message = record.message;
     }
@@ -56,7 +56,7 @@ function formatRecordToString(record, style, options) {
       return;
     }
 
-    const stringObject = (0, _formatObject2.default)(record[key], style, record[`${ key }Styles`]);
+    const stringObject = (0, _formatObject2.default)(record[key], style, record[`${key}Styles`]);
 
     if (!stringObject) {
       return;
