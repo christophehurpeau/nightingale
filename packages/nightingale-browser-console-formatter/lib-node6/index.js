@@ -16,7 +16,7 @@ const style = exports.style = args => (styles, string) => {
   const htmlStyles = styles.map(styleName => _nightingaleFormatter.styleToHtmlStyle[styleName]);
   args.push(htmlStyles.map(s => s.open).join('; '));
   args.push(htmlStyles.map(s => s.close).join('; '));
-  return `%c${ string }%c`;
+  return `%c${string}%c`;
 };
 
 /**
