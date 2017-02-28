@@ -1,3 +1,12 @@
+<a name="1.2.0"></a>
+# [1.2.0](https://github.com/nightingalejs/nightingale-html-formatter/compare/v1.1.0...v1.2.0) (2017-02-28)
+
+
+### Features
+
+* pob upgrade ([d48ff08](https://github.com/nightingalejs/nightingale-html-formatter/commit/d48ff08))
+
+
 ### v1.1.0
 
 - [`1408322`](https://github.com/nightingalejs/nightingale-html-formatter/commit/1408322fee7bd77cdcf7ab8b6ebdab7fe7539511) first commit (Christophe Hurpeau)
