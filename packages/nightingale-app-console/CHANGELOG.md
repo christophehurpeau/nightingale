@@ -1,3 +1,12 @@
+<a name="0.3.0"></a>
+# [0.3.0](https://github.com/nightingalejs/nightingale-app-console/compare/v0.2.0...v0.3.0) (2017-02-28)
+
+
+### Features
+
+* pob upgrade ([e146156](https://github.com/nightingalejs/nightingale-app-console/commit/e146156))
+
+
 ### v0.2.0
 
 - [`dfc0bfa`](https://github.com/nightingalejs/nightingale-app-console/commit/dfc0bfa9900d67431160f62d822d3b04469d9ea0) refactor: update dependencies, readme (Christophe Hurpeau)
