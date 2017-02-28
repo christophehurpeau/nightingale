@@ -2,6 +2,7 @@
 
 String handler for nightingale
 
+[![Dependency ci Status][dependencyci-image]][dependencyci-url]
 [![Dependency Status][daviddm-image]][daviddm-url]
 
 ## Install
@@ -22,3 +23,5 @@ console.log(nightingaleString);
 [npm-url]: https://npmjs.org/package/nightingale-string
 [daviddm-image]: https://david-dm.org/nightingalejs/nightingale-string.svg?style=flat-square
 [daviddm-url]: https://david-dm.org/nightingalejs/nightingale-string
+[dependencyci-image]: https://dependencyci.com/github/nightingalejs/nightingale-string/badge?style=flat-square
+[dependencyci-url]: https://dependencyci.com/github/nightingalejs/nightingale-string
