@@ -1,3 +1,12 @@
+<a name="2.1.0"></a>
+# [2.1.0](https://github.com/nightingalejs/nightingale-handler/compare/v2.0.0...v2.1.0) (2017-02-28)
+
+
+### Features
+
+* pob upgrade ([9f7742f](https://github.com/nightingalejs/nightingale-handler/commit/9f7742f))
+
+
 ### v2.0.0
 
 - [`d72e8bb`](https://github.com/nightingalejs/nightingale-handler/commit/d72e8bb0f042777781735aa751ed3e797c0187ba) refactor: v2 (Christophe Hurpeau)
