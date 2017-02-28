@@ -1,3 +1,12 @@
+<a name="2.2.0"></a>
+# [2.2.0](https://github.com/nightingalejs/nightingale-debug/compare/v2.1.0...v2.2.0) (2017-02-28)
+
+
+### Features
+
+* pob upgrade ([d0999af](https://github.com/nightingalejs/nightingale-debug/commit/d0999af))
+
+
 ### v2.1.0
 
 - [`3f4713d`](https://github.com/nightingalejs/nightingale-debug/commit/3f4713d590e167a473ee86395d159cc21865ca21) chore(package): fix main in package.json (Christophe Hurpeau)
