@@ -1,3 +1,12 @@
+<a name="2.2.0"></a>
+# [2.2.0](https://github.com/nightingalejs/nightingale-sentry/compare/v2.1.0...v2.2.0) (2017-02-28)
+
+
+### Features
+
+* pob upgrade ([2ec8cd0](https://github.com/nightingalejs/nightingale-sentry/commit/2ec8cd0))
+
+
 ### v2.1.0
 
 - [`73f7d73`](https://github.com/nightingalejs/nightingale-sentry/commit/73f7d7316d4b15b5e8f6b7c3caa37e4f0d38424e) Update README.md (Christophe Hurpeau)
