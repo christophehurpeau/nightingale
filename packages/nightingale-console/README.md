@@ -2,6 +2,7 @@
 
 Console handler for nightingale
 
+[![Dependency ci Status][dependencyci-image]][dependencyci-url]
 [![Dependency Status][daviddm-image]][daviddm-url]
 
 ## Install
@@ -40,3 +41,5 @@ DEBUG='*,-app:*'; # debug everything except app and all its children
 [npm-url]: https://npmjs.org/package/nightingale-console
 [daviddm-image]: https://david-dm.org/nightingalejs/nightingale-console.svg?style=flat-square
 [daviddm-url]: https://david-dm.org/nightingalejs/nightingale-console
+[dependencyci-image]: https://dependencyci.com/github/nightingalejs/nightingale-console/badge?style=flat-square
+[dependencyci-url]: https://dependencyci.com/github/nightingalejs/nightingale-console
