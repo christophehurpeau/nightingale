@@ -1,3 +1,12 @@
+<a name="2.2.0"></a>
+# [2.2.0](https://github.com/nightingalejs/nightingale-slack/compare/v2.1.0...v2.2.0) (2017-03-01)
+
+
+### Features
+
+* createBody ([890e420](https://github.com/nightingalejs/nightingale-slack/commit/890e420))
+
+
 <a name="2.1.0"></a>
 # [2.1.0](https://github.com/nightingalejs/nightingale-slack/compare/v2.0.0...v2.1.0) (2017-02-28)
 
