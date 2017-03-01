@@ -1,0 +1,27 @@
+machine:
+  node:
+    version: 7.6.0
+
+general:
+  branches:
+    ignore:
+      - gh-pages
+
+dependencies:
+  cache_directories:
+    - ~/.cache/yarn
+    - node_modules
+  override:
+    - yarn install
+
+test:
+  pre:
+    - mkdir -p $CIRCLE_TEST_REPORTS/junit/
+  override:
+    - yarn run preversion
+    - yarn run test
+    - XUNIT_FILE=$CIRCLE_TEST_REPORTS/junit/xunit.xml npm run test -- --reporter xunit-file
+    - yarn run generate:test-coverage
+  post:
+    - bash <(curl -s https://codecov.io/bash)
+    - cp -R coverage $CIRCLE_ARTIFACTS/

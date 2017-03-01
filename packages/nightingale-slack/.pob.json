@@ -6,9 +6,10 @@
   ],
   "react": false,
   "documentation": false,
-  "testing": false,
+  "testing": true,
   "entries": [
-    "index"
+    "index",
+    "createBody"
   ],
   "flow": false,
   "doclets": false
