@@ -1,3 +1,12 @@
+<a name="2.4.0"></a>
+# [2.4.0](https://github.com/nightingalejs/nightingale-console/compare/v2.3.0...v2.4.0) (2017-03-06)
+
+
+### Features
+
+* support node 4 ([7f8447a](https://github.com/nightingalejs/nightingale-console/commit/7f8447a))
+
+
 <a name="2.3.0"></a>
 # [2.3.0](https://github.com/nightingalejs/nightingale-console/compare/v2.2.0...v2.3.0) (2017-02-28)
 
