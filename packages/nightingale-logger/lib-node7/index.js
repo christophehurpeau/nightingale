@@ -3,6 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.default = undefined;
 
 var _util = require('util');
 
@@ -42,7 +43,7 @@ function getConfigForLoggerRecord(key, recordLevel) {
  * Interface that allows you to log records.
  * This records are treated by handlers
  */
-class Logger {
+let Logger = class Logger {
 
   /**
    * Create a new Logger
@@ -432,6 +433,6 @@ class Logger {
     callback();
     this.exit(fn);
   }
-}
+};
 exports.default = Logger;
 //# sourceMappingURL=index.js.map

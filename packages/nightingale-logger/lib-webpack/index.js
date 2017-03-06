@@ -555,5 +555,5 @@ var Logger = function () {
   return Logger;
 }();
 
-export default Logger;
+export { Logger as default };
 //# sourceMappingURL=index.js.map

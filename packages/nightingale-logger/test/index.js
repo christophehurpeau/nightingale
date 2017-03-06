@@ -1,6 +1,6 @@
 /* global test */
 import { strictEqual } from 'assert';
-import Logger from '../../';
+import Logger from '../';
 
 test('key argument', () => {
   const key = 'test';

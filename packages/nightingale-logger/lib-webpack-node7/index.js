@@ -29,7 +29,7 @@ function getConfigForLoggerRecord(key, recordLevel) {
  * Interface that allows you to log records.
  * This records are treated by handlers
  */
-export default class Logger {
+let Logger = class Logger {
 
   /**
    * Create a new Logger
@@ -419,5 +419,6 @@ export default class Logger {
     callback();
     this.exit(fn);
   }
-}
+};
+export { Logger as default };
 //# sourceMappingURL=index.js.map
