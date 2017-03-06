@@ -1688,10 +1688,6 @@ flow-config-parser@^0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/flow-config-parser/-/flow-config-parser-0.3.0.tgz#704916efba88cd2518ab4d8f933079571276138f"
 
-flow-runtime@^0.6.1:
-  version "0.6.1"
-  resolved "https://registry.yarnpkg.com/flow-runtime/-/flow-runtime-0.6.1.tgz#dfb5c29983d99df0ca2f045e2a3da8f20b461c0d"
-
 flow-runtime@^0.7.0:
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/flow-runtime/-/flow-runtime-0.7.0.tgz#5fd6ee50ebaf952be5d2940e9a0b96c8edefaea5"
@@ -2678,10 +2674,10 @@ nightingale-debug@^2.0.1:
     nightingale-levels "^1.0.0"
 
 nightingale-formatter@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/nightingale-formatter/-/nightingale-formatter-2.1.0.tgz#46b30a5a7755ef7e24c5a99b105823fdf40126b6"
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/nightingale-formatter/-/nightingale-formatter-2.1.1.tgz#9c391ed39da5ab9f2418b499ca651dca7217181f"
   dependencies:
-    flow-runtime "^0.6.1"
+    flow-runtime "^0.7.0"
     nightingale-levels "^1.0.0"
 
 nightingale-levels@^1.0.0, nightingale-levels@^1.1.0:
