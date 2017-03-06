@@ -1,3 +1,12 @@
+<a name="2.1.1"></a>
+## [2.1.1](https://github.com/nightingalejs/nightingale-formatter/compare/v2.1.0...v2.1.1) (2017-03-06)
+
+
+### Bug Fixes
+
+* node 4 ([5ab0e84](https://github.com/nightingalejs/nightingale-formatter/commit/5ab0e84))
+
+
 <a name="2.1.0"></a>
 # [2.1.0](https://github.com/nightingalejs/nightingale-formatter/compare/v2.0.2...v2.1.0) (2017-02-28)
 
