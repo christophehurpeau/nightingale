@@ -10,9 +10,7 @@
   "license": "ISC",
   "repository": "git@github.com:nightingalejs/nightingale-console.git",
   "homepage": "https://github.com/nightingalejs/nightingale",
-  "engines": {
-    "node": ">=6.5.0"
-  },
+  "engines": {},
   "main": "./lib/index.js",
   "webpack:node": "./lib-webpack-node7/index.js",
   "webpack:node-dev": "./lib-webpack-node7-dev/index.js",
@@ -46,7 +44,7 @@
     "eslint-plugin-import": "^2.2.0",
     "komet": "^0.1.4",
     "komet-karma": "^0.2.5",
-    "nightingale": "^6.1.0",
+    "nightingale": "^6.1.1",
     "pob-babel": "^16.2.3",
     "pob-release": "^3.1.0"
   }
