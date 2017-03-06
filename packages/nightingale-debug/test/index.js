@@ -1,7 +1,7 @@
 /* global suite, test */
 import levels from 'nightingale-levels';
 import { strictEqual } from 'assert';
-import createFindDebugLevel from '../../src';
+import createFindDebugLevel from '../src';
 
 suite('created with undefined', () => {
   const findDebugLevel = createFindDebugLevel();
