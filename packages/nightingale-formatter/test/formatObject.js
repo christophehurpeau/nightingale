@@ -1,7 +1,7 @@
 /* global suite, test */
 /* eslint-disable max-len */
 import { strictEqual } from 'assert';
-import { formatObject } from '../..';
+import { formatObject } from '../';
 
 suite('formatObject', () => {
   test('empty object should return empty string', () => {

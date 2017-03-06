@@ -2,6 +2,7 @@
   "envs": [
     "node6",
     "node7",
+    "older-node",
     "webpack-modern-browsers",
     "webpack",
     "webpack-node7"

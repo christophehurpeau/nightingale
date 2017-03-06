@@ -7,7 +7,7 @@ import {
   styleToHexColor,
   formatObject,
   formatRecordToString,
-} from '../..';
+} from '../';
 
 suite('test exports', () => {
   test('levelToStyles', () => ok(typeof levelToStyles === 'object'));

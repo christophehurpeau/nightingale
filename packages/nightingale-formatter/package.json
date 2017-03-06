@@ -10,9 +10,7 @@
   "license": "ISC",
   "repository": "git@github.com:nightingalejs/nightingale-formatter.git",
   "homepage": "https://github.com/nightingalejs/nightingale",
-  "engines": {
-    "node": ">=6.5.0"
-  },
+  "engines": {},
   "main": "./index.js",
   "webpack:main": "./lib-webpack/index.js",
   "webpack:main-dev": "./lib-webpack-dev/index.js",
@@ -23,18 +21,18 @@
   "scripts": {
     "build": "pob-build",
     "clean": "rm -Rf docs dist test/node6 coverage",
-    "generate:test-coverage": "rm -Rf coverage/ ; NODE_ENV=production node --harmony --es_staging node_modules/istanbul/lib/cli.js cover node_modules/.bin/_mocha -- --recursive --reporter=spec -u tdd test/node6",
-    "lint": "eslint --ext .js,.jsx src/ test/src/",
+    "generate:test-coverage": "rm -Rf coverage/ ; NODE_ENV=production POBREGISTER_ONLY=./test node node_modules/istanbul/lib/cli.js cover node_modules/.bin/_mocha -- --require pob-babel/register --recursive --bail -u tdd test",
+    "lint": "eslint --ext .js,.jsx src/ test/",
     "prepare": "ln -s ../../git-hooks/pre-commit .git/hooks/pre-commit 2>/dev/null || true ; ln -s ../../git-hooks/post-checkout .git/hooks/post-checkout 2>/dev/null || true ; ln -s ../../git-hooks/post-merge .git/hooks/post-merge 2>/dev/null || true ; ln -s ../../git-hooks/prepare-commit-msg .git/hooks/prepare-commit-msg 2>/dev/null || true",
     "prepublish": "ln -s ../../git-hooks/pre-commit .git/hooks/pre-commit 2>/dev/null || true ; ln -s ../../git-hooks/post-checkout .git/hooks/post-checkout 2>/dev/null || true ; ln -s ../../git-hooks/post-merge .git/hooks/post-merge 2>/dev/null || true ; ln -s ../../git-hooks/prepare-commit-msg .git/hooks/prepare-commit-msg 2>/dev/null || true",
-    "preversion": "npm run lint && npm run build && pob-repository-check-clean",
+    "preversion": "yarn run lint && yarn run build && pob-repository-check-clean",
     "release": "pob-repository-check-clean && pob-release",
-    "test": "mocha --harmony --es_staging --recursive --bail -u tdd test/node6",
+    "test": "POBREGISTER_ONLY=./test mocha --require pob-babel/register --recursive --bail -u tdd test",
     "version": "pob-version",
     "watch": "pob-watch"
   },
   "dependencies": {
-    "flow-runtime": "^0.6.1",
+    "flow-runtime": "^0.7.0",
     "nightingale-levels": "^1.0.0"
   },
   "devDependencies": {
@@ -42,17 +40,17 @@
     "babel-eslint": "^7.1.0",
     "babel-preset-latest": "^6.22.0",
     "babel-preset-latest-node": "^0.1.0",
-    "babel-preset-modern-browsers": "^8.1.1",
-    "eslint": "^3.16.1",
-    "eslint-config-airbnb-base": "^11.1.0",
+    "babel-preset-modern-browsers": "^8.1.2",
+    "eslint": "^3.17.0",
+    "eslint-config-airbnb-base": "^11.1.1",
     "eslint-config-pob": "^11.1.0",
-    "eslint-plugin-babel": "^4.1.0",
+    "eslint-plugin-babel": "^4.1.1",
     "eslint-plugin-import": "^2.2.0",
     "istanbul": "^0.4.5",
     "komet": "^0.1.4",
     "komet-karma": "^0.2.5",
-    "mocha": "^3.1.2",
-    "pob-babel": "^16.1.0",
+    "mocha": "^3.2.0",
+    "pob-babel": "^16.2.3",
     "pob-release": "^3.1.0",
     "xunit-file": "^1.0.0"
   }

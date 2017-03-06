@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/styleToHexColor.js"],"names":["orange","grayLight"],"mappings":";;;;;kBAAe;AACbA,UAAQ,QADK;AAEbC,aAAW,QAFE;AAGb,gBAAc;AAHD,C","file":"styleToHexColor.js","sourcesContent":["export default {\n  orange: 'ff5f00',\n  grayLight: '808080',\n  'gray-light': '808080',\n};\n"]}
