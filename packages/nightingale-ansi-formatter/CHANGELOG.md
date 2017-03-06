@@ -1,3 +1,12 @@
+<a name="1.5.0"></a>
+# [1.5.0](https://github.com/nightingalejs/nightingale-ansi-formatter/compare/v1.4.0...v1.5.0) (2017-03-06)
+
+
+### Features
+
+* node 4 ([cc1073a](https://github.com/nightingalejs/nightingale-ansi-formatter/commit/cc1073a))
+
+
 <a name="1.4.0"></a>
 # [1.4.0](https://github.com/nightingalejs/nightingale-ansi-formatter/compare/v1.3.0...v1.4.0) (2017-02-28)
 
