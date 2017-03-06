@@ -1,3 +1,12 @@
+<a name="1.3.1"></a>
+## [1.3.1](https://github.com/nightingalejs/nightingale-console-output/compare/v1.3.0...v1.3.1) (2017-03-06)
+
+
+### Bug Fixes
+
+* node 4 ([6b27595](https://github.com/nightingalejs/nightingale-console-output/commit/6b27595))
+
+
 <a name="1.3.0"></a>
 # [1.3.0](https://github.com/nightingalejs/nightingale-console-output/compare/v1.2.0...v1.3.0) (2017-02-28)
 
