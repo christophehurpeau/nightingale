@@ -1,3 +1,12 @@
+<a name="2.4.1"></a>
+## [2.4.1](https://github.com/nightingalejs/nightingale-console/compare/v2.4.0...v2.4.1) (2017-03-06)
+
+
+### Bug Fixes
+
+* package.json engine ([8440ef3](https://github.com/nightingalejs/nightingale-console/commit/8440ef3))
+
+
 <a name="2.4.0"></a>
 # [2.4.0](https://github.com/nightingalejs/nightingale-console/compare/v2.3.0...v2.4.0) (2017-03-06)
 
