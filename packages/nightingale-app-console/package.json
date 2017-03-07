@@ -50,7 +50,5 @@
     "komet-karma": "^0.2.5",
     "pob-babel": "^17.0.2",
     "pob-release": "^3.1.0"
-  },
-  "webpack:node": "./lib-webpack-node7/index.js",
-  "webpack:node-dev": "./lib-webpack-node7-dev/index.js"
+  }
 }
