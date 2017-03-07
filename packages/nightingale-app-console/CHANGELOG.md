@@ -1,3 +1,12 @@
+<a name="0.4.0"></a>
+# [0.4.0](https://github.com/nightingalejs/nightingale-app-console/compare/v0.3.0...v0.4.0) (2017-03-07)
+
+
+### Features
+
+* pob upgrade, support node 4 and browser ([4b57946](https://github.com/nightingalejs/nightingale-app-console/commit/4b57946))
+
+
 <a name="0.3.0"></a>
 # [0.3.0](https://github.com/nightingalejs/nightingale-app-console/compare/v0.2.0...v0.3.0) (2017-02-28)
 
