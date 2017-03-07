@@ -22,13 +22,9 @@ exports.addConfig = _nightingale.addConfig;
 exports.levels = _nightingale.levels;
 
 (0, _sourceMapSupport.install)({
-  environment: 'node'
+  environment: 'browser'
 });
-const logger = exports.logger = new _nightingale2.default('app');
-
-Error.stackTraceLimit = Infinity;
-(0, _nightingale.listenUnhandledErrors)(logger);
-
+var logger = exports.logger = new _nightingale2.default('app');
 
 (0, _nightingale.configure)([{
   pattern: /^app(:.*)?$/,

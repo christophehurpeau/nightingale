@@ -1,18 +1,23 @@
+import { install as installSourceMapSupport } from 'source-map-support';
 import Logger, { configure, addConfig, levels, listenUnhandledErrors } from 'nightingale/src';
 import ConsoleHandler from 'nightingale-console/src';
-import errorProcessor from 'nightingale-error-processor/src';
 
 export { configure, addConfig, levels };
 
+if (!BROWSER || !PRODUCTION) {
+  installSourceMapSupport({
+    environment: BROWSER ? 'browser' : 'node',
+  });
+}
+
 export const logger = new Logger('app');
 
-Error.stackTraceLimit = Infinity;
-listenUnhandledErrors(logger);
+if (!BROWSER) {
+  Error.stackTraceLimit = Infinity;
+  listenUnhandledErrors(logger);
+}
 
 configure([
-  {
-    processors: [errorProcessor],
-  },
   !PRODUCTION && {
     pattern: /^app(:.*)?$/,
     handlers: [new ConsoleHandler(levels.DEBUG)],

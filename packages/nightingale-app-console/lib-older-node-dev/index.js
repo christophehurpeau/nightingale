@@ -24,7 +24,7 @@ exports.levels = _nightingale.levels;
 (0, _sourceMapSupport.install)({
   environment: 'node'
 });
-const logger = exports.logger = new _nightingale2.default('app');
+var logger = exports.logger = new _nightingale2.default('app');
 
 Error.stackTraceLimit = Infinity;
 (0, _nightingale.listenUnhandledErrors)(logger);
