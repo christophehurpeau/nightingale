@@ -38,7 +38,7 @@
   "devDependencies": {
     "babel-eslint": "^7.2.0",
     "babel-preset-env": "^1.2.2",
-    "babel-preset-latest-node": "^0.2.0",
+    "babel-preset-latest-node": "^0.2.2",
     "babel-preset-modern-browsers": "^9.0.2",
     "eslint": "^3.18.0",
     "eslint-config-airbnb-base": "^11.1.1",

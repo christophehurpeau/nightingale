@@ -774,9 +774,9 @@ babel-preset-flow@^6.23.0:
   dependencies:
     babel-plugin-transform-flow-strip-types "^6.22.0"
 
-babel-preset-latest-node@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/babel-preset-latest-node/-/babel-preset-latest-node-0.2.0.tgz#1a108a5eeab87ad55e3cfd02ced5c5ef989d197a"
+babel-preset-latest-node@^0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/babel-preset-latest-node/-/babel-preset-latest-node-0.2.2.tgz#846294e3959057ba9f91da993a68b6031a2212e0"
   dependencies:
     babel-plugin-check-es2015-constants "^6.22.0"
     babel-plugin-syntax-trailing-function-commas "^6.22.0"
@@ -811,8 +811,8 @@ babel-preset-pob-stages@^0.1.2:
     babel-plugin-transform-object-rest-spread "^6.23.0"
 
 babel-preset-pob@^0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/babel-preset-pob/-/babel-preset-pob-0.4.0.tgz#eed0b64b941b50eae2b067b838192d811a511367"
+  version "0.4.3"
+  resolved "https://registry.yarnpkg.com/babel-preset-pob/-/babel-preset-pob-0.4.3.tgz#73167fa4c157f15f8a66eaf4f09b8da3feac04b3"
   dependencies:
     babel-plugin-import-export-rename "^1.0.1"
     babel-plugin-minify-replace "^0.0.4"
@@ -2619,12 +2619,12 @@ natural-compare@^1.4.0:
   resolved "https://registry.yarnpkg.com/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
 
 nightingale-ansi-formatter@^1.3.0:
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/nightingale-ansi-formatter/-/nightingale-ansi-formatter-1.5.0.tgz#58d4477f95766f862d9c0a236c1ecfc9e72231cb"
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/nightingale-ansi-formatter/-/nightingale-ansi-formatter-1.6.0.tgz#2c303ced36b0538e9860a2198c0daf5437c6d93d"
   dependencies:
     ansi-styles "github:chalk/ansi-styles#47ccb63c5b9b296b39188717b0efc4123a036d47"
-    flow-runtime "^0.7.0"
-    nightingale-formatter "^2.1.0"
+    flow-runtime "^0.10.0"
+    nightingale-formatter "^2.2.0"
 
 nightingale-console-output@^1.2.0:
   version "1.3.1"
@@ -2649,11 +2649,11 @@ nightingale-debug@^2.0.1:
     flow-runtime "^0.7.0"
     nightingale-levels "^1.0.0"
 
-nightingale-formatter@^2.1.0:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/nightingale-formatter/-/nightingale-formatter-2.1.1.tgz#9c391ed39da5ab9f2418b499ca651dca7217181f"
+nightingale-formatter@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/nightingale-formatter/-/nightingale-formatter-2.2.0.tgz#f62608fbc04a5f670add310b8f59c0122366fd8f"
   dependencies:
-    flow-runtime "^0.7.0"
+    flow-runtime "^0.10.0"
     nightingale-levels "^1.0.0"
 
 nightingale-levels@^1.0.0, nightingale-levels@^1.1.0:
