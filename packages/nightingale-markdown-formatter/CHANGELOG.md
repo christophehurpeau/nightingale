@@ -1,3 +1,16 @@
+<a name="0.6.0"></a>
+# [0.6.0](https://github.com/nightingalejs/nightingale-markdown-formatter/compare/v0.5.0...v0.6.0) (2017-03-21)
+
+
+### Bug Fixes
+
+* node 6 ([c23b5e5](https://github.com/nightingalejs/nightingale-markdown-formatter/commit/c23b5e5))
+
+### Features
+
+* support node 4 ([02709fb](https://github.com/nightingalejs/nightingale-markdown-formatter/commit/02709fb))
+
+
 <a name="0.5.0"></a>
 # [0.5.0](https://github.com/nightingalejs/nightingale-markdown-formatter/compare/v0.4.0...v0.5.0) (2017-03-21)
 
