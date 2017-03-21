@@ -1,3 +1,7 @@
+<a name="2.2.0"></a>
+# [2.2.0](https://github.com/nightingalejs/nightingale-formatter/compare/v2.1.1...v2.2.0) (2017-03-21)
+
+
 <a name="2.1.1"></a>
 ## [2.1.1](https://github.com/nightingalejs/nightingale-formatter/compare/v2.1.0...v2.1.1) (2017-03-06)
 
