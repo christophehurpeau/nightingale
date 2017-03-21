@@ -12,8 +12,8 @@
   "homepage": "https://github.com/nightingalejs/nightingale",
   "engines": {},
   "main": "./index.js",
-  "webpack:node": "./lib-webpack-node7/index.js",
-  "webpack:node-dev": "./lib-webpack-node7-dev/index.js",
+  "module:node": "./lib-module-node7/index.js",
+  "module:node-dev": "./lib-module-node7-dev/index.js",
   "scripts": {
     "build": "pob-build",
     "clean": "rm -Rf docs dist test/node6 coverage",
@@ -29,14 +29,14 @@
   },
   "dependencies": {
     "ansi-styles": "github:chalk/ansi-styles#47ccb63c5b9b296b39188717b0efc4123a036d47",
-    "flow-runtime": "^0.7.0",
-    "nightingale-formatter": "^2.1.0"
+    "flow-runtime": "^0.10.0",
+    "nightingale-formatter": "^2.2.0"
   },
   "devDependencies": {
-    "babel-eslint": "^7.1.1",
-    "babel-preset-latest": "^6.22.0",
-    "babel-preset-latest-node": "^0.1.0",
-    "eslint": "^3.17.0",
+    "babel-eslint": "^7.2.0",
+    "babel-preset-env": "^1.2.2",
+    "babel-preset-latest-node": "^0.2.0",
+    "eslint": "^3.18.0",
     "eslint-config-airbnb-base": "^11.1.1",
     "eslint-config-pob": "^11.1.0",
     "eslint-plugin-babel": "^4.1.1",
@@ -45,7 +45,7 @@
     "komet": "^0.1.4",
     "komet-karma": "^0.2.5",
     "mocha": "^3.2.0",
-    "pob-babel": "^16.2.3",
+    "pob-babel": "^17.1.1",
     "pob-release": "^3.1.0",
     "xunit-file": "^1.0.0"
   }
