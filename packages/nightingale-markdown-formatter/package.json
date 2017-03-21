@@ -10,12 +10,12 @@
   "license": "ISC",
   "repository": "git@github.com:nightingalejs/nightingale-markdown-formatter.git",
   "homepage": "https://github.com/nightingalejs/nightingale",
-  "engines": {
-    "node": ">=6.5.0"
-  },
+  "engines": {},
   "main": "./index.js",
   "module": "./lib-module/index.js",
   "module-dev": "./lib-module-dev/index.js",
+  "browser": "./lib-browsers/index.js",
+  "browser-dev": "./lib-browsers-dev/index.js",
   "module:node": "./lib-module-node7/index.js",
   "module:node-dev": "./lib-module-node7-dev/index.js",
   "module:modern-browsers": "./lib-module-modern-browsers/index.js",

@@ -2,9 +2,11 @@
   "envs": [
     "node6",
     "node7",
+    "older-node",
     "module-modern-browsers",
     "module",
-    "module-node7"
+    "module-node7",
+    "browsers"
   ],
   "react": false,
   "testing": true,
