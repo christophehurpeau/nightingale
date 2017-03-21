@@ -20,7 +20,7 @@ test:
   override:
     - yarn run preversion
     - yarn run test
-    - XUNIT_FILE=$CIRCLE_TEST_REPORTS/junit/xunit.xml node_modules/.bin/mocha --harmony --recursive --reporter xunit-file -u tdd test/node6
+    - POBREGISTER_ONLY=./testXUNIT_FILE=$CIRCLE_TEST_REPORTS/junit/xunit.xml node_modules/.bin/mocha --require pob-babel/register --recursive --reporter xunit-file -u tdd test
     - yarn run generate:test-coverage
   post:
     - bash <(curl -s https://codecov.io/bash)

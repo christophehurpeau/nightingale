@@ -1,12 +1,11 @@
-/* global test */
 import { strictEqual, deepStrictEqual } from 'assert';
-import format, { style } from '../../';
+import format, { style } from '../';
 
 test('style: blue bold color', () => {
   const args = [];
   strictEqual(style(args)(['blue', 'bold'], 'test'), '%ctest%c');
   deepStrictEqual(args, [
-    'color: #4682B4; font-weight: bold',
+    'color: #00a0ff; font-weight: bold',
     'color: initial; font-weight: normal',
   ]);
 });
