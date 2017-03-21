@@ -35,7 +35,7 @@
   },
   "dependencies": {
     "flow-runtime": "^0.10.0",
-    "nightingale-formatter": "^2.2.1"
+    "nightingale-formatter": "^2.2.2"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.0",
