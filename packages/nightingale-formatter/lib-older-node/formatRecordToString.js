@@ -38,7 +38,7 @@ function formatRecordToString(record, style) {
 
   if (record.message) {
     if (message) {
-      message += ' ' + record.message;
+      message += ` ${record.message}`;
     } else {
       message = record.message;
     }
@@ -56,7 +56,7 @@ function formatRecordToString(record, style) {
       return;
     }
 
-    var stringObject = (0, _formatObject2.default)(record[key], style, record[key + 'Styles']);
+    var stringObject = (0, _formatObject2.default)(record[key], style, record[`${key}Styles`]);
 
     if (!stringObject) {
       return;
