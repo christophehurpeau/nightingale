@@ -65,7 +65,7 @@ function createFindDebugLevel(debugValue) {
   if (debugValue) {
     debugValue.forEach(function (value) {
       if (specialRegexpChars.test(value)) {
-        throw new Error('Invalid debug value: "' + value + '" (contains special chars)');
+        throw new Error(`Invalid debug value: "${value}" (contains special chars)`);
       }
 
       if (!value) return;
