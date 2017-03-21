@@ -1,4 +1,3 @@
-/* global suite, test */
 /* eslint-disable max-len */
 import { strictEqual } from 'assert';
 import { formatObject } from '../';

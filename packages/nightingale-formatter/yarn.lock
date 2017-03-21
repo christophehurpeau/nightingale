@@ -2619,18 +2619,18 @@ natural-compare@^1.4.0:
   resolved "https://registry.yarnpkg.com/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
 
 nightingale-ansi-formatter@^1.3.0:
-  version "1.6.0"
-  resolved "https://registry.yarnpkg.com/nightingale-ansi-formatter/-/nightingale-ansi-formatter-1.6.0.tgz#2c303ced36b0538e9860a2198c0daf5437c6d93d"
+  version "1.7.1"
+  resolved "https://registry.yarnpkg.com/nightingale-ansi-formatter/-/nightingale-ansi-formatter-1.7.1.tgz#597bd3616ef94c4ca1b6a43d52a5588e8fc9c5b0"
   dependencies:
     ansi-styles "github:chalk/ansi-styles#47ccb63c5b9b296b39188717b0efc4123a036d47"
     flow-runtime "^0.10.0"
-    nightingale-formatter "^2.2.0"
+    nightingale-formatter "^2.2.1"
 
 nightingale-console-output@^1.2.0:
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/nightingale-console-output/-/nightingale-console-output-1.3.1.tgz#ccad8d76f82f42d17b8aa35612d2c51bf1d98668"
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/nightingale-console-output/-/nightingale-console-output-1.4.0.tgz#2682ea6bc39404194ffe8dc748b48a4a5d61c133"
   dependencies:
-    flow-runtime "^0.7.0"
+    flow-runtime "^0.10.0"
     nightingale-levels "^1.0.0"
 
 nightingale-console@^2.4.1:
@@ -2643,15 +2643,15 @@ nightingale-console@^2.4.1:
     nightingale-debug "^2.0.1"
 
 nightingale-debug@^2.0.1:
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/nightingale-debug/-/nightingale-debug-2.2.1.tgz#5e889c96b199a1da45ee3bf6969992f5aae12007"
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/nightingale-debug/-/nightingale-debug-2.3.1.tgz#15f0d101629d5bbb80fce8fc6900c666ba4eb321"
   dependencies:
-    flow-runtime "^0.7.0"
+    flow-runtime "^0.10.0"
     nightingale-levels "^1.0.0"
 
-nightingale-formatter@^2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/nightingale-formatter/-/nightingale-formatter-2.2.0.tgz#f62608fbc04a5f670add310b8f59c0122366fd8f"
+nightingale-formatter@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/nightingale-formatter/-/nightingale-formatter-2.2.1.tgz#1a96230725beb0ce68bf95181d80f69ac9bd733c"
   dependencies:
     flow-runtime "^0.10.0"
     nightingale-levels "^1.0.0"
