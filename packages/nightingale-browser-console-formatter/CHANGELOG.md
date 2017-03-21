@@ -1,3 +1,7 @@
+<a name="1.5.0"></a>
+# [1.5.0](https://github.com/nightingalejs/nightingale-browser-console-formatter/compare/v1.4.0...v1.5.0) (2017-03-21)
+
+
 <a name="1.4.0"></a>
 # [1.4.0](https://github.com/nightingalejs/nightingale-browser-console-formatter/compare/v1.3.2...v1.4.0) (2017-02-28)
 
