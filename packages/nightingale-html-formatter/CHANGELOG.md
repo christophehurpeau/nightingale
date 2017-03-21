@@ -1,3 +1,12 @@
+<a name="1.3.1"></a>
+## [1.3.1](https://github.com/nightingalejs/nightingale-html-formatter/compare/v1.3.0...v1.3.1) (2017-03-21)
+
+
+### Bug Fixes
+
+* node 6.10 ([ab4ac71](https://github.com/nightingalejs/nightingale-html-formatter/commit/ab4ac71))
+
+
 <a name="1.3.0"></a>
 # [1.3.0](https://github.com/nightingalejs/nightingale-html-formatter/compare/v1.2.0...v1.3.0) (2017-03-21)
 
