@@ -1,6 +1,5 @@
-/* global test */
 import { strictEqual } from 'assert';
-import format, { style } from '../../';
+import format, { style } from '../';
 
 test('style: blue bold color', () => {
   strictEqual(style(['blue', 'bold'], 'test'), '*test*');
