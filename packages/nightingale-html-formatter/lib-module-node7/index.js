@@ -5,9 +5,7 @@ export function style(styles, string) {
     return string;
   }
 
-  return `<span style="${styles.map(function (styleName) {
-    return styleToHtmlStyle[styleName];
-  }).join('; ')}">${string}</span>`;
+  return `<span style="${styles.map(styleName => styleToHtmlStyle[styleName].open).join('; ')}">${string}</span>`;
 }
 
 /**
