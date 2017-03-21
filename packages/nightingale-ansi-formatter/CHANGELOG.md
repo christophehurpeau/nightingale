@@ -1,3 +1,12 @@
+<a name="1.7.1"></a>
+## [1.7.1](https://github.com/nightingalejs/nightingale-ansi-formatter/compare/v1.7.0...v1.7.1) (2017-03-21)
+
+
+### Bug Fixes
+
+* node 6.10 ([5bdf78d](https://github.com/nightingalejs/nightingale-ansi-formatter/commit/5bdf78d))
+
+
 <a name="1.7.0"></a>
 # [1.7.0](https://github.com/nightingalejs/nightingale-ansi-formatter/compare/v1.6.0...v1.7.0) (2017-03-21)
 
