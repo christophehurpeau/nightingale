@@ -16,6 +16,6 @@ exports.default = function write(string, _ref) {
   var level = _ref.level;
 
   var outKey = level >= _nightingaleLevels2.default.ERROR ? 'stderr' : 'stdout';
-  process[outKey].write(string + '\n');
+  process[outKey].write(`${string}\n`);
 };
 //# sourceMappingURL=index.js.map
