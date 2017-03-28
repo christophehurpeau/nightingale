@@ -1,7 +1,7 @@
 {
   "envs": [
-    "webpack-modern-browsers",
-    "webpack",
+    "module-modern-browsers",
+    "module",
     "browsers"
   ],
   "react": false,
