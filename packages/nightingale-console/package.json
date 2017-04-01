@@ -26,7 +26,7 @@
   },
   "dependencies": {
     "flow-runtime": "^0.10.0",
-    "nightingale-ansi-formatter": "^1.7.1",
+    "nightingale-ansi-formatter": "^1.7.2",
     "nightingale-console-output": "^1.4.0",
     "nightingale-debug": "^2.3.1"
   },
@@ -41,7 +41,7 @@
     "eslint-plugin-import": "^2.2.0",
     "komet": "^0.1.4",
     "komet-karma": "^0.2.5",
-    "nightingale": "^6.1.1",
+    "nightingale": "^6.2.1",
     "pob-babel": "^17.2.0",
     "pob-release": "^3.1.0"
   }
