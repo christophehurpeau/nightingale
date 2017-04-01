@@ -1,3 +1,12 @@
+<a name="2.3.0"></a>
+# [2.3.0](https://github.com/nightingalejs/nightingale-string/compare/v2.2.0...v2.3.0) (2017-04-01)
+
+
+### Features
+
+* support node 4 ([0d94b3c](https://github.com/nightingalejs/nightingale-string/commit/0d94b3c))
+
+
 <a name="2.2.0"></a>
 # [2.2.0](https://github.com/nightingalejs/nightingale-string/compare/v2.1.0...v2.2.0) (2017-04-01)
 
