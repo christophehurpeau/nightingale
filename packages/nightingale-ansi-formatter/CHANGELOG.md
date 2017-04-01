@@ -1,3 +1,12 @@
+<a name="1.7.2"></a>
+## [1.7.2](https://github.com/nightingalejs/nightingale-ansi-formatter/compare/v1.7.1...v1.7.2) (2017-04-01)
+
+
+### Bug Fixes
+
+* ainsi-styles@3.0 ([2c3b319](https://github.com/nightingalejs/nightingale-ansi-formatter/commit/2c3b319))
+
+
 <a name="1.7.1"></a>
 ## [1.7.1](https://github.com/nightingalejs/nightingale-ansi-formatter/compare/v1.7.0...v1.7.1) (2017-03-21)
 
