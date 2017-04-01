@@ -1,8 +1,6 @@
-/* global suite, test */
-/* eslint import/no-extraneous-dependencies: "off" */
 import { strictEqual } from 'assert';
 import StringHandler from 'nightingale-string';
-import Logger, { levels } from '../../';
+import Logger, { levels } from '../';
 
 class TestableStringLogger extends Logger {
   constructor() {

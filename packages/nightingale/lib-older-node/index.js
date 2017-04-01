@@ -42,10 +42,10 @@ exports.levels = _nightingaleLevels2.default;
 function listenUnhandledErrors(logger) {
   if (!logger) logger = new _nightingaleLogger2.default('nightingale.listenUnhandledErrors', 'listenUnhandledErrors');
   process.on('uncaughtException', function (err) {
-    return logger.error('uncaughtException', { err: err });
+    return logger.error('uncaughtException', { err });
   });
   process.on('unhandledRejection', function (err) {
-    return logger.error('unhandledRejection', { err: err });
+    return logger.error('unhandledRejection', { err });
   });
 }
 //# sourceMappingURL=index.js.map

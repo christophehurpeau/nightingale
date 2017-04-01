@@ -134,7 +134,7 @@ global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = function getConfigForLoggerR
     handlers: handlers.filter(function (handler) {
       return level >= handler.minLevel && (!handler.isHandling || handler.isHandling(level, key));
     }),
-    processors: processors
+    processors
   };
 };
 //# sourceMappingURL=config.js.map
