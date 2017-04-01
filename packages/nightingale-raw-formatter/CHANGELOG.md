@@ -1,3 +1,12 @@
+<a name="1.5.0"></a>
+# [1.5.0](https://github.com/nightingalejs/nightingale-raw-formatter/compare/v1.4.0...v1.5.0) (2017-04-01)
+
+
+### Features
+
+* support node 4 ([95a260b](https://github.com/nightingalejs/nightingale-raw-formatter/commit/95a260b))
+
+
 <a name="1.4.0"></a>
 # [1.4.0](https://github.com/nightingalejs/nightingale-raw-formatter/compare/v1.3.0...v1.4.0) (2017-03-21)
 
