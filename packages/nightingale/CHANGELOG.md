@@ -1,3 +1,7 @@
+<a name="6.2.0"></a>
+# [6.2.0](https://github.com/nightingalejs/nightingale/compare/v6.1.1...v6.2.0) (2017-04-01)
+
+
 <a name="6.1.1"></a>
 ## [6.1.1](https://github.com/nightingalejs/nightingale/compare/v6.1.0...v6.1.1) (2017-03-06)
 
