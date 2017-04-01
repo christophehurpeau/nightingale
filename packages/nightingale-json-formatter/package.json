@@ -10,9 +10,6 @@
   "license": "ISC",
   "repository": "git@github.com:nightingalejs/nightingale-json-formatter.git",
   "homepage": "https://github.com/nightingalejs/nightingale",
-  "engines": {
-    "node": ">=6.5.0"
-  },
   "main": "./index.js",
   "module": "./lib-module/index.js",
   "module-dev": "./lib-module-dev/index.js",
@@ -43,7 +40,7 @@
     "babel-preset-latest-node": "^0.2.2",
     "babel-preset-modern-browsers": "^9.0.2",
     "eslint": "^3.18.0",
-    "eslint-config-airbnb-base": "^11.1.1",
+    "eslint-config-airbnb-base": "^11.1.2",
     "eslint-config-pob": "^11.1.0",
     "eslint-plugin-babel": "^4.1.1",
     "eslint-plugin-import": "^2.2.0",
