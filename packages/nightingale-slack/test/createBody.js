@@ -1,6 +1,7 @@
-import createBody from '../src/createBody';
-import levels from 'nightingale-levels';
+/* eslint-disable camelcase */
 import { strictEqual, deepStrictEqual } from 'assert';
+import levels from 'nightingale-levels';
+import createBody from '../src/createBody';
 
 suite('createBody', () => {
   test('keep channel', () => {
@@ -27,12 +28,12 @@ suite('createBody', () => {
     const record = { level: levels.INFO, message: 'hello', metadata: { meta1: true } };
     deepStrictEqual(createBody(record, {}).attachments, [
       {
-        "color": "#808080",
-        "fallback": "→ hello { meta1: true }",
-        "mrkdwn_in": ["text"],
-        "text": "→ hello { *meta1:* true }",
-        "title": "hello",
-      }
+        color: '#808080',
+        fallback: '→ hello { meta1: true }',
+        mrkdwn_in: ['text'],
+        text: '→ hello { *meta1:* true }',
+        title: 'hello',
+      },
     ]);
   });
 });
