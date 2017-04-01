@@ -155,7 +155,7 @@ var Logger = (_dec = _flowRuntime2.default.decorate(_flowRuntime2.default.string
     this.displayName = displayName;
 
     if (key.includes('.')) {
-      this.warn('nightingale: `.` in key is deprecated, replace with `:`', { key: key, displayName: displayName });
+      this.warn('nightingale: `.` in key is deprecated, replace with `:`', { key, displayName });
       this.key = key.replace(/\./g, ':');
     }
   }
@@ -202,7 +202,7 @@ var Logger = (_dec = _flowRuntime2.default.decorate(_flowRuntime2.default.string
 
       _flowRuntime2.default.param('childDisplayName', _childDisplayNameType).assert(childDisplayName);
 
-      return _returnType6.assert(new Logger(this.key + ':' + childSuffixKey, childDisplayName));
+      return _returnType6.assert(new Logger(`${this.key}:${childSuffixKey}`, childDisplayName));
     }
 
     /**
@@ -380,7 +380,7 @@ var Logger = (_dec = _flowRuntime2.default.decorate(_flowRuntime2.default.string
 
       _flowRuntime2.default.param('metadataStyles', _metadataStylesType).assert(metadataStyles);
 
-      this.log(message, metadata, _nightingaleLevels2.default.TRACE, { metadataStyles: metadataStyles });
+      this.log(message, metadata, _nightingaleLevels2.default.TRACE, { metadataStyles });
     }
 
     /**
@@ -402,7 +402,7 @@ var Logger = (_dec = _flowRuntime2.default.decorate(_flowRuntime2.default.string
 
       _flowRuntime2.default.param('metadataStyles', _metadataStylesType2).assert(metadataStyles);
 
-      this.log(message, metadata, _nightingaleLevels2.default.DEBUG, { metadataStyles: metadataStyles });
+      this.log(message, metadata, _nightingaleLevels2.default.DEBUG, { metadataStyles });
     }
 
     /**
@@ -424,7 +424,7 @@ var Logger = (_dec = _flowRuntime2.default.decorate(_flowRuntime2.default.string
 
       _flowRuntime2.default.param('metadataStyles', _metadataStylesType3).assert(metadataStyles);
 
-      this.log(message, metadata, _nightingaleLevels2.default.NOTICE, { metadataStyles: metadataStyles });
+      this.log(message, metadata, _nightingaleLevels2.default.NOTICE, { metadataStyles });
     }
 
     /**
@@ -446,7 +446,7 @@ var Logger = (_dec = _flowRuntime2.default.decorate(_flowRuntime2.default.string
 
       _flowRuntime2.default.param('metadataStyles', _metadataStylesType4).assert(metadataStyles);
 
-      this.log(message, metadata, _nightingaleLevels2.default.INFO, { metadataStyles: metadataStyles });
+      this.log(message, metadata, _nightingaleLevels2.default.INFO, { metadataStyles });
     }
 
     /**
@@ -468,7 +468,7 @@ var Logger = (_dec = _flowRuntime2.default.decorate(_flowRuntime2.default.string
 
       _flowRuntime2.default.param('metadataStyles', _metadataStylesType5).assert(metadataStyles);
 
-      this.log(message, metadata, _nightingaleLevels2.default.WARN, { metadataStyles: metadataStyles });
+      this.log(message, metadata, _nightingaleLevels2.default.WARN, { metadataStyles });
     }
 
     /**
@@ -495,9 +495,9 @@ var Logger = (_dec = _flowRuntime2.default.decorate(_flowRuntime2.default.string
 
       if (message instanceof Error) {
         metadata.error = message;
-        message = _messageType7.assert(metadata.error.name + ': ' + metadata.error.message);
+        message = _messageType7.assert(`${metadata.error.name}: ${metadata.error.message}`);
       }
-      this.log(message, metadata, _nightingaleLevels2.default.ERROR, { metadataStyles: metadataStyles });
+      this.log(message, metadata, _nightingaleLevels2.default.ERROR, { metadataStyles });
     }
 
     /**
@@ -519,7 +519,7 @@ var Logger = (_dec = _flowRuntime2.default.decorate(_flowRuntime2.default.string
 
       _flowRuntime2.default.param('metadataStyles', _metadataStylesType7).assert(metadataStyles);
 
-      this.log(message, metadata, _nightingaleLevels2.default.CRITICAL, { metadataStyles: metadataStyles });
+      this.log(message, metadata, _nightingaleLevels2.default.CRITICAL, { metadataStyles });
     }
 
     /**
@@ -541,7 +541,7 @@ var Logger = (_dec = _flowRuntime2.default.decorate(_flowRuntime2.default.string
 
       _flowRuntime2.default.param('metadataStyles', _metadataStylesType8).assert(metadataStyles);
 
-      this.log(message, metadata, _nightingaleLevels2.default.FATAL, { metadataStyles: metadataStyles });
+      this.log(message, metadata, _nightingaleLevels2.default.FATAL, { metadataStyles });
     }
 
     /**
@@ -563,7 +563,7 @@ var Logger = (_dec = _flowRuntime2.default.decorate(_flowRuntime2.default.string
 
       _flowRuntime2.default.param('metadataStyles', _metadataStylesType9).assert(metadataStyles);
 
-      this.log(message, metadata, _nightingaleLevels2.default.ALERT, { metadataStyles: metadataStyles });
+      this.log(message, metadata, _nightingaleLevels2.default.ALERT, { metadataStyles });
     }
 
     /**
@@ -588,7 +588,7 @@ var Logger = (_dec = _flowRuntime2.default.decorate(_flowRuntime2.default.string
       // Note: inspect is a special function for node:
       // https://github.com/nodejs/node/blob/a1bda1b4deb08dfb3e06cb778f0db40023b18318/lib/util.js#L210
       value = _valueType.assert(_util2.default.inspect(value, { depth: 6 }));
-      this.log(value, metadata, _nightingaleLevels2.default.DEBUG, { metadataStyles: metadataStyles, styles: ['gray'] });
+      this.log(value, metadata, _nightingaleLevels2.default.DEBUG, { metadataStyles, styles: ['gray'] });
     }
 
     /**
@@ -615,7 +615,7 @@ var Logger = (_dec = _flowRuntime2.default.decorate(_flowRuntime2.default.string
       _flowRuntime2.default.param('metadataStyles', _metadataStylesType11).assert(metadataStyles);
 
       varValue = _varValueType.assert(_util2.default.inspect(varValue, { depth: 6 }));
-      this.log(varName + ' = ' + varValue, metadata, _nightingaleLevels2.default.DEBUG, { metadataStyles: metadataStyles, styles: ['cyan'] });
+      this.log(`${varName} = ${varValue}`, metadata, _nightingaleLevels2.default.DEBUG, { metadataStyles, styles: ['cyan'] });
     }
 
     /**
@@ -660,7 +660,7 @@ var Logger = (_dec = _flowRuntime2.default.decorate(_flowRuntime2.default.string
       _flowRuntime2.default.param('metadataStyles', _metadataStylesType13).assert(metadataStyles);
 
       this.log(message, metadata, _nightingaleLevels2.default.INFO, {
-        metadataStyles: metadataStyles,
+        metadataStyles,
         symbol: '✔',
         styles: ['green', 'bold']
       });
@@ -686,7 +686,7 @@ var Logger = (_dec = _flowRuntime2.default.decorate(_flowRuntime2.default.string
       _flowRuntime2.default.param('metadataStyles', _metadataStylesType14).assert(metadataStyles);
 
       this.log(message, metadata, _nightingaleLevels2.default.DEBUG, {
-        metadataStyles: metadataStyles,
+        metadataStyles,
         symbol: '✔',
         styles: ['green']
       });
@@ -734,7 +734,7 @@ var Logger = (_dec = _flowRuntime2.default.decorate(_flowRuntime2.default.string
       _flowRuntime2.default.param('metadataStyles', _metadataStylesType16).assert(metadataStyles);
 
       this.log(message, metadata, _nightingaleLevels2.default.INFO, {
-        metadataStyles: metadataStyles,
+        metadataStyles,
         symbol: '✖',
         styles: ['red', 'bold']
       });
@@ -760,7 +760,7 @@ var Logger = (_dec = _flowRuntime2.default.decorate(_flowRuntime2.default.string
       _flowRuntime2.default.param('metadataStyles', _metadataStylesType17).assert(metadataStyles);
 
       this.log(message, metadata, _nightingaleLevels2.default.DEBUG, {
-        metadataStyles: metadataStyles,
+        metadataStyles,
         symbol: '✖',
         styles: ['red']
       });
@@ -794,7 +794,7 @@ var Logger = (_dec = _flowRuntime2.default.decorate(_flowRuntime2.default.string
       _flowRuntime2.default.param('level', _levelType3).assert(level);
 
       if (message) {
-        this.log(message, metadata, level, { metadataStyles: metadataStyles });
+        this.log(message, metadata, level, { metadataStyles });
       }
 
       return _returnType8.assert(Date.now());
@@ -863,15 +863,15 @@ var Logger = (_dec = _flowRuntime2.default.decorate(_flowRuntime2.default.string
       var diffTime = now - startTime;
 
       if (diffTime < 1000) {
-        metadata.readableTime = diffTime + 'ms';
+        metadata.readableTime = `${diffTime}ms`;
       } else {
         var seconds = diffTime > 1000 && Math.floor(diffTime / 1000);
 
-        metadata.readableTime = '' + (seconds ? seconds + 's and ' : '') + (diffTime - seconds * 1000) + 'ms';
+        metadata.readableTime = `${seconds ? `${seconds}s and ` : ''}${diffTime - seconds * 1000}ms`;
       }
 
       metadata.timeMs = diffTime;
-      this.log(message, metadata, level, Object.assign({}, options, { metadataStyles: metadataStyles }));
+      this.log(message, metadata, level, Object.assign({}, options, { metadataStyles }));
     }
 
     /**
@@ -960,7 +960,7 @@ var Logger = (_dec = _flowRuntime2.default.decorate(_flowRuntime2.default.string
       metadata = _metadataType24.assert(Object.assign({
         functionName: fn.name
       }, metadata));
-      this.log('enter', metadata, _nightingaleLevels2.default.TRACE, { metadataStyles: metadataStyles });
+      this.log('enter', metadata, _nightingaleLevels2.default.TRACE, { metadataStyles });
     }
 
     /**
@@ -994,7 +994,7 @@ var Logger = (_dec = _flowRuntime2.default.decorate(_flowRuntime2.default.string
       metadata = _metadataType25.assert(Object.assign({
         functionName: fn.name
       }, metadata));
-      this.log('exit', metadata, _nightingaleLevels2.default.TRACE, { metadataStyles: metadataStyles });
+      this.log('exit', metadata, _nightingaleLevels2.default.TRACE, { metadataStyles });
     }
 
     /**

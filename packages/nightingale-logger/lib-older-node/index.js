@@ -65,7 +65,7 @@ var Logger = function () {
     this.displayName = displayName;
 
     if (key.includes('.')) {
-      this.warn('nightingale: `.` in key is deprecated, replace with `:`', { key: key, displayName: displayName });
+      this.warn('nightingale: `.` in key is deprecated, replace with `:`', { key, displayName });
       this.key = key.replace(/\./g, ':');
     }
   }
@@ -94,7 +94,7 @@ var Logger = function () {
   }, {
     key: 'child',
     value: function child(childSuffixKey, childDisplayName) {
-      return new Logger(this.key + ':' + childSuffixKey, childDisplayName);
+      return new Logger(`${this.key}:${childSuffixKey}`, childDisplayName);
     }
 
     /**
@@ -226,7 +226,7 @@ var Logger = function () {
   }, {
     key: 'trace',
     value: function trace(message, metadata, metadataStyles) {
-      this.log(message, metadata, _nightingaleLevels2.default.TRACE, { metadataStyles: metadataStyles });
+      this.log(message, metadata, _nightingaleLevels2.default.TRACE, { metadataStyles });
     }
 
     /**
@@ -236,7 +236,7 @@ var Logger = function () {
   }, {
     key: 'debug',
     value: function debug(message, metadata, metadataStyles) {
-      this.log(message, metadata, _nightingaleLevels2.default.DEBUG, { metadataStyles: metadataStyles });
+      this.log(message, metadata, _nightingaleLevels2.default.DEBUG, { metadataStyles });
     }
 
     /**
@@ -246,7 +246,7 @@ var Logger = function () {
   }, {
     key: 'notice',
     value: function notice(message, metadata, metadataStyles) {
-      this.log(message, metadata, _nightingaleLevels2.default.NOTICE, { metadataStyles: metadataStyles });
+      this.log(message, metadata, _nightingaleLevels2.default.NOTICE, { metadataStyles });
     }
 
     /**
@@ -256,7 +256,7 @@ var Logger = function () {
   }, {
     key: 'info',
     value: function info(message, metadata, metadataStyles) {
-      this.log(message, metadata, _nightingaleLevels2.default.INFO, { metadataStyles: metadataStyles });
+      this.log(message, metadata, _nightingaleLevels2.default.INFO, { metadataStyles });
     }
 
     /**
@@ -266,7 +266,7 @@ var Logger = function () {
   }, {
     key: 'warn',
     value: function warn(message, metadata, metadataStyles) {
-      this.log(message, metadata, _nightingaleLevels2.default.WARN, { metadataStyles: metadataStyles });
+      this.log(message, metadata, _nightingaleLevels2.default.WARN, { metadataStyles });
     }
 
     /**
@@ -281,9 +281,9 @@ var Logger = function () {
 
       if (message instanceof Error) {
         metadata.error = message;
-        message = metadata.error.name + ': ' + metadata.error.message;
+        message = `${metadata.error.name}: ${metadata.error.message}`;
       }
-      this.log(message, metadata, _nightingaleLevels2.default.ERROR, { metadataStyles: metadataStyles });
+      this.log(message, metadata, _nightingaleLevels2.default.ERROR, { metadataStyles });
     }
 
     /**
@@ -293,7 +293,7 @@ var Logger = function () {
   }, {
     key: 'critical',
     value: function critical(message, metadata, metadataStyles) {
-      this.log(message, metadata, _nightingaleLevels2.default.CRITICAL, { metadataStyles: metadataStyles });
+      this.log(message, metadata, _nightingaleLevels2.default.CRITICAL, { metadataStyles });
     }
 
     /**
@@ -303,7 +303,7 @@ var Logger = function () {
   }, {
     key: 'fatal',
     value: function fatal(message, metadata, metadataStyles) {
-      this.log(message, metadata, _nightingaleLevels2.default.FATAL, { metadataStyles: metadataStyles });
+      this.log(message, metadata, _nightingaleLevels2.default.FATAL, { metadataStyles });
     }
 
     /**
@@ -313,7 +313,7 @@ var Logger = function () {
   }, {
     key: 'alert',
     value: function alert(message, metadata, metadataStyles) {
-      this.log(message, metadata, _nightingaleLevels2.default.ALERT, { metadataStyles: metadataStyles });
+      this.log(message, metadata, _nightingaleLevels2.default.ALERT, { metadataStyles });
     }
 
     /**
@@ -326,7 +326,7 @@ var Logger = function () {
       // Note: inspect is a special function for node:
       // https://github.com/nodejs/node/blob/a1bda1b4deb08dfb3e06cb778f0db40023b18318/lib/util.js#L210
       value = _util2.default.inspect(value, { depth: 6 });
-      this.log(value, metadata, _nightingaleLevels2.default.DEBUG, { metadataStyles: metadataStyles, styles: ['gray'] });
+      this.log(value, metadata, _nightingaleLevels2.default.DEBUG, { metadataStyles, styles: ['gray'] });
     }
 
     /**
@@ -337,7 +337,7 @@ var Logger = function () {
     key: 'inspectVar',
     value: function inspectVar(varName, varValue, metadata, metadataStyles) {
       varValue = _util2.default.inspect(varValue, { depth: 6 });
-      this.log(varName + ' = ' + varValue, metadata, _nightingaleLevels2.default.DEBUG, { metadataStyles: metadataStyles, styles: ['cyan'] });
+      this.log(`${varName} = ${varValue}`, metadata, _nightingaleLevels2.default.DEBUG, { metadataStyles, styles: ['cyan'] });
     }
 
     /**
@@ -358,7 +358,7 @@ var Logger = function () {
     key: 'infoSuccess',
     value: function infoSuccess(message, metadata, metadataStyles) {
       this.log(message, metadata, _nightingaleLevels2.default.INFO, {
-        metadataStyles: metadataStyles,
+        metadataStyles,
         symbol: '✔',
         styles: ['green', 'bold']
       });
@@ -372,7 +372,7 @@ var Logger = function () {
     key: 'debugSuccess',
     value: function debugSuccess(message, metadata, metadataStyles) {
       this.log(message, metadata, _nightingaleLevels2.default.DEBUG, {
-        metadataStyles: metadataStyles,
+        metadataStyles,
         symbol: '✔',
         styles: ['green']
       });
@@ -396,7 +396,7 @@ var Logger = function () {
     key: 'infoFail',
     value: function infoFail(message, metadata, metadataStyles) {
       this.log(message, metadata, _nightingaleLevels2.default.INFO, {
-        metadataStyles: metadataStyles,
+        metadataStyles,
         symbol: '✖',
         styles: ['red', 'bold']
       });
@@ -410,7 +410,7 @@ var Logger = function () {
     key: 'debugFail',
     value: function debugFail(message, metadata, metadataStyles) {
       this.log(message, metadata, _nightingaleLevels2.default.DEBUG, {
-        metadataStyles: metadataStyles,
+        metadataStyles,
         symbol: '✖',
         styles: ['red']
       });
@@ -426,7 +426,7 @@ var Logger = function () {
       var level = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : _nightingaleLevels2.default.DEBUG;
 
       if (message) {
-        this.log(message, metadata, level, { metadataStyles: metadataStyles });
+        this.log(message, metadata, level, { metadataStyles });
       }
 
       return Date.now();
@@ -457,15 +457,15 @@ var Logger = function () {
       var diffTime = now - startTime;
 
       if (diffTime < 1000) {
-        metadata.readableTime = diffTime + 'ms';
+        metadata.readableTime = `${diffTime}ms`;
       } else {
         var seconds = diffTime > 1000 && Math.floor(diffTime / 1000);
 
-        metadata.readableTime = '' + (seconds ? seconds + 's and ' : '') + (diffTime - seconds * 1000) + 'ms';
+        metadata.readableTime = `${seconds ? `${seconds}s and ` : ''}${diffTime - seconds * 1000}ms`;
       }
 
       metadata.timeMs = diffTime;
-      this.log(message, metadata, level, Object.assign({}, options, { metadataStyles: metadataStyles }));
+      this.log(message, metadata, level, Object.assign({}, options, { metadataStyles }));
     }
 
     /**
@@ -510,7 +510,7 @@ var Logger = function () {
       metadata = Object.assign({
         functionName: fn.name
       }, metadata);
-      this.log('enter', metadata, _nightingaleLevels2.default.TRACE, { metadataStyles: metadataStyles });
+      this.log('enter', metadata, _nightingaleLevels2.default.TRACE, { metadataStyles });
     }
 
     /**
@@ -532,7 +532,7 @@ var Logger = function () {
       metadata = Object.assign({
         functionName: fn.name
       }, metadata);
-      this.log('exit', metadata, _nightingaleLevels2.default.TRACE, { metadataStyles: metadataStyles });
+      this.log('exit', metadata, _nightingaleLevels2.default.TRACE, { metadataStyles });
     }
 
     /**
