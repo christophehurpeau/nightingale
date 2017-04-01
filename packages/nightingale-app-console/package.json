@@ -1,6 +1,6 @@
 {
   "name": "nightingale-app-console",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "description": "nightingale default config and logger for app",
   "keywords": [],
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (https://christophe.hurpeau.com)",
