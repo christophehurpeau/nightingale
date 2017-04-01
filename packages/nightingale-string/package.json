@@ -10,9 +10,6 @@
   "license": "ISC",
   "repository": "git@github.com:nightingalejs/nightingale-string.git",
   "homepage": "https://github.com/nightingalejs/nightingale",
-  "engines": {
-    "node": ">=6.5.0"
-  },
   "main": "./lib/index.js",
   "module:node": "./lib-module-node7/index.js",
   "module:node-dev": "./lib-module-node7-dev/index.js",
@@ -33,6 +30,7 @@
   },
   "devDependencies": {
     "babel-eslint": "^7.2.0",
+    "babel-preset-env": "^1.2.2",
     "babel-preset-latest-node": "^0.2.2",
     "eslint": "^3.18.0",
     "eslint-config-airbnb-base": "^11.1.2",
