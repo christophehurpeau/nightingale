@@ -1,3 +1,7 @@
+<a name="3.4.0"></a>
+# [3.4.0](https://github.com/nightingalejs/nightingale-logger/compare/v3.3.0...v3.4.0) (2017-04-01)
+
+
 <a name="3.3.0"></a>
 # [3.3.0](https://github.com/nightingalejs/nightingale-logger/compare/v3.2.0...v3.3.0) (2017-03-06)
 
