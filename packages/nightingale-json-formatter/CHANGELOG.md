@@ -1,3 +1,12 @@
+<a name="1.5.0"></a>
+# [1.5.0](https://github.com/nightingalejs/nightingale-json-formatter/compare/v1.4.0...v1.5.0) (2017-04-01)
+
+
+### Features
+
+* add support for node 4 ([43eab81](https://github.com/nightingalejs/nightingale-json-formatter/commit/43eab81))
+
+
 <a name="1.4.0"></a>
 # [1.4.0](https://github.com/nightingalejs/nightingale-json-formatter/compare/v1.3.0...v1.4.0) (2017-03-21)
 
