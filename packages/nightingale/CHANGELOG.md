@@ -1,3 +1,12 @@
+<a name="6.2.1"></a>
+## [6.2.1](https://github.com/nightingalejs/nightingale/compare/v6.2.0...v6.2.1) (2017-04-01)
+
+
+### Bug Fixes
+
+* node 4 ([2c4b903](https://github.com/nightingalejs/nightingale/commit/2c4b903))
+
+
 <a name="6.2.0"></a>
 # [6.2.0](https://github.com/nightingalejs/nightingale/compare/v6.1.1...v6.2.0) (2017-04-01)
 
