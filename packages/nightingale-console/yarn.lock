@@ -196,7 +196,7 @@ babel-core@^6.24.0:
     slash "^1.0.0"
     source-map "^0.5.0"
 
-babel-eslint@^7.2.0:
+babel-eslint@^7.2.1:
   version "7.2.1"
   resolved "https://registry.yarnpkg.com/babel-eslint/-/babel-eslint-7.2.1.tgz#079422eb73ba811e3ca0865ce87af29327f8c52f"
   dependencies:
@@ -368,9 +368,9 @@ babel-plugin-discard-module-references@^1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/babel-plugin-discard-module-references/-/babel-plugin-discard-module-references-1.1.2.tgz#898007cbeb472cef76ef11e1af485b41d4241747"
 
-babel-plugin-flow-runtime@^0.9.1:
-  version "0.9.1"
-  resolved "https://registry.yarnpkg.com/babel-plugin-flow-runtime/-/babel-plugin-flow-runtime-0.9.1.tgz#3673a8722aa22552a604b4a647db05a3f2063fda"
+babel-plugin-flow-runtime@^0.10.0:
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-flow-runtime/-/babel-plugin-flow-runtime-0.10.0.tgz#de60b8c64ce0eec6b13663a129d79ec46b97cb2d"
   dependencies:
     babel-generator "^6.21.0"
     babel-traverse "^6.20.0"
@@ -732,7 +732,7 @@ babel-preset-babili-optimizations@^0.2.0:
     babel-plugin-minify-guarded-expressions "^0.0.4"
     babel-plugin-transform-inline-consecutive-adds "^0.0.2"
 
-babel-preset-env@^1.2.2:
+babel-preset-env@^1.3.2:
   version "1.3.2"
   resolved "https://registry.yarnpkg.com/babel-preset-env/-/babel-preset-env-1.3.2.tgz#08eabd2bf810c3678069f7e052323419f1448749"
   dependencies:
@@ -794,7 +794,7 @@ babel-preset-pob-stages@^0.1.2:
     babel-plugin-transform-export-extensions "^6.22.0"
     babel-plugin-transform-object-rest-spread "^6.23.0"
 
-babel-preset-pob@^0.4.0:
+babel-preset-pob@^0.4.3:
   version "0.4.3"
   resolved "https://registry.yarnpkg.com/babel-preset-pob/-/babel-preset-pob-0.4.3.tgz#73167fa4c157f15f8a66eaf4f09b8da3feac04b3"
   dependencies:
@@ -1423,7 +1423,7 @@ eslint-plugin-import@^2.2.0:
     minimatch "^3.0.3"
     pkg-up "^1.0.0"
 
-eslint@^3.18.0:
+eslint@^3.19.0:
   version "3.19.0"
   resolved "https://registry.yarnpkg.com/eslint/-/eslint-3.19.0.tgz#c8fc6201c7f40dd08941b87c085767386a679acc"
   dependencies:
@@ -2474,7 +2474,7 @@ natural-compare@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
 
-nightingale-ansi-formatter@^1.3.0, nightingale-ansi-formatter@^1.7.1:
+nightingale-ansi-formatter@^1.7.1:
   version "1.7.1"
   resolved "https://registry.yarnpkg.com/nightingale-ansi-formatter/-/nightingale-ansi-formatter-1.7.1.tgz#597bd3616ef94c4ca1b6a43d52a5588e8fc9c5b0"
   dependencies:
@@ -2482,23 +2482,23 @@ nightingale-ansi-formatter@^1.3.0, nightingale-ansi-formatter@^1.7.1:
     flow-runtime "^0.10.0"
     nightingale-formatter "^2.2.1"
 
-nightingale-console-output@^1.2.0, nightingale-console-output@^1.4.0:
+nightingale-console-output@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/nightingale-console-output/-/nightingale-console-output-1.4.0.tgz#2682ea6bc39404194ffe8dc748b48a4a5d61c133"
   dependencies:
     flow-runtime "^0.10.0"
     nightingale-levels "^1.0.0"
 
-nightingale-console@^2.4.1:
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/nightingale-console/-/nightingale-console-2.4.1.tgz#8b74958412c3924db8d920ca596e69ef69b5f043"
+nightingale-console@^2.5.0:
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/nightingale-console/-/nightingale-console-2.5.0.tgz#55797bac4f4c376219be7693d0e662f4b36c409a"
   dependencies:
-    flow-runtime "^0.7.0"
-    nightingale-ansi-formatter "^1.3.0"
-    nightingale-console-output "^1.2.0"
-    nightingale-debug "^2.0.1"
+    flow-runtime "^0.10.0"
+    nightingale-ansi-formatter "^1.7.1"
+    nightingale-console-output "^1.4.0"
+    nightingale-debug "^2.3.1"
 
-nightingale-debug@^2.0.1, nightingale-debug@^2.3.1:
+nightingale-debug@^2.3.1:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/nightingale-debug/-/nightingale-debug-2.3.1.tgz#15f0d101629d5bbb80fce8fc6900c666ba4eb321"
   dependencies:
@@ -2516,7 +2516,7 @@ nightingale-levels@^1.0.0, nightingale-levels@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/nightingale-levels/-/nightingale-levels-1.1.0.tgz#d20cd00d050f557e1c29026fd75ec5b9a9752af3"
 
-nightingale-logger@^3.3.0:
+nightingale-logger@^3.3.0, nightingale-logger@^3.4.0:
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/nightingale-logger/-/nightingale-logger-3.4.0.tgz#1fcea1429c470356fe1135111e99402bb94110ce"
   dependencies:
@@ -2530,6 +2530,14 @@ nightingale@^6.1.1:
     flow-runtime "^0.7.0"
     nightingale-levels "^1.1.0"
     nightingale-logger "^3.3.0"
+
+nightingale@^6.2.0:
+  version "6.2.1"
+  resolved "https://registry.yarnpkg.com/nightingale/-/nightingale-6.2.1.tgz#4bf0ab7a448519f6874f039cb9e61ee48a893bc1"
+  dependencies:
+    flow-runtime "^0.10.0"
+    nightingale-levels "^1.1.0"
+    nightingale-logger "^3.4.0"
 
 node-pre-gyp@^0.6.29:
   version "0.6.34"
@@ -2629,7 +2637,7 @@ optionator@^0.8.2:
     type-check "~0.3.2"
     wordwrap "~1.0.0"
 
-ora@^1.1.0:
+ora@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/ora/-/ora-1.2.0.tgz#32fb3183500efe83f5ea89101785f0ee6060fec9"
   dependencies:
@@ -2746,15 +2754,15 @@ pluralize@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/pluralize/-/pluralize-1.2.1.tgz#d1a21483fd22bb41e58a12fa3421823140897c45"
 
-pob-babel@^17.1.1:
-  version "17.1.1"
-  resolved "https://registry.yarnpkg.com/pob-babel/-/pob-babel-17.1.1.tgz#3dd25426642d4aeeca0eaaeb18b03c6bebceb52a"
+pob-babel@^17.2.0:
+  version "17.2.0"
+  resolved "https://registry.yarnpkg.com/pob-babel/-/pob-babel-17.2.0.tgz#66f28a7a119f54f5503953a5439dd7a01f400729"
   dependencies:
     babel-core "^6.24.0"
     babel-plugin-discard-module-references "^1.1.2"
-    babel-plugin-flow-runtime "^0.9.1"
+    babel-plugin-flow-runtime "^0.10.0"
     babel-preset-babili-optimizations "^0.2.0"
-    babel-preset-pob "^0.4.0"
+    babel-preset-pob "^0.4.3"
     babel-preset-pob-stages "^0.1.2"
     babel-preset-stage-1 "^6.22.0"
     babel-register "^6.24.0"
@@ -2764,10 +2772,10 @@ pob-babel@^17.1.1:
     js-yaml "^3.8.2"
     lock "^0.1.3"
     mkdirp "^0.5.1"
-    nightingale "^6.1.1"
-    nightingale-console "^2.4.1"
-    ora "^1.1.0"
-    promise-callback-factory "^1.3.0"
+    nightingale "^6.2.0"
+    nightingale-console "^2.5.0"
+    ora "^1.2.0"
+    promise-callback-factory "^1.4.0"
     promise-queue "^2.2.3"
     slash "^1.0.0"
 
@@ -2801,11 +2809,11 @@ progress@^1.1.8:
   version "1.1.8"
   resolved "https://registry.yarnpkg.com/progress/-/progress-1.1.8.tgz#e260c78f6161cdd9b0e56cc3e0a85de17c7a57be"
 
-promise-callback-factory@^1.3.0:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/promise-callback-factory/-/promise-callback-factory-1.3.0.tgz#5dd9a00fd6a57baca54a6d33d400758f49a1e9bd"
+promise-callback-factory@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/promise-callback-factory/-/promise-callback-factory-1.4.0.tgz#6b046114ee547fc6b9a139b154f40ea174ede8cb"
   dependencies:
-    flow-runtime "^0.7.0"
+    flow-runtime "^0.10.0"
 
 promise-queue@^2.2.3:
   version "2.2.3"
