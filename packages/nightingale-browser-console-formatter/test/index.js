@@ -1,5 +1,5 @@
 import { strictEqual, deepStrictEqual } from 'assert';
-import format, { style } from '../';
+import format, { style } from '../src/';
 
 test('style: blue bold color', () => {
   const args = [];
@@ -12,7 +12,7 @@ test('style: blue bold color', () => {
 
 
 test('format simple message', () => {
-  const [string, args] = format({ message: 'test' });
+  const [string, ...args] = format({ message: 'test' });
   strictEqual(string, 'test');
   deepStrictEqual(args, []);
 });
