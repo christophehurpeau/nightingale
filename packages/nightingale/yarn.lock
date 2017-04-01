@@ -1947,10 +1947,6 @@ flow-runtime@^0.10.0:
   version "0.10.0"
   resolved "https://registry.yarnpkg.com/flow-runtime/-/flow-runtime-0.10.0.tgz#20a70432fb20e8bba43769078c7a17d99dd1acab"
 
-flow-runtime@^0.7.0:
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/flow-runtime/-/flow-runtime-0.7.0.tgz#5fd6ee50ebaf952be5d2940e9a0b96c8edefaea5"
-
 for-in@^1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/for-in/-/for-in-1.0.2.tgz#81068d295a8142ec0ac726c6e2200c30fb6d5e80"
@@ -3125,9 +3121,9 @@ nightingale-formatter@^2.2.1, nightingale-formatter@^2.2.2:
     flow-runtime "^0.10.0"
     nightingale-levels "^1.0.0"
 
-nightingale-json-formatter@^1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/nightingale-json-formatter/-/nightingale-json-formatter-1.4.0.tgz#98e8febb51ef87e5a6eb6ad6e4d02001e16a09c0"
+nightingale-json-formatter@^1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/nightingale-json-formatter/-/nightingale-json-formatter-1.5.0.tgz#10140254ef7546778928964c52c6e4e886ade27b"
   dependencies:
     flow-runtime "^0.10.0"
     nightingale-formatter "^2.2.2"
@@ -3136,7 +3132,7 @@ nightingale-levels@^1.0.0, nightingale-levels@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/nightingale-levels/-/nightingale-levels-1.1.0.tgz#d20cd00d050f557e1c29026fd75ec5b9a9752af3"
 
-nightingale-logger@^3.3.0, nightingale-logger@^3.4.0:
+nightingale-logger@^3.4.0:
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/nightingale-logger/-/nightingale-logger-3.4.0.tgz#1fcea1429c470356fe1135111e99402bb94110ce"
   dependencies:
@@ -3144,26 +3140,26 @@ nightingale-logger@^3.3.0, nightingale-logger@^3.4.0:
     nightingale-levels "^1.1.0"
 
 nightingale-raw-formatter@^1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/nightingale-raw-formatter/-/nightingale-raw-formatter-1.4.0.tgz#8c9db980830de9566c2b324978cd34f286ad7a2b"
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/nightingale-raw-formatter/-/nightingale-raw-formatter-1.5.0.tgz#bddb886eb0bbfc6f8bb23ee666d40c96739f4b9b"
   dependencies:
     flow-runtime "^0.10.0"
     nightingale-formatter "^2.2.1"
 
-nightingale-string@^2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/nightingale-string/-/nightingale-string-2.2.0.tgz#80dcde553d316bdff8f6579eab85252d27cc9dd8"
+nightingale-string@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/nightingale-string/-/nightingale-string-2.3.0.tgz#11e44f334a69fc1e86cca74239eba2a3534ce7e8"
   dependencies:
     flow-runtime "^0.10.0"
     nightingale-raw-formatter "^1.4.0"
 
 nightingale@^6.1.1:
-  version "6.1.1"
-  resolved "https://registry.yarnpkg.com/nightingale/-/nightingale-6.1.1.tgz#559801058a4cb06a7f00740d3ede9d257ec9b336"
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/nightingale/-/nightingale-6.2.0.tgz#9216a6f5859ceeb6e639ead1802aeba250141c39"
   dependencies:
-    flow-runtime "^0.7.0"
+    flow-runtime "^0.10.0"
     nightingale-levels "^1.1.0"
-    nightingale-logger "^3.3.0"
+    nightingale-logger "^3.4.0"
 
 node-pre-gyp@^0.6.29:
   version "0.6.34"
@@ -3486,10 +3482,10 @@ progress@^1.1.8:
   resolved "https://registry.yarnpkg.com/progress/-/progress-1.1.8.tgz#e260c78f6161cdd9b0e56cc3e0a85de17c7a57be"
 
 promise-callback-factory@^1.3.0:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/promise-callback-factory/-/promise-callback-factory-1.3.0.tgz#5dd9a00fd6a57baca54a6d33d400758f49a1e9bd"
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/promise-callback-factory/-/promise-callback-factory-1.4.0.tgz#6b046114ee547fc6b9a139b154f40ea174ede8cb"
   dependencies:
-    flow-runtime "^0.7.0"
+    flow-runtime "^0.10.0"
 
 promise-queue@^2.2.3:
   version "2.2.3"
