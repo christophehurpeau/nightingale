@@ -163,7 +163,6 @@ You can find handlers [on npm](https://www.npmjs.com/search?q=nightingale-handle
 - [ConsoleHandler](https://npmjs.org/package/nightingale-console)
 - [BrowserConsoleHandler](https://npmjs.org/package/nightingale-browser-console)
 - [StringHandler](https://npmjs.org/package/nightingale-string)
-- [FileHandler](https://npmjs.org/package/nightingale-file)
 - [SlackHandler](https://npmjs.org/package/nightingale-slack)
 
 ### Formatter
