@@ -1,3 +1,12 @@
+<a name="2.2.3"></a>
+## [2.2.3](https://github.com/nightingalejs/nightingale-formatter/compare/v2.2.2...v2.2.3) (2017-07-26)
+
+
+### Bug Fixes
+
+* show error with toString instead of stack ([2a0c823](https://github.com/nightingalejs/nightingale-formatter/commit/2a0c823))
+
+
 <a name="2.2.2"></a>
 ## [2.2.2](https://github.com/nightingalejs/nightingale-formatter/compare/v2.2.1...v2.2.2) (2017-03-21)
 
