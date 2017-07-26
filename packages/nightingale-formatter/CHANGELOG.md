@@ -1,3 +1,12 @@
+<a name="2.2.4"></a>
+## [2.2.4](https://github.com/nightingalejs/nightingale-formatter/compare/v2.2.3...v2.2.4) (2017-07-26)
+
+
+### Bug Fixes
+
+* show error with stack ([eceb062](https://github.com/nightingalejs/nightingale-formatter/commit/eceb062))
+
+
 <a name="2.2.3"></a>
 ## [2.2.3](https://github.com/nightingalejs/nightingale-formatter/compare/v2.2.2...v2.2.3) (2017-07-26)
 
