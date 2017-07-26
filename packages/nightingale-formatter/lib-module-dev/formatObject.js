@@ -59,7 +59,7 @@ function internalFormatValue(value, styleFn, styles, _ref) {
       return internalFormatArray(value, styleFn, { padding: padding, depth: depth + 1, maxDepth: maxDepth, objects: objects });
     }
   } else if (value instanceof Error) {
-    stringValue = value.stack || value.message || '';
+    stringValue = value.toString();
   } else {
     stringValue = tryStringify(value);
   }

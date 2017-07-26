@@ -52,7 +52,7 @@ function internalFormatValue(value, styleFn, styles, { padding, depth, maxDepth,
       return internalFormatArray(value, styleFn, { padding, depth: depth + 1, maxDepth, objects });
     }
   } else if (value instanceof Error) {
-    stringValue = value.stack || value.message || '';
+    stringValue = value.toString();
   } else {
     stringValue = tryStringify(value);
   }
