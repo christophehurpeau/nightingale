@@ -63,7 +63,22 @@ suite('formatObject', () => {
     a.a = a;
     strictEqual(
       formatObject({ a }, noStyleFn),
-      '{ a: { a: {Circular object} } }',
+      '{ a: { a: {Circular Object} } }',
+    );
+  });
+
+  test('empty map', () => {
+    strictEqual(
+      formatObject({ a: new Map() }, noStyleFn),
+      '{ a: Map {} }',
+    );
+  });
+
+
+  test('simple map', () => {
+    strictEqual(
+      formatObject({ a: new Map([['key1', 'value1'], [{ b: 1 }, 'value2']]) }, noStyleFn),
+      '{ a: Map { "key1": "value1", { b: 1 }: "value2" } }',
     );
   });
 
@@ -117,5 +132,20 @@ suite('formatObject', () => {
   ],
 }`,
     );
+
+    test('empty set', () => {
+      strictEqual(
+        formatObject({ a: new Set() }, noStyleFn),
+        '{ a: Set [] }',
+      );
+    });
+
+
+    test('simple set', () => {
+      strictEqual(
+        formatObject({ a: new Set(['value1', 'value2']) }, noStyleFn),
+        '{ a: Map ["value1", "value2"] }',
+      );
+    });
   });
 });

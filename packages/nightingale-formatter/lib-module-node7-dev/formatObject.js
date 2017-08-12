@@ -1,4 +1,6 @@
-/* eslint-disable no-use-before-define, max-lines */
+/* eslint-disable no-use-before-define, max-lines, no-useless-concat, prefer-template */
+
+const noStyleFn = (styles, value) => value;
 
 function tryStringify(arg) {
   try {
@@ -7,6 +9,8 @@ function tryStringify(arg) {
     return '[Circular]';
   }
 }
+
+const sameRawFormattedValue = value => ({ stringValue: value, formattedValue: value });
 
 function internalFormatValue(value, styleFn, styles, { padding, depth, maxDepth, objects }) {
   const typeofValue = typeof value;
@@ -41,19 +45,33 @@ function internalFormatValue(value, styleFn, styles, { padding, depth, maxDepth,
     stringValue = value.toString();
   } else if (value.constructor === Object) {
     if (depth >= maxDepth) {
-      stringValue = '{object...}';
+      stringValue = '{Object...}';
     } else {
       return internalFormatObject(value, styleFn, undefined, { padding, depth: depth + 1, maxDepth, objects });
     }
   } else if (Array.isArray(value)) {
     if (depth >= maxDepth) {
-      stringValue = '[array...]';
+      stringValue = '[Array...]';
     } else {
       return internalFormatArray(value, styleFn, { padding, depth: depth + 1, maxDepth, objects });
     }
   } else if (value instanceof Error) {
     const stack = value.stack;
     stringValue = stack.startsWith(value.message) ? stack : `${value.message}\n${stack}`;
+  } else if (value instanceof Map || value instanceof WeakMap) {
+    const name = value.constructor.name;
+    if (depth >= maxDepth) {
+      stringValue = `{${name}...}`;
+    } else {
+      return internalFormatMap(name, value, styleFn, { padding, depth: depth + 1, maxDepth, objects });
+    }
+  } else if (value instanceof Set || value instanceof WeakSet) {
+    const name = value.constructor.name;
+    if (depth >= maxDepth) {
+      stringValue = `{${name}...}`;
+    } else {
+      return internalFormatSet(name, value, styleFn, { padding, depth: depth + 1, maxDepth, objects });
+    }
   } else {
     stringValue = tryStringify(value);
   }
@@ -68,17 +86,34 @@ function internalFormatValue(value, styleFn, styles, { padding, depth, maxDepth,
 
 const separator = ',';
 
-const internalFormatIterator = (values, styleFn, objectStyles, { padding, depth, maxDepth, objects }, { prefix, suffix, prefixSuffixSpace = ' ' }) => {
+const internalFormatKey = (key, styleFn) => {
+  if (!key) return { stringKey: '', formattedKey: '' };
+  return {
+    stringKey: `${key}: `,
+    formattedKey: styleFn(['gray-light', 'bold'], `${key}:`) + ' '
+  };
+};
+
+const internalFormatMapKey = (key, styleFn, internalFormatParams) => {
+  const { stringValue, formattedValue } = internalFormatValue(key, noStyleFn, undefined, internalFormatParams);
+  return {
+    stringKey: stringValue + ' => ',
+    formattedKey: styleFn(['gray-light', 'bold'], `${formattedValue}:`) + ' '
+  };
+};
+
+const internalFormatIterator = (values, styleFn, objectStyles, { padding, depth, maxDepth, objects }, { prefix, suffix, prefixSuffixSpace = ' ', formatKey = internalFormatKey }) => {
   let breakLine = false;
   const formattedSeparator = () => styleFn(['gray'], separator);
 
   const valuesMaxIndex = values.length - 1;
   values = values.map(({ key, value }, index) => {
+    const internalFormatParams = { padding, depth: depth + 1, maxDepth, objects };
 
     // key must be formatted before value (browser-formatter needs order)
-    const formattedKey = key ? `${styleFn(['gray-light', 'bold'], `${key}:`)} ` : '';
+    const { stringKey, formattedKey } = formatKey(key, styleFn, internalFormatParams);
 
-    let { stringValue, formattedValue } = internalFormatValue(value, styleFn, key && objectStyles && objectStyles[key], { padding, depth: depth + 1, maxDepth, objects });
+    let { stringValue, formattedValue } = internalFormatValue(value, styleFn, key && objectStyles && objectStyles[key], internalFormatParams);
 
     if (stringValue && (stringValue.length > 80 || stringValue.indexOf('\n') !== -1)) {
       breakLine = true;
@@ -87,7 +122,7 @@ const internalFormatIterator = (values, styleFn, objectStyles, { padding, depth,
     }
 
     return {
-      stringValue: stringValue + (index === valuesMaxIndex ? '' : separator),
+      stringValue: stringKey + stringValue + (index === valuesMaxIndex ? '' : separator),
       // eslint-disable-next-line no-useless-concat
       formattedValue: formattedKey + formattedValue + (index === valuesMaxIndex ? '' : formattedSeparator())
     };
@@ -102,15 +137,12 @@ const internalFormatIterator = (values, styleFn, objectStyles, { padding, depth,
 
 function internalFormatObject(object, styleFn, objectStyles, { padding, depth, maxDepth, objects }) {
   if (objects.has(object)) {
-    return { stringValue: '{Circular object}', formattedValue: '{Circular object}' };
+    return sameRawFormattedValue('{Circular Object}');
   }
 
   const keys = Object.keys(object);
   if (keys.length === 0) {
-    return {
-      stringValue: '{}',
-      formattedValue: '{}'
-    };
+    return sameRawFormattedValue('{}');
   }
 
   objects.add(object);
@@ -122,16 +154,32 @@ function internalFormatObject(object, styleFn, objectStyles, { padding, depth, m
   return result;
 }
 
+function internalFormatMap(name, map, styleFn, { padding, depth, maxDepth, objects }) {
+  if (objects.has(map)) {
+    return sameRawFormattedValue(`{Circular ${name}`);
+  }
+
+  const keys = Array.from(map.keys());
+  if (keys.length === 0) {
+    return sameRawFormattedValue(`${name} {}`);
+  }
+
+  objects.add(map);
+
+  const result = internalFormatIterator(keys.map(key => ({ key, value: map.get(key) })), styleFn, undefined, { padding, depth, maxDepth, objects }, { prefix: `${name} {`, suffix: '}', formatKey: internalFormatMapKey });
+
+  objects.delete(map);
+
+  return result;
+}
+
 function internalFormatArray(array, styleFn, { padding, depth, maxDepth, objects }) {
   if (objects.has(array)) {
-    return { stringValue: '{Circular array}', formattedValue: '{Circular array}' };
+    return sameRawFormattedValue('{Circular Array}');
   }
 
   if (array.length === 0) {
-    return {
-      stringValue: '[]',
-      formattedValue: '[]'
-    };
+    return sameRawFormattedValue('[]');
   }
 
   objects.add(array);
@@ -139,6 +187,25 @@ function internalFormatArray(array, styleFn, { padding, depth, maxDepth, objects
   const result = internalFormatIterator(array.map(value => ({ key: undefined, value })), styleFn, undefined, { padding, depth, maxDepth, objects }, { prefix: '[', suffix: ']', prefixSuffixSpace: '' });
 
   objects.delete(array);
+
+  return result;
+}
+
+function internalFormatSet(name, set, styleFn, { padding, depth, maxDepth, objects }) {
+  if (objects.has(set)) {
+    return sameRawFormattedValue(`{Circular ${name}`);
+  }
+
+  const values = Array.from(set.values());
+  if (values.length === 0) {
+    return sameRawFormattedValue(`${name} []`);
+  }
+
+  objects.add(set);
+
+  const result = internalFormatIterator(values.map(value => ({ key: undefined, value })), styleFn, undefined, { padding, depth, maxDepth, objects }, { prefix: `${name} [`, suffix: ']' });
+
+  objects.delete(set);
 
   return result;
 }
