@@ -1,3 +1,12 @@
+<a name="2.2.5"></a>
+## [2.2.5](https://github.com/nightingalejs/nightingale-formatter/compare/v2.2.4...v2.2.5) (2017-08-12)
+
+
+### Bug Fixes
+
+* support Map, WeakMap, Set, WeakSet ([807ba52](https://github.com/nightingalejs/nightingale-formatter/commit/807ba52))
+
+
 <a name="2.2.4"></a>
 ## [2.2.4](https://github.com/nightingalejs/nightingale-formatter/compare/v2.2.3...v2.2.4) (2017-07-26)
 
