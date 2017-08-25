@@ -24,9 +24,12 @@ const ansiStyles = {
   bold: ansi.bold,
   underline: ansi.underline,
 
-    // http://www.calmar.ws/vim/256-xterm-24bit-rgb-color-chart.html
+  // http://www.calmar.ws/vim/256-xterm-24bit-rgb-color-chart.html
   orange: { open: ansi.color.ansi256.hex(styleToHexColor.orange), close: ansi.color.close },
-  'gray-light': { open: ansi.color.ansi256.hex(styleToHexColor['gray-light']), close: ansi.color.close },
+  'gray-light': {
+    open: ansi.color.ansi256.hex(styleToHexColor['gray-light']),
+    close: ansi.color.close,
+  },
 };
 
 export function style(styles, string) {

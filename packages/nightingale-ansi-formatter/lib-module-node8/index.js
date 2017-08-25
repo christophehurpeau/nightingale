@@ -26,23 +26,20 @@ const ansiStyles = {
 
   // http://www.calmar.ws/vim/256-xterm-24bit-rgb-color-chart.html
   orange: { open: ansi.color.ansi256.hex(styleToHexColor.orange), close: ansi.color.close },
-  'gray-light': { open: ansi.color.ansi256.hex(styleToHexColor['gray-light']), close: ansi.color.close }
+  'gray-light': {
+    open: ansi.color.ansi256.hex(styleToHexColor['gray-light']),
+    close: ansi.color.close
+  }
 };
 
 export function style(styles, string) {
-  if (!styles || !styles.length || !string) {
-    return string;
-  }
-
-  return styles.reduce((string, styleName) => {
+  return styles && styles.length && string ? styles.reduce((string, styleName) => {
     let style = ansiStyles[styleName];
 
-    if (!style) {
-      throw new Error(`Unknown style: ${styleName}`);
-    }
+    if (!style) throw new Error(`Unknown style: ${styleName}`);
 
     return style.open + string + style.close;
-  }, string);
+  }, string) : string;
 }
 
 /**
