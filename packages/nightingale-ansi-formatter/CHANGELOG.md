@@ -1,3 +1,12 @@
+<a name="1.8.0"></a>
+# [1.8.0](https://github.com/nightingalejs/nightingale-ansi-formatter/compare/v1.7.2...v1.8.0) (2017-08-25)
+
+
+### Features
+
+* update dependencies ([0e3ef8d](https://github.com/nightingalejs/nightingale-ansi-formatter/commit/0e3ef8d))
+
+
 <a name="1.7.2"></a>
 ## [1.7.2](https://github.com/nightingalejs/nightingale-ansi-formatter/compare/v1.7.1...v1.7.2) (2017-04-01)
 
