@@ -46,13 +46,19 @@ const ansiStyles = {
 };
 
 function style(styles, string) {
-  return styles && styles.length && string ? styles.reduce((string, styleName) => {
+  if (!styles || !styles.length || !string) {
+    return string;
+  }
+
+  return styles.reduce((string, styleName) => {
     let style = ansiStyles[styleName];
 
-    if (!style) throw new Error(`Unknown style: ${styleName}`);
+    if (!style) {
+      throw new Error(`Unknown style: ${styleName}`);
+    }
 
     return style.open + string + style.close;
-  }, string) : string;
+  }, string);
 }
 
 /**

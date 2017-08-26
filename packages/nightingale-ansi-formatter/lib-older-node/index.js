@@ -46,13 +46,19 @@ var ansiStyles = {
 };
 
 function style(styles, string) {
-  return styles && styles.length && string ? styles.reduce(function (string, styleName) {
+  if (!styles || !styles.length || !string) {
+    return string;
+  }
+
+  return styles.reduce(function (string, styleName) {
     var style = ansiStyles[styleName];
 
-    if (!style) throw new Error(`Unknown style: ${styleName}`);
+    if (!style) {
+      throw new Error(`Unknown style: ${styleName}`);
+    }
 
     return style.open + string + style.close;
-  }, string) : string;
+  }, string);
 }
 
 /**
