@@ -1,3 +1,12 @@
+<a name="1.8.1"></a>
+## [1.8.1](https://github.com/nightingalejs/nightingale-ansi-formatter/compare/v1.8.0...v1.8.1) (2017-08-26)
+
+
+### Bug Fixes
+
+* pob-babel@18.1.5 ([5fce26e](https://github.com/nightingalejs/nightingale-ansi-formatter/commit/5fce26e))
+
+
 <a name="1.8.0"></a>
 # [1.8.0](https://github.com/nightingalejs/nightingale-ansi-formatter/compare/v1.7.2...v1.8.0) (2017-08-25)
 
