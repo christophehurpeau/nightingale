@@ -1,3 +1,12 @@
+<a name="2.3.0"></a>
+# [2.3.0](https://github.com/nightingalejs/nightingale-formatter/compare/v2.2.5...v2.3.0) (2017-09-07)
+
+
+### Features
+
+* better display strings: transforms \n into real new line ([5107c5c](https://github.com/nightingalejs/nightingale-formatter/commit/5107c5c))
+
+
 <a name="2.2.5"></a>
 ## [2.2.5](https://github.com/nightingalejs/nightingale-formatter/compare/v2.2.4...v2.2.5) (2017-08-12)
 
