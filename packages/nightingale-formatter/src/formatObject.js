@@ -4,7 +4,7 @@ const noStyleFn = (styles, value) => value;
 
 function tryStringify(arg) {
   try {
-    return JSON.stringify(arg);
+    return JSON.stringify(arg).replace(/\\n/g, '\n');
   } catch (_) {
     return '[Circular]';
   }
