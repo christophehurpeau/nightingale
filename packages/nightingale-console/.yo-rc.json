@@ -1,0 +1,19 @@
+{
+  "pob": {
+    "pob-config": {
+      "envs": [
+        "node6",
+        "node8",
+        "older-node",
+        "module-node8"
+      ],
+      "documentation": false,
+      "testing": false,
+      "examples": true,
+      "entries": [
+        "index"
+      ],
+      "doclets": false
+    }
+  }
+}
