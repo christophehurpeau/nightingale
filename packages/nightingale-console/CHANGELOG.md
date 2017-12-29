@@ -1,3 +1,7 @@
+<a name="2.6.0"></a>
+# [2.6.0](https://github.com/nightingalejs/nightingale-console/compare/v2.5.1...v2.6.0) (2017-12-29)
+
+
 <a name="2.5.1"></a>
 ## [2.5.1](https://github.com/nightingalejs/nightingale-console/compare/v2.5.0...v2.5.1) (2017-04-01)
 
