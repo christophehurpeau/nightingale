@@ -1,0 +1,21 @@
+{
+  "pob": {
+    "pob-config": {
+      "envs": [
+        "node6",
+        "node8",
+        "older-node",
+        "module-modern-browsers",
+        "module",
+        "module-node8",
+        "browsers"
+      ],
+      "documentation": false,
+      "testing": false,
+      "entries": [
+        "index"
+      ],
+      "doclets": false
+    }
+  }
+}
