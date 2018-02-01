@@ -14,7 +14,7 @@ const mapToSentryLevel = {
 const createHandler = (ravenUrl, { getUser = () => {}, getTags = () => {} } = {}) => {
   const ravenClient = new RavenClient(ravenUrl);
 
-  return (record) => {
+  return record => {
     const { key, level, metadata, extra } = record;
     let error = metadata && metadata.error;
 
@@ -31,16 +31,13 @@ const createHandler = (ravenUrl, { getUser = () => {}, getTags = () => {} } = {}
       error = error.originalError;
     }
 
-    ravenClient.captureError(
-      error,
-      {
-        logger: key,
-        level: mapToSentryLevel[level] || 'error',
-        extra: extraData,
-        user: getUser(record),
-        tags: getTags(record),
-      },
-    );
+    ravenClient.captureException(error, {
+      logger: key,
+      level: mapToSentryLevel[level] || 'error',
+      extra: extraData,
+      user: getUser(record),
+      tags: getTags(record),
+    });
   };
 };
 

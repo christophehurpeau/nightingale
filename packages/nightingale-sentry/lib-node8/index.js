@@ -43,7 +43,7 @@ const createHandler = (ravenUrl, { getUser = () => {}, getTags = () => {} } = {}
       error = error.originalError;
     }
 
-    ravenClient.captureError(error, {
+    ravenClient.captureException(error, {
       logger: key,
       level: mapToSentryLevel[level] || 'error',
       extra: extraData,

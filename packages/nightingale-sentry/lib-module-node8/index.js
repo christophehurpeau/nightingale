@@ -1,7 +1,6 @@
 import { Client as RavenClient } from 'raven';
 import levels from 'nightingale-levels';
 
-import t from 'flow-runtime';
 const mapToSentryLevel = {
   [levels.TRACE]: 'debug',
   [levels.DEBUG]: 'debug',
@@ -32,7 +31,7 @@ const createHandler = (ravenUrl, { getUser = () => {}, getTags = () => {} } = {}
       error = error.originalError;
     }
 
-    ravenClient.captureError(error, {
+    ravenClient.captureException(error, {
       logger: key,
       level: mapToSentryLevel[level] || 'error',
       extra: extraData,
@@ -43,13 +42,6 @@ const createHandler = (ravenUrl, { getUser = () => {}, getTags = () => {} } = {}
 };
 
 export default function SentryHandler(ravenUrl, minLevel, options) {
-  let _ravenUrlType = t.string();
-
-  let _minLevelType = t.number();
-
-  t.param('ravenUrl', _ravenUrlType).assert(ravenUrl);
-  t.param('minLevel', _minLevelType).assert(minLevel);
-
   this.minLevel = minLevel;
   this.handle = createHandler(ravenUrl, options);
 }
