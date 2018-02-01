@@ -1,3 +1,7 @@
+<a name="2.3.0"></a>
+# [2.3.0](https://github.com/nightingalejs/nightingale-sentry/compare/v2.2.0...v2.3.0) (2018-02-01)
+
+
 <a name="2.2.0"></a>
 # [2.2.0](https://github.com/nightingalejs/nightingale-sentry/compare/v2.1.0...v2.2.0) (2017-02-28)
 
