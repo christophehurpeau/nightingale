@@ -1,6 +1,5 @@
 node_modules
 /docs
-/coverage
 /build
 
 /.settings

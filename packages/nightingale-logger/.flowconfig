@@ -1,7 +1,7 @@
 [ignore]
 <PROJECT_ROOT>/index.js
-<PROJECT_ROOT>/lib.*
-<PROJECT_ROOT>/node_modules/.*
+.*/dist/.*
+.*/node_modules/.*
 
 [include]
 

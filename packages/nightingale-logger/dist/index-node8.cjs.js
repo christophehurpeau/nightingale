@@ -1,57 +1,31 @@
+'use strict';
+
+function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
+
+var util = _interopDefault(require('util'));
+var levels = _interopDefault(require('nightingale-levels'));
+
 /* eslint-disable max-lines */
 
-import util from 'util';
-import levels from 'nightingale-levels';
-
-type RecordType = {
-  level: number,
-  key: string,
-  displayName: ?string,
-  datetime: Date,
-  message: string,
-  context: ?Object,
-  metadata: ?Object,
-  extra: ?Object,
-};
-
-type HandlerType = {
-  minLevel: number,
-  isHandling: ?() => boolean,
-  handle: ?(record: RecordType) => boolean,
-};
-
-type ProcessorType = (record: RecordType) => void;
-
-type ConfigForLoggerType = {
-  handlers: Array<HandlerType>,
-  processors: Array<ProcessorType>,
-};
-
 if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER) {
-  global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = function(): ConfigForLoggerType {
+  global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = function () {
     return { handlers: [], processors: [] };
   };
 }
 
 if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
-  global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = (
-    key: string,
-    level: number,
-  ): ConfigForLoggerType => {
+  global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = (key, level) => {
     const { handlers, processors } = global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key);
 
     return {
-      handlers: handlers.filter(
-        handler =>
-          level >= handler.minLevel && (!handler.isHandling || handler.isHandling(level, key)),
-      ),
-      processors,
+      handlers: handlers.filter(handler => level >= handler.minLevel && (!handler.isHandling || handler.isHandling(level, key))),
+      processors
     };
   };
 }
 
 /** @private */
-function getConfigForLoggerRecord(key: ?string, recordLevel: number): ConfigForLoggerType {
+function getConfigForLoggerRecord(key, recordLevel) {
   return global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD(key, recordLevel);
 }
 
@@ -59,9 +33,7 @@ function getConfigForLoggerRecord(key: ?string, recordLevel: number): ConfigForL
  * Interface that allows you to log records.
  * This records are treated by handlers
  */
-export default class Logger {
-  key: string;
-  displayName: ?string;
+let Logger = class Logger {
 
   /**
    * Create a new Logger
@@ -69,7 +41,7 @@ export default class Logger {
    * @param {string} key
    * @param {string} [displayName]
    */
-  constructor(key: string, displayName: ?string) {
+  constructor(key, displayName) {
     this.key = key;
     this.displayName = displayName;
 
@@ -80,19 +52,19 @@ export default class Logger {
   }
 
   /** @private */
-  getHandlersAndProcessors(recordLevel: number): ConfigForLoggerType {
+  getHandlersAndProcessors(recordLevel) {
     return getConfigForLoggerRecord(this.key, recordLevel);
   }
 
   /** @private */
-  getConfig(): ConfigForLoggerType {
+  getConfig() {
     return global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(this.key);
   }
 
   /**
    * Create a child logger
    */
-  child(childSuffixKey: string, childDisplayName: ?string): Logger {
+  child(childSuffixKey, childDisplayName) {
     return new Logger(`${this.key}:${childSuffixKey}`, childDisplayName);
   }
 
@@ -109,7 +81,7 @@ export default class Logger {
    * }
    *
    */
-  context(context: Object): Logger {
+  context(context) {
     const logger = new Logger(this.key);
     logger.setContext(context);
     return logger;
@@ -120,14 +92,14 @@ export default class Logger {
    *
    * @param {Object} context
    */
-  setContext(context: Object) {
+  setContext(context) {
     this._context = context;
   }
 
   /**
    * Extends existing context of this logger
    */
-  extendsContext(extendedContext: Object) {
+  extendsContext(extendedContext) {
     Object.assign(this._context, extendedContext);
   }
 
@@ -136,7 +108,7 @@ export default class Logger {
    *
    * Use this only if you know what you are doing.
    */
-  addRecord(record: Object) {
+  addRecord(record) {
     let { handlers, processors } = this.getHandlersAndProcessors(record.level);
 
     if (handlers.length === 0) {
@@ -144,7 +116,7 @@ export default class Logger {
         // eslint-disable-next-line no-console
         console.log('[nightingale] no logger for > error level.', {
           key: record.key,
-          message: record.message,
+          message: record.message
         });
       }
       return;
@@ -160,12 +132,7 @@ export default class Logger {
   /**
    * Log a message
    */
-  log(
-    message: string,
-    metadata: ?Object,
-    level: number = levels.INFO,
-    options: ?Object = undefined,
-  ) {
+  log(message, metadata, level = levels.INFO, options = undefined) {
     let context = metadata && metadata.context;
     if (metadata) {
       delete metadata.context;
@@ -179,7 +146,7 @@ export default class Logger {
       message,
       context: context || this._context,
       metadata,
-      extra: {},
+      extra: {}
     };
 
     if (options) {
@@ -192,42 +159,42 @@ export default class Logger {
   /**
    * Log a trace message
    */
-  trace(message: string, metadata: ?Object, metadataStyles: ?Object) {
+  trace(message, metadata, metadataStyles) {
     this.log(message, metadata, levels.TRACE, { metadataStyles });
   }
 
   /**
    * Log a debug message
    */
-  debug(message: string, metadata: ?Object, metadataStyles: ?Object) {
+  debug(message, metadata, metadataStyles) {
     this.log(message, metadata, levels.DEBUG, { metadataStyles });
   }
 
   /**
    * Notice an info message
    */
-  notice(message: string, metadata: ?Object, metadataStyles: ?Object) {
+  notice(message, metadata, metadataStyles) {
     this.log(message, metadata, levels.NOTICE, { metadataStyles });
   }
 
   /**
    * Log an info message
    */
-  info(message: string, metadata: ?Object, metadataStyles: ?Object) {
+  info(message, metadata, metadataStyles) {
     this.log(message, metadata, levels.INFO, { metadataStyles });
   }
 
   /**
    * Log a warn message
    */
-  warn(message: string, metadata: ?Object, metadataStyles: ?Object) {
+  warn(message, metadata, metadataStyles) {
     this.log(message, metadata, levels.WARN, { metadataStyles });
   }
 
   /**
    * Log an error message
    */
-  error(message: string | Error, metadata: Object = {}, metadataStyles: ?Object) {
+  error(message, metadata = {}, metadataStyles) {
     if (message instanceof Error) {
       metadata.error = message;
       message = `${metadata.error.name}: ${metadata.error.message}`;
@@ -238,120 +205,107 @@ export default class Logger {
   /**
    * Log an critical message
    */
-  critical(message: string, metadata: ?Object, metadataStyles: ?Object) {
+  critical(message, metadata, metadataStyles) {
     this.log(message, metadata, levels.CRITICAL, { metadataStyles });
   }
 
   /**
    * Log a fatal message
    */
-  fatal(message: string, metadata: ?Object, metadataStyles: ?Object) {
+  fatal(message, metadata, metadataStyles) {
     this.log(message, metadata, levels.FATAL, { metadataStyles });
   }
 
   /**
    * Log an alert message
    */
-  alert(message: string, metadata: ?Object, metadataStyles: ?Object) {
+  alert(message, metadata, metadataStyles) {
     this.log(message, metadata, levels.ALERT, { metadataStyles });
   }
 
   /**
    * Log an inspected value
    */
-  inspectValue(value: any, metadata: ?Object, metadataStyles: ?Object) {
-    if (BROWSER) {
-      throw new Error('Not supported for the browser. Prefer `debugger;`');
-    } else {
-      // Note: inspect is a special function for node:
-      // https://github.com/nodejs/node/blob/a1bda1b4deb08dfb3e06cb778f0db40023b18318/lib/util.js#L210
-      value = util.inspect(value, { depth: 6 });
-      this.log(value, metadata, levels.DEBUG, { metadataStyles, styles: ['gray'] });
-    }
+  inspectValue(value, metadata, metadataStyles) {
+    // Note: inspect is a special function for node:
+    // https://github.com/nodejs/node/blob/a1bda1b4deb08dfb3e06cb778f0db40023b18318/lib/util.js#L210
+    value = util.inspect(value, { depth: 6 });
+    this.log(value, metadata, levels.DEBUG, { metadataStyles, styles: ['gray'] });
   }
 
   /**
    * Log a debugged var
    */
-  inspectVar(varName: string, varValue: any, metadata: ?Object, metadataStyles: ?Object) {
-    if (BROWSER) {
-      throw new Error('Not supported for the browser. Prefer `debugger;`');
-    } else {
-      varValue = util.inspect(varValue, { depth: 6 });
-      this.log(`${varName} = ${varValue}`, metadata, levels.DEBUG, {
-        metadataStyles,
-        styles: ['cyan'],
-      });
-    }
+  inspectVar(varName, varValue, metadata, metadataStyles) {
+    varValue = util.inspect(varValue, { depth: 6 });
+    this.log(`${varName} = ${varValue}`, metadata, levels.DEBUG, {
+      metadataStyles,
+      styles: ['cyan']
+    });
   }
 
   /**
    * Alias for infoSuccess
    */
-  success(message: string, metadata: ?Object, metadataStyles: ?Object) {
+  success(message, metadata, metadataStyles) {
     this.infoSuccess(message, metadata, metadataStyles);
   }
 
   /**
    * Log an info success message
    */
-  infoSuccess(message: string, metadata: ?Object, metadataStyles: ?Object) {
+  infoSuccess(message, metadata, metadataStyles) {
     this.log(message, metadata, levels.INFO, {
       metadataStyles,
       symbol: '✔',
-      styles: ['green', 'bold'],
+      styles: ['green', 'bold']
     });
   }
 
   /**
    * Log an debug success message
    */
-  debugSuccess(message: string, metadata: ?Object, metadataStyles: ?Object) {
+  debugSuccess(message, metadata, metadataStyles) {
     this.log(message, metadata, levels.DEBUG, {
       metadataStyles,
       symbol: '✔',
-      styles: ['green'],
+      styles: ['green']
     });
   }
 
   /**
    * Alias for infoFail
    */
-  fail(message: string, metadata: ?Object, metadataStyles: ?Object) {
+  fail(message, metadata, metadataStyles) {
     this.infoFail(message, metadata, metadataStyles);
   }
 
   /**
    * Log an info fail message
    */
-  infoFail(message: string, metadata: ?Object, metadataStyles: ?Object) {
+  infoFail(message, metadata, metadataStyles) {
     this.log(message, metadata, levels.INFO, {
       metadataStyles,
       symbol: '✖',
-      styles: ['red', 'bold'],
+      styles: ['red', 'bold']
     });
   }
 
   /**
    * Log an debug fail message
    */
-  debugFail(message: string, metadata: ?Object, metadataStyles: ?Object) {
+  debugFail(message, metadata, metadataStyles) {
     this.log(message, metadata, levels.DEBUG, {
       metadataStyles,
       symbol: '✖',
-      styles: ['red'],
+      styles: ['red']
     });
   }
 
   /**
    * @returns {number} time to pass to timeEnd
    */
-  time(
-    message: ?string,
-    metadata: ?Object,
-    metadataStyles: ?Object,
-    level: number = levels.DEBUG,
-  ): number {
+  time(message, metadata, metadataStyles, level = levels.DEBUG) {
     if (message) {
       this.log(message, metadata, level, { metadataStyles });
     }
@@ -359,7 +313,7 @@ export default class Logger {
     return Date.now();
   }
 
-  infoTime(message: ?string, metadata: ?Object, metadataStyles: ?Object): number {
+  infoTime(message, metadata, metadataStyles) {
     return this.time(message, metadata, metadataStyles, levels.INFO);
   }
 
@@ -369,14 +323,7 @@ export default class Logger {
    * was called, then logs out the difference
    * and deletes the original record
    */
-  timeEnd(
-    startTime: number,
-    message: string,
-    metadata: Object = {},
-    metadataStyles: ?Object,
-    level: number = levels.DEBUG,
-    options: ?Object,
-  ) {
+  timeEnd(startTime, message, metadata = {}, metadataStyles, level = levels.DEBUG, options) {
     const now = Date.now();
 
     const diffTime = now - startTime;
@@ -385,28 +332,28 @@ export default class Logger {
       metadata.readableTime = `${diffTime}ms`;
     } else {
       const seconds = diffTime > 1000 && Math.floor(diffTime / 1000);
-      const ms = diffTime - seconds * 1000;
-      metadata.readableTime = `${seconds ? `${seconds}s and ` : ''}${ms}ms`;
+
+      metadata.readableTime = `${seconds ? `${seconds}s and ` : ''}${diffTime - seconds * 1000}ms`;
     }
 
     metadata.timeMs = diffTime;
-    this.log(message, metadata, level, { ...options, metadataStyles });
+    this.log(message, metadata, level, Object.assign({}, options, { metadataStyles }));
   }
 
   /**
    * Like timeEnd, but with INFO level
    */
-  infoTimeEnd(time: number, message: string, metadata: ?Object, metadataStyles: ?Object) {
+  infoTimeEnd(time, message, metadata, metadataStyles) {
     this.timeEnd(time, message, metadata, metadataStyles, levels.INFO);
   }
 
   /**
    * Like timeEnd, but with INFO level
    */
-  infoSuccessTimeEnd(time: number, message: string, metadata: ?Object, metadataStyles: ?Object) {
+  infoSuccessTimeEnd(time, message, metadata, metadataStyles) {
     this.timeEnd(time, message, metadata, metadataStyles, levels.INFO, {
       symbol: '✔',
-      styles: ['green', 'bold'],
+      styles: ['green', 'bold']
     });
   }
 
@@ -422,11 +369,10 @@ export default class Logger {
    * }
    *
    */
-  enter(fn: Function, metadata: ?Object, metadataStyles: ?Object) {
-    metadata = {
-      functionName: fn.name,
-      ...metadata,
-    };
+  enter(fn, metadata, metadataStyles) {
+    metadata = Object.assign({
+      functionName: fn.name
+    }, metadata);
     this.log('enter', metadata, levels.TRACE, { metadataStyles });
   }
 
@@ -442,11 +388,10 @@ export default class Logger {
    *   }
    * }
    */
-  exit(fn: Function, metadata: ?Object, metadataStyles: ?Object) {
-    metadata = {
-      functionName: fn.name,
-      ...metadata,
-    };
+  exit(fn, metadata, metadataStyles) {
+    metadata = Object.assign({
+      functionName: fn.name
+    }, metadata);
     this.log('exit', metadata, levels.TRACE, { metadataStyles });
   }
 
@@ -468,12 +413,7 @@ export default class Logger {
    * @param {Object} [metadataStyles]
    * @param {Function} callback
    */
-  wrap(
-    fn: Function,
-    metadata: ?Object | Function,
-    metadataStyles: ?Object | Function,
-    callback: Function,
-  ) {
+  wrap(fn, metadata, metadataStyles, callback) {
     if (typeof metadata === 'function') {
       callback = metadata;
       metadata = undefined;
@@ -486,4 +426,7 @@ export default class Logger {
     callback();
     this.exit(fn);
   }
-}
+};
+
+module.exports = Logger;
+//# sourceMappingURL=index-node8.cjs.js.map

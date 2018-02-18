@@ -1,0 +1,25 @@
+{
+  "extends": "pob/flow",
+  "rules": {
+    "flowtype/no-weak-types": "off"
+  },
+  "overrides": [
+    {
+      "files": [
+        "src/**/*.test.js",
+        "src/__tests__/**/*.js"
+      ],
+      "env": {
+        "jest": true
+      },
+      "rules": {
+        "import/no-extraneous-dependencies": [
+          "error",
+          {
+            "devDependencies": true
+          }
+        ]
+      }
+    }
+  ]
+}
