@@ -1,0 +1,76 @@
+version: 2
+
+
+defaults: &defaults
+  working_directory: /home/circleci/project
+  docker:
+    - image: circleci/node:8.9
+
+
+jobs:
+  dependencies:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - dependencies-{{ arch }}-{{ checksum "yarn.lock" }}
+            - dependencies-{{ arch }}
+      - run:
+          name: Install dependencies
+          command: yarn --prefer-offline --pure-lockfile
+      - save_cache:
+          key: dependencies-{{ arch }}-{{ checksum "yarn.lock" }}
+          paths:
+            - node_modules
+
+  test:
+    <<: *defaults
+
+    steps:
+      - checkout
+      - restore_cache:
+          key: dependencies-{{ arch }}-{{ checksum "yarn.lock" }}
+      - run:
+          name: preversion check
+          command: yarn run preversion
+      - run:
+          name: tests
+          command: yarn run test
+      - run:
+          name: Generate Coverage doc
+          command: yarn run generate:test-coverage
+
+  master-post-test:
+    <<: *defaults
+
+    steps:
+      - checkout
+      - restore_cache:
+          key: dependencies-{{ arch }}-{{ checksum "yarn.lock" }}
+      - run:
+          name: Generate Coverage doc
+          command: yarn run generate:test-coverage
+      - run:
+          name: Send results to codecov
+          command: bash <(curl -s https://codecov.io/bash)
+      - store_artifacts:
+          path: /home/circleci/project/docs
+
+workflows:
+  version: 2
+
+  test_and_documentation:
+    jobs:
+      - dependencies
+      - test:
+          requires:
+            - dependencies
+      - master-post-test:
+          requires:
+            - dependencies
+            - test
+          filters:
+            branches:
+              only:
+                - master

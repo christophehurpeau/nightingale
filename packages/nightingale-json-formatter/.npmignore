@@ -2,10 +2,10 @@
 /examples
 /samples
 /docs
-/coverage
 /build
 /test
-/.pob.json
+.yo-rc.json
+.travis.yml
 circle.yml
 .codeclimate.yml
 jsdoc.config.json

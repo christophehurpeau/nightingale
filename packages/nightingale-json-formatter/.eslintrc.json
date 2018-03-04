@@ -1,0 +1,19 @@
+{
+  "extends": "pob/babel",
+  "overrides": [
+    {
+      "files": ["src/**/*.test.js", "src/__tests__/**/*.js"],
+      "env": {
+        "jest": true
+      },
+      "rules": {
+        "import/no-extraneous-dependencies": [
+          "error",
+          {
+            "devDependencies": true
+          }
+        ]
+      }
+    }
+  ]
+}
