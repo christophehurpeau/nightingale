@@ -1,0 +1,13 @@
+{
+  "lerna": "2.9.0",
+  "npmClient": "yarn",
+  "useWorkspaces": true,
+  "version": "independent",
+  "commands": {
+    "publish": {
+      "ignore": [
+        "*-example"
+      ]
+    }
+  }
+}
