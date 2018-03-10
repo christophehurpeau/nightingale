@@ -26,6 +26,9 @@ jobs:
       - run:
           name: docs
           command: yarn run generate:docs
+      - run:
+          name: Send results to codecov
+          command: bash <(curl -s https://codecov.io/bash)
 # TODO: fix the date in the generated coverage
 #      - run:
 #          name: Check nothing was forget before commit

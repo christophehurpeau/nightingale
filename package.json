@@ -4,17 +4,27 @@
   "version": "0.0.0",
   "description": "Logger for browser and node",
   "keywords": [],
-  "author": "Christophe Hurpeau <christophe@hurpeau.com> (https://christophe.hurpeau.com)",
+  "author":
+    "Christophe Hurpeau <christophe@hurpeau.com> (https://christophe.hurpeau.com)",
   "license": "ISC",
   "repository": "git@github.com:christophehurpeau/nightingale.git",
   "homepage": "https://github.com/christophehurpeau/nightingale",
   "workspaces": ["packages/*"],
   "scripts": {
+    "build": "lerna run --parallel --ignore \"*-example\" build",
     "commitmsg": "commitlint -e $GIT_PARAMS",
+    "generate:docs":
+      "lerna run --parallel --ignore \"*-example\" generate:docs",
+    "lint": "lerna run lint --steam",
     "postcheckout": "yarnhook",
     "postmerge": "yarnhook",
     "postrewrite": "yarnhook",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "preversion":
+      "yarn run lint && yarn run build && yarn run generate:docs && pob-repository-check-clean",
+    "release": "lerna publish --conventional-commits -m 'chore: release'",
+    "test": "lerna run test --steam",
+    "watch": "lerna run --parallel --ignore \"*-example\" watch"
   },
   "lint-staged": {
     "{package.json,packages/*/package.json,,.eslintrc.json}": [
@@ -24,15 +34,14 @@
     "packages/*/lib/**/*.json": ["prettier --write", "git add"],
     "packages/*/lib/**/*.js": ["eslint --fix --quiet", "git add"]
   },
-  "commitlint": {
-    "extends": ["@commitlint/config-conventional"]
-  },
+  "commitlint": { "extends": ["@commitlint/config-conventional"] },
   "devDependencies": {
     "@commitlint/cli": "^6.1.3",
     "@commitlint/config-conventional": "^6.1.3",
     "husky": "^0.14.3",
     "lerna": "2.9.0",
     "lint-staged": "^7.0.0",
+    "pob-release": "^3.1.0",
     "yarnhook": "^0.1.1"
   }
 }
