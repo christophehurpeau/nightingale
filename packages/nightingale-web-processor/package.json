@@ -21,7 +21,6 @@
     "lint": "make lint"
   },
   "dependencies": {
-    "nightingale-levels": "^1.0.0"
   },
   "devDependencies": {
     "eslint": "^2.7.0",
