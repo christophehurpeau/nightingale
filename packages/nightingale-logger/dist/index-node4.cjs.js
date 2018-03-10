@@ -29,7 +29,7 @@ var createClass = function () {
   };
 }();
 
-/* eslint-disable max-lines */
+/* eslint-disable max-lines, flowtype/sort-keys */
 
 if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER) {
   global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = function () {

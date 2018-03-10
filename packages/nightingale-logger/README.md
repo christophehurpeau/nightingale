@@ -3,7 +3,6 @@
 Logger for browser and node
 
 [![Build Status][circleci-status-image]][circleci-status-url]
-[![Travis Status][travisci-status-image]][travisci-status-url]
 [![Dependency Status][daviddm-image]][daviddm-url]
 [![Dependency ci Status][dependencyci-image]][dependencyci-url]
 [![Coverage percentage][coverage-image]][coverage-url]
@@ -44,8 +43,6 @@ logger.success('It works !');
 [dependencyci-url]: https://dependencyci.com/github/nightingalejs/nightingale-logger
 [circleci-status-image]: https://img.shields.io/circleci/project/nightingalejs/nightingale-logger/master.svg?style=flat-square
 [circleci-status-url]: https://circleci.com/gh/nightingalejs/nightingale-logger
-[travisci-status-image]: https://img.shields.io/travis/nightingalejs/nightingale-logger/master.svg?style=flat-square
-[travisci-status-url]: https://travis-ci.org/nightingalejs/nightingale-logger
 [coverage-image]: https://img.shields.io/codecov/c/github/nightingalejs/nightingale-logger/master.svg?style=flat-square
 [coverage-url]: https://codecov.io/gh/nightingalejs/nightingale-logger
 [docs-coverage-url]: https://nightingalejs.github.io/nightingale-logger/coverage/lcov-report/

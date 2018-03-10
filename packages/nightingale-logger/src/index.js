@@ -1,4 +1,4 @@
-/* eslint-disable max-lines */
+/* eslint-disable max-lines, flowtype/sort-keys */
 
 import util from 'util';
 import levels from 'nightingale-levels';
@@ -137,7 +137,7 @@ export default class Logger {
    * Use this only if you know what you are doing.
    */
   addRecord(record: Object) {
-    let { handlers, processors } = this.getHandlersAndProcessors(record.level);
+    const { handlers, processors } = this.getHandlersAndProcessors(record.level);
 
     if (handlers.length === 0) {
       if (record.level > levels.ERROR) {
@@ -166,7 +166,7 @@ export default class Logger {
     level: number = levels.INFO,
     options: ?Object = undefined,
   ) {
-    let context = metadata && metadata.context;
+    const context = metadata && metadata.context;
     if (metadata) {
       delete metadata.context;
     }

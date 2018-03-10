@@ -1,7 +1,7 @@
 import util from 'util';
 import levels from 'nightingale-levels';
 
-/* eslint-disable max-lines */
+/* eslint-disable max-lines, flowtype/sort-keys */
 
 if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER) {
   global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = function () {
@@ -105,7 +105,7 @@ let Logger = class Logger {
    * Use this only if you know what you are doing.
    */
   addRecord(record) {
-    let { handlers, processors } = this.getHandlersAndProcessors(record.level);
+    const { handlers, processors } = this.getHandlersAndProcessors(record.level);
 
     if (handlers.length === 0) {
       if (record.level > levels.ERROR) {
@@ -129,7 +129,7 @@ let Logger = class Logger {
    * Log a message
    */
   log(message, metadata, level = levels.INFO, options = undefined) {
-    let context = metadata && metadata.context;
+    const context = metadata && metadata.context;
     if (metadata) {
       delete metadata.context;
     }

@@ -1,5 +1,8 @@
 {
-  "extends": "pob/flow",
+  "extends": [
+    "pob/babel",
+    "pob/flow"
+  ],
   "rules": {
     "flowtype/no-weak-types": "off"
   },

@@ -104,7 +104,7 @@ let Logger = class Logger {
    * Use this only if you know what you are doing.
    */
   addRecord(record) {
-    let { handlers, processors } = this.getHandlersAndProcessors(record.level);
+    const { handlers, processors } = this.getHandlersAndProcessors(record.level);
 
     if (handlers.length === 0) {
       if (record.level > levels.ERROR) {
@@ -132,7 +132,7 @@ let Logger = class Logger {
    * Log a message
    */
   log(message, metadata, level = levels.INFO, options = undefined) {
-    let context = metadata && metadata.context;
+    const context = metadata && metadata.context;
     if (metadata) {
       delete metadata.context;
     }

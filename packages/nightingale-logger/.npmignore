@@ -1,12 +1,13 @@
-/git-hooks
-/examples
-/samples
-/docs
+/.circleci
 /build
+/docs
+/examples
+/git-hooks
+/samples
 /test
-/.pob.json
-circle.yml
+.babelrc
 .codeclimate.yml
+.yo-rc.json
 jsdoc.config.json
 
 /.settings

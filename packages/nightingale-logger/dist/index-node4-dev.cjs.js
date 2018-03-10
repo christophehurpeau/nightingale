@@ -30,46 +30,7 @@ var createClass = function () {
   };
 }();
 
-var _dec, _dec2, _class, _descriptor, _descriptor2;
-
-function _initDefineProp(target, property, descriptor, context) {
-  if (!descriptor) return;
-  Object.defineProperty(target, property, {
-    enumerable: descriptor.enumerable,
-    configurable: descriptor.configurable,
-    writable: descriptor.writable,
-    value: descriptor.initializer ? descriptor.initializer.call(context) : void 0
-  });
-}
-
-function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) {
-  var desc = {};
-  Object['keys'](descriptor).forEach(function (key) {
-    desc[key] = descriptor[key];
-  });
-  desc.enumerable = !!desc.enumerable;
-  desc.configurable = !!desc.configurable;
-
-  if ('value' in desc || desc.initializer) {
-    desc.writable = true;
-  }
-
-  desc = decorators.slice().reverse().reduce(function (desc, decorator) {
-    return decorator(target, property, desc) || desc;
-  }, desc);
-
-  if (context && desc.initializer !== void 0) {
-    desc.value = desc.initializer ? desc.initializer.call(context) : void 0;
-    desc.initializer = undefined;
-  }
-
-  if (desc.initializer === void 0) {
-    Object['defineProperty'](target, property, desc);
-    desc = null;
-  }
-
-  return desc;
-}
+/* eslint-disable max-lines, flowtype/sort-keys */
 var RecordType = t.type('RecordType', t.object(t.property('level', t.number()), t.property('key', t.string()), t.property('displayName', t.nullable(t.string())), t.property('datetime', t.ref('Date')), t.property('message', t.string()), t.property('context', t.nullable(t.object())), t.property('metadata', t.nullable(t.object())), t.property('extra', t.nullable(t.object()))));
 var HandlerType = t.type('HandlerType', t.object(t.property('minLevel', t.number()), t.property('isHandling', t.nullable(t.function(t.return(t.boolean())))), t.property('handle', t.nullable(t.function(t.param('record', RecordType), t.return(t.boolean()))))));
 var ProcessorType = t.type('ProcessorType', t.function(t.param('record', RecordType), t.return(t.void())));
@@ -126,7 +87,8 @@ function getConfigForLoggerRecord(key, recordLevel) {
  * Interface that allows you to log records.
  * This records are treated by handlers
  */
-var Logger = (_dec = t.decorate(t.string()), _dec2 = t.decorate(t.nullable(t.string())), _class = function () {
+
+var Logger = function () {
 
   /**
    * Create a new Logger
@@ -136,10 +98,6 @@ var Logger = (_dec = t.decorate(t.string()), _dec2 = t.decorate(t.nullable(t.str
    */
   function Logger(key, displayName) {
     classCallCheck(this, Logger);
-
-    _initDefineProp(this, 'key', _descriptor, this);
-
-    _initDefineProp(this, 'displayName', _descriptor2, this);
 
     var _keyType3 = t.string();
 
@@ -987,13 +945,7 @@ var Logger = (_dec = t.decorate(t.string()), _dec2 = t.decorate(t.nullable(t.str
     }
   }]);
   return Logger;
-}(), _descriptor = _applyDecoratedDescriptor(_class.prototype, 'key', [_dec], {
-  enumerable: true,
-  initializer: null
-}), _descriptor2 = _applyDecoratedDescriptor(_class.prototype, 'displayName', [_dec2], {
-  enumerable: true,
-  initializer: null
-}), _class);
+}();
 
 module.exports = Logger;
 //# sourceMappingURL=index-node4-dev.cjs.js.map

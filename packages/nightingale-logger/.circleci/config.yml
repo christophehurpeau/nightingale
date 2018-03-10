@@ -1,0 +1,80 @@
+version: 2
+
+jobs:
+  test-node8:
+    docker:
+      - image: circleci/node:8.9
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - dependencies-node8-{{ arch }}-{{ checksum "yarn.lock" }}
+            - dependencies-node8-{{ arch }}
+      - run:
+          name: Install dependencies
+          command: yarn --prefer-offline --pure-lockfile
+      - save_cache:
+          key: dependencies-node8-{{ arch }}-{{ checksum "yarn.lock" }}
+          paths:
+            - node_modules
+      - run:
+          name: lint code
+          command: yarn run lint
+      - run:
+          name: tests
+          command: yarn run test
+      - run:
+          name: docs
+          command: yarn run generate:docs
+# TODO: fix the date in the generated coverage
+#      - run:
+#          name: Check nothing was forget before commit
+#          command: npx pob-repository-check-clean
+
+  test-node6:
+    docker:
+      - image: circleci/node:6
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - dependencies-node6-{{ arch }}-{{ checksum "yarn.lock" }}
+            - dependencies-node6-{{ arch }}
+      - run:
+          name: Install dependencies
+          command: yarn --prefer-offline --pure-lockfile
+      - save_cache:
+          key: dependencies-node6-{{ arch }}-{{ checksum "yarn.lock" }}
+          paths:
+            - node_modules
+      - run:
+          name: tests
+          command: yarn run test
+  test-node9:
+    docker:
+      - image: circleci/node:9
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - dependencies-node9-{{ arch }}-{{ checksum "yarn.lock" }}
+            - dependencies-node9-{{ arch }}
+      - run:
+          name: Install dependencies
+          command: yarn --prefer-offline --pure-lockfile
+      - save_cache:
+          key: dependencies-node9-{{ arch }}-{{ checksum "yarn.lock" }}
+          paths:
+            - node_modules
+      - run:
+          name: tests
+          command: yarn run test
+
+workflows:
+  version: 2
+
+  tests:
+    jobs:
+      - test-node8
+      - test-node6
+      - test-node9
