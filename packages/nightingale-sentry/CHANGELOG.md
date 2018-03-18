@@ -1,3 +1,31 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+<a name="3.0.0"></a>
+# 3.0.0 (2018-03-18)
+
+
+### Bug Fixes
+
+* fix ([dc7fdb4](https://github.com/christophehurpeau/nightingale/commit/dc7fdb4))
+
+
+### Features
+
+* add user and tags ([84c351e](https://github.com/christophehurpeau/nightingale/commit/84c351e))
+* lerna, rollup ([08f73b6](https://github.com/christophehurpeau/nightingale/commit/08f73b6))
+* pob upgrade ([5b4f01f](https://github.com/christophehurpeau/nightingale/commit/5b4f01f))
+
+
+### BREAKING CHANGES
+
+* remove deprecated dot support
+
+
+
+
 <a name="2.3.0"></a>
 # [2.3.0](https://github.com/nightingalejs/nightingale-sentry/compare/v2.2.0...v2.3.0) (2018-02-01)
 

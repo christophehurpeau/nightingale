@@ -1,3 +1,30 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+<a name="2.0.0"></a>
+# 2.0.0 (2018-03-18)
+
+
+### Bug Fixes
+
+* console.log args ([e047f07](https://github.com/christophehurpeau/nightingale/commit/e047f07))
+
+
+### Features
+
+* lerna, rollup ([08f73b6](https://github.com/christophehurpeau/nightingale/commit/08f73b6))
+* pob upgrade ([77267e7](https://github.com/christophehurpeau/nightingale/commit/77267e7))
+
+
+### BREAKING CHANGES
+
+* remove deprecated dot support
+
+
+
+
 <a name="1.5.0"></a>
 # [1.5.0](https://github.com/nightingalejs/nightingale-browser-console-formatter/compare/v1.4.0...v1.5.0) (2017-03-21)
 

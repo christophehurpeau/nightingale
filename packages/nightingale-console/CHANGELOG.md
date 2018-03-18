@@ -1,3 +1,33 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+<a name="3.0.0"></a>
+# 3.0.0 (2018-03-18)
+
+
+### Bug Fixes
+
+* dependency nightingale-ansi-formatter ([b2742d2](https://github.com/christophehurpeau/nightingale/commit/b2742d2))
+* package.json engine ([6f87d26](https://github.com/christophehurpeau/nightingale/commit/6f87d26))
+
+
+### Features
+
+* lerna, rollup ([08f73b6](https://github.com/christophehurpeau/nightingale/commit/08f73b6))
+* pob upgrade ([9889b2d](https://github.com/christophehurpeau/nightingale/commit/9889b2d))
+* support node 4 ([97743f9](https://github.com/christophehurpeau/nightingale/commit/97743f9))
+* use nightingale-debug ([a26f99c](https://github.com/christophehurpeau/nightingale/commit/a26f99c))
+
+
+### BREAKING CHANGES
+
+* remove deprecated dot support
+
+
+
+
 <a name="2.6.0"></a>
 # [2.6.0](https://github.com/nightingalejs/nightingale-console/compare/v2.5.1...v2.6.0) (2017-12-29)
 

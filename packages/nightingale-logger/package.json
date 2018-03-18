@@ -1,13 +1,17 @@
 {
   "name": "nightingale-logger",
-  "version": "3.4.0",
+  "version": "4.0.0",
   "description": "Logger for browser and node",
-  "keywords": ["nightingale"],
+  "keywords": [
+    "nightingale"
+  ],
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
   "license": "ISC",
   "repository": "git@github.com:christophehurpeau/nightingale.git",
   "homepage": "https://github.com/christophehurpeau/nightingale",
-  "engines": { "node": ">=4.0.0" },
+  "engines": {
+    "node": ">=4.0.0"
+  },
   "main": "./lib/index.js",
   "module": "./dist/index-browser.es.js",
   "module-dev": "./dist/index-browser-dev.es.js",
@@ -25,19 +29,30 @@
     "flow": "flow",
     "generate:api": "pob-build-doc",
     "generate:docs": "rm -Rf docs ; yarn run generate:api && yarn run generate:test-coverage",
-    "generate:test-coverage":
-      "rm -Rf docs/coverage/ ; NODE_ENV=production BABEL_ENV=test jest --coverage --coverageReporters=lcov --coverageDirectory=docs/coverage/",
+    "generate:test-coverage": "rm -Rf docs/coverage/ ; NODE_ENV=production BABEL_ENV=test jest --coverage --coverageReporters=lcov --coverageDirectory=docs/coverage/",
     "lint": "eslint src/",
     "test": "jest",
     "watch": "pob-watch"
   },
-  "prettier": { "trailingComma": "all", "singleQuote": true, "printWidth": 100 },
+  "prettier": {
+    "trailingComma": "all",
+    "singleQuote": true,
+    "printWidth": 100
+  },
   "jest": {
     "cacheDirectory": "./node_modules/.cache/jest",
-    "testMatch": ["<rootDir>/src/**/__tests__/**/*.js", "<rootDir>/src/**/*.test.js"],
-    "collectCoverageFrom": ["src/**/*.js"]
+    "testMatch": [
+      "<rootDir>/src/**/__tests__/**/*.js",
+      "<rootDir>/src/**/*.test.js"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ]
   },
-  "dependencies": { "flow-runtime": "^0.17.0", "nightingale-levels": "^1.1.0" },
+  "dependencies": {
+    "flow-runtime": "^0.17.0",
+    "nightingale-levels": "^2.0.0"
+  },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",

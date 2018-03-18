@@ -1,10 +1,45 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+<a name="3.0.0"></a>
+# 3.0.0 (2018-03-18)
+
+
+### Bug Fixes
+
+* colors works on firefox black background or chrome white background ([45d6652](https://github.com/christophehurpeau/nightingale/commit/45d6652))
+* node 4 ([a66b546](https://github.com/christophehurpeau/nightingale/commit/a66b546))
+* node 6.10 ([5d48e54](https://github.com/christophehurpeau/nightingale/commit/5d48e54))
+* show error with stack ([c03ddc7](https://github.com/christophehurpeau/nightingale/commit/c03ddc7))
+* show error with toString instead of stack ([7914652](https://github.com/christophehurpeau/nightingale/commit/7914652))
+* support Map, WeakMap, Set, WeakSet ([475ccb9](https://github.com/christophehurpeau/nightingale/commit/475ccb9))
+
+
+### Features
+
+* better display strings: transforms 
+ into real new line ([884263d](https://github.com/christophehurpeau/nightingale/commit/884263d))
+* lerna, rollup ([08f73b6](https://github.com/christophehurpeau/nightingale/commit/08f73b6))
+* pob upgrade ([79af44c](https://github.com/christophehurpeau/nightingale/commit/79af44c))
+
+
+### BREAKING CHANGES
+
+* remove deprecated dot support
+
+
+
+
 <a name="2.3.0"></a>
 # [2.3.0](https://github.com/nightingalejs/nightingale-formatter/compare/v2.2.5...v2.3.0) (2017-09-07)
 
 
 ### Features
 
-* better display strings: transforms \n into real new line ([5107c5c](https://github.com/nightingalejs/nightingale-formatter/commit/5107c5c))
+* better display strings: transforms 
+ into real new line ([5107c5c](https://github.com/nightingalejs/nightingale-formatter/commit/5107c5c))
 
 
 <a name="2.2.5"></a>

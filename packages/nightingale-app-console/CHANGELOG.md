@@ -1,3 +1,26 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+<a name="1.0.0"></a>
+# 1.0.0 (2018-03-18)
+
+
+### Features
+
+* lerna, rollup ([08f73b6](https://github.com/christophehurpeau/nightingale/commit/08f73b6))
+* pob upgrade ([8e76f33](https://github.com/christophehurpeau/nightingale/commit/8e76f33))
+* pob upgrade, support node 4 and browser ([cb7d420](https://github.com/christophehurpeau/nightingale/commit/cb7d420))
+
+
+### BREAKING CHANGES
+
+* remove deprecated dot support
+
+
+
+
 <a name="0.5.0"></a>
 # [0.5.0](https://github.com/nightingalejs/nightingale-app-console/compare/v0.4.1...v0.5.0) (2017-04-01)
 

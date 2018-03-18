@@ -1,3 +1,34 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+<a name="2.0.0"></a>
+# 2.0.0 (2018-03-18)
+
+
+### Bug Fixes
+
+* ainsi-styles@3.0 ([e061ecc](https://github.com/christophehurpeau/nightingale/commit/e061ecc))
+* node 6.10 ([9cc902b](https://github.com/christophehurpeau/nightingale/commit/9cc902b))
+* pob-babel@18.1.5 ([43b8ec3](https://github.com/christophehurpeau/nightingale/commit/43b8ec3))
+
+
+### Features
+
+* lerna, rollup ([08f73b6](https://github.com/christophehurpeau/nightingale/commit/08f73b6))
+* node 4 ([71b4b02](https://github.com/christophehurpeau/nightingale/commit/71b4b02))
+* pob upgrade ([8d10bc9](https://github.com/christophehurpeau/nightingale/commit/8d10bc9))
+* update dependencies ([e848866](https://github.com/christophehurpeau/nightingale/commit/e848866))
+
+
+### BREAKING CHANGES
+
+* remove deprecated dot support
+
+
+
+
 <a name="1.8.1"></a>
 ## [1.8.1](https://github.com/nightingalejs/nightingale-ansi-formatter/compare/v1.8.0...v1.8.1) (2017-08-26)
 

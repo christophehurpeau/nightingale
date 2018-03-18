@@ -1,13 +1,18 @@
 {
   "name": "nightingale-console",
-  "version": "2.6.0",
+  "version": "3.0.0",
   "description": "Console handler for nightingale",
-  "keywords": ["nightingale", "nightingale-handler"],
+  "keywords": [
+    "nightingale",
+    "nightingale-handler"
+  ],
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
   "license": "ISC",
   "repository": "git@github.com:christophehurpeau/nightingale.git",
   "homepage": "https://github.com/christophehurpeau/nightingale",
-  "engines": { "node": ">=4.0.0" },
+  "engines": {
+    "node": ">=4.0.0"
+  },
   "main": "./lib/index.js",
   "module:node": "./dist/index-node8.es.js",
   "module:node-dev": "./dist/index-node8-dev.es.js",
@@ -18,11 +23,15 @@
     "test": "No tests",
     "watch": "pob-watch"
   },
-  "prettier": { "trailingComma": "all", "singleQuote": true, "printWidth": 100 },
+  "prettier": {
+    "trailingComma": "all",
+    "singleQuote": true,
+    "printWidth": 100
+  },
   "dependencies": {
-    "nightingale-ansi-formatter": "^1.8.1",
-    "nightingale-console-output": "^1.4.0",
-    "nightingale-debug": "^2.3.1"
+    "nightingale-ansi-formatter": "^2.0.0",
+    "nightingale-console-output": "^2.0.0",
+    "nightingale-debug": "^3.0.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",

@@ -1,3 +1,31 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+<a name="1.0.0"></a>
+# 1.0.0 (2018-03-18)
+
+
+### Bug Fixes
+
+* node 6 ([0ce089c](https://github.com/christophehurpeau/nightingale/commit/0ce089c))
+
+
+### Features
+
+* lerna, rollup ([08f73b6](https://github.com/christophehurpeau/nightingale/commit/08f73b6))
+* pob upgrade ([bb56cf0](https://github.com/christophehurpeau/nightingale/commit/bb56cf0))
+* support node 4 ([4fdaa84](https://github.com/christophehurpeau/nightingale/commit/4fdaa84))
+
+
+### BREAKING CHANGES
+
+* remove deprecated dot support
+
+
+
+
 <a name="0.6.0"></a>
 # [0.6.0](https://github.com/nightingalejs/nightingale-markdown-formatter/compare/v0.5.0...v0.6.0) (2017-03-21)
 

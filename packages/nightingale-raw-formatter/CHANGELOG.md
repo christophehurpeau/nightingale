@@ -1,3 +1,26 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+<a name="2.0.0"></a>
+# 2.0.0 (2018-03-18)
+
+
+### Features
+
+* lerna, rollup ([08f73b6](https://github.com/christophehurpeau/nightingale/commit/08f73b6))
+* pob upgrade ([e9090d1](https://github.com/christophehurpeau/nightingale/commit/e9090d1))
+* support node 4 ([efee51e](https://github.com/christophehurpeau/nightingale/commit/efee51e))
+
+
+### BREAKING CHANGES
+
+* remove deprecated dot support
+
+
+
+
 <a name="1.5.0"></a>
 # [1.5.0](https://github.com/nightingalejs/nightingale-raw-formatter/compare/v1.4.0...v1.5.0) (2017-04-01)
 

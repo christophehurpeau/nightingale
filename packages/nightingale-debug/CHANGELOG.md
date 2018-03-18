@@ -1,3 +1,30 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+<a name="3.0.0"></a>
+# 3.0.0 (2018-03-18)
+
+
+### Bug Fixes
+
+* node 6.10 ([6e546f7](https://github.com/christophehurpeau/nightingale/commit/6e546f7))
+
+
+### Features
+
+* lerna, rollup ([08f73b6](https://github.com/christophehurpeau/nightingale/commit/08f73b6))
+* pob upgrade ([c98c563](https://github.com/christophehurpeau/nightingale/commit/c98c563))
+
+
+### BREAKING CHANGES
+
+* remove deprecated dot support
+
+
+
+
 <a name="2.3.1"></a>
 ## [2.3.1](https://github.com/nightingalejs/nightingale-debug/compare/v2.3.0...v2.3.1) (2017-03-21)
 

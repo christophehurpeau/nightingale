@@ -1,3 +1,37 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+<a name="4.0.0"></a>
+# 4.0.0 (2018-03-18)
+
+
+### Bug Fixes
+
+* getConfigForLoggerRecord key can be undefined ([260658b](https://github.com/christophehurpeau/nightingale/commit/260658b))
+* key replace all dot not just the first one ([00d4a50](https://github.com/christophehurpeau/nightingale/commit/00d4a50))
+* logger key warning ([a8097d7](https://github.com/christophehurpeau/nightingale/commit/a8097d7))
+* metadata is optional (flow) ([cd07211](https://github.com/christophehurpeau/nightingale/commit/cd07211))
+* warn without key ([c9118b3](https://github.com/christophehurpeau/nightingale/commit/c9118b3))
+
+
+### Features
+
+* lerna, rollup ([08f73b6](https://github.com/christophehurpeau/nightingale/commit/08f73b6))
+* pob upgrade ([df0f6d8](https://github.com/christophehurpeau/nightingale/commit/df0f6d8))
+* pob upgrade ([bce2e16](https://github.com/christophehurpeau/nightingale/commit/bce2e16))
+* update dependencies ([76b5391](https://github.com/christophehurpeau/nightingale/commit/76b5391))
+* warn dot in key add key and diplayname ([7a5967c](https://github.com/christophehurpeau/nightingale/commit/7a5967c))
+
+
+### BREAKING CHANGES
+
+* remove deprecated dot support
+
+
+
+
 <a name="3.4.0"></a>
 # [3.4.0](https://github.com/nightingalejs/nightingale-logger/compare/v3.3.0...v3.4.0) (2017-04-01)
 

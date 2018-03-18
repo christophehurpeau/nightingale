@@ -1,37 +1,54 @@
 {
   "name": "nightingale-slack",
-  "version": "2.3.0",
+  "version": "3.0.0",
   "description": "Slack handler for nightingale",
-  "keywords": ["nightingale", "nightingale-handler"],
+  "keywords": [
+    "nightingale",
+    "nightingale-handler"
+  ],
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
   "license": "ISC",
   "repository": "git@github.com:christophehurpeau/nightingale.git",
   "homepage": "https://github.com/christophehurpeau/nightingale",
-  "engines": { "node": ">=6.5.0" },
+  "engines": {
+    "node": ">=6.5.0"
+  },
   "main": "./lib/index.js",
   "module:node": "./dist/index-node8.es.js",
   "module:node-dev": "./dist/index-node8-dev.es.js",
-  "module:aliases-node": { "./createBody.js": "./dist/createBody-node8.es.js" },
-  "module:aliases-node-dev": { "./createBody.js": "./dist/createBody-node8-dev.es.js" },
+  "module:aliases-node": {
+    "./createBody.js": "./dist/createBody-node8.es.js"
+  },
+  "module:aliases-node-dev": {
+    "./createBody.js": "./dist/createBody-node8-dev.es.js"
+  },
   "scripts": {
     "build": "pob-build",
     "clean": "rm -Rf docs dist test/node6 coverage",
-    "generate:test-coverage":
-      "rm -Rf docs/coverage/ ; NODE_ENV=production BABEL_ENV=test jest --coverage --coverageReporters=lcov --coverageDirectory=docs/coverage/",
+    "generate:test-coverage": "rm -Rf docs/coverage/ ; NODE_ENV=production BABEL_ENV=test jest --coverage --coverageReporters=lcov --coverageDirectory=docs/coverage/",
     "lint": "eslint src/",
     "test": "jest",
     "watch": "pob-watch"
   },
-  "prettier": { "trailingComma": "all", "singleQuote": true, "printWidth": 100 },
+  "prettier": {
+    "trailingComma": "all",
+    "singleQuote": true,
+    "printWidth": 100
+  },
   "jest": {
     "cacheDirectory": "./node_modules/.cache/jest",
-    "testMatch": ["<rootDir>/src/**/__tests__/**/*.js", "<rootDir>/src/**/*.test.js"],
-    "collectCoverageFrom": ["src/**/*.js"]
+    "testMatch": [
+      "<rootDir>/src/**/__tests__/**/*.js",
+      "<rootDir>/src/**/*.test.js"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ]
   },
   "dependencies": {
-    "nightingale-levels": "^1.0.0",
-    "nightingale-markdown-formatter": "^0.6.0",
-    "nightingale-raw-formatter": "^1.5.0",
+    "nightingale-levels": "^2.0.0",
+    "nightingale-markdown-formatter": "^1.0.0",
+    "nightingale-raw-formatter": "^2.0.0",
     "request": "^2.81.0"
   },
   "devDependencies": {

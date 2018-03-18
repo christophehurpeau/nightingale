@@ -1,4 +1,35 @@
-<a name="6.2.1"></a>
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+    <a name="7.0.0"></a>
+# 7.0.0 (2018-03-18)
+
+
+### Bug Fixes
+
+* missing property stop ([fff57a0](https://github.com/christophehurpeau/nightingale/commit/fff57a0))
+* node 4 ([6dc83a8](https://github.com/christophehurpeau/nightingale/commit/6dc83a8))
+* replace process.exit by throw new Error ([defb009](https://github.com/christophehurpeau/nightingale/commit/defb009))
+* strict check config keys ([220033d](https://github.com/christophehurpeau/nightingale/commit/220033d))
+
+
+### Features
+
+* lerna, rollup ([08f73b6](https://github.com/christophehurpeau/nightingale/commit/08f73b6))
+* pob upgrade ([3c98d35](https://github.com/christophehurpeau/nightingale/commit/3c98d35))
+
+
+### BREAKING CHANGES
+
+* remove deprecated dot support
+* can throw errors in dev mode
+
+
+
+
+    <a name="6.2.1"></a>
 ## [6.2.1](https://github.com/nightingalejs/nightingale/compare/v6.2.0...v6.2.1) (2017-04-01)
 
 
@@ -134,10 +165,10 @@ import Logger from 'nightingale';
 const loggerMyService = new Logger('app.myService');
 
 export function someAction(arg1) {
-    const logger = loggerMyService.context({ arg1 });
-    logger.info('starting');
-    // do stuff
-    logger.info('done');
+const logger = loggerMyService.context({ arg1 });
+logger.info('starting');
+// do stuff
+logger.info('done');
 }
 ```
 

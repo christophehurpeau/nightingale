@@ -1,13 +1,15 @@
 {
   "name": "nightingale-app-console",
-  "version": "0.5.0",
+  "version": "1.0.0",
   "description": "nightingale default config and logger for app",
   "keywords": [],
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (https://christophe.hurpeau.com)",
   "license": "ISC",
   "repository": "git@github.com:christophehurpeau/nightingale.git",
   "homepage": "https://github.com/christophehurpeau/nightingale",
-  "engines": { "node": ">=4.0.0" },
+  "engines": {
+    "node": ">=4.0.0"
+  },
   "main": "./index.js",
   "module": "./dist/index-browser.es.js",
   "module-dev": "./dist/index-browser-dev.es.js",
@@ -26,10 +28,14 @@
     "test": "No tests",
     "watch": "pob-watch"
   },
-  "prettier": { "trailingComma": "all", "singleQuote": true, "printWidth": 100 },
+  "prettier": {
+    "trailingComma": "all",
+    "singleQuote": true,
+    "printWidth": 100
+  },
   "dependencies": {
-    "nightingale": "^6.2.1",
-    "nightingale-console": "^2.5.0",
+    "nightingale": "^7.0.0",
+    "nightingale-console": "^3.0.0",
     "source-map-support": "^0.4.14"
   },
   "devDependencies": {

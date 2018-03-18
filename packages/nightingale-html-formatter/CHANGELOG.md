@@ -1,3 +1,30 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+<a name="2.0.0"></a>
+# 2.0.0 (2018-03-18)
+
+
+### Bug Fixes
+
+* node 6.10 ([0579514](https://github.com/christophehurpeau/nightingale/commit/0579514))
+
+
+### Features
+
+* lerna, rollup ([08f73b6](https://github.com/christophehurpeau/nightingale/commit/08f73b6))
+* pob upgrade ([3e5e914](https://github.com/christophehurpeau/nightingale/commit/3e5e914))
+
+
+### BREAKING CHANGES
+
+* remove deprecated dot support
+
+
+
+
 <a name="1.3.1"></a>
 ## [1.3.1](https://github.com/nightingalejs/nightingale-html-formatter/compare/v1.3.0...v1.3.1) (2017-03-21)
 

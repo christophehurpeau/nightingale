@@ -1,3 +1,31 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+<a name="2.0.0"></a>
+# 2.0.0 (2018-03-18)
+
+
+### Bug Fixes
+
+* node 4 ([ea3eb11](https://github.com/christophehurpeau/nightingale/commit/ea3eb11))
+* webpack and browser ([28adb12](https://github.com/christophehurpeau/nightingale/commit/28adb12))
+
+
+### Features
+
+* lerna, rollup ([08f73b6](https://github.com/christophehurpeau/nightingale/commit/08f73b6))
+* pob upgrade ([abad541](https://github.com/christophehurpeau/nightingale/commit/abad541))
+
+
+### BREAKING CHANGES
+
+* remove deprecated dot support
+
+
+
+
 <a name="1.5.0"></a>
 # [1.5.0](https://github.com/nightingalejs/nightingale-console-output/compare/v1.4.0...v1.5.0) (2017-12-29)
 
