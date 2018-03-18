@@ -1,0 +1,34 @@
+{
+  "name": "nightingale-console-example",
+  "private": true,
+  "version": "0.0.0",
+  "description": "",
+  "keywords": [],
+  "author": "Christophe Hurpeau <christophe@hurpeau.com> (https://christophe.hurpeau.com)",
+  "license": "ISC",
+  "repository": "git@github.com:christophehurpeau/nightingale.git",
+  "homepage": "https://github.com/christophehurpeau/nightingale",
+  "engines": { "node": ">=4.0.0" },
+  "main": "./index.js",
+  "scripts": {
+    "build": "pob-build",
+    "lint": "eslint src/",
+    "test": "No tests",
+    "watch": "pob-watch"
+  },
+  "prettier": { "trailingComma": "all", "singleQuote": true, "printWidth": 100 },
+  "dependencies": { "nightingale": "^6.2.1", "nightingale-console": "^2.6.0" },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.2",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-latest-node": "^1.0.0",
+    "eslint": "^4.18.2",
+    "eslint-config-pob": "^18.0.0",
+    "eslint-plugin-babel": "^4.1.2",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-prettier": "^2.6.0",
+    "pob-babel": "^20.0.0",
+    "prettier": "^1.11.1"
+  }
+}

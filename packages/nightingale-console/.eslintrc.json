@@ -1,3 +1,5 @@
 {
-  "extends": "pob/babel"
+  "extends": [
+    "pob/babel"
+  ]
 }

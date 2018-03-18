@@ -3,29 +3,32 @@
 import util from 'util';
 import levels from 'nightingale-levels';
 
-type RecordType = {
+type Record = {
   level: number,
   key: string,
-  displayName: ?string,
+  displayName?: ?string,
   datetime: Date,
   message: string,
-  context: ?Object,
-  metadata: ?Object,
-  extra: ?Object,
+  context?: ?Object,
+  metadata?: ?Object,
+  extra?: ?Object,
 };
 
-type HandlerType = {
+type Handler = {
   minLevel: number,
-  isHandling: ?() => boolean,
-  handle: ?(record: RecordType) => boolean,
+  isHandling?: ?() => boolean,
+  handle?: ?(record: Record) => boolean,
 };
 
-type ProcessorType = (record: RecordType) => void;
+type Processor = (record: Record) => void;
 
 type ConfigForLoggerType = {
-  handlers: Array<HandlerType>,
-  processors: Array<ProcessorType>,
+  handlers: Array<Handler>,
+  processors: Array<Processor>,
 };
+
+type Metadata = { [string]: any };
+type MetadataStyles = { [string]: any };
 
 if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER) {
   global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = function(): ConfigForLoggerType {
@@ -62,6 +65,7 @@ function getConfigForLoggerRecord(key: ?string, recordLevel: number): ConfigForL
 export default class Logger {
   key: string;
   displayName: ?string;
+  _context: ?Object;
 
   /**
    * Create a new Logger
@@ -73,9 +77,8 @@ export default class Logger {
     this.key = key;
     this.displayName = displayName;
 
-    if (key.includes('.')) {
-      this.warn('nightingale: `.` in key is deprecated, replace with `:`', { key, displayName });
-      this.key = key.replace(/\./g, ':');
+    if (!PRODUCTION && key.includes('.')) {
+      throw new Error(`nightingale: \`.\` in key is no longer supported (key: ${key})`);
     }
   }
 
@@ -162,7 +165,7 @@ export default class Logger {
    */
   log(
     message: string,
-    metadata: ?Object,
+    metadata: ?Metadata,
     level: number = levels.INFO,
     options: ?Object = undefined,
   ) {
@@ -192,42 +195,42 @@ export default class Logger {
   /**
    * Log a trace message
    */
-  trace(message: string, metadata: ?Object, metadataStyles: ?Object) {
+  trace(message: string, metadata: ?Metadata, metadataStyles: ?MetadataStyles) {
     this.log(message, metadata, levels.TRACE, { metadataStyles });
   }
 
   /**
    * Log a debug message
    */
-  debug(message: string, metadata: ?Object, metadataStyles: ?Object) {
+  debug(message: string, metadata: ?Metadata, metadataStyles: ?MetadataStyles) {
     this.log(message, metadata, levels.DEBUG, { metadataStyles });
   }
 
   /**
    * Notice an info message
    */
-  notice(message: string, metadata: ?Object, metadataStyles: ?Object) {
+  notice(message: string, metadata: ?Metadata, metadataStyles: ?MetadataStyles) {
     this.log(message, metadata, levels.NOTICE, { metadataStyles });
   }
 
   /**
    * Log an info message
    */
-  info(message: string, metadata: ?Object, metadataStyles: ?Object) {
+  info(message: string, metadata: ?Metadata, metadataStyles: ?MetadataStyles) {
     this.log(message, metadata, levels.INFO, { metadataStyles });
   }
 
   /**
    * Log a warn message
    */
-  warn(message: string, metadata: ?Object, metadataStyles: ?Object) {
+  warn(message: string, metadata: ?Metadata, metadataStyles: ?MetadataStyles) {
     this.log(message, metadata, levels.WARN, { metadataStyles });
   }
 
   /**
    * Log an error message
    */
-  error(message: string | Error, metadata: Object = {}, metadataStyles: ?Object) {
+  error(message: string | Error, metadata: Object = {}, metadataStyles: ?MetadataStyles) {
     if (message instanceof Error) {
       metadata.error = message;
       message = `${metadata.error.name}: ${metadata.error.message}`;
@@ -238,28 +241,28 @@ export default class Logger {
   /**
    * Log an critical message
    */
-  critical(message: string, metadata: ?Object, metadataStyles: ?Object) {
+  critical(message: string, metadata: ?Metadata, metadataStyles: ?MetadataStyles) {
     this.log(message, metadata, levels.CRITICAL, { metadataStyles });
   }
 
   /**
    * Log a fatal message
    */
-  fatal(message: string, metadata: ?Object, metadataStyles: ?Object) {
+  fatal(message: string, metadata: ?Metadata, metadataStyles: ?MetadataStyles) {
     this.log(message, metadata, levels.FATAL, { metadataStyles });
   }
 
   /**
    * Log an alert message
    */
-  alert(message: string, metadata: ?Object, metadataStyles: ?Object) {
+  alert(message: string, metadata: ?Metadata, metadataStyles: ?MetadataStyles) {
     this.log(message, metadata, levels.ALERT, { metadataStyles });
   }
 
   /**
    * Log an inspected value
    */
-  inspectValue(value: any, metadata: ?Object, metadataStyles: ?Object) {
+  inspectValue(value: any, metadata: ?Metadata, metadataStyles: ?MetadataStyles) {
     if (BROWSER) {
       throw new Error('Not supported for the browser. Prefer `debugger;`');
     } else {
@@ -273,7 +276,7 @@ export default class Logger {
   /**
    * Log a debugged var
    */
-  inspectVar(varName: string, varValue: any, metadata: ?Object, metadataStyles: ?Object) {
+  inspectVar(varName: string, varValue: any, metadata: ?Metadata, metadataStyles: ?MetadataStyles) {
     if (BROWSER) {
       throw new Error('Not supported for the browser. Prefer `debugger;`');
     } else {
@@ -288,14 +291,14 @@ export default class Logger {
   /**
    * Alias for infoSuccess
    */
-  success(message: string, metadata: ?Object, metadataStyles: ?Object) {
+  success(message: string, metadata: ?Metadata, metadataStyles: ?MetadataStyles) {
     this.infoSuccess(message, metadata, metadataStyles);
   }
 
   /**
    * Log an info success message
    */
-  infoSuccess(message: string, metadata: ?Object, metadataStyles: ?Object) {
+  infoSuccess(message: string, metadata: ?Metadata, metadataStyles: ?MetadataStyles) {
     this.log(message, metadata, levels.INFO, {
       metadataStyles,
       symbol: '✔',
@@ -306,7 +309,7 @@ export default class Logger {
   /**
    * Log an debug success message
    */
-  debugSuccess(message: string, metadata: ?Object, metadataStyles: ?Object) {
+  debugSuccess(message: string, metadata: ?Metadata, metadataStyles: ?MetadataStyles) {
     this.log(message, metadata, levels.DEBUG, {
       metadataStyles,
       symbol: '✔',
@@ -317,14 +320,14 @@ export default class Logger {
   /**
    * Alias for infoFail
    */
-  fail(message: string, metadata: ?Object, metadataStyles: ?Object) {
+  fail(message: string, metadata: ?Metadata, metadataStyles: ?MetadataStyles) {
     this.infoFail(message, metadata, metadataStyles);
   }
 
   /**
    * Log an info fail message
    */
-  infoFail(message: string, metadata: ?Object, metadataStyles: ?Object) {
+  infoFail(message: string, metadata: ?Metadata, metadataStyles: ?MetadataStyles) {
     this.log(message, metadata, levels.INFO, {
       metadataStyles,
       symbol: '✖',
@@ -335,7 +338,7 @@ export default class Logger {
   /**
    * Log an debug fail message
    */
-  debugFail(message: string, metadata: ?Object, metadataStyles: ?Object) {
+  debugFail(message: string, metadata: ?Metadata, metadataStyles: ?MetadataStyles) {
     this.log(message, metadata, levels.DEBUG, {
       metadataStyles,
       symbol: '✖',
@@ -348,8 +351,8 @@ export default class Logger {
    */
   time(
     message: ?string,
-    metadata: ?Object,
-    metadataStyles: ?Object,
+    metadata: ?Metadata,
+    metadataStyles: ?MetadataStyles,
     level: number = levels.DEBUG,
   ): number {
     if (message) {
@@ -359,7 +362,7 @@ export default class Logger {
     return Date.now();
   }
 
-  infoTime(message: ?string, metadata: ?Object, metadataStyles: ?Object): number {
+  infoTime(message: ?string, metadata: ?Metadata, metadataStyles: ?MetadataStyles): number {
     return this.time(message, metadata, metadataStyles, levels.INFO);
   }
 
@@ -372,11 +375,12 @@ export default class Logger {
   timeEnd(
     startTime: number,
     message: string,
-    metadata: Object = {},
-    metadataStyles: ?Object,
+    metadata: ?Metadata,
+    metadataStyles: ?MetadataStyles,
     level: number = levels.DEBUG,
     options: ?Object,
   ) {
+    if (!metadata) metadata = {};
     const now = Date.now();
 
     const diffTime = now - startTime;
@@ -384,7 +388,7 @@ export default class Logger {
     if (diffTime < 1000) {
       metadata.readableTime = `${diffTime}ms`;
     } else {
-      const seconds = diffTime > 1000 && Math.floor(diffTime / 1000);
+      const seconds = diffTime > 1000 ? Math.floor(diffTime / 1000) : 0;
       const ms = diffTime - seconds * 1000;
       metadata.readableTime = `${seconds ? `${seconds}s and ` : ''}${ms}ms`;
     }
@@ -396,14 +400,19 @@ export default class Logger {
   /**
    * Like timeEnd, but with INFO level
    */
-  infoTimeEnd(time: number, message: string, metadata: ?Object, metadataStyles: ?Object) {
+  infoTimeEnd(time: number, message: string, metadata: ?Metadata, metadataStyles: ?MetadataStyles) {
     this.timeEnd(time, message, metadata, metadataStyles, levels.INFO);
   }
 
   /**
    * Like timeEnd, but with INFO level
    */
-  infoSuccessTimeEnd(time: number, message: string, metadata: ?Object, metadataStyles: ?Object) {
+  infoSuccessTimeEnd(
+    time: number,
+    message: string,
+    metadata: ?Metadata,
+    metadataStyles: ?MetadataStyles,
+  ) {
     this.timeEnd(time, message, metadata, metadataStyles, levels.INFO, {
       symbol: '✔',
       styles: ['green', 'bold'],
@@ -422,7 +431,7 @@ export default class Logger {
    * }
    *
    */
-  enter(fn: Function, metadata: ?Object, metadataStyles: ?Object) {
+  enter(fn: Function, metadata: ?Metadata, metadataStyles: ?MetadataStyles) {
     metadata = {
       functionName: fn.name,
       ...metadata,
@@ -442,7 +451,7 @@ export default class Logger {
    *   }
    * }
    */
-  exit(fn: Function, metadata: ?Object, metadataStyles: ?Object) {
+  exit(fn: Function, metadata: ?Metadata, metadataStyles: ?MetadataStyles) {
     metadata = {
       functionName: fn.name,
       ...metadata,
@@ -470,8 +479,8 @@ export default class Logger {
    */
   wrap(
     fn: Function,
-    metadata: ?Object | Function,
-    metadataStyles: ?Object | Function,
+    metadata: ?Metadata | Function,
+    metadataStyles: ?MetadataStyles | Function,
     callback: Function,
   ) {
     if (typeof metadata === 'function') {

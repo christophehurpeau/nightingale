@@ -1,1 +1,0 @@
-{"version":3,"sources":["../src/index.js"],"names":["handle","minLevel"],"mappings":";;;;;;kBAAgBA,MAAD,IACb,UAAUC,QAAV,EAA4B;AAC1B,OAAKA,QAAL,GAAgBA,QAAhB;AACA,OAAKD,MAAL,GAAcA,MAAd;AACD,C","file":"index.js","sourcesContent":["export default (handle: Function) => (\n  function (minLevel: number) {\n    this.minLevel = minLevel;\n    this.handle = handle;\n  }\n);\n"]}

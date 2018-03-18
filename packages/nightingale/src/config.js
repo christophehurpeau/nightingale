@@ -1,12 +1,12 @@
 type Config = {|
-  stop: ?boolean,
-  pattern: ?RegExp,
-  key: ?string,
-  keys: ?Array<string>,
-  handler: ?Object,
-  handlers: ?Array<Object>,
-  processor: ?any,
-  processors: ?Array<any>,
+  handler?: ?Object,
+  handlers?: ?Array<Object>,
+  key?: ?string,
+  keys?: ?Array<string>,
+  pattern?: ?RegExp,
+  processor?: ?any,
+  processors?: ?Array<any>,
+  stop?: ?boolean,
 |};
 
 if (!PRODUCTION && global.__NIGHTINGALE_GLOBAL_HANDLERS) {
@@ -97,7 +97,7 @@ global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = function getConfigForLogger(key) {
     processors: [],
   };
 
-  global.__NIGHTINGALE_CONFIG.filter(configIsForKey(key)).some((config) => {
+  global.__NIGHTINGALE_CONFIG.filter(configIsForKey(key)).some(config => {
     if (config.handlers) loggerConfig.handlers.push(...config.handlers);
     if (config.processors) loggerConfig.processors.push(...config.processors);
     return config.stop;
@@ -111,10 +111,10 @@ global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = function getConfigForLoggerR
   const { handlers, processors } = global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key);
 
   return {
-    handlers: handlers.filter(handler => (
-      level >= handler.minLevel && (!handler.isHandling || handler.isHandling(level, key))
-    )),
+    handlers: handlers.filter(
+      handler =>
+        level >= handler.minLevel && (!handler.isHandling || handler.isHandling(level, key)),
+    ),
     processors,
   };
 };
-

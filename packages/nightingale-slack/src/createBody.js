@@ -1,7 +1,6 @@
 /* eslint camelcase: "off" */
 import markdownFormatter from 'nightingale-markdown-formatter/src';
 import rawFormatter from 'nightingale-raw-formatter/src';
-
 import levels from 'nightingale-levels';
 
 const levelToSlackColor = {

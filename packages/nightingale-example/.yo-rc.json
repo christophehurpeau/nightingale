@@ -1,0 +1,43 @@
+{
+  "pob": {
+    "promptValues": {
+      "authorName": "Christophe Hurpeau",
+      "authorEmail": "christophe@hurpeau.com",
+      "authorUrl": "https://christophe.hurpeau.com"
+    },
+    "pob-config": {
+      "entries": [
+        "configure",
+        "console",
+        "debug",
+        "errors",
+        "jsonConsole"
+      ],
+      "documentation": false,
+      "testing": false,
+      "envs": [
+        {
+          "target": "node",
+          "version": "8",
+          "formats": [
+            "cjs"
+          ]
+        },
+        {
+          "target": "node",
+          "version": "6",
+          "formats": [
+            "cjs"
+          ]
+        },
+        {
+          "target": "node",
+          "version": "4",
+          "formats": [
+            "cjs"
+          ]
+        }
+      ]
+    }
+  }
+}

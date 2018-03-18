@@ -2,10 +2,28 @@
   "pob": {
     "pob-config": {
       "envs": [
-        "node6",
-        "node8",
-        "older-node",
-        "module-node8"
+        {
+          "target": "node",
+          "version": "8",
+          "formats": [
+            "cjs",
+            "es"
+          ]
+        },
+        {
+          "target": "node",
+          "version": "6",
+          "formats": [
+            "cjs"
+          ]
+        },
+        {
+          "target": "node",
+          "version": "4",
+          "formats": [
+            "cjs"
+          ]
+        }
       ],
       "documentation": false,
       "testing": false,

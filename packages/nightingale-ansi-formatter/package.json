@@ -2,81 +2,45 @@
   "name": "nightingale-ansi-formatter",
   "version": "1.8.1",
   "description": "Nightingale ANSI formatter",
-  "keywords": [
-    "nightingale",
-    "nightingale-formatter"
-  ],
+  "keywords": ["nightingale", "nightingale-formatter"],
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
   "license": "ISC",
-  "repository": "git@github.com:nightingalejs/nightingale-ansi-formatter.git",
-  "homepage": "https://github.com/nightingalejs/nightingale",
+  "repository": "git@github.com:christophehurpeau/nightingale.git",
+  "homepage": "https://github.com/christophehurpeau/nightingale",
+  "engines": { "node": ">=4.0.0" },
   "main": "./index.js",
-  "module:node": "./lib-module-node8/index.js",
-  "module:node-dev": "./lib-module-node8-dev/index.js",
+  "module:node": "./dist/index-node8.es.js",
+  "module:node-dev": "./dist/index-node8-dev.es.js",
   "scripts": {
     "build": "pob-build",
     "clean": "rm -Rf docs dist test/node6 coverage",
-    "generate:test-coverage": "NODE_ENV=production rm -Rf coverage/ ; jest --coverage --coverageReporters=lcov --coverageDirectory=coverage/",
-    "lint": "eslint --ext .js,.jsx src/",
-    "postcheckout": "./.git-hooks/post-checkout",
-    "postmerge": "./.git-hooks/post-merge",
-    "precommit": "./.git-hooks/pre-commit",
-    "preparecommitmsg": "./.git-hooks/prepare-commit-msg ${GIT_PARAMS}",
-    "preversion": "yarn run lint && yarn run build && pob-repository-check-clean",
-    "release": "pob-repository-check-clean && pob-release",
+    "generate:test-coverage":
+      "rm -Rf docs/coverage/ ; NODE_ENV=production BABEL_ENV=test jest --coverage --coverageReporters=lcov --coverageDirectory=docs/coverage/",
+    "lint": "eslint src/",
     "test": "jest",
-    "version": "pob-version",
     "watch": "pob-watch"
   },
-  "lint-staged": {
-    "package.json": [
-      "prettier --write",
-      "git add"
-    ],
-    "src/**/*.json": [
-      "prettier --write",
-      "git add"
-    ],
-    "src/**/*.{js,jsx}": [
-      "eslint --fix --quiet",
-      "git add"
-    ]
-  },
+  "prettier": { "trailingComma": "all", "singleQuote": true, "printWidth": 100 },
   "jest": {
     "cacheDirectory": "./node_modules/.cache/jest",
-    "testMatch": [
-      "**/src/**/?(*.)test.js",
-      "**/__tests__/**/*.test.js"
-    ],
-    "collectCoverageFrom": [
-      "src/**/*.js"
-    ]
+    "testMatch": ["<rootDir>/src/**/__tests__/**/*.js", "<rootDir>/src/**/*.test.js"],
+    "collectCoverageFrom": ["src/**/*.js"]
   },
-  "dependencies": {
-    "ansi-styles": "^3.2.0",
-    "flow-runtime": "0.10.0",
-    "nightingale-formatter": "^2.2.5"
-  },
+  "dependencies": { "ansi-styles": "^3.2.0", "nightingale-formatter": "^2.2.5" },
   "devDependencies": {
-    "babel-eslint": "^7.2.3",
-    "babel-preset-env": "^1.6.0",
-    "babel-preset-latest-node": "^0.4.0",
-    "eslint": "^4.3.0",
-    "eslint-config-airbnb-base": "^11.3.1",
-    "eslint-config-pob": "^16.0.4",
-    "eslint-config-prettier": "^2.3.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.2",
+    "babel-jest": "^22.4.1",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-latest-node": "^1.0.0",
+    "eslint": "^4.18.2",
+    "eslint-config-pob": "^18.0.0",
     "eslint-plugin-babel": "^4.1.2",
-    "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-prettier": "^2.2.0",
-    "husky": "^0.14.3",
-    "jest": "^20.0.4",
-    "jest-junit-reporter": "^1.1.0",
-    "komet": "^0.1.4",
-    "komet-karma": "^0.2.5",
-    "lint-staged": "^4.0.2",
-    "pob-babel": "^18.1.5",
-    "pob-release": "^3.1.0",
-    "prettier": "^1.5.3",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-prettier": "^2.6.0",
+    "jest": "^22.4.2",
+    "pob-babel": "^20.0.0",
+    "prettier": "^1.11.1",
     "xunit-file": "^1.0.0"
   }
 }

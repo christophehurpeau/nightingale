@@ -1,9 +1,15 @@
-# nightingale-string [![NPM version][npm-image]][npm-url]
+<h3 align="center">
+  nightingale-string
+</h3>
 
-String handler for nightingale
+<p align="center">
+  String handler for nightingale
+</p>
 
-[![Dependency ci Status][dependencyci-image]][dependencyci-url]
-[![Dependency Status][daviddm-image]][daviddm-url]
+<p align="center">
+  <a href="https://npmjs.org/package/nightingale-string"><img src="https://img.shields.io/npm/v/nightingale-string.svg?style=flat-square"></a>
+  <a href="https://david-dm.org/christophehurpeau/nightingale?path=packages/nightingale-string"><img src="https://david-dm.org/christophehurpeau/nightingale?path=packages/nightingale-string.svg?style=flat-square"></a>
+</p>
 
 ## Install
 
@@ -18,10 +24,3 @@ import nightingaleString from 'nightingale-string';
 
 console.log(nightingaleString);
 ```
-
-[npm-image]: https://img.shields.io/npm/v/nightingale-string.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/nightingale-string
-[daviddm-image]: https://david-dm.org/nightingalejs/nightingale-string.svg?style=flat-square
-[daviddm-url]: https://david-dm.org/nightingalejs/nightingale-string
-[dependencyci-image]: https://dependencyci.com/github/nightingalejs/nightingale-string/badge?style=flat-square
-[dependencyci-url]: https://dependencyci.com/github/nightingalejs/nightingale-string

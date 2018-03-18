@@ -1,9 +1,15 @@
-# nightingale-sentry [![NPM version][npm-image]][npm-url]
+<h3 align="center">
+  nightingale-sentry
+</h3>
 
-Sentry handler for nightingale
+<p align="center">
+  Sentry handler for nightingale
+</p>
 
-[![Dependency Status][daviddm-image]][daviddm-url]
-[![Dependency ci Status][dependencyci-image]][dependencyci-url]
+<p align="center">
+  <a href="https://npmjs.org/package/nightingale-sentry"><img src="https://img.shields.io/npm/v/nightingale-sentry.svg?style=flat-square"></a>
+  <a href="https://david-dm.org/christophehurpeau/nightingale?path=packages/nightingale-sentry"><img src="https://david-dm.org/christophehurpeau/nightingale?path=packages/nightingale-sentry.svg?style=flat-square"></a>
+</p>
 
 ## Install
 
@@ -28,10 +34,3 @@ configure([
   }
 ]);
 ```
-
-[npm-image]: https://img.shields.io/npm/v/nightingale-sentry.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/nightingale-sentry
-[daviddm-image]: https://david-dm.org/nightingalejs/nightingale-sentry.svg?style=flat-square
-[daviddm-url]: https://david-dm.org/nightingalejs/nightingale-sentry
-[dependencyci-image]: https://dependencyci.com/github/nightingalejs/nightingale-sentry/badge?style=flat-square
-[dependencyci-url]: https://dependencyci.com/github/nightingalejs/nightingale-sentry

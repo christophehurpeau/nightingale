@@ -1,9 +1,15 @@
-# nightingale-console [![NPM version][npm-image]][npm-url]
+<h3 align="center">
+  nightingale-console
+</h3>
 
-Console handler for nightingale
+<p align="center">
+  Console handler for nightingale
+</p>
 
-[![Dependency Status][daviddm-image]][daviddm-url]
-[![Dependency ci Status][dependencyci-image]][dependencyci-url]
+<p align="center">
+  <a href="https://npmjs.org/package/nightingale-console"><img src="https://img.shields.io/npm/v/nightingale-console.svg?style=flat-square"></a>
+  <a href="https://david-dm.org/christophehurpeau/nightingale?path=packages/nightingale-console"><img src="https://david-dm.org/christophehurpeau/nightingale?path=packages/nightingale-console.svg?style=flat-square"></a>
+</p>
 
 ## Install
 
@@ -36,10 +42,3 @@ DEBUG=/^(app|nightingale$)/ # debug for logger with key starting with 'app' and 
 DEBUG='*,-app'; # debug everything except app
 DEBUG='*,-app:*'; # debug everything except app and all its children
 ```
-
-[npm-image]: https://img.shields.io/npm/v/nightingale-console.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/nightingale-console
-[daviddm-image]: https://david-dm.org/nightingalejs/nightingale-console.svg?style=flat-square
-[daviddm-url]: https://david-dm.org/nightingalejs/nightingale-console
-[dependencyci-image]: https://dependencyci.com/github/nightingalejs/nightingale-console/badge?style=flat-square
-[dependencyci-url]: https://dependencyci.com/github/nightingalejs/nightingale-console

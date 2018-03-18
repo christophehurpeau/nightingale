@@ -1,10 +1,12 @@
 import levels from 'nightingale-levels';
 import t from 'flow-runtime';
 
-const RecordType = t.type('RecordType', t.object(t.property('level', t.number()), t.property('key', t.string()), t.property('displayName', t.nullable(t.string())), t.property('datetime', t.ref('Date')), t.property('message', t.string()), t.property('context', t.nullable(t.object())), t.property('metadata', t.nullable(t.object())), t.property('extra', t.nullable(t.object()))));
-const HandlerType = t.type('HandlerType', t.object(t.property('minLevel', t.number()), t.property('isHandling', t.nullable(t.function(t.return(t.boolean())))), t.property('handle', t.nullable(t.function(t.param('record', RecordType), t.return(t.boolean()))))));
-const ProcessorType = t.type('ProcessorType', t.function(t.param('record', RecordType), t.return(t.void())));
-const ConfigForLoggerType = t.type('ConfigForLoggerType', t.object(t.property('handlers', t.array(HandlerType)), t.property('processors', t.array(ProcessorType))));
+const Record = t.type('Record', t.object(t.property('level', t.number()), t.property('key', t.string()), t.property('displayName', t.nullable(t.string()), true), t.property('datetime', t.ref('Date')), t.property('message', t.string()), t.property('context', t.nullable(t.object()), true), t.property('metadata', t.nullable(t.object()), true), t.property('extra', t.nullable(t.object()), true)));
+const Handler = t.type('Handler', t.object(t.property('minLevel', t.number()), t.property('isHandling', t.nullable(t.function(t.return(t.boolean()))), true), t.property('handle', t.nullable(t.function(t.param('record', Record), t.return(t.boolean()))), true)));
+const Processor = t.type('Processor', t.function(t.param('record', Record), t.return(t.void())));
+const ConfigForLoggerType = t.type('ConfigForLoggerType', t.object(t.property('handlers', t.array(Handler)), t.property('processors', t.array(Processor))));
+const Metadata = t.type('Metadata', t.object(t.indexer('key', t.string(), t.any())));
+const MetadataStyles = t.type('MetadataStyles', t.object(t.indexer('key', t.string(), t.any())));
 
 
 if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER) {
@@ -75,8 +77,7 @@ let Logger = class Logger {
     this.displayName = displayName;
 
     if (key.includes('.')) {
-      this.warn('nightingale: `.` in key is deprecated, replace with `:`', { key, displayName });
-      this.key = key.replace(/\./g, ':');
+      throw new Error(`nightingale: \`.\` in key is no longer supported (key: ${key})`);
     }
   }
 
@@ -203,7 +204,7 @@ let Logger = class Logger {
   log(message, metadata, level = levels.INFO, options = undefined) {
     let _messageType = t.string();
 
-    let _metadataType = t.nullable(t.object());
+    let _metadataType = t.nullable(Metadata);
 
     let _levelType2 = t.number();
 
@@ -243,9 +244,9 @@ let Logger = class Logger {
   trace(message, metadata, metadataStyles) {
     let _messageType2 = t.string();
 
-    let _metadataType2 = t.nullable(t.object());
+    let _metadataType2 = t.nullable(Metadata);
 
-    let _metadataStylesType = t.nullable(t.object());
+    let _metadataStylesType = t.nullable(MetadataStyles);
 
     t.param('message', _messageType2).assert(message);
     t.param('metadata', _metadataType2).assert(metadata);
@@ -260,9 +261,9 @@ let Logger = class Logger {
   debug(message, metadata, metadataStyles) {
     let _messageType3 = t.string();
 
-    let _metadataType3 = t.nullable(t.object());
+    let _metadataType3 = t.nullable(Metadata);
 
-    let _metadataStylesType2 = t.nullable(t.object());
+    let _metadataStylesType2 = t.nullable(MetadataStyles);
 
     t.param('message', _messageType3).assert(message);
     t.param('metadata', _metadataType3).assert(metadata);
@@ -277,9 +278,9 @@ let Logger = class Logger {
   notice(message, metadata, metadataStyles) {
     let _messageType4 = t.string();
 
-    let _metadataType4 = t.nullable(t.object());
+    let _metadataType4 = t.nullable(Metadata);
 
-    let _metadataStylesType3 = t.nullable(t.object());
+    let _metadataStylesType3 = t.nullable(MetadataStyles);
 
     t.param('message', _messageType4).assert(message);
     t.param('metadata', _metadataType4).assert(metadata);
@@ -294,9 +295,9 @@ let Logger = class Logger {
   info(message, metadata, metadataStyles) {
     let _messageType5 = t.string();
 
-    let _metadataType5 = t.nullable(t.object());
+    let _metadataType5 = t.nullable(Metadata);
 
-    let _metadataStylesType4 = t.nullable(t.object());
+    let _metadataStylesType4 = t.nullable(MetadataStyles);
 
     t.param('message', _messageType5).assert(message);
     t.param('metadata', _metadataType5).assert(metadata);
@@ -311,9 +312,9 @@ let Logger = class Logger {
   warn(message, metadata, metadataStyles) {
     let _messageType6 = t.string();
 
-    let _metadataType6 = t.nullable(t.object());
+    let _metadataType6 = t.nullable(Metadata);
 
-    let _metadataStylesType5 = t.nullable(t.object());
+    let _metadataStylesType5 = t.nullable(MetadataStyles);
 
     t.param('message', _messageType6).assert(message);
     t.param('metadata', _metadataType6).assert(metadata);
@@ -330,7 +331,7 @@ let Logger = class Logger {
 
     let _metadataType7 = t.object();
 
-    let _metadataStylesType6 = t.nullable(t.object());
+    let _metadataStylesType6 = t.nullable(MetadataStyles);
 
     t.param('message', _messageType7).assert(message);
     t.param('metadata', _metadataType7).assert(metadata);
@@ -349,9 +350,9 @@ let Logger = class Logger {
   critical(message, metadata, metadataStyles) {
     let _messageType8 = t.string();
 
-    let _metadataType8 = t.nullable(t.object());
+    let _metadataType8 = t.nullable(Metadata);
 
-    let _metadataStylesType7 = t.nullable(t.object());
+    let _metadataStylesType7 = t.nullable(MetadataStyles);
 
     t.param('message', _messageType8).assert(message);
     t.param('metadata', _metadataType8).assert(metadata);
@@ -366,9 +367,9 @@ let Logger = class Logger {
   fatal(message, metadata, metadataStyles) {
     let _messageType9 = t.string();
 
-    let _metadataType9 = t.nullable(t.object());
+    let _metadataType9 = t.nullable(Metadata);
 
-    let _metadataStylesType8 = t.nullable(t.object());
+    let _metadataStylesType8 = t.nullable(MetadataStyles);
 
     t.param('message', _messageType9).assert(message);
     t.param('metadata', _metadataType9).assert(metadata);
@@ -383,9 +384,9 @@ let Logger = class Logger {
   alert(message, metadata, metadataStyles) {
     let _messageType10 = t.string();
 
-    let _metadataType10 = t.nullable(t.object());
+    let _metadataType10 = t.nullable(Metadata);
 
-    let _metadataStylesType9 = t.nullable(t.object());
+    let _metadataStylesType9 = t.nullable(MetadataStyles);
 
     t.param('message', _messageType10).assert(message);
     t.param('metadata', _metadataType10).assert(metadata);
@@ -400,9 +401,9 @@ let Logger = class Logger {
   inspectValue(value, metadata, metadataStyles) {
     let _valueType = t.any();
 
-    let _metadataType11 = t.nullable(t.object());
+    let _metadataType11 = t.nullable(Metadata);
 
-    let _metadataStylesType10 = t.nullable(t.object());
+    let _metadataStylesType10 = t.nullable(MetadataStyles);
 
     t.param('value', _valueType).assert(value);
     t.param('metadata', _metadataType11).assert(metadata);
@@ -419,9 +420,9 @@ let Logger = class Logger {
 
     let _varValueType = t.any();
 
-    let _metadataType12 = t.nullable(t.object());
+    let _metadataType12 = t.nullable(Metadata);
 
-    let _metadataStylesType11 = t.nullable(t.object());
+    let _metadataStylesType11 = t.nullable(MetadataStyles);
 
     t.param('varName', _varNameType).assert(varName);
     t.param('varValue', _varValueType).assert(varValue);
@@ -437,9 +438,9 @@ let Logger = class Logger {
   success(message, metadata, metadataStyles) {
     let _messageType11 = t.string();
 
-    let _metadataType13 = t.nullable(t.object());
+    let _metadataType13 = t.nullable(Metadata);
 
-    let _metadataStylesType12 = t.nullable(t.object());
+    let _metadataStylesType12 = t.nullable(MetadataStyles);
 
     t.param('message', _messageType11).assert(message);
     t.param('metadata', _metadataType13).assert(metadata);
@@ -454,9 +455,9 @@ let Logger = class Logger {
   infoSuccess(message, metadata, metadataStyles) {
     let _messageType12 = t.string();
 
-    let _metadataType14 = t.nullable(t.object());
+    let _metadataType14 = t.nullable(Metadata);
 
-    let _metadataStylesType13 = t.nullable(t.object());
+    let _metadataStylesType13 = t.nullable(MetadataStyles);
 
     t.param('message', _messageType12).assert(message);
     t.param('metadata', _metadataType14).assert(metadata);
@@ -475,9 +476,9 @@ let Logger = class Logger {
   debugSuccess(message, metadata, metadataStyles) {
     let _messageType13 = t.string();
 
-    let _metadataType15 = t.nullable(t.object());
+    let _metadataType15 = t.nullable(Metadata);
 
-    let _metadataStylesType14 = t.nullable(t.object());
+    let _metadataStylesType14 = t.nullable(MetadataStyles);
 
     t.param('message', _messageType13).assert(message);
     t.param('metadata', _metadataType15).assert(metadata);
@@ -496,9 +497,9 @@ let Logger = class Logger {
   fail(message, metadata, metadataStyles) {
     let _messageType14 = t.string();
 
-    let _metadataType16 = t.nullable(t.object());
+    let _metadataType16 = t.nullable(Metadata);
 
-    let _metadataStylesType15 = t.nullable(t.object());
+    let _metadataStylesType15 = t.nullable(MetadataStyles);
 
     t.param('message', _messageType14).assert(message);
     t.param('metadata', _metadataType16).assert(metadata);
@@ -513,9 +514,9 @@ let Logger = class Logger {
   infoFail(message, metadata, metadataStyles) {
     let _messageType15 = t.string();
 
-    let _metadataType17 = t.nullable(t.object());
+    let _metadataType17 = t.nullable(Metadata);
 
-    let _metadataStylesType16 = t.nullable(t.object());
+    let _metadataStylesType16 = t.nullable(MetadataStyles);
 
     t.param('message', _messageType15).assert(message);
     t.param('metadata', _metadataType17).assert(metadata);
@@ -534,9 +535,9 @@ let Logger = class Logger {
   debugFail(message, metadata, metadataStyles) {
     let _messageType16 = t.string();
 
-    let _metadataType18 = t.nullable(t.object());
+    let _metadataType18 = t.nullable(Metadata);
 
-    let _metadataStylesType17 = t.nullable(t.object());
+    let _metadataStylesType17 = t.nullable(MetadataStyles);
 
     t.param('message', _messageType16).assert(message);
     t.param('metadata', _metadataType18).assert(metadata);
@@ -555,9 +556,9 @@ let Logger = class Logger {
   time(message, metadata, metadataStyles, level = levels.DEBUG) {
     let _messageType17 = t.nullable(t.string());
 
-    let _metadataType19 = t.nullable(t.object());
+    let _metadataType19 = t.nullable(Metadata);
 
-    let _metadataStylesType18 = t.nullable(t.object());
+    let _metadataStylesType18 = t.nullable(MetadataStyles);
 
     let _levelType3 = t.number();
 
@@ -578,9 +579,9 @@ let Logger = class Logger {
   infoTime(message, metadata, metadataStyles) {
     let _messageType18 = t.nullable(t.string());
 
-    let _metadataType20 = t.nullable(t.object());
+    let _metadataType20 = t.nullable(Metadata);
 
-    let _metadataStylesType19 = t.nullable(t.object());
+    let _metadataStylesType19 = t.nullable(MetadataStyles);
 
     const _returnType9 = t.return(t.number());
 
@@ -597,14 +598,14 @@ let Logger = class Logger {
    * was called, then logs out the difference
    * and deletes the original record
    */
-  timeEnd(startTime, message, metadata = {}, metadataStyles, level = levels.DEBUG, options) {
+  timeEnd(startTime, message, metadata, metadataStyles, level = levels.DEBUG, options) {
     let _startTimeType = t.number();
 
     let _messageType19 = t.string();
 
-    let _metadataType21 = t.object();
+    let _metadataType21 = t.nullable(Metadata);
 
-    let _metadataStylesType20 = t.nullable(t.object());
+    let _metadataStylesType20 = t.nullable(MetadataStyles);
 
     let _levelType4 = t.number();
 
@@ -617,6 +618,7 @@ let Logger = class Logger {
     t.param('level', _levelType4).assert(level);
     t.param('options', _optionsType2).assert(options);
 
+    if (!metadata) metadata = _metadataType21.assert({});
     const now = Date.now();
 
     const diffTime = now - startTime;
@@ -624,7 +626,7 @@ let Logger = class Logger {
     if (diffTime < 1000) {
       metadata.readableTime = `${diffTime}ms`;
     } else {
-      const seconds = diffTime > 1000 && Math.floor(diffTime / 1000);
+      const seconds = diffTime > 1000 ? Math.floor(diffTime / 1000) : 0;
 
       metadata.readableTime = `${seconds ? `${seconds}s and ` : ''}${diffTime - seconds * 1000}ms`;
     }
@@ -641,9 +643,9 @@ let Logger = class Logger {
 
     let _messageType20 = t.string();
 
-    let _metadataType22 = t.nullable(t.object());
+    let _metadataType22 = t.nullable(Metadata);
 
-    let _metadataStylesType21 = t.nullable(t.object());
+    let _metadataStylesType21 = t.nullable(MetadataStyles);
 
     t.param('time', _timeType).assert(time);
     t.param('message', _messageType20).assert(message);
@@ -661,9 +663,9 @@ let Logger = class Logger {
 
     let _messageType21 = t.string();
 
-    let _metadataType23 = t.nullable(t.object());
+    let _metadataType23 = t.nullable(Metadata);
 
-    let _metadataStylesType22 = t.nullable(t.object());
+    let _metadataStylesType22 = t.nullable(MetadataStyles);
 
     t.param('time', _timeType2).assert(time);
     t.param('message', _messageType21).assert(message);
@@ -691,9 +693,9 @@ let Logger = class Logger {
   enter(fn, metadata, metadataStyles) {
     let _fnType = t.function();
 
-    let _metadataType24 = t.nullable(t.object());
+    let _metadataType24 = t.nullable(Metadata);
 
-    let _metadataStylesType23 = t.nullable(t.object());
+    let _metadataStylesType23 = t.nullable(MetadataStyles);
 
     t.param('fn', _fnType).assert(fn);
     t.param('metadata', _metadataType24).assert(metadata);
@@ -720,9 +722,9 @@ let Logger = class Logger {
   exit(fn, metadata, metadataStyles) {
     let _fnType2 = t.function();
 
-    let _metadataType25 = t.nullable(t.object());
+    let _metadataType25 = t.nullable(Metadata);
 
-    let _metadataStylesType24 = t.nullable(t.object());
+    let _metadataStylesType24 = t.nullable(MetadataStyles);
 
     t.param('fn', _fnType2).assert(fn);
     t.param('metadata', _metadataType25).assert(metadata);
@@ -755,9 +757,9 @@ let Logger = class Logger {
   wrap(fn, metadata, metadataStyles, callback) {
     let _fnType3 = t.function();
 
-    let _metadataType26 = t.union(t.nullable(t.object()), t.function());
+    let _metadataType26 = t.union(t.nullable(Metadata), t.function());
 
-    let _metadataStylesType25 = t.union(t.nullable(t.object()), t.function());
+    let _metadataStylesType25 = t.union(t.nullable(MetadataStyles), t.function());
 
     let _callbackType = t.function();
 

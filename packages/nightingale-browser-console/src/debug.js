@@ -1,8 +1,6 @@
-/* global location, localStorage */
-
 export default function getDebugString() {
-  const querystring = location.search;
-  let debugFromLocalStorage = (global.localStorage && localStorage.debug) || '';
+  const querystring = document.location.search;
+  const debugFromLocalStorage = (global.localStorage && localStorage.debug) || '';
 
   if (!querystring) {
     return debugFromLocalStorage;
@@ -10,10 +8,7 @@ export default function getDebugString() {
 
   // https://developer.mozilla.org/en-US/docs/Web/API/URLUtils/search#Get_the_value_of_a_single_search_param
   const debugFromQueryString = decodeURI(
-    querystring.replace(
-      new RegExp('^(?:.*[&\\?]DEBUG(?:\\=([^&]*))?)?.*$', 'i'),
-      '$1',
-    ),
+    querystring.replace(new RegExp('^(?:.*[&\\?]DEBUG(?:\\=([^&]*))?)?.*$', 'i'), '$1'),
   );
 
   return (debugFromLocalStorage ? `${debugFromLocalStorage},` : '') + debugFromQueryString;

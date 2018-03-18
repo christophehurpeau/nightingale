@@ -1,9 +1,15 @@
-# nightingale-browser-console [![NPM version][npm-image]][npm-url]
+<h3 align="center">
+  nightingale-browser-console
+</h3>
 
-Browser console handler for nightingale
+<p align="center">
+  Browser console handler for nightingale
+</p>
 
-[![Dependency ci Status][dependencyci-image]][dependencyci-url]
-[![Dependency Status][daviddm-image]][daviddm-url]
+<p align="center">
+  <a href="https://npmjs.org/package/nightingale-browser-console"><img src="https://img.shields.io/npm/v/nightingale-browser-console.svg?style=flat-square"></a>
+  <a href="https://david-dm.org/christophehurpeau/nightingale?path=packages/nightingale-browser-console"><img src="https://david-dm.org/christophehurpeau/nightingale?path=packages/nightingale-browser-console.svg?style=flat-square"></a>
+</p>
 
 ## Install
 
@@ -47,10 +53,3 @@ localStorage.debug = '*,-app:*'; // debug everything except app and all its chil
 ?DEBUG=*,-app // debug everything except app
 ?DEBUG=*,-app:* // debug everything except app and all its children
 ```
-
-[npm-image]: https://img.shields.io/npm/v/nightingale-browser-console.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/nightingale-browser-console
-[daviddm-image]: https://david-dm.org/nightingalejs/nightingale-browser-console.svg?style=flat-square
-[daviddm-url]: https://david-dm.org/nightingalejs/nightingale-browser-console
-[dependencyci-image]: https://dependencyci.com/github/nightingalejs/nightingale-browser-console/badge?style=flat-square
-[dependencyci-url]: https://dependencyci.com/github/nightingalejs/nightingale-browser-console

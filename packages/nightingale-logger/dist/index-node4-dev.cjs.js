@@ -31,10 +31,12 @@ var createClass = function () {
 }();
 
 /* eslint-disable max-lines, flowtype/sort-keys */
-var RecordType = t.type('RecordType', t.object(t.property('level', t.number()), t.property('key', t.string()), t.property('displayName', t.nullable(t.string())), t.property('datetime', t.ref('Date')), t.property('message', t.string()), t.property('context', t.nullable(t.object())), t.property('metadata', t.nullable(t.object())), t.property('extra', t.nullable(t.object()))));
-var HandlerType = t.type('HandlerType', t.object(t.property('minLevel', t.number()), t.property('isHandling', t.nullable(t.function(t.return(t.boolean())))), t.property('handle', t.nullable(t.function(t.param('record', RecordType), t.return(t.boolean()))))));
-var ProcessorType = t.type('ProcessorType', t.function(t.param('record', RecordType), t.return(t.void())));
-var ConfigForLoggerType = t.type('ConfigForLoggerType', t.object(t.property('handlers', t.array(HandlerType)), t.property('processors', t.array(ProcessorType))));
+var Record = t.type('Record', t.object(t.property('level', t.number()), t.property('key', t.string()), t.property('displayName', t.nullable(t.string()), true), t.property('datetime', t.ref('Date')), t.property('message', t.string()), t.property('context', t.nullable(t.object()), true), t.property('metadata', t.nullable(t.object()), true), t.property('extra', t.nullable(t.object()), true)));
+var Handler = t.type('Handler', t.object(t.property('minLevel', t.number()), t.property('isHandling', t.nullable(t.function(t.return(t.boolean()))), true), t.property('handle', t.nullable(t.function(t.param('record', Record), t.return(t.boolean()))), true)));
+var Processor = t.type('Processor', t.function(t.param('record', Record), t.return(t.void())));
+var ConfigForLoggerType = t.type('ConfigForLoggerType', t.object(t.property('handlers', t.array(Handler)), t.property('processors', t.array(Processor))));
+var Metadata = t.type('Metadata', t.object(t.indexer('key', t.string(), t.any())));
+var MetadataStyles = t.type('MetadataStyles', t.object(t.indexer('key', t.string(), t.any())));
 
 
 if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER) {
@@ -110,8 +112,7 @@ var Logger = function () {
     this.displayName = displayName;
 
     if (key.includes('.')) {
-      this.warn('nightingale: `.` in key is deprecated, replace with `:`', { key, displayName });
-      this.key = key.replace(/\./g, ':');
+      throw new Error(`nightingale: \`.\` in key is no longer supported (key: ${key})`);
     }
   }
 
@@ -278,7 +279,7 @@ var Logger = function () {
 
       var _messageType = t.string();
 
-      var _metadataType = t.nullable(t.object());
+      var _metadataType = t.nullable(Metadata);
 
       var _levelType2 = t.number();
 
@@ -321,9 +322,9 @@ var Logger = function () {
     value: function trace(message, metadata, metadataStyles) {
       var _messageType2 = t.string();
 
-      var _metadataType2 = t.nullable(t.object());
+      var _metadataType2 = t.nullable(Metadata);
 
-      var _metadataStylesType = t.nullable(t.object());
+      var _metadataStylesType = t.nullable(MetadataStyles);
 
       t.param('message', _messageType2).assert(message);
       t.param('metadata', _metadataType2).assert(metadata);
@@ -341,9 +342,9 @@ var Logger = function () {
     value: function debug(message, metadata, metadataStyles) {
       var _messageType3 = t.string();
 
-      var _metadataType3 = t.nullable(t.object());
+      var _metadataType3 = t.nullable(Metadata);
 
-      var _metadataStylesType2 = t.nullable(t.object());
+      var _metadataStylesType2 = t.nullable(MetadataStyles);
 
       t.param('message', _messageType3).assert(message);
       t.param('metadata', _metadataType3).assert(metadata);
@@ -361,9 +362,9 @@ var Logger = function () {
     value: function notice(message, metadata, metadataStyles) {
       var _messageType4 = t.string();
 
-      var _metadataType4 = t.nullable(t.object());
+      var _metadataType4 = t.nullable(Metadata);
 
-      var _metadataStylesType3 = t.nullable(t.object());
+      var _metadataStylesType3 = t.nullable(MetadataStyles);
 
       t.param('message', _messageType4).assert(message);
       t.param('metadata', _metadataType4).assert(metadata);
@@ -381,9 +382,9 @@ var Logger = function () {
     value: function info(message, metadata, metadataStyles) {
       var _messageType5 = t.string();
 
-      var _metadataType5 = t.nullable(t.object());
+      var _metadataType5 = t.nullable(Metadata);
 
-      var _metadataStylesType4 = t.nullable(t.object());
+      var _metadataStylesType4 = t.nullable(MetadataStyles);
 
       t.param('message', _messageType5).assert(message);
       t.param('metadata', _metadataType5).assert(metadata);
@@ -401,9 +402,9 @@ var Logger = function () {
     value: function warn(message, metadata, metadataStyles) {
       var _messageType6 = t.string();
 
-      var _metadataType6 = t.nullable(t.object());
+      var _metadataType6 = t.nullable(Metadata);
 
-      var _metadataStylesType5 = t.nullable(t.object());
+      var _metadataStylesType5 = t.nullable(MetadataStyles);
 
       t.param('message', _messageType6).assert(message);
       t.param('metadata', _metadataType6).assert(metadata);
@@ -426,7 +427,7 @@ var Logger = function () {
 
       var _metadataType7 = t.object();
 
-      var _metadataStylesType6 = t.nullable(t.object());
+      var _metadataStylesType6 = t.nullable(MetadataStyles);
 
       t.param('message', _messageType7).assert(message);
       t.param('metadata', _metadataType7).assert(metadata);
@@ -448,9 +449,9 @@ var Logger = function () {
     value: function critical(message, metadata, metadataStyles) {
       var _messageType8 = t.string();
 
-      var _metadataType8 = t.nullable(t.object());
+      var _metadataType8 = t.nullable(Metadata);
 
-      var _metadataStylesType7 = t.nullable(t.object());
+      var _metadataStylesType7 = t.nullable(MetadataStyles);
 
       t.param('message', _messageType8).assert(message);
       t.param('metadata', _metadataType8).assert(metadata);
@@ -468,9 +469,9 @@ var Logger = function () {
     value: function fatal(message, metadata, metadataStyles) {
       var _messageType9 = t.string();
 
-      var _metadataType9 = t.nullable(t.object());
+      var _metadataType9 = t.nullable(Metadata);
 
-      var _metadataStylesType8 = t.nullable(t.object());
+      var _metadataStylesType8 = t.nullable(MetadataStyles);
 
       t.param('message', _messageType9).assert(message);
       t.param('metadata', _metadataType9).assert(metadata);
@@ -488,9 +489,9 @@ var Logger = function () {
     value: function alert(message, metadata, metadataStyles) {
       var _messageType10 = t.string();
 
-      var _metadataType10 = t.nullable(t.object());
+      var _metadataType10 = t.nullable(Metadata);
 
-      var _metadataStylesType9 = t.nullable(t.object());
+      var _metadataStylesType9 = t.nullable(MetadataStyles);
 
       t.param('message', _messageType10).assert(message);
       t.param('metadata', _metadataType10).assert(metadata);
@@ -508,9 +509,9 @@ var Logger = function () {
     value: function inspectValue(value, metadata, metadataStyles) {
       var _valueType = t.any();
 
-      var _metadataType11 = t.nullable(t.object());
+      var _metadataType11 = t.nullable(Metadata);
 
-      var _metadataStylesType10 = t.nullable(t.object());
+      var _metadataStylesType10 = t.nullable(MetadataStyles);
 
       t.param('value', _valueType).assert(value);
       t.param('metadata', _metadataType11).assert(metadata);
@@ -533,9 +534,9 @@ var Logger = function () {
 
       var _varValueType = t.any();
 
-      var _metadataType12 = t.nullable(t.object());
+      var _metadataType12 = t.nullable(Metadata);
 
-      var _metadataStylesType11 = t.nullable(t.object());
+      var _metadataStylesType11 = t.nullable(MetadataStyles);
 
       t.param('varName', _varNameType).assert(varName);
       t.param('varValue', _varValueType).assert(varValue);
@@ -558,9 +559,9 @@ var Logger = function () {
     value: function success(message, metadata, metadataStyles) {
       var _messageType11 = t.string();
 
-      var _metadataType13 = t.nullable(t.object());
+      var _metadataType13 = t.nullable(Metadata);
 
-      var _metadataStylesType12 = t.nullable(t.object());
+      var _metadataStylesType12 = t.nullable(MetadataStyles);
 
       t.param('message', _messageType11).assert(message);
       t.param('metadata', _metadataType13).assert(metadata);
@@ -578,9 +579,9 @@ var Logger = function () {
     value: function infoSuccess(message, metadata, metadataStyles) {
       var _messageType12 = t.string();
 
-      var _metadataType14 = t.nullable(t.object());
+      var _metadataType14 = t.nullable(Metadata);
 
-      var _metadataStylesType13 = t.nullable(t.object());
+      var _metadataStylesType13 = t.nullable(MetadataStyles);
 
       t.param('message', _messageType12).assert(message);
       t.param('metadata', _metadataType14).assert(metadata);
@@ -602,9 +603,9 @@ var Logger = function () {
     value: function debugSuccess(message, metadata, metadataStyles) {
       var _messageType13 = t.string();
 
-      var _metadataType15 = t.nullable(t.object());
+      var _metadataType15 = t.nullable(Metadata);
 
-      var _metadataStylesType14 = t.nullable(t.object());
+      var _metadataStylesType14 = t.nullable(MetadataStyles);
 
       t.param('message', _messageType13).assert(message);
       t.param('metadata', _metadataType15).assert(metadata);
@@ -626,9 +627,9 @@ var Logger = function () {
     value: function fail(message, metadata, metadataStyles) {
       var _messageType14 = t.string();
 
-      var _metadataType16 = t.nullable(t.object());
+      var _metadataType16 = t.nullable(Metadata);
 
-      var _metadataStylesType15 = t.nullable(t.object());
+      var _metadataStylesType15 = t.nullable(MetadataStyles);
 
       t.param('message', _messageType14).assert(message);
       t.param('metadata', _metadataType16).assert(metadata);
@@ -646,9 +647,9 @@ var Logger = function () {
     value: function infoFail(message, metadata, metadataStyles) {
       var _messageType15 = t.string();
 
-      var _metadataType17 = t.nullable(t.object());
+      var _metadataType17 = t.nullable(Metadata);
 
-      var _metadataStylesType16 = t.nullable(t.object());
+      var _metadataStylesType16 = t.nullable(MetadataStyles);
 
       t.param('message', _messageType15).assert(message);
       t.param('metadata', _metadataType17).assert(metadata);
@@ -670,9 +671,9 @@ var Logger = function () {
     value: function debugFail(message, metadata, metadataStyles) {
       var _messageType16 = t.string();
 
-      var _metadataType18 = t.nullable(t.object());
+      var _metadataType18 = t.nullable(Metadata);
 
-      var _metadataStylesType17 = t.nullable(t.object());
+      var _metadataStylesType17 = t.nullable(MetadataStyles);
 
       t.param('message', _messageType16).assert(message);
       t.param('metadata', _metadataType18).assert(metadata);
@@ -696,9 +697,9 @@ var Logger = function () {
 
       var _messageType17 = t.nullable(t.string());
 
-      var _metadataType19 = t.nullable(t.object());
+      var _metadataType19 = t.nullable(Metadata);
 
-      var _metadataStylesType18 = t.nullable(t.object());
+      var _metadataStylesType18 = t.nullable(MetadataStyles);
 
       var _levelType3 = t.number();
 
@@ -720,9 +721,9 @@ var Logger = function () {
     value: function infoTime(message, metadata, metadataStyles) {
       var _messageType18 = t.nullable(t.string());
 
-      var _metadataType20 = t.nullable(t.object());
+      var _metadataType20 = t.nullable(Metadata);
 
-      var _metadataStylesType19 = t.nullable(t.object());
+      var _metadataStylesType19 = t.nullable(MetadataStyles);
 
       var _returnType9 = t.return(t.number());
 
@@ -742,9 +743,7 @@ var Logger = function () {
 
   }, {
     key: 'timeEnd',
-    value: function timeEnd(startTime, message) {
-      var metadata = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
-      var metadataStyles = arguments[3];
+    value: function timeEnd(startTime, message, metadata, metadataStyles) {
       var level = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : levels.DEBUG;
       var options = arguments[5];
 
@@ -752,9 +751,9 @@ var Logger = function () {
 
       var _messageType19 = t.string();
 
-      var _metadataType21 = t.object();
+      var _metadataType21 = t.nullable(Metadata);
 
-      var _metadataStylesType20 = t.nullable(t.object());
+      var _metadataStylesType20 = t.nullable(MetadataStyles);
 
       var _levelType4 = t.number();
 
@@ -767,6 +766,7 @@ var Logger = function () {
       t.param('level', _levelType4).assert(level);
       t.param('options', _optionsType2).assert(options);
 
+      if (!metadata) metadata = _metadataType21.assert({});
       var now = Date.now();
 
       var diffTime = now - startTime;
@@ -774,7 +774,7 @@ var Logger = function () {
       if (diffTime < 1000) {
         metadata.readableTime = `${diffTime}ms`;
       } else {
-        var seconds = diffTime > 1000 && Math.floor(diffTime / 1000);
+        var seconds = diffTime > 1000 ? Math.floor(diffTime / 1000) : 0;
 
         metadata.readableTime = `${seconds ? `${seconds}s and ` : ''}${diffTime - seconds * 1000}ms`;
       }
@@ -794,9 +794,9 @@ var Logger = function () {
 
       var _messageType20 = t.string();
 
-      var _metadataType22 = t.nullable(t.object());
+      var _metadataType22 = t.nullable(Metadata);
 
-      var _metadataStylesType21 = t.nullable(t.object());
+      var _metadataStylesType21 = t.nullable(MetadataStyles);
 
       t.param('time', _timeType).assert(time);
       t.param('message', _messageType20).assert(message);
@@ -817,9 +817,9 @@ var Logger = function () {
 
       var _messageType21 = t.string();
 
-      var _metadataType23 = t.nullable(t.object());
+      var _metadataType23 = t.nullable(Metadata);
 
-      var _metadataStylesType22 = t.nullable(t.object());
+      var _metadataStylesType22 = t.nullable(MetadataStyles);
 
       t.param('time', _timeType2).assert(time);
       t.param('message', _messageType21).assert(message);
@@ -850,9 +850,9 @@ var Logger = function () {
     value: function enter(fn, metadata, metadataStyles) {
       var _fnType = t.function();
 
-      var _metadataType24 = t.nullable(t.object());
+      var _metadataType24 = t.nullable(Metadata);
 
-      var _metadataStylesType23 = t.nullable(t.object());
+      var _metadataStylesType23 = t.nullable(MetadataStyles);
 
       t.param('fn', _fnType).assert(fn);
       t.param('metadata', _metadataType24).assert(metadata);
@@ -882,9 +882,9 @@ var Logger = function () {
     value: function exit(fn, metadata, metadataStyles) {
       var _fnType2 = t.function();
 
-      var _metadataType25 = t.nullable(t.object());
+      var _metadataType25 = t.nullable(Metadata);
 
-      var _metadataStylesType24 = t.nullable(t.object());
+      var _metadataStylesType24 = t.nullable(MetadataStyles);
 
       t.param('fn', _fnType2).assert(fn);
       t.param('metadata', _metadataType25).assert(metadata);
@@ -920,9 +920,9 @@ var Logger = function () {
     value: function wrap(fn, metadata, metadataStyles, callback) {
       var _fnType3 = t.function();
 
-      var _metadataType26 = t.union(t.nullable(t.object()), t.function());
+      var _metadataType26 = t.union(t.nullable(Metadata), t.function());
 
-      var _metadataStylesType25 = t.union(t.nullable(t.object()), t.function());
+      var _metadataStylesType25 = t.union(t.nullable(MetadataStyles), t.function());
 
       var _callbackType = t.function();
 

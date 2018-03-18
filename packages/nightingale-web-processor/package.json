@@ -1,30 +1,36 @@
 {
   "name": "nightingale-web-processor",
-  "description": "Nightingale web processor",
-  "keywords": [
-    "nightingale",
-    "nightingale-processor"
-  ],
   "version": "1.0.0",
-  "homepage": "https://github.com/nightingalejs/nightingale",
-  "license": "ISC",
+  "description": "Nightingale web processor",
+  "keywords": ["nightingale", "nightingale-processor"],
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
-  "repository": "nightingalejs/nightingale-web-processor",
-  "main": "./lib/node.js",
+  "license": "ISC",
+  "repository": "git@github.com:christophehurpeau/nightingale.git",
+  "homepage": "https://github.com/christophehurpeau/nightingale",
+  "engines": { "node": ">=4.0.0" },
+  "main": "./lib/index.js",
+  "module:node": "./dist/index-node8.es.js",
+  "module:node-dev": "./dist/index-node8-dev.es.js",
   "scripts": {
-    "test": "make test",
-    "build": "make build",
+    "build": "pob-build",
+    "lint": "eslint src/",
     "postpublish": "make post-publish",
-    "preversion": "make pre-version",
-    "version": "make version",
-    "watch": "make watch",
-    "lint": "make lint"
+    "test": "No tests",
+    "watch": "pob-watch"
   },
-  "dependencies": {
-  },
+  "prettier": { "trailingComma": "all", "singleQuote": true, "printWidth": 100 },
+  "dependencies": {},
   "devDependencies": {
-    "eslint": "^2.7.0",
-    "eslint-config-pob": "^5.0.0",
-    "springbokjs-library": "^17.0.0"
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.2",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-latest-node": "^1.0.0",
+    "eslint": "^4.18.2",
+    "eslint-config-pob": "^18.0.0",
+    "eslint-plugin-babel": "^4.1.2",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-prettier": "^2.6.0",
+    "pob-babel": "^20.0.0",
+    "prettier": "^1.11.1"
   }
 }

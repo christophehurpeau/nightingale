@@ -17,13 +17,15 @@ if (!BROWSER) {
   listenUnhandledErrors(logger);
 }
 
-configure([
-  !PRODUCTION && {
-    pattern: /^app(:.*)?$/,
-    handlers: [new ConsoleHandler(levels.DEBUG)],
-    stop: true,
-  },
-  {
-    handlers: [new ConsoleHandler(levels.INFO)],
-  },
-].filter(Boolean));
+configure(
+  [
+    !PRODUCTION && {
+      pattern: /^app(:.*)?$/,
+      handlers: [new ConsoleHandler(levels.DEBUG)],
+      stop: true,
+    },
+    {
+      handlers: [new ConsoleHandler(levels.INFO)],
+    },
+  ].filter(Boolean),
+);

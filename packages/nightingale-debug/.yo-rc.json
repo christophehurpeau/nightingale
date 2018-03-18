@@ -1,0 +1,53 @@
+{
+  "pob": {
+    "pob-config": {
+      "envs": [
+        {
+          "target": "node",
+          "version": "8",
+          "formats": [
+            "cjs",
+            "es"
+          ]
+        },
+        {
+          "target": "node",
+          "version": "6",
+          "formats": [
+            "cjs"
+          ]
+        },
+        {
+          "target": "node",
+          "version": "4",
+          "formats": [
+            "cjs"
+          ]
+        },
+        {
+          "target": "browser",
+          "version": "modern",
+          "formats": [
+            "es"
+          ]
+        },
+        {
+          "target": "browser",
+          "formats": [
+            "cjs",
+            "es"
+          ]
+        }
+      ],
+      "documentation": false,
+      "testing": {
+        "circleci": true,
+        "codecov": true
+      },
+      "entries": [
+        "index"
+      ],
+      "doclets": false
+    }
+  }
+}

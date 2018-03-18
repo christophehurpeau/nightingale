@@ -1,9 +1,15 @@
-# nightingale-winston-adapter [![NPM version][npm-image]][npm-url]
+<h3 align="center">
+  nightingale-winston-adapter
+</h3>
 
-Winston adapter handler for nightingale
+<p align="center">
+  Winston adapter handler for nightingale
+</p>
 
-[![Dependency ci Status][dependencyci-image]][dependencyci-url]
-[![Dependency Status][daviddm-image]][daviddm-url]
+<p align="center">
+  <a href="https://npmjs.org/package/nightingale-winston-adapter"><img src="https://img.shields.io/npm/v/nightingale-winston-adapter.svg?style=flat-square"></a>
+  <a href="https://david-dm.org/christophehurpeau/nightingale?path=packages/nightingale-winston-adapter"><img src="https://david-dm.org/christophehurpeau/nightingale?path=packages/nightingale-winston-adapter.svg?style=flat-square"></a>
+</p>
 
 ## Install
 
@@ -30,10 +36,3 @@ const logmaticTransport = new Logstash({
 // add the transport as a nightingale handler for all loggers
 addGlobalHandler(new WinstonAdapterHandler(logmaticTransport, levels.ALL));
 ```
-
-[npm-image]: https://img.shields.io/npm/v/nightingale-winston-adapter.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/nightingale-winston-adapter
-[daviddm-image]: https://david-dm.org/nightingalejs/nightingale-winston-adapter.svg?style=flat-square
-[daviddm-url]: https://david-dm.org/nightingalejs/nightingale-winston-adapter
-[dependencyci-image]: https://dependencyci.com/github/nightingalejs/nightingale-winston-adapter/badge?style=flat-square
-[dependencyci-url]: https://dependencyci.com/github/nightingalejs/nightingale-winston-adapter

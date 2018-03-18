@@ -3,7 +3,7 @@ import levelToStyles from './levelToStyles';
 import formatObject from './formatObject';
 
 export default function formatRecordToString(record, style, options) {
-  let parts = [];
+  const parts = [];
 
   if (record.displayName) {
     parts.push(style(['gray-light'], record.displayName));
@@ -13,11 +13,11 @@ export default function formatRecordToString(record, style, options) {
 
   if (record.datetime) {
     parts.push(style(['gray', 'bold'], record.datetime.toTimeString().split(' ')[0]));
-        /* new Date().toFormat('HH24:MI:SS') */
+    /* new Date().toFormat('HH24:MI:SS') */
   }
 
   let message = record.symbol || levelToSymbol[record.level];
-  let styles = record.styles || levelToStyles[record.level];
+  const styles = record.styles || levelToStyles[record.level];
 
   if (record.message) {
     if (message) {

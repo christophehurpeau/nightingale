@@ -1,0 +1,12 @@
+{
+  "pob": {
+    "pob-config": {
+      "entries": [
+        "index"
+      ],
+      "documentation": false,
+      "testing": false,
+      "envs": []
+    }
+  }
+}

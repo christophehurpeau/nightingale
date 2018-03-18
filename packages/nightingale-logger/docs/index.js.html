@@ -87,11 +87,6 @@ let Logger = class Logger {
   constructor(key, displayName) {
     this.key = key;
     this.displayName = displayName;
-
-    if (key.includes('.')) {
-      this.warn('nightingale: `.` in key is deprecated, replace with `:`', { key, displayName });
-      this.key = key.replace(/\./g, ':');
-    }
   }
 
   /** @private
@@ -187,7 +182,7 @@ let Logger = class Logger {
   /**
    * Log a message
   * @param {string} message
-  * @param {Object} [metadata]
+  * @param {Metadata} [metadata]
   * @param {number} level
   * @param {Object} options
   */
@@ -218,8 +213,8 @@ let Logger = class Logger {
   /**
    * Log a trace message
   * @param {string} message
-  * @param {Object} [metadata]
-  * @param {Object} [metadataStyles]
+  * @param {Metadata} [metadata]
+  * @param {MetadataStyles} [metadataStyles]
   */
   trace(message, metadata, metadataStyles) {
     this.log(message, metadata, levels.TRACE, { metadataStyles });
@@ -228,8 +223,8 @@ let Logger = class Logger {
   /**
    * Log a debug message
   * @param {string} message
-  * @param {Object} [metadata]
-  * @param {Object} [metadataStyles]
+  * @param {Metadata} [metadata]
+  * @param {MetadataStyles} [metadataStyles]
   */
   debug(message, metadata, metadataStyles) {
     this.log(message, metadata, levels.DEBUG, { metadataStyles });
@@ -238,8 +233,8 @@ let Logger = class Logger {
   /**
    * Notice an info message
   * @param {string} message
-  * @param {Object} [metadata]
-  * @param {Object} [metadataStyles]
+  * @param {Metadata} [metadata]
+  * @param {MetadataStyles} [metadataStyles]
   */
   notice(message, metadata, metadataStyles) {
     this.log(message, metadata, levels.NOTICE, { metadataStyles });
@@ -248,8 +243,8 @@ let Logger = class Logger {
   /**
    * Log an info message
   * @param {string} message
-  * @param {Object} [metadata]
-  * @param {Object} [metadataStyles]
+  * @param {Metadata} [metadata]
+  * @param {MetadataStyles} [metadataStyles]
   */
   info(message, metadata, metadataStyles) {
     this.log(message, metadata, levels.INFO, { metadataStyles });
@@ -258,8 +253,8 @@ let Logger = class Logger {
   /**
    * Log a warn message
   * @param {string} message
-  * @param {Object} [metadata]
-  * @param {Object} [metadataStyles]
+  * @param {Metadata} [metadata]
+  * @param {MetadataStyles} [metadataStyles]
   */
   warn(message, metadata, metadataStyles) {
     this.log(message, metadata, levels.WARN, { metadataStyles });
@@ -269,7 +264,7 @@ let Logger = class Logger {
    * Log an error message
   * @param {(string|Error)} message
   * @param {Object} metadata
-  * @param {Object} [metadataStyles]
+  * @param {MetadataStyles} [metadataStyles]
   */
   error(message, metadata = {}, metadataStyles) {
     if (message instanceof Error) {
@@ -282,8 +277,8 @@ let Logger = class Logger {
   /**
    * Log an critical message
   * @param {string} message
-  * @param {Object} [metadata]
-  * @param {Object} [metadataStyles]
+  * @param {Metadata} [metadata]
+  * @param {MetadataStyles} [metadataStyles]
   */
   critical(message, metadata, metadataStyles) {
     this.log(message, metadata, levels.CRITICAL, { metadataStyles });
@@ -292,8 +287,8 @@ let Logger = class Logger {
   /**
    * Log a fatal message
   * @param {string} message
-  * @param {Object} [metadata]
-  * @param {Object} [metadataStyles]
+  * @param {Metadata} [metadata]
+  * @param {MetadataStyles} [metadataStyles]
   */
   fatal(message, metadata, metadataStyles) {
     this.log(message, metadata, levels.FATAL, { metadataStyles });
@@ -302,8 +297,8 @@ let Logger = class Logger {
   /**
    * Log an alert message
   * @param {string} message
-  * @param {Object} [metadata]
-  * @param {Object} [metadataStyles]
+  * @param {Metadata} [metadata]
+  * @param {MetadataStyles} [metadataStyles]
   */
   alert(message, metadata, metadataStyles) {
     this.log(message, metadata, levels.ALERT, { metadataStyles });
@@ -312,8 +307,8 @@ let Logger = class Logger {
   /**
    * Log an inspected value
   * @param {*} value
-  * @param {Object} [metadata]
-  * @param {Object} [metadataStyles]
+  * @param {Metadata} [metadata]
+  * @param {MetadataStyles} [metadataStyles]
   */
   inspectValue(value, metadata, metadataStyles) {
     // Note: inspect is a special function for node:
@@ -326,8 +321,8 @@ let Logger = class Logger {
    * Log a debugged var
   * @param {string} varName
   * @param {*} varValue
-  * @param {Object} [metadata]
-  * @param {Object} [metadataStyles]
+  * @param {Metadata} [metadata]
+  * @param {MetadataStyles} [metadataStyles]
   */
   inspectVar(varName, varValue, metadata, metadataStyles) {
     varValue = util.inspect(varValue, { depth: 6 });
@@ -340,8 +335,8 @@ let Logger = class Logger {
   /**
    * Alias for infoSuccess
   * @param {string} message
-  * @param {Object} [metadata]
-  * @param {Object} [metadataStyles]
+  * @param {Metadata} [metadata]
+  * @param {MetadataStyles} [metadataStyles]
   */
   success(message, metadata, metadataStyles) {
     this.infoSuccess(message, metadata, metadataStyles);
@@ -350,8 +345,8 @@ let Logger = class Logger {
   /**
    * Log an info success message
   * @param {string} message
-  * @param {Object} [metadata]
-  * @param {Object} [metadataStyles]
+  * @param {Metadata} [metadata]
+  * @param {MetadataStyles} [metadataStyles]
   */
   infoSuccess(message, metadata, metadataStyles) {
     this.log(message, metadata, levels.INFO, {
@@ -364,8 +359,8 @@ let Logger = class Logger {
   /**
    * Log an debug success message
   * @param {string} message
-  * @param {Object} [metadata]
-  * @param {Object} [metadataStyles]
+  * @param {Metadata} [metadata]
+  * @param {MetadataStyles} [metadataStyles]
   */
   debugSuccess(message, metadata, metadataStyles) {
     this.log(message, metadata, levels.DEBUG, {
@@ -378,8 +373,8 @@ let Logger = class Logger {
   /**
    * Alias for infoFail
   * @param {string} message
-  * @param {Object} [metadata]
-  * @param {Object} [metadataStyles]
+  * @param {Metadata} [metadata]
+  * @param {MetadataStyles} [metadataStyles]
   */
   fail(message, metadata, metadataStyles) {
     this.infoFail(message, metadata, metadataStyles);
@@ -388,8 +383,8 @@ let Logger = class Logger {
   /**
    * Log an info fail message
   * @param {string} message
-  * @param {Object} [metadata]
-  * @param {Object} [metadataStyles]
+  * @param {Metadata} [metadata]
+  * @param {MetadataStyles} [metadataStyles]
   */
   infoFail(message, metadata, metadataStyles) {
     this.log(message, metadata, levels.INFO, {
@@ -402,8 +397,8 @@ let Logger = class Logger {
   /**
    * Log an debug fail message
   * @param {string} message
-  * @param {Object} [metadata]
-  * @param {Object} [metadataStyles]
+  * @param {Metadata} [metadata]
+  * @param {MetadataStyles} [metadataStyles]
   */
   debugFail(message, metadata, metadataStyles) {
     this.log(message, metadata, levels.DEBUG, {
@@ -416,8 +411,8 @@ let Logger = class Logger {
   /**
    * @returns {number} time to pass to timeEnd
   * @param {string} [message]
-  * @param {Object} [metadata]
-  * @param {Object} [metadataStyles]
+  * @param {Metadata} [metadata]
+  * @param {MetadataStyles} [metadataStyles]
   * @param {number} level
   */
   time(message, metadata, metadataStyles, level = levels.DEBUG) {
@@ -430,8 +425,8 @@ let Logger = class Logger {
 
   /**
    * @param {string} [message]
-   * @param {Object} [metadata]
-   * @param {Object} [metadataStyles]
+   * @param {Metadata} [metadata]
+   * @param {MetadataStyles} [metadataStyles]
    * @returns {number}
   */infoTime(message, metadata, metadataStyles) {
     return this.time(message, metadata, metadataStyles, levels.INFO);
@@ -444,12 +439,13 @@ let Logger = class Logger {
    * and deletes the original record
   * @param {number} startTime
   * @param {string} message
-  * @param {Object} metadata
-  * @param {Object} [metadataStyles]
+  * @param {Metadata} [metadata]
+  * @param {MetadataStyles} [metadataStyles]
   * @param {number} level
   * @param {Object} [options]
   */
-  timeEnd(startTime, message, metadata = {}, metadataStyles, level = levels.DEBUG, options) {
+  timeEnd(startTime, message, metadata, metadataStyles, level = levels.DEBUG, options) {
+    if (!metadata) metadata = {};
     const now = Date.now();
 
     const diffTime = now - startTime;
@@ -457,7 +453,7 @@ let Logger = class Logger {
     if (diffTime &lt; 1000) {
       metadata.readableTime = `${diffTime}ms`;
     } else {
-      const seconds = diffTime > 1000 &amp;&amp; Math.floor(diffTime / 1000);
+      const seconds = diffTime > 1000 ? Math.floor(diffTime / 1000) : 0;
 
       metadata.readableTime = `${seconds ? `${seconds}s and ` : ''}${diffTime - seconds * 1000}ms`;
     }
@@ -470,8 +466,8 @@ let Logger = class Logger {
    * Like timeEnd, but with INFO level
   * @param {number} time
   * @param {string} message
-  * @param {Object} [metadata]
-  * @param {Object} [metadataStyles]
+  * @param {Metadata} [metadata]
+  * @param {MetadataStyles} [metadataStyles]
   */
   infoTimeEnd(time, message, metadata, metadataStyles) {
     this.timeEnd(time, message, metadata, metadataStyles, levels.INFO);
@@ -481,8 +477,8 @@ let Logger = class Logger {
    * Like timeEnd, but with INFO level
   * @param {number} time
   * @param {string} message
-  * @param {Object} [metadata]
-  * @param {Object} [metadataStyles]
+  * @param {Metadata} [metadata]
+  * @param {MetadataStyles} [metadataStyles]
   */
   infoSuccessTimeEnd(time, message, metadata, metadataStyles) {
     this.timeEnd(time, message, metadata, metadataStyles, levels.INFO, {
@@ -503,8 +499,8 @@ let Logger = class Logger {
    * }
    *
   * @param {Function} fn
-  * @param {Object} [metadata]
-  * @param {Object} [metadataStyles]
+  * @param {Metadata} [metadata]
+  * @param {MetadataStyles} [metadataStyles]
   */
   enter(fn, metadata, metadataStyles) {
     metadata = Object.assign({
@@ -525,8 +521,8 @@ let Logger = class Logger {
    *   }
    * }
   * @param {Function} fn
-  * @param {Object} [metadata]
-  * @param {Object} [metadataStyles]
+  * @param {Metadata} [metadata]
+  * @param {MetadataStyles} [metadataStyles]
   */
   exit(fn, metadata, metadataStyles) {
     metadata = Object.assign({

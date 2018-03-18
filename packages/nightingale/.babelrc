@@ -1,0 +1,16 @@
+{
+  "env": {
+    "test": {
+      "only": ["src/"],
+      "presets": [
+        ["pob-babel/preset", { "flow": true }]
+      ]
+    },
+    "doc": {
+      "only": ["src/"],
+      "presets": [
+        ["pob-babel/jsdoc-preset", { "flow": true }]
+      ]
+    }
+  }
+}

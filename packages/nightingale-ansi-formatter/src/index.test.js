@@ -1,5 +1,5 @@
-/* global test */
-import format, { style } from '../index';
+/* eslint-disable no-control-regex */
+import format, { style } from './index';
 
 test('style: blue bold color', () => {
   expect(style(['blue', 'bold'], 'test').replace(/[\x1b]/g, 'ESC')).toBe(

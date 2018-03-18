@@ -68,11 +68,6 @@ var Logger = function () {
 
     this.key = key;
     this.displayName = displayName;
-
-    if (key.includes('.')) {
-      this.warn('nightingale: `.` in key is deprecated, replace with `:`', { key: key, displayName: displayName });
-      this.key = key.replace(/\./g, ':');
-    }
   }
 
   /** @private */
@@ -447,12 +442,11 @@ var Logger = function () {
 
   }, {
     key: 'timeEnd',
-    value: function timeEnd(startTime, message) {
-      var metadata = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
-      var metadataStyles = arguments[3];
+    value: function timeEnd(startTime, message, metadata, metadataStyles) {
       var level = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : levels.DEBUG;
       var options = arguments[5];
 
+      if (!metadata) metadata = {};
       var now = Date.now();
 
       var diffTime = now - startTime;
@@ -460,7 +454,7 @@ var Logger = function () {
       if (diffTime < 1000) {
         metadata.readableTime = diffTime + 'ms';
       } else {
-        var seconds = diffTime > 1000 && Math.floor(diffTime / 1000);
+        var seconds = diffTime > 1000 ? Math.floor(diffTime / 1000) : 0;
 
         metadata.readableTime = '' + (seconds ? seconds + 's and ' : '') + (diffTime - seconds * 1000) + 'ms';
       }

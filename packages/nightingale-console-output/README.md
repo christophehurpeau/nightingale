@@ -1,9 +1,15 @@
-# nightingale-console-output [![NPM version][npm-image]][npm-url]
+<h3 align="center">
+  nightingale-console-output
+</h3>
 
-Nightingale console output
+<p align="center">
+  Nightingale console output
+</p>
 
-[![Dependency Status][daviddm-image]][daviddm-url]
-[![Dependency ci Status][dependencyci-image]][dependencyci-url]
+<p align="center">
+  <a href="https://npmjs.org/package/nightingale-console-output"><img src="https://img.shields.io/npm/v/nightingale-console-output.svg?style=flat-square"></a>
+  <a href="https://david-dm.org/christophehurpeau/nightingale?path=packages/nightingale-console-output"><img src="https://david-dm.org/christophehurpeau/nightingale?path=packages/nightingale-console-output.svg?style=flat-square"></a>
+</p>
 
 ## Install
 
@@ -18,10 +24,3 @@ import nightingaleConsoleOutput from 'nightingale-console-output';
 
 console.log(nightingaleConsoleOutput);
 ```
-
-[npm-image]: https://img.shields.io/npm/v/nightingale-console-output.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/nightingale-console-output
-[daviddm-image]: https://david-dm.org/nightingalejs/nightingale-console-output.svg?style=flat-square
-[daviddm-url]: https://david-dm.org/nightingalejs/nightingale-console-output
-[dependencyci-image]: https://dependencyci.com/github/nightingalejs/nightingale-console-output/badge?style=flat-square
-[dependencyci-url]: https://dependencyci.com/github/nightingalejs/nightingale-console-output

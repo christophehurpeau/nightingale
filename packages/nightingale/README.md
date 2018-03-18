@@ -1,13 +1,17 @@
-# nightingale [![NPM version][npm-image]][npm-url]
+<h3 align="center">
+  nightingale
+</h3>
 
-Logger for browser and node
+<p align="center">
+  Logger for browser and node
+</p>
 
-[![Build Status][circleci-status-image]][circleci-status-url]
-[![Travis Status][travisci-status-image]][travisci-status-url]
-[![Dependency ci Status][dependencyci-image]][dependencyci-url]
-[![Dependency Status][daviddm-image]][daviddm-url]
-[![Coverage percentage][coverage-image]][coverage-url]
-[![Doclets Link][doclets-image]][doclets-url]
+<p align="center">
+  <a href="https://npmjs.org/package/nightingale"><img src="https://img.shields.io/npm/v/nightingale.svg?style=flat-square"></a>
+  <a href="https://circleci.com/gh/christophehurpeau/nightingale"><img src="https://img.shields.io/circleci/project/christophehurpeau/nightingale/master.svg?style=flat-square"></a>
+  <a href="https://david-dm.org/christophehurpeau/nightingale?path=packages/nightingale"><img src="https://david-dm.org/christophehurpeau/nightingale?path=packages/nightingale.svg?style=flat-square"></a>
+  <a href="https://codecov.io/gh/christophehurpeau/nightingale"><img src="https://img.shields.io/codecov/c/github/christophehurpeau/nightingale/master.svg?style=flat-square"></a>
+</p>
 
 ## Nightingale
 
@@ -250,20 +254,3 @@ export function someAction(arg1) {
     logger.info('done');
 }
 ```
-
-[npm-image]: https://img.shields.io/npm/v/nightingale.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/nightingale
-[daviddm-image]: https://david-dm.org/nightingalejs/nightingale.svg?style=flat-square
-[daviddm-url]: https://david-dm.org/nightingalejs/nightingale
-[dependencyci-image]: https://dependencyci.com/github/nightingalejs/nightingale/badge?style=flat-square
-[dependencyci-url]: https://dependencyci.com/github/nightingalejs/nightingale
-[circleci-status-image]: https://img.shields.io/circleci/project/nightingalejs/nightingale/master.svg?style=flat-square
-[circleci-status-url]: https://circleci.com/gh/nightingalejs/nightingale
-[travisci-status-image]: https://img.shields.io/travis/nightingalejs/nightingale/master.svg?style=flat-square
-[travisci-status-url]: https://travis-ci.org/nightingalejs/nightingale
-[coverage-image]: https://img.shields.io/codecov/c/github/nightingalejs/nightingale/master.svg?style=flat-square
-[coverage-url]: https://codecov.io/gh/nightingalejs/nightingale
-[docs-coverage-url]: https://nightingalejs.github.io/nightingale/coverage/lcov-report/
-
-[doclets-image]: https://img.shields.io/badge/doclets.io-master-green.svg?style=flat-square
-[doclets-url]: https://doclets.io/nightingalejs/nightingale/master

@@ -1,9 +1,15 @@
-# nightingale-app-console [![NPM version][npm-image]][npm-url]
+<h3 align="center">
+  nightingale-app-console
+</h3>
 
-nightingale default config and logger for app
+<p align="center">
+  nightingale default config and logger for app
+</p>
 
-[![Dependency ci Status][dependencyci-image]][dependencyci-url]
-[![Dependency Status][daviddm-image]][daviddm-url]
+<p align="center">
+  <a href="https://npmjs.org/package/nightingale-app-console"><img src="https://img.shields.io/npm/v/nightingale-app-console.svg?style=flat-square"></a>
+  <a href="https://david-dm.org/christophehurpeau/nightingale?path=packages/nightingale-app-console"><img src="https://david-dm.org/christophehurpeau/nightingale?path=packages/nightingale-app-console.svg?style=flat-square"></a>
+</p>
 
 ## Install
 
@@ -25,10 +31,3 @@ logger.info('hello');
 const myServiceLogger = logger.child('services:myService');
 myServiceLogger.debug('started');
 ```
-
-[npm-image]: https://img.shields.io/npm/v/nightingale-app-console.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/nightingale-app-console
-[daviddm-image]: https://david-dm.org/nightingalejs/nightingale-app-console.svg?style=flat-square
-[daviddm-url]: https://david-dm.org/nightingalejs/nightingale-app-console
-[dependencyci-image]: https://dependencyci.com/github/nightingalejs/nightingale-app-console/badge?style=flat-square
-[dependencyci-url]: https://dependencyci.com/github/nightingalejs/nightingale-app-console

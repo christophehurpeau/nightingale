@@ -38,7 +38,7 @@ export function style(styles, string) {
   }
 
   return styles.reduce((string, styleName) => {
-    let style = ansiStyles[styleName];
+    const style = ansiStyles[styleName];
 
     if (!style) {
       throw new Error(`Unknown style: ${styleName}`);

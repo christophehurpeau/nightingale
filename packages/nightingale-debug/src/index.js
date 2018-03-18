@@ -4,13 +4,13 @@ const specialRegexpChars = /[\\^$+?.()|[\]{}]/;
 
 type DebugValueType = string | RegExp | Array<string | RegExp>;
 
-const createTestFunctionFromRegexpString = (value) => {
+const createTestFunctionFromRegexpString = value => {
   if (!value.endsWith('/')) throw new Error('Invalid RegExp DEBUG value');
   const regexp = new RegExp(value.slice(1, -1));
   return string => regexp.test(string);
 };
 
-const createTestFunctionFromValue = (value) => {
+const createTestFunctionFromValue = value => {
   if (value.endsWith(':*')) {
     value = value.slice(0, -2);
     return string => string.startsWith(value);
@@ -20,7 +20,7 @@ const createTestFunctionFromValue = (value) => {
 };
 
 export default function createFindDebugLevel(debugValue: ?DebugValueType) {
-  debugValue = (debugValue || '');
+  debugValue = debugValue || '';
 
   let wilcard = false;
   const debugValues = [];
@@ -60,11 +60,9 @@ export default function createFindDebugLevel(debugValue: ?DebugValueType) {
 
   if (wilcard) {
     if (skips.length === 0) {
-      return (minLevel) => levels.ALL;
+      return minLevel => levels.ALL;
     } else {
-      return (minLevel, key) => (
-        skips.some(skip => skip(key)) ? minLevel : levels.ALL
-      );
+      return (minLevel, key) => (skips.some(skip => skip(key)) ? minLevel : levels.ALL);
     }
   }
 

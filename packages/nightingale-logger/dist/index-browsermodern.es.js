@@ -39,11 +39,6 @@ let Logger = class Logger {
   constructor(key, displayName) {
     this.key = key;
     this.displayName = displayName;
-
-    if (key.includes('.')) {
-      this.warn('nightingale: `.` in key is deprecated, replace with `:`', { key, displayName });
-      this.key = key.replace(/\./g, ':');
-    }
   }
 
   /** @private */
@@ -315,7 +310,8 @@ let Logger = class Logger {
    * was called, then logs out the difference
    * and deletes the original record
    */
-  timeEnd(startTime, message, metadata = {}, metadataStyles, level = levels.DEBUG, options) {
+  timeEnd(startTime, message, metadata, metadataStyles, level = levels.DEBUG, options) {
+    if (!metadata) metadata = {};
     const now = Date.now();
 
     const diffTime = now - startTime;
@@ -323,7 +319,7 @@ let Logger = class Logger {
     if (diffTime < 1000) {
       metadata.readableTime = `${diffTime}ms`;
     } else {
-      const seconds = diffTime > 1000 && Math.floor(diffTime / 1000);
+      const seconds = diffTime > 1000 ? Math.floor(diffTime / 1000) : 0;
 
       metadata.readableTime = `${seconds ? `${seconds}s and ` : ''}${diffTime - seconds * 1000}ms`;
     }

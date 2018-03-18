@@ -1,0 +1,36 @@
+{
+  "pob": {
+    "pob-config": {
+      "envs": [
+        {
+          "target": "node",
+          "version": "8",
+          "formats": [
+            "cjs",
+            "es"
+          ]
+        },
+        {
+          "target": "node",
+          "version": "6",
+          "formats": [
+            "cjs"
+          ]
+        },
+        {
+          "target": "node",
+          "version": "4",
+          "formats": [
+            "cjs"
+          ]
+        }
+      ],
+      "documentation": false,
+      "testing": false,
+      "entries": [
+        "index"
+      ],
+      "doclets": false
+    }
+  }
+}

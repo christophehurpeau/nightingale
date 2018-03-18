@@ -1,12 +1,17 @@
-# nightingale-slack [![NPM version][npm-image]][npm-url]
+<h3 align="center">
+  nightingale-slack
+</h3>
 
-Slack handler for nightingale
+<p align="center">
+  Slack handler for nightingale
+</p>
 
-[![Build Status][circleci-status-image]][circleci-status-url]
-[![Travis Status][travisci-status-image]][travisci-status-url]
-[![Dependency ci Status][dependencyci-image]][dependencyci-url]
-[![Dependency Status][daviddm-image]][daviddm-url]
-[![Coverage percentage][coverage-image]][coverage-url]
+<p align="center">
+  <a href="https://npmjs.org/package/nightingale-slack"><img src="https://img.shields.io/npm/v/nightingale-slack.svg?style=flat-square"></a>
+  <a href="https://circleci.com/gh/christophehurpeau/nightingale"><img src="https://img.shields.io/circleci/project/christophehurpeau/nightingale/master.svg?style=flat-square"></a>
+  <a href="https://david-dm.org/christophehurpeau/nightingale?path=packages/nightingale-slack"><img src="https://david-dm.org/christophehurpeau/nightingale?path=packages/nightingale-slack.svg?style=flat-square"></a>
+  <a href="https://codecov.io/gh/christophehurpeau/nightingale"><img src="https://img.shields.io/codecov/c/github/christophehurpeau/nightingale/master.svg?style=flat-square"></a>
+</p>
 
 ## Install
 
@@ -32,17 +37,3 @@ configure([
   { handlers: [new SlackHandler(slackErrorConfig, levels.ERROR)]
 ])
 ```
-
-[npm-image]: https://img.shields.io/npm/v/nightingale-slack.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/nightingale-slack
-[daviddm-image]: https://david-dm.org/nightingalejs/nightingale-slack.svg?style=flat-square
-[daviddm-url]: https://david-dm.org/nightingalejs/nightingale-slack
-[dependencyci-image]: https://dependencyci.com/github/nightingalejs/nightingale-slack/badge?style=flat-square
-[dependencyci-url]: https://dependencyci.com/github/nightingalejs/nightingale-slack
-[circleci-status-image]: https://img.shields.io/circleci/project/nightingalejs/nightingale-slack/master.svg?style=flat-square
-[circleci-status-url]: https://circleci.com/gh/nightingalejs/nightingale-slack
-[travisci-status-image]: https://img.shields.io/travis/nightingalejs/nightingale-slack/master.svg?style=flat-square
-[travisci-status-url]: https://travis-ci.org/nightingalejs/nightingale-slack
-[coverage-image]: https://img.shields.io/codecov/c/github/nightingalejs/nightingale-slack/master.svg?style=flat-square
-[coverage-url]: https://codecov.io/gh/nightingalejs/nightingale-slack
-[docs-coverage-url]: https://nightingalejs.github.io/nightingale-slack/coverage/lcov-report/

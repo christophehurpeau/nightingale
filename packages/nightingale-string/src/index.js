@@ -1,7 +1,7 @@
 /* eslint-disable prefer-template */
 import formatterRaw from 'nightingale-raw-formatter/src';
 
-export default function (minLevel: number) {
+export default function(minLevel: number) {
   this.minLevel = minLevel;
   this._buffer = '';
   this.handle = (record: Object) => {

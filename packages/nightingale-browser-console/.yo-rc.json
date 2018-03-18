@@ -1,0 +1,28 @@
+{
+  "pob": {
+    "pob-config": {
+      "envs": [
+        {
+          "target": "browser",
+          "version": "modern",
+          "formats": [
+            "es"
+          ]
+        },
+        {
+          "target": "browser",
+          "formats": [
+            "cjs",
+            "es"
+          ]
+        }
+      ],
+      "documentation": false,
+      "testing": false,
+      "entries": [
+        "index"
+      ],
+      "doclets": false
+    }
+  }
+}
