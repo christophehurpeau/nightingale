@@ -1,37 +1,36 @@
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
 var levelNames = _interopDefault(require('nightingale-level-names'));
-var t = _interopDefault(require('flow-runtime'));
 
 /* eslint camelcase:"off" */
-const WinstonTransportType = t.type('WinstonTransportType', t.object(t.property('log', t.function())));
+class WinstonAdapterHandler {
+  constructor(winstonTransport, minLevel) {
+    this.minLevel = void 0;
+    this.handle = void 0;
+    this.minLevel = minLevel;
 
+    this.handle = record => {
+      // new Promise((resolve, reject) => {
+      winstonTransport.log(record.level, record.message, {
+        level_name: levelNames.get(record.level),
+        key: record.key,
+        metadata: record.metadata,
+        extra: record.extra,
+        context: record.context
+      }, err => {
+        if (err) {
+          console.warn(err); // return reject(err);
+        } // resolve();
 
-function WinstonAdapterHandler(winstonTransport, minLevel) {
-  let _minLevelType = t.number();
+      }); // });
+    };
+  }
 
-  t.param('winstonTransport', WinstonTransportType).assert(winstonTransport);
-  t.param('minLevel', _minLevelType).assert(minLevel);
-
-  this.minLevel = minLevel;
-  this.handle = record => new Promise((resolve, reject) => {
-    winstonTransport.log(record.level, record.message, {
-      level_name: levelNames.get(record.level),
-      key: record.key,
-      metadata: record.metadata,
-      extra: record.extra,
-      context: record.context
-    }, err => {
-      if (err) {
-        return reject(err);
-      }
-
-      resolve();
-    });
-  });
 }
 
-module.exports = WinstonAdapterHandler;
+exports.default = WinstonAdapterHandler;
 //# sourceMappingURL=index-node8-dev.cjs.js.map

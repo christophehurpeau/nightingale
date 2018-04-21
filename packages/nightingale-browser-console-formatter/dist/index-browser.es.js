@@ -15,14 +15,14 @@ var style = function style(args) {
     args.push(htmlStyles.map(function (s) {
       return s.close;
     }).join('; '));
-    return '%c' + string + '%c';
+    return "%c" + string + "%c";
   };
 };
-
 /**
  * @param {Object} record
  * @returns {Array}
  */
+
 function format(record) {
   var args = [];
   var string = formatRecordToString(record, style(args));

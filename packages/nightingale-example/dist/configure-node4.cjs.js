@@ -9,19 +9,17 @@ var ConsoleHandler = _interopDefault(require('nightingale-console'));
 Logger.configure([{
   stop: true,
   key: 'app',
-  handlers: [new ConsoleHandler(Logger.levels.DEBUG)]
+  handlers: [new ConsoleHandler(Logger.Level.DEBUG)]
 }, {
   stop: true,
   pattern: /^app:service:/,
-  handlers: [new ConsoleHandler(Logger.levels.INFO)]
+  handlers: [new ConsoleHandler(Logger.Level.INFO)]
 }, {
-  handlers: [new ConsoleHandler(Logger.levels.ALL)]
+  handlers: [new ConsoleHandler(Logger.Level.ALL)]
 }]);
-
 var smthg = new Logger__default('smthg');
 var app = new Logger__default('app');
 var appService = new Logger__default('app:service:myService:insideMyService');
-
 smthg.trace('shoud appear 1');
 app.trace('shoud not appear');
 app.info('shoud appear 2');

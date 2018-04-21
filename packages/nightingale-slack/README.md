@@ -34,6 +34,6 @@ const slackErrorConfig = {
 };
 
 configure([
-  { handlers: [new SlackHandler(slackErrorConfig, levels.ERROR)]
+  { handlers: [new SlackHandler(slackErrorConfig, Levels.ERROR)]
 ])
 ```

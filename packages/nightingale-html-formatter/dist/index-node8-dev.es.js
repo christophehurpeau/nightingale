@@ -7,11 +7,11 @@ function style(styles, string) {
 
   return `<span style="${styles.map(styleName => styleToHtmlStyle[styleName].open).join('; ')}">${string}</span>`;
 }
-
 /**
  * @param {Object} record
  * @returns {string}
  */
+
 function format(record) {
   return formatRecordToString(record, style);
 }

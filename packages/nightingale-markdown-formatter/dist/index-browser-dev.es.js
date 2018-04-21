@@ -8,27 +8,21 @@ function style(styles, string) {
   return styles.reduce(function (string, styleName) {
     switch (styleName) {
       case 'bold':
-        return '*' + string + '*';
+        return "*" + string + "*";
+
       case 'italic':
-        return '_' + string + '_';
+        return "_" + string + "_";
+
       case 'strikethrough':
-        return '~' + string + '~';
+        return "~" + string + "~";
     }
 
     return string;
   }, string);
 }
-
-/**
- * @param {Object} record
- * @returns {string}
- */
 function format(record) {
   return formatRecordToString(record, style);
 }
-
-// export style function
-format.style = style;
 
 export default format;
 export { style };

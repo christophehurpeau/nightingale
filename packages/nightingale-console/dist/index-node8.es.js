@@ -1,14 +1,22 @@
 import formatterANSI from 'nightingale-ansi-formatter';
 import consoleOutput from 'nightingale-console-output';
 import createFindDebugLevel from 'nightingale-debug';
+import { Level } from 'nightingale-types';
 
 const handle = record => consoleOutput(formatterANSI(record), record);
-const findDebugLevel = createFindDebugLevel(process.env.DEBUG);
 
-function ConsoleHandler(minLevel) {
-  this.minLevel = 0;
-  this.handle = handle;
-  this.isHandling = (level, key) => level >= findDebugLevel(minLevel, key);
+const findDebugLevel = createFindDebugLevel(process.env.DEBUG);
+class ConsoleHandler {
+  constructor(minLevel) {
+    this.minLevel = Level.ALL;
+    this.isHandling = void 0;
+    this.handle = void 0;
+
+    this.isHandling = (level, key) => level >= findDebugLevel(minLevel, key);
+
+    this.handle = handle;
+  }
+
 }
 
 export default ConsoleHandler;

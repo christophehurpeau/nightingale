@@ -8,33 +8,54 @@
   "license": "ISC",
   "repository": "git@github.com:christophehurpeau/nightingale.git",
   "homepage": "https://github.com/christophehurpeau/nightingale",
-  "engines": { "node": ">=4.0.0" },
+  "engines": { "node": ">=6.5.0" },
   "main": "./index.js",
+  "typings": "./dist/index.d.ts",
+  "module:node": "./dist/index-node8.es.js",
+  "module:node-dev": "./dist/index-node8-dev.es.js",
+  "module:aliases-node": {
+    "./configure.js": "./dist/configure-node8.es.js",
+    "./console.js": "./dist/console-node8.es.js",
+    "./debug.js": "./dist/debug-node8.es.js",
+    "./errors.js": "./dist/errors-node8.es.js",
+    "./jsonConsole.js": "./dist/jsonConsole-node8.es.js"
+  },
+  "module:aliases-node-dev": {
+    "./configure.js": "./dist/configure-node8-dev.es.js",
+    "./console.js": "./dist/console-node8-dev.es.js",
+    "./debug.js": "./dist/debug-node8-dev.es.js",
+    "./errors.js": "./dist/errors-node8-dev.es.js",
+    "./jsonConsole.js": "./dist/jsonConsole-node8-dev.es.js"
+  },
   "scripts": {
-    "build": "pob-build",
-    "lint": "eslint src/",
-    "test": "No tests",
+    "build": "pob-build && tsc -p tsconfig.build.json --emitDeclarationOnly",
+    "lint": "tsc --noEmit && eslint --ext .ts  src/",
+    "test": "echo \"No tests\"",
     "watch": "pob-watch"
   },
   "prettier": { "trailingComma": "all", "singleQuote": true, "printWidth": 100 },
   "dependencies": {
-    "nightingale": "^6.2.1",
-    "nightingale-console": "^2.4.1",
-    "nightingale-console-output": "^1.4.0",
-    "nightingale-json-formatter": "^1.5.0",
-    "nightingale-string": "^2.3.0"
+    "nightingale": "^7.0.0",
+    "nightingale-console": "^3.0.0",
+    "nightingale-console-output": "^2.0.0",
+    "nightingale-json-formatter": "^2.0.0",
+    "nightingale-string": "^3.0.0",
+    "nightingale-types": "^0.0.0"
   },
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-eslint": "^8.2.2",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-latest-node": "^1.0.0",
-    "eslint": "^4.18.2",
-    "eslint-config-pob": "^18.0.0",
+    "@babel/core": "^7.0.0-beta.44",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-eslint": "^8.2.3",
+    "babel-preset-latest-node": "^2.0.0-beta.2",
+    "eslint": "^4.19.1",
+    "eslint-config-pob": "^19.1.0",
     "eslint-plugin-babel": "^4.1.2",
-    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-import": "^2.11.0",
     "eslint-plugin-prettier": "^2.6.0",
-    "pob-babel": "^20.0.0",
-    "prettier": "^1.11.1"
+    "eslint-plugin-typescript": "^0.11.0",
+    "pob-babel": "^22.0.1",
+    "prettier": "^1.12.1",
+    "typescript": "^2.8.3",
+    "typescript-eslint-parser": "^15.0.0"
   }
 }

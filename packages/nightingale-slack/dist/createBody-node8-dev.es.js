@@ -1,24 +1,21 @@
 import markdownFormatter from 'nightingale-markdown-formatter';
 import rawFormatter from 'nightingale-raw-formatter';
-import levels from 'nightingale-levels';
+import Level from 'nightingale-levels';
 
 /* eslint camelcase: "off" */
-
 const levelToSlackColor = {
-  [levels.TRACE]: '#808080',
-  [levels.DEBUG]: '#808080',
-  [levels.INFO]: '#808080',
-  [levels.WARN]: 'warning',
-  [levels.ERROR]: 'danger',
-  [levels.CRITICAL]: 'danger',
-  [levels.FATAL]: 'danger',
-  [levels.EMERGENCY]: 'danger'
+  [Level.TRACE]: '#808080',
+  [Level.DEBUG]: '#808080',
+  [Level.INFO]: '#808080',
+  [Level.WARN]: 'warning',
+  [Level.ERROR]: 'danger',
+  [Level.CRITICAL]: 'danger',
+  [Level.FATAL]: 'danger',
+  [Level.EMERGENCY]: 'danger'
 };
-
 var createBody = ((record, slackConfig) => {
   const markdown = markdownFormatter(record);
   const raw = rawFormatter(record);
-
   return {
     channel: slackConfig.channel,
     username: slackConfig.username,

@@ -9,11 +9,11 @@ function style(styles, string) {
     return styleToHtmlStyle[styleName].open;
   }).join('; ')}">${string}</span>`;
 }
-
 /**
  * @param {Object} record
  * @returns {string}
  */
+
 function format(record) {
   return formatRecordToString(record, style);
 }

@@ -1,8 +1,13 @@
 {
   "extends": [
-    "pob/babel"
+    "pob/babel",
+    "pob/typescript"
   ],
   "env": {
     "browser": true
-  }
+  },
+  "parser": "typescript-eslint-parser",
+  "plugins": [
+    "typescript"
+  ]
 }

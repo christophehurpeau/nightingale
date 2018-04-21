@@ -20,13 +20,13 @@ npm install --save nightingale nightingale-sentry
 ## Usage
 
 ```js
-import { configure, levels } from 'nightingale';
+import { configure, Levels } from 'nightingale';
 import SentryHandler from 'nightingale-sentry';
 
 configure([
   {
     handlers: [
-      new SentryHandler(ravenUrl, levels.ERROR, {
+      new SentryHandler(ravenUrl, Levels.ERROR, {
         // getUser: ({ context }) => context.user && { id: context.user.id },
         // getTags: ({ context }) => context.tags,
       }),

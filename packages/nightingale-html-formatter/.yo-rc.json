@@ -4,6 +4,13 @@
       "envs": [
         {
           "target": "node",
+          "version": "10",
+          "formats": [
+            "cjs"
+          ]
+        },
+        {
+          "target": "node",
           "version": "8",
           "formats": [
             "cjs",
@@ -39,8 +46,7 @@
       "documentation": false,
       "entries": [
         "index"
-      ],
-      "doclets": false
+      ]
     }
   }
 }

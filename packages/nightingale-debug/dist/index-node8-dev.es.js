@@ -1,15 +1,13 @@
-import levels from 'nightingale-levels';
-import t from 'flow-runtime';
+import Level from 'nightingale-levels';
 
+/* eslint-disable complexity */
 const specialRegexpChars = /[\\^$+?.()|[\]{}]/;
 
-const DebugValueType = t.type('DebugValueType', t.union(t.string(), t.ref('RegExp'), t.array(t.union(t.string(), t.ref('RegExp')))));
-
+const createTestFunctionFromRegexp = regexp => string => regexp.test(string);
 
 const createTestFunctionFromRegexpString = value => {
   if (!value.endsWith('/')) throw new Error('Invalid RegExp DEBUG value');
-  const regexp = new RegExp(value.slice(1, -1));
-  return string => regexp.test(string);
+  return createTestFunctionFromRegexp(new RegExp(value.slice(1, -1)));
 };
 
 const createTestFunctionFromValue = value => {
@@ -22,24 +20,23 @@ const createTestFunctionFromValue = value => {
 };
 
 function createFindDebugLevel(debugValue) {
-  let _debugValueType = t.nullable(DebugValueType);
-
-  t.param('debugValue', _debugValueType).assert(debugValue);
-
-  debugValue = _debugValueType.assert(debugValue || '');
-
   let wilcard = false;
   const debugValues = [];
   const skips = [];
 
   if (!Array.isArray(debugValue)) {
-    debugValue = _debugValueType.assert(debugValue.trim());
+    if (debugValue instanceof RegExp) {
+      debugValues.push(createTestFunctionFromRegexp(debugValue));
+      debugValue = undefined;
+    } else if (debugValue) {
+      debugValue = debugValue.trim();
 
-    if (debugValue.startsWith('/')) {
-      debugValues.push(createTestFunctionFromRegexpString(debugValue));
-      debugValue = _debugValueType.assert(null);
-    } else {
-      debugValue = _debugValueType.assert(debugValue.split(/[\s,]+/));
+      if (debugValue.startsWith('/')) {
+        debugValues.push(createTestFunctionFromRegexpString(debugValue));
+        debugValue = undefined;
+      } else {
+        debugValue = debugValue.split(/[\s,]+/);
+      }
     }
   }
 
@@ -66,28 +63,23 @@ function createFindDebugLevel(debugValue) {
 
   if (wilcard) {
     if (skips.length === 0) {
-      return () => levels.ALL;
+      return () => Level.ALL;
     } else {
-      return (minLevel, key) => skips.some(skip => skip(key)) ? minLevel : levels.ALL;
+      return (minLevel, key) => skips.some(skip => skip(key)) ? minLevel : Level.ALL;
     }
   }
 
   if (debugValues.length === 0) {
-    return minLevel => {
-      let _minLevelType = t.number();
-
-      t.param('minLevel', _minLevelType).assert(minLevel);
-      return minLevel;
-    };
+    return minLevel => minLevel;
   }
 
   return (minLevel, key) => {
-    if (minLevel === levels.ALL || !key) {
+    if (minLevel === Level.ALL || !key) {
       return minLevel;
     }
 
     if (debugValues.some(debugValue => debugValue(key))) {
-      return skips.some(skip => skip(key)) ? minLevel : levels.ALL;
+      return skips.some(skip => skip(key)) ? minLevel : Level.ALL;
     }
 
     return minLevel;

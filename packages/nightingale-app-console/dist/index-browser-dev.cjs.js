@@ -12,17 +12,14 @@ var ConsoleHandler = _interopDefault(require('nightingale-console'));
 sourceMapSupport.install({
   environment: 'browser'
 });
-
-
 var logger = new Logger__default('app');
-
 Logger.configure([{
   pattern: /^app(:.*)?$/,
   handlers: [new ConsoleHandler(Logger.levels.DEBUG)],
   stop: true
 }, {
   handlers: [new ConsoleHandler(Logger.levels.INFO)]
-}].filter(Boolean));
+}]);
 
 exports.configure = Logger.configure;
 exports.addConfig = Logger.addConfig;

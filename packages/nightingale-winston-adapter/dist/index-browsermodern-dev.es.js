@@ -1,19 +1,14 @@
 import levelNames from 'nightingale-level-names';
-import t from 'flow-runtime';
 
 /* eslint camelcase:"off" */
-const WinstonTransportType = t.type('WinstonTransportType', t.object(t.property('log', t.function())));
+class WinstonAdapterHandler {
+  constructor(winstonTransport, minLevel) {
+    this.minLevel = void 0;
+    this.handle = void 0;
+    this.minLevel = minLevel;
 
-
-function WinstonAdapterHandler(winstonTransport, minLevel) {
-  let _minLevelType = t.number();
-
-  t.param('winstonTransport', WinstonTransportType).assert(winstonTransport);
-  t.param('minLevel', _minLevelType).assert(minLevel);
-
-  this.minLevel = minLevel;
-  this.handle = function (record) {
-    return new Promise(function (resolve, reject) {
+    this.handle = function (record) {
+      // new Promise((resolve, reject) => {
       winstonTransport.log(record.level, record.message, {
         level_name: levelNames.get(record.level),
         key: record.key,
@@ -22,13 +17,13 @@ function WinstonAdapterHandler(winstonTransport, minLevel) {
         context: record.context
       }, function (err) {
         if (err) {
-          return reject(err);
-        }
+          console.warn(err); // return reject(err);
+        } // resolve();
 
-        resolve();
-      });
-    });
-  };
+      }); // });
+    };
+  }
+
 }
 
 export default WinstonAdapterHandler;

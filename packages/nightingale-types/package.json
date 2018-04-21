@@ -1,0 +1,24 @@
+{
+  "name": "nightingale-types",
+  "version": "0.0.0",
+  "description": "Nightingale types for typescript",
+  "keywords": ["logger"],
+  "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
+  "license": "ISC",
+  "repository": "git@github.com:christophehurpeau/nightingale.git",
+  "homepage": "https://github.com/christophehurpeau/nightingale",
+  "engines": { "node": ">=6.5.0" },
+  "main": "./lib/index.js",
+  "typings": "./lib/index.d.ts",
+  "scripts": { "build": "echo \"No build\"", "lint": "eslint lib/", "test": "echo \"No tests\"" },
+  "prettier": { "trailingComma": "es5", "singleQuote": true, "printWidth": 100 },
+  "dependencies": { "nightingale-levels": "^2.0.0" },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-pob": "^19.1.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-node": "^6.0.0",
+    "eslint-plugin-prettier": "^2.6.0",
+    "prettier": "^1.12.1"
+  }
+}

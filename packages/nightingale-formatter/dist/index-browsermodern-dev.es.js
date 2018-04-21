@@ -1,73 +1,140 @@
-import levels from 'nightingale-levels';
+import Level from 'nightingale-levels';
+import 'nightingale-types';
 
-var levelToStyles = {
-  [levels.TRACE]: ['gray'],
-  [levels.DEBUG]: ['gray'],
-  // [levels.INFO]: ['gray'],
-  [levels.WARN]: ['yellow'],
-  [levels.ERROR]: ['red', 'bold'],
-  [levels.CRITICAL]: ['red', 'bold'],
-  [levels.FATAL]: ['bgRed', 'white'],
-  [levels.EMERGENCY]: ['bgRed', 'white']
+const levelToStyles = {
+  [Level.TRACE]: ['gray'],
+  [Level.DEBUG]: ['gray'],
+  // [Levels.INFO]: ['gray'],
+  [Level.WARN]: ['yellow'],
+  [Level.ERROR]: ['red', 'bold'],
+  [Level.CRITICAL]: ['red', 'bold'],
+  [Level.FATAL]: ['bgRed', 'white'],
+  [Level.EMERGENCY]: ['bgRed', 'white']
 };
 
-var levelToSymbol = {
-  [levels.TRACE]: '•',
-  [levels.DEBUG]: '•',
-  [levels.INFO]: '→',
-  [levels.WARN]: '⚠',
-  [levels.ERROR]: '✖',
-  [levels.CRITICAL]: '!',
-  [levels.FATAL]: '‼',
-  [levels.EMERGENCY]: '‼'
+const levelToSymbol = {
+  [Level.TRACE]: '•',
+  [Level.DEBUG]: '•',
+  [Level.INFO]: '→',
+  [Level.WARN]: '⚠',
+  [Level.ERROR]: '✖',
+  [Level.CRITICAL]: '!',
+  [Level.FATAL]: '‼',
+  [Level.EMERGENCY]: '‼'
 };
 
-var hexColors = {
+const styleToHexColor = {
   orange: 'ff5f00',
   grayLight: '808080',
   'gray-light': '808080'
 };
 
-var styleToHtmlStyle = {
-  get reset() {
-    throw new Error();
-  },
-
+/* eslint-disable no-restricted-globals */
+const styleToHtmlStyle = {
   // text style
-  bold: { open: 'font-weight: bold', close: 'font-weight: normal' },
-  italic: { open: 'font-style: italic', close: 'font-style: normal' },
-  underline: { open: 'text-decoration: underline', close: 'text-decoration: none' },
+  bold: {
+    open: 'font-weight: bold',
+    close: 'font-weight: normal'
+  },
+  italic: {
+    open: 'font-style: italic',
+    close: 'font-style: normal'
+  },
+  underline: {
+    open: 'text-decoration: underline',
+    close: 'text-decoration: none'
+  },
   inverse: {
     open: 'unicode-bidi: bidi-override; direction: rtl',
     close: 'unicode-bidi: normal; direction: ltr'
   },
-  strikethrough: { open: 'text-decoration: line-through', close: 'text-decoration: none' },
-
-  black: { open: 'color: black', close: 'color: initial' },
-  red: { open: 'color: #ff0020', close: 'color: initial' },
-  green: { open: 'color: #00b317', close: 'color: initial' },
-  yellow: { open: 'color: #ffcc00', close: 'color: initial' },
-  blue: { open: 'color: #00a0ff', close: 'color: initial' },
-  magenta: { open: 'color: #ff00a0', close: 'color: initial' },
-  cyan: { open: 'color: #00cfd8', close: 'color: initial' },
-  white: { open: 'color: white', close: 'color: initial' },
-  gray: { open: 'color: gray', close: 'color: initial' },
-
-  bgBlack: { open: 'background: black', close: 'background: initial' },
-  bgRed: { open: 'background: #ff0020', close: 'background: initial' },
-  bgGreen: { open: 'background: #00b317', close: 'background: initial' },
-  bgYellow: { open: 'background: #ffcc00', close: 'background: initial' },
-  bgBlue: { open: 'background: #00a0ff', close: 'background: initial' },
-  bgMagenta: { open: 'background: #ff00a0', close: 'background: initial' },
-  bgCyan: { open: 'background: #00cfd8', close: 'background: initial' },
-  bgWhite: { open: 'background: white', close: 'background: initial' },
-
-  orange: { open: `color: #${hexColors.orange}`, close: 'color: initial' },
-  grayLight: { open: `color: #${hexColors.grayLight}`, close: 'color: initial' },
-  'gray-light': { open: `color: #${hexColors.grayLight}`, close: 'color: initial' }
+  strikethrough: {
+    open: 'text-decoration: line-through',
+    close: 'text-decoration: none'
+  },
+  black: {
+    open: 'color: black',
+    close: 'color: initial'
+  },
+  red: {
+    open: 'color: #ff0020',
+    close: 'color: initial'
+  },
+  green: {
+    open: 'color: #00b317',
+    close: 'color: initial'
+  },
+  yellow: {
+    open: 'color: #ffcc00',
+    close: 'color: initial'
+  },
+  blue: {
+    open: 'color: #00a0ff',
+    close: 'color: initial'
+  },
+  magenta: {
+    open: 'color: #ff00a0',
+    close: 'color: initial'
+  },
+  cyan: {
+    open: 'color: #00cfd8',
+    close: 'color: initial'
+  },
+  white: {
+    open: 'color: white',
+    close: 'color: initial'
+  },
+  gray: {
+    open: 'color: gray',
+    close: 'color: initial'
+  },
+  bgBlack: {
+    open: 'background: black',
+    close: 'background: initial'
+  },
+  bgRed: {
+    open: 'background: #ff0020',
+    close: 'background: initial'
+  },
+  bgGreen: {
+    open: 'background: #00b317',
+    close: 'background: initial'
+  },
+  bgYellow: {
+    open: 'background: #ffcc00',
+    close: 'background: initial'
+  },
+  bgBlue: {
+    open: 'background: #00a0ff',
+    close: 'background: initial'
+  },
+  bgMagenta: {
+    open: 'background: #ff00a0',
+    close: 'background: initial'
+  },
+  bgCyan: {
+    open: 'background: #00cfd8',
+    close: 'background: initial'
+  },
+  bgWhite: {
+    open: 'background: white',
+    close: 'background: initial'
+  },
+  orange: {
+    open: `color: #${styleToHexColor.orange}`,
+    close: 'color: initial'
+  },
+  grayLight: {
+    open: `color: #${styleToHexColor.grayLight}`,
+    close: 'color: initial'
+  },
+  'gray-light': {
+    open: `color: #${styleToHexColor.grayLight}`,
+    close: 'color: initial'
+  }
 };
 
-/* eslint-disable no-use-before-define, max-lines, no-useless-concat, prefer-template */
+/* eslint-disable max-lines, no-useless-concat, prefer-template, no-use-before-define, typescript/no-use-before-define */
 
 const noStyleFn = function noStyleFn(styles, value) {
   return value;
@@ -82,10 +149,18 @@ function tryStringify(arg) {
 }
 
 const sameRawFormattedValue = function sameRawFormattedValue(value) {
-  return { stringValue: value, formattedValue: value };
+  return {
+    stringValue: value,
+    formattedValue: value
+  };
 };
 
-function internalFormatValue(value, styleFn, styles, { padding, depth, maxDepth, objects }) {
+function internalFormatValue(value, styleFn, styles, {
+  padding,
+  depth,
+  maxDepth,
+  objects
+}) {
   const typeofValue = typeof value;
 
   if (!styles) {
@@ -96,13 +171,16 @@ function internalFormatValue(value, styleFn, styles, { padding, depth, maxDepth,
         case 'boolean':
           styles = ['green'];
           break;
+
         case 'number':
           styles = ['yellow'];
           break;
+
         case 'string':
           styles = ['orange'];
           break;
-        case 'date':
+
+        case 'symbol':
           styles = ['magenta'];
           break;
       }
@@ -110,6 +188,7 @@ function internalFormatValue(value, styleFn, styles, { padding, depth, maxDepth,
   }
 
   let stringValue;
+
   if (value === null) {
     stringValue = 'null';
   } else if (value === undefined) {
@@ -131,13 +210,19 @@ function internalFormatValue(value, styleFn, styles, { padding, depth, maxDepth,
     if (depth >= maxDepth) {
       stringValue = '[Array...]';
     } else {
-      return internalFormatArray(value, styleFn, { padding, depth: depth + 1, maxDepth, objects });
+      return internalFormatArray(value, styleFn, {
+        padding,
+        depth: depth + 1,
+        maxDepth,
+        objects
+      });
     }
   } else if (value instanceof Error) {
     const stack = value.stack;
-    stringValue = stack.startsWith(value.message) ? stack : `${value.message}\n${stack}`;
-  } else if (value instanceof Map || value instanceof WeakMap) {
+    stringValue = stack && stack.startsWith(value.message) ? stack : `${value.message}\n${stack}`;
+  } else if (value instanceof Map) {
     const name = value.constructor.name;
+
     if (depth >= maxDepth) {
       stringValue = `{${name}...}`;
     } else {
@@ -148,8 +233,9 @@ function internalFormatValue(value, styleFn, styles, { padding, depth, maxDepth,
         objects
       });
     }
-  } else if (value instanceof Set || value instanceof WeakSet) {
+  } else if (value instanceof Set) {
     const name = value.constructor.name;
+
     if (depth >= maxDepth) {
       stringValue = `{${name}...}`;
     } else {
@@ -160,22 +246,26 @@ function internalFormatValue(value, styleFn, styles, { padding, depth, maxDepth,
         objects
       });
     }
+  } else if (value instanceof WeakMap) {
+    stringValue = '{WeakMap...}';
+  } else if (value instanceof WeakSet) {
+    stringValue = '{WeakSet...}';
   } else {
     stringValue = tryStringify(value);
   }
 
   const formattedValue = styleFn(styles, stringValue);
-
   return {
     stringValue,
     formattedValue
   };
 }
 
-const separator = ',';
-
 const internalFormatKey = function internalFormatKey(key, styleFn) {
-  if (!key) return { stringKey: '', formattedKey: '' };
+  if (!key) return {
+    stringKey: '',
+    formattedKey: ''
+  };
   return {
     stringKey: `${key}: `,
     formattedKey: styleFn(['gray-light', 'bold'], `${key}:`) + ' '
@@ -183,27 +273,53 @@ const internalFormatKey = function internalFormatKey(key, styleFn) {
 };
 
 const internalFormatMapKey = function internalFormatMapKey(key, styleFn, internalFormatParams) {
-  const { stringValue, formattedValue } = internalFormatValue(key, noStyleFn, undefined, internalFormatParams);
+  const {
+    stringValue,
+    formattedValue
+  } = internalFormatValue(key, noStyleFn, undefined, internalFormatParams);
   return {
     stringKey: stringValue + ' => ',
     formattedKey: styleFn(['gray-light', 'bold'], `${formattedValue}:`) + ' '
   };
 };
 
-const internalFormatIterator = function internalFormatIterator(values, styleFn, objectStyles, { padding, depth, maxDepth, objects }, { prefix, suffix, prefixSuffixSpace = ' ', formatKey = internalFormatKey }) {
+const internalFormatIterator = function internalFormatIterator(values, styleFn, objectStyles, {
+  padding,
+  depth,
+  maxDepth,
+  objects
+}, {
+  prefix,
+  suffix,
+  prefixSuffixSpace = ' ',
+  formatKey = internalFormatKey
+}) {
   let breakLine = false;
+
   const formattedSeparator = function formattedSeparator() {
-    return styleFn(['gray'], separator);
+    return styleFn(['gray'], ",");
   };
 
   const valuesMaxIndex = values.length - 1;
-  values = values.map(function ({ key, value }, index) {
-    const internalFormatParams = { padding, depth: depth + 1, maxDepth, objects };
+  const formattedValues = values.map(function ({
+    key,
+    value
+  }, index) {
+    const internalFormatParams = {
+      padding,
+      depth: depth + 1,
+      maxDepth,
+      objects
+    }; // key must be formatted before value (browser-formatter needs order)
 
-    // key must be formatted before value (browser-formatter needs order)
-    const { stringKey, formattedKey } = formatKey(key, styleFn, internalFormatParams);
-
-    let { stringValue, formattedValue } = internalFormatValue(value, styleFn, key && objectStyles && objectStyles[key], internalFormatParams);
+    const {
+      stringKey,
+      formattedKey
+    } = formatKey(key, styleFn, internalFormatParams);
+    let {
+      stringValue,
+      formattedValue
+    } = internalFormatValue(value, styleFn, key && objectStyles && objectStyles[key], internalFormatParams);
 
     if (stringValue && (stringValue.length > 80 || stringValue.indexOf('\n') !== -1)) {
       breakLine = true;
@@ -212,21 +328,20 @@ const internalFormatIterator = function internalFormatIterator(values, styleFn, 
     }
 
     return {
-      stringValue: stringKey + stringValue + (index === valuesMaxIndex ? '' : separator),
+      stringValue: stringKey + stringValue + (index === valuesMaxIndex ? '' : ","),
       // eslint-disable-next-line no-useless-concat
-      formattedValue: formattedKey + formattedValue + (index === valuesMaxIndex ? '' : formattedSeparator())
-      // note: we need to format the separator for each values for browser-formatter
+      formattedValue: formattedKey + formattedValue + (index === valuesMaxIndex ? '' : formattedSeparator()) // note: we need to format the separator for each values for browser-formatter
+
     };
   });
-
   return {
-    stringValue: prefix + values.map(breakLine ? function (v) {
+    stringValue: prefix + formattedValues.map(breakLine ? function (v) {
       return `\n${padding}${v.stringValue}`;
     } : function (fv) {
       return fv.stringValue;
     }).join(breakLine ? '\n' : ' ') + suffix,
     // eslint-disable-next-line prefer-template
-    formattedValue: `${prefix}${breakLine ? '' : prefixSuffixSpace}` + values.map(breakLine ? function (v) {
+    formattedValue: `${prefix}${breakLine ? '' : prefixSuffixSpace}` + formattedValues.map(breakLine ? function (v) {
       return `\n${padding}${v.formattedValue}`;
     } : function (v) {
       return v.formattedValue;
@@ -234,49 +349,83 @@ const internalFormatIterator = function internalFormatIterator(values, styleFn, 
   };
 };
 
-function internalFormatObject(object, styleFn, objectStyles, { padding, depth, maxDepth, objects }) {
+function internalFormatObject(object, styleFn, objectStyles, {
+  padding,
+  depth,
+  maxDepth,
+  objects
+}) {
   if (objects.has(object)) {
     return sameRawFormattedValue('{Circular Object}');
   }
 
   const keys = Object.keys(object);
+
   if (keys.length === 0) {
     return sameRawFormattedValue('{}');
   }
 
   objects.add(object);
-
   const result = internalFormatIterator(keys.map(function (key) {
-    return { key, value: object[key] };
-  }), styleFn, objectStyles, { padding, depth, maxDepth, objects }, { prefix: '{', suffix: '}' });
-
+    return {
+      key,
+      value: object[key]
+    };
+  }), styleFn, objectStyles, {
+    padding,
+    depth,
+    maxDepth,
+    objects
+  }, {
+    prefix: '{',
+    suffix: '}'
+  });
   objects.delete(object);
-
   return result;
 }
 
-function internalFormatMap(name, map, styleFn, { padding, depth, maxDepth, objects }) {
+function internalFormatMap(name, map, styleFn, {
+  padding,
+  depth,
+  maxDepth,
+  objects
+}) {
   if (objects.has(map)) {
-    return sameRawFormattedValue(`{Circular ${name}`);
+    return sameRawFormattedValue(`{Circular ${name}}`);
   }
 
   const keys = Array.from(map.keys());
+
   if (keys.length === 0) {
     return sameRawFormattedValue(`${name} {}`);
   }
 
   objects.add(map);
-
   const result = internalFormatIterator(keys.map(function (key) {
-    return { key, value: map.get(key) };
-  }), styleFn, undefined, { padding, depth, maxDepth, objects }, { prefix: `${name} {`, suffix: '}', formatKey: internalFormatMapKey });
-
+    return {
+      key,
+      value: map.get(key)
+    };
+  }), styleFn, undefined, {
+    padding,
+    depth,
+    maxDepth,
+    objects
+  }, {
+    prefix: `${name} {`,
+    suffix: '}',
+    formatKey: internalFormatMapKey
+  });
   objects.delete(map);
-
   return result;
 }
 
-function internalFormatArray(array, styleFn, { padding, depth, maxDepth, objects }) {
+function internalFormatArray(array, styleFn, {
+  padding,
+  depth,
+  maxDepth,
+  objects
+}) {
   if (objects.has(array)) {
     return sameRawFormattedValue('{Circular Array}');
   }
@@ -286,39 +435,67 @@ function internalFormatArray(array, styleFn, { padding, depth, maxDepth, objects
   }
 
   objects.add(array);
-
   const result = internalFormatIterator(array.map(function (value) {
-    return { key: undefined, value };
-  }), styleFn, undefined, { padding, depth, maxDepth, objects }, { prefix: '[', suffix: ']', prefixSuffixSpace: '' });
-
+    return {
+      key: undefined,
+      value
+    };
+  }), styleFn, undefined, {
+    padding,
+    depth,
+    maxDepth,
+    objects
+  }, {
+    prefix: '[',
+    suffix: ']',
+    prefixSuffixSpace: ''
+  });
   objects.delete(array);
-
   return result;
 }
 
-function internalFormatSet(name, set, styleFn, { padding, depth, maxDepth, objects }) {
+function internalFormatSet(name, set, styleFn, {
+  padding,
+  depth,
+  maxDepth,
+  objects
+}) {
   if (objects.has(set)) {
-    return sameRawFormattedValue(`{Circular ${name}`);
+    return sameRawFormattedValue(`{Circular ${name}}`);
   }
 
   const values = Array.from(set.values());
+
   if (values.length === 0) {
     return sameRawFormattedValue(`${name} []`);
   }
 
   objects.add(set);
-
   const result = internalFormatIterator(values.map(function (value) {
-    return { key: undefined, value };
-  }), styleFn, undefined, { padding, depth, maxDepth, objects }, { prefix: `${name} [`, suffix: ']' });
-
+    return {
+      key: undefined,
+      value
+    };
+  }), styleFn, undefined, {
+    padding,
+    depth,
+    maxDepth,
+    objects
+  }, {
+    prefix: `${name} [`,
+    suffix: ']'
+  });
   objects.delete(set);
-
   return result;
 }
 
-function formatObject(object, styleFn, objectStyles, { padding = '  ', maxDepth = 10 } = {}) {
-  const { formattedValue: result } = internalFormatObject(object, styleFn, objectStyles, {
+function formatObject(object, styleFn = noStyleFn, objectStyles, {
+  padding = '  ',
+  maxDepth = 10
+} = {}) {
+  const {
+    formattedValue: result
+  } = internalFormatObject(object, styleFn, objectStyles, {
     padding,
     maxDepth,
     depth: 0,
@@ -361,25 +538,29 @@ function formatRecordToString(record, style) {
     if (styles) {
       message = style(styles, message);
     }
+
     parts.push(message);
   }
 
-  ['metadata', 'extra', 'context'].forEach(function (key) {
-    if (!record[key]) {
+  const formatRecordObject = function formatRecordObject(key, object, styles) {
+    if (!object) {
       return;
     }
 
-    const stringObject = formatObject(record[key], style, record[`${key}Styles`]);
+    const stringObject = formatObject(object, style, styles);
 
     if (!stringObject) {
       return;
     }
 
     parts.push(stringObject);
-  });
+  };
 
+  formatRecordObject('metadata', record.metadata, record.metadataStyles);
+  formatRecordObject('extra', record.extra, undefined);
+  formatRecordObject('context', record.context, undefined);
   return parts.join(' ');
 }
 
-export { levelToStyles, levelToSymbol, styleToHtmlStyle, hexColors as styleToHexColor, formatObject, formatRecordToString };
+export { levelToStyles, levelToSymbol, styleToHtmlStyle, styleToHexColor, formatObject, formatRecordToString };
 //# sourceMappingURL=index-browsermodern-dev.es.js.map

@@ -15,15 +15,15 @@ function JSONHandler() {
 }
 
 Logger.configure([{
-  handlers: [new JSONHandler(Logger.levels.ALL)]
+  handlers: [new JSONHandler(Logger.Level.ALL)]
 }]);
-
 const logger = new Logger__default('app');
-
 logger.log('test');
-
 const timeStarted = logger.time();
 setTimeout(() => logger.timeEnd(timeStarted, 'time measured'), 2000);
-
-logger.success('Listening', { port: 3000 }, { port: ['yellow'] });
+logger.success('Listening', {
+  port: 3000
+}, {
+  port: ['yellow']
+});
 //# sourceMappingURL=jsonConsole-node8.cjs.js.map

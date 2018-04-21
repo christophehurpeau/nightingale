@@ -15,21 +15,22 @@
       "envs": [
         {
           "target": "node",
-          "version": "8",
+          "version": "10",
           "formats": [
             "cjs"
+          ]
+        },
+        {
+          "target": "node",
+          "version": "8",
+          "formats": [
+            "cjs",
+            "es"
           ]
         },
         {
           "target": "node",
           "version": "6",
-          "formats": [
-            "cjs"
-          ]
-        },
-        {
-          "target": "node",
-          "version": "4",
           "formats": [
             "cjs"
           ]

@@ -1,16 +1,9 @@
-import levels from 'nightingale-levels';
+import Level from 'nightingale-levels';
 
-var index = (function () {
-  if (console.error) {
-    return function write(params, { level }) {
-      console[level >= levels.ERROR ? 'error' : 'log'](...params);
-    };
-  } else {
-    return function write(params) {
-      console.log(...params);
-    };
-  }
-})();
+/* eslint-disable no-console */
+var index = (function (param, record) {
+  console[record.level >= Level.ERROR ? 'error' : 'log'](...param);
+});
 
 export default index;
 //# sourceMappingURL=index-browsermodern.es.js.map

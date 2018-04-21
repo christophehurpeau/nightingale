@@ -1,24 +1,22 @@
 import formatterANSI from 'nightingale-ansi-formatter';
 import consoleOutput from 'nightingale-console-output';
 import createFindDebugLevel from 'nightingale-debug';
-import t from 'flow-runtime';
+import { Level } from 'nightingale-types';
 
-const handle = record => {
-  let _recordType = t.object();
+const handle = record => consoleOutput(formatterANSI(record), record);
 
-  t.param('record', _recordType).assert(record);
-  return consoleOutput(formatterANSI(record), record);
-};
 const findDebugLevel = createFindDebugLevel(process.env.DEBUG);
+class ConsoleHandler {
+  constructor(minLevel) {
+    this.minLevel = Level.ALL;
+    this.isHandling = void 0;
+    this.handle = void 0;
 
-function ConsoleHandler(minLevel) {
-  let _minLevelType = t.number();
+    this.isHandling = (level, key) => level >= findDebugLevel(minLevel, key);
 
-  t.param('minLevel', _minLevelType).assert(minLevel);
+    this.handle = handle;
+  }
 
-  this.minLevel = 0;
-  this.handle = handle;
-  this.isHandling = (level, key) => level >= findDebugLevel(minLevel, key);
 }
 
 export default ConsoleHandler;
