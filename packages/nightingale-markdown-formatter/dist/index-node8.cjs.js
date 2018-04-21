@@ -13,8 +13,10 @@ function style(styles, string) {
     switch (styleName) {
       case 'bold':
         return `*${string}*`;
+
       case 'italic':
         return `_${string}_`;
+
       case 'strikethrough':
         return `~${string}~`;
     }
@@ -22,17 +24,9 @@ function style(styles, string) {
     return string;
   }, string);
 }
-
-/**
- * @param {Object} record
- * @returns {string}
- */
 function format(record) {
   return nightingaleFormatter.formatRecordToString(record, style);
 }
-
-// export style function
-format.style = style;
 
 exports.style = style;
 exports.default = format;

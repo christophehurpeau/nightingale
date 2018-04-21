@@ -43,8 +43,7 @@
       "testing": false,
       "entries": [
         "index"
-      ],
-      "doclets": false
+      ]
     }
   }
 }

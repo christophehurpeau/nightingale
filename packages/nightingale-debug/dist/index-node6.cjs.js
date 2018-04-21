@@ -1,15 +1,19 @@
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
-var levels = _interopDefault(require('nightingale-levels'));
+var Level = _interopDefault(require('nightingale-levels'));
 
+/* eslint-disable complexity */
 const specialRegexpChars = /[\\^$+?.()|[\]{}]/;
+
+const createTestFunctionFromRegexp = regexp => string => regexp.test(string);
 
 const createTestFunctionFromRegexpString = value => {
   if (!value.endsWith('/')) throw new Error('Invalid RegExp DEBUG value');
-  const regexp = new RegExp(value.slice(1, -1));
-  return string => regexp.test(string);
+  return createTestFunctionFromRegexp(new RegExp(value.slice(1, -1)));
 };
 
 const createTestFunctionFromValue = value => {
@@ -22,20 +26,23 @@ const createTestFunctionFromValue = value => {
 };
 
 function createFindDebugLevel(debugValue) {
-  debugValue = debugValue || '';
-
   let wilcard = false;
   const debugValues = [];
   const skips = [];
 
   if (!Array.isArray(debugValue)) {
-    debugValue = debugValue.trim();
+    if (debugValue instanceof RegExp) {
+      debugValues.push(createTestFunctionFromRegexp(debugValue));
+      debugValue = undefined;
+    } else if (debugValue) {
+      debugValue = debugValue.trim();
 
-    if (debugValue.startsWith('/')) {
-      debugValues.push(createTestFunctionFromRegexpString(debugValue));
-      debugValue = null;
-    } else {
-      debugValue = debugValue.split(/[\s,]+/);
+      if (debugValue.startsWith('/')) {
+        debugValues.push(createTestFunctionFromRegexpString(debugValue));
+        debugValue = undefined;
+      } else {
+        debugValue = debugValue.split(/[\s,]+/);
+      }
     }
   }
 
@@ -62,9 +69,9 @@ function createFindDebugLevel(debugValue) {
 
   if (wilcard) {
     if (skips.length === 0) {
-      return () => levels.ALL;
+      return () => Level.ALL;
     } else {
-      return (minLevel, key) => skips.some(skip => skip(key)) ? minLevel : levels.ALL;
+      return (minLevel, key) => skips.some(skip => skip(key)) ? minLevel : Level.ALL;
     }
   }
 
@@ -73,17 +80,17 @@ function createFindDebugLevel(debugValue) {
   }
 
   return (minLevel, key) => {
-    if (minLevel === levels.ALL || !key) {
+    if (minLevel === Level.ALL || !key) {
       return minLevel;
     }
 
     if (debugValues.some(debugValue => debugValue(key))) {
-      return skips.some(skip => skip(key)) ? minLevel : levels.ALL;
+      return skips.some(skip => skip(key)) ? minLevel : Level.ALL;
     }
 
     return minLevel;
   };
 }
 
-module.exports = createFindDebugLevel;
+exports.default = createFindDebugLevel;
 //# sourceMappingURL=index-node6.cjs.js.map

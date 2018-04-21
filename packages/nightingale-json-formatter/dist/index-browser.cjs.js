@@ -1,9 +1,7 @@
 'use strict';
 
-/**
- * @param {Object} record
- * @returns {string}
- */
+Object.defineProperty(exports, '__esModule', { value: true });
+
 function format(record) {
   return JSON.stringify({
     key: record.key,
@@ -15,5 +13,5 @@ function format(record) {
   });
 }
 
-module.exports = format;
+exports.default = format;
 //# sourceMappingURL=index-browser.cjs.js.map

@@ -1,11 +1,20 @@
 import Logger from 'nightingale-logger';
 import nightingaleLevels from 'nightingale-levels';
-export { default as levels } from 'nightingale-levels';
+export { default as Level, default as levels } from 'nightingale-levels';
+
+/* eslint-disable no-restricted-globals */
+if (process.env.NODE_ENV !== 'production' && global.__NIGHTINGALE_GLOBAL_HANDLERS) {
+  // eslint-disable-next-line no-console
+  throw new Error('nightingale: update all to ^5.0.0');
+}
 
 if (!global.__NIGHTINGALE_CONFIG) {
   global.__NIGHTINGALE_CONFIG = [];
   global.__NIGHTINGALE_LOGGER_MAP_CACHE = new Map();
-  global.__NIGHTINGALE_CONFIG_DEFAULT = { handlers: [], processors: [] };
+  global.__NIGHTINGALE_CONFIG_DEFAULT = {
+    handlers: [],
+    processors: []
+  };
 }
 
 function clearCache() {
@@ -17,6 +26,7 @@ function handleConfig(config) {
     if (config.pattern) {
       throw new Error('Cannot have key and pattern for the same config');
     }
+
     if (config.key) {
       throw new Error('Cannot have key and keys for the same config');
     }
@@ -24,18 +34,16 @@ function handleConfig(config) {
     if (config.pattern) {
       throw new Error('Cannot have key and pattern for the same config');
     }
+
     config.keys = [config.key];
     delete config.key;
-  }
-
-  if (config.patterns) {
-    throw new Error('config.patterns is no longer supported, use pattern');
   }
 
   if (config.handler) {
     if (config.handlers) {
       throw new Error('Cannot have handler and handlers for the same config');
     }
+
     config.handlers = [config.handler];
     delete config.handler;
   }
@@ -44,6 +52,7 @@ function handleConfig(config) {
     if (config.processors) {
       throw new Error('Cannot have processors and processors for the same config');
     }
+
     config.processors = [config.processor];
     delete config.processor;
   }
@@ -60,10 +69,11 @@ function configure(config) {
   clearCache();
   global.__NIGHTINGALE_CONFIG = config.map(handleConfig);
 }
-
 function addConfig(config, unshift = false) {
   config = handleConfig(config);
+
   global.__NIGHTINGALE_CONFIG[unshift ? 'unshift' : 'push'](config);
+
   clearCache();
 }
 
@@ -73,7 +83,7 @@ const configIsForKey = key => config => {
   return true;
 };
 
-global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = function getConfigForLogger(key) {
+global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = key => {
   const globalCache = global.__NIGHTINGALE_LOGGER_MAP_CACHE;
 
   if (globalCache.has(key)) {
@@ -95,24 +105,32 @@ global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = function getConfigForLogger(key) {
   return loggerConfig;
 };
 
-global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = function getConfigForLoggerRecord(key, level) {
-  const { handlers, processors } = global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key);
+if (global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
+  global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = (key, level) => {
+    const {
+      handlers,
+      processors
+    } = global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key);
 
-  return {
-    handlers: handlers.filter(handler => level >= handler.minLevel && (!handler.isHandling || handler.isHandling(level, key))),
-    processors
+    return {
+      handlers: handlers.filter(handler => level >= handler.minLevel && (!handler.isHandling || handler.isHandling(level, key))),
+      processors
+    };
   };
-};
+}
 
 /**
  * listen to uncaughtException and unhandledRejection
  * @param {Logger} [logger]
  */
 
-function listenUnhandledErrors(logger) {
-  if (!logger) logger = new Logger('nightingale.listenUnhandledErrors', 'listenUnhandledErrors');
-  process.on('uncaughtException', err => logger.error('uncaughtException', { err }));
-  process.on('unhandledRejection', err => logger.error('unhandledRejection', { err }));
+function listenUnhandledErrors(logger = new Logger('nightingale.listenUnhandledErrors', 'listenUnhandledErrors')) {
+  process.on('uncaughtException', err => logger.error('uncaughtException', {
+    err
+  }));
+  process.on('unhandledRejection', err => logger.error('unhandledRejection', {
+    err
+  }));
 }
 
 export default Logger;

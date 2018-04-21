@@ -11,10 +11,7 @@
   <a href="https://david-dm.org/christophehurpeau/nightingale?path=packages/nightingale-levels"><img src="https://david-dm.org/christophehurpeau/nightingale?path=packages/nightingale-levels.svg?style=flat-square"></a>
 </p>
 
-
-Follows the logging levels described by [RFC 5424](https://tools.ietf.org/html/rfc5424)
-
-- *TRACE* (10): Trace information
+*TRACE* (10): Trace information
 - *DEBUG* (100): Detailed debug information
 - *INFO* (200): Normal but significant events
 - *NOTICE* (250): Normal but significant events

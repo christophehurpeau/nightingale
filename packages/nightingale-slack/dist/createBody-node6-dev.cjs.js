@@ -1,28 +1,27 @@
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
 var markdownFormatter = _interopDefault(require('nightingale-markdown-formatter'));
 var rawFormatter = _interopDefault(require('nightingale-raw-formatter'));
-var levels = _interopDefault(require('nightingale-levels'));
+var Level = _interopDefault(require('nightingale-levels'));
 
 /* eslint camelcase: "off" */
-
 const levelToSlackColor = {
-  [levels.TRACE]: '#808080',
-  [levels.DEBUG]: '#808080',
-  [levels.INFO]: '#808080',
-  [levels.WARN]: 'warning',
-  [levels.ERROR]: 'danger',
-  [levels.CRITICAL]: 'danger',
-  [levels.FATAL]: 'danger',
-  [levels.EMERGENCY]: 'danger'
+  [Level.TRACE]: '#808080',
+  [Level.DEBUG]: '#808080',
+  [Level.INFO]: '#808080',
+  [Level.WARN]: 'warning',
+  [Level.ERROR]: 'danger',
+  [Level.CRITICAL]: 'danger',
+  [Level.FATAL]: 'danger',
+  [Level.EMERGENCY]: 'danger'
 };
-
 var createBody = ((record, slackConfig) => {
   const markdown = markdownFormatter(record);
   const raw = rawFormatter(record);
-
   return {
     channel: slackConfig.channel,
     username: slackConfig.username,
@@ -38,5 +37,5 @@ var createBody = ((record, slackConfig) => {
   };
 });
 
-module.exports = createBody;
+exports.default = createBody;
 //# sourceMappingURL=createBody-node6-dev.cjs.js.map

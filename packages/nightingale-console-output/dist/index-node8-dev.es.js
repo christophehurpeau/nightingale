@@ -1,8 +1,13 @@
-import levels from 'nightingale-levels';
+import Level from 'nightingale-levels';
 
-var index = ((string, { level }) => {
-  const outKey = level >= levels.ERROR ? 'stderr' : 'stdout';
-  process[outKey].write(`${string}\n`);
+/* eslint-disable no-console */
+var index = ((param, record) => {
+  if (process.env.POB_TARGET !== 'browser') {
+    const outKey = record.level >= Level.ERROR ? 'stderr' : 'stdout';
+    process[outKey].write(`${param}\n`);
+  } else {
+    console[record.level >= Level.ERROR ? 'error' : 'log'](...param);
+  }
 });
 
 export default index;

@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * @enum {number} List of levels
+ * @enum {number} List of Levels
  *
  * <ul>
  * <li>ALL: Log everything. Not a level.</li>

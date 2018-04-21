@@ -30,8 +30,7 @@
       "examples": true,
       "entries": [
         "index"
-      ],
-      "doclets": false
+      ]
     }
   }
 }

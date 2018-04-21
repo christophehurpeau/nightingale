@@ -43,9 +43,7 @@
         "circleci": true,
         "codecov": true
       },
-      "documentation": {
-        "doclets": false
-      },
+      "documentation": true,
       "entries": [
         "index"
       ]

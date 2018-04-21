@@ -1,25 +1,22 @@
 import formatterRaw from 'nightingale-raw-formatter';
-import t from 'flow-runtime';
 
 /* eslint-disable prefer-template */
-function index (minLevel) {
-  let _minLevelType = t.number();
+class StringHandler {
+  constructor(minLevel) {
+    this.minLevel = void 0;
+    this._buffer = '';
+    this.minLevel = minLevel;
+  }
 
-  t.param('minLevel', _minLevelType).assert(minLevel);
+  get string() {
+    return this._buffer;
+  }
 
-  this.minLevel = minLevel;
-  this._buffer = '';
-  this.handle = record => {
-    let _recordType = t.object();
-
-    t.param('record', _recordType).assert(record);
-
+  handle(record) {
     this._buffer += formatterRaw(record) + '\n';
-  };
-  Object.defineProperty(this, 'string', {
-    get: () => this._buffer
-  });
+  }
+
 }
 
-export default index;
+export default StringHandler;
 //# sourceMappingURL=index-node8-dev.es.js.map

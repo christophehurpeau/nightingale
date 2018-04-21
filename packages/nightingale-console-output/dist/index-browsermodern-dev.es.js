@@ -1,16 +1,14 @@
-import levels from 'nightingale-levels';
+import Level from 'nightingale-levels';
 
-var index = (function () {
-  if (console.error) {
-    return function write(params, { level }) {
-      console[level >= levels.ERROR ? 'error' : 'log'](...params);
-    };
+/* eslint-disable no-console */
+var index = (function (param, record) {
+  if (process.env.POB_TARGET !== 'browser') {
+    const outKey = record.level >= Level.ERROR ? 'stderr' : 'stdout';
+    process[outKey].write(`${param}\n`);
   } else {
-    return function write(params) {
-      console.log(...params);
-    };
+    console[record.level >= Level.ERROR ? 'error' : 'log'](...param);
   }
-})();
+});
 
 export default index;
 //# sourceMappingURL=index-browsermodern-dev.es.js.map

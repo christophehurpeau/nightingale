@@ -1,29 +1,29 @@
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
 var formatterANSI = _interopDefault(require('nightingale-ansi-formatter'));
 var consoleOutput = _interopDefault(require('nightingale-console-output'));
 var createFindDebugLevel = _interopDefault(require('nightingale-debug'));
-var t = _interopDefault(require('flow-runtime'));
+var nightingaleTypes = require('nightingale-types');
 
-const handle = record => {
-  let _recordType = t.object();
+const handle = record => consoleOutput(formatterANSI(record), record);
 
-  t.param('record', _recordType).assert(record);
-  return consoleOutput(formatterANSI(record), record);
-};
 const findDebugLevel = createFindDebugLevel(process.env.DEBUG);
+class ConsoleHandler {
+  constructor(minLevel) {
+    this.minLevel = nightingaleTypes.Level.ALL;
+    this.isHandling = void 0;
+    this.handle = void 0;
 
-function ConsoleHandler(minLevel) {
-  let _minLevelType = t.number();
+    this.isHandling = (level, key) => level >= findDebugLevel(minLevel, key);
 
-  t.param('minLevel', _minLevelType).assert(minLevel);
+    this.handle = handle;
+  }
 
-  this.minLevel = 0;
-  this.handle = handle;
-  this.isHandling = (level, key) => level >= findDebugLevel(minLevel, key);
 }
 
-module.exports = ConsoleHandler;
+exports.default = ConsoleHandler;
 //# sourceMappingURL=index-node8-dev.cjs.js.map

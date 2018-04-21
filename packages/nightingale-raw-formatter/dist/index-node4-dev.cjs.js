@@ -4,20 +4,17 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 var nightingaleFormatter = require('nightingale-formatter');
 
-function style(styles, string) {
-  return string;
+function style(styles, value) {
+  return value;
 }
-
 /**
  * @param {Object} record
  * @returns {string}
  */
+
 function format(record) {
   return nightingaleFormatter.formatRecordToString(record, style);
 }
-
-// export style function
-format.style = style;
 
 exports.style = style;
 exports.default = format;

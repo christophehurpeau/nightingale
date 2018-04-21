@@ -2,31 +2,22 @@
   "name": "nightingale-levels",
   "version": "2.0.0",
   "description": "Nightingale levels",
-  "keywords": [
-    "logger"
-  ],
+  "keywords": ["logger"],
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
   "license": "ISC",
   "repository": "git@github.com:christophehurpeau/nightingale.git",
   "homepage": "https://github.com/christophehurpeau/nightingale",
-  "engines": {
-    "node": ">=4.0.0"
-  },
+  "engines": { "node": ">=4.0.0" },
   "main": "./lib/index.js",
-  "scripts": {
-    "lint": "eslint lib/",
-    "test": "No tests"
-  },
-  "prettier": {
-    "trailingComma": "es5",
-    "singleQuote": true,
-    "printWidth": 100
-  },
+  "scripts": { "lint": "eslint lib/", "test": "echo \"No tests\"" },
+  "prettier": { "trailingComma": "es5", "singleQuote": true, "printWidth": 100 },
   "devDependencies": {
-    "eslint": "^4.18.2",
-    "eslint-config-pob": "^18.0.0",
+    "eslint": "^4.19.1",
+    "eslint-config-pob": "^19.0.2",
+    "eslint-plugin-import": "^2.11.0",
     "eslint-plugin-node": "^6.0.0",
     "eslint-plugin-prettier": "^2.6.0",
-    "prettier": "^1.11.1"
-  }
+    "prettier": "^1.12.1"
+  },
+  "types": "./lib/index.d.ts"
 }

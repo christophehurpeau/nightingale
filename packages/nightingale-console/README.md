@@ -20,11 +20,11 @@ npm install --save nightingale nightingale-console
 ## Usage
 
 ```js
-import { configure, levels } from 'nightingale';
+import { configure, Levels } from 'nightingale';
 import ConsoleHandler from 'nightingale-console';
 
 configure([
-  { handlers: [new ConsoleHandler(levels.INFO)] }
+  { handlers: [new ConsoleHandler(Levels.INFO)] }
 ]);
 ```
 

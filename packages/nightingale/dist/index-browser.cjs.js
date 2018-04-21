@@ -7,20 +7,19 @@ function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'defau
 var Logger = _interopDefault(require('nightingale-logger'));
 var nightingaleLevels = _interopDefault(require('nightingale-levels'));
 
-var toConsumableArray = function (arr) {
-  if (Array.isArray(arr)) {
-    for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) arr2[i] = arr[i];
-
-    return arr2;
-  } else {
-    return Array.from(arr);
-  }
-};
+/* eslint-disable no-restricted-globals */
+if (process.env.NODE_ENV !== 'production' && global.__NIGHTINGALE_GLOBAL_HANDLERS) {
+  // eslint-disable-next-line no-console
+  throw new Error('nightingale: update all to ^5.0.0');
+}
 
 if (!global.__NIGHTINGALE_CONFIG) {
   global.__NIGHTINGALE_CONFIG = [];
   global.__NIGHTINGALE_LOGGER_MAP_CACHE = new Map();
-  global.__NIGHTINGALE_CONFIG_DEFAULT = { handlers: [], processors: [] };
+  global.__NIGHTINGALE_CONFIG_DEFAULT = {
+    handlers: [],
+    processors: []
+  };
 }
 
 function clearCache() {
@@ -32,6 +31,7 @@ function handleConfig(config) {
     if (config.pattern) {
       throw new Error('Cannot have key and pattern for the same config');
     }
+
     if (config.key) {
       throw new Error('Cannot have key and keys for the same config');
     }
@@ -39,18 +39,16 @@ function handleConfig(config) {
     if (config.pattern) {
       throw new Error('Cannot have key and pattern for the same config');
     }
+
     config.keys = [config.key];
     delete config.key;
-  }
-
-  if (config.patterns) {
-    throw new Error('config.patterns is no longer supported, use pattern');
   }
 
   if (config.handler) {
     if (config.handlers) {
       throw new Error('Cannot have handler and handlers for the same config');
     }
+
     config.handlers = [config.handler];
     delete config.handler;
   }
@@ -59,6 +57,7 @@ function handleConfig(config) {
     if (config.processors) {
       throw new Error('Cannot have processors and processors for the same config');
     }
+
     config.processors = [config.processor];
     delete config.processor;
   }
@@ -75,12 +74,15 @@ function configure(config) {
   clearCache();
   global.__NIGHTINGALE_CONFIG = config.map(handleConfig);
 }
-
-function addConfig(config) {
-  var unshift = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+function addConfig(config, unshift) {
+  if (unshift === void 0) {
+    unshift = false;
+  }
 
   config = handleConfig(config);
+
   global.__NIGHTINGALE_CONFIG[unshift ? 'unshift' : 'push'](config);
+
   clearCache();
 }
 
@@ -92,7 +94,7 @@ var configIsForKey = function configIsForKey(key) {
   };
 };
 
-global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = function getConfigForLogger(key) {
+global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = function (key) {
   var globalCache = global.__NIGHTINGALE_LOGGER_MAP_CACHE;
 
   if (globalCache.has(key)) {
@@ -107,8 +109,8 @@ global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = function getConfigForLogger(key) {
   global.__NIGHTINGALE_CONFIG.filter(configIsForKey(key)).some(function (config) {
     var _loggerConfig$handler, _loggerConfig$process;
 
-    if (config.handlers) (_loggerConfig$handler = loggerConfig.handlers).push.apply(_loggerConfig$handler, toConsumableArray(config.handlers));
-    if (config.processors) (_loggerConfig$process = loggerConfig.processors).push.apply(_loggerConfig$process, toConsumableArray(config.processors));
+    if (config.handlers) (_loggerConfig$handler = loggerConfig.handlers).push.apply(_loggerConfig$handler, config.handlers);
+    if (config.processors) (_loggerConfig$process = loggerConfig.processors).push.apply(_loggerConfig$process, config.processors);
     return config.stop;
   });
 
@@ -116,18 +118,20 @@ global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = function getConfigForLogger(key) {
   return loggerConfig;
 };
 
-global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = function getConfigForLoggerRecord(key, level) {
-  var _global$__NIGHTINGALE = global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key),
-      handlers = _global$__NIGHTINGALE.handlers,
-      processors = _global$__NIGHTINGALE.processors;
+if (global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
+  global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = function (key, level) {
+    var _global$__NIGHTINGALE = global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key),
+        handlers = _global$__NIGHTINGALE.handlers,
+        processors = _global$__NIGHTINGALE.processors;
 
-  return {
-    handlers: handlers.filter(function (handler) {
-      return level >= handler.minLevel && (!handler.isHandling || handler.isHandling(level, key));
-    }),
-    processors: processors
+    return {
+      handlers: handlers.filter(function (handler) {
+        return level >= handler.minLevel && (!handler.isHandling || handler.isHandling(level, key));
+      }),
+      processors: processors
+    };
   };
-};
+}
 
 /**
  * listen to uncaughtException and unhandledRejection
@@ -135,15 +139,23 @@ global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = function getConfigForLoggerR
  */
 
 function listenUnhandledErrors(logger) {
-  if (!logger) logger = new Logger('nightingale.listenUnhandledErrors', 'listenUnhandledErrors');
+  if (logger === void 0) {
+    logger = new Logger('nightingale.listenUnhandledErrors', 'listenUnhandledErrors');
+  }
+
   process.on('uncaughtException', function (err) {
-    return logger.error('uncaughtException', { err: err });
+    return logger.error('uncaughtException', {
+      err: err
+    });
   });
   process.on('unhandledRejection', function (err) {
-    return logger.error('unhandledRejection', { err: err });
+    return logger.error('unhandledRejection', {
+      err: err
+    });
   });
 }
 
+exports.Level = nightingaleLevels;
 exports.levels = nightingaleLevels;
 exports.default = Logger;
 exports.listenUnhandledErrors = listenUnhandledErrors;

@@ -38,25 +38,25 @@ npm install --save nightingale nightingale-console
 ```
 
 ```js
-import Logger, { configure, levels } from 'nightingale';
+import Logger, { configure, Levels } from 'nightingale';
 import ConsoleHandler from 'nightingale-console';
 
 configure([
     {
-        handlers: [new ConsoleHandler(levels.WARN)],
+        handlers: [new ConsoleHandler(Levels.WARN)],
     },
     {
         keys: ['mylib', 'myotherlib'],
-        handlers: [new ConsoleHandler(levels.ALL)],
+        handlers: [new ConsoleHandler(Levels.ALL)],
     },
     {
         pattern: /^app\.server$/,
-        handlers: [new ConsoleHandler(levels.ALL)],
+        handlers: [new ConsoleHandler(Levels.ALL)],
         stop: true, // means the following config won't be used, if the pattern matches.
     },
     {
         pattern: /^app(?!\.server)/,
-        handlers: [new ConsoleHandler(levels.INFO)],
+        handlers: [new ConsoleHandler(Levels.INFO)],
     },
 ]);
 
@@ -69,7 +69,7 @@ const logger = new Logger('app.server');
 logger.debug('This is a log'); // will be displayed
 ```
 
-You can configure several handlers with different `levels`, like console and slack.
+You can configure several handlers with different `Levels`, like console and slack.
 
 ### In a library
 
@@ -96,13 +96,13 @@ npm install --save nightingale nightingale-browser-console
 ![browser log example](https://static.hurpeau.com/images/npm/nightingale/log_in_firefox.png)
 
 ```js
-import { configure, levels } from 'nightingale';
+import { configure, Levels } from 'nightingale';
 import BrowserConsoleHandler from 'nightingale-browser-console';
 
 configure([
     {
         key: 'app',
-        handlers: [new BrowserConsoleHandler(levels.INFO)],
+        handlers: [new BrowserConsoleHandler(Levels.INFO)],
     }
 ]);
 ```
@@ -130,7 +130,7 @@ Values are minimatch patterns and separated by `,`.
 
 ```js
 import Koa from 'koa';
-import Logger, { configure, levels } from 'nightingale';
+import Logger, { configure, Levels } from 'nightingale';
 import ConsoleHandler from 'nightinale-console';
 import webProcessor from 'nightinale-web-processor';
 
@@ -140,7 +140,7 @@ const logger = new Logger('app');
 configure([
     {
         key: 'app',
-        handlers: [new ConsoleHandler(levels.ALL)],
+        handlers: [new ConsoleHandler(Levels.ALL)],
         processors: [webProcessor],
     }
 ])
@@ -219,11 +219,11 @@ configure([
 ## Global handlers
 
 ```js
-import { addGlobalHandler, levels } from 'nightingale';
+import { addGlobalHandler, Levels } from 'nightingale';
 import ErrorHandler from 'nightingale-sentry';
 
 configure([
-  { handlers: [new ErrorHandler(levels.ERROR)] }
+  { handlers: [new ErrorHandler(Levels.ERROR)] }
 ]);
 ```
 

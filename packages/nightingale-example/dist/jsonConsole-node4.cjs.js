@@ -17,17 +17,17 @@ function JSONHandler() {
 }
 
 Logger.configure([{
-  handlers: [new JSONHandler(Logger.levels.ALL)]
+  handlers: [new JSONHandler(Logger.Level.ALL)]
 }]);
-
 var logger = new Logger__default('app');
-
 logger.log('test');
-
 var timeStarted = logger.time();
 setTimeout(function () {
   return logger.timeEnd(timeStarted, 'time measured');
 }, 2000);
-
-logger.success('Listening', { port: 3000 }, { port: ['yellow'] });
+logger.success('Listening', {
+  port: 3000
+}, {
+  port: ['yellow']
+});
 //# sourceMappingURL=jsonConsole-node4.cjs.js.map

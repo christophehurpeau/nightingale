@@ -1,29 +1,28 @@
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
 var formatterRaw = _interopDefault(require('nightingale-raw-formatter'));
-var t = _interopDefault(require('flow-runtime'));
 
 /* eslint-disable prefer-template */
-function index (minLevel) {
-  let _minLevelType = t.number();
+class StringHandler {
+  constructor(minLevel) {
+    this.minLevel = void 0;
+    this._buffer = '';
+    this.minLevel = minLevel;
+  }
 
-  t.param('minLevel', _minLevelType).assert(minLevel);
+  get string() {
+    return this._buffer;
+  }
 
-  this.minLevel = minLevel;
-  this._buffer = '';
-  this.handle = record => {
-    let _recordType = t.object();
-
-    t.param('record', _recordType).assert(record);
-
+  handle(record) {
     this._buffer += formatterRaw(record) + '\n';
-  };
-  Object.defineProperty(this, 'string', {
-    get: () => this._buffer
-  });
+  }
+
 }
 
-module.exports = index;
+exports.default = StringHandler;
 //# sourceMappingURL=index-node6-dev.cjs.js.map

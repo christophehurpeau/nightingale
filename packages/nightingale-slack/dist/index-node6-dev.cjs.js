@@ -1,30 +1,28 @@
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
 var markdownFormatter = _interopDefault(require('nightingale-markdown-formatter'));
 var rawFormatter = _interopDefault(require('nightingale-raw-formatter'));
-var levels = _interopDefault(require('nightingale-levels'));
+var Level = _interopDefault(require('nightingale-levels'));
 var request = require('request');
-var t = _interopDefault(require('flow-runtime'));
 
 /* eslint camelcase: "off" */
-
 const levelToSlackColor = {
-  [levels.TRACE]: '#808080',
-  [levels.DEBUG]: '#808080',
-  [levels.INFO]: '#808080',
-  [levels.WARN]: 'warning',
-  [levels.ERROR]: 'danger',
-  [levels.CRITICAL]: 'danger',
-  [levels.FATAL]: 'danger',
-  [levels.EMERGENCY]: 'danger'
+  [Level.TRACE]: '#808080',
+  [Level.DEBUG]: '#808080',
+  [Level.INFO]: '#808080',
+  [Level.WARN]: 'warning',
+  [Level.ERROR]: 'danger',
+  [Level.CRITICAL]: 'danger',
+  [Level.FATAL]: 'danger',
+  [Level.EMERGENCY]: 'danger'
 };
-
 var createBody = ((record, slackConfig) => {
   const markdown = markdownFormatter(record);
   const raw = rawFormatter(record);
-
   return {
     channel: slackConfig.channel,
     username: slackConfig.username,
@@ -42,22 +40,22 @@ var createBody = ((record, slackConfig) => {
 
 const createHandler = slackConfig => record => {
   const body = createBody(record, slackConfig);
-
-  request.post({ url: slackConfig.webhookUrl, body, json: true }).on('error', err2 => console.error(err2.stack));
+  request.post({
+    url: slackConfig.webhookUrl,
+    body,
+    json: true
+  }).on('error', err2 => console.error(err2.stack));
 };
 
-const SlackConfigType = t.type('SlackConfigType', t.exactObject(t.property('webhookUrl', t.string()), t.property('channel', t.nullable(t.string()), true), t.property('username', t.nullable(t.string()), true), t.property('iconUrl', t.nullable(t.string()), true), t.property('iconEmoji', t.nullable(t.string()), true)));
+class SlackHandler {
+  constructor(slackConfig, minLevel) {
+    this.minLevel = void 0;
+    this.handle = void 0;
+    this.minLevel = minLevel;
+    this.handle = createHandler(slackConfig);
+  }
 
-
-function SlackHandler(slackConfig, minLevel) {
-  let _minLevelType = t.number();
-
-  t.param('slackConfig', SlackConfigType).assert(slackConfig);
-  t.param('minLevel', _minLevelType).assert(minLevel);
-
-  this.minLevel = minLevel;
-  this.handle = createHandler(slackConfig);
 }
 
-module.exports = SlackHandler;
+exports.default = SlackHandler;
 //# sourceMappingURL=index-node6-dev.cjs.js.map

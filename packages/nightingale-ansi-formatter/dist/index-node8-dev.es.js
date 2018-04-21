@@ -11,7 +11,6 @@ const ansiStyles = {
   cyan: ansi.cyan,
   white: ansi.white,
   gray: ansi.gray,
-
   bgBlack: ansi.bgBlack,
   bgRed: ansi.bgRed,
   bgGreen: ansi.bgGreen,
@@ -20,18 +19,18 @@ const ansiStyles = {
   bgMagenta: ansi.bgMagenta,
   bgCyan: ansi.bgCyan,
   bgWhite: ansi.bgWhite,
-
   bold: ansi.bold,
   underline: ansi.underline,
-
   // http://www.calmar.ws/vim/256-xterm-24bit-rgb-color-chart.html
-  orange: { open: ansi.color.ansi256.hex(styleToHexColor.orange), close: ansi.color.close },
+  orange: {
+    open: ansi.color.ansi256.hex(styleToHexColor.orange),
+    close: ansi.color.close
+  },
   'gray-light': {
     open: ansi.color.ansi256.hex(styleToHexColor['gray-light']),
     close: ansi.color.close
   }
 };
-
 function style(styles, string) {
   if (!styles || !styles.length || !string) {
     return string;
@@ -47,17 +46,14 @@ function style(styles, string) {
     return style.open + string + style.close;
   }, string);
 }
-
 /**
  * @param {Object} record
  * @returns {string}
  */
+
 function format(record) {
   return formatRecordToString(record, style);
 }
-
-// export style function
-format.style = style;
 
 export default format;
 export { style };

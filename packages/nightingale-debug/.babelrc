@@ -3,7 +3,7 @@
     "test": {
       "only": ["src/"],
       "presets": [
-        ["pob-babel/preset", { "flow": false }]
+        ["pob-babel/preset"]
       ]
     }
   }

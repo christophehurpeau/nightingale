@@ -1,91 +1,63 @@
-import levels from 'nightingale-levels';
-import t from 'flow-runtime';
+import { inspect } from 'util';
+import Level from 'nightingale-levels';
+export { default as Level } from 'nightingale-levels';
 
-var classCallCheck = function (instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError("Cannot call a class as a function");
-  }
-};
+function _extends() {
+  _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
 
-var createClass = function () {
-  function defineProperties(target, props) {
-    for (var i = 0; i < props.length; i++) {
-      var descriptor = props[i];
-      descriptor.enumerable = descriptor.enumerable || false;
-      descriptor.configurable = true;
-      if ("value" in descriptor) descriptor.writable = true;
-      Object.defineProperty(target, descriptor.key, descriptor);
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
     }
-  }
 
-  return function (Constructor, protoProps, staticProps) {
-    if (protoProps) defineProperties(Constructor.prototype, protoProps);
-    if (staticProps) defineProperties(Constructor, staticProps);
-    return Constructor;
+    return target;
   };
-}();
 
-var Record = t.type('Record', t.object(t.property('level', t.number()), t.property('key', t.string()), t.property('displayName', t.nullable(t.string()), true), t.property('datetime', t.ref('Date')), t.property('message', t.string()), t.property('context', t.nullable(t.object()), true), t.property('metadata', t.nullable(t.object()), true), t.property('extra', t.nullable(t.object()), true)));
-var Handler = t.type('Handler', t.object(t.property('minLevel', t.number()), t.property('isHandling', t.nullable(t.function(t.return(t.boolean()))), true), t.property('handle', t.nullable(t.function(t.param('record', Record), t.return(t.boolean()))), true)));
-var Processor = t.type('Processor', t.function(t.param('record', Record), t.return(t.void())));
-var ConfigForLoggerType = t.type('ConfigForLoggerType', t.object(t.property('handlers', t.array(Handler)), t.property('processors', t.array(Processor))));
-var Metadata = t.type('Metadata', t.object(t.indexer('key', t.string(), t.any())));
-var MetadataStyles = t.type('MetadataStyles', t.object(t.indexer('key', t.string(), t.any())));
-
+  return _extends.apply(this, arguments);
+}
 
 if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER) {
   global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = function () {
-    var _returnType = t.return(ConfigForLoggerType);
-
-    return _returnType.assert({ handlers: [], processors: [] });
+    return {
+      handlers: [],
+      processors: []
+    };
   };
 }
 
-if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
+if (global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
   global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = function (key, level) {
-    var _keyType = t.string();
-
-    var _levelType = t.number();
-
-    var _returnType2 = t.return(ConfigForLoggerType);
-
-    t.param('key', _keyType).assert(key);
-    t.param('level', _levelType).assert(level);
-
     var _global$__NIGHTINGALE = global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key),
         handlers = _global$__NIGHTINGALE.handlers,
         processors = _global$__NIGHTINGALE.processors;
 
-    return _returnType2.assert({
+    return {
       handlers: handlers.filter(function (handler) {
         return level >= handler.minLevel && (!handler.isHandling || handler.isHandling(level, key));
       }),
       processors: processors
-    });
+    };
   };
 }
-
 /** @private */
+
+
 function getConfigForLoggerRecord(key, recordLevel) {
-  var _keyType2 = t.nullable(t.string());
-
-  var _recordLevelType = t.number();
-
-  var _returnType3 = t.return(ConfigForLoggerType);
-
-  t.param('key', _keyType2).assert(key);
-  t.param('recordLevel', _recordLevelType).assert(recordLevel);
-
-  return _returnType3.assert(global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD(key, recordLevel));
+  return global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD(key, recordLevel);
 }
-
 /**
  * Interface that allows you to log records.
  * This records are treated by handlers
  */
 
-var Logger = function () {
 
+var Logger =
+/*#__PURE__*/
+function () {
   /**
    * Create a new Logger
    *
@@ -93,844 +65,488 @@ var Logger = function () {
    * @param {string} [displayName]
    */
   function Logger(key, displayName) {
-    classCallCheck(this, Logger);
-
-    var _keyType3 = t.string();
-
-    var _displayNameType = t.nullable(t.string());
-
-    t.param('key', _keyType3).assert(key);
-    t.param('displayName', _displayNameType).assert(displayName);
-
+    this.contextObject = void 0;
     this.key = key;
     this.displayName = displayName;
 
-    if (key.includes('.')) {
-      throw new Error('nightingale: `.` in key is no longer supported (key: ' + key + ')');
+    if (process.env.NODE_ENV !== 'production' && key.includes('.')) {
+      throw new Error("nightingale: `.` in key is no longer supported (key: " + key + ")");
     }
   }
-
   /** @private */
 
 
-  createClass(Logger, [{
-    key: 'getHandlersAndProcessors',
-    value: function getHandlersAndProcessors(recordLevel) {
-      var _recordLevelType2 = t.number();
+  var _proto = Logger.prototype;
 
-      var _returnType4 = t.return(ConfigForLoggerType);
+  _proto.getHandlersAndProcessors = function getHandlersAndProcessors(recordLevel) {
+    return getConfigForLoggerRecord(this.key, recordLevel);
+  };
+  /** @private */
 
-      t.param('recordLevel', _recordLevelType2).assert(recordLevel);
 
-      return _returnType4.assert(getConfigForLoggerRecord(this.key, recordLevel));
-    }
+  _proto.getConfig = function getConfig() {
+    return global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(this.key, Level.ALL);
+  };
+  /**
+   * Create a child logger
+   */
 
-    /** @private */
 
-  }, {
-    key: 'getConfig',
-    value: function getConfig() {
-      var _returnType5 = t.return(ConfigForLoggerType);
+  _proto.child = function child(childSuffixKey, childDisplayName) {
+    return new Logger(this.key + ":" + childSuffixKey, childDisplayName);
+  };
+  /**
+   * Create a new Logger with the same key a this attached context
+   *
+   * @example
+   * const loggerMyService = new Logger('app.myService');
+   * function someAction(arg1) {
+   *     const logger = loggerMyService.context({ arg1 });
+   *     logger.info('starting');
+   *     // do stuff
+   *     logger.info('done');
+   * }
+   *
+   */
 
-      return _returnType5.assert(global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(this.key));
-    }
 
-    /**
-     * Create a child logger
-     */
+  _proto.context = function context(_context) {
+    var logger = new Logger(this.key);
+    logger.setContext(_context);
+    return logger;
+  };
+  /**
+   * Set the context of this logger
+   *
+   * @param {Object} context
+   */
 
-  }, {
-    key: 'child',
-    value: function child(childSuffixKey, childDisplayName) {
-      var _childSuffixKeyType = t.string();
 
-      var _childDisplayNameType = t.nullable(t.string());
+  _proto.setContext = function setContext(context) {
+    this.contextObject = context;
+  };
+  /**
+   * Extends existing context of this logger
+   */
 
-      var _returnType6 = t.return(t.ref(Logger));
 
-      t.param('childSuffixKey', _childSuffixKeyType).assert(childSuffixKey);
-      t.param('childDisplayName', _childDisplayNameType).assert(childDisplayName);
+  _proto.extendsContext = function extendsContext(extendedContext) {
+    Object.assign(this.contextObject, extendedContext);
+  };
+  /**
+   * Handle a record
+   *
+   * Use this only if you know what you are doing.
+   */
 
-      return _returnType6.assert(new Logger(this.key + ':' + childSuffixKey, childDisplayName));
-    }
 
-    /**
-     * Create a new Logger with the same key a this attached context
-     *
-     * @example
-     * const loggerMyService = new Logger('app.myService');
-     * function someAction(arg1) {
-     *     const logger = loggerMyService.context({ arg1 });
-     *     logger.info('starting');
-     *     // do stuff
-     *     logger.info('done');
-     * }
-     *
-     */
+  _proto.addRecord = function addRecord(record) {
+    var _getHandlersAndProces = this.getHandlersAndProcessors(record.level),
+        handlers = _getHandlersAndProces.handlers,
+        processors = _getHandlersAndProces.processors;
 
-  }, {
-    key: 'context',
-    value: function (_context) {
-      function context() {
-        return _context.apply(this, arguments);
-      }
-
-      context.toString = function () {
-        return _context.toString();
-      };
-
-      return context;
-    }(function (context) {
-      var _contextType = t.object();
-
-      var _returnType7 = t.return(t.ref(Logger));
-
-      t.param('context', _contextType).assert(context);
-
-      var logger = new Logger(this.key);
-      logger.setContext(context);
-      return _returnType7.assert(logger);
-    })
-
-    /**
-     * Set the context of this logger
-     *
-     * @param {Object} context
-     */
-
-  }, {
-    key: 'setContext',
-    value: function setContext(context) {
-      var _contextType2 = t.object();
-
-      t.param('context', _contextType2).assert(context);
-
-      this._context = context;
-    }
-
-    /**
-     * Extends existing context of this logger
-     */
-
-  }, {
-    key: 'extendsContext',
-    value: function extendsContext(extendedContext) {
-      var _extendedContextType = t.object();
-
-      t.param('extendedContext', _extendedContextType).assert(extendedContext);
-
-      Object.assign(this._context, extendedContext);
-    }
-
-    /**
-     * Handle a record
-     *
-     * Use this only if you know what you are doing.
-     */
-
-  }, {
-    key: 'addRecord',
-    value: function addRecord(record) {
-      var _recordType = t.object();
-
-      t.param('record', _recordType).assert(record);
-
-      var _getHandlersAndProces = this.getHandlersAndProcessors(record.level),
-          handlers = _getHandlersAndProces.handlers,
-          processors = _getHandlersAndProces.processors;
-
-      if (handlers.length === 0) {
-        if (record.level > levels.ERROR) {
-          // eslint-disable-next-line no-console
-          console.log('[nightingale] no logger for > error level.', {
-            key: record.key,
-            message: record.message
-          });
-        }
-        return;
-      }
-
-      if (processors) {
-        processors.forEach(function (process) {
-          return process(record, record.context);
+    if (handlers.length === 0) {
+      if (record.level > Level.ERROR) {
+        // eslint-disable-next-line no-console
+        console.log('[nightingale] no logger for > error level.', {
+          key: record.key,
+          message: record.message
         });
       }
 
-      handlers.some(function (handler) {
-        return handler.handle(record) === false;
+      return;
+    }
+
+    if (processors) {
+      processors.forEach(function (process) {
+        return process(record, record.context);
       });
     }
 
-    /**
-     * Log a message
-     */
+    handlers.some(function (handler) {
+      return handler.handle(record) === false;
+    });
+  };
+  /**
+   * Log a message
+   */
 
-  }, {
-    key: 'log',
-    value: function log(message, metadata) {
-      var level = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : levels.INFO;
-      var options = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : undefined;
 
-      var _messageType = t.string();
-
-      var _metadataType = t.nullable(Metadata);
-
-      var _levelType2 = t.number();
-
-      var _optionsType = t.nullable(t.object());
-
-      t.param('message', _messageType).assert(message);
-      t.param('metadata', _metadataType).assert(metadata);
-      t.param('level', _levelType2).assert(level);
-      t.param('options', _optionsType).assert(options);
-
-      var context = metadata && metadata.context;
-      if (metadata) {
-        delete metadata.context;
-      }
-
-      var record = {
-        level: level,
-        key: this.key,
-        displayName: this.displayName,
-        datetime: new Date(),
-        message: message,
-        context: context || this._context,
-        metadata: metadata,
-        extra: {}
-      };
-
-      if (options) {
-        record = Object.assign(options, record);
-      }
-
-      this.addRecord(record);
+  _proto.log = function log(message, metadata, level, options) {
+    if (level === void 0) {
+      level = Level.INFO;
     }
 
-    /**
-     * Log a trace message
-     */
+    var context = metadata && metadata.context;
 
-  }, {
-    key: 'trace',
-    value: function trace(message, metadata, metadataStyles) {
-      var _messageType2 = t.string();
-
-      var _metadataType2 = t.nullable(Metadata);
-
-      var _metadataStylesType = t.nullable(MetadataStyles);
-
-      t.param('message', _messageType2).assert(message);
-      t.param('metadata', _metadataType2).assert(metadata);
-      t.param('metadataStyles', _metadataStylesType).assert(metadataStyles);
-
-      this.log(message, metadata, levels.TRACE, { metadataStyles: metadataStyles });
+    if (metadata) {
+      delete metadata.context;
     }
 
-    /**
-     * Log a debug message
-     */
+    var record = _extends({
+      level: level,
+      key: this.key,
+      displayName: this.displayName,
+      datetime: new Date(),
+      message: message,
+      context: context || this.contextObject,
+      metadata: metadata,
+      extra: {}
+    }, options);
 
-  }, {
-    key: 'debug',
-    value: function debug(message, metadata, metadataStyles) {
-      var _messageType3 = t.string();
+    this.addRecord(record);
+  };
+  /**
+   * Log a trace message
+   */
 
-      var _metadataType3 = t.nullable(Metadata);
 
-      var _metadataStylesType2 = t.nullable(MetadataStyles);
+  _proto.trace = function trace(message, metadata, metadataStyles) {
+    this.log(message, metadata, Level.TRACE, {
+      metadataStyles: metadataStyles
+    });
+  };
+  /**
+   * Log a debug message
+   */
 
-      t.param('message', _messageType3).assert(message);
-      t.param('metadata', _metadataType3).assert(metadata);
-      t.param('metadataStyles', _metadataStylesType2).assert(metadataStyles);
 
-      this.log(message, metadata, levels.DEBUG, { metadataStyles: metadataStyles });
+  _proto.debug = function debug(message, metadata, metadataStyles) {
+    this.log(message, metadata, Level.DEBUG, {
+      metadataStyles: metadataStyles
+    });
+  };
+  /**
+   * Notice an info message
+   */
+
+
+  _proto.notice = function notice(message, metadata, metadataStyles) {
+    this.log(message, metadata, Level.NOTICE, {
+      metadataStyles: metadataStyles
+    });
+  };
+  /**
+   * Log an info message
+   */
+
+
+  _proto.info = function info(message, metadata, metadataStyles) {
+    this.log(message, metadata, Level.INFO, {
+      metadataStyles: metadataStyles
+    });
+  };
+  /**
+   * Log a warn message
+   */
+
+
+  _proto.warn = function warn(message, metadata, metadataStyles) {
+    this.log(message, metadata, Level.WARN, {
+      metadataStyles: metadataStyles
+    });
+  };
+  /**
+   * Log an error message
+   */
+
+
+  _proto.error = function error(message, metadata, metadataStyles) {
+    if (message instanceof Error) {
+      var extendedMetadata = Object.assign({}, metadata, {
+        error: message
+      });
+      message = extendedMetadata.error.name + ": " + extendedMetadata.error.message;
+      this.log(message, extendedMetadata, Level.ERROR, {
+        metadataStyles: metadataStyles
+      });
+    } else {
+      this.log(message, metadata, Level.ERROR, {
+        metadataStyles: metadataStyles
+      });
     }
+  };
+  /**
+   * Log an critical message
+   */
 
-    /**
-     * Notice an info message
-     */
 
-  }, {
-    key: 'notice',
-    value: function notice(message, metadata, metadataStyles) {
-      var _messageType4 = t.string();
+  _proto.critical = function critical(message, metadata, metadataStyles) {
+    this.log(message, metadata, Level.CRITICAL, {
+      metadataStyles: metadataStyles
+    });
+  };
+  /**
+   * Log a fatal message
+   */
 
-      var _metadataType4 = t.nullable(Metadata);
 
-      var _metadataStylesType3 = t.nullable(MetadataStyles);
+  _proto.fatal = function fatal(message, metadata, metadataStyles) {
+    this.log(message, metadata, Level.FATAL, {
+      metadataStyles: metadataStyles
+    });
+  };
+  /**
+   * Log an alert message
+   */
 
-      t.param('message', _messageType4).assert(message);
-      t.param('metadata', _metadataType4).assert(metadata);
-      t.param('metadataStyles', _metadataStylesType3).assert(metadataStyles);
 
-      this.log(message, metadata, levels.NOTICE, { metadataStyles: metadataStyles });
-    }
+  _proto.alert = function alert(message, metadata, metadataStyles) {
+    this.log(message, metadata, Level.ALERT, {
+      metadataStyles: metadataStyles
+    });
+  };
+  /**
+   * Log an inspected value
+   */
 
-    /**
-     * Log an info message
-     */
 
-  }, {
-    key: 'info',
-    value: function info(message, metadata, metadataStyles) {
-      var _messageType5 = t.string();
-
-      var _metadataType5 = t.nullable(Metadata);
-
-      var _metadataStylesType4 = t.nullable(MetadataStyles);
-
-      t.param('message', _messageType5).assert(message);
-      t.param('metadata', _metadataType5).assert(metadata);
-      t.param('metadataStyles', _metadataStylesType4).assert(metadataStyles);
-
-      this.log(message, metadata, levels.INFO, { metadataStyles: metadataStyles });
-    }
-
-    /**
-     * Log a warn message
-     */
-
-  }, {
-    key: 'warn',
-    value: function warn(message, metadata, metadataStyles) {
-      var _messageType6 = t.string();
-
-      var _metadataType6 = t.nullable(Metadata);
-
-      var _metadataStylesType5 = t.nullable(MetadataStyles);
-
-      t.param('message', _messageType6).assert(message);
-      t.param('metadata', _metadataType6).assert(metadata);
-      t.param('metadataStyles', _metadataStylesType5).assert(metadataStyles);
-
-      this.log(message, metadata, levels.WARN, { metadataStyles: metadataStyles });
-    }
-
-    /**
-     * Log an error message
-     */
-
-  }, {
-    key: 'error',
-    value: function error(message) {
-      var metadata = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-      var metadataStyles = arguments[2];
-
-      var _messageType7 = t.union(t.string(), t.ref('Error'));
-
-      var _metadataType7 = t.object();
-
-      var _metadataStylesType6 = t.nullable(MetadataStyles);
-
-      t.param('message', _messageType7).assert(message);
-      t.param('metadata', _metadataType7).assert(metadata);
-      t.param('metadataStyles', _metadataStylesType6).assert(metadataStyles);
-
-      if (message instanceof Error) {
-        metadata.error = message;
-        message = _messageType7.assert(metadata.error.name + ': ' + metadata.error.message);
-      }
-      this.log(message, metadata, levels.ERROR, { metadataStyles: metadataStyles });
-    }
-
-    /**
-     * Log an critical message
-     */
-
-  }, {
-    key: 'critical',
-    value: function critical(message, metadata, metadataStyles) {
-      var _messageType8 = t.string();
-
-      var _metadataType8 = t.nullable(Metadata);
-
-      var _metadataStylesType7 = t.nullable(MetadataStyles);
-
-      t.param('message', _messageType8).assert(message);
-      t.param('metadata', _metadataType8).assert(metadata);
-      t.param('metadataStyles', _metadataStylesType7).assert(metadataStyles);
-
-      this.log(message, metadata, levels.CRITICAL, { metadataStyles: metadataStyles });
-    }
-
-    /**
-     * Log a fatal message
-     */
-
-  }, {
-    key: 'fatal',
-    value: function fatal(message, metadata, metadataStyles) {
-      var _messageType9 = t.string();
-
-      var _metadataType9 = t.nullable(Metadata);
-
-      var _metadataStylesType8 = t.nullable(MetadataStyles);
-
-      t.param('message', _messageType9).assert(message);
-      t.param('metadata', _metadataType9).assert(metadata);
-      t.param('metadataStyles', _metadataStylesType8).assert(metadataStyles);
-
-      this.log(message, metadata, levels.FATAL, { metadataStyles: metadataStyles });
-    }
-
-    /**
-     * Log an alert message
-     */
-
-  }, {
-    key: 'alert',
-    value: function alert(message, metadata, metadataStyles) {
-      var _messageType10 = t.string();
-
-      var _metadataType10 = t.nullable(Metadata);
-
-      var _metadataStylesType9 = t.nullable(MetadataStyles);
-
-      t.param('message', _messageType10).assert(message);
-      t.param('metadata', _metadataType10).assert(metadata);
-      t.param('metadataStyles', _metadataStylesType9).assert(metadataStyles);
-
-      this.log(message, metadata, levels.ALERT, { metadataStyles: metadataStyles });
-    }
-
-    /**
-     * Log an inspected value
-     */
-
-  }, {
-    key: 'inspectValue',
-    value: function inspectValue(value, metadata, metadataStyles) {
-      var _valueType = t.any();
-
-      var _metadataType11 = t.nullable(Metadata);
-
-      var _metadataStylesType10 = t.nullable(MetadataStyles);
-
-      t.param('value', _valueType).assert(value);
-      t.param('metadata', _metadataType11).assert(metadata);
-      t.param('metadataStyles', _metadataStylesType10).assert(metadataStyles);
-
+  _proto.inspectValue = function inspectValue(value, metadata, metadataStyles) {
+    if (process.env.POB_TARGET === 'browser') {
       throw new Error('Not supported for the browser. Prefer `debugger;`');
+    } else {
+      // Note: inspect is a special function for node:
+      // https://github.com/nodejs/node/blob/a1bda1b4deb08dfb3e06cb778f0db40023b18318/lib/util.js#L210
+      value = inspect(value, {
+        depth: 6
+      });
+      this.log(value, metadata, Level.DEBUG, {
+        metadataStyles: metadataStyles,
+        styles: ['gray']
+      });
     }
+  };
+  /**
+   * Log a debugged var
+   */
 
-    /**
-     * Log a debugged var
-     */
 
-  }, {
-    key: 'inspectVar',
-    value: function inspectVar(varName, varValue, metadata, metadataStyles) {
-      var _varNameType = t.string();
-
-      var _varValueType = t.any();
-
-      var _metadataType12 = t.nullable(Metadata);
-
-      var _metadataStylesType11 = t.nullable(MetadataStyles);
-
-      t.param('varName', _varNameType).assert(varName);
-      t.param('varValue', _varValueType).assert(varValue);
-      t.param('metadata', _metadataType12).assert(metadata);
-      t.param('metadataStyles', _metadataStylesType11).assert(metadataStyles);
-
+  _proto.inspectVar = function inspectVar(varName, varValue, metadata, metadataStyles) {
+    if (process.env.POB_TARGET === 'browser') {
       throw new Error('Not supported for the browser. Prefer `debugger;`');
-    }
-
-    /**
-     * Alias for infoSuccess
-     */
-
-  }, {
-    key: 'success',
-    value: function success(message, metadata, metadataStyles) {
-      var _messageType11 = t.string();
-
-      var _metadataType13 = t.nullable(Metadata);
-
-      var _metadataStylesType12 = t.nullable(MetadataStyles);
-
-      t.param('message', _messageType11).assert(message);
-      t.param('metadata', _metadataType13).assert(metadata);
-      t.param('metadataStyles', _metadataStylesType12).assert(metadataStyles);
-
-      this.infoSuccess(message, metadata, metadataStyles);
-    }
-
-    /**
-     * Log an info success message
-     */
-
-  }, {
-    key: 'infoSuccess',
-    value: function infoSuccess(message, metadata, metadataStyles) {
-      var _messageType12 = t.string();
-
-      var _metadataType14 = t.nullable(Metadata);
-
-      var _metadataStylesType13 = t.nullable(MetadataStyles);
-
-      t.param('message', _messageType12).assert(message);
-      t.param('metadata', _metadataType14).assert(metadata);
-      t.param('metadataStyles', _metadataStylesType13).assert(metadataStyles);
-
-      this.log(message, metadata, levels.INFO, {
+    } else {
+      varValue = inspect(varValue, {
+        depth: 6
+      });
+      this.log(varName + " = " + varValue, metadata, Level.DEBUG, {
         metadataStyles: metadataStyles,
-        symbol: '✔',
-        styles: ['green', 'bold']
+        styles: ['cyan']
+      });
+    }
+  };
+  /**
+   * Alias for infoSuccess
+   */
+
+
+  _proto.success = function success(message, metadata, metadataStyles) {
+    this.infoSuccess(message, metadata, metadataStyles);
+  };
+  /**
+   * Log an info success message
+   */
+
+
+  _proto.infoSuccess = function infoSuccess(message, metadata, metadataStyles) {
+    this.log(message, metadata, Level.INFO, {
+      metadataStyles: metadataStyles,
+      symbol: '✔',
+      styles: ['green', 'bold']
+    });
+  };
+  /**
+   * Log an debug success message
+   */
+
+
+  _proto.debugSuccess = function debugSuccess(message, metadata, metadataStyles) {
+    this.log(message, metadata, Level.DEBUG, {
+      metadataStyles: metadataStyles,
+      symbol: '✔',
+      styles: ['green']
+    });
+  };
+  /**
+   * Alias for infoFail
+   */
+
+
+  _proto.fail = function fail(message, metadata, metadataStyles) {
+    this.infoFail(message, metadata, metadataStyles);
+  };
+  /**
+   * Log an info fail message
+   */
+
+
+  _proto.infoFail = function infoFail(message, metadata, metadataStyles) {
+    this.log(message, metadata, Level.INFO, {
+      metadataStyles: metadataStyles,
+      symbol: '✖',
+      styles: ['red', 'bold']
+    });
+  };
+  /**
+   * Log an debug fail message
+   */
+
+
+  _proto.debugFail = function debugFail(message, metadata, metadataStyles) {
+    this.log(message, metadata, Level.DEBUG, {
+      metadataStyles: metadataStyles,
+      symbol: '✖',
+      styles: ['red']
+    });
+  };
+  /**
+   * @returns {number} time to pass to timeEnd
+   */
+
+
+  _proto.time = function time(message, metadata, metadataStyles, level) {
+    if (level === void 0) {
+      level = Level.DEBUG;
+    }
+
+    if (message) {
+      this.log(message, metadata, level, {
+        metadataStyles: metadataStyles
       });
     }
 
-    /**
-     * Log an debug success message
-     */
+    return Date.now();
+  };
 
-  }, {
-    key: 'debugSuccess',
-    value: function debugSuccess(message, metadata, metadataStyles) {
-      var _messageType13 = t.string();
+  _proto.infoTime = function infoTime(message, metadata, metadataStyles) {
+    return this.time(message, metadata, metadataStyles, Level.INFO);
+  };
+  /**
+   * Finds difference between when this method
+   * was called and when the respective time method
+   * was called, then logs out the difference
+   * and deletes the original record
+   */
 
-      var _metadataType15 = t.nullable(Metadata);
 
-      var _metadataStylesType14 = t.nullable(MetadataStyles);
-
-      t.param('message', _messageType13).assert(message);
-      t.param('metadata', _metadataType15).assert(metadata);
-      t.param('metadataStyles', _metadataStylesType14).assert(metadataStyles);
-
-      this.log(message, metadata, levels.DEBUG, {
-        metadataStyles: metadataStyles,
-        symbol: '✔',
-        styles: ['green']
-      });
+  _proto.timeEnd = function timeEnd(startTime, message, metadata, metadataStyles, level, options) {
+    if (level === void 0) {
+      level = Level.DEBUG;
     }
 
-    /**
-     * Alias for infoFail
-     */
+    var now = Date.now();
+    var diffTime = now - startTime;
+    var readableTime;
 
-  }, {
-    key: 'fail',
-    value: function fail(message, metadata, metadataStyles) {
-      var _messageType14 = t.string();
-
-      var _metadataType16 = t.nullable(Metadata);
-
-      var _metadataStylesType15 = t.nullable(MetadataStyles);
-
-      t.param('message', _messageType14).assert(message);
-      t.param('metadata', _metadataType16).assert(metadata);
-      t.param('metadataStyles', _metadataStylesType15).assert(metadataStyles);
-
-      this.infoFail(message, metadata, metadataStyles);
+    if (diffTime < 1000) {
+      readableTime = diffTime + "ms";
+    } else {
+      var seconds = diffTime > 1000 ? Math.floor(diffTime / 1000) : 0;
+      readableTime = "" + (seconds ? seconds + "s and " : '') + (diffTime - seconds * 1000) + "ms";
     }
 
-    /**
-     * Log an info fail message
-     */
+    var extendedMetadata = Object.assign({}, metadata, {
+      readableTime: readableTime,
+      timeMs: diffTime
+    });
+    this.log(message, extendedMetadata, level, _extends({}, options, {
+      metadataStyles: metadataStyles
+    }));
+  };
+  /**
+   * Like timeEnd, but with INFO level
+   */
 
-  }, {
-    key: 'infoFail',
-    value: function infoFail(message, metadata, metadataStyles) {
-      var _messageType15 = t.string();
 
-      var _metadataType17 = t.nullable(Metadata);
+  _proto.infoTimeEnd = function infoTimeEnd(time, message, metadata, metadataStyles) {
+    this.timeEnd(time, message, metadata, metadataStyles, Level.INFO);
+  };
+  /**
+   * Like timeEnd, but with INFO level
+   */
 
-      var _metadataStylesType16 = t.nullable(MetadataStyles);
 
-      t.param('message', _messageType15).assert(message);
-      t.param('metadata', _metadataType17).assert(metadata);
-      t.param('metadataStyles', _metadataStylesType16).assert(metadataStyles);
+  _proto.infoSuccessTimeEnd = function infoSuccessTimeEnd(time, message, metadata, metadataStyles) {
+    this.timeEnd(time, message, metadata, metadataStyles, Level.INFO, {
+      symbol: '✔',
+      styles: ['green', 'bold']
+    });
+  };
+  /**
+   * Log an enter in a function
+   *
+   * @example
+   * class A {
+   *   method(arg1) {
+   *     logger.enter(method, { arg1 });
+   *     // Do your stuff
+   *   }
+   * }
+   *
+   */
 
-      this.log(message, metadata, levels.INFO, {
-        metadataStyles: metadataStyles,
-        symbol: '✖',
-        styles: ['red', 'bold']
-      });
+
+  _proto.enter = function enter(fn, metadata, metadataStyles) {
+    (metadata || {}).functionName = fn.name;
+    this.log('enter', metadata, Level.TRACE, {
+      metadataStyles: metadataStyles
+    });
+  };
+  /**
+   * Log an exit in a function
+   *
+   * @example
+   * const logger = new ConsoleLogger('myNamespace.A');
+   * class A {
+   *   method(arg1) {
+   *     // Do your stuff
+   *     logger.exit(method, { arg1 });
+   *   }
+   * }
+   */
+
+
+  _proto.exit = function exit(fn, metadata, metadataStyles) {
+    var extendedMetadata = Object.assign({}, metadata, {
+      functionName: fn.name
+    });
+    this.log('exit', extendedMetadata, Level.TRACE, {
+      metadataStyles: metadataStyles
+    });
+  };
+  /**
+   * Wrap around a function to log enter and exit of a function
+   *
+   * @example
+   * const logger = new ConsoleLogger('myNamespace.A');
+   * class A {
+   *   method() {
+   *     logger.wrap(method, () => {
+   *       // Do your stuff
+   *     });
+   *   }
+   * }
+   *
+   * @param {Function} fn
+   * @param {Object} [metadata]
+   * @param {Object} [metadataStyles]
+   * @param {Function} callback
+   */
+
+
+  _proto.wrap = function wrap(fn, metadata, metadataStyles, callback) {
+    if (typeof metadata === 'function') {
+      callback = metadata;
+      metadata = undefined;
+    } else if (typeof metadataStyles === 'function') {
+      callback = metadataStyles;
+      metadataStyles = undefined;
     }
 
-    /**
-     * Log an debug fail message
-     */
+    this.enter(fn, metadata, metadataStyles);
+    callback();
+    this.exit(fn);
+  };
 
-  }, {
-    key: 'debugFail',
-    value: function debugFail(message, metadata, metadataStyles) {
-      var _messageType16 = t.string();
-
-      var _metadataType18 = t.nullable(Metadata);
-
-      var _metadataStylesType17 = t.nullable(MetadataStyles);
-
-      t.param('message', _messageType16).assert(message);
-      t.param('metadata', _metadataType18).assert(metadata);
-      t.param('metadataStyles', _metadataStylesType17).assert(metadataStyles);
-
-      this.log(message, metadata, levels.DEBUG, {
-        metadataStyles: metadataStyles,
-        symbol: '✖',
-        styles: ['red']
-      });
-    }
-
-    /**
-     * @returns {number} time to pass to timeEnd
-     */
-
-  }, {
-    key: 'time',
-    value: function time(message, metadata, metadataStyles) {
-      var level = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : levels.DEBUG;
-
-      var _messageType17 = t.nullable(t.string());
-
-      var _metadataType19 = t.nullable(Metadata);
-
-      var _metadataStylesType18 = t.nullable(MetadataStyles);
-
-      var _levelType3 = t.number();
-
-      var _returnType8 = t.return(t.number());
-
-      t.param('message', _messageType17).assert(message);
-      t.param('metadata', _metadataType19).assert(metadata);
-      t.param('metadataStyles', _metadataStylesType18).assert(metadataStyles);
-      t.param('level', _levelType3).assert(level);
-
-      if (message) {
-        this.log(message, metadata, level, { metadataStyles: metadataStyles });
-      }
-
-      return _returnType8.assert(Date.now());
-    }
-  }, {
-    key: 'infoTime',
-    value: function infoTime(message, metadata, metadataStyles) {
-      var _messageType18 = t.nullable(t.string());
-
-      var _metadataType20 = t.nullable(Metadata);
-
-      var _metadataStylesType19 = t.nullable(MetadataStyles);
-
-      var _returnType9 = t.return(t.number());
-
-      t.param('message', _messageType18).assert(message);
-      t.param('metadata', _metadataType20).assert(metadata);
-      t.param('metadataStyles', _metadataStylesType19).assert(metadataStyles);
-
-      return _returnType9.assert(this.time(message, metadata, metadataStyles, levels.INFO));
-    }
-
-    /**
-     * Finds difference between when this method
-     * was called and when the respective time method
-     * was called, then logs out the difference
-     * and deletes the original record
-     */
-
-  }, {
-    key: 'timeEnd',
-    value: function timeEnd(startTime, message, metadata, metadataStyles) {
-      var level = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : levels.DEBUG;
-      var options = arguments[5];
-
-      var _startTimeType = t.number();
-
-      var _messageType19 = t.string();
-
-      var _metadataType21 = t.nullable(Metadata);
-
-      var _metadataStylesType20 = t.nullable(MetadataStyles);
-
-      var _levelType4 = t.number();
-
-      var _optionsType2 = t.nullable(t.object());
-
-      t.param('startTime', _startTimeType).assert(startTime);
-      t.param('message', _messageType19).assert(message);
-      t.param('metadata', _metadataType21).assert(metadata);
-      t.param('metadataStyles', _metadataStylesType20).assert(metadataStyles);
-      t.param('level', _levelType4).assert(level);
-      t.param('options', _optionsType2).assert(options);
-
-      if (!metadata) metadata = _metadataType21.assert({});
-      var now = Date.now();
-
-      var diffTime = now - startTime;
-
-      if (diffTime < 1000) {
-        metadata.readableTime = diffTime + 'ms';
-      } else {
-        var seconds = diffTime > 1000 ? Math.floor(diffTime / 1000) : 0;
-
-        metadata.readableTime = '' + (seconds ? seconds + 's and ' : '') + (diffTime - seconds * 1000) + 'ms';
-      }
-
-      metadata.timeMs = diffTime;
-      this.log(message, metadata, level, Object.assign({}, options, { metadataStyles: metadataStyles }));
-    }
-
-    /**
-     * Like timeEnd, but with INFO level
-     */
-
-  }, {
-    key: 'infoTimeEnd',
-    value: function infoTimeEnd(time, message, metadata, metadataStyles) {
-      var _timeType = t.number();
-
-      var _messageType20 = t.string();
-
-      var _metadataType22 = t.nullable(Metadata);
-
-      var _metadataStylesType21 = t.nullable(MetadataStyles);
-
-      t.param('time', _timeType).assert(time);
-      t.param('message', _messageType20).assert(message);
-      t.param('metadata', _metadataType22).assert(metadata);
-      t.param('metadataStyles', _metadataStylesType21).assert(metadataStyles);
-
-      this.timeEnd(time, message, metadata, metadataStyles, levels.INFO);
-    }
-
-    /**
-     * Like timeEnd, but with INFO level
-     */
-
-  }, {
-    key: 'infoSuccessTimeEnd',
-    value: function infoSuccessTimeEnd(time, message, metadata, metadataStyles) {
-      var _timeType2 = t.number();
-
-      var _messageType21 = t.string();
-
-      var _metadataType23 = t.nullable(Metadata);
-
-      var _metadataStylesType22 = t.nullable(MetadataStyles);
-
-      t.param('time', _timeType2).assert(time);
-      t.param('message', _messageType21).assert(message);
-      t.param('metadata', _metadataType23).assert(metadata);
-      t.param('metadataStyles', _metadataStylesType22).assert(metadataStyles);
-
-      this.timeEnd(time, message, metadata, metadataStyles, levels.INFO, {
-        symbol: '✔',
-        styles: ['green', 'bold']
-      });
-    }
-
-    /**
-     * Log an enter in a function
-     *
-     * @example
-     * class A {
-     *   method(arg1) {
-     *     logger.enter(method, { arg1 });
-     *     // Do your stuff
-     *   }
-     * }
-     *
-     */
-
-  }, {
-    key: 'enter',
-    value: function enter(fn, metadata, metadataStyles) {
-      var _fnType = t.function();
-
-      var _metadataType24 = t.nullable(Metadata);
-
-      var _metadataStylesType23 = t.nullable(MetadataStyles);
-
-      t.param('fn', _fnType).assert(fn);
-      t.param('metadata', _metadataType24).assert(metadata);
-      t.param('metadataStyles', _metadataStylesType23).assert(metadataStyles);
-
-      metadata = _metadataType24.assert(Object.assign({
-        functionName: fn.name
-      }, metadata));
-      this.log('enter', metadata, levels.TRACE, { metadataStyles: metadataStyles });
-    }
-
-    /**
-     * Log an exit in a function
-     *
-     * @example
-     * const logger = new ConsoleLogger('myNamespace.A');
-     * class A {
-     *   method(arg1) {
-     *     // Do your stuff
-     *     logger.exit(method, { arg1 });
-     *   }
-     * }
-     */
-
-  }, {
-    key: 'exit',
-    value: function exit(fn, metadata, metadataStyles) {
-      var _fnType2 = t.function();
-
-      var _metadataType25 = t.nullable(Metadata);
-
-      var _metadataStylesType24 = t.nullable(MetadataStyles);
-
-      t.param('fn', _fnType2).assert(fn);
-      t.param('metadata', _metadataType25).assert(metadata);
-      t.param('metadataStyles', _metadataStylesType24).assert(metadataStyles);
-
-      metadata = _metadataType25.assert(Object.assign({
-        functionName: fn.name
-      }, metadata));
-      this.log('exit', metadata, levels.TRACE, { metadataStyles: metadataStyles });
-    }
-
-    /**
-     * Wrap around a function to log enter and exit of a function
-     *
-     * @example
-     * const logger = new ConsoleLogger('myNamespace.A');
-     * class A {
-     *   method() {
-     *     logger.wrap(method, () => {
-     *       // Do your stuff
-     *     });
-     *   }
-     * }
-     *
-     * @param {Function} fn
-     * @param {Object} [metadata]
-     * @param {Object} [metadataStyles]
-     * @param {Function} callback
-     */
-
-  }, {
-    key: 'wrap',
-    value: function wrap(fn, metadata, metadataStyles, callback) {
-      var _fnType3 = t.function();
-
-      var _metadataType26 = t.union(t.nullable(Metadata), t.function());
-
-      var _metadataStylesType25 = t.union(t.nullable(MetadataStyles), t.function());
-
-      var _callbackType = t.function();
-
-      t.param('fn', _fnType3).assert(fn);
-      t.param('metadata', _metadataType26).assert(metadata);
-      t.param('metadataStyles', _metadataStylesType25).assert(metadataStyles);
-      t.param('callback', _callbackType).assert(callback);
-
-      if (typeof metadata === 'function') {
-        callback = _callbackType.assert(metadata);
-        metadata = _metadataType26.assert(undefined);
-      } else if (typeof metadataStyles === 'function') {
-        callback = _callbackType.assert(metadataStyles);
-        metadataStyles = _metadataStylesType25.assert(undefined);
-      }
-
-      this.enter(fn, metadata, metadataStyles);
-      callback();
-      this.exit(fn);
-    }
-  }]);
   return Logger;
 }();
 

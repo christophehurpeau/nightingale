@@ -27,7 +27,7 @@ npm install --save nightingale-logger
 
 ## Levels
 
-[nightingale-levels](https://www.npmjs.com/package/nightingale-levels)
+[nightingale-Levels](https://www.npmjs.com/package/nightingale-Levels)
 
 ## Usage
 

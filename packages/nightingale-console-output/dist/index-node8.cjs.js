@@ -1,13 +1,20 @@
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
-var levels = _interopDefault(require('nightingale-levels'));
+var Level = _interopDefault(require('nightingale-levels'));
 
-var index = ((string, { level }) => {
-  const outKey = level >= levels.ERROR ? 'stderr' : 'stdout';
-  process[outKey].write(`${string}\n`);
+/* eslint-disable no-console */
+var index = ((param, record) => {
+  if (process.env.POB_TARGET !== 'browser') {
+    const outKey = record.level >= Level.ERROR ? 'stderr' : 'stdout';
+    process[outKey].write(`${param}\n`);
+  } else {
+    console[record.level >= Level.ERROR ? 'error' : 'log'](...param);
+  }
 });
 
-module.exports = index;
+exports.default = index;
 //# sourceMappingURL=index-node8.cjs.js.map

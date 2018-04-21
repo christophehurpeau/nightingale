@@ -2,26 +2,27 @@ import levelNames from 'nightingale-level-names';
 
 /* eslint camelcase:"off" */
 
-function WinstonAdapterHandler(winstonTransport, minLevel) {
+var WinstonAdapterHandler = function WinstonAdapterHandler(winstonTransport, minLevel) {
+  this.minLevel = void 0;
+  this.handle = void 0;
   this.minLevel = minLevel;
-  this.handle = function (record) {
-    return new Promise(function (resolve, reject) {
-      winstonTransport.log(record.level, record.message, {
-        level_name: levelNames.get(record.level),
-        key: record.key,
-        metadata: record.metadata,
-        extra: record.extra,
-        context: record.context
-      }, function (err) {
-        if (err) {
-          return reject(err);
-        }
 
-        resolve();
-      });
-    });
+  this.handle = function (record) {
+    // new Promise((resolve, reject) => {
+    winstonTransport.log(record.level, record.message, {
+      level_name: levelNames.get(record.level),
+      key: record.key,
+      metadata: record.metadata,
+      extra: record.extra,
+      context: record.context
+    }, function (err) {
+      if (err) {
+        console.warn(err); // return reject(err);
+      } // resolve();
+
+    }); // });
   };
-}
+};
 
 export default WinstonAdapterHandler;
 //# sourceMappingURL=index-browser.es.js.map

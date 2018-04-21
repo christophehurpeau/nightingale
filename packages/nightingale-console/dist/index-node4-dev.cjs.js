@@ -1,31 +1,31 @@
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
 var formatterANSI = _interopDefault(require('nightingale-ansi-formatter'));
 var consoleOutput = _interopDefault(require('nightingale-console-output'));
 var createFindDebugLevel = _interopDefault(require('nightingale-debug'));
-var t = _interopDefault(require('flow-runtime'));
+var nightingaleTypes = require('nightingale-types');
 
 var handle = function handle(record) {
-  var _recordType = t.object();
-
-  t.param('record', _recordType).assert(record);
   return consoleOutput(formatterANSI(record), record);
 };
+
 var findDebugLevel = createFindDebugLevel(process.env.DEBUG);
 
-function ConsoleHandler(minLevel) {
-  var _minLevelType = t.number();
+var ConsoleHandler = function ConsoleHandler(minLevel) {
+  this.minLevel = nightingaleTypes.Level.ALL;
+  this.isHandling = void 0;
+  this.handle = void 0;
 
-  t.param('minLevel', _minLevelType).assert(minLevel);
-
-  this.minLevel = 0;
-  this.handle = handle;
   this.isHandling = function (level, key) {
     return level >= findDebugLevel(minLevel, key);
   };
-}
 
-module.exports = ConsoleHandler;
+  this.handle = handle;
+};
+
+exports.default = ConsoleHandler;
 //# sourceMappingURL=index-node4-dev.cjs.js.map

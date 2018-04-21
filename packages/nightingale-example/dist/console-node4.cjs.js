@@ -7,9 +7,9 @@ var Logger__default = _interopDefault(Logger);
 var ConsoleHandler = _interopDefault(require('nightingale-console'));
 
 var logger = new Logger__default('console');
-
-Logger.configure([{ handlers: [new ConsoleHandler(Logger.levels.ALL)] }]);
-
+Logger.configure([{
+  handlers: [new ConsoleHandler(Logger.Level.ALL)]
+}]);
 logger.log('log()');
 logger.info('info()');
 logger.warn('warn()');
@@ -20,7 +20,6 @@ logger.debug('debug()');
 logger.inspectValue('inspect()');
 logger.inspectVar('varName', 'inspectVar()');
 logger.success('success()');
-
 var timeStarted = logger.time();
 setTimeout(function () {
   return logger.timeEnd(timeStarted, 'time');

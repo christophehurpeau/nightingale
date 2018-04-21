@@ -1,16 +1,17 @@
 {
   "extends": [
     "pob/babel",
-    "pob/flow"
+    "pob/typescript"
   ],
-  "rules": {
-    "flowtype/no-weak-types": "off"
-  },
+  "parser": "typescript-eslint-parser",
+  "plugins": [
+    "typescript"
+  ],
   "overrides": [
     {
       "files": [
-        "src/**/*.test.js",
-        "src/__tests__/**/*.js"
+        "src/**/*.test.ts",
+        "src/__tests__/**/*.ts"
       ],
       "env": {
         "jest": true

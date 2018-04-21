@@ -4,32 +4,36 @@ import createFindDebugLevel from 'nightingale-debug';
 
 function getDebugString() {
   const querystring = document.location.search;
-  const debugFromLocalStorage = global.localStorage && localStorage.debug || '';
+  const debugFromLocalStorage = window.localStorage && localStorage.debug || '';
 
   if (!querystring) {
     return debugFromLocalStorage;
-  }
+  } // https://developer.mozilla.org/en-US/docs/Web/API/URLUtils/search#Get_the_value_of_a_single_search_param
 
-  // https://developer.mozilla.org/en-US/docs/Web/API/URLUtils/search#Get_the_value_of_a_single_search_param
+
   const debugFromQueryString = decodeURI(querystring.replace(new RegExp('^(?:.*[&\\?]DEBUG(?:\\=([^&]*))?)?.*$', 'i'), '$1'));
-
   return (debugFromLocalStorage ? `${debugFromLocalStorage},` : '') + debugFromQueryString;
 }
 
-// debug string can change any time (localStorage), so we need a new object each time.
 const findDebugLevel = function findDebugLevel(minLevel, key) {
   return createFindDebugLevel(getDebugString())(minLevel, key);
 };
+
 const handle = function handle(record) {
-  return consoleOutput(browserConsoleFormatter(record), record);
+  consoleOutput(browserConsoleFormatter(record), record);
 };
 
-function BrowserConsoleHandler(minLevel) {
-  this.minLevel = 0;
-  this.handle = handle;
-  this.isHandling = function (level, key) {
-    return level >= findDebugLevel(minLevel, key);
-  };
+class BrowserConsoleHandler {
+  constructor(minLevel) {
+    this.minLevel = 0;
+    this.handle = handle;
+    this.isHandling = void 0;
+
+    this.isHandling = function (level, key) {
+      return level >= findDebugLevel(minLevel, key);
+    };
+  }
+
 }
 
 export default BrowserConsoleHandler;

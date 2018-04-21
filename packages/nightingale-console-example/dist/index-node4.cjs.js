@@ -6,10 +6,10 @@ var Logger = require('nightingale');
 var Logger__default = _interopDefault(Logger);
 var ConsoleHandler = _interopDefault(require('nightingale-console'));
 
-Logger.configure([{ handlers: [new ConsoleHandler(Logger.levels.INFO)] }]);
-
+Logger.configure([{
+  handlers: [new ConsoleHandler(Logger.Level.INFO)]
+}]);
 var logger = new Logger__default('nightingale:console');
-
 logger.debug('test');
 logger.info('test');
 logger.warn('test');

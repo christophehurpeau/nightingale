@@ -10,11 +10,11 @@ const style = args => (styles, string) => {
   args.push(htmlStyles.map(s => s.close).join('; '));
   return `%c${string}%c`;
 };
-
 /**
  * @param {Object} record
  * @returns {Array}
  */
+
 function format(record) {
   const args = [];
   const string = formatRecordToString(record, style(args));

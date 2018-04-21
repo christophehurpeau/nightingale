@@ -1,16 +1,16 @@
 # nightingale-level-names
 
 ```js
-import levels from 'nightingale-levels';
+import Levels from 'nightingale-Levels';
 import levelNames from 'nightingale-level-names';
 
-console.log(levelNames.get(levels.TRACE));
-console.log(levelNames.get(levels.DEBUG));
-console.log(levelNames.get(levels.INFO));
-console.log(levelNames.get(levels.WARN));
-console.log(levelNames.get(levels.ERROR));
-console.log(levelNames.get(levels.CRITICAL));
-console.log(levelNames.get(levels.FATAL));
-console.log(levelNames.get(levels.ALERT));
-console.log(levelNames.get(levels.EMERGENCY));
+console.log(levelNames.get(Levels.TRACE));
+console.log(levelNames.get(Levels.DEBUG));
+console.log(levelNames.get(Levels.INFO));
+console.log(levelNames.get(Levels.WARN));
+console.log(levelNames.get(Levels.ERROR));
+console.log(levelNames.get(Levels.CRITICAL));
+console.log(levelNames.get(Levels.FATAL));
+console.log(levelNames.get(Levels.ALERT));
+console.log(levelNames.get(Levels.EMERGENCY));
 ```
