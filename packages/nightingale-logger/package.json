@@ -1,13 +1,17 @@
 {
   "name": "nightingale-logger",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "description": "Logger for browser and node",
-  "keywords": ["nightingale"],
+  "keywords": [
+    "nightingale"
+  ],
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
   "license": "ISC",
   "repository": "git@github.com:christophehurpeau/nightingale.git",
   "homepage": "https://github.com/christophehurpeau/nightingale",
-  "engines": { "node": ">=6.5.0" },
+  "engines": {
+    "node": ">=6.5.0"
+  },
   "main": "./index.js",
   "typings": "./dist/index.d.ts",
   "module": "./dist/index-browser.es.js",
@@ -25,25 +29,38 @@
     "clean": "rm -Rf docs dist",
     "generate:api": "typedoc --out docs --tsconfig tsconfig.build.json",
     "generate:docs": "rm -Rf docs ; yarn run generate:api && yarn run generate:test-coverage",
-    "generate:test-coverage":
-      "rm -Rf docs/coverage/ ; NODE_ENV=production BABEL_ENV=test jest --coverage --coverageReporters=lcov --coverageDirectory=docs/coverage/",
+    "generate:test-coverage": "rm -Rf docs/coverage/ ; NODE_ENV=production BABEL_ENV=test jest --coverage --coverageReporters=lcov --coverageDirectory=docs/coverage/",
     "lint": "tsc --noEmit && eslint --ext .ts  src/",
     "test": "jest",
     "watch": "pob-watch"
   },
-  "prettier": { "trailingComma": "all", "singleQuote": true, "printWidth": 100 },
+  "prettier": {
+    "trailingComma": "all",
+    "singleQuote": true,
+    "printWidth": 100
+  },
   "jest": {
     "cacheDirectory": "./node_modules/.cache/jest",
-    "testMatch": ["<rootDir>/src/**/__tests__/**/*.ts", "<rootDir>/src/**/*.test.ts"],
-    "collectCoverageFrom": ["src/**/*.ts"],
-    "moduleFileExtensions": ["ts", "js"],
-    "transform": { "^.+\\.ts$": "babel-jest" }
+    "testMatch": [
+      "<rootDir>/src/**/__tests__/**/*.ts",
+      "<rootDir>/src/**/*.test.ts"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.ts"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.ts$": "babel-jest"
+    }
   },
   "dependencies": {
     "@types/jest": "^22.2.2",
     "@types/node": "^9.6.2",
-    "nightingale-levels": "^2.0.0",
-    "nightingale-types": "^0.0.0"
+    "nightingale-levels": "^3.0.0",
+    "nightingale-types": "^1.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.44",

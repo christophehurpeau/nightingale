@@ -1,8 +1,11 @@
 {
   "name": "nightingale-browser-console",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Browser console handler for nightingale",
-  "keywords": ["nightingale", "nightingale-handler"],
+  "keywords": [
+    "nightingale",
+    "nightingale-handler"
+  ],
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
   "license": "ISC",
   "repository": "git@github.com:christophehurpeau/nightingale.git",
@@ -24,12 +27,16 @@
     "test": "echo \"No tests\"",
     "watch": "pob-watch"
   },
-  "prettier": { "trailingComma": "all", "singleQuote": true, "printWidth": 100 },
+  "prettier": {
+    "trailingComma": "all",
+    "singleQuote": true,
+    "printWidth": 100
+  },
   "dependencies": {
-    "nightingale-browser-console-formatter": "^2.0.0",
-    "nightingale-console-output": "^2.0.0",
-    "nightingale-debug": "^3.0.0",
-    "nightingale-types": "^0.0.0"
+    "nightingale-browser-console-formatter": "^3.0.0",
+    "nightingale-console-output": "^3.0.0",
+    "nightingale-debug": "^4.0.0",
+    "nightingale-types": "^1.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.44",
