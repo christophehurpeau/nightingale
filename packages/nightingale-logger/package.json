@@ -1,6 +1,6 @@
 {
   "name": "nightingale-logger",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "description": "Logger for browser and node",
   "keywords": [
     "nightingale"
