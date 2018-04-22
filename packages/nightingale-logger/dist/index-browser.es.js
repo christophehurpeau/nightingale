@@ -28,7 +28,7 @@ if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER) {
   };
 }
 
-if (global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
+if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
   global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = function (key, level) {
     var _global$__NIGHTINGALE = global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key),
         handlers = _global$__NIGHTINGALE.handlers,
