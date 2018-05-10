@@ -1,14 +1,16 @@
 {
   "name": "nightingale-example",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "",
   "keywords": [],
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (https://christophe.hurpeau.com)",
   "license": "ISC",
   "repository": "git@github.com:christophehurpeau/nightingale.git",
   "homepage": "https://github.com/christophehurpeau/nightingale",
-  "engines": { "node": ">=6.5.0" },
+  "engines": {
+    "node": ">=6.5.0"
+  },
   "main": "./index.js",
   "typings": "./dist/index.d.ts",
   "module:node": "./dist/index-node8.es.js",
@@ -33,14 +35,18 @@
     "test": "echo \"No tests\"",
     "watch": "pob-watch"
   },
-  "prettier": { "trailingComma": "all", "singleQuote": true, "printWidth": 100 },
+  "prettier": {
+    "trailingComma": "all",
+    "singleQuote": true,
+    "printWidth": 100
+  },
   "dependencies": {
-    "nightingale": "^8.0.1",
-    "nightingale-console": "^4.0.0",
-    "nightingale-console-output": "^3.0.0",
-    "nightingale-json-formatter": "^3.0.0",
-    "nightingale-string": "^4.0.0",
-    "nightingale-types": "^1.0.0"
+    "nightingale": "^8.0.2",
+    "nightingale-console": "^4.0.1",
+    "nightingale-console-output": "^3.0.1",
+    "nightingale-json-formatter": "^3.0.1",
+    "nightingale-string": "^4.0.1",
+    "nightingale-types": "^1.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.46",

@@ -1,13 +1,18 @@
 {
   "name": "nightingale-web-processor",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Nightingale web processor",
-  "keywords": ["nightingale", "nightingale-processor"],
+  "keywords": [
+    "nightingale",
+    "nightingale-processor"
+  ],
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
   "license": "ISC",
   "repository": "git@github.com:christophehurpeau/nightingale.git",
   "homepage": "https://github.com/christophehurpeau/nightingale",
-  "engines": { "node": ">=6.5.0" },
+  "engines": {
+    "node": ">=6.5.0"
+  },
   "main": "./index.js",
   "typings": "./dist/index.d.ts",
   "module:node": "./dist/index-node8.es.js",
@@ -18,8 +23,14 @@
     "test": "echo \"No tests\"",
     "watch": "pob-watch"
   },
-  "prettier": { "trailingComma": "all", "singleQuote": true, "printWidth": 100 },
-  "dependencies": { "nightingale-types": "^1.0.0" },
+  "prettier": {
+    "trailingComma": "all",
+    "singleQuote": true,
+    "printWidth": 100
+  },
+  "dependencies": {
+    "nightingale-types": "^1.0.1"
+  },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.46",
     "babel-core": "7.0.0-bridge.0",

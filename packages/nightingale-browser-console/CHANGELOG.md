@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.0.1"></a>
+## [3.0.1](https://github.com/christophehurpeau/nightingale/compare/nightingale-browser-console@3.0.0...nightingale-browser-console@3.0.1) (2018-05-10)
+
+
+### Bug Fixes
+
+* main path ([1b54053](https://github.com/christophehurpeau/nightingale/commit/1b54053))
+
+
+
+
+
 <a name="3.0.0"></a>
 # [3.0.0](https://github.com/christophehurpeau/nightingale/compare/nightingale-browser-console@2.0.0...nightingale-browser-console@3.0.0) (2018-04-21)
 
