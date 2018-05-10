@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import 'pob-babel';
+import { POB_TARGET } from 'pob-babel';
 import { Record } from 'nightingale-types';
 import Level from 'nightingale-levels';
 

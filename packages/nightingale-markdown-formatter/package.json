@@ -2,17 +2,12 @@
   "name": "nightingale-markdown-formatter",
   "version": "2.0.0",
   "description": "Nightingale Markdown formatter",
-  "keywords": [
-    "nightingale",
-    "nightingale-formatter"
-  ],
+  "keywords": ["nightingale", "nightingale-formatter"],
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
   "license": "ISC",
   "repository": "git@github.com:christophehurpeau/nightingale.git",
   "homepage": "https://github.com/christophehurpeau/nightingale",
-  "engines": {
-    "node": ">=6.5.0"
-  },
+  "engines": { "node": ">=6.5.0" },
   "main": "./index.js",
   "typings": "./dist/index.d.ts",
   "module": "./dist/index-browser.es.js",
@@ -28,55 +23,39 @@
   "scripts": {
     "build": "pob-build && tsc -p tsconfig.build.json --emitDeclarationOnly",
     "clean": "rm -Rf docs dist test/node6 coverage",
-    "generate:test-coverage": "rm -Rf docs/coverage/ ; NODE_ENV=production BABEL_ENV=test jest --coverage --coverageReporters=lcov --coverageDirectory=docs/coverage/",
+    "generate:test-coverage":
+      "rm -Rf docs/coverage/ ; NODE_ENV=production BABEL_ENV=test jest --coverage --coverageReporters=lcov --coverageDirectory=docs/coverage/",
     "lint": "tsc --noEmit && eslint --ext .ts  src/",
     "test": "jest",
     "watch": "pob-watch"
   },
-  "prettier": {
-    "trailingComma": "all",
-    "singleQuote": true,
-    "printWidth": 100
-  },
+  "prettier": { "trailingComma": "all", "singleQuote": true, "printWidth": 100 },
   "jest": {
     "cacheDirectory": "./node_modules/.cache/jest",
-    "testMatch": [
-      "<rootDir>/src/**/__tests__/**/*.ts",
-      "<rootDir>/src/**/*.test.ts"
-    ],
-    "collectCoverageFrom": [
-      "src/**/*.ts"
-    ],
-    "moduleFileExtensions": [
-      "ts",
-      "js"
-    ],
-    "transform": {
-      "^.+\\.ts$": "babel-jest"
-    }
+    "testMatch": ["<rootDir>/src/**/__tests__/**/*.ts", "<rootDir>/src/**/*.test.ts"],
+    "collectCoverageFrom": ["src/**/*.ts"],
+    "moduleFileExtensions": ["ts", "js"],
+    "transform": { "^.+\\.ts$": "babel-jest" }
   },
-  "dependencies": {
-    "nightingale-formatter": "^4.0.0",
-    "nightingale-types": "^1.0.0"
-  },
+  "dependencies": { "nightingale-formatter": "^4.0.0", "nightingale-types": "^1.0.0" },
   "devDependencies": {
-    "@babel/core": "^7.0.0-beta.44",
-    "@babel/preset-env": "^7.0.0-beta.44",
+    "@babel/core": "^7.0.0-beta.46",
+    "@babel/preset-env": "^7.0.0-beta.46",
     "@types/jest": "^22.2.3",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^8.2.3",
     "babel-jest": "^22.4.3",
-    "babel-preset-latest-node": "^2.0.0-beta.2",
-    "babel-preset-modern-browsers": "^12.0.0-beta.0",
+    "babel-preset-latest-node": "^2.0.0-beta.3",
+    "babel-preset-modern-browsers": "^12.0.0-beta.1",
     "eslint": "^4.19.1",
     "eslint-config-pob": "^19.1.0",
     "eslint-plugin-babel": "^4.1.2",
     "eslint-plugin-import": "^2.11.0",
     "eslint-plugin-prettier": "^2.6.0",
-    "eslint-plugin-typescript": "^0.11.0",
+    "eslint-plugin-typescript": "^0.12.0",
     "jest": "^22.4.3",
     "nightingale-levels": "^3.0.0",
-    "pob-babel": "^22.0.1",
+    "pob-babel": "^22.2.4",
     "prettier": "^1.12.1",
     "typescript": "^2.8.3",
     "typescript-eslint-parser": "^15.0.0",

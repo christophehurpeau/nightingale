@@ -1,5 +1,5 @@
 /* eslint-disable max-lines */
-import 'pob-babel';
+import { PRODUCTION, POB_TARGET } from 'pob-babel';
 import * as util from 'util';
 import Level from 'nightingale-levels';
 import { Metadata, MetadataStyles, Styles, Handler, Processor, Record } from 'nightingale-types';
@@ -81,7 +81,7 @@ export default class Logger {
     this.key = key;
     this.displayName = displayName;
 
-    if (POB_ENV !== 'production' && key.includes('.')) {
+    if (!PRODUCTION && key.includes('.')) {
       throw new Error(`nightingale: \`.\` in key is no longer supported (key: ${key})`);
     }
   }

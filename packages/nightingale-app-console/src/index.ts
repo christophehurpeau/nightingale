@@ -1,11 +1,11 @@
-import 'pob-babel';
+import { PRODUCTION, POB_TARGET } from 'pob-babel';
 import { install as installSourceMapSupport } from 'source-map-support';
 import Logger, { configure, addConfig, levels, listenUnhandledErrors } from 'nightingale';
 import ConsoleHandler from 'nightingale-console';
 
 export { configure, addConfig, levels };
 
-if (POB_TARGET !== 'browser' || POB_ENV !== 'production') {
+if (POB_TARGET !== 'browser' || !PRODUCTION) {
   installSourceMapSupport({
     environment: POB_TARGET === 'browser' ? 'browser' : 'node',
   });
@@ -19,7 +19,7 @@ if (POB_TARGET !== 'browser') {
 }
 
 configure(
-  POB_ENV !== 'production'
+  !PRODUCTION
     ? [
         {
           pattern: /^app(:.*)?$/,

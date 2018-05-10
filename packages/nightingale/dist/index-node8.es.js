@@ -2,7 +2,6 @@ import Logger from 'nightingale-logger';
 import nightingaleLevels from 'nightingale-levels';
 export { default as Level, default as levels } from 'nightingale-levels';
 
-/* eslint-disable no-restricted-globals */
 if (!global.__NIGHTINGALE_CONFIG) {
   global.__NIGHTINGALE_CONFIG = [];
   global.__NIGHTINGALE_LOGGER_MAP_CACHE = new Map();

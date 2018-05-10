@@ -1,4 +1,3 @@
-import 'pob-babel';
 import Level from 'nightingale-levels';
 import { Metadata, MetadataStyles, Styles, Handler, Processor, Record } from 'nightingale-types';
 export { Level };

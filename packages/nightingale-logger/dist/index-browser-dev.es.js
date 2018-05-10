@@ -140,9 +140,9 @@ function () {
 
 
   _proto.addRecord = function addRecord(record) {
-    var _getHandlersAndProces = this.getHandlersAndProcessors(record.level),
-        handlers = _getHandlersAndProces.handlers,
-        processors = _getHandlersAndProces.processors;
+    var _this$getHandlersAndP = this.getHandlersAndProcessors(record.level),
+        handlers = _this$getHandlersAndP.handlers,
+        processors = _this$getHandlersAndP.processors;
 
     if (handlers.length === 0) {
       if (record.level > Level.ERROR) {

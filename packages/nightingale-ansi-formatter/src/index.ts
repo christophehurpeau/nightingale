@@ -1,18 +1,16 @@
-import ansi, { EscapeCodePair } from 'ansi-styles';
+import ansi from 'ansi-styles';
 import { Styles, Record } from 'nightingale-types';
 import { styleToHexColor, formatRecordToString } from 'nightingale-formatter';
 
-declare module 'ansi-styles' {
-  export const color: {
-    close: string;
-    ansi256: {
-      hex: (hex: string) => string;
-    };
-  };
+/* eslint-disable no-restricted-globals */
+interface CodePair {
+  open: string;
+  close: string;
 }
+/* eslint-enable no-restricted-globals */
 
 interface AnsiStyles {
-  [key: string]: EscapeCodePair | undefined;
+  [key: string]: CodePair | undefined;
 }
 
 const ansiStyles: AnsiStyles = {
@@ -52,7 +50,7 @@ export function style(styles: Styles, string: string) {
   }
 
   return styles.reduce((string: string, styleName: string) => {
-    const style: EscapeCodePair | undefined = ansiStyles[styleName];
+    const style: CodePair | undefined = ansiStyles[styleName];
 
     if (!style) {
       throw new Error(`Unknown style: ${styleName}`);

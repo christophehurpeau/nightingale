@@ -1,4 +1,3 @@
-import 'pob-babel';
 import { Handler, Processor } from 'nightingale-types';
 export interface Config {
     handler?: Handler;

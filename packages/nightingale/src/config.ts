@@ -1,5 +1,5 @@
 /* eslint-disable no-restricted-globals */
-import 'pob-babel';
+import { POB_ENV } from 'pob-babel';
 import { Handler, Processor } from 'nightingale-types';
 import { ComputedConfigForKey } from 'nightingale-logger';
 

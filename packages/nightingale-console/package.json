@@ -2,17 +2,12 @@
   "name": "nightingale-console",
   "version": "4.0.0",
   "description": "Console handler for nightingale",
-  "keywords": [
-    "nightingale",
-    "nightingale-handler"
-  ],
+  "keywords": ["nightingale", "nightingale-handler"],
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
   "license": "ISC",
   "repository": "git@github.com:christophehurpeau/nightingale.git",
   "homepage": "https://github.com/christophehurpeau/nightingale",
-  "engines": {
-    "node": ">=6.5.0"
-  },
+  "engines": { "node": ">=6.5.0" },
   "main": "./index.js",
   "typings": "./dist/index.d.ts",
   "module:node": "./dist/index-node8.es.js",
@@ -24,11 +19,7 @@
     "test": "echo \"No tests\"",
     "watch": "pob-watch"
   },
-  "prettier": {
-    "trailingComma": "all",
-    "singleQuote": true,
-    "printWidth": 100
-  },
+  "prettier": { "trailingComma": "all", "singleQuote": true, "printWidth": 100 },
   "dependencies": {
     "nightingale-ansi-formatter": "^3.0.0",
     "nightingale-console-output": "^3.0.0",
@@ -36,17 +27,17 @@
     "nightingale-types": "^1.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0-beta.44",
+    "@babel/core": "^7.0.0-beta.46",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^8.2.3",
-    "babel-preset-latest-node": "^2.0.0-beta.2",
+    "babel-preset-latest-node": "^2.0.0-beta.3",
     "eslint": "^4.19.1",
     "eslint-config-pob": "^19.1.0",
     "eslint-plugin-babel": "^4.1.2",
     "eslint-plugin-import": "^2.11.0",
     "eslint-plugin-prettier": "^2.6.0",
-    "eslint-plugin-typescript": "^0.11.0",
-    "pob-babel": "^22.0.1",
+    "eslint-plugin-typescript": "^0.12.0",
+    "pob-babel": "^22.2.4",
     "prettier": "^1.12.1",
     "typescript": "^2.8.3",
     "typescript-eslint-parser": "^15.0.0"
