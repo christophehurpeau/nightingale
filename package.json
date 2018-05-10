@@ -20,8 +20,7 @@
     "postmerge": "yarnhook",
     "postrewrite": "yarnhook",
     "precommit": "lint-staged",
-    "preversion":
-      "yarn run lint && yarn run build && yarn run generate:docs && pob-repository-check-clean",
+    "preversion": "yarn run lint && yarn run build && yarn run generate:docs",
     "release": "lerna publish --conventional-commits -m 'chore: release'",
     "test": "lerna run --stream test",
     "watch": "lerna run --parallel --ignore \"*-example\" watch"
