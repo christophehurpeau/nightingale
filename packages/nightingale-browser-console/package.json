@@ -7,7 +7,7 @@
   "license": "ISC",
   "repository": "git@github.com:christophehurpeau/nightingale.git",
   "homepage": "https://github.com/christophehurpeau/nightingale",
-  "main": "./index.js",
+  "main": "./dist/index-browser.cjs.js",
   "typings": "./dist/index.d.ts",
   "module": "./dist/index-browser.es.js",
   "module-dev": "./dist/index-browser-dev.es.js",
