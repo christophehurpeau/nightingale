@@ -2,9 +2,7 @@
   "name": "nightingale-levels",
   "version": "3.0.1",
   "description": "Nightingale levels",
-  "keywords": [
-    "logger"
-  ],
+  "keywords": ["logger"],
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
   "license": "ISC",
   "repository": "git@github.com:christophehurpeau/nightingale.git",

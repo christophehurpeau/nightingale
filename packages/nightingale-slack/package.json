@@ -2,10 +2,7 @@
   "name": "nightingale-slack",
   "version": "4.0.1",
   "description": "Slack handler for nightingale",
-  "keywords": [
-    "nightingale",
-    "nightingale-handler"
-  ],
+  "keywords": ["nightingale", "nightingale-handler"],
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
   "license": "ISC",
   "repository": "git@github.com:christophehurpeau/nightingale.git",
@@ -26,7 +23,8 @@
   "scripts": {
     "build": "pob-build && tsc -p tsconfig.build.json --emitDeclarationOnly",
     "clean": "rm -Rf docs dist test/node6 coverage",
-    "generate:test-coverage": "rm -Rf docs/coverage/ ; NODE_ENV=production BABEL_ENV=test jest --coverage --coverageReporters=lcov --coverageDirectory=docs/coverage/",
+    "generate:test-coverage":
+      "rm -Rf docs/coverage/ ; NODE_ENV=production BABEL_ENV=test jest --coverage --coverageReporters=lcov --coverageDirectory=docs/coverage/",
     "lint": "tsc --noEmit && eslint --ext .ts  src/",
     "test": "jest",
     "watch": "pob-watch"
@@ -38,17 +36,9 @@
   },
   "jest": {
     "cacheDirectory": "./node_modules/.cache/jest",
-    "testMatch": [
-      "<rootDir>/src/**/__tests__/**/*.ts",
-      "<rootDir>/src/**/*.test.ts"
-    ],
-    "collectCoverageFrom": [
-      "src/**/*.ts"
-    ],
-    "moduleFileExtensions": [
-      "ts",
-      "js"
-    ],
+    "testMatch": ["<rootDir>/src/**/__tests__/**/*.ts", "<rootDir>/src/**/*.test.ts"],
+    "collectCoverageFrom": ["src/**/*.ts"],
+    "moduleFileExtensions": ["ts", "js"],
     "transform": {
       "^.+\\.ts$": "babel-jest"
     }

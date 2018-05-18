@@ -2,10 +2,7 @@
   "name": "nightingale-sentry",
   "version": "4.0.1",
   "description": "Sentry handler for nightingale",
-  "keywords": [
-    "nightingale",
-    "nightingale-handler"
-  ],
+  "keywords": ["nightingale", "nightingale-handler"],
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
   "license": "ISC",
   "repository": "git@github.com:christophehurpeau/nightingale.git",

@@ -2,10 +2,7 @@
   "name": "nightingale-web-processor",
   "version": "3.0.1",
   "description": "Nightingale web processor",
-  "keywords": [
-    "nightingale",
-    "nightingale-processor"
-  ],
+  "keywords": ["nightingale", "nightingale-processor"],
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
   "license": "ISC",
   "repository": "git@github.com:christophehurpeau/nightingale.git",

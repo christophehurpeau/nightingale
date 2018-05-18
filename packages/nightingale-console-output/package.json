@@ -2,10 +2,7 @@
   "name": "nightingale-console-output",
   "version": "3.0.1",
   "description": "Nightingale console output",
-  "keywords": [
-    "nightingale",
-    "nightingale-output"
-  ],
+  "keywords": ["nightingale", "nightingale-output"],
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
   "license": "ISC",
   "repository": "git@github.com:christophehurpeau/nightingale.git",
