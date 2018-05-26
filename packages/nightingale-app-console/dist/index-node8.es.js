@@ -1,8 +1,9 @@
 import { install } from 'source-map-support';
 import Logger, { configure, addConfig, levels, listenUnhandledErrors } from 'nightingale';
 export { configure, addConfig, levels } from 'nightingale';
-import ConsoleHandler from 'nightingale-console';
+import TerminalConsoleHandler from 'nightingale-console';
 
+const ConsoleHandler = TerminalConsoleHandler;
 install({
   environment: 'node'
 });

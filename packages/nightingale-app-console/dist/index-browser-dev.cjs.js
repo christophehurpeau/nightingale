@@ -7,8 +7,9 @@ function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'defau
 var sourceMapSupport = require('source-map-support');
 var Logger = require('nightingale');
 var Logger__default = _interopDefault(Logger);
-var ConsoleHandler = _interopDefault(require('nightingale-console'));
+var BrowserConsoleHandler = _interopDefault(require('nightingale-browser-console'));
 
+var ConsoleHandler = BrowserConsoleHandler;
 sourceMapSupport.install({
   environment: 'browser'
 });

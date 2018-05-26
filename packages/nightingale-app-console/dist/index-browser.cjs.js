@@ -6,8 +6,9 @@ function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'defau
 
 var Logger = require('nightingale');
 var Logger__default = _interopDefault(Logger);
-var ConsoleHandler = _interopDefault(require('nightingale-console'));
+var BrowserConsoleHandler = _interopDefault(require('nightingale-browser-console'));
 
+var ConsoleHandler = BrowserConsoleHandler;
 var logger = new Logger__default('app');
 Logger.configure([{
   handlers: [new ConsoleHandler(Logger.levels.INFO)]

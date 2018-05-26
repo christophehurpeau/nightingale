@@ -1,7 +1,8 @@
 import Logger, { configure, addConfig, levels } from 'nightingale';
 export { configure, addConfig, levels } from 'nightingale';
-import ConsoleHandler from 'nightingale-console';
+import BrowserConsoleHandler from 'nightingale-browser-console';
 
+var ConsoleHandler = BrowserConsoleHandler;
 var logger = new Logger('app');
 configure([{
   handlers: [new ConsoleHandler(levels.INFO)]
