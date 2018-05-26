@@ -1,8 +1,10 @@
 {
   "name": "nightingale",
-  "version": "8.0.2",
+  "version": "8.0.3",
   "description": "Logger for browser and node",
-  "keywords": ["logger"],
+  "keywords": [
+    "logger"
+  ],
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
   "license": "ISC",
   "repository": "git@github.com:christophehurpeau/nightingale.git",
@@ -27,8 +29,7 @@
     "clean": "rm -Rf docs dist test/node6 coverage",
     "generate:api": "typedoc --out docs --tsconfig tsconfig.build.json",
     "generate:docs": "rm -Rf docs ; yarn run generate:api && yarn run generate:test-coverage",
-    "generate:test-coverage":
-      "rm -Rf docs/coverage/ ; NODE_ENV=production BABEL_ENV=test jest --coverage --coverageReporters=lcov --coverageDirectory=docs/coverage/",
+    "generate:test-coverage": "rm -Rf docs/coverage/ ; NODE_ENV=production BABEL_ENV=test jest --coverage --coverageReporters=lcov --coverageDirectory=docs/coverage/",
     "lint": "tsc --noEmit && eslint --ext .ts  src/",
     "test": "jest",
     "watch": "pob-watch"
@@ -40,17 +41,25 @@
   },
   "jest": {
     "cacheDirectory": "./node_modules/.cache/jest",
-    "testMatch": ["<rootDir>/src/**/__tests__/**/*.ts", "<rootDir>/src/**/*.test.ts"],
-    "collectCoverageFrom": ["src/**/*.ts"],
-    "moduleFileExtensions": ["ts", "js"],
+    "testMatch": [
+      "<rootDir>/src/**/__tests__/**/*.ts",
+      "<rootDir>/src/**/*.test.ts"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.ts"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
     "transform": {
       "^.+\\.ts$": "babel-jest"
     }
   },
   "dependencies": {
-    "nightingale-levels": "^3.0.1",
-    "nightingale-logger": "^5.0.2",
-    "nightingale-types": "^1.0.1"
+    "nightingale-levels": "^3.0.2",
+    "nightingale-logger": "^5.0.3",
+    "nightingale-types": "^1.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.46",
@@ -74,7 +83,7 @@
     "karma-ievms": "^0.1.0",
     "karma-mocha": "^1.2.0",
     "karma-proclaim": "^1.0.0",
-    "nightingale-string": "^4.0.1",
+    "nightingale-string": "^4.0.2",
     "pob-babel": "^22.2.4",
     "prettier": "^1.12.1",
     "typedoc": "^0.11.1",

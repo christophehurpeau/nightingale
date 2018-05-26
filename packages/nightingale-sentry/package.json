@@ -1,8 +1,11 @@
 {
   "name": "nightingale-sentry",
-  "version": "4.0.1",
+  "version": "4.0.2",
   "description": "Sentry handler for nightingale",
-  "keywords": ["nightingale", "nightingale-handler"],
+  "keywords": [
+    "nightingale",
+    "nightingale-handler"
+  ],
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
   "license": "ISC",
   "repository": "git@github.com:christophehurpeau/nightingale.git",
@@ -27,8 +30,8 @@
     "printWidth": 100
   },
   "dependencies": {
-    "nightingale-levels": "^3.0.1",
-    "nightingale-types": "^1.0.1",
+    "nightingale-levels": "^3.0.2",
+    "nightingale-types": "^1.0.2",
     "raven": "^2.4.0"
   },
   "devDependencies": {

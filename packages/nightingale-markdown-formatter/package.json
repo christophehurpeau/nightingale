@@ -1,8 +1,11 @@
 {
   "name": "nightingale-markdown-formatter",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Nightingale Markdown formatter",
-  "keywords": ["nightingale", "nightingale-formatter"],
+  "keywords": [
+    "nightingale",
+    "nightingale-formatter"
+  ],
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
   "license": "ISC",
   "repository": "git@github.com:christophehurpeau/nightingale.git",
@@ -25,8 +28,7 @@
   "scripts": {
     "build": "pob-build && tsc -p tsconfig.build.json --emitDeclarationOnly",
     "clean": "rm -Rf docs dist test/node6 coverage",
-    "generate:test-coverage":
-      "rm -Rf docs/coverage/ ; NODE_ENV=production BABEL_ENV=test jest --coverage --coverageReporters=lcov --coverageDirectory=docs/coverage/",
+    "generate:test-coverage": "rm -Rf docs/coverage/ ; NODE_ENV=production BABEL_ENV=test jest --coverage --coverageReporters=lcov --coverageDirectory=docs/coverage/",
     "lint": "tsc --noEmit && eslint --ext .ts  src/",
     "test": "jest",
     "watch": "pob-watch"
@@ -38,16 +40,24 @@
   },
   "jest": {
     "cacheDirectory": "./node_modules/.cache/jest",
-    "testMatch": ["<rootDir>/src/**/__tests__/**/*.ts", "<rootDir>/src/**/*.test.ts"],
-    "collectCoverageFrom": ["src/**/*.ts"],
-    "moduleFileExtensions": ["ts", "js"],
+    "testMatch": [
+      "<rootDir>/src/**/__tests__/**/*.ts",
+      "<rootDir>/src/**/*.test.ts"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.ts"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
     "transform": {
       "^.+\\.ts$": "babel-jest"
     }
   },
   "dependencies": {
-    "nightingale-formatter": "^4.0.1",
-    "nightingale-types": "^1.0.1"
+    "nightingale-formatter": "^4.0.2",
+    "nightingale-types": "^1.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.46",
@@ -65,7 +75,7 @@
     "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-typescript": "^0.12.0",
     "jest": "^22.4.3",
-    "nightingale-levels": "^3.0.1",
+    "nightingale-levels": "^3.0.2",
     "pob-babel": "^22.2.4",
     "prettier": "^1.12.1",
     "typescript": "^2.8.3",
