@@ -2,9 +2,7 @@
   "name": "nightingale-levels",
   "version": "3.0.2",
   "description": "Nightingale levels",
-  "keywords": [
-    "logger"
-  ],
+  "keywords": ["logger"],
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
   "license": "ISC",
   "repository": "git@github.com:christophehurpeau/nightingale.git",
@@ -36,8 +34,8 @@
     "printWidth": 100
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0-beta.46",
-    "@babel/preset-env": "^7.0.0-beta.46",
+    "@babel/core": "^7.0.0-beta.48",
+    "@babel/preset-env": "^7.0.0-beta.48",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^8.2.3",
     "babel-preset-latest-node": "^2.0.0-beta.3",

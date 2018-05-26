@@ -2,10 +2,7 @@
   "name": "nightingale-winston-adapter",
   "version": "2.0.2",
   "description": "Winston adapter handler for nightingale",
-  "keywords": [
-    "nightingale",
-    "nightingale-handler"
-  ],
+  "keywords": ["nightingale", "nightingale-handler"],
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
   "license": "ISC",
   "repository": "git@github.com:christophehurpeau/nightingale.git",
@@ -42,8 +39,8 @@
     "nightingale-types": "^1.0.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0-beta.46",
-    "@babel/preset-env": "^7.0.0-beta.46",
+    "@babel/core": "^7.0.0-beta.48",
+    "@babel/preset-env": "^7.0.0-beta.48",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^8.2.3",
     "babel-preset-latest-node": "^2.0.0-beta.3",

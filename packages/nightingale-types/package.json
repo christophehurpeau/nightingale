@@ -2,9 +2,7 @@
   "name": "nightingale-types",
   "version": "1.0.2",
   "description": "Nightingale types for typescript",
-  "keywords": [
-    "logger"
-  ],
+  "keywords": ["logger"],
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
   "license": "ISC",
   "repository": "git@github.com:christophehurpeau/nightingale.git",

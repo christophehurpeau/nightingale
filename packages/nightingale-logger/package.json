@@ -2,9 +2,7 @@
   "name": "nightingale-logger",
   "version": "5.0.3",
   "description": "Logger for browser and node",
-  "keywords": [
-    "nightingale"
-  ],
+  "keywords": ["nightingale"],
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
   "license": "ISC",
   "repository": "git@github.com:christophehurpeau/nightingale.git",
@@ -29,7 +27,8 @@
     "clean": "rm -Rf docs dist",
     "generate:api": "typedoc --out docs --tsconfig tsconfig.build.json",
     "generate:docs": "rm -Rf docs ; yarn run generate:api && yarn run generate:test-coverage",
-    "generate:test-coverage": "rm -Rf docs/coverage/ ; NODE_ENV=production BABEL_ENV=test jest --coverage --coverageReporters=lcov --coverageDirectory=docs/coverage/",
+    "generate:test-coverage":
+      "rm -Rf docs/coverage/ ; NODE_ENV=production BABEL_ENV=test jest --coverage --coverageReporters=lcov --coverageDirectory=docs/coverage/",
     "lint": "tsc --noEmit && eslint --ext .ts  src/",
     "test": "jest",
     "watch": "pob-watch"
@@ -41,17 +40,9 @@
   },
   "jest": {
     "cacheDirectory": "./node_modules/.cache/jest",
-    "testMatch": [
-      "<rootDir>/src/**/__tests__/**/*.ts",
-      "<rootDir>/src/**/*.test.ts"
-    ],
-    "collectCoverageFrom": [
-      "src/**/*.ts"
-    ],
-    "moduleFileExtensions": [
-      "ts",
-      "js"
-    ],
+    "testMatch": ["<rootDir>/src/**/__tests__/**/*.ts", "<rootDir>/src/**/*.test.ts"],
+    "collectCoverageFrom": ["src/**/*.ts"],
+    "moduleFileExtensions": ["ts", "js"],
     "transform": {
       "^.+\\.ts$": "babel-jest"
     }
@@ -63,8 +54,8 @@
     "nightingale-types": "^1.0.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0-beta.46",
-    "@babel/preset-env": "^7.0.0-beta.46",
+    "@babel/core": "^7.0.0-beta.48",
+    "@babel/preset-env": "^7.0.0-beta.48",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^8.2.3",
     "babel-jest": "^22.4.3",
