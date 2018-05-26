@@ -1,5 +1,7 @@
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
 var Logger = require('nightingale');
@@ -7,11 +9,16 @@ var Logger__default = _interopDefault(Logger);
 var jsonFormatter = _interopDefault(require('nightingale-json-formatter'));
 var consoleOutput = _interopDefault(require('nightingale-console-output'));
 
-const handle = record => consoleOutput(jsonFormatter(record), record);
+class JSONHandler {
+  constructor(minLevel) {
+    this.minLevel = void 0;
+    this.minLevel = minLevel;
+  }
 
-function JSONHandler() {
-  this.minLevel = 0;
-  this.handle = handle;
+  handle(record) {
+    consoleOutput(jsonFormatter(record), record);
+  }
+
 }
 
 Logger.configure([{

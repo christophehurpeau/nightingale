@@ -1,5 +1,7 @@
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
 var Logger = require('nightingale');
@@ -7,27 +9,28 @@ var Logger__default = _interopDefault(Logger);
 var jsonFormatter = _interopDefault(require('nightingale-json-formatter'));
 var consoleOutput = _interopDefault(require('nightingale-console-output'));
 
-var handle = function handle(record) {
-  return consoleOutput(jsonFormatter(record), record);
-};
+class JSONHandler {
+  constructor(minLevel) {
+    this.minLevel = void 0;
+    this.minLevel = minLevel;
+  }
 
-function JSONHandler() {
-  this.minLevel = 0;
-  this.handle = handle;
+  handle(record) {
+    consoleOutput(jsonFormatter(record), record);
+  }
+
 }
 
 Logger.configure([{
   handlers: [new JSONHandler(Logger.Level.ALL)]
 }]);
-var logger = new Logger__default('app');
+const logger = new Logger__default('app');
 logger.log('test');
-var timeStarted = logger.time();
-setTimeout(function () {
-  return logger.timeEnd(timeStarted, 'time measured');
-}, 2000);
+const timeStarted = logger.time();
+setTimeout(() => logger.timeEnd(timeStarted, 'time measured'), 2000);
 logger.success('Listening', {
   port: 3000
 }, {
   port: ['yellow']
 });
-//# sourceMappingURL=jsonConsole-node4-dev.cjs.js.map
+//# sourceMappingURL=jsonConsole-node10.cjs.js.map

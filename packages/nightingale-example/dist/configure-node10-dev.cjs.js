@@ -1,5 +1,7 @@
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
 var Logger = require('nightingale');
@@ -17,13 +19,13 @@ Logger.configure([{
 }, {
   handlers: [new ConsoleHandler(Logger.Level.ALL)]
 }]);
-var smthg = new Logger__default('smthg');
-var app = new Logger__default('app');
-var appService = new Logger__default('app:service:myService:insideMyService');
+const smthg = new Logger__default('smthg');
+const app = new Logger__default('app');
+const appService = new Logger__default('app:service:myService:insideMyService');
 smthg.trace('shoud appear 1');
 app.trace('shoud not appear');
 app.info('shoud appear 2');
 appService.trace('shoud not appear');
 appService.debug('shoud not appear');
 appService.info('shoud appear 3');
-//# sourceMappingURL=configure-node4.cjs.js.map
+//# sourceMappingURL=configure-node10-dev.cjs.js.map

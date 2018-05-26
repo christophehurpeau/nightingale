@@ -11,6 +11,7 @@ class ConsoleHandler {
     this.minLevel = Level.ALL;
     this.isHandling = void 0;
     this.handle = void 0;
+    this.minLevel = minLevel;
 
     this.isHandling = (level, key) => level >= findDebugLevel(minLevel, key);
 

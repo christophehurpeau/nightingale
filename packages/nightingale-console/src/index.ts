@@ -12,6 +12,7 @@ export default class ConsoleHandler {
   handle: Handle;
 
   constructor(minLevel: Level) {
+    this.minLevel = minLevel;
     this.isHandling = (level: Level, key: string) => level >= findDebugLevel(minLevel, key);
     this.handle = handle;
   }
