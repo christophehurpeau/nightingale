@@ -1,8 +1,11 @@
 {
   "name": "nightingale-console-output",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "Nightingale console output",
-  "keywords": ["nightingale", "nightingale-output"],
+  "keywords": [
+    "nightingale",
+    "nightingale-output"
+  ],
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
   "license": "ISC",
   "repository": "git@github.com:christophehurpeau/nightingale.git",
@@ -35,8 +38,8 @@
     "printWidth": 100
   },
   "dependencies": {
-    "nightingale-levels": "^3.0.2",
-    "nightingale-types": "^1.0.2"
+    "nightingale-levels": "^3.0.3",
+    "nightingale-types": "^1.0.3"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.48",

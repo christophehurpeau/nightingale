@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.0.4"></a>
+## [2.0.4](https://github.com/christophehurpeau/nightingale/compare/nightingale-app-console@2.0.3...nightingale-app-console@2.0.4) (2018-05-26)
+
+
+### Bug Fixes
+
+* use BrowserConsole in app-console for browser builds ([1b9c938](https://github.com/christophehurpeau/nightingale/commit/1b9c938))
+
+
+
+
+
 <a name="2.0.3"></a>
 ## [2.0.3](https://github.com/christophehurpeau/nightingale/compare/nightingale-app-console@2.0.2...nightingale-app-console@2.0.3) (2018-05-26)
 
