@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.1.0"></a>
+# [2.1.0](https://github.com/christophehurpeau/nightingale/compare/nightingale-app-console@2.0.4...nightingale-app-console@2.1.0) (2018-05-27)
+
+
+### Features
+
+* **nightingale-app-console:** export app logger with name `appLoggger` ([d86bf5c](https://github.com/christophehurpeau/nightingale/commit/d86bf5c))
+
+
+
+
+
 <a name="2.0.4"></a>
 ## [2.0.4](https://github.com/christophehurpeau/nightingale/compare/nightingale-app-console@2.0.3...nightingale-app-console@2.0.4) (2018-05-26)
 

@@ -1,6 +1,6 @@
 {
   "name": "nightingale",
-  "version": "8.0.4",
+  "version": "8.0.5",
   "description": "Logger for browser and node",
   "keywords": [
     "logger"
@@ -58,7 +58,7 @@
   },
   "dependencies": {
     "nightingale-levels": "^3.0.3",
-    "nightingale-logger": "^5.0.4",
+    "nightingale-logger": "^5.0.5",
     "nightingale-types": "^1.0.3"
   },
   "devDependencies": {

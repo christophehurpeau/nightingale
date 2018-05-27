@@ -1,7 +1,7 @@
 {
   "name": "nightingale-example",
   "private": true,
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "keywords": [],
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (https://christophe.hurpeau.com)",
@@ -41,7 +41,7 @@
     "printWidth": 100
   },
   "dependencies": {
-    "nightingale": "^8.0.4",
+    "nightingale": "^8.0.5",
     "nightingale-console": "^4.0.3",
     "nightingale-console-output": "^3.0.3",
     "nightingale-json-formatter": "^3.0.3",

@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.0.5"></a>
+## [8.0.5](https://github.com/christophehurpeau/nightingale/compare/nightingale@8.0.4...nightingale@8.0.5) (2018-05-27)
+
+**Note:** Version bump only for package nightingale
+
+
+
+
+
 <a name="8.0.4"></a>
 ## [8.0.4](https://github.com/christophehurpeau/nightingale/compare/nightingale@8.0.3...nightingale@8.0.4) (2018-05-26)
 
