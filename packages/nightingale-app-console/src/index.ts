@@ -15,6 +15,7 @@ if (POB_TARGET !== 'browser' || !PRODUCTION) {
 }
 
 export const logger = new Logger('app');
+export const appLogger = logger;
 
 if (POB_TARGET !== 'browser') {
   Error.stackTraceLimit = Infinity;

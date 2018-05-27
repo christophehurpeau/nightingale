@@ -8,6 +8,7 @@ install({
   environment: 'browser'
 });
 const logger = new Logger('app');
+const appLogger = logger;
 configure([{
   pattern: /^app(:.*)?$/,
   handlers: [new ConsoleHandler(levels.DEBUG)],
@@ -16,5 +17,5 @@ configure([{
   handlers: [new ConsoleHandler(levels.INFO)]
 }]);
 
-export { logger };
+export { logger, appLogger };
 //# sourceMappingURL=index-browsermodern-dev.es.js.map

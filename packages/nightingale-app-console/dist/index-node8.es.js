@@ -8,11 +8,12 @@ install({
   environment: 'node'
 });
 const logger = new Logger('app');
+const appLogger = logger;
 Error.stackTraceLimit = Infinity;
 listenUnhandledErrors(logger);
 configure([{
   handlers: [new ConsoleHandler(levels.INFO)]
 }]);
 
-export { logger };
+export { logger, appLogger };
 //# sourceMappingURL=index-node8.es.js.map

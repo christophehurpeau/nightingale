@@ -8,6 +8,7 @@ install({
   environment: 'browser'
 });
 var logger = new Logger('app');
+var appLogger = logger;
 configure([{
   pattern: /^app(:.*)?$/,
   handlers: [new ConsoleHandler(levels.DEBUG)],
@@ -16,5 +17,5 @@ configure([{
   handlers: [new ConsoleHandler(levels.INFO)]
 }]);
 
-export { logger };
+export { logger, appLogger };
 //# sourceMappingURL=index-browser-dev.es.js.map

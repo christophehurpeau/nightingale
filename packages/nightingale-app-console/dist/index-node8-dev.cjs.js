@@ -14,6 +14,7 @@ sourceMapSupport.install({
   environment: 'node'
 });
 const logger = new Logger__default('app');
+const appLogger = logger;
 Error.stackTraceLimit = Infinity;
 Logger.listenUnhandledErrors(logger);
 Logger.configure([{
@@ -28,4 +29,5 @@ exports.configure = Logger.configure;
 exports.addConfig = Logger.addConfig;
 exports.levels = Logger.levels;
 exports.logger = logger;
+exports.appLogger = appLogger;
 //# sourceMappingURL=index-node8-dev.cjs.js.map

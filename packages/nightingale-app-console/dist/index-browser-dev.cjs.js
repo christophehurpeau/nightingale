@@ -14,6 +14,7 @@ sourceMapSupport.install({
   environment: 'browser'
 });
 var logger = new Logger__default('app');
+var appLogger = logger;
 Logger.configure([{
   pattern: /^app(:.*)?$/,
   handlers: [new ConsoleHandler(Logger.levels.DEBUG)],
@@ -26,4 +27,5 @@ exports.configure = Logger.configure;
 exports.addConfig = Logger.addConfig;
 exports.levels = Logger.levels;
 exports.logger = logger;
+exports.appLogger = appLogger;
 //# sourceMappingURL=index-browser-dev.cjs.js.map

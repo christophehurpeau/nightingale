@@ -4,9 +4,10 @@ import BrowserConsoleHandler from 'nightingale-browser-console';
 
 var ConsoleHandler = BrowserConsoleHandler;
 var logger = new Logger('app');
+var appLogger = logger;
 configure([{
   handlers: [new ConsoleHandler(levels.INFO)]
 }]);
 
-export { logger };
+export { logger, appLogger };
 //# sourceMappingURL=index-browser.es.js.map
