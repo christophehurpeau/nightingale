@@ -1,6 +1,6 @@
 {
   "name": "nightingale-browser-console",
-  "version": "3.0.4",
+  "version": "3.0.5",
   "description": "Browser console handler for nightingale",
   "keywords": [
     "nightingale",
@@ -33,9 +33,9 @@
     "printWidth": 100
   },
   "dependencies": {
-    "nightingale-browser-console-formatter": "^3.0.4",
+    "nightingale-browser-console-formatter": "^3.0.5",
     "nightingale-console-output": "^3.0.4",
-    "nightingale-debug": "^4.0.4",
+    "nightingale-debug": "^4.0.5",
     "nightingale-types": "^1.0.4"
   },
   "devDependencies": {

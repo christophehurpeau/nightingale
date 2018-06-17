@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="4.0.5"></a>
+## [4.0.5](https://github.com/christophehurpeau/nightingale/compare/nightingale-formatter@4.0.4...nightingale-formatter@4.0.5) (2018-06-17)
+
+
+### Bug Fixes
+
+* eslint errors ([c3feb87](https://github.com/christophehurpeau/nightingale/commit/c3feb87))
+
+
+
+
+
 <a name="4.0.4"></a>
 ## [4.0.4](https://github.com/christophehurpeau/nightingale/compare/nightingale-formatter@4.0.3...nightingale-formatter@4.0.4) (2018-06-17)
 

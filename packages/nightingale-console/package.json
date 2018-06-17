@@ -1,6 +1,6 @@
 {
   "name": "nightingale-console",
-  "version": "4.0.4",
+  "version": "4.0.5",
   "description": "Console handler for nightingale",
   "keywords": [
     "nightingale",
@@ -30,9 +30,9 @@
     "printWidth": 100
   },
   "dependencies": {
-    "nightingale-ansi-formatter": "^3.0.4",
+    "nightingale-ansi-formatter": "^3.0.5",
     "nightingale-console-output": "^3.0.4",
-    "nightingale-debug": "^4.0.4",
+    "nightingale-debug": "^4.0.5",
     "nightingale-types": "^1.0.4"
   },
   "devDependencies": {
