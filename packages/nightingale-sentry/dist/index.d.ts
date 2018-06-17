@@ -13,3 +13,4 @@ export default class SentryHandler {
     handle: Handle;
     constructor(ravenUrl: string, minLevel: number, options?: Options);
 }
+//# sourceMappingURL=index.d.ts.map

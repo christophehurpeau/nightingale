@@ -4,3 +4,4 @@ export { default as styleToHtmlStyle } from './styleToHtmlStyle';
 export { default as styleToHexColor } from './styleToHexColor';
 export { default as formatObject } from './formatObject';
 export { default as formatRecordToString } from './formatRecordToString';
+//# sourceMappingURL=index.d.ts.map

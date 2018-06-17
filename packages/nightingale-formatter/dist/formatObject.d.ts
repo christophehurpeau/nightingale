@@ -10,4 +10,5 @@ export declare type ObjectStyles = {
 };
 export default function formatObject(object: {
     [key: string]: any;
-}, styleFn?: StyleFn, objectStyles?: ObjectStyles, {padding, maxDepth}?: FormatObjectOptions): string;
+}, styleFn?: StyleFn, objectStyles?: ObjectStyles, { padding, maxDepth }?: FormatObjectOptions): string;
+//# sourceMappingURL=formatObject.d.ts.map

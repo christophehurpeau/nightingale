@@ -7,3 +7,4 @@ export interface StyleToHtmlStyle {
 }
 declare const styleToHtmlStyle: StyleToHtmlStyle;
 export default styleToHtmlStyle;
+//# sourceMappingURL=styleToHtmlStyle.d.ts.map

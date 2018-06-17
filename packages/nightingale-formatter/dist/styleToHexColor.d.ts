@@ -3,3 +3,4 @@ export interface StyleToHexColor {
 }
 declare const styleToHexColor: StyleToHexColor;
 export default styleToHexColor;
+//# sourceMappingURL=styleToHexColor.d.ts.map

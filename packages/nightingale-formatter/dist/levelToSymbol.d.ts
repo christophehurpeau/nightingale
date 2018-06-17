@@ -3,3 +3,4 @@ export interface LevelToSymbol {
 }
 declare const levelToSymbol: LevelToSymbol;
 export default levelToSymbol;
+//# sourceMappingURL=levelToSymbol.d.ts.map

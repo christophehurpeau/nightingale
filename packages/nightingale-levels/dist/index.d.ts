@@ -42,6 +42,7 @@ declare enum Level {
     /** Alias for FATAL */
     ALERT = 550,
     /** Emergency: system is unusable */
-    EMERGENCY = 600,
+    EMERGENCY = 600
 }
 export default Level;
+//# sourceMappingURL=index.d.ts.map

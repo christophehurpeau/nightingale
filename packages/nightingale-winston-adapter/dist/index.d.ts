@@ -8,3 +8,4 @@ export default class WinstonAdapterHandler {
     handle: Handle;
     constructor(winstonTransport: WinstonTransportType, minLevel: number);
 }
+//# sourceMappingURL=index.d.ts.map

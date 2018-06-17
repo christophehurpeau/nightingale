@@ -250,6 +250,8 @@ function internalFormatValue(value, styleFn, styles, _ref) {
   };
 }
 
+var separator = ',';
+
 var internalFormatKey = function internalFormatKey(key, styleFn) {
   if (!key) return {
     stringKey: '',
@@ -286,7 +288,7 @@ var internalFormatIterator = function internalFormatIterator(values, styleFn, ob
   var breakLine = false;
 
   var formattedSeparator = function formattedSeparator() {
-    return styleFn(['gray'], ",");
+    return styleFn(['gray'], separator);
   };
 
   var valuesMaxIndex = values.length - 1;
@@ -315,7 +317,7 @@ var internalFormatIterator = function internalFormatIterator(values, styleFn, ob
     }
 
     return {
-      stringValue: stringKey + stringValue + (index === valuesMaxIndex ? '' : ","),
+      stringValue: stringKey + stringValue + (index === valuesMaxIndex ? '' : separator),
       // eslint-disable-next-line no-useless-concat
       formattedValue: formattedKey + formattedValue + (index === valuesMaxIndex ? '' : formattedSeparator()) // note: we need to format the separator for each values for browser-formatter
 

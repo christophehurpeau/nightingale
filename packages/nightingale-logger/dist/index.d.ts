@@ -16,7 +16,7 @@ export interface ComputedConfigForKey {
  */
 export default class Logger {
     readonly key: string;
-    readonly displayName: string | undefined;
+    readonly displayName?: string | undefined;
     private contextObject?;
     /**
      * Create a new Logger
@@ -203,3 +203,4 @@ export default class Logger {
      */
     wrap<T extends Metadata>(fn: Function, metadata?: T | Function, metadataStyles?: MetadataStyles<T> | Function, callback?: Function): void;
 }
+//# sourceMappingURL=index.d.ts.map

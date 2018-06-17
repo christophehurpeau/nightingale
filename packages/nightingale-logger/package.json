@@ -25,7 +25,7 @@
   "module:modern-browsers": "./dist/index-browsermodern.es.js",
   "module:modern-browsers-dev": "./dist/index-browsermodern-dev.es.js",
   "scripts": {
-    "build": "pob-build && tsc -p tsconfig.build.json --emitDeclarationOnly",
+    "build": "pob-build && tsc -p tsconfig.build.json --declarationMap --emitDeclarationOnly",
     "clean": "rm -Rf docs dist",
     "generate:api": "typedoc --out docs --tsconfig tsconfig.build.json",
     "generate:docs": "rm -Rf docs ; yarn run generate:api && yarn run generate:test-coverage",
@@ -57,32 +57,32 @@
     }
   },
   "dependencies": {
-    "@types/jest": "^22.2.2",
     "@types/node": ">=6.0.0",
     "nightingale-levels": "^3.0.3",
     "nightingale-types": "^1.0.3"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0-beta.48",
-    "@babel/preset-env": "^7.0.0-beta.48",
+    "@babel/core": "^7.0.0-beta.51",
+    "@babel/preset-env": "^7.0.0-beta.51",
+    "@types/jest": "^23.1.0",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^8.2.3",
-    "babel-jest": "^22.4.3",
+    "babel-jest": "^23.0.1",
     "babel-preset-latest-node": "^2.0.0-beta.3",
     "babel-preset-modern-browsers": "^12.0.0-beta.1",
     "eslint": "^4.19.1",
-    "eslint-config-pob": "^19.1.0",
-    "eslint-plugin-babel": "^4.1.2",
-    "eslint-plugin-import": "^2.11.0",
+    "eslint-config-pob": "^20.0.0",
+    "eslint-plugin-babel": "^5.1.0",
+    "eslint-plugin-import": "^2.12.0",
     "eslint-plugin-prefer-class-properties": "^1.0.0",
     "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-typescript": "^0.12.0",
-    "jest": "^22.4.3",
-    "pob-babel": "^22.2.4",
-    "prettier": "^1.12.1",
+    "jest": "^23.1.0",
+    "pob-babel": "^22.2.6",
+    "prettier": "^1.13.5",
     "typedoc": "^0.11.1",
-    "typescript": "^2.8.3",
-    "typescript-eslint-parser": "^15.0.0",
+    "typescript": "^2.9.2",
+    "typescript-eslint-parser": "^16.0.0",
     "xunit-file": "^1.0.0"
   }
 }

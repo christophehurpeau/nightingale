@@ -5,3 +5,4 @@ export interface ContextWithOptionalRequest {
     request?: IncomingMessage;
 }
 export default function webProcessor<T>(record: Record<T>, context?: ContextWithOptionalRequest): void;
+//# sourceMappingURL=index.d.ts.map
