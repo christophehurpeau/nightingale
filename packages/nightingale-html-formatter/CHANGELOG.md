@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.0.6"></a>
+## [3.0.6](https://github.com/christophehurpeau/nightingale/compare/nightingale-html-formatter@3.0.5...nightingale-html-formatter@3.0.6) (2018-06-17)
+
+
+### Bug Fixes
+
+* eslint errors ([d7a0f9c](https://github.com/christophehurpeau/nightingale/commit/d7a0f9c))
+
+
+
+
+
 <a name="3.0.5"></a>
 ## [3.0.5](https://github.com/christophehurpeau/nightingale/compare/nightingale-html-formatter@3.0.4...nightingale-html-formatter@3.0.5) (2018-06-17)
 
