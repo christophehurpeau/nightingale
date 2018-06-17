@@ -1,6 +1,6 @@
 {
   "name": "nightingale",
-  "version": "8.0.5",
+  "version": "8.0.6",
   "description": "Logger for browser and node",
   "keywords": [
     "logger"
@@ -57,9 +57,9 @@
     }
   },
   "dependencies": {
-    "nightingale-levels": "^3.0.3",
-    "nightingale-logger": "^5.0.5",
-    "nightingale-types": "^1.0.3"
+    "nightingale-levels": "^3.0.4",
+    "nightingale-logger": "^5.0.6",
+    "nightingale-types": "^1.0.4"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.51",
@@ -83,7 +83,7 @@
     "karma-ievms": "^0.1.0",
     "karma-mocha": "^1.2.0",
     "karma-proclaim": "^1.0.0",
-    "nightingale-string": "^4.0.3",
+    "nightingale-string": "^4.0.4",
     "pob-babel": "^22.2.6",
     "prettier": "^1.13.5",
     "typedoc": "^0.11.1",

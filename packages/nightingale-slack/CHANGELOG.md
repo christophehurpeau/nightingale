@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="4.0.4"></a>
+## [4.0.4](https://github.com/christophehurpeau/nightingale/compare/nightingale-slack@4.0.3...nightingale-slack@4.0.4) (2018-06-17)
+
+**Note:** Version bump only for package nightingale-slack
+
+
+
+
+
 <a name="4.0.3"></a>
 ## [4.0.3](https://github.com/christophehurpeau/nightingale/compare/nightingale-slack@4.0.2...nightingale-slack@4.0.3) (2018-05-26)
 

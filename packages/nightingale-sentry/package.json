@@ -1,6 +1,6 @@
 {
   "name": "nightingale-sentry",
-  "version": "4.0.3",
+  "version": "4.0.4",
   "description": "Sentry handler for nightingale",
   "keywords": [
     "nightingale",
@@ -30,8 +30,8 @@
     "printWidth": 100
   },
   "dependencies": {
-    "nightingale-levels": "^3.0.3",
-    "nightingale-types": "^1.0.3",
+    "nightingale-levels": "^3.0.4",
+    "nightingale-types": "^1.0.4",
     "raven": "^2.6.2"
   },
   "devDependencies": {

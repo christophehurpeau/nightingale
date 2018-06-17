@@ -1,6 +1,6 @@
 {
   "name": "nightingale-browser-console-formatter",
-  "version": "3.0.3",
+  "version": "3.0.4",
   "description": "Nightingale Browser console formatter",
   "keywords": [
     "nightingale",
@@ -56,8 +56,8 @@
     }
   },
   "dependencies": {
-    "nightingale-formatter": "^4.0.3",
-    "nightingale-types": "^1.0.3"
+    "nightingale-formatter": "^4.0.4",
+    "nightingale-types": "^1.0.4"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.51",
@@ -75,7 +75,7 @@
     "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-typescript": "^0.12.0",
     "jest": "^23.1.0",
-    "nightingale-levels": "^3.0.3",
+    "nightingale-levels": "^3.0.4",
     "pob-babel": "^22.2.6",
     "prettier": "^1.13.5",
     "typescript": "^2.9.2",
