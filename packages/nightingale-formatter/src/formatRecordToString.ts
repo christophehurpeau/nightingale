@@ -1,9 +1,13 @@
-import { Record } from 'nightingale-types';
+/* eslint-disable no-unused-vars */
+import { Record, Metadata } from 'nightingale-types';
 import levelToSymbol from './levelToSymbol';
 import levelToStyles from './levelToStyles';
 import formatObject, { StyleFn, ObjectStyles } from './formatObject';
 
-export default function formatRecordToString<T>(record: Record<T>, style: StyleFn) {
+export default function formatRecordToString<T extends Metadata>(
+  record: Record<T>,
+  style: StyleFn,
+) {
   const parts: Array<string> = [];
 
   if (record.displayName) {

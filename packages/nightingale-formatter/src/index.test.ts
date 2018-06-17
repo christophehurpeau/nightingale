@@ -5,7 +5,7 @@ import {
   styleToHexColor,
   formatObject,
   formatRecordToString,
-} from './';
+} from '.';
 
 describe('test exports', () => {
   test('levelToStyles', () => expect(typeof levelToStyles).toBe('object'));
