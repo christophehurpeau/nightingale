@@ -1,5 +1,5 @@
 import Level from 'nightingale-levels';
-import format, { style } from './';
+import format, { style } from '.';
 
 test('blue bold color', () => {
   expect(style(['blue', 'bold'], 'test')).toBe(
