@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="5.1.0"></a>
+# [5.1.0](https://github.com/christophehurpeau/nightingale/compare/nightingale-logger@5.0.6...nightingale-logger@5.1.0) (2018-06-28)
+
+
+### Features
+
+* **logger:** add a method to get the context of the logger ([0846714](https://github.com/christophehurpeau/nightingale/commit/0846714))
+
+
+
+
+
 <a name="5.0.6"></a>
 ## [5.0.6](https://github.com/christophehurpeau/nightingale/compare/nightingale-logger@5.0.5...nightingale-logger@5.0.6) (2018-06-17)
 

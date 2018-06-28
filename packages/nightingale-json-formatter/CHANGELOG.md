@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.0.6"></a>
+## [3.0.6](https://github.com/christophehurpeau/nightingale/compare/nightingale-json-formatter@3.0.5...nightingale-json-formatter@3.0.6) (2018-06-28)
+
+**Note:** Version bump only for package nightingale-json-formatter
+
+
+
+
+
 <a name="3.0.5"></a>
 ## [3.0.5](https://github.com/christophehurpeau/nightingale/compare/nightingale-json-formatter@3.0.4...nightingale-json-formatter@3.0.5) (2018-06-17)
 

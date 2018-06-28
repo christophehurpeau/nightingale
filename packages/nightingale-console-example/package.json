@@ -1,7 +1,7 @@
 {
   "name": "nightingale-console-example",
   "private": true,
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "",
   "keywords": [],
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (https://christophe.hurpeau.com)",
@@ -33,8 +33,8 @@
     "printWidth": 100
   },
   "dependencies": {
-    "nightingale": "^8.0.7",
-    "nightingale-console": "^4.0.5"
+    "nightingale": "^8.0.8",
+    "nightingale-console": "^4.0.6"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.51",
