@@ -69,7 +69,7 @@ function getConfigForLoggerRecord(key: string, recordLevel: number): ComputedCon
  * This records are treated by handlers
  */
 export default class Logger {
-  private contextObject?: Object;
+  private contextObject?: object;
 
   /**
    * Create a new Logger
@@ -120,6 +120,13 @@ export default class Logger {
     const logger = new Logger(this.key);
     logger.setContext(context);
     return logger;
+  }
+
+  /**
+   * Get the context of this logger
+   */
+  getContextObject(): Readonly<object> | undefined {
+    return this.contextObject;
   }
 
   /**
