@@ -14,3 +14,4 @@ declare const _default: <T>(record: Record<T>, slackConfig: SlackConfig) => {
     }[];
 };
 export default _default;
+//# sourceMappingURL=createBody.d.ts.map

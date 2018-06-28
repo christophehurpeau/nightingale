@@ -6,3 +6,4 @@ export default class StringHandler {
     readonly string: string;
     handle<T>(record: Record<T>): void;
 }
+//# sourceMappingURL=index.d.ts.map

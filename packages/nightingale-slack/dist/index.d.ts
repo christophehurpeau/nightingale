@@ -5,3 +5,4 @@ export default class SlackHandler {
     handle: Handle;
     constructor(slackConfig: SlackConfig, minLevel: number);
 }
+//# sourceMappingURL=index.d.ts.map

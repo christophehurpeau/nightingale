@@ -115,6 +115,14 @@ function () {
     return logger;
   };
   /**
+   * Get the context of this logger
+   */
+
+
+  _proto.getContextObject = function getContextObject() {
+    return this.contextObject;
+  };
+  /**
    * Set the context of this logger
    *
    * @param {Object} context

@@ -5,3 +5,4 @@ export declare function style(styles: Styles, string: string): string;
  * @returns {string}
  */
 export default function format<T>(record: Record<T>): string;
+//# sourceMappingURL=index.d.ts.map

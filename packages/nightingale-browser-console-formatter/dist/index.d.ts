@@ -5,3 +5,4 @@ export declare const style: (args: string[]) => (styles: string[] | undefined, s
  * @returns {Array}
  */
 export default function format<T>(record: Record<T>): string[];
+//# sourceMappingURL=index.d.ts.map

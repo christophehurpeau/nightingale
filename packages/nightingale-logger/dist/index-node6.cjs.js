@@ -96,6 +96,14 @@ class Logger {
     return logger;
   }
   /**
+   * Get the context of this logger
+   */
+
+
+  getContextObject() {
+    return this.contextObject;
+  }
+  /**
    * Set the context of this logger
    *
    * @param {Object} context

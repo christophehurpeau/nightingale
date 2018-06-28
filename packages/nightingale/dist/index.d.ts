@@ -8,3 +8,4 @@ export { Level, Level as levels };
  * @param {Logger} [logger]
  */
 export declare function listenUnhandledErrors(logger?: Logger): void;
+//# sourceMappingURL=index.d.ts.map

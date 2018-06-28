@@ -48,6 +48,10 @@ export default class Logger {
      */
     context(context: object): Logger;
     /**
+     * Get the context of this logger
+     */
+    getContextObject(): Readonly<object> | undefined;
+    /**
      * Set the context of this logger
      *
      * @param {Object} context

@@ -5,3 +5,4 @@ export default class BrowserConsoleHandler {
     isHandling: IsHandling;
     constructor(minLevel: Level);
 }
+//# sourceMappingURL=index.d.ts.map

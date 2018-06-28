@@ -5,3 +5,4 @@ export default class ConsoleHandler {
     handle: Handle;
     constructor(minLevel: Level);
 }
+//# sourceMappingURL=index.d.ts.map

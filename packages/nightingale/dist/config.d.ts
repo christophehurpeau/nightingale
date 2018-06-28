@@ -11,3 +11,4 @@ export interface Config {
 }
 export declare function configure(config: Array<Config>): void;
 export declare function addConfig(config: Config, unshift?: boolean): void;
+//# sourceMappingURL=config.d.ts.map

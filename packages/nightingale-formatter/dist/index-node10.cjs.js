@@ -495,6 +495,7 @@ function formatObject(object, styleFn = noStyleFn, objectStyles, {
   return result;
 }
 
+/* eslint-disable no-unused-vars */
 function formatRecordToString(record, style) {
   const parts = [];
 

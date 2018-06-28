@@ -504,6 +504,7 @@ function formatObject(object, styleFn, objectStyles, _temp) {
   return result;
 }
 
+/* eslint-disable no-unused-vars */
 function formatRecordToString(record, style) {
   var parts = [];
 

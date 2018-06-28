@@ -5,3 +5,4 @@ export default interface SlackConfig {
     iconUrl?: string;
     iconEmoji?: string;
 }
+//# sourceMappingURL=SlackConfig.d.ts.map
