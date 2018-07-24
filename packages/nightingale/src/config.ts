@@ -57,7 +57,9 @@ function handleConfig(config: Config) {
 
   if (config.processor) {
     if (config.processors) {
-      throw new Error('Cannot have processors and processors for the same config');
+      throw new Error(
+        'Cannot have processors and processors for the same config',
+      );
     }
     config.processors = [config.processor];
     delete config.processor;
@@ -100,11 +102,13 @@ global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = (key: string) => {
     processors: [],
   };
 
-  global.__NIGHTINGALE_CONFIG.filter(configIsForKey(key)).some((config: Config) => {
-    if (config.handlers) loggerConfig.handlers.push(...config.handlers);
-    if (config.processors) loggerConfig.processors.push(...config.processors);
-    return config.stop;
-  });
+  global.__NIGHTINGALE_CONFIG
+    .filter(configIsForKey(key))
+    .some((config: Config) => {
+      if (config.handlers) loggerConfig.handlers.push(...config.handlers);
+      if (config.processors) loggerConfig.processors.push(...config.processors);
+      return config.stop;
+    });
 
   globalCache.set(key, loggerConfig);
   return loggerConfig;
@@ -123,7 +127,8 @@ if (global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
     return {
       handlers: handlers.filter(
         (handler: Handler) =>
-          level >= handler.minLevel && (!handler.isHandling || handler.isHandling(level, key)),
+          level >= handler.minLevel &&
+          (!handler.isHandling || handler.isHandling(level, key)),
       ),
       processors,
     };

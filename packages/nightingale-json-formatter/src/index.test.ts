@@ -1,5 +1,5 @@
 import Level from 'nightingale-levels';
-import format from './index';
+import format from '.';
 
 test('format record', () => {
   const record = {

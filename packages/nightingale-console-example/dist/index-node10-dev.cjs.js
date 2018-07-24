@@ -9,8 +9,8 @@ var ConsoleHandler = _interopDefault(require('nightingale-console'));
 Logger.configure([{
   handlers: [new ConsoleHandler(Logger.Level.INFO)]
 }]);
-var logger = new Logger__default('nightingale:console');
+const logger = new Logger__default('nightingale:console');
 logger.debug('test');
 logger.info('test');
 logger.warn('test');
-//# sourceMappingURL=index-node4.cjs.js.map
+//# sourceMappingURL=index-node10-dev.cjs.js.map

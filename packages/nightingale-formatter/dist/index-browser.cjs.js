@@ -5,7 +5,6 @@ Object.defineProperty(exports, '__esModule', { value: true });
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
 var Level = _interopDefault(require('nightingale-levels'));
-require('nightingale-types');
 
 var _levelToStyles;
 var levelToStyles = (_levelToStyles = {}, _levelToStyles[Level.TRACE] = ['gray'], _levelToStyles[Level.DEBUG] = ['gray'], _levelToStyles[Level.WARN] = ['yellow'], _levelToStyles[Level.ERROR] = ['red', 'bold'], _levelToStyles[Level.CRITICAL] = ['red', 'bold'], _levelToStyles[Level.FATAL] = ['bgRed', 'white'], _levelToStyles[Level.EMERGENCY] = ['bgRed', 'white'], _levelToStyles);
@@ -125,7 +124,6 @@ var styleToHtmlStyle = {
 };
 
 /* eslint-disable max-lines, no-useless-concat, prefer-template, no-use-before-define, typescript/no-use-before-define */
-
 var noStyleFn = function noStyleFn(styles, value) {
   return value;
 };
@@ -383,7 +381,7 @@ function internalFormatMap(name, map, styleFn, _ref6) {
     return sameRawFormattedValue("{Circular " + name + "}");
   }
 
-  var keys = Array.from(map.keys());
+  var keys = map.keys().concat();
 
   if (keys.length === 0) {
     return sameRawFormattedValue(name + " {}");
@@ -453,7 +451,7 @@ function internalFormatSet(name, set, styleFn, _ref8) {
     return sameRawFormattedValue("{Circular " + name + "}");
   }
 
-  var values = Array.from(set.values());
+  var values = set.values().concat();
 
   if (values.length === 0) {
     return sameRawFormattedValue(name + " []");

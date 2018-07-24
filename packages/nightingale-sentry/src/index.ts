@@ -52,6 +52,7 @@ const createHandler = (
 
 export default class SentryHandler {
   minLevel: Level;
+
   handle: Handle;
 
   constructor(ravenUrl: string, minLevel: number, options?: Options) {

@@ -5,7 +5,6 @@ Object.defineProperty(exports, '__esModule', { value: true });
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
 var Level = _interopDefault(require('nightingale-levels'));
-require('nightingale-types');
 
 const levelToStyles = {
   [Level.TRACE]: ['gray'],
@@ -141,7 +140,6 @@ const styleToHtmlStyle = {
 };
 
 /* eslint-disable max-lines, no-useless-concat, prefer-template, no-use-before-define, typescript/no-use-before-define */
-
 const noStyleFn = (styles, value) => value;
 
 function tryStringify(arg) {
@@ -386,7 +384,7 @@ function internalFormatMap(name, map, styleFn, {
     return sameRawFormattedValue(`{Circular ${name}}`);
   }
 
-  const keys = Array.from(map.keys());
+  const keys = [...map.keys()];
 
   if (keys.length === 0) {
     return sameRawFormattedValue(`${name} {}`);
@@ -452,7 +450,7 @@ function internalFormatSet(name, set, styleFn, {
     return sameRawFormattedValue(`{Circular ${name}}`);
   }
 
-  const values = Array.from(set.values());
+  const values = [...set.values()];
 
   if (values.length === 0) {
     return sameRawFormattedValue(`${name} []`);

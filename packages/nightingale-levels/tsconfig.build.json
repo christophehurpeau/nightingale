@@ -1,6 +1,14 @@
 {
   "extends": "./tsconfig.json",
 
+
+  "compilerOptions": {
+    "isolatedModules": false,
+    "declaration": true,
+    "declarationMap": true,
+    "emitDeclarationOnly": true
+  },
+
   "exclude": [
     "src/**/*.test.ts",
     "src/**/__tests__/**"

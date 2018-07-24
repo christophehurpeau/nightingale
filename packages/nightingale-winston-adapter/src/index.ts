@@ -5,11 +5,17 @@ import { Record, Level, Handle } from 'nightingale-types';
 export type LogCallback = (err: Error | null) => void;
 
 export interface WinstonTransportType {
-  log: (level: number, message: string, metadata: object, callback: LogCallback) => void;
+  log: (
+    level: number,
+    message: string,
+    metadata: object,
+    callback: LogCallback,
+  ) => void;
 }
 
 export default class WinstonAdapterHandler {
   minLevel: Level;
+
   handle: Handle;
 
   constructor(winstonTransport: WinstonTransportType, minLevel: number) {
@@ -26,7 +32,7 @@ export default class WinstonAdapterHandler {
           extra: record.extra,
           context: record.context,
         },
-        err => {
+        (err) => {
           if (err) {
             console.warn(err);
             // return reject(err);

@@ -9,14 +9,8 @@ var ConsoleHandler = _interopDefault(require('nightingale-console'));
 Logger.configure([{
   handlers: [new ConsoleHandler(Logger.Level.INFO)]
 }]);
-var nightingaleLogger = new Logger__default('nightingale');
-nightingaleLogger.setContext({
-  nightingale: true
-});
-nightingaleLogger.info('test');
-var logger = nightingaleLogger.child('console');
-logger.setContext({
-  nightingaleConsole: true
-});
+const logger = new Logger__default('nightingale:console');
+logger.debug('test');
 logger.info('test');
-//# sourceMappingURL=children-node4-dev.cjs.js.map
+logger.warn('test');
+//# sourceMappingURL=index-node10.cjs.js.map

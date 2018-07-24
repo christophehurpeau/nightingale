@@ -18,17 +18,18 @@
   "module:node": "./dist/index-node8.es.js",
   "module:node-dev": "./dist/index-node8-dev.es.js",
   "scripts": {
-    "build": "pob-build && tsc -p tsconfig.build.json --declarationMap --emitDeclarationOnly",
+    "build": "pob-build && tsc -p tsconfig.build.json",
     "clean": "rm -Rf docs dist test/node6 coverage",
     "generate:test-coverage": "rm -Rf docs/coverage/ ; NODE_ENV=production BABEL_ENV=test jest --coverage --coverageReporters=lcov --coverageDirectory=docs/coverage/",
-    "lint": "tsc --noEmit && eslint --ext .ts  src/",
+    "lint": "npm run typescript-check && eslint --ext .ts  src/",
     "test": "jest",
+    "typescript-check": "tsc --noEmit",
     "watch": "pob-watch"
   },
   "prettier": {
     "trailingComma": "all",
     "singleQuote": true,
-    "printWidth": 100
+    "arrowParens": "always"
   },
   "jest": {
     "cacheDirectory": "./node_modules/.cache/jest",
@@ -54,21 +55,22 @@
     "nightingale-types": "^1.0.4"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0-beta.51",
+    "@babel/core": "^7.0.0-beta.52",
     "@types/jest": "^23.1.0",
     "babel-core": "7.0.0-bridge.0",
-    "babel-eslint": "^8.2.3",
+    "babel-eslint": "^8.2.5",
     "babel-jest": "^23.0.1",
     "babel-preset-latest-node": "^2.0.0-beta.3",
     "eslint": "^4.19.1",
-    "eslint-config-pob": "^20.0.0",
+    "eslint-config-pob": "^21.1.1",
     "eslint-plugin-babel": "^5.1.0",
-    "eslint-plugin-import": "^2.12.0",
-    "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-prettier": "^2.6.2",
     "eslint-plugin-typescript": "^0.12.0",
-    "jest": "^23.1.0",
-    "pob-babel": "^22.2.6",
-    "prettier": "^1.13.5",
+    "eslint-plugin-unicorn": "^4.0.3",
+    "jest": "^23.3.0",
+    "pob-babel": "^22.3.2",
+    "prettier": "^1.13.7",
     "typescript": "^2.9.2",
     "typescript-eslint-parser": "^16.0.0",
     "xunit-file": "^1.0.0"

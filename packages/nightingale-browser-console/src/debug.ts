@@ -1,6 +1,7 @@
 export default function getDebugString(): string {
   const querystring = document.location.search;
-  const debugFromLocalStorage = (window.localStorage && localStorage.debug) || '';
+  const debugFromLocalStorage =
+    (window.localStorage && localStorage.debug) || '';
 
   if (!querystring) {
     return debugFromLocalStorage;
@@ -8,8 +9,15 @@ export default function getDebugString(): string {
 
   // https://developer.mozilla.org/en-US/docs/Web/API/URLUtils/search#Get_the_value_of_a_single_search_param
   const debugFromQueryString = decodeURI(
-    querystring.replace(new RegExp('^(?:.*[&\\?]DEBUG(?:\\=([^&]*))?)?.*$', 'i'), '$1'),
+    querystring.replace(
+      // eslint-disable-next-line unicorn/no-unsafe-regex
+      new RegExp('^(?:.*[&\\?]DEBUG(?:\\=([^&]*))?)?.*$', 'i'),
+      '$1',
+    ),
   );
 
-  return (debugFromLocalStorage ? `${debugFromLocalStorage},` : '') + debugFromQueryString;
+  return (
+    (debugFromLocalStorage ? `${debugFromLocalStorage},` : '') +
+    debugFromQueryString
+  );
 }

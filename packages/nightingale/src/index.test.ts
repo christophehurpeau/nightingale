@@ -1,5 +1,5 @@
 import StringHandler from 'nightingale-string';
-import Logger, { Level } from './';
+import Logger, { Level } from '.';
 
 class TestableStringLogger extends Logger {
   stringHandler: StringHandler;

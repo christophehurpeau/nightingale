@@ -4,6 +4,7 @@ import formatterRaw from 'nightingale-raw-formatter';
 
 export default class StringHandler {
   readonly minLevel: Level;
+
   private _buffer = '';
 
   constructor(minLevel: Level) {

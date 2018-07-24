@@ -16,7 +16,7 @@ sourceMapSupport.install({
 var logger = new Logger__default('app');
 var appLogger = logger;
 Logger.configure([{
-  pattern: /^app(:.*)?$/,
+  pattern: /^app(:|$)/,
   handlers: [new ConsoleHandler(Logger.levels.DEBUG)],
   stop: true
 }, {

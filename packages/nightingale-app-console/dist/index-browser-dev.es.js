@@ -10,7 +10,7 @@ install({
 var logger = new Logger('app');
 var appLogger = logger;
 configure([{
-  pattern: /^app(:.*)?$/,
+  pattern: /^app(:|$)/,
   handlers: [new ConsoleHandler(levels.DEBUG)],
   stop: true
 }, {

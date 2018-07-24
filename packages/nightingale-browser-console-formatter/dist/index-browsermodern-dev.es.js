@@ -2,7 +2,7 @@ import { formatRecordToString, styleToHtmlStyle } from 'nightingale-formatter';
 
 const style = function style(args) {
   return function (styles, string) {
-    if (!styles || !styles.length || !string) {
+    if (!styles || styles.length === 0 || !string) {
       return string;
     }
 

@@ -1,14 +1,17 @@
 import { formatRecordToString, styleToHtmlStyle } from 'nightingale-formatter';
 import { Record, Styles } from 'nightingale-types';
 
-export const style = (args: Array<string>) => (styles: Styles, string: string) => {
-  if (!styles || !styles.length || !string) {
+export const style = (args: Array<string>) => (
+  styles: Styles,
+  string: string,
+) => {
+  if (!styles || styles.length === 0 || !string) {
     return string;
   }
 
-  const htmlStyles = styles.map(styleName => styleToHtmlStyle[styleName]);
-  args.push(htmlStyles.map(s => s.open).join('; '));
-  args.push(htmlStyles.map(s => s.close).join('; '));
+  const htmlStyles = styles.map((styleName) => styleToHtmlStyle[styleName]);
+  args.push(htmlStyles.map((s) => s.open).join('; '));
+  args.push(htmlStyles.map((s) => s.close).join('; '));
   return `%c${string}%c`;
 };
 

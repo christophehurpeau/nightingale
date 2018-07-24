@@ -18,7 +18,7 @@ const appLogger = logger;
 Error.stackTraceLimit = Infinity;
 Logger.listenUnhandledErrors(logger);
 Logger.configure([{
-  pattern: /^app(:.*)?$/,
+  pattern: /^app(:|$)/,
   handlers: [new ConsoleHandler(Logger.levels.DEBUG)],
   stop: true
 }, {

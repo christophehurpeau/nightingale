@@ -13,10 +13,13 @@ const handle: Handle = <T>(record: Record<T>) => {
 
 export default class BrowserConsoleHandler {
   minLevel: Level = 0;
+
   handle: Handle = handle;
+
   isHandling: IsHandling;
 
   constructor(minLevel: Level) {
-    this.isHandling = (level: Level, key: string) => level >= findDebugLevel(minLevel, key);
+    this.isHandling = (level: Level, key: string) =>
+      level >= findDebugLevel(minLevel, key);
   }
 }

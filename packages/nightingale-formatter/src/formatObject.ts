@@ -1,8 +1,6 @@
 /* eslint-disable max-lines, no-useless-concat, prefer-template, no-use-before-define, typescript/no-use-before-define */
 import { Styles } from 'nightingale-types';
 
-export { Styles };
-
 export interface FormatObjectOptions {
   padding?: string;
   maxDepth?: number;
@@ -291,7 +289,7 @@ function internalFormatMap(
     return sameRawFormattedValue(`{Circular ${name}}`);
   }
 
-  const keys = Array.from(map.keys());
+  const keys = [...map.keys()];
   if (keys.length === 0) {
     return sameRawFormattedValue(`${name} {}`);
   }
@@ -349,7 +347,7 @@ function internalFormatSet(
     return sameRawFormattedValue(`{Circular ${name}}`);
   }
 
-  const values = Array.from(set.values());
+  const values = [...set.values()];
   if (values.length === 0) {
     return sameRawFormattedValue(`${name} []`);
   }

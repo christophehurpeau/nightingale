@@ -1,7 +1,7 @@
 import { formatRecordToString } from 'nightingale-formatter';
 
 function style(styles, string) {
-  if (!styles || !styles.length || !string) {
+  if (!styles || styles.length === 0 || !string) {
     return string;
   }
 
