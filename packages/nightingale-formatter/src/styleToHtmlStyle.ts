@@ -1,5 +1,3 @@
-/* eslint-disable no-restricted-globals */
-
 import hexColors from './styleToHexColor';
 
 export interface HtmlStyle {
@@ -15,12 +13,18 @@ const styleToHtmlStyle: StyleToHtmlStyle = {
   // text style
   bold: { open: 'font-weight: bold', close: 'font-weight: normal' },
   italic: { open: 'font-style: italic', close: 'font-style: normal' },
-  underline: { open: 'text-decoration: underline', close: 'text-decoration: none' },
+  underline: {
+    open: 'text-decoration: underline',
+    close: 'text-decoration: none',
+  },
   inverse: {
     open: 'unicode-bidi: bidi-override; direction: rtl',
     close: 'unicode-bidi: normal; direction: ltr',
   },
-  strikethrough: { open: 'text-decoration: line-through', close: 'text-decoration: none' },
+  strikethrough: {
+    open: 'text-decoration: line-through',
+    close: 'text-decoration: none',
+  },
 
   black: { open: 'color: black', close: 'color: initial' },
   red: { open: 'color: #ff0020', close: 'color: initial' },
@@ -42,8 +46,14 @@ const styleToHtmlStyle: StyleToHtmlStyle = {
   bgWhite: { open: 'background: white', close: 'background: initial' },
 
   orange: { open: `color: #${hexColors.orange}`, close: 'color: initial' },
-  grayLight: { open: `color: #${hexColors.grayLight}`, close: 'color: initial' },
-  'gray-light': { open: `color: #${hexColors.grayLight}`, close: 'color: initial' },
+  grayLight: {
+    open: `color: #${hexColors.grayLight}`,
+    close: 'color: initial',
+  },
+  'gray-light': {
+    open: `color: #${hexColors.grayLight}`,
+    close: 'color: initial',
+  },
 };
 
 export default styleToHtmlStyle;

@@ -2,7 +2,14 @@
 import { PRODUCTION, POB_TARGET } from 'pob-babel';
 import * as util from 'util';
 import Level from 'nightingale-levels';
-import { Metadata, MetadataStyles, Styles, Handler, Processor, Record } from 'nightingale-types';
+import {
+  Metadata,
+  MetadataStyles,
+  Styles,
+  Handler,
+  Processor,
+  Record,
+} from 'nightingale-types';
 
 declare const global: any;
 
@@ -51,8 +58,9 @@ if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
 
     return {
       handlers: handlers.filter(
-        handler =>
-          level >= handler.minLevel && (!handler.isHandling || handler.isHandling(level, key)),
+        (handler) =>
+          level >= handler.minLevel &&
+          (!handler.isHandling || handler.isHandling(level, key)),
       ),
       processors,
     };
@@ -60,7 +68,10 @@ if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
 }
 
 /** @private */
-function getConfigForLoggerRecord(key: string, recordLevel: number): ComputedConfigForKey {
+function getConfigForLoggerRecord(
+  key: string,
+  recordLevel: Level,
+): ComputedConfigForKey {
   return global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD(key, recordLevel);
 }
 
@@ -82,7 +93,9 @@ export default class Logger {
     this.displayName = displayName;
 
     if (!PRODUCTION && key.includes('.')) {
-      throw new Error(`nightingale: \`.\` in key is no longer supported (key: ${key})`);
+      throw new Error(
+        `nightingale: \`.\` in key is no longer supported (key: ${key})`,
+      );
     }
   }
 
@@ -151,7 +164,9 @@ export default class Logger {
    * Use this only if you know what you are doing.
    */
   addRecord<T extends Metadata>(record: Readonly<Record<T>>) {
-    const { handlers, processors } = this.getHandlersAndProcessors(record.level);
+    const { handlers, processors } = this.getHandlersAndProcessors(
+      record.level,
+    );
 
     if (handlers.length === 0) {
       if (record.level > Level.ERROR) {
@@ -165,10 +180,10 @@ export default class Logger {
     }
 
     if (processors) {
-      processors.forEach(process => process(record, record.context));
+      processors.forEach((process) => process(record, record.context));
     }
 
-    handlers.some(handler => handler.handle(record) === false);
+    handlers.some((handler) => handler.handle(record) === false);
   }
 
   /**
@@ -202,35 +217,55 @@ export default class Logger {
   /**
    * Log a trace message
    */
-  trace<T extends Metadata>(message: string, metadata?: T, metadataStyles?: MetadataStyles<T>) {
+  trace<T extends Metadata>(
+    message: string,
+    metadata?: T,
+    metadataStyles?: MetadataStyles<T>,
+  ) {
     this.log(message, metadata, Level.TRACE, { metadataStyles });
   }
 
   /**
    * Log a debug message
    */
-  debug<T extends Metadata>(message: string, metadata?: T, metadataStyles?: MetadataStyles<T>) {
+  debug<T extends Metadata>(
+    message: string,
+    metadata?: T,
+    metadataStyles?: MetadataStyles<T>,
+  ) {
     this.log(message, metadata, Level.DEBUG, { metadataStyles });
   }
 
   /**
    * Notice an info message
    */
-  notice<T extends Metadata>(message: string, metadata?: T, metadataStyles?: MetadataStyles<T>) {
+  notice<T extends Metadata>(
+    message: string,
+    metadata?: T,
+    metadataStyles?: MetadataStyles<T>,
+  ) {
     this.log(message, metadata, Level.NOTICE, { metadataStyles });
   }
 
   /**
    * Log an info message
    */
-  info<T extends Metadata>(message: string, metadata?: T, metadataStyles?: MetadataStyles<T>) {
+  info<T extends Metadata>(
+    message: string,
+    metadata?: T,
+    metadataStyles?: MetadataStyles<T>,
+  ) {
     this.log(message, metadata, Level.INFO, { metadataStyles });
   }
 
   /**
    * Log a warn message
    */
-  warn<T extends Metadata>(message: string, metadata?: T, metadataStyles?: MetadataStyles<T>) {
+  warn<T extends Metadata>(
+    message: string,
+    metadata?: T,
+    metadataStyles?: MetadataStyles<T>,
+  ) {
     this.log(message, metadata, Level.WARN, { metadataStyles });
   }
 
@@ -243,10 +278,16 @@ export default class Logger {
     metadataStyles?: MetadataStyles<T>,
   ) {
     if (message instanceof Error) {
-      const extendedMetadata: T & ExtendedErrorMetadata = Object.assign({}, metadata, {
-        error: message,
-      });
-      message = `${extendedMetadata.error.name}: ${extendedMetadata.error.message}`;
+      const extendedMetadata: T & ExtendedErrorMetadata = Object.assign(
+        {},
+        metadata,
+        {
+          error: message,
+        },
+      );
+      message = `${extendedMetadata.error.name}: ${
+        extendedMetadata.error.message
+      }`;
       this.log(message, extendedMetadata, Level.ERROR, { metadataStyles });
     } else {
       this.log(message, metadata, Level.ERROR, { metadataStyles });
@@ -256,35 +297,54 @@ export default class Logger {
   /**
    * Log an critical message
    */
-  critical<T extends Metadata>(message: string, metadata?: T, metadataStyles?: MetadataStyles<T>) {
+  critical<T extends Metadata>(
+    message: string,
+    metadata?: T,
+    metadataStyles?: MetadataStyles<T>,
+  ) {
     this.log(message, metadata, Level.CRITICAL, { metadataStyles });
   }
 
   /**
    * Log a fatal message
    */
-  fatal<T extends Metadata>(message: string, metadata?: T, metadataStyles?: MetadataStyles<T>) {
+  fatal<T extends Metadata>(
+    message: string,
+    metadata?: T,
+    metadataStyles?: MetadataStyles<T>,
+  ) {
     this.log(message, metadata, Level.FATAL, { metadataStyles });
   }
 
   /**
    * Log an alert message
    */
-  alert<T extends Metadata>(message: string, metadata?: T, metadataStyles?: MetadataStyles<T>) {
+  alert<T extends Metadata>(
+    message: string,
+    metadata?: T,
+    metadataStyles?: MetadataStyles<T>,
+  ) {
     this.log(message, metadata, Level.ALERT, { metadataStyles });
   }
 
   /**
    * Log an inspected value
    */
-  inspectValue<T extends Metadata>(value: any, metadata?: T, metadataStyles?: MetadataStyles<T>) {
+  inspectValue<T extends Metadata>(
+    value: any,
+    metadata?: T,
+    metadataStyles?: MetadataStyles<T>,
+  ) {
     if (POB_TARGET === 'browser') {
       throw new Error('Not supported for the browser. Prefer `debugger;`');
     } else {
       // Note: inspect is a special function for node:
       // https://github.com/nodejs/node/blob/a1bda1b4deb08dfb3e06cb778f0db40023b18318/lib/util.js#L210
       value = util.inspect(value, { depth: 6 });
-      this.log(value, metadata, Level.DEBUG, { metadataStyles, styles: ['gray'] });
+      this.log(value, metadata, Level.DEBUG, {
+        metadataStyles,
+        styles: ['gray'],
+      });
     }
   }
 
@@ -311,7 +371,11 @@ export default class Logger {
   /**
    * Alias for infoSuccess
    */
-  success<T extends Metadata>(message: string, metadata?: T, metadataStyles?: MetadataStyles<T>) {
+  success<T extends Metadata>(
+    message: string,
+    metadata?: T,
+    metadataStyles?: MetadataStyles<T>,
+  ) {
     this.infoSuccess(message, metadata, metadataStyles);
   }
 
@@ -348,14 +412,22 @@ export default class Logger {
   /**
    * Alias for infoFail
    */
-  fail<T extends Metadata>(message: string, metadata?: T, metadataStyles?: MetadataStyles<T>) {
+  fail<T extends Metadata>(
+    message: string,
+    metadata?: T,
+    metadataStyles?: MetadataStyles<T>,
+  ) {
     this.infoFail(message, metadata, metadataStyles);
   }
 
   /**
    * Log an info fail message
    */
-  infoFail<T extends Metadata>(message: string, metadata?: T, metadataStyles?: MetadataStyles<T>) {
+  infoFail<T extends Metadata>(
+    message: string,
+    metadata?: T,
+    metadataStyles?: MetadataStyles<T>,
+  ) {
     this.log(message, metadata, Level.INFO, {
       metadataStyles,
       symbol: '✖',
@@ -366,7 +438,11 @@ export default class Logger {
   /**
    * Log an debug fail message
    */
-  debugFail<T extends Metadata>(message: string, metadata?: T, metadataStyles?: MetadataStyles<T>) {
+  debugFail<T extends Metadata>(
+    message: string,
+    metadata?: T,
+    metadataStyles?: MetadataStyles<T>,
+  ) {
     this.log(message, metadata, Level.DEBUG, {
       metadataStyles,
       symbol: '✖',
@@ -425,10 +501,14 @@ export default class Logger {
       readableTime = `${seconds ? `${seconds}s and ` : ''}${ms}ms`;
     }
 
-    const extendedMetadata: T & ExtendedTimeMetadata = Object.assign({}, metadata, {
-      readableTime,
-      timeMs: diffTime,
-    });
+    const extendedMetadata: T & ExtendedTimeMetadata = Object.assign(
+      {},
+      metadata,
+      {
+        readableTime,
+        timeMs: diffTime,
+      },
+    );
 
     this.log(message, extendedMetadata, level, { ...options, metadataStyles });
   }
@@ -472,7 +552,11 @@ export default class Logger {
    * }
    *
    */
-  enter<T extends Metadata>(fn: Function, metadata?: T, metadataStyles?: MetadataStyles<T>) {
+  enter<T extends Metadata>(
+    fn: Function,
+    metadata?: T,
+    metadataStyles?: MetadataStyles<T>,
+  ) {
     const extendedMetadata: Metadata = metadata || {};
     extendedMetadata.functionName = fn.name;
     this.log('enter', metadata, Level.TRACE, { metadataStyles });
@@ -495,9 +579,13 @@ export default class Logger {
     metadata?: T,
     metadataStyles?: MetadataStyles<T & { functionName: string }>,
   ) {
-    const extendedMetadata: T & ExtendedFunctionNameMetadata = Object.assign({}, metadata, {
-      functionName: fn.name,
-    });
+    const extendedMetadata: T & ExtendedFunctionNameMetadata = Object.assign(
+      {},
+      metadata,
+      {
+        functionName: fn.name,
+      },
+    );
     this.log('exit', extendedMetadata, Level.TRACE, { metadataStyles });
   }
 

@@ -34,7 +34,6 @@ const styleToHexColor = {
   'gray-light': '808080'
 };
 
-/* eslint-disable no-restricted-globals */
 const styleToHtmlStyle = {
   // text style
   bold: {

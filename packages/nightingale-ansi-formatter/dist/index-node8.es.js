@@ -1,8 +1,6 @@
 import ansi from 'ansi-styles';
 import { styleToHexColor, formatRecordToString } from 'nightingale-formatter';
 
-/* eslint-disable no-restricted-globals */
-
 const ansiStyles = {
   black: ansi.black,
   red: ansi.red,

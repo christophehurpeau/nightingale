@@ -7,7 +7,6 @@ function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'defau
 var Logger = _interopDefault(require('nightingale-logger'));
 var nightingaleLevels = _interopDefault(require('nightingale-levels'));
 
-/* eslint-disable no-restricted-globals */
 if (global.__NIGHTINGALE_GLOBAL_HANDLERS) {
   // eslint-disable-next-line no-console
   throw new Error('nightingale: update all to ^5.0.0');

@@ -56,7 +56,10 @@ function tryStringify(arg: any) {
   }
 }
 
-const sameRawFormattedValue = (value: string) => ({ stringValue: value, formattedValue: value });
+const sameRawFormattedValue = (value: string) => ({
+  stringValue: value,
+  formattedValue: value,
+});
 
 function internalFormatValue(
   value: any,
@@ -109,11 +112,19 @@ function internalFormatValue(
     if (depth >= maxDepth) {
       stringValue = '[Array...]';
     } else {
-      return internalFormatArray(value, styleFn, { padding, depth: depth + 1, maxDepth, objects });
+      return internalFormatArray(value, styleFn, {
+        padding,
+        depth: depth + 1,
+        maxDepth,
+        objects,
+      });
     }
   } else if (value instanceof Error) {
     const stack = value.stack;
-    stringValue = stack && stack.startsWith(value.message) ? stack : `${value.message}\n${stack}`;
+    stringValue =
+      stack && stack.startsWith(value.message)
+        ? stack
+        : `${value.message}\n${stack}`;
   } else if (value instanceof Map) {
     const name = value.constructor.name;
     if (depth >= maxDepth) {
@@ -204,10 +215,19 @@ const internalFormatIterator = (
   const formattedValues: Array<FormattedValue> = values.map(
     ({ key, value }: { key: any; value: any }, index: number) => {
       const nextDepth = depth + 1;
-      const internalFormatParams = { padding, depth: nextDepth, maxDepth, objects };
+      const internalFormatParams = {
+        padding,
+        depth: nextDepth,
+        maxDepth,
+        objects,
+      };
 
       // key must be formatted before value (browser-formatter needs order)
-      const { stringKey, formattedKey } = formatKey(key, styleFn, internalFormatParams);
+      const { stringKey, formattedKey } = formatKey(
+        key,
+        styleFn,
+        internalFormatParams,
+      );
 
       let { stringValue, formattedValue } = internalFormatValue(
         value,
@@ -216,17 +236,23 @@ const internalFormatIterator = (
         internalFormatParams,
       );
 
-      if (stringValue && (stringValue.length > 80 || stringValue.indexOf('\n') !== -1)) {
+      if (
+        stringValue &&
+        (stringValue.length > 80 || stringValue.indexOf('\n') !== -1)
+      ) {
         breakLine = true;
         stringValue = stringValue.replace(/\n/g, `\n${padding}`);
         formattedValue = formattedValue.replace(/\n/g, `\n${padding}`);
       }
 
       return {
-        stringValue: stringKey + stringValue + (index === valuesMaxIndex ? '' : separator),
+        stringValue:
+          stringKey + stringValue + (index === valuesMaxIndex ? '' : separator),
         // eslint-disable-next-line no-useless-concat
         formattedValue:
-          formattedKey + formattedValue + (index === valuesMaxIndex ? '' : formattedSeparator()),
+          formattedKey +
+          formattedValue +
+          (index === valuesMaxIndex ? '' : formattedSeparator()),
         // note: we need to format the separator for each values for browser-formatter
       };
     },
@@ -236,14 +262,22 @@ const internalFormatIterator = (
     stringValue:
       prefix +
       formattedValues
-        .map(breakLine ? v => `\n${padding}${v.stringValue}` : fv => fv.stringValue)
+        .map(
+          breakLine
+            ? (v) => `\n${padding}${v.stringValue}`
+            : (fv) => fv.stringValue,
+        )
         .join(breakLine ? '\n' : ' ') +
       suffix,
     // eslint-disable-next-line prefer-template
     formattedValue:
       `${prefix}${breakLine ? '' : prefixSuffixSpace}` +
       formattedValues
-        .map(breakLine ? v => `\n${padding}${v.formattedValue}` : v => v.formattedValue)
+        .map(
+          breakLine
+            ? (v) => `\n${padding}${v.formattedValue}`
+            : (v) => v.formattedValue,
+        )
         .join(breakLine ? '' : ' ') +
       `${breakLine ? ',\n' : prefixSuffixSpace}${suffix}`,
   };
@@ -267,7 +301,7 @@ function internalFormatObject(
   objects.add(object);
 
   const result = internalFormatIterator(
-    keys.map(key => ({ key, value: object[key] })),
+    keys.map((key) => ({ key, value: object[key] })),
     styleFn,
     objectStyles,
     { padding, depth, maxDepth, objects },
@@ -297,7 +331,7 @@ function internalFormatMap(
   objects.add(map);
 
   const result = internalFormatIterator(
-    keys.map(key => ({ key, value: map.get(key) })),
+    keys.map((key) => ({ key, value: map.get(key) })),
     styleFn,
     undefined,
     { padding, depth, maxDepth, objects },
@@ -355,7 +389,7 @@ function internalFormatSet(
   objects.add(set);
 
   const result = internalFormatIterator(
-    values.map(value => ({ key: undefined, value })),
+    values.map((value) => ({ key: undefined, value })),
     styleFn,
     undefined,
     { padding, depth, maxDepth, objects },
@@ -373,12 +407,17 @@ export default function formatObject(
   objectStyles?: ObjectStyles,
   { padding = '  ', maxDepth = 10 }: FormatObjectOptions = {},
 ) {
-  const { formattedValue: result } = internalFormatObject(object, styleFn, objectStyles, {
-    padding,
-    maxDepth,
-    depth: 0,
-    objects: new Set(),
-  });
+  const { formattedValue: result } = internalFormatObject(
+    object,
+    styleFn,
+    objectStyles,
+    {
+      padding,
+      maxDepth,
+      depth: 0,
+      objects: new Set(),
+    },
+  );
 
   if (result === '{}') {
     return '';

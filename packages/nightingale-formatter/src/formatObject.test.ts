@@ -7,7 +7,9 @@ test('empty object should return empty string', () => {
 });
 
 const styleFn = (styles: Styles, value: string) =>
-  styles && styles.length ? `[styles:${styles.join(',')}]${value}[/styles]` : value;
+  styles && styles.length !== 0
+    ? `[styles:${styles.join(',')}]${value}[/styles]`
+    : value;
 
 const noStyleFn = (styles: Styles, value: string) => value;
 
@@ -18,9 +20,9 @@ test('simple object', () => {
 });
 
 test('simple without prototype', () => {
-  expect(formatObject(Object.assign(Object.create(null), { a: 1 }), styleFn)).toBe(
-    '{ [styles:gray-light,bold]a:[/styles] [styles:yellow]1[/styles] }',
-  );
+  expect(
+    formatObject(Object.assign(Object.create(null), { a: 1 }), styleFn),
+  ).toBe('{ [styles:gray-light,bold]a:[/styles] [styles:yellow]1[/styles] }');
 });
 
 test('long object', () => {
@@ -55,7 +57,9 @@ test('simple recursive object', () => {
   const a: { a: any } = { a: 1 };
   a.a = a;
   expect(a.a).toBe(a);
-  expect(formatObject({ a }, noStyleFn)).toBe('{ a: { a: {Circular Object} } }');
+  expect(formatObject({ a }, noStyleFn)).toBe(
+    '{ a: { a: {Circular Object} } }',
+  );
 });
 
 test('empty map', () => {
@@ -64,7 +68,10 @@ test('empty map', () => {
 
 test('simple map', () => {
   expect(
-    formatObject({ a: new Map<any, any>([['key1', 'value1'], [{ b: 1 }, 'value2']]) }, noStyleFn),
+    formatObject(
+      { a: new Map<any, any>([['key1', 'value1'], [{ b: 1 }, 'value2']]) },
+      noStyleFn,
+    ),
   ).toBe('{ a: Map { "key1": "value1", { b: 1 }: "value2" } }');
 });
 
@@ -73,7 +80,9 @@ test('empty array', () => {
 });
 
 test('simple array', () => {
-  expect(formatObject({ a: [1, '2', 3, 4, 5] }, noStyleFn)).toBe('{ a: [1, "2", 3, 4, 5] }');
+  expect(formatObject({ a: [1, '2', 3, 4, 5] }, noStyleFn)).toBe(
+    '{ a: [1, "2", 3, 4, 5] }',
+  );
 });
 
 test('object in array', () => {

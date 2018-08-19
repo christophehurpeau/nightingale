@@ -50,20 +50,18 @@
     "nightingale-types": "^1.0.4"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0-beta.52",
+    "@babel/core": "^7.0.0-rc.1",
     "babel-core": "7.0.0-bridge.0",
-    "babel-eslint": "^8.2.5",
+    "babel-eslint": "^9.0.0-beta.3",
     "babel-preset-latest-node": "^2.0.0-beta.3",
-    "eslint": "^4.19.1",
-    "eslint-config-pob": "^21.1.1",
+    "eslint": "^5.4.0",
+    "eslint-config-pob": "^22.0.1",
     "eslint-plugin-babel": "^5.1.0",
-    "eslint-plugin-import": "^2.13.0",
-    "eslint-plugin-prettier": "^2.6.2",
+    "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-typescript": "^0.12.0",
-    "eslint-plugin-unicorn": "^4.0.3",
-    "pob-babel": "^22.3.2",
-    "prettier": "^1.13.7",
-    "typescript": "^2.9.2",
-    "typescript-eslint-parser": "^16.0.0"
+    "pob-babel": "^22.4.0",
+    "prettier": "^1.14.2",
+    "typescript": "^3.0.1",
+    "typescript-eslint-parser": "^18.0.0"
   }
 }

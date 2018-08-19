@@ -14,7 +14,7 @@ const appLogger = new Logger('app');
 const worker1Logger = new Logger('app:worker1');
 const worker2Logger = new Logger('app:worker2');
 
-[appLogger, worker1Logger, worker2Logger].forEach(logger => {
+[appLogger, worker1Logger, worker2Logger].forEach((logger) => {
   setTimeout(() => logger.log('log()'), Math.floor(Math.random() * 100));
   setTimeout(() => logger.info('info()'), Math.floor(Math.random() * 100));
   setTimeout(() => logger.warn('warn()'), Math.floor(Math.random() * 100));

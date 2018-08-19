@@ -17,7 +17,9 @@ export default function formatRecordToString<T extends Metadata>(
   }
 
   if (record.datetime) {
-    parts.push(style(['gray', 'bold'], record.datetime.toTimeString().split(' ')[0]));
+    parts.push(
+      style(['gray', 'bold'], record.datetime.toTimeString().split(' ')[0]),
+    );
     /* new Date().toFormat('HH24:MI:SS') */
   }
 

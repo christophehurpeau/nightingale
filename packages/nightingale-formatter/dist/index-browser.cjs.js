@@ -18,7 +18,6 @@ var styleToHexColor = {
   'gray-light': '808080'
 };
 
-/* eslint-disable no-restricted-globals */
 var styleToHtmlStyle = {
   // text style
   bold: {

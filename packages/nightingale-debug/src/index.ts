@@ -6,8 +6,9 @@ const specialRegexpChars = /[\\^$+?.()|[\]{}]/;
 type TestFunction = (string: string) => boolean;
 export type DebugValueType = string | RegExp | Array<string>;
 
-const createTestFunctionFromRegexp = (regexp: RegExp): TestFunction => (string: string) =>
-  regexp.test(string);
+const createTestFunctionFromRegexp = (regexp: RegExp): TestFunction => (
+  string: string,
+) => regexp.test(string);
 
 const createTestFunctionFromRegexpString = (value: string): TestFunction => {
   if (!value.endsWith('/')) throw new Error('Invalid RegExp DEBUG value');
@@ -25,7 +26,9 @@ const createTestFunctionFromValue = (value: string): TestFunction => {
 
 export type FindDebugLevel = (minLevel: Level, key: string) => Level;
 
-export default function createFindDebugLevel(debugValue?: DebugValueType): FindDebugLevel {
+export default function createFindDebugLevel(
+  debugValue?: DebugValueType,
+): FindDebugLevel {
   let wilcard = false;
   const debugValues: Array<TestFunction> = [];
   const skips: Array<TestFunction> = [];
@@ -47,9 +50,11 @@ export default function createFindDebugLevel(debugValue?: DebugValueType): FindD
   }
 
   if (debugValue) {
-    (debugValue as Array<string>).forEach(value => {
+    (debugValue as Array<string>).forEach((value) => {
       if (specialRegexpChars.test(value)) {
-        throw new Error(`Invalid debug value: "${value}" (contains special chars)`);
+        throw new Error(
+          `Invalid debug value: "${value}" (contains special chars)`,
+        );
       }
 
       if (!value) return;
@@ -72,7 +77,7 @@ export default function createFindDebugLevel(debugValue?: DebugValueType): FindD
       return () => Level.ALL;
     } else {
       return (minLevel: Level, key: string) =>
-        skips.some(skip => skip(key)) ? minLevel : Level.ALL;
+        skips.some((skip) => skip(key)) ? minLevel : Level.ALL;
     }
   }
 
@@ -85,8 +90,8 @@ export default function createFindDebugLevel(debugValue?: DebugValueType): FindD
       return minLevel;
     }
 
-    if (debugValues.some(debugValue => debugValue(key))) {
-      return skips.some(skip => skip(key)) ? minLevel : Level.ALL;
+    if (debugValues.some((debugValue) => debugValue(key))) {
+      return skips.some((skip) => skip(key)) ? minLevel : Level.ALL;
     }
 
     return minLevel;

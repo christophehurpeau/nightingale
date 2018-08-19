@@ -7,8 +7,6 @@ function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'defau
 var ansi = _interopDefault(require('ansi-styles'));
 var nightingaleFormatter = require('nightingale-formatter');
 
-/* eslint-disable no-restricted-globals */
-
 const ansiStyles = {
   black: ansi.black,
   red: ansi.red,

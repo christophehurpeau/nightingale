@@ -29,12 +29,10 @@
     "nightingale-levels": "^3.0.4"
   },
   "devDependencies": {
-    "eslint": "^4.19.1",
-    "eslint-config-pob": "^21.1.1",
-    "eslint-plugin-import": "^2.13.0",
-    "eslint-plugin-node": "^6.0.1",
-    "eslint-plugin-prettier": "^2.6.2",
-    "eslint-plugin-unicorn": "^4.0.3",
-    "prettier": "^1.13.7"
+    "eslint": "^5.4.0",
+    "eslint-config-pob": "^22.0.1",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^7.0.1",
+    "prettier": "^1.14.2"
   }
 }

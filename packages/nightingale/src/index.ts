@@ -10,8 +10,15 @@ export { Level, Level as levels };
  * @param {Logger} [logger]
  */
 export function listenUnhandledErrors(
-  logger: Logger = new Logger('nightingale.listenUnhandledErrors', 'listenUnhandledErrors'),
+  logger: Logger = new Logger(
+    'nightingale.listenUnhandledErrors',
+    'listenUnhandledErrors',
+  ),
 ) {
-  process.on('uncaughtException', err => logger.error('uncaughtException', { err }));
-  process.on('unhandledRejection', err => logger.error('unhandledRejection', { err }));
+  process.on('uncaughtException', (err) =>
+    logger.error('uncaughtException', { err }),
+  );
+  process.on('unhandledRejection', (err) =>
+    logger.error('unhandledRejection', { err }),
+  );
 }

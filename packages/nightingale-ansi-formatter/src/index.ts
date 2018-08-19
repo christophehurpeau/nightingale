@@ -2,12 +2,10 @@ import ansi from 'ansi-styles';
 import { Styles, Record } from 'nightingale-types';
 import { styleToHexColor, formatRecordToString } from 'nightingale-formatter';
 
-/* eslint-disable no-restricted-globals */
 interface CodePair {
   open: string;
   close: string;
 }
-/* eslint-enable no-restricted-globals */
 
 interface AnsiStyles {
   [key: string]: CodePair | undefined;

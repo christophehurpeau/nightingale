@@ -37,7 +37,7 @@ declare enum Level {
     /** Critical conditions. Example: Application component unavailable, unexpected exception */
     CRITICAL = 500,
     /** Action must be taken immediately. Example: Entire website down, database unavailable, etc
-     *                 This should trigger the SMS alerts and wake you up */
+     * This should trigger the SMS alerts and wake you up */
     FATAL = 550,
     /** Alias for FATAL */
     ALERT = 550,

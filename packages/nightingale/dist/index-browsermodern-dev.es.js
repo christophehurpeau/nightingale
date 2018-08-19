@@ -2,7 +2,6 @@ import Logger from 'nightingale-logger';
 import nightingaleLevels from 'nightingale-levels';
 export { default as Level, default as levels } from 'nightingale-levels';
 
-/* eslint-disable no-restricted-globals */
 if (global.__NIGHTINGALE_GLOBAL_HANDLERS) {
   // eslint-disable-next-line no-console
   throw new Error('nightingale: update all to ^5.0.0');
