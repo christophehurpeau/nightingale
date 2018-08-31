@@ -46,15 +46,12 @@
     ]
   },
   "devDependencies": {
-    "@commitlint/cli": "^7.0.0",
-    "@commitlint/config-conventional": "^7.0.1",
-    "husky": "^0.14.3",
-    "lerna": "3.1.1",
-    "lint-staged": "^7.2.2",
-    "pob-release": "^4.2.1",
-    "yarnhook": "^0.3.0"
-  },
-  "resolutions": {
-    "typescript": "^3.0.1"
+    "@commitlint/cli": "7.1.1",
+    "@commitlint/config-conventional": "7.1.1",
+    "husky": "0.14.3",
+    "lerna": "3.2.1",
+    "lint-staged": "7.2.2",
+    "pob-release": "4.4.0",
+    "yarnhook": "0.3.0"
   }
 }

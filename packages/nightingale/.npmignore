@@ -1,18 +1,20 @@
-/git-hooks
-/examples
-/samples
-/docs
-/coverage
 /build
+/docs
+/examples
+/git-hooks
+/samples
 /test
-/.pob.json
-circle.yml
+/tsconfig.json
+/tsconfig.build.json
+/tsconfig.doc.json
+.babelrc
 .codeclimate.yml
-jsdoc.config.json
+.yo-rc.json
 
 /.settings
 /.project
 /.idea
+/.vscode
 *.sublime-project
 *.sublime-workspace
 
