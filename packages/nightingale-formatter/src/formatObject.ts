@@ -213,7 +213,7 @@ const internalFormatIterator = (
 
   const valuesMaxIndex = values.length - 1;
   const formattedValues: Array<FormattedValue> = values.map(
-    ({ key, value }: { key: any; value: any }, index: number) => {
+    ({ key, value }, index: number) => {
       const nextDepth = depth + 1;
       const internalFormatParams = {
         padding,

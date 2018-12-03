@@ -1,17 +1,3 @@
-node_modules
 /build
+/docs
 
-/.settings
-/.project
-/.idea
-*.sublime-project
-*.sublime-workspace
-
-#*
-*$
-*.BAK
-*.bak
-*.log
-*.old
-*~
-.#*

@@ -1,6 +1,6 @@
 {
   "extends": [
-    "pob/babel",
+    "pob/babel-node",
     "pob/typescript"
   ],
   "parser": "typescript-eslint-parser",

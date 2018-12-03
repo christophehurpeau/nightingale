@@ -13,12 +13,10 @@
     "node": ">=6.5.0"
   },
   "main": "./lib/index.js",
-  "typings": "./lib/index.d.ts",
+  "types": "./lib/index.d.ts",
   "scripts": {
-    "build": "echo \"No build script.\"",
     "lint": "eslint lib/",
-    "test": "echo \"No tests\"",
-    "watch": "echo \"No watch script.\""
+    "test": "echo \"No tests\""
   },
   "prettier": {
     "trailingComma": "es5",
@@ -29,10 +27,10 @@
     "nightingale-levels": "^3.0.4"
   },
   "devDependencies": {
-    "eslint": "5.4.0",
-    "eslint-config-pob": "22.0.3",
+    "eslint": "5.9.0",
+    "eslint-config-pob": "24.0.2",
     "eslint-plugin-import": "2.14.0",
-    "eslint-plugin-node": "7.0.1",
-    "prettier": "1.14.2"
+    "eslint-plugin-node": "8.0.0",
+    "prettier": "1.15.3"
   }
 }

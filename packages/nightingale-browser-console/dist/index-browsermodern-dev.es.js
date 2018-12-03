@@ -3,7 +3,7 @@ import consoleOutput from 'nightingale-console-output';
 import createFindDebugLevel from 'nightingale-debug';
 
 function getDebugString() {
-  const querystring = document.location.search;
+  const querystring = document.location && document.location.search;
   const debugFromLocalStorage = window.localStorage && localStorage.getItem('debug') || '';
 
   if (!querystring) {

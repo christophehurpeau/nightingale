@@ -4,10 +4,10 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
+var request = require('request');
 var markdownFormatter = _interopDefault(require('nightingale-markdown-formatter'));
 var rawFormatter = _interopDefault(require('nightingale-raw-formatter'));
 var Level = _interopDefault(require('nightingale-levels'));
-var request = require('request');
 
 /* eslint camelcase: "off" */
 const levelToSlackColor = {

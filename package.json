@@ -12,19 +12,23 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "lerna run build",
-    "commitmsg": "commitlint -e $GIT_PARAMS",
+    "build": "lerna run --stream --concurrency=1 build",
     "generate:docs": "lerna run --parallel --ignore \"*-example\" generate:docs",
     "lint": "lerna run --stream lint",
-    "postcheckout": "yarnhook",
-    "postmerge": "yarnhook",
-    "postrewrite": "yarnhook",
-    "precommit": "lint-staged",
     "preversion": "yarn run lint && yarn run build && yarn run generate:docs",
     "release": "lerna publish --conventional-commits -m 'chore: release'",
     "test": "lerna run --stream test",
-    "typescript-check": "lerna run --stream typescript-check",
+    "typescript-check": "lerna run --parallel typescript-check",
     "watch": "lerna run --parallel --ignore \"*-example\" watch"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -e $GIT_PARAMS",
+      "post-checkout": "yarnhook",
+      "post-merge": "yarnhook",
+      "post-rewrite": "yarnhook",
+      "pre-commit": "lint-staged"
+    }
   },
   "lint-staged": {
     "{package.json,packages/*/package.json,,.eslintrc.json}": [
@@ -46,12 +50,12 @@
     ]
   },
   "devDependencies": {
-    "@commitlint/cli": "7.1.1",
-    "@commitlint/config-conventional": "7.1.1",
-    "husky": "0.14.3",
-    "lerna": "3.2.1",
-    "lint-staged": "7.2.2",
-    "pob-release": "4.4.0",
+    "@commitlint/cli": "7.2.1",
+    "@commitlint/config-conventional": "7.1.2",
+    "husky": "1.2.0",
+    "lerna": "3.5.1",
+    "lint-staged": "8.1.0",
+    "pob-release": "4.6.1",
     "yarnhook": "0.3.0"
   }
 }
