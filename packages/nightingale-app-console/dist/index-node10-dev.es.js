@@ -1,14 +1,16 @@
 import { install } from 'source-map-support';
-import Logger, { configure, addConfig, Level, levels } from 'nightingale';
+import Logger, { configure, addConfig, Level, levels, listenUnhandledErrors } from 'nightingale';
 export { configure, addConfig, Level, levels } from 'nightingale';
-import BrowserConsoleHandler from 'nightingale-browser-console';
+import TerminalConsoleHandler from 'nightingale-console';
 
-const ConsoleHandler = BrowserConsoleHandler;
+const ConsoleHandler = TerminalConsoleHandler;
 install({
-  environment: 'browser'
+  environment: 'node'
 });
 const logger = new Logger('app');
 const appLogger = logger;
+Error.stackTraceLimit = Infinity;
+listenUnhandledErrors(logger);
 configure([{
   pattern: /^app(:|$)/,
   handlers: [new ConsoleHandler(Level.DEBUG)],
@@ -18,4 +20,4 @@ configure([{
 }]);
 
 export { logger, appLogger };
-//# sourceMappingURL=index-browsermodern-dev.es.js.map
+//# sourceMappingURL=index-node10-dev.es.js.map

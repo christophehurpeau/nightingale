@@ -3,6 +3,7 @@ import { install as installSourceMapSupport } from 'source-map-support';
 import Logger, {
   configure,
   addConfig,
+  Level,
   levels,
   listenUnhandledErrors,
 } from 'nightingale';
@@ -12,7 +13,7 @@ import BrowserConsoleHandler from 'nightingale-browser-console';
 const ConsoleHandler =
   POB_TARGET === 'browser' ? BrowserConsoleHandler : TerminalConsoleHandler;
 
-export { configure, addConfig, levels };
+export { configure, addConfig, Level, levels };
 
 if (POB_TARGET !== 'browser' || !PRODUCTION) {
   installSourceMapSupport({
@@ -33,16 +34,16 @@ configure(
     ? [
         {
           pattern: /^app(:|$)/,
-          handlers: [new ConsoleHandler(levels.DEBUG)],
+          handlers: [new ConsoleHandler(Level.DEBUG)],
           stop: true,
         },
         {
-          handlers: [new ConsoleHandler(levels.INFO)],
+          handlers: [new ConsoleHandler(Level.INFO)],
         },
       ]
     : [
         {
-          handlers: [new ConsoleHandler(levels.INFO)],
+          handlers: [new ConsoleHandler(Level.INFO)],
         },
       ],
 );

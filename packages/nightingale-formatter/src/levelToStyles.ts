@@ -1,18 +1,18 @@
-import levels from 'nightingale-levels';
+import Level from 'nightingale-levels';
 
 export interface LevelToStyles {
   readonly [level: number]: Array<string>;
 }
 
 const levelToStyles: LevelToStyles = {
-  [levels.TRACE]: ['gray'],
-  [levels.DEBUG]: ['gray'],
-  // [levels.INFO]: ['gray'],
-  [levels.WARN]: ['yellow'],
-  [levels.ERROR]: ['red', 'bold'],
-  [levels.CRITICAL]: ['red', 'bold'],
-  [levels.FATAL]: ['bgRed', 'white'],
-  [levels.EMERGENCY]: ['bgRed', 'white'],
+  [Level.TRACE]: ['gray'],
+  [Level.DEBUG]: ['gray'],
+  // [Level.INFO]: ['gray'],
+  [Level.WARN]: ['yellow'],
+  [Level.ERROR]: ['red', 'bold'],
+  [Level.CRITICAL]: ['red', 'bold'],
+  [Level.FATAL]: ['bgRed', 'white'],
+  [Level.EMERGENCY]: ['bgRed', 'white'],
 };
 
 export default levelToStyles;

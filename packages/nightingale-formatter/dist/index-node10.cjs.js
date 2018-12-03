@@ -9,7 +9,7 @@ var Level = _interopDefault(require('nightingale-levels'));
 const levelToStyles = {
   [Level.TRACE]: ['gray'],
   [Level.DEBUG]: ['gray'],
-  // [Levels.INFO]: ['gray'],
+  // [Level.INFO]: ['gray'],
   [Level.WARN]: ['yellow'],
   [Level.ERROR]: ['red', 'bold'],
   [Level.CRITICAL]: ['red', 'bold'],

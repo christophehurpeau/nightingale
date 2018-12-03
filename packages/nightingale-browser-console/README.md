@@ -24,7 +24,7 @@ import { configure, levels } from 'nightingale';
 import ConsoleHandler from 'nightingale-browser-console';
 
 configure([
-  { handlers: [new ConsoleHandler(levels.INFO)] }
+  { handlers: [new ConsoleHandler(Level.INFO)] }
 ]);
 ```
 

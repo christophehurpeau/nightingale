@@ -22,7 +22,7 @@ npm install --save nightingale nightingale-slack
 ## Usage
 
 ```js
-import { configure, levels } from 'nightingale';
+import { configure, Level } from 'nightingale';
 import SlackHandler from 'nightingale-slack';
 
 const slackErrorConfig = {
@@ -34,6 +34,6 @@ const slackErrorConfig = {
 };
 
 configure([
-  { handlers: [new SlackHandler(slackErrorConfig, levels.ERROR)]
+  { handlers: [new SlackHandler(slackErrorConfig, Level.ERROR)]
 ])
 ```

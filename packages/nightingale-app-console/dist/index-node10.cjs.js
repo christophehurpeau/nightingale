@@ -7,19 +7,17 @@ function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'defau
 var sourceMapSupport = require('source-map-support');
 var Logger = require('nightingale');
 var Logger__default = _interopDefault(Logger);
-var BrowserConsoleHandler = _interopDefault(require('nightingale-browser-console'));
+var TerminalConsoleHandler = _interopDefault(require('nightingale-console'));
 
-var ConsoleHandler = BrowserConsoleHandler;
+const ConsoleHandler = TerminalConsoleHandler;
 sourceMapSupport.install({
-  environment: 'browser'
+  environment: 'node'
 });
-var logger = new Logger__default('app');
-var appLogger = logger;
+const logger = new Logger__default('app');
+const appLogger = logger;
+Error.stackTraceLimit = Infinity;
+Logger.listenUnhandledErrors(logger);
 Logger.configure([{
-  pattern: /^app(:|$)/,
-  handlers: [new ConsoleHandler(Logger.Level.DEBUG)],
-  stop: true
-}, {
   handlers: [new ConsoleHandler(Logger.Level.INFO)]
 }]);
 
@@ -29,4 +27,4 @@ exports.Level = Logger.Level;
 exports.levels = Logger.levels;
 exports.logger = logger;
 exports.appLogger = appLogger;
-//# sourceMappingURL=index-browser-dev.cjs.js.map
+//# sourceMappingURL=index-node10.cjs.js.map

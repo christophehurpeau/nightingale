@@ -12,11 +12,12 @@ var ConsoleHandler = BrowserConsoleHandler;
 var logger = new Logger__default('app');
 var appLogger = logger;
 Logger.configure([{
-  handlers: [new ConsoleHandler(Logger.levels.INFO)]
+  handlers: [new ConsoleHandler(Logger.Level.INFO)]
 }]);
 
 exports.configure = Logger.configure;
 exports.addConfig = Logger.addConfig;
+exports.Level = Logger.Level;
 exports.levels = Logger.levels;
 exports.logger = logger;
 exports.appLogger = appLogger;

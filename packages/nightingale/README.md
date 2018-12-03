@@ -43,20 +43,20 @@ import ConsoleHandler from 'nightingale-console';
 
 configure([
     {
-        handlers: [new ConsoleHandler(levels.WARN)],
+        handlers: [new ConsoleHandler(Level.WARN)],
     },
     {
         keys: ['mylib', 'myotherlib'],
-        handlers: [new ConsoleHandler(levels.ALL)],
+        handlers: [new ConsoleHandler(Level.ALL)],
     },
     {
         pattern: /^app\.server$/,
-        handlers: [new ConsoleHandler(levels.ALL)],
+        handlers: [new ConsoleHandler(Level.ALL)],
         stop: true, // means the following config won't be used, if the pattern matches.
     },
     {
         pattern: /^app(?!\.server)/,
-        handlers: [new ConsoleHandler(levels.INFO)],
+        handlers: [new ConsoleHandler(Level.INFO)],
     },
 ]);
 
@@ -69,7 +69,7 @@ const logger = new Logger('app.server');
 logger.debug('This is a log'); // will be displayed
 ```
 
-You can configure several handlers with different `levels`, like console and slack.
+You can configure several handlers with different `Level`, like console and slack.
 
 ### In a library
 
@@ -102,7 +102,7 @@ import BrowserConsoleHandler from 'nightingale-browser-console';
 configure([
     {
         key: 'app',
-        handlers: [new BrowserConsoleHandler(levels.INFO)],
+        handlers: [new BrowserConsoleHandler(Level.INFO)],
     }
 ]);
 ```
@@ -130,7 +130,7 @@ Values are minimatch patterns and separated by `,`.
 
 ```js
 import Koa from 'koa';
-import Logger, { configure, levels } from 'nightingale';
+import Logger, { configure, Level } from 'nightingale';
 import ConsoleHandler from 'nightinale-console';
 import webProcessor from 'nightinale-web-processor';
 
@@ -140,7 +140,7 @@ const logger = new Logger('app');
 configure([
     {
         key: 'app',
-        handlers: [new ConsoleHandler(levels.ALL)],
+        handlers: [new ConsoleHandler(Level.ALL)],
         processors: [webProcessor],
     }
 ])
@@ -223,7 +223,7 @@ import { addGlobalHandler, levels } from 'nightingale';
 import ErrorHandler from 'nightingale-sentry';
 
 configure([
-  { handlers: [new ErrorHandler(levels.ERROR)] }
+  { handlers: [new ErrorHandler(Level.ERROR)] }
 ]);
 ```
 
