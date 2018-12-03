@@ -1,6 +1,6 @@
 {
   "name": "nightingale-types",
-  "version": "1.0.4",
+  "version": "2.0.0",
   "description": "Nightingale types for typescript",
   "keywords": [
     "logger"
@@ -24,7 +24,7 @@
     "arrowParens": "always"
   },
   "dependencies": {
-    "nightingale-levels": "^3.0.4"
+    "nightingale-levels": "^4.0.0"
   },
   "devDependencies": {
     "eslint": "5.9.0",

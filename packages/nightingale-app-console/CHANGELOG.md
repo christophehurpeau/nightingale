@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0](https://github.com/christophehurpeau/nightingale/compare/nightingale-app-console@2.1.3...nightingale-app-console@3.0.0) (2018-12-03)
+
+
+### Features
+
+* drop node 6 ([e09773c](https://github.com/christophehurpeau/nightingale/commit/e09773c))
+
+
+### BREAKING CHANGES
+
+* node 6 no longer supported
+
+
+
+
+
 <a name="2.1.3"></a>
 ## [2.1.3](https://github.com/christophehurpeau/nightingale/compare/nightingale-app-console@2.1.2...nightingale-app-console@2.1.3) (2018-06-28)
 

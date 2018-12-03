@@ -1,6 +1,6 @@
 {
   "name": "nightingale-app-console",
-  "version": "2.1.3",
+  "version": "3.0.0",
   "description": "nightingale default config and logger for app",
   "keywords": [],
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (https://christophe.hurpeau.com)",
@@ -42,9 +42,9 @@
     "arrowParens": "always"
   },
   "dependencies": {
-    "nightingale": "^8.0.8",
-    "nightingale-browser-console": "^3.0.6",
-    "nightingale-console": "^4.0.6",
+    "nightingale": "^9.0.0",
+    "nightingale-browser-console": "^4.0.0",
+    "nightingale-console": "^5.0.0",
     "source-map-support": "^0.4.14"
   },
   "devDependencies": {

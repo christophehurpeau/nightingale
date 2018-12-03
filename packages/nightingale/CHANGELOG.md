@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [9.0.0](https://github.com/christophehurpeau/nightingale/compare/nightingale@8.0.8...nightingale@9.0.0) (2018-12-03)
+
+
+### Features
+
+* drop node 6 ([e09773c](https://github.com/christophehurpeau/nightingale/commit/e09773c))
+
+
+### BREAKING CHANGES
+
+* node 6 no longer supported
+
+
+
+
+
 <a name="8.0.8"></a>
 ## [8.0.8](https://github.com/christophehurpeau/nightingale/compare/nightingale@8.0.7...nightingale@8.0.8) (2018-06-28)
 

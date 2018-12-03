@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0](https://github.com/christophehurpeau/nightingale/compare/nightingale-debug@4.0.5...nightingale-debug@5.0.0) (2018-12-03)
+
+
+### Features
+
+* drop node 6 ([e09773c](https://github.com/christophehurpeau/nightingale/commit/e09773c))
+
+
+### BREAKING CHANGES
+
+* node 6 no longer supported
+
+
+
+
+
 <a name="4.0.5"></a>
 ## [4.0.5](https://github.com/christophehurpeau/nightingale/compare/nightingale-debug@4.0.4...nightingale-debug@4.0.5) (2018-06-17)
 

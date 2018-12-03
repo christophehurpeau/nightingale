@@ -1,7 +1,7 @@
 {
   "name": "nightingale-example",
   "private": true,
-  "version": "1.0.6",
+  "version": "2.0.0",
   "description": "",
   "keywords": [],
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (https://christophe.hurpeau.com)",
@@ -42,12 +42,12 @@
     "arrowParens": "always"
   },
   "dependencies": {
-    "nightingale": "^8.0.8",
-    "nightingale-console": "^4.0.6",
-    "nightingale-console-output": "^3.0.4",
-    "nightingale-json-formatter": "^3.0.6",
-    "nightingale-string": "^4.0.6",
-    "nightingale-types": "^1.0.4"
+    "nightingale": "^9.0.0",
+    "nightingale-console": "^5.0.0",
+    "nightingale-console-output": "^4.0.0",
+    "nightingale-json-formatter": "^4.0.0",
+    "nightingale-string": "^5.0.0",
+    "nightingale-types": "^2.0.0"
   },
   "devDependencies": {
     "@babel/core": "7.2.0",

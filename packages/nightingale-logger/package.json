@@ -1,6 +1,6 @@
 {
   "name": "nightingale-logger",
-  "version": "5.1.0",
+  "version": "6.0.0",
   "description": "Logger for browser and node",
   "keywords": [
     "nightingale"
@@ -65,8 +65,8 @@
   },
   "dependencies": {
     "@types/node": "^10.12.12",
-    "nightingale-levels": "^3.0.4",
-    "nightingale-types": "^1.0.4"
+    "nightingale-levels": "^4.0.0",
+    "nightingale-types": "^2.0.0"
   },
   "devDependencies": {
     "@babel/core": "7.2.0",

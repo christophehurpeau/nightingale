@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.0.0](https://github.com/christophehurpeau/nightingale/compare/nightingale-raw-formatter@3.0.6...nightingale-raw-formatter@4.0.0) (2018-12-03)
+
+
+### Features
+
+* drop node 6 ([e09773c](https://github.com/christophehurpeau/nightingale/commit/e09773c))
+
+
+### BREAKING CHANGES
+
+* node 6 no longer supported
+
+
+
+
+
 <a name="3.0.6"></a>
 ## [3.0.6](https://github.com/christophehurpeau/nightingale/compare/nightingale-raw-formatter@3.0.5...nightingale-raw-formatter@3.0.6) (2018-06-28)
 

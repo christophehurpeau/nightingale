@@ -1,6 +1,6 @@
 {
   "name": "nightingale-console-output",
-  "version": "3.0.4",
+  "version": "4.0.0",
   "description": "Nightingale console output",
   "keywords": [
     "nightingale",
@@ -45,8 +45,8 @@
     "arrowParens": "always"
   },
   "dependencies": {
-    "nightingale-levels": "^3.0.4",
-    "nightingale-types": "^1.0.4"
+    "nightingale-levels": "^4.0.0",
+    "nightingale-types": "^2.0.0"
   },
   "devDependencies": {
     "@babel/core": "7.2.0",

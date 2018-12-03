@@ -1,6 +1,6 @@
 {
   "name": "nightingale-json-formatter",
-  "version": "3.0.6",
+  "version": "4.0.0",
   "description": "Nightingale JSON formatter",
   "keywords": [
     "nightingale",
@@ -63,8 +63,8 @@
     }
   },
   "dependencies": {
-    "nightingale-formatter": "^4.0.6",
-    "nightingale-types": "^1.0.4"
+    "nightingale-formatter": "^5.0.0",
+    "nightingale-types": "^2.0.0"
   },
   "devDependencies": {
     "@babel/core": "7.2.0",
@@ -81,7 +81,7 @@
     "eslint-plugin-import": "2.14.0",
     "eslint-plugin-typescript": "0.14.0",
     "jest": "23.6.0",
-    "nightingale-levels": "^3.0.4",
+    "nightingale-levels": "^4.0.0",
     "pob-babel": "23.5.0",
     "prettier": "1.15.3",
     "typescript": "3.2.1",
