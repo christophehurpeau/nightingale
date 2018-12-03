@@ -1,6 +1,6 @@
 {
   "name": "nightingale",
-  "version": "9.0.0",
+  "version": "9.0.1",
   "description": "Logger for browser and node",
   "keywords": [
     "logger"
@@ -89,7 +89,7 @@
     "karma-ievms": "^0.1.0",
     "karma-mocha": "^1.2.0",
     "karma-proclaim": "^1.0.0",
-    "nightingale-string": "^5.0.0",
+    "nightingale-string": "^5.0.1",
     "pob-babel": "23.5.0",
     "prettier": "1.15.3",
     "typedoc": "0.13.0",

@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.1](https://github.com/christophehurpeau/nightingale/compare/nightingale-browser-console-formatter@4.0.0...nightingale-browser-console-formatter@4.0.1) (2018-12-03)
+
+**Note:** Version bump only for package nightingale-browser-console-formatter
+
+
+
+
+
 # [4.0.0](https://github.com/christophehurpeau/nightingale/compare/nightingale-browser-console-formatter@3.0.6...nightingale-browser-console-formatter@4.0.0) (2018-12-03)
 
 

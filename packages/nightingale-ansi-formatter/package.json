@@ -1,6 +1,6 @@
 {
   "name": "nightingale-ansi-formatter",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Nightingale ANSI formatter",
   "keywords": [
     "nightingale",
@@ -51,7 +51,7 @@
   "dependencies": {
     "@types/ansi-styles": "^3.2.1",
     "ansi-styles": "^3.2.1",
-    "nightingale-formatter": "^5.0.0",
+    "nightingale-formatter": "^5.0.1",
     "nightingale-types": "^2.0.0"
   },
   "devDependencies": {

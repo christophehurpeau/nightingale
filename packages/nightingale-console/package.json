@@ -1,6 +1,6 @@
 {
   "name": "nightingale-console",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "description": "Console handler for nightingale",
   "keywords": [
     "nightingale",
@@ -31,7 +31,7 @@
     "arrowParens": "always"
   },
   "dependencies": {
-    "nightingale-ansi-formatter": "^4.0.0",
+    "nightingale-ansi-formatter": "^4.0.1",
     "nightingale-console-output": "^4.0.0",
     "nightingale-debug": "^5.0.0",
     "nightingale-types": "^2.0.0"

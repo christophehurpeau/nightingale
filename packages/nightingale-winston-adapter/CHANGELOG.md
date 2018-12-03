@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.1](https://github.com/christophehurpeau/nightingale/compare/nightingale-winston-adapter@3.0.0...nightingale-winston-adapter@3.0.1) (2018-12-03)
+
+**Note:** Version bump only for package nightingale-winston-adapter
+
+
+
+
+
 # [3.0.0](https://github.com/christophehurpeau/nightingale/compare/nightingale-winston-adapter@2.0.4...nightingale-winston-adapter@3.0.0) (2018-12-03)
 
 

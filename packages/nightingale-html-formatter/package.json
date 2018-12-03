@@ -1,6 +1,6 @@
 {
   "name": "nightingale-html-formatter",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Nightingale HTML formatter",
   "keywords": [
     "nightingale",
@@ -63,7 +63,7 @@
     }
   },
   "dependencies": {
-    "nightingale-formatter": "^5.0.0",
+    "nightingale-formatter": "^5.0.1",
     "nightingale-types": "^2.0.0"
   },
   "devDependencies": {

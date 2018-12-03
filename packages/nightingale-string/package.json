@@ -1,6 +1,6 @@
 {
   "name": "nightingale-string",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "description": "String handler for nightingale",
   "keywords": [
     "nightingale",
@@ -31,7 +31,7 @@
     "arrowParens": "always"
   },
   "dependencies": {
-    "nightingale-raw-formatter": "^4.0.0",
+    "nightingale-raw-formatter": "^4.0.1",
     "nightingale-types": "^2.0.0"
   },
   "devDependencies": {
