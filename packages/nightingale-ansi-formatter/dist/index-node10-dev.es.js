@@ -1,5 +1,5 @@
 import ansi from 'ansi-styles';
-import { styleToHexColor, formatRecordToString } from 'nightingale-formatter';
+import { formatRecordToString, styleToHexColor } from 'nightingale-formatter';
 
 const ansiStyles = {
   black: ansi.black,

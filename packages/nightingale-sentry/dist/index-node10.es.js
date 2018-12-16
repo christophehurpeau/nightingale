@@ -46,8 +46,6 @@ const createHandler = (ravenUrl, {
 
 class SentryHandler {
   constructor(ravenUrl, minLevel, options) {
-    this.minLevel = void 0;
-    this.handle = void 0;
     this.minLevel = minLevel;
     this.handle = createHandler(ravenUrl, options);
   }

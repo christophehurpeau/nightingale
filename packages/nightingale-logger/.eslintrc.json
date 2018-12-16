@@ -1,18 +1,10 @@
 {
-  "extends": [
-    "pob/babel",
-    "pob/typescript"
-  ],
   "parser": "typescript-eslint-parser",
-  "plugins": [
-    "typescript"
-  ],
+  "plugins": ["typescript"],
+  "extends": ["pob/babel", "pob/typescript"],
   "overrides": [
     {
-      "files": [
-        "src/**/*.test.ts",
-        "src/__tests__/**/*.ts"
-      ],
+      "files": ["src/**/*.test.ts", "src/__tests__/**/*.ts"],
       "env": {
         "jest": true
       },

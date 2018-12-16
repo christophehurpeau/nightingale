@@ -1,5 +1,4 @@
 import Logger from 'nightingale-logger';
-import nightingaleLevels from 'nightingale-levels';
 export { default as Level, default as levels } from 'nightingale-levels';
 
 if (global.__NIGHTINGALE_GLOBAL_HANDLERS) {

@@ -43,8 +43,6 @@ const createHandler = slackConfig => record => {
 
 class SlackHandler {
   constructor(slackConfig, minLevel) {
-    this.minLevel = void 0;
-    this.handle = void 0;
     this.minLevel = minLevel;
     this.handle = createHandler(slackConfig);
   }

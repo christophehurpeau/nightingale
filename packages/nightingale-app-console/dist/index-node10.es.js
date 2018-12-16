@@ -1,5 +1,5 @@
 import { install } from 'source-map-support';
-import Logger, { configure, addConfig, Level, levels, listenUnhandledErrors } from 'nightingale';
+import Logger, { listenUnhandledErrors, configure, Level } from 'nightingale';
 export { configure, addConfig, Level, levels } from 'nightingale';
 import TerminalConsoleHandler from 'nightingale-console';
 

@@ -28,7 +28,6 @@ class BrowserConsoleHandler {
   constructor(minLevel) {
     this.minLevel = 0;
     this.handle = handle;
-    this.isHandling = void 0;
 
     this.isHandling = function (level, key) {
       return level >= findDebugLevel(minLevel, key);

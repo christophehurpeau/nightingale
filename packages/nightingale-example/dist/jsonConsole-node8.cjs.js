@@ -9,7 +9,6 @@ var consoleOutput = _interopDefault(require('nightingale-console-output'));
 
 class JSONHandler {
   constructor(minLevel) {
-    this.minLevel = void 0;
     this.minLevel = minLevel;
   }
 

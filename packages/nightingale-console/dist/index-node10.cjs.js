@@ -15,8 +15,6 @@ const findDebugLevel = createFindDebugLevel(process.env.DEBUG);
 class ConsoleHandler {
   constructor(minLevel) {
     this.minLevel = nightingaleTypes.Level.ALL;
-    this.isHandling = void 0;
-    this.handle = void 0;
     this.minLevel = minLevel;
 
     this.isHandling = (level, key) => level >= findDebugLevel(minLevel, key);

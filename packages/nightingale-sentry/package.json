@@ -2,10 +2,7 @@
   "name": "nightingale-sentry",
   "version": "5.0.1",
   "description": "Sentry handler for nightingale",
-  "keywords": [
-    "nightingale",
-    "nightingale-handler"
-  ],
+  "keywords": ["nightingale", "nightingale-handler"],
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
   "license": "ISC",
   "repository": "git@github.com:christophehurpeau/nightingale.git",
@@ -21,7 +18,6 @@
     "build": "pob-build && tsc -p tsconfig.build.json",
     "clean": "rm -Rf docs dist test/node6 coverage",
     "lint": "npm run typescript-check && eslint --ext .ts  src/",
-    "test": "echo \"No tests\"",
     "typescript-check": "tsc --noEmit",
     "watch": "pob-watch"
   },
@@ -36,19 +32,19 @@
     "raven": "^2.6.4"
   },
   "devDependencies": {
-    "@babel/core": "7.2.0",
+    "@babel/core": "7.2.2",
     "@types/raven": "^2.1.6",
     "babel-eslint": "10.0.1",
     "babel-preset-latest-node": "3.0.1",
-    "eslint": "5.9.0",
-    "eslint-config-pob": "24.0.2",
+    "eslint": "5.10.0",
+    "eslint-config-pob": "24.0.3",
     "eslint-plugin-babel": "5.3.0",
     "eslint-plugin-import": "2.14.0",
     "eslint-plugin-node": "8.0.0",
     "eslint-plugin-typescript": "0.14.0",
-    "pob-babel": "23.5.0",
+    "pob-babel": "23.5.3",
     "prettier": "1.15.3",
-    "typescript": "3.2.1",
+    "typescript": "3.2.2",
     "typescript-eslint-parser": "21.0.2"
   }
 }

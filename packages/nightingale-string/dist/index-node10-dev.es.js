@@ -3,7 +3,6 @@ import formatterRaw from 'nightingale-raw-formatter';
 /* eslint-disable prefer-template */
 class StringHandler {
   constructor(minLevel) {
-    this.minLevel = void 0;
     this._buffer = '';
     this.minLevel = minLevel;
   }

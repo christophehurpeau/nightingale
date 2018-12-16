@@ -2,21 +2,13 @@
   "name": "nightingale-browser-console",
   "version": "4.0.1",
   "description": "Browser console handler for nightingale",
-  "keywords": [
-    "nightingale",
-    "nightingale-handler"
-  ],
+  "keywords": ["nightingale", "nightingale-handler"],
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
   "license": "ISC",
   "repository": "git@github.com:christophehurpeau/nightingale.git",
   "homepage": "https://github.com/christophehurpeau/nightingale",
-  "browserslist": [
-    "> 0.1%",
-    "Firefox ESR",
-    "not ie < 9",
-    "not dead"
-  ],
-  "main": "./dist/index-browser.cjs.js",
+  "browserslist": ["> 0.1%", "Firefox ESR", "not ie < 9", "not dead"],
+  "main": "./dist/index-browser.es.js",
   "types": "./dist/index.d.ts",
   "module": "./dist/index-browser.es.js",
   "module-dev": "./dist/index-browser-dev.es.js",
@@ -30,7 +22,6 @@
     "build": "pob-build && tsc -p tsconfig.build.json",
     "clean": "rm -Rf docs dist test/node6 coverage",
     "lint": "npm run typescript-check && eslint --ext .ts  src/",
-    "test": "echo \"No tests\"",
     "typescript-check": "tsc --noEmit",
     "watch": "pob-watch"
   },
@@ -46,18 +37,18 @@
     "nightingale-types": "^2.0.0"
   },
   "devDependencies": {
-    "@babel/core": "7.2.0",
+    "@babel/core": "7.2.2",
     "@babel/preset-env": "7.2.0",
     "babel-eslint": "10.0.1",
     "babel-preset-modern-browsers": "13.0.1",
-    "eslint": "5.9.0",
-    "eslint-config-pob": "24.0.2",
+    "eslint": "5.10.0",
+    "eslint-config-pob": "24.0.3",
     "eslint-plugin-babel": "5.3.0",
     "eslint-plugin-import": "2.14.0",
     "eslint-plugin-typescript": "0.14.0",
-    "pob-babel": "23.5.0",
+    "pob-babel": "23.5.3",
     "prettier": "1.15.3",
-    "typescript": "3.2.1",
+    "typescript": "3.2.2",
     "typescript-eslint-parser": "21.0.2"
   }
 }

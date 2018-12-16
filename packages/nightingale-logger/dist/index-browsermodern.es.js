@@ -49,7 +49,6 @@ class Logger {
   constructor(key, displayName) {
     this.key = key;
     this.displayName = displayName;
-    this.contextObject = void 0;
     this.key = key;
     this.displayName = displayName;
   }

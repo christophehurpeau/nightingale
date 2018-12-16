@@ -1,4 +1,4 @@
-import Logger, { configure, addConfig, Level, levels } from 'nightingale';
+import Logger, { configure, Level } from 'nightingale';
 export { configure, addConfig, Level, levels } from 'nightingale';
 import BrowserConsoleHandler from 'nightingale-browser-console';
 

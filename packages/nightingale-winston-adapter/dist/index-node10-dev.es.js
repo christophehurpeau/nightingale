@@ -3,8 +3,6 @@ import levelNames from 'nightingale-level-names';
 /* eslint camelcase:"off" */
 class WinstonAdapterHandler {
   constructor(winstonTransport, minLevel) {
-    this.minLevel = void 0;
-    this.handle = void 0;
     this.minLevel = minLevel;
 
     this.handle = record => {
