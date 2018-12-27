@@ -15,9 +15,9 @@
 
 ## nightingale
 
-To see the full documentation, go to [nightingalejs/nightingale](https://github.com/nightingalejs/nightingale)
+To see the full documentation, go to [christophehurpeau/nightingale](https://github.com/christophehurpeau/nightingale)
 
-To see the Logger API, go to [docklets][docklets-url] or [http://nightingalejs.github.io/nightingale-logger](http://nightingalejs.github.io/nightingale-logger/docs/Logger.html)
+To see the Logger API, go to [http://nightingalejs.github.io/nightingale-logger](http://nightingalejs.github.io/nightingale-logger/docs/Logger.html)
 
 ## Install
 
@@ -27,7 +27,7 @@ npm install --save nightingale-logger
 
 ## Levels
 
-[nightingale-Levels](https://www.npmjs.com/package/nightingale-Levels)
+[nightingale-levels](https://www.npmjs.com/package/nightingale-levels)
 
 ## Usage
 
