@@ -116,7 +116,7 @@ var styleToHtmlStyle = {
   }
 };
 
-/* eslint-disable max-lines, no-useless-concat, prefer-template, no-use-before-define, typescript/no-use-before-define */
+/* eslint-disable max-lines, no-useless-concat, prefer-template, no-use-before-define, @typescript-eslint/no-use-before-define */
 var noStyleFn = function noStyleFn(styles, value) {
   return value;
 };

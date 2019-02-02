@@ -1,6 +1,6 @@
 {
-  "parser": "typescript-eslint-parser",
-  "plugins": ["typescript"],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
   "extends": ["pob/babel", "pob/typescript"],
   "env": {
     "browser": true

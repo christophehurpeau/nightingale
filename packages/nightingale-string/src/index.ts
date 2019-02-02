@@ -1,5 +1,5 @@
 /* eslint-disable prefer-template */
-import { Level, Record } from 'nightingale-types';
+import { Level, LogRecord } from 'nightingale-types';
 import formatterRaw from 'nightingale-raw-formatter';
 
 export default class StringHandler {
@@ -15,7 +15,7 @@ export default class StringHandler {
     return this._buffer;
   }
 
-  handle<T>(record: Record<T>) {
+  handle<T>(record: LogRecord<T>) {
     this._buffer += formatterRaw(record) + '\n';
   }
 }

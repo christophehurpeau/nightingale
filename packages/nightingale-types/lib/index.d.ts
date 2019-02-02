@@ -10,7 +10,7 @@ export interface Metadata {
 
 export type MetadataStyles<T extends Metadata> = { [P in keyof T]: any };
 
-export interface Record<T extends Metadata> {
+export interface LogRecord<T extends Metadata> {
   level: Level;
   key: string;
   displayName?: string;
@@ -24,8 +24,11 @@ export interface Record<T extends Metadata> {
   metadataStyles?: MetadataStyles<T>;
 }
 
+/** @deprecated use LogRecord instead */
+export type Record<T extends Metadata> = LogRecord<T>;
+
 export type IsHandling = (level: Level, key: string) => boolean;
-export type Handle = <T extends Metadata>(record: Readonly<Record<T>>) => false | void;
+export type Handle = <T extends Metadata>(record: Readonly<LogRecord<T>>) => false | void;
 
 export interface Handler {
   minLevel: number;
@@ -33,4 +36,4 @@ export interface Handler {
   handle: Handle;
 }
 
-export type Processor = <T extends Metadata>(record: Readonly<Record<T>>, context?: object) => void;
+export type Processor = <T extends Metadata>(record: Readonly<LogRecord<T>>, context?: object) => void;

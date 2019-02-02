@@ -1,6 +1,6 @@
-import { Record } from 'nightingale-types';
+import { LogRecord } from 'nightingale-types';
 
-export default function format<T>(record: Record<T>) {
+export default function format<T>(record: LogRecord<T>) {
   return JSON.stringify({
     key: record.key,
     level: record.level,

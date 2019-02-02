@@ -8,7 +8,7 @@ var markdownFormatter = _interopDefault(require('nightingale-markdown-formatter'
 var rawFormatter = _interopDefault(require('nightingale-raw-formatter'));
 var Level = _interopDefault(require('nightingale-levels'));
 
-/* eslint camelcase: "off" */
+/* eslint-disable @typescript-eslint/camelcase */
 const levelToSlackColor = {
   [Level.TRACE]: '#808080',
   [Level.DEBUG]: '#808080',

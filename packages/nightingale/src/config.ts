@@ -4,12 +4,12 @@ import { ComputedConfigForKey } from 'nightingale-logger';
 
 export interface Config {
   handler?: Handler;
-  handlers?: Array<Handler>;
+  handlers?: Handler[];
   key?: string;
-  keys?: Array<string>;
+  keys?: string[];
   pattern?: RegExp;
   processor?: Processor;
-  processors?: Array<Processor>;
+  processors?: Processor[];
   stop?: boolean;
 }
 
@@ -67,7 +67,7 @@ function handleConfig(config: Config) {
   return config;
 }
 
-export function configure(config: Array<Config>) {
+export function configure(config: Config[]) {
   if (global.__NIGHTINGALE_CONFIG.length !== 0) {
     // eslint-disable-next-line no-console
     console.log('nightingale: warning: config overridden');

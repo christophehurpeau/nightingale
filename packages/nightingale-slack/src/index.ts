@@ -1,9 +1,11 @@
 import { post } from 'request';
-import { Record, Handle } from 'nightingale-types';
+import { LogRecord, Handle } from 'nightingale-types';
 import SlackConfig from './SlackConfig';
 import createBody from './createBody';
 
-const createHandler = (slackConfig: SlackConfig) => <T>(record: Record<T>) => {
+const createHandler = (slackConfig: SlackConfig) => <T>(
+  record: LogRecord<T>,
+) => {
   const body = createBody(record, slackConfig);
 
   post({ url: slackConfig.webhookUrl, body, json: true }).on(

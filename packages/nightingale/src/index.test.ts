@@ -2,21 +2,21 @@ import StringHandler from 'nightingale-string';
 import Logger, { Level } from '.';
 
 class TestableStringLogger extends Logger {
-  stringHandler: StringHandler;
+  private stringHandler: StringHandler;
 
-  constructor() {
+  public constructor() {
     super('');
     this.stringHandler = new StringHandler(Level.ALL);
   }
 
-  getHandlersAndProcessors() {
+  protected getHandlersAndProcessors() {
     return {
       handlers: [this.stringHandler],
       processors: [],
     };
   }
 
-  get string() {
+  public get string(): string {
     return this.stringHandler.string;
   }
 }

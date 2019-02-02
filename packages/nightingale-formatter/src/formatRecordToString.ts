@@ -1,14 +1,14 @@
 /* eslint-disable no-unused-vars */
-import { Record, Metadata } from 'nightingale-types';
+import { LogRecord, Metadata } from 'nightingale-types';
 import levelToSymbol from './levelToSymbol';
 import levelToStyles from './levelToStyles';
 import formatObject, { StyleFn, ObjectStyles } from './formatObject';
 
 export default function formatRecordToString<T extends Metadata>(
-  record: Record<T>,
+  record: LogRecord<T>,
   style: StyleFn,
 ) {
-  const parts: Array<string> = [];
+  const parts: string[] = [];
 
   if (record.displayName) {
     parts.push(style(['gray-light'], record.displayName));

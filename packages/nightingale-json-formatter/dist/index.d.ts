@@ -1,3 +1,3 @@
-import { Record } from 'nightingale-types';
-export default function format<T>(record: Record<T>): string;
+import { LogRecord } from 'nightingale-types';
+export default function format<T>(record: LogRecord<T>): string;
 //# sourceMappingURL=index.d.ts.map

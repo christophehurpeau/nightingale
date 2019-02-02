@@ -1,5 +1,5 @@
 import { Client as RavenClient, CaptureOptions } from 'raven';
-import { Record, Handle } from 'nightingale-types';
+import { LogRecord, Handle } from 'nightingale-types';
 import Level from 'nightingale-levels';
 
 const mapToSentryLevel: { [level: number]: string } = {
@@ -13,9 +13,9 @@ const mapToSentryLevel: { [level: number]: string } = {
 };
 
 export interface Options {
-  getUser?: <T>(record: Record<T>) => any;
-  getTags?: <T>(record: Record<T>) => any;
-  getReq?: <T>(record: Record<T>) => any;
+  getUser?: <T>(record: LogRecord<T>) => any;
+  getTags?: <T>(record: LogRecord<T>) => any;
+  getReq?: <T>(record: LogRecord<T>) => any;
 }
 
 export interface MetadataWithError {
@@ -28,7 +28,7 @@ const createHandler = (
 ): Handle => {
   const ravenClient = new RavenClient(ravenUrl);
 
-  return <T extends MetadataWithError>(record: Record<T>) => {
+  return <T extends MetadataWithError>(record: LogRecord<T>) => {
     const { key, level, metadata, extra } = record;
     const error = metadata && metadata.error;
 
@@ -51,11 +51,11 @@ const createHandler = (
 };
 
 export default class SentryHandler {
-  minLevel: Level;
+  public minLevel: Level;
 
-  handle: Handle;
+  public handle: Handle;
 
-  constructor(ravenUrl: string, minLevel: number, options?: Options) {
+  public constructor(ravenUrl: string, minLevel: number, options?: Options) {
     this.minLevel = minLevel;
     this.handle = createHandler(ravenUrl, options);
   }

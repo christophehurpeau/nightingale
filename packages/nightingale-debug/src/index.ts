@@ -4,7 +4,7 @@ import Level from 'nightingale-levels';
 const specialRegexpChars = /[\\^$+?.()|[\]{}]/;
 
 type TestFunction = (string: string) => boolean;
-export type DebugValueType = string | RegExp | Array<string>;
+export type DebugValueType = string | RegExp | string[];
 
 const createTestFunctionFromRegexp = (regexp: RegExp): TestFunction => (
   string: string,
@@ -30,8 +30,8 @@ export default function createFindDebugLevel(
   debugValue?: DebugValueType,
 ): FindDebugLevel {
   let wilcard = false;
-  const debugValues: Array<TestFunction> = [];
-  const skips: Array<TestFunction> = [];
+  const debugValues: TestFunction[] = [];
+  const skips: TestFunction[] = [];
 
   if (!Array.isArray(debugValue)) {
     if (debugValue instanceof RegExp) {
@@ -50,7 +50,7 @@ export default function createFindDebugLevel(
   }
 
   if (debugValue) {
-    (debugValue as Array<string>).forEach((value) => {
+    (debugValue as string[]).forEach((value) => {
       if (specialRegexpChars.test(value)) {
         throw new Error(
           `Invalid debug value: "${value}" (contains special chars)`,

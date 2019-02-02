@@ -1,4 +1,4 @@
-/* eslint-disable max-lines, no-useless-concat, prefer-template, no-use-before-define, typescript/no-use-before-define */
+/* eslint-disable max-lines, no-useless-concat, prefer-template, no-use-before-define, @typescript-eslint/no-use-before-define */
 import { Styles } from 'nightingale-types';
 
 export interface FormatObjectOptions {
@@ -7,7 +7,10 @@ export interface FormatObjectOptions {
 }
 
 export type StyleFn = (styles: Styles, value: string) => string;
-export type ObjectStyles = { [key: string]: Styles };
+
+export interface ObjectStyles {
+  [key: string]: Styles;
+}
 
 const noStyleFn: StyleFn = (styles: Styles, value: string): string => value;
 
@@ -39,7 +42,7 @@ interface FormattedValue {
   formattedValue: string;
 }
 
-type Values = Array<Value>;
+type Values = Value[];
 
 interface InternalFormatIteratorParams {
   prefix: string;
@@ -212,7 +215,7 @@ const internalFormatIterator = (
   const formattedSeparator = () => styleFn(['gray'], separator);
 
   const valuesMaxIndex = values.length - 1;
-  const formattedValues: Array<FormattedValue> = values.map(
+  const formattedValues: FormattedValue[] = values.map(
     ({ key, value }, index: number) => {
       const nextDepth = depth + 1;
       const internalFormatParams = {
@@ -293,7 +296,7 @@ function internalFormatObject(
     return sameRawFormattedValue('{Circular Object}');
   }
 
-  const keys: Array<string> = Object.keys(object);
+  const keys: string[] = Object.keys(object);
   if (keys.length === 0) {
     return sameRawFormattedValue('{}');
   }
@@ -344,7 +347,7 @@ function internalFormatMap(
 }
 
 function internalFormatArray(
-  array: Array<any>,
+  array: any[],
   styleFn: StyleFn,
   { padding, depth, maxDepth, objects }: InternalFormatParams,
 ) {

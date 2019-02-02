@@ -6,6 +6,7 @@ exports.Styles = undefined;
 exports.Metadata = undefined;
 exports.MetadataStyles = undefined;
 exports.Record = undefined;
+exports.LogRecord = undefined;
 exports.IsHandling = undefined;
 exports.Handle = undefined;
 exports.Handler = undefined;

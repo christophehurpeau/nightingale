@@ -1,5 +1,5 @@
 import Level from 'nightingale-levels';
-import { Metadata, MetadataStyles, Styles, Handler, Processor, Record } from 'nightingale-types';
+import { Metadata, MetadataStyles, Styles, Handler, Processor, LogRecord } from 'nightingale-types';
 export { Level };
 export interface Options<T> {
     symbol?: string;
@@ -15,20 +15,20 @@ export interface ComputedConfigForKey {
  * This records are treated by handlers
  */
 export default class Logger {
-    readonly key: string;
-    readonly displayName?: string | undefined;
     private contextObject?;
+    readonly key: string;
+    readonly displayName?: string;
     /**
      * Create a new Logger
      *
      * @param {string} key
      * @param {string} [displayName]
      */
-    constructor(key: string, displayName?: string | undefined);
+    constructor(key: string, displayName?: string);
     /** @private */
-    getHandlersAndProcessors(recordLevel: number): ComputedConfigForKey;
+    protected getHandlersAndProcessors(recordLevel: number): ComputedConfigForKey;
     /** @private */
-    getConfig(): ComputedConfigForKey;
+    getConfig(): Readonly<ComputedConfigForKey>;
     /**
      * Create a child logger
      */
@@ -60,13 +60,13 @@ export default class Logger {
     /**
      * Extends existing context of this logger
      */
-    extendsContext(extendedContext: Object): void;
+    extendsContext(extendedContext: Record<string, any>): void;
     /**
      * Handle a record
      *
      * Use this only if you know what you are doing.
      */
-    addRecord<T extends Metadata>(record: Readonly<Record<T>>): void;
+    addRecord<T extends Metadata>(record: Readonly<LogRecord<T>>): void;
     /**
      * Log a message
      */

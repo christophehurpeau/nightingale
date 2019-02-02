@@ -13,6 +13,7 @@
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "scripts": {
+    "build:definitions": "tsc --noEmit ./lib/index.d.ts",
     "lint": "eslint lib/"
   },
   "prettier": {
@@ -24,10 +25,10 @@
     "nightingale-levels": "^4.0.0"
   },
   "devDependencies": {
-    "eslint": "5.11.0",
-    "eslint-config-pob": "24.0.3",
-    "eslint-plugin-import": "2.14.0",
-    "eslint-plugin-node": "8.0.0",
-    "prettier": "1.15.3"
+    "eslint": "5.13.0",
+    "eslint-config-pob": "26.0.8",
+    "eslint-plugin-import": "2.16.0",
+    "eslint-plugin-node": "8.0.1",
+    "prettier": "1.16.3"
   }
 }

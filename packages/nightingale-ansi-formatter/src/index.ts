@@ -1,5 +1,5 @@
 import ansi from 'ansi-styles';
-import { Styles, Record } from 'nightingale-types';
+import { Styles, LogRecord } from 'nightingale-types';
 import { styleToHexColor, formatRecordToString } from 'nightingale-formatter';
 
 interface CodePair {
@@ -65,6 +65,6 @@ export function style(styles: Styles, string: string) {
  * @param {Object} record
  * @returns {string}
  */
-export default function format<T>(record: Record<T>) {
+export default function format<T>(record: LogRecord<T>) {
   return formatRecordToString(record, style);
 }

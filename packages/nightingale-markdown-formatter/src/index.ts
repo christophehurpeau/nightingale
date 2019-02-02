@@ -1,4 +1,4 @@
-import { Styles, Record } from 'nightingale-types';
+import { Styles, LogRecord } from 'nightingale-types';
 import { formatRecordToString } from 'nightingale-formatter';
 
 export function style(styles: Styles, string: string) {
@@ -20,6 +20,6 @@ export function style(styles: Styles, string: string) {
   }, string);
 }
 
-export default function format<T>(record: Record<T>) {
+export default function format<T>(record: LogRecord<T>) {
   return formatRecordToString(record, style);
 }

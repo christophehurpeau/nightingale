@@ -2,7 +2,7 @@ import Level from 'nightingale-levels';
 import format, { style } from '.';
 
 test('style: blue bold color', () => {
-  const args: Array<string> = [];
+  const args: string[] = [];
   expect(style(args)(['blue', 'bold'], 'test')).toBe('%ctest%c');
   expect(args).toEqual([
     'color: #00a0ff; font-weight: bold',

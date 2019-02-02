@@ -3,7 +3,7 @@ import markdownFormatter from 'nightingale-markdown-formatter';
 import rawFormatter from 'nightingale-raw-formatter';
 import Level from 'nightingale-levels';
 
-/* eslint camelcase: "off" */
+/* eslint-disable @typescript-eslint/camelcase */
 const levelToSlackColor = {
   [Level.TRACE]: '#808080',
   [Level.DEBUG]: '#808080',

@@ -1,8 +1,7 @@
-/// <reference types="node" />
 import { IncomingMessage } from 'http';
-import { Record } from 'nightingale-types';
+import { LogRecord } from 'nightingale-types';
 export interface ContextWithOptionalRequest {
     request?: IncomingMessage;
 }
-export default function webProcessor<T>(record: Record<T>, context?: ContextWithOptionalRequest): void;
+export default function webProcessor<T>(record: LogRecord<T>, context?: ContextWithOptionalRequest): void;
 //# sourceMappingURL=index.d.ts.map

@@ -1,7 +1,7 @@
 import Level from 'nightingale-levels';
 
 export interface LevelToStyles {
-  readonly [level: number]: Array<string>;
+  readonly [level: number]: string[];
 }
 
 const levelToStyles: LevelToStyles = {

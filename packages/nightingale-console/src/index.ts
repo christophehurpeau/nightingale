@@ -1,9 +1,9 @@
 import formatterANSI from 'nightingale-ansi-formatter';
 import consoleOutput from 'nightingale-console-output';
 import createFindDebugLevel from 'nightingale-debug';
-import { IsHandling, Handle, Record, Level } from 'nightingale-types';
+import { IsHandling, Handle, LogRecord, Level } from 'nightingale-types';
 
-const handle: Handle = <T>(record: Record<T>) =>
+const handle: Handle = <T>(record: LogRecord<T>) =>
   consoleOutput(formatterANSI(record), record);
 const findDebugLevel = createFindDebugLevel(process.env.DEBUG);
 

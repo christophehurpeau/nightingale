@@ -1,12 +1,12 @@
 import { IncomingMessage } from 'http';
-import { Record } from 'nightingale-types';
+import { LogRecord } from 'nightingale-types';
 
 export interface ContextWithOptionalRequest {
   request?: IncomingMessage;
 }
 
 export default function webProcessor<T>(
-  record: Record<T>,
+  record: LogRecord<T>,
   context?: ContextWithOptionalRequest,
 ) {
   const request = context && context.request;

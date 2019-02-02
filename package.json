@@ -11,9 +11,11 @@
   "workspaces": ["packages/*"],
   "scripts": {
     "build": "lerna run --stream --concurrency=1 build",
+    "build:definitions": "lerna run --stream build:definitions",
     "generate:docs": "lerna run --parallel --ignore \"*-example\" generate:docs",
     "lint": "lerna run --stream lint",
-    "preversion": "yarn run lint && yarn run build && yarn run generate:docs",
+    "postbuild": "yarn run build:definitions",
+    "preversion": "yarn run lint && yarn run build && yarn run build:definitions && yarn run generate:docs",
     "release": "lerna publish --conventional-commits -m 'chore: release'",
     "test": "lerna run --stream test",
     "typescript-check": "lerna run --parallel typescript-check",
@@ -40,12 +42,12 @@
     "extends": ["@commitlint/config-conventional"]
   },
   "devDependencies": {
-    "@commitlint/cli": "7.2.1",
-    "@commitlint/config-conventional": "7.1.2",
-    "husky": "1.2.1",
-    "lerna": "3.8.0",
-    "lint-staged": "8.1.0",
-    "pob-release": "4.6.3",
+    "@commitlint/cli": "7.5.0",
+    "@commitlint/config-conventional": "7.5.0",
+    "husky": "1.3.1",
+    "lerna": "3.10.8",
+    "lint-staged": "8.1.3",
+    "pob-release": "4.7.0",
     "yarnhook": "0.3.0"
   }
 }

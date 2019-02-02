@@ -1,5 +1,5 @@
 export interface LevelToStyles {
-    readonly [level: number]: Array<string>;
+    readonly [level: number]: string[];
 }
 declare const levelToStyles: LevelToStyles;
 export default levelToStyles;

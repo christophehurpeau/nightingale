@@ -6,7 +6,7 @@ function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'defau
 
 var levelNames = _interopDefault(require('nightingale-level-names'));
 
-/* eslint camelcase:"off" */
+/* eslint-disable @typescript-eslint/camelcase */
 
 var WinstonAdapterHandler = function WinstonAdapterHandler(winstonTransport, minLevel) {
   this.minLevel = minLevel;

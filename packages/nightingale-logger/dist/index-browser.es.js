@@ -66,8 +66,6 @@ function () {
   function Logger(key, displayName) {
     this.key = key;
     this.displayName = displayName;
-    this.key = key;
-    this.displayName = displayName;
   }
   /** @private */
 

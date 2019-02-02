@@ -1,10 +1,10 @@
 import { formatRecordToString, styleToHtmlStyle } from 'nightingale-formatter';
-import { Record, Styles } from 'nightingale-types';
+import { LogRecord, Styles } from 'nightingale-types';
 
-export const style = (args: Array<string>) => (
+export const style = (args: string[]) => (
   styles: Styles,
   string: string,
-) => {
+): string => {
   if (!styles || styles.length === 0 || !string) {
     return string;
   }
@@ -15,12 +15,8 @@ export const style = (args: Array<string>) => (
   return `%c${string}%c`;
 };
 
-/**
- * @param {Object} record
- * @returns {Array}
- */
-export default function format<T>(record: Record<T>) {
-  const args: Array<string> = [];
+export default function format<T>(record: LogRecord<T>): string[] {
+  const args: string[] = [];
   const string = formatRecordToString(record, style(args));
   return [string, ...args];
 }

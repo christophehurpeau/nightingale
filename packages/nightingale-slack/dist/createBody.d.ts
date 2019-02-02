@@ -1,6 +1,6 @@
-import { Record } from 'nightingale-types';
+import { LogRecord } from 'nightingale-types';
 import SlackConfig from './SlackConfig';
-declare const _default: <T>(record: Record<T>, slackConfig: SlackConfig) => {
+declare const _default: <T>(record: LogRecord<T>, slackConfig: SlackConfig) => {
     channel: string | undefined;
     username: string | undefined;
     icon_url: string | undefined;

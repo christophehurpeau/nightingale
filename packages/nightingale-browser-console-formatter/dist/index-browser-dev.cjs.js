@@ -22,11 +22,6 @@ var style = function style(args) {
     return "%c" + string + "%c";
   };
 };
-/**
- * @param {Object} record
- * @returns {Array}
- */
-
 function format(record) {
   var args = [];
   var string = nightingaleFormatter.formatRecordToString(record, style(args));
