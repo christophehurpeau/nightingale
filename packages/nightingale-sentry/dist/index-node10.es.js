@@ -1,22 +1,27 @@
-import { Client } from 'raven';
+import { withScope, init } from '@sentry/node';
 import Level from 'nightingale-levels';
 
 const mapToSentryLevel = {
   [Level.TRACE]: 'debug',
   [Level.DEBUG]: 'debug',
   [Level.INFO]: 'info',
+  [Level.NOTICE]: 'log',
   [Level.WARNING]: 'warning',
   [Level.ERROR]: 'error',
-  [Level.FATAL]: 'fatal',
-  [Level.EMERGENCY]: 'fatal'
+  [Level.CRITICAL]: 'critical',
+  [Level.FATAL]: 'critical',
+  [Level.EMERGENCY]: 'critical',
+  // not a level
+  [Level.ALL]: 'fatal'
 };
 
-const createHandler = (ravenUrl, {
-  getUser = () => {},
-  getTags = () => {},
-  getReq = () => {}
+const createHandler = (dsn, {
+  getUser,
+  getTags
 } = {}) => {
-  const ravenClient = new Client(ravenUrl);
+  init({
+    dsn
+  });
   return record => {
     const {
       key,
@@ -32,14 +37,30 @@ const createHandler = (ravenUrl, {
 
     const extraData = Object.assign({}, metadata, extra);
     delete extraData.error;
-    ravenClient.captureException(error, {
-      logger: key,
-      // logger is not in CaptureOptions but should work: merged later. TODO check and make a PR
-      level: mapToSentryLevel[level] || 'error',
-      extra: extraData,
-      user: getUser(record),
-      tags: getTags(record),
-      req: getReq(record)
+    withScope(scope => {
+      scope.setLevel(mapToSentryLevel[level] || 'error');
+      scope.setTag('loggerKey', key);
+
+      if (extraData) {
+        Object.keys(extraData).forEach(key => {
+          scope.setExtra(key, extraData[key]);
+        });
+      }
+
+      if (getUser) {
+        const user = getUser(record);
+        if (user) scope.setUser(user);
+      }
+
+      if (getTags) {
+        const tags = getTags(record);
+
+        if (tags) {
+          Object.keys(tags).forEach(key => {
+            scope.setTag(key, tags[key]);
+          });
+        }
+      }
     });
   };
 };

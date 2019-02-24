@@ -4,25 +4,30 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
-var raven = require('raven');
+var node = require('@sentry/node');
 var Level = _interopDefault(require('nightingale-levels'));
 
 const mapToSentryLevel = {
   [Level.TRACE]: 'debug',
   [Level.DEBUG]: 'debug',
   [Level.INFO]: 'info',
+  [Level.NOTICE]: 'log',
   [Level.WARNING]: 'warning',
   [Level.ERROR]: 'error',
-  [Level.FATAL]: 'fatal',
-  [Level.EMERGENCY]: 'fatal'
+  [Level.CRITICAL]: 'critical',
+  [Level.FATAL]: 'critical',
+  [Level.EMERGENCY]: 'critical',
+  // not a level
+  [Level.ALL]: 'fatal'
 };
 
-const createHandler = (ravenUrl, {
-  getUser = () => {},
-  getTags = () => {},
-  getReq = () => {}
+const createHandler = (dsn, {
+  getUser,
+  getTags
 } = {}) => {
-  const ravenClient = new raven.Client(ravenUrl);
+  node.init({
+    dsn
+  });
   return record => {
     const {
       key,
@@ -38,14 +43,30 @@ const createHandler = (ravenUrl, {
 
     const extraData = Object.assign({}, metadata, extra);
     delete extraData.error;
-    ravenClient.captureException(error, {
-      logger: key,
-      // logger is not in CaptureOptions but should work: merged later. TODO check and make a PR
-      level: mapToSentryLevel[level] || 'error',
-      extra: extraData,
-      user: getUser(record),
-      tags: getTags(record),
-      req: getReq(record)
+    node.withScope(scope => {
+      scope.setLevel(mapToSentryLevel[level] || 'error');
+      scope.setTag('loggerKey', key);
+
+      if (extraData) {
+        Object.keys(extraData).forEach(key => {
+          scope.setExtra(key, extraData[key]);
+        });
+      }
+
+      if (getUser) {
+        const user = getUser(record);
+        if (user) scope.setUser(user);
+      }
+
+      if (getTags) {
+        const tags = getTags(record);
+
+        if (tags) {
+          Object.keys(tags).forEach(key => {
+            scope.setTag(key, tags[key]);
+          });
+        }
+      }
     });
   };
 };
