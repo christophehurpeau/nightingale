@@ -9,7 +9,7 @@
 <p align="center">
   <a href="https://npmjs.org/package/nightingale-json-formatter"><img src="https://img.shields.io/npm/v/nightingale-json-formatter.svg?style=flat-square"></a>
   <a href="https://circleci.com/gh/christophehurpeau/nightingale"><img src="https://img.shields.io/circleci/project/christophehurpeau/nightingale/master.svg?style=flat-square"></a>
-  <a href="https://david-dm.org/christophehurpeau/nightingale?path=packages/nightingale-json-formatter"><img src="https://david-dm.org/christophehurpeau/nightingale?path=packages/nightingale-json-formatter.svg?style=flat-square"></a>
+  <a href="https://david-dm.org/christophehurpeau/nightingale?path=packages/nightingale-json-formatter"><img src="https://david-dm.org/christophehurpeau/nightingale.svg?path=packages/nightingale-json-formatter?style=flat-square"></a>
   <a href="https://codecov.io/gh/christophehurpeau/nightingale"><img src="https://img.shields.io/codecov/c/github/christophehurpeau/nightingale/master.svg?style=flat-square"></a>
 </p>
 

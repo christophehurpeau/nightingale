@@ -29,14 +29,13 @@ jobs:
       - run:
           name: Send results to codecov
           command: bash <(curl -s https://codecov.io/bash)
-# TODO: fix the date in the generated coverage
-#      - run:
-#          name: Check nothing was forget before commit
-#          command: npx pob-repository-check-clean
+      - run:
+          name: Check nothing was forget before commit
+          command: yarn run repository-check-dirty
 
   test-node11:
     docker:
-      - image: circleci/node:11.6
+      - image: circleci/node:11.9
     steps:
       - checkout
       - restore_cache:

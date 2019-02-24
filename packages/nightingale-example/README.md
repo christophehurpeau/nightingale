@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-  <a href="https://david-dm.org/christophehurpeau/nightingale?path=packages/nightingale-example"><img src="https://david-dm.org/christophehurpeau/nightingale?path=packages/nightingale-example.svg?style=flat-square"></a>
+  <a href="https://david-dm.org/christophehurpeau/nightingale?path=packages/nightingale-example"><img src="https://david-dm.org/christophehurpeau/nightingale.svg?path=packages/nightingale-example?style=flat-square"></a>
 </p>
 
 ## Install

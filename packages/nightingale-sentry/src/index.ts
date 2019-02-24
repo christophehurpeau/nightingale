@@ -1,21 +1,24 @@
-import { Client as RavenClient, CaptureOptions } from 'raven';
+import { init, withScope, Severity } from '@sentry/node';
 import { LogRecord, Handle } from 'nightingale-types';
 import Level from 'nightingale-levels';
 
-const mapToSentryLevel: { [level: number]: string } = {
+const mapToSentryLevel: Record<Level, string> = {
   [Level.TRACE]: 'debug',
   [Level.DEBUG]: 'debug',
   [Level.INFO]: 'info',
+  [Level.NOTICE]: 'log',
   [Level.WARNING]: 'warning',
   [Level.ERROR]: 'error',
-  [Level.FATAL]: 'fatal',
-  [Level.EMERGENCY]: 'fatal',
+  [Level.CRITICAL]: 'critical',
+  [Level.FATAL]: 'critical',
+  [Level.EMERGENCY]: 'critical',
+  // not a level
+  [Level.ALL]: 'fatal',
 };
 
 export interface Options {
   getUser?: <T>(record: LogRecord<T>) => any;
   getTags?: <T>(record: LogRecord<T>) => any;
-  getReq?: <T>(record: LogRecord<T>) => any;
 }
 
 export interface MetadataWithError {
@@ -23,10 +26,10 @@ export interface MetadataWithError {
 }
 
 const createHandler = (
-  ravenUrl: string,
-  { getUser = () => {}, getTags = () => {}, getReq = () => {} }: Options = {},
+  dsn: string,
+  { getUser, getTags }: Options = {},
 ): Handle => {
-  const ravenClient = new RavenClient(ravenUrl);
+  init({ dsn });
 
   return <T extends MetadataWithError>(record: LogRecord<T>) => {
     const { key, level, metadata, extra } = record;
@@ -39,14 +42,28 @@ const createHandler = (
     const extraData = Object.assign({}, metadata, extra);
     delete extraData.error;
 
-    ravenClient.captureException(error, {
-      logger: key, // logger is not in CaptureOptions but should work: merged later. TODO check and make a PR
-      level: mapToSentryLevel[level] || 'error',
-      extra: extraData,
-      user: getUser(record),
-      tags: getTags(record),
-      req: getReq(record),
-    } as CaptureOptions);
+    withScope((scope) => {
+      scope.setLevel((mapToSentryLevel[level] || 'error') as Severity);
+      scope.setTag('loggerKey', key);
+
+      if (extraData) {
+        Object.keys(extraData).forEach((key) => {
+          scope.setExtra(key, extraData[key]);
+        });
+      }
+      if (getUser) {
+        const user = getUser(record);
+        if (user) scope.setUser(user);
+      }
+      if (getTags) {
+        const tags = getTags(record);
+        if (tags) {
+          Object.keys(tags).forEach((key) => {
+            scope.setTag(key, tags[key]);
+          });
+        }
+      }
+    });
   };
 };
 

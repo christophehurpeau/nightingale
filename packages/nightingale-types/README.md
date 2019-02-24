@@ -8,7 +8,7 @@
 
 <p align="center">
   <a href="https://npmjs.org/package/nightingale-types"><img src="https://img.shields.io/npm/v/nightingale-types.svg?style=flat-square"></a>
-  <a href="https://david-dm.org/christophehurpeau/nightingale?path=packages/nightingale-types"><img src="https://david-dm.org/christophehurpeau/nightingale?path=packages/nightingale-types.svg?style=flat-square"></a>
+  <a href="https://david-dm.org/christophehurpeau/nightingale?path=packages/nightingale-types"><img src="https://david-dm.org/christophehurpeau/nightingale.svg?path=packages/nightingale-types?style=flat-square"></a>
 </p>
 
 ## Install
