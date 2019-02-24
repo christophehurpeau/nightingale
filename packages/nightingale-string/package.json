@@ -1,6 +1,6 @@
 {
   "name": "nightingale-string",
-  "version": "5.0.1",
+  "version": "5.1.0",
   "description": "String handler for nightingale",
   "keywords": ["nightingale", "nightingale-handler"],
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
@@ -32,8 +32,8 @@
     "arrowParens": "always"
   },
   "dependencies": {
-    "nightingale-raw-formatter": "^4.0.1",
-    "nightingale-types": "^2.0.0"
+    "nightingale-raw-formatter": "^4.1.0",
+    "nightingale-types": "^2.1.0"
   },
   "devDependencies": {
     "@babel/core": "7.3.3",

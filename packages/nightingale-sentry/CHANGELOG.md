@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.1.0](https://github.com/christophehurpeau/nightingale/compare/nightingale-sentry@5.0.1...nightingale-sentry@5.1.0) (2019-02-24)
+
+
+### Bug Fixes
+
+* update dependencies and deprecate Record for LogRecord ([2d0a758](https://github.com/christophehurpeau/nightingale/commit/2d0a758))
+
+
+### Features
+
+* update dependencies ([a185796](https://github.com/christophehurpeau/nightingale/commit/a185796))
+* update nightingale-sentry to use @sentry/node ([53b5b22](https://github.com/christophehurpeau/nightingale/commit/53b5b22))
+
+
+
+
+
 ## [5.0.1](https://github.com/christophehurpeau/nightingale/compare/nightingale-sentry@5.0.0...nightingale-sentry@5.0.1) (2018-12-03)
 
 **Note:** Version bump only for package nightingale-sentry

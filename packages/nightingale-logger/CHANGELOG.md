@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.1.0](https://github.com/christophehurpeau/nightingale/compare/nightingale-logger@6.0.0...nightingale-logger@6.1.0) (2019-02-24)
+
+
+### Bug Fixes
+
+* update dependencies and deprecate Record for LogRecord ([2d0a758](https://github.com/christophehurpeau/nightingale/commit/2d0a758))
+
+
+### Features
+
+* update dependencies ([a185796](https://github.com/christophehurpeau/nightingale/commit/a185796))
+
+
+
+
+
 # [6.0.0](https://github.com/christophehurpeau/nightingale/compare/nightingale-logger@5.1.0...nightingale-logger@6.0.0) (2018-12-03)
 
 

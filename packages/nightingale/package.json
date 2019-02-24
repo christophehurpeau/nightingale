@@ -1,6 +1,6 @@
 {
   "name": "nightingale",
-  "version": "9.0.1",
+  "version": "9.1.0",
   "description": "Logger for browser and node",
   "keywords": ["logger"],
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
@@ -57,9 +57,9 @@
     }
   },
   "dependencies": {
-    "nightingale-levels": "^4.0.0",
-    "nightingale-logger": "^6.0.0",
-    "nightingale-types": "^2.0.0"
+    "nightingale-levels": "^4.1.0",
+    "nightingale-logger": "^6.1.0",
+    "nightingale-types": "^2.1.0"
   },
   "devDependencies": {
     "@babel/core": "7.3.3",
@@ -82,7 +82,7 @@
     "karma-ievms": "^0.1.0",
     "karma-mocha": "^1.2.0",
     "karma-proclaim": "^1.0.0",
-    "nightingale-string": "^5.0.1",
+    "nightingale-string": "^5.1.0",
     "pob-babel": "23.6.7",
     "pob-lcov-reporter": "1.0.0",
     "prettier": "1.16.4",

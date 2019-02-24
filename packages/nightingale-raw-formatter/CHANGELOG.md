@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.1.0](https://github.com/christophehurpeau/nightingale/compare/nightingale-raw-formatter@4.0.1...nightingale-raw-formatter@4.1.0) (2019-02-24)
+
+
+### Bug Fixes
+
+* update dependencies and deprecate Record for LogRecord ([2d0a758](https://github.com/christophehurpeau/nightingale/commit/2d0a758))
+
+
+### Features
+
+* update dependencies ([a185796](https://github.com/christophehurpeau/nightingale/commit/a185796))
+
+
+
+
+
 ## [4.0.1](https://github.com/christophehurpeau/nightingale/compare/nightingale-raw-formatter@4.0.0...nightingale-raw-formatter@4.0.1) (2018-12-03)
 
 **Note:** Version bump only for package nightingale-raw-formatter

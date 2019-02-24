@@ -1,6 +1,6 @@
 {
   "name": "nightingale-html-formatter",
-  "version": "4.0.1",
+  "version": "4.1.0",
   "description": "Nightingale HTML formatter",
   "keywords": ["nightingale", "nightingale-formatter"],
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
@@ -55,8 +55,8 @@
     }
   },
   "dependencies": {
-    "nightingale-formatter": "^5.0.1",
-    "nightingale-types": "^2.0.0"
+    "nightingale-formatter": "^5.1.0",
+    "nightingale-types": "^2.1.0"
   },
   "devDependencies": {
     "@babel/core": "7.3.3",
@@ -73,7 +73,7 @@
     "eslint-plugin-babel": "5.3.0",
     "eslint-plugin-import": "2.16.0",
     "jest": "24.1.0",
-    "nightingale-levels": "^4.0.0",
+    "nightingale-levels": "^4.1.0",
     "pob-babel": "23.6.7",
     "pob-lcov-reporter": "1.0.0",
     "prettier": "1.16.4",
