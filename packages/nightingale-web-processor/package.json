@@ -35,7 +35,7 @@
   },
   "devDependencies": {
     "@babel/core": "7.3.3",
-    "@typescript-eslint/eslint-plugin": "1.4.1",
+    "@typescript-eslint/eslint-plugin": "1.4.2",
     "@typescript-eslint/parser": "1.4.1",
     "babel-eslint": "10.0.1",
     "babel-preset-latest-node": "3.0.1",
