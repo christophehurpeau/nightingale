@@ -63,7 +63,7 @@
     "@types/jest": "24.0.6",
     "@types/request": "^2.48.1",
     "@typescript-eslint/eslint-plugin": "1.4.1",
-    "@typescript-eslint/parser": "1.4.1",
+    "@typescript-eslint/parser": "1.4.2",
     "babel-eslint": "10.0.1",
     "babel-jest": "24.1.0",
     "babel-preset-latest-node": "3.0.1",
