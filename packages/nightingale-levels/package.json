@@ -40,8 +40,8 @@
     "arrowParens": "always"
   },
   "devDependencies": {
-    "@babel/core": "7.3.3",
-    "@babel/preset-env": "7.3.1",
+    "@babel/core": "7.3.4",
+    "@babel/preset-env": "7.3.4",
     "@typescript-eslint/eslint-plugin": "1.4.1",
     "@typescript-eslint/parser": "1.4.1",
     "babel-eslint": "10.0.1",
