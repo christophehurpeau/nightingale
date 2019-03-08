@@ -83,21 +83,21 @@ function () {
 
   _proto.getHandlersAndProcessors = function getHandlersAndProcessors(recordLevel) {
     return getConfigForLoggerRecord(this.key, recordLevel);
-  };
+  }
   /** @private */
-
+  ;
 
   _proto.getConfig = function getConfig() {
     return global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(this.key, Level.ALL);
-  };
+  }
   /**
    * Create a child logger
    */
-
+  ;
 
   _proto.child = function child(childSuffixKey, childDisplayName) {
     return new Logger(this.key + ":" + childSuffixKey, childDisplayName);
-  };
+  }
   /**
    * Create a new Logger with the same key a this attached context
    *
@@ -111,45 +111,45 @@ function () {
    * }
    *
    */
-
+  ;
 
   _proto.context = function context(_context) {
     var logger = new Logger(this.key);
     logger.setContext(_context);
     return logger;
-  };
+  }
   /**
    * Get the context of this logger
    */
-
+  ;
 
   _proto.getContextObject = function getContextObject() {
     return this.contextObject;
-  };
+  }
   /**
    * Set the context of this logger
    *
    * @param {Object} context
    */
-
+  ;
 
   _proto.setContext = function setContext(context) {
     this.contextObject = context;
-  };
+  }
   /**
    * Extends existing context of this logger
    */
-
+  ;
 
   _proto.extendsContext = function extendsContext(extendedContext) {
     Object.assign(this.contextObject, extendedContext);
-  };
+  }
   /**
    * Handle a record
    *
    * Use this only if you know what you are doing.
    */
-
+  ;
 
   _proto.addRecord = function addRecord(record) {
     var _this$getHandlersAndP = this.getHandlersAndProcessors(record.level),
@@ -177,11 +177,11 @@ function () {
     handlers.some(function (handler) {
       return handler.handle(record) === false;
     });
-  };
+  }
   /**
    * Log a message
    */
-
+  ;
 
   _proto.log = function log(message, metadata, level, options) {
     if (level === void 0) {
@@ -206,61 +206,61 @@ function () {
     }, options);
 
     this.addRecord(record);
-  };
+  }
   /**
    * Log a trace message
    */
-
+  ;
 
   _proto.trace = function trace(message, metadata, metadataStyles) {
     this.log(message, metadata, Level.TRACE, {
       metadataStyles: metadataStyles
     });
-  };
+  }
   /**
    * Log a debug message
    */
-
+  ;
 
   _proto.debug = function debug(message, metadata, metadataStyles) {
     this.log(message, metadata, Level.DEBUG, {
       metadataStyles: metadataStyles
     });
-  };
+  }
   /**
    * Notice an info message
    */
-
+  ;
 
   _proto.notice = function notice(message, metadata, metadataStyles) {
     this.log(message, metadata, Level.NOTICE, {
       metadataStyles: metadataStyles
     });
-  };
+  }
   /**
    * Log an info message
    */
-
+  ;
 
   _proto.info = function info(message, metadata, metadataStyles) {
     this.log(message, metadata, Level.INFO, {
       metadataStyles: metadataStyles
     });
-  };
+  }
   /**
    * Log a warn message
    */
-
+  ;
 
   _proto.warn = function warn(message, metadata, metadataStyles) {
     this.log(message, metadata, Level.WARN, {
       metadataStyles: metadataStyles
     });
-  };
+  }
   /**
    * Log an error message
    */
-
+  ;
 
   _proto.error = function error(message, metadata, metadataStyles) {
     if (message instanceof Error) {
@@ -276,65 +276,65 @@ function () {
         metadataStyles: metadataStyles
       });
     }
-  };
+  }
   /**
    * Log an critical message
    */
-
+  ;
 
   _proto.critical = function critical(message, metadata, metadataStyles) {
     this.log(message, metadata, Level.CRITICAL, {
       metadataStyles: metadataStyles
     });
-  };
+  }
   /**
    * Log a fatal message
    */
-
+  ;
 
   _proto.fatal = function fatal(message, metadata, metadataStyles) {
     this.log(message, metadata, Level.FATAL, {
       metadataStyles: metadataStyles
     });
-  };
+  }
   /**
    * Log an alert message
    */
-
+  ;
 
   _proto.alert = function alert(message, metadata, metadataStyles) {
     this.log(message, metadata, Level.ALERT, {
       metadataStyles: metadataStyles
     });
-  };
+  }
   /**
    * Log an inspected value
    */
-
+  ;
 
   _proto.inspectValue = function inspectValue() {
     throw new Error('Not supported for the browser. Prefer `debugger;`');
-  };
+  }
   /**
    * Log a debugged var
    */
-
+  ;
 
   _proto.inspectVar = function inspectVar() {
     throw new Error('Not supported for the browser. Prefer `debugger;`');
-  };
+  }
   /**
    * Alias for infoSuccess
    */
-
+  ;
 
   _proto.success = function success(message, metadata, metadataStyles) {
     this.infoSuccess(message, metadata, metadataStyles);
-  };
+  }
   /**
    * Log an info success message
    */
-
+  ;
 
   _proto.infoSuccess = function infoSuccess(message, metadata, metadataStyles) {
     this.log(message, metadata, Level.INFO, {
@@ -342,11 +342,11 @@ function () {
       symbol: '✔',
       styles: ['green', 'bold']
     });
-  };
+  }
   /**
    * Log an debug success message
    */
-
+  ;
 
   _proto.debugSuccess = function debugSuccess(message, metadata, metadataStyles) {
     this.log(message, metadata, Level.DEBUG, {
@@ -354,19 +354,19 @@ function () {
       symbol: '✔',
       styles: ['green']
     });
-  };
+  }
   /**
    * Alias for infoFail
    */
-
+  ;
 
   _proto.fail = function fail(message, metadata, metadataStyles) {
     this.infoFail(message, metadata, metadataStyles);
-  };
+  }
   /**
    * Log an info fail message
    */
-
+  ;
 
   _proto.infoFail = function infoFail(message, metadata, metadataStyles) {
     this.log(message, metadata, Level.INFO, {
@@ -374,11 +374,11 @@ function () {
       symbol: '✖',
       styles: ['red', 'bold']
     });
-  };
+  }
   /**
    * Log an debug fail message
    */
-
+  ;
 
   _proto.debugFail = function debugFail(message, metadata, metadataStyles) {
     this.log(message, metadata, Level.DEBUG, {
@@ -386,11 +386,11 @@ function () {
       symbol: '✖',
       styles: ['red']
     });
-  };
+  }
   /**
    * @returns {number} time to pass to timeEnd
    */
-
+  ;
 
   _proto.time = function time(message, metadata, metadataStyles, level) {
     if (level === void 0) {
@@ -408,14 +408,14 @@ function () {
 
   _proto.infoTime = function infoTime(message, metadata, metadataStyles) {
     return this.time(message, metadata, metadataStyles, Level.INFO);
-  };
+  }
   /**
    * Finds difference between when this method
    * was called and when the respective time method
    * was called, then logs out the difference
    * and deletes the original record
    */
-
+  ;
 
   _proto.timeEnd = function timeEnd(startTime, message, metadata, metadataStyles, level, options) {
     if (level === void 0) {
@@ -440,26 +440,26 @@ function () {
     this.log(message, extendedMetadata, level, _extends({}, options, {
       metadataStyles: metadataStyles
     }));
-  };
+  }
   /**
    * Like timeEnd, but with INFO level
    */
-
+  ;
 
   _proto.infoTimeEnd = function infoTimeEnd(time, message, metadata, metadataStyles) {
     this.timeEnd(time, message, metadata, metadataStyles, Level.INFO);
-  };
+  }
   /**
    * Like timeEnd, but with INFO level
    */
-
+  ;
 
   _proto.infoSuccessTimeEnd = function infoSuccessTimeEnd(time, message, metadata, metadataStyles) {
     this.timeEnd(time, message, metadata, metadataStyles, Level.INFO, {
       symbol: '✔',
       styles: ['green', 'bold']
     });
-  };
+  }
   /**
    * Log an enter in a function
    *
@@ -472,14 +472,14 @@ function () {
    * }
    *
    */
-
+  ;
 
   _proto.enter = function enter(fn, metadata, metadataStyles) {
     (metadata || {}).functionName = fn.name;
     this.log('enter', metadata, Level.TRACE, {
       metadataStyles: metadataStyles
     });
-  };
+  }
   /**
    * Log an exit in a function
    *
@@ -492,7 +492,7 @@ function () {
    *   }
    * }
    */
-
+  ;
 
   _proto.exit = function exit(fn, metadata, metadataStyles) {
     var extendedMetadata = Object.assign({}, metadata, {
@@ -501,7 +501,7 @@ function () {
     this.log('exit', extendedMetadata, Level.TRACE, {
       metadataStyles: metadataStyles
     });
-  };
+  }
   /**
    * Wrap around a function to log enter and exit of a function
    *
@@ -520,7 +520,7 @@ function () {
    * @param {Object} [metadataStyles]
    * @param {Function} callback
    */
-
+  ;
 
   _proto.wrap = function wrap(fn, metadata, metadataStyles, callback) {
     if (typeof metadata === 'function') {

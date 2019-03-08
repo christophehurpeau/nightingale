@@ -2,14 +2,15 @@
   "extends": "./tsconfig.json",
 
   "compilerOptions": {
+    "noEmit": false,
+    "emitDeclarationOnly": true,
+    "outDir": "dist",
     "isolatedModules": false,
     "declaration": true,
-    "declarationMap": true,
-    "emitDeclarationOnly": true
+    "declarationMap": true
   },
 
   "exclude": [
-    "dist/**",
     "src/**/*.test.ts",
     "src/**/__tests__/**"
   ]

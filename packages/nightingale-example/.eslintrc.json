@@ -1,5 +1,10 @@
 {
+  "root": true,
   "parser": "@typescript-eslint/parser",
   "plugins": ["@typescript-eslint"],
-  "extends": ["pob/babel-node", "pob/typescript"]
+  "extends": [
+    "@pob/eslint-config-babel",
+    "@pob/eslint-config-babel-node",
+    "@pob/eslint-config-typescript"
+  ]
 }

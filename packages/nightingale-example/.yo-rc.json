@@ -33,5 +33,10 @@
         }
       ]
     }
+  },
+  "nightingale-example": {
+    "type": {
+      "type": "lib"
+    }
   }
 }

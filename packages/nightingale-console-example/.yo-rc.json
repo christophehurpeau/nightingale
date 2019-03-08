@@ -30,5 +30,10 @@
         }
       ]
     }
+  },
+  "nightingale-console-example": {
+    "type": {
+      "type": "lib"
+    }
   }
 }

@@ -38,5 +38,10 @@
         }
       ]
     }
+  },
+  "nightingale-levels": {
+    "type": {
+      "type": "lib"
+    }
   }
 }

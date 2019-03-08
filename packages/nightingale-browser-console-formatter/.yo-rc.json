@@ -41,5 +41,10 @@
         "index"
       ]
     }
+  },
+  "nightingale-browser-console-formatter": {
+    "type": {
+      "type": "lib"
+    }
   }
 }

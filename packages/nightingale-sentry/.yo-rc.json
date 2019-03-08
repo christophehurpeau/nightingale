@@ -24,5 +24,10 @@
         "index"
       ]
     }
+  },
+  "nightingale-sentry": {
+    "type": {
+      "type": "lib"
+    }
   }
 }

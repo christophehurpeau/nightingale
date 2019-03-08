@@ -25,5 +25,10 @@
         "index"
       ]
     }
+  },
+  "nightingale-console": {
+    "type": {
+      "type": "lib"
+    }
   }
 }

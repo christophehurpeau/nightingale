@@ -8,5 +8,10 @@
       "testing": false,
       "envs": []
     }
+  },
+  "nightingale-types": {
+    "type": {
+      "type": "lib"
+    }
   }
 }

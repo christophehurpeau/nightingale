@@ -38,5 +38,10 @@
         "index"
       ]
     }
+  },
+  "nightingale-app-console": {
+    "type": {
+      "type": "lib"
+    }
   }
 }

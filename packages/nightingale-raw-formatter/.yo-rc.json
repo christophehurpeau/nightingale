@@ -41,5 +41,10 @@
         "index"
       ]
     }
+  },
+  "nightingale-raw-formatter": {
+    "type": {
+      "type": "lib"
+    }
   }
 }

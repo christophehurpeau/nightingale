@@ -24,5 +24,10 @@
         "index"
       ]
     }
+  },
+  "nightingale-string": {
+    "type": {
+      "type": "lib"
+    }
   }
 }

@@ -37,6 +37,9 @@
         "nightingale-winston-adapter"
       ],
       "typescript": false
+    },
+    "renovate": {
+      "enable": true
     }
   }
 }

@@ -38,5 +38,10 @@
         "index"
       ]
     }
+  },
+  "nightingale-winston-adapter": {
+    "type": {
+      "type": "lib"
+    }
   }
 }

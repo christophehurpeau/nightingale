@@ -28,5 +28,10 @@
         "createBody"
       ]
     }
+  },
+  "nightingale-slack": {
+    "type": {
+      "type": "lib"
+    }
   }
 }

@@ -38,5 +38,10 @@
         "index"
       ]
     }
+  },
+  "nightingale-console-output": {
+    "type": {
+      "type": "lib"
+    }
   }
 }

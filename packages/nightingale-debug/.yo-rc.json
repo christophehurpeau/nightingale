@@ -41,5 +41,10 @@
         "index"
       ]
     }
+  },
+  "nightingale-debug": {
+    "type": {
+      "type": "lib"
+    }
   }
 }

@@ -24,5 +24,10 @@
         }
       ]
     }
+  },
+  "nightingale-web-processor": {
+    "type": {
+      "type": "lib"
+    }
   }
 }
