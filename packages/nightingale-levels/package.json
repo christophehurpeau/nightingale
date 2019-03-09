@@ -46,7 +46,7 @@
     "babel-preset-latest-node": "3.0.1",
     "babel-preset-modern-browsers": "13.0.1",
     "eslint": "5.15.1",
-    "pob-babel": "23.6.7",
+    "pob-babel": "23.7.0",
     "prettier": "1.16.4",
     "typescript": "3.3.3333"
   }

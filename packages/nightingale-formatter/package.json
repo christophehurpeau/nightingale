@@ -68,8 +68,8 @@
     "babel-preset-modern-browsers": "13.0.1",
     "eslint": "5.15.1",
     "jest": "24.3.1",
-    "pob-babel": "23.6.7",
-    "pob-lcov-reporter": "1.0.0",
+    "pob-babel": "23.7.0",
+    "pob-lcov-reporter": "1.0.1",
     "prettier": "1.16.4",
     "typescript": "3.3.3333",
     "xunit-file": "^1.0.0"
