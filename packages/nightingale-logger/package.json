@@ -78,7 +78,7 @@
     "eslint-plugin-prefer-class-properties": "^1.0.0",
     "jest": "24.1.0",
     "pob-babel": "23.6.7",
-    "pob-lcov-reporter": "1.0.0",
+    "pob-lcov-reporter": "1.0.1",
     "prettier": "1.16.4",
     "typedoc": "0.14.2",
     "typescript": "3.3.3333",
