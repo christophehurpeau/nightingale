@@ -60,7 +60,7 @@
   },
   "devDependencies": {
     "@babel/core": "7.3.3",
-    "@types/jest": "24.0.6",
+    "@types/jest": "24.0.11",
     "@types/request": "^2.48.1",
     "@typescript-eslint/eslint-plugin": "1.4.1",
     "@typescript-eslint/parser": "1.4.1",
