@@ -64,6 +64,6 @@
     "pob-lcov-reporter": "1.0.1",
     "prettier": "1.16.4",
     "typescript": "3.3.3333",
-    "xunit-file": "^1.0.0"
+    "xunit-file": "1.0.0"
   }
 }

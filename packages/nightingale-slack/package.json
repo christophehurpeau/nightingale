@@ -63,16 +63,16 @@
     "@pob/eslint-config-babel-node": "29.0.1",
     "@pob/eslint-config-typescript": "29.0.1",
     "@types/jest": "24.0.9",
-    "@types/request": "^2.48.1",
+    "@types/request": "2.48.1",
     "babel-jest": "24.3.1",
     "babel-preset-latest-node": "3.0.1",
-    "babel-register": "^6.24.0",
+    "babel-register": "6.24.0",
     "eslint": "5.15.1",
     "jest": "24.3.1",
     "pob-babel": "23.7.0",
     "pob-lcov-reporter": "1.0.1",
     "prettier": "1.16.4",
     "typescript": "3.3.3333",
-    "xunit-file": "^1.0.0"
+    "xunit-file": "1.0.0"
   }
 }
