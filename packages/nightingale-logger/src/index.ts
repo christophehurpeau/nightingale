@@ -561,11 +561,14 @@ export default class Logger {
   public enter<T extends Metadata>(
     fn: Function,
     metadata?: T,
-    metadataStyles?: MetadataStyles<T>,
+    metadataStyles?: MetadataStyles<T & { functionName: string }>,
   ): void {
-    const extendedMetadata: Metadata = metadata || {};
-    extendedMetadata.functionName = fn.name;
-    this.log('enter', metadata, Level.TRACE, { metadataStyles });
+    const extendedMetadata: T & ExtendedFunctionNameMetadata = Object.assign(
+      {},
+      metadata,
+      { functionName: fn.name },
+    );
+    this.log('enter', extendedMetadata, Level.TRACE, { metadataStyles });
   }
 
   /**
@@ -588,9 +591,7 @@ export default class Logger {
     const extendedMetadata: T & ExtendedFunctionNameMetadata = Object.assign(
       {},
       metadata,
-      {
-        functionName: fn.name,
-      },
+      { functionName: fn.name },
     );
     this.log('exit', extendedMetadata, Level.TRACE, { metadataStyles });
   }
