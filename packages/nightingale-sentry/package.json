@@ -31,7 +31,7 @@
     "arrowParens": "always"
   },
   "dependencies": {
-    "@sentry/node": "^4.6.3",
+    "@sentry/node": "^5.0.0",
     "nightingale-levels": "^4.1.0",
     "nightingale-types": "^2.1.0"
   },
