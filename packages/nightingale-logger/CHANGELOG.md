@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.2.0](https://github.com/christophehurpeau/nightingale/compare/nightingale-logger@6.1.0...nightingale-logger@6.2.0) (2019-04-05)
+
+
+### Bug Fixes
+
+* metadata for enter function ([a6529b2](https://github.com/christophehurpeau/nightingale/commit/a6529b2))
+
+
+### Features
+
+* update dependencies ([e2e8ef5](https://github.com/christophehurpeau/nightingale/commit/e2e8ef5))
+
+
+
+
+
 # [6.1.0](https://github.com/christophehurpeau/nightingale/compare/nightingale-logger@6.0.0...nightingale-logger@6.1.0) (2019-02-24)
 
 

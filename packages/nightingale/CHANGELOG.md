@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [9.2.0](https://github.com/christophehurpeau/nightingale/compare/nightingale@9.1.0...nightingale@9.2.0) (2019-04-05)
+
+
+### Features
+
+* update dependencies ([e2e8ef5](https://github.com/christophehurpeau/nightingale/commit/e2e8ef5))
+
+
+
+
+
 # [9.1.0](https://github.com/christophehurpeau/nightingale/compare/nightingale@9.0.1...nightingale@9.1.0) (2019-02-24)
 
 

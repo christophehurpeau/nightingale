@@ -1,6 +1,6 @@
 {
   "name": "nightingale-browser-console-formatter",
-  "version": "4.1.0",
+  "version": "4.2.0",
   "description": "Nightingale Browser console formatter",
   "keywords": ["nightingale", "nightingale-formatter"],
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
@@ -55,8 +55,8 @@
     }
   },
   "dependencies": {
-    "nightingale-formatter": "^5.1.0",
-    "nightingale-types": "^2.1.0"
+    "nightingale-formatter": "^5.2.0",
+    "nightingale-types": "^2.2.0"
   },
   "devDependencies": {
     "@babel/core": "7.4.3",
@@ -69,7 +69,7 @@
     "babel-preset-modern-browsers": "14.0.0",
     "eslint": "5.16.0",
     "jest": "24.7.1",
-    "nightingale-levels": "^4.1.0",
+    "nightingale-levels": "^4.2.0",
     "pob-babel": "23.10.1",
     "pob-lcov-reporter": "1.0.2",
     "prettier": "1.16.4",
