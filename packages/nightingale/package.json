@@ -72,7 +72,7 @@
     "babel-preset-modern-browsers": "14.0.0",
     "eslint": "5.16.0",
     "jest": "24.7.1",
-    "karma": "1.5.0",
+    "karma": "4.0.1",
     "karma-chrome-launcher": "2.0.0",
     "karma-firefox-launcher": "1.0.1",
     "karma-ievms": "0.1.0",
