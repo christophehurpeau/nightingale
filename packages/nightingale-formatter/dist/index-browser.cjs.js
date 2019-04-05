@@ -307,7 +307,7 @@ var internalFormatIterator = function internalFormatIterator(values, styleFn, ob
         stringValue = _internalFormatValue2.stringValue,
         formattedValue = _internalFormatValue2.formattedValue;
 
-    if (stringValue && (stringValue.length > 80 || stringValue.indexOf('\n') !== -1)) {
+    if (stringValue && (stringValue.length > 80 || stringValue.includes('\n'))) {
       breakLine = true;
       stringValue = stringValue.replace(/\n/g, "\n" + padding);
       formattedValue = formattedValue.replace(/\n/g, "\n" + padding);

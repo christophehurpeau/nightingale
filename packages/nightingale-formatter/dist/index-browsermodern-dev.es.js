@@ -320,7 +320,7 @@ const internalFormatIterator = function internalFormatIterator(values, styleFn, 
       formattedValue
     } = internalFormatValue(value, styleFn, key && objectStyles && objectStyles[key], internalFormatParams);
 
-    if (stringValue && (stringValue.length > 80 || stringValue.indexOf('\n') !== -1)) {
+    if (stringValue && (stringValue.length > 80 || stringValue.includes('\n'))) {
       breakLine = true;
       stringValue = stringValue.replace(/\n/g, `\n${padding}`);
       formattedValue = formattedValue.replace(/\n/g, `\n${padding}`);

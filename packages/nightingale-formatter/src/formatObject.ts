@@ -241,7 +241,7 @@ const internalFormatIterator = (
 
       if (
         stringValue &&
-        (stringValue.length > 80 || stringValue.indexOf('\n') !== -1)
+        (stringValue.length > 80 || stringValue.includes('\n'))
       ) {
         breakLine = true;
         stringValue = stringValue.replace(/\n/g, `\n${padding}`);

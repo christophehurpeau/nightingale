@@ -48,7 +48,7 @@
     "lerna": "3.13.1",
     "lint-staged": "8.1.5",
     "repository-check-dirty": "1.0.2",
-    "yarn-update-lock": "0.3.5",
+    "yarn-update-lock": "0.4.0",
     "yarnhook": "0.4.0"
   }
 }
