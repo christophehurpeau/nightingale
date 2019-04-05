@@ -144,5 +144,5 @@ function listenUnhandledErrors(logger) {
 }
 
 export default Logger;
-export { listenUnhandledErrors, configure, addConfig };
+export { addConfig, configure, listenUnhandledErrors };
 //# sourceMappingURL=index-browser.es.js.map

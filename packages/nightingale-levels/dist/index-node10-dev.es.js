@@ -34,7 +34,7 @@ var Level;
   Level[Level["EMERGENCY"] = 600] = "EMERGENCY";
 })(Level || (Level = {}));
 
-var Level$1 = Level;
+const Level$1 = Level;
 
 export default Level$1;
 //# sourceMappingURL=index-node10-dev.es.js.map

@@ -4,8 +4,8 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
-var util = require('util');
-var Level = _interopDefault(require('nightingale-levels'));
+const util = require('util');
+const Level = _interopDefault(require('nightingale-levels'));
 
 /* eslint-disable max-lines */
 
@@ -452,8 +452,10 @@ class Logger {
 
 
   enter(fn, metadata, metadataStyles) {
-    (metadata || {}).functionName = fn.name;
-    this.log('enter', metadata, Level.TRACE, {
+    const extendedMetadata = Object.assign({}, metadata, {
+      functionName: fn.name
+    });
+    this.log('enter', extendedMetadata, Level.TRACE, {
       metadataStyles
     });
   }

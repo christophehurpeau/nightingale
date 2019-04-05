@@ -4,8 +4,8 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
-var node = require('@sentry/node');
-var Level = _interopDefault(require('nightingale-levels'));
+const node = require('@sentry/node');
+const Level = _interopDefault(require('nightingale-levels'));
 
 const mapToSentryLevel = {
   [Level.TRACE]: 'debug',

@@ -471,8 +471,10 @@ function () {
   ;
 
   _proto.enter = function enter(fn, metadata, metadataStyles) {
-    (metadata || {}).functionName = fn.name;
-    this.log('enter', metadata, Level.TRACE, {
+    var extendedMetadata = Object.assign({}, metadata, {
+      functionName: fn.name
+    });
+    this.log('enter', extendedMetadata, Level.TRACE, {
       metadataStyles: metadataStyles
     });
   }

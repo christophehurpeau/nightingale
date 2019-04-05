@@ -28,6 +28,6 @@ function format(record) {
   return [string].concat(args);
 }
 
-exports.style = style;
 exports.default = format;
+exports.style = style;
 //# sourceMappingURL=index-browser.cjs.js.map

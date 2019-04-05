@@ -4,10 +4,10 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
-var request = require('request');
-var markdownFormatter = _interopDefault(require('nightingale-markdown-formatter'));
-var rawFormatter = _interopDefault(require('nightingale-raw-formatter'));
-var Level = _interopDefault(require('nightingale-levels'));
+const request = require('request');
+const markdownFormatter = _interopDefault(require('nightingale-markdown-formatter'));
+const rawFormatter = _interopDefault(require('nightingale-raw-formatter'));
+const Level = _interopDefault(require('nightingale-levels'));
 
 /* eslint-disable @typescript-eslint/camelcase */
 const levelToSlackColor = {
@@ -20,7 +20,7 @@ const levelToSlackColor = {
   [Level.FATAL]: 'danger',
   [Level.EMERGENCY]: 'danger'
 };
-var createBody = ((record, slackConfig) => {
+const createBody = ((record, slackConfig) => {
   const markdown = markdownFormatter(record);
   const raw = rawFormatter(record);
   return {

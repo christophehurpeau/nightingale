@@ -13,7 +13,7 @@ const levelToSlackColor = {
   [Level.FATAL]: 'danger',
   [Level.EMERGENCY]: 'danger'
 };
-var createBody = ((record, slackConfig) => {
+const createBody = ((record, slackConfig) => {
   const markdown = markdownFormatter(record);
   const raw = rawFormatter(record);
   return {

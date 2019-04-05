@@ -1,6 +1,6 @@
 import { install } from 'source-map-support';
 import Logger, { configure, Level } from 'nightingale';
-export { configure, addConfig, Level, levels } from 'nightingale';
+export { Level, addConfig, configure, levels } from 'nightingale';
 import BrowserConsoleHandler from 'nightingale-browser-console';
 
 const ConsoleHandler = BrowserConsoleHandler;
@@ -17,5 +17,5 @@ configure([{
   handlers: [new ConsoleHandler(Level.INFO)]
 }]);
 
-export { logger, appLogger };
+export { appLogger, logger };
 //# sourceMappingURL=index-browsermodern-dev.es.js.map

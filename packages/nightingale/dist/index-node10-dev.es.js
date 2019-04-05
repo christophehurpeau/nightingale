@@ -132,5 +132,5 @@ function listenUnhandledErrors(logger = new Logger('nightingale.listenUnhandledE
 }
 
 export default Logger;
-export { listenUnhandledErrors, configure, addConfig };
+export { addConfig, configure, listenUnhandledErrors };
 //# sourceMappingURL=index-node10-dev.es.js.map

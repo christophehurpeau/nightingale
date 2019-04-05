@@ -555,10 +555,10 @@ function formatRecordToString(record, style) {
   return parts.join(' ');
 }
 
-exports.levelToStyles = levelToStyles;
-exports.levelToSymbol = levelToSymbol;
-exports.styleToHtmlStyle = styleToHtmlStyle;
-exports.styleToHexColor = styleToHexColor;
 exports.formatObject = formatObject;
 exports.formatRecordToString = formatRecordToString;
+exports.levelToStyles = levelToStyles;
+exports.levelToSymbol = levelToSymbol;
+exports.styleToHexColor = styleToHexColor;
+exports.styleToHtmlStyle = styleToHtmlStyle;
 //# sourceMappingURL=index-browser-dev.cjs.js.map

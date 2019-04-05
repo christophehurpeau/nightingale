@@ -4,10 +4,10 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
-var formatterANSI = _interopDefault(require('nightingale-ansi-formatter'));
-var consoleOutput = _interopDefault(require('nightingale-console-output'));
-var createFindDebugLevel = _interopDefault(require('nightingale-debug'));
-var nightingaleTypes = require('nightingale-types');
+const formatterANSI = _interopDefault(require('nightingale-ansi-formatter'));
+const consoleOutput = _interopDefault(require('nightingale-console-output'));
+const createFindDebugLevel = _interopDefault(require('nightingale-debug'));
+const nightingaleTypes = require('nightingale-types');
 
 const handle = record => consoleOutput(formatterANSI(record), record);
 

@@ -4,8 +4,8 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
-var Logger = _interopDefault(require('nightingale-logger'));
-var nightingaleLevels = _interopDefault(require('nightingale-levels'));
+const Logger = _interopDefault(require('nightingale-logger'));
+const nightingaleLevels = _interopDefault(require('nightingale-levels'));
 
 if (!global.__NIGHTINGALE_CONFIG) {
   global.__NIGHTINGALE_CONFIG = [];
@@ -134,8 +134,8 @@ function listenUnhandledErrors(logger = new Logger('nightingale.listenUnhandledE
 
 exports.Level = nightingaleLevels;
 exports.levels = nightingaleLevels;
+exports.addConfig = addConfig;
+exports.configure = configure;
 exports.default = Logger;
 exports.listenUnhandledErrors = listenUnhandledErrors;
-exports.configure = configure;
-exports.addConfig = addConfig;
 //# sourceMappingURL=index-node10.cjs.js.map
