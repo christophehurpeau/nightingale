@@ -1,6 +1,6 @@
 {
   "name": "nightingale-json-formatter",
-  "version": "4.2.0",
+  "version": "4.2.1",
   "description": "Nightingale JSON formatter",
   "keywords": ["nightingale", "nightingale-formatter"],
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
@@ -55,8 +55,8 @@
     }
   },
   "dependencies": {
-    "nightingale-formatter": "^5.2.0",
-    "nightingale-types": "^2.2.0"
+    "nightingale-formatter": "^5.2.1",
+    "nightingale-types": "^2.2.1"
   },
   "devDependencies": {
     "@babel/core": "7.4.3",
@@ -69,7 +69,7 @@
     "babel-preset-modern-browsers": "14.0.0",
     "eslint": "5.16.0",
     "jest": "24.7.1",
-    "nightingale-levels": "^4.2.0",
+    "nightingale-levels": "^4.2.1",
     "pob-babel": "23.12.0",
     "pob-lcov-reporter": "1.1.0",
     "prettier": "1.16.4",
