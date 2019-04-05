@@ -39,15 +39,15 @@
     "arrowParens": "always"
   },
   "devDependencies": {
-    "@babel/core": "7.3.4",
-    "@babel/preset-env": "7.3.4",
-    "@pob/eslint-config-babel": "29.0.1",
-    "@pob/eslint-config-typescript": "29.0.1",
-    "babel-preset-latest-node": "3.0.1",
-    "babel-preset-modern-browsers": "13.0.1",
-    "eslint": "5.15.1",
-    "pob-babel": "23.7.0",
+    "@babel/core": "7.4.3",
+    "@babel/preset-env": "7.4.3",
+    "@pob/eslint-config-babel": "29.1.0",
+    "@pob/eslint-config-typescript": "29.1.0",
+    "babel-preset-latest-node": "3.1.1",
+    "babel-preset-modern-browsers": "13.1.0",
+    "eslint": "5.16.0",
+    "pob-babel": "23.10.0",
     "prettier": "1.16.4",
-    "typescript": "3.3.3333"
+    "typescript": "3.4.1"
   }
 }
