@@ -2,9 +2,9 @@
 
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
-var Logger = require('nightingale');
-var Logger__default = _interopDefault(Logger);
-var ConsoleHandler = _interopDefault(require('nightingale-console'));
+const Logger = require('nightingale');
+const Logger__default = _interopDefault(Logger);
+const ConsoleHandler = _interopDefault(require('nightingale-console'));
 
 Logger.configure([{
   stop: true,

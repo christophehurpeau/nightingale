@@ -1,6 +1,6 @@
 import { install } from 'source-map-support';
 import Logger, { listenUnhandledErrors, configure, Level } from 'nightingale';
-export { configure, addConfig, Level, levels } from 'nightingale';
+export { Level, addConfig, configure, levels } from 'nightingale';
 import TerminalConsoleHandler from 'nightingale-console';
 
 const ConsoleHandler = TerminalConsoleHandler;
@@ -15,5 +15,5 @@ configure([{
   handlers: [new ConsoleHandler(Level.INFO)]
 }]);
 
-export { logger, appLogger };
+export { appLogger, logger };
 //# sourceMappingURL=index-node10.es.js.map

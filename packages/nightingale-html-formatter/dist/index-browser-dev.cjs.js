@@ -22,6 +22,6 @@ function format(record) {
   return nightingaleFormatter.formatRecordToString(record, style);
 }
 
-exports.style = style;
 exports.default = format;
+exports.style = style;
 //# sourceMappingURL=index-browser-dev.cjs.js.map

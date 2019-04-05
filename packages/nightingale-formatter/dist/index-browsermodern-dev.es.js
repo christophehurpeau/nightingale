@@ -562,5 +562,5 @@ function formatRecordToString(record, style) {
   return parts.join(' ');
 }
 
-export { levelToStyles, levelToSymbol, styleToHtmlStyle, styleToHexColor, formatObject, formatRecordToString };
+export { formatObject, formatRecordToString, levelToStyles, levelToSymbol, styleToHexColor, styleToHtmlStyle };
 //# sourceMappingURL=index-browsermodern-dev.es.js.map

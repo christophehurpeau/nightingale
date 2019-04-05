@@ -156,8 +156,8 @@ function listenUnhandledErrors(logger) {
 
 exports.Level = nightingaleLevels;
 exports.levels = nightingaleLevels;
+exports.addConfig = addConfig;
+exports.configure = configure;
 exports.default = Logger;
 exports.listenUnhandledErrors = listenUnhandledErrors;
-exports.configure = configure;
-exports.addConfig = addConfig;
 //# sourceMappingURL=index-browser-dev.cjs.js.map

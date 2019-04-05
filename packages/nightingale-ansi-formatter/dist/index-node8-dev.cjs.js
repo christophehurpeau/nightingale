@@ -4,8 +4,8 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
-var ansi = _interopDefault(require('ansi-styles'));
-var nightingaleFormatter = require('nightingale-formatter');
+const ansi = _interopDefault(require('ansi-styles'));
+const nightingaleFormatter = require('nightingale-formatter');
 
 const ansiStyles = {
   black: ansi.black,
@@ -61,6 +61,6 @@ function format(record) {
   return nightingaleFormatter.formatRecordToString(record, style);
 }
 
-exports.style = style;
 exports.default = format;
+exports.style = style;
 //# sourceMappingURL=index-node8-dev.cjs.js.map

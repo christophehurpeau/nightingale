@@ -2,7 +2,7 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var nightingaleFormatter = require('nightingale-formatter');
+const nightingaleFormatter = require('nightingale-formatter');
 
 const style = args => (styles, string) => {
   if (!styles || styles.length === 0 || !string) {
@@ -20,6 +20,6 @@ function format(record) {
   return [string, ...args];
 }
 
-exports.style = style;
 exports.default = format;
+exports.style = style;
 //# sourceMappingURL=index-node10.cjs.js.map

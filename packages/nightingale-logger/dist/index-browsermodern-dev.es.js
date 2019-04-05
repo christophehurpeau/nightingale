@@ -284,7 +284,7 @@ class Logger {
    */
 
 
-  inspectValue() {
+  inspectValue(value, metadata, metadataStyles) {
     throw new Error('Not supported for the browser. Prefer `debugger;`');
   }
   /**
@@ -292,7 +292,7 @@ class Logger {
    */
 
 
-  inspectVar() {
+  inspectVar(varName, varValue, metadata, metadataStyles) {
     throw new Error('Not supported for the browser. Prefer `debugger;`');
   }
   /**
@@ -439,8 +439,10 @@ class Logger {
 
 
   enter(fn, metadata, metadataStyles) {
-    (metadata || {}).functionName = fn.name;
-    this.log('enter', metadata, Level.TRACE, {
+    const extendedMetadata = Object.assign({}, metadata, {
+      functionName: fn.name
+    });
+    this.log('enter', extendedMetadata, Level.TRACE, {
       metadataStyles
     });
   }

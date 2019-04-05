@@ -2,10 +2,10 @@
 
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
-var Logger = require('nightingale');
-var Logger__default = _interopDefault(Logger);
-var jsonFormatter = _interopDefault(require('nightingale-json-formatter'));
-var consoleOutput = _interopDefault(require('nightingale-console-output'));
+const Logger = require('nightingale');
+const Logger__default = _interopDefault(Logger);
+const jsonFormatter = _interopDefault(require('nightingale-json-formatter'));
+const consoleOutput = _interopDefault(require('nightingale-console-output'));
 
 class JSONHandler {
   constructor(minLevel) {

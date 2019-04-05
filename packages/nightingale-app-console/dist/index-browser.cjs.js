@@ -15,10 +15,30 @@ Logger.configure([{
   handlers: [new ConsoleHandler(Logger.Level.INFO)]
 }]);
 
-exports.configure = Logger.configure;
-exports.addConfig = Logger.addConfig;
-exports.Level = Logger.Level;
-exports.levels = Logger.levels;
-exports.logger = logger;
+Object.defineProperty(exports, 'Level', {
+  enumerable: true,
+  get: function () {
+    return Logger.Level;
+  }
+});
+Object.defineProperty(exports, 'addConfig', {
+  enumerable: true,
+  get: function () {
+    return Logger.addConfig;
+  }
+});
+Object.defineProperty(exports, 'configure', {
+  enumerable: true,
+  get: function () {
+    return Logger.configure;
+  }
+});
+Object.defineProperty(exports, 'levels', {
+  enumerable: true,
+  get: function () {
+    return Logger.levels;
+  }
+});
 exports.appLogger = appLogger;
+exports.logger = logger;
 //# sourceMappingURL=index-browser.cjs.js.map

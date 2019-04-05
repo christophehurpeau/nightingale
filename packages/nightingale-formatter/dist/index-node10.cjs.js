@@ -4,7 +4,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
-var Level = _interopDefault(require('nightingale-levels'));
+const Level = _interopDefault(require('nightingale-levels'));
 
 const levelToStyles = {
   [Level.TRACE]: ['gray'],
@@ -546,10 +546,10 @@ function formatRecordToString(record, style) {
   return parts.join(' ');
 }
 
-exports.levelToStyles = levelToStyles;
-exports.levelToSymbol = levelToSymbol;
-exports.styleToHtmlStyle = styleToHtmlStyle;
-exports.styleToHexColor = styleToHexColor;
 exports.formatObject = formatObject;
 exports.formatRecordToString = formatRecordToString;
+exports.levelToStyles = levelToStyles;
+exports.levelToSymbol = levelToSymbol;
+exports.styleToHexColor = styleToHexColor;
+exports.styleToHtmlStyle = styleToHtmlStyle;
 //# sourceMappingURL=index-node10.cjs.js.map

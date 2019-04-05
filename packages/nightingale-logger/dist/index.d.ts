@@ -171,7 +171,9 @@ export default class Logger {
      * }
      *
      */
-    enter<T extends Metadata>(fn: Function, metadata?: T, metadataStyles?: MetadataStyles<T>): void;
+    enter<T extends Metadata>(fn: Function, metadata?: T, metadataStyles?: MetadataStyles<T & {
+        functionName?: string;
+    }>): void;
     /**
      * Log an exit in a function
      *
@@ -185,7 +187,7 @@ export default class Logger {
      * }
      */
     exit<T extends Metadata>(fn: Function, metadata?: T, metadataStyles?: MetadataStyles<T & {
-        functionName: string;
+        functionName?: string;
     }>): void;
     /**
      * Wrap around a function to log enter and exit of a function

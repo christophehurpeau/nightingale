@@ -4,7 +4,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
-var formatterRaw = _interopDefault(require('nightingale-raw-formatter'));
+const formatterRaw = _interopDefault(require('nightingale-raw-formatter'));
 
 /* eslint-disable prefer-template */
 class StringHandler {
