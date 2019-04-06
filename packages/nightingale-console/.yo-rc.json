@@ -23,7 +23,8 @@
       "examples": true,
       "entries": [
         "index"
-      ]
+      ],
+      "withReact": false
     }
   },
   "nightingale-console": {

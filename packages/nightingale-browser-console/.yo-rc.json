@@ -21,7 +21,8 @@
       "testing": false,
       "entries": [
         "index"
-      ]
+      ],
+      "withReact": false
     }
   },
   "nightingale-browser-console": {

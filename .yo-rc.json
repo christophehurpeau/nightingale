@@ -10,6 +10,7 @@
       "testing": true,
       "codecov": true,
       "documentation": true,
+      "typescript": true,
       "packageNames": [
         "nightingale",
         "nightingale-ansi-formatter",
@@ -35,8 +36,7 @@
         "nightingale-types",
         "nightingale-web-processor",
         "nightingale-winston-adapter"
-      ],
-      "typescript": false
+      ]
     },
     "renovate": {
       "enable": true

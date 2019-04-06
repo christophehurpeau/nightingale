@@ -31,7 +31,8 @@
             "cjs"
           ]
         }
-      ]
+      ],
+      "withReact": false
     }
   },
   "nightingale-example": {

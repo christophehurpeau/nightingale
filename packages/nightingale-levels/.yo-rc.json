@@ -36,7 +36,8 @@
             "es"
           ]
         }
-      ]
+      ],
+      "withReact": false
     }
   },
   "nightingale-levels": {

@@ -36,7 +36,8 @@
       "testing": false,
       "entries": [
         "index"
-      ]
+      ],
+      "withReact": false
     }
   },
   "nightingale-app-console": {

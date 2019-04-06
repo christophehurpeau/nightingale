@@ -7,11 +7,15 @@ yarn-debug.log*
 yarn-error.log*
 
 
+# IDE
 /.settings
 /.project
 /.idea
 *.sublime-project
 *.sublime-workspace
+
+# typescript
+*.tsbuildinfo
 
 
 #*

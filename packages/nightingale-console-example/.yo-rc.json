@@ -28,7 +28,8 @@
             "cjs"
           ]
         }
-      ]
+      ],
+      "withReact": false
     }
   },
   "nightingale-console-example": {

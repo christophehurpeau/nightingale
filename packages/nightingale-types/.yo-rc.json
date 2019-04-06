@@ -6,7 +6,8 @@
       ],
       "documentation": false,
       "testing": false,
-      "envs": []
+      "envs": [],
+      "withReact": false
     }
   },
   "nightingale-types": {

@@ -39,7 +39,8 @@
       "documentation": true,
       "entries": [
         "index"
-      ]
+      ],
+      "withReact": false
     }
   },
   "nightingale-logger": {

@@ -9,11 +9,11 @@
   "homepage": "https://github.com/christophehurpeau/nightingale",
   "workspaces": ["packages/*"],
   "scripts": {
-    "build": "lerna run --stream --concurrency=1 build",
-    "build:definitions": "lerna run --stream build:definitions",
+    "build": "lerna run --stream build",
+    "build:definitions": "tsc -b tsconfig.build.json",
     "generate:docs": "lerna run --parallel --ignore \"*-example\" generate:docs",
     "lint": "lerna run --stream lint",
-    "postbuild": "yarn run build:definitions --since",
+    "postbuild": "yarn run build:definitions",
     "preversion": "yarn run lint --since && yarn run build --since && repository-check-dirty",
     "release": "GH_TOKEN=$POB_GITHUB_TOKEN lerna version --conventional-commits --github-release -m 'chore: release' && lerna publish from-git",
     "test": "lerna run --stream test",
@@ -48,6 +48,7 @@
     "lerna": "3.13.1",
     "lint-staged": "8.1.5",
     "repository-check-dirty": "1.0.2",
+    "typescript": "3.4.2",
     "yarn-update-lock": "0.4.0",
     "yarnhook": "0.4.0"
   }

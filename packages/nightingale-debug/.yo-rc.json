@@ -39,7 +39,8 @@
       },
       "entries": [
         "index"
-      ]
+      ],
+      "withReact": false
     }
   },
   "nightingale-debug": {

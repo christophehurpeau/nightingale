@@ -26,7 +26,8 @@
       "entries": [
         "index",
         "createBody"
-      ]
+      ],
+      "withReact": false
     }
   },
   "nightingale-slack": {

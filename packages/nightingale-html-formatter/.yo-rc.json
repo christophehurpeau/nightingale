@@ -39,7 +39,8 @@
       "documentation": false,
       "entries": [
         "index"
-      ]
+      ],
+      "withReact": false
     }
   },
   "nightingale-html-formatter": {

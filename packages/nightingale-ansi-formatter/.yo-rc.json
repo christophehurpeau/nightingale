@@ -25,7 +25,8 @@
       "documentation": false,
       "entries": [
         "index"
-      ]
+      ],
+      "withReact": false
     }
   },
   "nightingale-ansi-formatter": {

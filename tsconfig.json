@@ -1,0 +1,27 @@
+{
+  "files": [],
+  "references": [
+    { "path": "packages/nightingale/tsconfig.json" },
+    { "path": "packages/nightingale-ansi-formatter/tsconfig.json" },
+    { "path": "packages/nightingale-app-console/tsconfig.json" },
+    { "path": "packages/nightingale-browser-console/tsconfig.json" },
+    { "path": "packages/nightingale-browser-console-formatter/tsconfig.json" },
+    { "path": "packages/nightingale-console/tsconfig.json" },
+    { "path": "packages/nightingale-console-example/tsconfig.json" },
+    { "path": "packages/nightingale-console-output/tsconfig.json" },
+    { "path": "packages/nightingale-debug/tsconfig.json" },
+    { "path": "packages/nightingale-example/tsconfig.json" },
+    { "path": "packages/nightingale-formatter/tsconfig.json" },
+    { "path": "packages/nightingale-html-formatter/tsconfig.json" },
+    { "path": "packages/nightingale-json-formatter/tsconfig.json" },
+    { "path": "packages/nightingale-levels/tsconfig.json" },
+    { "path": "packages/nightingale-logger/tsconfig.json" },
+    { "path": "packages/nightingale-markdown-formatter/tsconfig.json" },
+    { "path": "packages/nightingale-raw-formatter/tsconfig.json" },
+    { "path": "packages/nightingale-sentry/tsconfig.json" },
+    { "path": "packages/nightingale-slack/tsconfig.json" },
+    { "path": "packages/nightingale-string/tsconfig.json" },
+    { "path": "packages/nightingale-web-processor/tsconfig.json" },
+    { "path": "packages/nightingale-winston-adapter/tsconfig.json" }
+  ]
+}
