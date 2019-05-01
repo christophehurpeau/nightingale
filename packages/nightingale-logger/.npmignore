@@ -4,7 +4,8 @@
 /samples
 /test
 /tsconfig.json
-/tsconfig.build.*
+/tsconfig.build.json
+/dist/tsbuildinfo
 /tsconfig.doc.json
 .babelrc
 .codeclimate.yml

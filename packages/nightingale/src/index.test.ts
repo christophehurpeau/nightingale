@@ -4,7 +4,7 @@ import Logger, { Level } from '.';
 class TestableStringLogger extends Logger {
   private stringHandler: StringHandler;
 
-  public constructor() {
+  constructor() {
     super('');
     this.stringHandler = new StringHandler(Level.ALL);
   }
@@ -16,7 +16,7 @@ class TestableStringLogger extends Logger {
     };
   }
 
-  public get string(): string {
+  get string(): string {
     return this.stringHandler.string;
   }
 }

@@ -32,7 +32,7 @@
     "build:definitions": "tsc -p tsconfig.build.json",
     "clean": "rm -Rf docs dist test/node6 coverage",
     "generate:test-coverage": "rm -Rf docs/coverage/ ; NODE_ENV=production BABEL_ENV=test jest --coverage --coverageReporters=pob-lcov-reporter --coverageDirectory=docs/coverage/",
-    "lint": "tsc && eslint --ext .ts --quiet src/",
+    "lint": "eslint --ext .ts --quiet src/",
     "test": "jest",
     "test:watch": "jest",
     "watch": "pob-watch"
@@ -59,19 +59,19 @@
     "nightingale-types": "^2.2.1"
   },
   "devDependencies": {
-    "@babel/core": "7.4.3",
-    "@babel/preset-env": "7.4.3",
-    "@pob/eslint-config-babel": "29.2.0",
-    "@pob/eslint-config-typescript": "29.2.0",
-    "@types/jest": "24.0.11",
+    "@babel/core": "7.4.4",
+    "@babel/preset-env": "7.4.4",
+    "@pob/eslint-config-babel": "31.0.0",
+    "@pob/eslint-config-typescript": "31.1.0",
+    "@types/jest": "24.0.12",
     "babel-jest": "24.7.1",
     "babel-preset-latest-node": "3.1.1",
     "babel-preset-modern-browsers": "14.0.0",
     "eslint": "5.16.0",
     "jest": "24.7.1",
-    "pob-babel": "23.12.0",
-    "pob-lcov-reporter": "1.1.0",
-    "prettier": "1.16.4",
+    "pob-babel": "23.16.0",
+    "pob-lcov-reporter": "1.2.0",
+    "prettier": "1.17.0",
     "xunit-file": "1.0.0"
   }
 }

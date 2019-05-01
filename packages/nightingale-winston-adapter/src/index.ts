@@ -18,7 +18,7 @@ export default class WinstonAdapterHandler {
 
   handle: Handle;
 
-  public constructor(winstonTransport: WinstonTransportType, minLevel: number) {
+  constructor(winstonTransport: WinstonTransportType, minLevel: number) {
     this.minLevel = minLevel;
     this.handle = <T>(record: LogRecord<T>) => {
       // new Promise((resolve, reject) => {

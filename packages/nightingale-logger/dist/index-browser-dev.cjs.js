@@ -6,23 +6,7 @@ function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'defau
 
 var Level = _interopDefault(require('nightingale-levels'));
 
-function _extends() {
-  _extends = Object.assign || function (target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i];
-
-      for (var key in source) {
-        if (Object.prototype.hasOwnProperty.call(source, key)) {
-          target[key] = source[key];
-        }
-      }
-    }
-
-    return target;
-  };
-
-  return _extends.apply(this, arguments);
-}
+/* eslint-disable max-lines */
 
 if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER) {
   global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = function () {
@@ -194,7 +178,7 @@ function () {
       delete metadata.context;
     }
 
-    var record = _extends({
+    var record = Object.assign({
       level: level,
       key: this.key,
       displayName: this.displayName,
@@ -204,7 +188,6 @@ function () {
       metadata: metadata,
       extra: {}
     }, options);
-
     this.addRecord(record);
   }
   /**
@@ -437,7 +420,7 @@ function () {
       readableTime: readableTime,
       timeMs: diffTime
     });
-    this.log(message, extendedMetadata, level, _extends({}, options, {
+    this.log(message, extendedMetadata, level, Object.assign({}, options, {
       metadataStyles: metadataStyles
     }));
   }

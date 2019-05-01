@@ -1,9 +1,9 @@
 import Level from 'nightingale-levels';
 
 /* eslint-disable no-console */
-const index = (function (param, record) {
+function consoleOutput(param, record) {
   console[record.level >= Level.ERROR ? 'error' : 'log'](...param);
-});
+}
 
-export default index;
+export default consoleOutput;
 //# sourceMappingURL=index-browsermodern.es.js.map

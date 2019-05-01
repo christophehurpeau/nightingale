@@ -1,12 +1,12 @@
 import Level from 'nightingale-levels';
 
 /* eslint-disable no-console */
-const index = ((param, record) => {
+function consoleOutput(param, record) {
   {
     const outKey = record.level >= Level.ERROR ? 'stderr' : 'stdout';
     process[outKey].write(`${param}\n`);
   }
-});
+}
 
-export default index;
+export default consoleOutput;
 //# sourceMappingURL=index-node10.es.js.map

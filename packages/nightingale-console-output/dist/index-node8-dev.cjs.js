@@ -7,12 +7,12 @@ function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'defau
 const Level = _interopDefault(require('nightingale-levels'));
 
 /* eslint-disable no-console */
-const index = ((param, record) => {
+function consoleOutput(param, record) {
   {
     const outKey = record.level >= Level.ERROR ? 'stderr' : 'stdout';
     process[outKey].write(`${param}\n`);
   }
-});
+}
 
-exports.default = index;
+exports.default = consoleOutput;
 //# sourceMappingURL=index-node8-dev.cjs.js.map

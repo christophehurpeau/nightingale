@@ -16,7 +16,10 @@ const levelToSlackColor: { [level: number]: string } = {
   [Level.EMERGENCY]: 'danger',
 };
 
-export default <T>(record: LogRecord<T>, slackConfig: SlackConfig) => {
+export default function createBody<T>(
+  record: LogRecord<T>,
+  slackConfig: SlackConfig,
+) {
   const markdown = markdownFormatter(record);
   const raw = rawFormatter(record);
 
@@ -35,4 +38,4 @@ export default <T>(record: LogRecord<T>, slackConfig: SlackConfig) => {
       },
     ],
   };
-};
+}

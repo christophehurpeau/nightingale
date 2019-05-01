@@ -5,6 +5,7 @@
     "noEmit": false,
     "emitDeclarationOnly": true,
     "outDir": "dist",
+    "tsBuildInfoFile": "dist/tsbuildinfo",
     "isolatedModules": false,
     "declaration": true,
     "declarationMap": true

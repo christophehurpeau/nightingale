@@ -68,11 +68,11 @@ const createHandler = (
 };
 
 export default class SentryHandler {
-  public minLevel: Level;
+  minLevel: Level;
 
-  public handle: Handle;
+  handle: Handle;
 
-  public constructor(ravenUrl: string, minLevel: number, options?: Options) {
+  constructor(ravenUrl: string, minLevel: number, options?: Options) {
     this.minLevel = minLevel;
     this.handle = createHandler(ravenUrl, options);
   }

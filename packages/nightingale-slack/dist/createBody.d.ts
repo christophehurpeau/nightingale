@@ -1,6 +1,6 @@
 import { LogRecord } from 'nightingale-types';
 import SlackConfig from './SlackConfig';
-declare const _default: <T>(record: LogRecord<T>, slackConfig: SlackConfig) => {
+export default function createBody<T>(record: LogRecord<T>, slackConfig: SlackConfig): {
     channel: string | undefined;
     username: string | undefined;
     icon_url: string | undefined;
@@ -13,5 +13,4 @@ declare const _default: <T>(record: LogRecord<T>, slackConfig: SlackConfig) => {
         mrkdwn_in: string[];
     }[];
 };
-export default _default;
 //# sourceMappingURL=createBody.d.ts.map

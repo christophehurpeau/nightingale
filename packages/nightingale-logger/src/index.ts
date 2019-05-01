@@ -82,9 +82,9 @@ function getConfigForLoggerRecord(
 export default class Logger {
   private contextObject?: object;
 
-  public readonly key: string;
+  readonly key: string;
 
-  public readonly displayName?: string;
+  readonly displayName?: string;
 
   /**
    * Create a new Logger
@@ -92,7 +92,7 @@ export default class Logger {
    * @param {string} key
    * @param {string} [displayName]
    */
-  public constructor(key: string, displayName?: string) {
+  constructor(key: string, displayName?: string) {
     this.key = key;
     this.displayName = displayName;
 
@@ -111,14 +111,14 @@ export default class Logger {
   }
 
   /** @private */
-  public getConfig(): Readonly<ComputedConfigForKey> {
+  getConfig(): Readonly<ComputedConfigForKey> {
     return global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(this.key, Level.ALL);
   }
 
   /**
    * Create a child logger
    */
-  public child(childSuffixKey: string, childDisplayName?: string): Logger {
+  child(childSuffixKey: string, childDisplayName?: string): Logger {
     return new Logger(`${this.key}:${childSuffixKey}`, childDisplayName);
   }
 
@@ -135,7 +135,7 @@ export default class Logger {
    * }
    *
    */
-  public context(context: object): Logger {
+  context(context: object): Logger {
     const logger = new Logger(this.key);
     logger.setContext(context);
     return logger;
@@ -144,7 +144,7 @@ export default class Logger {
   /**
    * Get the context of this logger
    */
-  public getContextObject(): Readonly<object> | undefined {
+  getContextObject(): Readonly<object> | undefined {
     return this.contextObject;
   }
 
@@ -153,14 +153,14 @@ export default class Logger {
    *
    * @param {Object} context
    */
-  public setContext(context: object): void {
+  setContext(context: object): void {
     this.contextObject = context;
   }
 
   /**
    * Extends existing context of this logger
    */
-  public extendsContext(extendedContext: Record<string, any>): void {
+  extendsContext(extendedContext: Record<string, any>): void {
     Object.assign(this.contextObject, extendedContext);
   }
 
@@ -169,7 +169,7 @@ export default class Logger {
    *
    * Use this only if you know what you are doing.
    */
-  public addRecord<T extends Metadata>(record: Readonly<LogRecord<T>>): void {
+  addRecord<T extends Metadata>(record: Readonly<LogRecord<T>>): void {
     const { handlers, processors } = this.getHandlersAndProcessors(
       record.level,
     );
@@ -195,7 +195,7 @@ export default class Logger {
   /**
    * Log a message
    */
-  public log<T extends Metadata>(
+  log<T extends Metadata>(
     message: string,
     metadata?: T,
     level: number = Level.INFO,
@@ -223,7 +223,7 @@ export default class Logger {
   /**
    * Log a trace message
    */
-  public trace<T extends Metadata>(
+  trace<T extends Metadata>(
     message: string,
     metadata?: T,
     metadataStyles?: MetadataStyles<T>,
@@ -234,7 +234,7 @@ export default class Logger {
   /**
    * Log a debug message
    */
-  public debug<T extends Metadata>(
+  debug<T extends Metadata>(
     message: string,
     metadata?: T,
     metadataStyles?: MetadataStyles<T>,
@@ -245,7 +245,7 @@ export default class Logger {
   /**
    * Notice an info message
    */
-  public notice<T extends Metadata>(
+  notice<T extends Metadata>(
     message: string,
     metadata?: T,
     metadataStyles?: MetadataStyles<T>,
@@ -256,7 +256,7 @@ export default class Logger {
   /**
    * Log an info message
    */
-  public info<T extends Metadata>(
+  info<T extends Metadata>(
     message: string,
     metadata?: T,
     metadataStyles?: MetadataStyles<T>,
@@ -267,7 +267,7 @@ export default class Logger {
   /**
    * Log a warn message
    */
-  public warn<T extends Metadata>(
+  warn<T extends Metadata>(
     message: string,
     metadata?: T,
     metadataStyles?: MetadataStyles<T>,
@@ -278,7 +278,7 @@ export default class Logger {
   /**
    * Log an error message
    */
-  public error<T extends Metadata>(
+  error<T extends Metadata>(
     message: string | Error,
     metadata?: T,
     metadataStyles?: MetadataStyles<T>,
@@ -303,7 +303,7 @@ export default class Logger {
   /**
    * Log an critical message
    */
-  public critical<T extends Metadata>(
+  critical<T extends Metadata>(
     message: string,
     metadata?: T,
     metadataStyles?: MetadataStyles<T>,
@@ -314,7 +314,7 @@ export default class Logger {
   /**
    * Log a fatal message
    */
-  public fatal<T extends Metadata>(
+  fatal<T extends Metadata>(
     message: string,
     metadata?: T,
     metadataStyles?: MetadataStyles<T>,
@@ -325,7 +325,7 @@ export default class Logger {
   /**
    * Log an alert message
    */
-  public alert<T extends Metadata>(
+  alert<T extends Metadata>(
     message: string,
     metadata?: T,
     metadataStyles?: MetadataStyles<T>,
@@ -336,7 +336,7 @@ export default class Logger {
   /**
    * Log an inspected value
    */
-  public inspectValue<T extends Metadata>(
+  inspectValue<T extends Metadata>(
     value: any,
     metadata?: T,
     metadataStyles?: MetadataStyles<T>,
@@ -357,7 +357,7 @@ export default class Logger {
   /**
    * Log a debugged var
    */
-  public inspectVar<T extends Metadata>(
+  inspectVar<T extends Metadata>(
     varName: string,
     varValue: any,
     metadata?: T,
@@ -377,7 +377,7 @@ export default class Logger {
   /**
    * Alias for infoSuccess
    */
-  public success<T extends Metadata>(
+  success<T extends Metadata>(
     message: string,
     metadata?: T,
     metadataStyles?: MetadataStyles<T>,
@@ -388,7 +388,7 @@ export default class Logger {
   /**
    * Log an info success message
    */
-  public infoSuccess<T extends Metadata>(
+  infoSuccess<T extends Metadata>(
     message: string,
     metadata?: T,
     metadataStyles?: MetadataStyles<T>,
@@ -403,7 +403,7 @@ export default class Logger {
   /**
    * Log an debug success message
    */
-  public debugSuccess<T extends Metadata>(
+  debugSuccess<T extends Metadata>(
     message: string,
     metadata?: T,
     metadataStyles?: MetadataStyles<T>,
@@ -418,7 +418,7 @@ export default class Logger {
   /**
    * Alias for infoFail
    */
-  public fail<T extends Metadata>(
+  fail<T extends Metadata>(
     message: string,
     metadata?: T,
     metadataStyles?: MetadataStyles<T>,
@@ -429,7 +429,7 @@ export default class Logger {
   /**
    * Log an info fail message
    */
-  public infoFail<T extends Metadata>(
+  infoFail<T extends Metadata>(
     message: string,
     metadata?: T,
     metadataStyles?: MetadataStyles<T>,
@@ -444,7 +444,7 @@ export default class Logger {
   /**
    * Log an debug fail message
    */
-  public debugFail<T extends Metadata>(
+  debugFail<T extends Metadata>(
     message: string,
     metadata?: T,
     metadataStyles?: MetadataStyles<T>,
@@ -459,7 +459,7 @@ export default class Logger {
   /**
    * @returns {number} time to pass to timeEnd
    */
-  public time<T extends Metadata>(
+  time<T extends Metadata>(
     message?: string,
     metadata?: T,
     metadataStyles?: MetadataStyles<T>,
@@ -472,7 +472,7 @@ export default class Logger {
     return Date.now();
   }
 
-  public infoTime<T extends Metadata>(
+  infoTime<T extends Metadata>(
     message?: string,
     metadata?: T,
     metadataStyles?: MetadataStyles<T>,
@@ -486,7 +486,7 @@ export default class Logger {
    * was called, then logs out the difference
    * and deletes the original record
    */
-  public timeEnd<T extends Metadata>(
+  timeEnd<T extends Metadata>(
     startTime: number,
     message: string,
     metadata?: T,
@@ -522,7 +522,7 @@ export default class Logger {
   /**
    * Like timeEnd, but with INFO level
    */
-  public infoTimeEnd<T extends Metadata>(
+  infoTimeEnd<T extends Metadata>(
     time: number,
     message: string,
     metadata?: T,
@@ -534,7 +534,7 @@ export default class Logger {
   /**
    * Like timeEnd, but with INFO level
    */
-  public infoSuccessTimeEnd<T extends Metadata>(
+  infoSuccessTimeEnd<T extends Metadata>(
     time: number,
     message: string,
     metadata?: T,
@@ -558,7 +558,7 @@ export default class Logger {
    * }
    *
    */
-  public enter<T extends Metadata>(
+  enter<T extends Metadata>(
     fn: Function,
     metadata?: T,
     metadataStyles?: MetadataStyles<T & { functionName?: string }>,
@@ -583,7 +583,7 @@ export default class Logger {
    *   }
    * }
    */
-  public exit<T extends Metadata>(
+  exit<T extends Metadata>(
     fn: Function,
     metadata?: T,
     metadataStyles?: MetadataStyles<T & { functionName?: string }>,
@@ -614,7 +614,7 @@ export default class Logger {
    * @param {Object} [metadataStyles]
    * @param {Function} callback
    */
-  public wrap<T extends Metadata>(
+  wrap<T extends Metadata>(
     fn: Function,
     metadata?: T | Function,
     metadataStyles?: MetadataStyles<T> | Function,
