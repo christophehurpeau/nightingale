@@ -34,6 +34,7 @@
     "nightingale-ansi-formatter": "^4.2.1",
     "nightingale-console-output": "^4.2.1",
     "nightingale-debug": "^5.2.1",
+    "nightingale-json-formatter": "^4.2.1",
     "nightingale-types": "^2.2.1"
   },
   "devDependencies": {

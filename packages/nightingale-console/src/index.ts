@@ -1,11 +1,29 @@
+import { POB_TARGET } from 'pob-babel';
 import formatterANSI from 'nightingale-ansi-formatter';
+import formatterJSON from 'nightingale-json-formatter';
 import consoleOutput from 'nightingale-console-output';
 import createFindDebugLevel from 'nightingale-debug';
 import { IsHandling, Handle, LogRecord, Level } from 'nightingale-types';
 
-const handle: Handle = <T>(record: LogRecord<T>) =>
-  consoleOutput(formatterANSI(record), record);
+const defaultFormatter =
+  POB_TARGET === 'node' && !process.stdout.isTTY
+    ? formatterJSON
+    : formatterANSI;
+
+const createHandle = (
+  formatter = defaultFormatter,
+  output = consoleOutput,
+): Handle => {
+  return <T>(record: LogRecord<T>): void => {
+    return output(formatter(record), record);
+  };
+};
 const findDebugLevel = createFindDebugLevel(process.env.DEBUG);
+
+interface ConsoleHandlerOptions {
+  formatter?: <T>(record: LogRecord<T>) => string;
+  output?: <T>(param: string | string[], record: LogRecord<T>) => void;
+}
 
 export default class ConsoleHandler {
   minLevel: Level = Level.ALL;
@@ -14,10 +32,10 @@ export default class ConsoleHandler {
 
   handle: Handle;
 
-  constructor(minLevel: Level) {
+  constructor(minLevel: Level, options: ConsoleHandlerOptions = {}) {
     this.minLevel = minLevel;
     this.isHandling = (level: Level, key: string) =>
       level >= findDebugLevel(minLevel, key);
-    this.handle = handle;
+    this.handle = createHandle(options.formatter, options.output);
   }
 }
