@@ -10,7 +10,7 @@ const consoleOutput = _interopDefault(require('nightingale-console-output'));
 const createFindDebugLevel = _interopDefault(require('nightingale-debug'));
 const nightingaleTypes = require('nightingale-types');
 
-const defaultFormatter = !process.stdout.isTTY ? formatterJSON : formatterANSI;
+const defaultFormatter = !process.stdout.isTTY && process.env.NIGHTINGALE_CONSOLE_FORMATTER !== 'ansi' ? formatterJSON : formatterANSI;
 
 const createHandle = (formatter = defaultFormatter, output = consoleOutput) => {
   return record => {

@@ -6,7 +6,9 @@ import createFindDebugLevel from 'nightingale-debug';
 import { IsHandling, Handle, LogRecord, Level } from 'nightingale-types';
 
 const defaultFormatter =
-  POB_TARGET === 'node' && !process.stdout.isTTY
+  POB_TARGET === 'node' &&
+  !process.stdout.isTTY &&
+  process.env.NIGHTINGALE_CONSOLE_FORMATTER !== 'ansi'
     ? formatterJSON
     : formatterANSI;
 
