@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.5](https://github.com/christophehurpeau/nightingale/compare/nightingale-example@2.2.4...nightingale-example@2.2.5) (2019-05-01)
+
+**Note:** Version bump only for package nightingale-example
+
+
+
+
+
 ## [2.2.4](https://github.com/christophehurpeau/nightingale/compare/nightingale-example@2.2.3...nightingale-example@2.2.4) (2019-05-01)
 
 **Note:** Version bump only for package nightingale-example
