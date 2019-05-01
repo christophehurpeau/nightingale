@@ -1,6 +1,6 @@
 {
   "name": "nightingale-types",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "description": "Nightingale types for typescript",
   "keywords": ["logger"],
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
@@ -26,7 +26,7 @@
     "arrowParens": "always"
   },
   "dependencies": {
-    "nightingale-levels": "^4.2.1"
+    "nightingale-levels": "^4.2.2"
   },
   "devDependencies": {
     "@pob/eslint-config": "31.0.0",

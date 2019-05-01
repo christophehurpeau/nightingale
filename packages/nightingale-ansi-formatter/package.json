@@ -1,6 +1,6 @@
 {
   "name": "nightingale-ansi-formatter",
-  "version": "4.2.1",
+  "version": "4.2.2",
   "description": "Nightingale ANSI formatter",
   "keywords": ["nightingale", "nightingale-formatter"],
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
@@ -48,8 +48,8 @@
   "dependencies": {
     "@types/ansi-styles": "^3.2.1",
     "ansi-styles": "^3.2.1",
-    "nightingale-formatter": "^5.2.1",
-    "nightingale-types": "^2.2.1"
+    "nightingale-formatter": "^5.2.2",
+    "nightingale-types": "^2.2.2"
   },
   "devDependencies": {
     "@babel/core": "7.4.4",

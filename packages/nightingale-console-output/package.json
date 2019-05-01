@@ -1,6 +1,6 @@
 {
   "name": "nightingale-console-output",
-  "version": "4.2.1",
+  "version": "4.2.2",
   "description": "Nightingale console output",
   "keywords": ["nightingale", "nightingale-output"],
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
@@ -40,8 +40,8 @@
     "arrowParens": "always"
   },
   "dependencies": {
-    "nightingale-levels": "^4.2.1",
-    "nightingale-types": "^2.2.1"
+    "nightingale-levels": "^4.2.2",
+    "nightingale-types": "^2.2.2"
   },
   "devDependencies": {
     "@babel/core": "7.4.4",

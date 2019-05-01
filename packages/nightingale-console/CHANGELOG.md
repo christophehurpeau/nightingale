@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0](https://github.com/christophehurpeau/nightingale/compare/nightingale-console@5.2.1...nightingale-console@6.0.0) (2019-05-01)
+
+
+### Features
+
+* **nightingale-console:** add options and json when not tty ([c8baf84](https://github.com/christophehurpeau/nightingale/commit/c8baf84))
+
+
+### BREAKING CHANGES
+
+* **nightingale-console:** output json by default when process.stdout.isTty is false
+
+
+
+
+
 ## [5.2.1](https://github.com/christophehurpeau/nightingale/compare/nightingale-console@5.2.0...nightingale-console@5.2.1) (2019-04-05)
 
 **Note:** Version bump only for package nightingale-console

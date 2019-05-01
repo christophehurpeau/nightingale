@@ -1,6 +1,6 @@
 {
   "name": "nightingale-console",
-  "version": "5.2.1",
+  "version": "6.0.0",
   "description": "Console handler for nightingale",
   "keywords": ["nightingale", "nightingale-handler"],
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
@@ -31,11 +31,11 @@
     "arrowParens": "always"
   },
   "dependencies": {
-    "nightingale-ansi-formatter": "^4.2.1",
-    "nightingale-console-output": "^4.2.1",
-    "nightingale-debug": "^5.2.1",
-    "nightingale-json-formatter": "^4.2.1",
-    "nightingale-types": "^2.2.1"
+    "nightingale-ansi-formatter": "^4.2.2",
+    "nightingale-console-output": "^4.2.2",
+    "nightingale-debug": "^5.2.2",
+    "nightingale-json-formatter": "^4.2.2",
+    "nightingale-types": "^2.2.2"
   },
   "devDependencies": {
     "@babel/core": "7.4.4",

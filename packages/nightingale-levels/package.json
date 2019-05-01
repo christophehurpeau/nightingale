@@ -1,6 +1,6 @@
 {
   "name": "nightingale-levels",
-  "version": "4.2.1",
+  "version": "4.2.2",
   "description": "Nightingale levels",
   "keywords": ["logger"],
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
@@ -38,7 +38,6 @@
     "singleQuote": true,
     "arrowParens": "always"
   },
-  "dependencies": {},
   "devDependencies": {
     "@babel/core": "7.4.4",
     "@babel/preset-env": "7.4.4",

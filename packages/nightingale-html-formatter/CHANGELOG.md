@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.2.2](https://github.com/christophehurpeau/nightingale/compare/nightingale-html-formatter@4.2.1...nightingale-html-formatter@4.2.2) (2019-05-01)
+
+**Note:** Version bump only for package nightingale-html-formatter
+
+
+
+
+
 ## [4.2.1](https://github.com/christophehurpeau/nightingale/compare/nightingale-html-formatter@4.2.0...nightingale-html-formatter@4.2.1) (2019-04-05)
 
 **Note:** Version bump only for package nightingale-html-formatter
