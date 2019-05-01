@@ -1,6 +1,6 @@
 {
   "name": "nightingale-console",
-  "version": "6.0.0",
+  "version": "6.0.1",
   "description": "Console handler for nightingale",
   "keywords": ["nightingale", "nightingale-handler"],
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
