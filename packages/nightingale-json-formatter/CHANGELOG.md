@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.3.0](https://github.com/christophehurpeau/nightingale/compare/nightingale-json-formatter@4.2.2...nightingale-json-formatter@4.3.0) (2019-05-03)
+
+
+### Features
+
+* improve json formatter to support map and error ([dd3b21c](https://github.com/christophehurpeau/nightingale/commit/dd3b21c))
+
+
+
+
+
 ## [4.2.2](https://github.com/christophehurpeau/nightingale/compare/nightingale-json-formatter@4.2.1...nightingale-json-formatter@4.2.2) (2019-05-01)
 
 **Note:** Version bump only for package nightingale-json-formatter

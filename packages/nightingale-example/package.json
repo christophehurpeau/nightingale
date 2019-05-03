@@ -1,7 +1,7 @@
 {
   "name": "nightingale-example",
   "private": true,
-  "version": "2.2.5",
+  "version": "2.2.6",
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (https://christophe.hurpeau.com)",
   "license": "ISC",
   "repository": {
@@ -44,9 +44,9 @@
   },
   "dependencies": {
     "nightingale": "^9.2.3",
-    "nightingale-console": "^6.1.0",
+    "nightingale-console": "^6.1.1",
     "nightingale-console-output": "^4.2.2",
-    "nightingale-json-formatter": "^4.2.2",
+    "nightingale-json-formatter": "^4.3.0",
     "nightingale-string": "^5.2.2",
     "nightingale-types": "^2.2.2"
   },

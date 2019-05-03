@@ -1,6 +1,6 @@
 {
   "name": "nightingale-json-formatter",
-  "version": "4.2.2",
+  "version": "4.3.0",
   "description": "Nightingale JSON formatter",
   "keywords": ["nightingale", "nightingale-formatter"],
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
