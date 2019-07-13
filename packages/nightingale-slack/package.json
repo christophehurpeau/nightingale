@@ -64,7 +64,7 @@
     "@pob/eslint-config-babel-node": "31.0.0",
     "@pob/eslint-config-typescript": "31.1.0",
     "@types/jest": "24.0.12",
-    "@types/request": "2.48.1",
+    "@types/request": "2.48.2",
     "babel-jest": "24.7.1",
     "babel-preset-latest-node": "3.1.1",
     "eslint": "5.16.0",
