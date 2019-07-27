@@ -41,13 +41,13 @@
     "nightingale-types": "^2.2.2"
   },
   "devDependencies": {
-    "@babel/core": "7.4.4",
-    "@babel/preset-env": "7.4.4",
+    "@babel/core": "7.5.5",
+    "@babel/preset-env": "7.5.5",
     "@pob/eslint-config-babel": "31.0.0",
     "@pob/eslint-config-typescript": "31.1.0",
     "babel-preset-modern-browsers": "14.0.0",
     "eslint": "5.16.0",
-    "pob-babel": "23.16.0",
-    "prettier": "1.17.0"
+    "pob-babel": "23.18.0",
+    "prettier": "1.18.2"
   }
 }

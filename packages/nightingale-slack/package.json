@@ -59,19 +59,19 @@
     "request": "^2.88.0"
   },
   "devDependencies": {
-    "@babel/core": "7.4.4",
+    "@babel/core": "7.5.5",
     "@pob/eslint-config-babel": "31.0.0",
     "@pob/eslint-config-babel-node": "31.0.0",
     "@pob/eslint-config-typescript": "31.1.0",
-    "@types/jest": "24.0.12",
+    "@types/jest": "24.0.15",
     "@types/request": "2.48.2",
-    "babel-jest": "24.7.1",
-    "babel-preset-latest-node": "3.1.1",
+    "babel-jest": "24.8.0",
+    "babel-preset-latest-node": "3.2.1",
     "eslint": "5.16.0",
-    "jest": "24.7.1",
-    "pob-babel": "23.16.0",
-    "pob-lcov-reporter": "1.2.0",
-    "prettier": "1.17.0",
+    "jest": "24.8.0",
+    "pob-babel": "23.18.0",
+    "pob-lcov-reporter": "1.2.1",
+    "prettier": "1.18.2",
     "xunit-file": "1.0.0"
   }
 }
