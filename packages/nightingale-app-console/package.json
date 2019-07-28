@@ -75,7 +75,7 @@
     "@pob/eslint-config-babel": "31.0.0",
     "@pob/eslint-config-typescript": "31.1.0",
     "@pob/version": "4.32.1",
-    "@types/source-map-support": "^0.4.2",
+    "@types/source-map-support": "0.4.2",
     "babel-preset-latest-node": "3.2.1",
     "babel-preset-modern-browsers": "14.0.0",
     "eslint": "5.16.0",
