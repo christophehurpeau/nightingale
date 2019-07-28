@@ -36,9 +36,9 @@
     // "types": [],                           /* Type declaration files to be included in compilation. */
   },
   "references": [
-    { "path": "../nightingale-browser-console-formatter" },
+    { "path": "../nightingale-debug" },
     { "path": "../nightingale-console-output" },
-    { "path": "../nightingale-debug" }
+    { "path": "../nightingale-browser-console-formatter" }
   ]
 
 }

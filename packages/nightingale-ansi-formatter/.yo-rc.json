@@ -1,31 +1,11 @@
 {
   "pob": {
     "pob-config": {
-      "envs": [
-        {
-          "target": "node",
-          "version": "10",
-          "formats": [
-            "cjs",
-            "es"
-          ]
-        },
-        {
-          "target": "node",
-          "version": "8",
-          "formats": [
-            "cjs"
-          ]
-        }
-      ],
       "testing": {
         "circleci": true,
         "codecov": true
       },
       "documentation": false,
-      "entries": [
-        "index"
-      ],
       "withReact": false
     }
   },

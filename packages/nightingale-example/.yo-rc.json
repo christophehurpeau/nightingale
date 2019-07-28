@@ -6,32 +6,8 @@
       "authorUrl": "https://christophe.hurpeau.com"
     },
     "pob-config": {
-      "entries": [
-        "configure",
-        "console",
-        "debug",
-        "errors",
-        "jsonConsole"
-      ],
       "documentation": false,
       "testing": false,
-      "envs": [
-        {
-          "target": "node",
-          "version": "10",
-          "formats": [
-            "cjs",
-            "es"
-          ]
-        },
-        {
-          "target": "node",
-          "version": "8",
-          "formats": [
-            "cjs"
-          ]
-        }
-      ],
       "withReact": false
     }
   },

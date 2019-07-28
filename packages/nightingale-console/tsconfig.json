@@ -36,9 +36,10 @@
     // "types": [],                           /* Type declaration files to be included in compilation. */
   },
   "references": [
-    { "path": "../nightingale-ansi-formatter" },
+    { "path": "../nightingale-debug" },
     { "path": "../nightingale-console-output" },
-    { "path": "../nightingale-debug" }
+    { "path": "../nightingale-ansi-formatter" },
+    { "path": "../nightingale-json-formatter" }
   ]
 
 }

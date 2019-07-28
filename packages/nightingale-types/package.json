@@ -25,13 +25,15 @@
     "singleQuote": true,
     "arrowParens": "always"
   },
+  "pob": {},
   "dependencies": {
     "nightingale-levels": "^4.2.2"
   },
   "devDependencies": {
     "@pob/eslint-config": "31.0.0",
     "@pob/eslint-config-node": "31.0.0",
+    "@pob/version": "4.32.1",
     "eslint": "5.16.0",
-    "prettier": "1.17.0"
+    "prettier": "1.18.2"
   }
 }

@@ -36,11 +36,11 @@
     // "types": [],                           /* Type declaration files to be included in compilation. */
   },
   "references": [
-    { "path": "../nightingale" },
-    { "path": "../nightingale-console" },
     { "path": "../nightingale-console-output" },
     { "path": "../nightingale-json-formatter" },
-    { "path": "../nightingale-string" }
+    { "path": "../nightingale-console" },
+    { "path": "../nightingale-string" },
+    { "path": "../nightingale" }
   ]
 
 }

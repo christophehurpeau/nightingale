@@ -36,8 +36,8 @@
     // "types": [],                           /* Type declaration files to be included in compilation. */
   },
   "references": [
-    { "path": "../nightingale-formatter" },
-    { "path": "../nightingale-levels" }
+    { "path": "../nightingale-levels" },
+    { "path": "../nightingale-formatter" }
   ]
 
 }

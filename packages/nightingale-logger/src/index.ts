@@ -291,9 +291,7 @@ export default class Logger {
           error: message,
         },
       );
-      message = `${extendedMetadata.error.name}: ${
-        extendedMetadata.error.message
-      }`;
+      message = `${extendedMetadata.error.name}: ${extendedMetadata.error.message}`;
       this.log(message, extendedMetadata, Level.ERROR, { metadataStyles });
     } else {
       this.log(message, metadata, Level.ERROR, { metadataStyles });
