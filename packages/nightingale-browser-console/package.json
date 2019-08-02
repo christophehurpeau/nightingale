@@ -62,7 +62,7 @@
     "@pob/version": "4.32.1",
     "babel-preset-modern-browsers": "14.0.0",
     "eslint": "5.16.0",
-    "pob-babel": "23.18.0",
+    "pob-babel": "23.19.0",
     "prettier": "1.18.2"
   }
 }
