@@ -45,7 +45,7 @@
     "@commitlint/cli": "8.1.0",
     "@commitlint/config-conventional": "8.1.0",
     "@pob/version": "4.32.1",
-    "husky": "3.0.8",
+    "husky": "3.0.9",
     "lerna": "3.16.4",
     "lint-staged": "9.2.1",
     "repository-check-dirty": "1.0.2",
