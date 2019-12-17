@@ -81,7 +81,7 @@
     "@pob/eslint-config-typescript": "31.1.0",
     "@pob/version": "4.32.1",
     "@types/jest": "24.0.16",
-    "@types/request": "2.48.2",
+    "@types/request": "2.48.4",
     "babel-jest": "24.8.0",
     "babel-preset-latest-node": "3.2.1",
     "eslint": "5.16.0",
