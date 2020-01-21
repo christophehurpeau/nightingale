@@ -44,12 +44,12 @@
   "devDependencies": {
     "@commitlint/cli": "8.1.0",
     "@commitlint/config-conventional": "8.1.0",
-    "@pob/version": "4.32.1",
+    "@pob/version": "4.33.4",
     "husky": "3.1.0",
-    "lerna": "3.16.4",
+    "lerna": "3.20.2",
     "lint-staged": "9.2.1",
-    "repository-check-dirty": "1.0.2",
-    "typescript": "3.5.3",
+    "repository-check-dirty": "1.0.3",
+    "typescript": "3.7.5",
     "yarn-update-lock": "1.0.0",
     "yarnhook": "0.4.2"
   }

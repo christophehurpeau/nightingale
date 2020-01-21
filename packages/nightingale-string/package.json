@@ -50,14 +50,14 @@
     "nightingale-types": "^2.2.2"
   },
   "devDependencies": {
-    "@babel/core": "7.5.5",
+    "@babel/core": "7.8.3",
     "@pob/eslint-config-babel": "31.0.0",
     "@pob/eslint-config-babel-node": "31.0.0",
     "@pob/eslint-config-typescript": "31.1.0",
-    "@pob/version": "4.32.1",
+    "@pob/version": "4.33.4",
     "babel-preset-latest-node": "3.2.1",
     "eslint": "5.16.0",
-    "pob-babel": "23.19.0",
-    "prettier": "1.18.2"
+    "pob-babel": "23.22.2",
+    "prettier": "1.19.1"
   }
 }

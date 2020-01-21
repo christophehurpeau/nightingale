@@ -84,20 +84,20 @@
     "nightingale-types": "^2.2.2"
   },
   "devDependencies": {
-    "@babel/core": "7.5.5",
-    "@babel/preset-env": "7.5.5",
+    "@babel/core": "7.8.3",
+    "@babel/preset-env": "7.8.3",
     "@pob/eslint-config-babel": "31.0.0",
     "@pob/eslint-config-typescript": "31.1.0",
-    "@pob/version": "4.32.1",
-    "@types/jest": "24.0.16",
-    "babel-jest": "24.8.0",
+    "@pob/version": "4.33.4",
+    "@types/jest": "24.9.0",
+    "babel-jest": "24.9.0",
     "babel-preset-latest-node": "3.2.1",
-    "babel-preset-modern-browsers": "14.0.0",
+    "babel-preset-modern-browsers": "14.1.1",
     "eslint": "5.16.0",
-    "jest": "24.8.0",
-    "pob-babel": "23.19.0",
-    "pob-lcov-reporter": "1.2.1",
-    "prettier": "1.18.2",
+    "jest": "24.9.0",
+    "pob-babel": "23.22.2",
+    "pob-lcov-reporter": "1.2.3",
+    "prettier": "1.19.1",
     "xunit-file": "1.0.0"
   }
 }
