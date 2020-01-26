@@ -3,7 +3,7 @@ export default class StringHandler {
     readonly minLevel: Level;
     private _buffer;
     constructor(minLevel: Level);
-    readonly string: string;
+    get string(): string;
     handle<T>(record: LogRecord<T>): void;
 }
 //# sourceMappingURL=index.d.ts.map

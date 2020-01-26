@@ -26,15 +26,6 @@ export interface ComputedConfigForKey {
   processors: Processor[];
 }
 
-interface ExtendedErrorMetadata {
-  error: Error;
-}
-
-interface ExtendedTimeMetadata {
-  readableTime: string;
-  timeMs: number;
-}
-
 interface ExtendedFunctionNameMetadata {
   functionName: string;
 }
@@ -201,7 +192,7 @@ export default class Logger {
     level: number = Level.INFO,
     options?: Options<T>,
   ): void {
-    const context = metadata && metadata.context;
+    const context = metadata?.context;
     if (metadata) {
       delete metadata.context;
     }
@@ -284,13 +275,10 @@ export default class Logger {
     metadataStyles?: MetadataStyles<T>,
   ): void {
     if (message instanceof Error) {
-      const extendedMetadata: T & ExtendedErrorMetadata = Object.assign(
-        {},
-        metadata,
-        {
-          error: message,
-        },
-      );
+      const extendedMetadata = {
+        ...metadata,
+        error: message,
+      };
       message = `${extendedMetadata.error.name}: ${extendedMetadata.error.message}`;
       this.log(message, extendedMetadata, Level.ERROR, { metadataStyles });
     } else {
@@ -505,14 +493,11 @@ export default class Logger {
       readableTime = `${seconds ? `${seconds}s and ` : ''}${ms}ms`;
     }
 
-    const extendedMetadata: T & ExtendedTimeMetadata = Object.assign(
-      {},
-      metadata,
-      {
-        readableTime,
-        timeMs: diffTime,
-      },
-    );
+    const extendedMetadata = {
+      ...metadata,
+      readableTime,
+      timeMs: diffTime,
+    };
 
     this.log(message, extendedMetadata, level, { ...options, metadataStyles });
   }
@@ -559,13 +544,12 @@ export default class Logger {
   enter<T extends Metadata>(
     fn: Function,
     metadata?: T,
-    metadataStyles?: MetadataStyles<T & { functionName?: string }>,
+    metadataStyles?: MetadataStyles<T & ExtendedFunctionNameMetadata>,
   ): void {
-    const extendedMetadata: T & ExtendedFunctionNameMetadata = Object.assign(
-      {},
-      metadata,
-      { functionName: fn.name },
-    );
+    const extendedMetadata = {
+      ...metadata,
+      functionName: fn.name,
+    };
     this.log('enter', extendedMetadata, Level.TRACE, { metadataStyles });
   }
 
@@ -584,13 +568,12 @@ export default class Logger {
   exit<T extends Metadata>(
     fn: Function,
     metadata?: T,
-    metadataStyles?: MetadataStyles<T & { functionName?: string }>,
+    metadataStyles?: MetadataStyles<T & ExtendedFunctionNameMetadata>,
   ): void {
-    const extendedMetadata: T & ExtendedFunctionNameMetadata = Object.assign(
-      {},
-      metadata,
-      { functionName: fn.name },
-    );
+    const extendedMetadata = {
+      ...metadata,
+      functionName: fn.name,
+    };
     this.log('exit', extendedMetadata, Level.TRACE, { metadataStyles });
   }
 

@@ -5,8 +5,7 @@
       "testing": {
         "circleci": true,
         "codecov": true
-      },
-      "withReact": false
+      }
     }
   },
   "nightingale-slack": {

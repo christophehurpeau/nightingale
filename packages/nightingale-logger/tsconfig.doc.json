@@ -3,7 +3,14 @@
 
 
   "compilerOptions": {
+    "rootDirs": [],
+    "rootDir": "src",
     "isolatedModules": false
+  },
+
+  "typedocOptions": {
+    "out": "docs",
+    "gitRevision": "master"
   },
 
   "exclude": [

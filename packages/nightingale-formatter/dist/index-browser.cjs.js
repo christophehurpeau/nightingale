@@ -205,7 +205,7 @@ function internalFormatValue(value, styleFn, styles, _ref) {
     }
   } else if (value instanceof Error) {
     var stack = value.stack;
-    stringValue = stack && stack.startsWith(value.message) ? stack : value.message + "\n" + stack;
+    stringValue = (stack === null || stack === void 0 ? void 0 : stack.startsWith(value.message)) ? stack : value.message + "\n" + stack;
   } else if (value instanceof Map) {
     var name = value.constructor.name;
 
@@ -380,7 +380,7 @@ function internalFormatMap(name, map, styleFn, _ref6) {
     return sameRawFormattedValue("{Circular " + name + "}");
   }
 
-  var keys = map.keys().concat();
+  var keys = [].concat(map.keys());
 
   if (keys.length === 0) {
     return sameRawFormattedValue(name + " {}");
@@ -450,7 +450,7 @@ function internalFormatSet(name, set, styleFn, _ref8) {
     return sameRawFormattedValue("{Circular " + name + "}");
   }
 
-  var values = set.values().concat();
+  var values = [].concat(set.values());
 
   if (values.length === 0) {
     return sameRawFormattedValue(name + " []");

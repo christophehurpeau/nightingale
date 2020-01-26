@@ -8,7 +8,7 @@ export interface Metadata {
   [propName: string]: any;
 }
 
-export type MetadataStyles<T extends Metadata> = { [P in keyof T]: any };
+export type MetadataStyles<T extends Metadata> = { [P in keyof T]?: any };
 
 export interface LogRecord<T extends Metadata> {
   level: Level;

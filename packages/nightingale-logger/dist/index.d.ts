@@ -10,6 +10,9 @@ export interface ComputedConfigForKey {
     handlers: Handler[];
     processors: Processor[];
 }
+interface ExtendedFunctionNameMetadata {
+    functionName: string;
+}
 /**
  * Interface that allows you to log records.
  * This records are treated by handlers
@@ -171,9 +174,7 @@ export default class Logger {
      * }
      *
      */
-    enter<T extends Metadata>(fn: Function, metadata?: T, metadataStyles?: MetadataStyles<T & {
-        functionName?: string;
-    }>): void;
+    enter<T extends Metadata>(fn: Function, metadata?: T, metadataStyles?: MetadataStyles<T & ExtendedFunctionNameMetadata>): void;
     /**
      * Log an exit in a function
      *
@@ -186,9 +187,7 @@ export default class Logger {
      *   }
      * }
      */
-    exit<T extends Metadata>(fn: Function, metadata?: T, metadataStyles?: MetadataStyles<T & {
-        functionName?: string;
-    }>): void;
+    exit<T extends Metadata>(fn: Function, metadata?: T, metadataStyles?: MetadataStyles<T & ExtendedFunctionNameMetadata>): void;
     /**
      * Wrap around a function to log enter and exit of a function
      *

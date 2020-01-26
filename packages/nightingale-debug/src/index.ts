@@ -1,7 +1,7 @@
 /* eslint-disable complexity */
 import Level from 'nightingale-levels';
 
-const specialRegexpChars = /[\\^$+?.()|[\]{}]/;
+const specialRegexpChars = /[$()+.?[\\\]^{|}]/;
 
 type TestFunction = (string: string) => boolean;
 export type DebugValueType = string | RegExp | string[];
@@ -65,7 +65,7 @@ export default function createFindDebugLevel(
       }
 
       if (value.startsWith('-')) {
-        skips.push(createTestFunctionFromValue(value.substr(1)));
+        skips.push(createTestFunctionFromValue(value.slice(1)));
       } else if (!wilcard) {
         debugValues.push(createTestFunctionFromValue(value));
       }

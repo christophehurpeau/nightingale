@@ -69,7 +69,12 @@ test('empty map', () => {
 test('simple map', () => {
   expect(
     formatObject(
-      { a: new Map<any, any>([['key1', 'value1'], [{ b: 1 }, 'value2']]) },
+      {
+        a: new Map<any, any>([
+          ['key1', 'value1'],
+          [{ b: 1 }, 'value2'],
+        ]),
+      },
       noStyleFn,
     ),
   ).toBe('{ a: Map { "key1": "value1", { b: 1 }: "value2" } }');

@@ -29,13 +29,15 @@ const createHandler = (dsn, {
       metadata,
       extra
     } = record;
-    const error = metadata && metadata.error;
+    const error = metadata === null || metadata === void 0 ? void 0 : metadata.error;
 
     if (!error) {
       return;
     }
 
-    const extraData = Object.assign({}, metadata, extra);
+    const extraData = { ...metadata,
+      ...extra
+    };
     delete extraData.error;
     withScope(scope => {
       scope.setLevel(mapToSentryLevel[level] || 'error');

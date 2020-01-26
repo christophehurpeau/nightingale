@@ -2,8 +2,7 @@
   "pob": {
     "pob-config": {
       "documentation": false,
-      "testing": false,
-      "withReact": false
+      "testing": false
     }
   },
   "nightingale-console-output": {

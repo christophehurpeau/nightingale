@@ -5,8 +5,7 @@
         "circleci": true,
         "codecov": true
       },
-      "documentation": true,
-      "withReact": false
+      "documentation": true
     }
   },
   "nightingale-logger": {
