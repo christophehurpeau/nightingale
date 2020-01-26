@@ -168,7 +168,7 @@ function () {
       level = Level.INFO;
     }
 
-    var context = metadata && metadata.context;
+    var context = metadata === null || metadata === void 0 ? void 0 : metadata.context;
 
     if (metadata) {
       delete metadata.context;

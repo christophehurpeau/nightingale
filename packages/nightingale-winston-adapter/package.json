@@ -12,7 +12,7 @@
   },
   "homepage": "https://github.com/christophehurpeau/nightingale",
   "engines": {
-    "node": ">=8.3.0"
+    "node": ">=10.13.0"
   },
   "browserslist": ["> 0.1%", "Firefox ESR", "not ie < 9", "not dead"],
   "main": "./index.js",
@@ -31,7 +31,7 @@
     "build": "pob-build",
     "build:definitions": "tsc -p tsconfig.build.json",
     "clean": "rm -Rf docs dist test/node6 coverage",
-    "lint": "eslint --ext .ts --quiet src/",
+    "lint": "eslint --ext .js,.ts --quiet src",
     "watch": "pob-watch"
   },
   "prettier": {
@@ -45,11 +45,6 @@
         "target": "node",
         "version": "10",
         "formats": ["cjs", "es"]
-      },
-      {
-        "target": "node",
-        "version": "8",
-        "formats": ["cjs"]
       },
       {
         "target": "browser",
@@ -68,15 +63,14 @@
     "nightingale-types": "^2.2.2"
   },
   "devDependencies": {
-    "@babel/core": "7.5.5",
-    "@babel/preset-env": "7.5.5",
-    "@pob/eslint-config-babel": "31.0.0",
-    "@pob/eslint-config-typescript": "31.1.0",
-    "@pob/version": "4.32.1",
-    "babel-preset-latest-node": "3.2.1",
-    "babel-preset-modern-browsers": "14.0.0",
-    "eslint": "5.16.0",
-    "pob-babel": "23.19.0",
-    "prettier": "1.18.2"
+    "@babel/core": "7.8.3",
+    "@babel/preset-env": "7.8.3",
+    "@pob/eslint-config-typescript": "34.0.0",
+    "@pob/version": "5.0.1",
+    "babel-preset-latest-node": "4.0.1",
+    "babel-preset-modern-browsers": "14.1.1",
+    "eslint": "6.8.0",
+    "pob-babel": "24.3.0",
+    "prettier": "1.19.1"
   }
 }

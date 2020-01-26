@@ -5,8 +5,7 @@
         "circleci": true,
         "codecov": true
       },
-      "documentation": false,
-      "withReact": false
+      "documentation": false
     }
   },
   "nightingale-formatter": {

@@ -33,13 +33,13 @@ const createHandler = (
 
   return <T extends MetadataWithError>(record: LogRecord<T>) => {
     const { key, level, metadata, extra } = record;
-    const error = metadata && metadata.error;
+    const error = metadata?.error;
 
     if (!error) {
       return;
     }
 
-    const extraData = Object.assign({}, metadata, extra);
+    const extraData = { ...metadata, ...extra };
     delete extraData.error;
 
     withScope((scope) => {

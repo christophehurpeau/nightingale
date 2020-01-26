@@ -1,5 +1,5 @@
 function webProcessor(record, context) {
-  const request = context && context.request;
+  const request = context === null || context === void 0 ? void 0 : context.request;
 
   if (request) {
     record.extra = record.extra || {};

@@ -1,20 +1,20 @@
 version: 2
 
 jobs:
-  test-node8:
+  test-node10:
     docker:
-      - image: circleci/node:8.16
+      - image: circleci/node:10.17
     steps:
       - checkout
       - restore_cache:
           keys:
-            - dependencies-node8-{{ arch }}-{{ checksum "yarn.lock" }}
-            - dependencies-node8-{{ arch }}
+            - dependencies-node10-{{ arch }}-{{ checksum "yarn.lock" }}
+            - dependencies-node10-{{ arch }}
       - run:
           name: Install dependencies
           command: yarn --prefer-offline --pure-lockfile
       - save_cache:
-          key: dependencies-node8-{{ arch }}-{{ checksum "yarn.lock" }}
+          key: dependencies-node10-{{ arch }}-{{ checksum "yarn.lock" }}
           paths:
             - node_modules
       - run:
@@ -35,7 +35,7 @@ jobs:
 
   test-node12:
     docker:
-      - image: circleci/node:12.7
+      - image: circleci/node:12.13
     steps:
       - checkout
       - restore_cache:
@@ -53,31 +53,10 @@ jobs:
           name: tests
           command: yarn run test
 
-  test-node10:
-    docker:
-      - image: circleci/node:10.16
-    steps:
-      - checkout
-      - restore_cache:
-          keys:
-            - dependencies-node10-{{ arch }}-{{ checksum "yarn.lock" }}
-            - dependencies-node10-{{ arch }}
-      - run:
-          name: Install dependencies
-          command: yarn --prefer-offline --pure-lockfile
-      - save_cache:
-          key: dependencies-node10-{{ arch }}-{{ checksum "yarn.lock" }}
-          paths:
-            - node_modules
-      - run:
-          name: tests
-          command: yarn run test
-
 workflows:
   version: 2
 
   tests:
     jobs:
-      - test-node8
       - test-node10
       - test-node12

@@ -9,7 +9,7 @@ export default function webProcessor<T>(
   record: LogRecord<T>,
   context?: ContextWithOptionalRequest,
 ) {
-  const request = context && context.request;
+  const request = context?.request;
   if (request) {
     record.extra = record.extra || {};
     record.extra.url = request.url;

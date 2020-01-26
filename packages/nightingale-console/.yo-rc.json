@@ -3,8 +3,7 @@
     "pob-config": {
       "documentation": false,
       "testing": false,
-      "examples": true,
-      "withReact": false
+      "examples": true
     }
   },
   "nightingale-console": {

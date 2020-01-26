@@ -15,42 +15,20 @@
     "lint": "lerna run --stream lint",
     "postbuild": "yarn run build:definitions",
     "preversion": "yarn run lint --since && yarn run build --since -- -- --no-clean && repository-check-dirty",
-    "release": "GH_TOKEN=$POB_GITHUB_TOKEN lerna version --conventional-commits --create-release=github -m 'chore: release' && lerna publish from-git",
+    "release": "cross-env GH_TOKEN=$POB_GITHUB_TOKEN lerna version --conventional-commits --conventional-graduate --create-release=github -m 'chore: release' && lerna publish from-git",
     "test": "lerna run --stream test",
-    "typescript-check": "lerna run --parallel typescript-check",
+    "tsc": "tsc -b",
     "watch": "lerna run --parallel --ignore \"*-example\" watch"
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS",
-      "post-checkout": "yarnhook",
-      "post-merge": "yarnhook",
-      "post-rewrite": "yarnhook",
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "yarn.lock": ["yarn-deduplicate", "git add"],
-    "{package.json,packages/*/package.json,.eslintrc.json}": [
-      "prettier --parser json --write",
-      "git add"
-    ],
-    "{packages/*}/lib/**/*.json": ["prettier --parser json --write", "git add"],
-    "{packages/*}/lib/**/*.{js,ts}": ["eslint --fix --quiet", "git add"]
   },
   "commitlint": {
     "extends": ["@commitlint/config-conventional"]
   },
   "devDependencies": {
-    "@commitlint/cli": "8.1.0",
-    "@commitlint/config-conventional": "8.1.0",
-    "@pob/version": "4.32.1",
-    "husky": "3.1.0",
-    "lerna": "3.16.4",
-    "lint-staged": "9.2.1",
-    "repository-check-dirty": "1.0.2",
-    "typescript": "3.5.3",
-    "yarn-update-lock": "1.0.0",
-    "yarnhook": "0.4.2"
+    "@pob/repo-config": "1.0.3",
+    "@pob/version": "5.0.1",
+    "husky": "4.2.1",
+    "lerna": "3.20.2",
+    "repository-check-dirty": "1.0.3",
+    "typescript": "3.7.5"
   }
 }

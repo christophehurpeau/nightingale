@@ -124,10 +124,9 @@ function internalFormatValue(
     }
   } else if (value instanceof Error) {
     const stack = value.stack;
-    stringValue =
-      stack && stack.startsWith(value.message)
-        ? stack
-        : `${value.message}\n${stack}`;
+    stringValue = stack?.startsWith(value.message)
+      ? stack
+      : `${value.message}\n${stack}`;
   } else if (value instanceof Map) {
     const name = value.constructor.name;
     if (depth >= maxDepth) {

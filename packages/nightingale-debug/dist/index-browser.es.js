@@ -1,7 +1,7 @@
 import Level from 'nightingale-levels';
 
 /* eslint-disable complexity */
-var specialRegexpChars = /[\\^$+?.()|[\]{}]/;
+var specialRegexpChars = /[$()+.?[\\\]^{|}]/;
 
 var createTestFunctionFromRegexp = function createTestFunctionFromRegexp(regexp) {
   return function (string) {
@@ -62,7 +62,7 @@ function createFindDebugLevel(debugValue) {
       }
 
       if (value.startsWith('-')) {
-        skips.push(createTestFunctionFromValue(value.substr(1)));
+        skips.push(createTestFunctionFromValue(value.slice(1)));
       } else if (!wilcard) {
         debugValues.push(createTestFunctionFromValue(value));
       }

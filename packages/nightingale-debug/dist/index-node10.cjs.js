@@ -7,7 +7,7 @@ function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'defau
 const Level = _interopDefault(require('nightingale-levels'));
 
 /* eslint-disable complexity */
-const specialRegexpChars = /[\\^$+?.()|[\]{}]/;
+const specialRegexpChars = /[$()+.?[\\\]^{|}]/;
 
 const createTestFunctionFromRegexp = regexp => string => regexp.test(string);
 
@@ -60,7 +60,7 @@ function createFindDebugLevel(debugValue) {
       }
 
       if (value.startsWith('-')) {
-        skips.push(createTestFunctionFromValue(value.substr(1)));
+        skips.push(createTestFunctionFromValue(value.slice(1)));
       } else if (!wilcard) {
         debugValues.push(createTestFunctionFromValue(value));
       }

@@ -155,7 +155,7 @@ class Logger {
 
 
   log(message, metadata, level = Level.INFO, options) {
-    const context = metadata && metadata.context;
+    const context = metadata === null || metadata === void 0 ? void 0 : metadata.context;
 
     if (metadata) {
       delete metadata.context;
@@ -231,9 +231,9 @@ class Logger {
 
   error(message, metadata, metadataStyles) {
     if (message instanceof Error) {
-      const extendedMetadata = Object.assign({}, metadata, {
+      const extendedMetadata = { ...metadata,
         error: message
-      });
+      };
       message = `${extendedMetadata.error.name}: ${extendedMetadata.error.message}`;
       this.log(message, extendedMetadata, Level.ERROR, {
         metadataStyles
@@ -406,10 +406,10 @@ class Logger {
       readableTime = `${seconds ? `${seconds}s and ` : ''}${diffTime - seconds * 1000}ms`;
     }
 
-    const extendedMetadata = Object.assign({}, metadata, {
+    const extendedMetadata = { ...metadata,
       readableTime,
       timeMs: diffTime
-    });
+    };
     this.log(message, extendedMetadata, level, { ...options,
       metadataStyles
     });
@@ -448,9 +448,9 @@ class Logger {
 
 
   enter(fn, metadata, metadataStyles) {
-    const extendedMetadata = Object.assign({}, metadata, {
+    const extendedMetadata = { ...metadata,
       functionName: fn.name
-    });
+    };
     this.log('enter', extendedMetadata, Level.TRACE, {
       metadataStyles
     });
@@ -470,9 +470,9 @@ class Logger {
 
 
   exit(fn, metadata, metadataStyles) {
-    const extendedMetadata = Object.assign({}, metadata, {
+    const extendedMetadata = { ...metadata,
       functionName: fn.name
-    });
+    };
     this.log('exit', extendedMetadata, Level.TRACE, {
       metadataStyles
     });

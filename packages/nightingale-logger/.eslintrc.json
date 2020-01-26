@@ -2,10 +2,11 @@
   "root": true,
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "project": "./tsconfig.json"
+    "project": "./tsconfig.json",
+    "createDefaultProgram": true
   },
   "plugins": ["@typescript-eslint"],
-  "extends": ["@pob/eslint-config-babel", "@pob/eslint-config-typescript"],
+  "extends": ["@pob/eslint-config-typescript"],
   "overrides": [
     {
       "files": ["src/**/*.test.ts", "src/__tests__/**/*.ts"],
