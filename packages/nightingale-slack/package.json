@@ -73,7 +73,7 @@
     "@babel/core": "7.8.3",
     "@pob/eslint-config-babel-node": "34.0.0",
     "@pob/eslint-config-typescript": "34.0.0",
-    "@pob/version": "5.0.1",
+    "@pob/version": "5.2.0",
     "@types/jest": "24.9.1",
     "@types/request": "2.48.4",
     "babel-jest": "25.1.0",
