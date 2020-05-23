@@ -2,7 +2,7 @@
   "name": "nightingale",
   "private": true,
   "version": "0.0.0",
-  "description": "Logger for browser and node",
+  "description": "Logger for browser and node, see [nightingale](packages/nightingale) to get started !",
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (https://christophe.hurpeau.com)",
   "license": "ISC",
   "repository": "https://github.com:christophehurpeau/nightingale.git",

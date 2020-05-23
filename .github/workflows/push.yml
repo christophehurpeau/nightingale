@@ -51,5 +51,6 @@ jobs:
           token: ${{ secrets.CODECOV_TOKEN }}
         if: startsWith(matrix.node-version, '12.')
 
-      - name: Check nothing was forget before commit
+      - name: Check nothing was forgotten before commit
+        if: startsWith(matrix.node-version, '12.')
         run: yarn run repository-check-dirty

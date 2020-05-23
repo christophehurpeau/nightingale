@@ -3,7 +3,7 @@
 </h3>
 
 <p align="center">
-  Logger for browser and node
+  Logger for browser and node, see [nightingale](packages/nightingale) to get started !
 </p>
 
 <h1>Packages</h1>
