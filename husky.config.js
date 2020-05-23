@@ -1,16 +1,16 @@
+/* eslint-disable global-require */
+
 'use strict';
 
-/*
- * husky greps this file to check if a hook is defined
- * so we need to list them here:
- * - commit-msg
- * - pre-commit
- * - post-checkout
- * - post-merge
- * - post-rewrite
- * - pre-push
- */
+const { spawnSync } = require('child_process');
 
-const createHuskyConfig = require('@pob/repo-config/createHuskyConfig');
+let createHuskyConfig;
+
+try {
+  createHuskyConfig = require('@pob/root/createHuskyConfig');
+} catch (err) {
+  spawnSync('yarn', ['install'], { stdio: 'inherit' });
+  createHuskyConfig = require('@pob/root/createHuskyConfig');
+}
 
 module.exports = createHuskyConfig();

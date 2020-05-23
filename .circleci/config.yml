@@ -3,7 +3,7 @@ version: 2
 jobs:
   test-node10:
     docker:
-      - image: circleci/node:10.17
+      - image: circleci/node:10.20
     steps:
       - checkout
       - restore_cache:
@@ -35,7 +35,7 @@ jobs:
 
   test-node12:
     docker:
-      - image: circleci/node:12.13
+      - image: circleci/node:12.16
     steps:
       - checkout
       - restore_cache:

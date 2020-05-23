@@ -3,10 +3,6 @@
 </h3>
 
 <p align="center">
-  
-</p>
-
-<p align="center">
   <a href="https://david-dm.org/christophehurpeau/nightingale?path=packages/nightingale-console-example"><img src="https://david-dm.org/christophehurpeau/nightingale.svg?path=packages/nightingale-console-example?style=flat-square"></a>
 </p>
 

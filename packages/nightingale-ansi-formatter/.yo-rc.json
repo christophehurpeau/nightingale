@@ -6,10 +6,8 @@
         "codecov": true
       },
       "documentation": false
-    }
-  },
-  "nightingale-ansi-formatter": {
-    "type": {
+    },
+    "project": {
       "type": "lib"
     }
   }

@@ -8,47 +8,48 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [10.x, 12.x, 13.x]
+        node-version: [10.x, 12.x, 14.x]
 
     steps:
-    - uses: actions/checkout@v1
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
+      - uses: actions/checkout@v2
 
-    - name: Cache node modules
-      uses: actions/cache@v1
-      with:
-        path: node_modules
-        key: dependencies--${{ matrix.node-version }}-${{ runner.OS }}-${{ hashFiles('yarn.lock') }}
-        restore-keys: |
-          dependencies--${{ matrix.node-version }}-${{ runner.OS }}-
-          dependencies--${{ matrix.node-version }}-
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
 
-    - name: Install Dependencies
-      run: yarn install --prefer-offline --pure-lockfile
+      - name: Cache dependencies
+        uses: actions/cache@v1
+        with:
+          path: node_modules
+          key: v2-dependencies--${{ matrix.node-version }}-${{ runner.OS }}-${{ hashFiles('yarn.lock') }}
+          restore-keys: |
+            v2-dependencies--${{ matrix.node-version }}-${{ runner.OS }}-
+            v2-dependencies--${{ matrix.node-version }}-
 
-    - name: Lint
-      run: yarn run lint
-      if: startsWith(matrix.node-version, '12.')
+      - name: Install Dependencies
+        run: yarn install --prefer-offline --pure-lockfile
 
-    - name: Test
-      run: yarn run test
-      env:
-        CI: true
+      - name: Lint
+        run: yarn run lint
+        if: startsWith(matrix.node-version, '12.')
 
-    - name: Documentation
-      run: yarn run generate:docs
-      if: startsWith(matrix.node-version, '12.')
-      env:
-        CI: true
-    - name: Send results to codecov
-      uses: codecov/codecov-action@v1
-      with:
-        token: ${{ secrets.CODECOV_TOKEN }}
-      if: startsWith(matrix.node-version, '12.')
+      - name: Test
+        run: yarn run test
+        env:
+          CI: true
 
-    - name: Check nothing was forget before commit
-      if: startsWith(matrix.node-version, '12.')
-      run: yarn run repository-check-dirty
+      - name: Documentation
+        run: yarn run generate:docs
+        if: startsWith(matrix.node-version, '12.')
+        env:
+          CI: true
+
+      - name: Send results to codecov
+        uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+        if: startsWith(matrix.node-version, '12.')
+
+      - name: Check nothing was forget before commit
+        run: yarn run repository-check-dirty

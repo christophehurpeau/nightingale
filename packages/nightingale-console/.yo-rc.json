@@ -4,10 +4,8 @@
       "documentation": false,
       "testing": false,
       "examples": true
-    }
-  },
-  "nightingale-console": {
-    "type": {
+    },
+    "project": {
       "type": "lib"
     }
   }

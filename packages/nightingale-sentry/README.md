@@ -31,6 +31,6 @@ configure([
         // getTags: ({ context }) => context.tags,
       }),
     ],
-  }
+  },
 ]);
 ```

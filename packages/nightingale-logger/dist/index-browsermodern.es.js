@@ -232,7 +232,7 @@ class Logger {
 
   error(message, metadata, metadataStyles) {
     if (message instanceof Error) {
-      const extendedMetadata = Object.assign({}, metadata, {
+      const extendedMetadata = Object.assign(Object.assign({}, metadata), {}, {
         error: message
       });
       message = `${extendedMetadata.error.name}: ${extendedMetadata.error.message}`;
@@ -280,7 +280,7 @@ class Logger {
    */
 
 
-  inspectValue(value, metadata, metadataStyles) {
+  inspectValue() {
     throw new Error('Not supported for the browser. Prefer `debugger;`');
   }
   /**
@@ -288,7 +288,7 @@ class Logger {
    */
 
 
-  inspectVar(varName, varValue, metadata, metadataStyles) {
+  inspectVar() {
     throw new Error('Not supported for the browser. Prefer `debugger;`');
   }
   /**
@@ -393,11 +393,11 @@ class Logger {
       readableTime = `${seconds ? `${seconds}s and ` : ''}${diffTime - seconds * 1000}ms`;
     }
 
-    const extendedMetadata = Object.assign({}, metadata, {
+    const extendedMetadata = Object.assign(Object.assign({}, metadata), {}, {
       readableTime,
       timeMs: diffTime
     });
-    this.log(message, extendedMetadata, level, Object.assign({}, options, {
+    this.log(message, extendedMetadata, level, Object.assign(Object.assign({}, options), {}, {
       metadataStyles
     }));
   }
@@ -435,7 +435,7 @@ class Logger {
 
 
   enter(fn, metadata, metadataStyles) {
-    const extendedMetadata = Object.assign({}, metadata, {
+    const extendedMetadata = Object.assign(Object.assign({}, metadata), {}, {
       functionName: fn.name
     });
     this.log('enter', extendedMetadata, Level.TRACE, {
@@ -457,7 +457,7 @@ class Logger {
 
 
   exit(fn, metadata, metadataStyles) {
-    const extendedMetadata = Object.assign({}, metadata, {
+    const extendedMetadata = Object.assign(Object.assign({}, metadata), {}, {
       functionName: fn.name
     });
     this.log('exit', extendedMetadata, Level.TRACE, {

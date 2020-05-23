@@ -2,7 +2,10 @@
   "name": "nightingale-winston-adapter",
   "version": "3.2.2",
   "description": "Winston adapter handler for nightingale",
-  "keywords": ["nightingale", "nightingale-handler"],
+  "keywords": [
+    "nightingale",
+    "nightingale-handler"
+  ],
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
   "license": "ISC",
   "repository": {
@@ -14,7 +17,12 @@
   "engines": {
     "node": ">=10.13.0"
   },
-  "browserslist": ["> 0.1%", "Firefox ESR", "not ie < 9", "not dead"],
+  "browserslist": [
+    "> 0.1%",
+    "Firefox ESR",
+    "not ie < 9",
+    "not dead"
+  ],
   "main": "./index.js",
   "types": "./dist/index.d.ts",
   "module": "./dist/index-browser.es.js",
@@ -31,7 +39,7 @@
     "build": "pob-build",
     "build:definitions": "tsc -p tsconfig.build.json",
     "clean": "rm -Rf docs dist test/node6 coverage",
-    "lint": "eslint --ext .js,.ts --quiet src",
+    "lint": "eslint --ext .js,.ts --quiet *.js src",
     "watch": "pob-watch"
   },
   "prettier": {
@@ -44,33 +52,50 @@
       {
         "target": "node",
         "version": "10",
-        "formats": ["cjs", "es"]
+        "formats": [
+          "cjs",
+          "es"
+        ]
       },
       {
         "target": "browser",
         "version": "modern",
-        "formats": ["es"]
+        "formats": [
+          "es"
+        ]
       },
       {
         "target": "browser",
-        "formats": ["cjs", "es"]
+        "formats": [
+          "cjs",
+          "es"
+        ]
       }
     ],
-    "entries": ["index"]
+    "entries": [
+      "index"
+    ]
   },
   "dependencies": {
     "nightingale-level-names": "^2.0.2",
     "nightingale-types": "^2.2.2"
   },
   "devDependencies": {
-    "@babel/core": "7.8.3",
-    "@babel/preset-env": "7.8.3",
-    "@pob/eslint-config-typescript": "34.0.0",
-    "@pob/version": "5.0.1",
-    "babel-preset-latest-node": "4.0.1",
-    "babel-preset-modern-browsers": "14.1.1",
+    "@babel/core": "7.9.6",
+    "@babel/preset-env": "7.9.6",
+    "@pob/eslint-config": "37.1.0",
+    "@pob/eslint-config-node": "37.0.2",
+    "@pob/eslint-config-typescript": "37.1.0",
+    "@typescript-eslint/eslint-plugin": "2.34.0",
+    "babel-preset-latest-node": "4.1.0",
+    "babel-preset-modern-browsers": "14.2.1",
     "eslint": "6.8.0",
-    "pob-babel": "24.3.0",
-    "prettier": "1.19.1"
+    "eslint-import-resolver-node": "0.3.3",
+    "eslint-plugin-import": "2.20.2",
+    "eslint-plugin-node": "11.1.0",
+    "eslint-plugin-prettier": "3.1.3",
+    "eslint-plugin-unicorn": "18.0.1",
+    "pob-babel": "24.11.1",
+    "prettier": "2.0.5"
   }
 }

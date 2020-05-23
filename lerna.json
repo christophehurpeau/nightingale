@@ -4,7 +4,14 @@
   "useWorkspaces": true,
   "command": {
     "publish": {
-      "npmClient": "npm"
+      "npmClient": "npm",
+      "ignoreChanges": [
+        "**/.yo-rc.json",
+        "**/renovate.json",
+        "**/.eslintrc.json",
+        "**/tsconfig.json",
+        "**/tsconfig.build.json"
+      ]
     }
   }
 }

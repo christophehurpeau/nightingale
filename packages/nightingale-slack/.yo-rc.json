@@ -6,10 +6,8 @@
         "circleci": true,
         "codecov": true
       }
-    }
-  },
-  "nightingale-slack": {
-    "type": {
+    },
+    "project": {
       "type": "lib"
     }
   }

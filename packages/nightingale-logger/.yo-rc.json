@@ -6,10 +6,8 @@
         "codecov": true
       },
       "documentation": true
-    }
-  },
-  "nightingale-logger": {
-    "type": {
+    },
+    "project": {
       "type": "lib"
     }
   }

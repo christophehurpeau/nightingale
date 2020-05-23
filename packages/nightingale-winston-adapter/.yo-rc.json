@@ -3,10 +3,8 @@
     "pob-config": {
       "documentation": false,
       "testing": false
-    }
-  },
-  "nightingale-winston-adapter": {
-    "type": {
+    },
+    "project": {
       "type": "lib"
     }
   }

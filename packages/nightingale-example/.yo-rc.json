@@ -8,11 +8,12 @@
     "pob-config": {
       "documentation": false,
       "testing": false
-    }
-  },
-  "nightingale-example": {
-    "type": {
-      "type": "lib"
+    },
+    "project": {
+      "type": "app"
+    },
+    "app": {
+      "type": "node"
     }
   }
 }

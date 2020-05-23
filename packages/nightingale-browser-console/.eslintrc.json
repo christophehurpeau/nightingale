@@ -1,12 +1,6 @@
 {
   "root": true,
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "project": "./tsconfig.json",
-    "createDefaultProgram": true
-  },
-  "plugins": ["@typescript-eslint"],
-  "extends": ["@pob/eslint-config-typescript"],
+  "extends": ["@pob/eslint-config", "@pob/eslint-config-node"],
   "env": {
     "browser": true
   }

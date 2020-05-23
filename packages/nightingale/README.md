@@ -42,22 +42,22 @@ import Logger, { configure, Level } from 'nightingale';
 import ConsoleHandler from 'nightingale-console';
 
 configure([
-    {
-        handlers: [new ConsoleHandler(Level.WARN)],
-    },
-    {
-        keys: ['mylib', 'myotherlib'],
-        handlers: [new ConsoleHandler(Level.ALL)],
-    },
-    {
-        pattern: /^app\.server$/,
-        handlers: [new ConsoleHandler(Level.ALL)],
-        stop: true, // means the following config won't be used, if the pattern matches.
-    },
-    {
-        pattern: /^app(?!\.server)/,
-        handlers: [new ConsoleHandler(Level.INFO)],
-    },
+  {
+    handlers: [new ConsoleHandler(Level.WARN)],
+  },
+  {
+    keys: ['mylib', 'myotherlib'],
+    handlers: [new ConsoleHandler(Level.ALL)],
+  },
+  {
+    pattern: /^app\.server$/,
+    handlers: [new ConsoleHandler(Level.ALL)],
+    stop: true, // means the following config won't be used, if the pattern matches.
+  },
+  {
+    pattern: /^app(?!\.server)/,
+    handlers: [new ConsoleHandler(Level.INFO)],
+  },
 ]);
 
 // in one of your controllers
@@ -100,10 +100,10 @@ import { configure, levels } from 'nightingale';
 import BrowserConsoleHandler from 'nightingale-browser-console';
 
 configure([
-    {
-        key: 'app',
-        handlers: [new BrowserConsoleHandler(Level.INFO)],
-    }
+  {
+    key: 'app',
+    handlers: [new BrowserConsoleHandler(Level.INFO)],
+  },
 ]);
 ```
 
@@ -138,20 +138,20 @@ const app = new Koa();
 const logger = new Logger('app');
 
 configure([
-    {
-        key: 'app',
-        handlers: [new ConsoleHandler(Level.ALL)],
-        processors: [webProcessor],
-    }
-])
+  {
+    key: 'app',
+    handlers: [new ConsoleHandler(Level.ALL)],
+    processors: [webProcessor],
+  },
+]);
 
 app.use(async (ctx) => {
-    logger.info('something to log !', { context: ctx });
-})
+  logger.info('something to log !', { context: ctx });
+});
 
 app.use(async (ctx) => {
-    ctx.logger.info('something to log !', { context: ctx });
-})
+  ctx.logger.info('something to log !', { context: ctx });
+});
 ```
 
 ## More info
@@ -197,9 +197,9 @@ Add extra data in the record
 import { Logger } from 'nightingale';
 
 class MyCustomLogger extends Logger {
-    myCustomMethod(message) {
-        return this.info(`custom message: ${message}`);
-    }
+  myCustomMethod(message) {
+    return this.info(`custom message: ${message}`);
+  }
 }
 
 const logger = new MyCustomLogger('app');
@@ -211,9 +211,7 @@ const logger = new MyCustomLogger('app');
 import { configure } from 'nightingale';
 import errorProcessor from 'nightingale-error-processor';
 
-configure([
-  { processors: [errorProcessor] }
-]);
+configure([{ processors: [errorProcessor] }]);
 ```
 
 ## Global handlers
@@ -222,9 +220,7 @@ configure([
 import { addGlobalHandler, levels } from 'nightingale';
 import ErrorHandler from 'nightingale-sentry';
 
-configure([
-  { handlers: [new ErrorHandler(Level.ERROR)] }
-]);
+configure([{ handlers: [new ErrorHandler(Level.ERROR)] }]);
 ```
 
 ## Children
@@ -236,7 +232,6 @@ import Logger from 'nightingale';
 const loggerApp = new Logger('app');
 const loggerMyService = loggerApp.child('myService');
 // loggerMyService key is `app.myService`
-
 ```
 
 ## Context
@@ -248,9 +243,9 @@ import Logger from 'nightingale';
 const loggerMyService = new Logger('app.myService');
 
 export function someAction(arg1) {
-    const logger = loggerMyService.context({ arg1 });
-    logger.info('starting');
-    // do stuff
-    logger.info('done');
+  const logger = loggerMyService.context({ arg1 });
+  logger.info('starting');
+  // do stuff
+  logger.info('done');
 }
 ```

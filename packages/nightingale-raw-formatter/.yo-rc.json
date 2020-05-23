@@ -6,10 +6,8 @@
         "codecov": true
       },
       "documentation": false
-    }
-  },
-  "nightingale-raw-formatter": {
-    "type": {
+    },
+    "project": {
       "type": "lib"
     }
   }

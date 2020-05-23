@@ -38,9 +38,7 @@ function getConfigForLoggerRecord(key, recordLevel) {
  */
 
 
-var Logger =
-/*#__PURE__*/
-function () {
+var Logger = /*#__PURE__*/function () {
   /**
    * Create a new Logger
    *
@@ -238,7 +236,7 @@ function () {
 
   _proto.error = function error(message, metadata, metadataStyles) {
     if (message instanceof Error) {
-      var extendedMetadata = Object.assign({}, metadata, {
+      var extendedMetadata = Object.assign(Object.assign({}, metadata), {}, {
         error: message
       });
       message = extendedMetadata.error.name + ": " + extendedMetadata.error.message;
@@ -407,11 +405,11 @@ function () {
       readableTime = "" + (seconds ? seconds + "s and " : '') + (diffTime - seconds * 1000) + "ms";
     }
 
-    var extendedMetadata = Object.assign({}, metadata, {
+    var extendedMetadata = Object.assign(Object.assign({}, metadata), {}, {
       readableTime: readableTime,
       timeMs: diffTime
     });
-    this.log(message, extendedMetadata, level, Object.assign({}, options, {
+    this.log(message, extendedMetadata, level, Object.assign(Object.assign({}, options), {}, {
       metadataStyles: metadataStyles
     }));
   }
@@ -449,7 +447,7 @@ function () {
   ;
 
   _proto.enter = function enter(fn, metadata, metadataStyles) {
-    var extendedMetadata = Object.assign({}, metadata, {
+    var extendedMetadata = Object.assign(Object.assign({}, metadata), {}, {
       functionName: fn.name
     });
     this.log('enter', extendedMetadata, Level.TRACE, {
@@ -471,7 +469,7 @@ function () {
   ;
 
   _proto.exit = function exit(fn, metadata, metadataStyles) {
-    var extendedMetadata = Object.assign({}, metadata, {
+    var extendedMetadata = Object.assign(Object.assign({}, metadata), {}, {
       functionName: fn.name
     });
     this.log('exit', extendedMetadata, Level.TRACE, {

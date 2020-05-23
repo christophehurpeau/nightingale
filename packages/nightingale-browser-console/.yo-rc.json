@@ -3,10 +3,8 @@
     "pob-config": {
       "documentation": false,
       "testing": false
-    }
-  },
-  "nightingale-browser-console": {
-    "type": {
+    },
+    "project": {
       "type": "lib"
     }
   }

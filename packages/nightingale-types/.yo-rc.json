@@ -3,10 +3,8 @@
     "pob-config": {
       "documentation": false,
       "testing": false
-    }
-  },
-  "nightingale-types": {
-    "type": {
+    },
+    "project": {
       "type": "lib"
     }
   }

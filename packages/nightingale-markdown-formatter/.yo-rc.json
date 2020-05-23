@@ -6,10 +6,8 @@
         "codecov": true
       },
       "documentation": false
-    }
-  },
-  "nightingale-markdown-formatter": {
-    "type": {
+    },
+    "project": {
       "type": "lib"
     }
   }
