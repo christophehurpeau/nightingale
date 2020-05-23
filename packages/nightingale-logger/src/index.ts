@@ -89,7 +89,7 @@ export default class Logger {
 
     if (!PRODUCTION && key.includes('.')) {
       throw new Error(
-        `nightingale: \`.\` in key is no longer supported (key: ${key})`,
+        `nightingale: \`.\` in key is no longer supported, use \`:\` instead (key: ${key})`,
       );
     }
   }
