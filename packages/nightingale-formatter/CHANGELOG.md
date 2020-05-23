@@ -3,6 +3,49 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 10.0.0 (2020-05-23)
+
+
+### Bug Fixes
+
+* colors works on firefox black background or chrome white background ([45d6652](https://github.com/christophehurpeau/nightingale/commit/45d6652))
+* eslint errors ([c3feb87](https://github.com/christophehurpeau/nightingale/commit/c3feb87))
+* node 4 ([a66b546](https://github.com/christophehurpeau/nightingale/commit/a66b546))
+* node 6.10 ([5d48e54](https://github.com/christophehurpeau/nightingale/commit/5d48e54))
+* show error with stack ([c03ddc7](https://github.com/christophehurpeau/nightingale/commit/c03ddc7))
+* show error with toString instead of stack ([7914652](https://github.com/christophehurpeau/nightingale/commit/7914652))
+* support Map, WeakMap, Set, WeakSet ([475ccb9](https://github.com/christophehurpeau/nightingale/commit/475ccb9))
+* update dependencies and deprecate Record for LogRecord ([2d0a758](https://github.com/christophehurpeau/nightingale/commit/2d0a758))
+
+
+### Code Refactoring
+
+* use typescript ([2e465c6](https://github.com/christophehurpeau/nightingale/commit/2e465c6))
+
+
+### Features
+
+* better display strings: transforms \n into real new line ([884263d](https://github.com/christophehurpeau/nightingale/commit/884263d))
+* drop node 6 ([e09773c](https://github.com/christophehurpeau/nightingale/commit/e09773c))
+* lerna, rollup ([08f73b6](https://github.com/christophehurpeau/nightingale/commit/08f73b6))
+* pob update ([8eb74d9](https://github.com/christophehurpeau/nightingale/commit/8eb74d9))
+* pob upgrade ([79af44c](https://github.com/christophehurpeau/nightingale/commit/79af44c))
+* update dependencies ([08e82b5](https://github.com/christophehurpeau/nightingale/commit/08e82b5))
+* update dependencies ([e2e8ef5](https://github.com/christophehurpeau/nightingale/commit/e2e8ef5))
+* update dependencies ([a185796](https://github.com/christophehurpeau/nightingale/commit/a185796))
+
+
+### BREAKING CHANGES
+
+* requires node 10
+* node 6 no longer supported
+* node 4 is no longer supported
+* remove deprecated dot support
+
+
+
+
+
 ## [5.2.2](https://github.com/christophehurpeau/nightingale/compare/nightingale-formatter@5.2.1...nightingale-formatter@5.2.2) (2019-05-01)
 
 **Note:** Version bump only for package nightingale-formatter

@@ -3,6 +3,43 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 10.0.0 (2020-05-23)
+
+
+### Bug Fixes
+
+* node 6 ([0ce089c](https://github.com/christophehurpeau/nightingale/commit/0ce089c))
+* update dependencies and deprecate Record for LogRecord ([2d0a758](https://github.com/christophehurpeau/nightingale/commit/2d0a758))
+
+
+### Code Refactoring
+
+* use typescript ([2e465c6](https://github.com/christophehurpeau/nightingale/commit/2e465c6))
+
+
+### Features
+
+* drop node 6 ([e09773c](https://github.com/christophehurpeau/nightingale/commit/e09773c))
+* lerna, rollup ([08f73b6](https://github.com/christophehurpeau/nightingale/commit/08f73b6))
+* pob update ([8eb74d9](https://github.com/christophehurpeau/nightingale/commit/8eb74d9))
+* pob upgrade ([bb56cf0](https://github.com/christophehurpeau/nightingale/commit/bb56cf0))
+* support node 4 ([4fdaa84](https://github.com/christophehurpeau/nightingale/commit/4fdaa84))
+* update dependencies ([08e82b5](https://github.com/christophehurpeau/nightingale/commit/08e82b5))
+* update dependencies ([e2e8ef5](https://github.com/christophehurpeau/nightingale/commit/e2e8ef5))
+* update dependencies ([a185796](https://github.com/christophehurpeau/nightingale/commit/a185796))
+
+
+### BREAKING CHANGES
+
+* requires node 10
+* node 6 no longer supported
+* node 4 is no longer supported
+* remove deprecated dot support
+
+
+
+
+
 ## [3.2.2](https://github.com/christophehurpeau/nightingale/compare/nightingale-markdown-formatter@3.2.1...nightingale-markdown-formatter@3.2.2) (2019-05-01)
 
 **Note:** Version bump only for package nightingale-markdown-formatter

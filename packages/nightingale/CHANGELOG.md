@@ -3,6 +3,47 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 10.0.0 (2020-05-23)
+
+
+### Bug Fixes
+
+* main path ([1b54053](https://github.com/christophehurpeau/nightingale/commit/1b54053))
+* missing property stop ([fff57a0](https://github.com/christophehurpeau/nightingale/commit/fff57a0))
+* node 4 ([6dc83a8](https://github.com/christophehurpeau/nightingale/commit/6dc83a8))
+* replace process.exit by throw new Error ([defb009](https://github.com/christophehurpeau/nightingale/commit/defb009))
+* strict check config keys ([220033d](https://github.com/christophehurpeau/nightingale/commit/220033d))
+* update dependencies and deprecate Record for LogRecord ([2d0a758](https://github.com/christophehurpeau/nightingale/commit/2d0a758))
+
+
+### Code Refactoring
+
+* use typescript ([2e465c6](https://github.com/christophehurpeau/nightingale/commit/2e465c6))
+
+
+### Features
+
+* drop node 6 ([e09773c](https://github.com/christophehurpeau/nightingale/commit/e09773c))
+* lerna, rollup ([08f73b6](https://github.com/christophehurpeau/nightingale/commit/08f73b6))
+* pob update ([8eb74d9](https://github.com/christophehurpeau/nightingale/commit/8eb74d9))
+* pob upgrade ([3c98d35](https://github.com/christophehurpeau/nightingale/commit/3c98d35))
+* update dependencies ([08e82b5](https://github.com/christophehurpeau/nightingale/commit/08e82b5))
+* update dependencies ([e2e8ef5](https://github.com/christophehurpeau/nightingale/commit/e2e8ef5))
+* update dependencies ([a185796](https://github.com/christophehurpeau/nightingale/commit/a185796))
+
+
+### BREAKING CHANGES
+
+* requires node 10
+* node 6 no longer supported
+* node 4 is no longer supported
+* remove deprecated dot support
+* can throw errors in dev mode
+
+
+
+
+
 ## [9.2.3](https://github.com/christophehurpeau/nightingale/compare/nightingale@9.2.2...nightingale@9.2.3) (2019-05-01)
 
 **Note:** Version bump only for package nightingale

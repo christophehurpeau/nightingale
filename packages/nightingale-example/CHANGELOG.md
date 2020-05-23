@@ -3,6 +3,42 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 10.0.0 (2020-05-23)
+
+
+### Bug Fixes
+
+* nightingale-console undefined minLevel ([2c47bfb](https://github.com/christophehurpeau/nightingale/commit/2c47bfb))
+* update dependencies and deprecate Record for LogRecord ([2d0a758](https://github.com/christophehurpeau/nightingale/commit/2d0a758))
+
+
+### Code Refactoring
+
+* use typescript ([2e465c6](https://github.com/christophehurpeau/nightingale/commit/2e465c6))
+
+
+### Features
+
+* drop node 6 ([e09773c](https://github.com/christophehurpeau/nightingale/commit/e09773c))
+* improve not dot error message ([16710a6](https://github.com/christophehurpeau/nightingale/commit/16710a6))
+* lerna, rollup ([08f73b6](https://github.com/christophehurpeau/nightingale/commit/08f73b6))
+* pob update ([8eb74d9](https://github.com/christophehurpeau/nightingale/commit/8eb74d9))
+* update dependencies ([08e82b5](https://github.com/christophehurpeau/nightingale/commit/08e82b5))
+* update dependencies ([e2e8ef5](https://github.com/christophehurpeau/nightingale/commit/e2e8ef5))
+* update dependencies ([a185796](https://github.com/christophehurpeau/nightingale/commit/a185796))
+
+
+### BREAKING CHANGES
+
+* requires node 10
+* node 6 no longer supported
+* node 4 is no longer supported
+* remove deprecated dot support
+
+
+
+
+
 ## [2.2.6](https://github.com/christophehurpeau/nightingale/compare/nightingale-example@2.2.5...nightingale-example@2.2.6) (2019-05-03)
 
 **Note:** Version bump only for package nightingale-example

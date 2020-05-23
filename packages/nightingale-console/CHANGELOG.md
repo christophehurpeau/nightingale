@@ -3,6 +3,50 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 10.0.0 (2020-05-23)
+
+
+### Bug Fixes
+
+* dependency nightingale-ansi-formatter ([b2742d2](https://github.com/christophehurpeau/nightingale/commit/b2742d2))
+* missing declaration files ([594be78](https://github.com/christophehurpeau/nightingale/commit/594be78))
+* nightingale-console undefined minLevel ([2c47bfb](https://github.com/christophehurpeau/nightingale/commit/2c47bfb))
+* package.json engine ([6f87d26](https://github.com/christophehurpeau/nightingale/commit/6f87d26))
+* update dependencies and deprecate Record for LogRecord ([2d0a758](https://github.com/christophehurpeau/nightingale/commit/2d0a758))
+
+
+### Code Refactoring
+
+* use typescript ([2e465c6](https://github.com/christophehurpeau/nightingale/commit/2e465c6))
+
+
+### Features
+
+* add process.env.NIGHTINGALE_CONSOLE_FORMATTER to bring back old behavior ([c622606](https://github.com/christophehurpeau/nightingale/commit/c622606))
+* pob update ([8eb74d9](https://github.com/christophehurpeau/nightingale/commit/8eb74d9))
+* update dependencies ([08e82b5](https://github.com/christophehurpeau/nightingale/commit/08e82b5))
+* **nightingale-console:** add options and json when not tty ([c8baf84](https://github.com/christophehurpeau/nightingale/commit/c8baf84))
+* drop node 6 ([e09773c](https://github.com/christophehurpeau/nightingale/commit/e09773c))
+* lerna, rollup ([08f73b6](https://github.com/christophehurpeau/nightingale/commit/08f73b6))
+* pob upgrade ([9889b2d](https://github.com/christophehurpeau/nightingale/commit/9889b2d))
+* support node 4 ([97743f9](https://github.com/christophehurpeau/nightingale/commit/97743f9))
+* update dependencies ([e2e8ef5](https://github.com/christophehurpeau/nightingale/commit/e2e8ef5))
+* update dependencies ([a185796](https://github.com/christophehurpeau/nightingale/commit/a185796))
+* use nightingale-debug ([a26f99c](https://github.com/christophehurpeau/nightingale/commit/a26f99c))
+
+
+### BREAKING CHANGES
+
+* requires node 10
+* **nightingale-console:** output json by default when process.stdout.isTty is false
+* node 6 no longer supported
+* node 4 is no longer supported
+* remove deprecated dot support
+
+
+
+
+
 ## [6.1.1](https://github.com/christophehurpeau/nightingale/compare/nightingale-console@6.1.0...nightingale-console@6.1.1) (2019-05-03)
 
 **Note:** Version bump only for package nightingale-console

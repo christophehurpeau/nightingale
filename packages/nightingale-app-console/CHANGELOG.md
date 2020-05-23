@@ -3,6 +3,44 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 10.0.0 (2020-05-23)
+
+
+### Bug Fixes
+
+* update dependencies and deprecate Record for LogRecord ([2d0a758](https://github.com/christophehurpeau/nightingale/commit/2d0a758))
+* use BrowserConsole in app-console for browser builds ([1b9c938](https://github.com/christophehurpeau/nightingale/commit/1b9c938))
+
+
+### Code Refactoring
+
+* use typescript ([2e465c6](https://github.com/christophehurpeau/nightingale/commit/2e465c6))
+
+
+### Features
+
+* drop node 6 ([e09773c](https://github.com/christophehurpeau/nightingale/commit/e09773c))
+* lerna, rollup ([08f73b6](https://github.com/christophehurpeau/nightingale/commit/08f73b6))
+* pob update ([8eb74d9](https://github.com/christophehurpeau/nightingale/commit/8eb74d9))
+* pob upgrade ([8e76f33](https://github.com/christophehurpeau/nightingale/commit/8e76f33))
+* pob upgrade, support node 4 and browser ([cb7d420](https://github.com/christophehurpeau/nightingale/commit/cb7d420))
+* update dependencies ([08e82b5](https://github.com/christophehurpeau/nightingale/commit/08e82b5))
+* update dependencies ([e2e8ef5](https://github.com/christophehurpeau/nightingale/commit/e2e8ef5))
+* update dependencies ([a185796](https://github.com/christophehurpeau/nightingale/commit/a185796))
+* **nightingale-app-console:** export app logger with name `appLoggger` ([d86bf5c](https://github.com/christophehurpeau/nightingale/commit/d86bf5c))
+
+
+### BREAKING CHANGES
+
+* requires node 10
+* node 6 no longer supported
+* node 4 is no longer supported
+* remove deprecated dot support
+
+
+
+
+
 ## [3.2.6](https://github.com/christophehurpeau/nightingale/compare/nightingale-app-console@3.2.5...nightingale-app-console@3.2.6) (2019-05-03)
 
 **Note:** Version bump only for package nightingale-app-console

@@ -1,6 +1,6 @@
 {
   "name": "nightingale-types",
-  "version": "2.2.2",
+  "version": "10.0.0",
   "description": "Nightingale types for typescript",
   "keywords": [
     "logger"
@@ -29,7 +29,7 @@
   },
   "pob": {},
   "dependencies": {
-    "nightingale-levels": "^4.2.2"
+    "nightingale-levels": "^10.0.0"
   },
   "devDependencies": {
     "@pob/eslint-config": "37.1.0",

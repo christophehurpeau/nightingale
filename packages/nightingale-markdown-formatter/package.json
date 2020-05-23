@@ -1,6 +1,6 @@
 {
   "name": "nightingale-markdown-formatter",
-  "version": "3.2.2",
+  "version": "10.0.0",
   "description": "Nightingale Markdown formatter",
   "keywords": [
     "nightingale",
@@ -98,8 +98,8 @@
     ]
   },
   "dependencies": {
-    "nightingale-formatter": "^5.2.2",
-    "nightingale-types": "^2.2.2"
+    "nightingale-formatter": "^10.0.0",
+    "nightingale-types": "^10.0.0"
   },
   "devDependencies": {
     "@babel/core": "7.9.6",
@@ -119,7 +119,7 @@
     "eslint-plugin-prettier": "3.1.3",
     "eslint-plugin-unicorn": "18.0.1",
     "jest": "26.0.1",
-    "nightingale-levels": "^4.2.2",
+    "nightingale-levels": "^10.0.0",
     "pob-babel": "24.11.1",
     "pob-lcov-reporter": "2.2.2",
     "prettier": "2.0.5",
