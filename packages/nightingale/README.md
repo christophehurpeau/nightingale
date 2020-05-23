@@ -38,7 +38,7 @@ npm install --save nightingale nightingale-console
 ```
 
 ```js
-import Logger, { configure, levels } from 'nightingale';
+import Logger, { configure, Level } from 'nightingale';
 import ConsoleHandler from 'nightingale-console';
 
 configure([
