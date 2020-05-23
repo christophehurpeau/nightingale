@@ -2083,13 +2083,13 @@
     eslint-plugin-prettier "^3.1.3"
     eslint-plugin-unicorn "^18.0.1"
 
-"@pob/root@2.1.0":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@pob/root/-/root-2.1.0.tgz#952ae05d7efc392c902a7bfab5599c10f1f8a18a"
-  integrity sha512-OKXGwrKztBBszZliRaE8wfDyyqueHgf96t1FvaLLtxxhOK2/ykNBKiB7fp31uWanFLcTe7HqjgaMBBg9RVzRbw==
+"@pob/root@2.2.0":
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/@pob/root/-/root-2.2.0.tgz#f51c2a622e357ab845c7b283bfb6a66a0336f969"
+  integrity sha512-yb/f6DIU1/wNhZ7hv8kLcsdwGz7POaRy9o10yd9+Rw68bhS/VrsgZgmn2Dx1Zy11L7rJqVPzqepcLAUynzlUhw==
   dependencies:
     "@commitlint/cli" "8.3.5"
-    cross-env "^7.0.0"
+    cross-env "^7.0.2"
     lint-staged "10.2.6"
     repository-check-dirty "^1.2.2"
     semver "^7.1.2"
@@ -2300,10 +2300,10 @@
     "@types/istanbul-lib-coverage" "*"
     "@types/istanbul-lib-report" "*"
 
-"@types/jest@25.2.1":
-  version "25.2.1"
-  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-25.2.1.tgz#9544cd438607955381c1bdbdb97767a249297db5"
-  integrity sha512-msra1bCaAeEdkSyA0CZ6gW1ukMIvZ5YoJkdXw/qhQdsuuDlFTcEUrUw8CLCPt2rVRUfXlClVvK2gvPs9IokZaA==
+"@types/jest@25.2.3":
+  version "25.2.3"
+  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-25.2.3.tgz#33d27e4c4716caae4eced355097a47ad363fdcaf"
+  integrity sha512-JXc1nK/tXHiDhV55dvfzqtmP4S3sy3T3ouV2tkViZgxY/zeUkcpQcQPGRlgF4KmWzWW5oiWYSZwtCB+2RsE4Fw==
   dependencies:
     jest-diff "^25.2.1"
     pretty-format "^25.2.1"
@@ -3618,10 +3618,10 @@ cosmiconfig@^6.0.0:
     path-type "^4.0.0"
     yaml "^1.7.2"
 
-cross-env@^7.0.0:
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/cross-env/-/cross-env-7.0.0.tgz#5a3b2ddce51ec713ea58f2fb79ce22e65b4f5479"
-  integrity sha512-rV6M9ldNgmwP7bx5u6rZsTbYidzwvrwIYZnT08hSGLcQCcggofgFW+sNe7IhA1SRauPS0QuLbbX+wdNtpqE5CQ==
+cross-env@^7.0.2:
+  version "7.0.2"
+  resolved "https://registry.yarnpkg.com/cross-env/-/cross-env-7.0.2.tgz#bd5ed31339a93a3418ac4f3ca9ca3403082ae5f9"
+  integrity sha512-KZP/bMEOJEDCkDQAyRhu3RL2ZO/SUVrxQVI0G3YEQ+OLbRA3c6zgixe8Mq8a/z7+HKlNEjo8oiLUs8iRijY2Rw==
   dependencies:
     cross-spawn "^7.0.1"
 
@@ -7185,10 +7185,10 @@ please-upgrade-node@^3.2.0:
   dependencies:
     semver-compare "^1.0.0"
 
-pob-babel@24.11.1:
-  version "24.11.1"
-  resolved "https://registry.yarnpkg.com/pob-babel/-/pob-babel-24.11.1.tgz#44ef2c8919733ddfadfea47cea1a3f297126391f"
-  integrity sha512-ANnshxTY+JY+F6h3Xq9NrUci1DHT5dY3oWuY7TL1dAl1zEc1SS+TUgheOgQb+fIcKBxO/fRscFb0vEJxfx2MAw==
+pob-babel@24.12.0:
+  version "24.12.0"
+  resolved "https://registry.yarnpkg.com/pob-babel/-/pob-babel-24.12.0.tgz#d55dffa08edcb4ad1ed517a4dfb8e4cc0a7586a1"
+  integrity sha512-FtpAXDJcZXtcheXG6aGREQlB6fgfBCdsLPCOeVoTiyCUN6JktJBbfAhJAOMc87yvX3Mq8eR9LJtCP+9xEm8s+A==
   dependencies:
     "@babel/preset-flow" "^7.9.0"
     babel-plugin-transform-builtins "^2.2.2"
@@ -7203,10 +7203,10 @@ pob-babel@24.11.1:
     rollup-plugin-json "^4.0.0"
     rollup-plugin-node-resolve "^5.2.0"
 
-pob-lcov-reporter@2.2.2:
-  version "2.2.2"
-  resolved "https://registry.yarnpkg.com/pob-lcov-reporter/-/pob-lcov-reporter-2.2.2.tgz#a645dba0d32c2b1c31ae11d5c947781a73943df1"
-  integrity sha512-mKzGsRKEbdJKI2YiRMfWkTUEMhS/GKS0pzHZq1GpuYOW3oU/q/GS4VHV6y6WPAqA7ZOqhn2vEvA/gJh/DOIeNw==
+pob-lcov-reporter@2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/pob-lcov-reporter/-/pob-lcov-reporter-2.3.0.tgz#da07152f1a1f2e20df2c930e672ce6cb00d16a70"
+  integrity sha512-MMY+oL1UnUXFKkd3RhqNvn6V0M6dSNbxsdrnEt55lhvqQCOlbwcPPA5CRQMDfM2z4YIbNoK3XW87nBJaSe68qw==
   dependencies:
     istanbul-reports "^3.0.2"
 
