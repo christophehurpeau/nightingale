@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [10.0.1](https://github.com/christophehurpeau/nightingale/compare/v10.0.0...v10.0.1) (2020-05-23)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ansi-styles to v4 ([#39](https://github.com/christophehurpeau/nightingale/issues/39)) ([c3e7598](https://github.com/christophehurpeau/nightingale/commit/c3e75987fe9fa0cd178046bb6db7f3e3c7d0fda5))
+
+
+
+
+
 # 10.0.0 (2020-05-23)
 
 
