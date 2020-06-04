@@ -17,13 +17,18 @@
     "build": "lerna run --stream build",
     "build:definitions": "tsc -b tsconfig.build.json",
     "generate:docs": "lerna run --parallel --ignore \"*-example\" generate:docs",
-    "lint": "lerna run --stream lint",
+    "lint": "eslint --ext js,ts,tsx .",
     "postbuild": "yarn run build:definitions && yarn run generate:docs",
-    "preversion": "yarn run lint --since && yarn run build --since -- -- --no-clean && repository-check-dirty",
+    "preversion": "yarn run lint && yarn run build --since -- -- --no-clean && repository-check-dirty",
     "release": "cross-env GH_TOKEN=$POB_GITHUB_TOKEN lerna version --conventional-commits --conventional-graduate --create-release=github -m 'chore: release' && lerna publish from-git",
     "test": "lerna run --stream test",
     "tsc": "tsc -b",
     "watch": "lerna run --parallel --ignore \"*-example\" watch"
+  },
+  "prettier": {
+    "trailingComma": "all",
+    "singleQuote": true,
+    "arrowParens": "always"
   },
   "commitlint": {
     "extends": [
@@ -32,9 +37,21 @@
   },
   "devDependencies": {
     "@pob/commitlint-config": "1.1.2",
+    "@pob/eslint-config": "37.2.0",
+    "@pob/eslint-config-babel-node": "37.2.0",
+    "@pob/eslint-config-node": "37.2.0",
+    "@pob/eslint-config-typescript": "37.2.0",
     "@pob/root": "2.2.0",
+    "@typescript-eslint/eslint-plugin": "2.34.0",
+    "eslint": "6.8.0",
+    "eslint-import-resolver-node": "0.3.3",
+    "eslint-plugin-import": "2.20.2",
+    "eslint-plugin-node": "11.1.0",
+    "eslint-plugin-prettier": "3.1.3",
+    "eslint-plugin-unicorn": "18.0.1",
     "husky": "4.2.5",
-    "lerna": "3.21.0",
-    "typescript": "3.9.3"
+    "lerna": "3.22.0",
+    "prettier": "2.0.5",
+    "typescript": "3.9.5"
   }
 }
