@@ -69,11 +69,11 @@
     "nightingale-types": "^10.0.1"
   },
   "devDependencies": {
-    "@babel/core": "7.9.6",
-    "@pob/eslint-config": "37.1.0",
-    "@pob/eslint-config-babel-node": "37.0.2",
-    "@pob/eslint-config-node": "37.0.2",
-    "@pob/eslint-config-typescript": "37.1.0",
+    "@babel/core": "7.10.2",
+    "@pob/eslint-config": "37.2.0",
+    "@pob/eslint-config-babel-node": "37.2.0",
+    "@pob/eslint-config-node": "37.2.0",
+    "@pob/eslint-config-typescript": "37.2.0",
     "@typescript-eslint/eslint-plugin": "2.34.0",
     "babel-preset-latest-node": "4.1.0",
     "eslint": "6.8.0",
