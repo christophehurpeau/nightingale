@@ -1,6 +1,6 @@
 import { POB_ENV } from 'pob-babel';
-import { Handler, Processor } from 'nightingale-types';
 import { ComputedConfigForKey } from 'nightingale-logger';
+import { Handler, Processor } from 'nightingale-types';
 
 export interface Config {
   handler?: Handler;
@@ -26,11 +26,11 @@ if (!global.__NIGHTINGALE_CONFIG) {
   global.__NIGHTINGALE_CONFIG_DEFAULT = { handlers: [], processors: [] };
 }
 
-function clearCache() {
+function clearCache(): void {
   global.__NIGHTINGALE_LOGGER_MAP_CACHE.clear();
 }
 
-function handleConfig(config: Config) {
+function handleConfig(config: Config): Config {
   if (config.keys) {
     if (config.pattern) {
       throw new Error('Cannot have key and pattern for the same config');
@@ -67,7 +67,7 @@ function handleConfig(config: Config) {
   return config;
 }
 
-export function configure(config: Config[]) {
+export function configure(config: Config[]): void {
   if (global.__NIGHTINGALE_CONFIG.length !== 0) {
     // eslint-disable-next-line no-console
     console.log('nightingale: warning: config overridden');
@@ -77,7 +77,7 @@ export function configure(config: Config[]) {
   global.__NIGHTINGALE_CONFIG = config.map(handleConfig);
 }
 
-export function addConfig(config: Config, unshift = false) {
+export function addConfig(config: Config, unshift = false): void {
   config = handleConfig(config);
   global.__NIGHTINGALE_CONFIG[unshift ? 'unshift' : 'push'](config);
   clearCache();

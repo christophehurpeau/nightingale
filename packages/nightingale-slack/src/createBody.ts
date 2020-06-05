@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/camelcase */
+import Level from 'nightingale-levels';
 import markdownFormatter from 'nightingale-markdown-formatter';
 import rawFormatter from 'nightingale-raw-formatter';
-import Level from 'nightingale-levels';
 import { LogRecord } from 'nightingale-types';
 import SlackConfig from './SlackConfig';
 
@@ -19,7 +19,7 @@ const levelToSlackColor: { [level: number]: string } = {
 export default function createBody<T>(
   record: LogRecord<T>,
   slackConfig: SlackConfig,
-) {
+): any {
   const markdown = markdownFormatter(record);
   const raw = rawFormatter(record);
 

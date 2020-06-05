@@ -1,5 +1,4 @@
 import { PRODUCTION, POB_TARGET } from 'pob-babel';
-import { install as installSourceMapSupport } from 'source-map-support';
 import Logger, {
   configure,
   addConfig,
@@ -7,8 +6,9 @@ import Logger, {
   levels,
   listenUnhandledErrors,
 } from 'nightingale';
-import TerminalConsoleHandler from 'nightingale-console';
 import BrowserConsoleHandler from 'nightingale-browser-console';
+import TerminalConsoleHandler from 'nightingale-console';
+import { install as installSourceMapSupport } from 'source-map-support';
 
 const ConsoleHandler =
   POB_TARGET === 'browser' ? BrowserConsoleHandler : TerminalConsoleHandler;

@@ -1,7 +1,7 @@
-import { LogRecord, Styles } from 'nightingale-types';
 import { formatRecordToString } from 'nightingale-formatter';
+import { LogRecord, Styles } from 'nightingale-types';
 
-export function style(styles: Styles, value: string) {
+export function style(styles: Styles, value: string): string {
   return value;
 }
 
@@ -9,6 +9,6 @@ export function style(styles: Styles, value: string) {
  * @param {Object} record
  * @returns {string}
  */
-export default function format<T>(record: LogRecord<T>) {
+export default function format<T>(record: LogRecord<T>): string {
   return formatRecordToString(record, style);
 }

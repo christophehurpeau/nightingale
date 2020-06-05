@@ -4,11 +4,9 @@
   "parserOptions": {
     "project": "packages/nightingale-sentry/tsconfig.json"
   },
-  "plugins": [
-    "@typescript-eslint"
-  ],
+  "plugins": ["@typescript-eslint"],
   "extends": [
     "@pob/eslint-config-typescript",
-    "@pob/eslint-config-babel-node"
+    "@pob/eslint-config-typescript-node"
   ]
 }

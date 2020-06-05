@@ -328,8 +328,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { POB_ENV } from 'pob-babel';
-import { Handler, Processor } from 'nightingale-types';
 import { ComputedConfigForKey } from 'nightingale-logger';
+import { Handler, Processor } from 'nightingale-types';
 &nbsp;
 export interface Config {
   handler?: Handler;
@@ -355,11 +355,11 @@ declare const global: any;
   global.__NIGHTINGALE_CONFIG_DEFAULT = { handlers: [], processors: [] };
 }
 &nbsp;
-function <span class="fstat-no" title="function not covered" >clearCache(</span>) {
+function <span class="fstat-no" title="function not covered" >clearCache(</span>): void {
 <span class="cstat-no" title="statement not covered" >  global.__NIGHTINGALE_LOGGER_MAP_CACHE.clear();</span>
 }
 &nbsp;
-function <span class="fstat-no" title="function not covered" >handleConfig(</span>config: Config) {
+function <span class="fstat-no" title="function not covered" >handleConfig(</span>config: Config): Config {
 <span class="cstat-no" title="statement not covered" >  if (config.keys) {</span>
 <span class="cstat-no" title="statement not covered" >    if (config.pattern) {</span>
 <span class="cstat-no" title="statement not covered" >      throw new Error('Cannot have key and pattern for the same config');</span>
@@ -396,7 +396,7 @@ function <span class="fstat-no" title="function not covered" >handleConfig(</spa
 <span class="cstat-no" title="statement not covered" >  return config;</span>
 }
 &nbsp;
-export function <span class="fstat-no" title="function not covered" >configure(</span>config: Config[]) {
+export function <span class="fstat-no" title="function not covered" >configure(</span>config: Config[]): void {
 <span class="cstat-no" title="statement not covered" >  if (global.__NIGHTINGALE_CONFIG.length !== 0) {</span>
     // eslint-disable-next-line no-console
 <span class="cstat-no" title="statement not covered" >    console.log('nightingale: warning: config overridden');</span>
@@ -406,7 +406,7 @@ export function <span class="fstat-no" title="function not covered" >configure(<
 <span class="cstat-no" title="statement not covered" >  global.__NIGHTINGALE_CONFIG = config.map(handleConfig);</span>
 }
 &nbsp;
-export function <span class="fstat-no" title="function not covered" >addConfig(</span>config: Config, unshift = <span class="branch-0 cbranch-no" title="branch not covered" >false)</span> {
+export function <span class="fstat-no" title="function not covered" >addConfig(</span>config: Config, unshift = <span class="branch-0 cbranch-no" title="branch not covered" >false)</span>: void {
 <span class="cstat-no" title="statement not covered" >  config = handleConfig(config);</span>
 <span class="cstat-no" title="statement not covered" >  global.__NIGHTINGALE_CONFIG[unshift ? 'unshift' : 'push'](config);</span>
 <span class="cstat-no" title="statement not covered" >  clearCache();</span>

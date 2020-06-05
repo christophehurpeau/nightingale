@@ -4,18 +4,11 @@
   "parserOptions": {
     "project": "packages/nightingale-raw-formatter/tsconfig.json"
   },
-  "plugins": [
-    "@typescript-eslint"
-  ],
-  "extends": [
-    "@pob/eslint-config-typescript"
-  ],
+  "plugins": ["@typescript-eslint"],
+  "extends": ["@pob/eslint-config-typescript"],
   "overrides": [
     {
-      "files": [
-        "**/*.test.ts",
-        "__tests__/**/*.ts"
-      ],
+      "files": ["**/*.test.ts", "__tests__/**/*.ts"],
       "env": {
         "jest": true
       },

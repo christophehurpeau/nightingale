@@ -51,7 +51,7 @@ interface InternalFormatIteratorParams {
   formatKey?: FormatKey;
 }
 
-function tryStringify(arg: any) {
+function tryStringify(arg: any): string {
   try {
     return JSON.stringify(arg).replace(/\\n/g, '\n');
   } catch (_) {
@@ -59,7 +59,7 @@ function tryStringify(arg: any) {
   }
 }
 
-const sameRawFormattedValue = (value: string) => ({
+const sameRawFormattedValue = (value: string): FormattedValue => ({
   stringValue: value,
   formattedValue: value,
 });
@@ -69,7 +69,7 @@ function internalFormatValue(
   styleFn: StyleFn,
   styles: Styles,
   { padding, depth, maxDepth, objects }: InternalFormatParams,
-) {
+): FormattedValue {
   const typeofValue = typeof value;
 
   if (!styles) {
@@ -209,9 +209,9 @@ const internalFormatIterator = (
     prefixSuffixSpace = ' ',
     formatKey = internalFormatKey,
   }: InternalFormatIteratorParams,
-) => {
+): FormattedValue => {
   let breakLine = false;
-  const formattedSeparator = () => styleFn(['gray'], separator);
+  const formattedSeparator = (): string => styleFn(['gray'], separator);
 
   const valuesMaxIndex = values.length - 1;
   const formattedValues: FormattedValue[] = values.map(
@@ -290,7 +290,7 @@ function internalFormatObject(
   styleFn: StyleFn,
   objectStyles: ObjectStyles | undefined,
   { padding, depth, maxDepth, objects }: InternalFormatParams,
-) {
+): FormattedValue {
   if (objects.has(object)) {
     return sameRawFormattedValue('{Circular Object}');
   }
@@ -320,7 +320,7 @@ function internalFormatMap(
   map: Map<any, any>,
   styleFn: StyleFn,
   { padding, depth, maxDepth, objects }: InternalFormatParams,
-) {
+): FormattedValue {
   if (objects.has(map)) {
     return sameRawFormattedValue(`{Circular ${name}}`);
   }
@@ -349,7 +349,7 @@ function internalFormatArray(
   array: any[],
   styleFn: StyleFn,
   { padding, depth, maxDepth, objects }: InternalFormatParams,
-) {
+): FormattedValue {
   if (objects.has(array)) {
     return sameRawFormattedValue('{Circular Array}');
   }
@@ -378,7 +378,7 @@ function internalFormatSet(
   set: Set<any>,
   styleFn: StyleFn,
   { padding, depth, maxDepth, objects }: InternalFormatParams,
-) {
+): FormattedValue {
   if (objects.has(set)) {
     return sameRawFormattedValue(`{Circular ${name}}`);
   }
@@ -408,7 +408,7 @@ export default function formatObject(
   styleFn: StyleFn = noStyleFn,
   objectStyles?: ObjectStyles,
   { padding = '  ', maxDepth = 10 }: FormatObjectOptions = {},
-) {
+): string {
   const { formattedValue: result } = internalFormatObject(
     object,
     styleFn,

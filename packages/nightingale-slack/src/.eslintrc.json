@@ -4,19 +4,14 @@
   "parserOptions": {
     "project": "packages/nightingale-slack/tsconfig.json"
   },
-  "plugins": [
-    "@typescript-eslint"
-  ],
+  "plugins": ["@typescript-eslint"],
   "extends": [
     "@pob/eslint-config-typescript",
-    "@pob/eslint-config-babel-node"
+    "@pob/eslint-config-typescript-node"
   ],
   "overrides": [
     {
-      "files": [
-        "**/*.test.ts",
-        "__tests__/**/*.ts"
-      ],
+      "files": ["**/*.test.ts", "__tests__/**/*.ts"],
       "env": {
         "jest": true
       },

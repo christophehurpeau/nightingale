@@ -8,7 +8,7 @@ export interface ContextWithOptionalRequest {
 export default function webProcessor<T>(
   record: LogRecord<T>,
   context?: ContextWithOptionalRequest,
-) {
+): void {
   const request = context?.request;
   if (request) {
     record.extra = record.extra || {};

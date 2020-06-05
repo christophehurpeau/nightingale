@@ -35,7 +35,7 @@ function stringify(value: any, space?: string | number): string {
   );
 }
 
-export default function format<T>(record: LogRecord<T>) {
+export default function format<T>(record: LogRecord<T>): string {
   return stringify({
     key: record.key,
     level: record.level,

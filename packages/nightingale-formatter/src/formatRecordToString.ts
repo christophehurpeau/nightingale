@@ -1,13 +1,13 @@
 /* eslint-disable no-unused-vars */
 import { LogRecord, Metadata } from 'nightingale-types';
-import levelToSymbol from './levelToSymbol';
-import levelToStyles from './levelToStyles';
 import formatObject, { StyleFn, ObjectStyles } from './formatObject';
+import levelToStyles from './levelToStyles';
+import levelToSymbol from './levelToSymbol';
 
 export default function formatRecordToString<T extends Metadata>(
   record: LogRecord<T>,
   style: StyleFn,
-) {
+): string {
   const parts: string[] = [];
 
   if (record.displayName) {
@@ -45,7 +45,7 @@ export default function formatRecordToString<T extends Metadata>(
     key: string,
     object: object | undefined,
     styles: ObjectStyles | undefined,
-  ) => {
+  ): void => {
     if (!object) {
       return;
     }

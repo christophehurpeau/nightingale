@@ -1,5 +1,5 @@
-import Logger from 'nightingale-logger';
 import Level from 'nightingale-levels';
+import Logger from 'nightingale-logger';
 
 export default Logger;
 export { configure, addConfig } from './config';
@@ -14,7 +14,7 @@ export function listenUnhandledErrors(
     'nightingale.listenUnhandledErrors',
     'listenUnhandledErrors',
   ),
-) {
+): void {
   process.on('uncaughtException', (err) =>
     logger.error('uncaughtException', { err }),
   );

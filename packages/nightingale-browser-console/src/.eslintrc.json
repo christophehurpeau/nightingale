@@ -4,10 +4,6 @@
   "parserOptions": {
     "project": "packages/nightingale-browser-console/tsconfig.json"
   },
-  "plugins": [
-    "@typescript-eslint"
-  ],
-  "extends": [
-    "@pob/eslint-config-typescript"
-  ]
+  "plugins": ["@typescript-eslint"],
+  "extends": ["@pob/eslint-config-typescript"]
 }

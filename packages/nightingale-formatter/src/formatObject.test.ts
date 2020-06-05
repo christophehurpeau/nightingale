@@ -6,12 +6,12 @@ test('empty object should return empty string', () => {
   expect(formatObject({})).toBe('');
 });
 
-const styleFn = (styles: Styles, value: string) =>
+const styleFn = (styles: Styles, value: string): string =>
   styles && styles.length !== 0
     ? `[styles:${styles.join(',')}]${value}[/styles]`
     : value;
 
-const noStyleFn = (styles: Styles, value: string) => value;
+const noStyleFn = (styles: Styles, value: string): string => value;
 
 test('simple object', () => {
   expect(formatObject({ a: 1 }, styleFn)).toBe(

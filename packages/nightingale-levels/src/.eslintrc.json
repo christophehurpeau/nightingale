@@ -4,10 +4,6 @@
   "parserOptions": {
     "project": "packages/nightingale-levels/tsconfig.json"
   },
-  "plugins": [
-    "@typescript-eslint"
-  ],
-  "extends": [
-    "@pob/eslint-config-typescript"
-  ]
+  "plugins": ["@typescript-eslint"],
+  "extends": ["@pob/eslint-config-typescript"]
 }

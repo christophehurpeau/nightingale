@@ -1,6 +1,6 @@
 /* eslint-disable prefer-template */
-import { Level, LogRecord } from 'nightingale-types';
 import formatterRaw from 'nightingale-raw-formatter';
+import { Level, LogRecord } from 'nightingale-types';
 
 export default class StringHandler {
   readonly minLevel: Level;
@@ -11,11 +11,11 @@ export default class StringHandler {
     this.minLevel = minLevel;
   }
 
-  get string() {
+  get string(): string {
     return this._buffer;
   }
 
-  handle<T>(record: LogRecord<T>) {
+  handle<T>(record: LogRecord<T>): void {
     this._buffer += formatterRaw(record) + '\n';
   }
 }
