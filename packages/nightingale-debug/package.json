@@ -107,7 +107,7 @@
     "babel-preset-latest-node": "4.1.0",
     "babel-preset-modern-browsers": "14.2.1",
     "jest": "26.0.1",
-    "pob-babel": "24.12.0",
+    "pob-babel": "24.12.1",
     "pob-lcov-reporter": "2.3.0",
     "xunit-file": "1.0.0"
   }

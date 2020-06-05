@@ -3077,10 +3077,10 @@ babel-preset-optimizations@^2.0.0:
     babel-plugin-transform-inline-consecutive-adds "^0.4.3"
     babel-plugin-transform-undefined-to-void "^6.9.4"
 
-babel-preset-pob-env@^3.7.1:
-  version "3.7.1"
-  resolved "https://registry.yarnpkg.com/babel-preset-pob-env/-/babel-preset-pob-env-3.7.1.tgz#91a38cda3f0251bee73c7a2c1a38ac242a93c35f"
-  integrity sha512-4LEMj2AMeGmW4yawC4Gta1bst5JUZFV6H2FT9nmKvoigOc0P1f9PQjGNOECJH85d9TMMGP+wKCs72dkVsxVTqg==
+babel-preset-pob-env@^3.8.0:
+  version "3.8.0"
+  resolved "https://registry.yarnpkg.com/babel-preset-pob-env/-/babel-preset-pob-env-3.8.0.tgz#e5b132f92b0ea7cfdded969c4034953fbfb486a8"
+  integrity sha512-ajXYlf72eAyDW4yOlEEpvC1ISVgxd4MXRK+hWRpIqKxZ5YPWWb9GjIq/46CyVcHhNi81V1Kr3q9ryfe0uy2yKg==
   dependencies:
     "@babel/plugin-proposal-class-properties" "^7.8.3"
     "@babel/plugin-proposal-export-default-from" "^7.8.3"
@@ -7617,16 +7617,16 @@ please-upgrade-node@^3.2.0:
   dependencies:
     semver-compare "^1.0.0"
 
-pob-babel@24.12.0:
-  version "24.12.0"
-  resolved "https://registry.yarnpkg.com/pob-babel/-/pob-babel-24.12.0.tgz#d55dffa08edcb4ad1ed517a4dfb8e4cc0a7586a1"
-  integrity sha512-FtpAXDJcZXtcheXG6aGREQlB6fgfBCdsLPCOeVoTiyCUN6JktJBbfAhJAOMc87yvX3Mq8eR9LJtCP+9xEm8s+A==
+pob-babel@24.12.1:
+  version "24.12.1"
+  resolved "https://registry.yarnpkg.com/pob-babel/-/pob-babel-24.12.1.tgz#cca91704ed68f228788f6282854a157c6ff92fbb"
+  integrity sha512-S31cxoiafzRd/XrxuGc1tHNriSPnxC/NpnCBH3K/+OlHiibUcaV8VdkXnbhXQTpaP7y2r+QZFE7TKXtgb2O1Mw==
   dependencies:
     "@babel/preset-flow" "^7.9.0"
     babel-plugin-transform-builtins "^2.2.2"
     babel-preset-latest-node "^4.1.0"
     babel-preset-modern-browsers "^14.2.1"
-    babel-preset-pob-env "^3.7.1"
+    babel-preset-pob-env "^3.8.0"
     minimist-argv "^1.1.0"
     rollup "^1.29.1"
     rollup-config-external-dependencies "^1.1.0"
