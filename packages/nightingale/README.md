@@ -15,7 +15,7 @@
 
 The nightingale is a bird best known for its powerful and beautiful song.
 
-See the [Logger API](http://nightingalejs.github.io/nightingale-logger/docs/Logger.html)
+See the [Logger API](https://christophehurpeau.github.io/nightingale/classes/nightingale_logger.logger.html)
 
 ## Install
 
