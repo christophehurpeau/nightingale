@@ -1,7 +1,7 @@
 import { post } from 'request';
+import Level from 'nightingale-levels';
 import markdownFormatter from 'nightingale-markdown-formatter';
 import rawFormatter from 'nightingale-raw-formatter';
-import Level from 'nightingale-levels';
 
 /* eslint-disable @typescript-eslint/camelcase */
 const levelToSlackColor = {

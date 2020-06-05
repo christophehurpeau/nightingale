@@ -1,5 +1,5 @@
 import { formatRecordToString, styleToHtmlStyle } from 'nightingale-formatter';
-import { LogRecord, Styles } from 'nightingale-types';
+import type { LogRecord, Styles } from 'nightingale-types';
 
 export const style = (args: string[]) => (
   styles: Styles,

@@ -6,16 +6,6 @@
   <a href="https://david-dm.org/christophehurpeau/nightingale?path=packages/nightingale-console-example"><img src="https://david-dm.org/christophehurpeau/nightingale.svg?path=packages/nightingale-console-example?style=flat-square"></a>
 </p>
 
-## Install
+## Example
 
-```bash
-npm install --save nightingale-console-example
-```
-
-## Usage
-
-```js
-import nightingaleConsoleExample from 'nightingale-console-example';
-
-console.log(nightingaleConsoleExample);
-```
+A simple example on how to use a logger with nightingale-console as output

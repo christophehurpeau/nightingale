@@ -1,5 +1,5 @@
-import Logger from 'nightingale-logger';
 export { default as Level, default as levels } from 'nightingale-levels';
+import Logger from 'nightingale-logger';
 
 if (global.__NIGHTINGALE_GLOBAL_HANDLERS) {
   // eslint-disable-next-line no-console

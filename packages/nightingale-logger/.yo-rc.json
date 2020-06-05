@@ -5,7 +5,7 @@
         "circleci": true,
         "codecov": true
       },
-      "documentation": true
+      "documentation": false
     },
     "project": {
       "type": "lib"

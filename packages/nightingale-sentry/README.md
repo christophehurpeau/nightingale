@@ -8,7 +8,6 @@
 
 <p align="center">
   <a href="https://npmjs.org/package/nightingale-sentry"><img src="https://img.shields.io/npm/v/nightingale-sentry.svg?style=flat-square"></a>
-  <a href="https://david-dm.org/christophehurpeau/nightingale?path=packages/nightingale-sentry"><img src="https://david-dm.org/christophehurpeau/nightingale.svg?path=packages/nightingale-sentry?style=flat-square"></a>
 </p>
 
 ## Install

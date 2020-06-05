@@ -53,6 +53,7 @@
     "nightingale-console-output": "^10.0.1",
     "nightingale-debug": "^10.0.1",
     "nightingale-json-formatter": "^10.0.1",
+    "nightingale-levels": "^10.0.1",
     "nightingale-types": "^10.0.1"
   },
   "devDependencies": {

@@ -1,8 +1,8 @@
 import formatterANSI from 'nightingale-ansi-formatter';
-import formatterJSON from 'nightingale-json-formatter';
 import consoleOutput from 'nightingale-console-output';
 import createFindDebugLevel from 'nightingale-debug';
-import { Level } from 'nightingale-types';
+import formatterJSON from 'nightingale-json-formatter';
+import Level from 'nightingale-levels';
 
 const defaultFormatter = !process.stdout.isTTY && process.env.NIGHTINGALE_CONSOLE_FORMATTER !== 'ansi' ? formatterJSON : formatterANSI;
 

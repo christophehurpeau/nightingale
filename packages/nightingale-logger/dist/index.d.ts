@@ -1,5 +1,5 @@
 import Level from 'nightingale-levels';
-import { Metadata, MetadataStyles, Styles, Handler, Processor, LogRecord } from 'nightingale-types';
+import type { Metadata, MetadataStyles, Styles, Handler, Processor, LogRecord } from 'nightingale-types';
 export { Level };
 export interface Options<T> {
     symbol?: string;
@@ -73,7 +73,7 @@ export default class Logger {
     /**
      * Log a message
      */
-    log<T extends Metadata>(message: string, metadata?: T, level?: number, options?: Options<T>): void;
+    log<T extends Metadata>(message: string, metadata?: T, level?: Level, options?: Options<T>): void;
     /**
      * Log a trace message
      */

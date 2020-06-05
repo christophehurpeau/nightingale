@@ -1,9 +1,8 @@
 **/node_modules/*
 *.d.ts
+/docs
 
 packages/*/dist
 packages/*/test
 packages/*/public
 packages/*/build
-packages/*/docs
-

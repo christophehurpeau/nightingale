@@ -1,4 +1,4 @@
-import { Level, Handle } from 'nightingale-types';
+import type { Level, Handle } from 'nightingale-types';
 export declare type LogCallback = (err: Error | null) => void;
 export interface WinstonTransportType {
     log: (level: number, message: string, metadata: object, callback: LogCallback) => void;

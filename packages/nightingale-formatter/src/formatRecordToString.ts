@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { LogRecord, Metadata } from 'nightingale-types';
+import type { LogRecord, Metadata } from 'nightingale-types';
 import formatObject, { StyleFn, ObjectStyles } from './formatObject';
 import levelToStyles from './levelToStyles';
 import levelToSymbol from './levelToSymbol';

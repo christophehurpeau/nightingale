@@ -1,6 +1,6 @@
 import { init, withScope, Severity } from '@sentry/node';
 import Level from 'nightingale-levels';
-import { LogRecord, Handle } from 'nightingale-types';
+import type { LogRecord, Handle } from 'nightingale-types';
 
 const mapToSentryLevel: Record<Level, string> = {
   [Level.TRACE]: 'debug',

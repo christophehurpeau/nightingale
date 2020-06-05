@@ -1,5 +1,5 @@
-import { LogRecord, Handle } from 'nightingale-types';
 import Level from 'nightingale-levels';
+import type { LogRecord, Handle } from 'nightingale-types';
 export interface Options {
     getUser?: <T>(record: LogRecord<T>) => any;
     getTags?: <T>(record: LogRecord<T>) => any;

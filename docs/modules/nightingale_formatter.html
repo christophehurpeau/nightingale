@@ -1,0 +1,2044 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>nightingale-formatter | nightingale</title>
+	<meta name="description" content="Documentation for nightingale">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">nightingale</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="nightingale_formatter.html">nightingale-formatter</a>
+				</li>
+			</ul>
+			<h1>Module nightingale-formatter</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<h3 align="center">
+						nightingale-formatter
+					</h3>
+					<p align="center">
+						Nightingale formatter
+					</p>
+					<p align="center">
+						<a href="https://npmjs.org/package/nightingale-formatter"><img src="https://img.shields.io/npm/v/nightingale-formatter.svg?style=flat-square"></a>
+						<a href="https://circleci.com/gh/christophehurpeau/nightingale"><img src="https://img.shields.io/circleci/project/christophehurpeau/nightingale/master.svg?style=flat-square"></a>
+						<a href="https://codecov.io/gh/christophehurpeau/nightingale"><img src="https://img.shields.io/codecov/c/github/christophehurpeau/nightingale/master.svg?style=flat-square"></a>
+					</p>
+					<a href="#install" id="install" style="color: inherit; text-decoration: none;">
+						<h2>Install</h2>
+					</a>
+					<pre><code class="language-sh">npm install --save nightingale-formatter</code></pre>
+					<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
+						<h2>Usage</h2>
+					</a>
+					<pre><code class="language-js"><span class="hljs-keyword">import</span> {
+  levelToStyles,
+  levelToSymbol,
+  styleToHtmlStyle,
+  styleToHexColor,
+  formatObject,
+  formatRecordToString,
+} <span class="hljs-keyword">from</span> <span class="hljs-string">'nightingale-formatter'</span>;</code></pre>
+				</div>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>References</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="nightingale_formatter.html#formatobject" class="tsd-kind-icon">format<wbr>Object</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="nightingale_formatter.html#formatrecordtostring" class="tsd-kind-icon">format<wbr>Record<wbr>ToString</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="nightingale_formatter.html#leveltostyles" class="tsd-kind-icon">level<wbr>ToStyles</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="nightingale_formatter.html#leveltosymbol" class="tsd-kind-icon">level<wbr>ToSymbol</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="nightingale_formatter.html#styletohexcolor" class="tsd-kind-icon">style<wbr>ToHex<wbr>Color</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="nightingale_formatter.html#styletohtmlstyle" class="tsd-kind-icon">style<wbr>ToHtml<wbr>Style</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Interfaces</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/nightingale_formatter.formatobjectoptions.html" class="tsd-kind-icon">Format<wbr>Object<wbr>Options</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported"><a href="../interfaces/nightingale_formatter.formattedkey.html" class="tsd-kind-icon">Formatted<wbr>Key</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported"><a href="../interfaces/nightingale_formatter.formattedvalue.html" class="tsd-kind-icon">Formatted<wbr>Value</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/nightingale_formatter.htmlstyle.html" class="tsd-kind-icon">Html<wbr>Style</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported"><a href="../interfaces/nightingale_formatter.internalformatiteratorparams.html" class="tsd-kind-icon">Internal<wbr>Format<wbr>Iterator<wbr>Params</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported"><a href="../interfaces/nightingale_formatter.internalformatparams.html" class="tsd-kind-icon">Internal<wbr>Format<wbr>Params</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/nightingale_formatter.leveltostyles-1.html" class="tsd-kind-icon">Level<wbr>ToStyles</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/nightingale_formatter.leveltosymbol-1.html" class="tsd-kind-icon">Level<wbr>ToSymbol</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/nightingale_formatter.objectstyles.html" class="tsd-kind-icon">Object<wbr>Styles</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/nightingale_formatter.styletohexcolor-1.html" class="tsd-kind-icon">Style<wbr>ToHex<wbr>Color</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/nightingale_formatter.styletohtmlstyle-1.html" class="tsd-kind-icon">Style<wbr>ToHtml<wbr>Style</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported"><a href="../interfaces/nightingale_formatter.value.html" class="tsd-kind-icon">Value</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Type aliases</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-type-alias tsd-parent-kind-module tsd-is-not-exported"><a href="nightingale_formatter.html#formatkey" class="tsd-kind-icon">Format<wbr>Key</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="nightingale_formatter.html#stylefn" class="tsd-kind-icon">Style<wbr>Fn</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-module tsd-is-not-exported"><a href="nightingale_formatter.html#values" class="tsd-kind-icon">Values</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-not-exported">
+							<h3>Variables</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported"><a href="nightingale_formatter.html#separator" class="tsd-kind-icon">separator</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Functions</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="nightingale_formatter.html#formatobject-1" class="tsd-kind-icon">format<wbr>Object</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="nightingale_formatter.html#formatrecordtostring-1" class="tsd-kind-icon">format<wbr>Record<wbr>ToString</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="nightingale_formatter.html#internalformatarray" class="tsd-kind-icon">internal<wbr>Format<wbr>Array</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="nightingale_formatter.html#internalformatiterator" class="tsd-kind-icon">internal<wbr>Format<wbr>Iterator</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="nightingale_formatter.html#internalformatkey" class="tsd-kind-icon">internal<wbr>Format<wbr>Key</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="nightingale_formatter.html#internalformatmap" class="tsd-kind-icon">internal<wbr>Format<wbr>Map</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="nightingale_formatter.html#internalformatmapkey" class="tsd-kind-icon">internal<wbr>Format<wbr>Map<wbr>Key</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="nightingale_formatter.html#internalformatobject" class="tsd-kind-icon">internal<wbr>Format<wbr>Object</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="nightingale_formatter.html#internalformatset" class="tsd-kind-icon">internal<wbr>Format<wbr>Set</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="nightingale_formatter.html#internalformatvalue" class="tsd-kind-icon">internal<wbr>Format<wbr>Value</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="nightingale_formatter.html#nostylefn" class="tsd-kind-icon">no<wbr>Style<wbr>Fn</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="nightingale_formatter.html#samerawformattedvalue" class="tsd-kind-icon">same<wbr>Raw<wbr>Formatted<wbr>Value</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="nightingale_formatter.html#trystringify" class="tsd-kind-icon">try<wbr>Stringify</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Object literals</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-object-literal tsd-parent-kind-module"><a href="nightingale_formatter.html#leveltostyles-2" class="tsd-kind-icon">level<wbr>ToStyles</a></li>
+								<li class="tsd-kind-object-literal tsd-parent-kind-module"><a href="nightingale_formatter.html#leveltosymbol-2" class="tsd-kind-icon">level<wbr>ToSymbol</a></li>
+								<li class="tsd-kind-object-literal tsd-parent-kind-module"><a href="nightingale_formatter.html#styletohexcolor-2" class="tsd-kind-icon">style<wbr>ToHex<wbr>Color</a></li>
+								<li class="tsd-kind-object-literal tsd-parent-kind-module"><a href="nightingale_formatter.html#styletohtmlstyle-2" class="tsd-kind-icon">style<wbr>ToHtml<wbr>Style</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>References</h2>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="formatobject" class="tsd-anchor"></a>
+					<h3>format<wbr>Object</h3>
+					Re-exports <a href="nightingale_formatter.html#formatobject-1">formatObject</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="formatrecordtostring" class="tsd-anchor"></a>
+					<h3>format<wbr>Record<wbr>ToString</h3>
+					Re-exports <a href="nightingale_formatter.html#formatrecordtostring-1">formatRecordToString</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="leveltostyles" class="tsd-anchor"></a>
+					<h3>level<wbr>ToStyles</h3>
+					Re-exports <a href="nightingale_formatter.html#leveltostyles-2">levelToStyles</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="leveltosymbol" class="tsd-anchor"></a>
+					<h3>level<wbr>ToSymbol</h3>
+					Re-exports <a href="nightingale_formatter.html#leveltosymbol-2">levelToSymbol</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="styletohexcolor" class="tsd-anchor"></a>
+					<h3>style<wbr>ToHex<wbr>Color</h3>
+					Re-exports <a href="nightingale_formatter.html#styletohexcolor-2">styleToHexColor</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="styletohtmlstyle" class="tsd-anchor"></a>
+					<h3>style<wbr>ToHtml<wbr>Style</h3>
+					Re-exports <a href="nightingale_formatter.html#styletohtmlstyle-2">styleToHtmlStyle</a>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Type aliases</h2>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module tsd-is-not-exported">
+					<a name="formatkey" class="tsd-anchor"></a>
+					<h3>Format<wbr>Key</h3>
+					<div class="tsd-signature tsd-kind-icon">Format<wbr>Key<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, styleFn<span class="tsd-signature-symbol">: </span><a href="nightingale_formatter.html#stylefn" class="tsd-signature-type">StyleFn</a>, internalFormatParams<span class="tsd-signature-symbol">: </span><a href="../interfaces/nightingale_formatter.internalformatparams.html" class="tsd-signature-type">InternalFormatParams</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><a href="../interfaces/nightingale_formatter.formattedkey.html" class="tsd-signature-type">FormattedKey</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/formatObject.ts#L29">nightingale-formatter/src/formatObject.ts:29</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-signature">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-type-alias tsd-is-not-exported">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, styleFn<span class="tsd-signature-symbol">: </span><a href="nightingale_formatter.html#stylefn" class="tsd-signature-type">StyleFn</a>, internalFormatParams<span class="tsd-signature-symbol">: </span><a href="../interfaces/nightingale_formatter.internalformatparams.html" class="tsd-signature-type">InternalFormatParams</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/nightingale_formatter.formattedkey.html" class="tsd-signature-type">FormattedKey</a></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5>key: <span class="tsd-signature-type">string</span></h5>
+											</li>
+											<li>
+												<h5>styleFn: <a href="nightingale_formatter.html#stylefn" class="tsd-signature-type">StyleFn</a></h5>
+											</li>
+											<li>
+												<h5>internalFormatParams: <a href="../interfaces/nightingale_formatter.internalformatparams.html" class="tsd-signature-type">InternalFormatParams</a></h5>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <a href="../interfaces/nightingale_formatter.formattedkey.html" class="tsd-signature-type">FormattedKey</a></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
+					<a name="stylefn" class="tsd-anchor"></a>
+					<h3>Style<wbr>Fn</h3>
+					<div class="tsd-signature tsd-kind-icon">Style<wbr>Fn<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>styles<span class="tsd-signature-symbol">: </span><a href="nightingale_types.html#styles" class="tsd-signature-type">Styles</a>, value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/formatObject.ts#L9">nightingale-formatter/src/formatObject.ts:9</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-signature">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-type-alias">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>styles<span class="tsd-signature-symbol">: </span><a href="nightingale_types.html#styles" class="tsd-signature-type">Styles</a>, value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5>styles: <a href="nightingale_types.html#styles" class="tsd-signature-type">Styles</a></h5>
+											</li>
+											<li>
+												<h5>value: <span class="tsd-signature-type">string</span></h5>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module tsd-is-not-exported">
+					<a name="values" class="tsd-anchor"></a>
+					<h3>Values</h3>
+					<div class="tsd-signature tsd-kind-icon">Values<span class="tsd-signature-symbol">:</span> <a href="../interfaces/nightingale_formatter.value.html" class="tsd-signature-type">Value</a><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/formatObject.ts#L45">nightingale-formatter/src/formatObject.ts:45</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
+				<h2>Variables</h2>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
+					<a name="separator" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> separator</h3>
+					<div class="tsd-signature tsd-kind-icon">separator<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">","</span><span class="tsd-signature-symbol"> = &quot;,&quot;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/formatObject.ts#L170">nightingale-formatter/src/formatObject.ts:170</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="formatobject-1" class="tsd-anchor"></a>
+					<h3>format<wbr>Object</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">format<wbr>Object<span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{}</span>, styleFn<span class="tsd-signature-symbol">?: </span><a href="nightingale_formatter.html#stylefn" class="tsd-signature-type">StyleFn</a>, objectStyles<span class="tsd-signature-symbol">?: </span><a href="../interfaces/nightingale_formatter.objectstyles.html" class="tsd-signature-type">ObjectStyles</a>, __namedParameters<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">{ </span>maxDepth<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>padding<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/formatObject.ts#L406">nightingale-formatter/src/formatObject.ts:406</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>object: <span class="tsd-signature-symbol">{}</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-index-signature">
+											<h5><span class="tsd-signature-symbol">[</span>key: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">any</span></h5>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> styleFn: <a href="nightingale_formatter.html#stylefn" class="tsd-signature-type">StyleFn</a><span class="tsd-signature-symbol"> = noStyleFn</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> objectStyles: <a href="../interfaces/nightingale_formatter.objectstyles.html" class="tsd-signature-type">ObjectStyles</a></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> __namedParameters: <span class="tsd-signature-symbol">{ </span>maxDepth<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>padding<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> = {}</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter">
+											<h5>max<wbr>Depth<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>padding<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
+					<a name="formatrecordtostring-1" class="tsd-anchor"></a>
+					<h3>format<wbr>Record<wbr>ToString</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">format<wbr>Record<wbr>ToString&lt;T&gt;<span class="tsd-signature-symbol">(</span>record<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">LogRecord</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, style<span class="tsd-signature-symbol">: </span><a href="nightingale_formatter.html#stylefn" class="tsd-signature-type">StyleFn</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/formatRecordToString.ts#L7">nightingale-formatter/src/formatRecordToString.ts:7</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Metadata</span></h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>record: <span class="tsd-signature-type">LogRecord</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+								<li>
+									<h5>style: <a href="nightingale_formatter.html#stylefn" class="tsd-signature-type">StyleFn</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="internalformatarray" class="tsd-anchor"></a>
+					<h3>internal<wbr>Format<wbr>Array</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">internal<wbr>Format<wbr>Array<span class="tsd-signature-symbol">(</span>array<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span>, styleFn<span class="tsd-signature-symbol">: </span><a href="nightingale_formatter.html#stylefn" class="tsd-signature-type">StyleFn</a>, __namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>depth<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>maxDepth<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>objects<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Set</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">; </span>padding<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/nightingale_formatter.formattedvalue.html" class="tsd-signature-type">FormattedValue</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/formatObject.ts#L348">nightingale-formatter/src/formatObject.ts:348</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>array: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+								<li>
+									<h5>styleFn: <a href="nightingale_formatter.html#stylefn" class="tsd-signature-type">StyleFn</a></h5>
+								</li>
+								<li>
+									<h5>__namedParameters: <span class="tsd-signature-symbol">{ </span>depth<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>maxDepth<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>objects<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Set</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">; </span>padding<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter">
+											<h5>depth<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>max<wbr>Depth<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>objects<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Set</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>padding<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/nightingale_formatter.formattedvalue.html" class="tsd-signature-type">FormattedValue</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="internalformatiterator" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> internal<wbr>Format<wbr>Iterator</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">internal<wbr>Format<wbr>Iterator<span class="tsd-signature-symbol">(</span>values<span class="tsd-signature-symbol">: </span><a href="nightingale_formatter.html#values" class="tsd-signature-type">Values</a>, styleFn<span class="tsd-signature-symbol">: </span><a href="nightingale_formatter.html#stylefn" class="tsd-signature-type">StyleFn</a>, objectStyles<span class="tsd-signature-symbol">: </span><a href="../interfaces/nightingale_formatter.objectstyles.html" class="tsd-signature-type">ObjectStyles</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span>, __namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>depth<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>maxDepth<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>objects<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Set</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">; </span>padding<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span>, __namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>formatKey<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, styleFn<span class="tsd-signature-symbol">: </span><a href="nightingale_formatter.html#stylefn" class="tsd-signature-type">StyleFn</a>, internalFormatParams<span class="tsd-signature-symbol">: </span><a href="../interfaces/nightingale_formatter.internalformatparams.html" class="tsd-signature-type">InternalFormatParams</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><a href="../interfaces/nightingale_formatter.formattedkey.html" class="tsd-signature-type">FormattedKey</a><span class="tsd-signature-symbol">; </span>prefix<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>prefixSuffixSpace<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>suffix<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/nightingale_formatter.formattedvalue.html" class="tsd-signature-type">FormattedValue</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/formatObject.ts#L201">nightingale-formatter/src/formatObject.ts:201</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>values: <a href="nightingale_formatter.html#values" class="tsd-signature-type">Values</a></h5>
+								</li>
+								<li>
+									<h5>styleFn: <a href="nightingale_formatter.html#stylefn" class="tsd-signature-type">StyleFn</a></h5>
+								</li>
+								<li>
+									<h5>objectStyles: <a href="../interfaces/nightingale_formatter.objectstyles.html" class="tsd-signature-type">ObjectStyles</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h5>
+								</li>
+								<li>
+									<h5>__namedParameters: <span class="tsd-signature-symbol">{ </span>depth<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>maxDepth<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>objects<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Set</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">; </span>padding<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter">
+											<h5>depth<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>max<wbr>Depth<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>objects<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Set</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>padding<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<h5>__namedParameters: <span class="tsd-signature-symbol">{ </span>formatKey<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, styleFn<span class="tsd-signature-symbol">: </span><a href="nightingale_formatter.html#stylefn" class="tsd-signature-type">StyleFn</a>, internalFormatParams<span class="tsd-signature-symbol">: </span><a href="../interfaces/nightingale_formatter.internalformatparams.html" class="tsd-signature-type">InternalFormatParams</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><a href="../interfaces/nightingale_formatter.formattedkey.html" class="tsd-signature-type">FormattedKey</a><span class="tsd-signature-symbol">; </span>prefix<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>prefixSuffixSpace<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>suffix<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter">
+											<h5>format<wbr>Key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, styleFn<span class="tsd-signature-symbol">: </span><a href="nightingale_formatter.html#stylefn" class="tsd-signature-type">StyleFn</a>, internalFormatParams<span class="tsd-signature-symbol">: </span><a href="../interfaces/nightingale_formatter.internalformatparams.html" class="tsd-signature-type">InternalFormatParams</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><a href="../interfaces/nightingale_formatter.formattedkey.html" class="tsd-signature-type">FormattedKey</a></h5>
+											<ul class="tsd-parameters">
+												<li class="tsd-parameter-signature">
+													<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-variable tsd-is-not-exported">
+														<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, styleFn<span class="tsd-signature-symbol">: </span><a href="nightingale_formatter.html#stylefn" class="tsd-signature-type">StyleFn</a>, internalFormatParams<span class="tsd-signature-symbol">: </span><a href="../interfaces/nightingale_formatter.internalformatparams.html" class="tsd-signature-type">InternalFormatParams</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/nightingale_formatter.formattedkey.html" class="tsd-signature-type">FormattedKey</a></li>
+													</ul>
+													<ul class="tsd-descriptions">
+														<li class="tsd-description">
+															<h4 class="tsd-parameters-title">Parameters</h4>
+															<ul class="tsd-parameters">
+																<li>
+																	<h5>key: <span class="tsd-signature-type">string</span></h5>
+																</li>
+																<li>
+																	<h5>styleFn: <a href="nightingale_formatter.html#stylefn" class="tsd-signature-type">StyleFn</a></h5>
+																</li>
+																<li>
+																	<h5>internalFormatParams: <a href="../interfaces/nightingale_formatter.internalformatparams.html" class="tsd-signature-type">InternalFormatParams</a></h5>
+																</li>
+															</ul>
+															<h4 class="tsd-returns-title">Returns <a href="../interfaces/nightingale_formatter.formattedkey.html" class="tsd-signature-type">FormattedKey</a></h4>
+														</li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+										<li class="tsd-parameter">
+											<h5>prefix<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>prefix<wbr>Suffix<wbr>Space<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>suffix<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/nightingale_formatter.formattedvalue.html" class="tsd-signature-type">FormattedValue</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="internalformatkey" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> internal<wbr>Format<wbr>Key</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">internal<wbr>Format<wbr>Key<span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, styleFn<span class="tsd-signature-symbol">: </span><a href="nightingale_formatter.html#stylefn" class="tsd-signature-type">StyleFn</a>, internalFormatParams<span class="tsd-signature-symbol">: </span><a href="../interfaces/nightingale_formatter.internalformatparams.html" class="tsd-signature-type">InternalFormatParams</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/nightingale_formatter.formattedkey.html" class="tsd-signature-type">FormattedKey</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/formatObject.ts#L172">nightingale-formatter/src/formatObject.ts:172</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>key: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>styleFn: <a href="nightingale_formatter.html#stylefn" class="tsd-signature-type">StyleFn</a></h5>
+								</li>
+								<li>
+									<h5>internalFormatParams: <a href="../interfaces/nightingale_formatter.internalformatparams.html" class="tsd-signature-type">InternalFormatParams</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/nightingale_formatter.formattedkey.html" class="tsd-signature-type">FormattedKey</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="internalformatmap" class="tsd-anchor"></a>
+					<h3>internal<wbr>Format<wbr>Map</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">internal<wbr>Format<wbr>Map<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, map<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span>, styleFn<span class="tsd-signature-symbol">: </span><a href="nightingale_formatter.html#stylefn" class="tsd-signature-type">StyleFn</a>, __namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>depth<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>maxDepth<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>objects<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Set</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">; </span>padding<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/nightingale_formatter.formattedvalue.html" class="tsd-signature-type">FormattedValue</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/formatObject.ts#L318">nightingale-formatter/src/formatObject.ts:318</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>name: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>map: <span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+								<li>
+									<h5>styleFn: <a href="nightingale_formatter.html#stylefn" class="tsd-signature-type">StyleFn</a></h5>
+								</li>
+								<li>
+									<h5>__namedParameters: <span class="tsd-signature-symbol">{ </span>depth<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>maxDepth<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>objects<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Set</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">; </span>padding<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter">
+											<h5>depth<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>max<wbr>Depth<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>objects<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Set</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>padding<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/nightingale_formatter.formattedvalue.html" class="tsd-signature-type">FormattedValue</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="internalformatmapkey" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> internal<wbr>Format<wbr>Map<wbr>Key</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">internal<wbr>Format<wbr>Map<wbr>Key<span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, styleFn<span class="tsd-signature-symbol">: </span><a href="nightingale_formatter.html#stylefn" class="tsd-signature-type">StyleFn</a>, internalFormatParams<span class="tsd-signature-symbol">: </span><a href="../interfaces/nightingale_formatter.internalformatparams.html" class="tsd-signature-type">InternalFormatParams</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/nightingale_formatter.formattedkey.html" class="tsd-signature-type">FormattedKey</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/formatObject.ts#L184">nightingale-formatter/src/formatObject.ts:184</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>key: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>styleFn: <a href="nightingale_formatter.html#stylefn" class="tsd-signature-type">StyleFn</a></h5>
+								</li>
+								<li>
+									<h5>internalFormatParams: <a href="../interfaces/nightingale_formatter.internalformatparams.html" class="tsd-signature-type">InternalFormatParams</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/nightingale_formatter.formattedkey.html" class="tsd-signature-type">FormattedKey</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="internalformatobject" class="tsd-anchor"></a>
+					<h3>internal<wbr>Format<wbr>Object</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">internal<wbr>Format<wbr>Object<span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{}</span>, styleFn<span class="tsd-signature-symbol">: </span><a href="nightingale_formatter.html#stylefn" class="tsd-signature-type">StyleFn</a>, objectStyles<span class="tsd-signature-symbol">: </span><a href="../interfaces/nightingale_formatter.objectstyles.html" class="tsd-signature-type">ObjectStyles</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span>, __namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>depth<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>maxDepth<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>objects<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Set</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">; </span>padding<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/nightingale_formatter.formattedvalue.html" class="tsd-signature-type">FormattedValue</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/formatObject.ts#L288">nightingale-formatter/src/formatObject.ts:288</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>object: <span class="tsd-signature-symbol">{}</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-index-signature">
+											<h5><span class="tsd-signature-symbol">[</span>key: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">any</span></h5>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<h5>styleFn: <a href="nightingale_formatter.html#stylefn" class="tsd-signature-type">StyleFn</a></h5>
+								</li>
+								<li>
+									<h5>objectStyles: <a href="../interfaces/nightingale_formatter.objectstyles.html" class="tsd-signature-type">ObjectStyles</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h5>
+								</li>
+								<li>
+									<h5>__namedParameters: <span class="tsd-signature-symbol">{ </span>depth<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>maxDepth<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>objects<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Set</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">; </span>padding<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter">
+											<h5>depth<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>max<wbr>Depth<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>objects<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Set</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>padding<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/nightingale_formatter.formattedvalue.html" class="tsd-signature-type">FormattedValue</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="internalformatset" class="tsd-anchor"></a>
+					<h3>internal<wbr>Format<wbr>Set</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">internal<wbr>Format<wbr>Set<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, set<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Set</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span>, styleFn<span class="tsd-signature-symbol">: </span><a href="nightingale_formatter.html#stylefn" class="tsd-signature-type">StyleFn</a>, __namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>depth<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>maxDepth<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>objects<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Set</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">; </span>padding<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/nightingale_formatter.formattedvalue.html" class="tsd-signature-type">FormattedValue</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/formatObject.ts#L376">nightingale-formatter/src/formatObject.ts:376</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>name: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>set: <span class="tsd-signature-type">Set</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+								<li>
+									<h5>styleFn: <a href="nightingale_formatter.html#stylefn" class="tsd-signature-type">StyleFn</a></h5>
+								</li>
+								<li>
+									<h5>__namedParameters: <span class="tsd-signature-symbol">{ </span>depth<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>maxDepth<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>objects<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Set</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">; </span>padding<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter">
+											<h5>depth<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>max<wbr>Depth<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>objects<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Set</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>padding<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/nightingale_formatter.formattedvalue.html" class="tsd-signature-type">FormattedValue</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="internalformatvalue" class="tsd-anchor"></a>
+					<h3>internal<wbr>Format<wbr>Value</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">internal<wbr>Format<wbr>Value<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, styleFn<span class="tsd-signature-symbol">: </span><a href="nightingale_formatter.html#stylefn" class="tsd-signature-type">StyleFn</a>, styles<span class="tsd-signature-symbol">: </span><a href="nightingale_types.html#styles" class="tsd-signature-type">Styles</a>, __namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>depth<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>maxDepth<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>objects<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Set</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">; </span>padding<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/nightingale_formatter.formattedvalue.html" class="tsd-signature-type">FormattedValue</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/formatObject.ts#L67">nightingale-formatter/src/formatObject.ts:67</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5>styleFn: <a href="nightingale_formatter.html#stylefn" class="tsd-signature-type">StyleFn</a></h5>
+								</li>
+								<li>
+									<h5>styles: <a href="nightingale_types.html#styles" class="tsd-signature-type">Styles</a></h5>
+								</li>
+								<li>
+									<h5>__namedParameters: <span class="tsd-signature-symbol">{ </span>depth<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>maxDepth<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>objects<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Set</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">; </span>padding<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter">
+											<h5>depth<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>max<wbr>Depth<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>objects<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Set</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>padding<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/nightingale_formatter.formattedvalue.html" class="tsd-signature-type">FormattedValue</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="nostylefn" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> no<wbr>Style<wbr>Fn</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">no<wbr>Style<wbr>Fn<span class="tsd-signature-symbol">(</span>styles<span class="tsd-signature-symbol">: </span><a href="nightingale_types.html#styles" class="tsd-signature-type">Styles</a>, value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/formatObject.ts#L15">nightingale-formatter/src/formatObject.ts:15</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>styles: <a href="nightingale_types.html#styles" class="tsd-signature-type">Styles</a></h5>
+								</li>
+								<li>
+									<h5>value: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="samerawformattedvalue" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> same<wbr>Raw<wbr>Formatted<wbr>Value</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">same<wbr>Raw<wbr>Formatted<wbr>Value<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/nightingale_formatter.formattedvalue.html" class="tsd-signature-type">FormattedValue</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/formatObject.ts#L62">nightingale-formatter/src/formatObject.ts:62</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/nightingale_formatter.formattedvalue.html" class="tsd-signature-type">FormattedValue</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="trystringify" class="tsd-anchor"></a>
+					<h3>try<wbr>Stringify</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">try<wbr>Stringify<span class="tsd-signature-symbol">(</span>arg<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/formatObject.ts#L54">nightingale-formatter/src/formatObject.ts:54</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>arg: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Object literals</h2>
+				<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-module">
+					<a name="leveltostyles-2" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> level<wbr>ToStyles</h3>
+					<div class="tsd-signature tsd-kind-icon">level<wbr>ToStyles<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/levelToStyles.ts#L7">nightingale-formatter/src/levelToStyles.ts:7</a></li>
+						</ul>
+					</aside>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="leveltostyles-2._level_critical_" class="tsd-anchor"></a>
+						<h3>[<wbr>Level.CRITICAL]</h3>
+						<div class="tsd-signature tsd-kind-icon">[<wbr>Level.CRITICAL]<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = [&#x27;red&#x27;, &#x27;bold&#x27;]</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/levelToStyles.ts#L13">nightingale-formatter/src/levelToStyles.ts:13</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="leveltostyles-2._level_debug_" class="tsd-anchor"></a>
+						<h3>[<wbr>Level.DEBUG]</h3>
+						<div class="tsd-signature tsd-kind-icon">[<wbr>Level.DEBUG]<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = [&#x27;gray&#x27;]</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/levelToStyles.ts#L9">nightingale-formatter/src/levelToStyles.ts:9</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="leveltostyles-2._level_emergency_" class="tsd-anchor"></a>
+						<h3>[<wbr>Level.EMERGENCY]</h3>
+						<div class="tsd-signature tsd-kind-icon">[<wbr>Level.EMERGENCY]<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = [&#x27;bgRed&#x27;, &#x27;white&#x27;]</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/levelToStyles.ts#L15">nightingale-formatter/src/levelToStyles.ts:15</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="leveltostyles-2._level_error_" class="tsd-anchor"></a>
+						<h3>[<wbr>Level.ERROR]</h3>
+						<div class="tsd-signature tsd-kind-icon">[<wbr>Level.ERROR]<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = [&#x27;red&#x27;, &#x27;bold&#x27;]</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/levelToStyles.ts#L12">nightingale-formatter/src/levelToStyles.ts:12</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="leveltostyles-2._level_fatal_" class="tsd-anchor"></a>
+						<h3>[<wbr>Level.FATAL]</h3>
+						<div class="tsd-signature tsd-kind-icon">[<wbr>Level.FATAL]<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = [&#x27;bgRed&#x27;, &#x27;white&#x27;]</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/levelToStyles.ts#L14">nightingale-formatter/src/levelToStyles.ts:14</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="leveltostyles-2._level_trace_" class="tsd-anchor"></a>
+						<h3>[<wbr>Level.TRACE]</h3>
+						<div class="tsd-signature tsd-kind-icon">[<wbr>Level.TRACE]<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = [&#x27;gray&#x27;]</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/levelToStyles.ts#L8">nightingale-formatter/src/levelToStyles.ts:8</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="leveltostyles-2._level_warn_" class="tsd-anchor"></a>
+						<h3>[<wbr>Level.WARN]</h3>
+						<div class="tsd-signature tsd-kind-icon">[<wbr>Level.WARN]<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = [&#x27;yellow&#x27;]</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/levelToStyles.ts#L11">nightingale-formatter/src/levelToStyles.ts:11</a></li>
+							</ul>
+						</aside>
+					</section>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-module">
+					<a name="leveltosymbol-2" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> level<wbr>ToSymbol</h3>
+					<div class="tsd-signature tsd-kind-icon">level<wbr>ToSymbol<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/levelToSymbol.ts#L7">nightingale-formatter/src/levelToSymbol.ts:7</a></li>
+						</ul>
+					</aside>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="leveltosymbol-2._level_critical_-1" class="tsd-anchor"></a>
+						<h3>[<wbr>Level.CRITICAL]</h3>
+						<div class="tsd-signature tsd-kind-icon">[<wbr>Level.CRITICAL]<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;!&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/levelToSymbol.ts#L13">nightingale-formatter/src/levelToSymbol.ts:13</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="leveltosymbol-2._level_debug_-1" class="tsd-anchor"></a>
+						<h3>[<wbr>Level.DEBUG]</h3>
+						<div class="tsd-signature tsd-kind-icon">[<wbr>Level.DEBUG]<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;•&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/levelToSymbol.ts#L9">nightingale-formatter/src/levelToSymbol.ts:9</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="leveltosymbol-2._level_emergency_-1" class="tsd-anchor"></a>
+						<h3>[<wbr>Level.EMERGENCY]</h3>
+						<div class="tsd-signature tsd-kind-icon">[<wbr>Level.EMERGENCY]<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;‼&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/levelToSymbol.ts#L15">nightingale-formatter/src/levelToSymbol.ts:15</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="leveltosymbol-2._level_error_-1" class="tsd-anchor"></a>
+						<h3>[<wbr>Level.ERROR]</h3>
+						<div class="tsd-signature tsd-kind-icon">[<wbr>Level.ERROR]<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;✖&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/levelToSymbol.ts#L12">nightingale-formatter/src/levelToSymbol.ts:12</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="leveltosymbol-2._level_fatal_-1" class="tsd-anchor"></a>
+						<h3>[<wbr>Level.FATAL]</h3>
+						<div class="tsd-signature tsd-kind-icon">[<wbr>Level.FATAL]<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;‼&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/levelToSymbol.ts#L14">nightingale-formatter/src/levelToSymbol.ts:14</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="leveltosymbol-2._level_info_" class="tsd-anchor"></a>
+						<h3>[<wbr>Level.INFO]</h3>
+						<div class="tsd-signature tsd-kind-icon">[<wbr>Level.INFO]<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;→&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/levelToSymbol.ts#L10">nightingale-formatter/src/levelToSymbol.ts:10</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="leveltosymbol-2._level_trace_-1" class="tsd-anchor"></a>
+						<h3>[<wbr>Level.TRACE]</h3>
+						<div class="tsd-signature tsd-kind-icon">[<wbr>Level.TRACE]<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;•&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/levelToSymbol.ts#L8">nightingale-formatter/src/levelToSymbol.ts:8</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="leveltosymbol-2._level_warn_-1" class="tsd-anchor"></a>
+						<h3>[<wbr>Level.WARN]</h3>
+						<div class="tsd-signature tsd-kind-icon">[<wbr>Level.WARN]<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;⚠&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/levelToSymbol.ts#L11">nightingale-formatter/src/levelToSymbol.ts:11</a></li>
+							</ul>
+						</aside>
+					</section>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-module">
+					<a name="styletohexcolor-2" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> style<wbr>ToHex<wbr>Color</h3>
+					<div class="tsd-signature tsd-kind-icon">style<wbr>ToHex<wbr>Color<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHexColor.ts#L5">nightingale-formatter/src/styleToHexColor.ts:5</a></li>
+						</ul>
+					</aside>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="styletohexcolor-2.gray_light" class="tsd-anchor"></a>
+						<h3>gray-<wbr>light</h3>
+						<div class="tsd-signature tsd-kind-icon">gray-<wbr>light<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;808080&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHexColor.ts#L8">nightingale-formatter/src/styleToHexColor.ts:8</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="styletohexcolor-2.graylight" class="tsd-anchor"></a>
+						<h3>gray<wbr>Light</h3>
+						<div class="tsd-signature tsd-kind-icon">gray<wbr>Light<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;808080&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHexColor.ts#L7">nightingale-formatter/src/styleToHexColor.ts:7</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="styletohexcolor-2.orange" class="tsd-anchor"></a>
+						<h3>orange</h3>
+						<div class="tsd-signature tsd-kind-icon">orange<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;ff5f00&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHexColor.ts#L6">nightingale-formatter/src/styleToHexColor.ts:6</a></li>
+							</ul>
+						</aside>
+					</section>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-module">
+					<a name="styletohtmlstyle-2" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> style<wbr>ToHtml<wbr>Style</h3>
+					<div class="tsd-signature tsd-kind-icon">style<wbr>ToHtml<wbr>Style<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L12">nightingale-formatter/src/styleToHtmlStyle.ts:12</a></li>
+						</ul>
+					</aside>
+					<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+						<a name="styletohtmlstyle-2.bgblack" class="tsd-anchor"></a>
+						<h3>bg<wbr>Black</h3>
+						<div class="tsd-signature tsd-kind-icon">bg<wbr>Black<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L39">nightingale-formatter/src/styleToHtmlStyle.ts:39</a></li>
+							</ul>
+						</aside>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="styletohtmlstyle-2.bgblack.close" class="tsd-anchor"></a>
+							<h3>close</h3>
+							<div class="tsd-signature tsd-kind-icon">close<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;background: initial&quot;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L39">nightingale-formatter/src/styleToHtmlStyle.ts:39</a></li>
+								</ul>
+							</aside>
+						</section>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="styletohtmlstyle-2.bgblack.open" class="tsd-anchor"></a>
+							<h3>open</h3>
+							<div class="tsd-signature tsd-kind-icon">open<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;background: black&quot;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L39">nightingale-formatter/src/styleToHtmlStyle.ts:39</a></li>
+								</ul>
+							</aside>
+						</section>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+						<a name="styletohtmlstyle-2.bgblue" class="tsd-anchor"></a>
+						<h3>bg<wbr>Blue</h3>
+						<div class="tsd-signature tsd-kind-icon">bg<wbr>Blue<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L43">nightingale-formatter/src/styleToHtmlStyle.ts:43</a></li>
+							</ul>
+						</aside>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="styletohtmlstyle-2.bgblue.close-1" class="tsd-anchor"></a>
+							<h3>close</h3>
+							<div class="tsd-signature tsd-kind-icon">close<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;background: initial&quot;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L43">nightingale-formatter/src/styleToHtmlStyle.ts:43</a></li>
+								</ul>
+							</aside>
+						</section>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="styletohtmlstyle-2.bgblue.open-1" class="tsd-anchor"></a>
+							<h3>open</h3>
+							<div class="tsd-signature tsd-kind-icon">open<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;background: #00a0ff&quot;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L43">nightingale-formatter/src/styleToHtmlStyle.ts:43</a></li>
+								</ul>
+							</aside>
+						</section>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+						<a name="styletohtmlstyle-2.bgcyan" class="tsd-anchor"></a>
+						<h3>bg<wbr>Cyan</h3>
+						<div class="tsd-signature tsd-kind-icon">bg<wbr>Cyan<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L45">nightingale-formatter/src/styleToHtmlStyle.ts:45</a></li>
+							</ul>
+						</aside>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="styletohtmlstyle-2.bgcyan.close-2" class="tsd-anchor"></a>
+							<h3>close</h3>
+							<div class="tsd-signature tsd-kind-icon">close<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;background: initial&quot;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L45">nightingale-formatter/src/styleToHtmlStyle.ts:45</a></li>
+								</ul>
+							</aside>
+						</section>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="styletohtmlstyle-2.bgcyan.open-2" class="tsd-anchor"></a>
+							<h3>open</h3>
+							<div class="tsd-signature tsd-kind-icon">open<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;background: #00cfd8&quot;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L45">nightingale-formatter/src/styleToHtmlStyle.ts:45</a></li>
+								</ul>
+							</aside>
+						</section>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+						<a name="styletohtmlstyle-2.bggreen" class="tsd-anchor"></a>
+						<h3>bg<wbr>Green</h3>
+						<div class="tsd-signature tsd-kind-icon">bg<wbr>Green<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L41">nightingale-formatter/src/styleToHtmlStyle.ts:41</a></li>
+							</ul>
+						</aside>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="styletohtmlstyle-2.bggreen.close-3" class="tsd-anchor"></a>
+							<h3>close</h3>
+							<div class="tsd-signature tsd-kind-icon">close<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;background: initial&quot;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L41">nightingale-formatter/src/styleToHtmlStyle.ts:41</a></li>
+								</ul>
+							</aside>
+						</section>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="styletohtmlstyle-2.bggreen.open-3" class="tsd-anchor"></a>
+							<h3>open</h3>
+							<div class="tsd-signature tsd-kind-icon">open<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;background: #00b317&quot;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L41">nightingale-formatter/src/styleToHtmlStyle.ts:41</a></li>
+								</ul>
+							</aside>
+						</section>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+						<a name="styletohtmlstyle-2.bgmagenta" class="tsd-anchor"></a>
+						<h3>bg<wbr>Magenta</h3>
+						<div class="tsd-signature tsd-kind-icon">bg<wbr>Magenta<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L44">nightingale-formatter/src/styleToHtmlStyle.ts:44</a></li>
+							</ul>
+						</aside>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="styletohtmlstyle-2.bgmagenta.close-4" class="tsd-anchor"></a>
+							<h3>close</h3>
+							<div class="tsd-signature tsd-kind-icon">close<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;background: initial&quot;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L44">nightingale-formatter/src/styleToHtmlStyle.ts:44</a></li>
+								</ul>
+							</aside>
+						</section>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="styletohtmlstyle-2.bgmagenta.open-4" class="tsd-anchor"></a>
+							<h3>open</h3>
+							<div class="tsd-signature tsd-kind-icon">open<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;background: #ff00a0&quot;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L44">nightingale-formatter/src/styleToHtmlStyle.ts:44</a></li>
+								</ul>
+							</aside>
+						</section>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+						<a name="styletohtmlstyle-2.bgred" class="tsd-anchor"></a>
+						<h3>bg<wbr>Red</h3>
+						<div class="tsd-signature tsd-kind-icon">bg<wbr>Red<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L40">nightingale-formatter/src/styleToHtmlStyle.ts:40</a></li>
+							</ul>
+						</aside>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="styletohtmlstyle-2.bgred.close-5" class="tsd-anchor"></a>
+							<h3>close</h3>
+							<div class="tsd-signature tsd-kind-icon">close<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;background: initial&quot;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L40">nightingale-formatter/src/styleToHtmlStyle.ts:40</a></li>
+								</ul>
+							</aside>
+						</section>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="styletohtmlstyle-2.bgred.open-5" class="tsd-anchor"></a>
+							<h3>open</h3>
+							<div class="tsd-signature tsd-kind-icon">open<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;background: #ff0020&quot;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L40">nightingale-formatter/src/styleToHtmlStyle.ts:40</a></li>
+								</ul>
+							</aside>
+						</section>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+						<a name="styletohtmlstyle-2.bgwhite" class="tsd-anchor"></a>
+						<h3>bg<wbr>White</h3>
+						<div class="tsd-signature tsd-kind-icon">bg<wbr>White<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L46">nightingale-formatter/src/styleToHtmlStyle.ts:46</a></li>
+							</ul>
+						</aside>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="styletohtmlstyle-2.bgwhite.close-6" class="tsd-anchor"></a>
+							<h3>close</h3>
+							<div class="tsd-signature tsd-kind-icon">close<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;background: initial&quot;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L46">nightingale-formatter/src/styleToHtmlStyle.ts:46</a></li>
+								</ul>
+							</aside>
+						</section>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="styletohtmlstyle-2.bgwhite.open-6" class="tsd-anchor"></a>
+							<h3>open</h3>
+							<div class="tsd-signature tsd-kind-icon">open<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;background: white&quot;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L46">nightingale-formatter/src/styleToHtmlStyle.ts:46</a></li>
+								</ul>
+							</aside>
+						</section>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+						<a name="styletohtmlstyle-2.bgyellow" class="tsd-anchor"></a>
+						<h3>bg<wbr>Yellow</h3>
+						<div class="tsd-signature tsd-kind-icon">bg<wbr>Yellow<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L42">nightingale-formatter/src/styleToHtmlStyle.ts:42</a></li>
+							</ul>
+						</aside>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="styletohtmlstyle-2.bgyellow.close-7" class="tsd-anchor"></a>
+							<h3>close</h3>
+							<div class="tsd-signature tsd-kind-icon">close<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;background: initial&quot;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L42">nightingale-formatter/src/styleToHtmlStyle.ts:42</a></li>
+								</ul>
+							</aside>
+						</section>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="styletohtmlstyle-2.bgyellow.open-7" class="tsd-anchor"></a>
+							<h3>open</h3>
+							<div class="tsd-signature tsd-kind-icon">open<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;background: #ffcc00&quot;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L42">nightingale-formatter/src/styleToHtmlStyle.ts:42</a></li>
+								</ul>
+							</aside>
+						</section>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+						<a name="styletohtmlstyle-2.black" class="tsd-anchor"></a>
+						<h3>black</h3>
+						<div class="tsd-signature tsd-kind-icon">black<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L29">nightingale-formatter/src/styleToHtmlStyle.ts:29</a></li>
+							</ul>
+						</aside>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="styletohtmlstyle-2.black.close-8" class="tsd-anchor"></a>
+							<h3>close</h3>
+							<div class="tsd-signature tsd-kind-icon">close<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;color: initial&quot;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L29">nightingale-formatter/src/styleToHtmlStyle.ts:29</a></li>
+								</ul>
+							</aside>
+						</section>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="styletohtmlstyle-2.black.open-8" class="tsd-anchor"></a>
+							<h3>open</h3>
+							<div class="tsd-signature tsd-kind-icon">open<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;color: black&quot;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L29">nightingale-formatter/src/styleToHtmlStyle.ts:29</a></li>
+								</ul>
+							</aside>
+						</section>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+						<a name="styletohtmlstyle-2.blue" class="tsd-anchor"></a>
+						<h3>blue</h3>
+						<div class="tsd-signature tsd-kind-icon">blue<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L33">nightingale-formatter/src/styleToHtmlStyle.ts:33</a></li>
+							</ul>
+						</aside>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="styletohtmlstyle-2.blue.close-9" class="tsd-anchor"></a>
+							<h3>close</h3>
+							<div class="tsd-signature tsd-kind-icon">close<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;color: initial&quot;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L33">nightingale-formatter/src/styleToHtmlStyle.ts:33</a></li>
+								</ul>
+							</aside>
+						</section>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="styletohtmlstyle-2.blue.open-9" class="tsd-anchor"></a>
+							<h3>open</h3>
+							<div class="tsd-signature tsd-kind-icon">open<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;color: #00a0ff&quot;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L33">nightingale-formatter/src/styleToHtmlStyle.ts:33</a></li>
+								</ul>
+							</aside>
+						</section>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+						<a name="styletohtmlstyle-2.bold" class="tsd-anchor"></a>
+						<h3>bold</h3>
+						<div class="tsd-signature tsd-kind-icon">bold<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L14">nightingale-formatter/src/styleToHtmlStyle.ts:14</a></li>
+							</ul>
+						</aside>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="styletohtmlstyle-2.bold.close-10" class="tsd-anchor"></a>
+							<h3>close</h3>
+							<div class="tsd-signature tsd-kind-icon">close<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;font-weight: normal&quot;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L14">nightingale-formatter/src/styleToHtmlStyle.ts:14</a></li>
+								</ul>
+							</aside>
+						</section>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="styletohtmlstyle-2.bold.open-10" class="tsd-anchor"></a>
+							<h3>open</h3>
+							<div class="tsd-signature tsd-kind-icon">open<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;font-weight: bold&quot;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L14">nightingale-formatter/src/styleToHtmlStyle.ts:14</a></li>
+								</ul>
+							</aside>
+						</section>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+						<a name="styletohtmlstyle-2.cyan" class="tsd-anchor"></a>
+						<h3>cyan</h3>
+						<div class="tsd-signature tsd-kind-icon">cyan<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L35">nightingale-formatter/src/styleToHtmlStyle.ts:35</a></li>
+							</ul>
+						</aside>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="styletohtmlstyle-2.cyan.close-11" class="tsd-anchor"></a>
+							<h3>close</h3>
+							<div class="tsd-signature tsd-kind-icon">close<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;color: initial&quot;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L35">nightingale-formatter/src/styleToHtmlStyle.ts:35</a></li>
+								</ul>
+							</aside>
+						</section>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="styletohtmlstyle-2.cyan.open-11" class="tsd-anchor"></a>
+							<h3>open</h3>
+							<div class="tsd-signature tsd-kind-icon">open<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;color: #00cfd8&quot;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L35">nightingale-formatter/src/styleToHtmlStyle.ts:35</a></li>
+								</ul>
+							</aside>
+						</section>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+						<a name="styletohtmlstyle-2.gray" class="tsd-anchor"></a>
+						<h3>gray</h3>
+						<div class="tsd-signature tsd-kind-icon">gray<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L37">nightingale-formatter/src/styleToHtmlStyle.ts:37</a></li>
+							</ul>
+						</aside>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="styletohtmlstyle-2.gray.close-12" class="tsd-anchor"></a>
+							<h3>close</h3>
+							<div class="tsd-signature tsd-kind-icon">close<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;color: initial&quot;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L37">nightingale-formatter/src/styleToHtmlStyle.ts:37</a></li>
+								</ul>
+							</aside>
+						</section>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="styletohtmlstyle-2.gray.open-12" class="tsd-anchor"></a>
+							<h3>open</h3>
+							<div class="tsd-signature tsd-kind-icon">open<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;color: gray&quot;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L37">nightingale-formatter/src/styleToHtmlStyle.ts:37</a></li>
+								</ul>
+							</aside>
+						</section>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+						<a name="styletohtmlstyle-2.gray_light-1" class="tsd-anchor"></a>
+						<h3>gray-<wbr>light</h3>
+						<div class="tsd-signature tsd-kind-icon">gray-<wbr>light<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L53">nightingale-formatter/src/styleToHtmlStyle.ts:53</a></li>
+							</ul>
+						</aside>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="styletohtmlstyle-2.gray_light-1.close-13" class="tsd-anchor"></a>
+							<h3>close</h3>
+							<div class="tsd-signature tsd-kind-icon">close<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;color: initial&quot;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L55">nightingale-formatter/src/styleToHtmlStyle.ts:55</a></li>
+								</ul>
+							</aside>
+						</section>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="styletohtmlstyle-2.gray_light-1.open-13" class="tsd-anchor"></a>
+							<h3>open</h3>
+							<div class="tsd-signature tsd-kind-icon">open<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &#x60;color: #${hexColors.grayLight}&#x60;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L54">nightingale-formatter/src/styleToHtmlStyle.ts:54</a></li>
+								</ul>
+							</aside>
+						</section>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+						<a name="styletohtmlstyle-2.graylight-1" class="tsd-anchor"></a>
+						<h3>gray<wbr>Light</h3>
+						<div class="tsd-signature tsd-kind-icon">gray<wbr>Light<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L49">nightingale-formatter/src/styleToHtmlStyle.ts:49</a></li>
+							</ul>
+						</aside>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="styletohtmlstyle-2.graylight-1.close-14" class="tsd-anchor"></a>
+							<h3>close</h3>
+							<div class="tsd-signature tsd-kind-icon">close<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;color: initial&quot;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L51">nightingale-formatter/src/styleToHtmlStyle.ts:51</a></li>
+								</ul>
+							</aside>
+						</section>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="styletohtmlstyle-2.graylight-1.open-14" class="tsd-anchor"></a>
+							<h3>open</h3>
+							<div class="tsd-signature tsd-kind-icon">open<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &#x60;color: #${hexColors.grayLight}&#x60;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L50">nightingale-formatter/src/styleToHtmlStyle.ts:50</a></li>
+								</ul>
+							</aside>
+						</section>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+						<a name="styletohtmlstyle-2.green" class="tsd-anchor"></a>
+						<h3>green</h3>
+						<div class="tsd-signature tsd-kind-icon">green<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L31">nightingale-formatter/src/styleToHtmlStyle.ts:31</a></li>
+							</ul>
+						</aside>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="styletohtmlstyle-2.green.close-15" class="tsd-anchor"></a>
+							<h3>close</h3>
+							<div class="tsd-signature tsd-kind-icon">close<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;color: initial&quot;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L31">nightingale-formatter/src/styleToHtmlStyle.ts:31</a></li>
+								</ul>
+							</aside>
+						</section>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="styletohtmlstyle-2.green.open-15" class="tsd-anchor"></a>
+							<h3>open</h3>
+							<div class="tsd-signature tsd-kind-icon">open<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;color: #00b317&quot;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L31">nightingale-formatter/src/styleToHtmlStyle.ts:31</a></li>
+								</ul>
+							</aside>
+						</section>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+						<a name="styletohtmlstyle-2.inverse" class="tsd-anchor"></a>
+						<h3>inverse</h3>
+						<div class="tsd-signature tsd-kind-icon">inverse<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L20">nightingale-formatter/src/styleToHtmlStyle.ts:20</a></li>
+							</ul>
+						</aside>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="styletohtmlstyle-2.inverse.close-16" class="tsd-anchor"></a>
+							<h3>close</h3>
+							<div class="tsd-signature tsd-kind-icon">close<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;unicode-bidi: normal; direction: ltr&quot;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L22">nightingale-formatter/src/styleToHtmlStyle.ts:22</a></li>
+								</ul>
+							</aside>
+						</section>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="styletohtmlstyle-2.inverse.open-16" class="tsd-anchor"></a>
+							<h3>open</h3>
+							<div class="tsd-signature tsd-kind-icon">open<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;unicode-bidi: bidi-override; direction: rtl&quot;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L21">nightingale-formatter/src/styleToHtmlStyle.ts:21</a></li>
+								</ul>
+							</aside>
+						</section>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+						<a name="styletohtmlstyle-2.italic" class="tsd-anchor"></a>
+						<h3>italic</h3>
+						<div class="tsd-signature tsd-kind-icon">italic<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L15">nightingale-formatter/src/styleToHtmlStyle.ts:15</a></li>
+							</ul>
+						</aside>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="styletohtmlstyle-2.italic.close-17" class="tsd-anchor"></a>
+							<h3>close</h3>
+							<div class="tsd-signature tsd-kind-icon">close<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;font-style: normal&quot;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L15">nightingale-formatter/src/styleToHtmlStyle.ts:15</a></li>
+								</ul>
+							</aside>
+						</section>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="styletohtmlstyle-2.italic.open-17" class="tsd-anchor"></a>
+							<h3>open</h3>
+							<div class="tsd-signature tsd-kind-icon">open<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;font-style: italic&quot;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L15">nightingale-formatter/src/styleToHtmlStyle.ts:15</a></li>
+								</ul>
+							</aside>
+						</section>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+						<a name="styletohtmlstyle-2.magenta" class="tsd-anchor"></a>
+						<h3>magenta</h3>
+						<div class="tsd-signature tsd-kind-icon">magenta<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L34">nightingale-formatter/src/styleToHtmlStyle.ts:34</a></li>
+							</ul>
+						</aside>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="styletohtmlstyle-2.magenta.close-18" class="tsd-anchor"></a>
+							<h3>close</h3>
+							<div class="tsd-signature tsd-kind-icon">close<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;color: initial&quot;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L34">nightingale-formatter/src/styleToHtmlStyle.ts:34</a></li>
+								</ul>
+							</aside>
+						</section>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="styletohtmlstyle-2.magenta.open-18" class="tsd-anchor"></a>
+							<h3>open</h3>
+							<div class="tsd-signature tsd-kind-icon">open<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;color: #ff00a0&quot;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L34">nightingale-formatter/src/styleToHtmlStyle.ts:34</a></li>
+								</ul>
+							</aside>
+						</section>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+						<a name="styletohtmlstyle-2.orange-1" class="tsd-anchor"></a>
+						<h3>orange</h3>
+						<div class="tsd-signature tsd-kind-icon">orange<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L48">nightingale-formatter/src/styleToHtmlStyle.ts:48</a></li>
+							</ul>
+						</aside>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="styletohtmlstyle-2.orange-1.close-19" class="tsd-anchor"></a>
+							<h3>close</h3>
+							<div class="tsd-signature tsd-kind-icon">close<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;color: initial&quot;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L48">nightingale-formatter/src/styleToHtmlStyle.ts:48</a></li>
+								</ul>
+							</aside>
+						</section>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="styletohtmlstyle-2.orange-1.open-19" class="tsd-anchor"></a>
+							<h3>open</h3>
+							<div class="tsd-signature tsd-kind-icon">open<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &#x60;color: #${hexColors.orange}&#x60;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L48">nightingale-formatter/src/styleToHtmlStyle.ts:48</a></li>
+								</ul>
+							</aside>
+						</section>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+						<a name="styletohtmlstyle-2.red" class="tsd-anchor"></a>
+						<h3>red</h3>
+						<div class="tsd-signature tsd-kind-icon">red<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L30">nightingale-formatter/src/styleToHtmlStyle.ts:30</a></li>
+							</ul>
+						</aside>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="styletohtmlstyle-2.red.close-20" class="tsd-anchor"></a>
+							<h3>close</h3>
+							<div class="tsd-signature tsd-kind-icon">close<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;color: initial&quot;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L30">nightingale-formatter/src/styleToHtmlStyle.ts:30</a></li>
+								</ul>
+							</aside>
+						</section>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="styletohtmlstyle-2.red.open-20" class="tsd-anchor"></a>
+							<h3>open</h3>
+							<div class="tsd-signature tsd-kind-icon">open<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;color: #ff0020&quot;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L30">nightingale-formatter/src/styleToHtmlStyle.ts:30</a></li>
+								</ul>
+							</aside>
+						</section>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+						<a name="styletohtmlstyle-2.strikethrough" class="tsd-anchor"></a>
+						<h3>strikethrough</h3>
+						<div class="tsd-signature tsd-kind-icon">strikethrough<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L24">nightingale-formatter/src/styleToHtmlStyle.ts:24</a></li>
+							</ul>
+						</aside>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="styletohtmlstyle-2.strikethrough.close-21" class="tsd-anchor"></a>
+							<h3>close</h3>
+							<div class="tsd-signature tsd-kind-icon">close<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;text-decoration: none&quot;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L26">nightingale-formatter/src/styleToHtmlStyle.ts:26</a></li>
+								</ul>
+							</aside>
+						</section>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="styletohtmlstyle-2.strikethrough.open-21" class="tsd-anchor"></a>
+							<h3>open</h3>
+							<div class="tsd-signature tsd-kind-icon">open<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;text-decoration: line-through&quot;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L25">nightingale-formatter/src/styleToHtmlStyle.ts:25</a></li>
+								</ul>
+							</aside>
+						</section>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+						<a name="styletohtmlstyle-2.underline" class="tsd-anchor"></a>
+						<h3>underline</h3>
+						<div class="tsd-signature tsd-kind-icon">underline<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L16">nightingale-formatter/src/styleToHtmlStyle.ts:16</a></li>
+							</ul>
+						</aside>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="styletohtmlstyle-2.underline.close-22" class="tsd-anchor"></a>
+							<h3>close</h3>
+							<div class="tsd-signature tsd-kind-icon">close<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;text-decoration: none&quot;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L18">nightingale-formatter/src/styleToHtmlStyle.ts:18</a></li>
+								</ul>
+							</aside>
+						</section>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="styletohtmlstyle-2.underline.open-22" class="tsd-anchor"></a>
+							<h3>open</h3>
+							<div class="tsd-signature tsd-kind-icon">open<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;text-decoration: underline&quot;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L17">nightingale-formatter/src/styleToHtmlStyle.ts:17</a></li>
+								</ul>
+							</aside>
+						</section>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+						<a name="styletohtmlstyle-2.white" class="tsd-anchor"></a>
+						<h3>white</h3>
+						<div class="tsd-signature tsd-kind-icon">white<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L36">nightingale-formatter/src/styleToHtmlStyle.ts:36</a></li>
+							</ul>
+						</aside>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="styletohtmlstyle-2.white.close-23" class="tsd-anchor"></a>
+							<h3>close</h3>
+							<div class="tsd-signature tsd-kind-icon">close<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;color: initial&quot;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L36">nightingale-formatter/src/styleToHtmlStyle.ts:36</a></li>
+								</ul>
+							</aside>
+						</section>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="styletohtmlstyle-2.white.open-23" class="tsd-anchor"></a>
+							<h3>open</h3>
+							<div class="tsd-signature tsd-kind-icon">open<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;color: white&quot;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L36">nightingale-formatter/src/styleToHtmlStyle.ts:36</a></li>
+								</ul>
+							</aside>
+						</section>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+						<a name="styletohtmlstyle-2.yellow" class="tsd-anchor"></a>
+						<h3>yellow</h3>
+						<div class="tsd-signature tsd-kind-icon">yellow<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L32">nightingale-formatter/src/styleToHtmlStyle.ts:32</a></li>
+							</ul>
+						</aside>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="styletohtmlstyle-2.yellow.close-24" class="tsd-anchor"></a>
+							<h3>close</h3>
+							<div class="tsd-signature tsd-kind-icon">close<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;color: initial&quot;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L32">nightingale-formatter/src/styleToHtmlStyle.ts:32</a></li>
+								</ul>
+							</aside>
+						</section>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="styletohtmlstyle-2.yellow.open-24" class="tsd-anchor"></a>
+							<h3>open</h3>
+							<div class="tsd-signature tsd-kind-icon">open<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;color: #ffcc00&quot;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-formatter/src/styleToHtmlStyle.ts#L32">nightingale-formatter/src/styleToHtmlStyle.ts:32</a></li>
+								</ul>
+							</aside>
+						</section>
+					</section>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../globals.html"><em>Globals</em></a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="nightingale.html">nightingale</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="nightingale_ansi_formatter.html">nightingale-<wbr>ansi-<wbr>formatter</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="nightingale_app_console.html">nightingale-<wbr>app-<wbr>console</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="nightingale_browser_console.html">nightingale-<wbr>browser-<wbr>console</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="nightingale_browser_console_formatter.html">nightingale-<wbr>browser-<wbr>console-<wbr>formatter</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="nightingale_console.html">nightingale-<wbr>console</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="nightingale_console_example.html">nightingale-<wbr>console-<wbr>example</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="nightingale_console_output.html">nightingale-<wbr>console-<wbr>output</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="nightingale_debug.html">nightingale-<wbr>debug</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="nightingale_example.html">nightingale-<wbr>example</a>
+					</li>
+					<li class="current tsd-kind-module">
+						<a href="nightingale_formatter.html">nightingale-<wbr>formatter</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="nightingale_html_formatter.html">nightingale-<wbr>html-<wbr>formatter</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="nightingale_json_formatter.html">nightingale-<wbr>json-<wbr>formatter</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="nightingale_level_names.html">nightingale-<wbr>level-<wbr>names</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="nightingale_levels.html">nightingale-<wbr>levels</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="nightingale_logger.html">nightingale-<wbr>logger</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="nightingale_markdown_formatter.html">nightingale-<wbr>markdown-<wbr>formatter</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="nightingale_raw_formatter.html">nightingale-<wbr>raw-<wbr>formatter</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="nightingale_sentry.html">nightingale-<wbr>sentry</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="nightingale_slack.html">nightingale-<wbr>slack</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="nightingale_string.html">nightingale-<wbr>string</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="nightingale_types.html">nightingale-<wbr>types</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="nightingale_web_processor.html">nightingale-<wbr>web-<wbr>processor</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="nightingale_winston_adapter.html">nightingale-<wbr>winston-<wbr>adapter</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="nightingale_formatter.html#formatobject" class="tsd-kind-icon">format<wbr>Object</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="nightingale_formatter.html#formatrecordtostring" class="tsd-kind-icon">format<wbr>Record<wbr>ToString</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="nightingale_formatter.html#leveltostyles" class="tsd-kind-icon">level<wbr>ToStyles</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="nightingale_formatter.html#leveltosymbol" class="tsd-kind-icon">level<wbr>ToSymbol</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="nightingale_formatter.html#styletohexcolor" class="tsd-kind-icon">style<wbr>ToHex<wbr>Color</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="nightingale_formatter.html#styletohtmlstyle" class="tsd-kind-icon">style<wbr>ToHtml<wbr>Style</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/nightingale_formatter.formatobjectoptions.html" class="tsd-kind-icon">Format<wbr>Object<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported">
+						<a href="../interfaces/nightingale_formatter.formattedkey.html" class="tsd-kind-icon">Formatted<wbr>Key</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported">
+						<a href="../interfaces/nightingale_formatter.formattedvalue.html" class="tsd-kind-icon">Formatted<wbr>Value</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/nightingale_formatter.htmlstyle.html" class="tsd-kind-icon">Html<wbr>Style</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported">
+						<a href="../interfaces/nightingale_formatter.internalformatiteratorparams.html" class="tsd-kind-icon">Internal<wbr>Format<wbr>Iterator<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported">
+						<a href="../interfaces/nightingale_formatter.internalformatparams.html" class="tsd-kind-icon">Internal<wbr>Format<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/nightingale_formatter.leveltostyles-1.html" class="tsd-kind-icon">Level<wbr>ToStyles</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/nightingale_formatter.leveltosymbol-1.html" class="tsd-kind-icon">Level<wbr>ToSymbol</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/nightingale_formatter.objectstyles.html" class="tsd-kind-icon">Object<wbr>Styles</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/nightingale_formatter.styletohexcolor-1.html" class="tsd-kind-icon">Style<wbr>ToHex<wbr>Color</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/nightingale_formatter.styletohtmlstyle-1.html" class="tsd-kind-icon">Style<wbr>ToHtml<wbr>Style</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported">
+						<a href="../interfaces/nightingale_formatter.value.html" class="tsd-kind-icon">Value</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module tsd-is-not-exported">
+						<a href="nightingale_formatter.html#formatkey" class="tsd-kind-icon">Format<wbr>Key</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+						<a href="nightingale_formatter.html#stylefn" class="tsd-kind-icon">Style<wbr>Fn</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module tsd-is-not-exported">
+						<a href="nightingale_formatter.html#values" class="tsd-kind-icon">Values</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
+						<a href="nightingale_formatter.html#separator" class="tsd-kind-icon">separator</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="nightingale_formatter.html#formatobject-1" class="tsd-kind-icon">format<wbr>Object</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="nightingale_formatter.html#formatrecordtostring-1" class="tsd-kind-icon">format<wbr>Record<wbr>ToString</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="nightingale_formatter.html#internalformatarray" class="tsd-kind-icon">internal<wbr>Format<wbr>Array</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="nightingale_formatter.html#internalformatiterator" class="tsd-kind-icon">internal<wbr>Format<wbr>Iterator</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="nightingale_formatter.html#internalformatkey" class="tsd-kind-icon">internal<wbr>Format<wbr>Key</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="nightingale_formatter.html#internalformatmap" class="tsd-kind-icon">internal<wbr>Format<wbr>Map</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="nightingale_formatter.html#internalformatmapkey" class="tsd-kind-icon">internal<wbr>Format<wbr>Map<wbr>Key</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="nightingale_formatter.html#internalformatobject" class="tsd-kind-icon">internal<wbr>Format<wbr>Object</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="nightingale_formatter.html#internalformatset" class="tsd-kind-icon">internal<wbr>Format<wbr>Set</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="nightingale_formatter.html#internalformatvalue" class="tsd-kind-icon">internal<wbr>Format<wbr>Value</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="nightingale_formatter.html#nostylefn" class="tsd-kind-icon">no<wbr>Style<wbr>Fn</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="nightingale_formatter.html#samerawformattedvalue" class="tsd-kind-icon">same<wbr>Raw<wbr>Formatted<wbr>Value</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="nightingale_formatter.html#trystringify" class="tsd-kind-icon">try<wbr>Stringify</a>
+					</li>
+					<li class=" tsd-kind-object-literal tsd-parent-kind-module">
+						<a href="nightingale_formatter.html#leveltostyles-2" class="tsd-kind-icon">level<wbr>ToStyles</a>
+					</li>
+					<li class=" tsd-kind-object-literal tsd-parent-kind-module">
+						<a href="nightingale_formatter.html#leveltosymbol-2" class="tsd-kind-icon">level<wbr>ToSymbol</a>
+					</li>
+					<li class=" tsd-kind-object-literal tsd-parent-kind-module">
+						<a href="nightingale_formatter.html#styletohexcolor-2" class="tsd-kind-icon">style<wbr>ToHex<wbr>Color</a>
+					</li>
+					<li class=" tsd-kind-object-literal tsd-parent-kind-module">
+						<a href="nightingale_formatter.html#styletohtmlstyle-2" class="tsd-kind-icon">style<wbr>ToHtml<wbr>Style</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>

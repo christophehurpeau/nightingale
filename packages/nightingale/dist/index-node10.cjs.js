@@ -4,8 +4,8 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
-const Logger = _interopDefault(require('nightingale-logger'));
 const nightingaleLevels = _interopDefault(require('nightingale-levels'));
+const Logger = _interopDefault(require('nightingale-logger'));
 
 if (!global.__NIGHTINGALE_CONFIG) {
   global.__NIGHTINGALE_CONFIG = [];

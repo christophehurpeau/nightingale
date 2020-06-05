@@ -3,7 +3,8 @@ import formatterANSI from 'nightingale-ansi-formatter';
 import consoleOutput from 'nightingale-console-output';
 import createFindDebugLevel from 'nightingale-debug';
 import formatterJSON from 'nightingale-json-formatter';
-import { IsHandling, Handle, LogRecord, Level } from 'nightingale-types';
+import Level from 'nightingale-levels';
+import type { IsHandling, Handle, LogRecord } from 'nightingale-types';
 
 const defaultFormatter =
   POB_TARGET === 'node' &&

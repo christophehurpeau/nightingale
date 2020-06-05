@@ -14,14 +14,13 @@
     "declarationMap": true
   },
 
-  "exclude": [
-    "dist/**",
-    "src/**/*.test.ts",
-    "src/**/__tests__/**"
-  ],
+  "exclude": ["dist/**", "src/**/*.test.ts", "src/**/__tests__/**"],
   "references": [
+    { "path": "../nightingale-levels/tsconfig.build.json" },
     { "path": "../nightingale-debug/tsconfig.build.json" },
+    { "path": "../nightingale-types/tsconfig.build.json" },
     { "path": "../nightingale-console-output/tsconfig.build.json" },
     { "path": "../nightingale-ansi-formatter/tsconfig.build.json" },
     { "path": "../nightingale-json-formatter/tsconfig.build.json" }
-]}
+  ]
+}

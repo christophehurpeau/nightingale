@@ -2,7 +2,7 @@
 import Level from 'nightingale-levels';
 import markdownFormatter from 'nightingale-markdown-formatter';
 import rawFormatter from 'nightingale-raw-formatter';
-import { LogRecord } from 'nightingale-types';
+import type { LogRecord } from 'nightingale-types';
 import SlackConfig from './SlackConfig';
 
 const levelToSlackColor: { [level: number]: string } = {

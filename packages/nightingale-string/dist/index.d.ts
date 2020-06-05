@@ -1,4 +1,4 @@
-import { Level, LogRecord } from 'nightingale-types';
+import type { Level, LogRecord } from 'nightingale-types';
 export default class StringHandler {
     readonly minLevel: Level;
     private _buffer;

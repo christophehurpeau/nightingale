@@ -1,7 +1,7 @@
 import browserConsoleFormatter from 'nightingale-browser-console-formatter';
 import consoleOutput from 'nightingale-console-output';
 import createFindDebugLevel from 'nightingale-debug';
-import { Level, Handle, IsHandling, LogRecord } from 'nightingale-types';
+import type { Level, Handle, IsHandling, LogRecord } from 'nightingale-types';
 import getDebugString from './debug';
 
 // debug string can change any time (localStorage), so we need a new object each time.

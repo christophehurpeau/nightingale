@@ -2,7 +2,7 @@
 import { PRODUCTION, POB_TARGET } from 'pob-babel';
 import * as util from 'util';
 import Level from 'nightingale-levels';
-import {
+import type {
   Metadata,
   MetadataStyles,
   Styles,
@@ -189,7 +189,7 @@ export default class Logger {
   log<T extends Metadata>(
     message: string,
     metadata?: T,
-    level: number = Level.INFO,
+    level: Level = Level.INFO,
     options?: Options<T>,
   ): void {
     const context = metadata?.context;

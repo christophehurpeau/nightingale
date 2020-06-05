@@ -16,7 +16,9 @@
   "scripts": {
     "build": "lerna run --stream build",
     "build:definitions": "tsc -b tsconfig.build.json",
-    "generate:docs": "lerna run --parallel --ignore \"*-example\" generate:docs",
+    "generate:api": "typedoc --tsconfig tsconfig.doc.json",
+    "generate:docs": "rm -Rf docs ; yarn run generate:api ; touch docs/.nojekyll",
+    "generate:test-coverage": "lerna run --parallel --ignore \"*-example\" generate:test-coverage",
     "lint": "eslint --ext js,ts,tsx .",
     "postbuild": "yarn run build:definitions && yarn run generate:docs",
     "preversion": "yarn run lint && yarn run build --since -- -- --no-clean && repository-check-dirty",
@@ -52,6 +54,8 @@
     "husky": "4.2.5",
     "lerna": "3.22.0",
     "prettier": "2.0.5",
+    "typedoc": "0.17.7",
+    "typedoc-plugin-lerna-packages": "0.3.0",
     "typescript": "3.9.5"
   }
 }

@@ -6,7 +6,6 @@
 /tsconfig.json
 /tsconfig.build.json
 /dist/tsbuildinfo
-/tsconfig.doc.json
 .babelrc
 .codeclimate.yml
 .yo-rc.json

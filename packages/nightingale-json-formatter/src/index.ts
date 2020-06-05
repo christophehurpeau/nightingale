@@ -1,4 +1,4 @@
-import { LogRecord } from 'nightingale-types';
+import type { LogRecord } from 'nightingale-types';
 
 function map2object(map: Map<any, any>): any {
   const object: any = {};

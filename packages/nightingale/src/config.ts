@@ -1,6 +1,6 @@
 import { POB_ENV } from 'pob-babel';
 import { ComputedConfigForKey } from 'nightingale-logger';
-import { Handler, Processor } from 'nightingale-types';
+import type { Handler, Processor } from 'nightingale-types';
 
 export interface Config {
   handler?: Handler;

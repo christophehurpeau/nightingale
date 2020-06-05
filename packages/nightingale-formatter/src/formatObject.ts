@@ -1,5 +1,5 @@
 /* eslint-disable max-lines, no-useless-concat, prefer-template, no-use-before-define, @typescript-eslint/no-use-before-define */
-import { Styles } from 'nightingale-types';
+import type { Styles } from 'nightingale-types';
 
 export interface FormatObjectOptions {
   padding?: string;

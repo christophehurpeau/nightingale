@@ -3,6 +3,7 @@
   "references": [
     { "path": "packages/nightingale-levels/tsconfig.build.json" },
     { "path": "packages/nightingale-debug/tsconfig.build.json" },
+    { "path": "packages/nightingale-types/tsconfig.build.json" },
     { "path": "packages/nightingale-console-output/tsconfig.build.json" },
     { "path": "packages/nightingale-formatter/tsconfig.build.json" },
     { "path": "packages/nightingale-logger/tsconfig.build.json" },

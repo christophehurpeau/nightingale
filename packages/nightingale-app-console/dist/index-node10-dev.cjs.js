@@ -4,10 +4,10 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
-const sourceMapSupport = require('source-map-support');
 const Logger = require('nightingale');
 const Logger__default = _interopDefault(Logger);
 const TerminalConsoleHandler = _interopDefault(require('nightingale-console'));
+const sourceMapSupport = require('source-map-support');
 
 const ConsoleHandler = TerminalConsoleHandler;
 sourceMapSupport.install({

@@ -1,6 +1,6 @@
 import ansi from 'ansi-styles';
 import { styleToHexColor, formatRecordToString } from 'nightingale-formatter';
-import { Styles, LogRecord } from 'nightingale-types';
+import type { Styles, LogRecord } from 'nightingale-types';
 
 interface CodePair {
   open: string;

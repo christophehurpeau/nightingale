@@ -38,8 +38,6 @@
     "build": "pob-build",
     "build:definitions": "tsc -p tsconfig.build.json",
     "clean": "rm -Rf docs dist",
-    "generate:api": "typedoc --tsconfig tsconfig.doc.json",
-    "generate:docs": "rm -Rf docs ; yarn run generate:api ; touch docs/.nojekyll && yarn run generate:test-coverage",
     "generate:test-coverage": "rm -Rf docs/coverage/ ; NODE_ENV=production BABEL_ENV=test jest --coverage --coverageReporters=pob-lcov-reporter --coverageDirectory=docs/coverage/",
     "lint": "yarn --cwd ../.. eslint --ext .js,.ts --quiet packages/nightingale-logger",
     "test": "jest",
@@ -114,7 +112,6 @@
     "jest": "26.0.1",
     "pob-babel": "24.12.1",
     "pob-lcov-reporter": "2.3.0",
-    "typedoc": "0.17.7",
     "xunit-file": "1.0.0"
   }
 }

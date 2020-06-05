@@ -1,5 +1,5 @@
 import { formatRecordToString } from 'nightingale-formatter';
-import { LogRecord, Styles } from 'nightingale-types';
+import type { LogRecord, Styles } from 'nightingale-types';
 
 export function style(styles: Styles, value: string): string {
   return value;

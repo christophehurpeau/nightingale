@@ -1,4 +1,4 @@
-import { Handler, Processor } from 'nightingale-types';
+import type { Handler, Processor } from 'nightingale-types';
 export interface Config {
     handler?: Handler;
     handlers?: Handler[];

@@ -4,10 +4,10 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
-var sourceMapSupport = require('source-map-support');
 var Logger = require('nightingale');
 var Logger__default = _interopDefault(Logger);
 var BrowserConsoleHandler = _interopDefault(require('nightingale-browser-console'));
+var sourceMapSupport = require('source-map-support');
 
 var ConsoleHandler = BrowserConsoleHandler;
 sourceMapSupport.install({

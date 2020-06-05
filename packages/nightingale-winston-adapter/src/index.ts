@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/camelcase */
 import levelNames from 'nightingale-level-names';
-import { LogRecord, Level, Handle } from 'nightingale-types';
+import type { LogRecord, Level, Handle } from 'nightingale-types';
 
 export type LogCallback = (err: Error | null) => void;
 

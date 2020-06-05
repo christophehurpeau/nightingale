@@ -1,6 +1,6 @@
 /// <reference types="node" />
 import { IncomingMessage } from 'http';
-import { LogRecord } from 'nightingale-types';
+import type { LogRecord } from 'nightingale-types';
 export interface ContextWithOptionalRequest {
     request?: IncomingMessage;
 }

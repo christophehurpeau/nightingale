@@ -8,6 +8,7 @@
 
     "rootDirs": [
       "src",
+      "../../packages/nightingale-types/src",
       "../../packages/nightingale-console-output/src",
       "../../packages/nightingale-json-formatter/src",
       "../../packages/nightingale-console/src",
@@ -41,6 +42,7 @@
     "baseUrl": "" /* Base directory to resolve non-absolute module names. */,
 
     "paths": {
+      "nightingale-types": ["../../../packages/nightingale-types/src"],
       "nightingale-console-output": [
         "../../../packages/nightingale-console-output/src"
       ],

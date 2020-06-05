@@ -8,7 +8,6 @@
 
 <p align="center">
   <a href="https://npmjs.org/package/nightingale-string"><img src="https://img.shields.io/npm/v/nightingale-string.svg?style=flat-square"></a>
-  <a href="https://david-dm.org/christophehurpeau/nightingale?path=packages/nightingale-string"><img src="https://david-dm.org/christophehurpeau/nightingale.svg?path=packages/nightingale-string?style=flat-square"></a>
 </p>
 
 ## Install
@@ -21,6 +20,4 @@ npm install --save nightingale-string
 
 ```js
 import nightingaleString from 'nightingale-string';
-
-console.log(nightingaleString);
 ```

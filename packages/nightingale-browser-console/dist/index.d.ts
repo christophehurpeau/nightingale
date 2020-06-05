@@ -1,4 +1,4 @@
-import { Level, Handle, IsHandling } from 'nightingale-types';
+import type { Level, Handle, IsHandling } from 'nightingale-types';
 export default class BrowserConsoleHandler {
     minLevel: Level;
     handle: Handle;

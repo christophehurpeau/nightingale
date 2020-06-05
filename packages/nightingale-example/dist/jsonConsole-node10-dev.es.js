@@ -1,6 +1,6 @@
 import Logger, { configure, Level } from 'nightingale';
-import jsonFormatter from 'nightingale-json-formatter';
 import consoleOutput from 'nightingale-console-output';
+import jsonFormatter from 'nightingale-json-formatter';
 
 class JSONHandler {
   constructor(minLevel) {

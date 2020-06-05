@@ -1,4 +1,4 @@
-import { Styles } from 'nightingale-types';
+import type { Styles } from 'nightingale-types';
 export interface FormatObjectOptions {
     padding?: string;
     maxDepth?: number;

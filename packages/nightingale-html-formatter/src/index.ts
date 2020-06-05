@@ -1,5 +1,5 @@
 import { formatRecordToString, styleToHtmlStyle } from 'nightingale-formatter';
-import { Styles, LogRecord } from 'nightingale-types';
+import type { Styles, LogRecord } from 'nightingale-types';
 
 export function style(styles: Styles, string: string): string {
   if (!styles || styles.length === 0 || !string) {

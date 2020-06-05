@@ -1,4 +1,5 @@
-import { IsHandling, Handle, LogRecord, Level } from 'nightingale-types';
+import Level from 'nightingale-levels';
+import type { IsHandling, Handle, LogRecord } from 'nightingale-types';
 interface ConsoleHandlerOptions {
     formatter?: <T>(record: LogRecord<T>) => string;
     output?: <T>(param: string | string[], record: LogRecord<T>) => void;

@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import { Styles } from 'nightingale-types';
+import type { Styles } from 'nightingale-types';
 import formatObject from './formatObject';
 
 test('empty object should return empty string', () => {

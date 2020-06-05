@@ -9,7 +9,6 @@
 <p align="center">
   <a href="https://npmjs.org/package/nightingale-html-formatter"><img src="https://img.shields.io/npm/v/nightingale-html-formatter.svg?style=flat-square"></a>
   <a href="https://circleci.com/gh/christophehurpeau/nightingale"><img src="https://img.shields.io/circleci/project/christophehurpeau/nightingale/master.svg?style=flat-square"></a>
-  <a href="https://david-dm.org/christophehurpeau/nightingale?path=packages/nightingale-html-formatter"><img src="https://david-dm.org/christophehurpeau/nightingale.svg?path=packages/nightingale-html-formatter?style=flat-square"></a>
   <a href="https://codecov.io/gh/christophehurpeau/nightingale"><img src="https://img.shields.io/codecov/c/github/christophehurpeau/nightingale/master.svg?style=flat-square"></a>
 </p>
 
@@ -22,5 +21,5 @@ npm install --save nightingale-html-formatter
 ## Usage
 
 ```js
-import nightingaleHtmlFormatter from 'nightingale-html-formatter';
+import htmlFormatter from 'nightingale-html-formatter';
 ```
