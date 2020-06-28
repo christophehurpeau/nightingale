@@ -43,7 +43,7 @@
     "@pob/eslint-config-node": "38.0.0",
     "@pob/eslint-config-typescript": "38.1.0",
     "@pob/eslint-config-typescript-node": "38.0.2",
-    "@pob/root": "2.2.1",
+    "@pob/root": "2.2.2",
     "@typescript-eslint/eslint-plugin": "2.34.0",
     "eslint": "6.8.0",
     "eslint-import-resolver-node": "0.3.3",
