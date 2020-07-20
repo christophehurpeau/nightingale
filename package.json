@@ -40,7 +40,7 @@
   "devDependencies": {
     "@pob/commitlint-config": "1.1.2",
     "@pob/eslint-config": "38.0.0",
-    "@pob/eslint-config-node": "38.0.0",
+    "@pob/eslint-config-node": "38.2.0",
     "@pob/eslint-config-typescript": "38.1.0",
     "@pob/eslint-config-typescript-node": "38.0.2",
     "@pob/root": "2.2.2",

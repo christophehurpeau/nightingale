@@ -2112,12 +2112,12 @@
   dependencies:
     "@commitlint/config-conventional" "^8.3.4"
 
-"@pob/eslint-config-node@38.0.0":
-  version "38.0.0"
-  resolved "https://registry.yarnpkg.com/@pob/eslint-config-node/-/eslint-config-node-38.0.0.tgz#1aaf95038cacc00be964fda7014020b9c6f0a891"
-  integrity sha512-t2TT9cqs5gUXuXfWzxVVrEvPkAftb8ReQNtJc6Ug6ppSkZyUwatKyhCtuYTcFRg+VLEh2aM6dG4Bj6Bff7c65w==
+"@pob/eslint-config-node@38.2.0":
+  version "38.2.0"
+  resolved "https://registry.yarnpkg.com/@pob/eslint-config-node/-/eslint-config-node-38.2.0.tgz#910cb5daa00327517d2a2e2c56aea26874343f83"
+  integrity sha512-BpFsrd+RKPJ8z4Kh7ZioiJydsa5FcQiy0q+UnsYgv0MKiEVHV3FZrjbDALDdJ/DTiyFB55EA5oSJ+Qund41BiQ==
   dependencies:
-    "@pob/use-eslint-plugin" "^38.0.0"
+    "@pob/use-eslint-plugin" "^38.2.0"
     eslint-plugin-node "^11.0.0"
 
 "@pob/eslint-config-typescript-node@38.0.2":
@@ -2169,6 +2169,11 @@
   version "38.0.0"
   resolved "https://registry.yarnpkg.com/@pob/use-eslint-plugin/-/use-eslint-plugin-38.0.0.tgz#97a5dbfc87da219adb038bed15d68c3363212130"
   integrity sha512-CqM9qZd7ex6q6JMHNlu3QwAev5SUE7ulaSWulmwuDIT6OnbrRPP1X0TnGMRMImwvzunvYxgQq1BimWPjongkcA==
+
+"@pob/use-eslint-plugin@^38.2.0":
+  version "38.2.0"
+  resolved "https://registry.yarnpkg.com/@pob/use-eslint-plugin/-/use-eslint-plugin-38.2.0.tgz#5de15bfb6b1dfcf8cbf31810ba8f6e50d713f47c"
+  integrity sha512-/5W+MQlajunaB6hip1AV9WI5dDnqKcKaWzEL1aEw1Vl9ex4lpAazrchnB3b4KNTPvYSg/9bjO3KttiOZmJZESQ==
 
 "@sentry/apm@5.15.5":
   version "5.15.5"
