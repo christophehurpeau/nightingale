@@ -104,7 +104,7 @@
   "devDependencies": {
     "@babel/core": "7.10.2",
     "@babel/preset-env": "7.10.2",
-    "@types/jest": "25.2.3",
+    "@types/jest": "26.0.13",
     "babel-jest": "26.0.1",
     "babel-preset-latest-node": "4.1.0",
     "babel-preset-modern-browsers": "14.2.1",
