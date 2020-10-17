@@ -24,9 +24,6 @@ export interface LogRecord<T extends Metadata> {
   metadataStyles?: MetadataStyles<T>;
 }
 
-/** @deprecated use LogRecord instead */
-export type Record<T extends Metadata> = LogRecord<T>;
-
 export type IsHandling = (level: Level, key: string) => boolean;
 export type Handle = <T extends Metadata>(
   record: Readonly<LogRecord<T>>,
