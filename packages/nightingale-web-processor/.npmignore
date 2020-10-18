@@ -3,13 +3,13 @@
 /examples
 /samples
 /test
+/*.config.js
 /tsconfig.json
 /tsconfig.build.json
 /dist/tsbuildinfo
 .babelrc
 .codeclimate.yml
 .yo-rc.json
-/yarn.lock
 
 /.settings
 /.project

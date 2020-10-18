@@ -85,16 +85,16 @@ npm <span class="hljs-keyword">install</span> <span class="hljs-comment">--save 
 					<a href="#how-to-use" id="how-to-use" style="color: inherit; text-decoration: none;">
 						<h2>How to use</h2>
 					</a>
-					<pre><code class="language-js"><span class="hljs-keyword">import</span> { addGlobalHandler, Level } <span class="hljs-keyword">from</span> <span class="hljs-string">'nightingale'</span>;
-<span class="hljs-keyword">import</span> WinstonAdapterHandler <span class="hljs-keyword">from</span> <span class="hljs-string">'nightingale-winston-adapter'</span>;
-<span class="hljs-keyword">import</span> LogStash <span class="hljs-keyword">from</span> <span class="hljs-string">'winston-logstash'</span>;
+					<pre><code class="language-js"><span class="hljs-keyword">import</span> { addGlobalHandler, Level } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;nightingale&#x27;</span>;
+<span class="hljs-keyword">import</span> WinstonAdapterHandler <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;nightingale-winston-adapter&#x27;</span>;
+<span class="hljs-keyword">import</span> LogStash <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;winston-logstash&#x27;</span>;
 
 <span class="hljs-comment">// create transport</span>
 <span class="hljs-keyword">const</span> logmaticTransport = <span class="hljs-keyword">new</span> Logstash({
   <span class="hljs-attr">port</span>: <span class="hljs-number">0000</span>,
-  <span class="hljs-attr">host</span>: <span class="hljs-string">'api.logmatic.io'</span>,
-  <span class="hljs-attr">meta</span>: { <span class="hljs-attr">logmaticKey</span>: <span class="hljs-string">'xxxxxxxx'</span> },
-  <span class="hljs-attr">node_name</span>: <span class="hljs-string">'my node name'</span>,
+  <span class="hljs-attr">host</span>: <span class="hljs-string">&#x27;api.logmatic.io&#x27;</span>,
+  <span class="hljs-attr">meta</span>: { <span class="hljs-attr">logmaticKey</span>: <span class="hljs-string">&#x27;xxxxxxxx&#x27;</span> },
+  <span class="hljs-attr">node_name</span>: <span class="hljs-string">&#x27;my node name&#x27;</span>,
 });
 
 <span class="hljs-comment">// add the transport as a nightingale handler for all loggers</span>
@@ -262,6 +262,7 @@ addGlobalHandler(<span class="hljs-keyword">new</span> WinstonAdapterHandler(log
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
 			<ul class="tsd-legend">
+				<li class="tsd-kind-namespace"><span class="tsd-kind-icon">Namespace</span></li>
 				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
 				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
 				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
@@ -287,6 +288,5 @@ addGlobalHandler(<span class="hljs-keyword">new</span> WinstonAdapterHandler(log
 </div>
 <div class="overlay"></div>
 <script src="../assets/js/main.js"></script>
-<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
 </body>
 </html>

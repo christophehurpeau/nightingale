@@ -15,17 +15,32 @@
   },
   "main": "./index.js",
   "types": "./dist/index.d.ts",
-  "module:node": "./dist/index-node10.es.js",
-  "module:node-dev": "./dist/index-node10-dev.es.js",
-  "module:aliases-node": {
-    "./children.js": "./dist/children-node10.es.js"
+  "exports": {
+    ".": {
+      "node": {
+        "development": {
+          "import": "./dist/index-node10-dev.mjs",
+          "require": "./dist/index-node10-dev.cjs.js"
+        },
+        "import": "./dist/index-node10.mjs",
+        "require": "./dist/index-node10.cjs.js"
+      }
+    },
+    "./children": {
+      "node": {
+        "development": {
+          "import": "./dist/children-node10-dev.mjs",
+          "require": "./dist/children-node10-dev.cjs.js"
+        },
+        "import": "./dist/children-node10.mjs",
+        "require": "./dist/children-node10.cjs.js"
+      }
+    }
   },
-  "module:aliases-node-dev": {
-    "./children.js": "./dist/children-node10-dev.es.js"
-  },
+  "sideEffects": true,
   "scripts": {
     "build": "pob-build",
-    "lint": "yarn --cwd ../.. eslint --ext .js,.ts --quiet packages/nightingale-console-example",
+    "lint": "yarn --cwd ../.. eslint --ext .js,.ts --report-unused-disable-directives --quiet packages/nightingale-console-example",
     "watch": "pob-watch"
   },
   "prettier": {
@@ -54,8 +69,9 @@
     "nightingale-console": "^10.0.1"
   },
   "devDependencies": {
-    "@babel/core": "7.10.2",
-    "babel-preset-latest-node": "4.1.0",
-    "pob-babel": "24.12.1"
+    "@babel/core": "7.12.3",
+    "babel-preset-latest-node": "5.0.0",
+    "pob-babel": "25.1.1",
+    "rollup": "2.32.0"
   }
 }

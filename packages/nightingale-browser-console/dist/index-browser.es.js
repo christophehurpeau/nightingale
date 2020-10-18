@@ -3,7 +3,9 @@ import consoleOutput from 'nightingale-console-output';
 import createFindDebugLevel from 'nightingale-debug';
 
 function getDebugString() {
-  var querystring = document.location && document.location.search;
+  var _document$location;
+
+  var querystring = (_document$location = document.location) == null ? void 0 : _document$location.search;
   var debugFromLocalStorage = window.localStorage && localStorage.getItem('debug') || '';
 
   if (!querystring) {
@@ -13,7 +15,7 @@ function getDebugString() {
 
   var debugFromQueryString = decodeURI(querystring.replace( // eslint-disable-next-line unicorn/no-unsafe-regex
   new RegExp('^(?:.*[&\\?]DEBUG(?:\\=([^&]*))?)?.*$', 'i'), '$1'));
-  return (debugFromLocalStorage ? debugFromLocalStorage + "," : '') + debugFromQueryString;
+  return (debugFromLocalStorage ? `${debugFromLocalStorage},` : '') + debugFromQueryString;
 }
 
 var findDebugLevel = function findDebugLevel(minLevel, key) {

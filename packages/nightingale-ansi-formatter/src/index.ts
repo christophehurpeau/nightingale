@@ -1,6 +1,6 @@
 import ansi from 'ansi-styles';
 import { styleToHexColor, formatRecordToString } from 'nightingale-formatter';
-import type { Styles, LogRecord } from 'nightingale-types';
+import type { Styles, LogRecord, Metadata } from 'nightingale-types';
 
 interface CodePair {
   open: string;
@@ -50,6 +50,7 @@ export function style(styles: Styles, string: string): string {
     return string;
   }
 
+  // eslint-disable-next-line unicorn/no-reduce
   return styles.reduce((string: string, styleName: string) => {
     const style: CodePair | undefined = ansiStyles[styleName];
 
@@ -65,6 +66,8 @@ export function style(styles: Styles, string: string): string {
  * @param {Object} record
  * @returns {string}
  */
-export default function format<T>(record: LogRecord<T>): string {
+export default function format<T extends Metadata>(
+  record: LogRecord<T>,
+): string {
   return formatRecordToString(record, style);
 }

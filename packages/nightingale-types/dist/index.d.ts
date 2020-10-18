@@ -1,11 +1,12 @@
-import Level from 'nightingale-levels';
+import type Level from 'nightingale-levels';
 export type { Level };
 export declare type Styles = string[] | undefined;
 export interface Metadata {
-    [propName: string]: any;
+    context?: Record<string, unknown>;
+    [propName: string]: unknown;
 }
 export declare type MetadataStyles<T extends Metadata> = {
-    [P in keyof T]?: any;
+    [P in keyof T]?: Styles;
 };
 export interface LogRecord<T extends Metadata> {
     level: Level;
@@ -13,15 +14,13 @@ export interface LogRecord<T extends Metadata> {
     displayName?: string;
     datetime: Date;
     message: string;
-    context?: object;
+    context?: Record<string, unknown>;
     metadata?: T;
-    extra?: object | any;
+    extra?: Record<string, unknown>;
     symbol?: string;
     styles?: Styles;
     metadataStyles?: MetadataStyles<T>;
 }
-/** @deprecated use LogRecord instead */
-export declare type Record<T extends Metadata> = LogRecord<T>;
 export declare type IsHandling = (level: Level, key: string) => boolean;
 export declare type Handle = <T extends Metadata>(record: Readonly<LogRecord<T>>) => false | void;
 export interface Handler {
@@ -29,5 +28,5 @@ export interface Handler {
     isHandling?: IsHandling;
     handle: Handle;
 }
-export declare type Processor = <T extends Metadata>(record: Readonly<LogRecord<T>>, context?: object) => void;
+export declare type Processor = <T extends Metadata>(record: Readonly<LogRecord<T>>, context?: Record<string, unknown>) => void;
 //# sourceMappingURL=index.d.ts.map

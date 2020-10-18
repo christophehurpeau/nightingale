@@ -1,14 +1,4 @@
-import type { Handler, Processor } from 'nightingale-types';
-export interface Config {
-    handler?: Handler;
-    handlers?: Handler[];
-    key?: string;
-    keys?: string[];
-    pattern?: RegExp;
-    processor?: Processor;
-    processors?: Processor[];
-    stop?: boolean;
-}
+import type { Config } from 'nightingale-logger';
 export declare function configure(config: Config[]): void;
 export declare function addConfig(config: Config, unshift?: boolean): void;
 //# sourceMappingURL=config.d.ts.map

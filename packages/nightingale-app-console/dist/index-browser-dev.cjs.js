@@ -2,14 +2,16 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
-
 var Logger = require('nightingale');
-var Logger__default = _interopDefault(Logger);
-var BrowserConsoleHandler = _interopDefault(require('nightingale-browser-console'));
+var BrowserConsoleHandler = require('nightingale-browser-console');
 var sourceMapSupport = require('source-map-support');
 
-var ConsoleHandler = BrowserConsoleHandler;
+function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e['default'] : e; }
+
+var Logger__default = /*#__PURE__*/_interopDefaultLegacy(Logger);
+var BrowserConsoleHandler__default = /*#__PURE__*/_interopDefaultLegacy(BrowserConsoleHandler);
+
+var ConsoleHandler = BrowserConsoleHandler__default;
 sourceMapSupport.install({
   environment: 'browser'
 });
@@ -23,30 +25,10 @@ Logger.configure([{
   handlers: [new ConsoleHandler(Logger.Level.INFO)]
 }]);
 
-Object.defineProperty(exports, 'Level', {
-  enumerable: true,
-  get: function () {
-    return Logger.Level;
-  }
-});
-Object.defineProperty(exports, 'addConfig', {
-  enumerable: true,
-  get: function () {
-    return Logger.addConfig;
-  }
-});
-Object.defineProperty(exports, 'configure', {
-  enumerable: true,
-  get: function () {
-    return Logger.configure;
-  }
-});
-Object.defineProperty(exports, 'levels', {
-  enumerable: true,
-  get: function () {
-    return Logger.levels;
-  }
-});
+exports.Level = Logger.Level;
+exports.addConfig = Logger.addConfig;
+exports.configure = Logger.configure;
+exports.levels = Logger.levels;
 exports.appLogger = appLogger;
 exports.logger = logger;
 //# sourceMappingURL=index-browser-dev.cjs.js.map

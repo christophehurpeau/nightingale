@@ -2,13 +2,15 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
+var nightingaleLevels = require('nightingale-levels');
+var Logger = require('nightingale-logger');
 
-var nightingaleLevels = _interopDefault(require('nightingale-levels'));
-var Logger = _interopDefault(require('nightingale-logger'));
+function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e['default'] : e; }
+
+var nightingaleLevels__default = /*#__PURE__*/_interopDefaultLegacy(nightingaleLevels);
+var Logger__default = /*#__PURE__*/_interopDefaultLegacy(Logger);
 
 if (global.__NIGHTINGALE_GLOBAL_HANDLERS) {
-  // eslint-disable-next-line no-console
   throw new Error('nightingale: update all to ^5.0.0');
 }
 
@@ -65,7 +67,7 @@ function handleConfig(config) {
 }
 
 function configure(config) {
-  if (global.__NIGHTINGALE_CONFIG.length !== 0) {
+  if (global.__NIGHTINGALE_CONFIG.length > 0) {
     // eslint-disable-next-line no-console
     console.log('nightingale: warning: config overridden');
   }
@@ -95,9 +97,10 @@ var configIsForKey = function configIsForKey(key) {
 
 global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = function (key) {
   var globalCache = global.__NIGHTINGALE_LOGGER_MAP_CACHE;
+  var existingCache = globalCache.get(key);
 
-  if (globalCache.has(key)) {
-    return globalCache.get(key);
+  if (existingCache) {
+    return existingCache;
   }
 
   var loggerConfig = {
@@ -127,7 +130,7 @@ if (global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
       handlers: handlers.filter(function (handler) {
         return level >= handler.minLevel && (!handler.isHandling || handler.isHandling(level, key));
       }),
-      processors: processors
+      processors
     };
   };
 }
@@ -139,25 +142,25 @@ if (global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
 
 function listenUnhandledErrors(logger) {
   if (logger === void 0) {
-    logger = new Logger('nightingale.listenUnhandledErrors', 'listenUnhandledErrors');
+    logger = new Logger__default('nightingale.listenUnhandledErrors', 'listenUnhandledErrors');
   }
 
   process.on('uncaughtException', function (err) {
     return logger.error('uncaughtException', {
-      err: err
+      err
     });
   });
   process.on('unhandledRejection', function (err) {
     return logger.error('unhandledRejection', {
-      err: err
+      err
     });
   });
 }
 
-exports.Level = nightingaleLevels;
-exports.levels = nightingaleLevels;
+exports.Level = nightingaleLevels__default;
+exports.levels = nightingaleLevels__default;
+exports.default = Logger__default;
 exports.addConfig = addConfig;
 exports.configure = configure;
-exports.default = Logger;
 exports.listenUnhandledErrors = listenUnhandledErrors;
 //# sourceMappingURL=index-browser-dev.cjs.js.map

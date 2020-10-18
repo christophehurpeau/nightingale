@@ -1,7 +1,7 @@
 import Logger, { configure, Level } from 'nightingale';
 import consoleOutput from 'nightingale-console-output';
 import jsonFormatter from 'nightingale-json-formatter';
-import type { LogRecord } from 'nightingale-types';
+import type { LogRecord, Metadata } from 'nightingale-types';
 
 class JSONHandler {
   minLevel: Level;
@@ -10,7 +10,7 @@ class JSONHandler {
     this.minLevel = minLevel;
   }
 
-  handle<T>(record: LogRecord<T>): void {
+  handle<T extends Metadata>(record: LogRecord<T>): void {
     consoleOutput(jsonFormatter(record), record);
   }
 }

@@ -2,8 +2,8 @@
   "pob": {
     "pob-config": {
       "testing": {
-        "circleci": true,
-        "codecov": true
+        "codecov": true,
+        "ci": true
       },
       "documentation": false
     },

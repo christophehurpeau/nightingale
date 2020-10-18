@@ -1,11 +1,11 @@
 import levelNames from 'nightingale-level-names';
 
-/* eslint-disable @typescript-eslint/camelcase */
+/* eslint-disable camelcase */
 class WinstonAdapterHandler {
   constructor(winstonTransport, minLevel) {
     this.minLevel = minLevel;
 
-    this.handle = function (record) {
+    this.handle = record => {
       // new Promise((resolve, reject) => {
       winstonTransport.log(record.level, record.message, {
         level_name: levelNames.get(record.level),
@@ -13,7 +13,7 @@ class WinstonAdapterHandler {
         metadata: record.metadata,
         extra: record.extra,
         context: record.context
-      }, function (err) {
+      }, err => {
         if (err) {
           console.warn(err); // return reject(err);
         } // resolve();

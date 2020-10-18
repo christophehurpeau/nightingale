@@ -1,4 +1,2 @@
-declare module "nightingale-level-names" {
-  var levelToName: Map<number, string>;
-  export = levelToName;
-}
+declare const levelToName: Map<number, string>;
+export = levelToName;

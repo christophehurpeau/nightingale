@@ -97,21 +97,21 @@ npm install --save nightingale-browser-console <span class="hljs-comment"># for 
 						<h3>In an application</h3>
 					</a>
 					<pre><code class="language-sh">npm install --save nightingale nightingale-console</code></pre>
-					<pre><code class="language-js"><span class="hljs-keyword">import</span> Logger, { configure, Level } <span class="hljs-keyword">from</span> <span class="hljs-string">'nightingale'</span>;
-<span class="hljs-keyword">import</span> ConsoleHandler <span class="hljs-keyword">from</span> <span class="hljs-string">'nightingale-console'</span>;
+					<pre><code class="language-js"><span class="hljs-keyword">import</span> Logger, { configure, Level } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;nightingale&#x27;</span>;
+<span class="hljs-keyword">import</span> ConsoleHandler <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;nightingale-console&#x27;</span>;
 
 configure([
   {
     <span class="hljs-attr">handlers</span>: [<span class="hljs-keyword">new</span> ConsoleHandler(Level.WARN)],
   },
   {
-    <span class="hljs-attr">keys</span>: [<span class="hljs-string">'mylib'</span>, <span class="hljs-string">'myotherlib'</span>],
+    <span class="hljs-attr">keys</span>: [<span class="hljs-string">&#x27;mylib&#x27;</span>, <span class="hljs-string">&#x27;myotherlib&#x27;</span>],
     <span class="hljs-attr">handlers</span>: [<span class="hljs-keyword">new</span> ConsoleHandler(Level.ALL)],
   },
   {
     <span class="hljs-attr">pattern</span>: <span class="hljs-regexp">/^app\.server$/</span>,
     handlers: [<span class="hljs-keyword">new</span> ConsoleHandler(Level.ALL)],
-    <span class="hljs-attr">stop</span>: <span class="hljs-literal">true</span>, <span class="hljs-comment">// means the following config won't be used, if the pattern matches.</span>
+    <span class="hljs-attr">stop</span>: <span class="hljs-literal">true</span>, <span class="hljs-comment">// means the following config won&#x27;t be used, if the pattern matches.</span>
   },
   {
     <span class="hljs-attr">pattern</span>: <span class="hljs-regexp">/^app(?!\.server)/</span>,
@@ -120,35 +120,35 @@ configure([
 ]);
 
 <span class="hljs-comment">// in one of your controllers</span>
-<span class="hljs-keyword">const</span> logger = <span class="hljs-keyword">new</span> Logger(<span class="hljs-string">'app.controllers'</span>);
-logger.debug(<span class="hljs-string">'This is a log'</span>); <span class="hljs-comment">// will not be displayed</span>
+<span class="hljs-keyword">const</span> logger = <span class="hljs-keyword">new</span> Logger(<span class="hljs-string">&#x27;app.controllers&#x27;</span>);
+logger.debug(<span class="hljs-string">&#x27;This is a log&#x27;</span>); <span class="hljs-comment">// will not be displayed</span>
 
 <span class="hljs-comment">// in your server.js file</span>
-<span class="hljs-keyword">const</span> logger = <span class="hljs-keyword">new</span> Logger(<span class="hljs-string">'app.server'</span>);
-logger.debug(<span class="hljs-string">'This is a log'</span>); <span class="hljs-comment">// will be displayed</span></code></pre>
+<span class="hljs-keyword">const</span> logger = <span class="hljs-keyword">new</span> Logger(<span class="hljs-string">&#x27;app.server&#x27;</span>);
+logger.debug(<span class="hljs-string">&#x27;This is a log&#x27;</span>); <span class="hljs-comment">// will be displayed</span></code></pre>
 					<p>You can configure several handlers with different <code>Level</code>, like console and slack.</p>
 					<a href="#in-a-library" id="in-a-library" style="color: inherit; text-decoration: none;">
 						<h3>In a library</h3>
 					</a>
 					<pre><code class="language-sh">npm install --save nightingale-logger</code></pre>
-					<pre><code class="language-js"><span class="hljs-keyword">import</span> Logger <span class="hljs-keyword">from</span> <span class="hljs-string">'nightingale-logger'</span>;
+					<pre><code class="language-js"><span class="hljs-keyword">import</span> Logger <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;nightingale-logger&#x27;</span>;
 
-<span class="hljs-keyword">const</span> logger = <span class="hljs-keyword">new</span> Logger(<span class="hljs-string">'mylib'</span>);
+<span class="hljs-keyword">const</span> logger = <span class="hljs-keyword">new</span> Logger(<span class="hljs-string">&#x27;mylib&#x27;</span>);
 
-logger.info(<span class="hljs-string">'This is a log'</span>);
-logger.warn(<span class="hljs-string">'This is a warning !'</span>);
-logger.success(<span class="hljs-string">'It works !'</span>);</code></pre>
+logger.info(<span class="hljs-string">&#x27;This is a log&#x27;</span>);
+logger.warn(<span class="hljs-string">&#x27;This is a warning !&#x27;</span>);
+logger.success(<span class="hljs-string">&#x27;It works !&#x27;</span>);</code></pre>
 					<a href="#in-the-browser" id="in-the-browser" style="color: inherit; text-decoration: none;">
 						<h3>In the browser</h3>
 					</a>
 					<pre><code class="language-sh">npm install --save nightingale nightingale-browser-console</code></pre>
 					<p><img src="https://static.hurpeau.com/images/npm/nightingale/log_in_firefox.png" alt="browser log example"></p>
-					<pre><code class="language-js"><span class="hljs-keyword">import</span> { configure, levels } <span class="hljs-keyword">from</span> <span class="hljs-string">'nightingale'</span>;
-<span class="hljs-keyword">import</span> BrowserConsoleHandler <span class="hljs-keyword">from</span> <span class="hljs-string">'nightingale-browser-console'</span>;
+					<pre><code class="language-js"><span class="hljs-keyword">import</span> { configure, levels } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;nightingale&#x27;</span>;
+<span class="hljs-keyword">import</span> BrowserConsoleHandler <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;nightingale-browser-console&#x27;</span>;
 
 configure([
   {
-    <span class="hljs-attr">key</span>: <span class="hljs-string">'app'</span>,
+    <span class="hljs-attr">key</span>: <span class="hljs-string">&#x27;app&#x27;</span>,
     <span class="hljs-attr">handlers</span>: [<span class="hljs-keyword">new</span> BrowserConsoleHandler(Level.INFO)],
   },
 ]);</code></pre>
@@ -174,28 +174,28 @@ configure([
 					<a href="#add-information-on-a-request" id="add-information-on-a-request" style="color: inherit; text-decoration: none;">
 						<h3>Add information on a request</h3>
 					</a>
-					<pre><code class="language-js"><span class="hljs-keyword">import</span> Koa <span class="hljs-keyword">from</span> <span class="hljs-string">'koa'</span>;
-<span class="hljs-keyword">import</span> Logger, { configure, Level } <span class="hljs-keyword">from</span> <span class="hljs-string">'nightingale'</span>;
-<span class="hljs-keyword">import</span> ConsoleHandler <span class="hljs-keyword">from</span> <span class="hljs-string">'nightinale-console'</span>;
-<span class="hljs-keyword">import</span> webProcessor <span class="hljs-keyword">from</span> <span class="hljs-string">'nightinale-web-processor'</span>;
+					<pre><code class="language-js"><span class="hljs-keyword">import</span> Koa <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;koa&#x27;</span>;
+<span class="hljs-keyword">import</span> Logger, { configure, Level } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;nightingale&#x27;</span>;
+<span class="hljs-keyword">import</span> ConsoleHandler <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;nightinale-console&#x27;</span>;
+<span class="hljs-keyword">import</span> webProcessor <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;nightinale-web-processor&#x27;</span>;
 
 <span class="hljs-keyword">const</span> app = <span class="hljs-keyword">new</span> Koa();
-<span class="hljs-keyword">const</span> logger = <span class="hljs-keyword">new</span> Logger(<span class="hljs-string">'app'</span>);
+<span class="hljs-keyword">const</span> logger = <span class="hljs-keyword">new</span> Logger(<span class="hljs-string">&#x27;app&#x27;</span>);
 
 configure([
   {
-    <span class="hljs-attr">key</span>: <span class="hljs-string">'app'</span>,
+    <span class="hljs-attr">key</span>: <span class="hljs-string">&#x27;app&#x27;</span>,
     <span class="hljs-attr">handlers</span>: [<span class="hljs-keyword">new</span> ConsoleHandler(Level.ALL)],
     <span class="hljs-attr">processors</span>: [webProcessor],
   },
 ]);
 
 app.use(<span class="hljs-keyword">async</span> (ctx) =&gt; {
-  logger.info(<span class="hljs-string">'something to log !'</span>, { <span class="hljs-attr">context</span>: ctx });
+  logger.info(<span class="hljs-string">&#x27;something to log !&#x27;</span>, { <span class="hljs-attr">context</span>: ctx });
 });
 
 app.use(<span class="hljs-keyword">async</span> (ctx) =&gt; {
-  ctx.logger.info(<span class="hljs-string">'something to log !'</span>, { <span class="hljs-attr">context</span>: ctx });
+  ctx.logger.info(<span class="hljs-string">&#x27;something to log !&#x27;</span>, { <span class="hljs-attr">context</span>: ctx });
 });</code></pre>
 					<a href="#more-info" id="more-info" style="color: inherit; text-decoration: none;">
 						<h2>More info</h2>
@@ -238,49 +238,49 @@ app.use(<span class="hljs-keyword">async</span> (ctx) =&gt; {
 					<a href="#extends-logger" id="extends-logger" style="color: inherit; text-decoration: none;">
 						<h2>Extends Logger</h2>
 					</a>
-					<pre><code class="language-js"><span class="hljs-keyword">import</span> { Logger } <span class="hljs-keyword">from</span> <span class="hljs-string">'nightingale'</span>;
+					<pre><code class="language-js"><span class="hljs-keyword">import</span> { Logger } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;nightingale&#x27;</span>;
 
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyCustomLogger</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Logger</span> </span>{
   myCustomMethod(message) {
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.info(<span class="hljs-string">`custom message: <span class="hljs-subst">${message}</span>`</span>);
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.info(<span class="hljs-string">`custom message: <span class="hljs-subst">${message}</span>`</span>);
   }
 }
 
-<span class="hljs-keyword">const</span> logger = <span class="hljs-keyword">new</span> MyCustomLogger(<span class="hljs-string">'app'</span>);</code></pre>
+<span class="hljs-keyword">const</span> logger = <span class="hljs-keyword">new</span> MyCustomLogger(<span class="hljs-string">&#x27;app&#x27;</span>);</code></pre>
 					<a href="#global-processors" id="global-processors" style="color: inherit; text-decoration: none;">
 						<h2>Global processors</h2>
 					</a>
-					<pre><code class="language-js"><span class="hljs-keyword">import</span> { configure } <span class="hljs-keyword">from</span> <span class="hljs-string">'nightingale'</span>;
-<span class="hljs-keyword">import</span> errorProcessor <span class="hljs-keyword">from</span> <span class="hljs-string">'nightingale-error-processor'</span>;
+					<pre><code class="language-js"><span class="hljs-keyword">import</span> { configure } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;nightingale&#x27;</span>;
+<span class="hljs-keyword">import</span> errorProcessor <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;nightingale-error-processor&#x27;</span>;
 
 configure([{ <span class="hljs-attr">processors</span>: [errorProcessor] }]);</code></pre>
 					<a href="#global-handlers" id="global-handlers" style="color: inherit; text-decoration: none;">
 						<h2>Global handlers</h2>
 					</a>
-					<pre><code class="language-js"><span class="hljs-keyword">import</span> { addGlobalHandler, levels } <span class="hljs-keyword">from</span> <span class="hljs-string">'nightingale'</span>;
-<span class="hljs-keyword">import</span> ErrorHandler <span class="hljs-keyword">from</span> <span class="hljs-string">'nightingale-sentry'</span>;
+					<pre><code class="language-js"><span class="hljs-keyword">import</span> { addGlobalHandler, levels } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;nightingale&#x27;</span>;
+<span class="hljs-keyword">import</span> ErrorHandler <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;nightingale-sentry&#x27;</span>;
 
 configure([{ <span class="hljs-attr">handlers</span>: [<span class="hljs-keyword">new</span> ErrorHandler(Level.ERROR)] }]);</code></pre>
 					<a href="#children" id="children" style="color: inherit; text-decoration: none;">
 						<h2>Children</h2>
 					</a>
 					<p>You can create children.</p>
-					<pre><code class="language-js"><span class="hljs-keyword">import</span> Logger <span class="hljs-keyword">from</span> <span class="hljs-string">'nightingale'</span>;
-<span class="hljs-keyword">const</span> loggerApp = <span class="hljs-keyword">new</span> Logger(<span class="hljs-string">'app'</span>);
-<span class="hljs-keyword">const</span> loggerMyService = loggerApp.child(<span class="hljs-string">'myService'</span>);
+					<pre><code class="language-js"><span class="hljs-keyword">import</span> Logger <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;nightingale&#x27;</span>;
+<span class="hljs-keyword">const</span> loggerApp = <span class="hljs-keyword">new</span> Logger(<span class="hljs-string">&#x27;app&#x27;</span>);
+<span class="hljs-keyword">const</span> loggerMyService = loggerApp.child(<span class="hljs-string">&#x27;myService&#x27;</span>);
 <span class="hljs-comment">// loggerMyService key is `app.myService`</span></code></pre>
 					<a href="#context" id="context" style="color: inherit; text-decoration: none;">
 						<h2>Context</h2>
 					</a>
 					<p>You can use context to add data to each log.</p>
-					<pre><code class="language-js"><span class="hljs-keyword">import</span> Logger <span class="hljs-keyword">from</span> <span class="hljs-string">'nightingale'</span>;
-<span class="hljs-keyword">const</span> loggerMyService = <span class="hljs-keyword">new</span> Logger(<span class="hljs-string">'app.myService'</span>);
+					<pre><code class="language-js"><span class="hljs-keyword">import</span> Logger <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;nightingale&#x27;</span>;
+<span class="hljs-keyword">const</span> loggerMyService = <span class="hljs-keyword">new</span> Logger(<span class="hljs-string">&#x27;app.myService&#x27;</span>);
 
 <span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">someAction</span>(<span class="hljs-params">arg1</span>) </span>{
   <span class="hljs-keyword">const</span> logger = loggerMyService.context({ arg1 });
-  logger.info(<span class="hljs-string">'starting'</span>);
+  logger.info(<span class="hljs-string">&#x27;starting&#x27;</span>);
   <span class="hljs-comment">// do stuff</span>
-  logger.info(<span class="hljs-string">'done'</span>);
+  logger.info(<span class="hljs-string">&#x27;done&#x27;</span>);
 }</code></pre>
 				</div>
 			</section>
@@ -294,18 +294,6 @@ configure([{ <span class="hljs-attr">handlers</span>: [<span class="hljs-keyword
 								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="nightingale.html#addconfig" class="tsd-kind-icon">add<wbr>Config</a></li>
 								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="nightingale.html#configure" class="tsd-kind-icon">configure</a></li>
 								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="nightingale.html#levels" class="tsd-kind-icon">levels</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section ">
-							<h3>Interfaces</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/nightingale.config.html" class="tsd-kind-icon">Config</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section tsd-is-not-exported">
-							<h3>Variables</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported"><a href="nightingale.html#global" class="tsd-kind-icon">global</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -340,38 +328,25 @@ configure([{ <span class="hljs-attr">handlers</span>: [<span class="hljs-keyword
 					Renames and re-exports <a href="../enums/nightingale_levels.level.html">Level</a>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
-				<h2>Variables</h2>
-				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
-					<a name="global" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> global</h3>
-					<div class="tsd-signature tsd-kind-icon">global<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale/src/config.ts#L16">nightingale/src/config.ts:16</a></li>
-						</ul>
-					</aside>
-				</section>
-			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
 					<a name="addconfig-1" class="tsd-anchor"></a>
 					<h3>add<wbr>Config</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">add<wbr>Config<span class="tsd-signature-symbol">(</span>config<span class="tsd-signature-symbol">: </span><a href="../interfaces/nightingale.config.html" class="tsd-signature-type">Config</a>, unshift<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Config<span class="tsd-signature-symbol">(</span>config<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Config</span>, unshift<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale/src/config.ts#L80">nightingale/src/config.ts:80</a></li>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale/src/config.ts#L69">nightingale/src/config.ts:69</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>config: <a href="../interfaces/nightingale.config.html" class="tsd-signature-type">Config</a></h5>
+									<h5>config: <span class="tsd-signature-type">Config</span></h5>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> unshift: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></h5>
@@ -391,7 +366,7 @@ configure([{ <span class="hljs-attr">handlers</span>: [<span class="hljs-keyword
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale/src/config.ts#L29">nightingale/src/config.ts:29</a></li>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale/src/config.ts#L18">nightingale/src/config.ts:18</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -408,7 +383,7 @@ configure([{ <span class="hljs-attr">handlers</span>: [<span class="hljs-keyword
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale/src/config.ts#L86">nightingale/src/config.ts:86</a></li>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale/src/config.ts#L75">nightingale/src/config.ts:75</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -425,19 +400,19 @@ configure([{ <span class="hljs-attr">handlers</span>: [<span class="hljs-keyword
 					<a name="configure-1" class="tsd-anchor"></a>
 					<h3>configure</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">configure<span class="tsd-signature-symbol">(</span>config<span class="tsd-signature-symbol">: </span><a href="../interfaces/nightingale.config.html" class="tsd-signature-type">Config</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">configure<span class="tsd-signature-symbol">(</span>config<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Config</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale/src/config.ts#L70">nightingale/src/config.ts:70</a></li>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale/src/config.ts#L59">nightingale/src/config.ts:59</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>config: <a href="../interfaces/nightingale.config.html" class="tsd-signature-type">Config</a><span class="tsd-signature-symbol">[]</span></h5>
+									<h5>config: <span class="tsd-signature-type">Config</span><span class="tsd-signature-symbol">[]</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -448,22 +423,22 @@ configure([{ <span class="hljs-attr">handlers</span>: [<span class="hljs-keyword
 					<a name="handleconfig" class="tsd-anchor"></a>
 					<h3>handle<wbr>Config</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">handle<wbr>Config<span class="tsd-signature-symbol">(</span>config<span class="tsd-signature-symbol">: </span><a href="../interfaces/nightingale.config.html" class="tsd-signature-type">Config</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/nightingale.config.html" class="tsd-signature-type">Config</a></li>
+						<li class="tsd-signature tsd-kind-icon">handle<wbr>Config<span class="tsd-signature-symbol">(</span>config<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Config</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Config</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale/src/config.ts#L33">nightingale/src/config.ts:33</a></li>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale/src/config.ts#L22">nightingale/src/config.ts:22</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>config: <a href="../interfaces/nightingale.config.html" class="tsd-signature-type">Config</a></h5>
+									<h5>config: <span class="tsd-signature-type">Config</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="../interfaces/nightingale.config.html" class="tsd-signature-type">Config</a></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Config</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -588,12 +563,6 @@ configure([{ <span class="hljs-attr">handlers</span>: [<span class="hljs-keyword
 					<li class=" tsd-kind-reference tsd-parent-kind-module">
 						<a href="nightingale.html#levels" class="tsd-kind-icon">levels</a>
 					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="../interfaces/nightingale.config.html" class="tsd-kind-icon">Config</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
-						<a href="nightingale.html#global" class="tsd-kind-icon">global</a>
-					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="nightingale.html#addconfig-1" class="tsd-kind-icon">add<wbr>Config</a>
 					</li>
@@ -622,6 +591,7 @@ configure([{ <span class="hljs-attr">handlers</span>: [<span class="hljs-keyword
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
 			<ul class="tsd-legend">
+				<li class="tsd-kind-namespace"><span class="tsd-kind-icon">Namespace</span></li>
 				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
 				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
 				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
@@ -647,6 +617,5 @@ configure([{ <span class="hljs-attr">handlers</span>: [<span class="hljs-keyword
 </div>
 <div class="overlay"></div>
 <script src="../assets/js/main.js"></script>
-<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
 </body>
 </html>

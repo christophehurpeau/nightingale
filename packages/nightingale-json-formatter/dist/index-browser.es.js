@@ -6,7 +6,7 @@ function map2object(map) {
       return;
     }
 
-    object[key] = value;
+    object[String(key)] = value;
   });
   return object;
 }

@@ -3,7 +3,7 @@ import consoleOutput from 'nightingale-console-output';
 import createFindDebugLevel from 'nightingale-debug';
 
 function getDebugString() {
-  const querystring = document.location && document.location.search;
+  const querystring = document.location?.search;
   const debugFromLocalStorage = window.localStorage && localStorage.getItem('debug') || '';
 
   if (!querystring) {
@@ -16,11 +16,9 @@ function getDebugString() {
   return (debugFromLocalStorage ? `${debugFromLocalStorage},` : '') + debugFromQueryString;
 }
 
-const findDebugLevel = function findDebugLevel(minLevel, key) {
-  return createFindDebugLevel(getDebugString())(minLevel, key);
-};
+const findDebugLevel = (minLevel, key) => createFindDebugLevel(getDebugString())(minLevel, key);
 
-const handle = function handle(record) {
+const handle = record => {
   consoleOutput(browserConsoleFormatter(record), record);
 };
 
@@ -29,9 +27,7 @@ class BrowserConsoleHandler {
     this.minLevel = 0;
     this.handle = handle;
 
-    this.isHandling = function (level, key) {
-      return level >= findDebugLevel(minLevel, key);
-    };
+    this.isHandling = (level, key) => level >= findDebugLevel(minLevel, key);
   }
 
 }

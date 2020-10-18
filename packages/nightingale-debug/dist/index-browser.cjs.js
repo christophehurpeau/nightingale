@@ -2,9 +2,11 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
+var Level = require('nightingale-levels');
 
-var Level = _interopDefault(require('nightingale-levels'));
+function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e['default'] : e; }
+
+var Level__default = /*#__PURE__*/_interopDefaultLegacy(Level);
 
 /* eslint-disable complexity */
 var specialRegexpChars = /[$()+.?[\\\]^{|}]/;
@@ -57,7 +59,7 @@ function createFindDebugLevel(debugValue) {
   if (debugValue) {
     debugValue.forEach(function (value) {
       if (specialRegexpChars.test(value)) {
-        throw new Error("Invalid debug value: \"" + value + "\" (contains special chars)");
+        throw new Error(`Invalid debug value: "${value}" (contains special chars)`);
       }
 
       if (!value) return;
@@ -78,13 +80,13 @@ function createFindDebugLevel(debugValue) {
   if (wilcard) {
     if (skips.length === 0) {
       return function () {
-        return Level.ALL;
+        return Level__default.ALL;
       };
     } else {
       return function (minLevel, key) {
         return skips.some(function (skip) {
           return skip(key);
-        }) ? minLevel : Level.ALL;
+        }) ? minLevel : Level__default.ALL;
       };
     }
   }
@@ -96,7 +98,7 @@ function createFindDebugLevel(debugValue) {
   }
 
   return function (minLevel, key) {
-    if (minLevel === Level.ALL || !key) {
+    if (minLevel === Level__default.ALL || !key) {
       return minLevel;
     }
 
@@ -105,7 +107,7 @@ function createFindDebugLevel(debugValue) {
     })) {
       return skips.some(function (skip) {
         return skip(key);
-      }) ? minLevel : Level.ALL;
+      }) ? minLevel : Level__default.ALL;
     }
 
     return minLevel;

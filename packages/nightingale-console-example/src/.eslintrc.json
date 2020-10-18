@@ -15,5 +15,6 @@
         "paths": ["./node_modules", "./src"]
       }
     }
-  }
+  },
+  "ignorePatterns": ["*.d.ts"]
 }

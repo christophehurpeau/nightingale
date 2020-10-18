@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/camelcase */
+/* eslint-disable camelcase */
 import Level from 'nightingale-levels';
 import createBody from './createBody';
 

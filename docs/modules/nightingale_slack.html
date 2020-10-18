@@ -85,8 +85,8 @@
 					<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
 						<h2>Usage</h2>
 					</a>
-					<pre><code class="language-js"><span class="hljs-keyword">import</span> { configure, Level } <span class="hljs-keyword">from</span> <span class="hljs-string">'nightingale'</span>;
-<span class="hljs-keyword">import</span> SlackHandler <span class="hljs-keyword">from</span> <span class="hljs-string">'nightingale-slack'</span>;
+					<pre><code class="language-js"><span class="hljs-keyword">import</span> { configure, Level } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;nightingale&#x27;</span>;
+<span class="hljs-keyword">import</span> SlackHandler <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;nightingale-slack&#x27;</span>;
 
 <span class="hljs-keyword">const</span> slackErrorConfig = {
   <span class="hljs-attr">webhookUrl</span>: string,
@@ -139,7 +139,7 @@ configure([
 					<a name="createbody" class="tsd-anchor"></a>
 					<h3>create<wbr>Body</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
-						<li class="tsd-signature tsd-kind-icon">create<wbr>Body&lt;T&gt;<span class="tsd-signature-symbol">(</span>record<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">LogRecord</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, slackConfig<span class="tsd-signature-symbol">: </span><a href="../interfaces/nightingale_slack.slackconfig.html" class="tsd-signature-type">SlackConfig</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Body&lt;T&gt;<span class="tsd-signature-symbol">(</span>record<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">LogRecord</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, slackConfig<span class="tsd-signature-symbol">: </span><a href="../interfaces/nightingale_slack.slackconfig.html" class="tsd-signature-type">SlackConfig</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -151,7 +151,7 @@ configure([
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
 							<ul class="tsd-type-parameters">
 								<li>
-									<h4>T</h4>
+									<h4>T<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Metadata</span></h4>
 								</li>
 							</ul>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -163,7 +163,7 @@ configure([
 									<h5>slackConfig: <a href="../interfaces/nightingale_slack.slackconfig.html" class="tsd-signature-type">SlackConfig</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -392,6 +392,7 @@ configure([
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
 			<ul class="tsd-legend">
+				<li class="tsd-kind-namespace"><span class="tsd-kind-icon">Namespace</span></li>
 				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
 				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
 				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
@@ -417,6 +418,5 @@ configure([
 </div>
 <div class="overlay"></div>
 <script src="../assets/js/main.js"></script>
-<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
 </body>
 </html>

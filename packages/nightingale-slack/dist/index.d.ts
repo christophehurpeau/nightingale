@@ -1,5 +1,5 @@
 import type { Handle } from 'nightingale-types';
-import SlackConfig from './SlackConfig';
+import type SlackConfig from './SlackConfig';
 export default class SlackHandler {
     minLevel: number;
     handle: Handle;

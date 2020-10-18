@@ -2,14 +2,16 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
+const Level = require('nightingale-levels');
 
-const Level = _interopDefault(require('nightingale-levels'));
+function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e['default'] : e; }
+
+const Level__default = /*#__PURE__*/_interopDefaultLegacy(Level);
 
 /* eslint-disable no-console */
 function consoleOutput(param, record) {
   {
-    const outKey = record.level >= Level.ERROR ? 'stderr' : 'stdout';
+    const outKey = record.level >= Level__default.ERROR ? 'stderr' : 'stdout';
     process[outKey].write(`${param}\n`);
   }
 }

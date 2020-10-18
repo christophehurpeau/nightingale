@@ -4,25 +4,21 @@ export { default as Level } from 'nightingale-levels';
 /* eslint-disable max-lines */
 
 if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER) {
-  global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = function () {
-    return {
-      handlers: [],
-      processors: []
-    };
-  };
+  global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = () => ({
+    handlers: [],
+    processors: []
+  });
 }
 
 if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
-  global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = function (key, level) {
+  global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = (key, level) => {
     const {
       handlers,
       processors
     } = global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key);
 
     return {
-      handlers: handlers.filter(function (handler) {
-        return level >= handler.minLevel && (!handler.isHandling || handler.isHandling(level, key));
-      }),
+      handlers: handlers.filter(handler => level >= handler.minLevel && (!handler.isHandling || handler.isHandling(level, key))),
       processors
     };
   };
@@ -64,7 +60,7 @@ class Logger {
 
 
   getConfig() {
-    return global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(this.key, Level.ALL);
+    return global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(this.key);
   }
   /**
    * Create a child logger
@@ -146,14 +142,10 @@ class Logger {
     }
 
     if (processors) {
-      processors.forEach(function (process) {
-        return process(record, record.context);
-      });
+      processors.forEach(process => process(record, record.context));
     }
 
-    handlers.some(function (handler) {
-      return handler.handle(record) === false;
-    });
+    handlers.some(handler => handler.handle(record) === false);
   }
   /**
    * Log a message
@@ -161,13 +153,13 @@ class Logger {
 
 
   log(message, metadata, level = Level.INFO, options) {
-    const context = metadata === null || metadata === void 0 ? void 0 : metadata.context;
+    const context = metadata?.context;
 
     if (metadata) {
       delete metadata.context;
     }
 
-    const record = Object.assign({
+    const record = {
       level,
       key: this.key,
       displayName: this.displayName,
@@ -175,8 +167,9 @@ class Logger {
       message,
       context: context || this.contextObject,
       metadata,
-      extra: {}
-    }, options);
+      extra: {},
+      ...options
+    };
     this.addRecord(record);
   }
   /**
@@ -236,9 +229,9 @@ class Logger {
 
   error(message, metadata, metadataStyles) {
     if (message instanceof Error) {
-      const extendedMetadata = Object.assign({}, metadata, {
+      const extendedMetadata = { ...metadata,
         error: message
-      });
+      };
       message = `${extendedMetadata.error.name}: ${extendedMetadata.error.message}`;
       this.log(message, extendedMetadata, Level.ERROR, {
         metadataStyles
@@ -397,13 +390,13 @@ class Logger {
       readableTime = `${seconds ? `${seconds}s and ` : ''}${diffTime - seconds * 1000}ms`;
     }
 
-    const extendedMetadata = Object.assign({}, metadata, {
+    const extendedMetadata = { ...metadata,
       readableTime,
       timeMs: diffTime
-    });
-    this.log(message, extendedMetadata, level, Object.assign({}, options, {
+    };
+    this.log(message, extendedMetadata, level, { ...options,
       metadataStyles
-    }));
+    });
   }
   /**
    * Like timeEnd, but with INFO level
@@ -439,9 +432,9 @@ class Logger {
 
 
   enter(fn, metadata, metadataStyles) {
-    const extendedMetadata = Object.assign({}, metadata, {
+    const extendedMetadata = { ...metadata,
       functionName: fn.name
-    });
+    };
     this.log('enter', extendedMetadata, Level.TRACE, {
       metadataStyles
     });
@@ -461,9 +454,9 @@ class Logger {
 
 
   exit(fn, metadata, metadataStyles) {
-    const extendedMetadata = Object.assign({}, metadata, {
+    const extendedMetadata = { ...metadata,
       functionName: fn.name
-    });
+    };
     this.log('exit', extendedMetadata, Level.TRACE, {
       metadataStyles
     });
@@ -488,13 +481,20 @@ class Logger {
    */
 
 
-  wrap(fn, metadata, metadataStyles, callback) {
-    if (typeof metadata === 'function') {
-      callback = metadata;
-      metadata = undefined;
-    } else if (typeof metadataStyles === 'function') {
-      callback = metadataStyles;
-      metadataStyles = undefined;
+  wrap(fn, option1, option2, callback) {
+    let metadata;
+    let metadataStyles;
+
+    if (typeof option1 === 'function') {
+      callback = option1;
+    } else {
+      metadata = option1;
+
+      if (typeof option2 === 'function') {
+        callback = option2;
+      } else {
+        metadataStyles = option2;
+      }
     }
 
     this.enter(fn, metadata, metadataStyles);

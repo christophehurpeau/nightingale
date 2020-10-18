@@ -1,9 +1,9 @@
-/* eslint-disable @typescript-eslint/camelcase */
+/* eslint-disable camelcase */
 import Level from 'nightingale-levels';
 import markdownFormatter from 'nightingale-markdown-formatter';
 import rawFormatter from 'nightingale-raw-formatter';
-import type { LogRecord } from 'nightingale-types';
-import SlackConfig from './SlackConfig';
+import type { LogRecord, Metadata } from 'nightingale-types';
+import type SlackConfig from './SlackConfig';
 
 const levelToSlackColor: { [level: number]: string } = {
   [Level.TRACE]: '#808080',
@@ -16,10 +16,10 @@ const levelToSlackColor: { [level: number]: string } = {
   [Level.EMERGENCY]: 'danger',
 };
 
-export default function createBody<T>(
+export default function createBody<T extends Metadata>(
   record: LogRecord<T>,
   slackConfig: SlackConfig,
-): any {
+): Record<string, unknown> {
   const markdown = markdownFormatter(record);
   const raw = rawFormatter(record);
 

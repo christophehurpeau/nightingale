@@ -2,13 +2,15 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
+const nightingaleLevels = require('nightingale-levels');
+const Logger = require('nightingale-logger');
 
-const nightingaleLevels = _interopDefault(require('nightingale-levels'));
-const Logger = _interopDefault(require('nightingale-logger'));
+function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e['default'] : e; }
+
+const nightingaleLevels__default = /*#__PURE__*/_interopDefaultLegacy(nightingaleLevels);
+const Logger__default = /*#__PURE__*/_interopDefaultLegacy(Logger);
 
 if (global.__NIGHTINGALE_GLOBAL_HANDLERS) {
-  // eslint-disable-next-line no-console
   throw new Error('nightingale: update all to ^5.0.0');
 }
 
@@ -65,7 +67,7 @@ function handleConfig(config) {
 }
 
 function configure(config) {
-  if (global.__NIGHTINGALE_CONFIG.length !== 0) {
+  if (global.__NIGHTINGALE_CONFIG.length > 0) {
     // eslint-disable-next-line no-console
     console.log('nightingale: warning: config overridden');
   }
@@ -89,9 +91,10 @@ const configIsForKey = key => config => {
 
 global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = key => {
   const globalCache = global.__NIGHTINGALE_LOGGER_MAP_CACHE;
+  const existingCache = globalCache.get(key);
 
-  if (globalCache.has(key)) {
-    return globalCache.get(key);
+  if (existingCache) {
+    return existingCache;
   }
 
   const loggerConfig = {
@@ -128,7 +131,7 @@ if (global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
  * @param {Logger} [logger]
  */
 
-function listenUnhandledErrors(logger = new Logger('nightingale.listenUnhandledErrors', 'listenUnhandledErrors')) {
+function listenUnhandledErrors(logger = new Logger__default('nightingale.listenUnhandledErrors', 'listenUnhandledErrors')) {
   process.on('uncaughtException', err => logger.error('uncaughtException', {
     err
   }));
@@ -137,10 +140,10 @@ function listenUnhandledErrors(logger = new Logger('nightingale.listenUnhandledE
   }));
 }
 
-exports.Level = nightingaleLevels;
-exports.levels = nightingaleLevels;
+exports.Level = nightingaleLevels__default;
+exports.levels = nightingaleLevels__default;
+exports.default = Logger__default;
 exports.addConfig = addConfig;
 exports.configure = configure;
-exports.default = Logger;
 exports.listenUnhandledErrors = listenUnhandledErrors;
 //# sourceMappingURL=index-node10-dev.cjs.js.map

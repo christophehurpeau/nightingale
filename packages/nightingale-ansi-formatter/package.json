@@ -19,14 +19,25 @@
   },
   "main": "./index.js",
   "types": "./dist/index.d.ts",
-  "module:node": "./dist/index-node10.es.js",
-  "module:node-dev": "./dist/index-node10-dev.es.js",
+  "exports": {
+    ".": {
+      "node": {
+        "development": {
+          "import": "./dist/index-node10-dev.mjs",
+          "require": "./dist/index-node10-dev.cjs.js"
+        },
+        "import": "./dist/index-node10.mjs",
+        "require": "./dist/index-node10.cjs.js"
+      }
+    }
+  },
+  "sideEffects": false,
   "scripts": {
     "build": "pob-build",
     "build:definitions": "tsc -p tsconfig.build.json",
     "clean": "rm -Rf docs dist test/node6 coverage",
     "generate:test-coverage": "rm -Rf docs/coverage/ ; NODE_ENV=production BABEL_ENV=test jest --coverage --coverageReporters=pob-lcov-reporter --coverageDirectory=docs/coverage/",
-    "lint": "yarn --cwd ../.. eslint --ext .js,.ts --quiet packages/nightingale-ansi-formatter",
+    "lint": "yarn --cwd ../.. eslint --ext .js,.ts --report-unused-disable-directives --quiet packages/nightingale-ansi-formatter",
     "test": "jest",
     "test:watch": "jest",
     "watch": "pob-watch"
@@ -47,7 +58,8 @@
     ],
     "moduleFileExtensions": [
       "ts",
-      "js"
+      "js",
+      "json"
     ],
     "transform": {
       "^.+\\.ts$": "babel-jest"
@@ -76,13 +88,14 @@
     "nightingale-types": "^10.0.1"
   },
   "devDependencies": {
-    "@babel/core": "7.10.2",
-    "@types/jest": "25.2.3",
-    "babel-jest": "26.0.1",
-    "babel-preset-latest-node": "4.1.0",
-    "jest": "26.0.1",
-    "pob-babel": "24.12.1",
-    "pob-lcov-reporter": "2.3.0",
+    "@babel/core": "7.12.3",
+    "@types/jest": "26.0.14",
+    "babel-jest": "26.5.2",
+    "babel-preset-latest-node": "5.0.0",
+    "jest": "26.5.3",
+    "pob-babel": "25.1.1",
+    "pob-lcov-reporter": "3.0.1",
+    "rollup": "2.32.0",
     "xunit-file": "1.0.0"
   }
 }

@@ -4,10 +4,6 @@ export interface FormatObjectOptions {
     maxDepth?: number;
 }
 export declare type StyleFn = (styles: Styles, value: string) => string;
-export interface ObjectStyles {
-    [key: string]: Styles;
-}
-export default function formatObject(object: {
-    [key: string]: any;
-}, styleFn?: StyleFn, objectStyles?: ObjectStyles, { padding, maxDepth }?: FormatObjectOptions): string;
+export declare type ObjectStyles<Keys extends string = string> = Record<Keys, Styles>;
+export default function formatObject(object: Record<string, unknown>, styleFn?: StyleFn, objectStyles?: ObjectStyles, { padding, maxDepth }?: FormatObjectOptions): string;
 //# sourceMappingURL=formatObject.d.ts.map

@@ -68,216 +68,129 @@
 					nightingale
 				</h3>
 				<p align="center">
-					Logger for browser and node
+					Logger for browser and node, see [nightingale](packages/nightingale) to get started !
 				</p>
-				<p align="center">
-					<a href="https://npmjs.org/package/nightingale"><img src="https://img.shields.io/npm/v/nightingale.svg?style=flat-square"></a>
-					<a href="https://codecov.io/gh/christophehurpeau/nightingale"><img src="https://img.shields.io/codecov/c/github/christophehurpeau/nightingale/master.svg?style=flat-square"></a>
-				</p>
-				<a href="#nightingale" id="nightingale" style="color: inherit; text-decoration: none;">
-					<h2>Nightingale</h2>
-				</a>
-				<p>The nightingale is a bird best known for its powerful and beautiful song.</p>
-				<p>See the <a href="https://christophehurpeau.github.io/nightingale/classes/nightingale_logger.logger.html">Logger API</a></p>
-				<a href="#install" id="install" style="color: inherit; text-decoration: none;">
-					<h2>Install</h2>
-				</a>
-				<pre><code class="language-sh">npm install --save nightingale
-npm install --save nightingale-console <span class="hljs-comment"># for console handler in nodejs</span>
-npm install --save nightingale-browser-console <span class="hljs-comment"># for console handler in browser</span></code></pre>
-				<p>You can also use <a href="https://www.npmjs.com/package/nightingale-app-console">nightingale-app-console</a>.</p>
-				<a href="#how-to-use" id="how-to-use" style="color: inherit; text-decoration: none;">
-					<h2>How to use</h2>
-				</a>
-				<a href="#in-an-application" id="in-an-application" style="color: inherit; text-decoration: none;">
-					<h3>In an application</h3>
-				</a>
-				<pre><code class="language-sh">npm install --save nightingale nightingale-console</code></pre>
-				<pre><code class="language-js"><span class="hljs-keyword">import</span> Logger, { configure, Level } <span class="hljs-keyword">from</span> <span class="hljs-string">'nightingale'</span>;
-<span class="hljs-keyword">import</span> ConsoleHandler <span class="hljs-keyword">from</span> <span class="hljs-string">'nightingale-console'</span>;
-
-configure([
-  {
-    <span class="hljs-attr">handlers</span>: [<span class="hljs-keyword">new</span> ConsoleHandler(Level.WARN)],
-  },
-  {
-    <span class="hljs-attr">keys</span>: [<span class="hljs-string">'mylib'</span>, <span class="hljs-string">'myotherlib'</span>],
-    <span class="hljs-attr">handlers</span>: [<span class="hljs-keyword">new</span> ConsoleHandler(Level.ALL)],
-  },
-  {
-    <span class="hljs-attr">pattern</span>: <span class="hljs-regexp">/^app\.server$/</span>,
-    handlers: [<span class="hljs-keyword">new</span> ConsoleHandler(Level.ALL)],
-    <span class="hljs-attr">stop</span>: <span class="hljs-literal">true</span>, <span class="hljs-comment">// means the following config won't be used, if the pattern matches.</span>
-  },
-  {
-    <span class="hljs-attr">pattern</span>: <span class="hljs-regexp">/^app(?!\.server)/</span>,
-    handlers: [<span class="hljs-keyword">new</span> ConsoleHandler(Level.INFO)],
-  },
-]);
-
-<span class="hljs-comment">// in one of your controllers</span>
-<span class="hljs-keyword">const</span> logger = <span class="hljs-keyword">new</span> Logger(<span class="hljs-string">'app.controllers'</span>);
-logger.debug(<span class="hljs-string">'This is a log'</span>); <span class="hljs-comment">// will not be displayed</span>
-
-<span class="hljs-comment">// in your server.js file</span>
-<span class="hljs-keyword">const</span> logger = <span class="hljs-keyword">new</span> Logger(<span class="hljs-string">'app.server'</span>);
-logger.debug(<span class="hljs-string">'This is a log'</span>); <span class="hljs-comment">// will be displayed</span></code></pre>
-				<p>You can configure several handlers with different <code>Level</code>, like console and slack.</p>
-				<a href="#in-a-library" id="in-a-library" style="color: inherit; text-decoration: none;">
-					<h3>In a library</h3>
-				</a>
-				<pre><code class="language-sh">npm install --save nightingale-logger</code></pre>
-				<pre><code class="language-js"><span class="hljs-keyword">import</span> Logger <span class="hljs-keyword">from</span> <span class="hljs-string">'nightingale-logger'</span>;
-
-<span class="hljs-keyword">const</span> logger = <span class="hljs-keyword">new</span> Logger(<span class="hljs-string">'mylib'</span>);
-
-logger.info(<span class="hljs-string">'This is a log'</span>);
-logger.warn(<span class="hljs-string">'This is a warning !'</span>);
-logger.success(<span class="hljs-string">'It works !'</span>);</code></pre>
-				<a href="#in-the-browser" id="in-the-browser" style="color: inherit; text-decoration: none;">
-					<h3>In the browser</h3>
-				</a>
-				<pre><code class="language-sh">npm install --save nightingale nightingale-browser-console</code></pre>
-				<p><img src="https://static.hurpeau.com/images/npm/nightingale/log_in_firefox.png" alt="browser log example"></p>
-				<pre><code class="language-js"><span class="hljs-keyword">import</span> { configure, levels } <span class="hljs-keyword">from</span> <span class="hljs-string">'nightingale'</span>;
-<span class="hljs-keyword">import</span> BrowserConsoleHandler <span class="hljs-keyword">from</span> <span class="hljs-string">'nightingale-browser-console'</span>;
-
-configure([
-  {
-    <span class="hljs-attr">key</span>: <span class="hljs-string">'app'</span>,
-    <span class="hljs-attr">handlers</span>: [<span class="hljs-keyword">new</span> BrowserConsoleHandler(Level.INFO)],
-  },
-]);</code></pre>
-				<a href="#logger" id="logger" style="color: inherit; text-decoration: none;">
-					<h3><a href="https://nightingalejs.github.io/nightingale-logger/docs/Logger.html">Logger</a></h3>
-				</a>
-				<p>The class with all the methods you call to log things.</p>
-				<a href="#debug" id="debug" style="color: inherit; text-decoration: none;">
-					<h2>Debug</h2>
-				</a>
-				<pre><code><span class="hljs-attr">DEBUG=</span>worker1 <span class="hljs-keyword">node</span> <span class="hljs-title">example</span>/debug</code></pre>
-				<a href="#in-browser" id="in-browser" style="color: inherit; text-decoration: none;">
-					<h4>In browser</h4>
-				</a>
-				<ul>
-					<li>via url : <code>?DEBUG=worker1</code></li>
-					<li>via localStorage (in a console): <code>localStorage.DEBUG=&#39;worker1&#39;</code></li>
-				</ul>
-				<p>Values are minimatch patterns and separated by <code>,</code>.</p>
-				<a href="#processors" id="processors" style="color: inherit; text-decoration: none;">
-					<h2>Processors</h2>
-				</a>
-				<a href="#add-information-on-a-request" id="add-information-on-a-request" style="color: inherit; text-decoration: none;">
-					<h3>Add information on a request</h3>
-				</a>
-				<pre><code class="language-js"><span class="hljs-keyword">import</span> Koa <span class="hljs-keyword">from</span> <span class="hljs-string">'koa'</span>;
-<span class="hljs-keyword">import</span> Logger, { configure, Level } <span class="hljs-keyword">from</span> <span class="hljs-string">'nightingale'</span>;
-<span class="hljs-keyword">import</span> ConsoleHandler <span class="hljs-keyword">from</span> <span class="hljs-string">'nightinale-console'</span>;
-<span class="hljs-keyword">import</span> webProcessor <span class="hljs-keyword">from</span> <span class="hljs-string">'nightinale-web-processor'</span>;
-
-<span class="hljs-keyword">const</span> app = <span class="hljs-keyword">new</span> Koa();
-<span class="hljs-keyword">const</span> logger = <span class="hljs-keyword">new</span> Logger(<span class="hljs-string">'app'</span>);
-
-configure([
-  {
-    <span class="hljs-attr">key</span>: <span class="hljs-string">'app'</span>,
-    <span class="hljs-attr">handlers</span>: [<span class="hljs-keyword">new</span> ConsoleHandler(Level.ALL)],
-    <span class="hljs-attr">processors</span>: [webProcessor],
-  },
-]);
-
-app.use(<span class="hljs-keyword">async</span> (ctx) =&gt; {
-  logger.info(<span class="hljs-string">'something to log !'</span>, { <span class="hljs-attr">context</span>: ctx });
-});
-
-app.use(<span class="hljs-keyword">async</span> (ctx) =&gt; {
-  ctx.logger.info(<span class="hljs-string">'something to log !'</span>, { <span class="hljs-attr">context</span>: ctx });
-});</code></pre>
-				<a href="#more-info" id="more-info" style="color: inherit; text-decoration: none;">
-					<h2>More info</h2>
-				</a>
-				<a href="#handler" id="handler" style="color: inherit; text-decoration: none;">
-					<h3>Handler</h3>
-				</a>
-				<p>How a log is processed: has a layout and an output.
-				Also define a minimum level.</p>
-				<p>You can find handlers <a href="https://www.npmjs.com/search?q=nightingale-handler">on npm</a></p>
-				<ul>
-					<li><a href="https://npmjs.org/package/nightingale-console">ConsoleHandler</a></li>
-					<li><a href="https://npmjs.org/package/nightingale-browser-console">BrowserConsoleHandler</a></li>
-					<li><a href="https://npmjs.org/package/nightingale-string">StringHandler</a></li>
-					<li><a href="https://npmjs.org/package/nightingale-slack">SlackHandler</a></li>
-				</ul>
-				<a href="#formatter" id="formatter" style="color: inherit; text-decoration: none;">
-					<h3>Formatter</h3>
-				</a>
-				<p>You can find formatters <a href="https://www.npmjs.com/search?q=nightingale-formatter">on npm</a></p>
-				<p>How the record is formatted, with its colors.</p>
-				<ul>
-					<li><a href="https://npmjs.org/package/nightingale-ansi-formatter">AnsiFormatter</a></li>
-					<li><a href="https://npmjs.org/package/nightingale-json-formatter">JsonFormatter</a></li>
-					<li><a href="https://npmjs.org/package/nightingale-markdown-formatter">MarkdownFormatter</a></li>
-				</ul>
-				<a href="#output" id="output" style="color: inherit; text-decoration: none;">
-					<h3>Output</h3>
-				</a>
-				<p>Where the log is sent: console, file, ...</p>
-				<p>You can find outputs <a href="https://www.npmjs.com/search?q=nightingale-output">on npm</a></p>
-				<ul>
-					<li><a href="https://npmjs.org/package/nightingale-console-output">console</a></li>
-					<li><a href="https://npmjs.org/package/nightingale-file-output">file</a></li>
-				</ul>
-				<a href="#processor" id="processor" style="color: inherit; text-decoration: none;">
-					<h3>Processor</h3>
-				</a>
-				<p>Add extra data in the record</p>
-				<a href="#extends-logger" id="extends-logger" style="color: inherit; text-decoration: none;">
-					<h2>Extends Logger</h2>
-				</a>
-				<pre><code class="language-js"><span class="hljs-keyword">import</span> { Logger } <span class="hljs-keyword">from</span> <span class="hljs-string">'nightingale'</span>;
-
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyCustomLogger</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Logger</span> </span>{
-  myCustomMethod(message) {
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.info(<span class="hljs-string">`custom message: <span class="hljs-subst">${message}</span>`</span>);
-  }
-}
-
-<span class="hljs-keyword">const</span> logger = <span class="hljs-keyword">new</span> MyCustomLogger(<span class="hljs-string">'app'</span>);</code></pre>
-				<a href="#global-processors" id="global-processors" style="color: inherit; text-decoration: none;">
-					<h2>Global processors</h2>
-				</a>
-				<pre><code class="language-js"><span class="hljs-keyword">import</span> { configure } <span class="hljs-keyword">from</span> <span class="hljs-string">'nightingale'</span>;
-<span class="hljs-keyword">import</span> errorProcessor <span class="hljs-keyword">from</span> <span class="hljs-string">'nightingale-error-processor'</span>;
-
-configure([{ <span class="hljs-attr">processors</span>: [errorProcessor] }]);</code></pre>
-				<a href="#global-handlers" id="global-handlers" style="color: inherit; text-decoration: none;">
-					<h2>Global handlers</h2>
-				</a>
-				<pre><code class="language-js"><span class="hljs-keyword">import</span> { addGlobalHandler, levels } <span class="hljs-keyword">from</span> <span class="hljs-string">'nightingale'</span>;
-<span class="hljs-keyword">import</span> ErrorHandler <span class="hljs-keyword">from</span> <span class="hljs-string">'nightingale-sentry'</span>;
-
-configure([{ <span class="hljs-attr">handlers</span>: [<span class="hljs-keyword">new</span> ErrorHandler(Level.ERROR)] }]);</code></pre>
-				<a href="#children" id="children" style="color: inherit; text-decoration: none;">
-					<h2>Children</h2>
-				</a>
-				<p>You can create children.</p>
-				<pre><code class="language-js"><span class="hljs-keyword">import</span> Logger <span class="hljs-keyword">from</span> <span class="hljs-string">'nightingale'</span>;
-<span class="hljs-keyword">const</span> loggerApp = <span class="hljs-keyword">new</span> Logger(<span class="hljs-string">'app'</span>);
-<span class="hljs-keyword">const</span> loggerMyService = loggerApp.child(<span class="hljs-string">'myService'</span>);
-<span class="hljs-comment">// loggerMyService key is `app.myService`</span></code></pre>
-				<a href="#context" id="context" style="color: inherit; text-decoration: none;">
-					<h2>Context</h2>
-				</a>
-				<p>You can use context to add data to each log.</p>
-				<pre><code class="language-js"><span class="hljs-keyword">import</span> Logger <span class="hljs-keyword">from</span> <span class="hljs-string">'nightingale'</span>;
-<span class="hljs-keyword">const</span> loggerMyService = <span class="hljs-keyword">new</span> Logger(<span class="hljs-string">'app.myService'</span>);
-
-<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">someAction</span>(<span class="hljs-params">arg1</span>) </span>{
-  <span class="hljs-keyword">const</span> logger = loggerMyService.context({ arg1 });
-  logger.info(<span class="hljs-string">'starting'</span>);
-  <span class="hljs-comment">// do stuff</span>
-  logger.info(<span class="hljs-string">'done'</span>);
-}</code></pre>
+				<h1>Packages</h1>
+				<p>This repository is a monorepo that we manage using <a href="https://github.com/lerna/lerna">Lerna</a>.</p>
+				<table>
+					<thead>
+						<tr>
+							<th>Package</th>
+							<th>Version</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody><tr>
+							<td><a href="packages/nightingale">nightingale</a></td>
+							<td><a href="https://npmjs.org/package/nightingale"><img src="https://img.shields.io/npm/v/nightingale.svg?style=flat-square"></a></td>
+							<td>Logger for browser and node</td>
+						</tr>
+						<tr>
+							<td><a href="packages/nightingale-ansi-formatter">nightingale-ansi-formatter</a></td>
+							<td><a href="https://npmjs.org/package/nightingale-ansi-formatter"><img src="https://img.shields.io/npm/v/nightingale-ansi-formatter.svg?style=flat-square"></a></td>
+							<td>Nightingale ANSI formatter</td>
+						</tr>
+						<tr>
+							<td><a href="packages/nightingale-app-console">nightingale-app-console</a></td>
+							<td><a href="https://npmjs.org/package/nightingale-app-console"><img src="https://img.shields.io/npm/v/nightingale-app-console.svg?style=flat-square"></a></td>
+							<td>nightingale default config and logger for app</td>
+						</tr>
+						<tr>
+							<td><a href="packages/nightingale-browser-console">nightingale-browser-console</a></td>
+							<td><a href="https://npmjs.org/package/nightingale-browser-console"><img src="https://img.shields.io/npm/v/nightingale-browser-console.svg?style=flat-square"></a></td>
+							<td>Browser console handler for nightingale</td>
+						</tr>
+						<tr>
+							<td><a href="packages/nightingale-browser-console-formatter">nightingale-browser-console-formatter</a></td>
+							<td><a href="https://npmjs.org/package/nightingale-browser-console-formatter"><img src="https://img.shields.io/npm/v/nightingale-browser-console-formatter.svg?style=flat-square"></a></td>
+							<td>Nightingale Browser console formatter</td>
+						</tr>
+						<tr>
+							<td><a href="packages/nightingale-console">nightingale-console</a></td>
+							<td><a href="https://npmjs.org/package/nightingale-console"><img src="https://img.shields.io/npm/v/nightingale-console.svg?style=flat-square"></a></td>
+							<td>Console handler for nightingale</td>
+						</tr>
+						<tr>
+							<td><a href="packages/nightingale-console-output">nightingale-console-output</a></td>
+							<td><a href="https://npmjs.org/package/nightingale-console-output"><img src="https://img.shields.io/npm/v/nightingale-console-output.svg?style=flat-square"></a></td>
+							<td>Nightingale console output</td>
+						</tr>
+						<tr>
+							<td><a href="packages/nightingale-debug">nightingale-debug</a></td>
+							<td><a href="https://npmjs.org/package/nightingale-debug"><img src="https://img.shields.io/npm/v/nightingale-debug.svg?style=flat-square"></a></td>
+							<td>Nightingale debug</td>
+						</tr>
+						<tr>
+							<td><a href="packages/nightingale-formatter">nightingale-formatter</a></td>
+							<td><a href="https://npmjs.org/package/nightingale-formatter"><img src="https://img.shields.io/npm/v/nightingale-formatter.svg?style=flat-square"></a></td>
+							<td>Nightingale formatter</td>
+						</tr>
+						<tr>
+							<td><a href="packages/nightingale-html-formatter">nightingale-html-formatter</a></td>
+							<td><a href="https://npmjs.org/package/nightingale-html-formatter"><img src="https://img.shields.io/npm/v/nightingale-html-formatter.svg?style=flat-square"></a></td>
+							<td>Nightingale HTML formatter</td>
+						</tr>
+						<tr>
+							<td><a href="packages/nightingale-json-formatter">nightingale-json-formatter</a></td>
+							<td><a href="https://npmjs.org/package/nightingale-json-formatter"><img src="https://img.shields.io/npm/v/nightingale-json-formatter.svg?style=flat-square"></a></td>
+							<td>Nightingale JSON formatter</td>
+						</tr>
+						<tr>
+							<td><a href="packages/nightingale-level-names">nightingale-level-names</a></td>
+							<td><a href="https://npmjs.org/package/nightingale-level-names"><img src="https://img.shields.io/npm/v/nightingale-level-names.svg?style=flat-square"></a></td>
+							<td>Nightingale level values to level names</td>
+						</tr>
+						<tr>
+							<td><a href="packages/nightingale-levels">nightingale-levels</a></td>
+							<td><a href="https://npmjs.org/package/nightingale-levels"><img src="https://img.shields.io/npm/v/nightingale-levels.svg?style=flat-square"></a></td>
+							<td>Nightingale levels</td>
+						</tr>
+						<tr>
+							<td><a href="packages/nightingale-logger">nightingale-logger</a></td>
+							<td><a href="https://npmjs.org/package/nightingale-logger"><img src="https://img.shields.io/npm/v/nightingale-logger.svg?style=flat-square"></a></td>
+							<td>Logger for browser and node</td>
+						</tr>
+						<tr>
+							<td><a href="packages/nightingale-markdown-formatter">nightingale-markdown-formatter</a></td>
+							<td><a href="https://npmjs.org/package/nightingale-markdown-formatter"><img src="https://img.shields.io/npm/v/nightingale-markdown-formatter.svg?style=flat-square"></a></td>
+							<td>Nightingale Markdown formatter</td>
+						</tr>
+						<tr>
+							<td><a href="packages/nightingale-raw-formatter">nightingale-raw-formatter</a></td>
+							<td><a href="https://npmjs.org/package/nightingale-raw-formatter"><img src="https://img.shields.io/npm/v/nightingale-raw-formatter.svg?style=flat-square"></a></td>
+							<td>Nightingale Raw formatter</td>
+						</tr>
+						<tr>
+							<td><a href="packages/nightingale-sentry">nightingale-sentry</a></td>
+							<td><a href="https://npmjs.org/package/nightingale-sentry"><img src="https://img.shields.io/npm/v/nightingale-sentry.svg?style=flat-square"></a></td>
+							<td>Sentry handler for nightingale</td>
+						</tr>
+						<tr>
+							<td><a href="packages/nightingale-slack">nightingale-slack</a></td>
+							<td><a href="https://npmjs.org/package/nightingale-slack"><img src="https://img.shields.io/npm/v/nightingale-slack.svg?style=flat-square"></a></td>
+							<td>Slack handler for nightingale</td>
+						</tr>
+						<tr>
+							<td><a href="packages/nightingale-string">nightingale-string</a></td>
+							<td><a href="https://npmjs.org/package/nightingale-string"><img src="https://img.shields.io/npm/v/nightingale-string.svg?style=flat-square"></a></td>
+							<td>String handler for nightingale</td>
+						</tr>
+						<tr>
+							<td><a href="packages/nightingale-types">nightingale-types</a></td>
+							<td><a href="https://npmjs.org/package/nightingale-types"><img src="https://img.shields.io/npm/v/nightingale-types.svg?style=flat-square"></a></td>
+							<td>Nightingale types for typescript</td>
+						</tr>
+						<tr>
+							<td><a href="packages/nightingale-web-processor">nightingale-web-processor</a></td>
+							<td><a href="https://npmjs.org/package/nightingale-web-processor"><img src="https://img.shields.io/npm/v/nightingale-web-processor.svg?style=flat-square"></a></td>
+							<td>Nightingale web processor</td>
+						</tr>
+						<tr>
+							<td><a href="packages/nightingale-winston-adapter">nightingale-winston-adapter</a></td>
+							<td><a href="https://npmjs.org/package/nightingale-winston-adapter"><img src="https://img.shields.io/npm/v/nightingale-winston-adapter.svg?style=flat-square"></a></td>
+							<td>Winston adapter handler for nightingale</td>
+						</tr>
+				</tbody></table>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -372,6 +285,7 @@ configure([{ <span class="hljs-attr">handlers</span>: [<span class="hljs-keyword
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
 			<ul class="tsd-legend">
+				<li class="tsd-kind-namespace"><span class="tsd-kind-icon">Namespace</span></li>
 				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
 				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
 				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
@@ -397,6 +311,5 @@ configure([{ <span class="hljs-attr">handlers</span>: [<span class="hljs-keyword
 </div>
 <div class="overlay"></div>
 <script src="assets/js/main.js"></script>
-<script>if (location.protocol == 'file:') document.write('<script src="assets/js/search.js"><' + '/script>');</script>
 </body>
 </html>

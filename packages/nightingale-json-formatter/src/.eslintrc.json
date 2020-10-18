@@ -6,6 +6,7 @@
   },
   "plugins": ["@typescript-eslint"],
   "extends": ["@pob/eslint-config-typescript"],
+  "ignorePatterns": ["*.d.ts"],
   "overrides": [
     {
       "files": ["**/*.test.ts", "__tests__/**/*.ts"],

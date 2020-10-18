@@ -1,7 +1,7 @@
 import Level from 'nightingale-levels';
 import type { Metadata, MetadataStyles, Styles, Handler, Processor, LogRecord } from 'nightingale-types';
 export { Level };
-export interface Options<T> {
+export interface Options<T extends Metadata> {
     symbol?: string;
     metadataStyles?: MetadataStyles<T>;
     styles?: Styles;
@@ -12,6 +12,28 @@ export interface ComputedConfigForKey {
 }
 interface ExtendedFunctionNameMetadata {
     functionName: string;
+}
+export interface Config {
+    handler?: Handler;
+    handlers?: Handler[];
+    key?: string;
+    keys?: string[];
+    pattern?: RegExp;
+    processor?: Processor;
+    processors?: Processor[];
+    stop?: boolean;
+}
+declare global {
+    namespace NodeJS {
+        interface Global {
+            __NIGHTINGALE_CONFIG: Config[];
+            __NIGHTINGALE_LOGGER_MAP_CACHE: Map<string, ComputedConfigForKey>;
+            __NIGHTINGALE_CONFIG_DEFAULT: ComputedConfigForKey;
+            __NIGHTINGALE_GLOBAL_HANDLERS: unknown;
+            __NIGHTINGALE_GET_CONFIG_FOR_LOGGER: (key: string) => ComputedConfigForKey;
+            __NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD: (key: string, level: number) => ComputedConfigForKey;
+        }
+    }
 }
 /**
  * Interface that allows you to log records.
@@ -49,21 +71,21 @@ export default class Logger {
      * }
      *
      */
-    context(context: object): Logger;
+    context(context: Record<string, unknown>): Logger;
     /**
      * Get the context of this logger
      */
-    getContextObject(): Readonly<object> | undefined;
+    getContextObject(): Readonly<Record<string, unknown>> | undefined;
     /**
      * Set the context of this logger
      *
      * @param {Object} context
      */
-    setContext(context: object): void;
+    setContext(context: Record<string, unknown>): void;
     /**
      * Extends existing context of this logger
      */
-    extendsContext(extendedContext: Record<string, any>): void;
+    extendsContext(extendedContext: Record<string, unknown>): void;
     /**
      * Handle a record
      *
@@ -113,11 +135,11 @@ export default class Logger {
     /**
      * Log an inspected value
      */
-    inspectValue<T extends Metadata>(value: any, metadata?: T, metadataStyles?: MetadataStyles<T>): void;
+    inspectValue<T extends Metadata>(value: unknown, metadata?: T, metadataStyles?: MetadataStyles<T>): void;
     /**
      * Log a debugged var
      */
-    inspectVar<T extends Metadata>(varName: string, varValue: any, metadata?: T, metadataStyles?: MetadataStyles<T>): void;
+    inspectVar<T extends Metadata>(varName: string, varValue: unknown, metadata?: T, metadataStyles?: MetadataStyles<T>): void;
     /**
      * Alias for infoSuccess
      */
@@ -174,7 +196,7 @@ export default class Logger {
      * }
      *
      */
-    enter<T extends Metadata>(fn: Function, metadata?: T, metadataStyles?: MetadataStyles<T & ExtendedFunctionNameMetadata>): void;
+    enter<T extends Metadata, Fn extends (...args: unknown[]) => unknown>(fn: Fn, metadata?: T, metadataStyles?: MetadataStyles<T & ExtendedFunctionNameMetadata>): void;
     /**
      * Log an exit in a function
      *
@@ -187,7 +209,7 @@ export default class Logger {
      *   }
      * }
      */
-    exit<T extends Metadata>(fn: Function, metadata?: T, metadataStyles?: MetadataStyles<T & ExtendedFunctionNameMetadata>): void;
+    exit<T extends Metadata, Fn extends (...args: unknown[]) => unknown>(fn: Fn, metadata?: T, metadataStyles?: MetadataStyles<T & ExtendedFunctionNameMetadata>): void;
     /**
      * Wrap around a function to log enter and exit of a function
      *
@@ -206,6 +228,8 @@ export default class Logger {
      * @param {Object} [metadataStyles]
      * @param {Function} callback
      */
-    wrap<T extends Metadata>(fn: Function, metadata?: T | Function, metadataStyles?: MetadataStyles<T> | Function, callback?: Function): void;
+    wrap<Fn extends (...args: unknown[]) => unknown>(fn: Fn, callback: () => void): void;
+    wrap<T extends Metadata, Fn extends (...args: unknown[]) => unknown>(fn: Fn, metadata: T, callback: () => void): void;
+    wrap<T extends Metadata, Fn extends (...args: unknown[]) => unknown>(fn: Fn, metadata: T, metadataStyles: MetadataStyles<T>, callback: () => void): void;
 }
 //# sourceMappingURL=index.d.ts.map

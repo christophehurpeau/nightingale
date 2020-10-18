@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import type { Styles } from 'nightingale-types';
 import formatObject from './formatObject';
 
@@ -7,7 +6,7 @@ test('empty object should return empty string', () => {
 });
 
 const styleFn = (styles: Styles, value: string): string =>
-  styles && styles.length !== 0
+  styles && styles.length > 0
     ? `[styles:${styles.join(',')}]${value}[/styles]`
     : value;
 
@@ -30,12 +29,12 @@ test('long object', () => {
     formatObject(
       {
         obj: {
-          a: 10000000000000000000,
-          b: 10000000000000000000,
-          c: 10000000000000000000,
-          d: 10000000000000000000,
-          e: 10000000000000000000,
-          f: 10000000000000000000,
+          a: 10_000_000_000_000_000_000,
+          b: 10_000_000_000_000_000_000,
+          c: 10_000_000_000_000_000_000,
+          d: 10_000_000_000_000_000_000,
+          e: 10_000_000_000_000_000_000,
+          f: 10_000_000_000_000_000_000,
         },
       },
       noStyleFn,
@@ -104,12 +103,12 @@ test('objects in array', () => {
 
 test('objects with breaking lines in array', () => {
   const obj = {
-    a: 10000000000000000000,
-    b: 10000000000000000000,
-    c: 10000000000000000000,
-    d: 10000000000000000000,
-    e: 10000000000000000000,
-    f: 10000000000000000000,
+    a: 10_000_000_000_000_000_000,
+    b: 10_000_000_000_000_000_000,
+    c: 10_000_000_000_000_000_000,
+    d: 10_000_000_000_000_000_000,
+    e: 10_000_000_000_000_000_000,
+    f: 10_000_000_000_000_000_000,
   };
   expect(formatObject({ a: [obj, obj] }, noStyleFn)).toBe(
     `{

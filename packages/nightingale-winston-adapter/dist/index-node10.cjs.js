@@ -2,11 +2,13 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
+const levelNames = require('nightingale-level-names');
 
-const levelNames = _interopDefault(require('nightingale-level-names'));
+function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e['default'] : e; }
 
-/* eslint-disable @typescript-eslint/camelcase */
+const levelNames__default = /*#__PURE__*/_interopDefaultLegacy(levelNames);
+
+/* eslint-disable camelcase */
 class WinstonAdapterHandler {
   constructor(winstonTransport, minLevel) {
     this.minLevel = minLevel;
@@ -14,7 +16,7 @@ class WinstonAdapterHandler {
     this.handle = record => {
       // new Promise((resolve, reject) => {
       winstonTransport.log(record.level, record.message, {
-        level_name: levelNames.get(record.level),
+        level_name: levelNames__default.get(record.level),
         key: record.key,
         metadata: record.metadata,
         extra: record.extra,

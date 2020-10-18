@@ -1,28 +1,17 @@
 import { POB_ENV } from 'pob-babel';
-import { ComputedConfigForKey } from 'nightingale-logger';
-import type { Handler, Processor } from 'nightingale-types';
-
-export interface Config {
-  handler?: Handler;
-  handlers?: Handler[];
-  key?: string;
-  keys?: string[];
-  pattern?: RegExp;
-  processor?: Processor;
-  processors?: Processor[];
-  stop?: boolean;
-}
-
-declare const global: any;
+import type { ComputedConfigForKey, Config } from 'nightingale-logger';
+import type { Handler } from 'nightingale-types';
 
 if (POB_ENV !== 'production' && global.__NIGHTINGALE_GLOBAL_HANDLERS) {
-  // eslint-disable-next-line no-console
   throw new Error('nightingale: update all to ^5.0.0');
 }
 
 if (!global.__NIGHTINGALE_CONFIG) {
   global.__NIGHTINGALE_CONFIG = [];
-  global.__NIGHTINGALE_LOGGER_MAP_CACHE = new Map();
+  global.__NIGHTINGALE_LOGGER_MAP_CACHE = new Map<
+    string,
+    ComputedConfigForKey
+  >();
   global.__NIGHTINGALE_CONFIG_DEFAULT = { handlers: [], processors: [] };
 }
 
@@ -68,7 +57,7 @@ function handleConfig(config: Config): Config {
 }
 
 export function configure(config: Config[]): void {
-  if (global.__NIGHTINGALE_CONFIG.length !== 0) {
+  if (global.__NIGHTINGALE_CONFIG.length > 0) {
     // eslint-disable-next-line no-console
     console.log('nightingale: warning: config overridden');
   }
@@ -89,11 +78,15 @@ const configIsForKey = (key: string) => (config: Config) => {
   return true;
 };
 
-global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = (key: string) => {
+global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = (
+  key: string,
+): ComputedConfigForKey => {
   const globalCache = global.__NIGHTINGALE_LOGGER_MAP_CACHE;
 
-  if (globalCache.has(key)) {
-    return globalCache.get(key);
+  const existingCache = globalCache.get(key);
+
+  if (existingCache) {
+    return existingCache;
   }
 
   const loggerConfig: ComputedConfigForKey = {

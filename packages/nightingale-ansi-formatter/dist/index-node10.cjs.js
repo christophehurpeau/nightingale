@@ -2,45 +2,48 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
-
-const ansi = _interopDefault(require('ansi-styles'));
+const ansi = require('ansi-styles');
 const nightingaleFormatter = require('nightingale-formatter');
 
+function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e['default'] : e; }
+
+const ansi__default = /*#__PURE__*/_interopDefaultLegacy(ansi);
+
 const ansiStyles = {
-  black: ansi.black,
-  red: ansi.red,
-  green: ansi.green,
-  yellow: ansi.yellow,
-  blue: ansi.blue,
-  magenta: ansi.magenta,
-  cyan: ansi.cyan,
-  white: ansi.white,
-  gray: ansi.gray,
-  bgBlack: ansi.bgBlack,
-  bgRed: ansi.bgRed,
-  bgGreen: ansi.bgGreen,
-  bgYellow: ansi.bgYellow,
-  bgBlue: ansi.bgBlue,
-  bgMagenta: ansi.bgMagenta,
-  bgCyan: ansi.bgCyan,
-  bgWhite: ansi.bgWhite,
-  bold: ansi.bold,
-  underline: ansi.underline,
+  black: ansi__default.black,
+  red: ansi__default.red,
+  green: ansi__default.green,
+  yellow: ansi__default.yellow,
+  blue: ansi__default.blue,
+  magenta: ansi__default.magenta,
+  cyan: ansi__default.cyan,
+  white: ansi__default.white,
+  gray: ansi__default.gray,
+  bgBlack: ansi__default.bgBlack,
+  bgRed: ansi__default.bgRed,
+  bgGreen: ansi__default.bgGreen,
+  bgYellow: ansi__default.bgYellow,
+  bgBlue: ansi__default.bgBlue,
+  bgMagenta: ansi__default.bgMagenta,
+  bgCyan: ansi__default.bgCyan,
+  bgWhite: ansi__default.bgWhite,
+  bold: ansi__default.bold,
+  underline: ansi__default.underline,
   // http://www.calmar.ws/vim/256-xterm-24bit-rgb-color-chart.html
   orange: {
-    open: ansi.color.ansi256.hex(nightingaleFormatter.styleToHexColor.orange),
-    close: ansi.color.close
+    open: ansi__default.color.ansi256.hex(nightingaleFormatter.styleToHexColor.orange),
+    close: ansi__default.color.close
   },
   'gray-light': {
-    open: ansi.color.ansi256.hex(nightingaleFormatter.styleToHexColor['gray-light']),
-    close: ansi.color.close
+    open: ansi__default.color.ansi256.hex(nightingaleFormatter.styleToHexColor['gray-light']),
+    close: ansi__default.color.close
   }
 };
 function style(styles, string) {
   if (!styles || styles.length === 0 || !string) {
     return string;
-  }
+  } // eslint-disable-next-line unicorn/no-reduce
+
 
   return styles.reduce((string, styleName) => {
     const style = ansiStyles[styleName];

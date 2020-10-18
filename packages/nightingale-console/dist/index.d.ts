@@ -1,8 +1,8 @@
 import Level from 'nightingale-levels';
-import type { IsHandling, Handle, LogRecord } from 'nightingale-types';
+import type { IsHandling, Handle, LogRecord, Metadata } from 'nightingale-types';
 interface ConsoleHandlerOptions {
-    formatter?: <T>(record: LogRecord<T>) => string;
-    output?: <T>(param: string | string[], record: LogRecord<T>) => void;
+    formatter?: <T extends Metadata>(record: LogRecord<T>) => string;
+    output?: <T extends Metadata>(param: string | string[], record: LogRecord<T>) => void;
 }
 export default class ConsoleHandler {
     minLevel: Level;

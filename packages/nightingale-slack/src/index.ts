@@ -1,9 +1,9 @@
-import type { LogRecord, Handle } from 'nightingale-types';
+import type { LogRecord, Handle, Metadata } from 'nightingale-types';
 import { post } from 'request';
-import SlackConfig from './SlackConfig';
+import type SlackConfig from './SlackConfig';
 import createBody from './createBody';
 
-const createHandler = (slackConfig: SlackConfig) => <T>(
+const createHandler = (slackConfig: SlackConfig) => <T extends Metadata>(
   record: LogRecord<T>,
 ) => {
   const body = createBody(record, slackConfig);

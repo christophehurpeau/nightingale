@@ -1,5 +1,5 @@
 import { formatRecordToString, styleToHtmlStyle } from 'nightingale-formatter';
-import type { Styles, LogRecord } from 'nightingale-types';
+import type { Styles, LogRecord, Metadata } from 'nightingale-types';
 
 export function style(styles: Styles, string: string): string {
   if (!styles || styles.length === 0 || !string) {
@@ -15,6 +15,8 @@ export function style(styles: Styles, string: string): string {
  * @param {Object} record
  * @returns {string}
  */
-export default function format<T>(record: LogRecord<T>): string {
+export default function format<T extends Metadata>(
+  record: LogRecord<T>,
+): string {
   return formatRecordToString(record, style);
 }

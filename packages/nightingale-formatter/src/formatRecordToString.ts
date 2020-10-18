@@ -1,6 +1,6 @@
-/* eslint-disable no-unused-vars */
 import type { LogRecord, Metadata } from 'nightingale-types';
-import formatObject, { StyleFn, ObjectStyles } from './formatObject';
+import type { StyleFn, ObjectStyles } from './formatObject';
+import formatObject from './formatObject';
 import levelToStyles from './levelToStyles';
 import levelToSymbol from './levelToSymbol';
 
@@ -43,7 +43,7 @@ export default function formatRecordToString<T extends Metadata>(
 
   const formatRecordObject = (
     key: string,
-    object: object | undefined,
+    object: Record<string, unknown> | undefined,
     styles: ObjectStyles | undefined,
   ): void => {
     if (!object) {

@@ -2,23 +2,25 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
-
 const node = require('@sentry/node');
-const Level = _interopDefault(require('nightingale-levels'));
+const Level = require('nightingale-levels');
+
+function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e['default'] : e; }
+
+const Level__default = /*#__PURE__*/_interopDefaultLegacy(Level);
 
 const mapToSentryLevel = {
-  [Level.TRACE]: 'debug',
-  [Level.DEBUG]: 'debug',
-  [Level.INFO]: 'info',
-  [Level.NOTICE]: 'log',
-  [Level.WARNING]: 'warning',
-  [Level.ERROR]: 'error',
-  [Level.CRITICAL]: 'critical',
-  [Level.FATAL]: 'critical',
-  [Level.EMERGENCY]: 'critical',
+  [Level__default.TRACE]: 'debug',
+  [Level__default.DEBUG]: 'debug',
+  [Level__default.INFO]: 'info',
+  [Level__default.NOTICE]: 'log',
+  [Level__default.WARNING]: 'warning',
+  [Level__default.ERROR]: 'error',
+  [Level__default.CRITICAL]: 'critical',
+  [Level__default.FATAL]: 'critical',
+  [Level__default.EMERGENCY]: 'critical',
   // not a level
-  [Level.ALL]: 'fatal'
+  [Level__default.ALL]: 'fatal'
 };
 
 const createHandler = (dsn, {

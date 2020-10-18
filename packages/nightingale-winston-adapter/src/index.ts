@@ -1,6 +1,6 @@
-/* eslint-disable @typescript-eslint/camelcase */
+/* eslint-disable camelcase */
 import levelNames from 'nightingale-level-names';
-import type { LogRecord, Level, Handle } from 'nightingale-types';
+import type { LogRecord, Level, Handle, Metadata } from 'nightingale-types';
 
 export type LogCallback = (err: Error | null) => void;
 
@@ -8,7 +8,7 @@ export interface WinstonTransportType {
   log: (
     level: number,
     message: string,
-    metadata: object,
+    metadata: Record<string, unknown>,
     callback: LogCallback,
   ) => void;
 }
@@ -20,7 +20,7 @@ export default class WinstonAdapterHandler {
 
   constructor(winstonTransport: WinstonTransportType, minLevel: number) {
     this.minLevel = minLevel;
-    this.handle = <T>(record: LogRecord<T>) => {
+    this.handle = <T extends Metadata>(record: LogRecord<T>) => {
       // new Promise((resolve, reject) => {
       winstonTransport.log(
         record.level,

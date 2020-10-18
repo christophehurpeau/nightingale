@@ -8,5 +8,6 @@
   "extends": [
     "@pob/eslint-config-typescript",
     "@pob/eslint-config-typescript-node"
-  ]
+  ],
+  "ignorePatterns": ["*.d.ts"]
 }

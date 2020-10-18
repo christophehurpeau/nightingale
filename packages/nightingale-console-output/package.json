@@ -18,28 +18,47 @@
     "node": ">=10.13.0"
   },
   "browserslist": [
-    "> 0.1%",
+    "> 0.2%",
     "Firefox ESR",
-    "not ie < 9",
-    "not dead"
+    "not ie < 12",
+    "not dead",
+    "not op_mini all"
   ],
   "main": "./index.js",
   "types": "./dist/index.d.ts",
   "module": "./dist/index-browser.es.js",
-  "module-dev": "./dist/index-browser-dev.es.js",
-  "browser": "./dist/index-browser.cjs.js",
-  "browser-dev": "./dist/index-browser-dev.cjs.js",
-  "module:node": "./dist/index-node10.es.js",
-  "module:node-dev": "./dist/index-node10-dev.es.js",
-  "module:browser": "./dist/index-browser.es.js",
-  "module:browser-dev": "./dist/index-browser-dev.es.js",
-  "module:modern-browsers": "./dist/index-browsermodern.es.js",
-  "module:modern-browsers-dev": "./dist/index-browsermodern-dev.es.js",
+  "exports": {
+    ".": {
+      "node": {
+        "development": {
+          "import": "./dist/index-node10-dev.mjs",
+          "require": "./dist/index-node10-dev.cjs.js"
+        },
+        "import": "./dist/index-node10.mjs",
+        "require": "./dist/index-node10.cjs.js"
+      },
+      "browser": {
+        "browser:modern": {
+          "development": {
+            "import": "./dist/index-browsermodern-dev.mjs"
+          },
+          "import": "./dist/index-browsermodern.mjs"
+        },
+        "development": {
+          "import": "./dist/index-browser-dev.mjs",
+          "require": "./dist/index-browser-dev.cjs.js"
+        },
+        "import": "./dist/index-browser.mjs",
+        "require": "./dist/index-browser.cjs.js"
+      }
+    }
+  },
+  "sideEffects": false,
   "scripts": {
     "build": "pob-build",
     "build:definitions": "tsc -p tsconfig.build.json",
     "clean": "rm -Rf docs dist test/node6 coverage",
-    "lint": "yarn --cwd ../.. eslint --ext .js,.ts --quiet packages/nightingale-console-output",
+    "lint": "yarn --cwd ../.. eslint --ext .js,.ts --report-unused-disable-directives --quiet packages/nightingale-console-output",
     "watch": "pob-watch"
   },
   "prettier": {
@@ -81,10 +100,11 @@
     "nightingale-types": "^10.0.1"
   },
   "devDependencies": {
-    "@babel/core": "7.10.2",
-    "@babel/preset-env": "7.10.2",
-    "babel-preset-latest-node": "4.1.0",
-    "babel-preset-modern-browsers": "14.2.1",
-    "pob-babel": "24.12.1"
+    "@babel/core": "7.12.3",
+    "@babel/preset-env": "7.12.1",
+    "babel-preset-latest-node": "5.0.0",
+    "babel-preset-modern-browsers": "15.0.2",
+    "pob-babel": "25.1.1",
+    "rollup": "2.32.0"
   }
 }

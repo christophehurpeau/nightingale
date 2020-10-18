@@ -7,10 +7,12 @@ function webProcessor(record, context) {
 
   if (request) {
     record.extra = record.extra || {};
-    record.extra.url = request.url;
-    record.extra.method = request.method;
-    record.extra.server = request.headers.host;
-    record.extra.ip = request.headers['x-forwarded-for'] || request.connection.remoteAddress;
+    Object.assign(record.extra, {
+      url: request.url,
+      method: request.method,
+      server: request.headers.host,
+      ip: request.headers['x-forwarded-for'] || request.connection.remoteAddress
+    });
   }
 }
 

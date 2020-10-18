@@ -1,6 +1,6 @@
 import levelNames from 'nightingale-level-names';
 
-/* eslint-disable @typescript-eslint/camelcase */
+/* eslint-disable camelcase */
 
 var WinstonAdapterHandler = function WinstonAdapterHandler(winstonTransport, minLevel) {
   this.minLevel = minLevel;

@@ -2,9 +2,11 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
+const formatterRaw = require('nightingale-raw-formatter');
 
-const formatterRaw = _interopDefault(require('nightingale-raw-formatter'));
+function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e['default'] : e; }
+
+const formatterRaw__default = /*#__PURE__*/_interopDefaultLegacy(formatterRaw);
 
 /* eslint-disable prefer-template */
 class StringHandler {
@@ -18,7 +20,7 @@ class StringHandler {
   }
 
   handle(record) {
-    this._buffer += formatterRaw(record) + '\n';
+    this._buffer += formatterRaw__default(record) + '\n';
   }
 
 }

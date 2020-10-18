@@ -3,8 +3,8 @@
     "pob-config": {
       "documentation": false,
       "testing": {
-        "circleci": true,
-        "codecov": true
+        "codecov": true,
+        "ci": true
       }
     },
     "project": {

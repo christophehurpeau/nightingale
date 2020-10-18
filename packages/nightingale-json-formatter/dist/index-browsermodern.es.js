@@ -1,18 +1,18 @@
 function map2object(map) {
   const object = {};
-  map.forEach(function (value, key) {
+  map.forEach((value, key) => {
     if (typeof key === 'object') {
       // ignore key
       return;
     }
 
-    object[key] = value;
+    object[String(key)] = value;
   });
   return object;
 }
 
 function stringify(value, space) {
-  return JSON.stringify(value, function (key, value) {
+  return JSON.stringify(value, (key, value) => {
     if (value instanceof Map) {
       return map2object(value);
     }

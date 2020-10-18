@@ -1,6 +1,7 @@
-import { init, withScope, Severity } from '@sentry/node';
+import type { Severity, User } from '@sentry/node';
+import { init, withScope } from '@sentry/node';
 import Level from 'nightingale-levels';
-import type { LogRecord, Handle } from 'nightingale-types';
+import type { LogRecord, Handle, Metadata } from 'nightingale-types';
 
 const mapToSentryLevel: Record<Level, string> = {
   [Level.TRACE]: 'debug',
@@ -17,11 +18,13 @@ const mapToSentryLevel: Record<Level, string> = {
 };
 
 export interface Options {
-  getUser?: <T>(record: LogRecord<T>) => any;
-  getTags?: <T>(record: LogRecord<T>) => any;
+  getUser?: <T extends Metadata>(record: LogRecord<T>) => User;
+  getTags?: <T extends Metadata>(
+    record: LogRecord<T>,
+  ) => Record<string, string>;
 }
 
-export interface MetadataWithError {
+export interface MetadataWithError extends Metadata {
   error?: Error;
 }
 
@@ -39,7 +42,7 @@ const createHandler = (
       return;
     }
 
-    const extraData = { ...metadata, ...extra };
+    const extraData: Record<string, unknown> = { ...metadata, ...extra };
     delete extraData.error;
 
     withScope((scope) => {

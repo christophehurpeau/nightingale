@@ -3,5 +3,6 @@
   "extends": ["@pob/eslint-config", "@pob/eslint-config-node"],
   "env": {
     "browser": true
-  }
+  },
+  "ignorePatterns": ["/dist", "/test", "/public", "/build"]
 }

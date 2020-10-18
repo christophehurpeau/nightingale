@@ -1,4 +1,4 @@
-import { ComputedConfigForKey } from 'nightingale-logger';
+import type { ComputedConfigForKey } from 'nightingale-logger';
 import StringHandler from 'nightingale-string';
 import Logger, { Level } from '.';
 

@@ -1,11 +1,14 @@
 'use strict';
 
-function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
-
 const Logger = require('nightingale');
-const Logger__default = _interopDefault(Logger);
-const consoleOutput = _interopDefault(require('nightingale-console-output'));
-const jsonFormatter = _interopDefault(require('nightingale-json-formatter'));
+const consoleOutput = require('nightingale-console-output');
+const jsonFormatter = require('nightingale-json-formatter');
+
+function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e['default'] : e; }
+
+const Logger__default = /*#__PURE__*/_interopDefaultLegacy(Logger);
+const consoleOutput__default = /*#__PURE__*/_interopDefaultLegacy(consoleOutput);
+const jsonFormatter__default = /*#__PURE__*/_interopDefaultLegacy(jsonFormatter);
 
 class JSONHandler {
   constructor(minLevel) {
@@ -13,7 +16,7 @@ class JSONHandler {
   }
 
   handle(record) {
-    consoleOutput(jsonFormatter(record), record);
+    consoleOutput__default(jsonFormatter__default(record), record);
   }
 
 }

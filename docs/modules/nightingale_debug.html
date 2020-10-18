@@ -92,35 +92,35 @@
 					<a href="#usage-with-nodejs" id="usage-with-nodejs" style="color: inherit; text-decoration: none;">
 						<h2>Usage with nodejs</h2>
 					</a>
-					<pre><code><span class="hljs-attribute">DEBUG</span>=<span class="hljs-string">'*'</span>; # <span class="hljs-builtin-name">debug</span> everything
-<span class="hljs-attribute">DEBUG</span>=app # <span class="hljs-builtin-name">debug</span> <span class="hljs-keyword">for</span> logger with key <span class="hljs-string">'app'</span>
-<span class="hljs-attribute">DEBUG</span>=app:* # <span class="hljs-builtin-name">debug</span> <span class="hljs-keyword">for</span> logger with key <span class="hljs-string">'app'</span> <span class="hljs-keyword">and</span> all its children
-<span class="hljs-attribute">DEBUG</span>=app,nightingale # <span class="hljs-builtin-name">debug</span> <span class="hljs-keyword">for</span> logger with key <span class="hljs-string">'app'</span> <span class="hljs-keyword">and</span> <span class="hljs-string">'nightingale'</span>
-<span class="hljs-attribute">DEBUG</span>=/^app/ # <span class="hljs-builtin-name">debug</span> <span class="hljs-keyword">for</span> logger with key starting with <span class="hljs-string">'app'</span>
-<span class="hljs-attribute">DEBUG</span>=/^(app|nightingale$)/ # <span class="hljs-builtin-name">debug</span> <span class="hljs-keyword">for</span> logger with key starting with <span class="hljs-string">'app'</span> <span class="hljs-keyword">and</span> key <span class="hljs-string">'nightingale'</span>
-<span class="hljs-attribute">DEBUG</span>=<span class="hljs-string">'*,-app'</span>; # <span class="hljs-builtin-name">debug</span> everything except app
-<span class="hljs-attribute">DEBUG</span>=<span class="hljs-string">'*,-app:*'</span>; # <span class="hljs-builtin-name">debug</span> everything except app <span class="hljs-keyword">and</span> all its children</code></pre>
+					<pre><code><span class="hljs-attribute">DEBUG</span>=<span class="hljs-string">&#x27;*&#x27;</span>; # <span class="hljs-builtin-name">debug</span> everything
+<span class="hljs-attribute">DEBUG</span>=app # <span class="hljs-builtin-name">debug</span> <span class="hljs-keyword">for</span> logger with key <span class="hljs-string">&#x27;app&#x27;</span>
+<span class="hljs-attribute">DEBUG</span>=app:* # <span class="hljs-builtin-name">debug</span> <span class="hljs-keyword">for</span> logger with key <span class="hljs-string">&#x27;app&#x27;</span> <span class="hljs-keyword">and</span> all its children
+<span class="hljs-attribute">DEBUG</span>=app,nightingale # <span class="hljs-builtin-name">debug</span> <span class="hljs-keyword">for</span> logger with key <span class="hljs-string">&#x27;app&#x27;</span> <span class="hljs-keyword">and</span> <span class="hljs-string">&#x27;nightingale&#x27;</span>
+<span class="hljs-attribute">DEBUG</span>=/^app/ # <span class="hljs-builtin-name">debug</span> <span class="hljs-keyword">for</span> logger with key starting with <span class="hljs-string">&#x27;app&#x27;</span>
+<span class="hljs-attribute">DEBUG</span>=/^(app|nightingale$)/ # <span class="hljs-builtin-name">debug</span> <span class="hljs-keyword">for</span> logger with key starting with <span class="hljs-string">&#x27;app&#x27;</span> <span class="hljs-keyword">and</span> key <span class="hljs-string">&#x27;nightingale&#x27;</span>
+<span class="hljs-attribute">DEBUG</span>=<span class="hljs-string">&#x27;*,-app&#x27;</span>; # <span class="hljs-builtin-name">debug</span> everything except app
+<span class="hljs-attribute">DEBUG</span>=<span class="hljs-string">&#x27;*,-app:*&#x27;</span>; # <span class="hljs-builtin-name">debug</span> everything except app <span class="hljs-keyword">and</span> all its children</code></pre>
 					<a href="#usage-with-browser" id="usage-with-browser" style="color: inherit; text-decoration: none;">
 						<h2>Usage with browser</h2>
 					</a>
 					<a href="#with-localstorage" id="with-localstorage" style="color: inherit; text-decoration: none;">
 						<h3>with localStorage</h3>
 					</a>
-					<pre><code>localStorage.<span class="hljs-keyword">debug</span> = <span class="hljs-string">'*'</span>; // <span class="hljs-keyword">debug</span> everything
-localStorage.<span class="hljs-keyword">debug</span> = <span class="hljs-string">'app'</span>; // <span class="hljs-keyword">debug</span> <span class="hljs-keyword">for</span> logger <span class="hljs-keyword">with</span> key <span class="hljs-string">'app'</span>
-localStorage.<span class="hljs-keyword">debug</span> = <span class="hljs-string">'app,nightingale'</span>; // <span class="hljs-keyword">debug</span> <span class="hljs-keyword">for</span> logger <span class="hljs-keyword">with</span> key <span class="hljs-string">'app'</span> <span class="hljs-keyword">and</span> <span class="hljs-string">'nightingale'</span>
-localStorage.<span class="hljs-keyword">debug</span> = <span class="hljs-string">'/^app/'</span>;  //<span class="hljs-keyword">debug</span> <span class="hljs-keyword">for</span> logger <span class="hljs-keyword">with</span> key starting <span class="hljs-keyword">with</span> <span class="hljs-string">'app'</span>
-localStorage.<span class="hljs-keyword">debug</span> = <span class="hljs-string">'/^(app|nightingale$)/'</span>;  // <span class="hljs-keyword">debug</span> <span class="hljs-keyword">for</span> logger <span class="hljs-keyword">with</span> key starting <span class="hljs-keyword">with</span> <span class="hljs-string">'app'</span> <span class="hljs-keyword">and</span> key <span class="hljs-string">'nightingale'</span>
-localStorage.<span class="hljs-keyword">debug</span> = <span class="hljs-string">'*,-app'</span>; // <span class="hljs-keyword">debug</span> everything <span class="hljs-keyword">except</span> app
-localStorage.<span class="hljs-keyword">debug</span> = <span class="hljs-string">'*,-app:*'</span>; // <span class="hljs-keyword">debug</span> everything <span class="hljs-keyword">except</span> app <span class="hljs-keyword">and</span> <span class="hljs-keyword">all</span> its children</code></pre>
+					<pre><code>localStorage.<span class="hljs-keyword">debug</span> = <span class="hljs-string">&#x27;*&#x27;</span>; // <span class="hljs-keyword">debug</span> everything
+localStorage.<span class="hljs-keyword">debug</span> = <span class="hljs-string">&#x27;app&#x27;</span>; // <span class="hljs-keyword">debug</span> <span class="hljs-keyword">for</span> logger <span class="hljs-keyword">with</span> key <span class="hljs-string">&#x27;app&#x27;</span>
+localStorage.<span class="hljs-keyword">debug</span> = <span class="hljs-string">&#x27;app,nightingale&#x27;</span>; // <span class="hljs-keyword">debug</span> <span class="hljs-keyword">for</span> logger <span class="hljs-keyword">with</span> key <span class="hljs-string">&#x27;app&#x27;</span> <span class="hljs-keyword">and</span> <span class="hljs-string">&#x27;nightingale&#x27;</span>
+localStorage.<span class="hljs-keyword">debug</span> = <span class="hljs-string">&#x27;/^app/&#x27;</span>;  //<span class="hljs-keyword">debug</span> <span class="hljs-keyword">for</span> logger <span class="hljs-keyword">with</span> key starting <span class="hljs-keyword">with</span> <span class="hljs-string">&#x27;app&#x27;</span>
+localStorage.<span class="hljs-keyword">debug</span> = <span class="hljs-string">&#x27;/^(app|nightingale$)/&#x27;</span>;  // <span class="hljs-keyword">debug</span> <span class="hljs-keyword">for</span> logger <span class="hljs-keyword">with</span> key starting <span class="hljs-keyword">with</span> <span class="hljs-string">&#x27;app&#x27;</span> <span class="hljs-keyword">and</span> key <span class="hljs-string">&#x27;nightingale&#x27;</span>
+localStorage.<span class="hljs-keyword">debug</span> = <span class="hljs-string">&#x27;*,-app&#x27;</span>; // <span class="hljs-keyword">debug</span> everything <span class="hljs-keyword">except</span> app
+localStorage.<span class="hljs-keyword">debug</span> = <span class="hljs-string">&#x27;*,-app:*&#x27;</span>; // <span class="hljs-keyword">debug</span> everything <span class="hljs-keyword">except</span> app <span class="hljs-keyword">and</span> <span class="hljs-keyword">all</span> its children</code></pre>
 					<a href="#with-query-in-the-url" id="with-query-in-the-url" style="color: inherit; text-decoration: none;">
 						<h3>with query, in the url</h3>
 					</a>
-					<pre><code>?<span class="hljs-keyword">DEBUG</span>=<span class="hljs-string">'*'</span>; // <span class="hljs-keyword">debug</span> everything
-?<span class="hljs-keyword">DEBUG</span>=app // <span class="hljs-keyword">debug</span> <span class="hljs-keyword">for</span> logger <span class="hljs-keyword">with</span> key <span class="hljs-string">'app'</span>
-?<span class="hljs-keyword">DEBUG</span>=app,nightingale // <span class="hljs-keyword">debug</span> <span class="hljs-keyword">for</span> logger <span class="hljs-keyword">with</span> key <span class="hljs-string">'app'</span> <span class="hljs-keyword">and</span> <span class="hljs-string">'nightingale'</span>
-?<span class="hljs-keyword">DEBUG</span>=/^app/  // <span class="hljs-keyword">debug</span> <span class="hljs-keyword">for</span> logger <span class="hljs-keyword">with</span> key starting <span class="hljs-keyword">with</span> <span class="hljs-string">'app'</span>
-?<span class="hljs-keyword">DEBUG</span>=/^(app|nightingale$)/  // <span class="hljs-keyword">debug</span> <span class="hljs-keyword">for</span> logger <span class="hljs-keyword">with</span> key starting <span class="hljs-keyword">with</span> <span class="hljs-string">'app'</span> <span class="hljs-keyword">and</span> key <span class="hljs-string">'nightingale'</span>
+					<pre><code>?<span class="hljs-keyword">DEBUG</span>=<span class="hljs-string">&#x27;*&#x27;</span>; // <span class="hljs-keyword">debug</span> everything
+?<span class="hljs-keyword">DEBUG</span>=app // <span class="hljs-keyword">debug</span> <span class="hljs-keyword">for</span> logger <span class="hljs-keyword">with</span> key <span class="hljs-string">&#x27;app&#x27;</span>
+?<span class="hljs-keyword">DEBUG</span>=app,nightingale // <span class="hljs-keyword">debug</span> <span class="hljs-keyword">for</span> logger <span class="hljs-keyword">with</span> key <span class="hljs-string">&#x27;app&#x27;</span> <span class="hljs-keyword">and</span> <span class="hljs-string">&#x27;nightingale&#x27;</span>
+?<span class="hljs-keyword">DEBUG</span>=/^app/  // <span class="hljs-keyword">debug</span> <span class="hljs-keyword">for</span> logger <span class="hljs-keyword">with</span> key starting <span class="hljs-keyword">with</span> <span class="hljs-string">&#x27;app&#x27;</span>
+?<span class="hljs-keyword">DEBUG</span>=/^(app|nightingale$)/  // <span class="hljs-keyword">debug</span> <span class="hljs-keyword">for</span> logger <span class="hljs-keyword">with</span> key starting <span class="hljs-keyword">with</span> <span class="hljs-string">&#x27;app&#x27;</span> <span class="hljs-keyword">and</span> key <span class="hljs-string">&#x27;nightingale&#x27;</span>
 ?<span class="hljs-keyword">DEBUG</span>=*,-app // <span class="hljs-keyword">debug</span> everything <span class="hljs-keyword">except</span> app
 ?<span class="hljs-keyword">DEBUG</span>=*,-app:* // <span class="hljs-keyword">debug</span> everything <span class="hljs-keyword">except</span> app <span class="hljs-keyword">and</span> <span class="hljs-keyword">all</span> its children</code></pre>
 				</div>
@@ -458,6 +458,7 @@ localStorage.<span class="hljs-keyword">debug</span> = <span class="hljs-string"
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
 			<ul class="tsd-legend">
+				<li class="tsd-kind-namespace"><span class="tsd-kind-icon">Namespace</span></li>
 				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
 				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
 				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
@@ -483,6 +484,5 @@ localStorage.<span class="hljs-keyword">debug</span> = <span class="hljs-string"
 </div>
 <div class="overlay"></div>
 <script src="../assets/js/main.js"></script>
-<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
 </body>
 </html>

@@ -2,30 +2,32 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
+const Level = require('nightingale-levels');
 
-const Level = _interopDefault(require('nightingale-levels'));
+function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e['default'] : e; }
+
+const Level__default = /*#__PURE__*/_interopDefaultLegacy(Level);
 
 const levelToStyles = {
-  [Level.TRACE]: ['gray'],
-  [Level.DEBUG]: ['gray'],
+  [Level__default.TRACE]: ['gray'],
+  [Level__default.DEBUG]: ['gray'],
   // [Level.INFO]: ['gray'],
-  [Level.WARN]: ['yellow'],
-  [Level.ERROR]: ['red', 'bold'],
-  [Level.CRITICAL]: ['red', 'bold'],
-  [Level.FATAL]: ['bgRed', 'white'],
-  [Level.EMERGENCY]: ['bgRed', 'white']
+  [Level__default.WARN]: ['yellow'],
+  [Level__default.ERROR]: ['red', 'bold'],
+  [Level__default.CRITICAL]: ['red', 'bold'],
+  [Level__default.FATAL]: ['bgRed', 'white'],
+  [Level__default.EMERGENCY]: ['bgRed', 'white']
 };
 
 const levelToSymbol = {
-  [Level.TRACE]: '•',
-  [Level.DEBUG]: '•',
-  [Level.INFO]: '→',
-  [Level.WARN]: '⚠',
-  [Level.ERROR]: '✖',
-  [Level.CRITICAL]: '!',
-  [Level.FATAL]: '‼',
-  [Level.EMERGENCY]: '‼'
+  [Level__default.TRACE]: '•',
+  [Level__default.DEBUG]: '•',
+  [Level__default.INFO]: '→',
+  [Level__default.WARN]: '⚠',
+  [Level__default.ERROR]: '✖',
+  [Level__default.CRITICAL]: '!',
+  [Level__default.FATAL]: '‼',
+  [Level__default.EMERGENCY]: '‼'
 };
 
 const styleToHexColor = {
@@ -138,13 +140,13 @@ const styleToHtmlStyle = {
   }
 };
 
-/* eslint-disable max-lines, no-useless-concat, prefer-template, no-use-before-define, @typescript-eslint/no-use-before-define */
+/* eslint-disable max-lines,  no-use-before-define */
 const noStyleFn = (styles, value) => value;
 
 function tryStringify(arg) {
   try {
     return JSON.stringify(arg).replace(/\\n/g, '\n');
-  } catch (_) {
+  } catch {
     return '[Circular]';
   }
 }
@@ -193,6 +195,7 @@ function internalFormatValue(value, styleFn, styles, {
   } else if (value === undefined) {
     stringValue = 'undefined';
   } else if (typeofValue === 'boolean') {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
     stringValue = value.toString();
   } else if (value.constructor === Object) {
     if (depth >= maxDepth) {
@@ -218,7 +221,7 @@ function internalFormatValue(value, styleFn, styles, {
     }
   } else if (value instanceof Error) {
     const stack = value.stack;
-    stringValue = (stack === null || stack === void 0 ? void 0 : stack.startsWith(value.message)) ? stack : `${value.message}\n${stack}`;
+    stringValue = (stack === null || stack === void 0 ? void 0 : stack.startsWith(value.message)) ? stack : `${value.message}\n${stack || ''}`;
   } else if (value instanceof Map) {
     const name = value.constructor.name;
 
@@ -263,13 +266,16 @@ function internalFormatValue(value, styleFn, styles, {
 const separator = ',';
 
 const internalFormatKey = (key, styleFn) => {
-  if (!key) return {
-    stringKey: '',
-    formattedKey: ''
-  };
   return {
     stringKey: `${key}: `,
-    formattedKey: styleFn(['gray-light', 'bold'], `${key}:`) + ' '
+    formattedKey: `${styleFn(['gray-light', 'bold'], `${key}:`)} `
+  };
+};
+
+const internalNoKey = () => {
+  return {
+    stringKey: '',
+    formattedKey: ''
   };
 };
 
@@ -279,8 +285,8 @@ const internalFormatMapKey = (key, styleFn, internalFormatParams) => {
     formattedValue
   } = internalFormatValue(key, noStyleFn, undefined, internalFormatParams);
   return {
-    stringKey: stringValue + ' => ',
-    formattedKey: styleFn(['gray-light', 'bold'], `${formattedValue}:`) + ' '
+    stringKey: `${stringValue} => `,
+    formattedKey: `${styleFn(['gray-light', 'bold'], `${formattedValue}:`)} `
   };
 };
 
@@ -293,7 +299,7 @@ const internalFormatIterator = (values, styleFn, objectStyles, {
   prefix,
   suffix,
   prefixSuffixSpace = ' ',
-  formatKey = internalFormatKey
+  formatKey
 }) => {
   let breakLine = false;
 
@@ -318,7 +324,7 @@ const internalFormatIterator = (values, styleFn, objectStyles, {
     let {
       stringValue,
       formattedValue
-    } = internalFormatValue(value, styleFn, key && objectStyles && objectStyles[key], internalFormatParams);
+    } = internalFormatValue(value, styleFn, key && objectStyles ? objectStyles[key] : undefined, internalFormatParams);
 
     if (stringValue && (stringValue.length > 80 || stringValue.includes('\n'))) {
       breakLine = true;
@@ -328,15 +334,13 @@ const internalFormatIterator = (values, styleFn, objectStyles, {
 
     return {
       stringValue: stringKey + stringValue + (index === valuesMaxIndex ? '' : separator),
-      // eslint-disable-next-line no-useless-concat
       formattedValue: formattedKey + formattedValue + (index === valuesMaxIndex ? '' : formattedSeparator()) // note: we need to format the separator for each values for browser-formatter
 
     };
   });
   return {
     stringValue: prefix + formattedValues.map(breakLine ? v => `\n${padding}${v.stringValue}` : fv => fv.stringValue).join(breakLine ? '\n' : ' ') + suffix,
-    // eslint-disable-next-line prefer-template
-    formattedValue: `${prefix}${breakLine ? '' : prefixSuffixSpace}` + formattedValues.map(breakLine ? v => `\n${padding}${v.formattedValue}` : v => v.formattedValue).join(breakLine ? '' : ' ') + `${breakLine ? ',\n' : prefixSuffixSpace}${suffix}`
+    formattedValue: `${prefix}${breakLine ? '' : prefixSuffixSpace}${formattedValues.map(breakLine ? v => `\n${padding}${v.formattedValue}` : v => v.formattedValue).join(breakLine ? '' : ' ')}${breakLine ? ',\n' : prefixSuffixSpace}${suffix}`
   };
 };
 
@@ -367,7 +371,8 @@ function internalFormatObject(object, styleFn, objectStyles, {
     objects
   }, {
     prefix: '{',
-    suffix: '}'
+    suffix: '}',
+    formatKey: internalFormatKey
   });
   objects.delete(object);
   return result;
@@ -433,7 +438,8 @@ function internalFormatArray(array, styleFn, {
   }, {
     prefix: '[',
     suffix: ']',
-    prefixSuffixSpace: ''
+    prefixSuffixSpace: '',
+    formatKey: internalNoKey
   });
   objects.delete(array);
   return result;
@@ -466,7 +472,8 @@ function internalFormatSet(name, set, styleFn, {
     objects
   }, {
     prefix: `${name} [`,
-    suffix: ']'
+    suffix: ']',
+    formatKey: internalNoKey
   });
   objects.delete(set);
   return result;
@@ -492,7 +499,6 @@ function formatObject(object, styleFn = noStyleFn, objectStyles, {
   return result;
 }
 
-/* eslint-disable no-unused-vars */
 function formatRecordToString(record, style) {
   const parts = [];
 

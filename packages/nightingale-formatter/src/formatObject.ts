@@ -1,4 +1,4 @@
-/* eslint-disable max-lines, no-useless-concat, prefer-template, no-use-before-define, @typescript-eslint/no-use-before-define */
+/* eslint-disable max-lines,  no-use-before-define */
 import type { Styles } from 'nightingale-types';
 
 export interface FormatObjectOptions {
@@ -8,9 +8,7 @@ export interface FormatObjectOptions {
 
 export type StyleFn = (styles: Styles, value: string) => string;
 
-export interface ObjectStyles {
-  [key: string]: Styles;
-}
+export type ObjectStyles<Keys extends string = string> = Record<Keys, Styles>;
 
 const noStyleFn: StyleFn = (styles: Styles, value: string): string => value;
 
@@ -18,7 +16,7 @@ interface InternalFormatParams {
   padding: string;
   depth: number;
   maxDepth: number;
-  objects: Set<any>;
+  objects: Set<unknown>;
 }
 
 interface FormattedKey {
@@ -26,15 +24,15 @@ interface FormattedKey {
   formattedKey: string;
 }
 
-type FormatKey = (
-  key: string,
+type FormatKey<Key> = (
+  key: Key,
   styleFn: StyleFn,
   internalFormatParams: InternalFormatParams,
 ) => FormattedKey;
 
-interface Value {
-  key: any;
-  value: any;
+interface Value<Key> {
+  key: Key;
+  value: unknown;
 }
 
 interface FormattedValue {
@@ -42,19 +40,19 @@ interface FormattedValue {
   formattedValue: string;
 }
 
-type Values = Value[];
+type Values<Key> = Value<Key>[];
 
-interface InternalFormatIteratorParams {
+interface InternalFormatIteratorParams<Key> {
   prefix: string;
   suffix: string;
+  formatKey: FormatKey<Key>;
   prefixSuffixSpace?: string;
-  formatKey?: FormatKey;
 }
 
-function tryStringify(arg: any): string {
+function tryStringify(arg: unknown): string {
   try {
     return JSON.stringify(arg).replace(/\\n/g, '\n');
-  } catch (_) {
+  } catch {
     return '[Circular]';
   }
 }
@@ -65,7 +63,7 @@ const sameRawFormattedValue = (value: string): FormattedValue => ({
 });
 
 function internalFormatValue(
-  value: any,
+  value: unknown,
   styleFn: StyleFn,
   styles: Styles,
   { padding, depth, maxDepth, objects }: InternalFormatParams,
@@ -93,23 +91,29 @@ function internalFormatValue(
     }
   }
 
-  let stringValue;
+  let stringValue: string;
   if (value === null) {
     stringValue = 'null';
   } else if (value === undefined) {
     stringValue = 'undefined';
   } else if (typeofValue === 'boolean') {
-    stringValue = value.toString();
-  } else if (value.constructor === Object) {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
+    stringValue = (value as any).toString() as string;
+  } else if ((value as () => unknown).constructor === Object) {
     if (depth >= maxDepth) {
       stringValue = '{Object...}';
     } else {
-      return internalFormatObject(value, styleFn, undefined, {
-        padding,
-        depth: depth + 1,
-        maxDepth,
-        objects,
-      });
+      return internalFormatObject(
+        value as Record<string, unknown>,
+        styleFn,
+        undefined,
+        {
+          padding,
+          depth: depth + 1,
+          maxDepth,
+          objects,
+        },
+      );
     }
   } else if (Array.isArray(value)) {
     if (depth >= maxDepth) {
@@ -126,7 +130,7 @@ function internalFormatValue(
     const stack = value.stack;
     stringValue = stack?.startsWith(value.message)
       ? stack
-      : `${value.message}\n${stack}`;
+      : `${value.message}\n${stack || ''}`;
   } else if (value instanceof Map) {
     const name = value.constructor.name;
     if (depth >= maxDepth) {
@@ -169,20 +173,27 @@ function internalFormatValue(
 
 const separator = ',';
 
-const internalFormatKey: FormatKey = (
+const internalFormatKey: FormatKey<string> = (
   key: string,
   styleFn: StyleFn,
   internalFormatParams: InternalFormatParams,
 ): FormattedKey => {
-  if (!key) return { stringKey: '', formattedKey: '' };
   return {
     stringKey: `${key}: `,
-    formattedKey: styleFn(['gray-light', 'bold'], `${key}:`) + ' ',
+    formattedKey: `${styleFn(['gray-light', 'bold'], `${key}:`)} `,
   };
 };
 
-const internalFormatMapKey: FormatKey = (
-  key: string,
+const internalNoKey: FormatKey<undefined> = (
+  key: string | undefined,
+  styleFn: StyleFn,
+  internalFormatParams: InternalFormatParams,
+): FormattedKey => {
+  return { stringKey: '', formattedKey: '' };
+};
+
+const internalFormatMapKey: FormatKey<unknown> = (
+  key: unknown,
   styleFn: StyleFn,
   internalFormatParams: InternalFormatParams,
 ): FormattedKey => {
@@ -193,13 +204,13 @@ const internalFormatMapKey: FormatKey = (
     internalFormatParams,
   );
   return {
-    stringKey: stringValue + ' => ',
-    formattedKey: styleFn(['gray-light', 'bold'], `${formattedValue}:`) + ' ',
+    stringKey: `${stringValue} => `,
+    formattedKey: `${styleFn(['gray-light', 'bold'], `${formattedValue}:`)} `,
   };
 };
 
-const internalFormatIterator = (
-  values: Values,
+const internalFormatIterator = <Key>(
+  values: Values<Key>,
   styleFn: StyleFn,
   objectStyles: ObjectStyles | undefined,
   { padding, depth, maxDepth, objects }: InternalFormatParams,
@@ -207,8 +218,8 @@ const internalFormatIterator = (
     prefix,
     suffix,
     prefixSuffixSpace = ' ',
-    formatKey = internalFormatKey,
-  }: InternalFormatIteratorParams,
+    formatKey,
+  }: InternalFormatIteratorParams<Key>,
 ): FormattedValue => {
   let breakLine = false;
   const formattedSeparator = (): string => styleFn(['gray'], separator);
@@ -234,7 +245,9 @@ const internalFormatIterator = (
       let { stringValue, formattedValue } = internalFormatValue(
         value,
         styleFn,
-        key && objectStyles && objectStyles[key],
+        key && objectStyles
+          ? objectStyles[(key as unknown) as string]
+          : undefined,
         internalFormatParams,
       );
 
@@ -250,7 +263,6 @@ const internalFormatIterator = (
       return {
         stringValue:
           stringKey + stringValue + (index === valuesMaxIndex ? '' : separator),
-        // eslint-disable-next-line no-useless-concat
         formattedValue:
           formattedKey +
           formattedValue +
@@ -271,22 +283,22 @@ const internalFormatIterator = (
         )
         .join(breakLine ? '\n' : ' ') +
       suffix,
-    // eslint-disable-next-line prefer-template
-    formattedValue:
-      `${prefix}${breakLine ? '' : prefixSuffixSpace}` +
-      formattedValues
-        .map(
-          breakLine
-            ? (v) => `\n${padding}${v.formattedValue}`
-            : (v) => v.formattedValue,
-        )
-        .join(breakLine ? '' : ' ') +
-      `${breakLine ? ',\n' : prefixSuffixSpace}${suffix}`,
+    formattedValue: `${prefix}${
+      breakLine ? '' : prefixSuffixSpace
+    }${formattedValues
+      .map(
+        breakLine
+          ? (v) => `\n${padding}${v.formattedValue}`
+          : (v) => v.formattedValue,
+      )
+      .join(breakLine ? '' : ' ')}${
+      breakLine ? ',\n' : prefixSuffixSpace
+    }${suffix}`,
   };
 };
 
 function internalFormatObject(
-  object: { [key: string]: any },
+  object: Record<string, unknown>,
   styleFn: StyleFn,
   objectStyles: ObjectStyles | undefined,
   { padding, depth, maxDepth, objects }: InternalFormatParams,
@@ -307,7 +319,7 @@ function internalFormatObject(
     styleFn,
     objectStyles,
     { padding, depth, maxDepth, objects },
-    { prefix: '{', suffix: '}' },
+    { prefix: '{', suffix: '}', formatKey: internalFormatKey },
   );
 
   objects.delete(object);
@@ -317,7 +329,7 @@ function internalFormatObject(
 
 function internalFormatMap(
   name: string,
-  map: Map<any, any>,
+  map: Map<unknown, unknown>,
   styleFn: StyleFn,
   { padding, depth, maxDepth, objects }: InternalFormatParams,
 ): FormattedValue {
@@ -346,7 +358,7 @@ function internalFormatMap(
 }
 
 function internalFormatArray(
-  array: any[],
+  array: unknown[],
   styleFn: StyleFn,
   { padding, depth, maxDepth, objects }: InternalFormatParams,
 ): FormattedValue {
@@ -361,11 +373,16 @@ function internalFormatArray(
   objects.add(array);
 
   const result = internalFormatIterator(
-    array.map((value: any) => ({ key: undefined, value })),
+    array.map((value) => ({ key: undefined, value })),
     styleFn,
     undefined,
     { padding, depth, maxDepth, objects },
-    { prefix: '[', suffix: ']', prefixSuffixSpace: '' },
+    {
+      prefix: '[',
+      suffix: ']',
+      prefixSuffixSpace: '',
+      formatKey: internalNoKey,
+    },
   );
 
   objects.delete(array);
@@ -375,7 +392,7 @@ function internalFormatArray(
 
 function internalFormatSet(
   name: string,
-  set: Set<any>,
+  set: Set<unknown>,
   styleFn: StyleFn,
   { padding, depth, maxDepth, objects }: InternalFormatParams,
 ): FormattedValue {
@@ -395,7 +412,7 @@ function internalFormatSet(
     styleFn,
     undefined,
     { padding, depth, maxDepth, objects },
-    { prefix: `${name} [`, suffix: ']' },
+    { prefix: `${name} [`, suffix: ']', formatKey: internalNoKey },
   );
 
   objects.delete(set);
@@ -404,7 +421,7 @@ function internalFormatSet(
 }
 
 export default function formatObject(
-  object: { [key: string]: any },
+  object: Record<string, unknown>,
   styleFn: StyleFn = noStyleFn,
   objectStyles?: ObjectStyles,
   { padding = '  ', maxDepth = 10 }: FormatObjectOptions = {},

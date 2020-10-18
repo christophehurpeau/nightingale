@@ -1,8 +1,8 @@
 export { default as Level, default as levels } from 'nightingale-levels';
 import Logger from 'nightingale-logger';
+export { default } from 'nightingale-logger';
 
 if (global.__NIGHTINGALE_GLOBAL_HANDLERS) {
-  // eslint-disable-next-line no-console
   throw new Error('nightingale: update all to ^5.0.0');
 }
 
@@ -59,7 +59,7 @@ function handleConfig(config) {
 }
 
 function configure(config) {
-  if (global.__NIGHTINGALE_CONFIG.length !== 0) {
+  if (global.__NIGHTINGALE_CONFIG.length > 0) {
     // eslint-disable-next-line no-console
     console.log('nightingale: warning: config overridden');
   }
@@ -89,9 +89,10 @@ var configIsForKey = function configIsForKey(key) {
 
 global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = function (key) {
   var globalCache = global.__NIGHTINGALE_LOGGER_MAP_CACHE;
+  var existingCache = globalCache.get(key);
 
-  if (globalCache.has(key)) {
-    return globalCache.get(key);
+  if (existingCache) {
+    return existingCache;
   }
 
   var loggerConfig = {
@@ -121,7 +122,7 @@ if (global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
       handlers: handlers.filter(function (handler) {
         return level >= handler.minLevel && (!handler.isHandling || handler.isHandling(level, key));
       }),
-      processors: processors
+      processors
     };
   };
 }
@@ -138,16 +139,15 @@ function listenUnhandledErrors(logger) {
 
   process.on('uncaughtException', function (err) {
     return logger.error('uncaughtException', {
-      err: err
+      err
     });
   });
   process.on('unhandledRejection', function (err) {
     return logger.error('unhandledRejection', {
-      err: err
+      err
     });
   });
 }
 
-export default Logger;
 export { addConfig, configure, listenUnhandledErrors };
 //# sourceMappingURL=index-browser-dev.es.js.map

@@ -2,26 +2,32 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
+const formatterANSI = require('nightingale-ansi-formatter');
+const consoleOutput = require('nightingale-console-output');
+const createFindDebugLevel = require('nightingale-debug');
+const formatterJSON = require('nightingale-json-formatter');
+const Level = require('nightingale-levels');
 
-const formatterANSI = _interopDefault(require('nightingale-ansi-formatter'));
-const consoleOutput = _interopDefault(require('nightingale-console-output'));
-const createFindDebugLevel = _interopDefault(require('nightingale-debug'));
-const formatterJSON = _interopDefault(require('nightingale-json-formatter'));
-const Level = _interopDefault(require('nightingale-levels'));
+function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e['default'] : e; }
 
-const defaultFormatter = !process.stdout.isTTY && process.env.NIGHTINGALE_CONSOLE_FORMATTER !== 'ansi' ? formatterJSON : formatterANSI;
+const formatterANSI__default = /*#__PURE__*/_interopDefaultLegacy(formatterANSI);
+const consoleOutput__default = /*#__PURE__*/_interopDefaultLegacy(consoleOutput);
+const createFindDebugLevel__default = /*#__PURE__*/_interopDefaultLegacy(createFindDebugLevel);
+const formatterJSON__default = /*#__PURE__*/_interopDefaultLegacy(formatterJSON);
+const Level__default = /*#__PURE__*/_interopDefaultLegacy(Level);
 
-const createHandle = (formatter = defaultFormatter, output = consoleOutput) => {
+const defaultFormatter = !process.stdout.isTTY && process.env.NIGHTINGALE_CONSOLE_FORMATTER !== 'ansi' ? formatterJSON__default : formatterANSI__default;
+
+const createHandle = (formatter = defaultFormatter, output = consoleOutput__default) => {
   return record => {
     return output(formatter(record), record);
   };
 };
 
-const findDebugLevel = createFindDebugLevel(process.env.DEBUG);
+const findDebugLevel = createFindDebugLevel__default(process.env.DEBUG);
 class ConsoleHandler {
   constructor(minLevel, options = {}) {
-    this.minLevel = Level.ALL;
+    this.minLevel = Level__default.ALL;
     this.minLevel = minLevel;
 
     this.isHandling = (level, key) => level >= findDebugLevel(minLevel, key);

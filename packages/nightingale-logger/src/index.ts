@@ -11,11 +11,9 @@ import type {
   LogRecord,
 } from 'nightingale-types';
 
-declare const global: any;
-
 export { Level };
 
-export interface Options<T> {
+export interface Options<T extends Metadata> {
   symbol?: string;
   metadataStyles?: MetadataStyles<T>;
   styles?: Styles;
@@ -28,6 +26,36 @@ export interface ComputedConfigForKey {
 
 interface ExtendedFunctionNameMetadata {
   functionName: string;
+}
+
+export interface Config {
+  handler?: Handler;
+  handlers?: Handler[];
+  key?: string;
+  keys?: string[];
+  pattern?: RegExp;
+  processor?: Processor;
+  processors?: Processor[];
+  stop?: boolean;
+}
+
+declare global {
+  // eslint-disable-next-line @typescript-eslint/no-namespace
+  namespace NodeJS {
+    interface Global {
+      __NIGHTINGALE_CONFIG: Config[];
+      __NIGHTINGALE_LOGGER_MAP_CACHE: Map<string, ComputedConfigForKey>;
+      __NIGHTINGALE_CONFIG_DEFAULT: ComputedConfigForKey;
+      __NIGHTINGALE_GLOBAL_HANDLERS: unknown;
+      __NIGHTINGALE_GET_CONFIG_FOR_LOGGER: (
+        key: string,
+      ) => ComputedConfigForKey;
+      __NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD: (
+        key: string,
+        level: number,
+      ) => ComputedConfigForKey;
+    }
+  }
 }
 
 if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER) {
@@ -71,7 +99,7 @@ function getConfigForLoggerRecord(
  * This records are treated by handlers
  */
 export default class Logger {
-  private contextObject?: object;
+  private contextObject?: Record<string, unknown>;
 
   readonly key: string;
 
@@ -103,7 +131,7 @@ export default class Logger {
 
   /** @private */
   getConfig(): Readonly<ComputedConfigForKey> {
-    return global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(this.key, Level.ALL);
+    return global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(this.key);
   }
 
   /**
@@ -126,7 +154,7 @@ export default class Logger {
    * }
    *
    */
-  context(context: object): Logger {
+  context(context: Record<string, unknown>): Logger {
     const logger = new Logger(this.key);
     logger.setContext(context);
     return logger;
@@ -135,7 +163,7 @@ export default class Logger {
   /**
    * Get the context of this logger
    */
-  getContextObject(): Readonly<object> | undefined {
+  getContextObject(): Readonly<Record<string, unknown>> | undefined {
     return this.contextObject;
   }
 
@@ -144,14 +172,14 @@ export default class Logger {
    *
    * @param {Object} context
    */
-  setContext(context: object): void {
+  setContext(context: Record<string, unknown>): void {
     this.contextObject = context;
   }
 
   /**
    * Extends existing context of this logger
    */
-  extendsContext(extendedContext: Record<string, any>): void {
+  extendsContext(extendedContext: Record<string, unknown>): void {
     Object.assign(this.contextObject, extendedContext);
   }
 
@@ -323,7 +351,7 @@ export default class Logger {
    * Log an inspected value
    */
   inspectValue<T extends Metadata>(
-    value: any,
+    value: unknown,
     metadata?: T,
     metadataStyles?: MetadataStyles<T>,
   ): void {
@@ -332,8 +360,8 @@ export default class Logger {
     } else {
       // Note: inspect is a special function for node:
       // https://github.com/nodejs/node/blob/a1bda1b4deb08dfb3e06cb778f0db40023b18318/lib/util.js#L210
-      value = util.inspect(value, { depth: 6 });
-      this.log(value, metadata, Level.DEBUG, {
+      const inspectedValue = util.inspect(value, { depth: 6 });
+      this.log(inspectedValue, metadata, Level.DEBUG, {
         metadataStyles,
         styles: ['gray'],
       });
@@ -345,15 +373,15 @@ export default class Logger {
    */
   inspectVar<T extends Metadata>(
     varName: string,
-    varValue: any,
+    varValue: unknown,
     metadata?: T,
     metadataStyles?: MetadataStyles<T>,
   ): void {
     if (POB_TARGET === 'browser') {
       throw new Error('Not supported for the browser. Prefer `debugger;`');
     } else {
-      varValue = util.inspect(varValue, { depth: 6 });
-      this.log(`${varName} = ${varValue}`, metadata, Level.DEBUG, {
+      const inspectedValue = util.inspect(varValue, { depth: 6 });
+      this.log(`${varName} = ${inspectedValue}`, metadata, Level.DEBUG, {
         metadataStyles,
         styles: ['cyan'],
       });
@@ -541,8 +569,8 @@ export default class Logger {
    * }
    *
    */
-  enter<T extends Metadata>(
-    fn: Function,
+  enter<T extends Metadata, Fn extends (...args: unknown[]) => unknown>(
+    fn: Fn,
     metadata?: T,
     metadataStyles?: MetadataStyles<T & ExtendedFunctionNameMetadata>,
   ): void {
@@ -565,8 +593,8 @@ export default class Logger {
    *   }
    * }
    */
-  exit<T extends Metadata>(
-    fn: Function,
+  exit<T extends Metadata, Fn extends (...args: unknown[]) => unknown>(
+    fn: Fn,
     metadata?: T,
     metadataStyles?: MetadataStyles<T & ExtendedFunctionNameMetadata>,
   ): void {
@@ -595,22 +623,47 @@ export default class Logger {
    * @param {Object} [metadataStyles]
    * @param {Function} callback
    */
-  wrap<T extends Metadata>(
-    fn: Function,
-    metadata?: T | Function,
-    metadataStyles?: MetadataStyles<T> | Function,
-    callback?: Function,
+  wrap<Fn extends (...args: unknown[]) => unknown>(
+    fn: Fn,
+    callback: () => void,
+  ): void;
+
+  wrap<T extends Metadata, Fn extends (...args: unknown[]) => unknown>(
+    fn: Fn,
+    metadata: T,
+    callback: () => void,
+  ): void;
+
+  wrap<T extends Metadata, Fn extends (...args: unknown[]) => unknown>(
+    fn: Fn,
+    metadata: T,
+    metadataStyles: MetadataStyles<T>,
+    callback: () => void,
+  ): void;
+
+  wrap<T extends Metadata, Fn extends (...args: unknown[]) => unknown>(
+    fn: Fn,
+    option1: T | (() => void),
+    option2?: MetadataStyles<T> | (() => void),
+    callback?: () => void,
   ): void {
-    if (typeof metadata === 'function') {
-      callback = metadata;
-      metadata = undefined;
-    } else if (typeof metadataStyles === 'function') {
-      callback = metadataStyles;
-      metadataStyles = undefined;
+    let metadata: T | undefined;
+    let metadataStyles: MetadataStyles<T> | undefined;
+
+    if (typeof option1 === 'function') {
+      callback = option1;
+    } else {
+      metadata = option1;
+
+      if (typeof option2 === 'function') {
+        callback = option2;
+      } else {
+        metadataStyles = option2;
+      }
     }
 
     this.enter(fn, metadata, metadataStyles as MetadataStyles<T>);
-    (callback as Function)();
+    (callback as () => void)();
     this.exit(fn);
   }
 }

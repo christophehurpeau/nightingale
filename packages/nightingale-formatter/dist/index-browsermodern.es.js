@@ -132,25 +132,21 @@ const styleToHtmlStyle = {
   }
 };
 
-/* eslint-disable max-lines, no-useless-concat, prefer-template, no-use-before-define, @typescript-eslint/no-use-before-define */
-const noStyleFn = function noStyleFn(styles, value) {
-  return value;
-};
+/* eslint-disable max-lines,  no-use-before-define */
+const noStyleFn = (styles, value) => value;
 
 function tryStringify(arg) {
   try {
     return JSON.stringify(arg).replace(/\\n/g, '\n');
-  } catch (_) {
+  } catch {
     return '[Circular]';
   }
 }
 
-const sameRawFormattedValue = function sameRawFormattedValue(value) {
-  return {
-    stringValue: value,
-    formattedValue: value
-  };
-};
+const sameRawFormattedValue = value => ({
+  stringValue: value,
+  formattedValue: value
+});
 
 function internalFormatValue(value, styleFn, styles, {
   padding,
@@ -191,6 +187,7 @@ function internalFormatValue(value, styleFn, styles, {
   } else if (value === undefined) {
     stringValue = 'undefined';
   } else if (typeofValue === 'boolean') {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
     stringValue = value.toString();
   } else if (value.constructor === Object) {
     if (depth >= maxDepth) {
@@ -216,7 +213,7 @@ function internalFormatValue(value, styleFn, styles, {
     }
   } else if (value instanceof Error) {
     const stack = value.stack;
-    stringValue = (stack === null || stack === void 0 ? void 0 : stack.startsWith(value.message)) ? stack : `${value.message}\n${stack}`;
+    stringValue = stack?.startsWith(value.message) ? stack : `${value.message}\n${stack || ''}`;
   } else if (value instanceof Map) {
     const name = value.constructor.name;
 
@@ -260,29 +257,32 @@ function internalFormatValue(value, styleFn, styles, {
 
 const separator = ',';
 
-const internalFormatKey = function internalFormatKey(key, styleFn) {
-  if (!key) return {
-    stringKey: '',
-    formattedKey: ''
-  };
+const internalFormatKey = (key, styleFn) => {
   return {
     stringKey: `${key}: `,
-    formattedKey: styleFn(['gray-light', 'bold'], `${key}:`) + ' '
+    formattedKey: `${styleFn(['gray-light', 'bold'], `${key}:`)} `
   };
 };
 
-const internalFormatMapKey = function internalFormatMapKey(key, styleFn, internalFormatParams) {
+const internalNoKey = () => {
+  return {
+    stringKey: '',
+    formattedKey: ''
+  };
+};
+
+const internalFormatMapKey = (key, styleFn, internalFormatParams) => {
   const {
     stringValue,
     formattedValue
   } = internalFormatValue(key, noStyleFn, undefined, internalFormatParams);
   return {
-    stringKey: stringValue + ' => ',
-    formattedKey: styleFn(['gray-light', 'bold'], `${formattedValue}:`) + ' '
+    stringKey: `${stringValue} => `,
+    formattedKey: `${styleFn(['gray-light', 'bold'], `${formattedValue}:`)} `
   };
 };
 
-const internalFormatIterator = function internalFormatIterator(values, styleFn, objectStyles, {
+const internalFormatIterator = (values, styleFn, objectStyles, {
   padding,
   depth,
   maxDepth,
@@ -291,19 +291,17 @@ const internalFormatIterator = function internalFormatIterator(values, styleFn, 
   prefix,
   suffix,
   prefixSuffixSpace = ' ',
-  formatKey = internalFormatKey
-}) {
+  formatKey
+}) => {
   let breakLine = false;
 
-  const formattedSeparator = function formattedSeparator() {
-    return styleFn(['gray'], separator);
-  };
+  const formattedSeparator = () => styleFn(['gray'], separator);
 
   const valuesMaxIndex = values.length - 1;
-  const formattedValues = values.map(function ({
+  const formattedValues = values.map(({
     key,
     value
-  }, index) {
+  }, index) => {
     const internalFormatParams = {
       padding,
       depth: depth + 1,
@@ -318,7 +316,7 @@ const internalFormatIterator = function internalFormatIterator(values, styleFn, 
     let {
       stringValue,
       formattedValue
-    } = internalFormatValue(value, styleFn, key && objectStyles && objectStyles[key], internalFormatParams);
+    } = internalFormatValue(value, styleFn, key && objectStyles ? objectStyles[key] : undefined, internalFormatParams);
 
     if (stringValue && (stringValue.length > 80 || stringValue.includes('\n'))) {
       breakLine = true;
@@ -328,23 +326,13 @@ const internalFormatIterator = function internalFormatIterator(values, styleFn, 
 
     return {
       stringValue: stringKey + stringValue + (index === valuesMaxIndex ? '' : separator),
-      // eslint-disable-next-line no-useless-concat
       formattedValue: formattedKey + formattedValue + (index === valuesMaxIndex ? '' : formattedSeparator()) // note: we need to format the separator for each values for browser-formatter
 
     };
   });
   return {
-    stringValue: prefix + formattedValues.map(breakLine ? function (v) {
-      return `\n${padding}${v.stringValue}`;
-    } : function (fv) {
-      return fv.stringValue;
-    }).join(breakLine ? '\n' : ' ') + suffix,
-    // eslint-disable-next-line prefer-template
-    formattedValue: `${prefix}${breakLine ? '' : prefixSuffixSpace}` + formattedValues.map(breakLine ? function (v) {
-      return `\n${padding}${v.formattedValue}`;
-    } : function (v) {
-      return v.formattedValue;
-    }).join(breakLine ? '' : ' ') + `${breakLine ? ',\n' : prefixSuffixSpace}${suffix}`
+    stringValue: prefix + formattedValues.map(breakLine ? v => `\n${padding}${v.stringValue}` : fv => fv.stringValue).join(breakLine ? '\n' : ' ') + suffix,
+    formattedValue: `${prefix}${breakLine ? '' : prefixSuffixSpace}${formattedValues.map(breakLine ? v => `\n${padding}${v.formattedValue}` : v => v.formattedValue).join(breakLine ? '' : ' ')}${breakLine ? ',\n' : prefixSuffixSpace}${suffix}`
   };
 };
 
@@ -365,19 +353,18 @@ function internalFormatObject(object, styleFn, objectStyles, {
   }
 
   objects.add(object);
-  const result = internalFormatIterator(keys.map(function (key) {
-    return {
-      key,
-      value: object[key]
-    };
-  }), styleFn, objectStyles, {
+  const result = internalFormatIterator(keys.map(key => ({
+    key,
+    value: object[key]
+  })), styleFn, objectStyles, {
     padding,
     depth,
     maxDepth,
     objects
   }, {
     prefix: '{',
-    suffix: '}'
+    suffix: '}',
+    formatKey: internalFormatKey
   });
   objects.delete(object);
   return result;
@@ -400,12 +387,10 @@ function internalFormatMap(name, map, styleFn, {
   }
 
   objects.add(map);
-  const result = internalFormatIterator(keys.map(function (key) {
-    return {
-      key,
-      value: map.get(key)
-    };
-  }), styleFn, undefined, {
+  const result = internalFormatIterator(keys.map(key => ({
+    key,
+    value: map.get(key)
+  })), styleFn, undefined, {
     padding,
     depth,
     maxDepth,
@@ -434,12 +419,10 @@ function internalFormatArray(array, styleFn, {
   }
 
   objects.add(array);
-  const result = internalFormatIterator(array.map(function (value) {
-    return {
-      key: undefined,
-      value
-    };
-  }), styleFn, undefined, {
+  const result = internalFormatIterator(array.map(value => ({
+    key: undefined,
+    value
+  })), styleFn, undefined, {
     padding,
     depth,
     maxDepth,
@@ -447,7 +430,8 @@ function internalFormatArray(array, styleFn, {
   }, {
     prefix: '[',
     suffix: ']',
-    prefixSuffixSpace: ''
+    prefixSuffixSpace: '',
+    formatKey: internalNoKey
   });
   objects.delete(array);
   return result;
@@ -470,19 +454,18 @@ function internalFormatSet(name, set, styleFn, {
   }
 
   objects.add(set);
-  const result = internalFormatIterator(values.map(function (value) {
-    return {
-      key: undefined,
-      value
-    };
-  }), styleFn, undefined, {
+  const result = internalFormatIterator(values.map(value => ({
+    key: undefined,
+    value
+  })), styleFn, undefined, {
     padding,
     depth,
     maxDepth,
     objects
   }, {
     prefix: `${name} [`,
-    suffix: ']'
+    suffix: ']',
+    formatKey: internalNoKey
   });
   objects.delete(set);
   return result;
@@ -508,7 +491,6 @@ function formatObject(object, styleFn = noStyleFn, objectStyles, {
   return result;
 }
 
-/* eslint-disable no-unused-vars */
 function formatRecordToString(record, style) {
   const parts = [];
 
@@ -542,7 +524,7 @@ function formatRecordToString(record, style) {
     parts.push(message);
   }
 
-  const formatRecordObject = function formatRecordObject(key, object, styles) {
+  const formatRecordObject = (key, object, styles) => {
     if (!object) {
       return;
     }

@@ -1,5 +1,6 @@
 export { default as Level, default as levels } from 'nightingale-levels';
 import Logger from 'nightingale-logger';
+export { default } from 'nightingale-logger';
 
 if (!global.__NIGHTINGALE_CONFIG) {
   global.__NIGHTINGALE_CONFIG = [];
@@ -54,7 +55,7 @@ function handleConfig(config) {
 }
 
 function configure(config) {
-  if (global.__NIGHTINGALE_CONFIG.length !== 0) {
+  if (global.__NIGHTINGALE_CONFIG.length > 0) {
     // eslint-disable-next-line no-console
     console.log('nightingale: warning: config overridden');
   }
@@ -70,19 +71,18 @@ function addConfig(config, unshift = false) {
   clearCache();
 }
 
-const configIsForKey = function configIsForKey(key) {
-  return function (config) {
-    if (config.keys) return config.keys.includes(key);
-    if (config.pattern) return config.pattern.test(key);
-    return true;
-  };
+const configIsForKey = key => config => {
+  if (config.keys) return config.keys.includes(key);
+  if (config.pattern) return config.pattern.test(key);
+  return true;
 };
 
-global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = function (key) {
+global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = key => {
   const globalCache = global.__NIGHTINGALE_LOGGER_MAP_CACHE;
+  const existingCache = globalCache.get(key);
 
-  if (globalCache.has(key)) {
-    return globalCache.get(key);
+  if (existingCache) {
+    return existingCache;
   }
 
   const loggerConfig = {
@@ -90,7 +90,7 @@ global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = function (key) {
     processors: []
   };
 
-  global.__NIGHTINGALE_CONFIG.filter(configIsForKey(key)).some(function (config) {
+  global.__NIGHTINGALE_CONFIG.filter(configIsForKey(key)).some(config => {
     if (config.handlers) loggerConfig.handlers.push(...config.handlers);
     if (config.processors) loggerConfig.processors.push(...config.processors);
     return config.stop;
@@ -101,16 +101,14 @@ global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = function (key) {
 };
 
 if (global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
-  global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = function (key, level) {
+  global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = (key, level) => {
     const {
       handlers,
       processors
     } = global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key);
 
     return {
-      handlers: handlers.filter(function (handler) {
-        return level >= handler.minLevel && (!handler.isHandling || handler.isHandling(level, key));
-      }),
+      handlers: handlers.filter(handler => level >= handler.minLevel && (!handler.isHandling || handler.isHandling(level, key))),
       processors
     };
   };
@@ -122,18 +120,13 @@ if (global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
  */
 
 function listenUnhandledErrors(logger = new Logger('nightingale.listenUnhandledErrors', 'listenUnhandledErrors')) {
-  process.on('uncaughtException', function (err) {
-    return logger.error('uncaughtException', {
-      err
-    });
-  });
-  process.on('unhandledRejection', function (err) {
-    return logger.error('unhandledRejection', {
-      err
-    });
-  });
+  process.on('uncaughtException', err => logger.error('uncaughtException', {
+    err
+  }));
+  process.on('unhandledRejection', err => logger.error('unhandledRejection', {
+    err
+  }));
 }
 
-export default Logger;
 export { addConfig, configure, listenUnhandledErrors };
 //# sourceMappingURL=index-browsermodern.es.js.map

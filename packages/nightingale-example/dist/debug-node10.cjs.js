@@ -1,16 +1,18 @@
 'use strict';
 
-function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
-
 const Logger = require('nightingale');
-const Logger__default = _interopDefault(Logger);
-const ConsoleHandler = _interopDefault(require('nightingale-console'));
+const ConsoleHandler = require('nightingale-console');
+
+function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e['default'] : e; }
+
+const Logger__default = /*#__PURE__*/_interopDefaultLegacy(Logger);
+const ConsoleHandler__default = /*#__PURE__*/_interopDefaultLegacy(ConsoleHandler);
 
 Logger.configure([{
-  handlers: [new ConsoleHandler(Logger.Level.ALL)]
+  handlers: [new ConsoleHandler__default(Logger.Level.ALL)]
 }, {
   pattern: /^app/,
-  handlers: [new ConsoleHandler(Logger.Level.ALL)]
+  handlers: [new ConsoleHandler__default(Logger.Level.ALL)]
 }]);
 const appLogger = new Logger__default('app');
 const worker1Logger = new Logger__default('app:worker1');

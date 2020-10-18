@@ -15,7 +15,7 @@ var style = function style(args) {
     args.push(htmlStyles.map(function (s) {
       return s.close;
     }).join('; '));
-    return "%c" + string + "%c";
+    return `%c${string}%c`;
   };
 };
 function format(record) {
