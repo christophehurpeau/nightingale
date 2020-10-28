@@ -45,7 +45,7 @@
     "@pob/eslint-config-typescript-node": "40.1.0",
     "@pob/root": "2.4.4",
     "@typescript-eslint/eslint-plugin": "4.4.1",
-    "eslint": "7.11.0",
+    "eslint": "7.12.1",
     "eslint-import-resolver-node": "0.3.4",
     "eslint-plugin-import": "2.22.1",
     "eslint-plugin-node": "11.1.0",
