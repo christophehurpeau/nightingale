@@ -36,7 +36,7 @@ test('format error', () => {
 });
 
 test('format map', () => {
-  const map = new Map<any, any>([
+  const map = new Map<unknown, unknown>([
     [1, 'value1'],
     ['2', 'value2'],
     ['3', 3],
