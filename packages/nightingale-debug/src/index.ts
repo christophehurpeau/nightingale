@@ -29,7 +29,7 @@ export type FindDebugLevel = (minLevel: Level, key: string) => Level;
 export default function createFindDebugLevel(
   debugValue?: DebugValueType,
 ): FindDebugLevel {
-  let wilcard = false;
+  let isWildcard = false;
   const debugValues: TestFunction[] = [];
   const skips: TestFunction[] = [];
 
@@ -60,19 +60,19 @@ export default function createFindDebugLevel(
       if (!value) return;
 
       if (value === '*') {
-        wilcard = true;
+        isWildcard = true;
         return;
       }
 
       if (value.startsWith('-')) {
         skips.push(createTestFunctionFromValue(value.slice(1)));
-      } else if (!wilcard) {
+      } else if (!isWildcard) {
         debugValues.push(createTestFunctionFromValue(value));
       }
     });
   }
 
-  if (wilcard) {
+  if (isWildcard) {
     if (skips.length === 0) {
       return () => Level.ALL;
     } else {
