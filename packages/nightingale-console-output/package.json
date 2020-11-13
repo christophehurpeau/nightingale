@@ -105,7 +105,7 @@
     "@babel/preset-env": "7.12.1",
     "@pob/eslint-config": "41.0.0",
     "@pob/eslint-config-node": "41.0.0",
-    "@pob/eslint-config-typescript": "41.0.2",
+    "@pob/eslint-config-typescript": "41.0.3",
     "@typescript-eslint/eslint-plugin": "4.7.0",
     "@typescript-eslint/parser": "4.7.0",
     "babel-preset-latest-node": "5.1.1",
