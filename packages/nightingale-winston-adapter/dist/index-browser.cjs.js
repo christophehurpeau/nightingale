@@ -23,6 +23,7 @@ var WinstonAdapterHandler = function WinstonAdapterHandler(winstonTransport, min
       context: record.context
     }, function (err) {
       if (err) {
+        // eslint-disable-next-line no-console
         console.warn(err); // return reject(err);
       } // resolve();
 

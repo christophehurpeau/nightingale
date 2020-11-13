@@ -1,3 +1,3 @@
 'use strict';
 
-module.exports = require('pob-babel/rollup.config.js');
+module.exports = require('pob-babel/lib/createRollupConfig')();

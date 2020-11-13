@@ -36,7 +36,7 @@ var createTestFunctionFromValue = function createTestFunctionFromValue(value) {
 };
 
 function createFindDebugLevel(debugValue) {
-  var wilcard = false;
+  var isWildcard = false;
   var debugValues = [];
   var skips = [];
 
@@ -65,19 +65,19 @@ function createFindDebugLevel(debugValue) {
       if (!value) return;
 
       if (value === '*') {
-        wilcard = true;
+        isWildcard = true;
         return;
       }
 
       if (value.startsWith('-')) {
         skips.push(createTestFunctionFromValue(value.slice(1)));
-      } else if (!wilcard) {
+      } else if (!isWildcard) {
         debugValues.push(createTestFunctionFromValue(value));
       }
     });
   }
 
-  if (wilcard) {
+  if (isWildcard) {
     if (skips.length === 0) {
       return function () {
         return Level__default.ALL;

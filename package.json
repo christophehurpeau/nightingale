@@ -1,31 +1,33 @@
 {
-  "name": "nightingale",
+  "name": "nightingale-monorepo",
   "private": true,
   "version": "0.0.0",
   "description": "Logger for browser and node, see [nightingale](packages/nightingale) to get started !",
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (https://christophe.hurpeau.com)",
   "license": "ISC",
-  "repository": "https://github.com:christophehurpeau/nightingale.git",
+  "repository": "https://github.com/christophehurpeau/nightingale.git",
   "homepage": "https://github.com/christophehurpeau/nightingale",
   "engines": {
-    "node": ">=10.13.0"
+    "node": ">=12.10.0"
   },
   "workspaces": [
     "packages/*"
   ],
   "scripts": {
-    "build": "lerna run --stream build",
+    "build": "yarn workspaces foreach -Av run build",
     "build:definitions": "tsc -b tsconfig.build.json",
     "generate:api": "typedoc --tsconfig tsconfig.doc.json",
     "generate:docs": "rm -Rf docs ; yarn run generate:api ; touch docs/.nojekyll",
     "generate:test-coverage": "lerna run --parallel --ignore \"*-example\" generate:test-coverage",
-    "lint": "eslint --report-unused-disable-directives --quiet --resolve-plugins-relative-to . --ext js,ts,tsx .",
+    "lint": "yarn run lint:prettier && yarn run lint:eslint",
+    "lint:eslint": "eslint --report-unused-disable-directives --quiet --resolve-plugins-relative-to . --ext js,ts,tsx .",
+    "lint:prettier": "prettier --check .",
     "postbuild": "yarn run build:definitions && yarn run generate:docs",
-    "preversion": "yarn run lint && yarn run build --since -- -- --no-clean && repository-check-dirty",
-    "release": "cross-env GH_TOKEN=$POB_GITHUB_TOKEN lerna version --conventional-commits --conventional-graduate --create-release=github -m 'chore: release' && lerna publish from-git",
-    "test": "lerna run --stream test",
+    "preversion": "yarn run lint && yarn run build -- -- --no-clean && repository-check-dirty",
+    "release": "GH_TOKEN=$POB_GITHUB_TOKEN lerna version --conventional-commits --conventional-graduate --create-release=github -m 'chore: release' && lerna publish from-git",
+    "test": "yarn workspaces foreach --parallel -Av run test",
     "tsc": "tsc -b",
-    "watch": "lerna run --parallel --ignore \"*-example\" watch"
+    "watch": "yarn workspaces foreach --parallel --exclude \"*-example\" -Av run watch"
   },
   "prettier": {
     "trailingComma": "all",
@@ -37,25 +39,28 @@
       "@pob/commitlint-config"
     ]
   },
-  "devDependencies": {
-    "@pob/commitlint-config": "1.1.3",
-    "@pob/eslint-config": "40.1.0",
-    "@pob/eslint-config-node": "40.1.0",
-    "@pob/eslint-config-typescript": "40.1.0",
-    "@pob/eslint-config-typescript-node": "40.1.0",
-    "@pob/root": "2.4.4",
-    "@typescript-eslint/eslint-plugin": "4.4.1",
-    "eslint": "7.11.0",
-    "eslint-import-resolver-node": "0.3.4",
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "4.7.0",
+    "@typescript-eslint/parser": "4.7.0",
     "eslint-plugin-import": "2.22.1",
-    "eslint-plugin-node": "11.1.0",
     "eslint-plugin-prettier": "3.1.4",
-    "eslint-plugin-unicorn": "23.0.0",
+    "eslint-plugin-unicorn": "23.0.0"
+  },
+  "devDependencies": {
+    "@pob/commitlint-config": "2.0.0",
+    "@pob/eslint-config": "41.0.0",
+    "@pob/eslint-config-node": "41.0.0",
+    "@pob/eslint-config-typescript": "41.0.2",
+    "@pob/eslint-config-typescript-node": "41.0.0",
+    "@pob/root": "3.0.0",
+    "eslint": "7.13.0",
+    "eslint-import-resolver-node": "0.3.4",
+    "eslint-plugin-node": "11.1.0",
     "husky": "4.3.0",
     "lerna": "3.22.1",
     "prettier": "2.1.2",
     "typedoc": "0.19.2",
     "typedoc-plugin-lerna-packages": "0.3.1",
-    "typescript": "4.0.3"
+    "typescript": "4.0.5"
   }
 }

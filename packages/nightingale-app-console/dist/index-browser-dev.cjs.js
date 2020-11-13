@@ -2,9 +2,9 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
+var sourceMapSupport = require('source-map-support');
 var Logger = require('nightingale');
 var BrowserConsoleHandler = require('nightingale-browser-console');
-var sourceMapSupport = require('source-map-support');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e['default'] : e; }
 

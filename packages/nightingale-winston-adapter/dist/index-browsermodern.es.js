@@ -15,6 +15,7 @@ class WinstonAdapterHandler {
         context: record.context
       }, err => {
         if (err) {
+          // eslint-disable-next-line no-console
           console.warn(err); // return reject(err);
         } // resolve();
 

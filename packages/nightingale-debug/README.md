@@ -8,7 +8,6 @@
 
 <p align="center">
   <a href="https://npmjs.org/package/nightingale-debug"><img src="https://img.shields.io/npm/v/nightingale-debug.svg?style=flat-square"></a>
-  <a href="https://codecov.io/gh/christophehurpeau/nightingale"><img src="https://img.shields.io/codecov/c/github/christophehurpeau/nightingale/master.svg?style=flat-square"></a>
 </p>
 
 ## Install

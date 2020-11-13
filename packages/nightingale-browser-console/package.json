@@ -10,7 +10,7 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "https://github.com:christophehurpeau/nightingale.git",
+    "url": "https://github.com/christophehurpeau/nightingale.git",
     "directory": "packages/nightingale-browser-console"
   },
   "homepage": "https://github.com/christophehurpeau/nightingale",
@@ -34,11 +34,9 @@
           "import": "./dist/index-browsermodern.mjs"
         },
         "development": {
-          "import": "./dist/index-browser-dev.mjs",
-          "require": "./dist/index-browser-dev.cjs.js"
+          "import": "./dist/index-browser-dev.mjs"
         },
-        "import": "./dist/index-browser.mjs",
-        "require": "./dist/index-browser.cjs.js"
+        "import": "./dist/index-browser.mjs"
       }
     }
   },
@@ -47,7 +45,7 @@
     "build": "pob-build",
     "build:definitions": "tsc -p tsconfig.build.json",
     "clean": "rm -Rf docs dist test/node6 coverage",
-    "lint": "yarn --cwd ../.. eslint --ext .js,.ts --report-unused-disable-directives --quiet packages/nightingale-browser-console",
+    "lint:eslint": "yarn --cwd ../.. eslint --ext .js,.ts --report-unused-disable-directives --quiet packages/nightingale-browser-console",
     "watch": "pob-watch"
   },
   "prettier": {
@@ -67,7 +65,6 @@
       {
         "target": "browser",
         "formats": [
-          "cjs",
           "es"
         ]
       }
@@ -85,8 +82,18 @@
   "devDependencies": {
     "@babel/core": "7.12.3",
     "@babel/preset-env": "7.12.1",
+    "@pob/eslint-config": "41.0.0",
+    "@pob/eslint-config-node": "41.0.0",
+    "@pob/eslint-config-typescript": "41.0.2",
+    "@typescript-eslint/eslint-plugin": "4.7.0",
+    "@typescript-eslint/parser": "4.7.0",
     "babel-preset-modern-browsers": "15.0.2",
-    "pob-babel": "25.1.1",
-    "rollup": "2.32.0"
+    "eslint-import-resolver-node": "0.3.4",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-node": "11.1.0",
+    "eslint-plugin-unicorn": "23.0.0",
+    "pob-babel": "26.0.0",
+    "rollup": "2.33.1",
+    "typescript": "4.0.5"
   }
 }

@@ -8,7 +8,7 @@ const record = {
   datetime: new Date(2010, 1, 1, 1, 1, 1),
   level: Level.INFO,
   message: 'hello',
-  metadata: { meta1: true },
+  metadata: { isMeta1: true },
 };
 
 test('keep channel', () => {

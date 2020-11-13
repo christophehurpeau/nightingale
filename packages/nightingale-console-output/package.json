@@ -10,12 +10,12 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "https://github.com:christophehurpeau/nightingale.git",
+    "url": "https://github.com/christophehurpeau/nightingale.git",
     "directory": "packages/nightingale-console-output"
   },
   "homepage": "https://github.com/christophehurpeau/nightingale",
   "engines": {
-    "node": ">=10.13.0"
+    "node": ">=12.10.0"
   },
   "browserslist": [
     "> 0.2%",
@@ -31,11 +31,11 @@
     ".": {
       "node": {
         "development": {
-          "import": "./dist/index-node10-dev.mjs",
-          "require": "./dist/index-node10-dev.cjs.js"
+          "import": "./dist/index-node12-dev.mjs",
+          "require": "./dist/index-node12-dev.cjs.js"
         },
-        "import": "./dist/index-node10.mjs",
-        "require": "./dist/index-node10.cjs.js"
+        "import": "./dist/index-node12.mjs",
+        "require": "./dist/index-node12.cjs.js"
       },
       "browser": {
         "browser:modern": {
@@ -58,7 +58,7 @@
     "build": "pob-build",
     "build:definitions": "tsc -p tsconfig.build.json",
     "clean": "rm -Rf docs dist test/node6 coverage",
-    "lint": "yarn --cwd ../.. eslint --ext .js,.ts --report-unused-disable-directives --quiet packages/nightingale-console-output",
+    "lint:eslint": "yarn --cwd ../.. eslint --ext .js,.ts --report-unused-disable-directives --quiet packages/nightingale-console-output",
     "watch": "pob-watch"
   },
   "prettier": {
@@ -70,7 +70,7 @@
     "babelEnvs": [
       {
         "target": "node",
-        "version": "10",
+        "version": "12",
         "formats": [
           "cjs",
           "es"
@@ -96,15 +96,26 @@
     ]
   },
   "dependencies": {
+    "@types/node": ">=12.0.0",
     "nightingale-levels": "^10.0.1",
     "nightingale-types": "^10.0.1"
   },
   "devDependencies": {
     "@babel/core": "7.12.3",
     "@babel/preset-env": "7.12.1",
-    "babel-preset-latest-node": "5.0.0",
+    "@pob/eslint-config": "41.0.0",
+    "@pob/eslint-config-node": "41.0.0",
+    "@pob/eslint-config-typescript": "41.0.2",
+    "@typescript-eslint/eslint-plugin": "4.7.0",
+    "@typescript-eslint/parser": "4.7.0",
+    "babel-preset-latest-node": "5.1.1",
     "babel-preset-modern-browsers": "15.0.2",
-    "pob-babel": "25.1.1",
-    "rollup": "2.32.0"
+    "eslint-import-resolver-node": "0.3.4",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-node": "11.1.0",
+    "eslint-plugin-unicorn": "23.0.0",
+    "pob-babel": "26.0.0",
+    "rollup": "2.33.1",
+    "typescript": "4.0.5"
   }
 }

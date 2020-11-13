@@ -1,5 +1,5 @@
-import type { LogRecord, Handle, Metadata } from 'nightingale-types';
 import { post } from 'request';
+import type { LogRecord, Handle, Metadata } from 'nightingale-types';
 import type SlackConfig from './SlackConfig';
 import createBody from './createBody';
 

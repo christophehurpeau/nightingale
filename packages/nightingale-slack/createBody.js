@@ -1,6 +1,8 @@
-/* eslint-disable import/no-dynamic-require, prettier/prettier */
+/* eslint-disable import/no-dynamic-require */
 
-'use strict' ;
+'use strict';
 
 const production = process.env.NODE_ENV === 'production';
-module.exports = require(`./dist/createBody-node10${production ? '' : '-dev'}.cjs`);
+module.exports = require(`./dist/createBody-node12${
+  production ? '' : '-dev'
+}.cjs`);

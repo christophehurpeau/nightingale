@@ -1,1 +1,0 @@
-{"version":3,"file":"styleToHtmlStyle.d.ts","sourceRoot":"","sources":["../src/styleToHtmlStyle.ts"],"names":[],"mappings":"AAEA,MAAM,WAAW,SAAS;IACxB,QAAQ,CAAC,IAAI,EAAE,MAAM,CAAC;IACtB,QAAQ,CAAC,KAAK,EAAE,MAAM,CAAC;CACxB;AAED,MAAM,WAAW,gBAAgB;IAC/B,QAAQ,EAAE,GAAG,EAAE,MAAM,GAAG,SAAS,CAAC;CACnC;AAED,QAAA,MAAM,gBAAgB,EAAE,gBA6CvB,CAAC;AAEF,eAAe,gBAAgB,CAAC"}

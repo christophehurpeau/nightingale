@@ -10,12 +10,12 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "https://github.com:christophehurpeau/nightingale.git",
+    "url": "https://github.com/christophehurpeau/nightingale.git",
     "directory": "packages/nightingale-raw-formatter"
   },
   "homepage": "https://github.com/christophehurpeau/nightingale",
   "engines": {
-    "node": ">=10.13.0"
+    "node": ">=12.10.0"
   },
   "browserslist": [
     "> 0.2%",
@@ -31,11 +31,11 @@
     ".": {
       "node": {
         "development": {
-          "import": "./dist/index-node10-dev.mjs",
-          "require": "./dist/index-node10-dev.cjs.js"
+          "import": "./dist/index-node12-dev.mjs",
+          "require": "./dist/index-node12-dev.cjs.js"
         },
-        "import": "./dist/index-node10.mjs",
-        "require": "./dist/index-node10.cjs.js"
+        "import": "./dist/index-node12.mjs",
+        "require": "./dist/index-node12.cjs.js"
       },
       "browser": {
         "browser:modern": {
@@ -59,7 +59,7 @@
     "build:definitions": "tsc -p tsconfig.build.json",
     "clean": "rm -Rf docs dist test/node6 coverage",
     "generate:test-coverage": "rm -Rf docs/coverage/ ; NODE_ENV=production BABEL_ENV=test jest --coverage --coverageReporters=pob-lcov-reporter --coverageDirectory=docs/coverage/",
-    "lint": "yarn --cwd ../.. eslint --ext .js,.ts --report-unused-disable-directives --quiet packages/nightingale-raw-formatter",
+    "lint:eslint": "yarn --cwd ../.. eslint --ext .js,.ts --report-unused-disable-directives --quiet packages/nightingale-raw-formatter",
     "test": "jest",
     "test:watch": "jest",
     "watch": "pob-watch"
@@ -92,7 +92,7 @@
     "babelEnvs": [
       {
         "target": "node",
-        "version": "10",
+        "version": "12",
         "formats": [
           "cjs",
           "es"
@@ -124,15 +124,25 @@
   "devDependencies": {
     "@babel/core": "7.12.3",
     "@babel/preset-env": "7.12.1",
-    "@types/jest": "26.0.14",
-    "babel-jest": "26.5.2",
-    "babel-preset-latest-node": "5.0.0",
+    "@pob/eslint-config": "41.0.0",
+    "@pob/eslint-config-node": "41.0.0",
+    "@pob/eslint-config-typescript": "41.0.2",
+    "@types/jest": "26.0.15",
+    "@typescript-eslint/eslint-plugin": "4.7.0",
+    "@typescript-eslint/parser": "4.7.0",
+    "babel-jest": "26.6.3",
+    "babel-preset-latest-node": "5.1.1",
     "babel-preset-modern-browsers": "15.0.2",
-    "jest": "26.5.3",
+    "eslint-import-resolver-node": "0.3.4",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-node": "11.1.0",
+    "eslint-plugin-unicorn": "23.0.0",
+    "jest": "26.6.3",
     "nightingale-levels": "^10.0.1",
-    "pob-babel": "25.1.1",
-    "pob-lcov-reporter": "3.0.1",
-    "rollup": "2.32.0",
+    "pob-babel": "26.0.0",
+    "pob-lcov-reporter": "4.0.0",
+    "rollup": "2.33.1",
+    "typescript": "4.0.5",
     "xunit-file": "1.0.0"
   }
 }

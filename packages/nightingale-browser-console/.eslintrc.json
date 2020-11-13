@@ -4,5 +4,5 @@
   "env": {
     "browser": true
   },
-  "ignorePatterns": ["/dist", "/test", "/public", "/build"]
+  "ignorePatterns": ["*.d.ts", "/dist", "/test", "/public", "/build"]
 }

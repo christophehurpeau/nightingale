@@ -44,7 +44,7 @@
     },
     "project": {
       "type": "lib",
-      "yarn2": false
+      "yarn2": true
     }
   }
 }

@@ -1,0 +1,11 @@
+{
+  "pob": {
+    "project": {
+      "type": "lib"
+    },
+    "pob-config": {
+      "documentation": false,
+      "testing": false
+    }
+  }
+}

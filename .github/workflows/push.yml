@@ -8,7 +8,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [10.x, 12.x, 14.x]
+        node-version: [12.x, 14.x, 15.x]
 
     steps:
       - uses: actions/checkout@v2
@@ -19,20 +19,27 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Cache dependencies
-        uses: actions/cache@v1
+        uses: actions/cache@v2
         with:
-          path: node_modules
+          path: |
+            .yarn/unplugged
+            .yarn/build-state.yml
+            .yarn/install-state.gz
           key: v2-dependencies--${{ matrix.node-version }}-${{ runner.OS }}-${{ hashFiles('yarn.lock') }}
           restore-keys: |
             v2-dependencies--${{ matrix.node-version }}-${{ runner.OS }}-
             v2-dependencies--${{ matrix.node-version }}-
 
-      - name: Install Dependencies
-        run: yarn install --prefer-offline --pure-lockfile
+      - name: Check Dependencies
+        run: yarn install --immutable
 
-      - name: Lint
-        run: yarn run lint
-        if: startsWith(matrix.node-version, '12.')
+      - name: Prettier
+        run: yarn run lint:prettier
+        if: startsWith(matrix.node-version, '14.')
+
+      - name: Eslint
+        run: yarn run lint:eslint
+        if: startsWith(matrix.node-version, '14.')
 
       - name: Test
         run: yarn run test
@@ -41,7 +48,7 @@ jobs:
 
       - name: Documentation
         run: yarn run generate:docs
-        if: startsWith(matrix.node-version, '12.')
+        if: startsWith(matrix.node-version, '14.')
         env:
           CI: true
 
@@ -49,8 +56,8 @@ jobs:
         uses: codecov/codecov-action@v1
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-        if: startsWith(matrix.node-version, '12.')
+        if: startsWith(matrix.node-version, '14.')
 
       - name: Check nothing was forgotten before commit
-        if: startsWith(matrix.node-version, '12.')
+        if: startsWith(matrix.node-version, '14.')
         run: yarn run repository-check-dirty

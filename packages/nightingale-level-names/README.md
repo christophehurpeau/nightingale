@@ -1,4 +1,22 @@
-# nightingale-level-names
+<h3 align="center">
+  nightingale-level-names
+</h3>
+
+<p align="center">
+  Nightingale level values to level names
+</p>
+
+<p align="center">
+  <a href="https://npmjs.org/package/nightingale-level-names"><img src="https://img.shields.io/npm/v/nightingale-level-names.svg?style=flat-square"></a>
+</p>
+
+## Install
+
+```bash
+npm install --save nightingale-level-names
+```
+
+## Usage
 
 ```js
 import Level from 'nightingale-Levels';

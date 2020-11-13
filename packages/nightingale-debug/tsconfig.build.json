@@ -14,11 +14,6 @@
     "declarationMap": true
   },
 
-  "exclude": [
-    "dist/**",
-    "src/**/*.test.ts",
-    "src/**/__tests__/**"
-  ],
-  "references": [
-    { "path": "../nightingale-levels/tsconfig.build.json" }
-]}
+  "exclude": ["dist/**", "src/**/*.test.ts", "src/**/__tests__/**"],
+  "references": [{ "path": "../nightingale-levels/tsconfig.build.json" }]
+}
