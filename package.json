@@ -14,7 +14,7 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "yarn workspaces foreach -Av run build",
+    "build": "lerna run --stream build",
     "build:definitions": "tsc -b tsconfig.build.json",
     "generate:api": "typedoc --tsconfig tsconfig.doc.json",
     "generate:docs": "rm -Rf docs ; yarn run generate:api ; touch docs/.nojekyll",
@@ -23,11 +23,11 @@
     "lint:eslint": "eslint --report-unused-disable-directives --quiet --resolve-plugins-relative-to . --ext js,ts,tsx .",
     "lint:prettier": "prettier --check .",
     "postbuild": "yarn run build:definitions && yarn run generate:docs",
-    "preversion": "yarn run lint && yarn run build -- -- --no-clean && repository-check-dirty",
+    "preversion": "yarn run lint && yarn run build --since -- -- --no-clean && repository-check-dirty",
     "release": "GH_TOKEN=$POB_GITHUB_TOKEN lerna version --conventional-commits --conventional-graduate --create-release=github -m 'chore: release' && lerna publish from-git",
-    "test": "yarn workspaces foreach --parallel -Av run test",
+    "test": "lerna run --stream test",
     "tsc": "tsc -b",
-    "watch": "yarn workspaces foreach --parallel --exclude \"*-example\" -Av run watch"
+    "watch": "lerna run --parallel --ignore \"*-example\" watch"
   },
   "prettier": {
     "trailingComma": "all",
