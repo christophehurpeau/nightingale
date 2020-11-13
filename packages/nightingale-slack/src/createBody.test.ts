@@ -43,9 +43,9 @@ test('attachments has both raw and markdown', () => {
   expect(createBody(record, { webhookUrl }).attachments).toEqual([
     {
       color: '#808080',
-      fallback: 'key 01:01:01 → hello { meta1: true }',
+      fallback: 'key 01:01:01 → hello { isMeta1: true }',
       mrkdwn_in: ['text'],
-      text: 'key *01:01:01* → hello { *meta1:* true }',
+      text: 'key *01:01:01* → hello { *isMeta1:* true }',
       title: 'hello',
     },
   ]);
