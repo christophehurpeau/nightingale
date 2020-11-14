@@ -2741,11 +2741,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pob/eslint-config-typescript@npm:41.0.2":
-  version: 41.0.2
-  resolution: "@pob/eslint-config-typescript@npm:41.0.2"
+"@pob/eslint-config-typescript@npm:41.0.3":
+  version: 41.0.3
+  resolution: "@pob/eslint-config-typescript@npm:41.0.3"
   dependencies:
-    "@pob/eslint-config": ^41.0.0
+    "@pob/eslint-config": ^41.0.3
     "@pob/use-eslint-plugin": ^41.0.0
     "@typescript-eslint/eslint-plugin": ^4.1.1
     "@typescript-eslint/parser": ^4.1.1
@@ -2759,7 +2759,6 @@ __metadata:
     eslint: ^7.5.0
     eslint-plugin-import: ^2.22.1
     eslint-plugin-prettier: ^3.1.4
-    prettier: ^2.0.5
   peerDependenciesMeta:
     "@typescript-eslint/eslint-plugin":
       optional: true
@@ -2769,13 +2768,13 @@ __metadata:
       optional: true
     eslint-plugin-prettier:
       optional: true
-  checksum: 4ff4b5ea4099d7f82c5e4d5658e2efaadbcd6842a170e3f18ae2e7a37a796b22d529969b3109002169bbda9dbc625636a81e0f0453243261afd311156067dd31
+  checksum: eb88f8b331c25fc7c8c9ef8e4314cbf6aadb90e02d41ca45cf75cd441ca8bd758ceb711c6d989dae544e5deda24e7249d5dea52eda9d351deca9b7d7e99fab93
   languageName: node
   linkType: hard
 
-"@pob/eslint-config@npm:41.0.0, @pob/eslint-config@npm:^41.0.0":
-  version: 41.0.0
-  resolution: "@pob/eslint-config@npm:41.0.0"
+"@pob/eslint-config@npm:41.0.3, @pob/eslint-config@npm:^41.0.3":
+  version: 41.0.3
+  resolution: "@pob/eslint-config@npm:41.0.3"
   dependencies:
     "@pob/use-eslint-plugin": ^41.0.0
     eslint-config-airbnb-base: ^14.2.1
@@ -2785,13 +2784,12 @@ __metadata:
     eslint: ^7.5.0
     eslint-plugin-import: ^2.22.1
     eslint-plugin-unicorn: ^23.0.0
-    prettier: ^2.0.5
   peerDependenciesMeta:
     eslint-plugin-import:
       optional: true
     eslint-plugin-unicorn:
       optional: true
-  checksum: a9a1e98a23b811fb2f70454404c6a1e0e5b1839623c368a91e1a3543492c36d1010b8a3ab505a69e51e32170ff3bb0c30290387268343010733f07a1baacfea4
+  checksum: 5bde9954659253a65f4b55733ece165b09f6c786050789a5f65613c2fa82265cbbc6a9a3705d372b79a2c1ada43646f6cfcdc2c1c54de221951d331c0adc2106
   languageName: node
   linkType: hard
 
@@ -2994,6 +2992,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@strictsoftware/typedoc-plugin-monorepo@npm:^0.3.1":
+  version: 0.3.1
+  resolution: "@strictsoftware/typedoc-plugin-monorepo@npm:0.3.1"
+  dependencies:
+    highlight.js: ^9.15.6
+  peerDependencies:
+    typedoc: ">=0.17.3 <1.0"
+  checksum: 64fe50a901d8b36e218f7b3fce6f92a425d2d1b89ab2f039e6bafcdb1c4051f3ad8b4b2428177f1d6ed990edbec3b4ca869369809b363655e9ed007d4a0e4f83
+  languageName: node
+  linkType: hard
+
 "@types/ansi-styles@npm:^3.2.1":
   version: 3.2.1
   resolution: "@types/ansi-styles@npm:3.2.1"
@@ -3155,7 +3164,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:>= 8, @types/node@npm:>=12.0.0":
+"@types/node@npm:*, @types/node@npm:>= 8, @types/node@npm:>=12.0.0, @types/node@npm:^14.14.7":
   version: 14.14.7
   resolution: "@types/node@npm:14.14.7"
   checksum: 4fc8434bfe81c2a3102fa76777712ecee9e9177d43ec5929ba0dfd5a77a6c459cf10a37df64ea880a328f06973f6210eabf04b312428e309b2e8998147a6cd63
@@ -6654,7 +6663,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"glob@npm:^7.0.0, glob@npm:^7.1.1, glob@npm:^7.1.2, glob@npm:^7.1.3, glob@npm:^7.1.4":
+"glob@npm:*, glob@npm:^7.0.0, glob@npm:^7.1.1, glob@npm:^7.1.2, glob@npm:^7.1.3, glob@npm:^7.1.4":
   version: 7.1.6
   resolution: "glob@npm:7.1.6"
   dependencies:
@@ -6856,9 +6865,16 @@ __metadata:
   linkType: hard
 
 "highlight.js@npm:^10.2.0":
-  version: 10.2.1
-  resolution: "highlight.js@npm:10.2.1"
-  checksum: a799dabfbf78ae5f369d113bfedcf0ba6ea4f9aefcc44d4b27a6d77ec0d6b90fc31b01137497c9710c7d87ec8b2613e613c9499d69bfa65282bcbaf8ca7daeaa
+  version: 10.3.2
+  resolution: "highlight.js@npm:10.3.2"
+  checksum: 8dab959070ff2e20190cbe7ea9bc03ce0163f0a6a09d88cfec8f7e21ca12111c0553515b4c5b273748da531fb26de8f34a361f6f0f03c1348175d2424e265599
+  languageName: node
+  linkType: hard
+
+"highlight.js@npm:^9.15.6":
+  version: 9.18.3
+  resolution: "highlight.js@npm:9.18.3"
+  checksum: b6b518f937ce65779cbebb219f94ed685cdbad142f222a183afa5d0dd24dfb6b1aeaef40087ff74a2ea978c3ae9b814452bfdef685c98971e4b840f306ccdb82
   languageName: node
   linkType: hard
 
@@ -7229,12 +7245,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"is-core-module@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "is-core-module@npm:2.0.0"
+"is-core-module@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "is-core-module@npm:2.1.0"
   dependencies:
     has: ^1.0.3
-  checksum: de99dfbdf14d254f6d078aa37113512295acef3cfff5fb39fdf8020b04788535eae6da39e02b0c4ad07f7bc79594de8d5aeb4fce66f97feb9c597d7d6d6d43d4
+  checksum: 6e9d45be21c607e5af4f0ff91e68f808c53cafb8729dc30425fc83dc2538ac2af65242752e4e5c5f75aac767cae6bd8bd1834a998931e1c236fb121f9bad7029
   languageName: node
   linkType: hard
 
@@ -8745,11 +8761,11 @@ __metadata:
   linkType: hard
 
 "marked@npm:^1.1.1":
-  version: 1.1.1
-  resolution: "marked@npm:1.1.1"
+  version: 1.2.3
+  resolution: "marked@npm:1.2.3"
   bin:
     marked: bin/marked
-  checksum: 4fb077a99ca6a6a4f389bbe2f27620509a332da6fac019560fc25e0e9636226cc86420ddbcfc6e8956920cbca68d64cd11d03954d22123a95ffc63c2e6c4e0ae
+  checksum: ea00ad0f4f1d9ba693fee861700deee5cb43be194cc34f66b0a0434770976124504ff0adceb71b9580864d40d307d9f081bb12d2541ce0ec6b176ead1ba7325c
   languageName: node
   linkType: hard
 
@@ -9150,9 +9166,9 @@ __metadata:
   resolution: "nightingale-ansi-formatter@workspace:packages/nightingale-ansi-formatter"
   dependencies:
     "@babel/core": 7.12.3
-    "@pob/eslint-config": 41.0.0
+    "@pob/eslint-config": 41.0.3
     "@pob/eslint-config-node": 41.0.0
-    "@pob/eslint-config-typescript": 41.0.2
+    "@pob/eslint-config-typescript": 41.0.3
     "@pob/eslint-config-typescript-node": 41.0.0
     "@types/ansi-styles": ^3.2.1
     "@types/jest": 26.0.15
@@ -9161,6 +9177,7 @@ __metadata:
     ansi-styles: ^4.0.0
     babel-jest: 26.6.3
     babel-preset-latest-node: 5.1.1
+    eslint: 7.13.0
     eslint-import-resolver-node: 0.3.4
     eslint-plugin-import: 2.22.1
     eslint-plugin-node: 11.1.0
@@ -9182,14 +9199,15 @@ __metadata:
   dependencies:
     "@babel/core": 7.12.3
     "@babel/preset-env": 7.12.1
-    "@pob/eslint-config": 41.0.0
+    "@pob/eslint-config": 41.0.3
     "@pob/eslint-config-node": 41.0.0
-    "@pob/eslint-config-typescript": 41.0.2
+    "@pob/eslint-config-typescript": 41.0.3
     "@types/source-map-support": 0.4.2
     "@typescript-eslint/eslint-plugin": 4.7.0
     "@typescript-eslint/parser": 4.7.0
     babel-preset-latest-node: 5.1.1
     babel-preset-modern-browsers: 15.0.2
+    eslint: 7.13.0
     eslint-import-resolver-node: 0.3.4
     eslint-plugin-import: 2.22.1
     eslint-plugin-node: 11.1.0
@@ -9210,15 +9228,16 @@ __metadata:
   dependencies:
     "@babel/core": 7.12.3
     "@babel/preset-env": 7.12.1
-    "@pob/eslint-config": 41.0.0
+    "@pob/eslint-config": 41.0.3
     "@pob/eslint-config-node": 41.0.0
-    "@pob/eslint-config-typescript": 41.0.2
+    "@pob/eslint-config-typescript": 41.0.3
     "@types/jest": 26.0.15
     "@typescript-eslint/eslint-plugin": 4.7.0
     "@typescript-eslint/parser": 4.7.0
     babel-jest: 26.6.3
     babel-preset-latest-node: 5.1.1
     babel-preset-modern-browsers: 15.0.2
+    eslint: 7.13.0
     eslint-import-resolver-node: 0.3.4
     eslint-plugin-import: 2.22.1
     eslint-plugin-node: 11.1.0
@@ -9241,12 +9260,13 @@ __metadata:
   dependencies:
     "@babel/core": 7.12.3
     "@babel/preset-env": 7.12.1
-    "@pob/eslint-config": 41.0.0
+    "@pob/eslint-config": 41.0.3
     "@pob/eslint-config-node": 41.0.0
-    "@pob/eslint-config-typescript": 41.0.2
+    "@pob/eslint-config-typescript": 41.0.3
     "@typescript-eslint/eslint-plugin": 4.7.0
     "@typescript-eslint/parser": 4.7.0
     babel-preset-modern-browsers: 15.0.2
+    eslint: 7.13.0
     eslint-import-resolver-node: 0.3.4
     eslint-plugin-import: 2.22.1
     eslint-plugin-node: 11.1.0
@@ -9266,13 +9286,14 @@ __metadata:
   resolution: "nightingale-console-example@workspace:packages/nightingale-console-example"
   dependencies:
     "@babel/core": 7.12.3
-    "@pob/eslint-config": 41.0.0
+    "@pob/eslint-config": 41.0.3
     "@pob/eslint-config-node": 41.0.0
-    "@pob/eslint-config-typescript": 41.0.2
+    "@pob/eslint-config-typescript": 41.0.3
     "@pob/eslint-config-typescript-node": 41.0.0
     "@typescript-eslint/eslint-plugin": 4.7.0
     "@typescript-eslint/parser": 4.7.0
     babel-preset-latest-node: 5.1.1
+    eslint: 7.13.0
     eslint-import-resolver-node: 0.3.4
     eslint-plugin-import: 2.22.1
     eslint-plugin-node: 11.1.0
@@ -9291,14 +9312,15 @@ __metadata:
   dependencies:
     "@babel/core": 7.12.3
     "@babel/preset-env": 7.12.1
-    "@pob/eslint-config": 41.0.0
+    "@pob/eslint-config": 41.0.3
     "@pob/eslint-config-node": 41.0.0
-    "@pob/eslint-config-typescript": 41.0.2
+    "@pob/eslint-config-typescript": 41.0.3
     "@types/node": ">=12.0.0"
     "@typescript-eslint/eslint-plugin": 4.7.0
     "@typescript-eslint/parser": 4.7.0
     babel-preset-latest-node: 5.1.1
     babel-preset-modern-browsers: 15.0.2
+    eslint: 7.13.0
     eslint-import-resolver-node: 0.3.4
     eslint-plugin-import: 2.22.1
     eslint-plugin-node: 11.1.0
@@ -9316,14 +9338,15 @@ __metadata:
   resolution: "nightingale-console@workspace:packages/nightingale-console"
   dependencies:
     "@babel/core": 7.12.3
-    "@pob/eslint-config": 41.0.0
+    "@pob/eslint-config": 41.0.3
     "@pob/eslint-config-node": 41.0.0
-    "@pob/eslint-config-typescript": 41.0.2
+    "@pob/eslint-config-typescript": 41.0.3
     "@pob/eslint-config-typescript-node": 41.0.0
     "@types/node": ">=12.0.0"
     "@typescript-eslint/eslint-plugin": 4.7.0
     "@typescript-eslint/parser": 4.7.0
     babel-preset-latest-node: 5.1.1
+    eslint: 7.13.0
     eslint-import-resolver-node: 0.3.4
     eslint-plugin-import: 2.22.1
     eslint-plugin-node: 11.1.0
@@ -9346,15 +9369,16 @@ __metadata:
   dependencies:
     "@babel/core": 7.12.3
     "@babel/preset-env": 7.12.1
-    "@pob/eslint-config": 41.0.0
+    "@pob/eslint-config": 41.0.3
     "@pob/eslint-config-node": 41.0.0
-    "@pob/eslint-config-typescript": 41.0.2
+    "@pob/eslint-config-typescript": 41.0.3
     "@types/jest": 26.0.15
     "@typescript-eslint/eslint-plugin": 4.7.0
     "@typescript-eslint/parser": 4.7.0
     babel-jest: 26.6.3
     babel-preset-latest-node: 5.1.1
     babel-preset-modern-browsers: 15.0.2
+    eslint: 7.13.0
     eslint-import-resolver-node: 0.3.4
     eslint-plugin-import: 2.22.1
     eslint-plugin-node: 11.1.0
@@ -9374,13 +9398,14 @@ __metadata:
   resolution: "nightingale-example@workspace:packages/nightingale-example"
   dependencies:
     "@babel/core": 7.12.3
-    "@pob/eslint-config": 41.0.0
+    "@pob/eslint-config": 41.0.3
     "@pob/eslint-config-node": 41.0.0
-    "@pob/eslint-config-typescript": 41.0.2
+    "@pob/eslint-config-typescript": 41.0.3
     "@pob/eslint-config-typescript-node": 41.0.0
     "@typescript-eslint/eslint-plugin": 4.7.0
     "@typescript-eslint/parser": 4.7.0
     babel-preset-latest-node: 5.1.1
+    eslint: 7.13.0
     eslint-import-resolver-node: 0.3.4
     eslint-plugin-import: 2.22.1
     eslint-plugin-node: 11.1.0
@@ -9403,15 +9428,16 @@ __metadata:
   dependencies:
     "@babel/core": 7.12.3
     "@babel/preset-env": 7.12.1
-    "@pob/eslint-config": 41.0.0
+    "@pob/eslint-config": 41.0.3
     "@pob/eslint-config-node": 41.0.0
-    "@pob/eslint-config-typescript": 41.0.2
+    "@pob/eslint-config-typescript": 41.0.3
     "@types/jest": 26.0.15
     "@typescript-eslint/eslint-plugin": 4.7.0
     "@typescript-eslint/parser": 4.7.0
     babel-jest: 26.6.3
     babel-preset-latest-node: 5.1.1
     babel-preset-modern-browsers: 15.0.2
+    eslint: 7.13.0
     eslint-import-resolver-node: 0.3.4
     eslint-plugin-import: 2.22.1
     eslint-plugin-node: 11.1.0
@@ -9433,15 +9459,16 @@ __metadata:
   dependencies:
     "@babel/core": 7.12.3
     "@babel/preset-env": 7.12.1
-    "@pob/eslint-config": 41.0.0
+    "@pob/eslint-config": 41.0.3
     "@pob/eslint-config-node": 41.0.0
-    "@pob/eslint-config-typescript": 41.0.2
+    "@pob/eslint-config-typescript": 41.0.3
     "@types/jest": 26.0.15
     "@typescript-eslint/eslint-plugin": 4.7.0
     "@typescript-eslint/parser": 4.7.0
     babel-jest: 26.6.3
     babel-preset-latest-node: 5.1.1
     babel-preset-modern-browsers: 15.0.2
+    eslint: 7.13.0
     eslint-import-resolver-node: 0.3.4
     eslint-plugin-import: 2.22.1
     eslint-plugin-node: 11.1.0
@@ -9464,15 +9491,16 @@ __metadata:
   dependencies:
     "@babel/core": 7.12.3
     "@babel/preset-env": 7.12.1
-    "@pob/eslint-config": 41.0.0
+    "@pob/eslint-config": 41.0.3
     "@pob/eslint-config-node": 41.0.0
-    "@pob/eslint-config-typescript": 41.0.2
+    "@pob/eslint-config-typescript": 41.0.3
     "@types/jest": 26.0.15
     "@typescript-eslint/eslint-plugin": 4.7.0
     "@typescript-eslint/parser": 4.7.0
     babel-jest: 26.6.3
     babel-preset-latest-node: 5.1.1
     babel-preset-modern-browsers: 15.0.2
+    eslint: 7.13.0
     eslint-import-resolver-node: 0.3.4
     eslint-plugin-import: 2.22.1
     eslint-plugin-node: 11.1.0
@@ -9493,8 +9521,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-level-names@workspace:packages/nightingale-level-names"
   dependencies:
-    "@pob/eslint-config": 41.0.0
+    "@pob/eslint-config": 41.0.3
     "@pob/eslint-config-node": 41.0.0
+    eslint: 7.13.0
     eslint-import-resolver-node: 0.3.4
     eslint-plugin-import: 2.22.1
     eslint-plugin-node: 11.1.0
@@ -9508,13 +9537,14 @@ __metadata:
   dependencies:
     "@babel/core": 7.12.3
     "@babel/preset-env": 7.12.1
-    "@pob/eslint-config": 41.0.0
+    "@pob/eslint-config": 41.0.3
     "@pob/eslint-config-node": 41.0.0
-    "@pob/eslint-config-typescript": 41.0.2
+    "@pob/eslint-config-typescript": 41.0.3
     "@typescript-eslint/eslint-plugin": 4.7.0
     "@typescript-eslint/parser": 4.7.0
     babel-preset-latest-node: 5.1.1
     babel-preset-modern-browsers: 15.0.2
+    eslint: 7.13.0
     eslint-import-resolver-node: 0.3.4
     eslint-plugin-import: 2.22.1
     eslint-plugin-node: 11.1.0
@@ -9531,9 +9561,9 @@ __metadata:
   dependencies:
     "@babel/core": 7.12.3
     "@babel/preset-env": 7.12.1
-    "@pob/eslint-config": 41.0.0
+    "@pob/eslint-config": 41.0.3
     "@pob/eslint-config-node": 41.0.0
-    "@pob/eslint-config-typescript": 41.0.2
+    "@pob/eslint-config-typescript": 41.0.3
     "@types/jest": 26.0.15
     "@types/node": ">=12.0.0"
     "@typescript-eslint/eslint-plugin": 4.7.0
@@ -9541,6 +9571,7 @@ __metadata:
     babel-jest: 26.6.3
     babel-preset-latest-node: 5.1.1
     babel-preset-modern-browsers: 15.0.2
+    eslint: 7.13.0
     eslint-import-resolver-node: 0.3.4
     eslint-plugin-import: 2.22.1
     eslint-plugin-node: 11.1.0
@@ -9562,15 +9593,16 @@ __metadata:
   dependencies:
     "@babel/core": 7.12.3
     "@babel/preset-env": 7.12.1
-    "@pob/eslint-config": 41.0.0
+    "@pob/eslint-config": 41.0.3
     "@pob/eslint-config-node": 41.0.0
-    "@pob/eslint-config-typescript": 41.0.2
+    "@pob/eslint-config-typescript": 41.0.3
     "@types/jest": 26.0.15
     "@typescript-eslint/eslint-plugin": 4.7.0
     "@typescript-eslint/parser": 4.7.0
     babel-jest: 26.6.3
     babel-preset-latest-node: 5.1.1
     babel-preset-modern-browsers: 15.0.2
+    eslint: 7.13.0
     eslint-import-resolver-node: 0.3.4
     eslint-plugin-import: 2.22.1
     eslint-plugin-node: 11.1.0
@@ -9592,11 +9624,13 @@ __metadata:
   resolution: "nightingale-monorepo@workspace:."
   dependencies:
     "@pob/commitlint-config": 2.0.0
-    "@pob/eslint-config": 41.0.0
+    "@pob/eslint-config": 41.0.3
     "@pob/eslint-config-node": 41.0.0
-    "@pob/eslint-config-typescript": 41.0.2
+    "@pob/eslint-config-typescript": 41.0.3
     "@pob/eslint-config-typescript-node": 41.0.0
     "@pob/root": 3.0.0
+    "@strictsoftware/typedoc-plugin-monorepo": ^0.3.1
+    "@types/node": ^14.14.7
     "@typescript-eslint/eslint-plugin": 4.7.0
     "@typescript-eslint/parser": 4.7.0
     eslint: 7.13.0
@@ -9620,15 +9654,16 @@ __metadata:
   dependencies:
     "@babel/core": 7.12.3
     "@babel/preset-env": 7.12.1
-    "@pob/eslint-config": 41.0.0
+    "@pob/eslint-config": 41.0.3
     "@pob/eslint-config-node": 41.0.0
-    "@pob/eslint-config-typescript": 41.0.2
+    "@pob/eslint-config-typescript": 41.0.3
     "@types/jest": 26.0.15
     "@typescript-eslint/eslint-plugin": 4.7.0
     "@typescript-eslint/parser": 4.7.0
     babel-jest: 26.6.3
     babel-preset-latest-node: 5.1.1
     babel-preset-modern-browsers: 15.0.2
+    eslint: 7.13.0
     eslint-import-resolver-node: 0.3.4
     eslint-plugin-import: 2.22.1
     eslint-plugin-node: 11.1.0
@@ -9650,14 +9685,15 @@ __metadata:
   resolution: "nightingale-sentry@workspace:packages/nightingale-sentry"
   dependencies:
     "@babel/core": 7.12.3
-    "@pob/eslint-config": 41.0.0
+    "@pob/eslint-config": 41.0.3
     "@pob/eslint-config-node": 41.0.0
-    "@pob/eslint-config-typescript": 41.0.2
+    "@pob/eslint-config-typescript": 41.0.3
     "@pob/eslint-config-typescript-node": 41.0.0
     "@sentry/node": ^5.11.1
     "@typescript-eslint/eslint-plugin": 4.7.0
     "@typescript-eslint/parser": 4.7.0
     babel-preset-latest-node: 5.1.1
+    eslint: 7.13.0
     eslint-import-resolver-node: 0.3.4
     eslint-plugin-import: 2.22.1
     eslint-plugin-node: 11.1.0
@@ -9675,9 +9711,9 @@ __metadata:
   resolution: "nightingale-slack@workspace:packages/nightingale-slack"
   dependencies:
     "@babel/core": 7.12.3
-    "@pob/eslint-config": 41.0.0
+    "@pob/eslint-config": 41.0.3
     "@pob/eslint-config-node": 41.0.0
-    "@pob/eslint-config-typescript": 41.0.2
+    "@pob/eslint-config-typescript": 41.0.3
     "@pob/eslint-config-typescript-node": 41.0.0
     "@types/jest": 26.0.15
     "@types/request": 2.48.5
@@ -9685,6 +9721,7 @@ __metadata:
     "@typescript-eslint/parser": 4.7.0
     babel-jest: 26.6.3
     babel-preset-latest-node: 5.1.1
+    eslint: 7.13.0
     eslint-import-resolver-node: 0.3.4
     eslint-plugin-import: 2.22.1
     eslint-plugin-node: 11.1.0
@@ -9708,13 +9745,14 @@ __metadata:
   resolution: "nightingale-string@workspace:packages/nightingale-string"
   dependencies:
     "@babel/core": 7.12.3
-    "@pob/eslint-config": 41.0.0
+    "@pob/eslint-config": 41.0.3
     "@pob/eslint-config-node": 41.0.0
-    "@pob/eslint-config-typescript": 41.0.2
+    "@pob/eslint-config-typescript": 41.0.3
     "@pob/eslint-config-typescript-node": 41.0.0
     "@typescript-eslint/eslint-plugin": 4.7.0
     "@typescript-eslint/parser": 4.7.0
     babel-preset-latest-node: 5.1.1
+    eslint: 7.13.0
     eslint-import-resolver-node: 0.3.4
     eslint-plugin-import: 2.22.1
     eslint-plugin-node: 11.1.0
@@ -9733,13 +9771,14 @@ __metadata:
   dependencies:
     "@babel/core": 7.12.3
     "@babel/preset-env": 7.12.1
-    "@pob/eslint-config": 41.0.0
+    "@pob/eslint-config": 41.0.3
     "@pob/eslint-config-node": 41.0.0
-    "@pob/eslint-config-typescript": 41.0.2
+    "@pob/eslint-config-typescript": 41.0.3
     "@typescript-eslint/eslint-plugin": 4.7.0
     "@typescript-eslint/parser": 4.7.0
     babel-preset-latest-node: 5.1.1
     babel-preset-modern-browsers: 15.0.2
+    eslint: 7.13.0
     eslint-import-resolver-node: 0.3.4
     eslint-plugin-import: 2.22.1
     eslint-plugin-node: 11.1.0
@@ -9756,14 +9795,15 @@ __metadata:
   resolution: "nightingale-web-processor@workspace:packages/nightingale-web-processor"
   dependencies:
     "@babel/core": 7.12.3
-    "@pob/eslint-config": 41.0.0
+    "@pob/eslint-config": 41.0.3
     "@pob/eslint-config-node": 41.0.0
-    "@pob/eslint-config-typescript": 41.0.2
+    "@pob/eslint-config-typescript": 41.0.3
     "@pob/eslint-config-typescript-node": 41.0.0
     "@types/node": ">=12.0.0"
     "@typescript-eslint/eslint-plugin": 4.7.0
     "@typescript-eslint/parser": 4.7.0
     babel-preset-latest-node: 5.1.1
+    eslint: 7.13.0
     eslint-import-resolver-node: 0.3.4
     eslint-plugin-import: 2.22.1
     eslint-plugin-node: 11.1.0
@@ -9781,13 +9821,14 @@ __metadata:
   dependencies:
     "@babel/core": 7.12.3
     "@babel/preset-env": 7.12.1
-    "@pob/eslint-config": 41.0.0
+    "@pob/eslint-config": 41.0.3
     "@pob/eslint-config-node": 41.0.0
-    "@pob/eslint-config-typescript": 41.0.2
+    "@pob/eslint-config-typescript": 41.0.3
     "@typescript-eslint/eslint-plugin": 4.7.0
     "@typescript-eslint/parser": 4.7.0
     babel-preset-latest-node: 5.1.1
     babel-preset-modern-browsers: 15.0.2
+    eslint: 7.13.0
     eslint-import-resolver-node: 0.3.4
     eslint-plugin-import: 2.22.1
     eslint-plugin-node: 11.1.0
@@ -9806,9 +9847,9 @@ __metadata:
   dependencies:
     "@babel/core": 7.12.3
     "@babel/preset-env": 7.12.1
-    "@pob/eslint-config": 41.0.0
+    "@pob/eslint-config": 41.0.3
     "@pob/eslint-config-node": 41.0.0
-    "@pob/eslint-config-typescript": 41.0.2
+    "@pob/eslint-config-typescript": 41.0.3
     "@types/jest": 26.0.15
     "@types/node": ">=12.0.0"
     "@typescript-eslint/eslint-plugin": 4.7.0
@@ -9816,6 +9857,7 @@ __metadata:
     babel-jest: 26.6.3
     babel-preset-latest-node: 5.1.1
     babel-preset-modern-browsers: 15.0.2
+    eslint: 7.13.0
     eslint-import-resolver-node: 0.3.4
     eslint-plugin-import: 2.22.1
     eslint-plugin-node: 11.1.0
@@ -11455,22 +11497,22 @@ __metadata:
   linkType: hard
 
 "resolve@^1.1.6, resolve@^1.10.0, resolve@^1.10.1, resolve@^1.12.0, resolve@^1.13.1, resolve@^1.17.0, resolve@^1.18.1, resolve@^1.3.2, resolve@^1.8.1":
-  version: 1.18.1
-  resolution: "resolve@npm:1.18.1"
+  version: 1.19.0
+  resolution: "resolve@npm:1.19.0"
   dependencies:
-    is-core-module: ^2.0.0
+    is-core-module: ^2.1.0
     path-parse: ^1.0.6
-  checksum: deb5ba746e1c038ba8fb7ca5c35ee3fe88665e2f79be3e9a706e5254eeea55eb12b6f1830dd60a11bbafa327bcd868284fbf5caf428cf5761b3f094abdffee77
+  checksum: 8b23c7fde1224898ffb9fec2a2295a44d1564981343bdbf5fd3769465658f6a6f6647bb7ea66dfb3c1291ca86046b0233be2edfcd8ca05b38886521e8869677c
   languageName: node
   linkType: hard
 
 "resolve@patch:resolve@^1.1.6#builtin<compat/resolve>, resolve@patch:resolve@^1.10.0#builtin<compat/resolve>, resolve@patch:resolve@^1.10.1#builtin<compat/resolve>, resolve@patch:resolve@^1.12.0#builtin<compat/resolve>, resolve@patch:resolve@^1.13.1#builtin<compat/resolve>, resolve@patch:resolve@^1.17.0#builtin<compat/resolve>, resolve@patch:resolve@^1.18.1#builtin<compat/resolve>, resolve@patch:resolve@^1.3.2#builtin<compat/resolve>, resolve@patch:resolve@^1.8.1#builtin<compat/resolve>":
-  version: 1.18.1
-  resolution: "resolve@patch:resolve@npm%3A1.18.1#builtin<compat/resolve>::version=1.18.1&hash=3388aa"
+  version: 1.19.0
+  resolution: "resolve@patch:resolve@npm%3A1.19.0#builtin<compat/resolve>::version=1.19.0&hash=3388aa"
   dependencies:
-    is-core-module: ^2.0.0
+    is-core-module: ^2.1.0
     path-parse: ^1.0.6
-  checksum: 9e62d2803ad1ec21b13780cc6a45b72bb7b6525eb5b44f0ede7cde37c00a8eb310c06ebfcc7de7dc10c2234d7d271bc4f1eed9783fb87acac141597cd4efaeec
+  checksum: 188d5167e8578a9af8d194faf382b8f3526aad5145391c24ecdc6246c6fc82c10fc66d6352267f8e93c5977c503d61803169c91b9e2ee36dd2de759915c9b673
   languageName: node
   linkType: hard
 

@@ -20,6 +20,7 @@
   "types": "./lib/index.d.ts",
   "sideEffects": false,
   "scripts": {
+    "build": "yarn run build:definitions",
     "build:definitions": "tsc --lib esnext --noEmit ./lib/index.d.ts",
     "lint:eslint": "yarn --cwd ../.. eslint --report-unused-disable-directives --quiet packages/nightingale-level-names"
   },
@@ -30,8 +31,9 @@
   },
   "pob": {},
   "devDependencies": {
-    "@pob/eslint-config": "41.0.0",
+    "@pob/eslint-config": "41.0.3",
     "@pob/eslint-config-node": "41.0.0",
+    "eslint": "7.13.0",
     "eslint-import-resolver-node": "0.3.4",
     "eslint-plugin-import": "2.22.1",
     "eslint-plugin-node": "11.1.0",

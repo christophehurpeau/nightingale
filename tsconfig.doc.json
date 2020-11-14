@@ -10,10 +10,17 @@
   },
 
   "typedocOptions": {
+    "plugin": ["typedoc-plugin-lerna-packages"],
+    "lernaExclude": [
+      "packages/nightingale-console-example",
+      "packages/nightingale-example"
+    ],
     "readme": "README.md",
     "mode": "modules",
     "out": "docs",
     "excludePrivate": true,
+    "excludeNotExported": false,
+    "preserveConstEnums": true,
     "gitRevision": "master"
   },
 
