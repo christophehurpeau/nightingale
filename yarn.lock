@@ -2992,17 +2992,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@strictsoftware/typedoc-plugin-monorepo@npm:^0.3.1":
-  version: 0.3.1
-  resolution: "@strictsoftware/typedoc-plugin-monorepo@npm:0.3.1"
-  dependencies:
-    highlight.js: ^9.15.6
-  peerDependencies:
-    typedoc: ">=0.17.3 <1.0"
-  checksum: 64fe50a901d8b36e218f7b3fce6f92a425d2d1b89ab2f039e6bafcdb1c4051f3ad8b4b2428177f1d6ed990edbec3b4ca869369809b363655e9ed007d4a0e4f83
-  languageName: node
-  linkType: hard
-
 "@types/ansi-styles@npm:^3.2.1":
   version: 3.2.1
   resolution: "@types/ansi-styles@npm:3.2.1"
@@ -6871,13 +6860,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"highlight.js@npm:^9.15.6":
-  version: 9.18.3
-  resolution: "highlight.js@npm:9.18.3"
-  checksum: b6b518f937ce65779cbebb219f94ed685cdbad142f222a183afa5d0dd24dfb6b1aeaef40087ff74a2ea978c3ae9b814452bfdef685c98971e4b840f306ccdb82
-  languageName: node
-  linkType: hard
-
 "hosted-git-info@npm:^2.1.4, hosted-git-info@npm:^2.7.1":
   version: 2.8.8
   resolution: "hosted-git-info@npm:2.8.8"
@@ -9629,7 +9611,6 @@ __metadata:
     "@pob/eslint-config-typescript": 41.0.3
     "@pob/eslint-config-typescript-node": 41.0.0
     "@pob/root": 3.0.0
-    "@strictsoftware/typedoc-plugin-monorepo": ^0.3.1
     "@types/node": ^14.14.7
     "@typescript-eslint/eslint-plugin": 4.7.0
     "@typescript-eslint/parser": 4.7.0
