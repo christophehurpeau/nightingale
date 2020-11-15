@@ -31,8 +31,8 @@
   },
   "pob": {},
   "devDependencies": {
-    "@pob/eslint-config": "41.0.3",
-    "@pob/eslint-config-node": "41.0.0",
+    "@pob/eslint-config": "41.0.4",
+    "@pob/eslint-config-node": "41.0.4",
     "eslint": "7.13.0",
     "eslint-import-resolver-node": "0.3.4",
     "eslint-plugin-import": "2.22.1",

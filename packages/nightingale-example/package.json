@@ -19,41 +19,51 @@
     "./configure": {
       "node": {
         "development": {
-          "require": "./dist/configure-node10-dev.cjs.js"
+          "import": "./dist/configure-node12-dev.mjs",
+          "require": "./dist/configure-node12-dev.cjs.js"
         },
-        "require": "./dist/configure-node10.cjs.js"
+        "import": "./dist/configure-node12.mjs",
+        "require": "./dist/configure-node12.cjs.js"
       }
     },
     "./console": {
       "node": {
         "development": {
-          "require": "./dist/console-node10-dev.cjs.js"
+          "import": "./dist/console-node12-dev.mjs",
+          "require": "./dist/console-node12-dev.cjs.js"
         },
-        "require": "./dist/console-node10.cjs.js"
+        "import": "./dist/console-node12.mjs",
+        "require": "./dist/console-node12.cjs.js"
       }
     },
     "./debug": {
       "node": {
         "development": {
-          "require": "./dist/debug-node10-dev.cjs.js"
+          "import": "./dist/debug-node12-dev.mjs",
+          "require": "./dist/debug-node12-dev.cjs.js"
         },
-        "require": "./dist/debug-node10.cjs.js"
+        "import": "./dist/debug-node12.mjs",
+        "require": "./dist/debug-node12.cjs.js"
       }
     },
     "./errors": {
       "node": {
         "development": {
-          "require": "./dist/errors-node10-dev.cjs.js"
+          "import": "./dist/errors-node12-dev.mjs",
+          "require": "./dist/errors-node12-dev.cjs.js"
         },
-        "require": "./dist/errors-node10.cjs.js"
+        "import": "./dist/errors-node12.mjs",
+        "require": "./dist/errors-node12.cjs.js"
       }
     },
     "./jsonConsole": {
       "node": {
         "development": {
-          "require": "./dist/jsonConsole-node10-dev.cjs.js"
+          "import": "./dist/jsonConsole-node12-dev.mjs",
+          "require": "./dist/jsonConsole-node12-dev.cjs.js"
         },
-        "require": "./dist/jsonConsole-node10.cjs.js"
+        "import": "./dist/jsonConsole-node12.mjs",
+        "require": "./dist/jsonConsole-node12.cjs.js"
       }
     }
   },
@@ -72,9 +82,10 @@
     "babelEnvs": [
       {
         "target": "node",
-        "version": "10",
+        "version": "12",
         "formats": [
-          "cjs"
+          "cjs",
+          "es"
         ]
       }
     ],
@@ -96,10 +107,10 @@
   },
   "devDependencies": {
     "@babel/core": "7.12.3",
-    "@pob/eslint-config": "41.0.3",
-    "@pob/eslint-config-node": "41.0.0",
-    "@pob/eslint-config-typescript": "41.0.3",
-    "@pob/eslint-config-typescript-node": "41.0.0",
+    "@pob/eslint-config": "41.0.4",
+    "@pob/eslint-config-node": "41.0.4",
+    "@pob/eslint-config-typescript": "41.0.4",
+    "@pob/eslint-config-typescript-node": "41.0.4",
     "@typescript-eslint/eslint-plugin": "4.7.0",
     "@typescript-eslint/parser": "4.7.0",
     "babel-preset-latest-node": "5.1.1",
@@ -108,8 +119,8 @@
     "eslint-plugin-import": "2.22.1",
     "eslint-plugin-node": "11.1.0",
     "eslint-plugin-unicorn": "23.0.0",
-    "pob-babel": "26.0.0",
-    "rollup": "2.33.1",
+    "pob-babel": "26.0.1",
+    "rollup": "2.33.2",
     "typescript": "4.0.5"
   }
 }
