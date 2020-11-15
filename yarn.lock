@@ -1220,6 +1220,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@chrp/typedoc-plugin-lerna-packages@npm:0.4.1":
+  version: 0.4.1
+  resolution: "@chrp/typedoc-plugin-lerna-packages@npm:0.4.1"
+  dependencies:
+    glob: ^7.1.6
+  peerDependencies:
+    typedoc: ^0.17.0 || ^0.19.0 || ^0.19.0
+  checksum: 5b035d34798c344946e7b646ca77132c1d2c031ca80179a0f960c947fad9f514c6b33be4236b4f0d1d68d98fe6105503cd97cad71f132b447e070df92a86c558
+  languageName: node
+  linkType: hard
+
 "@cnakazawa/watch@npm:^1.0.3":
   version: 1.0.4
   resolution: "@cnakazawa/watch@npm:1.0.4"
@@ -6352,7 +6363,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"glob@npm:*, glob@npm:^7.0.0, glob@npm:^7.1.1, glob@npm:^7.1.2, glob@npm:^7.1.3, glob@npm:^7.1.4":
+"glob@npm:^7.0.0, glob@npm:^7.1.1, glob@npm:^7.1.2, glob@npm:^7.1.3, glob@npm:^7.1.4, glob@npm:^7.1.6":
   version: 7.1.6
   resolution: "glob@npm:7.1.6"
   dependencies:
@@ -9229,6 +9240,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-monorepo@workspace:."
   dependencies:
+    "@chrp/typedoc-plugin-lerna-packages": 0.4.1
     "@pob/commitlint-config": 2.0.1
     "@pob/eslint-config": 41.0.4
     "@pob/eslint-config-node": 41.0.4
@@ -9248,7 +9260,6 @@ __metadata:
     husky: 4.3.0
     prettier: 2.1.2
     typedoc: 0.19.2
-    typedoc-plugin-lerna-packages: 0.3.1
     typescript: 4.0.5
   languageName: unknown
   linkType: soft
@@ -12358,15 +12369,6 @@ __metadata:
   version: 0.11.4
   resolution: "typedoc-default-themes@npm:0.11.4"
   checksum: 1993030e242ae9cd8b25ec706d7fefccd14b6f8de8f766b55b9bfa1b7044e244eccec9e6ed2382f85a6cea23e547bf398125bcd6f359fa0647212802c0830f4f
-  languageName: node
-  linkType: hard
-
-"typedoc-plugin-lerna-packages@npm:0.3.1":
-  version: 0.3.1
-  resolution: "typedoc-plugin-lerna-packages@npm:0.3.1"
-  peerDependencies:
-    typedoc: ^0.17.0
-  checksum: fb640421677b1f058c8812ab50ef168f2bee7536f5bfb80204182b956cdaf0f8f59489d18901334b46cd841f3e944aedd4d98fe17c626285cf2a854cc4429798
   languageName: node
   linkType: hard
 

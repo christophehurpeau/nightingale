@@ -10,7 +10,7 @@
   },
 
   "typedocOptions": {
-    "plugin": ["typedoc-plugin-lerna-packages"],
+    "plugin": ["@chrp/typedoc-plugin-lerna-packages"],
     "lernaExclude": [
       "packages/nightingale-console-example",
       "packages/nightingale-example"
