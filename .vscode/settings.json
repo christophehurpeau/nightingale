@@ -1,0 +1,28 @@
+{
+  // yarn berry
+  "eslint.nodePath": ".yarn/sdks",
+  "prettier.prettierPath": ".yarn/sdks/prettier/index.js",
+  "typescript.tsdk": ".yarn/sdks/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "search.exclude": {
+    "**/.yarn": true,
+    "**/.pnp.*": true
+  },
+  // save config
+  "editor.formatOnSave": true,
+  "eslint.codeActionsOnSave.mode": "all",
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.organizeImports": false
+  },
+  // eslint config
+  "eslint.workingDirectories": ["."],
+  "eslint.options": {
+    "resolvePluginsRelativeTo": ".",
+    "reportUnusedDisableDirectives": true
+  },
+  "eslint.lintTask.enable": true,
+  // eslint & prettier formatter
+  "eslint.format.enable": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
+}

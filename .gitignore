@@ -11,6 +11,7 @@ yarn-error.log*
 /.settings
 /.project
 /.idea
+!/.vscode
 *.sublime-project
 *.sublime-workspace
 
