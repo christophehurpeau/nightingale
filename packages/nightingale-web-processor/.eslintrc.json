@@ -1,5 +1,5 @@
 {
   "root": true,
   "extends": ["@pob/eslint-config", "@pob/eslint-config-node"],
-  "ignorePatterns": ["*.d.ts", "/dist", "/test", "/public", "/build"]
+  "ignorePatterns": ["*.d.ts", "/dist"]
 }
