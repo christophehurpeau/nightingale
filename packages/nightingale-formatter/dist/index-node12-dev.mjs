@@ -213,7 +213,7 @@ function internalFormatValue(value, styleFn, styles, {
     }
   } else if (value instanceof Error) {
     const stack = value.stack;
-    stringValue = (stack === null || stack === void 0 ? void 0 : stack.startsWith(value.message)) ? stack : `${value.message}\n${stack || ''}`;
+    stringValue = stack !== null && stack !== void 0 && stack.startsWith(value.message) ? stack : `${value.message}\n${stack || ''}`;
   } else if (value instanceof Map) {
     const name = value.constructor.name;
 

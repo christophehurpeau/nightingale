@@ -38,13 +38,6 @@
       "@pob/commitlint-config"
     ]
   },
-  "dependencies": {
-    "@typescript-eslint/eslint-plugin": "4.8.1",
-    "@typescript-eslint/parser": "4.8.1",
-    "eslint-plugin-import": "2.22.1",
-    "eslint-plugin-prettier": "3.1.4",
-    "eslint-plugin-unicorn": "23.0.0"
-  },
   "devDependencies": {
     "@chrp/typedoc-plugin-lerna-packages": "0.4.1",
     "@pob/commitlint-config": "2.0.1",
@@ -55,9 +48,13 @@
     "@pob/lerna-light": "3.23.0",
     "@pob/root": "3.0.3",
     "@types/node": "14.14.7",
+    "@typescript-eslint/eslint-plugin": "4.9.1",
+    "@typescript-eslint/parser": "4.9.1",
     "eslint": "7.15.0",
     "eslint-import-resolver-node": "0.3.4",
+    "eslint-plugin-import": "2.22.1",
     "eslint-plugin-node": "11.1.0",
+    "eslint-plugin-unicorn": "23.0.0",
     "husky": "4.3.5",
     "prettier": "2.2.1",
     "typedoc": "0.19.2",
