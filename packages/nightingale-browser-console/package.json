@@ -1,6 +1,6 @@
 {
   "name": "nightingale-browser-console",
-  "version": "10.0.1",
+  "version": "11.0.0",
   "description": "Browser console handler for nightingale",
   "keywords": [
     "nightingale",
@@ -75,10 +75,10 @@
     ]
   },
   "dependencies": {
-    "nightingale-browser-console-formatter": "^10.0.1",
-    "nightingale-console-output": "^10.0.1",
-    "nightingale-debug": "^10.0.1",
-    "nightingale-types": "^10.0.1"
+    "nightingale-browser-console-formatter": "^11.0.0",
+    "nightingale-console-output": "^11.0.0",
+    "nightingale-debug": "^11.0.0",
+    "nightingale-types": "^11.0.0"
   },
   "devDependencies": {
     "@babel/core": "7.12.10",

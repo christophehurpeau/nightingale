@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [11.0.0](https://github.com/christophehurpeau/nightingale/compare/v10.0.1...v11.0.0) (2020-12-12)
+
+
+### Bug Fixes
+
+* update devdeps and fix lerna config ([79e97dd](https://github.com/christophehurpeau/nightingale/commit/79e97dd8ad0750a2e5871d9fdeee49de1668bf77))
+
+
+### Code Refactoring
+
+* use yarn 2, requires node 12 ([73a85dd](https://github.com/christophehurpeau/nightingale/commit/73a85ddc37dbfe53b80fd6feea6cbd31874ea771))
+
+
+### BREAKING CHANGES
+
+* drop support for node 10
+
+
+
+
+
 ## [10.0.1](https://github.com/christophehurpeau/nightingale/compare/v10.0.0...v10.0.1) (2020-05-23)
 
 **Note:** Version bump only for package nightingale
