@@ -21,7 +21,7 @@
   "sideEffects": false,
   "scripts": {
     "build": "yarn run build:definitions",
-    "build:definitions": "tsc --lib esnext --noEmit ./lib/index.d.ts",
+    "build:definitions": "tsc --lib esnext --noEmit --skipLibCheck ./lib/index.d.ts",
     "lint": "yarn run lint:eslint",
     "lint:eslint": "yarn --cwd ../.. eslint --report-unused-disable-directives --quiet packages/nightingale-level-names"
   },
