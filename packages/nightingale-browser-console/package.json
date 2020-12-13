@@ -85,7 +85,7 @@
     "@babel/preset-env": "7.12.10",
     "@pob/eslint-config": "41.0.4",
     "@pob/eslint-config-node": "41.1.0",
-    "@pob/eslint-config-typescript": "41.0.4",
+    "@pob/eslint-config-typescript": "41.1.0",
     "@typescript-eslint/eslint-plugin": "4.9.1",
     "@typescript-eslint/parser": "4.9.1",
     "babel-preset-modern-browsers": "15.0.2",
