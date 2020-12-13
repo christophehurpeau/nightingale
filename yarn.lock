@@ -2522,11 +2522,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pob/eslint-config@npm:41.0.4, @pob/eslint-config@npm:^41.0.4":
-  version: 41.0.4
-  resolution: "@pob/eslint-config@npm:41.0.4"
+"@pob/eslint-config@npm:41.1.0, @pob/eslint-config@npm:^41.0.4":
+  version: 41.1.0
+  resolution: "@pob/eslint-config@npm:41.1.0"
   dependencies:
-    "@pob/use-eslint-plugin": ^41.0.4
+    "@pob/use-eslint-plugin": ^41.1.0
     eslint-config-airbnb-base: ^14.2.1
     eslint-config-prettier: ^6.11.0
     eslint-plugin-unicorn: ^23.0.0
@@ -2539,7 +2539,7 @@ __metadata:
       optional: true
     eslint-plugin-unicorn:
       optional: true
-  checksum: 9992d710bc5368c90f82d3ce4dfa93815ae47774cfbf1079952a5334a38493369d0d1a80522f3b72cca1704664d4eeb63b37c91adbea9f6fd94ab87e59653411
+  checksum: 8fec1d275c91b6b6b275e12eb25af65461d993b514ede45c21a5992c52a6db792a452146a59b2ffc4fa178120f2f46524eecc4644d5f04848e3b999257b11e1b
   languageName: node
   linkType: hard
 
@@ -8727,7 +8727,7 @@ __metadata:
   resolution: "nightingale-ansi-formatter@workspace:packages/nightingale-ansi-formatter"
   dependencies:
     "@babel/core": 7.12.10
-    "@pob/eslint-config": 41.0.4
+    "@pob/eslint-config": 41.1.0
     "@pob/eslint-config-node": 41.1.0
     "@pob/eslint-config-typescript": 41.0.4
     "@pob/eslint-config-typescript-node": 41.0.4
@@ -8760,7 +8760,7 @@ __metadata:
   dependencies:
     "@babel/core": 7.12.10
     "@babel/preset-env": 7.12.10
-    "@pob/eslint-config": 41.0.4
+    "@pob/eslint-config": 41.1.0
     "@pob/eslint-config-node": 41.1.0
     "@pob/eslint-config-typescript": 41.0.4
     "@types/source-map-support": 0.4.2
@@ -8789,7 +8789,7 @@ __metadata:
   dependencies:
     "@babel/core": 7.12.10
     "@babel/preset-env": 7.12.10
-    "@pob/eslint-config": 41.0.4
+    "@pob/eslint-config": 41.1.0
     "@pob/eslint-config-node": 41.1.0
     "@pob/eslint-config-typescript": 41.0.4
     "@types/jest": 26.0.19
@@ -8821,7 +8821,7 @@ __metadata:
   dependencies:
     "@babel/core": 7.12.10
     "@babel/preset-env": 7.12.10
-    "@pob/eslint-config": 41.0.4
+    "@pob/eslint-config": 41.1.0
     "@pob/eslint-config-node": 41.1.0
     "@pob/eslint-config-typescript": 41.0.4
     "@typescript-eslint/eslint-plugin": 4.9.1
@@ -8847,7 +8847,7 @@ __metadata:
   resolution: "nightingale-console-example@workspace:packages/nightingale-console-example"
   dependencies:
     "@babel/core": 7.12.10
-    "@pob/eslint-config": 41.0.4
+    "@pob/eslint-config": 41.1.0
     "@pob/eslint-config-node": 41.1.0
     "@pob/eslint-config-typescript": 41.0.4
     "@pob/eslint-config-typescript-node": 41.0.4
@@ -8873,7 +8873,7 @@ __metadata:
   dependencies:
     "@babel/core": 7.12.10
     "@babel/preset-env": 7.12.10
-    "@pob/eslint-config": 41.0.4
+    "@pob/eslint-config": 41.1.0
     "@pob/eslint-config-node": 41.1.0
     "@pob/eslint-config-typescript": 41.0.4
     "@types/node": ">=12.0.0"
@@ -8899,7 +8899,7 @@ __metadata:
   resolution: "nightingale-console@workspace:packages/nightingale-console"
   dependencies:
     "@babel/core": 7.12.10
-    "@pob/eslint-config": 41.0.4
+    "@pob/eslint-config": 41.1.0
     "@pob/eslint-config-node": 41.1.0
     "@pob/eslint-config-typescript": 41.0.4
     "@pob/eslint-config-typescript-node": 41.0.4
@@ -8930,7 +8930,7 @@ __metadata:
   dependencies:
     "@babel/core": 7.12.10
     "@babel/preset-env": 7.12.10
-    "@pob/eslint-config": 41.0.4
+    "@pob/eslint-config": 41.1.0
     "@pob/eslint-config-node": 41.1.0
     "@pob/eslint-config-typescript": 41.0.4
     "@types/jest": 26.0.19
@@ -8959,7 +8959,7 @@ __metadata:
   resolution: "nightingale-example@workspace:packages/nightingale-example"
   dependencies:
     "@babel/core": 7.12.10
-    "@pob/eslint-config": 41.0.4
+    "@pob/eslint-config": 41.1.0
     "@pob/eslint-config-node": 41.1.0
     "@pob/eslint-config-typescript": 41.0.4
     "@pob/eslint-config-typescript-node": 41.0.4
@@ -8989,7 +8989,7 @@ __metadata:
   dependencies:
     "@babel/core": 7.12.10
     "@babel/preset-env": 7.12.10
-    "@pob/eslint-config": 41.0.4
+    "@pob/eslint-config": 41.1.0
     "@pob/eslint-config-node": 41.1.0
     "@pob/eslint-config-typescript": 41.0.4
     "@types/jest": 26.0.19
@@ -9020,7 +9020,7 @@ __metadata:
   dependencies:
     "@babel/core": 7.12.10
     "@babel/preset-env": 7.12.10
-    "@pob/eslint-config": 41.0.4
+    "@pob/eslint-config": 41.1.0
     "@pob/eslint-config-node": 41.1.0
     "@pob/eslint-config-typescript": 41.0.4
     "@types/jest": 26.0.19
@@ -9052,7 +9052,7 @@ __metadata:
   dependencies:
     "@babel/core": 7.12.10
     "@babel/preset-env": 7.12.10
-    "@pob/eslint-config": 41.0.4
+    "@pob/eslint-config": 41.1.0
     "@pob/eslint-config-node": 41.1.0
     "@pob/eslint-config-typescript": 41.0.4
     "@types/jest": 26.0.19
@@ -9082,7 +9082,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-level-names@workspace:packages/nightingale-level-names"
   dependencies:
-    "@pob/eslint-config": 41.0.4
+    "@pob/eslint-config": 41.1.0
     "@pob/eslint-config-node": 41.1.0
     eslint: 7.15.0
     eslint-import-resolver-node: 0.3.4
@@ -9098,7 +9098,7 @@ __metadata:
   dependencies:
     "@babel/core": 7.12.10
     "@babel/preset-env": 7.12.10
-    "@pob/eslint-config": 41.0.4
+    "@pob/eslint-config": 41.1.0
     "@pob/eslint-config-node": 41.1.0
     "@pob/eslint-config-typescript": 41.0.4
     "@typescript-eslint/eslint-plugin": 4.9.1
@@ -9122,7 +9122,7 @@ __metadata:
   dependencies:
     "@babel/core": 7.12.10
     "@babel/preset-env": 7.12.10
-    "@pob/eslint-config": 41.0.4
+    "@pob/eslint-config": 41.1.0
     "@pob/eslint-config-node": 41.1.0
     "@pob/eslint-config-typescript": 41.0.4
     "@types/jest": 26.0.19
@@ -9154,7 +9154,7 @@ __metadata:
   dependencies:
     "@babel/core": 7.12.10
     "@babel/preset-env": 7.12.10
-    "@pob/eslint-config": 41.0.4
+    "@pob/eslint-config": 41.1.0
     "@pob/eslint-config-node": 41.1.0
     "@pob/eslint-config-typescript": 41.0.4
     "@types/jest": 26.0.19
@@ -9186,7 +9186,7 @@ __metadata:
   dependencies:
     "@chrp/typedoc-plugin-lerna-packages": 0.4.1
     "@pob/commitlint-config": 2.0.1
-    "@pob/eslint-config": 41.0.4
+    "@pob/eslint-config": 41.1.0
     "@pob/eslint-config-node": 41.1.0
     "@pob/eslint-config-typescript": 41.0.4
     "@pob/eslint-config-typescript-node": 41.0.4
@@ -9213,7 +9213,7 @@ __metadata:
   dependencies:
     "@babel/core": 7.12.10
     "@babel/preset-env": 7.12.10
-    "@pob/eslint-config": 41.0.4
+    "@pob/eslint-config": 41.1.0
     "@pob/eslint-config-node": 41.1.0
     "@pob/eslint-config-typescript": 41.0.4
     "@types/jest": 26.0.19
@@ -9244,7 +9244,7 @@ __metadata:
   resolution: "nightingale-sentry@workspace:packages/nightingale-sentry"
   dependencies:
     "@babel/core": 7.12.10
-    "@pob/eslint-config": 41.0.4
+    "@pob/eslint-config": 41.1.0
     "@pob/eslint-config-node": 41.1.0
     "@pob/eslint-config-typescript": 41.0.4
     "@pob/eslint-config-typescript-node": 41.0.4
@@ -9270,7 +9270,7 @@ __metadata:
   resolution: "nightingale-slack@workspace:packages/nightingale-slack"
   dependencies:
     "@babel/core": 7.12.10
-    "@pob/eslint-config": 41.0.4
+    "@pob/eslint-config": 41.1.0
     "@pob/eslint-config-node": 41.1.0
     "@pob/eslint-config-typescript": 41.0.4
     "@pob/eslint-config-typescript-node": 41.0.4
@@ -9304,7 +9304,7 @@ __metadata:
   resolution: "nightingale-string@workspace:packages/nightingale-string"
   dependencies:
     "@babel/core": 7.12.10
-    "@pob/eslint-config": 41.0.4
+    "@pob/eslint-config": 41.1.0
     "@pob/eslint-config-node": 41.1.0
     "@pob/eslint-config-typescript": 41.0.4
     "@pob/eslint-config-typescript-node": 41.0.4
@@ -9330,7 +9330,7 @@ __metadata:
   dependencies:
     "@babel/core": 7.12.10
     "@babel/preset-env": 7.12.10
-    "@pob/eslint-config": 41.0.4
+    "@pob/eslint-config": 41.1.0
     "@pob/eslint-config-node": 41.1.0
     "@pob/eslint-config-typescript": 41.0.4
     "@typescript-eslint/eslint-plugin": 4.9.1
@@ -9354,7 +9354,7 @@ __metadata:
   resolution: "nightingale-web-processor@workspace:packages/nightingale-web-processor"
   dependencies:
     "@babel/core": 7.12.10
-    "@pob/eslint-config": 41.0.4
+    "@pob/eslint-config": 41.1.0
     "@pob/eslint-config-node": 41.1.0
     "@pob/eslint-config-typescript": 41.0.4
     "@pob/eslint-config-typescript-node": 41.0.4
@@ -9380,7 +9380,7 @@ __metadata:
   dependencies:
     "@babel/core": 7.12.10
     "@babel/preset-env": 7.12.10
-    "@pob/eslint-config": 41.0.4
+    "@pob/eslint-config": 41.1.0
     "@pob/eslint-config-node": 41.1.0
     "@pob/eslint-config-typescript": 41.0.4
     "@typescript-eslint/eslint-plugin": 4.9.1
@@ -9406,7 +9406,7 @@ __metadata:
   dependencies:
     "@babel/core": 7.12.10
     "@babel/preset-env": 7.12.10
-    "@pob/eslint-config": 41.0.4
+    "@pob/eslint-config": 41.1.0
     "@pob/eslint-config-node": 41.1.0
     "@pob/eslint-config-typescript": 41.0.4
     "@types/jest": 26.0.19
