@@ -14,7 +14,6 @@
     "node": ">=12.10.0"
   },
   "main": "./index.js",
-  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "node": {
@@ -37,7 +36,6 @@
       }
     }
   },
-  "sideEffects": true,
   "scripts": {
     "build": "pob-build",
     "lint": "yarn run lint:eslint",
@@ -71,10 +69,11 @@
   },
   "devDependencies": {
     "@babel/core": "7.12.10",
-    "@pob/eslint-config": "41.1.0",
-    "@pob/eslint-config-node": "41.1.0",
-    "@pob/eslint-config-typescript": "41.1.0",
-    "@pob/eslint-config-typescript-node": "41.1.0",
+    "@pob/eslint-config": "41.1.2",
+    "@pob/eslint-config-node": "41.1.2",
+    "@pob/eslint-config-typescript": "41.1.2",
+    "@pob/eslint-config-typescript-node": "41.1.2",
+    "@rollup/plugin-run": "2.0.2",
     "@typescript-eslint/eslint-plugin": "4.10.0",
     "@typescript-eslint/parser": "4.10.0",
     "babel-preset-latest-node": "5.2.0",
@@ -82,8 +81,8 @@
     "eslint-import-resolver-node": "0.3.4",
     "eslint-plugin-import": "2.22.1",
     "eslint-plugin-node": "11.1.0",
-    "eslint-plugin-unicorn": "23.0.0",
-    "pob-babel": "26.2.1",
+    "eslint-plugin-unicorn": "24.0.0",
+    "pob-babel": "26.3.0",
     "rollup": "2.35.1",
     "typescript": "4.1.3"
   }

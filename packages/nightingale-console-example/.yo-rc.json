@@ -5,10 +5,6 @@
       "authorEmail": "christophe@hurpeau.com",
       "authorUrl": "https://christophe.hurpeau.com"
     },
-    "pob-config": {
-      "documentation": false,
-      "testing": false
-    },
     "project": {
       "type": "app"
     },

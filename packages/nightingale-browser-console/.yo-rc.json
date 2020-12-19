@@ -1,11 +1,11 @@
 {
   "pob": {
-    "pob-config": {
-      "documentation": false,
-      "testing": false
-    },
     "project": {
       "type": "lib"
+    },
+    "lib": {
+      "documentation": false,
+      "testing": false
     }
   }
 }
