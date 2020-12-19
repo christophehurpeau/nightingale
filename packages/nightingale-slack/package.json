@@ -105,7 +105,7 @@
     "@pob/eslint-config": "41.1.0",
     "@pob/eslint-config-node": "41.1.0",
     "@pob/eslint-config-typescript": "41.1.0",
-    "@pob/eslint-config-typescript-node": "41.1.0",
+    "@pob/eslint-config-typescript-node": "41.1.2",
     "@types/jest": "26.0.19",
     "@types/request": "2.48.5",
     "@typescript-eslint/eslint-plugin": "4.10.0",

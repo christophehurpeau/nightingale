@@ -2476,11 +2476,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pob/eslint-config-typescript-node@npm:41.1.0":
-  version: 41.1.0
-  resolution: "@pob/eslint-config-typescript-node@npm:41.1.0"
+"@pob/eslint-config-typescript-node@npm:41.1.2":
+  version: 41.1.2
+  resolution: "@pob/eslint-config-typescript-node@npm:41.1.2"
   dependencies:
-    "@pob/use-eslint-plugin": ^41.1.0
+    "@pob/use-eslint-plugin": ^41.1.2
     eslint-plugin-node: ^11.1.0
   peerDependencies:
     eslint: ^7.5.0
@@ -2491,7 +2491,7 @@ __metadata:
       optional: true
     eslint-plugin-node:
       optional: true
-  checksum: e4371ea4f6920d9a4b58d6ccae736fcd829ffe304a4bc138429505310b18e2a0e7cd629177648e04f224cf10a7bef9aafd27baa15b20c58931e5c55118c6109b
+  checksum: 1d592c3a4a3f42903b553aeb9f8cf076f0511fe9dc4e451807ee571039464721fd097ffbaedc48d4b12fece7085b51bf22457125b26a972f4d70536d85a5c185
   languageName: node
   linkType: hard
 
@@ -2581,10 +2581,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pob/use-eslint-plugin@npm:^41.1.0":
-  version: 41.1.0
-  resolution: "@pob/use-eslint-plugin@npm:41.1.0"
-  checksum: ac3e950bcc4c597edce97dac19f28f75c07067220149bed9e026b34203167fe77431b224e6b19be6ccd7b56fb680a95cbfb2d009663c80a66120ce6678abdef1
+"@pob/use-eslint-plugin@npm:^41.1.0, @pob/use-eslint-plugin@npm:^41.1.2":
+  version: 41.1.2
+  resolution: "@pob/use-eslint-plugin@npm:41.1.2"
+  checksum: f8218d80f563e4d76742320ea1930612856364dbf91b97d5f55889b47b33b2c897ef65537e1b113700a8f2f8ae62289c832f78ba080966ef1ab9366cd2530537
   languageName: node
   linkType: hard
 
@@ -8723,7 +8723,7 @@ __metadata:
     "@pob/eslint-config": 41.1.0
     "@pob/eslint-config-node": 41.1.0
     "@pob/eslint-config-typescript": 41.1.0
-    "@pob/eslint-config-typescript-node": 41.1.0
+    "@pob/eslint-config-typescript-node": 41.1.2
     "@types/ansi-styles": ^3.2.1
     "@types/jest": 26.0.19
     "@typescript-eslint/eslint-plugin": 4.10.0
@@ -8843,7 +8843,7 @@ __metadata:
     "@pob/eslint-config": 41.1.0
     "@pob/eslint-config-node": 41.1.0
     "@pob/eslint-config-typescript": 41.1.0
-    "@pob/eslint-config-typescript-node": 41.1.0
+    "@pob/eslint-config-typescript-node": 41.1.2
     "@typescript-eslint/eslint-plugin": 4.10.0
     "@typescript-eslint/parser": 4.10.0
     babel-preset-latest-node: 5.2.0
@@ -8895,7 +8895,7 @@ __metadata:
     "@pob/eslint-config": 41.1.0
     "@pob/eslint-config-node": 41.1.0
     "@pob/eslint-config-typescript": 41.1.0
-    "@pob/eslint-config-typescript-node": 41.1.0
+    "@pob/eslint-config-typescript-node": 41.1.2
     "@types/node": ">=12.0.0"
     "@typescript-eslint/eslint-plugin": 4.10.0
     "@typescript-eslint/parser": 4.10.0
@@ -8955,7 +8955,7 @@ __metadata:
     "@pob/eslint-config": 41.1.0
     "@pob/eslint-config-node": 41.1.0
     "@pob/eslint-config-typescript": 41.1.0
-    "@pob/eslint-config-typescript-node": 41.1.0
+    "@pob/eslint-config-typescript-node": 41.1.2
     "@typescript-eslint/eslint-plugin": 4.10.0
     "@typescript-eslint/parser": 4.10.0
     babel-preset-latest-node: 5.2.0
@@ -9182,7 +9182,7 @@ __metadata:
     "@pob/eslint-config": 41.1.0
     "@pob/eslint-config-node": 41.1.0
     "@pob/eslint-config-typescript": 41.1.0
-    "@pob/eslint-config-typescript-node": 41.1.0
+    "@pob/eslint-config-typescript-node": 41.1.2
     "@pob/lerna-light": 3.23.0
     "@pob/root": 3.0.3
     "@types/node": 14.14.14
@@ -9240,7 +9240,7 @@ __metadata:
     "@pob/eslint-config": 41.1.0
     "@pob/eslint-config-node": 41.1.0
     "@pob/eslint-config-typescript": 41.1.0
-    "@pob/eslint-config-typescript-node": 41.1.0
+    "@pob/eslint-config-typescript-node": 41.1.2
     "@sentry/node": ^5.11.1
     "@typescript-eslint/eslint-plugin": 4.10.0
     "@typescript-eslint/parser": 4.10.0
@@ -9266,7 +9266,7 @@ __metadata:
     "@pob/eslint-config": 41.1.0
     "@pob/eslint-config-node": 41.1.0
     "@pob/eslint-config-typescript": 41.1.0
-    "@pob/eslint-config-typescript-node": 41.1.0
+    "@pob/eslint-config-typescript-node": 41.1.2
     "@types/jest": 26.0.19
     "@types/request": 2.48.5
     "@typescript-eslint/eslint-plugin": 4.10.0
@@ -9300,7 +9300,7 @@ __metadata:
     "@pob/eslint-config": 41.1.0
     "@pob/eslint-config-node": 41.1.0
     "@pob/eslint-config-typescript": 41.1.0
-    "@pob/eslint-config-typescript-node": 41.1.0
+    "@pob/eslint-config-typescript-node": 41.1.2
     "@typescript-eslint/eslint-plugin": 4.10.0
     "@typescript-eslint/parser": 4.10.0
     babel-preset-latest-node: 5.2.0
@@ -9350,7 +9350,7 @@ __metadata:
     "@pob/eslint-config": 41.1.0
     "@pob/eslint-config-node": 41.1.0
     "@pob/eslint-config-typescript": 41.1.0
-    "@pob/eslint-config-typescript-node": 41.1.0
+    "@pob/eslint-config-typescript-node": 41.1.2
     "@types/node": ">=12.0.0"
     "@typescript-eslint/eslint-plugin": 4.10.0
     "@typescript-eslint/parser": 4.10.0
