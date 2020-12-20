@@ -1,4 +1,6 @@
 /* eslint-disable no-console */
+/// <reference types="node" />
+
 import { POB_TARGET } from 'pob-babel';
 import Level from 'nightingale-levels';
 import type { LogRecord, Metadata } from 'nightingale-types';

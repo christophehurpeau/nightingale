@@ -38,6 +38,9 @@
       "@pob/commitlint-config"
     ]
   },
+  "resolutions": {
+    "@types/node": "14.14.14"
+  },
   "devDependencies": {
     "@chrp/typedoc-plugin-lerna-packages": "0.4.1",
     "@pob/commitlint-config": "2.0.1",

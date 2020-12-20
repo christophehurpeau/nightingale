@@ -2930,17 +2930,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:14.14.14, @types/node@npm:>= 8, @types/node@npm:>=12.0.0":
+"@types/node@npm:14.14.14":
   version: 14.14.14
   resolution: "@types/node@npm:14.14.14"
   checksum: dea8d257d49d68c65dafa6ebde9453bb61b67febc92ed8d7e38fce8b95f18d32ccffb3ab37021f9be8d1e5c65cd59cdb7dd8981d9b89b2be103b3012aee09fcf
-  languageName: node
-  linkType: hard
-
-"@types/node@npm:13.1.6":
-  version: 13.1.6
-  resolution: "@types/node@npm:13.1.6"
-  checksum: a32e28c9e93553259543772ba81879a79b70c2f369c4ad34d45403574f4ff4f7fcb05279faf31d13281762ef00cf139faa9878dfb0d61c9477f4fbd182a8fed5
   languageName: node
   linkType: hard
 
