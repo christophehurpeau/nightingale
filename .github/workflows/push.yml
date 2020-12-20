@@ -41,6 +41,10 @@ jobs:
         run: yarn run lint:eslint
         if: startsWith(matrix.node-version, '14.')
 
+      - name: Typescript
+        run: yarn run tsc
+        if: startsWith(matrix.node-version, '14.')
+
       - name: Test
         run: yarn run test
         env:
