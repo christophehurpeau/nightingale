@@ -72,7 +72,7 @@
     "@typescript-eslint/eslint-plugin": "4.10.0",
     "@typescript-eslint/parser": "4.10.0",
     "babel-preset-latest-node": "5.2.0",
-    "eslint": "7.16.0",
+    "eslint": "7.17.0",
     "eslint-import-resolver-node": "0.3.4",
     "eslint-plugin-import": "2.22.1",
     "eslint-plugin-node": "11.1.0",
