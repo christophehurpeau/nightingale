@@ -1,6 +1,12 @@
 {
   "include": ["packages/*/src/**/*.ts"],
 
+  "exclude": [
+    "**/node_modules/**",
+    "**/src/**/*.test.ts",
+    "**/src/**/__tests__/**"
+  ],
+
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",
@@ -10,23 +16,33 @@
   },
 
   "typedocOptions": {
-    "plugin": ["@chrp/typedoc-plugin-lerna-packages"],
-    "lernaExclude": [
-      "packages/nightingale-console-example",
-      "packages/nightingale-example"
+    "entryPoints": [
+      "packages/nightingale-level-names/src/index.ts",
+      "packages/nightingale-levels/src/index.ts",
+      "packages/nightingale-debug/src/index.ts",
+      "packages/nightingale-types/src/index.ts",
+      "packages/nightingale-console-output/src/index.ts",
+      "packages/nightingale-formatter/src/index.ts",
+      "packages/nightingale-logger/src/index.ts",
+      "packages/nightingale-sentry/src/index.ts",
+      "packages/nightingale-web-processor/src/index.ts",
+      "packages/nightingale-winston-adapter/src/index.ts",
+      "packages/nightingale-ansi-formatter/src/index.ts",
+      "packages/nightingale-browser-console-formatter/src/index.ts",
+      "packages/nightingale-html-formatter/src/index.ts",
+      "packages/nightingale-json-formatter/src/index.ts",
+      "packages/nightingale-markdown-formatter/src/index.ts",
+      "packages/nightingale-raw-formatter/src/index.ts",
+      "packages/nightingale-browser-console/src/index.ts",
+      "packages/nightingale-console/src/index.ts",
+      "packages/nightingale-slack/src/index.ts",
+      "packages/nightingale-string/src/index.ts",
+      "packages/nightingale/src/index.ts",
+      "packages/nightingale-app-console/src/index.ts"
     ],
     "readme": "README.md",
-    "mode": "modules",
     "out": "docs",
     "excludePrivate": true,
-    "excludeNotExported": false,
-    "preserveConstEnums": true,
     "gitRevision": "master"
-  },
-
-  "exclude": [
-    "**/node_modules/**",
-    "**/src/**/*.test.ts",
-    "**/src/**/__tests__/**"
-  ]
+  }
 }

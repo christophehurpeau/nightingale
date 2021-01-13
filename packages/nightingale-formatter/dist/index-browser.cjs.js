@@ -140,7 +140,7 @@ var styleToHtmlStyle = {
   }
 };
 
-/* eslint-disable max-lines,  no-use-before-define */
+/* eslint-disable max-lines, @typescript-eslint/no-use-before-define */
 var noStyleFn = function noStyleFn(styles, value) {
   return value;
 };

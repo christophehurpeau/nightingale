@@ -7,8 +7,7 @@ var nightingaleFormatter = require('nightingale-formatter');
 function style(styles, string) {
   if (!styles || styles.length === 0 || !string) {
     return string;
-  } // eslint-disable-next-line unicorn/no-reduce
-
+  }
 
   return styles.reduce(function (string, styleName) {
     switch (styleName) {

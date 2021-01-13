@@ -6,7 +6,6 @@ export function style(styles: Styles, string: string): string {
     return string;
   }
 
-  // eslint-disable-next-line unicorn/no-reduce
   return styles.reduce((string, styleName) => {
     switch (styleName) {
       case 'bold':

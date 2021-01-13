@@ -1,4 +1,4 @@
-/* eslint-disable max-lines,  no-use-before-define */
+/* eslint-disable max-lines, @typescript-eslint/no-use-before-define */
 import type { Styles } from 'nightingale-types';
 
 export interface FormatObjectOptions {
