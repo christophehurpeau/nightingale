@@ -130,7 +130,7 @@
     "@typescript-eslint/eslint-plugin": "4.13.0",
     "@typescript-eslint/parser": "4.13.0",
     "babel-jest": "26.6.3",
-    "babel-preset-latest-node": "5.2.0",
+    "babel-preset-latest-node": "5.4.0",
     "babel-preset-modern-browsers": "15.0.2",
     "eslint": "7.17.0",
     "eslint-import-resolver-node": "0.3.4",
