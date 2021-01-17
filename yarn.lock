@@ -9188,7 +9188,7 @@ __metadata:
     eslint-plugin-unicorn: 25.0.1
     husky: 4.3.7
     prettier: 2.2.1
-    typedoc: 0.20.14
+    typedoc: 0.20.16
     typescript: 4.1.3
   languageName: unknown
   linkType: soft
@@ -12327,16 +12327,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typedoc-default-themes@npm:0.12.1":
-  version: 0.12.1
-  resolution: "typedoc-default-themes@npm:0.12.1"
-  checksum: 491e8aeb5192760c6b9a563140a87a7f10322750e23412ffa526e5a417c366992321332db45096d5717dadf3f00a611b06e1d495ead0707c27d80f8d3a42bf58
+"typedoc-default-themes@npm:^0.12.4":
+  version: 0.12.4
+  resolution: "typedoc-default-themes@npm:0.12.4"
+  checksum: 7fca966a3d553688f9b8ce17794a2797b69c691bd064f26f6dc542e5bd64eda31ee37d4224679f8906cf5d695827475f86f81e71a5f8662a1a87579de4f15053
   languageName: node
   linkType: hard
 
-"typedoc@npm:0.20.14":
-  version: 0.20.14
-  resolution: "typedoc@npm:0.20.14"
+"typedoc@npm:0.20.16":
+  version: 0.20.16
+  resolution: "typedoc@npm:0.20.16"
   dependencies:
     colors: ^1.4.0
     fs-extra: ^9.0.1
@@ -12348,12 +12348,12 @@ __metadata:
     progress: ^2.0.3
     shelljs: ^0.8.4
     shiki: ^0.2.7
-    typedoc-default-themes: 0.12.1
+    typedoc-default-themes: ^0.12.4
   peerDependencies:
     typescript: 3.9.x || 4.0.x || 4.1.x
   bin:
     typedoc: bin/typedoc
-  checksum: a94cf1529165c72d934673a9e9699f0eed9e9bcf2d7a4b952b79dece786071ee35cc61f85018d9696096d144e871ea595423586bb7c8306b553034bc5ca75c52
+  checksum: ce172d4c18e445e516bb70fca07ee62f96f1f3a2e16733e005967e69d36be5ca7c7392ee75f23403e20f6099de3a2ae671897293b329f1c4ef160cda5fd51042
   languageName: node
   linkType: hard
 
