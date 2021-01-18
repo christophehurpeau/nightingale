@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [11.0.3](https://github.com/christophehurpeau/nightingale/compare/v11.0.2...v11.0.3) (2021-01-18)
+
+
+### Bug Fixes
+
+* import browser path ([d4469d4](https://github.com/christophehurpeau/nightingale/commit/d4469d400db56a8dc22838ae6308fdd607375566))
+
+
+
+
+
 ## [11.0.2](https://github.com/christophehurpeau/nightingale/compare/v11.0.1...v11.0.2) (2021-01-18)
 
 

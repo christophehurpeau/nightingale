@@ -1,6 +1,6 @@
 {
   "name": "nightingale-debug",
-  "version": "11.0.1",
+  "version": "11.0.3",
   "description": "Nightingale debug",
   "keywords": [
     "logger"
@@ -124,7 +124,7 @@
     ]
   },
   "dependencies": {
-    "nightingale-levels": "^11.0.1"
+    "nightingale-levels": "^11.0.3"
   },
   "devDependencies": {
     "@babel/core": "7.12.10",
