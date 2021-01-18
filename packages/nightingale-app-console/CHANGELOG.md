@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [11.0.4](https://github.com/christophehurpeau/nightingale/compare/v11.0.3...v11.0.4) (2021-01-18)
+
+
+### Bug Fixes
+
+* nightingale-app-console has side effects ([54d752c](https://github.com/christophehurpeau/nightingale/commit/54d752cb11f4855bba4efa8724ad211d660b6103))
+
+
+
+
+
 ## [11.0.3](https://github.com/christophehurpeau/nightingale/compare/v11.0.2...v11.0.3) (2021-01-18)
 
 
