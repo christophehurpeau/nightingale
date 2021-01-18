@@ -1,12 +1,8 @@
-import { install } from 'source-map-support';
 import Logger, { configure, Level } from 'nightingale';
 export { Level, addConfig, configure, levels } from 'nightingale';
 import BrowserConsoleHandler from 'nightingale-browser-console';
 
 var ConsoleHandler = BrowserConsoleHandler;
-install({
-  environment: 'browser'
-});
 var logger = new Logger('app');
 var appLogger = logger;
 configure([{

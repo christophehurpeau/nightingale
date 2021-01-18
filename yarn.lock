@@ -8763,7 +8763,6 @@ __metadata:
     nightingale-console: ^11.0.1
     pob-babel: 26.3.0
     rollup: 2.36.2
-    source-map-support: ^0.4.14
     typescript: 4.1.3
   languageName: unknown
   linkType: soft
@@ -11477,15 +11476,6 @@ __metadata:
     source-map-url: ^0.4.0
     urix: ^0.1.0
   checksum: 042ad0c0ba70458ba45fc8726a4eb61068ca0a5273578994803e25fc0fb8da00854cf5004616c9b6d0cb7fcd528c50313789d75dfc56a2f5c789cbd332bf4331
-  languageName: node
-  linkType: hard
-
-"source-map-support@npm:^0.4.14":
-  version: 0.4.18
-  resolution: "source-map-support@npm:0.4.18"
-  dependencies:
-    source-map: ^0.5.6
-  checksum: 0bae0d4dfa1981f7d98bea9b654c31e0dafd91fcafc99ac5844ca19cf1a90127da8023fe593189127cae5976ef0c144e95b1a0d4d5eb15695153848ea35c3080
   languageName: node
   linkType: hard
 

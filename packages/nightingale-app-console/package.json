@@ -102,8 +102,7 @@
   "dependencies": {
     "nightingale": "^11.0.1",
     "nightingale-browser-console": "^11.0.1",
-    "nightingale-console": "^11.0.1",
-    "source-map-support": "^0.4.14"
+    "nightingale-console": "^11.0.1"
   },
   "devDependencies": {
     "@babel/core": "7.12.10",

@@ -1,5 +1,4 @@
 import { PRODUCTION, POB_TARGET } from 'pob-babel';
-import { install as installSourceMapSupport } from 'source-map-support';
 import Logger, {
   configure,
   addConfig,
@@ -14,12 +13,6 @@ const ConsoleHandler =
   POB_TARGET === 'browser' ? BrowserConsoleHandler : TerminalConsoleHandler;
 
 export { configure, addConfig, Level, levels };
-
-if (POB_TARGET !== 'browser' || !PRODUCTION) {
-  installSourceMapSupport({
-    environment: POB_TARGET === 'browser' ? 'browser' : 'node',
-  });
-}
 
 export const logger = new Logger('app');
 export const appLogger = logger;

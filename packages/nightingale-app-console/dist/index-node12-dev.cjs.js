@@ -2,7 +2,6 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const sourceMapSupport = require('source-map-support');
 const Logger = require('nightingale');
 const TerminalConsoleHandler = require('nightingale-console');
 
@@ -12,9 +11,6 @@ const Logger__default = /*#__PURE__*/_interopDefaultLegacy(Logger);
 const TerminalConsoleHandler__default = /*#__PURE__*/_interopDefaultLegacy(TerminalConsoleHandler);
 
 const ConsoleHandler = TerminalConsoleHandler__default;
-sourceMapSupport.install({
-  environment: 'node'
-});
 const logger = new Logger__default('app');
 const appLogger = logger;
 Error.stackTraceLimit = Infinity;

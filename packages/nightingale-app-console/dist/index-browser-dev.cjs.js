@@ -2,7 +2,6 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var sourceMapSupport = require('source-map-support');
 var Logger = require('nightingale');
 var BrowserConsoleHandler = require('nightingale-browser-console');
 
@@ -12,9 +11,6 @@ var Logger__default = /*#__PURE__*/_interopDefaultLegacy(Logger);
 var BrowserConsoleHandler__default = /*#__PURE__*/_interopDefaultLegacy(BrowserConsoleHandler);
 
 var ConsoleHandler = BrowserConsoleHandler__default;
-sourceMapSupport.install({
-  environment: 'browser'
-});
 var logger = new Logger__default('app');
 var appLogger = logger;
 Logger.configure([{
