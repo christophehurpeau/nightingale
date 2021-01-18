@@ -6,13 +6,7 @@
     /* No need to check .d.ts files */
     "skipLibCheck": true,
 
-    "rootDirs": [
-      "src",
-      "../../packages/nightingale-levels/src",
-      "../../packages/nightingale-types/src",
-      "../../packages/nightingale-markdown-formatter/src",
-      "../../packages/nightingale-raw-formatter/src"
-    ],
+    "rootDirs": ["src"],
 
     "target": "esnext" /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017','ES2018' or 'ESNEXT'. */,
     "module": "esnext" /* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', or 'ESNext'. */,
@@ -41,12 +35,20 @@
 
     "paths": {
       "nightingale-levels": ["../../../packages/nightingale-levels/src"],
+      "nightingale-levels/*": ["../../../packages/nightingale-levels/src/*"],
       "nightingale-types": ["../../../packages/nightingale-types/src"],
+      "nightingale-types/*": ["../../../packages/nightingale-types/src/*"],
       "nightingale-markdown-formatter": [
         "../../../packages/nightingale-markdown-formatter/src"
       ],
+      "nightingale-markdown-formatter/*": [
+        "../../../packages/nightingale-markdown-formatter/src/*"
+      ],
       "nightingale-raw-formatter": [
         "../../../packages/nightingale-raw-formatter/src"
+      ],
+      "nightingale-raw-formatter/*": [
+        "../../../packages/nightingale-raw-formatter/src/*"
       ]
     }
   }

@@ -36,10 +36,18 @@
       }
     }
   },
+  "module:node": "./dist/index-node12.mjs",
+  "module:node-dev": "./dist/index-node12-dev.mjs",
+  "module:aliases-node": {
+    "./children.js": "./dist/children-node12.es.js"
+  },
+  "module:aliases-node-dev": {
+    "./children.js": "./dist/children-node12-dev.es.js"
+  },
   "scripts": {
     "build": "pob-build",
     "lint": "yarn run lint:eslint",
-    "lint:eslint": "yarn --cwd ../.. eslint --ext .js,.ts --report-unused-disable-directives --quiet packages/nightingale-console-example",
+    "lint:eslint": "yarn --cwd ../.. run eslint --ext .js,.mjs,.ts --report-unused-disable-directives --quiet packages/nightingale-console-example",
     "watch": "pob-watch"
   },
   "prettier": {
@@ -69,21 +77,21 @@
   },
   "devDependencies": {
     "@babel/core": "7.12.10",
-    "@pob/eslint-config": "42.0.1",
-    "@pob/eslint-config-node": "42.0.0",
-    "@pob/eslint-config-typescript": "42.0.1",
-    "@pob/eslint-config-typescript-node": "42.0.0",
+    "@pob/eslint-config": "43.0.0",
+    "@pob/eslint-config-node": "43.0.0",
+    "@pob/eslint-config-typescript": "43.0.0",
+    "@pob/eslint-config-typescript-node": "43.0.0",
     "@rollup/plugin-run": "2.0.2",
     "@typescript-eslint/eslint-plugin": "4.13.0",
     "@typescript-eslint/parser": "4.13.0",
-    "babel-preset-latest-node": "5.2.0",
-    "eslint": "7.17.0",
+    "babel-preset-latest-node": "5.4.0",
+    "eslint": "7.18.0",
     "eslint-import-resolver-node": "0.3.4",
     "eslint-plugin-import": "2.22.1",
     "eslint-plugin-node": "11.1.0",
     "eslint-plugin-unicorn": "25.0.1",
     "pob-babel": "26.3.0",
-    "rollup": "2.36.1",
+    "rollup": "2.36.2",
     "typescript": "4.1.3"
   }
 }

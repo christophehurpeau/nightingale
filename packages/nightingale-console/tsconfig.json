@@ -6,15 +6,7 @@
     /* No need to check .d.ts files */
     "skipLibCheck": true,
 
-    "rootDirs": [
-      "src",
-      "../../packages/nightingale-levels/src",
-      "../../packages/nightingale-debug/src",
-      "../../packages/nightingale-types/src",
-      "../../packages/nightingale-console-output/src",
-      "../../packages/nightingale-ansi-formatter/src",
-      "../../packages/nightingale-json-formatter/src"
-    ],
+    "rootDirs": ["src"],
 
     "target": "esnext" /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017','ES2018' or 'ESNEXT'. */,
     "module": "esnext" /* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', or 'ESNext'. */,
@@ -43,16 +35,28 @@
 
     "paths": {
       "nightingale-levels": ["../../../packages/nightingale-levels/src"],
+      "nightingale-levels/*": ["../../../packages/nightingale-levels/src/*"],
       "nightingale-debug": ["../../../packages/nightingale-debug/src"],
+      "nightingale-debug/*": ["../../../packages/nightingale-debug/src/*"],
       "nightingale-types": ["../../../packages/nightingale-types/src"],
+      "nightingale-types/*": ["../../../packages/nightingale-types/src/*"],
       "nightingale-console-output": [
         "../../../packages/nightingale-console-output/src"
+      ],
+      "nightingale-console-output/*": [
+        "../../../packages/nightingale-console-output/src/*"
       ],
       "nightingale-ansi-formatter": [
         "../../../packages/nightingale-ansi-formatter/src"
       ],
+      "nightingale-ansi-formatter/*": [
+        "../../../packages/nightingale-ansi-formatter/src/*"
+      ],
       "nightingale-json-formatter": [
         "../../../packages/nightingale-json-formatter/src"
+      ],
+      "nightingale-json-formatter/*": [
+        "../../../packages/nightingale-json-formatter/src/*"
       ]
     }
   }

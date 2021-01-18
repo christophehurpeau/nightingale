@@ -23,7 +23,7 @@
     "build": "yarn run build:definitions",
     "build:definitions": "tsc --lib esnext --noEmit --skipLibCheck ./lib/index.d.ts",
     "lint": "yarn run lint:eslint",
-    "lint:eslint": "yarn --cwd ../.. eslint --report-unused-disable-directives --quiet packages/nightingale-level-names"
+    "lint:eslint": "yarn --cwd ../.. run eslint --report-unused-disable-directives --quiet packages/nightingale-level-names"
   },
   "prettier": {
     "trailingComma": "all",
@@ -32,9 +32,9 @@
   },
   "pob": {},
   "devDependencies": {
-    "@pob/eslint-config": "42.0.1",
-    "@pob/eslint-config-node": "42.0.0",
-    "eslint": "7.17.0",
+    "@pob/eslint-config": "43.0.0",
+    "@pob/eslint-config-node": "43.0.0",
+    "eslint": "7.18.0",
     "eslint-import-resolver-node": "0.3.4",
     "eslint-plugin-import": "2.22.1",
     "eslint-plugin-node": "11.1.0",

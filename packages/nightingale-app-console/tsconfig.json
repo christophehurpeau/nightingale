@@ -6,12 +6,7 @@
     /* No need to check .d.ts files */
     "skipLibCheck": true,
 
-    "rootDirs": [
-      "src",
-      "../../packages/nightingale-browser-console/src",
-      "../../packages/nightingale-console/src",
-      "../../packages/nightingale/src"
-    ],
+    "rootDirs": ["src"],
 
     "target": "esnext" /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017','ES2018' or 'ESNEXT'. */,
     "module": "esnext" /* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', or 'ESNext'. */,
@@ -42,8 +37,13 @@
       "nightingale-browser-console": [
         "../../../packages/nightingale-browser-console/src"
       ],
+      "nightingale-browser-console/*": [
+        "../../../packages/nightingale-browser-console/src/*"
+      ],
       "nightingale-console": ["../../../packages/nightingale-console/src"],
-      "nightingale": ["../../../packages/nightingale/src"]
+      "nightingale-console/*": ["../../../packages/nightingale-console/src/*"],
+      "nightingale": ["../../../packages/nightingale/src"],
+      "nightingale/*": ["../../../packages/nightingale/src/*"]
     }
   }
 }
