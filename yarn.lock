@@ -8710,7 +8710,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nightingale-ansi-formatter@^11.0.3, nightingale-ansi-formatter@workspace:packages/nightingale-ansi-formatter":
+"nightingale-ansi-formatter@^11.0.5, nightingale-ansi-formatter@workspace:packages/nightingale-ansi-formatter":
   version: 0.0.0-use.local
   resolution: "nightingale-ansi-formatter@workspace:packages/nightingale-ansi-formatter"
   dependencies:
@@ -8732,8 +8732,8 @@ __metadata:
     eslint-plugin-node: 11.1.0
     eslint-plugin-unicorn: 25.0.1
     jest: 26.6.3
-    nightingale-formatter: ^11.0.3
-    nightingale-types: ^11.0.3
+    nightingale-formatter: ^11.0.5
+    nightingale-types: ^11.0.5
     pob-babel: 26.4.0
     pob-lcov-reporter: 4.0.1
     rollup: 2.36.2
@@ -8761,16 +8761,16 @@ __metadata:
     eslint-plugin-import: 2.22.1
     eslint-plugin-node: 11.1.0
     eslint-plugin-unicorn: 25.0.1
-    nightingale: ^11.0.3
-    nightingale-browser-console: ^11.0.3
-    nightingale-console: ^11.0.3
+    nightingale: ^11.0.5
+    nightingale-browser-console: ^11.0.5
+    nightingale-console: ^11.0.5
     pob-babel: 26.4.0
     rollup: 2.36.2
     typescript: 4.1.3
   languageName: unknown
   linkType: soft
 
-"nightingale-browser-console-formatter@^11.0.3, nightingale-browser-console-formatter@workspace:packages/nightingale-browser-console-formatter":
+"nightingale-browser-console-formatter@^11.0.5, nightingale-browser-console-formatter@workspace:packages/nightingale-browser-console-formatter":
   version: 0.0.0-use.local
   resolution: "nightingale-browser-console-formatter@workspace:packages/nightingale-browser-console-formatter"
   dependencies:
@@ -8791,9 +8791,9 @@ __metadata:
     eslint-plugin-node: 11.1.0
     eslint-plugin-unicorn: 25.0.1
     jest: 26.6.3
-    nightingale-formatter: ^11.0.3
-    nightingale-levels: ^11.0.3
-    nightingale-types: ^11.0.3
+    nightingale-formatter: ^11.0.5
+    nightingale-levels: ^11.0.5
+    nightingale-types: ^11.0.5
     pob-babel: 26.4.0
     pob-lcov-reporter: 4.0.1
     rollup: 2.36.2
@@ -8802,7 +8802,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"nightingale-browser-console@^11.0.3, nightingale-browser-console@workspace:packages/nightingale-browser-console":
+"nightingale-browser-console@^11.0.5, nightingale-browser-console@workspace:packages/nightingale-browser-console":
   version: 0.0.0-use.local
   resolution: "nightingale-browser-console@workspace:packages/nightingale-browser-console"
   dependencies:
@@ -8819,10 +8819,10 @@ __metadata:
     eslint-plugin-import: 2.22.1
     eslint-plugin-node: 11.1.0
     eslint-plugin-unicorn: 25.0.1
-    nightingale-browser-console-formatter: ^11.0.3
-    nightingale-console-output: ^11.0.3
-    nightingale-debug: ^11.0.3
-    nightingale-types: ^11.0.3
+    nightingale-browser-console-formatter: ^11.0.5
+    nightingale-console-output: ^11.0.5
+    nightingale-debug: ^11.0.5
+    nightingale-types: ^11.0.5
     pob-babel: 26.4.0
     rollup: 2.36.2
     typescript: 4.1.3
@@ -8847,15 +8847,15 @@ __metadata:
     eslint-plugin-import: 2.22.1
     eslint-plugin-node: 11.1.0
     eslint-plugin-unicorn: 25.0.1
-    nightingale: ^11.0.3
-    nightingale-console: ^11.0.3
+    nightingale: ^11.0.5
+    nightingale-console: ^11.0.5
     pob-babel: 26.4.0
     rollup: 2.36.2
     typescript: 4.1.3
   languageName: unknown
   linkType: soft
 
-"nightingale-console-output@^11.0.3, nightingale-console-output@workspace:packages/nightingale-console-output":
+"nightingale-console-output@^11.0.5, nightingale-console-output@workspace:packages/nightingale-console-output":
   version: 0.0.0-use.local
   resolution: "nightingale-console-output@workspace:packages/nightingale-console-output"
   dependencies:
@@ -8874,15 +8874,15 @@ __metadata:
     eslint-plugin-import: 2.22.1
     eslint-plugin-node: 11.1.0
     eslint-plugin-unicorn: 25.0.1
-    nightingale-levels: ^11.0.3
-    nightingale-types: ^11.0.3
+    nightingale-levels: ^11.0.5
+    nightingale-types: ^11.0.5
     pob-babel: 26.4.0
     rollup: 2.36.2
     typescript: 4.1.3
   languageName: unknown
   linkType: soft
 
-"nightingale-console@^11.0.3, nightingale-console@workspace:packages/nightingale-console":
+"nightingale-console@^11.0.5, nightingale-console@workspace:packages/nightingale-console":
   version: 0.0.0-use.local
   resolution: "nightingale-console@workspace:packages/nightingale-console"
   dependencies:
@@ -8900,19 +8900,19 @@ __metadata:
     eslint-plugin-import: 2.22.1
     eslint-plugin-node: 11.1.0
     eslint-plugin-unicorn: 25.0.1
-    nightingale-ansi-formatter: ^11.0.3
-    nightingale-console-output: ^11.0.3
-    nightingale-debug: ^11.0.3
-    nightingale-json-formatter: ^11.0.3
-    nightingale-levels: ^11.0.3
-    nightingale-types: ^11.0.3
+    nightingale-ansi-formatter: ^11.0.5
+    nightingale-console-output: ^11.0.5
+    nightingale-debug: ^11.0.5
+    nightingale-json-formatter: ^11.0.5
+    nightingale-levels: ^11.0.5
+    nightingale-types: ^11.0.5
     pob-babel: 26.4.0
     rollup: 2.36.2
     typescript: 4.1.3
   languageName: unknown
   linkType: soft
 
-"nightingale-debug@^11.0.3, nightingale-debug@workspace:packages/nightingale-debug":
+"nightingale-debug@^11.0.5, nightingale-debug@workspace:packages/nightingale-debug":
   version: 0.0.0-use.local
   resolution: "nightingale-debug@workspace:packages/nightingale-debug"
   dependencies:
@@ -8933,7 +8933,7 @@ __metadata:
     eslint-plugin-node: 11.1.0
     eslint-plugin-unicorn: 25.0.1
     jest: 26.6.3
-    nightingale-levels: ^11.0.3
+    nightingale-levels: ^11.0.5
     pob-babel: 26.4.0
     pob-lcov-reporter: 4.0.1
     rollup: 2.36.2
@@ -8960,19 +8960,19 @@ __metadata:
     eslint-plugin-import: 2.22.1
     eslint-plugin-node: 11.1.0
     eslint-plugin-unicorn: 25.0.1
-    nightingale: ^11.0.3
-    nightingale-console: ^11.0.3
-    nightingale-console-output: ^11.0.3
-    nightingale-json-formatter: ^11.0.3
-    nightingale-string: ^11.0.3
-    nightingale-types: ^11.0.3
+    nightingale: ^11.0.5
+    nightingale-console: ^11.0.5
+    nightingale-console-output: ^11.0.5
+    nightingale-json-formatter: ^11.0.5
+    nightingale-string: ^11.0.5
+    nightingale-types: ^11.0.5
     pob-babel: 26.4.0
     rollup: 2.36.2
     typescript: 4.1.3
   languageName: unknown
   linkType: soft
 
-"nightingale-formatter@^11.0.3, nightingale-formatter@workspace:packages/nightingale-formatter":
+"nightingale-formatter@^11.0.5, nightingale-formatter@workspace:packages/nightingale-formatter":
   version: 0.0.0-use.local
   resolution: "nightingale-formatter@workspace:packages/nightingale-formatter"
   dependencies:
@@ -8993,8 +8993,8 @@ __metadata:
     eslint-plugin-node: 11.1.0
     eslint-plugin-unicorn: 25.0.1
     jest: 26.6.3
-    nightingale-levels: ^11.0.3
-    nightingale-types: ^11.0.3
+    nightingale-levels: ^11.0.5
+    nightingale-types: ^11.0.5
     pob-babel: 26.4.0
     pob-lcov-reporter: 4.0.1
     rollup: 2.36.2
@@ -9024,9 +9024,9 @@ __metadata:
     eslint-plugin-node: 11.1.0
     eslint-plugin-unicorn: 25.0.1
     jest: 26.6.3
-    nightingale-formatter: ^11.0.3
-    nightingale-levels: ^11.0.3
-    nightingale-types: ^11.0.3
+    nightingale-formatter: ^11.0.5
+    nightingale-levels: ^11.0.5
+    nightingale-types: ^11.0.5
     pob-babel: 26.4.0
     pob-lcov-reporter: 4.0.1
     rollup: 2.36.2
@@ -9035,7 +9035,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"nightingale-json-formatter@^11.0.3, nightingale-json-formatter@workspace:packages/nightingale-json-formatter":
+"nightingale-json-formatter@^11.0.5, nightingale-json-formatter@workspace:packages/nightingale-json-formatter":
   version: 0.0.0-use.local
   resolution: "nightingale-json-formatter@workspace:packages/nightingale-json-formatter"
   dependencies:
@@ -9056,9 +9056,9 @@ __metadata:
     eslint-plugin-node: 11.1.0
     eslint-plugin-unicorn: 25.0.1
     jest: 26.6.3
-    nightingale-formatter: ^11.0.3
-    nightingale-levels: ^11.0.3
-    nightingale-types: ^11.0.3
+    nightingale-formatter: ^11.0.5
+    nightingale-levels: ^11.0.5
+    nightingale-types: ^11.0.5
     pob-babel: 26.4.0
     pob-lcov-reporter: 4.0.1
     rollup: 2.36.2
@@ -9081,7 +9081,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"nightingale-levels@^11.0.3, nightingale-levels@workspace:packages/nightingale-levels":
+"nightingale-levels@^11.0.5, nightingale-levels@workspace:packages/nightingale-levels":
   version: 0.0.0-use.local
   resolution: "nightingale-levels@workspace:packages/nightingale-levels"
   dependencies:
@@ -9105,7 +9105,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"nightingale-logger@^11.0.3, nightingale-logger@workspace:packages/nightingale-logger":
+"nightingale-logger@^11.0.5, nightingale-logger@workspace:packages/nightingale-logger":
   version: 0.0.0-use.local
   resolution: "nightingale-logger@workspace:packages/nightingale-logger"
   dependencies:
@@ -9127,8 +9127,8 @@ __metadata:
     eslint-plugin-node: 11.1.0
     eslint-plugin-unicorn: 25.0.1
     jest: 26.6.3
-    nightingale-levels: ^11.0.3
-    nightingale-types: ^11.0.3
+    nightingale-levels: ^11.0.5
+    nightingale-types: ^11.0.5
     pob-babel: 26.4.0
     pob-lcov-reporter: 4.0.1
     rollup: 2.36.2
@@ -9137,7 +9137,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"nightingale-markdown-formatter@^11.0.3, nightingale-markdown-formatter@workspace:packages/nightingale-markdown-formatter":
+"nightingale-markdown-formatter@^11.0.5, nightingale-markdown-formatter@workspace:packages/nightingale-markdown-formatter":
   version: 0.0.0-use.local
   resolution: "nightingale-markdown-formatter@workspace:packages/nightingale-markdown-formatter"
   dependencies:
@@ -9158,9 +9158,9 @@ __metadata:
     eslint-plugin-node: 11.1.0
     eslint-plugin-unicorn: 25.0.1
     jest: 26.6.3
-    nightingale-formatter: ^11.0.3
-    nightingale-levels: ^11.0.3
-    nightingale-types: ^11.0.3
+    nightingale-formatter: ^11.0.5
+    nightingale-levels: ^11.0.5
+    nightingale-types: ^11.0.5
     pob-babel: 26.4.0
     pob-lcov-reporter: 4.0.1
     rollup: 2.36.2
@@ -9195,7 +9195,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"nightingale-raw-formatter@^11.0.3, nightingale-raw-formatter@workspace:packages/nightingale-raw-formatter":
+"nightingale-raw-formatter@^11.0.5, nightingale-raw-formatter@workspace:packages/nightingale-raw-formatter":
   version: 0.0.0-use.local
   resolution: "nightingale-raw-formatter@workspace:packages/nightingale-raw-formatter"
   dependencies:
@@ -9216,9 +9216,9 @@ __metadata:
     eslint-plugin-node: 11.1.0
     eslint-plugin-unicorn: 25.0.1
     jest: 26.6.3
-    nightingale-formatter: ^11.0.3
-    nightingale-levels: ^11.0.3
-    nightingale-types: ^11.0.3
+    nightingale-formatter: ^11.0.5
+    nightingale-levels: ^11.0.5
+    nightingale-types: ^11.0.5
     pob-babel: 26.4.0
     pob-lcov-reporter: 4.0.1
     rollup: 2.36.2
@@ -9245,8 +9245,8 @@ __metadata:
     eslint-plugin-import: 2.22.1
     eslint-plugin-node: 11.1.0
     eslint-plugin-unicorn: 25.0.1
-    nightingale-levels: ^11.0.3
-    nightingale-types: ^11.0.3
+    nightingale-levels: ^11.0.5
+    nightingale-types: ^11.0.5
     pob-babel: 26.4.0
     rollup: 2.36.2
     typescript: 4.1.3
@@ -9274,10 +9274,10 @@ __metadata:
     eslint-plugin-node: 11.1.0
     eslint-plugin-unicorn: 25.0.1
     jest: 26.6.3
-    nightingale-levels: ^11.0.3
-    nightingale-markdown-formatter: ^11.0.3
-    nightingale-raw-formatter: ^11.0.3
-    nightingale-types: ^11.0.3
+    nightingale-levels: ^11.0.5
+    nightingale-markdown-formatter: ^11.0.5
+    nightingale-raw-formatter: ^11.0.5
+    nightingale-types: ^11.0.5
     pob-babel: 26.4.0
     pob-lcov-reporter: 4.0.1
     request: ^2.88.0
@@ -9287,7 +9287,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"nightingale-string@^11.0.3, nightingale-string@workspace:packages/nightingale-string":
+"nightingale-string@^11.0.5, nightingale-string@workspace:packages/nightingale-string":
   version: 0.0.0-use.local
   resolution: "nightingale-string@workspace:packages/nightingale-string"
   dependencies:
@@ -9304,15 +9304,15 @@ __metadata:
     eslint-plugin-import: 2.22.1
     eslint-plugin-node: 11.1.0
     eslint-plugin-unicorn: 25.0.1
-    nightingale-raw-formatter: ^11.0.3
-    nightingale-types: ^11.0.3
+    nightingale-raw-formatter: ^11.0.5
+    nightingale-types: ^11.0.5
     pob-babel: 26.4.0
     rollup: 2.36.2
     typescript: 4.1.3
   languageName: unknown
   linkType: soft
 
-"nightingale-types@^11.0.3, nightingale-types@workspace:packages/nightingale-types":
+"nightingale-types@^11.0.5, nightingale-types@workspace:packages/nightingale-types":
   version: 0.0.0-use.local
   resolution: "nightingale-types@workspace:packages/nightingale-types"
   dependencies:
@@ -9330,7 +9330,7 @@ __metadata:
     eslint-plugin-import: 2.22.1
     eslint-plugin-node: 11.1.0
     eslint-plugin-unicorn: 25.0.1
-    nightingale-levels: ^11.0.3
+    nightingale-levels: ^11.0.5
     pob-babel: 26.4.0
     rollup: 2.36.2
     typescript: 4.1.3
@@ -9355,7 +9355,7 @@ __metadata:
     eslint-plugin-import: 2.22.1
     eslint-plugin-node: 11.1.0
     eslint-plugin-unicorn: 25.0.1
-    nightingale-types: ^11.0.3
+    nightingale-types: ^11.0.5
     pob-babel: 26.4.0
     rollup: 2.36.2
     typescript: 4.1.3
@@ -9381,14 +9381,14 @@ __metadata:
     eslint-plugin-node: 11.1.0
     eslint-plugin-unicorn: 25.0.1
     nightingale-level-names: ^11.0.1
-    nightingale-types: ^11.0.3
+    nightingale-types: ^11.0.5
     pob-babel: 26.4.0
     rollup: 2.36.2
     typescript: 4.1.3
   languageName: unknown
   linkType: soft
 
-"nightingale@^11.0.3, nightingale@workspace:packages/nightingale":
+"nightingale@^11.0.5, nightingale@workspace:packages/nightingale":
   version: 0.0.0-use.local
   resolution: "nightingale@workspace:packages/nightingale"
   dependencies:
@@ -9410,10 +9410,10 @@ __metadata:
     eslint-plugin-node: 11.1.0
     eslint-plugin-unicorn: 25.0.1
     jest: 26.6.3
-    nightingale-levels: ^11.0.3
-    nightingale-logger: ^11.0.3
-    nightingale-string: ^11.0.3
-    nightingale-types: ^11.0.3
+    nightingale-levels: ^11.0.5
+    nightingale-logger: ^11.0.5
+    nightingale-string: ^11.0.5
+    nightingale-types: ^11.0.5
     pob-babel: 26.4.0
     pob-lcov-reporter: 4.0.1
     rollup: 2.36.2

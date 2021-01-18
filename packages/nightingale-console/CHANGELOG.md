@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [11.0.5](https://github.com/christophehurpeau/nightingale/compare/v11.0.4...v11.0.5) (2021-01-18)
+
+
+### Bug Fixes
+
+* update pob-babel for better support ([44119b7](https://github.com/christophehurpeau/nightingale/commit/44119b72437e0572757a118985c7a205cb9d2e0a))
+
+
+
+
+
 ## [11.0.3](https://github.com/christophehurpeau/nightingale/compare/v11.0.2...v11.0.3) (2021-01-18)
 
 **Note:** Version bump only for package nightingale-console
