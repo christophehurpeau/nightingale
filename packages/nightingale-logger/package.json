@@ -39,15 +39,15 @@
       "browser": {
         "browser:modern": {
           "development": {
-            "import": "./dist/index-browsermodern-dev.mjs"
+            "import": "./dist/index-browsermodern-dev.es.js"
           },
-          "import": "./dist/index-browsermodern.mjs"
+          "import": "./dist/index-browsermodern.es.js"
         },
         "development": {
-          "import": "./dist/index-browser-dev.mjs",
+          "import": "./dist/index-browser-dev.es.js",
           "require": "./dist/index-browser-dev.cjs.js"
         },
-        "import": "./dist/index-browser.mjs",
+        "import": "./dist/index-browser.es.js",
         "require": "./dist/index-browser.cjs.js"
       }
     }
