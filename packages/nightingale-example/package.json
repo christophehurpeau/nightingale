@@ -127,15 +127,15 @@
     "@pob/eslint-config-typescript": "43.0.0",
     "@pob/eslint-config-typescript-node": "43.0.0",
     "@rollup/plugin-run": "2.0.2",
-    "@typescript-eslint/eslint-plugin": "4.13.0",
-    "@typescript-eslint/parser": "4.13.0",
+    "@typescript-eslint/eslint-plugin": "4.14.0",
+    "@typescript-eslint/parser": "4.14.0",
     "babel-preset-latest-node": "5.4.0",
     "eslint": "7.18.0",
     "eslint-import-resolver-node": "0.3.4",
     "eslint-plugin-import": "2.22.1",
     "eslint-plugin-node": "11.1.0",
     "eslint-plugin-unicorn": "25.0.1",
-    "pob-babel": "26.3.0",
+    "pob-babel": "26.4.0",
     "rollup": "2.36.2",
     "typescript": "4.1.3"
   }

@@ -5,7 +5,7 @@ import createFindDebugLevel from 'nightingale-debug';
 function getDebugString() {
   var _document$location;
 
-  var querystring = (_document$location = document.location) == null ? void 0 : _document$location.search;
+  var querystring = (_document$location = document.location) === null || _document$location === void 0 ? void 0 : _document$location.search;
   var debugFromLocalStorage = window.localStorage && localStorage.getItem('debug') || '';
 
   if (!querystring) {
