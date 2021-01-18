@@ -56,7 +56,7 @@
   "module:browser-dev": "./dist/index-browser-dev.es.js",
   "module:modern-browsers": "./dist/index-browsermodern.es.js",
   "module:modern-browsers-dev": "./dist/index-browsermodern-dev.es.js",
-  "sideEffects": false,
+  "sideEffects": true,
   "scripts": {
     "build": "pob-build && yarn run build:definitions",
     "build:definitions": "tsc -p tsconfig.build.json",
