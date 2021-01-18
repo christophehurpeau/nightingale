@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [11.0.1](https://github.com/christophehurpeau/nightingale/compare/v11.0.0...v11.0.1) (2021-01-18)
+
+
+### Bug Fixes
+
+* bring back support for webpack 4 ([9134da3](https://github.com/christophehurpeau/nightingale/commit/9134da3b85fb46da826c4f59631942373b51f592))
+
+
+
+
+
 # [11.0.0](https://github.com/christophehurpeau/nightingale/compare/v10.0.1...v11.0.0) (2020-12-12)
 
 
