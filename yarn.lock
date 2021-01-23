@@ -2449,9 +2449,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pob/eslint-config-node@npm:43.0.0":
-  version: 43.0.0
-  resolution: "@pob/eslint-config-node@npm:43.0.0"
+"@pob/eslint-config-node@npm:43.1.0":
+  version: 43.1.0
+  resolution: "@pob/eslint-config-node@npm:43.1.0"
   dependencies:
     "@pob/use-eslint-plugin": ^43.0.0
     eslint-plugin-node: ^11.1.0
@@ -2461,7 +2461,7 @@ __metadata:
   peerDependenciesMeta:
     eslint-plugin-node:
       optional: true
-  checksum: edbcae6aa2d56392c4b6ca1d33583e29a47d076d24f8ea28274f3e82af1d5da9d8ad69f8b1e20052d62f2876cfe669a215248f45d92735f266fe0d71406d7ef8
+  checksum: 05670523d5cda2ac29b02a92538afb049fbd586137dac8b77a8587ca3dd83a854b4dee62bd7fb0e16f6be5e03aa9afdbd04279e11c24f35c77366478f5fd74aa
   languageName: node
   linkType: hard
 
@@ -8716,7 +8716,7 @@ __metadata:
   dependencies:
     "@babel/core": 7.12.10
     "@pob/eslint-config": 43.0.0
-    "@pob/eslint-config-node": 43.0.0
+    "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
     "@pob/eslint-config-typescript-node": 43.0.0
     "@types/ansi-styles": ^3.2.1
@@ -8749,7 +8749,7 @@ __metadata:
     "@babel/core": 7.12.10
     "@babel/preset-env": 7.12.11
     "@pob/eslint-config": 43.0.0
-    "@pob/eslint-config-node": 43.0.0
+    "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
     "@types/source-map-support": 0.4.2
     "@typescript-eslint/eslint-plugin": 4.14.0
@@ -8777,7 +8777,7 @@ __metadata:
     "@babel/core": 7.12.10
     "@babel/preset-env": 7.12.11
     "@pob/eslint-config": 43.0.0
-    "@pob/eslint-config-node": 43.0.0
+    "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
     "@types/jest": 26.0.20
     "@typescript-eslint/eslint-plugin": 4.14.0
@@ -8809,7 +8809,7 @@ __metadata:
     "@babel/core": 7.12.10
     "@babel/preset-env": 7.12.11
     "@pob/eslint-config": 43.0.0
-    "@pob/eslint-config-node": 43.0.0
+    "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
     "@typescript-eslint/eslint-plugin": 4.14.0
     "@typescript-eslint/parser": 4.14.0
@@ -8835,7 +8835,7 @@ __metadata:
   dependencies:
     "@babel/core": 7.12.10
     "@pob/eslint-config": 43.0.0
-    "@pob/eslint-config-node": 43.0.0
+    "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
     "@pob/eslint-config-typescript-node": 43.0.0
     "@rollup/plugin-run": 2.0.2
@@ -8862,7 +8862,7 @@ __metadata:
     "@babel/core": 7.12.10
     "@babel/preset-env": 7.12.11
     "@pob/eslint-config": 43.0.0
-    "@pob/eslint-config-node": 43.0.0
+    "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
     "@types/node": ">=12.0.0"
     "@typescript-eslint/eslint-plugin": 4.14.0
@@ -8888,7 +8888,7 @@ __metadata:
   dependencies:
     "@babel/core": 7.12.10
     "@pob/eslint-config": 43.0.0
-    "@pob/eslint-config-node": 43.0.0
+    "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
     "@pob/eslint-config-typescript-node": 43.0.0
     "@types/node": ">=12.0.0"
@@ -8919,7 +8919,7 @@ __metadata:
     "@babel/core": 7.12.10
     "@babel/preset-env": 7.12.11
     "@pob/eslint-config": 43.0.0
-    "@pob/eslint-config-node": 43.0.0
+    "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
     "@types/jest": 26.0.20
     "@typescript-eslint/eslint-plugin": 4.14.0
@@ -8948,7 +8948,7 @@ __metadata:
   dependencies:
     "@babel/core": 7.12.10
     "@pob/eslint-config": 43.0.0
-    "@pob/eslint-config-node": 43.0.0
+    "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
     "@pob/eslint-config-typescript-node": 43.0.0
     "@rollup/plugin-run": 2.0.2
@@ -8979,7 +8979,7 @@ __metadata:
     "@babel/core": 7.12.10
     "@babel/preset-env": 7.12.11
     "@pob/eslint-config": 43.0.0
-    "@pob/eslint-config-node": 43.0.0
+    "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
     "@types/jest": 26.0.20
     "@typescript-eslint/eslint-plugin": 4.14.0
@@ -9010,7 +9010,7 @@ __metadata:
     "@babel/core": 7.12.10
     "@babel/preset-env": 7.12.11
     "@pob/eslint-config": 43.0.0
-    "@pob/eslint-config-node": 43.0.0
+    "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
     "@types/jest": 26.0.20
     "@typescript-eslint/eslint-plugin": 4.14.0
@@ -9042,7 +9042,7 @@ __metadata:
     "@babel/core": 7.12.10
     "@babel/preset-env": 7.12.11
     "@pob/eslint-config": 43.0.0
-    "@pob/eslint-config-node": 43.0.0
+    "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
     "@types/jest": 26.0.20
     "@typescript-eslint/eslint-plugin": 4.14.0
@@ -9072,7 +9072,7 @@ __metadata:
   resolution: "nightingale-level-names@workspace:packages/nightingale-level-names"
   dependencies:
     "@pob/eslint-config": 43.0.0
-    "@pob/eslint-config-node": 43.0.0
+    "@pob/eslint-config-node": 43.1.0
     eslint: 7.18.0
     eslint-import-resolver-node: 0.3.4
     eslint-plugin-import: 2.22.1
@@ -9088,7 +9088,7 @@ __metadata:
     "@babel/core": 7.12.10
     "@babel/preset-env": 7.12.11
     "@pob/eslint-config": 43.0.0
-    "@pob/eslint-config-node": 43.0.0
+    "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
     "@typescript-eslint/eslint-plugin": 4.14.0
     "@typescript-eslint/parser": 4.14.0
@@ -9112,7 +9112,7 @@ __metadata:
     "@babel/core": 7.12.10
     "@babel/preset-env": 7.12.11
     "@pob/eslint-config": 43.0.0
-    "@pob/eslint-config-node": 43.0.0
+    "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
     "@types/jest": 26.0.20
     "@types/node": ">=12.0.0"
@@ -9144,7 +9144,7 @@ __metadata:
     "@babel/core": 7.12.10
     "@babel/preset-env": 7.12.11
     "@pob/eslint-config": 43.0.0
-    "@pob/eslint-config-node": 43.0.0
+    "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
     "@types/jest": 26.0.20
     "@typescript-eslint/eslint-plugin": 4.14.0
@@ -9175,7 +9175,7 @@ __metadata:
   dependencies:
     "@pob/commitlint-config": 2.0.1
     "@pob/eslint-config": 43.0.0
-    "@pob/eslint-config-node": 43.0.0
+    "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
     "@pob/eslint-config-typescript-node": 43.0.0
     "@pob/lerna-light": 3.23.0
@@ -9202,7 +9202,7 @@ __metadata:
     "@babel/core": 7.12.10
     "@babel/preset-env": 7.12.11
     "@pob/eslint-config": 43.0.0
-    "@pob/eslint-config-node": 43.0.0
+    "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
     "@types/jest": 26.0.20
     "@typescript-eslint/eslint-plugin": 4.14.0
@@ -9233,7 +9233,7 @@ __metadata:
   dependencies:
     "@babel/core": 7.12.10
     "@pob/eslint-config": 43.0.0
-    "@pob/eslint-config-node": 43.0.0
+    "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
     "@pob/eslint-config-typescript-node": 43.0.0
     "@sentry/node": ^5.11.1
@@ -9259,7 +9259,7 @@ __metadata:
   dependencies:
     "@babel/core": 7.12.10
     "@pob/eslint-config": 43.0.0
-    "@pob/eslint-config-node": 43.0.0
+    "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
     "@pob/eslint-config-typescript-node": 43.0.0
     "@types/jest": 26.0.20
@@ -9293,7 +9293,7 @@ __metadata:
   dependencies:
     "@babel/core": 7.12.10
     "@pob/eslint-config": 43.0.0
-    "@pob/eslint-config-node": 43.0.0
+    "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
     "@pob/eslint-config-typescript-node": 43.0.0
     "@typescript-eslint/eslint-plugin": 4.14.0
@@ -9319,7 +9319,7 @@ __metadata:
     "@babel/core": 7.12.10
     "@babel/preset-env": 7.12.11
     "@pob/eslint-config": 43.0.0
-    "@pob/eslint-config-node": 43.0.0
+    "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
     "@typescript-eslint/eslint-plugin": 4.14.0
     "@typescript-eslint/parser": 4.14.0
@@ -9343,7 +9343,7 @@ __metadata:
   dependencies:
     "@babel/core": 7.12.10
     "@pob/eslint-config": 43.0.0
-    "@pob/eslint-config-node": 43.0.0
+    "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
     "@pob/eslint-config-typescript-node": 43.0.0
     "@types/node": ">=12.0.0"
@@ -9369,7 +9369,7 @@ __metadata:
     "@babel/core": 7.12.10
     "@babel/preset-env": 7.12.11
     "@pob/eslint-config": 43.0.0
-    "@pob/eslint-config-node": 43.0.0
+    "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
     "@typescript-eslint/eslint-plugin": 4.14.0
     "@typescript-eslint/parser": 4.14.0
@@ -9395,7 +9395,7 @@ __metadata:
     "@babel/core": 7.12.10
     "@babel/preset-env": 7.12.11
     "@pob/eslint-config": 43.0.0
-    "@pob/eslint-config-node": 43.0.0
+    "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
     "@types/jest": 26.0.20
     "@types/node": ">=12.0.0"
