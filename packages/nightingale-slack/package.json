@@ -116,7 +116,7 @@
     "@pob/eslint-config-typescript-node": "43.0.0",
     "@types/jest": "26.0.20",
     "@types/request": "2.48.5",
-    "@typescript-eslint/eslint-plugin": "4.14.0",
+    "@typescript-eslint/eslint-plugin": "4.14.1",
     "@typescript-eslint/parser": "4.14.0",
     "babel-jest": "26.6.3",
     "babel-preset-latest-node": "5.4.0",
