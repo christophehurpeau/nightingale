@@ -19,7 +19,11 @@ npm install --save nightingale-levels
 ## Usage
 
 ```js
-import nightingaleLevels from 'nightingale-levels';
+import { Level } from 'nightingale-levels';
 
-console.log(nightingaleLevels);
+console.log(Level.INFO);
 ```
+
+## List of levels
+
+see https://christophehurpeau.github.io/nightingale/enums/nightingale_levels_src.level.html

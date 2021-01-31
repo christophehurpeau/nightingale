@@ -15,14 +15,23 @@ const logger = new Logger__default('app');
 const appLogger = logger;
 Error.stackTraceLimit = Infinity;
 Logger.listenUnhandledErrors(logger);
-Logger.configure([{
-  handlers: [new ConsoleHandler(Logger.Level.INFO)]
+const appMinLevel = process.env.NIGHTINGALE_APP_MIN_LEVEL === undefined ? Number(process.env.NIGHTINGALE_APP_MIN_LEVEL) : Logger.Level.DEBUG;
+const libMinLevel = process.env.NIGHTINGALE_LIB_MIN_LEVEL === undefined ? Number(process.env.NIGHTINGALE_LIB_MIN_LEVEL) : Logger.Level.INFO;
+Logger.configure(appMinLevel !== libMinLevel ? [{
+  pattern: /^app(:|$)/,
+  handlers: [new ConsoleHandler(appMinLevel)],
+  stop: true
+}, {
+  handlers: [new ConsoleHandler(libMinLevel)]
+}] : [{
+  handlers: [new ConsoleHandler(libMinLevel)]
 }]);
 
 exports.Level = Logger.Level;
 exports.addConfig = Logger.addConfig;
 exports.configure = Logger.configure;
 exports.levels = Logger.levels;
+exports.ConsoleHandler = ConsoleHandler;
 exports.appLogger = appLogger;
 exports.logger = logger;
 //# sourceMappingURL=index-node12.cjs.js.map

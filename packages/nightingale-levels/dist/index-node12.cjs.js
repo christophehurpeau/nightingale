@@ -21,7 +21,6 @@ Object.defineProperty(exports, '__esModule', { value: true });
  * </ul>
  *
  */
-var Level;
 
 (function (Level) {
   Level[Level["ALL"] = 0] = "ALL";
@@ -36,9 +35,9 @@ var Level;
   Level[Level["FATAL"] = 550] = "FATAL";
   Level[Level["ALERT"] = 550] = "ALERT";
   Level[Level["EMERGENCY"] = 600] = "EMERGENCY";
-})(Level || (Level = {}));
+})(exports.Level || (exports.Level = {}));
 
-const Level$1 = Level;
+const Level = exports.Level;
 
-exports.default = Level$1;
+exports.default = Level;
 //# sourceMappingURL=index-node12.cjs.js.map

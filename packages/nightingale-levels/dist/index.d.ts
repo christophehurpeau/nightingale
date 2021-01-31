@@ -17,7 +17,7 @@
  * </ul>
  *
  */
-declare enum Level {
+export declare enum Level {
     /** Log everything. Not a level. */
     ALL = 0,
     /** Trace information */

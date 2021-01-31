@@ -1,7 +1,6 @@
 import { PRODUCTION, POB_TARGET } from 'pob-babel';
 import Logger, {
   configure,
-  addConfig,
   Level,
   levels,
   listenUnhandledErrors,
@@ -9,10 +8,14 @@ import Logger, {
 import BrowserConsoleHandler from 'nightingale-browser-console';
 import TerminalConsoleHandler from 'nightingale-console';
 
-const ConsoleHandler =
+export { configure, addConfig } from 'nightingale';
+
+export const ConsoleHandler:
+  | typeof BrowserConsoleHandler
+  | typeof TerminalConsoleHandler =
   POB_TARGET === 'browser' ? BrowserConsoleHandler : TerminalConsoleHandler;
 
-export { configure, addConfig, Level, levels };
+export { Level, levels };
 
 export const logger = new Logger('app');
 export const appLogger = logger;
@@ -22,21 +25,35 @@ if (POB_TARGET !== 'browser') {
   listenUnhandledErrors(logger);
 }
 
+const appMinLevel =
+  POB_TARGET !== 'browser' &&
+  process.env.NIGHTINGALE_APP_MIN_LEVEL === undefined
+    ? Number(process.env.NIGHTINGALE_APP_MIN_LEVEL)
+    : PRODUCTION
+    ? Level.DEBUG
+    : Level.INFO;
+
+const libMinLevel =
+  POB_TARGET !== 'browser' &&
+  process.env.NIGHTINGALE_LIB_MIN_LEVEL === undefined
+    ? Number(process.env.NIGHTINGALE_LIB_MIN_LEVEL)
+    : Level.INFO;
+
 configure(
-  !PRODUCTION
+  appMinLevel !== libMinLevel
     ? [
         {
           pattern: /^app(:|$)/,
-          handlers: [new ConsoleHandler(Level.DEBUG)],
+          handlers: [new ConsoleHandler(appMinLevel)],
           stop: true,
         },
         {
-          handlers: [new ConsoleHandler(Level.INFO)],
+          handlers: [new ConsoleHandler(libMinLevel)],
         },
       ]
     : [
         {
-          handlers: [new ConsoleHandler(Level.INFO)],
+          handlers: [new ConsoleHandler(libMinLevel)],
         },
       ],
 );

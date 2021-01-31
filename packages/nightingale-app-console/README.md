@@ -19,14 +19,33 @@ npm install --save nightingale-app-console
 ## Usage
 
 ```js
-import { logger } from 'nightingale-app-console';
+import { appLogger } from 'nightingale-app-console';
 
-logger.info('hello');
+appLogger.info('hello');
 ```
 
 ## Create children
 
 ```js
-const myServiceLogger = logger.child('services:myService');
+const myServiceLogger = appLogger.child('services:myService');
 myServiceLogger.debug('started');
+```
+
+## Import the right bundle with webpack
+
+Configure `webpackConfig.resolve.mainFields`:
+
+- node: `env === 'production' ? ['module:node', 'module', 'main'] : ['module:node-dev', 'module:node', 'module-dev', 'module', 'main']`
+- browser: `env === 'production' ? ['browser', 'module', 'main'] : ['browser-dev', 'browser', 'module-dev', 'module', 'main']`
+- modern browser: `env === 'production' ? ['module:modern-browsers', 'browser', 'module', 'main'] : ['module:modern-browsers-dev','module:modern-browsers', 'browser-dev', 'browser', 'module', 'main']`
+
+## Change default levels
+
+Default level for app (appLogger and children): in production, `Level.INFO` () else `Level.DEBUG`
+Default level for lib: `Level.INFO`
+
+You can use `process.env.NIGHTINGALE_APP_MIN_LEVEL` and `process.env.NIGHTINGALE_LIB_MIN_LEVEL` to change theses levels.
+
+```
+NIGHTINGALE_APP_MIN_LEVEL=0 node .
 ```

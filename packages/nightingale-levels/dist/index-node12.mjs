@@ -17,7 +17,7 @@
  * </ul>
  *
  */
-var Level;
+let Level;
 
 (function (Level) {
   Level[Level["ALL"] = 0] = "ALL";
@@ -37,4 +37,5 @@ var Level;
 const Level$1 = Level;
 
 export default Level$1;
+export { Level };
 //# sourceMappingURL=index-node12.mjs.map

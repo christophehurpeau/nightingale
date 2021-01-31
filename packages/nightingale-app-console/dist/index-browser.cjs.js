@@ -13,14 +13,23 @@ var BrowserConsoleHandler__default = /*#__PURE__*/_interopDefaultLegacy(BrowserC
 var ConsoleHandler = BrowserConsoleHandler__default;
 var logger = new Logger__default('app');
 var appLogger = logger;
-Logger.configure([{
-  handlers: [new ConsoleHandler(Logger.Level.INFO)]
+var appMinLevel = Logger.Level.DEBUG;
+var libMinLevel = Logger.Level.INFO;
+Logger.configure(appMinLevel !== libMinLevel ? [{
+  pattern: /^app(:|$)/,
+  handlers: [new ConsoleHandler(appMinLevel)],
+  stop: true
+}, {
+  handlers: [new ConsoleHandler(libMinLevel)]
+}] : [{
+  handlers: [new ConsoleHandler(libMinLevel)]
 }]);
 
 exports.Level = Logger.Level;
 exports.addConfig = Logger.addConfig;
 exports.configure = Logger.configure;
 exports.levels = Logger.levels;
+exports.ConsoleHandler = ConsoleHandler;
 exports.appLogger = appLogger;
 exports.logger = logger;
 //# sourceMappingURL=index-browser.cjs.js.map
