@@ -1,4 +1,4 @@
-import browserConsoleFormatter from 'nightingale-browser-console-formatter';
+import { createBrowserConsoleFormatter } from 'nightingale-browser-console-formatter';
 import consoleOutput from 'nightingale-console-output';
 import createFindDebugLevel from 'nightingale-debug';
 
@@ -20,16 +20,32 @@ function getDebugString() {
 
 const findDebugLevel = (minLevel, key) => createFindDebugLevel(getDebugString())(minLevel, key);
 
-const handle = record => {
-  consoleOutput(browserConsoleFormatter(record), record);
+const getDefaultTheme = () => {
+  try {
+    const configInLocalStorage = localStorage.getItem('NIGHTINGALE_THEME');
+
+    if (configInLocalStorage && configInLocalStorage === 'dark') {
+      return configInLocalStorage;
+    }
+  } catch {}
+
+  return 'light';
+};
+
+const createHandler = (theme = getDefaultTheme()) => {
+  const browserConsoleFormatter = createBrowserConsoleFormatter(theme);
+  return record => {
+    consoleOutput(browserConsoleFormatter(record), record);
+  };
 };
 
 class BrowserConsoleHandler {
-  constructor(minLevel) {
+  constructor(minLevel, options = {}) {
     this.minLevel = 0;
-    this.handle = handle;
 
     this.isHandling = (level, key) => level >= findDebugLevel(minLevel, key);
+
+    this.handle = createHandler(options.theme);
   }
 
 }

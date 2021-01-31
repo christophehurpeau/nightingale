@@ -1,4 +1,4 @@
-import browserConsoleFormatter from 'nightingale-browser-console-formatter';
+import { createBrowserConsoleFormatter } from 'nightingale-browser-console-formatter';
 import consoleOutput from 'nightingale-console-output';
 import createFindDebugLevel from 'nightingale-debug';
 
@@ -22,17 +22,41 @@ var findDebugLevel = function findDebugLevel(minLevel, key) {
   return createFindDebugLevel(getDebugString())(minLevel, key);
 };
 
-var handle = function handle(record) {
-  consoleOutput(browserConsoleFormatter(record), record);
+var getDefaultTheme = function getDefaultTheme() {
+  try {
+    var configInLocalStorage = localStorage.getItem('NIGHTINGALE_THEME');
+
+    if (configInLocalStorage && configInLocalStorage === 'dark') {
+      return configInLocalStorage;
+    }
+  } catch (_unused) {}
+
+  return 'light';
 };
 
-var BrowserConsoleHandler = function BrowserConsoleHandler(minLevel) {
+var createHandler = function createHandler(theme) {
+  if (theme === void 0) {
+    theme = getDefaultTheme();
+  }
+
+  var browserConsoleFormatter = createBrowserConsoleFormatter(theme);
+  return function (record) {
+    consoleOutput(browserConsoleFormatter(record), record);
+  };
+};
+
+var BrowserConsoleHandler = function BrowserConsoleHandler(minLevel, options) {
+  if (options === void 0) {
+    options = {};
+  }
+
   this.minLevel = 0;
-  this.handle = handle;
 
   this.isHandling = function (level, key) {
     return level >= findDebugLevel(minLevel, key);
   };
+
+  this.handle = createHandler(options.theme);
 };
 
 export default BrowserConsoleHandler;

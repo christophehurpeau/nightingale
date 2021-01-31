@@ -25,6 +25,24 @@ import ConsoleHandler from 'nightingale-browser-console';
 configure([{ handlers: [new ConsoleHandler(Level.INFO)] }]);
 ```
 
+## Theme
+
+If you have a dark console theme, you can set this config in your localStorage :
+
+```
+localStorage.NIGHTINGALE_THEME = 'dark';
+```
+
+You can also force this option:
+
+```
+import ConsoleHandler from 'nightingale-browser-console';
+
+
+configure([{ handlers: [new ConsoleHandler(Level.INFO, { theme: 'dark' })] }]);
+
+```
+
 ## Debug
 
 ### with localStorage

@@ -34,6 +34,8 @@ interface ConsoleHandlerOptions {
     param: string | string[],
     record: LogRecord<T>,
   ) => void;
+  // compat with nightingale-app-console, not used yet
+  theme?: 'dark' | 'light';
 }
 
 export default class ConsoleHandler {
