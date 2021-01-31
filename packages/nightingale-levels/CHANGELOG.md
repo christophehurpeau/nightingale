@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [11.1.0](https://github.com/christophehurpeau/nightingale/compare/v11.0.5...v11.1.0) (2021-01-31)
+
+
+### Features
+
+* **nightingale-app-console:** export ConsoleHandler, fix sideEffect, add env ([643c049](https://github.com/christophehurpeau/nightingale/commit/643c049bac05de4ecaee0458b5dd3c84f1b128a7))
+
+
+
+
+
 ## [11.0.5](https://github.com/christophehurpeau/nightingale/compare/v11.0.4...v11.0.5) (2021-01-18)
 
 

@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [11.1.0](https://github.com/christophehurpeau/nightingale/compare/v11.0.5...v11.1.0) (2021-01-31)
+
+
+### Bug Fixes
+
+* lint ([27a92c9](https://github.com/christophehurpeau/nightingale/commit/27a92c9419f91741aaeece59ca89edb5e6783b5d))
+
+
+### Features
+
+* add dark theme for browser logger ([b1d214e](https://github.com/christophehurpeau/nightingale/commit/b1d214e912a20ccc759735aa2d1c388e8cd62431))
+
+
+
+
+
 ## [11.0.5](https://github.com/christophehurpeau/nightingale/compare/v11.0.4...v11.0.5) (2021-01-18)
 
 

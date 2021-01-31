@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [11.1.0](https://github.com/christophehurpeau/nightingale/compare/v11.0.5...v11.1.0) (2021-01-31)
+
+
+### Features
+
+* **nightingale-formatter:** create dark theme for html ([b0ae0cd](https://github.com/christophehurpeau/nightingale/commit/b0ae0cdc32e702fb2f9d5eb4cc8da93bbec759b2))
+
+
+
+
+
 ## [11.0.5](https://github.com/christophehurpeau/nightingale/compare/v11.0.4...v11.0.5) (2021-01-18)
 
 

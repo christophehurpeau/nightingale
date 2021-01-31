@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [11.1.0](https://github.com/christophehurpeau/nightingale/compare/v11.0.5...v11.1.0) (2021-01-31)
+
+
+### Bug Fixes
+
+* lint ([27a92c9](https://github.com/christophehurpeau/nightingale/commit/27a92c9419f91741aaeece59ca89edb5e6783b5d))
+* **nightingale-app-console:** remove unused @types/source-map-support ([b39a24b](https://github.com/christophehurpeau/nightingale/commit/b39a24bdd7b9cc203ed6d3569d9bdde03a4f914e))
+
+
+### Features
+
+* **nightingale-app-console:** export ConsoleHandler, fix sideEffect, add env ([643c049](https://github.com/christophehurpeau/nightingale/commit/643c049bac05de4ecaee0458b5dd3c84f1b128a7))
+
+
+
+
+
 ## [11.0.5](https://github.com/christophehurpeau/nightingale/compare/v11.0.4...v11.0.5) (2021-01-18)
 
 

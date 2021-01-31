@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [11.1.0](https://github.com/christophehurpeau/nightingale/compare/v11.0.5...v11.1.0) (2021-01-31)
+
+
+### Bug Fixes
+
+* lint ([27a92c9](https://github.com/christophehurpeau/nightingale/commit/27a92c9419f91741aaeece59ca89edb5e6783b5d))
+
+
+### Features
+
+* **nightingale-browser-console-formatter:** createBrowserConsoleFormatter using theme ([c1bcb08](https://github.com/christophehurpeau/nightingale/commit/c1bcb083c30dd5b71c7d78cd5ac83e62b8fa8ef3))
+
+
+
+
+
 ## [11.0.5](https://github.com/christophehurpeau/nightingale/compare/v11.0.4...v11.0.5) (2021-01-18)
 
 

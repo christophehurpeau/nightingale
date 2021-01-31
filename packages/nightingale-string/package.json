@@ -1,6 +1,6 @@
 {
   "name": "nightingale-string",
-  "version": "11.0.5",
+  "version": "11.1.0",
   "description": "String handler for nightingale",
   "keywords": [
     "nightingale",
@@ -63,8 +63,8 @@
     ]
   },
   "dependencies": {
-    "nightingale-raw-formatter": "^11.0.5",
-    "nightingale-types": "^11.0.5"
+    "nightingale-raw-formatter": "^11.1.0",
+    "nightingale-types": "^11.1.0"
   },
   "devDependencies": {
     "@babel/core": "7.12.10",
