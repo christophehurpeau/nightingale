@@ -8742,6 +8742,7 @@ __metadata:
     "@pob/eslint-config": 43.0.0
     "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
+    "@types/node": "*"
     "@typescript-eslint/eslint-plugin": 4.14.1
     "@typescript-eslint/parser": 4.14.1
     babel-preset-latest-node: 5.4.0

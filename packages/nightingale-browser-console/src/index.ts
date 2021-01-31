@@ -14,7 +14,9 @@ import getDebugString from './debug';
 const findDebugLevel = (minLevel: Level, key: string): Level =>
   createFindDebugLevel(getDebugString())(minLevel, key);
 
-const getDefaultTheme = () => {
+type Theme = 'light' | 'dark';
+
+const getDefaultTheme = (): Theme => {
   try {
     const configInLocalStorage = localStorage.getItem('NIGHTINGALE_THEME');
     if (configInLocalStorage && configInLocalStorage === 'dark') {
@@ -30,8 +32,6 @@ const createHandler = (theme: Theme = getDefaultTheme()): Handle => {
     consoleOutput(browserConsoleFormatter(record), record);
   };
 };
-
-type Theme = 'light' | 'dark';
 
 interface BrowserConsoleHandlerOptions {
   theme?: Theme;

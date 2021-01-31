@@ -13,7 +13,8 @@ var BrowserConsoleHandler__default = /*#__PURE__*/_interopDefaultLegacy(BrowserC
 var ConsoleHandler = BrowserConsoleHandler__default;
 var logger = new Logger__default('app');
 var appLogger = logger;
-var appMinLevel = Logger.Level.INFO;
+var appMinLevel = // eslint-disable-next-line unicorn/no-nested-ternary
+Logger.Level.DEBUG;
 var libMinLevel = Logger.Level.INFO;
 Logger.configure(appMinLevel !== libMinLevel ? [{
   pattern: /^app(:|$)/,

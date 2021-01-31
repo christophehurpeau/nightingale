@@ -29,9 +29,10 @@ const appMinLevel =
   POB_TARGET !== 'browser' &&
   process.env.NIGHTINGALE_APP_MIN_LEVEL === undefined
     ? Number(process.env.NIGHTINGALE_APP_MIN_LEVEL)
-    : PRODUCTION
-    ? Level.DEBUG
-    : Level.INFO;
+    : // eslint-disable-next-line unicorn/no-nested-ternary
+    PRODUCTION
+    ? Level.INFO
+    : Level.DEBUG;
 
 const libMinLevel =
   POB_TARGET !== 'browser' &&

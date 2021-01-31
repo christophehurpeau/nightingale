@@ -1,8 +1,8 @@
+import type { StyleToHtmlStyle } from 'nightingale-formatter';
 import {
   formatRecordToString,
   styleToHtmlStyleThemeLight,
   styleToHtmlStyleThemeDark,
-  StyleToHtmlStyle,
 } from 'nightingale-formatter';
 import type { LogRecord, Metadata, Styles } from 'nightingale-types';
 
