@@ -14,7 +14,7 @@ test('style: blue bold color', () => {
   );
   expect(args).toEqual([
     'color: #00a0ff; font-weight: bold',
-    'color: initial; font-weight: normal',
+    'color: currentcolor; font-weight: normal',
   ]);
 });
 
