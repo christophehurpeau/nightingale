@@ -1,7 +1,12 @@
-import { formatRecordToString, styleToHtmlStyle } from 'nightingale-formatter';
+import {
+  formatRecordToString,
+  styleToHtmlStyleThemeLight,
+  styleToHtmlStyleThemeDark,
+  StyleToHtmlStyle,
+} from 'nightingale-formatter';
 import type { LogRecord, Metadata, Styles } from 'nightingale-types';
 
-export const style = (args: string[]) => (
+export const style = (styleToHtmlStyle: StyleToHtmlStyle, args: string[]) => (
   styles: Styles,
   string: string,
 ): string => {
@@ -15,10 +20,17 @@ export const style = (args: string[]) => (
   return `%c${string}%c`;
 };
 
-export default function format<T extends Metadata>(
-  record: LogRecord<T>,
-): string[] {
-  const args: string[] = [];
-  const string = formatRecordToString(record, style(args));
-  return [string, ...args];
+export function createBrowserConsoleFormatter(
+  theme: 'light' | 'dark' = 'light',
+): <T extends Metadata>(record: LogRecord<T>) => string[] {
+  const styleToHtmlStyle: StyleToHtmlStyle =
+    theme === 'dark' ? styleToHtmlStyleThemeDark : styleToHtmlStyleThemeLight;
+  return function format<T extends Metadata>(record: LogRecord<T>): string[] {
+    const args: string[] = [];
+    const string = formatRecordToString(record, style(styleToHtmlStyle, args));
+    return [string, ...args];
+  };
 }
+
+/** @deprecated use createBrowserConsoleFormatter */
+export default createBrowserConsoleFormatter('light');
