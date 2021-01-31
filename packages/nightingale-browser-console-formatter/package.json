@@ -1,6 +1,6 @@
 {
   "name": "nightingale-browser-console-formatter",
-  "version": "11.1.0",
+  "version": "11.1.1",
   "description": "Nightingale Browser console formatter",
   "keywords": [
     "nightingale",
@@ -125,7 +125,7 @@
     ]
   },
   "dependencies": {
-    "nightingale-formatter": "^11.1.0",
+    "nightingale-formatter": "^11.1.1",
     "nightingale-types": "^11.1.0"
   },
   "devDependencies": {

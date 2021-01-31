@@ -1,6 +1,6 @@
 {
   "name": "nightingale-string",
-  "version": "11.1.0",
+  "version": "11.1.1",
   "description": "String handler for nightingale",
   "keywords": [
     "nightingale",
@@ -63,7 +63,7 @@
     ]
   },
   "dependencies": {
-    "nightingale-raw-formatter": "^11.1.0",
+    "nightingale-raw-formatter": "^11.1.1",
     "nightingale-types": "^11.1.0"
   },
   "devDependencies": {

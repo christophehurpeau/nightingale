@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [11.1.1](https://github.com/christophehurpeau/nightingale/compare/v11.1.0...v11.1.1) (2021-01-31)
+
+
+### Bug Fixes
+
+* use currentcolor instead of initial to format html ([53182bc](https://github.com/christophehurpeau/nightingale/commit/53182bc3f2f51335085e290ae605cfbdbb02624a))
+
+
+
+
+
 # [11.1.0](https://github.com/christophehurpeau/nightingale/compare/v11.0.5...v11.1.0) (2021-01-31)
 
 

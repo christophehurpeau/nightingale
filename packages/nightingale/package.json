@@ -1,6 +1,6 @@
 {
   "name": "nightingale",
-  "version": "11.1.0",
+  "version": "11.1.1",
   "description": "Logger for browser and node",
   "keywords": [
     "logger"
@@ -147,7 +147,7 @@
     "eslint-plugin-node": "11.1.0",
     "eslint-plugin-unicorn": "25.0.1",
     "jest": "26.6.3",
-    "nightingale-string": "^11.1.0",
+    "nightingale-string": "^11.1.1",
     "pob-babel": "26.4.0",
     "pob-lcov-reporter": "4.0.1",
     "rollup": "2.38.2",
