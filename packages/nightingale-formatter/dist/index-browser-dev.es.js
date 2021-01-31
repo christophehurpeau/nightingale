@@ -53,39 +53,39 @@ var styleToHtmlStyleThemeLight = {
   },
   black: {
     open: 'color: black',
-    close: 'color: initial'
+    close: 'color: currentcolor'
   },
   red: {
     open: 'color: #ff0020',
-    close: 'color: initial'
+    close: 'color: currentcolor'
   },
   green: {
     open: 'color: #00b317',
-    close: 'color: initial'
+    close: 'color: currentcolor'
   },
   yellow: {
     open: 'color: #ffcc00',
-    close: 'color: initial'
+    close: 'color: currentcolor'
   },
   blue: {
     open: 'color: #00a0ff',
-    close: 'color: initial'
+    close: 'color: currentcolor'
   },
   magenta: {
     open: 'color: #ff00a0',
-    close: 'color: initial'
+    close: 'color: currentcolor'
   },
   cyan: {
     open: 'color: #00cfd8',
-    close: 'color: initial'
+    close: 'color: currentcolor'
   },
   white: {
     open: 'color: white',
-    close: 'color: initial'
+    close: 'color: currentcolor'
   },
   gray: {
     open: 'color: gray',
-    close: 'color: initial'
+    close: 'color: currentcolor'
   },
   bgBlack: {
     open: 'background: black',
@@ -121,15 +121,15 @@ var styleToHtmlStyleThemeLight = {
   },
   orange: {
     open: `color: #${styleToHexColor.orange}`,
-    close: 'color: initial'
+    close: 'color: currentcolor'
   },
   grayLight: {
     open: `color: #${styleToHexColor.grayLight}`,
-    close: 'color: initial'
+    close: 'color: currentcolor'
   },
   'gray-light': {
     open: `color: #${styleToHexColor.grayLight}`,
-    close: 'color: initial'
+    close: 'color: currentcolor'
   }
 };
 var styleToHtmlStyleThemeDark = _extends({}, styleToHtmlStyleThemeLight, {
@@ -139,7 +139,7 @@ var styleToHtmlStyleThemeDark = _extends({}, styleToHtmlStyleThemeLight, {
   bgWhite: styleToHtmlStyleThemeLight.bgBlack,
   gray: {
     open: 'color: lightgray',
-    close: 'color: initial'
+    close: 'color: currentcolor'
   }
 });
 

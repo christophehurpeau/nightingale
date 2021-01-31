@@ -26,15 +26,15 @@ export const styleToHtmlStyleThemeLight: StyleToHtmlStyle = {
     close: 'text-decoration: none',
   },
 
-  black: { open: 'color: black', close: 'color: initial' },
-  red: { open: 'color: #ff0020', close: 'color: initial' },
-  green: { open: 'color: #00b317', close: 'color: initial' },
-  yellow: { open: 'color: #ffcc00', close: 'color: initial' },
-  blue: { open: 'color: #00a0ff', close: 'color: initial' },
-  magenta: { open: 'color: #ff00a0', close: 'color: initial' },
-  cyan: { open: 'color: #00cfd8', close: 'color: initial' },
-  white: { open: 'color: white', close: 'color: initial' },
-  gray: { open: 'color: gray', close: 'color: initial' },
+  black: { open: 'color: black', close: 'color: currentcolor' },
+  red: { open: 'color: #ff0020', close: 'color: currentcolor' },
+  green: { open: 'color: #00b317', close: 'color: currentcolor' },
+  yellow: { open: 'color: #ffcc00', close: 'color: currentcolor' },
+  blue: { open: 'color: #00a0ff', close: 'color: currentcolor' },
+  magenta: { open: 'color: #ff00a0', close: 'color: currentcolor' },
+  cyan: { open: 'color: #00cfd8', close: 'color: currentcolor' },
+  white: { open: 'color: white', close: 'color: currentcolor' },
+  gray: { open: 'color: gray', close: 'color: currentcolor' },
 
   bgBlack: { open: 'background: black', close: 'background: initial' },
   bgRed: { open: 'background: #ff0020', close: 'background: initial' },
@@ -45,14 +45,14 @@ export const styleToHtmlStyleThemeLight: StyleToHtmlStyle = {
   bgCyan: { open: 'background: #00cfd8', close: 'background: initial' },
   bgWhite: { open: 'background: white', close: 'background: initial' },
 
-  orange: { open: `color: #${hexColors.orange}`, close: 'color: initial' },
+  orange: { open: `color: #${hexColors.orange}`, close: 'color: currentcolor' },
   grayLight: {
     open: `color: #${hexColors.grayLight}`,
-    close: 'color: initial',
+    close: 'color: currentcolor',
   },
   'gray-light': {
     open: `color: #${hexColors.grayLight}`,
-    close: 'color: initial',
+    close: 'color: currentcolor',
   },
 };
 
@@ -62,5 +62,5 @@ export const styleToHtmlStyleThemeDark: StyleToHtmlStyle = {
   bgBlack: styleToHtmlStyleThemeLight.bgWhite,
   white: styleToHtmlStyleThemeLight.black,
   bgWhite: styleToHtmlStyleThemeLight.bgBlack,
-  gray: { open: 'color: lightgray', close: 'color: initial' },
+  gray: { open: 'color: lightgray', close: 'color: currentcolor' },
 };

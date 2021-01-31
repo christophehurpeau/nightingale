@@ -32,9 +32,9 @@ test('format simple message, with light theme', () => {
   expect(string).toBe('%crecord.key%c %c01:00:00%c → test');
   expect(args).toEqual([
     'color: #808080',
-    'color: initial',
+    'color: currentcolor',
     'color: gray; font-weight: bold',
-    'color: initial; font-weight: normal',
+    'color: currentcolor; font-weight: normal',
   ]);
 });
 
@@ -52,8 +52,8 @@ test('format simple message, with dark theme', () => {
   expect(string).toBe('%crecord.key%c %c01:00:00%c → test');
   expect(args).toEqual([
     'color: #808080',
-    'color: initial',
+    'color: currentcolor',
     'color: lightgray; font-weight: bold',
-    'color: initial; font-weight: normal',
+    'color: currentcolor; font-weight: normal',
   ]);
 });
