@@ -2968,15 +2968,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/source-map-support@npm:0.4.2":
-  version: 0.4.2
-  resolution: "@types/source-map-support@npm:0.4.2"
-  dependencies:
-    "@types/node": "*"
-  checksum: 41494283eb436f10e2f3b1174ac7b60cdb538c77e39a6b4b3712463a770e3ca67b69a8cd6e7849265e0ce0756391aabee2138ca731a04598806e19c75f640269
-  languageName: node
-  linkType: hard
-
 "@types/stack-utils@npm:^2.0.0":
   version: 2.0.0
   resolution: "@types/stack-utils@npm:2.0.0"
@@ -8751,7 +8742,6 @@ __metadata:
     "@pob/eslint-config": 43.0.0
     "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
-    "@types/source-map-support": 0.4.2
     "@typescript-eslint/eslint-plugin": 4.14.1
     "@typescript-eslint/parser": 4.14.1
     babel-preset-latest-node: 5.4.0
