@@ -28,7 +28,7 @@ const styleToHexColor = {
   'gray-light': '808080'
 };
 
-const styleToHtmlStyle = {
+const styleToHtmlStyleThemeLight = {
   // text style
   bold: {
     open: 'font-weight: bold',
@@ -128,6 +128,16 @@ const styleToHtmlStyle = {
   },
   'gray-light': {
     open: `color: #${styleToHexColor.grayLight}`,
+    close: 'color: initial'
+  }
+};
+const styleToHtmlStyleThemeDark = { ...styleToHtmlStyleThemeLight,
+  black: styleToHtmlStyleThemeLight.white,
+  bgBlack: styleToHtmlStyleThemeLight.bgWhite,
+  white: styleToHtmlStyleThemeLight.black,
+  bgWhite: styleToHtmlStyleThemeLight.bgBlack,
+  gray: {
+    open: 'color: lightgray',
     close: 'color: initial'
   }
 };
@@ -544,5 +554,5 @@ function formatRecordToString(record, style) {
   return parts.join(' ');
 }
 
-export { formatObject, formatRecordToString, levelToStyles, levelToSymbol, styleToHexColor, styleToHtmlStyle };
+export { formatObject, formatRecordToString, levelToStyles, levelToSymbol, styleToHexColor, styleToHtmlStyleThemeLight as styleToHtmlStyle, styleToHtmlStyleThemeDark, styleToHtmlStyleThemeLight };
 //# sourceMappingURL=index-node12.mjs.map

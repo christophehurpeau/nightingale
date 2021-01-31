@@ -5,6 +5,6 @@ export interface HtmlStyle {
 export interface StyleToHtmlStyle {
     readonly [key: string]: HtmlStyle;
 }
-declare const styleToHtmlStyle: StyleToHtmlStyle;
-export default styleToHtmlStyle;
+export declare const styleToHtmlStyleThemeLight: StyleToHtmlStyle;
+export declare const styleToHtmlStyleThemeDark: StyleToHtmlStyle;
 //# sourceMappingURL=styleToHtmlStyle.d.ts.map

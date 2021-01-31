@@ -36,7 +36,7 @@ const styleToHexColor = {
   'gray-light': '808080'
 };
 
-const styleToHtmlStyle = {
+const styleToHtmlStyleThemeLight = {
   // text style
   bold: {
     open: 'font-weight: bold',
@@ -136,6 +136,16 @@ const styleToHtmlStyle = {
   },
   'gray-light': {
     open: `color: #${styleToHexColor.grayLight}`,
+    close: 'color: initial'
+  }
+};
+const styleToHtmlStyleThemeDark = { ...styleToHtmlStyleThemeLight,
+  black: styleToHtmlStyleThemeLight.white,
+  bgBlack: styleToHtmlStyleThemeLight.bgWhite,
+  white: styleToHtmlStyleThemeLight.black,
+  bgWhite: styleToHtmlStyleThemeLight.bgBlack,
+  gray: {
+    open: 'color: lightgray',
     close: 'color: initial'
   }
 };
@@ -557,5 +567,7 @@ exports.formatRecordToString = formatRecordToString;
 exports.levelToStyles = levelToStyles;
 exports.levelToSymbol = levelToSymbol;
 exports.styleToHexColor = styleToHexColor;
-exports.styleToHtmlStyle = styleToHtmlStyle;
+exports.styleToHtmlStyle = styleToHtmlStyleThemeLight;
+exports.styleToHtmlStyleThemeDark = styleToHtmlStyleThemeDark;
+exports.styleToHtmlStyleThemeLight = styleToHtmlStyleThemeLight;
 //# sourceMappingURL=index-node12-dev.cjs.js.map

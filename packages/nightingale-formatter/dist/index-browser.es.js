@@ -1,4 +1,5 @@
 import Level from 'nightingale-levels';
+import _extends from '@babel/runtime/helpers/esm/extends';
 
 var levelToStyles = {
   [Level.TRACE]: ['gray'],
@@ -28,7 +29,7 @@ var styleToHexColor = {
   'gray-light': '808080'
 };
 
-var styleToHtmlStyle = {
+var styleToHtmlStyleThemeLight = {
   // text style
   bold: {
     open: 'font-weight: bold',
@@ -131,6 +132,16 @@ var styleToHtmlStyle = {
     close: 'color: initial'
   }
 };
+var styleToHtmlStyleThemeDark = _extends({}, styleToHtmlStyleThemeLight, {
+  black: styleToHtmlStyleThemeLight.white,
+  bgBlack: styleToHtmlStyleThemeLight.bgWhite,
+  white: styleToHtmlStyleThemeLight.black,
+  bgWhite: styleToHtmlStyleThemeLight.bgBlack,
+  gray: {
+    open: 'color: lightgray',
+    close: 'color: initial'
+  }
+});
 
 /* eslint-disable max-lines, @typescript-eslint/no-use-before-define */
 var noStyleFn = function noStyleFn(styles, value) {
@@ -568,5 +579,5 @@ function formatRecordToString(record, style) {
   return parts.join(' ');
 }
 
-export { formatObject, formatRecordToString, levelToStyles, levelToSymbol, styleToHexColor, styleToHtmlStyle };
+export { formatObject, formatRecordToString, levelToStyles, levelToSymbol, styleToHexColor, styleToHtmlStyleThemeLight as styleToHtmlStyle, styleToHtmlStyleThemeDark, styleToHtmlStyleThemeLight };
 //# sourceMappingURL=index-browser.es.js.map

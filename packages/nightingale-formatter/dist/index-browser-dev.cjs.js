@@ -3,10 +3,12 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 var Level = require('nightingale-levels');
+var _extends = require('@babel/runtime/helpers/esm/extends');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e['default'] : e; }
 
 var Level__default = /*#__PURE__*/_interopDefaultLegacy(Level);
+var _extends__default = /*#__PURE__*/_interopDefaultLegacy(_extends);
 
 var levelToStyles = {
   [Level__default.TRACE]: ['gray'],
@@ -36,7 +38,7 @@ var styleToHexColor = {
   'gray-light': '808080'
 };
 
-var styleToHtmlStyle = {
+var styleToHtmlStyleThemeLight = {
   // text style
   bold: {
     open: 'font-weight: bold',
@@ -139,6 +141,16 @@ var styleToHtmlStyle = {
     close: 'color: initial'
   }
 };
+var styleToHtmlStyleThemeDark = _extends__default({}, styleToHtmlStyleThemeLight, {
+  black: styleToHtmlStyleThemeLight.white,
+  bgBlack: styleToHtmlStyleThemeLight.bgWhite,
+  white: styleToHtmlStyleThemeLight.black,
+  bgWhite: styleToHtmlStyleThemeLight.bgBlack,
+  gray: {
+    open: 'color: lightgray',
+    close: 'color: initial'
+  }
+});
 
 /* eslint-disable max-lines, @typescript-eslint/no-use-before-define */
 var noStyleFn = function noStyleFn(styles, value) {
@@ -581,5 +593,7 @@ exports.formatRecordToString = formatRecordToString;
 exports.levelToStyles = levelToStyles;
 exports.levelToSymbol = levelToSymbol;
 exports.styleToHexColor = styleToHexColor;
-exports.styleToHtmlStyle = styleToHtmlStyle;
+exports.styleToHtmlStyle = styleToHtmlStyleThemeLight;
+exports.styleToHtmlStyleThemeDark = styleToHtmlStyleThemeDark;
+exports.styleToHtmlStyleThemeLight = styleToHtmlStyleThemeLight;
 //# sourceMappingURL=index-browser-dev.cjs.js.map

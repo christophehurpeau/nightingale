@@ -9,7 +9,7 @@ export interface StyleToHtmlStyle {
   readonly [key: string]: HtmlStyle;
 }
 
-const styleToHtmlStyle: StyleToHtmlStyle = {
+export const styleToHtmlStyleThemeLight: StyleToHtmlStyle = {
   // text style
   bold: { open: 'font-weight: bold', close: 'font-weight: normal' },
   italic: { open: 'font-style: italic', close: 'font-style: normal' },
@@ -56,4 +56,11 @@ const styleToHtmlStyle: StyleToHtmlStyle = {
   },
 };
 
-export default styleToHtmlStyle;
+export const styleToHtmlStyleThemeDark: StyleToHtmlStyle = {
+  ...styleToHtmlStyleThemeLight,
+  black: styleToHtmlStyleThemeLight.white,
+  bgBlack: styleToHtmlStyleThemeLight.bgWhite,
+  white: styleToHtmlStyleThemeLight.black,
+  bgWhite: styleToHtmlStyleThemeLight.bgBlack,
+  gray: { open: 'color: lightgray', close: 'color: initial' },
+};
