@@ -2897,10 +2897,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:14.14.22":
-  version: 14.14.22
-  resolution: "@types/node@npm:14.14.22"
-  checksum: e46e32685b4d0261779c13c10ba3ff220cfa714b5c12f8f571fd52cc309546bdbc8ffc86cbad20559ad88e7b17e66fc51c98b067d8c3766597092c05df157b9b
+"@types/node@npm:14.14.23":
+  version: 14.14.23
+  resolution: "@types/node@npm:14.14.23"
+  checksum: ce326d20d687a1339a9a3e902cce5f40ae2811e5fc446b893deeb7aee7cc58d5c5330ba6e1620c06de03380966cd2335dd819a6f9bd968722019a9267ed9880c
   languageName: node
   linkType: hard
 
@@ -9149,7 +9149,7 @@ __metadata:
     "@pob/eslint-config-typescript-node": 43.0.0
     "@pob/lerna-light": 3.23.0
     "@pob/root": 3.0.3
-    "@types/node": 14.14.22
+    "@types/node": 14.14.23
     "@typescript-eslint/eslint-plugin": 4.14.1
     "@typescript-eslint/parser": 4.14.1
     eslint: 7.19.0
