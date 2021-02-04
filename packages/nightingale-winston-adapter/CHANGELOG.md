@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [11.2.0](https://github.com/christophehurpeau/nightingale/compare/v11.1.1...v11.2.0) (2021-02-04)
+
+
+### Bug Fixes
+
+* missing "browser" in package.json ([cce81cb](https://github.com/christophehurpeau/nightingale/commit/cce81cb3f8f52f18049f0a2f49944920ee027fad))
+
+
+### Features
+
+* prefer named exports and deprecate some default exports ([4697828](https://github.com/christophehurpeau/nightingale/commit/4697828a3a22b95a978e90001046337f8efd7d0c))
+
+
+
+
+
 # [11.1.0](https://github.com/christophehurpeau/nightingale/compare/v11.0.5...v11.1.0) (2021-01-31)
 
 **Note:** Version bump only for package nightingale-winston-adapter

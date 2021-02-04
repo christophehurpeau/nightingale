@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [11.2.0](https://github.com/christophehurpeau/nightingale/compare/v11.1.1...v11.2.0) (2021-02-04)
+
+
+### Bug Fixes
+
+* missing "browser" in package.json ([cce81cb](https://github.com/christophehurpeau/nightingale/commit/cce81cb3f8f52f18049f0a2f49944920ee027fad))
+
+
+
+
+
 ## [11.1.1](https://github.com/christophehurpeau/nightingale/compare/v11.1.0...v11.1.1) (2021-01-31)
 
 **Note:** Version bump only for package nightingale-html-formatter
