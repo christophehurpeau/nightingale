@@ -2,21 +2,16 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var Logger = require('nightingale');
-var BrowserConsoleHandler = require('nightingale-browser-console');
+var nightingale = require('nightingale');
+var nightingaleBrowserConsole = require('nightingale-browser-console');
 
-function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e['default'] : e; }
-
-var Logger__default = /*#__PURE__*/_interopDefaultLegacy(Logger);
-var BrowserConsoleHandler__default = /*#__PURE__*/_interopDefaultLegacy(BrowserConsoleHandler);
-
-var ConsoleHandler = BrowserConsoleHandler__default;
-var logger = new Logger__default('app');
+var ConsoleHandler = nightingaleBrowserConsole.BrowserConsoleHandler;
+var logger = new nightingale.Logger('app');
 var appLogger = logger;
 var appMinLevel = // eslint-disable-next-line unicorn/no-nested-ternary
-Logger.Level.INFO;
-var libMinLevel = Logger.Level.INFO;
-Logger.configure(appMinLevel !== libMinLevel ? [{
+nightingale.Level.INFO;
+var libMinLevel = nightingale.Level.INFO;
+nightingale.configure(appMinLevel !== libMinLevel ? [{
   pattern: /^app(:|$)/,
   handlers: [new ConsoleHandler(appMinLevel)],
   stop: true
@@ -26,10 +21,10 @@ Logger.configure(appMinLevel !== libMinLevel ? [{
   handlers: [new ConsoleHandler(libMinLevel)]
 }]);
 
-exports.Level = Logger.Level;
-exports.addConfig = Logger.addConfig;
-exports.configure = Logger.configure;
-exports.levels = Logger.levels;
+exports.Level = nightingale.Level;
+exports.addConfig = nightingale.addConfig;
+exports.configure = nightingale.configure;
+exports.levels = nightingale.levels;
 exports.ConsoleHandler = ConsoleHandler;
 exports.appLogger = appLogger;
 exports.logger = logger;

@@ -1,8 +1,8 @@
-import Logger, { listenUnhandledErrors, Level, configure } from 'nightingale';
+import { Logger, listenUnhandledErrors, Level, configure } from 'nightingale';
 export { Level, addConfig, configure, levels } from 'nightingale';
-import TerminalConsoleHandler from 'nightingale-console';
+import { ConsoleHandler as ConsoleHandler$1 } from 'nightingale-console';
 
-const ConsoleHandler = TerminalConsoleHandler;
+const ConsoleHandler = ConsoleHandler$1;
 const logger = new Logger('app');
 const appLogger = logger;
 Error.stackTraceLimit = Infinity;

@@ -1,6 +1,6 @@
-import Logger, { Level, levels } from 'nightingale';
-import BrowserConsoleHandler from 'nightingale-browser-console';
-import TerminalConsoleHandler from 'nightingale-console';
+import { Logger, Level, levels } from 'nightingale';
+import { BrowserConsoleHandler } from 'nightingale-browser-console';
+import { ConsoleHandler as TerminalConsoleHandler } from 'nightingale-console';
 export { configure, addConfig } from 'nightingale';
 export declare const ConsoleHandler: typeof BrowserConsoleHandler | typeof TerminalConsoleHandler;
 export { Level, levels };
