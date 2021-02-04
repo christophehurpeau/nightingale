@@ -14,7 +14,7 @@
 
 To see the full documentation, go to https://www.npmjs.com/package/nightingale
 
-To see the Logger API, go to https://christophehurpeau.github.io/nightingale/classes/nightingale_logger.logger.html
+To see the Logger API, go to https://christophehurpeau.github.io/nightingale/classes/nightingale_logger_src.logger.html
 
 ## Install
 
