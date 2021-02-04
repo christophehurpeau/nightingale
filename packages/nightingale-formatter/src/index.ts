@@ -1,5 +1,5 @@
-export { default as levelToStyles } from './levelToStyles';
-export { default as levelToSymbol } from './levelToSymbol';
+export { levelToStyles } from './levelToStyles';
+export { levelToSymbol } from './levelToSymbol';
 export {
   styleToHtmlStyleThemeDark,
   styleToHtmlStyleThemeLight,
@@ -7,6 +7,6 @@ export {
 /** @deprecated */
 export { styleToHtmlStyleThemeLight as styleToHtmlStyle } from './styleToHtmlStyle';
 export type { StyleToHtmlStyle } from './styleToHtmlStyle';
-export { default as styleToHexColor } from './styleToHexColor';
-export { default as formatObject } from './formatObject';
-export { default as formatRecordToString } from './formatRecordToString';
+export { styleToHexColor } from './styleToHexColor';
+export { formatObject } from './formatObject';
+export { formatRecordToString } from './formatRecordToString';

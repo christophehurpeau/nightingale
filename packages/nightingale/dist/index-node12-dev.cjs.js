@@ -142,6 +142,7 @@ function listenUnhandledErrors(logger = new Logger__default('nightingale.listenU
 
 exports.Level = nightingaleLevels__default;
 exports.levels = nightingaleLevels__default;
+exports.Logger = Logger__default;
 exports.default = Logger__default;
 exports.addConfig = addConfig;
 exports.configure = configure;

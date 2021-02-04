@@ -420,7 +420,7 @@ function internalFormatSet(
   return result;
 }
 
-export default function formatObject(
+export function formatObject(
   object: Record<string, unknown>,
   styleFn: StyleFn = noStyleFn,
   objectStyles?: ObjectStyles,

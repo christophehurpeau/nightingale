@@ -50,4 +50,5 @@ class SlackHandler {
 }
 
 export default SlackHandler;
+export { SlackHandler };
 //# sourceMappingURL=index-node12-dev.mjs.map

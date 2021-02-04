@@ -13,7 +13,7 @@ export interface WinstonTransportType {
   ) => void;
 }
 
-export default class WinstonAdapterHandler {
+export class WinstonAdapterHandler {
   minLevel: Level;
 
   handle: Handle;
@@ -46,3 +46,6 @@ export default class WinstonAdapterHandler {
     };
   }
 }
+
+/** @deprecated use named export instead */
+export default WinstonAdapterHandler;

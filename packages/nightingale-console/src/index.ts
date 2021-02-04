@@ -38,7 +38,7 @@ interface ConsoleHandlerOptions {
   theme?: 'dark' | 'light';
 }
 
-export default class ConsoleHandler {
+export class ConsoleHandler {
   minLevel: Level = Level.ALL;
 
   isHandling: IsHandling;
@@ -52,3 +52,6 @@ export default class ConsoleHandler {
     this.handle = createHandle(options.formatter, options.output);
   }
 }
+
+/** @deprecated use named export instead */
+export default ConsoleHandler;

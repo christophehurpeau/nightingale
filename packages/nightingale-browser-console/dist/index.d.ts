@@ -3,11 +3,12 @@ declare type Theme = 'light' | 'dark';
 interface BrowserConsoleHandlerOptions {
     theme?: Theme;
 }
-export default class BrowserConsoleHandler {
+export declare class BrowserConsoleHandler {
     minLevel: Level;
     handle: Handle;
     isHandling: IsHandling;
     constructor(minLevel: Level, options?: BrowserConsoleHandlerOptions);
 }
-export {};
+/** @deprecated use named export instead */
+export default BrowserConsoleHandler;
 //# sourceMappingURL=index.d.ts.map

@@ -1,4 +1,4 @@
-export default function getDebugString(): string {
+export function getDebugString(): string {
   const querystring = document.location?.search;
   const debugFromLocalStorage =
     (window.localStorage && localStorage.getItem('debug')) || '';

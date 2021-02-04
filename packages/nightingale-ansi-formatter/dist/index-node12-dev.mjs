@@ -51,10 +51,10 @@ function style(styles, string) {
  * @returns {string}
  */
 
-function format(record) {
+function ansiFormat(record) {
   return formatRecordToString(record, style);
 }
 
-export default format;
+export default ansiFormat;
 export { style };
 //# sourceMappingURL=index-node12-dev.mjs.map

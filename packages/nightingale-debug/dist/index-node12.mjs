@@ -87,4 +87,5 @@ function createFindDebugLevel(debugValue) {
 }
 
 export default createFindDebugLevel;
+export { createFindDebugLevel };
 //# sourceMappingURL=index-node12.mjs.map

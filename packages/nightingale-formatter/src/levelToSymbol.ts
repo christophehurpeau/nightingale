@@ -4,7 +4,7 @@ export interface LevelToSymbol {
   readonly [level: number]: string;
 }
 
-const levelToSymbol: LevelToSymbol = {
+export const levelToSymbol: LevelToSymbol = {
   [Level.TRACE]: '•',
   [Level.DEBUG]: '•',
   [Level.INFO]: '→',
@@ -14,5 +14,3 @@ const levelToSymbol: LevelToSymbol = {
   [Level.FATAL]: '‼',
   [Level.EMERGENCY]: '‼',
 };
-
-export default levelToSymbol;

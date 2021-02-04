@@ -524,4 +524,5 @@ class Logger {
 }
 
 export default Logger;
+export { Logger };
 //# sourceMappingURL=index-node12-dev.mjs.map

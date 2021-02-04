@@ -537,5 +537,6 @@ var Logger = /*#__PURE__*/function () {
 }();
 
 exports.Level = Level__default;
+exports.Logger = Logger;
 exports.default = Logger;
 //# sourceMappingURL=index-browser-dev.cjs.js.map

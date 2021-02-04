@@ -1,4 +1,4 @@
-import Logger from '.';
+import { Logger } from '.';
 
 test('key argument', () => {
   const key = 'test';

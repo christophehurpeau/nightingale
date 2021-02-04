@@ -26,7 +26,7 @@ const createTestFunctionFromValue = (value: string): TestFunction => {
 
 export type FindDebugLevel = (minLevel: Level, key: string) => Level;
 
-export default function createFindDebugLevel(
+export function createFindDebugLevel(
   debugValue?: DebugValueType,
 ): FindDebugLevel {
   let isWildcard = false;
@@ -97,3 +97,6 @@ export default function createFindDebugLevel(
     return minLevel;
   };
 }
+
+/** @deprecated use named export instead */
+export default createFindDebugLevel;

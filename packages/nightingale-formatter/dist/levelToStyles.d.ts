@@ -1,6 +1,5 @@
 export interface LevelToStyles {
     readonly [level: number]: string[];
 }
-declare const levelToStyles: LevelToStyles;
-export default levelToStyles;
+export declare const levelToStyles: LevelToStyles;
 //# sourceMappingURL=levelToStyles.d.ts.map

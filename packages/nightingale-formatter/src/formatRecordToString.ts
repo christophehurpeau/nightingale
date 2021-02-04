@@ -1,10 +1,10 @@
 import type { LogRecord, Metadata } from 'nightingale-types';
 import type { StyleFn, ObjectStyles } from './formatObject';
-import formatObject from './formatObject';
-import levelToStyles from './levelToStyles';
-import levelToSymbol from './levelToSymbol';
+import { formatObject } from './formatObject';
+import { levelToStyles } from './levelToStyles';
+import { levelToSymbol } from './levelToSymbol';
 
-export default function formatRecordToString<T extends Metadata>(
+export function formatRecordToString<T extends Metadata>(
   record: LogRecord<T>,
   style: StyleFn,
 ): string {

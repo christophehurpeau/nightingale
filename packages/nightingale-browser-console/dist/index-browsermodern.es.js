@@ -51,4 +51,5 @@ class BrowserConsoleHandler {
 }
 
 export default BrowserConsoleHandler;
+export { BrowserConsoleHandler };
 //# sourceMappingURL=index-browsermodern.es.js.map

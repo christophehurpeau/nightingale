@@ -60,4 +60,5 @@ var BrowserConsoleHandler = function BrowserConsoleHandler(minLevel, options) {
 };
 
 export default BrowserConsoleHandler;
+export { BrowserConsoleHandler };
 //# sourceMappingURL=index-browser-dev.es.js.map

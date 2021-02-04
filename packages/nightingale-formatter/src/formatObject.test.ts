@@ -1,5 +1,5 @@
 import type { Styles } from 'nightingale-types';
-import formatObject from './formatObject';
+import { formatObject } from './formatObject';
 
 test('empty object should return empty string', () => {
   expect(formatObject({})).toBe('');

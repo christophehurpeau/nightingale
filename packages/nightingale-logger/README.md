@@ -12,7 +12,7 @@
 
 ## nightingale
 
-To see the full documentation, go to https://christophehurpeau.github.io/nightingale/modules/nightingale.html
+To see the full documentation, go to https://www.npmjs.com/package/nightingale
 
 To see the Logger API, go to https://christophehurpeau.github.io/nightingale/classes/nightingale_logger.logger.html
 

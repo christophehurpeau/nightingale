@@ -1,6 +1,5 @@
 export interface LevelToSymbol {
     readonly [level: number]: string;
 }
-declare const levelToSymbol: LevelToSymbol;
-export default levelToSymbol;
+export declare const levelToSymbol: LevelToSymbol;
 //# sourceMappingURL=levelToSymbol.d.ts.map

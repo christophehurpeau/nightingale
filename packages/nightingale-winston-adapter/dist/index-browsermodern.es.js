@@ -26,4 +26,5 @@ class WinstonAdapterHandler {
 }
 
 export default WinstonAdapterHandler;
+export { WinstonAdapterHandler };
 //# sourceMappingURL=index-browsermodern.es.js.map

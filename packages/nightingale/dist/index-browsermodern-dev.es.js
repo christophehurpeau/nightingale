@@ -1,6 +1,6 @@
 export { default as Level, default as levels } from 'nightingale-levels';
 import Logger from 'nightingale-logger';
-export { default } from 'nightingale-logger';
+export { default as Logger, default } from 'nightingale-logger';
 
 if (global.__NIGHTINGALE_GLOBAL_HANDLERS) {
   throw new Error('nightingale: update all to ^5.0.0');

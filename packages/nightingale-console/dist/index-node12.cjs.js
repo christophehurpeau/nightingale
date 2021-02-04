@@ -37,5 +37,6 @@ class ConsoleHandler {
 
 }
 
+exports.ConsoleHandler = ConsoleHandler;
 exports.default = ConsoleHandler;
 //# sourceMappingURL=index-node12.cjs.js.map

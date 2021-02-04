@@ -8,7 +8,7 @@ import type {
   LogRecord,
   Metadata,
 } from 'nightingale-types';
-import getDebugString from './debug';
+import { getDebugString } from './debug';
 
 // debug string can change any time (localStorage), so we need a new object each time.
 const findDebugLevel = (minLevel: Level, key: string): Level =>
@@ -37,7 +37,7 @@ interface BrowserConsoleHandlerOptions {
   theme?: Theme;
 }
 
-export default class BrowserConsoleHandler {
+export class BrowserConsoleHandler {
   minLevel: Level = 0;
 
   handle: Handle;
@@ -51,3 +51,6 @@ export default class BrowserConsoleHandler {
     this.handle = createHandler(options.theme);
   }
 }
+
+/** @deprecated use named export instead */
+export default BrowserConsoleHandler;

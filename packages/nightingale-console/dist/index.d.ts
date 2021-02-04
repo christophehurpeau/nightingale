@@ -5,11 +5,12 @@ interface ConsoleHandlerOptions {
     output?: <T extends Metadata>(param: string | string[], record: LogRecord<T>) => void;
     theme?: 'dark' | 'light';
 }
-export default class ConsoleHandler {
+export declare class ConsoleHandler {
     minLevel: Level;
     isHandling: IsHandling;
     handle: Handle;
     constructor(minLevel: Level, options?: ConsoleHandlerOptions);
 }
-export {};
+/** @deprecated use named export instead */
+export default ConsoleHandler;
 //# sourceMappingURL=index.d.ts.map

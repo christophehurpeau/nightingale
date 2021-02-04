@@ -14,7 +14,7 @@ const createHandler = (slackConfig: SlackConfig) => <T extends Metadata>(
   );
 };
 
-export default class SlackHandler {
+export class SlackHandler {
   minLevel: number;
 
   handle: Handle;
@@ -24,3 +24,6 @@ export default class SlackHandler {
     this.handle = createHandler(slackConfig);
   }
 }
+
+/** @deprecated use named export instead */
+export default SlackHandler;

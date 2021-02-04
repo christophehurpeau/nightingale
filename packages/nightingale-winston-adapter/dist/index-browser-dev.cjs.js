@@ -9,7 +9,6 @@ function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'defau
 var levelNames__default = /*#__PURE__*/_interopDefaultLegacy(levelNames);
 
 /* eslint-disable camelcase */
-
 var WinstonAdapterHandler = function WinstonAdapterHandler(winstonTransport, minLevel) {
   this.minLevel = minLevel;
 
@@ -31,5 +30,6 @@ var WinstonAdapterHandler = function WinstonAdapterHandler(winstonTransport, min
   };
 };
 
+exports.WinstonAdapterHandler = WinstonAdapterHandler;
 exports.default = WinstonAdapterHandler;
 //# sourceMappingURL=index-browser-dev.cjs.js.map

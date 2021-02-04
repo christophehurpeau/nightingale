@@ -33,5 +33,6 @@ class WinstonAdapterHandler {
 
 }
 
+exports.WinstonAdapterHandler = WinstonAdapterHandler;
 exports.default = WinstonAdapterHandler;
 //# sourceMappingURL=index-node12.cjs.js.map

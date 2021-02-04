@@ -98,7 +98,7 @@ function getConfigForLoggerRecord(
  * Interface that allows you to log records.
  * This records are treated by handlers
  */
-export default class Logger {
+export class Logger {
   private contextObject?: Record<string, unknown>;
 
   readonly key: string;
@@ -667,3 +667,6 @@ export default class Logger {
     this.exit(fn);
   }
 }
+
+/** @deprecated use named export instead */
+export default Logger;

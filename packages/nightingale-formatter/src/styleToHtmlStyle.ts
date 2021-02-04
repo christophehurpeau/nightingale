@@ -1,4 +1,4 @@
-import hexColors from './styleToHexColor';
+import { styleToHexColor } from './styleToHexColor';
 
 export interface HtmlStyle {
   readonly open: string;
@@ -45,13 +45,16 @@ export const styleToHtmlStyleThemeLight: StyleToHtmlStyle = {
   bgCyan: { open: 'background: #00cfd8', close: 'background: initial' },
   bgWhite: { open: 'background: white', close: 'background: initial' },
 
-  orange: { open: `color: #${hexColors.orange}`, close: 'color: currentcolor' },
+  orange: {
+    open: `color: #${styleToHexColor.orange}`,
+    close: 'color: currentcolor',
+  },
   grayLight: {
-    open: `color: #${hexColors.grayLight}`,
+    open: `color: #${styleToHexColor.grayLight}`,
     close: 'color: currentcolor',
   },
   'gray-light': {
-    open: `color: #${hexColors.grayLight}`,
+    open: `color: #${styleToHexColor.grayLight}`,
     close: 'color: currentcolor',
   },
 };

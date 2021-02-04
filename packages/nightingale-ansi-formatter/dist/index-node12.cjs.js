@@ -59,10 +59,10 @@ function style(styles, string) {
  * @returns {string}
  */
 
-function format(record) {
+function ansiFormat(record) {
   return nightingaleFormatter.formatRecordToString(record, style);
 }
 
-exports.default = format;
+exports.default = ansiFormat;
 exports.style = style;
 //# sourceMappingURL=index-node12.cjs.js.map

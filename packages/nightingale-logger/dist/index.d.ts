@@ -39,7 +39,7 @@ declare global {
  * Interface that allows you to log records.
  * This records are treated by handlers
  */
-export default class Logger {
+export declare class Logger {
     private contextObject?;
     readonly key: string;
     readonly displayName?: string;
@@ -232,4 +232,6 @@ export default class Logger {
     wrap<T extends Metadata, Fn extends (...args: unknown[]) => unknown>(fn: Fn, metadata: T, callback: () => void): void;
     wrap<T extends Metadata, Fn extends (...args: unknown[]) => unknown>(fn: Fn, metadata: T, metadataStyles: MetadataStyles<T>, callback: () => void): void;
 }
+/** @deprecated use named export instead */
+export default Logger;
 //# sourceMappingURL=index.d.ts.map

@@ -2,7 +2,7 @@
 import formatterRaw from 'nightingale-raw-formatter';
 import type { Level, LogRecord, Metadata } from 'nightingale-types';
 
-export default class StringHandler {
+export class StringHandler {
   readonly minLevel: Level;
 
   private _buffer = '';
@@ -19,3 +19,6 @@ export default class StringHandler {
     this._buffer += formatterRaw(record) + '\n';
   }
 }
+
+/** @deprecated use named export instead */
+export default StringHandler;

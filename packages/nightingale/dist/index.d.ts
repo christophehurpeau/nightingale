@@ -1,8 +1,9 @@
 import Level from 'nightingale-levels';
 import Logger from 'nightingale-logger';
+/** @deprecated use named export instead */
 export default Logger;
 export { configure, addConfig } from './config';
-export { Level, Level as levels };
+export { Logger, Level, Level as levels };
 /**
  * listen to uncaughtException and unhandledRejection
  * @param {Logger} [logger]

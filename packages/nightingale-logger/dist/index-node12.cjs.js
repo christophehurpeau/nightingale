@@ -527,5 +527,6 @@ class Logger {
 }
 
 exports.Level = Level__default;
+exports.Logger = Logger;
 exports.default = Logger;
 //# sourceMappingURL=index-node12.cjs.js.map
