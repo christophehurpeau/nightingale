@@ -8705,7 +8705,7 @@ __metadata:
     nightingale-types: ^11.2.0
     pob-babel: 26.4.0
     pob-lcov-reporter: 4.0.1
-    rollup: 2.38.4
+    rollup: 2.38.5
     typescript: 4.1.3
     xunit-file: 1.0.0
   languageName: unknown
@@ -8734,7 +8734,7 @@ __metadata:
     nightingale-browser-console: ^11.2.0
     nightingale-console: ^11.2.0
     pob-babel: 26.4.0
-    rollup: 2.38.4
+    rollup: 2.38.5
     typescript: 4.1.3
   languageName: unknown
   linkType: soft
@@ -8765,7 +8765,7 @@ __metadata:
     nightingale-types: ^11.2.0
     pob-babel: 26.4.0
     pob-lcov-reporter: 4.0.1
-    rollup: 2.38.4
+    rollup: 2.38.5
     typescript: 4.1.3
     xunit-file: 1.0.0
   languageName: unknown
@@ -8793,7 +8793,7 @@ __metadata:
     nightingale-debug: ^11.2.0
     nightingale-types: ^11.2.0
     pob-babel: 26.4.0
-    rollup: 2.38.4
+    rollup: 2.38.5
     typescript: 4.1.3
   languageName: unknown
   linkType: soft
@@ -8819,7 +8819,7 @@ __metadata:
     nightingale: ^11.2.0
     nightingale-console: ^11.2.0
     pob-babel: 26.4.0
-    rollup: 2.38.4
+    rollup: 2.38.5
     typescript: 4.1.3
   languageName: unknown
   linkType: soft
@@ -8846,7 +8846,7 @@ __metadata:
     nightingale-levels: ^11.2.0
     nightingale-types: ^11.2.0
     pob-babel: 26.4.0
-    rollup: 2.38.4
+    rollup: 2.38.5
     typescript: 4.1.3
   languageName: unknown
   linkType: soft
@@ -8876,7 +8876,7 @@ __metadata:
     nightingale-levels: ^11.2.0
     nightingale-types: ^11.2.0
     pob-babel: 26.4.0
-    rollup: 2.38.4
+    rollup: 2.38.5
     typescript: 4.1.3
   languageName: unknown
   linkType: soft
@@ -8905,7 +8905,7 @@ __metadata:
     nightingale-levels: ^11.2.0
     pob-babel: 26.4.0
     pob-lcov-reporter: 4.0.1
-    rollup: 2.38.4
+    rollup: 2.38.5
     typescript: 4.1.3
     xunit-file: 1.0.0
   languageName: unknown
@@ -8936,7 +8936,7 @@ __metadata:
     nightingale-string: ^11.2.0
     nightingale-types: ^11.2.0
     pob-babel: 26.4.0
-    rollup: 2.38.4
+    rollup: 2.38.5
     typescript: 4.1.3
   languageName: unknown
   linkType: soft
@@ -8966,7 +8966,7 @@ __metadata:
     nightingale-types: ^11.2.0
     pob-babel: 26.4.0
     pob-lcov-reporter: 4.0.1
-    rollup: 2.38.4
+    rollup: 2.38.5
     typescript: 4.1.3
     xunit-file: 1.0.0
   languageName: unknown
@@ -8998,7 +8998,7 @@ __metadata:
     nightingale-types: ^11.2.0
     pob-babel: 26.4.0
     pob-lcov-reporter: 4.0.1
-    rollup: 2.38.4
+    rollup: 2.38.5
     typescript: 4.1.3
     xunit-file: 1.0.0
   languageName: unknown
@@ -9030,7 +9030,7 @@ __metadata:
     nightingale-types: ^11.2.0
     pob-babel: 26.4.0
     pob-lcov-reporter: 4.0.1
-    rollup: 2.38.4
+    rollup: 2.38.5
     typescript: 4.1.3
     xunit-file: 1.0.0
   languageName: unknown
@@ -9069,7 +9069,7 @@ __metadata:
     eslint-plugin-node: 11.1.0
     eslint-plugin-unicorn: 25.0.1
     pob-babel: 26.4.0
-    rollup: 2.38.4
+    rollup: 2.38.5
     typescript: 4.1.3
   languageName: unknown
   linkType: soft
@@ -9100,7 +9100,7 @@ __metadata:
     nightingale-types: ^11.2.0
     pob-babel: 26.4.0
     pob-lcov-reporter: 4.0.1
-    rollup: 2.38.4
+    rollup: 2.38.5
     typescript: 4.1.3
     xunit-file: 1.0.0
   languageName: unknown
@@ -9132,7 +9132,7 @@ __metadata:
     nightingale-types: ^11.2.0
     pob-babel: 26.4.0
     pob-lcov-reporter: 4.0.1
-    rollup: 2.38.4
+    rollup: 2.38.5
     typescript: 4.1.3
     xunit-file: 1.0.0
   languageName: unknown
@@ -9190,7 +9190,7 @@ __metadata:
     nightingale-types: ^11.2.0
     pob-babel: 26.4.0
     pob-lcov-reporter: 4.0.1
-    rollup: 2.38.4
+    rollup: 2.38.5
     typescript: 4.1.3
     xunit-file: 1.0.0
   languageName: unknown
@@ -9217,7 +9217,7 @@ __metadata:
     nightingale-levels: ^11.2.0
     nightingale-types: ^11.2.0
     pob-babel: 26.4.0
-    rollup: 2.38.4
+    rollup: 2.38.5
     typescript: 4.1.3
   languageName: unknown
   linkType: soft
@@ -9250,7 +9250,7 @@ __metadata:
     pob-babel: 26.4.0
     pob-lcov-reporter: 4.0.1
     request: ^2.88.0
-    rollup: 2.38.4
+    rollup: 2.38.5
     typescript: 4.1.3
     xunit-file: 1.0.0
   languageName: unknown
@@ -9276,7 +9276,7 @@ __metadata:
     nightingale-raw-formatter: ^11.2.0
     nightingale-types: ^11.2.0
     pob-babel: 26.4.0
-    rollup: 2.38.4
+    rollup: 2.38.5
     typescript: 4.1.3
   languageName: unknown
   linkType: soft
@@ -9301,7 +9301,7 @@ __metadata:
     eslint-plugin-unicorn: 25.0.1
     nightingale-levels: ^11.2.0
     pob-babel: 26.4.0
-    rollup: 2.38.4
+    rollup: 2.38.5
     typescript: 4.1.3
   languageName: unknown
   linkType: soft
@@ -9326,7 +9326,7 @@ __metadata:
     eslint-plugin-unicorn: 25.0.1
     nightingale-types: ^11.2.0
     pob-babel: 26.4.0
-    rollup: 2.38.4
+    rollup: 2.38.5
     typescript: 4.1.3
   languageName: unknown
   linkType: soft
@@ -9352,7 +9352,7 @@ __metadata:
     nightingale-level-names: ^11.1.0
     nightingale-types: ^11.2.0
     pob-babel: 26.4.0
-    rollup: 2.38.4
+    rollup: 2.38.5
     typescript: 4.1.3
   languageName: unknown
   linkType: soft
@@ -9385,7 +9385,7 @@ __metadata:
     nightingale-types: ^11.2.0
     pob-babel: 26.4.0
     pob-lcov-reporter: 4.0.1
-    rollup: 2.38.4
+    rollup: 2.38.5
     typescript: 4.1.3
     xunit-file: 1.0.0
   languageName: unknown
@@ -11017,9 +11017,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rollup@npm:2.38.4, rollup@npm:^2.34.2":
-  version: 2.38.4
-  resolution: "rollup@npm:2.38.4"
+"rollup@npm:2.38.5, rollup@npm:^2.34.2":
+  version: 2.38.5
+  resolution: "rollup@npm:2.38.5"
   dependencies:
     fsevents: ~2.3.1
   dependenciesMeta:
@@ -11027,7 +11027,7 @@ __metadata:
       optional: true
   bin:
     rollup: dist/bin/rollup
-  checksum: dab8b6c64fced8b1b606d4018bb8e37b96bfd5b711c1cd8523c017fb71694bc3dfed2625e959e670b53d56cfae9fb6941f4005f1de02770e1f9d76d50e5d026d
+  checksum: b8ccad97a04f95f2459101c9b477e27f857fba5995d936728838da3728c2295aa396198b42fd254888057974589ba70a06e00feff7c1a1db992f0280914d695b
   languageName: node
   linkType: hard
 
