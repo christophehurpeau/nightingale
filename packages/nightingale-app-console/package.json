@@ -1,6 +1,6 @@
 {
   "name": "nightingale-app-console",
-  "version": "11.3.0",
+  "version": "11.4.0",
   "description": "nightingale default config and logger for app",
   "keywords": [],
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (https://christophe.hurpeau.com)",
@@ -102,7 +102,7 @@
   },
   "dependencies": {
     "@types/node": ">=12.0.0",
-    "nightingale": "^11.3.0",
+    "nightingale": "^11.4.0",
     "nightingale-browser-console": "^11.3.0",
     "nightingale-console": "^11.3.0"
   },
