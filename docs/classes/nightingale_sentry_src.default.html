@@ -61,13 +61,21 @@
 					<a href="nightingale_sentry_src.default.html">default</a>
 				</li>
 			</ul>
-			<h1>default</h1>
+			<h1>default&lt;S&gt;</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-type-parameters">
+				<h3>Type parameters</h3>
+				<ul class="tsd-type-parameters">
+					<li>
+						<h4>S<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">SentryRequiredMethods</span></h4>
+					</li>
+				</ul>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
@@ -83,7 +91,7 @@
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="nightingale_sentry_src.default.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-has-type-parameter"><a href="nightingale_sentry_src.default.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -98,23 +106,29 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Constructors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-has-type-parameter">
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
-					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new default<span class="tsd-signature-symbol">(</span>ravenUrl<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, minLevel<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/nightingale_sentry_src.options.html" class="tsd-signature-type" data-tsd-kind="Interface">Options</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="nightingale_sentry_src.default.html" class="tsd-signature-type" data-tsd-kind="Class">default</a></li>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">new default&lt;S&gt;<span class="tsd-signature-symbol">(</span>Sentry<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">S</span>, minLevel<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/nightingale_sentry_src.options.html" class="tsd-signature-type" data-tsd-kind="Interface">Options</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="nightingale_sentry_src.default.html" class="tsd-signature-type" data-tsd-kind="Class">default</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">S</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-sentry/src/index.ts#L76">nightingale-sentry/src/index.ts:76</a></li>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-sentry/src/index.ts#L105">nightingale-sentry/src/index.ts:105</a></li>
 								</ul>
 							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>S<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">SentryRequiredMethods</span></h4>
+								</li>
+							</ul>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>ravenUrl: <span class="tsd-signature-type">string</span></h5>
+									<h5>Sentry: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">S</span></h5>
 								</li>
 								<li>
 									<h5>minLevel: <span class="tsd-signature-type">number</span></h5>
@@ -123,7 +137,7 @@
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="../interfaces/nightingale_sentry_src.options.html" class="tsd-signature-type" data-tsd-kind="Interface">Options</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="nightingale_sentry_src.default.html" class="tsd-signature-type" data-tsd-kind="Class">default</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="nightingale_sentry_src.default.html" class="tsd-signature-type" data-tsd-kind="Class">default</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">S</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -136,7 +150,7 @@
 					<div class="tsd-signature tsd-kind-icon">handle<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Handle</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-sentry/src/index.ts#L76">nightingale-sentry/src/index.ts:76</a></li>
+							<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-sentry/src/index.ts#L105">nightingale-sentry/src/index.ts:105</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -146,7 +160,7 @@
 					<div class="tsd-signature tsd-kind-icon">min<wbr>Level<span class="tsd-signature-symbol">:</span> <a href="../enums/nightingale_types_src.level.html" class="tsd-signature-type" data-tsd-kind="Enumeration">Level</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-sentry/src/index.ts#L74">nightingale-sentry/src/index.ts:74</a></li>
+							<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-sentry/src/index.ts#L103">nightingale-sentry/src/index.ts:103</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -167,10 +181,10 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-class tsd-parent-kind-module">
+					<li class="current tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
 						<a href="nightingale_sentry_src.default.html" class="tsd-kind-icon">default</a>
 						<ul>
-							<li class=" tsd-kind-constructor tsd-parent-kind-class">
+							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-has-type-parameter">
 								<a href="nightingale_sentry_src.default.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
@@ -207,7 +221,7 @@
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
-				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
 				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
 			</ul>
 			<ul class="tsd-legend">

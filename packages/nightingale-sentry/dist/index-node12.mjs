@@ -1,27 +1,34 @@
-import { withScope, init } from '@sentry/node';
+import * as SentryNode from '@sentry/node';
+import { init } from '@sentry/node';
+import { Severity } from '@sentry/types';
 import Level from 'nightingale-levels';
 
 const mapToSentryLevel = {
-  [Level.TRACE]: 'debug',
-  [Level.DEBUG]: 'debug',
-  [Level.INFO]: 'info',
-  [Level.NOTICE]: 'log',
-  [Level.WARNING]: 'warning',
-  [Level.ERROR]: 'error',
-  [Level.CRITICAL]: 'critical',
-  [Level.FATAL]: 'critical',
-  [Level.EMERGENCY]: 'critical',
+  [Level.TRACE]: Severity.Debug,
+  [Level.DEBUG]: Severity.Debug,
+  [Level.INFO]: Severity.Info,
+  [Level.NOTICE]: Severity.Log,
+  [Level.WARNING]: Severity.Warning,
+  [Level.ERROR]: Severity.Error,
+  [Level.CRITICAL]: Severity.Critical,
+  [Level.FATAL]: Severity.Fatal,
+  [Level.EMERGENCY]: Severity.Critical,
   // not a level
-  [Level.ALL]: 'fatal'
+  [Level.ALL]: Severity.Error
 };
 
-const createHandler = (dsn, {
-  getUser,
-  getTags
+const createHandler = (Sentry, {
+  getUser = () => undefined,
+  getTags = () => ({}),
+  getBreadcrumbCategory = () => undefined,
+  getBreadcrumbType = () => undefined,
+  shouldSendAsException = record => {
+    var _record$metadata;
+
+    return ((_record$metadata = record.metadata) === null || _record$metadata === void 0 ? void 0 : _record$metadata.error) !== undefined;
+  },
+  shouldSendAsBreadcrumb = () => false
 } = {}) => {
-  init({
-    dsn
-  });
   return record => {
     const {
       key,
@@ -29,48 +36,48 @@ const createHandler = (dsn, {
       metadata,
       extra
     } = record;
-    const error = metadata === null || metadata === void 0 ? void 0 : metadata.error;
 
-    if (!error) {
-      return;
+    if (shouldSendAsException(record)) {
+      const error = (metadata === null || metadata === void 0 ? void 0 : metadata.error) || record.message;
+      const extraData = { ...metadata,
+        ...extra
+      };
+      delete extraData.error;
+      Sentry.captureException(error, {
+        level: mapToSentryLevel[level] || Severity.Error,
+        user: getUser(record),
+        tags: {
+          loggerKey: key,
+          ...getTags(record)
+        },
+        extra: extraData
+      });
+    } else if (shouldSendAsBreadcrumb(record)) {
+      Sentry.addBreadcrumb({
+        level: mapToSentryLevel[level] || Severity.Error,
+        category: getBreadcrumbCategory(record),
+        type: getBreadcrumbType(record),
+        message: record.message,
+        data: record.metadata,
+        timestamp: record.datetime.getTime()
+      });
     }
-
-    const extraData = { ...metadata,
-      ...extra
-    };
-    delete extraData.error;
-    withScope(scope => {
-      scope.setLevel(mapToSentryLevel[level] || 'error');
-      scope.setTag('loggerKey', key);
-
-      if (extraData) {
-        Object.keys(extraData).forEach(key => {
-          scope.setExtra(key, extraData[key]);
-        });
-      }
-
-      if (getUser) {
-        const user = getUser(record);
-        if (user) scope.setUser(user);
-      }
-
-      if (getTags) {
-        const tags = getTags(record);
-
-        if (tags) {
-          Object.keys(tags).forEach(key => {
-            scope.setTag(key, tags[key]);
-          });
-        }
-      }
-    });
   };
 };
 
 class SentryHandler {
-  constructor(ravenUrl, minLevel, options) {
+  constructor(Sentry, minLevel, options) {
     this.minLevel = minLevel;
-    this.handle = createHandler(ravenUrl, options);
+
+    if (typeof Sentry === 'string') {
+      console.warn('nightingale-sentry: Passing DSN directly is deprecated, pass Sentry instead and init in your app.');
+      init({
+        dsn: Sentry
+      });
+      this.handle = createHandler(SentryNode, options);
+    } else {
+      this.handle = createHandler(Sentry, options);
+    }
   }
 
 }

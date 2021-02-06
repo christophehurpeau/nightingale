@@ -1,16 +1,27 @@
-import type { User } from '@sentry/node';
+import type { addBreadcrumb, captureException, captureMessage } from '@sentry/core';
+import type { User } from '@sentry/types';
 import Level from 'nightingale-levels';
 import type { LogRecord, Handle, Metadata } from 'nightingale-types';
-export interface Options {
-    getUser?: <T extends Metadata>(record: LogRecord<T>) => User;
-    getTags?: <T extends Metadata>(record: LogRecord<T>) => Record<string, string>;
-}
 export interface MetadataWithError extends Metadata {
     error?: Error;
 }
-export default class SentryHandler {
+export interface Options {
+    getUser?: <T extends MetadataWithError>(record: LogRecord<T>) => User | undefined;
+    getTags?: <T extends MetadataWithError>(record: LogRecord<T>) => Record<string, string>;
+    getBreadcrumbCategory?: <T extends Metadata>(record: LogRecord<T>) => string | undefined;
+    getBreadcrumbType?: <T extends Metadata>(record: LogRecord<T>) => string | undefined;
+    shouldSendAsException?: <T extends MetadataWithError>(record: LogRecord<T>) => boolean;
+    shouldSendAsBreadcrumb?: <T extends Metadata>(record: LogRecord<T>) => boolean;
+}
+interface SentryRequiredMethods {
+    addBreadcrumb: typeof addBreadcrumb;
+    captureException: typeof captureException;
+    captureMessage: typeof captureMessage;
+}
+export default class SentryHandler<S extends SentryRequiredMethods> {
     minLevel: Level;
     handle: Handle;
-    constructor(ravenUrl: string, minLevel: number, options?: Options);
+    constructor(Sentry: string | S, minLevel: number, options?: Options);
 }
+export {};
 //# sourceMappingURL=index.d.ts.map

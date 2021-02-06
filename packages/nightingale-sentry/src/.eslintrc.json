@@ -5,9 +5,6 @@
     "project": "packages/nightingale-sentry/tsconfig.json"
   },
   "plugins": ["@typescript-eslint"],
-  "extends": [
-    "@pob/eslint-config-typescript",
-    "@pob/eslint-config-typescript-node"
-  ],
+  "extends": ["@pob/eslint-config-typescript"],
   "ignorePatterns": ["*.d.ts"]
 }
