@@ -104,7 +104,7 @@ configure([
 ]);
 ```
 
-### [Logger](https://nightingalejs.github.io/nightingale-logger/docs/Logger.html)
+### [Logger](https://christophehurpeau.github.io/nightingale/classes/nightingale_logger_src.logger.html)
 
 The class with all the methods you call to log things.
 
@@ -164,6 +164,7 @@ You can find handlers [on npm](https://www.npmjs.com/search?q=nightingale-handle
 - [BrowserConsoleHandler](https://npmjs.org/package/nightingale-browser-console)
 - [StringHandler](https://npmjs.org/package/nightingale-string)
 - [SlackHandler](https://npmjs.org/package/nightingale-slack)
+- [ReactNativeConsoleHandler](https://npmjs.org/package/nightingale-react-native-console)
 
 ### Formatter
 
@@ -206,7 +207,7 @@ const logger = new MyCustomLogger('app');
 
 ```js
 import { configure } from 'nightingale';
-import errorProcessor from 'nightingale-error-processor';
+import errorProcessor from './myErrorProcessor';
 
 configure([{ processors: [errorProcessor] }]);
 ```

@@ -31,6 +31,14 @@ const myServiceLogger = appLogger.child('services:myService');
 myServiceLogger.debug('started');
 ```
 
+### [Logger](https://christophehurpeau.github.io/nightingale/classes/nightingale_logger_src.logger.html)
+
+The class with all the methods you call to log things.
+
+## Library
+
+If you're writing a library, use only [nightingale-logger](https://npmjs.org/package/nightingale-logger)
+
 ## Import the right bundle with webpack
 
 Configure `webpackConfig.resolve.mainFields`:

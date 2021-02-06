@@ -35,10 +35,12 @@
       "packages/nightingale-raw-formatter/src/",
       "packages/nightingale-browser-console/src/",
       "packages/nightingale-console/src/",
+      "packages/nightingale-react-native-console/src/",
       "packages/nightingale-slack/src/",
       "packages/nightingale-string/src/",
       "packages/nightingale/src/",
-      "packages/nightingale-app-console/src/"
+      "packages/nightingale-app-console/src/",
+      "packages/nightingale-app-react-native/src/"
     ],
     "exclude": ["src/**/*.test.ts", "src/**/__tests__/**"],
     "readme": "README.md",

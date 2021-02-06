@@ -18,10 +18,12 @@
     { "path": "packages/nightingale-raw-formatter/tsconfig.json" },
     { "path": "packages/nightingale-browser-console/tsconfig.json" },
     { "path": "packages/nightingale-console/tsconfig.json" },
+    { "path": "packages/nightingale-react-native-console/tsconfig.json" },
     { "path": "packages/nightingale-slack/tsconfig.json" },
     { "path": "packages/nightingale-string/tsconfig.json" },
     { "path": "packages/nightingale/tsconfig.json" },
     { "path": "packages/nightingale-app-console/tsconfig.json" },
+    { "path": "packages/nightingale-app-react-native/tsconfig.json" },
     { "path": "packages/nightingale-console-example/tsconfig.json" },
     { "path": "packages/nightingale-example/tsconfig.json" }
   ]

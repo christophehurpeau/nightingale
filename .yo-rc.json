@@ -31,10 +31,12 @@
         "nightingale-raw-formatter",
         "nightingale-browser-console",
         "nightingale-console",
+        "nightingale-react-native-console",
         "nightingale-slack",
         "nightingale-string",
         "nightingale",
         "nightingale-app-console",
+        "nightingale-app-react-native",
         "nightingale-console-example",
         "nightingale-example"
       ]
