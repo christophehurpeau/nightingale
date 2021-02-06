@@ -14,8 +14,6 @@
 
 The nightingale is a bird best known for its powerful and beautiful song.
 
-See the [Logger API](https://christophehurpeau.github.io/nightingale/classes/nightingale_logger.logger.html)
-
 ## Install
 
 ```sh
@@ -24,11 +22,12 @@ npm install --save nightingale-console # for console handler in nodejs
 npm install --save nightingale-browser-console # for console handler in browser
 ```
 
-You can also use [nightingale-app-console](https://www.npmjs.com/package/nightingale-app-console).
-
 ## How to use
 
 ### In an application
+
+You can also use pre-configured isomorphic [nightingale-app-console](https://www.npmjs.com/package/nightingale-app-console).
+If you use react-native or expo, check out [nightingale-app-react-native](https://www.npmjs.com/package/nightingale-app-react-native).
 
 ```sh
 npm install --save nightingale nightingale-console
@@ -86,6 +85,8 @@ logger.success('It works !');
 
 ### In the browser
 
+You can also use pre-configured isomorphic [nightingale-app-console](https://www.npmjs.com/package/nightingale-app-console).
+
 ```sh
 npm install --save nightingale nightingale-browser-console
 ```
@@ -104,9 +105,9 @@ configure([
 ]);
 ```
 
-### [Logger](https://christophehurpeau.github.io/nightingale/classes/nightingale_logger_src.logger.html)
+### The Logger class
 
-The class with all the methods you call to log things.
+See the [Logger API](https://christophehurpeau.github.io/nightingale/classes/nightingale_logger.logger.html), with all the methods you call to log things.
 
 ## Debug
 

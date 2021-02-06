@@ -31,9 +31,9 @@ const myServiceLogger = appLogger.child('services:myService');
 myServiceLogger.debug('started');
 ```
 
-### [Logger](https://christophehurpeau.github.io/nightingale/classes/nightingale_logger_src.logger.html)
+### The Logger class
 
-The class with all the methods you call to log things.
+See the [Logger API](https://christophehurpeau.github.io/nightingale/classes/nightingale_logger.logger.html), with all the methods you call to log things.
 
 ## Library
 

@@ -43,7 +43,7 @@
       "packages/nightingale-app-react-native/src/"
     ],
     "exclude": ["src/**/*.test.ts", "src/**/__tests__/**"],
-    "readme": "README.md",
+    "readme": "packages/nightingale/README.md",
     "out": "docs",
     "excludePrivate": true,
     "gitRevision": "master"
