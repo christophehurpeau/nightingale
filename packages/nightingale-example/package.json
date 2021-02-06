@@ -1,7 +1,7 @@
 {
   "name": "nightingale-example",
   "private": true,
-  "version": "11.2.0",
+  "version": "11.3.0",
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (https://christophe.hurpeau.com)",
   "license": "ISC",
   "repository": {
@@ -113,12 +113,12 @@
     ]
   },
   "dependencies": {
-    "nightingale": "^11.2.0",
-    "nightingale-console": "^11.2.0",
-    "nightingale-console-output": "^11.2.0",
-    "nightingale-json-formatter": "^11.2.0",
-    "nightingale-string": "^11.2.0",
-    "nightingale-types": "^11.2.0"
+    "nightingale": "^11.3.0",
+    "nightingale-console": "^11.3.0",
+    "nightingale-console-output": "^11.3.0",
+    "nightingale-json-formatter": "^11.3.0",
+    "nightingale-string": "^11.3.0",
+    "nightingale-types": "^11.3.0"
   },
   "devDependencies": {
     "@babel/core": "7.12.13",

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [11.3.0](https://github.com/christophehurpeau/nightingale/compare/v11.2.0...v11.3.0) (2021-02-06)
+
+
+### Features
+
+* **nightingale-ansi-formatter:** build for browser usage ([3582d40](https://github.com/christophehurpeau/nightingale/commit/3582d4035f04c0c42e79de4e249f2aa76512816c))
+
+
+
+
+
 # [11.2.0](https://github.com/christophehurpeau/nightingale/compare/v11.1.1...v11.2.0) (2021-02-04)
 
 
