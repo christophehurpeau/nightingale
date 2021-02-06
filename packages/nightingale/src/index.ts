@@ -16,10 +16,10 @@ export function listenUnhandledErrors(
     'listenUnhandledErrors',
   ),
 ): void {
-  process.on('uncaughtException', (err) =>
-    logger.error('uncaughtException', { err }),
+  process.on('uncaughtException', (error) =>
+    logger.error('uncaughtException', { error, unhandled: true }),
   );
-  process.on('unhandledRejection', (err) =>
-    logger.error('unhandledRejection', { err }),
+  process.on('unhandledRejection', (error) =>
+    logger.error('unhandledRejection', { error, unhandled: true }),
   );
 }

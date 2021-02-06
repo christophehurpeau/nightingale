@@ -63,7 +63,8 @@ const createHandler = <S extends SentryRequiredMethods>(
     getBreadcrumbCategory = () => undefined,
     getBreadcrumbType = () => undefined,
     shouldSendAsException = <T extends Metadata>(record: LogRecord<T>) =>
-      record.metadata?.error !== undefined,
+      record.metadata?.error !== undefined &&
+      record.metadata.unhandled !== true,
     shouldSendAsBreadcrumb = <T extends Metadata>(record: LogRecord<T>) =>
       false,
   }: Options = {},

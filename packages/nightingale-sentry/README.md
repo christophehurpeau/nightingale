@@ -28,9 +28,7 @@ import {
 import { configure, Level, listenUnhandledErrors } from 'nightingale';
 import SentryHandler from 'nightingale-sentry';
 
-if (process.env.NODE_ENV !== 'production') {
-  listenUnhandledErrors();
-}
+listenUnhandledErrors();
 
 sentryInit({
   dsn: process.env.NODE_ENV === 'production' ? '__DSN__' : undefined,
@@ -44,7 +42,7 @@ configure([
         { addBreadcrumb, captureException, captureMessage },
         Level.ERROR,
         {
-          // shouldSendAsException: (record) => record.metadata?.error !== undefined,
+          // shouldSendAsException: (record) => record.metadata?.error !== undefined && record.metadata.unhandled !== true,
           // shouldSendAsBreadcrumb: (record) => false,
           // getUser: ({ context }) => context.user && { id: context.user.id },
           // getTags: ({ context }) => context.tags,
@@ -110,7 +108,9 @@ configure([
         Level.INFO,
         {
           shouldSendAsException: (record) =>
-            record.level >= Level.ERROR && record.metadata?.error !== undefined,
+            record.level >= Level.ERROR &&
+            record.metadata?.error !== undefined &&
+            record.metadata.unhandled !== true,
           shouldSendAsBreadcrumb: (record) =>
             record.metadata?.breadcrumb ? true : false,
           getBreadcrumbCategory: (record) =>

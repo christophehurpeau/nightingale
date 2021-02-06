@@ -47,7 +47,7 @@ var createHandler = function createHandler(Sentry, _temp) {
       shouldSendAsException = _ref$shouldSendAsExce === void 0 ? function (record) {
     var _record$metadata;
 
-    return ((_record$metadata = record.metadata) === null || _record$metadata === void 0 ? void 0 : _record$metadata.error) !== undefined;
+    return ((_record$metadata = record.metadata) === null || _record$metadata === void 0 ? void 0 : _record$metadata.error) !== undefined && record.metadata.unhandled !== true;
   } : _ref$shouldSendAsExce,
       _ref$shouldSendAsBrea = _ref.shouldSendAsBreadcrumb,
       shouldSendAsBreadcrumb = _ref$shouldSendAsBrea === void 0 ? function () {

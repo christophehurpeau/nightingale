@@ -23,7 +23,7 @@ const createHandler = (Sentry, {
   shouldSendAsException = record => {
     var _record$metadata;
 
-    return ((_record$metadata = record.metadata) === null || _record$metadata === void 0 ? void 0 : _record$metadata.error) !== undefined;
+    return ((_record$metadata = record.metadata) === null || _record$metadata === void 0 ? void 0 : _record$metadata.error) !== undefined && record.metadata.unhandled !== true;
   },
   shouldSendAsBreadcrumb = () => false
 } = {}) => {

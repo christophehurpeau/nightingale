@@ -141,14 +141,16 @@ function listenUnhandledErrors(logger) {
     logger = new Logger__default('nightingale.listenUnhandledErrors', 'listenUnhandledErrors');
   }
 
-  process.on('uncaughtException', function (err) {
+  process.on('uncaughtException', function (error) {
     return logger.error('uncaughtException', {
-      err
+      error,
+      unhandled: true
     });
   });
-  process.on('unhandledRejection', function (err) {
+  process.on('unhandledRejection', function (error) {
     return logger.error('unhandledRejection', {
-      err
+      error,
+      unhandled: true
     });
   });
 }
