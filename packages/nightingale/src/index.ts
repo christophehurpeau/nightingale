@@ -12,8 +12,8 @@ export { Logger, Level, Level as levels };
  */
 export function listenUnhandledErrors(
   logger: Logger = new Logger(
-    'nightingale.listenUnhandledErrors',
-    'listenUnhandledErrors',
+    'nightingale:listenUnhandledErrors',
+    'UnhandledErrors',
   ),
 ): void {
   process.on('uncaughtException', (error) =>

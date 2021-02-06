@@ -138,7 +138,7 @@ if (global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
 
 function listenUnhandledErrors(logger) {
   if (logger === void 0) {
-    logger = new Logger__default('nightingale.listenUnhandledErrors', 'listenUnhandledErrors');
+    logger = new Logger__default('nightingale:listenUnhandledErrors', 'UnhandledErrors');
   }
 
   process.on('uncaughtException', function (error) {

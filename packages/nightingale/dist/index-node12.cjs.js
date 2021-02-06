@@ -127,7 +127,7 @@ if (global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
  * @param {Logger} [logger]
  */
 
-function listenUnhandledErrors(logger = new Logger__default('nightingale.listenUnhandledErrors', 'listenUnhandledErrors')) {
+function listenUnhandledErrors(logger = new Logger__default('nightingale:listenUnhandledErrors', 'UnhandledErrors')) {
   process.on('uncaughtException', error => logger.error('uncaughtException', {
     error,
     unhandled: true
