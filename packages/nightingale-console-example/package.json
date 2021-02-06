@@ -34,15 +34,27 @@
         "import": "./dist/children-node12.mjs",
         "require": "./dist/children-node12.cjs.js"
       }
+    },
+    "./sentry": {
+      "node": {
+        "development": {
+          "import": "./dist/sentry-node12-dev.mjs",
+          "require": "./dist/sentry-node12-dev.cjs.js"
+        },
+        "import": "./dist/sentry-node12.mjs",
+        "require": "./dist/sentry-node12.cjs.js"
+      }
     }
   },
   "module:node": "./dist/index-node12.mjs",
   "module:node-dev": "./dist/index-node12-dev.mjs",
   "module:aliases-node": {
-    "./children.js": "./dist/children-node12.es.js"
+    "./children.js": "./dist/children-node12.es.js",
+    "./sentry.js": "./dist/sentry-node12.es.js"
   },
   "module:aliases-node-dev": {
-    "./children.js": "./dist/children-node12-dev.es.js"
+    "./children.js": "./dist/children-node12-dev.es.js",
+    "./sentry.js": "./dist/sentry-node12-dev.es.js"
   },
   "scripts": {
     "build": "pob-build",
@@ -68,12 +80,15 @@
     ],
     "entries": [
       "index",
-      "children"
+      "children",
+      "sentry"
     ]
   },
   "dependencies": {
+    "@sentry/node": "^6.1.0",
     "nightingale": "^11.5.0",
-    "nightingale-console": "^11.3.0"
+    "nightingale-console": "^11.3.0",
+    "nightingale-sentry": "^11.5.0"
   },
   "devDependencies": {
     "@babel/core": "7.12.13",

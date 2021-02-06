@@ -34,6 +34,8 @@
     "baseUrl": "" /* Base directory to resolve non-absolute module names. */,
 
     "paths": {
+      "nightingale-sentry": ["../../../packages/nightingale-sentry/src"],
+      "nightingale-sentry/*": ["../../../packages/nightingale-sentry/src/*"],
       "nightingale-console": ["../../../packages/nightingale-console/src"],
       "nightingale-console/*": ["../../../packages/nightingale-console/src/*"],
       "nightingale": ["../../../packages/nightingale/src"],
