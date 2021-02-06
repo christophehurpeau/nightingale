@@ -8719,7 +8719,7 @@ __metadata:
     eslint-plugin-import: 2.22.1
     eslint-plugin-node: 11.1.0
     eslint-plugin-unicorn: 25.0.1
-    nightingale: ^11.4.0
+    nightingale: ^11.5.0
     nightingale-browser-console: ^11.3.0
     nightingale-console: ^11.3.0
     pob-babel: 26.4.0
@@ -8746,7 +8746,7 @@ __metadata:
     eslint-plugin-import: 2.22.1
     eslint-plugin-node: 11.1.0
     eslint-plugin-unicorn: 25.0.1
-    nightingale: ^11.4.0
+    nightingale: ^11.5.0
     nightingale-react-native-console: ^11.4.0
     pob-babel: 26.4.0
     rollup: 2.38.5
@@ -8831,7 +8831,7 @@ __metadata:
     eslint-plugin-import: 2.22.1
     eslint-plugin-node: 11.1.0
     eslint-plugin-unicorn: 25.0.1
-    nightingale: ^11.4.0
+    nightingale: ^11.5.0
     nightingale-console: ^11.3.0
     pob-babel: 26.4.0
     rollup: 2.38.5
@@ -8944,7 +8944,7 @@ __metadata:
     eslint-plugin-import: 2.22.1
     eslint-plugin-node: 11.1.0
     eslint-plugin-unicorn: 25.0.1
-    nightingale: ^11.4.0
+    nightingale: ^11.5.0
     nightingale-console: ^11.3.0
     nightingale-console-output: ^11.3.0
     nightingale-json-formatter: ^11.3.0
@@ -9401,7 +9401,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"nightingale@^11.4.0, nightingale@workspace:packages/nightingale":
+"nightingale@^11.5.0, nightingale@workspace:packages/nightingale":
   version: 0.0.0-use.local
   resolution: "nightingale@workspace:packages/nightingale"
   dependencies:

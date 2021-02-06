@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [11.5.0](https://github.com/christophehurpeau/nightingale/compare/v11.4.0...v11.5.0) (2021-02-06)
+
+
+### Features
+
+* better support unhandled errors ([b666145](https://github.com/christophehurpeau/nightingale/commit/b666145eefa5ce090a4134bf0dcb968eb6a2062d))
+
+
+
+
+
 # [11.4.0](https://github.com/christophehurpeau/nightingale/compare/v11.3.0...v11.4.0) (2021-02-06)
 
 
