@@ -9,6 +9,7 @@ import type {
   Handle,
   LogRecord,
   Metadata,
+  Handler,
 } from 'nightingale-types';
 
 const defaultFormatter =
@@ -38,7 +39,7 @@ interface ConsoleHandlerOptions {
   theme?: 'dark' | 'light';
 }
 
-export class ConsoleHandler {
+export class ConsoleHandler implements Handler {
   minLevel: Level = Level.ALL;
 
   isHandling: IsHandling;

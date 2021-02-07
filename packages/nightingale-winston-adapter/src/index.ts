@@ -1,6 +1,12 @@
 /* eslint-disable camelcase */
 import levelNames from 'nightingale-level-names';
-import type { LogRecord, Level, Handle, Metadata } from 'nightingale-types';
+import type {
+  LogRecord,
+  Level,
+  Handle,
+  Metadata,
+  Handler,
+} from 'nightingale-types';
 
 export type LogCallback = (err: Error | null) => void;
 
@@ -13,12 +19,12 @@ export interface WinstonTransportType {
   ) => void;
 }
 
-export class WinstonAdapterHandler {
+export class WinstonAdapterHandler implements Handler {
   minLevel: Level;
 
   handle: Handle;
 
-  constructor(winstonTransport: WinstonTransportType, minLevel: number) {
+  constructor(winstonTransport: WinstonTransportType, minLevel: Level) {
     this.minLevel = minLevel;
     this.handle = <T extends Metadata>(record: LogRecord<T>) => {
       // new Promise((resolve, reject) => {

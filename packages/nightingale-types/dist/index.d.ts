@@ -24,7 +24,7 @@ export interface LogRecord<T extends Metadata> {
 export declare type IsHandling = (level: Level, key: string) => boolean;
 export declare type Handle = <T extends Metadata>(record: Readonly<LogRecord<T>>) => false | void;
 export interface Handler {
-    minLevel: number;
+    minLevel: Level;
     isHandling?: IsHandling;
     handle: Handle;
 }

@@ -3,12 +3,7 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 const nightingaleLevels = require('nightingale-levels');
-const Logger = require('nightingale-logger');
-
-function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e['default'] : e; }
-
-const nightingaleLevels__default = /*#__PURE__*/_interopDefaultLegacy(nightingaleLevels);
-const Logger__default = /*#__PURE__*/_interopDefaultLegacy(Logger);
+const nightingaleLogger = require('nightingale-logger');
 
 if (!global.__NIGHTINGALE_CONFIG) {
   global.__NIGHTINGALE_CONFIG = [];
@@ -127,7 +122,7 @@ if (global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
  * @param {Logger} [logger]
  */
 
-function listenUnhandledErrors(logger = new Logger__default('nightingale:listenUnhandledErrors', 'UnhandledErrors')) {
+function listenUnhandledErrors(logger = new nightingaleLogger.Logger('nightingale:listenUnhandledErrors', 'UnhandledErrors')) {
   process.on('uncaughtException', error => logger.error('uncaughtException', {
     error,
     unhandled: true
@@ -138,10 +133,10 @@ function listenUnhandledErrors(logger = new Logger__default('nightingale:listenU
   }));
 }
 
-exports.Level = nightingaleLevels__default;
-exports.levels = nightingaleLevels__default;
-exports.Logger = Logger__default;
-exports.default = Logger__default;
+exports.Level = nightingaleLevels.Level;
+exports.levels = nightingaleLevels.Level;
+exports.Logger = nightingaleLogger.Logger;
+exports.default = nightingaleLogger.Logger;
 exports.addConfig = addConfig;
 exports.configure = configure;
 exports.listenUnhandledErrors = listenUnhandledErrors;

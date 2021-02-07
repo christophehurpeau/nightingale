@@ -1,12 +1,12 @@
 import Logger, { configure, Level } from 'nightingale';
 import consoleOutput from 'nightingale-console-output';
 import jsonFormatter from 'nightingale-json-formatter';
-import type { LogRecord, Metadata } from 'nightingale-types';
+import type { Handler, LogRecord, Metadata } from 'nightingale-types';
 
-class JSONHandler {
+class JSONHandler implements Handler {
   minLevel: Level;
 
-  constructor(minLevel: number) {
+  constructor(minLevel: Level) {
     this.minLevel = minLevel;
   }
 

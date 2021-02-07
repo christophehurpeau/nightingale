@@ -7,6 +7,7 @@ import type {
   IsHandling,
   LogRecord,
   Metadata,
+  Handler,
 } from 'nightingale-types';
 import { getDebugString } from './debug';
 
@@ -37,7 +38,7 @@ interface BrowserConsoleHandlerOptions {
   theme?: Theme;
 }
 
-export class BrowserConsoleHandler {
+export class BrowserConsoleHandler implements Handler {
   minLevel: Level = 0;
 
   handle: Handle;

@@ -82,7 +82,7 @@ export function createFindDebugLevel(
   }
 
   if (debugValues.length === 0) {
-    return (minLevel: number) => minLevel;
+    return (minLevel: Level) => minLevel;
   }
 
   return (minLevel: Level, key: string) => {

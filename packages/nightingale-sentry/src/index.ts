@@ -8,7 +8,7 @@ import * as SentryNode from '@sentry/node';
 import type { User } from '@sentry/types';
 import { Severity } from '@sentry/types';
 import Level from 'nightingale-levels';
-import type { LogRecord, Handle, Metadata } from 'nightingale-types';
+import type { LogRecord, Handle, Metadata, Handler } from 'nightingale-types';
 
 const mapToSentryLevel: Record<Level, Severity> = {
   [Level.TRACE]: Severity.Debug,
@@ -100,12 +100,13 @@ const createHandler = <S extends SentryRequiredMethods>(
   };
 };
 
-export default class SentryHandler<S extends SentryRequiredMethods> {
+export default class SentryHandler<S extends SentryRequiredMethods>
+  implements Handler {
   minLevel: Level;
 
   handle: Handle;
 
-  constructor(Sentry: string | S, minLevel: number, options?: Options) {
+  constructor(Sentry: string | S, minLevel: Level, options?: Options) {
     this.minLevel = minLevel;
     if (POB_TARGET === 'node' && typeof Sentry === 'string') {
       console.warn(

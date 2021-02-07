@@ -1,6 +1,6 @@
-export { default as Level, default as levels } from 'nightingale-levels';
-import Logger from 'nightingale-logger';
-export { default as Logger, default } from 'nightingale-logger';
+export { Level, Level as levels } from 'nightingale-levels';
+import { Logger } from 'nightingale-logger';
+export { Logger, Logger as default } from 'nightingale-logger';
 
 if (!global.__NIGHTINGALE_CONFIG) {
   global.__NIGHTINGALE_CONFIG = [];

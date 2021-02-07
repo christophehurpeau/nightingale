@@ -1,5 +1,11 @@
 import { post } from 'request';
-import type { LogRecord, Handle, Metadata } from 'nightingale-types';
+import type {
+  LogRecord,
+  Handle,
+  Metadata,
+  Handler,
+  Level,
+} from 'nightingale-types';
 import type SlackConfig from './SlackConfig';
 import createBody from './createBody';
 
@@ -16,12 +22,12 @@ const createHandler = (slackConfig: SlackConfig) => <T extends Metadata>(
   );
 };
 
-export class SlackHandler {
-  minLevel: number;
+export class SlackHandler implements Handler {
+  minLevel: Level;
 
   handle: Handle;
 
-  constructor(slackConfig: SlackConfig, minLevel: number) {
+  constructor(slackConfig: SlackConfig, minLevel: Level) {
     this.minLevel = minLevel;
     this.handle = createHandler(slackConfig);
   }

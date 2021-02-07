@@ -32,7 +32,7 @@ export type Handle = <T extends Metadata>(
 ) => false | void;
 
 export interface Handler {
-  minLevel: number;
+  minLevel: Level;
   isHandling?: IsHandling;
   handle: Handle;
 }

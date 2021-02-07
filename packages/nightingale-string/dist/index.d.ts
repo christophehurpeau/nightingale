@@ -1,5 +1,5 @@
-import type { Level, LogRecord, Metadata } from 'nightingale-types';
-export declare class StringHandler {
+import type { Handler, Level, LogRecord, Metadata } from 'nightingale-types';
+export declare class StringHandler implements Handler {
     readonly minLevel: Level;
     private _buffer;
     constructor(minLevel: Level);
