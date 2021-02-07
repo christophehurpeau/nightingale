@@ -29,26 +29,10 @@
         "import": "./dist/index-node12.mjs",
         "require": "./dist/index-node12.cjs.js"
       }
-    },
-    "./createBody": {
-      "node": {
-        "development": {
-          "import": "./dist/createBody-node12-dev.mjs",
-          "require": "./dist/createBody-node12-dev.cjs.js"
-        },
-        "import": "./dist/createBody-node12.mjs",
-        "require": "./dist/createBody-node12.cjs.js"
-      }
     }
   },
   "module:node": "./dist/index-node12.mjs",
   "module:node-dev": "./dist/index-node12-dev.mjs",
-  "module:aliases-node": {
-    "./createBody.js": "./dist/createBody-node12.es.js"
-  },
-  "module:aliases-node-dev": {
-    "./createBody.js": "./dist/createBody-node12-dev.es.js"
-  },
   "sideEffects": false,
   "scripts": {
     "build": "pob-build && yarn run build:definitions",
@@ -97,8 +81,7 @@
       }
     ],
     "entries": [
-      "index",
-      "createBody"
+      "index"
     ]
   },
   "dependencies": {

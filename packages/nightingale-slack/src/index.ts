@@ -3,6 +3,8 @@ import type { LogRecord, Handle, Metadata } from 'nightingale-types';
 import type SlackConfig from './SlackConfig';
 import createBody from './createBody';
 
+export { createBody };
+
 const createHandler = (slackConfig: SlackConfig) => <T extends Metadata>(
   record: LogRecord<T>,
 ) => {
