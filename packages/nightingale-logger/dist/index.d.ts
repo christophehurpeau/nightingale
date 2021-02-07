@@ -62,13 +62,17 @@ export declare class Logger {
      * Create a new Logger with the same key a this attached context
      *
      * @example
-     * const loggerMyService = new Logger('app.myService');
+     * ```typescript
+     * const loggerMyService = new Logger('app:myService');
      * function someAction(arg1) {
      *     const logger = loggerMyService.context({ arg1 });
-     *     logger.info('starting');
+     *     logger.enter(someAction);
      *     // do stuff
-     *     logger.info('done');
+     *     logger.info('info');
+     *     // do stuff
+     *     logger.exit(someAction);
      * }
+     * ```
      *
      */
     context(context: Record<string, unknown>): Logger;
@@ -188,12 +192,14 @@ export declare class Logger {
      * Log an enter in a function
      *
      * @example
+     * ```typescript
      * class A {
      *   method(arg1) {
      *     logger.enter(method, { arg1 });
      *     // Do your stuff
      *   }
      * }
+     * ```
      *
      */
     enter<T extends Metadata, Fn extends (...args: unknown[]) => unknown>(fn: Fn, metadata?: T, metadataStyles?: MetadataStyles<T & ExtendedFunctionNameMetadata>): void;
@@ -201,20 +207,23 @@ export declare class Logger {
      * Log an exit in a function
      *
      * @example
-     * const logger = new ConsoleLogger('myNamespace.A');
+     * ```typescript
+     * const logger = new Logger('myNamespace:A');
      * class A {
      *   method(arg1) {
      *     // Do your stuff
      *     logger.exit(method, { arg1 });
      *   }
      * }
+     * ```
      */
     exit<T extends Metadata, Fn extends (...args: unknown[]) => unknown>(fn: Fn, metadata?: T, metadataStyles?: MetadataStyles<T & ExtendedFunctionNameMetadata>): void;
     /**
      * Wrap around a function to log enter and exit of a function
      *
      * @example
-     * const logger = new ConsoleLogger('myNamespace.A');
+     * ```typescript
+     * const logger = new Logger('myNamespace:A');
      * class A {
      *   method() {
      *     logger.wrap(method, () => {
@@ -222,11 +231,7 @@ export declare class Logger {
      *     });
      *   }
      * }
-     *
-     * @param {Function} fn
-     * @param {Object} [metadata]
-     * @param {Object} [metadataStyles]
-     * @param {Function} callback
+     * ```
      */
     wrap<Fn extends (...args: unknown[]) => unknown>(fn: Fn, callback: () => void): void;
     wrap<T extends Metadata, Fn extends (...args: unknown[]) => unknown>(fn: Fn, metadata: T, callback: () => void): void;
