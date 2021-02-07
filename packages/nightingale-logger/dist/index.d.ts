@@ -122,6 +122,16 @@ export declare class Logger {
     warn<T extends Metadata>(message: string, metadata?: T, metadataStyles?: MetadataStyles<T>): void;
     /**
      * Log an error message
+     *
+     * @example
+     * ```typescript
+     * const logger = new Logger('something');
+     * try {
+     *   throw new Error('Always throws here');
+     * } catch (error) {
+     *   logger.error('caught error', { error });
+     * }
+     * ```
      */
     error<T extends Metadata>(message: string | Error, metadata?: T, metadataStyles?: MetadataStyles<T>): void;
     /**
@@ -130,6 +140,16 @@ export declare class Logger {
     critical<T extends Metadata>(message: string, metadata?: T, metadataStyles?: MetadataStyles<T>): void;
     /**
      * Log a fatal message
+     *
+     * @example
+     * ```typescript
+     * const logger = new Logger('something');
+     * try {
+     *   throw new Error('Always throws here');
+     * } catch (error) {
+     *   logger.error('caught error', { error });
+     *   process.exit(1);
+     * }
      */
     fatal<T extends Metadata>(message: string, metadata?: T, metadataStyles?: MetadataStyles<T>): void;
     /**

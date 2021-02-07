@@ -232,6 +232,16 @@ class Logger {
   }
   /**
    * Log an error message
+   *
+   * @example
+   * ```typescript
+   * const logger = new Logger('something');
+   * try {
+   *   throw new Error('Always throws here');
+   * } catch (error) {
+   *   logger.error('caught error', { error });
+   * }
+   * ```
    */
 
 
@@ -262,6 +272,16 @@ class Logger {
   }
   /**
    * Log a fatal message
+   *
+   * @example
+   * ```typescript
+   * const logger = new Logger('something');
+   * try {
+   *   throw new Error('Always throws here');
+   * } catch (error) {
+   *   logger.error('caught error', { error });
+   *   process.exit(1);
+   * }
    */
 
 

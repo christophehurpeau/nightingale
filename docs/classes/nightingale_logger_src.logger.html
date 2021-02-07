@@ -245,7 +245,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-logger/dist/index.d.ts#L138">nightingale-logger/dist/index.d.ts:138</a></li>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-logger/dist/index.d.ts#L158">nightingale-logger/dist/index.d.ts:158</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -358,7 +358,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-logger/dist/index.d.ts#L130">nightingale-logger/dist/index.d.ts:130</a></li>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-logger/dist/index.d.ts#L140">nightingale-logger/dist/index.d.ts:140</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -438,7 +438,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-logger/dist/index.d.ts#L170">nightingale-logger/dist/index.d.ts:170</a></li>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-logger/dist/index.d.ts#L190">nightingale-logger/dist/index.d.ts:190</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -478,7 +478,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-logger/dist/index.d.ts#L158">nightingale-logger/dist/index.d.ts:158</a></li>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-logger/dist/index.d.ts#L178">nightingale-logger/dist/index.d.ts:178</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -518,7 +518,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-logger/dist/index.d.ts#L205">nightingale-logger/dist/index.d.ts:205</a></li>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-logger/dist/index.d.ts#L225">nightingale-logger/dist/index.d.ts:225</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -572,13 +572,24 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-logger/dist/index.d.ts#L126">nightingale-logger/dist/index.d.ts:126</a></li>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-logger/dist/index.d.ts#L136">nightingale-logger/dist/index.d.ts:136</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Log an error message</p>
 								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><pre><code class="language-typescript"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">logger</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">Logger</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;something&#039;</span><span style="color: #000000">);</span>
+<span style="color: #AF00DB">try</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #AF00DB">throw</span><span style="color: #000000"> </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #267F99">Error</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Always throws here&#039;</span><span style="color: #000000">);</span>
+<span style="color: #000000">} </span><span style="color: #AF00DB">catch</span><span style="color: #000000"> (</span><span style="color: #001080">error</span><span style="color: #000000">) {</span>
+<span style="color: #000000">  </span><span style="color: #001080">logger</span><span style="color: #000000">.</span><span style="color: #795E26">error</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;caught error&#039;</span><span style="color: #000000">, { </span><span style="color: #001080">error</span><span style="color: #000000"> });</span>
+<span style="color: #000000">}</span>
+</code></pre>
+									</dd>
+								</dl>
 							</div>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
 							<ul class="tsd-type-parameters">
@@ -612,7 +623,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-logger/dist/index.d.ts#L220">nightingale-logger/dist/index.d.ts:220</a></li>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-logger/dist/index.d.ts#L240">nightingale-logger/dist/index.d.ts:240</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -695,7 +706,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-logger/dist/index.d.ts#L162">nightingale-logger/dist/index.d.ts:162</a></li>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-logger/dist/index.d.ts#L182">nightingale-logger/dist/index.d.ts:182</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -735,13 +746,25 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-logger/dist/index.d.ts#L134">nightingale-logger/dist/index.d.ts:134</a></li>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-logger/dist/index.d.ts#L154">nightingale-logger/dist/index.d.ts:154</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Log a fatal message</p>
 								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><pre><code class="language-typescript"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">logger</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">Logger</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;something&#039;</span><span style="color: #000000">);</span>
+<span style="color: #AF00DB">try</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #AF00DB">throw</span><span style="color: #000000"> </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #267F99">Error</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Always throws here&#039;</span><span style="color: #000000">);</span>
+<span style="color: #000000">} </span><span style="color: #AF00DB">catch</span><span style="color: #000000"> (</span><span style="color: #001080">error</span><span style="color: #000000">) {</span>
+<span style="color: #000000">  </span><span style="color: #001080">logger</span><span style="color: #000000">.</span><span style="color: #795E26">error</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;caught error&#039;</span><span style="color: #000000">, { </span><span style="color: #001080">error</span><span style="color: #000000"> });</span>
+<span style="color: #000000">  </span><span style="color: #001080">process</span><span style="color: #000000">.</span><span style="color: #795E26">exit</span><span style="color: #000000">(</span><span style="color: #098658">1</span><span style="color: #000000">);</span>
+<span style="color: #000000">}</span>
+</code></pre>
+									</dd>
+								</dl>
 							</div>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
 							<ul class="tsd-type-parameters">
@@ -837,7 +860,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-logger/dist/index.d.ts#L166">nightingale-logger/dist/index.d.ts:166</a></li>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-logger/dist/index.d.ts#L186">nightingale-logger/dist/index.d.ts:186</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -877,7 +900,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-logger/dist/index.d.ts#L154">nightingale-logger/dist/index.d.ts:154</a></li>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-logger/dist/index.d.ts#L174">nightingale-logger/dist/index.d.ts:174</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -917,7 +940,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-logger/dist/index.d.ts#L190">nightingale-logger/dist/index.d.ts:190</a></li>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-logger/dist/index.d.ts#L210">nightingale-logger/dist/index.d.ts:210</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -960,7 +983,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-logger/dist/index.d.ts#L175">nightingale-logger/dist/index.d.ts:175</a></li>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-logger/dist/index.d.ts#L195">nightingale-logger/dist/index.d.ts:195</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -995,7 +1018,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-logger/dist/index.d.ts#L186">nightingale-logger/dist/index.d.ts:186</a></li>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-logger/dist/index.d.ts#L206">nightingale-logger/dist/index.d.ts:206</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1038,7 +1061,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-logger/dist/index.d.ts#L142">nightingale-logger/dist/index.d.ts:142</a></li>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-logger/dist/index.d.ts#L162">nightingale-logger/dist/index.d.ts:162</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1078,7 +1101,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-logger/dist/index.d.ts#L146">nightingale-logger/dist/index.d.ts:146</a></li>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-logger/dist/index.d.ts#L166">nightingale-logger/dist/index.d.ts:166</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1234,7 +1257,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-logger/dist/index.d.ts#L150">nightingale-logger/dist/index.d.ts:150</a></li>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-logger/dist/index.d.ts#L170">nightingale-logger/dist/index.d.ts:170</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1274,7 +1297,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-logger/dist/index.d.ts#L174">nightingale-logger/dist/index.d.ts:174</a></li>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-logger/dist/index.d.ts#L194">nightingale-logger/dist/index.d.ts:194</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -1313,7 +1336,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-logger/dist/index.d.ts#L182">nightingale-logger/dist/index.d.ts:182</a></li>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-logger/dist/index.d.ts#L202">nightingale-logger/dist/index.d.ts:202</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1447,7 +1470,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-logger/dist/index.d.ts#L236">nightingale-logger/dist/index.d.ts:236</a></li>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-logger/dist/index.d.ts#L256">nightingale-logger/dist/index.d.ts:256</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1500,7 +1523,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-logger/dist/index.d.ts#L237">nightingale-logger/dist/index.d.ts:237</a></li>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-logger/dist/index.d.ts#L257">nightingale-logger/dist/index.d.ts:257</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -1541,7 +1564,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-logger/dist/index.d.ts#L238">nightingale-logger/dist/index.d.ts:238</a></li>
+									<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-logger/dist/index.d.ts#L258">nightingale-logger/dist/index.d.ts:258</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
