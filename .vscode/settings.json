@@ -15,6 +15,7 @@
     "source.fixAll": true,
     "source.organizeImports": false
   },
+
   // eslint config
   "eslint.workingDirectories": ["."],
   "eslint.options": {
@@ -22,6 +23,7 @@
     "reportUnusedDisableDirectives": true
   },
   "eslint.lintTask.enable": true,
+
   // eslint & prettier formatter
   "eslint.format.enable": false,
   "editor.defaultFormatter": "esbenp.prettier-vscode"

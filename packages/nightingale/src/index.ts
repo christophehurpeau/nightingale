@@ -1,5 +1,5 @@
-import Level from 'nightingale-levels';
-import Logger from 'nightingale-logger';
+import { Level } from 'nightingale-levels';
+import { Logger } from 'nightingale-logger';
 
 /** @deprecated use named export instead */
 export default Logger;
