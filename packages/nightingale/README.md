@@ -166,6 +166,7 @@ You can find handlers [on npm](https://www.npmjs.com/search?q=nightingale-handle
 - [StringHandler](https://npmjs.org/package/nightingale-string)
 - [SlackHandler](https://npmjs.org/package/nightingale-slack)
 - [ReactNativeConsoleHandler](https://npmjs.org/package/nightingale-react-native-console)
+- [WinstonAdapterHandler](https://npmjs.org/package/nightingale-winston-adapter)
 
 ### Formatter
 
