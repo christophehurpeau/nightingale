@@ -107,7 +107,7 @@ configure([
 
 ### The Logger class
 
-See the [Logger API](https://christophehurpeau.github.io/nightingale/classes/nightingale_logger.logger.html), with all the methods you call to log things.
+See the [Logger API](https://christophehurpeau.github.io/nightingale/classes/nightingale_logger_src.logger.html), with all the methods you call to log things.
 
 ## Debug
 
