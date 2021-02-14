@@ -8523,7 +8523,7 @@ __metadata:
     eslint-plugin-unicorn: 25.0.1
     nightingale: ^11.5.2
     nightingale-console: ^11.5.2
-    nightingale-sentry: ^11.5.2
+    nightingale-sentry: ^11.5.3
     pob-babel: 26.5.0
     rollup: 2.39.0
     typescript: 4.1.5
@@ -8928,7 +8928,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"nightingale-sentry@^11.5.2, nightingale-sentry@workspace:packages/nightingale-sentry":
+"nightingale-sentry@^11.5.3, nightingale-sentry@workspace:packages/nightingale-sentry":
   version: 0.0.0-use.local
   resolution: "nightingale-sentry@workspace:packages/nightingale-sentry"
   dependencies:

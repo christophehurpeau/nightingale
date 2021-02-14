@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [11.5.3](https://github.com/christophehurpeau/nightingale/compare/v11.5.2...v11.5.3) (2021-02-14)
+
+
+### Bug Fixes
+
+* **nightingale-sentry:** compatibility with sentry-expo ([3ab3262](https://github.com/christophehurpeau/nightingale/commit/3ab3262054bfce3645945d54a2373a19c4455e9e))
+
+
+
+
+
 ## [11.5.2](https://github.com/christophehurpeau/nightingale/compare/v11.5.1...v11.5.2) (2021-02-14)
 
 **Note:** Version bump only for package nightingale-sentry
