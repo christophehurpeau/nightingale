@@ -1,6 +1,6 @@
 {
   "name": "nightingale-sentry",
-  "version": "11.5.3",
+  "version": "11.5.4",
   "description": "Sentry handler for nightingale",
   "keywords": [
     "nightingale",
