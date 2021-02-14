@@ -2675,7 +2675,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sentry/core@npm:6.1.0, @sentry/core@npm:^6.1.0":
+"@sentry/core@npm:6.1.0, @sentry/core@npm:^5.0.0 || ^6.1.0":
   version: 6.1.0
   resolution: "@sentry/core@npm:6.1.0"
   dependencies:
@@ -2710,7 +2710,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sentry/node@npm:^6.1.0":
+"@sentry/node@npm:^5.0.0 || ^6.1.0, @sentry/node@npm:^6.1.0":
   version: 6.1.0
   resolution: "@sentry/node@npm:6.1.0"
   dependencies:
@@ -2740,7 +2740,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sentry/types@npm:6.1.0, @sentry/types@npm:^6.1.0":
+"@sentry/types@npm:6.1.0, @sentry/types@npm:^5.0.0 || ^6.1.0":
   version: 6.1.0
   resolution: "@sentry/types@npm:6.1.0"
   checksum: 94ca9ac94f6cec5db23c4526daad0aa29ef166f00de0f7ccfbcf5005e882c95c4e1e75f8ecb06c2fd4dfc8912f9f56ce2c7c2ea0fed8ff06b8ac5f4bc5db6d0b
@@ -8937,9 +8937,9 @@ __metadata:
     "@pob/eslint-config": 43.0.0
     "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
-    "@sentry/core": ^6.1.0
-    "@sentry/node": ^6.1.0
-    "@sentry/types": ^6.1.0
+    "@sentry/core": ^5.0.0 || ^6.1.0
+    "@sentry/node": ^5.0.0 || ^6.1.0
+    "@sentry/types": ^5.0.0 || ^6.1.0
     "@typescript-eslint/eslint-plugin": 4.15.0
     "@typescript-eslint/parser": 4.15.0
     babel-preset-latest-node: 5.4.0
