@@ -1,6 +1,6 @@
 {
   "name": "nightingale-raw-formatter",
-  "version": "11.3.0",
+  "version": "11.5.2",
   "description": "Nightingale Raw formatter",
   "keywords": [
     "nightingale",
@@ -126,8 +126,8 @@
     ]
   },
   "dependencies": {
-    "nightingale-formatter": "^11.3.0",
-    "nightingale-types": "^11.3.0"
+    "nightingale-formatter": "^11.5.2",
+    "nightingale-types": "^11.5.2"
   },
   "devDependencies": {
     "@babel/core": "7.12.16",
@@ -147,7 +147,7 @@
     "eslint-plugin-node": "11.1.0",
     "eslint-plugin-unicorn": "25.0.1",
     "jest": "26.6.3",
-    "nightingale-levels": "^11.3.0",
+    "nightingale-levels": "^11.5.2",
     "pob-babel": "26.5.0",
     "pob-lcov-reporter": "4.0.1",
     "rollup": "2.39.0",
