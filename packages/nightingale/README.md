@@ -14,6 +14,8 @@
 
 The nightingale is a bird best known for its powerful and beautiful song.
 
+Unlike most popular loggers ([winston](https://github.com/winstonjs/winston), [bunyan](https://github.com/trentm/node-bunyan)) handlers (also called transporters) are not defined at the logger, but rather with the `configure` method in `nightingale` or `nightingale-app-*`. That means libraries can freely use the `nightingale-logger` package without much dependencies and letting the application to configure all loggers ! It's more closer to the [debug](https://github.com/visionmedia/debug) philosophy (the `DEBUG` env variable is in fact supported by `nightingale-console`, the basic handler for node). `nightingale` is and always will be compatible with all versions of `nightingale-logger`.
+
 ## Install
 
 ```sh
@@ -65,7 +67,14 @@ const logger = new Logger('app.server');
 logger.debug('This is a log'); // will be displayed
 ```
 
-You can configure several handlers with different `Level`, like console and slack.
+You can configure several handlers with different `Level`, like console, slack, sentry.
+
+Ensure the configure is always called before the first log! For example:
+
+```js
+import './configure-logger';
+import './myApp';
+```
 
 ### In a library
 

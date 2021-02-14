@@ -71,6 +71,7 @@
 					<h2>Nightingale</h2>
 				</a>
 				<p>The nightingale is a bird best known for its powerful and beautiful song.</p>
+				<p>Unlike most popular loggers (<a href="https://github.com/winstonjs/winston">winston</a>, <a href="https://github.com/trentm/node-bunyan">bunyan</a>) handlers (also called transporters) are not defined at the logger, but rather with the <code>configure</code> method in <code>nightingale</code> or <code>nightingale-app-*</code>. That means libraries can freely use the <code>nightingale-logger</code> package without much dependencies and letting the application to configure all loggers ! It&#39;s more closer to the <a href="https://github.com/visionmedia/debug">debug</a> philosophy (the <code>DEBUG</code> env variable is in fact supported by <code>nightingale-console</code>, the basic handler for node). <code>nightingale</code> is and always will be compatible with all versions of <code>nightingale-logger</code>.</p>
 				<a href="#install" id="install" style="color: inherit; text-decoration: none;">
 					<h2>Install</h2>
 				</a>
@@ -118,7 +119,11 @@
 <span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">logger</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">Logger</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;app.server&#039;</span><span style="color: #000000">);</span>
 <span style="color: #001080">logger</span><span style="color: #000000">.</span><span style="color: #795E26">debug</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;This is a log&#039;</span><span style="color: #000000">); </span><span style="color: #008000">// will be displayed</span>
 </code></pre>
-				<p>You can configure several handlers with different <code>Level</code>, like console and slack.</p>
+				<p>You can configure several handlers with different <code>Level</code>, like console, slack, sentry.</p>
+				<p>Ensure the configure is always called before the first log! For example:</p>
+				<pre><code class="language-js"><span style="color: #AF00DB">import</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;./configure-logger&#039;</span><span style="color: #000000">;</span>
+<span style="color: #AF00DB">import</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;./myApp&#039;</span><span style="color: #000000">;</span>
+</code></pre>
 				<a href="#in-a-library" id="in-a-library" style="color: inherit; text-decoration: none;">
 					<h3>In a library</h3>
 				</a>
