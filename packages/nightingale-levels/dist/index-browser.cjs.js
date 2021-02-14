@@ -21,6 +21,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
  * </ul>
  *
  */
+exports.Level = void 0;
 
 (function (Level) {
   Level[Level["ALL"] = 0] = "ALL";
