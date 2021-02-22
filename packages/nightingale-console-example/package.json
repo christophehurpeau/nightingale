@@ -88,7 +88,7 @@
     "@sentry/node": "^6.1.0",
     "nightingale": "^11.5.2",
     "nightingale-console": "^11.5.2",
-    "nightingale-sentry": "^11.5.4"
+    "nightingale-sentry": "^11.5.3"
   },
   "devDependencies": {
     "@babel/core": "7.12.17",
