@@ -88,7 +88,7 @@
   },
   "devDependencies": {
     "@babel/core": "7.13.1",
-    "@babel/preset-env": "7.13.0",
+    "@babel/preset-env": "7.13.5",
     "@pob/eslint-config": "43.0.0",
     "@pob/eslint-config-node": "43.1.0",
     "@pob/eslint-config-typescript": "43.0.0",
