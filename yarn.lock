@@ -1068,9 +1068,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/preset-env@npm:7.13.8":
-  version: 7.13.8
-  resolution: "@babel/preset-env@npm:7.13.8"
+"@babel/preset-env@npm:7.13.9":
+  version: 7.13.9
+  resolution: "@babel/preset-env@npm:7.13.9"
   dependencies:
     "@babel/compat-data": ^7.13.8
     "@babel/helper-compilation-targets": ^7.13.8
@@ -1142,7 +1142,7 @@ __metadata:
     semver: ^6.3.0
   peerDependencies:
     "@babel/core": ^7.0.0-0
-  checksum: fa41587bdb31900499a3d8661e251e93e2b075590660985de3b63efdf72f1a4c1588a25c9148d0f91046639d324b7730ebf8c4fb0230b3dfcc70ac7937fd6a7e
+  checksum: 55ef45c648da2cf98d703a3f5128eeb883285580f02717059c1ac708ac8cb291e40705838dfdd4f4c59da3c96b816c13e2d2d0d9a7490e3bace4cf41ec8ba151
   languageName: node
   linkType: hard
 
@@ -8428,7 +8428,7 @@ __metadata:
   resolution: "nightingale-ansi-formatter@workspace:packages/nightingale-ansi-formatter"
   dependencies:
     "@babel/core": 7.13.8
-    "@babel/preset-env": 7.13.8
+    "@babel/preset-env": 7.13.9
     "@pob/eslint-config": 43.0.0
     "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
@@ -8460,7 +8460,7 @@ __metadata:
   resolution: "nightingale-app-console@workspace:packages/nightingale-app-console"
   dependencies:
     "@babel/core": 7.13.8
-    "@babel/preset-env": 7.13.8
+    "@babel/preset-env": 7.13.9
     "@pob/eslint-config": 43.0.0
     "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
@@ -8488,7 +8488,7 @@ __metadata:
   resolution: "nightingale-app-react-native@workspace:packages/nightingale-app-react-native"
   dependencies:
     "@babel/core": 7.13.8
-    "@babel/preset-env": 7.13.8
+    "@babel/preset-env": 7.13.9
     "@pob/eslint-config": 43.0.0
     "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
@@ -8514,7 +8514,7 @@ __metadata:
   resolution: "nightingale-browser-console-formatter@workspace:packages/nightingale-browser-console-formatter"
   dependencies:
     "@babel/core": 7.13.8
-    "@babel/preset-env": 7.13.8
+    "@babel/preset-env": 7.13.9
     "@pob/eslint-config": 43.0.0
     "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
@@ -8546,7 +8546,7 @@ __metadata:
   resolution: "nightingale-browser-console@workspace:packages/nightingale-browser-console"
   dependencies:
     "@babel/core": 7.13.8
-    "@babel/preset-env": 7.13.8
+    "@babel/preset-env": 7.13.9
     "@pob/eslint-config": 43.0.0
     "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
@@ -8601,7 +8601,7 @@ __metadata:
   resolution: "nightingale-console-output@workspace:packages/nightingale-console-output"
   dependencies:
     "@babel/core": 7.13.8
-    "@babel/preset-env": 7.13.8
+    "@babel/preset-env": 7.13.9
     "@pob/eslint-config": 43.0.0
     "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
@@ -8658,7 +8658,7 @@ __metadata:
   resolution: "nightingale-debug@workspace:packages/nightingale-debug"
   dependencies:
     "@babel/core": 7.13.8
-    "@babel/preset-env": 7.13.8
+    "@babel/preset-env": 7.13.9
     "@pob/eslint-config": 43.0.0
     "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
@@ -8718,7 +8718,7 @@ __metadata:
   resolution: "nightingale-formatter@workspace:packages/nightingale-formatter"
   dependencies:
     "@babel/core": 7.13.8
-    "@babel/preset-env": 7.13.8
+    "@babel/preset-env": 7.13.9
     "@pob/eslint-config": 43.0.0
     "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
@@ -8749,7 +8749,7 @@ __metadata:
   resolution: "nightingale-html-formatter@workspace:packages/nightingale-html-formatter"
   dependencies:
     "@babel/core": 7.13.8
-    "@babel/preset-env": 7.13.8
+    "@babel/preset-env": 7.13.9
     "@pob/eslint-config": 43.0.0
     "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
@@ -8781,7 +8781,7 @@ __metadata:
   resolution: "nightingale-json-formatter@workspace:packages/nightingale-json-formatter"
   dependencies:
     "@babel/core": 7.13.8
-    "@babel/preset-env": 7.13.8
+    "@babel/preset-env": 7.13.9
     "@pob/eslint-config": 43.0.0
     "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
@@ -8827,7 +8827,7 @@ __metadata:
   resolution: "nightingale-levels@workspace:packages/nightingale-levels"
   dependencies:
     "@babel/core": 7.13.8
-    "@babel/preset-env": 7.13.8
+    "@babel/preset-env": 7.13.9
     "@pob/eslint-config": 43.0.0
     "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
@@ -8851,7 +8851,7 @@ __metadata:
   resolution: "nightingale-logger@workspace:packages/nightingale-logger"
   dependencies:
     "@babel/core": 7.13.8
-    "@babel/preset-env": 7.13.8
+    "@babel/preset-env": 7.13.9
     "@pob/eslint-config": 43.0.0
     "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
@@ -8883,7 +8883,7 @@ __metadata:
   resolution: "nightingale-markdown-formatter@workspace:packages/nightingale-markdown-formatter"
   dependencies:
     "@babel/core": 7.13.8
-    "@babel/preset-env": 7.13.8
+    "@babel/preset-env": 7.13.9
     "@pob/eslint-config": 43.0.0
     "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
@@ -8941,7 +8941,7 @@ __metadata:
   resolution: "nightingale-raw-formatter@workspace:packages/nightingale-raw-formatter"
   dependencies:
     "@babel/core": 7.13.8
-    "@babel/preset-env": 7.13.8
+    "@babel/preset-env": 7.13.9
     "@pob/eslint-config": 43.0.0
     "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
@@ -8973,7 +8973,7 @@ __metadata:
   resolution: "nightingale-react-native-console@workspace:packages/nightingale-react-native-console"
   dependencies:
     "@babel/core": 7.13.8
-    "@babel/preset-env": 7.13.8
+    "@babel/preset-env": 7.13.9
     "@pob/eslint-config": 43.0.0
     "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
@@ -8999,7 +8999,7 @@ __metadata:
   resolution: "nightingale-sentry@workspace:packages/nightingale-sentry"
   dependencies:
     "@babel/core": 7.13.8
-    "@babel/preset-env": 7.13.8
+    "@babel/preset-env": 7.13.9
     "@pob/eslint-config": 43.0.0
     "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
@@ -9087,7 +9087,7 @@ __metadata:
   resolution: "nightingale-types@workspace:packages/nightingale-types"
   dependencies:
     "@babel/core": 7.13.8
-    "@babel/preset-env": 7.13.8
+    "@babel/preset-env": 7.13.9
     "@pob/eslint-config": 43.0.0
     "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
@@ -9137,7 +9137,7 @@ __metadata:
   resolution: "nightingale-winston-adapter@workspace:packages/nightingale-winston-adapter"
   dependencies:
     "@babel/core": 7.13.8
-    "@babel/preset-env": 7.13.8
+    "@babel/preset-env": 7.13.9
     "@pob/eslint-config": 43.0.0
     "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
@@ -9163,7 +9163,7 @@ __metadata:
   resolution: "nightingale@workspace:packages/nightingale"
   dependencies:
     "@babel/core": 7.13.8
-    "@babel/preset-env": 7.13.8
+    "@babel/preset-env": 7.13.9
     "@pob/eslint-config": 43.0.0
     "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
