@@ -30,7 +30,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/core@npm:7.13.10, @babel/core@npm:^7.1.0, @babel/core@npm:^7.7.5":
+"@babel/core@npm:7.13.10, @babel/core@npm:^7.1.0, @babel/core@npm:^7.12.16, @babel/core@npm:^7.7.5":
   version: 7.13.10
   resolution: "@babel/core@npm:7.13.10"
   dependencies:
@@ -51,6 +51,20 @@ __metadata:
     semver: ^6.3.0
     source-map: ^0.5.0
   checksum: 728249a0bae293547d987e4d9886a14dda663d8cb629eb59c9d9ad3ee455048c2ccc3858c82305229ad4a415c2f39579abaa3982b653d40de348c39a3beb5e4d
+  languageName: node
+  linkType: hard
+
+"@babel/eslint-parser@npm:^7.12.16":
+  version: 7.13.10
+  resolution: "@babel/eslint-parser@npm:7.13.10"
+  dependencies:
+    eslint-scope: 5.1.0
+    eslint-visitor-keys: ^1.3.0
+    semver: ^6.3.0
+  peerDependencies:
+    "@babel/core": ">=7.11.0"
+    eslint: ">=7.5.0"
+  checksum: a082aac86acfae4137b92dd297502723f0d11b0c5793ebaa0d3eaede77a5177740308e992ac9eab55d7307f8e5b7a8bf045e26ee8004b7f0c38b9b44c449cb70
   languageName: node
   linkType: hard
 
@@ -331,7 +345,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/parser@npm:^7.1.0, @babel/parser@npm:^7.12.13, @babel/parser@npm:^7.13.0, @babel/parser@npm:^7.13.10, @babel/parser@npm:^7.7.0":
+"@babel/parser@npm:^7.1.0, @babel/parser@npm:^7.12.13, @babel/parser@npm:^7.13.0, @babel/parser@npm:^7.13.10":
   version: 7.13.10
   resolution: "@babel/parser@npm:7.13.10"
   bin:
@@ -1193,7 +1207,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/traverse@npm:^7.1.0, @babel/traverse@npm:^7.13.0, @babel/traverse@npm:^7.7.0":
+"@babel/traverse@npm:^7.1.0, @babel/traverse@npm:^7.13.0":
   version: 7.13.0
   resolution: "@babel/traverse@npm:7.13.0"
   dependencies:
@@ -1210,7 +1224,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/types@npm:^7.0.0, @babel/types@npm:^7.12.1, @babel/types@npm:^7.12.13, @babel/types@npm:^7.13.0, @babel/types@npm:^7.3.0, @babel/types@npm:^7.3.3, @babel/types@npm:^7.4.4, @babel/types@npm:^7.7.0, @babel/types@npm:^7.8.3":
+"@babel/types@npm:^7.0.0, @babel/types@npm:^7.12.1, @babel/types@npm:^7.12.13, @babel/types@npm:^7.13.0, @babel/types@npm:^7.3.0, @babel/types@npm:^7.3.3, @babel/types@npm:^7.4.4, @babel/types@npm:^7.8.3":
   version: 7.13.0
   resolution: "@babel/types@npm:7.13.0"
   dependencies:
@@ -3511,22 +3525,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"babel-eslint@npm:^10.1.0":
-  version: 10.1.0
-  resolution: "babel-eslint@npm:10.1.0"
-  dependencies:
-    "@babel/code-frame": ^7.0.0
-    "@babel/parser": ^7.7.0
-    "@babel/traverse": ^7.7.0
-    "@babel/types": ^7.7.0
-    eslint-visitor-keys: ^1.0.0
-    resolve: ^1.12.0
-  peerDependencies:
-    eslint: ">= 4.12.1"
-  checksum: c872bb9476e62557918b1f4ddfe864b1477cc5b0b31aa6049af5ffa94feae133c7e9d3e9b1d09eb516a811e9cf569b9f9eb2bc7b980d47d3960857a51ffe7b41
-  languageName: node
-  linkType: hard
-
 "babel-helper-evaluate-path@npm:^0.5.0":
   version: 0.5.0
   resolution: "babel-helper-evaluate-path@npm:0.5.0"
@@ -5238,7 +5236,30 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-unicorn@npm:25.0.1, eslint-plugin-unicorn@npm:^25.0.1":
+"eslint-plugin-unicorn@npm:28.0.2":
+  version: 28.0.2
+  resolution: "eslint-plugin-unicorn@npm:28.0.2"
+  dependencies:
+    ci-info: ^2.0.0
+    clean-regexp: ^1.0.0
+    eslint-template-visitor: ^2.2.2
+    eslint-utils: ^2.1.0
+    eslint-visitor-keys: ^2.0.0
+    import-modules: ^2.1.0
+    lodash: ^4.17.20
+    pluralize: ^8.0.0
+    read-pkg-up: ^7.0.1
+    regexp-tree: ^0.1.22
+    reserved-words: ^0.1.2
+    safe-regex: ^2.1.1
+    semver: ^7.3.4
+  peerDependencies:
+    eslint: ">=7.17.0"
+  checksum: 15d9802fe9036661fd4300705f096f7d30b2bb777e591ad966945eeba335a9e29b186d6096741d293cdf4a7d137dd0f30c0ff9eaa98dd82d41c7235660adbcf2
+  languageName: node
+  linkType: hard
+
+"eslint-plugin-unicorn@npm:^25.0.1":
   version: 25.0.1
   resolution: "eslint-plugin-unicorn@npm:25.0.1"
   dependencies:
@@ -5261,6 +5282,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"eslint-scope@npm:5.1.0":
+  version: 5.1.0
+  resolution: "eslint-scope@npm:5.1.0"
+  dependencies:
+    esrecurse: ^4.1.0
+    estraverse: ^4.1.1
+  checksum: 4a0e97979a855d09c4bb3a3f4f945cefaf8f6638a6a8f49472cefb0cf64982ab7ed1683a1e63d20ce1bcb01f94c133dc7a5bdf03b28eb945999f50f08878a2b4
+  languageName: node
+  linkType: hard
+
 "eslint-scope@npm:^5.0.0, eslint-scope@npm:^5.1.1":
   version: 5.1.1
   resolution: "eslint-scope@npm:5.1.1"
@@ -5271,17 +5302,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-template-visitor@npm:^2.2.1":
-  version: 2.2.1
-  resolution: "eslint-template-visitor@npm:2.2.1"
+"eslint-template-visitor@npm:^2.2.1, eslint-template-visitor@npm:^2.2.2":
+  version: 2.3.2
+  resolution: "eslint-template-visitor@npm:2.3.2"
   dependencies:
-    babel-eslint: ^10.1.0
-    eslint-visitor-keys: ^1.3.0
+    "@babel/core": ^7.12.16
+    "@babel/eslint-parser": ^7.12.16
+    eslint-visitor-keys: ^2.0.0
     esquery: ^1.3.1
     multimap: ^1.1.0
   peerDependencies:
     eslint: ">=7.0.0"
-  checksum: c9d1afc8da08ba404d751c63c88897add330bef6b4d132182816745ad21e97431308a9c7bea8a50ab1c8b03ca83a48bcbaf731dc8c65efdfe9b965c97e6fca4d
+  checksum: 80c818c40b18a43c402d708206bd5b6e781d6c2374336f9cecae1a48eb1777d3eda3a2b47ecb89b3f48d838ba7cac4023c23fb2c92526d6d714c1e626767ba48
   languageName: node
   linkType: hard
 
@@ -5294,7 +5326,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-visitor-keys@npm:^1.0.0, eslint-visitor-keys@npm:^1.1.0, eslint-visitor-keys@npm:^1.3.0":
+"eslint-visitor-keys@npm:^1.1.0, eslint-visitor-keys@npm:^1.3.0":
   version: 1.3.0
   resolution: "eslint-visitor-keys@npm:1.3.0"
   checksum: 58ab7a0107621d8a0fe19142a5e1306fd527c0f36b65d5c79033639e80278d8060264804f42c56f68e5541c4cc83d9175f9143083774cec8222f6cd5a695306e
@@ -5385,7 +5417,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"esrecurse@npm:^4.3.0":
+"esrecurse@npm:^4.1.0, esrecurse@npm:^4.3.0":
   version: 4.3.0
   resolution: "esrecurse@npm:4.3.0"
   dependencies:
@@ -6421,10 +6453,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"import-modules@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "import-modules@npm:2.0.0"
-  checksum: 81b7f5c762d3775ddc75195f0b97aaa1e9a6d219ae4b9a896b2e46daafd0e3911563f75e819d65b6272329f06d221da539f78aa045c967097c8cb8beac64154c
+"import-modules@npm:^2.0.0, import-modules@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "import-modules@npm:2.1.0"
+  checksum: d9d551623ab92453b98049177e7fe6dc6213a7920d43e62250577928115af6b176eed51ef422c717a6c3b8d172275f7409c5cbc26346ae44b6ba26b39a1e9580
   languageName: node
   linkType: hard
 
@@ -8443,7 +8475,7 @@ __metadata:
     eslint-import-resolver-node: 0.3.4
     eslint-plugin-import: 2.22.1
     eslint-plugin-node: 11.1.0
-    eslint-plugin-unicorn: 25.0.1
+    eslint-plugin-unicorn: 28.0.2
     jest: 26.6.3
     nightingale-formatter: ^11.5.2
     nightingale-types: ^11.5.2
@@ -8473,7 +8505,7 @@ __metadata:
     eslint-import-resolver-node: 0.3.4
     eslint-plugin-import: 2.22.1
     eslint-plugin-node: 11.1.0
-    eslint-plugin-unicorn: 25.0.1
+    eslint-plugin-unicorn: 28.0.2
     nightingale: ^11.5.2
     nightingale-browser-console: ^11.5.2
     nightingale-console: ^11.5.2
@@ -8500,7 +8532,7 @@ __metadata:
     eslint-import-resolver-node: 0.3.4
     eslint-plugin-import: 2.22.1
     eslint-plugin-node: 11.1.0
-    eslint-plugin-unicorn: 25.0.1
+    eslint-plugin-unicorn: 28.0.2
     nightingale: ^11.5.2
     nightingale-react-native-console: ^11.5.2
     pob-babel: 26.5.0
@@ -8528,7 +8560,7 @@ __metadata:
     eslint-import-resolver-node: 0.3.4
     eslint-plugin-import: 2.22.1
     eslint-plugin-node: 11.1.0
-    eslint-plugin-unicorn: 25.0.1
+    eslint-plugin-unicorn: 28.0.2
     jest: 26.6.3
     nightingale-formatter: ^11.5.2
     nightingale-levels: ^11.5.2
@@ -8557,7 +8589,7 @@ __metadata:
     eslint-import-resolver-node: 0.3.4
     eslint-plugin-import: 2.22.1
     eslint-plugin-node: 11.1.0
-    eslint-plugin-unicorn: 25.0.1
+    eslint-plugin-unicorn: 28.0.2
     nightingale-browser-console-formatter: ^11.5.2
     nightingale-console-output: ^11.5.2
     nightingale-debug: ^11.5.2
@@ -8586,7 +8618,7 @@ __metadata:
     eslint-import-resolver-node: 0.3.4
     eslint-plugin-import: 2.22.1
     eslint-plugin-node: 11.1.0
-    eslint-plugin-unicorn: 25.0.1
+    eslint-plugin-unicorn: 28.0.2
     nightingale: ^11.5.2
     nightingale-console: ^11.5.2
     nightingale-sentry: ^11.5.4
@@ -8614,7 +8646,7 @@ __metadata:
     eslint-import-resolver-node: 0.3.4
     eslint-plugin-import: 2.22.1
     eslint-plugin-node: 11.1.0
-    eslint-plugin-unicorn: 25.0.1
+    eslint-plugin-unicorn: 28.0.2
     nightingale-levels: ^11.5.2
     nightingale-types: ^11.5.2
     pob-babel: 26.5.0
@@ -8640,7 +8672,7 @@ __metadata:
     eslint-import-resolver-node: 0.3.4
     eslint-plugin-import: 2.22.1
     eslint-plugin-node: 11.1.0
-    eslint-plugin-unicorn: 25.0.1
+    eslint-plugin-unicorn: 28.0.2
     nightingale-ansi-formatter: ^11.5.2
     nightingale-console-output: ^11.5.2
     nightingale-debug: ^11.5.2
@@ -8672,7 +8704,7 @@ __metadata:
     eslint-import-resolver-node: 0.3.4
     eslint-plugin-import: 2.22.1
     eslint-plugin-node: 11.1.0
-    eslint-plugin-unicorn: 25.0.1
+    eslint-plugin-unicorn: 28.0.2
     jest: 26.6.3
     nightingale-levels: ^11.5.2
     pob-babel: 26.5.0
@@ -8700,7 +8732,7 @@ __metadata:
     eslint-import-resolver-node: 0.3.4
     eslint-plugin-import: 2.22.1
     eslint-plugin-node: 11.1.0
-    eslint-plugin-unicorn: 25.0.1
+    eslint-plugin-unicorn: 28.0.2
     nightingale: ^11.5.2
     nightingale-console: ^11.5.2
     nightingale-console-output: ^11.5.2
@@ -8732,7 +8764,7 @@ __metadata:
     eslint-import-resolver-node: 0.3.4
     eslint-plugin-import: 2.22.1
     eslint-plugin-node: 11.1.0
-    eslint-plugin-unicorn: 25.0.1
+    eslint-plugin-unicorn: 28.0.2
     jest: 26.6.3
     nightingale-levels: ^11.5.2
     nightingale-types: ^11.5.2
@@ -8763,7 +8795,7 @@ __metadata:
     eslint-import-resolver-node: 0.3.4
     eslint-plugin-import: 2.22.1
     eslint-plugin-node: 11.1.0
-    eslint-plugin-unicorn: 25.0.1
+    eslint-plugin-unicorn: 28.0.2
     jest: 26.6.3
     nightingale-formatter: ^11.5.2
     nightingale-levels: ^11.5.2
@@ -8795,7 +8827,7 @@ __metadata:
     eslint-import-resolver-node: 0.3.4
     eslint-plugin-import: 2.22.1
     eslint-plugin-node: 11.1.0
-    eslint-plugin-unicorn: 25.0.1
+    eslint-plugin-unicorn: 28.0.2
     jest: 26.6.3
     nightingale-formatter: ^11.5.2
     nightingale-levels: ^11.5.2
@@ -8818,7 +8850,7 @@ __metadata:
     eslint-import-resolver-node: 0.3.4
     eslint-plugin-import: 2.22.1
     eslint-plugin-node: 11.1.0
-    eslint-plugin-unicorn: 25.0.1
+    eslint-plugin-unicorn: 28.0.2
   languageName: unknown
   linkType: soft
 
@@ -8839,7 +8871,7 @@ __metadata:
     eslint-import-resolver-node: 0.3.4
     eslint-plugin-import: 2.22.1
     eslint-plugin-node: 11.1.0
-    eslint-plugin-unicorn: 25.0.1
+    eslint-plugin-unicorn: 28.0.2
     pob-babel: 26.5.0
     rollup: 2.40.0
     typescript: 4.1.5
@@ -8866,7 +8898,7 @@ __metadata:
     eslint-import-resolver-node: 0.3.4
     eslint-plugin-import: 2.22.1
     eslint-plugin-node: 11.1.0
-    eslint-plugin-unicorn: 25.0.1
+    eslint-plugin-unicorn: 28.0.2
     jest: 26.6.3
     nightingale-levels: ^11.5.2
     nightingale-types: ^11.5.2
@@ -8897,7 +8929,7 @@ __metadata:
     eslint-import-resolver-node: 0.3.4
     eslint-plugin-import: 2.22.1
     eslint-plugin-node: 11.1.0
-    eslint-plugin-unicorn: 25.0.1
+    eslint-plugin-unicorn: 28.0.2
     jest: 26.6.3
     nightingale-formatter: ^11.5.2
     nightingale-levels: ^11.5.2
@@ -8928,7 +8960,7 @@ __metadata:
     eslint-import-resolver-node: 0.3.4
     eslint-plugin-import: 2.22.1
     eslint-plugin-node: 11.1.0
-    eslint-plugin-unicorn: 25.0.1
+    eslint-plugin-unicorn: 28.0.2
     husky: 4.3.8
     prettier: 2.2.1
     typedoc: 0.20.24
@@ -8955,7 +8987,7 @@ __metadata:
     eslint-import-resolver-node: 0.3.4
     eslint-plugin-import: 2.22.1
     eslint-plugin-node: 11.1.0
-    eslint-plugin-unicorn: 25.0.1
+    eslint-plugin-unicorn: 28.0.2
     jest: 26.6.3
     nightingale-formatter: ^11.5.2
     nightingale-levels: ^11.5.2
@@ -8984,7 +9016,7 @@ __metadata:
     eslint-import-resolver-node: 0.3.4
     eslint-plugin-import: 2.22.1
     eslint-plugin-node: 11.1.0
-    eslint-plugin-unicorn: 25.0.1
+    eslint-plugin-unicorn: 28.0.2
     nightingale-ansi-formatter: ^11.5.2
     nightingale-console-output: ^11.5.2
     nightingale-types: ^11.5.2
@@ -9014,7 +9046,7 @@ __metadata:
     eslint-import-resolver-node: 0.3.4
     eslint-plugin-import: 2.22.1
     eslint-plugin-node: 11.1.0
-    eslint-plugin-unicorn: 25.0.1
+    eslint-plugin-unicorn: 28.0.2
     nightingale-levels: ^11.5.2
     nightingale-types: ^11.5.2
     pob-babel: 26.5.0
@@ -9042,7 +9074,7 @@ __metadata:
     eslint-import-resolver-node: 0.3.4
     eslint-plugin-import: 2.22.1
     eslint-plugin-node: 11.1.0
-    eslint-plugin-unicorn: 25.0.1
+    eslint-plugin-unicorn: 28.0.2
     jest: 26.6.3
     nightingale-levels: ^11.5.2
     nightingale-markdown-formatter: ^11.5.2
@@ -9073,7 +9105,7 @@ __metadata:
     eslint-import-resolver-node: 0.3.4
     eslint-plugin-import: 2.22.1
     eslint-plugin-node: 11.1.0
-    eslint-plugin-unicorn: 25.0.1
+    eslint-plugin-unicorn: 28.0.2
     nightingale-raw-formatter: ^11.5.2
     nightingale-types: ^11.5.2
     pob-babel: 26.5.0
@@ -9099,7 +9131,7 @@ __metadata:
     eslint-import-resolver-node: 0.3.4
     eslint-plugin-import: 2.22.1
     eslint-plugin-node: 11.1.0
-    eslint-plugin-unicorn: 25.0.1
+    eslint-plugin-unicorn: 28.0.2
     nightingale-levels: ^11.5.2
     pob-babel: 26.5.0
     rollup: 2.40.0
@@ -9124,7 +9156,7 @@ __metadata:
     eslint-import-resolver-node: 0.3.4
     eslint-plugin-import: 2.22.1
     eslint-plugin-node: 11.1.0
-    eslint-plugin-unicorn: 25.0.1
+    eslint-plugin-unicorn: 28.0.2
     nightingale-types: ^11.5.2
     pob-babel: 26.5.0
     rollup: 2.40.0
@@ -9149,7 +9181,7 @@ __metadata:
     eslint-import-resolver-node: 0.3.4
     eslint-plugin-import: 2.22.1
     eslint-plugin-node: 11.1.0
-    eslint-plugin-unicorn: 25.0.1
+    eslint-plugin-unicorn: 28.0.2
     nightingale-level-names: ^11.5.2
     nightingale-types: ^11.5.2
     pob-babel: 26.5.0
@@ -9178,7 +9210,7 @@ __metadata:
     eslint-import-resolver-node: 0.3.4
     eslint-plugin-import: 2.22.1
     eslint-plugin-node: 11.1.0
-    eslint-plugin-unicorn: 25.0.1
+    eslint-plugin-unicorn: 28.0.2
     jest: 26.6.3
     nightingale-levels: ^11.5.2
     nightingale-logger: ^11.5.2
@@ -10512,12 +10544,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"regexp-tree@npm:^0.1.21, regexp-tree@npm:~0.1.1":
-  version: 0.1.21
-  resolution: "regexp-tree@npm:0.1.21"
+"regexp-tree@npm:^0.1.21, regexp-tree@npm:^0.1.22, regexp-tree@npm:~0.1.1":
+  version: 0.1.23
+  resolution: "regexp-tree@npm:0.1.23"
   bin:
     regexp-tree: bin/regexp-tree
-  checksum: b101cb99d4c25e1eb22d7be764464cd414c495d572dcf4c436c05f48942cc885069d46d63cd350523ffd19c667a9be4d0b724ea672769d2602365fa5a917286b
+  checksum: b4cc85f60f69621d91e5f9f40914143b979f049be13adcba4a62348f12d9af338a9ae10c4c1c9fffb8958e1956d35bf30f638e7002291261e1222a2973f09f3c
   languageName: node
   linkType: hard
 
@@ -10711,7 +10743,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"resolve@^1.1.6, resolve@^1.10.0, resolve@^1.10.1, resolve@^1.12.0, resolve@^1.13.1, resolve@^1.14.2, resolve@^1.17.0, resolve@^1.18.1, resolve@^1.19.0":
+"resolve@^1.1.6, resolve@^1.10.0, resolve@^1.10.1, resolve@^1.13.1, resolve@^1.14.2, resolve@^1.17.0, resolve@^1.18.1, resolve@^1.19.0":
   version: 1.20.0
   resolution: "resolve@npm:1.20.0"
   dependencies:
@@ -10721,7 +10753,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"resolve@patch:resolve@^1.1.6#builtin<compat/resolve>, resolve@patch:resolve@^1.10.0#builtin<compat/resolve>, resolve@patch:resolve@^1.10.1#builtin<compat/resolve>, resolve@patch:resolve@^1.12.0#builtin<compat/resolve>, resolve@patch:resolve@^1.13.1#builtin<compat/resolve>, resolve@patch:resolve@^1.14.2#builtin<compat/resolve>, resolve@patch:resolve@^1.17.0#builtin<compat/resolve>, resolve@patch:resolve@^1.18.1#builtin<compat/resolve>, resolve@patch:resolve@^1.19.0#builtin<compat/resolve>":
+"resolve@patch:resolve@^1.1.6#builtin<compat/resolve>, resolve@patch:resolve@^1.10.0#builtin<compat/resolve>, resolve@patch:resolve@^1.10.1#builtin<compat/resolve>, resolve@patch:resolve@^1.13.1#builtin<compat/resolve>, resolve@patch:resolve@^1.14.2#builtin<compat/resolve>, resolve@patch:resolve@^1.17.0#builtin<compat/resolve>, resolve@patch:resolve@^1.18.1#builtin<compat/resolve>, resolve@patch:resolve@^1.19.0#builtin<compat/resolve>":
   version: 1.20.0
   resolution: "resolve@patch:resolve@npm%3A1.20.0#builtin<compat/resolve>::version=1.20.0&hash=3388aa"
   dependencies:
