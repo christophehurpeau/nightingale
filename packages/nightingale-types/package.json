@@ -114,7 +114,7 @@
     "@typescript-eslint/parser": "4.15.0",
     "babel-preset-latest-node": "5.4.0",
     "babel-preset-modern-browsers": "15.0.2",
-    "eslint": "7.21.0",
+    "eslint": "7.22.0",
     "eslint-import-resolver-node": "0.3.4",
     "eslint-plugin-import": "2.22.1",
     "eslint-plugin-node": "11.1.0",
