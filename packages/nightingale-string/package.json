@@ -82,6 +82,6 @@
     "eslint-plugin-unicorn": "25.0.1",
     "pob-babel": "26.5.0",
     "rollup": "2.41.2",
-    "typescript": "4.1.5"
+    "typescript": "4.2.3"
   }
 }
