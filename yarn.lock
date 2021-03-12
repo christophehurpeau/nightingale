@@ -2948,10 +2948,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:14.14.32":
-  version: 14.14.32
-  resolution: "@types/node@npm:14.14.32"
-  checksum: ae73f3b668242da660b4f4f2047114fc047f5a6a92b8f9f4ab2f8ca1325c914c08cf13b6f90e6e88016fafb7a662d1963b075a6220d2208651a98a1cb3407221
+"@types/node@npm:14.14.34":
+  version: 14.14.34
+  resolution: "@types/node@npm:14.14.34"
+  checksum: 74db0d80ad997c3ca2597abe1c63c85e87c32e06b4e8c8392a24a11ad00a4567b293a72bbdf49ace201150b420a943609181771cab034cef10fe65272d452718
   languageName: node
   linkType: hard
 
@@ -8492,7 +8492,7 @@ __metadata:
     "@pob/eslint-config": 43.0.0
     "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
-    "@types/node": 14.14.32
+    "@types/node": 14.14.34
     "@typescript-eslint/eslint-plugin": 4.15.0
     "@typescript-eslint/parser": 4.15.0
     babel-preset-modern-browsers: 15.0.2
@@ -8921,7 +8921,7 @@ __metadata:
     "@pob/eslint-config-typescript-node": 43.0.0
     "@pob/lerna-light": 3.24.0
     "@pob/root": 3.1.1
-    "@types/node": 14.14.32
+    "@types/node": 14.14.34
     "@typescript-eslint/eslint-plugin": 4.15.0
     "@typescript-eslint/parser": 4.15.0
     eslint: 7.21.0
