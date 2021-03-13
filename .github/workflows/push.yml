@@ -33,6 +33,9 @@ jobs:
       - name: Check Dependencies
         run: yarn install --immutable
 
+      - name: Checks
+        run: yarn run checks
+
       - name: Prettier
         run: yarn run lint:prettier
         if: startsWith(matrix.node-version, '14.')
