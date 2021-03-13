@@ -50,7 +50,7 @@
     "@types/node": "14.14.34",
     "@typescript-eslint/eslint-plugin": "4.17.0",
     "@typescript-eslint/parser": "4.17.0",
-    "check-package-dependencies": "0.1.2",
+    "check-package-dependencies": "0.2.0",
     "eslint": "7.22.0",
     "eslint-import-resolver-node": "0.3.4",
     "eslint-plugin-import": "2.22.1",
