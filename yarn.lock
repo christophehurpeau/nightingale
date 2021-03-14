@@ -452,7 +452,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/plugin-proposal-optional-catch-binding@npm:^7.12.1, @babel/plugin-proposal-optional-catch-binding@npm:^7.13.8":
+"@babel/plugin-proposal-optional-catch-binding@npm:^7.13.8":
   version: 7.13.8
   resolution: "@babel/plugin-proposal-optional-catch-binding@npm:7.13.8"
   dependencies:
@@ -489,7 +489,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/plugin-proposal-unicode-property-regex@npm:^7.12.1, @babel/plugin-proposal-unicode-property-regex@npm:^7.12.13, @babel/plugin-proposal-unicode-property-regex@npm:^7.4.4":
+"@babel/plugin-proposal-unicode-property-regex@npm:^7.12.13, @babel/plugin-proposal-unicode-property-regex@npm:^7.4.4":
   version: 7.12.13
   resolution: "@babel/plugin-proposal-unicode-property-regex@npm:7.12.13"
   dependencies:
@@ -644,7 +644,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/plugin-syntax-top-level-await@npm:^7.12.1, @babel/plugin-syntax-top-level-await@npm:^7.12.13, @babel/plugin-syntax-top-level-await@npm:^7.8.3":
+"@babel/plugin-syntax-top-level-await@npm:^7.12.13, @babel/plugin-syntax-top-level-await@npm:^7.8.3":
   version: 7.12.13
   resolution: "@babel/plugin-syntax-top-level-await@npm:7.12.13"
   dependencies:
@@ -844,7 +844,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/plugin-transform-modules-commonjs@npm:^7.10.4, @babel/plugin-transform-modules-commonjs@npm:^7.12.1, @babel/plugin-transform-modules-commonjs@npm:^7.13.8":
+"@babel/plugin-transform-modules-commonjs@npm:^7.10.4, @babel/plugin-transform-modules-commonjs@npm:^7.13.8":
   version: 7.13.8
   resolution: "@babel/plugin-transform-modules-commonjs@npm:7.13.8"
   dependencies:
@@ -3783,20 +3783,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"babel-preset-latest-node@npm:5.4.0, babel-preset-latest-node@npm:^5.2.0":
-  version: 5.4.0
-  resolution: "babel-preset-latest-node@npm:5.4.0"
+"babel-preset-latest-node@npm:5.5.1, babel-preset-latest-node@npm:^5.2.0":
+  version: 5.5.1
+  resolution: "babel-preset-latest-node@npm:5.5.1"
   dependencies:
-    "@babel/plugin-proposal-nullish-coalescing-operator": ^7.12.1
-    "@babel/plugin-proposal-optional-catch-binding": ^7.12.1
-    "@babel/plugin-proposal-optional-chaining": ^7.12.7
-    "@babel/plugin-proposal-unicode-property-regex": ^7.12.1
-    "@babel/plugin-syntax-numeric-separator": ^7.10.4
-    "@babel/plugin-syntax-top-level-await": ^7.12.1
-    "@babel/plugin-transform-modules-commonjs": ^7.12.1
+    "@babel/plugin-proposal-nullish-coalescing-operator": ^7.13.8
+    "@babel/plugin-proposal-numeric-separator": ^7.12.13
+    "@babel/plugin-proposal-optional-catch-binding": ^7.13.8
+    "@babel/plugin-proposal-optional-chaining": ^7.13.8
+    "@babel/plugin-proposal-unicode-property-regex": ^7.12.13
+    "@babel/plugin-syntax-top-level-await": ^7.12.13
+    "@babel/plugin-transform-modules-commonjs": ^7.13.8
   peerDependencies:
     "@babel/core": ^7.10.5
-  checksum: f3ac00c844f49fdc14104d52b1b613239966b1bd72c0e76cb8bf4fe6f96a2828f4181daa9284e334e221408dfa7c5db4aca59b0bf815730b3b5433935bc41741
+  checksum: cc79f41cd430b467891dd33f949c404ee16bf9e9ffa70cfcbdbe0fa8f06e90acabe304c0a679ed261db57e78beeed764ad10cfe62a5ea2423634f1b36a20dc69
   languageName: node
   linkType: hard
 
@@ -8458,7 +8458,7 @@ __metadata:
     "@typescript-eslint/parser": 4.17.0
     ansi-styles: ^4.0.0
     babel-jest: 26.6.3
-    babel-preset-latest-node: 5.4.0
+    babel-preset-latest-node: 5.5.1
     eslint: 7.22.0
     eslint-import-resolver-node: 0.3.4
     eslint-plugin-import: 2.22.1
@@ -8487,7 +8487,7 @@ __metadata:
     "@types/node": ">=12.0.0"
     "@typescript-eslint/eslint-plugin": 4.17.0
     "@typescript-eslint/parser": 4.17.0
-    babel-preset-latest-node: 5.4.0
+    babel-preset-latest-node: 5.5.1
     babel-preset-modern-browsers: 15.0.2
     eslint: 7.22.0
     eslint-import-resolver-node: 0.3.4
@@ -8541,7 +8541,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": 4.17.0
     "@typescript-eslint/parser": 4.17.0
     babel-jest: 26.6.3
-    babel-preset-latest-node: 5.4.0
+    babel-preset-latest-node: 5.5.1
     babel-preset-modern-browsers: 15.0.2
     eslint: 7.22.0
     eslint-import-resolver-node: 0.3.4
@@ -8600,7 +8600,7 @@ __metadata:
     "@sentry/node": ^6.1.0
     "@typescript-eslint/eslint-plugin": 4.17.0
     "@typescript-eslint/parser": 4.17.0
-    babel-preset-latest-node: 5.4.0
+    babel-preset-latest-node: 5.5.1
     eslint: 7.22.0
     eslint-import-resolver-node: 0.3.4
     eslint-plugin-import: 2.22.1
@@ -8627,7 +8627,7 @@ __metadata:
     "@types/node": ">=12.0.0"
     "@typescript-eslint/eslint-plugin": 4.17.0
     "@typescript-eslint/parser": 4.17.0
-    babel-preset-latest-node: 5.4.0
+    babel-preset-latest-node: 5.5.1
     babel-preset-modern-browsers: 15.0.2
     eslint: 7.22.0
     eslint-import-resolver-node: 0.3.4
@@ -8654,7 +8654,7 @@ __metadata:
     "@types/node": ">=12.0.0"
     "@typescript-eslint/eslint-plugin": 4.17.0
     "@typescript-eslint/parser": 4.17.0
-    babel-preset-latest-node: 5.4.0
+    babel-preset-latest-node: 5.5.1
     eslint: 7.22.0
     eslint-import-resolver-node: 0.3.4
     eslint-plugin-import: 2.22.1
@@ -8685,7 +8685,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": 4.17.0
     "@typescript-eslint/parser": 4.17.0
     babel-jest: 26.6.3
-    babel-preset-latest-node: 5.4.0
+    babel-preset-latest-node: 5.5.1
     babel-preset-modern-browsers: 15.0.2
     eslint: 7.22.0
     eslint-import-resolver-node: 0.3.4
@@ -8714,7 +8714,7 @@ __metadata:
     "@rollup/plugin-run": 2.0.2
     "@typescript-eslint/eslint-plugin": 4.17.0
     "@typescript-eslint/parser": 4.17.0
-    babel-preset-latest-node: 5.4.0
+    babel-preset-latest-node: 5.5.1
     eslint: 7.22.0
     eslint-import-resolver-node: 0.3.4
     eslint-plugin-import: 2.22.1
@@ -8745,7 +8745,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": 4.17.0
     "@typescript-eslint/parser": 4.17.0
     babel-jest: 26.6.3
-    babel-preset-latest-node: 5.4.0
+    babel-preset-latest-node: 5.5.1
     babel-preset-modern-browsers: 15.0.2
     eslint: 7.22.0
     eslint-import-resolver-node: 0.3.4
@@ -8776,7 +8776,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": 4.17.0
     "@typescript-eslint/parser": 4.17.0
     babel-jest: 26.6.3
-    babel-preset-latest-node: 5.4.0
+    babel-preset-latest-node: 5.5.1
     babel-preset-modern-browsers: 15.0.2
     eslint: 7.22.0
     eslint-import-resolver-node: 0.3.4
@@ -8808,7 +8808,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": 4.17.0
     "@typescript-eslint/parser": 4.17.0
     babel-jest: 26.6.3
-    babel-preset-latest-node: 5.4.0
+    babel-preset-latest-node: 5.5.1
     babel-preset-modern-browsers: 15.0.2
     eslint: 7.22.0
     eslint-import-resolver-node: 0.3.4
@@ -8852,7 +8852,7 @@ __metadata:
     "@pob/eslint-config-typescript": 43.0.0
     "@typescript-eslint/eslint-plugin": 4.17.0
     "@typescript-eslint/parser": 4.17.0
-    babel-preset-latest-node: 5.4.0
+    babel-preset-latest-node: 5.5.1
     babel-preset-modern-browsers: 15.0.2
     eslint: 7.22.0
     eslint-import-resolver-node: 0.3.4
@@ -8879,7 +8879,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": 4.17.0
     "@typescript-eslint/parser": 4.17.0
     babel-jest: 26.6.3
-    babel-preset-latest-node: 5.4.0
+    babel-preset-latest-node: 5.5.1
     babel-preset-modern-browsers: 15.0.2
     eslint: 7.22.0
     eslint-import-resolver-node: 0.3.4
@@ -8910,7 +8910,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": 4.17.0
     "@typescript-eslint/parser": 4.17.0
     babel-jest: 26.6.3
-    babel-preset-latest-node: 5.4.0
+    babel-preset-latest-node: 5.5.1
     babel-preset-modern-browsers: 15.0.2
     eslint: 7.22.0
     eslint-import-resolver-node: 0.3.4
@@ -8969,7 +8969,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": 4.17.0
     "@typescript-eslint/parser": 4.17.0
     babel-jest: 26.6.3
-    babel-preset-latest-node: 5.4.0
+    babel-preset-latest-node: 5.5.1
     babel-preset-modern-browsers: 15.0.2
     eslint: 7.22.0
     eslint-import-resolver-node: 0.3.4
@@ -9028,7 +9028,7 @@ __metadata:
     "@sentry/types": ^5.0.0 || ^6.1.0
     "@typescript-eslint/eslint-plugin": 4.17.0
     "@typescript-eslint/parser": 4.17.0
-    babel-preset-latest-node: 5.4.0
+    babel-preset-latest-node: 5.5.1
     babel-preset-modern-browsers: 15.0.2
     eslint: 7.22.0
     eslint-import-resolver-node: 0.3.4
@@ -9057,7 +9057,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": 4.17.0
     "@typescript-eslint/parser": 4.17.0
     babel-jest: 26.6.3
-    babel-preset-latest-node: 5.4.0
+    babel-preset-latest-node: 5.5.1
     eslint: 7.22.0
     eslint-import-resolver-node: 0.3.4
     eslint-plugin-import: 2.22.1
@@ -9088,7 +9088,7 @@ __metadata:
     "@pob/eslint-config-typescript-node": 43.0.0
     "@typescript-eslint/eslint-plugin": 4.17.0
     "@typescript-eslint/parser": 4.17.0
-    babel-preset-latest-node: 5.4.0
+    babel-preset-latest-node: 5.5.1
     eslint: 7.22.0
     eslint-import-resolver-node: 0.3.4
     eslint-plugin-import: 2.22.1
@@ -9113,7 +9113,7 @@ __metadata:
     "@pob/eslint-config-typescript": 43.0.0
     "@typescript-eslint/eslint-plugin": 4.17.0
     "@typescript-eslint/parser": 4.17.0
-    babel-preset-latest-node: 5.4.0
+    babel-preset-latest-node: 5.5.1
     babel-preset-modern-browsers: 15.0.2
     eslint: 7.22.0
     eslint-import-resolver-node: 0.3.4
@@ -9139,7 +9139,7 @@ __metadata:
     "@types/node": ">=12.0.0"
     "@typescript-eslint/eslint-plugin": 4.17.0
     "@typescript-eslint/parser": 4.17.0
-    babel-preset-latest-node: 5.4.0
+    babel-preset-latest-node: 5.5.1
     eslint: 7.22.0
     eslint-import-resolver-node: 0.3.4
     eslint-plugin-import: 2.22.1
@@ -9163,7 +9163,7 @@ __metadata:
     "@pob/eslint-config-typescript": 43.0.0
     "@typescript-eslint/eslint-plugin": 4.17.0
     "@typescript-eslint/parser": 4.17.0
-    babel-preset-latest-node: 5.4.0
+    babel-preset-latest-node: 5.5.1
     babel-preset-modern-browsers: 15.0.2
     eslint: 7.22.0
     eslint-import-resolver-node: 0.3.4
@@ -9192,7 +9192,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": 4.17.0
     "@typescript-eslint/parser": 4.17.0
     babel-jest: 26.6.3
-    babel-preset-latest-node: 5.4.0
+    babel-preset-latest-node: 5.5.1
     babel-preset-modern-browsers: 15.0.2
     eslint: 7.22.0
     eslint-import-resolver-node: 0.3.4
