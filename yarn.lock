@@ -4148,14 +4148,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"check-package-dependencies@npm:0.1.2":
-  version: 0.1.2
-  resolution: "check-package-dependencies@npm:0.1.2"
+"check-package-dependencies@npm:1.0.0":
+  version: 1.0.0
+  resolution: "check-package-dependencies@npm:1.0.0"
   dependencies:
     chalk: ^4.1.0
     glob: ^7.1.6
     semver: ^7.3.4
-  checksum: e5a639faf7b3690cf2b21f72ac4b4638fc961851bc3d84d678f1c2ea356b8074e91fc24eb73f89c29671e1730832ea4c29e08ac2aaf664ba754adfd5504395a5
+    type-fest: ^0.21.3
+  bin:
+    check-package-dependencies: bin/check-package-dependencies.js
+  checksum: 05ef176e11ff6b7f7b0d224817cc3d848d3c74ec2a145d89a28de6da09104f12eed4b0f24d58b427818c219cc7e532edc6b83e12e555de43f3b977b0ce2bc386
   languageName: node
   linkType: hard
 
@@ -8943,7 +8946,7 @@ __metadata:
     "@types/node": 14.14.34
     "@typescript-eslint/eslint-plugin": 4.17.0
     "@typescript-eslint/parser": 4.17.0
-    check-package-dependencies: 0.1.2
+    check-package-dependencies: 1.0.0
     eslint: 7.22.0
     eslint-import-resolver-node: 0.3.4
     eslint-plugin-import: 2.22.1
@@ -11971,6 +11974,13 @@ __metadata:
   version: 0.20.2
   resolution: "type-fest@npm:0.20.2"
   checksum: 1f887bc6150e632fb772fd28e33c22a4ab036c6f484fa9ac2e2115f6cae9d62bba7ca0368e3332b539d85bd2c8391c7bff22ad410abcbc9ab3774d61e250b210
+  languageName: node
+  linkType: hard
+
+"type-fest@npm:^0.21.3":
+  version: 0.21.3
+  resolution: "type-fest@npm:0.21.3"
+  checksum: bbe5f5c60e8da4e0b0fe290c31821b10c2fd935768802cd659784cb5e792c7a31bb25a89174d3b42dde3bf8eb9d301ede7456a274c1068280b7698438e250f49
   languageName: node
   linkType: hard
 
