@@ -98,7 +98,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/helper-create-class-features-plugin@npm:^7.12.1, @babel/helper-create-class-features-plugin@npm:^7.13.0":
+"@babel/helper-create-class-features-plugin@npm:^7.13.0":
   version: 7.13.0
   resolution: "@babel/helper-create-class-features-plugin@npm:7.13.0"
   dependencies:
@@ -425,7 +425,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/plugin-proposal-numeric-separator@npm:^7.12.13, @babel/plugin-proposal-numeric-separator@npm:^7.12.7":
+"@babel/plugin-proposal-numeric-separator@npm:^7.12.13":
   version: 7.12.13
   resolution: "@babel/plugin-proposal-numeric-separator@npm:7.12.13"
   dependencies:
@@ -655,14 +655,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/plugin-syntax-typescript@npm:^7.12.1":
-  version: 7.12.1
-  resolution: "@babel/plugin-syntax-typescript@npm:7.12.1"
+"@babel/plugin-syntax-typescript@npm:^7.12.13":
+  version: 7.12.13
+  resolution: "@babel/plugin-syntax-typescript@npm:7.12.13"
   dependencies:
-    "@babel/helper-plugin-utils": ^7.10.4
+    "@babel/helper-plugin-utils": ^7.12.13
   peerDependencies:
     "@babel/core": ^7.0.0-0
-  checksum: 37bdb828915d9193d5fc3b877fb479f1cef6ea3f1cfaa18908170fe23af043ba59d7bc723d3e27067b879e486f16e418d602d7212a7a1e93125bf80339c39668
+  checksum: ea2b4aad35c62fc66c9e1629b70ece2ac060550f2fd10c814d568946121ec0790690c5dc65c8888bc3b543e71691e553e2ed8becac769384484c27ae6ddcb21e
   languageName: node
   linkType: hard
 
@@ -1032,16 +1032,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/plugin-transform-typescript@npm:^7.12.1":
-  version: 7.12.1
-  resolution: "@babel/plugin-transform-typescript@npm:7.12.1"
+"@babel/plugin-transform-typescript@npm:^7.13.0":
+  version: 7.13.0
+  resolution: "@babel/plugin-transform-typescript@npm:7.13.0"
   dependencies:
-    "@babel/helper-create-class-features-plugin": ^7.12.1
-    "@babel/helper-plugin-utils": ^7.10.4
-    "@babel/plugin-syntax-typescript": ^7.12.1
+    "@babel/helper-create-class-features-plugin": ^7.13.0
+    "@babel/helper-plugin-utils": ^7.13.0
+    "@babel/plugin-syntax-typescript": ^7.12.13
   peerDependencies:
     "@babel/core": ^7.0.0-0
-  checksum: d93737e2350d0f7c36726c43af64ed4af566e67fd38400faf7f9057ede62eef4fa99235228167b27150e03b86aa53c2ef9f0ea346a02ad9a3070c147aa5e732d
+  checksum: cbf557689f6dcd59545b394d47d77ed9aeacefdbb68532e5d13b5983543f568c948a0ff492b37bc233f7073e405162076a6d29995e26230f691ceaf9d5630183
   languageName: node
   linkType: hard
 
@@ -1161,15 +1161,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/preset-typescript@npm:^7.12.1":
-  version: 7.12.1
-  resolution: "@babel/preset-typescript@npm:7.12.1"
+"@babel/preset-typescript@npm:^7.13.0":
+  version: 7.13.0
+  resolution: "@babel/preset-typescript@npm:7.13.0"
   dependencies:
-    "@babel/helper-plugin-utils": ^7.10.4
-    "@babel/plugin-transform-typescript": ^7.12.1
+    "@babel/helper-plugin-utils": ^7.13.0
+    "@babel/helper-validator-option": ^7.12.17
+    "@babel/plugin-transform-typescript": ^7.13.0
   peerDependencies:
     "@babel/core": ^7.0.0-0
-  checksum: 730eb743a4367db204c229183a3c2d669caa4f5234d98196c39368fc54f2cadd20a3d55f71104ebec8bc17cf3236b784f2737cac9ae4bb57b250cd1c609aabf9
+  checksum: d98b9ca5dfd418f42548f9c2c0b88503fc2b8bd928efc95400023cc886705a3f52cabb5547d3b91afcbd5346c5966e06bc14e6e44fa41bffaa4fbe1a9e023bdf
   languageName: node
   linkType: hard
 
@@ -3027,12 +3028,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/eslint-plugin@npm:4.17.0, @typescript-eslint/eslint-plugin@npm:^4.1.1":
-  version: 4.17.0
-  resolution: "@typescript-eslint/eslint-plugin@npm:4.17.0"
+"@typescript-eslint/eslint-plugin@npm:4.18.0, @typescript-eslint/eslint-plugin@npm:^4.1.1":
+  version: 4.18.0
+  resolution: "@typescript-eslint/eslint-plugin@npm:4.18.0"
   dependencies:
-    "@typescript-eslint/experimental-utils": 4.17.0
-    "@typescript-eslint/scope-manager": 4.17.0
+    "@typescript-eslint/experimental-utils": 4.18.0
+    "@typescript-eslint/scope-manager": 4.18.0
     debug: ^4.1.1
     functional-red-black-tree: ^1.0.1
     lodash: ^4.17.15
@@ -3045,66 +3046,66 @@ __metadata:
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: d836f5ec39c878df1352e86d0869562519c982e26f772179e7f7f49318305a1c1e1ea388b154d379a1d58a9a799d4403fc96597ce1bf10dc051a0a832db27771
+  checksum: f137baf23f42345986a3570016ef0bacfff9f1e973f87962e09b826dde26b2f3d4c383a2b22839d2cd46baeb54753ac52c8837d41aa6caaf2ce122efdefea689
   languageName: node
   linkType: hard
 
-"@typescript-eslint/experimental-utils@npm:4.17.0":
-  version: 4.17.0
-  resolution: "@typescript-eslint/experimental-utils@npm:4.17.0"
+"@typescript-eslint/experimental-utils@npm:4.18.0":
+  version: 4.18.0
+  resolution: "@typescript-eslint/experimental-utils@npm:4.18.0"
   dependencies:
     "@types/json-schema": ^7.0.3
-    "@typescript-eslint/scope-manager": 4.17.0
-    "@typescript-eslint/types": 4.17.0
-    "@typescript-eslint/typescript-estree": 4.17.0
+    "@typescript-eslint/scope-manager": 4.18.0
+    "@typescript-eslint/types": 4.18.0
+    "@typescript-eslint/typescript-estree": 4.18.0
     eslint-scope: ^5.0.0
     eslint-utils: ^2.0.0
   peerDependencies:
     eslint: "*"
-  checksum: 47ce799425c766cd8b6b4b81f1091c2485cf273925c328315af66b0e68241f3d6af1732bbe00f446474e6e269c4e84dab1d2ede6e5d7393099dd182b0458b096
+  checksum: 1f1357b38aa6e1dc9088abec1c259372ff124be215644283df1725421c3faeeb90ca463c5e549247f10918d18031cd56b58b366d22a5c90e23f601826d1d7f3a
   languageName: node
   linkType: hard
 
-"@typescript-eslint/parser@npm:4.17.0, @typescript-eslint/parser@npm:^4.1.1":
-  version: 4.17.0
-  resolution: "@typescript-eslint/parser@npm:4.17.0"
+"@typescript-eslint/parser@npm:4.18.0, @typescript-eslint/parser@npm:^4.1.1":
+  version: 4.18.0
+  resolution: "@typescript-eslint/parser@npm:4.18.0"
   dependencies:
-    "@typescript-eslint/scope-manager": 4.17.0
-    "@typescript-eslint/types": 4.17.0
-    "@typescript-eslint/typescript-estree": 4.17.0
+    "@typescript-eslint/scope-manager": 4.18.0
+    "@typescript-eslint/types": 4.18.0
+    "@typescript-eslint/typescript-estree": 4.18.0
     debug: ^4.1.1
   peerDependencies:
     eslint: ^5.0.0 || ^6.0.0 || ^7.0.0
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 69e56c3916e43896e13a823cb79d4ebe45adffc45e7d6f7bbc96ed842916735abada3dd6651436c024aaf4fe6eb747465e42a869c4863bf7d1104b0f943eceda
+  checksum: d2f907dc2888078fa6aaca329e39209cc0ceff0dfe43657835b9fbd73678d848077572fdf451dd0cae4ea199b8bfa0f3791037bd9174049668914c7a8ac55157
   languageName: node
   linkType: hard
 
-"@typescript-eslint/scope-manager@npm:4.17.0":
-  version: 4.17.0
-  resolution: "@typescript-eslint/scope-manager@npm:4.17.0"
+"@typescript-eslint/scope-manager@npm:4.18.0":
+  version: 4.18.0
+  resolution: "@typescript-eslint/scope-manager@npm:4.18.0"
   dependencies:
-    "@typescript-eslint/types": 4.17.0
-    "@typescript-eslint/visitor-keys": 4.17.0
-  checksum: 0b4eedc7c209b5006db027b58883356657352483baba61eecbbaa78c3255daadfdbde24dfc6bfae504e4208bf84b6b9e010fcf5187870ee9144e9075597d2912
+    "@typescript-eslint/types": 4.18.0
+    "@typescript-eslint/visitor-keys": 4.18.0
+  checksum: c543d4bf73ad0193cca7303c376f15b099ee861be492a210cfc19909d2ec828b7dc898a59e17c89cc91e4cc2ea450731a83671d136cd995fb9b77f8a7db4d440
   languageName: node
   linkType: hard
 
-"@typescript-eslint/types@npm:4.17.0":
-  version: 4.17.0
-  resolution: "@typescript-eslint/types@npm:4.17.0"
-  checksum: a94e1b1d0284f04a0e73b1b7acfcf732a7eb489e06bff671fdbf1ec1c964a01987bff8701cb6e6b54c3450bf976444ae2fcbae6d76177cc04ddc4c452fd6d75f
+"@typescript-eslint/types@npm:4.18.0":
+  version: 4.18.0
+  resolution: "@typescript-eslint/types@npm:4.18.0"
+  checksum: 45d3df0c4993ceab017df2a4502bb2e3d9b21e6554997a539b88dfa5899c83bf6156a823d15eeb679e65dec15ab07ff371c6e5c09f98c166ed94f79a8223ffab
   languageName: node
   linkType: hard
 
-"@typescript-eslint/typescript-estree@npm:4.17.0":
-  version: 4.17.0
-  resolution: "@typescript-eslint/typescript-estree@npm:4.17.0"
+"@typescript-eslint/typescript-estree@npm:4.18.0":
+  version: 4.18.0
+  resolution: "@typescript-eslint/typescript-estree@npm:4.18.0"
   dependencies:
-    "@typescript-eslint/types": 4.17.0
-    "@typescript-eslint/visitor-keys": 4.17.0
+    "@typescript-eslint/types": 4.18.0
+    "@typescript-eslint/visitor-keys": 4.18.0
     debug: ^4.1.1
     globby: ^11.0.1
     is-glob: ^4.0.1
@@ -3113,17 +3114,17 @@ __metadata:
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 502af03c3ab2f58520afa77e772a7fd8bf428f504f776c04435b7038eecb89368463a3a5147a6a35f500de2c780449d9a33b30b17b149905344524eae9a6f2d3
+  checksum: b77e150d281d50aad89f915c05310b5f94fa2b1fc64eada20460d8a7f10c42d4c2a5ccffe185f128c965fc9bd209f77a0df8e1779af18b0a3a383241564ecc4b
   languageName: node
   linkType: hard
 
-"@typescript-eslint/visitor-keys@npm:4.17.0":
-  version: 4.17.0
-  resolution: "@typescript-eslint/visitor-keys@npm:4.17.0"
+"@typescript-eslint/visitor-keys@npm:4.18.0":
+  version: 4.18.0
+  resolution: "@typescript-eslint/visitor-keys@npm:4.18.0"
   dependencies:
-    "@typescript-eslint/types": 4.17.0
+    "@typescript-eslint/types": 4.18.0
     eslint-visitor-keys: ^2.0.0
-  checksum: 04156bce01aafde8127f1a87d356ee7c1ecb84eb223a11b3ede91722ffd704e2ba51161a9636185e2a95f0b80fddaeb2411edb233a820ab2b5dc16390254aa06
+  checksum: 654576d330531386773facffc715e213602721de8ca2f6268d71186a732975031954119fba414a4d502b4827b3941fae068ebb4368b4b7f94e937597b3f57d82
   languageName: node
   linkType: hard
 
@@ -3783,7 +3784,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"babel-preset-latest-node@npm:5.4.0, babel-preset-latest-node@npm:^5.2.0":
+"babel-preset-latest-node@npm:5.4.0":
   version: 5.4.0
   resolution: "babel-preset-latest-node@npm:5.4.0"
   dependencies:
@@ -3797,6 +3798,23 @@ __metadata:
   peerDependencies:
     "@babel/core": ^7.10.5
   checksum: f3ac00c844f49fdc14104d52b1b613239966b1bd72c0e76cb8bf4fe6f96a2828f4181daa9284e334e221408dfa7c5db4aca59b0bf815730b3b5433935bc41741
+  languageName: node
+  linkType: hard
+
+"babel-preset-latest-node@npm:^5.5.1":
+  version: 5.5.1
+  resolution: "babel-preset-latest-node@npm:5.5.1"
+  dependencies:
+    "@babel/plugin-proposal-nullish-coalescing-operator": ^7.13.8
+    "@babel/plugin-proposal-numeric-separator": ^7.12.13
+    "@babel/plugin-proposal-optional-catch-binding": ^7.13.8
+    "@babel/plugin-proposal-optional-chaining": ^7.13.8
+    "@babel/plugin-proposal-unicode-property-regex": ^7.12.13
+    "@babel/plugin-syntax-top-level-await": ^7.12.13
+    "@babel/plugin-transform-modules-commonjs": ^7.13.8
+  peerDependencies:
+    "@babel/core": ^7.10.5
+  checksum: cc79f41cd430b467891dd33f949c404ee16bf9e9ffa70cfcbdbe0fa8f06e90acabe304c0a679ed261db57e78beeed764ad10cfe62a5ea2423634f1b36a20dc69
   languageName: node
   linkType: hard
 
@@ -3826,16 +3844,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"babel-preset-pob-env@npm:^5.5.0":
-  version: 5.5.0
-  resolution: "babel-preset-pob-env@npm:5.5.0"
+"babel-preset-pob-env@npm:^5.6.0":
+  version: 5.6.0
+  resolution: "babel-preset-pob-env@npm:5.6.0"
   dependencies:
     "@babel/plugin-proposal-class-properties": ^7.12.1
-    "@babel/plugin-proposal-nullish-coalescing-operator": ^7.12.1
-    "@babel/plugin-proposal-numeric-separator": ^7.12.7
-    "@babel/plugin-proposal-optional-chaining": ^7.12.7
     "@babel/plugin-syntax-dynamic-import": ^7.8.3
-    "@babel/preset-typescript": ^7.12.1
+    "@babel/preset-typescript": ^7.13.0
     babel-plugin-discard-module-references: ^1.1.2
     babel-plugin-fix-class-properties-uninitialized: ^3.0.1
     babel-plugin-import-export-rename: ^1.0.1
@@ -3844,7 +3859,7 @@ __metadata:
     babel-preset-optimizations: ^2.0.0
   peerDependencies:
     "@babel/core": ^7.11.6
-  checksum: dcbdaedc5cef063d2bdcd0ea6553d5e171fca63a2b0b45f9be66282d1d2cdc2962dbb291aa79056c0f394bdecc76192d107bb31e7459428efde655fba43e6a54
+  checksum: 8dfe8e49915e6c277ea4d41b2318a01f8156c35dcc3af838925fe81b45d4ee6960fc963604579be8828a95f6729d13f825016ebe691bace1e05a12ec37c20112
   languageName: node
   linkType: hard
 
@@ -8454,8 +8469,8 @@ __metadata:
     "@pob/eslint-config-typescript": 43.0.0
     "@types/ansi-styles": ^3.2.1
     "@types/jest": 26.0.20
-    "@typescript-eslint/eslint-plugin": 4.17.0
-    "@typescript-eslint/parser": 4.17.0
+    "@typescript-eslint/eslint-plugin": 4.18.0
+    "@typescript-eslint/parser": 4.18.0
     ansi-styles: ^4.0.0
     babel-jest: 26.6.3
     babel-preset-latest-node: 5.4.0
@@ -8467,7 +8482,7 @@ __metadata:
     jest: 26.6.3
     nightingale-formatter: ^11.5.2
     nightingale-types: ^11.5.2
-    pob-babel: 26.7.0
+    pob-babel: 26.8.0
     pob-lcov-reporter: 4.0.1
     rollup: 2.41.2
     typescript: 4.2.3
@@ -8485,8 +8500,8 @@ __metadata:
     "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
     "@types/node": ">=12.0.0"
-    "@typescript-eslint/eslint-plugin": 4.17.0
-    "@typescript-eslint/parser": 4.17.0
+    "@typescript-eslint/eslint-plugin": 4.18.0
+    "@typescript-eslint/parser": 4.18.0
     babel-preset-latest-node: 5.4.0
     babel-preset-modern-browsers: 15.0.2
     eslint: 7.22.0
@@ -8497,7 +8512,7 @@ __metadata:
     nightingale: ^11.5.2
     nightingale-browser-console: ^11.5.2
     nightingale-console: ^11.5.2
-    pob-babel: 26.7.0
+    pob-babel: 26.8.0
     rollup: 2.41.2
     typescript: 4.2.3
   languageName: unknown
@@ -8512,8 +8527,8 @@ __metadata:
     "@pob/eslint-config": 43.0.0
     "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
-    "@typescript-eslint/eslint-plugin": 4.17.0
-    "@typescript-eslint/parser": 4.17.0
+    "@typescript-eslint/eslint-plugin": 4.18.0
+    "@typescript-eslint/parser": 4.18.0
     babel-preset-modern-browsers: 15.0.2
     eslint: 7.22.0
     eslint-import-resolver-node: 0.3.4
@@ -8522,7 +8537,7 @@ __metadata:
     eslint-plugin-unicorn: 25.0.1
     nightingale: ^11.5.2
     nightingale-react-native-console: ^11.5.2
-    pob-babel: 26.7.0
+    pob-babel: 26.8.0
     rollup: 2.41.2
     typescript: 4.2.3
   languageName: unknown
@@ -8538,8 +8553,8 @@ __metadata:
     "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
     "@types/jest": 26.0.20
-    "@typescript-eslint/eslint-plugin": 4.17.0
-    "@typescript-eslint/parser": 4.17.0
+    "@typescript-eslint/eslint-plugin": 4.18.0
+    "@typescript-eslint/parser": 4.18.0
     babel-jest: 26.6.3
     babel-preset-latest-node: 5.4.0
     babel-preset-modern-browsers: 15.0.2
@@ -8552,7 +8567,7 @@ __metadata:
     nightingale-formatter: ^11.5.2
     nightingale-levels: ^11.5.2
     nightingale-types: ^11.5.2
-    pob-babel: 26.7.0
+    pob-babel: 26.8.0
     pob-lcov-reporter: 4.0.1
     rollup: 2.41.2
     typescript: 4.2.3
@@ -8569,8 +8584,8 @@ __metadata:
     "@pob/eslint-config": 43.0.0
     "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
-    "@typescript-eslint/eslint-plugin": 4.17.0
-    "@typescript-eslint/parser": 4.17.0
+    "@typescript-eslint/eslint-plugin": 4.18.0
+    "@typescript-eslint/parser": 4.18.0
     babel-preset-modern-browsers: 15.0.2
     eslint: 7.22.0
     eslint-import-resolver-node: 0.3.4
@@ -8581,7 +8596,7 @@ __metadata:
     nightingale-console-output: ^11.5.2
     nightingale-debug: ^11.5.2
     nightingale-types: ^11.5.2
-    pob-babel: 26.7.0
+    pob-babel: 26.8.0
     rollup: 2.41.2
     typescript: 4.2.3
   languageName: unknown
@@ -8598,8 +8613,8 @@ __metadata:
     "@pob/eslint-config-typescript-node": 43.0.0
     "@rollup/plugin-run": 2.0.2
     "@sentry/node": ^6.1.0
-    "@typescript-eslint/eslint-plugin": 4.17.0
-    "@typescript-eslint/parser": 4.17.0
+    "@typescript-eslint/eslint-plugin": 4.18.0
+    "@typescript-eslint/parser": 4.18.0
     babel-preset-latest-node: 5.4.0
     eslint: 7.22.0
     eslint-import-resolver-node: 0.3.4
@@ -8609,7 +8624,7 @@ __metadata:
     nightingale: ^11.5.2
     nightingale-console: ^11.5.2
     nightingale-sentry: ^11.5.4
-    pob-babel: 26.7.0
+    pob-babel: 26.8.0
     rollup: 2.41.2
     typescript: 4.2.3
   languageName: unknown
@@ -8625,8 +8640,8 @@ __metadata:
     "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
     "@types/node": ">=12.0.0"
-    "@typescript-eslint/eslint-plugin": 4.17.0
-    "@typescript-eslint/parser": 4.17.0
+    "@typescript-eslint/eslint-plugin": 4.18.0
+    "@typescript-eslint/parser": 4.18.0
     babel-preset-latest-node: 5.4.0
     babel-preset-modern-browsers: 15.0.2
     eslint: 7.22.0
@@ -8636,7 +8651,7 @@ __metadata:
     eslint-plugin-unicorn: 25.0.1
     nightingale-levels: ^11.5.2
     nightingale-types: ^11.5.2
-    pob-babel: 26.7.0
+    pob-babel: 26.8.0
     rollup: 2.41.2
     typescript: 4.2.3
   languageName: unknown
@@ -8652,8 +8667,8 @@ __metadata:
     "@pob/eslint-config-typescript": 43.0.0
     "@pob/eslint-config-typescript-node": 43.0.0
     "@types/node": ">=12.0.0"
-    "@typescript-eslint/eslint-plugin": 4.17.0
-    "@typescript-eslint/parser": 4.17.0
+    "@typescript-eslint/eslint-plugin": 4.18.0
+    "@typescript-eslint/parser": 4.18.0
     babel-preset-latest-node: 5.4.0
     eslint: 7.22.0
     eslint-import-resolver-node: 0.3.4
@@ -8666,7 +8681,7 @@ __metadata:
     nightingale-json-formatter: ^11.5.2
     nightingale-levels: ^11.5.2
     nightingale-types: ^11.5.2
-    pob-babel: 26.7.0
+    pob-babel: 26.8.0
     rollup: 2.41.2
     typescript: 4.2.3
   languageName: unknown
@@ -8682,8 +8697,8 @@ __metadata:
     "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
     "@types/jest": 26.0.20
-    "@typescript-eslint/eslint-plugin": 4.17.0
-    "@typescript-eslint/parser": 4.17.0
+    "@typescript-eslint/eslint-plugin": 4.18.0
+    "@typescript-eslint/parser": 4.18.0
     babel-jest: 26.6.3
     babel-preset-latest-node: 5.4.0
     babel-preset-modern-browsers: 15.0.2
@@ -8694,7 +8709,7 @@ __metadata:
     eslint-plugin-unicorn: 25.0.1
     jest: 26.6.3
     nightingale-levels: ^11.5.2
-    pob-babel: 26.7.0
+    pob-babel: 26.8.0
     pob-lcov-reporter: 4.0.1
     rollup: 2.41.2
     typescript: 4.2.3
@@ -8712,8 +8727,8 @@ __metadata:
     "@pob/eslint-config-typescript": 43.0.0
     "@pob/eslint-config-typescript-node": 43.0.0
     "@rollup/plugin-run": 2.0.2
-    "@typescript-eslint/eslint-plugin": 4.17.0
-    "@typescript-eslint/parser": 4.17.0
+    "@typescript-eslint/eslint-plugin": 4.18.0
+    "@typescript-eslint/parser": 4.18.0
     babel-preset-latest-node: 5.4.0
     eslint: 7.22.0
     eslint-import-resolver-node: 0.3.4
@@ -8726,7 +8741,7 @@ __metadata:
     nightingale-json-formatter: ^11.5.2
     nightingale-string: ^11.5.2
     nightingale-types: ^11.5.2
-    pob-babel: 26.7.0
+    pob-babel: 26.8.0
     rollup: 2.41.2
     typescript: 4.2.3
   languageName: unknown
@@ -8742,8 +8757,8 @@ __metadata:
     "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
     "@types/jest": 26.0.20
-    "@typescript-eslint/eslint-plugin": 4.17.0
-    "@typescript-eslint/parser": 4.17.0
+    "@typescript-eslint/eslint-plugin": 4.18.0
+    "@typescript-eslint/parser": 4.18.0
     babel-jest: 26.6.3
     babel-preset-latest-node: 5.4.0
     babel-preset-modern-browsers: 15.0.2
@@ -8755,7 +8770,7 @@ __metadata:
     jest: 26.6.3
     nightingale-levels: ^11.5.2
     nightingale-types: ^11.5.2
-    pob-babel: 26.7.0
+    pob-babel: 26.8.0
     pob-lcov-reporter: 4.0.1
     rollup: 2.41.2
     typescript: 4.2.3
@@ -8773,8 +8788,8 @@ __metadata:
     "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
     "@types/jest": 26.0.20
-    "@typescript-eslint/eslint-plugin": 4.17.0
-    "@typescript-eslint/parser": 4.17.0
+    "@typescript-eslint/eslint-plugin": 4.18.0
+    "@typescript-eslint/parser": 4.18.0
     babel-jest: 26.6.3
     babel-preset-latest-node: 5.4.0
     babel-preset-modern-browsers: 15.0.2
@@ -8787,7 +8802,7 @@ __metadata:
     nightingale-formatter: ^11.5.2
     nightingale-levels: ^11.5.2
     nightingale-types: ^11.5.2
-    pob-babel: 26.7.0
+    pob-babel: 26.8.0
     pob-lcov-reporter: 4.0.1
     rollup: 2.41.2
     typescript: 4.2.3
@@ -8805,8 +8820,8 @@ __metadata:
     "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
     "@types/jest": 26.0.20
-    "@typescript-eslint/eslint-plugin": 4.17.0
-    "@typescript-eslint/parser": 4.17.0
+    "@typescript-eslint/eslint-plugin": 4.18.0
+    "@typescript-eslint/parser": 4.18.0
     babel-jest: 26.6.3
     babel-preset-latest-node: 5.4.0
     babel-preset-modern-browsers: 15.0.2
@@ -8819,7 +8834,7 @@ __metadata:
     nightingale-formatter: ^11.5.2
     nightingale-levels: ^11.5.2
     nightingale-types: ^11.5.2
-    pob-babel: 26.7.0
+    pob-babel: 26.8.0
     pob-lcov-reporter: 4.0.1
     rollup: 2.41.2
     typescript: 4.2.3
@@ -8850,8 +8865,8 @@ __metadata:
     "@pob/eslint-config": 43.0.0
     "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
-    "@typescript-eslint/eslint-plugin": 4.17.0
-    "@typescript-eslint/parser": 4.17.0
+    "@typescript-eslint/eslint-plugin": 4.18.0
+    "@typescript-eslint/parser": 4.18.0
     babel-preset-latest-node: 5.4.0
     babel-preset-modern-browsers: 15.0.2
     eslint: 7.22.0
@@ -8859,7 +8874,7 @@ __metadata:
     eslint-plugin-import: 2.22.1
     eslint-plugin-node: 11.1.0
     eslint-plugin-unicorn: 25.0.1
-    pob-babel: 26.7.0
+    pob-babel: 26.8.0
     rollup: 2.41.2
     typescript: 4.2.3
   languageName: unknown
@@ -8876,8 +8891,8 @@ __metadata:
     "@pob/eslint-config-typescript": 43.0.0
     "@types/jest": 26.0.20
     "@types/node": ">=12.0.0"
-    "@typescript-eslint/eslint-plugin": 4.17.0
-    "@typescript-eslint/parser": 4.17.0
+    "@typescript-eslint/eslint-plugin": 4.18.0
+    "@typescript-eslint/parser": 4.18.0
     babel-jest: 26.6.3
     babel-preset-latest-node: 5.4.0
     babel-preset-modern-browsers: 15.0.2
@@ -8889,7 +8904,7 @@ __metadata:
     jest: 26.6.3
     nightingale-levels: ^11.5.2
     nightingale-types: ^11.5.2
-    pob-babel: 26.7.0
+    pob-babel: 26.8.0
     pob-lcov-reporter: 4.0.1
     rollup: 2.41.2
     typescript: 4.2.3
@@ -8907,8 +8922,8 @@ __metadata:
     "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
     "@types/jest": 26.0.20
-    "@typescript-eslint/eslint-plugin": 4.17.0
-    "@typescript-eslint/parser": 4.17.0
+    "@typescript-eslint/eslint-plugin": 4.18.0
+    "@typescript-eslint/parser": 4.18.0
     babel-jest: 26.6.3
     babel-preset-latest-node: 5.4.0
     babel-preset-modern-browsers: 15.0.2
@@ -8921,7 +8936,7 @@ __metadata:
     nightingale-formatter: ^11.5.2
     nightingale-levels: ^11.5.2
     nightingale-types: ^11.5.2
-    pob-babel: 26.7.0
+    pob-babel: 26.8.0
     pob-lcov-reporter: 4.0.1
     rollup: 2.41.2
     typescript: 4.2.3
@@ -8941,8 +8956,8 @@ __metadata:
     "@pob/lerna-light": 3.24.0
     "@pob/root": 3.1.1
     "@types/node": 14.14.34
-    "@typescript-eslint/eslint-plugin": 4.17.0
-    "@typescript-eslint/parser": 4.17.0
+    "@typescript-eslint/eslint-plugin": 4.18.0
+    "@typescript-eslint/parser": 4.18.0
     check-package-dependencies: 0.1.2
     eslint: 7.22.0
     eslint-import-resolver-node: 0.3.4
@@ -8951,7 +8966,7 @@ __metadata:
     eslint-plugin-unicorn: 25.0.1
     husky: 4.3.8
     prettier: 2.2.1
-    typedoc: 0.20.30
+    typedoc: 0.20.32
     typescript: 4.2.3
   languageName: unknown
   linkType: soft
@@ -8966,8 +8981,8 @@ __metadata:
     "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
     "@types/jest": 26.0.20
-    "@typescript-eslint/eslint-plugin": 4.17.0
-    "@typescript-eslint/parser": 4.17.0
+    "@typescript-eslint/eslint-plugin": 4.18.0
+    "@typescript-eslint/parser": 4.18.0
     babel-jest: 26.6.3
     babel-preset-latest-node: 5.4.0
     babel-preset-modern-browsers: 15.0.2
@@ -8980,7 +8995,7 @@ __metadata:
     nightingale-formatter: ^11.5.2
     nightingale-levels: ^11.5.2
     nightingale-types: ^11.5.2
-    pob-babel: 26.7.0
+    pob-babel: 26.8.0
     pob-lcov-reporter: 4.0.1
     rollup: 2.41.2
     typescript: 4.2.3
@@ -8997,8 +9012,8 @@ __metadata:
     "@pob/eslint-config": 43.0.0
     "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
-    "@typescript-eslint/eslint-plugin": 4.17.0
-    "@typescript-eslint/parser": 4.17.0
+    "@typescript-eslint/eslint-plugin": 4.18.0
+    "@typescript-eslint/parser": 4.18.0
     babel-preset-modern-browsers: 15.0.2
     eslint: 7.22.0
     eslint-import-resolver-node: 0.3.4
@@ -9008,7 +9023,7 @@ __metadata:
     nightingale-ansi-formatter: ^11.5.2
     nightingale-console-output: ^11.5.2
     nightingale-types: ^11.5.2
-    pob-babel: 26.7.0
+    pob-babel: 26.8.0
     rollup: 2.41.2
     typescript: 4.2.3
   languageName: unknown
@@ -9026,8 +9041,8 @@ __metadata:
     "@sentry/core": ^5.0.0 || ^6.1.0
     "@sentry/node": ^5.0.0 || ^6.1.0
     "@sentry/types": ^5.0.0 || ^6.1.0
-    "@typescript-eslint/eslint-plugin": 4.17.0
-    "@typescript-eslint/parser": 4.17.0
+    "@typescript-eslint/eslint-plugin": 4.18.0
+    "@typescript-eslint/parser": 4.18.0
     babel-preset-latest-node: 5.4.0
     babel-preset-modern-browsers: 15.0.2
     eslint: 7.22.0
@@ -9037,7 +9052,7 @@ __metadata:
     eslint-plugin-unicorn: 25.0.1
     nightingale-levels: ^11.5.2
     nightingale-types: ^11.5.2
-    pob-babel: 26.7.0
+    pob-babel: 26.8.0
     rollup: 2.41.2
     typescript: 4.2.3
   languageName: unknown
@@ -9054,8 +9069,8 @@ __metadata:
     "@pob/eslint-config-typescript-node": 43.0.0
     "@types/jest": 26.0.20
     "@types/request": 2.48.5
-    "@typescript-eslint/eslint-plugin": 4.17.0
-    "@typescript-eslint/parser": 4.17.0
+    "@typescript-eslint/eslint-plugin": 4.18.0
+    "@typescript-eslint/parser": 4.18.0
     babel-jest: 26.6.3
     babel-preset-latest-node: 5.4.0
     eslint: 7.22.0
@@ -9068,7 +9083,7 @@ __metadata:
     nightingale-markdown-formatter: ^11.5.2
     nightingale-raw-formatter: ^11.5.2
     nightingale-types: ^11.5.2
-    pob-babel: 26.7.0
+    pob-babel: 26.8.0
     pob-lcov-reporter: 4.0.1
     request: ^2.88.0
     rollup: 2.41.2
@@ -9086,8 +9101,8 @@ __metadata:
     "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
     "@pob/eslint-config-typescript-node": 43.0.0
-    "@typescript-eslint/eslint-plugin": 4.17.0
-    "@typescript-eslint/parser": 4.17.0
+    "@typescript-eslint/eslint-plugin": 4.18.0
+    "@typescript-eslint/parser": 4.18.0
     babel-preset-latest-node: 5.4.0
     eslint: 7.22.0
     eslint-import-resolver-node: 0.3.4
@@ -9096,7 +9111,7 @@ __metadata:
     eslint-plugin-unicorn: 25.0.1
     nightingale-raw-formatter: ^11.5.2
     nightingale-types: ^11.5.2
-    pob-babel: 26.7.0
+    pob-babel: 26.8.0
     rollup: 2.41.2
     typescript: 4.2.3
   languageName: unknown
@@ -9111,8 +9126,8 @@ __metadata:
     "@pob/eslint-config": 43.0.0
     "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
-    "@typescript-eslint/eslint-plugin": 4.17.0
-    "@typescript-eslint/parser": 4.17.0
+    "@typescript-eslint/eslint-plugin": 4.18.0
+    "@typescript-eslint/parser": 4.18.0
     babel-preset-latest-node: 5.4.0
     babel-preset-modern-browsers: 15.0.2
     eslint: 7.22.0
@@ -9121,7 +9136,7 @@ __metadata:
     eslint-plugin-node: 11.1.0
     eslint-plugin-unicorn: 25.0.1
     nightingale-levels: ^11.5.2
-    pob-babel: 26.7.0
+    pob-babel: 26.8.0
     rollup: 2.41.2
     typescript: 4.2.3
   languageName: unknown
@@ -9137,8 +9152,8 @@ __metadata:
     "@pob/eslint-config-typescript": 43.0.0
     "@pob/eslint-config-typescript-node": 43.0.0
     "@types/node": ">=12.0.0"
-    "@typescript-eslint/eslint-plugin": 4.17.0
-    "@typescript-eslint/parser": 4.17.0
+    "@typescript-eslint/eslint-plugin": 4.18.0
+    "@typescript-eslint/parser": 4.18.0
     babel-preset-latest-node: 5.4.0
     eslint: 7.22.0
     eslint-import-resolver-node: 0.3.4
@@ -9146,7 +9161,7 @@ __metadata:
     eslint-plugin-node: 11.1.0
     eslint-plugin-unicorn: 25.0.1
     nightingale-types: ^11.5.2
-    pob-babel: 26.7.0
+    pob-babel: 26.8.0
     rollup: 2.41.2
     typescript: 4.2.3
   languageName: unknown
@@ -9161,8 +9176,8 @@ __metadata:
     "@pob/eslint-config": 43.0.0
     "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
-    "@typescript-eslint/eslint-plugin": 4.17.0
-    "@typescript-eslint/parser": 4.17.0
+    "@typescript-eslint/eslint-plugin": 4.18.0
+    "@typescript-eslint/parser": 4.18.0
     babel-preset-latest-node: 5.4.0
     babel-preset-modern-browsers: 15.0.2
     eslint: 7.22.0
@@ -9172,7 +9187,7 @@ __metadata:
     eslint-plugin-unicorn: 25.0.1
     nightingale-level-names: ^11.5.2
     nightingale-types: ^11.5.2
-    pob-babel: 26.7.0
+    pob-babel: 26.8.0
     rollup: 2.41.2
     typescript: 4.2.3
   languageName: unknown
@@ -9189,8 +9204,8 @@ __metadata:
     "@pob/eslint-config-typescript": 43.0.0
     "@types/jest": 26.0.20
     "@types/node": ">=12.0.0"
-    "@typescript-eslint/eslint-plugin": 4.17.0
-    "@typescript-eslint/parser": 4.17.0
+    "@typescript-eslint/eslint-plugin": 4.18.0
+    "@typescript-eslint/parser": 4.18.0
     babel-jest: 26.6.3
     babel-preset-latest-node: 5.4.0
     babel-preset-modern-browsers: 15.0.2
@@ -9204,7 +9219,7 @@ __metadata:
     nightingale-logger: ^11.5.2
     nightingale-string: ^11.5.2
     nightingale-types: ^11.5.2
-    pob-babel: 26.7.0
+    pob-babel: 26.8.0
     pob-lcov-reporter: 4.0.1
     rollup: 2.41.2
     typescript: 4.2.3
@@ -10134,17 +10149,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pob-babel@npm:26.7.0":
-  version: 26.7.0
-  resolution: "pob-babel@npm:26.7.0"
+"pob-babel@npm:26.8.0":
+  version: 26.8.0
+  resolution: "pob-babel@npm:26.8.0"
   dependencies:
     "@babel/plugin-transform-runtime": ^7.12.10
     "@rollup/plugin-babel": ^5.2.2
     "@rollup/plugin-json": ^4.1.0
     "@rollup/plugin-node-resolve": ^11.0.0
-    babel-preset-latest-node: ^5.2.0
+    babel-preset-latest-node: ^5.5.1
     babel-preset-modern-browsers: ^15.0.2
-    babel-preset-pob-env: ^5.5.0
+    babel-preset-pob-env: ^5.6.0
     minimist-argv: ^1.1.0
     rollup: ^2.34.2
     rollup-config-external-dependencies: ^2.0.0
@@ -10156,7 +10171,7 @@ __metadata:
   bin:
     pob-build: bin/pob-build.js
     pob-watch: bin/pob-watch.js
-  checksum: 8737febbf74324a0f5ca872c504f30ff6467ea7b7c91ce119b9105b717187fe5e237b9b693f0ef8bdcc6c32ce6e91c13dcd5d596c00eef7bd7efa72d4389bb5b
+  checksum: 1ada823f0d1bbc5871fa3f4dbd9c3f67e08e0ff04eb5672ca654974731713a47c93fe01b016d54942b31420b27286d9dec8fa4f088cd549173df1af0a26a8dbf
   languageName: node
   linkType: hard
 
@@ -11063,13 +11078,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"shiki@npm:^0.9.2":
-  version: 0.9.2
-  resolution: "shiki@npm:0.9.2"
+"shiki@npm:^0.9.3":
+  version: 0.9.3
+  resolution: "shiki@npm:0.9.3"
   dependencies:
     onigasm: ^2.2.5
     vscode-textmate: ^5.2.0
-  checksum: 3177802720bec0605876c859f88200a0d109bb7db1656e190422d21563ac639cab36b01cd34cf82fe1673a3d63fac33be2f06cf9c1d6fe5a0552cbbfe1a82245
+  checksum: fce8084727491c496187abe5b8f831dbecdada11ebcc2861335a31fb7eb3d3ebceaf50aec2f2d855f76af626ddb66dabd860536e334b3cb9feff7e79d61ccde0
   languageName: node
   linkType: hard
 
@@ -12011,16 +12026,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typedoc-default-themes@npm:^0.12.8":
-  version: 0.12.8
-  resolution: "typedoc-default-themes@npm:0.12.8"
-  checksum: dd2a196f571d7ee03c3d0a713150fb3bb5c80a8432e9bd167d8b8f89986803c71b03eda41865ec64cbb82bda65f287adfd479543da828d24bd9fe2eae9507f30
+"typedoc-default-themes@npm:^0.12.9":
+  version: 0.12.9
+  resolution: "typedoc-default-themes@npm:0.12.9"
+  checksum: 7d5a4152dadeca4649151909f8f0180f35a3d2d030c8e382930d04abb66d0d3f3c60461eb548376e92e0f6f8a3b027b39aaa432e84f9b52eb1e0dcc50cde45c7
   languageName: node
   linkType: hard
 
-"typedoc@npm:0.20.30":
-  version: 0.20.30
-  resolution: "typedoc@npm:0.20.30"
+"typedoc@npm:0.20.32":
+  version: 0.20.32
+  resolution: "typedoc@npm:0.20.32"
   dependencies:
     colors: ^1.4.0
     fs-extra: ^9.1.0
@@ -12031,13 +12046,13 @@ __metadata:
     minimatch: ^3.0.0
     progress: ^2.0.3
     shelljs: ^0.8.4
-    shiki: ^0.9.2
-    typedoc-default-themes: ^0.12.8
+    shiki: ^0.9.3
+    typedoc-default-themes: ^0.12.9
   peerDependencies:
     typescript: 3.9.x || 4.0.x || 4.1.x || 4.2.x
   bin:
     typedoc: bin/typedoc
-  checksum: 32bf2726d222a290e9757301c03cc10c0e7588d6eebc1e8be4b3c487f9b836898db3fc672b7d98213edbb6c76e8c95ee9f1a5bd55d1dd1b13a7b3acda1f42a42
+  checksum: 310a779923ebc74e569e67080a8b8e007b412b5616ee57ed52980e6595e0016ebb63ce0718fa61e8fe0183083f9ac1d674dee1ef5b69446ac8e1958608d705d6
   languageName: node
   linkType: hard
 
