@@ -7,6 +7,19 @@ const Level = require('nightingale-levels');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e['default'] : e; }
 
+function _interopNamespace(e) {
+  if (e && e.__esModule) return e;
+  var n = Object.create(null);
+  if (e) {
+    Object.keys(e).forEach(function (k) {
+      n[k] = e[k];
+    });
+  }
+  n['default'] = e;
+  return n;
+}
+
+const util__namespace = /*#__PURE__*/_interopNamespace(util);
 const Level__default = /*#__PURE__*/_interopDefaultLegacy(Level);
 
 /* eslint-disable max-lines */
@@ -313,7 +326,7 @@ class Logger {
     {
       // Note: inspect is a special function for node:
       // https://github.com/nodejs/node/blob/a1bda1b4deb08dfb3e06cb778f0db40023b18318/lib/util.js#L210
-      const inspectedValue = util.inspect(value, {
+      const inspectedValue = util__namespace.inspect(value, {
         depth: 6
       });
       this.log(inspectedValue, metadata, Level__default.DEBUG, {
@@ -329,7 +342,7 @@ class Logger {
 
   inspectVar(varName, varValue, metadata, metadataStyles) {
     {
-      const inspectedValue = util.inspect(varValue, {
+      const inspectedValue = util__namespace.inspect(varValue, {
         depth: 6
       });
       this.log(`${varName} = ${inspectedValue}`, metadata, Level__default.DEBUG, {

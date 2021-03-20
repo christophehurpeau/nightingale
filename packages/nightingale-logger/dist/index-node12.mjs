@@ -1,4 +1,4 @@
-import { inspect } from 'util';
+import * as util from 'util';
 import Level from 'nightingale-levels';
 export { default as Level } from 'nightingale-levels';
 
@@ -302,7 +302,7 @@ class Logger {
     {
       // Note: inspect is a special function for node:
       // https://github.com/nodejs/node/blob/a1bda1b4deb08dfb3e06cb778f0db40023b18318/lib/util.js#L210
-      const inspectedValue = inspect(value, {
+      const inspectedValue = util.inspect(value, {
         depth: 6
       });
       this.log(inspectedValue, metadata, Level.DEBUG, {
@@ -318,7 +318,7 @@ class Logger {
 
   inspectVar(varName, varValue, metadata, metadataStyles) {
     {
-      const inspectedValue = inspect(varValue, {
+      const inspectedValue = util.inspect(varValue, {
         depth: 6
       });
       this.log(`${varName} = ${inspectedValue}`, metadata, Level.DEBUG, {

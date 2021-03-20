@@ -2,12 +2,12 @@ import { Logger, Level, configure } from 'nightingale';
 export { Level, addConfig, configure, levels } from 'nightingale';
 import { BrowserConsoleHandler } from 'nightingale-browser-console';
 
-var ConsoleHandler = BrowserConsoleHandler;
-var logger = new Logger('app');
-var appLogger = logger;
-var appMinLevel = // eslint-disable-next-line unicorn/no-nested-ternary
+const ConsoleHandler = BrowserConsoleHandler;
+const logger = new Logger('app');
+const appLogger = logger;
+const appMinLevel = // eslint-disable-next-line unicorn/no-nested-ternary
 Level.DEBUG;
-var libMinLevel = Level.INFO;
+const libMinLevel = Level.INFO;
 configure(appMinLevel !== libMinLevel ? [{
   pattern: /^app(:|$)/,
   handlers: [new ConsoleHandler(appMinLevel)],

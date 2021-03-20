@@ -20,7 +20,12 @@
   "browserslist": [
     "> 0.2%",
     "Firefox ESR",
+    "last 2 Chrome versions",
+    "last 2 iOS versions",
+    "last 2 Edge versions",
+    "last 2 Safari versions",
     "not ie < 12",
+    "not ios_saf < 10",
     "not dead",
     "not op_mini all"
   ],
@@ -116,17 +121,17 @@
     "@pob/eslint-config": "43.0.0",
     "@pob/eslint-config-node": "43.1.0",
     "@pob/eslint-config-typescript": "43.0.0",
-    "@typescript-eslint/eslint-plugin": "4.17.0",
-    "@typescript-eslint/parser": "4.17.0",
-    "babel-preset-latest-node": "5.4.0",
+    "@typescript-eslint/eslint-plugin": "4.18.0",
+    "@typescript-eslint/parser": "4.18.0",
+    "babel-preset-latest-node": "5.5.1",
     "babel-preset-modern-browsers": "15.0.2",
     "eslint": "7.22.0",
     "eslint-import-resolver-node": "0.3.4",
     "eslint-plugin-import": "2.22.1",
     "eslint-plugin-node": "11.1.0",
     "eslint-plugin-unicorn": "25.0.1",
-    "pob-babel": "26.7.0",
-    "rollup": "2.41.2",
+    "pob-babel": "26.8.0",
+    "rollup": "2.42.1",
     "typescript": "4.2.3"
   }
 }

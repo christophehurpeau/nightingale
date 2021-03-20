@@ -20,11 +20,7 @@ const createHandler = (Sentry, {
   getTags = () => ({}),
   getBreadcrumbCategory = () => undefined,
   getBreadcrumbType = () => undefined,
-  shouldSendAsException = record => {
-    var _record$metadata;
-
-    return ((_record$metadata = record.metadata) === null || _record$metadata === void 0 ? void 0 : _record$metadata.error) !== undefined && record.metadata.unhandled !== true;
-  },
+  shouldSendAsException = record => record.metadata?.error !== undefined && record.metadata.unhandled !== true,
   shouldSendAsBreadcrumb = () => false
 } = {}) => {
   return record => {
@@ -36,7 +32,7 @@ const createHandler = (Sentry, {
     } = record;
 
     if (shouldSendAsException(record)) {
-      const error = (metadata === null || metadata === void 0 ? void 0 : metadata.error) || record.message;
+      const error = metadata?.error || record.message;
       const extraData = { ...metadata,
         ...extra
       };

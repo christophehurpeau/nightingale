@@ -91,7 +91,7 @@ class SentryHandler {
 
     if (typeof Sentry === 'string') {
       console.warn('nightingale-sentry: Passing DSN directly is deprecated, pass Sentry instead and init in your app.');
-      SentryNode.init({
+      SentryNode__namespace.init({
         dsn: Sentry
       });
       this.handle = createHandler(SentryNode__namespace, options);

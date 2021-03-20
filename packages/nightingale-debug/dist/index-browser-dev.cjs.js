@@ -9,36 +9,28 @@ function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'defau
 var Level__default = /*#__PURE__*/_interopDefaultLegacy(Level);
 
 /* eslint-disable complexity */
-var specialRegexpChars = /[$()+.?[\\\]^{|}]/;
+const specialRegexpChars = /[$()+.?[\\\]^{|}]/;
 
-var createTestFunctionFromRegexp = function createTestFunctionFromRegexp(regexp) {
-  return function (string) {
-    return regexp.test(string);
-  };
-};
+const createTestFunctionFromRegexp = regexp => string => regexp.test(string);
 
-var createTestFunctionFromRegexpString = function createTestFunctionFromRegexpString(value) {
+const createTestFunctionFromRegexpString = value => {
   if (!value.endsWith('/')) throw new Error('Invalid RegExp DEBUG value');
   return createTestFunctionFromRegexp(new RegExp(value.slice(1, -1)));
 };
 
-var createTestFunctionFromValue = function createTestFunctionFromValue(value) {
+const createTestFunctionFromValue = value => {
   if (value.endsWith(':*')) {
     value = value.slice(0, -2);
-    return function (string) {
-      return string.startsWith(value);
-    };
+    return string => string.startsWith(value);
   }
 
-  return function (string) {
-    return string === value;
-  };
+  return string => string === value;
 };
 
 function createFindDebugLevel(debugValue) {
-  var isWildcard = false;
-  var debugValues = [];
-  var skips = [];
+  let isWildcard = false;
+  const debugValues = [];
+  const skips = [];
 
   if (!Array.isArray(debugValue)) {
     if (debugValue instanceof RegExp) {
@@ -57,7 +49,7 @@ function createFindDebugLevel(debugValue) {
   }
 
   if (debugValue) {
-    debugValue.forEach(function (value) {
+    debugValue.forEach(value => {
       if (specialRegexpChars.test(value)) {
         throw new Error(`Invalid debug value: "${value}" (contains special chars)`);
       }
@@ -79,35 +71,23 @@ function createFindDebugLevel(debugValue) {
 
   if (isWildcard) {
     if (skips.length === 0) {
-      return function () {
-        return Level__default.ALL;
-      };
+      return () => Level__default.ALL;
     } else {
-      return function (minLevel, key) {
-        return skips.some(function (skip) {
-          return skip(key);
-        }) ? minLevel : Level__default.ALL;
-      };
+      return (minLevel, key) => skips.some(skip => skip(key)) ? minLevel : Level__default.ALL;
     }
   }
 
   if (debugValues.length === 0) {
-    return function (minLevel) {
-      return minLevel;
-    };
+    return minLevel => minLevel;
   }
 
-  return function (minLevel, key) {
+  return (minLevel, key) => {
     if (minLevel === Level__default.ALL || !key) {
       return minLevel;
     }
 
-    if (debugValues.some(function (debugValue) {
-      return debugValue(key);
-    })) {
-      return skips.some(function (skip) {
-        return skip(key);
-      }) ? minLevel : Level__default.ALL;
+    if (debugValues.some(debugValue => debugValue(key))) {
+      return skips.some(skip => skip(key)) ? minLevel : Level__default.ALL;
     }
 
     return minLevel;

@@ -11,7 +11,7 @@ function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'defau
 var _extends__default = /*#__PURE__*/_interopDefaultLegacy(_extends);
 var Level__default = /*#__PURE__*/_interopDefaultLegacy(Level);
 
-var mapToSentryLevel = {
+const mapToSentryLevel = {
   [Level__default.TRACE]: types.Severity.Debug,
   [Level__default.DEBUG]: types.Severity.Debug,
   [Level__default.INFO]: types.Severity.Info,
@@ -25,45 +25,28 @@ var mapToSentryLevel = {
   [Level__default.ALL]: types.Severity.Error
 };
 
-var createHandler = function createHandler(Sentry, _temp) {
-  var _ref = _temp === void 0 ? {} : _temp,
-      _ref$getUser = _ref.getUser,
-      getUser = _ref$getUser === void 0 ? function () {
-    return undefined;
-  } : _ref$getUser,
-      _ref$getTags = _ref.getTags,
-      getTags = _ref$getTags === void 0 ? function () {
-    return {};
-  } : _ref$getTags,
-      _ref$getBreadcrumbCat = _ref.getBreadcrumbCategory,
-      getBreadcrumbCategory = _ref$getBreadcrumbCat === void 0 ? function () {
-    return undefined;
-  } : _ref$getBreadcrumbCat,
-      _ref$getBreadcrumbTyp = _ref.getBreadcrumbType,
-      getBreadcrumbType = _ref$getBreadcrumbTyp === void 0 ? function () {
-    return undefined;
-  } : _ref$getBreadcrumbTyp,
-      _ref$shouldSendAsExce = _ref.shouldSendAsException,
-      shouldSendAsException = _ref$shouldSendAsExce === void 0 ? function (record) {
+const createHandler = (Sentry, {
+  getUser = () => undefined,
+  getTags = () => ({}),
+  getBreadcrumbCategory = () => undefined,
+  getBreadcrumbType = () => undefined,
+  shouldSendAsException = record => {
     var _record$metadata;
 
-    return ((_record$metadata = record.metadata) === null || _record$metadata === void 0 ? void 0 : _record$metadata.error) !== undefined && record.metadata.unhandled !== true;
-  } : _ref$shouldSendAsExce,
-      _ref$shouldSendAsBrea = _ref.shouldSendAsBreadcrumb,
-      shouldSendAsBreadcrumb = _ref$shouldSendAsBrea === void 0 ? function () {
-    return false;
-  } : _ref$shouldSendAsBrea;
-
-  return function (record) {
-    var key = record.key,
-        level = record.level,
-        metadata = record.metadata,
-        extra = record.extra;
+    return ((_record$metadata = record.metadata) == null ? void 0 : _record$metadata.error) !== undefined && record.metadata.unhandled !== true;
+  },
+  shouldSendAsBreadcrumb = () => false
+} = {}) => {
+  return record => {
+    const key = record.key,
+          level = record.level,
+          metadata = record.metadata,
+          extra = record.extra;
 
     if (shouldSendAsException(record)) {
-      var error = (metadata === null || metadata === void 0 ? void 0 : metadata.error) || record.message;
+      const error = (metadata == null ? void 0 : metadata.error) || record.message;
 
-      var extraData = _extends__default({}, metadata, extra);
+      const extraData = _extends__default({}, metadata, extra);
 
       delete extraData.error;
       Sentry.captureException(error, {
@@ -87,10 +70,13 @@ var createHandler = function createHandler(Sentry, _temp) {
   };
 };
 
-var SentryHandler = function SentryHandler(Sentry, minLevel, options) {
-  this.minLevel = minLevel;
-  this.handle = createHandler(Sentry, options);
-};
+class SentryHandler {
+  constructor(Sentry, minLevel, options) {
+    this.minLevel = minLevel;
+    this.handle = createHandler(Sentry, options);
+  }
+
+}
 
 exports.default = SentryHandler;
 //# sourceMappingURL=index-browser-dev.cjs.js.map

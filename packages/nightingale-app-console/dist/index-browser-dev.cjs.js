@@ -5,12 +5,12 @@ Object.defineProperty(exports, '__esModule', { value: true });
 var nightingale = require('nightingale');
 var nightingaleBrowserConsole = require('nightingale-browser-console');
 
-var ConsoleHandler = nightingaleBrowserConsole.BrowserConsoleHandler;
-var logger = new nightingale.Logger('app');
-var appLogger = logger;
-var appMinLevel = // eslint-disable-next-line unicorn/no-nested-ternary
+const ConsoleHandler = nightingaleBrowserConsole.BrowserConsoleHandler;
+const logger = new nightingale.Logger('app');
+const appLogger = logger;
+const appMinLevel = // eslint-disable-next-line unicorn/no-nested-ternary
 nightingale.Level.DEBUG;
-var libMinLevel = nightingale.Level.INFO;
+const libMinLevel = nightingale.Level.INFO;
 nightingale.configure(appMinLevel !== libMinLevel ? [{
   pattern: /^app(:|$)/,
   handlers: [new ConsoleHandler(appMinLevel)],

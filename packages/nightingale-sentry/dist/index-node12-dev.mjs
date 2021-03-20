@@ -1,5 +1,4 @@
 import * as SentryNode from '@sentry/node';
-import { init } from '@sentry/node';
 import { Severity } from '@sentry/types';
 import Level from 'nightingale-levels';
 
@@ -71,7 +70,7 @@ class SentryHandler {
 
     if (typeof Sentry === 'string') {
       console.warn('nightingale-sentry: Passing DSN directly is deprecated, pass Sentry instead and init in your app.');
-      init({
+      SentryNode.init({
         dsn: Sentry
       });
       this.handle = createHandler(SentryNode, options);

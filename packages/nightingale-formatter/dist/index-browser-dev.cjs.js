@@ -10,7 +10,7 @@ function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'defau
 var Level__default = /*#__PURE__*/_interopDefaultLegacy(Level);
 var _extends__default = /*#__PURE__*/_interopDefaultLegacy(_extends);
 
-var levelToStyles = {
+const levelToStyles = {
   [Level__default.TRACE]: ['gray'],
   [Level__default.DEBUG]: ['gray'],
   // [Level.INFO]: ['gray'],
@@ -21,7 +21,7 @@ var levelToStyles = {
   [Level__default.EMERGENCY]: ['bgRed', 'white']
 };
 
-var levelToSymbol = {
+const levelToSymbol = {
   [Level__default.TRACE]: '•',
   [Level__default.DEBUG]: '•',
   [Level__default.INFO]: '→',
@@ -32,13 +32,13 @@ var levelToSymbol = {
   [Level__default.EMERGENCY]: '‼'
 };
 
-var styleToHexColor = {
+const styleToHexColor = {
   orange: 'ff5f00',
   grayLight: '808080',
   'gray-light': '808080'
 };
 
-var styleToHtmlStyleThemeLight = {
+const styleToHtmlStyleThemeLight = {
   // text style
   bold: {
     open: 'font-weight: bold',
@@ -141,7 +141,7 @@ var styleToHtmlStyleThemeLight = {
     close: 'color: currentcolor'
   }
 };
-var styleToHtmlStyleThemeDark = _extends__default({}, styleToHtmlStyleThemeLight, {
+const styleToHtmlStyleThemeDark = _extends__default({}, styleToHtmlStyleThemeLight, {
   black: styleToHtmlStyleThemeLight.white,
   bgBlack: styleToHtmlStyleThemeLight.bgWhite,
   white: styleToHtmlStyleThemeLight.black,
@@ -153,9 +153,7 @@ var styleToHtmlStyleThemeDark = _extends__default({}, styleToHtmlStyleThemeLight
 });
 
 /* eslint-disable max-lines, @typescript-eslint/no-use-before-define */
-var noStyleFn = function noStyleFn(styles, value) {
-  return value;
-};
+const noStyleFn = (styles, value) => value;
 
 function tryStringify(arg) {
   try {
@@ -165,19 +163,18 @@ function tryStringify(arg) {
   }
 }
 
-var sameRawFormattedValue = function sameRawFormattedValue(value) {
-  return {
-    stringValue: value,
-    formattedValue: value
-  };
-};
+const sameRawFormattedValue = value => ({
+  stringValue: value,
+  formattedValue: value
+});
 
-function internalFormatValue(value, styleFn, styles, _ref) {
-  var padding = _ref.padding,
-      depth = _ref.depth,
-      maxDepth = _ref.maxDepth,
-      objects = _ref.objects;
-  var typeofValue = typeof value;
+function internalFormatValue(value, styleFn, styles, {
+  padding,
+  depth,
+  maxDepth,
+  objects
+}) {
+  const typeofValue = typeof value;
 
   if (!styles) {
     if (value == null) {
@@ -203,7 +200,7 @@ function internalFormatValue(value, styleFn, styles, _ref) {
     }
   }
 
-  var stringValue;
+  let stringValue;
 
   if (value === null) {
     stringValue = 'null';
@@ -235,10 +232,10 @@ function internalFormatValue(value, styleFn, styles, _ref) {
       });
     }
   } else if (value instanceof Error) {
-    var stack = value.stack;
-    stringValue = stack !== null && stack !== void 0 && stack.startsWith(value.message) ? stack : `${value.message}\n${stack || ''}`;
+    const stack = value.stack;
+    stringValue = stack != null && stack.startsWith(value.message) ? stack : `${value.message}\n${stack || ''}`;
   } else if (value instanceof Map) {
-    var name = value.constructor.name;
+    const name = value.constructor.name;
 
     if (depth >= maxDepth) {
       stringValue = `{${name}...}`;
@@ -251,12 +248,12 @@ function internalFormatValue(value, styleFn, styles, _ref) {
       });
     }
   } else if (value instanceof Set) {
-    var _name = value.constructor.name;
+    const name = value.constructor.name;
 
     if (depth >= maxDepth) {
-      stringValue = `{${_name}...}`;
+      stringValue = `{${name}...}`;
     } else {
-      return internalFormatSet(_name, value, styleFn, {
+      return internalFormatSet(name, value, styleFn, {
         padding,
         depth: depth + 1,
         maxDepth,
@@ -271,33 +268,33 @@ function internalFormatValue(value, styleFn, styles, _ref) {
     stringValue = tryStringify(value);
   }
 
-  var formattedValue = styleFn(styles, stringValue);
+  const formattedValue = styleFn(styles, stringValue);
   return {
     stringValue,
     formattedValue
   };
 }
 
-var separator = ',';
+const separator = ',';
 
-var internalFormatKey = function internalFormatKey(key, styleFn) {
+const internalFormatKey = (key, styleFn) => {
   return {
     stringKey: `${key}: `,
     formattedKey: `${styleFn(['gray-light', 'bold'], `${key}:`)} `
   };
 };
 
-var internalNoKey = function internalNoKey() {
+const internalNoKey = () => {
   return {
     stringKey: '',
     formattedKey: ''
   };
 };
 
-var internalFormatMapKey = function internalFormatMapKey(key, styleFn, internalFormatParams) {
-  var _internalFormatValue = internalFormatValue(key, noStyleFn, undefined, internalFormatParams),
-      stringValue = _internalFormatValue.stringValue,
-      formattedValue = _internalFormatValue.formattedValue;
+const internalFormatMapKey = (key, styleFn, internalFormatParams) => {
+  const _internalFormatValue = internalFormatValue(key, noStyleFn, undefined, internalFormatParams),
+        stringValue = _internalFormatValue.stringValue,
+        formattedValue = _internalFormatValue.formattedValue;
 
   return {
     stringKey: `${stringValue} => `,
@@ -305,38 +302,38 @@ var internalFormatMapKey = function internalFormatMapKey(key, styleFn, internalF
   };
 };
 
-var internalFormatIterator = function internalFormatIterator(values, styleFn, objectStyles, _ref2, _ref3) {
-  var padding = _ref2.padding,
-      depth = _ref2.depth,
-      maxDepth = _ref2.maxDepth,
-      objects = _ref2.objects;
-  var prefix = _ref3.prefix,
-      suffix = _ref3.suffix,
-      _ref3$prefixSuffixSpa = _ref3.prefixSuffixSpace,
-      prefixSuffixSpace = _ref3$prefixSuffixSpa === void 0 ? ' ' : _ref3$prefixSuffixSpa,
-      formatKey = _ref3.formatKey;
-  var breakLine = false;
+const internalFormatIterator = (values, styleFn, objectStyles, {
+  padding,
+  depth,
+  maxDepth,
+  objects
+}, {
+  prefix,
+  suffix,
+  prefixSuffixSpace = ' ',
+  formatKey
+}) => {
+  let breakLine = false;
 
-  var formattedSeparator = function formattedSeparator() {
-    return styleFn(['gray'], separator);
-  };
+  const formattedSeparator = () => styleFn(['gray'], separator);
 
-  var valuesMaxIndex = values.length - 1;
-  var formattedValues = values.map(function (_ref4, index) {
-    var key = _ref4.key,
-        value = _ref4.value;
-    var internalFormatParams = {
+  const valuesMaxIndex = values.length - 1;
+  const formattedValues = values.map(({
+    key,
+    value
+  }, index) => {
+    const internalFormatParams = {
       padding,
       depth: depth + 1,
       maxDepth,
       objects
     }; // key must be formatted before value (browser-formatter needs order)
 
-    var _formatKey = formatKey(key, styleFn, internalFormatParams),
-        stringKey = _formatKey.stringKey,
-        formattedKey = _formatKey.formattedKey;
+    const _formatKey = formatKey(key, styleFn, internalFormatParams),
+          stringKey = _formatKey.stringKey,
+          formattedKey = _formatKey.formattedKey;
 
-    var _internalFormatValue2 = internalFormatValue(value, styleFn, key && objectStyles ? objectStyles[key] : undefined, internalFormatParams),
+    let _internalFormatValue2 = internalFormatValue(value, styleFn, key && objectStyles ? objectStyles[key] : undefined, internalFormatParams),
         stringValue = _internalFormatValue2.stringValue,
         formattedValue = _internalFormatValue2.formattedValue;
 
@@ -353,42 +350,32 @@ var internalFormatIterator = function internalFormatIterator(values, styleFn, ob
     };
   });
   return {
-    stringValue: prefix + formattedValues.map(breakLine ? function (v) {
-      return `\n${padding}${v.stringValue}`;
-    } : function (fv) {
-      return fv.stringValue;
-    }).join(breakLine ? '\n' : ' ') + suffix,
-    formattedValue: `${prefix}${breakLine ? '' : prefixSuffixSpace}${formattedValues.map(breakLine ? function (v) {
-      return `\n${padding}${v.formattedValue}`;
-    } : function (v) {
-      return v.formattedValue;
-    }).join(breakLine ? '' : ' ')}${breakLine ? ',\n' : prefixSuffixSpace}${suffix}`
+    stringValue: prefix + formattedValues.map(breakLine ? v => `\n${padding}${v.stringValue}` : fv => fv.stringValue).join(breakLine ? '\n' : ' ') + suffix,
+    formattedValue: `${prefix}${breakLine ? '' : prefixSuffixSpace}${formattedValues.map(breakLine ? v => `\n${padding}${v.formattedValue}` : v => v.formattedValue).join(breakLine ? '' : ' ')}${breakLine ? ',\n' : prefixSuffixSpace}${suffix}`
   };
 };
 
-function internalFormatObject(object, styleFn, objectStyles, _ref5) {
-  var padding = _ref5.padding,
-      depth = _ref5.depth,
-      maxDepth = _ref5.maxDepth,
-      objects = _ref5.objects;
-
+function internalFormatObject(object, styleFn, objectStyles, {
+  padding,
+  depth,
+  maxDepth,
+  objects
+}) {
   if (objects.has(object)) {
     return sameRawFormattedValue('{Circular Object}');
   }
 
-  var keys = Object.keys(object);
+  const keys = Object.keys(object);
 
   if (keys.length === 0) {
     return sameRawFormattedValue('{}');
   }
 
   objects.add(object);
-  var result = internalFormatIterator(keys.map(function (key) {
-    return {
-      key,
-      value: object[key]
-    };
-  }), styleFn, objectStyles, {
+  const result = internalFormatIterator(keys.map(key => ({
+    key,
+    value: object[key]
+  })), styleFn, objectStyles, {
     padding,
     depth,
     maxDepth,
@@ -402,29 +389,27 @@ function internalFormatObject(object, styleFn, objectStyles, _ref5) {
   return result;
 }
 
-function internalFormatMap(name, map, styleFn, _ref6) {
-  var padding = _ref6.padding,
-      depth = _ref6.depth,
-      maxDepth = _ref6.maxDepth,
-      objects = _ref6.objects;
-
+function internalFormatMap(name, map, styleFn, {
+  padding,
+  depth,
+  maxDepth,
+  objects
+}) {
   if (objects.has(map)) {
     return sameRawFormattedValue(`{Circular ${name}}`);
   }
 
-  var keys = [].concat(map.keys());
+  const keys = [...map.keys()];
 
   if (keys.length === 0) {
     return sameRawFormattedValue(`${name} {}`);
   }
 
   objects.add(map);
-  var result = internalFormatIterator(keys.map(function (key) {
-    return {
-      key,
-      value: map.get(key)
-    };
-  }), styleFn, undefined, {
+  const result = internalFormatIterator(keys.map(key => ({
+    key,
+    value: map.get(key)
+  })), styleFn, undefined, {
     padding,
     depth,
     maxDepth,
@@ -438,12 +423,12 @@ function internalFormatMap(name, map, styleFn, _ref6) {
   return result;
 }
 
-function internalFormatArray(array, styleFn, _ref7) {
-  var padding = _ref7.padding,
-      depth = _ref7.depth,
-      maxDepth = _ref7.maxDepth,
-      objects = _ref7.objects;
-
+function internalFormatArray(array, styleFn, {
+  padding,
+  depth,
+  maxDepth,
+  objects
+}) {
   if (objects.has(array)) {
     return sameRawFormattedValue('{Circular Array}');
   }
@@ -453,12 +438,10 @@ function internalFormatArray(array, styleFn, _ref7) {
   }
 
   objects.add(array);
-  var result = internalFormatIterator(array.map(function (value) {
-    return {
-      key: undefined,
-      value
-    };
-  }), styleFn, undefined, {
+  const result = internalFormatIterator(array.map(value => ({
+    key: undefined,
+    value
+  })), styleFn, undefined, {
     padding,
     depth,
     maxDepth,
@@ -473,29 +456,27 @@ function internalFormatArray(array, styleFn, _ref7) {
   return result;
 }
 
-function internalFormatSet(name, set, styleFn, _ref8) {
-  var padding = _ref8.padding,
-      depth = _ref8.depth,
-      maxDepth = _ref8.maxDepth,
-      objects = _ref8.objects;
-
+function internalFormatSet(name, set, styleFn, {
+  padding,
+  depth,
+  maxDepth,
+  objects
+}) {
   if (objects.has(set)) {
     return sameRawFormattedValue(`{Circular ${name}}`);
   }
 
-  var values = [].concat(set.values());
+  const values = [...set.values()];
 
   if (values.length === 0) {
     return sameRawFormattedValue(`${name} []`);
   }
 
   objects.add(set);
-  var result = internalFormatIterator(values.map(function (value) {
-    return {
-      key: undefined,
-      value
-    };
-  }), styleFn, undefined, {
+  const result = internalFormatIterator(values.map(value => ({
+    key: undefined,
+    value
+  })), styleFn, undefined, {
     padding,
     depth,
     maxDepth,
@@ -509,24 +490,17 @@ function internalFormatSet(name, set, styleFn, _ref8) {
   return result;
 }
 
-function formatObject(object, styleFn, objectStyles, _temp) {
-  if (styleFn === void 0) {
-    styleFn = noStyleFn;
-  }
-
-  var _ref9 = _temp === void 0 ? {} : _temp,
-      _ref9$padding = _ref9.padding,
-      padding = _ref9$padding === void 0 ? '  ' : _ref9$padding,
-      _ref9$maxDepth = _ref9.maxDepth,
-      maxDepth = _ref9$maxDepth === void 0 ? 10 : _ref9$maxDepth;
-
-  var _internalFormatObject = internalFormatObject(object, styleFn, objectStyles, {
+function formatObject(object, styleFn = noStyleFn, objectStyles, {
+  padding = '  ',
+  maxDepth = 10
+} = {}) {
+  const _internalFormatObject = internalFormatObject(object, styleFn, objectStyles, {
     padding,
     maxDepth,
     depth: 0,
     objects: new Set()
   }),
-      result = _internalFormatObject.formattedValue;
+        result = _internalFormatObject.formattedValue;
 
   if (result === '{}') {
     return '';
@@ -536,7 +510,7 @@ function formatObject(object, styleFn, objectStyles, _temp) {
 }
 
 function formatRecordToString(record, style) {
-  var parts = [];
+  const parts = [];
 
   if (record.displayName) {
     parts.push(style(['gray-light'], record.displayName));
@@ -549,8 +523,8 @@ function formatRecordToString(record, style) {
     /* new Date().toFormat('HH24:MI:SS') */
   }
 
-  var message = record.symbol || levelToSymbol[record.level];
-  var styles = record.styles || levelToStyles[record.level];
+  let message = record.symbol || levelToSymbol[record.level];
+  const styles = record.styles || levelToStyles[record.level];
 
   if (record.message) {
     if (message) {
@@ -568,12 +542,12 @@ function formatRecordToString(record, style) {
     parts.push(message);
   }
 
-  var formatRecordObject = function formatRecordObject(key, object, styles) {
+  const formatRecordObject = (key, object, styles) => {
     if (!object) {
       return;
     }
 
-    var stringObject = formatObject(object, style, styles);
+    const stringObject = formatObject(object, style, styles);
 
     if (!stringObject) {
       return;

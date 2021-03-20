@@ -3,24 +3,20 @@ import Level from 'nightingale-levels';
 export { default as Level } from 'nightingale-levels';
 
 if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER) {
-  global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = function () {
-    return {
-      handlers: [],
-      processors: []
-    };
-  };
+  global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = () => ({
+    handlers: [],
+    processors: []
+  });
 }
 
 if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
-  global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = function (key, level) {
-    var _global$__NIGHTINGALE = global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key),
-        handlers = _global$__NIGHTINGALE.handlers,
-        processors = _global$__NIGHTINGALE.processors;
+  global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = (key, level) => {
+    const _global$__NIGHTINGALE = global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key),
+          handlers = _global$__NIGHTINGALE.handlers,
+          processors = _global$__NIGHTINGALE.processors;
 
     return {
-      handlers: handlers.filter(function (handler) {
-        return level >= handler.minLevel && (!handler.isHandling || handler.isHandling(level, key));
-      }),
+      handlers: handlers.filter(handler => level >= handler.minLevel && (!handler.isHandling || handler.isHandling(level, key))),
       processors
     };
   };
@@ -37,14 +33,14 @@ function getConfigForLoggerRecord(key, recordLevel) {
  */
 
 
-var Logger = /*#__PURE__*/function () {
+class Logger {
   /**
    * Create a new Logger
    *
    * @param {string} key
    * @param {string} [displayName]
    */
-  function Logger(key, displayName) {
+  constructor(key, displayName) {
     this.key = key;
     this.displayName = displayName;
 
@@ -55,23 +51,21 @@ var Logger = /*#__PURE__*/function () {
   /** @private */
 
 
-  var _proto = Logger.prototype;
-
-  _proto.getHandlersAndProcessors = function getHandlersAndProcessors(recordLevel) {
+  getHandlersAndProcessors(recordLevel) {
     return getConfigForLoggerRecord(this.key, recordLevel);
   }
   /** @private */
-  ;
 
-  _proto.getConfig = function getConfig() {
+
+  getConfig() {
     return global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(this.key);
   }
   /**
    * Create a child logger
    */
-  ;
 
-  _proto.child = function child(childSuffixKey, childDisplayName) {
+
+  child(childSuffixKey, childDisplayName) {
     return new Logger(`${this.key}:${childSuffixKey}`, childDisplayName);
   }
   /**
@@ -91,19 +85,19 @@ var Logger = /*#__PURE__*/function () {
    * ```
    *
    */
-  ;
 
-  _proto.context = function context(_context) {
-    var logger = new Logger(this.key);
-    logger.setContext(_context);
+
+  context(context) {
+    const logger = new Logger(this.key);
+    logger.setContext(context);
     return logger;
   }
   /**
    * Get the context of this logger
    */
-  ;
 
-  _proto.getContextObject = function getContextObject() {
+
+  getContextObject() {
     return this.contextObject;
   }
   /**
@@ -111,17 +105,17 @@ var Logger = /*#__PURE__*/function () {
    *
    * @param {Object} context
    */
-  ;
 
-  _proto.setContext = function setContext(context) {
+
+  setContext(context) {
     this.contextObject = context;
   }
   /**
    * Extends existing context of this logger
    */
-  ;
 
-  _proto.extendsContext = function extendsContext(extendedContext) {
+
+  extendsContext(extendedContext) {
     Object.assign(this.contextObject, extendedContext);
   }
   /**
@@ -129,12 +123,12 @@ var Logger = /*#__PURE__*/function () {
    *
    * Use this only if you know what you are doing.
    */
-  ;
 
-  _proto.addRecord = function addRecord(record) {
-    var _this$getHandlersAndP = this.getHandlersAndProcessors(record.level),
-        handlers = _this$getHandlersAndP.handlers,
-        processors = _this$getHandlersAndP.processors;
+
+  addRecord(record) {
+    const _this$getHandlersAndP = this.getHandlersAndProcessors(record.level),
+          handlers = _this$getHandlersAndP.handlers,
+          processors = _this$getHandlersAndP.processors;
 
     if (handlers.length === 0) {
       if (record.level > Level.ERROR) {
@@ -149,32 +143,24 @@ var Logger = /*#__PURE__*/function () {
     }
 
     if (processors) {
-      processors.forEach(function (process) {
-        return process(record, record.context);
-      });
+      processors.forEach(process => process(record, record.context));
     }
 
-    handlers.some(function (handler) {
-      return handler.handle(record) === false;
-    });
+    handlers.some(handler => handler.handle(record) === false);
   }
   /**
    * Log a message
    */
-  ;
 
-  _proto.log = function log(message, metadata, level, options) {
-    if (level === void 0) {
-      level = Level.INFO;
-    }
 
-    var context = metadata === null || metadata === void 0 ? void 0 : metadata.context;
+  log(message, metadata, level = Level.INFO, options) {
+    const context = metadata == null ? void 0 : metadata.context;
 
     if (metadata) {
       delete metadata.context;
     }
 
-    var record = _extends({
+    const record = _extends({
       level,
       key: this.key,
       displayName: this.displayName,
@@ -190,9 +176,9 @@ var Logger = /*#__PURE__*/function () {
   /**
    * Log a trace message
    */
-  ;
 
-  _proto.trace = function trace(message, metadata, metadataStyles) {
+
+  trace(message, metadata, metadataStyles) {
     this.log(message, metadata, Level.TRACE, {
       metadataStyles
     });
@@ -200,9 +186,9 @@ var Logger = /*#__PURE__*/function () {
   /**
    * Log a debug message
    */
-  ;
 
-  _proto.debug = function debug(message, metadata, metadataStyles) {
+
+  debug(message, metadata, metadataStyles) {
     this.log(message, metadata, Level.DEBUG, {
       metadataStyles
     });
@@ -210,9 +196,9 @@ var Logger = /*#__PURE__*/function () {
   /**
    * Notice an info message
    */
-  ;
 
-  _proto.notice = function notice(message, metadata, metadataStyles) {
+
+  notice(message, metadata, metadataStyles) {
     this.log(message, metadata, Level.NOTICE, {
       metadataStyles
     });
@@ -220,9 +206,9 @@ var Logger = /*#__PURE__*/function () {
   /**
    * Log an info message
    */
-  ;
 
-  _proto.info = function info(message, metadata, metadataStyles) {
+
+  info(message, metadata, metadataStyles) {
     this.log(message, metadata, Level.INFO, {
       metadataStyles
     });
@@ -230,9 +216,9 @@ var Logger = /*#__PURE__*/function () {
   /**
    * Log a warn message
    */
-  ;
 
-  _proto.warn = function warn(message, metadata, metadataStyles) {
+
+  warn(message, metadata, metadataStyles) {
     this.log(message, metadata, Level.WARN, {
       metadataStyles
     });
@@ -250,11 +236,11 @@ var Logger = /*#__PURE__*/function () {
    * }
    * ```
    */
-  ;
 
-  _proto.error = function error(message, metadata, metadataStyles) {
+
+  error(message, metadata, metadataStyles) {
     if (message instanceof Error) {
-      var extendedMetadata = _extends({}, metadata, {
+      const extendedMetadata = _extends({}, metadata, {
         error: message
       });
 
@@ -271,9 +257,9 @@ var Logger = /*#__PURE__*/function () {
   /**
    * Log an critical message
    */
-  ;
 
-  _proto.critical = function critical(message, metadata, metadataStyles) {
+
+  critical(message, metadata, metadataStyles) {
     this.log(message, metadata, Level.CRITICAL, {
       metadataStyles
     });
@@ -291,9 +277,9 @@ var Logger = /*#__PURE__*/function () {
    *   process.exit(1);
    * }
    */
-  ;
 
-  _proto.fatal = function fatal(message, metadata, metadataStyles) {
+
+  fatal(message, metadata, metadataStyles) {
     this.log(message, metadata, Level.FATAL, {
       metadataStyles
     });
@@ -301,9 +287,9 @@ var Logger = /*#__PURE__*/function () {
   /**
    * Log an alert message
    */
-  ;
 
-  _proto.alert = function alert(message, metadata, metadataStyles) {
+
+  alert(message, metadata, metadataStyles) {
     this.log(message, metadata, Level.ALERT, {
       metadataStyles
     });
@@ -311,33 +297,33 @@ var Logger = /*#__PURE__*/function () {
   /**
    * Log an inspected value
    */
-  ;
 
-  _proto.inspectValue = function inspectValue() {
+
+  inspectValue() {
     throw new Error('Not supported for the browser. Prefer `debugger;`');
   }
   /**
    * Log a debugged var
    */
-  ;
 
-  _proto.inspectVar = function inspectVar() {
+
+  inspectVar() {
     throw new Error('Not supported for the browser. Prefer `debugger;`');
   }
   /**
    * Alias for infoSuccess
    */
-  ;
 
-  _proto.success = function success(message, metadata, metadataStyles) {
+
+  success(message, metadata, metadataStyles) {
     this.infoSuccess(message, metadata, metadataStyles);
   }
   /**
    * Log an info success message
    */
-  ;
 
-  _proto.infoSuccess = function infoSuccess(message, metadata, metadataStyles) {
+
+  infoSuccess(message, metadata, metadataStyles) {
     this.log(message, metadata, Level.INFO, {
       metadataStyles,
       symbol: '✔',
@@ -347,9 +333,9 @@ var Logger = /*#__PURE__*/function () {
   /**
    * Log an debug success message
    */
-  ;
 
-  _proto.debugSuccess = function debugSuccess(message, metadata, metadataStyles) {
+
+  debugSuccess(message, metadata, metadataStyles) {
     this.log(message, metadata, Level.DEBUG, {
       metadataStyles,
       symbol: '✔',
@@ -359,17 +345,17 @@ var Logger = /*#__PURE__*/function () {
   /**
    * Alias for infoFail
    */
-  ;
 
-  _proto.fail = function fail(message, metadata, metadataStyles) {
+
+  fail(message, metadata, metadataStyles) {
     this.infoFail(message, metadata, metadataStyles);
   }
   /**
    * Log an info fail message
    */
-  ;
 
-  _proto.infoFail = function infoFail(message, metadata, metadataStyles) {
+
+  infoFail(message, metadata, metadataStyles) {
     this.log(message, metadata, Level.INFO, {
       metadataStyles,
       symbol: '✖',
@@ -379,9 +365,9 @@ var Logger = /*#__PURE__*/function () {
   /**
    * Log an debug fail message
    */
-  ;
 
-  _proto.debugFail = function debugFail(message, metadata, metadataStyles) {
+
+  debugFail(message, metadata, metadataStyles) {
     this.log(message, metadata, Level.DEBUG, {
       metadataStyles,
       symbol: '✖',
@@ -391,13 +377,9 @@ var Logger = /*#__PURE__*/function () {
   /**
    * @returns {number} time to pass to timeEnd
    */
-  ;
 
-  _proto.time = function time(message, metadata, metadataStyles, level) {
-    if (level === void 0) {
-      level = Level.DEBUG;
-    }
 
+  time(message, metadata, metadataStyles, level = Level.DEBUG) {
     if (message) {
       this.log(message, metadata, level, {
         metadataStyles
@@ -405,9 +387,9 @@ var Logger = /*#__PURE__*/function () {
     }
 
     return Date.now();
-  };
+  }
 
-  _proto.infoTime = function infoTime(message, metadata, metadataStyles) {
+  infoTime(message, metadata, metadataStyles) {
     return this.time(message, metadata, metadataStyles, Level.INFO);
   }
   /**
@@ -416,25 +398,21 @@ var Logger = /*#__PURE__*/function () {
    * was called, then logs out the difference
    * and deletes the original record
    */
-  ;
 
-  _proto.timeEnd = function timeEnd(startTime, message, metadata, metadataStyles, level, options) {
-    if (level === void 0) {
-      level = Level.DEBUG;
-    }
 
-    var now = Date.now();
-    var diffTime = now - startTime;
-    var readableTime;
+  timeEnd(startTime, message, metadata, metadataStyles, level = Level.DEBUG, options) {
+    const now = Date.now();
+    const diffTime = now - startTime;
+    let readableTime;
 
     if (diffTime < 1000) {
       readableTime = `${diffTime}ms`;
     } else {
-      var seconds = diffTime > 1000 ? Math.floor(diffTime / 1000) : 0;
+      const seconds = diffTime > 1000 ? Math.floor(diffTime / 1000) : 0;
       readableTime = `${seconds ? `${seconds}s and ` : ''}${diffTime - seconds * 1000}ms`;
     }
 
-    var extendedMetadata = _extends({}, metadata, {
+    const extendedMetadata = _extends({}, metadata, {
       readableTime,
       timeMs: diffTime
     });
@@ -446,17 +424,17 @@ var Logger = /*#__PURE__*/function () {
   /**
    * Like timeEnd, but with INFO level
    */
-  ;
 
-  _proto.infoTimeEnd = function infoTimeEnd(time, message, metadata, metadataStyles) {
+
+  infoTimeEnd(time, message, metadata, metadataStyles) {
     this.timeEnd(time, message, metadata, metadataStyles, Level.INFO);
   }
   /**
    * Like timeEnd, but with INFO level
    */
-  ;
 
-  _proto.infoSuccessTimeEnd = function infoSuccessTimeEnd(time, message, metadata, metadataStyles) {
+
+  infoSuccessTimeEnd(time, message, metadata, metadataStyles) {
     this.timeEnd(time, message, metadata, metadataStyles, Level.INFO, {
       symbol: '✔',
       styles: ['green', 'bold']
@@ -476,10 +454,10 @@ var Logger = /*#__PURE__*/function () {
    * ```
    *
    */
-  ;
 
-  _proto.enter = function enter(fn, metadata, metadataStyles) {
-    var extendedMetadata = _extends({}, metadata, {
+
+  enter(fn, metadata, metadataStyles) {
+    const extendedMetadata = _extends({}, metadata, {
       functionName: fn.name
     });
 
@@ -501,10 +479,10 @@ var Logger = /*#__PURE__*/function () {
    * }
    * ```
    */
-  ;
 
-  _proto.exit = function exit(fn, metadata, metadataStyles) {
-    var extendedMetadata = _extends({}, metadata, {
+
+  exit(fn, metadata, metadataStyles) {
+    const extendedMetadata = _extends({}, metadata, {
       functionName: fn.name
     });
 
@@ -527,11 +505,11 @@ var Logger = /*#__PURE__*/function () {
    * }
    * ```
    */
-  ;
 
-  _proto.wrap = function wrap(fn, option1, option2, callback) {
-    var metadata;
-    var metadataStyles;
+
+  wrap(fn, option1, option2, callback) {
+    let metadata;
+    let metadataStyles;
 
     if (typeof option1 === 'function') {
       callback = option1;
@@ -548,10 +526,9 @@ var Logger = /*#__PURE__*/function () {
     this.enter(fn, metadata, metadataStyles);
     callback();
     this.exit(fn);
-  };
+  }
 
-  return Logger;
-}();
+}
 
 export default Logger;
 export { Logger };

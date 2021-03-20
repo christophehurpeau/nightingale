@@ -5,26 +5,24 @@ import createFindDebugLevel from 'nightingale-debug';
 function getDebugString() {
   var _document$location;
 
-  var querystring = (_document$location = document.location) === null || _document$location === void 0 ? void 0 : _document$location.search;
-  var debugFromLocalStorage = window.localStorage && localStorage.getItem('debug') || '';
+  const querystring = (_document$location = document.location) == null ? void 0 : _document$location.search;
+  const debugFromLocalStorage = window.localStorage && localStorage.getItem('debug') || '';
 
   if (!querystring) {
     return debugFromLocalStorage;
   } // https://developer.mozilla.org/en-US/docs/Web/API/URLUtils/search#Get_the_value_of_a_single_search_param
 
 
-  var debugFromQueryString = decodeURI(querystring.replace( // eslint-disable-next-line unicorn/no-unsafe-regex
+  const debugFromQueryString = decodeURI(querystring.replace( // eslint-disable-next-line unicorn/no-unsafe-regex
   new RegExp('^(?:.*[&\\?]DEBUG(?:\\=([^&]*))?)?.*$', 'i'), '$1'));
   return (debugFromLocalStorage ? `${debugFromLocalStorage},` : '') + debugFromQueryString;
 }
 
-var findDebugLevel = function findDebugLevel(minLevel, key) {
-  return createFindDebugLevel(getDebugString())(minLevel, key);
-};
+const findDebugLevel = (minLevel, key) => createFindDebugLevel(getDebugString())(minLevel, key);
 
-var getDefaultTheme = function getDefaultTheme() {
+const getDefaultTheme = () => {
   try {
-    var configInLocalStorage = localStorage.getItem('NIGHTINGALE_THEME');
+    const configInLocalStorage = localStorage.getItem('NIGHTINGALE_THEME');
 
     if (configInLocalStorage && configInLocalStorage === 'dark') {
       return configInLocalStorage;
@@ -34,30 +32,23 @@ var getDefaultTheme = function getDefaultTheme() {
   return 'light';
 };
 
-var createHandler = function createHandler(theme) {
-  if (theme === void 0) {
-    theme = getDefaultTheme();
-  }
-
-  var browserConsoleFormatter = createBrowserConsoleFormatter(theme);
-  return function (record) {
+const createHandler = (theme = getDefaultTheme()) => {
+  const browserConsoleFormatter = createBrowserConsoleFormatter(theme);
+  return record => {
     consoleOutput(browserConsoleFormatter(record), record);
   };
 };
 
-var BrowserConsoleHandler = function BrowserConsoleHandler(minLevel, options) {
-  if (options === void 0) {
-    options = {};
+class BrowserConsoleHandler {
+  constructor(minLevel, options = {}) {
+    this.minLevel = 0;
+
+    this.isHandling = (level, key) => level >= findDebugLevel(minLevel, key);
+
+    this.handle = createHandler(options.theme);
   }
 
-  this.minLevel = 0;
-
-  this.isHandling = function (level, key) {
-    return level >= findDebugLevel(minLevel, key);
-  };
-
-  this.handle = createHandler(options.theme);
-};
+}
 
 export default BrowserConsoleHandler;
 export { BrowserConsoleHandler };

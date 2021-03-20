@@ -9,7 +9,7 @@ function style(styles, string) {
     return string;
   }
 
-  return styles.reduce(function (string, styleName) {
+  return styles.reduce((string, styleName) => {
     switch (styleName) {
       case 'bold':
         return `*${string}*`;

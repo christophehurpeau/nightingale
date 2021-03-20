@@ -12,7 +12,7 @@
   "editor.formatOnSave": true,
   "eslint.codeActionsOnSave.mode": "all",
   "editor.codeActionsOnSave": {
-    "source.fixAll": true,
+    "source.fixAll.eslint": true,
     "source.organizeImports": false
   },
   // eslint config

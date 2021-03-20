@@ -5,7 +5,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 var nightingale = require('nightingale');
 var nightingaleReactNativeConsole = require('nightingale-react-native-console');
 
-var appLogger = new nightingale.Logger('app');
+const appLogger = new nightingale.Logger('app');
 nightingale.configure( // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
 process.env.NODE_ENV === 'production' ? [] : [{
   pattern: /^app(:|$)/,

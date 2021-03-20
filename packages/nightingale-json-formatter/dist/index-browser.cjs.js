@@ -3,8 +3,8 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 function map2object(map) {
-  var object = {};
-  map.forEach(function (value, key) {
+  const object = {};
+  map.forEach((value, key) => {
     if (typeof key === 'object') {
       // ignore key
       return;
@@ -16,7 +16,7 @@ function map2object(map) {
 }
 
 function stringify(value, space) {
-  return JSON.stringify(value, function (key, value) {
+  return JSON.stringify(value, (key, value) => {
     if (value instanceof Map) {
       return map2object(value);
     }
