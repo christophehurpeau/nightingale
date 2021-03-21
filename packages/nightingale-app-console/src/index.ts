@@ -28,7 +28,8 @@ if (POB_TARGET !== 'browser') {
 
 const appMinLevel =
   POB_TARGET !== 'browser' &&
-  process.env.NIGHTINGALE_APP_MIN_LEVEL === undefined
+  process.env.NIGHTINGALE_APP_MIN_LEVEL !== undefined &&
+  process.env.NIGHTINGALE_APP_MIN_LEVEL !== ''
     ? Number(process.env.NIGHTINGALE_APP_MIN_LEVEL)
     : // eslint-disable-next-line unicorn/no-nested-ternary
     PRODUCTION
@@ -37,7 +38,8 @@ const appMinLevel =
 
 const libMinLevel =
   POB_TARGET !== 'browser' &&
-  process.env.NIGHTINGALE_LIB_MIN_LEVEL === undefined
+  process.env.NIGHTINGALE_LIB_MIN_LEVEL !== undefined &&
+  process.env.NIGHTINGALE_LIB_MIN_LEVEL !== ''
     ? Number(process.env.NIGHTINGALE_LIB_MIN_LEVEL)
     : Level.INFO;
 
