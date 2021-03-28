@@ -2913,13 +2913,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/jest@npm:26.0.21":
-  version: 26.0.21
-  resolution: "@types/jest@npm:26.0.21"
+"@types/jest@npm:26.0.22":
+  version: 26.0.22
+  resolution: "@types/jest@npm:26.0.22"
   dependencies:
     jest-diff: ^26.0.0
     pretty-format: ^26.0.0
-  checksum: c219599d663527302a261aaa7cc038b79c428d7af39b0a20c2167cb698ae280f3a238b2ca3594bcabbe7ee441a6370d4b3afd19c4a616aaa5556d5b9e875c081
+  checksum: 4c98ed058522f6cc74bcb47b8b7b104b77b2d4e42e087171f3d2d3ae5338c21f43ec26f2a186bc229c1bd72c3f776ad07faba837f0ec27f22cf94e154516c0b3
   languageName: node
   linkType: hard
 
@@ -8449,7 +8449,7 @@ __metadata:
     "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
     "@types/ansi-styles": ^3.2.1
-    "@types/jest": 26.0.21
+    "@types/jest": 26.0.22
     "@typescript-eslint/eslint-plugin": 4.18.0
     "@typescript-eslint/parser": 4.18.0
     ansi-styles: ^4.0.0
@@ -8534,7 +8534,7 @@ __metadata:
     "@pob/eslint-config": 43.0.0
     "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
-    "@types/jest": 26.0.21
+    "@types/jest": 26.0.22
     "@typescript-eslint/eslint-plugin": 4.18.0
     "@typescript-eslint/parser": 4.18.0
     babel-jest: 26.6.3
@@ -8678,7 +8678,7 @@ __metadata:
     "@pob/eslint-config": 43.0.0
     "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
-    "@types/jest": 26.0.21
+    "@types/jest": 26.0.22
     "@typescript-eslint/eslint-plugin": 4.18.0
     "@typescript-eslint/parser": 4.18.0
     babel-jest: 26.6.3
@@ -8738,7 +8738,7 @@ __metadata:
     "@pob/eslint-config": 43.0.0
     "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
-    "@types/jest": 26.0.21
+    "@types/jest": 26.0.22
     "@typescript-eslint/eslint-plugin": 4.18.0
     "@typescript-eslint/parser": 4.18.0
     babel-jest: 26.6.3
@@ -8769,7 +8769,7 @@ __metadata:
     "@pob/eslint-config": 43.0.0
     "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
-    "@types/jest": 26.0.21
+    "@types/jest": 26.0.22
     "@typescript-eslint/eslint-plugin": 4.18.0
     "@typescript-eslint/parser": 4.18.0
     babel-jest: 26.6.3
@@ -8801,7 +8801,7 @@ __metadata:
     "@pob/eslint-config": 43.0.0
     "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
-    "@types/jest": 26.0.21
+    "@types/jest": 26.0.22
     "@typescript-eslint/eslint-plugin": 4.18.0
     "@typescript-eslint/parser": 4.18.0
     babel-jest: 26.6.3
@@ -8871,7 +8871,7 @@ __metadata:
     "@pob/eslint-config": 43.0.0
     "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
-    "@types/jest": 26.0.21
+    "@types/jest": 26.0.22
     "@types/node": ">=12.0.0"
     "@typescript-eslint/eslint-plugin": 4.18.0
     "@typescript-eslint/parser": 4.18.0
@@ -8903,7 +8903,7 @@ __metadata:
     "@pob/eslint-config": 43.0.0
     "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
-    "@types/jest": 26.0.21
+    "@types/jest": 26.0.22
     "@typescript-eslint/eslint-plugin": 4.18.0
     "@typescript-eslint/parser": 4.18.0
     babel-jest: 26.6.3
@@ -8962,7 +8962,7 @@ __metadata:
     "@pob/eslint-config": 43.0.0
     "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
-    "@types/jest": 26.0.21
+    "@types/jest": 26.0.22
     "@typescript-eslint/eslint-plugin": 4.18.0
     "@typescript-eslint/parser": 4.18.0
     babel-jest: 26.6.3
@@ -9049,7 +9049,7 @@ __metadata:
     "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
     "@pob/eslint-config-typescript-node": 43.0.0
-    "@types/jest": 26.0.21
+    "@types/jest": 26.0.22
     "@types/request": 2.48.5
     "@typescript-eslint/eslint-plugin": 4.18.0
     "@typescript-eslint/parser": 4.18.0
@@ -9184,7 +9184,7 @@ __metadata:
     "@pob/eslint-config": 43.0.0
     "@pob/eslint-config-node": 43.1.0
     "@pob/eslint-config-typescript": 43.0.0
-    "@types/jest": 26.0.21
+    "@types/jest": 26.0.22
     "@types/node": ">=12.0.0"
     "@typescript-eslint/eslint-plugin": 4.18.0
     "@typescript-eslint/parser": 4.18.0
