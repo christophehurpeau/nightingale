@@ -3328,6 +3328,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"ansi-styles@npm:^5.0.0":
+  version: 5.1.0
+  resolution: "ansi-styles@npm:5.1.0"
+  checksum: 7a6de64edc4de392134864aced56be7d9d2a5c4525e7b60d7ab5de8910d84c0c5a7a0dde494576624d4deb03ee184862a80ff3ae1649a376b42c418acc4fd21a
+  languageName: node
+  linkType: hard
+
 "anymatch@npm:^2.0.0":
   version: 2.0.0
   resolution: "anymatch@npm:2.0.0"
@@ -8477,7 +8484,7 @@ __metadata:
     "@types/jest": 26.0.22
     "@typescript-eslint/eslint-plugin": 4.19.0
     "@typescript-eslint/parser": 4.19.0
-    ansi-styles: ^4.0.0
+    ansi-styles: ^5.0.0
     babel-jest: 26.6.3
     babel-preset-latest-node: 5.5.1
     eslint: 7.23.0
