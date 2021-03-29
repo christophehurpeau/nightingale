@@ -1,6 +1,6 @@
 {
   "name": "nightingale",
-  "version": "11.6.0",
+  "version": "11.7.0",
   "description": "Logger for browser and node",
   "keywords": [
     "logger"
@@ -131,9 +131,9 @@
   },
   "dependencies": {
     "@types/node": ">=12.0.0",
-    "nightingale-levels": "^11.6.0",
-    "nightingale-logger": "^11.6.0",
-    "nightingale-types": "^11.6.0"
+    "nightingale-levels": "^11.7.0",
+    "nightingale-logger": "^11.7.0",
+    "nightingale-types": "^11.7.0"
   },
   "devDependencies": {
     "@babel/core": "7.13.10",
@@ -153,7 +153,7 @@
     "eslint-plugin-node": "11.1.0",
     "eslint-plugin-unicorn": "25.0.1",
     "jest": "26.6.3",
-    "nightingale-string": "^11.6.0",
+    "nightingale-string": "^11.7.0",
     "pob-babel": "26.8.0",
     "pob-lcov-reporter": "4.0.1",
     "rollup": "2.43.1",

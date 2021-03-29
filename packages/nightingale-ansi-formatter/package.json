@@ -1,6 +1,6 @@
 {
   "name": "nightingale-ansi-formatter",
-  "version": "11.6.0",
+  "version": "11.7.0",
   "description": "Nightingale ANSI formatter",
   "keywords": [
     "nightingale",
@@ -118,8 +118,8 @@
   "dependencies": {
     "@types/ansi-styles": "^3.2.1",
     "ansi-styles": "^4.0.0",
-    "nightingale-formatter": "^11.6.0",
-    "nightingale-types": "^11.6.0"
+    "nightingale-formatter": "^11.7.0",
+    "nightingale-types": "^11.7.0"
   },
   "devDependencies": {
     "@babel/core": "7.13.10",

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [11.7.0](https://github.com/christophehurpeau/nightingale/compare/v11.6.0...v11.7.0) (2021-03-29)
+
+
+### Features
+
+* **nightingale-app-react-native:** support expo web ([5e4e080](https://github.com/christophehurpeau/nightingale/commit/5e4e080d1995055c5ff262bc52a43321fe09e4aa))
+
+
+
+
+
 # [11.6.0](https://github.com/christophehurpeau/nightingale/compare/v11.5.4...v11.6.0) (2021-03-21)
 
 
