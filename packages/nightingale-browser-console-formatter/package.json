@@ -155,7 +155,7 @@
     "nightingale-levels": "^11.7.0",
     "pob-babel": "26.8.0",
     "pob-lcov-reporter": "4.0.1",
-    "rollup": "2.45.1",
+    "rollup": "2.45.2",
     "typescript": "4.2.4",
     "xunit-file": "1.0.0"
   }
