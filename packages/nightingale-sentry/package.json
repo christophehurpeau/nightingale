@@ -109,9 +109,9 @@
     ]
   },
   "dependencies": {
-    "@sentry/core": "^5.0.0 || ^6.1.0",
-    "@sentry/node": "^5.0.0 || ^6.1.0",
-    "@sentry/types": "^5.0.0 || ^6.1.0",
+    "@sentry/core": "^6.1.0",
+    "@sentry/node": "^6.1.0",
+    "@sentry/types": "^6.1.0",
     "nightingale-levels": "^11.7.0",
     "nightingale-types": "^11.7.0"
   },
