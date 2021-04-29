@@ -4215,9 +4215,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"check-package-dependencies@npm:1.2.3":
-  version: 1.2.3
-  resolution: "check-package-dependencies@npm:1.2.3"
+"check-package-dependencies@npm:1.2.4":
+  version: 1.2.4
+  resolution: "check-package-dependencies@npm:1.2.4"
   dependencies:
     chalk: ^4.1.0
     glob: ^7.1.6
@@ -4225,7 +4225,7 @@ __metadata:
     type-fest: ^1.0.0
   bin:
     check-package-dependencies: bin/check-package-dependencies.js
-  checksum: 19531e59ac7647afcb942084ac1008e64bd255ddc2650060494b91aebc9fb069e7b57de5c7297a34a82eda643c0005b0f8afacac4857ace7c168bb207883a8d5
+  checksum: 1a3fe11fda86db50e0a7801659b7a5bf772baa3b6b9c7e37f0d0a35172941700c0501fb065d9a1fec8db22896d8fee4b4a6acda206a2e5ff175e5789baa464f9
   languageName: node
   linkType: hard
 
@@ -9010,7 +9010,7 @@ __metadata:
     "@types/node": 14.14.43
     "@typescript-eslint/eslint-plugin": 4.19.0
     "@typescript-eslint/parser": 4.19.0
-    check-package-dependencies: 1.2.3
+    check-package-dependencies: 1.2.4
     eslint: 7.25.0
     eslint-import-resolver-node: 0.3.4
     eslint-plugin-import: 2.22.1
