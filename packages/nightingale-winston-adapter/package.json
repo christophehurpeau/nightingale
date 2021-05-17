@@ -113,7 +113,7 @@
     "nightingale-types": "^11.7.0"
   },
   "devDependencies": {
-    "@babel/core": "7.14.2",
+    "@babel/core": "7.14.3",
     "@babel/preset-env": "7.14.2",
     "@pob/eslint-config": "43.0.0",
     "@pob/eslint-config-node": "43.1.0",
