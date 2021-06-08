@@ -106,7 +106,7 @@
     "eslint-plugin-node": "11.1.0",
     "eslint-plugin-unicorn": "25.0.1",
     "pob-babel": "26.8.0",
-    "rollup": "2.51.0",
+    "rollup": "2.51.1",
     "typescript": "4.2.4"
   }
 }
