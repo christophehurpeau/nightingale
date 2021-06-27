@@ -38,6 +38,6 @@
     "eslint-import-resolver-node": "0.3.4",
     "eslint-plugin-import": "2.23.4",
     "eslint-plugin-node": "11.1.0",
-    "eslint-plugin-unicorn": "29.0.0"
+    "eslint-plugin-unicorn": "33.0.1"
   }
 }
