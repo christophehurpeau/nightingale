@@ -9,9 +9,7 @@ interface CodePair {
   close: string;
 }
 
-interface AnsiStyles {
-  [key: string]: CodePair | undefined;
-}
+type AnsiStyles = Record<string, CodePair | undefined>;
 
 const ansiStyles: AnsiStyles = {
   black: ansi.black,

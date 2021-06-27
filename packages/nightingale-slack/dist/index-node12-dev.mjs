@@ -38,7 +38,9 @@ const createHandler = slackConfig => record => {
     url: slackConfig.webhookUrl,
     body,
     json: true
-  }).on('error', err2 => console.error(err2.stack));
+  }).on('error', err2 => {
+    console.error(err2.stack);
+  });
 };
 
 class SlackHandler {

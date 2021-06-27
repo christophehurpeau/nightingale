@@ -1,8 +1,6 @@
 import Level from 'nightingale-levels';
 
-export interface LevelToStyles {
-  readonly [level: number]: string[];
-}
+export type LevelToStyles = Readonly<Record<number, string[]>>;
 
 export const levelToStyles: LevelToStyles = {
   [Level.TRACE]: ['gray'],

@@ -17,7 +17,7 @@
  * </ul>
  *
  */
-let Level;
+var Level;
 
 (function (Level) {
   Level[Level["ALL"] = 0] = "ALL";

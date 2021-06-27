@@ -1,6 +1,4 @@
-export interface StyleToHexColor {
-  readonly [key: string]: string;
-}
+export type StyleToHexColor = Readonly<Record<string, string>>;
 
 export const styleToHexColor: StyleToHexColor = {
   orange: 'ff5f00',

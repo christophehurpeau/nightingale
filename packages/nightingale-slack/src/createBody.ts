@@ -5,7 +5,7 @@ import rawFormatter from 'nightingale-raw-formatter';
 import type { LogRecord, Metadata } from 'nightingale-types';
 import type SlackConfig from './SlackConfig';
 
-const levelToSlackColor: { [level: number]: string } = {
+const levelToSlackColor: Record<number, string> = {
   [Level.TRACE]: '#808080',
   [Level.DEBUG]: '#808080',
   [Level.INFO]: '#808080',

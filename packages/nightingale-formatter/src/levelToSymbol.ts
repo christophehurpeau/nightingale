@@ -1,8 +1,6 @@
 import Level from 'nightingale-levels';
 
-export interface LevelToSymbol {
-  readonly [level: number]: string;
-}
+export type LevelToSymbol = Readonly<Record<number, string>>;
 
 export const levelToSymbol: LevelToSymbol = {
   [Level.TRACE]: '•',

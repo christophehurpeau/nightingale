@@ -9,7 +9,7 @@ function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'defau
 
 var ansi__default = /*#__PURE__*/_interopDefaultLegacy(ansi);
 
-const ansiStyles = {
+var ansiStyles = {
   black: ansi__default.black,
   red: ansi__default.red,
   green: ansi__default.green,
@@ -44,11 +44,11 @@ function style(styles, string) {
     return string;
   }
 
-  return styles.reduce((string, styleName) => {
-    const style = ansiStyles[styleName];
+  return styles.reduce(function (string, styleName) {
+    var style = ansiStyles[styleName];
 
     if (!style) {
-      throw new Error(`Unknown style: ${styleName}`);
+      throw new Error("Unknown style: " + styleName);
     }
 
     return style.open + string + style.close;

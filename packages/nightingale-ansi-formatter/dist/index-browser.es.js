@@ -1,7 +1,7 @@
 import ansi from 'ansi-styles';
 import { formatRecordToString, styleToHexColor } from 'nightingale-formatter';
 
-const ansiStyles = {
+var ansiStyles = {
   black: ansi.black,
   red: ansi.red,
   green: ansi.green,
@@ -36,11 +36,11 @@ function style(styles, string) {
     return string;
   }
 
-  return styles.reduce((string, styleName) => {
-    const style = ansiStyles[styleName];
+  return styles.reduce(function (string, styleName) {
+    var style = ansiStyles[styleName];
 
     if (!style) {
-      throw new Error(`Unknown style: ${styleName}`);
+      throw new Error("Unknown style: " + styleName);
     }
 
     return style.open + string + style.close;

@@ -209,7 +209,9 @@ export class Logger {
     }
 
     if (processors) {
-      processors.forEach((process) => process(record, record.context));
+      processors.forEach((process) => {
+        process(record, record.context);
+      });
     }
 
     handlers.some((handler) => handler.handle(record) === false);
@@ -687,7 +689,7 @@ export class Logger {
       }
     }
 
-    this.enter(fn, metadata, metadataStyles as MetadataStyles<T>);
+    this.enter(fn, metadata, metadataStyles!);
     (callback as () => void)();
     this.exit(fn);
   }

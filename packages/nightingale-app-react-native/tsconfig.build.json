@@ -16,6 +16,7 @@
 
   "exclude": ["dist/**", "src/**/*.test.ts", "src/**/__tests__/**"],
   "references": [
+    { "path": "../nightingale-browser-console/tsconfig.build.json" },
     { "path": "../nightingale-react-native-console/tsconfig.build.json" },
     { "path": "../nightingale/tsconfig.build.json" }
   ]

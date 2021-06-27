@@ -143,7 +143,9 @@ class Logger {
     }
 
     if (processors) {
-      processors.forEach(process => process(record, record.context));
+      processors.forEach(process => {
+        process(record, record.context);
+      });
     }
 
     handlers.some(handler => handler.handle(record) === false);

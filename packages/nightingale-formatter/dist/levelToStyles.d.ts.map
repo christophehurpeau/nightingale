@@ -1,1 +1,1 @@
-{"version":3,"file":"levelToStyles.d.ts","sourceRoot":"","sources":["../src/levelToStyles.ts"],"names":[],"mappings":"AAEA,MAAM,WAAW,aAAa;IAC5B,QAAQ,EAAE,KAAK,EAAE,MAAM,GAAG,MAAM,EAAE,CAAC;CACpC;AAED,eAAO,MAAM,aAAa,EAAE,aAS3B,CAAC"}
+{"version":3,"file":"levelToStyles.d.ts","sourceRoot":"","sources":["../src/levelToStyles.ts"],"names":[],"mappings":"AAEA,oBAAY,aAAa,GAAG,QAAQ,CAAC,MAAM,CAAC,MAAM,EAAE,MAAM,EAAE,CAAC,CAAC,CAAC;AAE/D,eAAO,MAAM,aAAa,EAAE,aAS3B,CAAC"}

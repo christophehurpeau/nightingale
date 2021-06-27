@@ -10,8 +10,7 @@ const style = (styleToHtmlStyle, args) => (styles, string) => {
   }
 
   const htmlStyles = styles.map(styleName => styleToHtmlStyle[styleName]);
-  args.push(htmlStyles.map(s => s.open).join('; '));
-  args.push(htmlStyles.map(s => s.close).join('; '));
+  args.push(htmlStyles.map(s => s.open).join('; '), htmlStyles.map(s => s.close).join('; '));
   return `%c${string}%c`;
 };
 function createBrowserConsoleFormatter(theme = 'light') {

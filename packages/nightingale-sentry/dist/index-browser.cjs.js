@@ -11,42 +11,48 @@ function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'defau
 var _extends__default = /*#__PURE__*/_interopDefaultLegacy(_extends);
 var Level__default = /*#__PURE__*/_interopDefaultLegacy(Level);
 
-const mapToSentryLevel = {
-  [Level__default.TRACE]: types.Severity.Debug,
-  [Level__default.DEBUG]: types.Severity.Debug,
-  [Level__default.INFO]: types.Severity.Info,
-  [Level__default.NOTICE]: types.Severity.Log,
-  [Level__default.WARNING]: types.Severity.Warning,
-  [Level__default.ERROR]: types.Severity.Error,
-  [Level__default.CRITICAL]: types.Severity.Critical,
-  [Level__default.FATAL]: types.Severity.Fatal,
-  [Level__default.EMERGENCY]: types.Severity.Critical,
-  // not a level
-  [Level__default.ALL]: types.Severity.Error
-};
+var _mapToSentryLevel;
+var mapToSentryLevel = (_mapToSentryLevel = {}, _mapToSentryLevel[Level__default.TRACE] = types.Severity.Debug, _mapToSentryLevel[Level__default.DEBUG] = types.Severity.Debug, _mapToSentryLevel[Level__default.INFO] = types.Severity.Info, _mapToSentryLevel[Level__default.NOTICE] = types.Severity.Log, _mapToSentryLevel[Level__default.WARNING] = types.Severity.Warning, _mapToSentryLevel[Level__default.ERROR] = types.Severity.Error, _mapToSentryLevel[Level__default.CRITICAL] = types.Severity.Critical, _mapToSentryLevel[Level__default.FATAL] = types.Severity.Fatal, _mapToSentryLevel[Level__default.EMERGENCY] = types.Severity.Critical, _mapToSentryLevel[Level__default.ALL] = types.Severity.Error, _mapToSentryLevel);
 
-const createHandler = (Sentry, {
-  getUser = () => undefined,
-  getTags = () => ({}),
-  getBreadcrumbCategory = () => undefined,
-  getBreadcrumbType = () => undefined,
-  shouldSendAsException = record => {
+var createHandler = function createHandler(Sentry, _temp) {
+  var _ref = _temp === void 0 ? {} : _temp,
+      _ref$getUser = _ref.getUser,
+      getUser = _ref$getUser === void 0 ? function () {
+    return undefined;
+  } : _ref$getUser,
+      _ref$getTags = _ref.getTags,
+      getTags = _ref$getTags === void 0 ? function () {
+    return {};
+  } : _ref$getTags,
+      _ref$getBreadcrumbCat = _ref.getBreadcrumbCategory,
+      getBreadcrumbCategory = _ref$getBreadcrumbCat === void 0 ? function () {
+    return undefined;
+  } : _ref$getBreadcrumbCat,
+      _ref$getBreadcrumbTyp = _ref.getBreadcrumbType,
+      getBreadcrumbType = _ref$getBreadcrumbTyp === void 0 ? function () {
+    return undefined;
+  } : _ref$getBreadcrumbTyp,
+      _ref$shouldSendAsExce = _ref.shouldSendAsException,
+      shouldSendAsException = _ref$shouldSendAsExce === void 0 ? function (record) {
     var _record$metadata;
 
     return ((_record$metadata = record.metadata) == null ? void 0 : _record$metadata.error) !== undefined && record.metadata.unhandled !== true;
-  },
-  shouldSendAsBreadcrumb = () => false
-} = {}) => {
-  return record => {
-    const key = record.key,
-          level = record.level,
-          metadata = record.metadata,
-          extra = record.extra;
+  } : _ref$shouldSendAsExce,
+      _ref$shouldSendAsBrea = _ref.shouldSendAsBreadcrumb,
+      shouldSendAsBreadcrumb = _ref$shouldSendAsBrea === void 0 ? function () {
+    return false;
+  } : _ref$shouldSendAsBrea;
+
+  return function (record) {
+    var key = record.key,
+        level = record.level,
+        metadata = record.metadata,
+        extra = record.extra;
 
     if (shouldSendAsException(record)) {
-      const error = (metadata == null ? void 0 : metadata.error) || record.message;
+      var error = (metadata == null ? void 0 : metadata.error) || record.message;
 
-      const extraData = _extends__default({}, metadata, extra);
+      var extraData = _extends__default({}, metadata, extra);
 
       delete extraData.error;
       Sentry.captureException(error, {
@@ -70,13 +76,10 @@ const createHandler = (Sentry, {
   };
 };
 
-class SentryHandler {
-  constructor(Sentry, minLevel, options) {
-    this.minLevel = minLevel;
-    this.handle = createHandler(Sentry, options);
-  }
-
-}
+var SentryHandler = function SentryHandler(Sentry, minLevel, options) {
+  this.minLevel = minLevel;
+  this.handle = createHandler(Sentry, options);
+};
 
 exports.default = SentryHandler;
 //# sourceMappingURL=index-browser.cjs.js.map

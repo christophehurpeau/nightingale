@@ -5,9 +5,7 @@ export interface HtmlStyle {
   readonly close: string;
 }
 
-export interface StyleToHtmlStyle {
-  readonly [key: string]: HtmlStyle;
-}
+export type StyleToHtmlStyle = Readonly<Record<string, HtmlStyle>>;
 
 export const styleToHtmlStyleThemeLight: StyleToHtmlStyle = {
   // text style

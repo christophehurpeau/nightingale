@@ -1,4 +1,3 @@
-import { post } from 'request';
 import type {
   LogRecord,
   Handle,
@@ -6,6 +5,7 @@ import type {
   Handler,
   Level,
 } from 'nightingale-types';
+import { post } from 'request';
 import type SlackConfig from './SlackConfig';
 import createBody from './createBody';
 
@@ -18,7 +18,9 @@ const createHandler = (slackConfig: SlackConfig) => <T extends Metadata>(
 
   post({ url: slackConfig.webhookUrl, body, json: true }).on(
     'error',
-    (err2: Error) => console.error(err2.stack),
+    (err2: Error) => {
+      console.error(err2.stack);
+    },
   );
 };
 

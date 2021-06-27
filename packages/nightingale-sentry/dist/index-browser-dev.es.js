@@ -2,42 +2,48 @@ import _extends from '@babel/runtime/helpers/esm/extends';
 import { Severity } from '@sentry/types';
 import Level from 'nightingale-levels';
 
-const mapToSentryLevel = {
-  [Level.TRACE]: Severity.Debug,
-  [Level.DEBUG]: Severity.Debug,
-  [Level.INFO]: Severity.Info,
-  [Level.NOTICE]: Severity.Log,
-  [Level.WARNING]: Severity.Warning,
-  [Level.ERROR]: Severity.Error,
-  [Level.CRITICAL]: Severity.Critical,
-  [Level.FATAL]: Severity.Fatal,
-  [Level.EMERGENCY]: Severity.Critical,
-  // not a level
-  [Level.ALL]: Severity.Error
-};
+var _mapToSentryLevel;
+var mapToSentryLevel = (_mapToSentryLevel = {}, _mapToSentryLevel[Level.TRACE] = Severity.Debug, _mapToSentryLevel[Level.DEBUG] = Severity.Debug, _mapToSentryLevel[Level.INFO] = Severity.Info, _mapToSentryLevel[Level.NOTICE] = Severity.Log, _mapToSentryLevel[Level.WARNING] = Severity.Warning, _mapToSentryLevel[Level.ERROR] = Severity.Error, _mapToSentryLevel[Level.CRITICAL] = Severity.Critical, _mapToSentryLevel[Level.FATAL] = Severity.Fatal, _mapToSentryLevel[Level.EMERGENCY] = Severity.Critical, _mapToSentryLevel[Level.ALL] = Severity.Error, _mapToSentryLevel);
 
-const createHandler = (Sentry, {
-  getUser = () => undefined,
-  getTags = () => ({}),
-  getBreadcrumbCategory = () => undefined,
-  getBreadcrumbType = () => undefined,
-  shouldSendAsException = record => {
+var createHandler = function createHandler(Sentry, _temp) {
+  var _ref = _temp === void 0 ? {} : _temp,
+      _ref$getUser = _ref.getUser,
+      getUser = _ref$getUser === void 0 ? function () {
+    return undefined;
+  } : _ref$getUser,
+      _ref$getTags = _ref.getTags,
+      getTags = _ref$getTags === void 0 ? function () {
+    return {};
+  } : _ref$getTags,
+      _ref$getBreadcrumbCat = _ref.getBreadcrumbCategory,
+      getBreadcrumbCategory = _ref$getBreadcrumbCat === void 0 ? function () {
+    return undefined;
+  } : _ref$getBreadcrumbCat,
+      _ref$getBreadcrumbTyp = _ref.getBreadcrumbType,
+      getBreadcrumbType = _ref$getBreadcrumbTyp === void 0 ? function () {
+    return undefined;
+  } : _ref$getBreadcrumbTyp,
+      _ref$shouldSendAsExce = _ref.shouldSendAsException,
+      shouldSendAsException = _ref$shouldSendAsExce === void 0 ? function (record) {
     var _record$metadata;
 
     return ((_record$metadata = record.metadata) == null ? void 0 : _record$metadata.error) !== undefined && record.metadata.unhandled !== true;
-  },
-  shouldSendAsBreadcrumb = () => false
-} = {}) => {
-  return record => {
-    const key = record.key,
-          level = record.level,
-          metadata = record.metadata,
-          extra = record.extra;
+  } : _ref$shouldSendAsExce,
+      _ref$shouldSendAsBrea = _ref.shouldSendAsBreadcrumb,
+      shouldSendAsBreadcrumb = _ref$shouldSendAsBrea === void 0 ? function () {
+    return false;
+  } : _ref$shouldSendAsBrea;
+
+  return function (record) {
+    var key = record.key,
+        level = record.level,
+        metadata = record.metadata,
+        extra = record.extra;
 
     if (shouldSendAsException(record)) {
-      const error = (metadata == null ? void 0 : metadata.error) || record.message;
+      var error = (metadata == null ? void 0 : metadata.error) || record.message;
 
-      const extraData = _extends({}, metadata, extra);
+      var extraData = _extends({}, metadata, extra);
 
       delete extraData.error;
       Sentry.captureException(error, {
@@ -61,13 +67,10 @@ const createHandler = (Sentry, {
   };
 };
 
-class SentryHandler {
-  constructor(Sentry, minLevel, options) {
-    this.minLevel = minLevel;
-    this.handle = createHandler(Sentry, options);
-  }
-
-}
+var SentryHandler = function SentryHandler(Sentry, minLevel, options) {
+  this.minLevel = minLevel;
+  this.handle = createHandler(Sentry, options);
+};
 
 export default SentryHandler;
 //# sourceMappingURL=index-browser-dev.es.js.map

@@ -34,6 +34,12 @@
     "baseUrl": "./src" /* Base directory to resolve non-absolute module names. */,
 
     "paths": {
+      "nightingale-browser-console": [
+        "../../../packages/nightingale-browser-console/src"
+      ],
+      "nightingale-browser-console/*": [
+        "../../../packages/nightingale-browser-console/src/*"
+      ],
       "nightingale-react-native-console": [
         "../../../packages/nightingale-react-native-console/src"
       ],
