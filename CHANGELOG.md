@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [11.7.1](https://github.com/christophehurpeau/nightingale/compare/v11.7.0...v11.7.1) (2021-06-29)
+
+
+### Bug Fixes
+
+* update pob-babel to bring back webpack 4 support ([4887431](https://github.com/christophehurpeau/nightingale/commit/4887431b3b272496511f879af022638723b9056e))
+* **nightingale-app-react-native:** add react-native-web as optional peer dependency ([0092538](https://github.com/christophehurpeau/nightingale/commit/0092538689a2e3ca8cea9c1422f8140f4c9e8c9c))
+
+
+
+
+
 # [11.7.0](https://github.com/christophehurpeau/nightingale/compare/v11.6.0...v11.7.0) (2021-03-29)
 
 

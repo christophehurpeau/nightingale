@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [11.7.1](https://github.com/christophehurpeau/nightingale/compare/v11.7.0...v11.7.1) (2021-06-29)
+
+
+### Bug Fixes
+
+* update pob-babel to bring back webpack 4 support ([4887431](https://github.com/christophehurpeau/nightingale/commit/4887431b3b272496511f879af022638723b9056e))
+
+
+
+
+
 # [11.7.0](https://github.com/christophehurpeau/nightingale/compare/v11.6.0...v11.7.0) (2021-03-29)
 
 **Note:** Version bump only for package nightingale-slack
