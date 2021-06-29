@@ -111,9 +111,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/helper-create-class-features-plugin@npm:^7.13.0, @babel/helper-create-class-features-plugin@npm:^7.14.5":
-  version: 7.14.5
-  resolution: "@babel/helper-create-class-features-plugin@npm:7.14.5"
+"@babel/helper-create-class-features-plugin@npm:^7.14.5, @babel/helper-create-class-features-plugin@npm:^7.14.6":
+  version: 7.14.6
+  resolution: "@babel/helper-create-class-features-plugin@npm:7.14.6"
   dependencies:
     "@babel/helper-annotate-as-pure": ^7.14.5
     "@babel/helper-function-name": ^7.14.5
@@ -123,7 +123,7 @@ __metadata:
     "@babel/helper-split-export-declaration": ^7.14.5
   peerDependencies:
     "@babel/core": ^7.0.0
-  checksum: e5b9f51fe2754d946e65d46303b3eaecf95c560dd5957b92786aea1655f73742791e397bbd8138ec74fb6ffb8315e8ff1fe7547667c518fad76eddd2dd8973fc
+  checksum: 833222da49f33c32d341c99cda796b622bd7cd7824a49c532296ed96bbfe5935187abfe59f6e5886879825140cd7f71516bff8a6afa20ceec1c32cde2d388eb9
   languageName: node
   linkType: hard
 
@@ -302,7 +302,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/helper-validator-option@npm:^7.12.17, @babel/helper-validator-option@npm:^7.14.5":
+"@babel/helper-validator-option@npm:^7.14.5":
   version: 7.14.5
   resolution: "@babel/helper-validator-option@npm:7.14.5"
   checksum: aded46b377d25f5966aab30506cdb95908bae18ea5d062e86c646e9afcef911327da80e637e06c3542ea2ba01cab903d18e91fc8a12fbf7b15e0b3e8ee0b9d3b
@@ -378,7 +378,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/plugin-proposal-class-properties@npm:^7.12.1, @babel/plugin-proposal-class-properties@npm:^7.14.5":
+"@babel/plugin-proposal-class-properties@npm:^7.14.5":
   version: 7.14.5
   resolution: "@babel/plugin-proposal-class-properties@npm:7.14.5"
   dependencies:
@@ -729,14 +729,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/plugin-syntax-typescript@npm:^7.12.13":
-  version: 7.12.13
-  resolution: "@babel/plugin-syntax-typescript@npm:7.12.13"
+"@babel/plugin-syntax-typescript@npm:^7.14.5":
+  version: 7.14.5
+  resolution: "@babel/plugin-syntax-typescript@npm:7.14.5"
   dependencies:
-    "@babel/helper-plugin-utils": ^7.12.13
+    "@babel/helper-plugin-utils": ^7.14.5
   peerDependencies:
     "@babel/core": ^7.0.0-0
-  checksum: ea2b4aad35c62fc66c9e1629b70ece2ac060550f2fd10c814d568946121ec0790690c5dc65c8888bc3b543e71691e553e2ed8becac769384484c27ae6ddcb21e
+  checksum: 1b26952c0fa586460c8be3422e755fcd28a0cbddf5fb5647ade091facddc7a314b0320cb7a63072f32fd63702332ec837dc0e2b21a111c427c21d243596da180
   languageName: node
   linkType: hard
 
@@ -1109,16 +1109,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/plugin-transform-typescript@npm:^7.13.0":
-  version: 7.13.0
-  resolution: "@babel/plugin-transform-typescript@npm:7.13.0"
+"@babel/plugin-transform-typescript@npm:^7.14.5":
+  version: 7.14.6
+  resolution: "@babel/plugin-transform-typescript@npm:7.14.6"
   dependencies:
-    "@babel/helper-create-class-features-plugin": ^7.13.0
-    "@babel/helper-plugin-utils": ^7.13.0
-    "@babel/plugin-syntax-typescript": ^7.12.13
+    "@babel/helper-create-class-features-plugin": ^7.14.6
+    "@babel/helper-plugin-utils": ^7.14.5
+    "@babel/plugin-syntax-typescript": ^7.14.5
   peerDependencies:
     "@babel/core": ^7.0.0-0
-  checksum: cbf557689f6dcd59545b394d47d77ed9aeacefdbb68532e5d13b5983543f568c948a0ff492b37bc233f7073e405162076a6d29995e26230f691ceaf9d5630183
+  checksum: 81cf43bbf5efe88c165ac09ab37c884b25dbcf96202a0548b9126224f6e7fb067ff298618e225c3803732de7c91607dd27af86898044333c7955b3693361be7e
   languageName: node
   linkType: hard
 
@@ -1243,16 +1243,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/preset-typescript@npm:^7.13.0":
-  version: 7.13.0
-  resolution: "@babel/preset-typescript@npm:7.13.0"
+"@babel/preset-typescript@npm:^7.14.5":
+  version: 7.14.5
+  resolution: "@babel/preset-typescript@npm:7.14.5"
   dependencies:
-    "@babel/helper-plugin-utils": ^7.13.0
-    "@babel/helper-validator-option": ^7.12.17
-    "@babel/plugin-transform-typescript": ^7.13.0
+    "@babel/helper-plugin-utils": ^7.14.5
+    "@babel/helper-validator-option": ^7.14.5
+    "@babel/plugin-transform-typescript": ^7.14.5
   peerDependencies:
     "@babel/core": ^7.0.0-0
-  checksum: d98b9ca5dfd418f42548f9c2c0b88503fc2b8bd928efc95400023cc886705a3f52cabb5547d3b91afcbd5346c5966e06bc14e6e44fa41bffaa4fbe1a9e023bdf
+  checksum: d2fdf3d875a155a97b04cb2799c001cce41de001fe16091657f636eaa56d789715a6fe768fa63222d9046c71d1975e4c165be74b71a93358e0ce376bf0a297e4
   languageName: node
   linkType: hard
 
@@ -3908,13 +3908,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"babel-preset-pob-env@npm:^5.7.0":
-  version: 5.7.0
-  resolution: "babel-preset-pob-env@npm:5.7.0"
+"babel-preset-pob-env@npm:^5.7.1":
+  version: 5.7.1
+  resolution: "babel-preset-pob-env@npm:5.7.1"
   dependencies:
-    "@babel/plugin-proposal-class-properties": ^7.12.1
+    "@babel/plugin-proposal-class-properties": ^7.14.5
+    "@babel/plugin-proposal-nullish-coalescing-operator": ^7.14.5
+    "@babel/plugin-proposal-optional-chaining": ^7.14.5
     "@babel/plugin-syntax-dynamic-import": ^7.8.3
-    "@babel/preset-typescript": ^7.13.0
+    "@babel/preset-typescript": ^7.14.5
     babel-plugin-discard-module-references: ^1.1.2
     babel-plugin-fix-class-properties-uninitialized: ^3.0.1
     babel-plugin-import-export-rename: ^1.0.1
@@ -3923,7 +3925,7 @@ __metadata:
     babel-preset-optimizations: ^2.0.0
   peerDependencies:
     "@babel/core": ^7.11.6
-  checksum: f63cdec6d7926c0aad0161e1b8e8a9d1973463d56c556e3ddb6b86df9f161fae723c4f3c435bf13f6deac4fd002170e8e4d4781419403f8084b2a794a52e82a6
+  checksum: ec1bfbd576a4c37b94fc13ef95b5ddbe163b31c91f7eae87cb292f2d212fa9b4f9e7599cf4ccef7047199ee1f48645256d242ba5d9ccd780015984ea80443ca4
   languageName: node
   linkType: hard
 
@@ -8578,7 +8580,7 @@ __metadata:
     jest: 26.6.3
     nightingale-formatter: ^11.7.0
     nightingale-types: ^11.7.0
-    pob-babel: 27.0.2
+    pob-babel: 27.0.3
     pob-lcov-reporter: 4.0.1
     rollup: 2.52.3
     typescript: 4.3.4
@@ -8608,7 +8610,7 @@ __metadata:
     nightingale: ^11.7.0
     nightingale-browser-console: ^11.7.0
     nightingale-console: ^11.7.0
-    pob-babel: 27.0.2
+    pob-babel: 27.0.3
     rollup: 2.52.3
     typescript: 4.3.4
   languageName: unknown
@@ -8635,7 +8637,7 @@ __metadata:
     nightingale: ^11.7.0
     nightingale-browser-console: ^11.7.0
     nightingale-react-native-console: ^11.7.0
-    pob-babel: 27.0.2
+    pob-babel: 27.0.3
     rollup: 2.52.3
     typescript: 4.3.4
   peerDependencies:
@@ -8671,7 +8673,7 @@ __metadata:
     nightingale-formatter: ^11.7.0
     nightingale-levels: ^11.7.0
     nightingale-types: ^11.7.0
-    pob-babel: 27.0.2
+    pob-babel: 27.0.3
     pob-lcov-reporter: 4.0.1
     rollup: 2.52.3
     typescript: 4.3.4
@@ -8700,7 +8702,7 @@ __metadata:
     nightingale-console-output: ^11.7.0
     nightingale-debug: ^11.7.0
     nightingale-types: ^11.7.0
-    pob-babel: 27.0.2
+    pob-babel: 27.0.3
     rollup: 2.52.3
     typescript: 4.3.4
   languageName: unknown
@@ -8728,7 +8730,7 @@ __metadata:
     nightingale: ^11.7.0
     nightingale-console: ^11.7.0
     nightingale-sentry: ^11.7.0
-    pob-babel: 27.0.2
+    pob-babel: 27.0.3
     rollup: 2.52.3
     typescript: 4.3.4
   languageName: unknown
@@ -8755,7 +8757,7 @@ __metadata:
     eslint-plugin-unicorn: 29.0.0
     nightingale-levels: ^11.7.0
     nightingale-types: ^11.7.0
-    pob-babel: 27.0.2
+    pob-babel: 27.0.3
     rollup: 2.52.3
     typescript: 4.3.4
   languageName: unknown
@@ -8785,7 +8787,7 @@ __metadata:
     nightingale-json-formatter: ^11.7.0
     nightingale-levels: ^11.7.0
     nightingale-types: ^11.7.0
-    pob-babel: 27.0.2
+    pob-babel: 27.0.3
     rollup: 2.52.3
     typescript: 4.3.4
   languageName: unknown
@@ -8813,7 +8815,7 @@ __metadata:
     eslint-plugin-unicorn: 29.0.0
     jest: 26.6.3
     nightingale-levels: ^11.7.0
-    pob-babel: 27.0.2
+    pob-babel: 27.0.3
     pob-lcov-reporter: 4.0.1
     rollup: 2.52.3
     typescript: 4.3.4
@@ -8845,7 +8847,7 @@ __metadata:
     nightingale-json-formatter: ^11.7.0
     nightingale-string: ^11.7.0
     nightingale-types: ^11.7.0
-    pob-babel: 27.0.2
+    pob-babel: 27.0.3
     rollup: 2.52.3
     typescript: 4.3.4
   languageName: unknown
@@ -8874,7 +8876,7 @@ __metadata:
     jest: 26.6.3
     nightingale-levels: ^11.7.0
     nightingale-types: ^11.7.0
-    pob-babel: 27.0.2
+    pob-babel: 27.0.3
     pob-lcov-reporter: 4.0.1
     rollup: 2.52.3
     typescript: 4.3.4
@@ -8906,7 +8908,7 @@ __metadata:
     nightingale-formatter: ^11.7.0
     nightingale-levels: ^11.7.0
     nightingale-types: ^11.7.0
-    pob-babel: 27.0.2
+    pob-babel: 27.0.3
     pob-lcov-reporter: 4.0.1
     rollup: 2.52.3
     typescript: 4.3.4
@@ -8938,7 +8940,7 @@ __metadata:
     nightingale-formatter: ^11.7.0
     nightingale-levels: ^11.7.0
     nightingale-types: ^11.7.0
-    pob-babel: 27.0.2
+    pob-babel: 27.0.3
     pob-lcov-reporter: 4.0.1
     rollup: 2.52.3
     typescript: 4.3.4
@@ -8978,7 +8980,7 @@ __metadata:
     eslint-plugin-import: 2.23.4
     eslint-plugin-node: 11.1.0
     eslint-plugin-unicorn: 29.0.0
-    pob-babel: 27.0.2
+    pob-babel: 27.0.3
     rollup: 2.52.3
     typescript: 4.3.4
   languageName: unknown
@@ -9008,7 +9010,7 @@ __metadata:
     jest: 26.6.3
     nightingale-levels: ^11.7.0
     nightingale-types: ^11.7.0
-    pob-babel: 27.0.2
+    pob-babel: 27.0.3
     pob-lcov-reporter: 4.0.1
     rollup: 2.52.3
     typescript: 4.3.4
@@ -9040,7 +9042,7 @@ __metadata:
     nightingale-formatter: ^11.7.0
     nightingale-levels: ^11.7.0
     nightingale-types: ^11.7.0
-    pob-babel: 27.0.2
+    pob-babel: 27.0.3
     pob-lcov-reporter: 4.0.1
     rollup: 2.52.3
     typescript: 4.3.4
@@ -9098,7 +9100,7 @@ __metadata:
     nightingale-formatter: ^11.7.0
     nightingale-levels: ^11.7.0
     nightingale-types: ^11.7.0
-    pob-babel: 27.0.2
+    pob-babel: 27.0.3
     pob-lcov-reporter: 4.0.1
     rollup: 2.52.3
     typescript: 4.3.4
@@ -9126,7 +9128,7 @@ __metadata:
     nightingale-ansi-formatter: ^11.7.0
     nightingale-console-output: ^11.7.0
     nightingale-types: ^11.7.0
-    pob-babel: 27.0.2
+    pob-babel: 27.0.3
     rollup: 2.52.3
     typescript: 4.3.4
   languageName: unknown
@@ -9155,7 +9157,7 @@ __metadata:
     eslint-plugin-unicorn: 29.0.0
     nightingale-levels: ^11.7.0
     nightingale-types: ^11.7.0
-    pob-babel: 27.0.2
+    pob-babel: 27.0.3
     rollup: 2.52.3
     typescript: 4.3.4
   languageName: unknown
@@ -9186,7 +9188,7 @@ __metadata:
     nightingale-markdown-formatter: ^11.7.0
     nightingale-raw-formatter: ^11.7.0
     nightingale-types: ^11.7.0
-    pob-babel: 27.0.2
+    pob-babel: 27.0.3
     pob-lcov-reporter: 4.0.1
     request: ^2.88.0
     rollup: 2.52.3
@@ -9214,7 +9216,7 @@ __metadata:
     eslint-plugin-unicorn: 29.0.0
     nightingale-raw-formatter: ^11.7.0
     nightingale-types: ^11.7.0
-    pob-babel: 27.0.2
+    pob-babel: 27.0.3
     rollup: 2.52.3
     typescript: 4.3.4
   languageName: unknown
@@ -9239,7 +9241,7 @@ __metadata:
     eslint-plugin-node: 11.1.0
     eslint-plugin-unicorn: 29.0.0
     nightingale-levels: ^11.7.0
-    pob-babel: 27.0.2
+    pob-babel: 27.0.3
     rollup: 2.52.3
     typescript: 4.3.4
   languageName: unknown
@@ -9264,7 +9266,7 @@ __metadata:
     eslint-plugin-node: 11.1.0
     eslint-plugin-unicorn: 29.0.0
     nightingale-types: ^11.7.0
-    pob-babel: 27.0.2
+    pob-babel: 27.0.3
     rollup: 2.52.3
     typescript: 4.3.4
   languageName: unknown
@@ -9290,7 +9292,7 @@ __metadata:
     eslint-plugin-unicorn: 29.0.0
     nightingale-level-names: ^11.7.0
     nightingale-types: ^11.7.0
-    pob-babel: 27.0.2
+    pob-babel: 27.0.3
     rollup: 2.52.3
     typescript: 4.3.4
   languageName: unknown
@@ -9324,7 +9326,7 @@ __metadata:
     nightingale-logger: ^11.7.0
     nightingale-string: ^11.7.0
     nightingale-types: ^11.7.0
-    pob-babel: 27.0.2
+    pob-babel: 27.0.3
     pob-lcov-reporter: 4.0.1
     rollup: 2.52.3
     typescript: 4.3.4
@@ -10235,9 +10237,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pob-babel@npm:27.0.2":
-  version: 27.0.2
-  resolution: "pob-babel@npm:27.0.2"
+"pob-babel@npm:27.0.3":
+  version: 27.0.3
+  resolution: "pob-babel@npm:27.0.3"
   dependencies:
     "@babel/plugin-transform-runtime": ^7.13.10
     "@rollup/plugin-babel": ^5.2.2
@@ -10245,7 +10247,7 @@ __metadata:
     "@rollup/plugin-node-resolve": ^13.0.0
     babel-preset-latest-node: ^5.5.1
     babel-preset-modern-browsers: ^15.0.2
-    babel-preset-pob-env: ^5.7.0
+    babel-preset-pob-env: ^5.7.1
     minimist-argv: ^1.1.0
     rollup: ^2.47.0
     rollup-config-external-dependencies: ^2.0.0
@@ -10257,7 +10259,7 @@ __metadata:
   bin:
     pob-build: bin/pob-build.js
     pob-watch: bin/pob-watch.js
-  checksum: cb31fa8287bdfd0aa1bd68694ed41ed33a328fe4bc20cc733966748d9e74cc08664c7ca1c55a5072936e7c3087f3b297bead667ce96b300c10c36f31db5a7690
+  checksum: dce4da079827e2d9268a5acbaf072137b04f399552c621f4449fd2bb8e891004d05e003af2173883895644feb2c9f425f9b60c980dbce0a6145bd4656099ac1f
   languageName: node
   linkType: hard
 
