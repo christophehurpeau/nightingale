@@ -39,3 +39,9 @@ DEBUG=/^(app|nightingale$)/ # debug for logger with key starting with 'app' and 
 DEBUG='*,-app'; # debug everything except app
 DEBUG='*,-app:*'; # debug everything except app and all its children
 ```
+
+## Use source maps to display error stack trace
+
+Since node 12.12.0, you can use `--enable-source-maps` while running node.
+
+![error with source maps](https://static.hurpeau.com/images/npm/nightingale/screenshot-errors-with-source-maps.png)

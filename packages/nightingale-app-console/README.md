@@ -57,3 +57,8 @@ You can use `process.env.NIGHTINGALE_APP_MIN_LEVEL` and `process.env.NIGHTINGALE
 ```
 NIGHTINGALE_APP_MIN_LEVEL=0 node .
 ```
+
+## Use source maps to display error stack trace
+
+- for browser, see [nightingale-browser-console](https://npmjs.org/package/nightingale-browser-console)
+- for node, see [nightingale-console](https://npmjs.org/package/nightingale-console)

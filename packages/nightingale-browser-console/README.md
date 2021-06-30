@@ -68,3 +68,14 @@ localStorage.debug = '*,-app:*'; // debug everything except app and all its chil
 ?DEBUG=*,-app // debug everything except app
 ?DEBUG=*,-app:* // debug everything except app and all its children
 ```
+
+## Use source maps to display error stack trace
+
+In production:
+
+Send your log to an external tool like [sentry](https://sentry.io/). Sentry allows you to send the source maps after building (if you use webpack, you can use `hidden-source-map` to generate `.map` files, send them to sentry, and remove them so they are not accessible).
+
+In development:
+
+- Configure your build tool to generate sourcemaps. For webpack: use proper [`devtool` configuration](https://webpack.js.org/configuration/devtool/). For best stack trace, use `source-map` but it's the slowest option.
+- Make sure your project uses [source-map-support](https://www.npmjs.com/package/source-map-support) or similar tool. If not, you can install and simply import `source-map-support/register`.

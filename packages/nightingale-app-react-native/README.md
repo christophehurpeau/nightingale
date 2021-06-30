@@ -65,3 +65,8 @@ configure(
       ],
 );
 ```
+
+## Use source maps to display error stack trace
+
+- for browser (expo web or react-native-web), see [nightingale-browser-console](https://npmjs.org/package/nightingale-browser-console)
+- for android/ios, like [nightingale-browser-console](https://npmjs.org/package/nightingale-browser-console), use `source-map-support` in development but import `source-map-support/browser-source-map-support` instead of `source-map-support/register`. [expo-sentry](https://docs.expo.io/guides/using-sentry/#publish-your-app-with-sourcemaps) can send sourcemaps when publishing for production.
