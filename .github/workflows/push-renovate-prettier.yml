@@ -1,0 +1,45 @@
+name: Run Prettier on renovate update
+
+on:
+  push:
+    branches:
+      - 'renovate/prettier-**'
+
+jobs:
+  run-prettier:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.GH_TOKEN }}
+
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: |
+            .yarn/unplugged
+            .yarn/build-state.yml
+            .yarn/install-state.gz
+          key: v2-dependencies--${{ matrix.node-version }}-${{ runner.OS }}-${{ hashFiles('yarn.lock') }}
+          restore-keys: |
+            v2-dependencies--${{ matrix.node-version }}-${{ runner.OS }}-
+            v2-dependencies--${{ matrix.node-version }}-
+
+      - name: Check Dependencies
+        run: yarn install --immutable
+
+      - name: Run Prettier
+        run: yarn prettier --write .
+
+      - name: Check for modified files
+        id: git-check-modified
+        run: echo ::set-output name=modified::$(if git diff-index --quiet HEAD --; then echo "false"; else echo "true"; fi)
+
+      - name: Commit report
+        if: steps.git-check-modified.outputs.modified == 'true'
+        run: |
+          git add .
+          git config --global user.name 'Christophe Hurpeau'
+          git config --global user.email 'christophehurpeau@users.noreply.github.com'
+          git commit -m "style: apply prettier changes"
+          git push
