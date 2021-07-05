@@ -133,11 +133,9 @@
   "devDependencies": {
     "@babel/core": "7.14.6",
     "@babel/preset-env": "7.14.7",
-    "@pob/commitlint-config": "2.2.0",
     "@pob/eslint-config": "43.2.0",
     "@pob/eslint-config-node": "43.2.0",
     "@pob/eslint-config-typescript": "43.2.0",
-    "@pob/root": "4.0.0",
     "@types/jest": "26.0.23",
     "@typescript-eslint/eslint-plugin": "4.28.2",
     "@typescript-eslint/parser": "4.28.2",
