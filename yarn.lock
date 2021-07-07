@@ -3077,15 +3077,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/request@npm:2.48.5":
-  version: 2.48.5
-  resolution: "@types/request@npm:2.48.5"
+"@types/request@npm:2.48.6":
+  version: 2.48.6
+  resolution: "@types/request@npm:2.48.6"
   dependencies:
     "@types/caseless": "*"
     "@types/node": "*"
     "@types/tough-cookie": "*"
     form-data: ^2.5.0
-  checksum: 74f1a250cab068aec594cede9e57508e0b63d46110dd5d62611f087a4c0e9b524884b1d76f128e5ee86d3d91a40587986d85567b567653cd3e30873686ab195d
+  checksum: f59a03414d9310fc3e455999aef5cd52cc1275933efb265acfd84cd9947c618d26e758c42404bacd62627f01cfc9372d82a0968cf84e088a71a34c5a5f139e54
   languageName: node
   linkType: hard
 
@@ -9179,7 +9179,7 @@ __metadata:
     "@pob/eslint-config-typescript": 43.2.0
     "@pob/eslint-config-typescript-node": 43.2.0
     "@types/jest": 26.0.24
-    "@types/request": 2.48.5
+    "@types/request": 2.48.6
     "@typescript-eslint/eslint-plugin": 4.28.2
     "@typescript-eslint/parser": 4.28.2
     babel-jest: 26.6.3
