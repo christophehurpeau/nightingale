@@ -70,7 +70,7 @@
     "@babel/core": "7.14.6",
     "@pob/eslint-config": "43.2.0",
     "@pob/eslint-config-node": "43.2.0",
-    "@pob/eslint-config-typescript": "43.2.0",
+    "@pob/eslint-config-typescript": "44.0.1",
     "@pob/eslint-config-typescript-node": "43.2.0",
     "@typescript-eslint/eslint-plugin": "4.28.2",
     "@typescript-eslint/parser": "4.28.2",
