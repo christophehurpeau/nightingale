@@ -2566,14 +2566,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pob/eslint-config-typescript-node@npm:43.2.0":
-  version: 43.2.0
-  resolution: "@pob/eslint-config-typescript-node@npm:43.2.0"
+"@pob/eslint-config-typescript-node@npm:44.0.0":
+  version: 44.0.0
+  resolution: "@pob/eslint-config-typescript-node@npm:44.0.0"
   dependencies:
-    "@pob/use-eslint-plugin": ^43.2.0
+    "@pob/use-eslint-plugin": ^44.0.0
     eslint-plugin-node: ^11.1.0
   peerDependencies:
-    eslint: ^7.5.0
+    eslint: ^7.30.0
     eslint-plugin-import: ^2.22.1
     eslint-plugin-node: ^11.1.0
   peerDependenciesMeta:
@@ -2581,7 +2581,7 @@ __metadata:
       optional: true
     eslint-plugin-node:
       optional: true
-  checksum: 592954c5fe476f7be4a2601abdf5a85cb439b4d558a0cd57700e068f144d348870e51899f48b06980db5e1a3affa49bf361ebb3688dc23f7393e48e2e4922049
+  checksum: b828b497c67a29fc3faeff4ba23820dc2f70dc4286f731d03f6bd333606c0d8d1b76ad78bd5a4cdefd775a3b0d1f9bef78a95fe4ab0c53886053ef8439115ef0
   languageName: node
   linkType: hard
 
@@ -2728,6 +2728,13 @@ __metadata:
   version: 43.2.0
   resolution: "@pob/use-eslint-plugin@npm:43.2.0"
   checksum: c522e3f468f36cc915d5bf96a1f2b87adda28540a227f89dd7ec941c04b98b166e7cc70fb7b277ec3e014db2f1f5cc57dc238bae3be587884968457ed05c3d19
+  languageName: node
+  linkType: hard
+
+"@pob/use-eslint-plugin@npm:^44.0.0":
+  version: 44.0.0
+  resolution: "@pob/use-eslint-plugin@npm:44.0.0"
+  checksum: 7c5b43080a1af7aec0aa697b6ec555cb35312c2ee0b492f0a75d42f5ef1e601354d978bca64a67009d54e4bc24d8fef71ca54f3dd705e8a1877aeccfde1346fc
   languageName: node
   linkType: hard
 
@@ -8722,7 +8729,7 @@ __metadata:
     "@pob/eslint-config": 43.2.0
     "@pob/eslint-config-node": 43.2.0
     "@pob/eslint-config-typescript": 43.2.0
-    "@pob/eslint-config-typescript-node": 43.2.0
+    "@pob/eslint-config-typescript-node": 44.0.0
     "@rollup/plugin-run": 2.1.0
     "@sentry/node": ^6.1.0
     "@typescript-eslint/eslint-plugin": 4.29.0
@@ -8777,7 +8784,7 @@ __metadata:
     "@pob/eslint-config": 43.2.0
     "@pob/eslint-config-node": 43.2.0
     "@pob/eslint-config-typescript": 43.2.0
-    "@pob/eslint-config-typescript-node": 43.2.0
+    "@pob/eslint-config-typescript-node": 44.0.0
     "@types/node": ">=12.0.0"
     "@typescript-eslint/eslint-plugin": 4.29.0
     "@typescript-eslint/parser": 4.29.0
@@ -8837,7 +8844,7 @@ __metadata:
     "@pob/eslint-config": 43.2.0
     "@pob/eslint-config-node": 43.2.0
     "@pob/eslint-config-typescript": 43.2.0
-    "@pob/eslint-config-typescript-node": 43.2.0
+    "@pob/eslint-config-typescript-node": 44.0.0
     "@rollup/plugin-run": 2.1.0
     "@typescript-eslint/eslint-plugin": 4.29.0
     "@typescript-eslint/parser": 4.29.0
@@ -9064,7 +9071,7 @@ __metadata:
     "@pob/eslint-config": 43.2.0
     "@pob/eslint-config-node": 43.2.0
     "@pob/eslint-config-typescript": 43.2.0
-    "@pob/eslint-config-typescript-node": 43.2.0
+    "@pob/eslint-config-typescript-node": 44.0.0
     "@pob/lerna-light": 3.24.0
     "@pob/root": 4.1.0
     "@types/node": 14.17.7
@@ -9177,7 +9184,7 @@ __metadata:
     "@pob/eslint-config": 43.2.0
     "@pob/eslint-config-node": 43.2.0
     "@pob/eslint-config-typescript": 43.2.0
-    "@pob/eslint-config-typescript-node": 43.2.0
+    "@pob/eslint-config-typescript-node": 44.0.0
     "@types/jest": 26.0.24
     "@types/request": 2.48.7
     "@typescript-eslint/eslint-plugin": 4.29.0
@@ -9211,7 +9218,7 @@ __metadata:
     "@pob/eslint-config": 43.2.0
     "@pob/eslint-config-node": 43.2.0
     "@pob/eslint-config-typescript": 43.2.0
-    "@pob/eslint-config-typescript-node": 43.2.0
+    "@pob/eslint-config-typescript-node": 44.0.0
     "@typescript-eslint/eslint-plugin": 4.29.0
     "@typescript-eslint/parser": 4.29.0
     babel-preset-latest-node: 5.5.1
@@ -9261,7 +9268,7 @@ __metadata:
     "@pob/eslint-config": 43.2.0
     "@pob/eslint-config-node": 43.2.0
     "@pob/eslint-config-typescript": 43.2.0
-    "@pob/eslint-config-typescript-node": 43.2.0
+    "@pob/eslint-config-typescript-node": 44.0.0
     "@types/node": ">=12.0.0"
     "@typescript-eslint/eslint-plugin": 4.29.0
     "@typescript-eslint/parser": 4.29.0
