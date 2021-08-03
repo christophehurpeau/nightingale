@@ -2775,14 +2775,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rollup/plugin-run@npm:2.0.2":
-  version: 2.0.2
-  resolution: "@rollup/plugin-run@npm:2.0.2"
+"@rollup/plugin-run@npm:2.1.0":
+  version: 2.1.0
+  resolution: "@rollup/plugin-run@npm:2.1.0"
   dependencies:
-    "@types/node": 13.1.6
+    "@types/node": 14.0.26
   peerDependencies:
     rollup: ^2.0.0
-  checksum: 2b136e1af6528d0b0cbb885748fe271bd997735392951f47a0c15c0aaaa241549c9fc6172c23a9ac19ec95555b7ddc699507ab4ce57282b2723e62dd8222eafa
+  checksum: 3bdb533b932d5511f947ecfc2bc46a380ea236dd046b277011132eba3adb77ee97360506c2417937bfa01a0599098371f6e73bb320f9b5435983f8a1b871e7b1
   languageName: node
   linkType: hard
 
@@ -8723,7 +8723,7 @@ __metadata:
     "@pob/eslint-config-node": 43.2.0
     "@pob/eslint-config-typescript": 43.2.0
     "@pob/eslint-config-typescript-node": 43.2.0
-    "@rollup/plugin-run": 2.0.2
+    "@rollup/plugin-run": 2.1.0
     "@sentry/node": ^6.1.0
     "@typescript-eslint/eslint-plugin": 4.28.2
     "@typescript-eslint/parser": 4.28.2
@@ -8838,7 +8838,7 @@ __metadata:
     "@pob/eslint-config-node": 43.2.0
     "@pob/eslint-config-typescript": 43.2.0
     "@pob/eslint-config-typescript-node": 43.2.0
-    "@rollup/plugin-run": 2.0.2
+    "@rollup/plugin-run": 2.1.0
     "@typescript-eslint/eslint-plugin": 4.28.2
     "@typescript-eslint/parser": 4.28.2
     babel-preset-latest-node: 5.5.1
