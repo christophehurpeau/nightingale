@@ -111,7 +111,7 @@
     "jest": "26.6.3",
     "pob-babel": "27.0.3",
     "pob-lcov-reporter": "4.0.1",
-    "rollup": "2.53.1",
+    "rollup": "2.55.1",
     "typescript": "4.3.5",
     "xunit-file": "1.0.0"
   }
