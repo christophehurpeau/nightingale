@@ -94,7 +94,7 @@
     "@babel/core": "7.14.8",
     "@pob/eslint-config": "43.2.0",
     "@pob/eslint-config-node": "43.2.0",
-    "@pob/eslint-config-typescript": "43.2.0",
+    "@pob/eslint-config-typescript": "45.0.3",
     "@pob/eslint-config-typescript-node": "43.2.0",
     "@rollup/plugin-run": "2.1.0",
     "@typescript-eslint/eslint-plugin": "4.29.0",
