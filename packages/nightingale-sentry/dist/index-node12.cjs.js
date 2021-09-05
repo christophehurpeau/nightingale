@@ -4,9 +4,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 const SentryNode = require('@sentry/node');
 const types = require('@sentry/types');
-const Level = require('nightingale-levels');
-
-function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e['default'] : e; }
+const nightingaleLevels = require('nightingale-levels');
 
 function _interopNamespace(e) {
   if (e && e.__esModule) return e;
@@ -21,20 +19,19 @@ function _interopNamespace(e) {
 }
 
 const SentryNode__namespace = /*#__PURE__*/_interopNamespace(SentryNode);
-const Level__default = /*#__PURE__*/_interopDefaultLegacy(Level);
 
 const mapToSentryLevel = {
-  [Level__default.TRACE]: types.Severity.Debug,
-  [Level__default.DEBUG]: types.Severity.Debug,
-  [Level__default.INFO]: types.Severity.Info,
-  [Level__default.NOTICE]: types.Severity.Log,
-  [Level__default.WARNING]: types.Severity.Warning,
-  [Level__default.ERROR]: types.Severity.Error,
-  [Level__default.CRITICAL]: types.Severity.Critical,
-  [Level__default.FATAL]: types.Severity.Fatal,
-  [Level__default.EMERGENCY]: types.Severity.Critical,
+  [nightingaleLevels.Level.TRACE]: types.Severity.Debug,
+  [nightingaleLevels.Level.DEBUG]: types.Severity.Debug,
+  [nightingaleLevels.Level.INFO]: types.Severity.Info,
+  [nightingaleLevels.Level.NOTICE]: types.Severity.Log,
+  [nightingaleLevels.Level.WARNING]: types.Severity.Warning,
+  [nightingaleLevels.Level.ERROR]: types.Severity.Error,
+  [nightingaleLevels.Level.CRITICAL]: types.Severity.Critical,
+  [nightingaleLevels.Level.FATAL]: types.Severity.Fatal,
+  [nightingaleLevels.Level.EMERGENCY]: types.Severity.Critical,
   // not a level
-  [Level__default.ALL]: types.Severity.Error
+  [nightingaleLevels.Level.ALL]: types.Severity.Error
 };
 
 const createHandler = (Sentry, {
@@ -102,5 +99,5 @@ class SentryHandler {
 
 }
 
-exports.default = SentryHandler;
+exports['default'] = SentryHandler;
 //# sourceMappingURL=index-node12.cjs.js.map

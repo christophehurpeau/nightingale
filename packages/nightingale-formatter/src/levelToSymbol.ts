@@ -1,4 +1,4 @@
-import Level from 'nightingale-levels';
+import { Level } from 'nightingale-levels';
 
 export type LevelToSymbol = Readonly<Record<number, string>>;
 

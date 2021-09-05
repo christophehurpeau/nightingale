@@ -21,6 +21,5 @@ function createBrowserConsoleFormatter(theme = 'light') {
 
 const index = createBrowserConsoleFormatter('light');
 
-export default index;
-export { createBrowserConsoleFormatter, style };
+export { createBrowserConsoleFormatter, index as default, style };
 //# sourceMappingURL=index-node12-dev.mjs.map

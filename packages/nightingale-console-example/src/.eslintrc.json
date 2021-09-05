@@ -7,7 +7,7 @@
   "plugins": ["@typescript-eslint"],
   "extends": [
     "@pob/eslint-config-typescript",
-    "@pob/eslint-config-typescript-node"
+    "@pob/eslint-config-typescript/node"
   ],
   "settings": {
     "import/resolver": {

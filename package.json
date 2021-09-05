@@ -7,27 +7,31 @@
   "license": "ISC",
   "repository": "https://github.com/christophehurpeau/nightingale.git",
   "homepage": "https://github.com/christophehurpeau/nightingale",
+  "type": "commonjs",
   "engines": {
     "node": ">=12.10.0"
   },
+  "packageManager": "yarn@3.0.2",
   "workspaces": [
     "packages/*"
   ],
   "scripts": {
-    "build": "lerna run --stream build && yarn run build:definitions && yarn run generate:docs",
+    "build": "yarn workspaces foreach -Av run build && yarn run build:definitions && yarn run generate:docs",
     "build:definitions": "tsc -b tsconfig.build.json",
     "checks": "node scripts/check-packages.js",
     "generate:api": "typedoc --tsconfig tsconfig.doc.json",
     "generate:docs": "rm -Rf docs ; yarn run generate:api ; touch docs/.nojekyll",
     "generate:test-coverage": "lerna run --parallel --ignore \"*-example\" generate:test-coverage",
     "lint": "yarn run lint:prettier && yarn run lint:eslint",
-    "lint:eslint": "eslint --report-unused-disable-directives --quiet --resolve-plugins-relative-to . --ext js,mjs,ts,tsx .",
+    "lint:eslint": "eslint --report-unused-disable-directives --resolve-plugins-relative-to . --quiet .",
     "lint:prettier": "prettier --check .",
+    "postinstall": "pob-root-postinstall",
     "preversion": "yarn run lint && yarn run build && repository-check-dirty",
     "release": "GH_TOKEN=$POB_GITHUB_TOKEN lerna version --conventional-commits --conventional-graduate --create-release=github -m 'chore: release' && lerna publish from-git",
-    "test": "lerna run --stream test",
+    "test": "yarn workspaces foreach --parallel -Av run test",
     "tsc": "tsc -b",
-    "watch": "lerna run --parallel --ignore \"*-example\" watch"
+    "watch": "yarn workspaces foreach --parallel --exclude \"*-example\" -Av run watch",
+    "watch:lerna": "lerna run --parallel --ignore \"*-example\" watch"
   },
   "prettier": {
     "trailingComma": "all",
@@ -39,31 +43,29 @@
       "@pob/commitlint-config"
     ]
   },
-  "devDependencies": {
-    "@pob/commitlint-config": "2.2.0",
-    "@pob/eslint-config": "43.2.0",
-    "@pob/eslint-config-node": "43.2.0",
-    "@pob/eslint-config-typescript": "43.2.0",
-    "@pob/eslint-config-typescript-node": "43.2.0",
-    "@pob/lerna-light": "3.24.0",
-    "@pob/root": "4.1.0",
-    "@types/node": "14.17.7",
-    "@typescript-eslint/eslint-plugin": "4.29.0",
-    "@typescript-eslint/parser": "4.29.0",
-    "check-package-dependencies": "1.2.7",
-    "eslint": "7.32.0",
-    "eslint-import-resolver-node": "0.3.4",
-    "eslint-plugin-import": "2.23.4",
-    "eslint-plugin-node": "11.1.0",
-    "eslint-plugin-unicorn": "29.0.0",
-    "prettier": "2.2.1",
-    "typedoc": "0.21.2",
-    "typescript": "4.3.5"
-  },
   "resolutions": {
     "@types/node": "14.17.7"
   },
   "resolutionsExplained": {
     "@types/node": "Avoid problems in typescript with several versions of @types/node"
+  },
+  "devDependencies": {
+    "@pob/commitlint-config": "3.1.1",
+    "@pob/eslint-config": "45.0.3",
+    "@pob/eslint-config-typescript": "45.0.3",
+    "@pob/lerna-light": "4.1.0",
+    "@pob/root": "5.3.1",
+    "@types/node": "14.17.7",
+    "@typescript-eslint/eslint-plugin": "4.29.1",
+    "@typescript-eslint/parser": "4.29.1",
+    "check-package-dependencies": "1.2.7",
+    "eslint": "7.32.0",
+    "eslint-import-resolver-node": "0.3.6",
+    "eslint-plugin-import": "2.24.2",
+    "eslint-plugin-node": "11.1.0",
+    "eslint-plugin-unicorn": "34.0.1",
+    "prettier": "2.3.2",
+    "typedoc": "0.21.9",
+    "typescript": "4.3.5"
   }
 }

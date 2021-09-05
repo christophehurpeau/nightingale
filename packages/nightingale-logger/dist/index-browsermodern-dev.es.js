@@ -1,5 +1,5 @@
-import Level from 'nightingale-levels';
-export { default as Level } from 'nightingale-levels';
+import { Level } from 'nightingale-levels';
+export { Level } from 'nightingale-levels';
 
 /* eslint-disable max-lines */
 
@@ -531,6 +531,5 @@ class Logger {
 
 }
 
-export default Logger;
-export { Logger };
+export { Logger, Logger as default };
 //# sourceMappingURL=index-browsermodern-dev.es.js.map

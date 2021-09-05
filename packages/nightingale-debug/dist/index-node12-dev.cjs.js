@@ -2,11 +2,7 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const Level = require('nightingale-levels');
-
-function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e['default'] : e; }
-
-const Level__default = /*#__PURE__*/_interopDefaultLegacy(Level);
+const nightingaleLevels = require('nightingale-levels');
 
 /* eslint-disable complexity */
 const specialRegexpChars = /[$()+.?[\\\]^{|}]/;
@@ -71,9 +67,9 @@ function createFindDebugLevel(debugValue) {
 
   if (isWildcard) {
     if (skips.length === 0) {
-      return () => Level__default.ALL;
+      return () => nightingaleLevels.Level.ALL;
     } else {
-      return (minLevel, key) => skips.some(skip => skip(key)) ? minLevel : Level__default.ALL;
+      return (minLevel, key) => skips.some(skip => skip(key)) ? minLevel : nightingaleLevels.Level.ALL;
     }
   }
 
@@ -82,12 +78,12 @@ function createFindDebugLevel(debugValue) {
   }
 
   return (minLevel, key) => {
-    if (minLevel === Level__default.ALL || !key) {
+    if (minLevel === nightingaleLevels.Level.ALL || !key) {
       return minLevel;
     }
 
     if (debugValues.some(debugValue => debugValue(key))) {
-      return skips.some(skip => skip(key)) ? minLevel : Level__default.ALL;
+      return skips.some(skip => skip(key)) ? minLevel : nightingaleLevels.Level.ALL;
     }
 
     return minLevel;
@@ -95,5 +91,5 @@ function createFindDebugLevel(debugValue) {
 }
 
 exports.createFindDebugLevel = createFindDebugLevel;
-exports.default = createFindDebugLevel;
+exports['default'] = createFindDebugLevel;
 //# sourceMappingURL=index-node12-dev.cjs.js.map

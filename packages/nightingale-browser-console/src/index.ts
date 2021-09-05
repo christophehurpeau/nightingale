@@ -1,6 +1,6 @@
 import { createBrowserConsoleFormatter } from 'nightingale-browser-console-formatter';
 import consoleOutput from 'nightingale-console-output';
-import createFindDebugLevel from 'nightingale-debug';
+import { createFindDebugLevel } from 'nightingale-debug';
 import type {
   Level,
   Handle,

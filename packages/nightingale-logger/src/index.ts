@@ -1,7 +1,7 @@
 /* eslint-disable max-lines */
 import { PRODUCTION, POB_TARGET } from 'pob-babel';
 import * as util from 'util';
-import Level from 'nightingale-levels';
+import { Level } from 'nightingale-levels';
 import type {
   Metadata,
   MetadataStyles,
@@ -70,10 +70,8 @@ if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
     key: string,
     level: number,
   ): ComputedConfigForKey => {
-    const {
-      handlers,
-      processors,
-    }: ComputedConfigForKey = global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key);
+    const { handlers, processors }: ComputedConfigForKey =
+      global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key);
 
     return {
       handlers: handlers.filter(

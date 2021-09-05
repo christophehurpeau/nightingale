@@ -1,6 +1,6 @@
 import { createBrowserConsoleFormatter } from 'nightingale-browser-console-formatter';
 import consoleOutput from 'nightingale-console-output';
-import createFindDebugLevel from 'nightingale-debug';
+import { createFindDebugLevel } from 'nightingale-debug';
 
 function getDebugString() {
   var _document$location;
@@ -59,6 +59,5 @@ var BrowserConsoleHandler = function BrowserConsoleHandler(minLevel, options) {
   this.handle = createHandler(options.theme);
 };
 
-export default BrowserConsoleHandler;
-export { BrowserConsoleHandler };
+export { BrowserConsoleHandler, BrowserConsoleHandler as default };
 //# sourceMappingURL=index-browser.es.js.map

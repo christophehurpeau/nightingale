@@ -36,6 +36,5 @@ var Level;
 
 var Level$1 = Level;
 
-export default Level$1;
-export { Level };
+export { Level, Level$1 as default };
 //# sourceMappingURL=index-browser.es.js.map

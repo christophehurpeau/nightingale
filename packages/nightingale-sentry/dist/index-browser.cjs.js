@@ -4,15 +4,14 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 var _extends = require('@babel/runtime/helpers/esm/extends');
 var types = require('@sentry/types');
-var Level = require('nightingale-levels');
+var nightingaleLevels = require('nightingale-levels');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e['default'] : e; }
 
 var _extends__default = /*#__PURE__*/_interopDefaultLegacy(_extends);
-var Level__default = /*#__PURE__*/_interopDefaultLegacy(Level);
 
 var _mapToSentryLevel;
-var mapToSentryLevel = (_mapToSentryLevel = {}, _mapToSentryLevel[Level__default.TRACE] = types.Severity.Debug, _mapToSentryLevel[Level__default.DEBUG] = types.Severity.Debug, _mapToSentryLevel[Level__default.INFO] = types.Severity.Info, _mapToSentryLevel[Level__default.NOTICE] = types.Severity.Log, _mapToSentryLevel[Level__default.WARNING] = types.Severity.Warning, _mapToSentryLevel[Level__default.ERROR] = types.Severity.Error, _mapToSentryLevel[Level__default.CRITICAL] = types.Severity.Critical, _mapToSentryLevel[Level__default.FATAL] = types.Severity.Fatal, _mapToSentryLevel[Level__default.EMERGENCY] = types.Severity.Critical, _mapToSentryLevel[Level__default.ALL] = types.Severity.Error, _mapToSentryLevel);
+var mapToSentryLevel = (_mapToSentryLevel = {}, _mapToSentryLevel[nightingaleLevels.Level.TRACE] = types.Severity.Debug, _mapToSentryLevel[nightingaleLevels.Level.DEBUG] = types.Severity.Debug, _mapToSentryLevel[nightingaleLevels.Level.INFO] = types.Severity.Info, _mapToSentryLevel[nightingaleLevels.Level.NOTICE] = types.Severity.Log, _mapToSentryLevel[nightingaleLevels.Level.WARNING] = types.Severity.Warning, _mapToSentryLevel[nightingaleLevels.Level.ERROR] = types.Severity.Error, _mapToSentryLevel[nightingaleLevels.Level.CRITICAL] = types.Severity.Critical, _mapToSentryLevel[nightingaleLevels.Level.FATAL] = types.Severity.Fatal, _mapToSentryLevel[nightingaleLevels.Level.EMERGENCY] = types.Severity.Critical, _mapToSentryLevel[nightingaleLevels.Level.ALL] = types.Severity.Error, _mapToSentryLevel);
 
 var createHandler = function createHandler(Sentry, _temp) {
   var _ref = _temp === void 0 ? {} : _temp,
@@ -81,5 +80,5 @@ var SentryHandler = function SentryHandler(Sentry, minLevel, options) {
   this.handle = createHandler(Sentry, options);
 };
 
-exports.default = SentryHandler;
+exports['default'] = SentryHandler;
 //# sourceMappingURL=index-browser.cjs.js.map

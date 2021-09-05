@@ -3,12 +3,11 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 var _extends = require('@babel/runtime/helpers/esm/extends');
-var Level = require('nightingale-levels');
+var nightingaleLevels = require('nightingale-levels');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e['default'] : e; }
 
 var _extends__default = /*#__PURE__*/_interopDefaultLegacy(_extends);
-var Level__default = /*#__PURE__*/_interopDefaultLegacy(Level);
 
 if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER) {
   global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = function () {
@@ -145,7 +144,7 @@ var Logger = /*#__PURE__*/function () {
         processors = _this$getHandlersAndP.processors;
 
     if (handlers.length === 0) {
-      if (record.level > Level__default.ERROR) {
+      if (record.level > nightingaleLevels.Level.ERROR) {
         // eslint-disable-next-line no-console
         console.log('[nightingale] no logger for > error level.', {
           key: record.key,
@@ -173,7 +172,7 @@ var Logger = /*#__PURE__*/function () {
 
   _proto.log = function log(message, metadata, level, options) {
     if (level === void 0) {
-      level = Level__default.INFO;
+      level = nightingaleLevels.Level.INFO;
     }
 
     var context = metadata == null ? void 0 : metadata.context;
@@ -201,7 +200,7 @@ var Logger = /*#__PURE__*/function () {
   ;
 
   _proto.trace = function trace(message, metadata, metadataStyles) {
-    this.log(message, metadata, Level__default.TRACE, {
+    this.log(message, metadata, nightingaleLevels.Level.TRACE, {
       metadataStyles: metadataStyles
     });
   }
@@ -211,7 +210,7 @@ var Logger = /*#__PURE__*/function () {
   ;
 
   _proto.debug = function debug(message, metadata, metadataStyles) {
-    this.log(message, metadata, Level__default.DEBUG, {
+    this.log(message, metadata, nightingaleLevels.Level.DEBUG, {
       metadataStyles: metadataStyles
     });
   }
@@ -221,7 +220,7 @@ var Logger = /*#__PURE__*/function () {
   ;
 
   _proto.notice = function notice(message, metadata, metadataStyles) {
-    this.log(message, metadata, Level__default.NOTICE, {
+    this.log(message, metadata, nightingaleLevels.Level.NOTICE, {
       metadataStyles: metadataStyles
     });
   }
@@ -231,7 +230,7 @@ var Logger = /*#__PURE__*/function () {
   ;
 
   _proto.info = function info(message, metadata, metadataStyles) {
-    this.log(message, metadata, Level__default.INFO, {
+    this.log(message, metadata, nightingaleLevels.Level.INFO, {
       metadataStyles: metadataStyles
     });
   }
@@ -241,7 +240,7 @@ var Logger = /*#__PURE__*/function () {
   ;
 
   _proto.warn = function warn(message, metadata, metadataStyles) {
-    this.log(message, metadata, Level__default.WARN, {
+    this.log(message, metadata, nightingaleLevels.Level.WARN, {
       metadataStyles: metadataStyles
     });
   }
@@ -267,11 +266,11 @@ var Logger = /*#__PURE__*/function () {
       });
 
       message = extendedMetadata.error.name + ": " + extendedMetadata.error.message;
-      this.log(message, extendedMetadata, Level__default.ERROR, {
+      this.log(message, extendedMetadata, nightingaleLevels.Level.ERROR, {
         metadataStyles: metadataStyles
       });
     } else {
-      this.log(message, metadata, Level__default.ERROR, {
+      this.log(message, metadata, nightingaleLevels.Level.ERROR, {
         metadataStyles: metadataStyles
       });
     }
@@ -282,7 +281,7 @@ var Logger = /*#__PURE__*/function () {
   ;
 
   _proto.critical = function critical(message, metadata, metadataStyles) {
-    this.log(message, metadata, Level__default.CRITICAL, {
+    this.log(message, metadata, nightingaleLevels.Level.CRITICAL, {
       metadataStyles: metadataStyles
     });
   }
@@ -302,7 +301,7 @@ var Logger = /*#__PURE__*/function () {
   ;
 
   _proto.fatal = function fatal(message, metadata, metadataStyles) {
-    this.log(message, metadata, Level__default.FATAL, {
+    this.log(message, metadata, nightingaleLevels.Level.FATAL, {
       metadataStyles: metadataStyles
     });
   }
@@ -312,7 +311,7 @@ var Logger = /*#__PURE__*/function () {
   ;
 
   _proto.alert = function alert(message, metadata, metadataStyles) {
-    this.log(message, metadata, Level__default.ALERT, {
+    this.log(message, metadata, nightingaleLevels.Level.ALERT, {
       metadataStyles: metadataStyles
     });
   }
@@ -346,7 +345,7 @@ var Logger = /*#__PURE__*/function () {
   ;
 
   _proto.infoSuccess = function infoSuccess(message, metadata, metadataStyles) {
-    this.log(message, metadata, Level__default.INFO, {
+    this.log(message, metadata, nightingaleLevels.Level.INFO, {
       metadataStyles: metadataStyles,
       symbol: '✔',
       styles: ['green', 'bold']
@@ -358,7 +357,7 @@ var Logger = /*#__PURE__*/function () {
   ;
 
   _proto.debugSuccess = function debugSuccess(message, metadata, metadataStyles) {
-    this.log(message, metadata, Level__default.DEBUG, {
+    this.log(message, metadata, nightingaleLevels.Level.DEBUG, {
       metadataStyles: metadataStyles,
       symbol: '✔',
       styles: ['green']
@@ -378,7 +377,7 @@ var Logger = /*#__PURE__*/function () {
   ;
 
   _proto.infoFail = function infoFail(message, metadata, metadataStyles) {
-    this.log(message, metadata, Level__default.INFO, {
+    this.log(message, metadata, nightingaleLevels.Level.INFO, {
       metadataStyles: metadataStyles,
       symbol: '✖',
       styles: ['red', 'bold']
@@ -390,7 +389,7 @@ var Logger = /*#__PURE__*/function () {
   ;
 
   _proto.debugFail = function debugFail(message, metadata, metadataStyles) {
-    this.log(message, metadata, Level__default.DEBUG, {
+    this.log(message, metadata, nightingaleLevels.Level.DEBUG, {
       metadataStyles: metadataStyles,
       symbol: '✖',
       styles: ['red']
@@ -403,7 +402,7 @@ var Logger = /*#__PURE__*/function () {
 
   _proto.time = function time(message, metadata, metadataStyles, level) {
     if (level === void 0) {
-      level = Level__default.DEBUG;
+      level = nightingaleLevels.Level.DEBUG;
     }
 
     if (message) {
@@ -416,7 +415,7 @@ var Logger = /*#__PURE__*/function () {
   };
 
   _proto.infoTime = function infoTime(message, metadata, metadataStyles) {
-    return this.time(message, metadata, metadataStyles, Level__default.INFO);
+    return this.time(message, metadata, metadataStyles, nightingaleLevels.Level.INFO);
   }
   /**
    * Finds difference between when this method
@@ -428,7 +427,7 @@ var Logger = /*#__PURE__*/function () {
 
   _proto.timeEnd = function timeEnd(startTime, message, metadata, metadataStyles, level, options) {
     if (level === void 0) {
-      level = Level__default.DEBUG;
+      level = nightingaleLevels.Level.DEBUG;
     }
 
     var now = Date.now();
@@ -457,7 +456,7 @@ var Logger = /*#__PURE__*/function () {
   ;
 
   _proto.infoTimeEnd = function infoTimeEnd(time, message, metadata, metadataStyles) {
-    this.timeEnd(time, message, metadata, metadataStyles, Level__default.INFO);
+    this.timeEnd(time, message, metadata, metadataStyles, nightingaleLevels.Level.INFO);
   }
   /**
    * Like timeEnd, but with INFO level
@@ -465,7 +464,7 @@ var Logger = /*#__PURE__*/function () {
   ;
 
   _proto.infoSuccessTimeEnd = function infoSuccessTimeEnd(time, message, metadata, metadataStyles) {
-    this.timeEnd(time, message, metadata, metadataStyles, Level__default.INFO, {
+    this.timeEnd(time, message, metadata, metadataStyles, nightingaleLevels.Level.INFO, {
       symbol: '✔',
       styles: ['green', 'bold']
     });
@@ -491,7 +490,7 @@ var Logger = /*#__PURE__*/function () {
       functionName: fn.name
     });
 
-    this.log('enter', extendedMetadata, Level__default.TRACE, {
+    this.log('enter', extendedMetadata, nightingaleLevels.Level.TRACE, {
       metadataStyles: metadataStyles
     });
   }
@@ -516,7 +515,7 @@ var Logger = /*#__PURE__*/function () {
       functionName: fn.name
     });
 
-    this.log('exit', extendedMetadata, Level__default.TRACE, {
+    this.log('exit', extendedMetadata, nightingaleLevels.Level.TRACE, {
       metadataStyles: metadataStyles
     });
   }
@@ -561,7 +560,7 @@ var Logger = /*#__PURE__*/function () {
   return Logger;
 }();
 
-exports.Level = Level__default;
+exports.Level = nightingaleLevels.Level;
 exports.Logger = Logger;
-exports.default = Logger;
+exports['default'] = Logger;
 //# sourceMappingURL=index-browser-dev.cjs.js.map

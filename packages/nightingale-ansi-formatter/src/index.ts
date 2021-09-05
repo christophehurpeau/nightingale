@@ -50,6 +50,7 @@ export function style(styles: Styles, string: string): string {
     return string;
   }
 
+  // eslint-disable-next-line unicorn/no-array-reduce
   return styles.reduce((string: string, styleName: string) => {
     const style: CodePair | undefined = ansiStyles[styleName];
 

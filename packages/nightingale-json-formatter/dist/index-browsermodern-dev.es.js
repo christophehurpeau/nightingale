@@ -39,5 +39,5 @@ function format(record) {
   });
 }
 
-export default format;
+export { format as default };
 //# sourceMappingURL=index-browsermodern-dev.es.js.map

@@ -1,4 +1,4 @@
-import Level from 'nightingale-levels';
+import { Level } from 'nightingale-levels';
 import format, { style } from '.';
 
 test('style: blue bold color', () => {

@@ -3,26 +3,25 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 const request = require('request');
-const Level = require('nightingale-levels');
+const nightingaleLevels = require('nightingale-levels');
 const markdownFormatter = require('nightingale-markdown-formatter');
 const rawFormatter = require('nightingale-raw-formatter');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e['default'] : e; }
 
-const Level__default = /*#__PURE__*/_interopDefaultLegacy(Level);
 const markdownFormatter__default = /*#__PURE__*/_interopDefaultLegacy(markdownFormatter);
 const rawFormatter__default = /*#__PURE__*/_interopDefaultLegacy(rawFormatter);
 
 /* eslint-disable camelcase */
 const levelToSlackColor = {
-  [Level__default.TRACE]: '#808080',
-  [Level__default.DEBUG]: '#808080',
-  [Level__default.INFO]: '#808080',
-  [Level__default.WARN]: 'warning',
-  [Level__default.ERROR]: 'danger',
-  [Level__default.CRITICAL]: 'danger',
-  [Level__default.FATAL]: 'danger',
-  [Level__default.EMERGENCY]: 'danger'
+  [nightingaleLevels.Level.TRACE]: '#808080',
+  [nightingaleLevels.Level.DEBUG]: '#808080',
+  [nightingaleLevels.Level.INFO]: '#808080',
+  [nightingaleLevels.Level.WARN]: 'warning',
+  [nightingaleLevels.Level.ERROR]: 'danger',
+  [nightingaleLevels.Level.CRITICAL]: 'danger',
+  [nightingaleLevels.Level.FATAL]: 'danger',
+  [nightingaleLevels.Level.EMERGENCY]: 'danger'
 };
 function createBody(record, slackConfig) {
   const markdown = markdownFormatter__default(record);
@@ -63,5 +62,5 @@ class SlackHandler {
 
 exports.SlackHandler = SlackHandler;
 exports.createBody = createBody;
-exports.default = SlackHandler;
+exports['default'] = SlackHandler;
 //# sourceMappingURL=index-node12-dev.cjs.js.map

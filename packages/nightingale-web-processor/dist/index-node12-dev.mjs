@@ -12,5 +12,5 @@ function webProcessor(record, context) {
   }
 }
 
-export default webProcessor;
+export { webProcessor as default };
 //# sourceMappingURL=index-node12-dev.mjs.map

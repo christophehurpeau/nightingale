@@ -1,6 +1,6 @@
 import type { addBreadcrumb, captureException, captureMessage } from '@sentry/core';
 import type { User } from '@sentry/types';
-import Level from 'nightingale-levels';
+import { Level } from 'nightingale-levels';
 import type { LogRecord, Handle, Metadata, Handler } from 'nightingale-types';
 export interface MetadataWithError extends Metadata {
     error?: Error;

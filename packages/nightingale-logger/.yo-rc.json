@@ -1,14 +1,14 @@
 {
   "pob": {
-    "project": {
-      "type": "lib"
-    },
     "lib": {
       "testing": {
         "codecov": true,
         "ci": true
       },
       "documentation": false
+    },
+    "project": {
+      "type": "lib"
     }
   }
 }

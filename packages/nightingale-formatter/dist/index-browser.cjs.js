@@ -2,19 +2,18 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var Level = require('nightingale-levels');
+var nightingaleLevels = require('nightingale-levels');
 var _extends = require('@babel/runtime/helpers/esm/extends');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e['default'] : e; }
 
-var Level__default = /*#__PURE__*/_interopDefaultLegacy(Level);
 var _extends__default = /*#__PURE__*/_interopDefaultLegacy(_extends);
 
 var _levelToStyles;
-var levelToStyles = (_levelToStyles = {}, _levelToStyles[Level__default.TRACE] = ['gray'], _levelToStyles[Level__default.DEBUG] = ['gray'], _levelToStyles[Level__default.WARN] = ['yellow'], _levelToStyles[Level__default.ERROR] = ['red', 'bold'], _levelToStyles[Level__default.CRITICAL] = ['red', 'bold'], _levelToStyles[Level__default.FATAL] = ['bgRed', 'white'], _levelToStyles[Level__default.EMERGENCY] = ['bgRed', 'white'], _levelToStyles);
+var levelToStyles = (_levelToStyles = {}, _levelToStyles[nightingaleLevels.Level.TRACE] = ['gray'], _levelToStyles[nightingaleLevels.Level.DEBUG] = ['gray'], _levelToStyles[nightingaleLevels.Level.WARN] = ['yellow'], _levelToStyles[nightingaleLevels.Level.ERROR] = ['red', 'bold'], _levelToStyles[nightingaleLevels.Level.CRITICAL] = ['red', 'bold'], _levelToStyles[nightingaleLevels.Level.FATAL] = ['bgRed', 'white'], _levelToStyles[nightingaleLevels.Level.EMERGENCY] = ['bgRed', 'white'], _levelToStyles);
 
 var _levelToSymbol;
-var levelToSymbol = (_levelToSymbol = {}, _levelToSymbol[Level__default.TRACE] = '•', _levelToSymbol[Level__default.DEBUG] = '•', _levelToSymbol[Level__default.INFO] = '→', _levelToSymbol[Level__default.WARN] = '⚠', _levelToSymbol[Level__default.ERROR] = '✖', _levelToSymbol[Level__default.CRITICAL] = '!', _levelToSymbol[Level__default.FATAL] = '‼', _levelToSymbol[Level__default.EMERGENCY] = '‼', _levelToSymbol);
+var levelToSymbol = (_levelToSymbol = {}, _levelToSymbol[nightingaleLevels.Level.TRACE] = '•', _levelToSymbol[nightingaleLevels.Level.DEBUG] = '•', _levelToSymbol[nightingaleLevels.Level.INFO] = '→', _levelToSymbol[nightingaleLevels.Level.WARN] = '⚠', _levelToSymbol[nightingaleLevels.Level.ERROR] = '✖', _levelToSymbol[nightingaleLevels.Level.CRITICAL] = '!', _levelToSymbol[nightingaleLevels.Level.FATAL] = '‼', _levelToSymbol[nightingaleLevels.Level.EMERGENCY] = '‼', _levelToSymbol);
 
 var styleToHexColor = {
   orange: 'ff5f00',

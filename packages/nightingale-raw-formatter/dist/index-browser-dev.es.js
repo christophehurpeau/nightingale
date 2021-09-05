@@ -12,6 +12,5 @@ function format(record) {
   return formatRecordToString(record, style);
 }
 
-export default format;
-export { style };
+export { format as default, style };
 //# sourceMappingURL=index-browser-dev.es.js.map

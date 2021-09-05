@@ -1,5 +1,5 @@
 import { post } from 'request';
-import Level from 'nightingale-levels';
+import { Level } from 'nightingale-levels';
 import markdownFormatter from 'nightingale-markdown-formatter';
 import rawFormatter from 'nightingale-raw-formatter';
 
@@ -51,6 +51,5 @@ class SlackHandler {
 
 }
 
-export default SlackHandler;
-export { SlackHandler, createBody };
+export { SlackHandler, createBody, SlackHandler as default };
 //# sourceMappingURL=index-node12-dev.mjs.map

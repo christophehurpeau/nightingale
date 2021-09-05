@@ -1,4 +1,4 @@
-import Level from 'nightingale-levels';
+import { Level } from 'nightingale-levels';
 
 /* eslint-disable no-console */
 function consoleOutput(param, record) {
@@ -7,5 +7,5 @@ function consoleOutput(param, record) {
   (_console = console)[record.level >= Level.ERROR ? 'error' : 'log'].apply(_console, param);
 }
 
-export default consoleOutput;
+export { consoleOutput as default };
 //# sourceMappingURL=index-browser-dev.es.js.map

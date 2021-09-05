@@ -111,10 +111,8 @@ if (global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
     key: string,
     level: number,
   ): ComputedConfigForKey => {
-    const {
-      handlers,
-      processors,
-    }: ComputedConfigForKey = global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key);
+    const { handlers, processors }: ComputedConfigForKey =
+      global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key);
 
     return {
       handlers: handlers.filter(

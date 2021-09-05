@@ -1,12 +1,12 @@
 {
   "pob": {
-    "project": {
-      "type": "lib"
-    },
     "lib": {
       "documentation": false,
       "testing": false,
       "examples": true
+    },
+    "project": {
+      "type": "lib"
     }
   }
 }

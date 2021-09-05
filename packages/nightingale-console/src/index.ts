@@ -1,9 +1,9 @@
 import { POB_TARGET } from 'pob-babel';
 import formatterANSI from 'nightingale-ansi-formatter';
 import consoleOutput from 'nightingale-console-output';
-import createFindDebugLevel from 'nightingale-debug';
+import { createFindDebugLevel } from 'nightingale-debug';
 import formatterJSON from 'nightingale-json-formatter';
-import Level from 'nightingale-levels';
+import { Level } from 'nightingale-levels';
 import type {
   IsHandling,
   Handle,
@@ -24,7 +24,7 @@ const createHandle = (
   output = consoleOutput,
 ): Handle => {
   return <T extends Metadata>(record: LogRecord<T>): void => {
-    return output(formatter(record), record);
+    output(formatter(record), record);
   };
 };
 const findDebugLevel = createFindDebugLevel(process.env.DEBUG);

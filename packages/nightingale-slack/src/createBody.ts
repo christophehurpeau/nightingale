@@ -1,5 +1,5 @@
 /* eslint-disable camelcase */
-import Level from 'nightingale-levels';
+import { Level } from 'nightingale-levels';
 import markdownFormatter from 'nightingale-markdown-formatter';
 import rawFormatter from 'nightingale-raw-formatter';
 import type { LogRecord, Metadata } from 'nightingale-types';

@@ -1,4 +1,4 @@
-import Level from 'nightingale-levels';
+import { Level } from 'nightingale-levels';
 
 /* eslint-disable complexity */
 const specialRegexpChars = /[$()+.?[\\\]^{|}]/;
@@ -86,6 +86,5 @@ function createFindDebugLevel(debugValue) {
   };
 }
 
-export default createFindDebugLevel;
-export { createFindDebugLevel };
+export { createFindDebugLevel, createFindDebugLevel as default };
 //# sourceMappingURL=index-browsermodern.es.js.map

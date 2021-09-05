@@ -7,7 +7,7 @@ import type {
 import * as SentryNode from '@sentry/node';
 import type { User } from '@sentry/types';
 import { Severity } from '@sentry/types';
-import Level from 'nightingale-levels';
+import { Level } from 'nightingale-levels';
 import type { LogRecord, Handle, Metadata, Handler } from 'nightingale-types';
 
 const mapToSentryLevel: Record<Level, Severity> = {
@@ -101,7 +101,8 @@ const createHandler = <S extends SentryRequiredMethods>(
 };
 
 export default class SentryHandler<S extends SentryRequiredMethods>
-  implements Handler {
+  implements Handler
+{
   minLevel: Level;
 
   handle: Handle;

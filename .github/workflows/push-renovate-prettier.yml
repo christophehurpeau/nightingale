@@ -26,20 +26,20 @@ jobs:
             v2-dependencies--${{ matrix.node-version }}-
 
       - name: Check Dependencies
-        run: yarn install --immutable
+        run: yarn install --immutable --immutable-cache
 
       - name: Run Prettier
         run: yarn prettier --write .
 
-      - name: Check for modified files
+      - name: Check for added or modified files
         id: git-check-modified
-        run: echo ::set-output name=modified::$(if git diff-index --quiet HEAD --; then echo "false"; else echo "true"; fi)
+        run: echo ::set-output name=modified::$(if [[ -z $(git status -s) ]]; then echo "false"; else echo "true"; fi)
 
       - name: Commit report
         if: steps.git-check-modified.outputs.modified == 'true'
         run: |
           git add .
-          git config --global user.name 'Christophe Hurpeau'
-          git config --global user.email 'christophehurpeau@users.noreply.github.com'
-          git commit -m "style: apply prettier changes"
+          git -c user.name="Christophe Hurpeau" \
+            -c user.email="christophehurpeau@users.noreply.github.com" \
+            commit -m "chore: update pob root" --author="github-actions[bot] <actions@github.com>"
           git push

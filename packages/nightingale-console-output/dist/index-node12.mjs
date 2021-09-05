@@ -1,4 +1,4 @@
-import Level from 'nightingale-levels';
+import { Level } from 'nightingale-levels';
 
 /* eslint-disable no-console */
 function consoleOutput(param, record) {
@@ -8,5 +8,5 @@ function consoleOutput(param, record) {
   }
 }
 
-export default consoleOutput;
+export { consoleOutput as default };
 //# sourceMappingURL=index-node12.mjs.map

@@ -1,6 +1,6 @@
 import _extends from '@babel/runtime/helpers/esm/extends';
 import { Severity } from '@sentry/types';
-import Level from 'nightingale-levels';
+import { Level } from 'nightingale-levels';
 
 var _mapToSentryLevel;
 var mapToSentryLevel = (_mapToSentryLevel = {}, _mapToSentryLevel[Level.TRACE] = Severity.Debug, _mapToSentryLevel[Level.DEBUG] = Severity.Debug, _mapToSentryLevel[Level.INFO] = Severity.Info, _mapToSentryLevel[Level.NOTICE] = Severity.Log, _mapToSentryLevel[Level.WARNING] = Severity.Warning, _mapToSentryLevel[Level.ERROR] = Severity.Error, _mapToSentryLevel[Level.CRITICAL] = Severity.Critical, _mapToSentryLevel[Level.FATAL] = Severity.Fatal, _mapToSentryLevel[Level.EMERGENCY] = Severity.Critical, _mapToSentryLevel[Level.ALL] = Severity.Error, _mapToSentryLevel);
@@ -72,5 +72,5 @@ var SentryHandler = function SentryHandler(Sentry, minLevel, options) {
   this.handle = createHandler(Sentry, options);
 };
 
-export default SentryHandler;
+export { SentryHandler as default };
 //# sourceMappingURL=index-browser-dev.es.js.map

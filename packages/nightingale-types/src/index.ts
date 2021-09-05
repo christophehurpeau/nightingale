@@ -1,4 +1,4 @@
-import type Level from 'nightingale-levels';
+import type { Level } from 'nightingale-levels';
 
 export type { Level };
 

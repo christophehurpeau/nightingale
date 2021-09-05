@@ -7,7 +7,8 @@ var nightingaleFormatter = require('nightingale-formatter');
 function style(styles, string) {
   if (!styles || styles.length === 0 || !string) {
     return string;
-  }
+  } // eslint-disable-next-line unicorn/no-array-reduce
+
 
   return styles.reduce(function (string, styleName) {
     switch (styleName) {
@@ -28,6 +29,6 @@ function format(record) {
   return nightingaleFormatter.formatRecordToString(record, style);
 }
 
-exports.default = format;
+exports['default'] = format;
 exports.style = style;
 //# sourceMappingURL=index-browser.cjs.js.map

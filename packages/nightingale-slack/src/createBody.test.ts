@@ -1,5 +1,5 @@
 /* eslint-disable camelcase */
-import Level from 'nightingale-levels';
+import { Level } from 'nightingale-levels';
 import createBody from './createBody';
 
 const webhookUrl = 'webhookUrl';

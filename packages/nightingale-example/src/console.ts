@@ -1,4 +1,4 @@
-import Logger, { configure, Level } from 'nightingale';
+import { Logger, configure, Level } from 'nightingale';
 import ConsoleHandler from 'nightingale-console';
 
 const logger = new Logger('console');
@@ -31,4 +31,6 @@ function testWrapWithMetadata(): void {
 testWrapWithMetadata();
 
 const timeStarted = logger.time();
-setTimeout(() => logger.timeEnd(timeStarted, 'time'), 2000);
+setTimeout(() => {
+  logger.timeEnd(timeStarted, 'time');
+}, 2000);

@@ -1,4 +1,4 @@
-import Level from 'nightingale-levels';
+import { Level } from 'nightingale-levels';
 import { createFindDebugLevel } from '.';
 
 describe('created with undefined', () => {

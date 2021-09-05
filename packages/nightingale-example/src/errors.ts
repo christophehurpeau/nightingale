@@ -1,4 +1,4 @@
-import Logger, { configure, Level } from 'nightingale';
+import { Logger, configure, Level } from 'nightingale';
 import ConsoleHandler from 'nightingale-console';
 
 configure([

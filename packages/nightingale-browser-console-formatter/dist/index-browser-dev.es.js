@@ -33,6 +33,5 @@ function createBrowserConsoleFormatter(theme) {
 
 var index = createBrowserConsoleFormatter('light');
 
-export default index;
-export { createBrowserConsoleFormatter, style };
+export { createBrowserConsoleFormatter, index as default, style };
 //# sourceMappingURL=index-browser-dev.es.js.map

@@ -1,5 +1,5 @@
 import { Severity } from '@sentry/types';
-import Level from 'nightingale-levels';
+import { Level } from 'nightingale-levels';
 
 const mapToSentryLevel = {
   [Level.TRACE]: Severity.Debug,
@@ -71,5 +71,5 @@ class SentryHandler {
 
 }
 
-export default SentryHandler;
+export { SentryHandler as default };
 //# sourceMappingURL=index-browsermodern.es.js.map

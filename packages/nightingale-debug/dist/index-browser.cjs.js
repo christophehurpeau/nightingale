@@ -2,11 +2,7 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var Level = require('nightingale-levels');
-
-function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e['default'] : e; }
-
-var Level__default = /*#__PURE__*/_interopDefaultLegacy(Level);
+var nightingaleLevels = require('nightingale-levels');
 
 /* eslint-disable complexity */
 var specialRegexpChars = /[$()+.?[\\\]^{|}]/;
@@ -80,13 +76,13 @@ function createFindDebugLevel(debugValue) {
   if (isWildcard) {
     if (skips.length === 0) {
       return function () {
-        return Level__default.ALL;
+        return nightingaleLevels.Level.ALL;
       };
     } else {
       return function (minLevel, key) {
         return skips.some(function (skip) {
           return skip(key);
-        }) ? minLevel : Level__default.ALL;
+        }) ? minLevel : nightingaleLevels.Level.ALL;
       };
     }
   }
@@ -98,7 +94,7 @@ function createFindDebugLevel(debugValue) {
   }
 
   return function (minLevel, key) {
-    if (minLevel === Level__default.ALL || !key) {
+    if (minLevel === nightingaleLevels.Level.ALL || !key) {
       return minLevel;
     }
 
@@ -107,7 +103,7 @@ function createFindDebugLevel(debugValue) {
     })) {
       return skips.some(function (skip) {
         return skip(key);
-      }) ? minLevel : Level__default.ALL;
+      }) ? minLevel : nightingaleLevels.Level.ALL;
     }
 
     return minLevel;
@@ -115,5 +111,5 @@ function createFindDebugLevel(debugValue) {
 }
 
 exports.createFindDebugLevel = createFindDebugLevel;
-exports.default = createFindDebugLevel;
+exports['default'] = createFindDebugLevel;
 //# sourceMappingURL=index-browser.cjs.js.map

@@ -7,11 +7,11 @@
     },
     "monorepo": {
       "ci": true,
-      "eslint": true,
       "testing": true,
       "codecov": true,
       "documentation": true,
       "typescript": true,
+      "eslint": true,
       "packageNames": [
         "nightingale-level-names",
         "nightingale-levels",
@@ -46,7 +46,8 @@
     },
     "project": {
       "type": "lib",
-      "yarn2": true
+      "yarnNodeLinker": "node-modules",
+      "packageManager": "yarn"
     }
   }
 }

@@ -2,32 +2,28 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const Level = require('nightingale-levels');
-
-function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e['default'] : e; }
-
-const Level__default = /*#__PURE__*/_interopDefaultLegacy(Level);
+const nightingaleLevels = require('nightingale-levels');
 
 const levelToStyles = {
-  [Level__default.TRACE]: ['gray'],
-  [Level__default.DEBUG]: ['gray'],
+  [nightingaleLevels.Level.TRACE]: ['gray'],
+  [nightingaleLevels.Level.DEBUG]: ['gray'],
   // [Level.INFO]: ['gray'],
-  [Level__default.WARN]: ['yellow'],
-  [Level__default.ERROR]: ['red', 'bold'],
-  [Level__default.CRITICAL]: ['red', 'bold'],
-  [Level__default.FATAL]: ['bgRed', 'white'],
-  [Level__default.EMERGENCY]: ['bgRed', 'white']
+  [nightingaleLevels.Level.WARN]: ['yellow'],
+  [nightingaleLevels.Level.ERROR]: ['red', 'bold'],
+  [nightingaleLevels.Level.CRITICAL]: ['red', 'bold'],
+  [nightingaleLevels.Level.FATAL]: ['bgRed', 'white'],
+  [nightingaleLevels.Level.EMERGENCY]: ['bgRed', 'white']
 };
 
 const levelToSymbol = {
-  [Level__default.TRACE]: '•',
-  [Level__default.DEBUG]: '•',
-  [Level__default.INFO]: '→',
-  [Level__default.WARN]: '⚠',
-  [Level__default.ERROR]: '✖',
-  [Level__default.CRITICAL]: '!',
-  [Level__default.FATAL]: '‼',
-  [Level__default.EMERGENCY]: '‼'
+  [nightingaleLevels.Level.TRACE]: '•',
+  [nightingaleLevels.Level.DEBUG]: '•',
+  [nightingaleLevels.Level.INFO]: '→',
+  [nightingaleLevels.Level.WARN]: '⚠',
+  [nightingaleLevels.Level.ERROR]: '✖',
+  [nightingaleLevels.Level.CRITICAL]: '!',
+  [nightingaleLevels.Level.FATAL]: '‼',
+  [nightingaleLevels.Level.EMERGENCY]: '‼'
 };
 
 const styleToHexColor = {

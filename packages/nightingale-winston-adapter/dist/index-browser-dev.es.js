@@ -22,6 +22,5 @@ var WinstonAdapterHandler = function WinstonAdapterHandler(winstonTransport, min
   };
 };
 
-export default WinstonAdapterHandler;
-export { WinstonAdapterHandler };
+export { WinstonAdapterHandler, WinstonAdapterHandler as default };
 //# sourceMappingURL=index-browser-dev.es.js.map

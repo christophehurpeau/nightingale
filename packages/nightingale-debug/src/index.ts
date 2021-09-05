@@ -1,14 +1,15 @@
 /* eslint-disable complexity */
-import Level from 'nightingale-levels';
+import { Level } from 'nightingale-levels';
 
 const specialRegexpChars = /[$()+.?[\\\]^{|}]/;
 
 type TestFunction = (string: string) => boolean;
 export type DebugValueType = string | RegExp | string[];
 
-const createTestFunctionFromRegexp = (regexp: RegExp): TestFunction => (
-  string: string,
-) => regexp.test(string);
+const createTestFunctionFromRegexp =
+  (regexp: RegExp): TestFunction =>
+  (string: string) =>
+    regexp.test(string);
 
 const createTestFunctionFromRegexpString = (value: string): TestFunction => {
   if (!value.endsWith('/')) throw new Error('Invalid RegExp DEBUG value');

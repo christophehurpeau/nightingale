@@ -1,4 +1,4 @@
-import Level from 'nightingale-levels';
+import { Level } from 'nightingale-levels';
 import _extends from '@babel/runtime/helpers/esm/extends';
 
 var _levelToStyles;

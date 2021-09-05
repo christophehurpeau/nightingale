@@ -42,7 +42,8 @@ var ansiStyles = {
 function style(styles, string) {
   if (!styles || styles.length === 0 || !string) {
     return string;
-  }
+  } // eslint-disable-next-line unicorn/no-array-reduce
+
 
   return styles.reduce(function (string, styleName) {
     var style = ansiStyles[styleName];
@@ -63,6 +64,6 @@ function ansiFormat(record) {
   return nightingaleFormatter.formatRecordToString(record, style);
 }
 
-exports.default = ansiFormat;
+exports['default'] = ansiFormat;
 exports.style = style;
 //# sourceMappingURL=index-browser.cjs.js.map

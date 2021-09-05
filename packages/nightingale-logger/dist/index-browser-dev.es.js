@@ -1,6 +1,6 @@
 import _extends from '@babel/runtime/helpers/esm/extends';
-import Level from 'nightingale-levels';
-export { default as Level } from 'nightingale-levels';
+import { Level } from 'nightingale-levels';
+export { Level } from 'nightingale-levels';
 
 if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER) {
   global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = function () {
@@ -553,6 +553,5 @@ var Logger = /*#__PURE__*/function () {
   return Logger;
 }();
 
-export default Logger;
-export { Logger };
+export { Logger, Logger as default };
 //# sourceMappingURL=index-browser-dev.es.js.map

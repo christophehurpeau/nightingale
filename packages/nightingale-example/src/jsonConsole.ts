@@ -1,4 +1,4 @@
-import Logger, { configure, Level } from 'nightingale';
+import { Logger, configure, Level } from 'nightingale';
 import consoleOutput from 'nightingale-console-output';
 import jsonFormatter from 'nightingale-json-formatter';
 import type { Handler, LogRecord, Metadata } from 'nightingale-types';
@@ -26,6 +26,8 @@ const logger = new Logger('app');
 logger.log('test');
 
 const timeStarted = logger.time();
-setTimeout(() => logger.timeEnd(timeStarted, 'time measured'), 2000);
+setTimeout(() => {
+  logger.timeEnd(timeStarted, 'time measured');
+}, 2000);
 
 logger.success('Listening', { port: 3000 }, { port: ['yellow'] });

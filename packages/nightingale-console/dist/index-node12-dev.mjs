@@ -1,14 +1,14 @@
 import formatterANSI from 'nightingale-ansi-formatter';
 import consoleOutput from 'nightingale-console-output';
-import createFindDebugLevel from 'nightingale-debug';
+import { createFindDebugLevel } from 'nightingale-debug';
 import formatterJSON from 'nightingale-json-formatter';
-import Level from 'nightingale-levels';
+import { Level } from 'nightingale-levels';
 
 const defaultFormatter = !process.stdout.isTTY && process.env.NIGHTINGALE_CONSOLE_FORMATTER !== 'ansi' ? formatterJSON : formatterANSI;
 
 const createHandle = (formatter = defaultFormatter, output = consoleOutput) => {
   return record => {
-    return output(formatter(record), record);
+    output(formatter(record), record);
   };
 };
 
@@ -25,6 +25,5 @@ class ConsoleHandler {
 
 }
 
-export default ConsoleHandler;
-export { ConsoleHandler };
+export { ConsoleHandler, ConsoleHandler as default };
 //# sourceMappingURL=index-node12-dev.mjs.map

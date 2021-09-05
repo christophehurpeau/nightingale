@@ -246,7 +246,7 @@ const internalFormatIterator = <Key>(
         value,
         styleFn,
         key && objectStyles
-          ? objectStyles[(key as unknown) as string]
+          ? objectStyles[key as unknown as string]
           : undefined,
         internalFormatParams,
       );

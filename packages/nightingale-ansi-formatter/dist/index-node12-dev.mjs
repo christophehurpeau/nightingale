@@ -1,5 +1,5 @@
 import ansi from 'ansi-styles';
-import { formatRecordToString, styleToHexColor } from 'nightingale-formatter';
+import { styleToHexColor, formatRecordToString } from 'nightingale-formatter';
 
 const ansiStyles = {
   black: ansi.black,
@@ -34,7 +34,8 @@ const ansiStyles = {
 function style(styles, string) {
   if (!styles || styles.length === 0 || !string) {
     return string;
-  }
+  } // eslint-disable-next-line unicorn/no-array-reduce
+
 
   return styles.reduce((string, styleName) => {
     const style = ansiStyles[styleName];
@@ -55,6 +56,5 @@ function ansiFormat(record) {
   return formatRecordToString(record, style);
 }
 
-export default ansiFormat;
-export { style };
+export { ansiFormat as default, style };
 //# sourceMappingURL=index-node12-dev.mjs.map

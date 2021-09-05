@@ -11,18 +11,18 @@ import createBody from './createBody';
 
 export { createBody };
 
-const createHandler = (slackConfig: SlackConfig) => <T extends Metadata>(
-  record: LogRecord<T>,
-) => {
-  const body = createBody(record, slackConfig);
+const createHandler =
+  (slackConfig: SlackConfig) =>
+  <T extends Metadata>(record: LogRecord<T>) => {
+    const body = createBody(record, slackConfig);
 
-  post({ url: slackConfig.webhookUrl, body, json: true }).on(
-    'error',
-    (err2: Error) => {
-      console.error(err2.stack);
-    },
-  );
-};
+    post({ url: slackConfig.webhookUrl, body, json: true }).on(
+      'error',
+      (err2: Error) => {
+        console.error(err2.stack);
+      },
+    );
+  };
 
 export class SlackHandler implements Handler {
   minLevel: Level;
