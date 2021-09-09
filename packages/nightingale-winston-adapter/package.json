@@ -111,7 +111,7 @@
   },
   "devDependencies": {
     "@babel/core": "7.15.5",
-    "@babel/preset-env": "7.15.4",
+    "@babel/preset-env": "7.15.6",
     "babel-preset-latest-node": "5.5.1",
     "babel-preset-modern-browsers": "15.0.2",
     "pob-babel": "28.2.2",
