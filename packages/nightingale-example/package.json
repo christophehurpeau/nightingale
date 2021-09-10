@@ -128,6 +128,6 @@
     "babel-preset-latest-node": "5.5.1",
     "pob-babel": "28.2.2",
     "rollup": "2.56.3",
-    "typescript": "4.3.5"
+    "typescript": "4.4.3"
   }
 }
