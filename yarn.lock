@@ -5109,7 +5109,29 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-unicorn@npm:34.0.1, eslint-plugin-unicorn@npm:^34.0.1":
+"eslint-plugin-unicorn@npm:36.0.0":
+  version: 36.0.0
+  resolution: "eslint-plugin-unicorn@npm:36.0.0"
+  dependencies:
+    "@babel/helper-validator-identifier": ^7.14.9
+    ci-info: ^3.2.0
+    clean-regexp: ^1.0.0
+    eslint-template-visitor: ^2.3.2
+    eslint-utils: ^3.0.0
+    is-builtin-module: ^3.1.0
+    lodash: ^4.17.21
+    pluralize: ^8.0.0
+    read-pkg-up: ^7.0.1
+    regexp-tree: ^0.1.23
+    safe-regex: ^2.1.1
+    semver: ^7.3.5
+  peerDependencies:
+    eslint: ">=7.32.0"
+  checksum: 8c1051036b65509228639bdf7eafaa034982985071a817a3b275f58b68ad525e8741eca2ba0a2b56cd8b5e82b9a8911bd1f65456659cdef267e9e230d2edd1e3
+  languageName: node
+  linkType: hard
+
+"eslint-plugin-unicorn@npm:^34.0.1":
   version: 34.0.1
   resolution: "eslint-plugin-unicorn@npm:34.0.1"
   dependencies:
@@ -8351,7 +8373,7 @@ __metadata:
     eslint-import-resolver-node: 0.3.6
     eslint-plugin-import: 2.24.2
     eslint-plugin-node: 11.1.0
-    eslint-plugin-unicorn: 34.0.1
+    eslint-plugin-unicorn: 36.0.0
     prettier: 2.4.1
     typedoc: 0.21.9
     typescript: 4.4.3
