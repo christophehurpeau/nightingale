@@ -88,8 +88,8 @@
     "nightingale-types": "^11.7.1"
   },
   "devDependencies": {
-    "@babel/core": "7.15.5",
-    "@babel/preset-env": "7.15.6",
+    "@babel/core": "7.15.8",
+    "@babel/preset-env": "7.15.8",
     "babel-preset-modern-browsers": "15.0.2",
     "pob-babel": "28.2.2",
     "rollup": "2.58.0",
