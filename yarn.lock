@@ -5113,7 +5113,32 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-unicorn@npm:34.0.1, eslint-plugin-unicorn@npm:^34.0.1":
+"eslint-plugin-unicorn@npm:37.0.1":
+  version: 37.0.1
+  resolution: "eslint-plugin-unicorn@npm:37.0.1"
+  dependencies:
+    "@babel/helper-validator-identifier": ^7.14.9
+    ci-info: ^3.2.0
+    clean-regexp: ^1.0.0
+    eslint-template-visitor: ^2.3.2
+    eslint-utils: ^3.0.0
+    esquery: ^1.4.0
+    indent-string: 4
+    is-builtin-module: ^3.1.0
+    lodash: ^4.17.21
+    pluralize: ^8.0.0
+    read-pkg-up: ^7.0.1
+    regexp-tree: ^0.1.23
+    safe-regex: ^2.1.1
+    semver: ^7.3.5
+    strip-indent: ^3.0.0
+  peerDependencies:
+    eslint: ">=7.32.0"
+  checksum: 9c74b642150c765919fc925808791910a3e8ce642db4a5a38aa4c04e8b4899b8aed5fab4ae73947cf0ad0b4a783161e2389c9148ed30c73469a757ba8372c1cd
+  languageName: node
+  linkType: hard
+
+"eslint-plugin-unicorn@npm:^34.0.1":
   version: 34.0.1
   resolution: "eslint-plugin-unicorn@npm:34.0.1"
   dependencies:
@@ -6159,19 +6184,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"indent-string@npm:4, indent-string@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "indent-string@npm:4.0.0"
+  checksum: 824cfb9929d031dabf059bebfe08cf3137365e112019086ed3dcff6a0a7b698cb80cf67ccccde0e25b9e2d7527aa6cc1fed1ac490c752162496caba3e6699612
+  languageName: node
+  linkType: hard
+
 "indent-string@npm:^2.1.0":
   version: 2.1.0
   resolution: "indent-string@npm:2.1.0"
   dependencies:
     repeating: ^2.0.0
   checksum: 2fe7124311435f4d7a98f0a314d8259a4ec47ecb221110a58e2e2073e5f75c8d2b4f775f2ed199598fbe20638917e57423096539455ca8bff8eab113c9bee12c
-  languageName: node
-  linkType: hard
-
-"indent-string@npm:^4.0.0":
-  version: 4.0.0
-  resolution: "indent-string@npm:4.0.0"
-  checksum: 824cfb9929d031dabf059bebfe08cf3137365e112019086ed3dcff6a0a7b698cb80cf67ccccde0e25b9e2d7527aa6cc1fed1ac490c752162496caba3e6699612
   languageName: node
   linkType: hard
 
@@ -8410,7 +8435,7 @@ __metadata:
     eslint-import-resolver-node: 0.3.6
     eslint-plugin-import: 2.25.2
     eslint-plugin-node: 11.1.0
-    eslint-plugin-unicorn: 34.0.1
+    eslint-plugin-unicorn: 37.0.1
     prettier: 2.4.1
     typedoc: 0.22.4
     typescript: 4.4.4

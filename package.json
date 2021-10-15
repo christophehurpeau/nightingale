@@ -63,7 +63,7 @@
     "eslint-import-resolver-node": "0.3.6",
     "eslint-plugin-import": "2.25.2",
     "eslint-plugin-node": "11.1.0",
-    "eslint-plugin-unicorn": "34.0.1",
+    "eslint-plugin-unicorn": "37.0.1",
     "prettier": "2.4.1",
     "typedoc": "0.22.4",
     "typescript": "4.4.4"
