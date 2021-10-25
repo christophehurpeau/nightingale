@@ -6,7 +6,7 @@ var _extends = require('@babel/runtime/helpers/esm/extends');
 var types = require('@sentry/types');
 var nightingaleLevels = require('nightingale-levels');
 
-function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e['default'] : e; }
+function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e["default"] : e; }
 
 var _extends__default = /*#__PURE__*/_interopDefaultLegacy(_extends);
 
@@ -80,5 +80,5 @@ var SentryHandler = function SentryHandler(Sentry, minLevel, options) {
   this.handle = createHandler(Sentry, options);
 };
 
-exports['default'] = SentryHandler;
+exports["default"] = SentryHandler;
 //# sourceMappingURL=index-browser.cjs.js.map

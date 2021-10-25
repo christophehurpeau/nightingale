@@ -5,7 +5,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 var _extends = require('@babel/runtime/helpers/esm/extends');
 var nightingaleLevels = require('nightingale-levels');
 
-function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e['default'] : e; }
+function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e["default"] : e; }
 
 var _extends__default = /*#__PURE__*/_interopDefaultLegacy(_extends);
 
@@ -562,5 +562,5 @@ var Logger = /*#__PURE__*/function () {
 
 exports.Level = nightingaleLevels.Level;
 exports.Logger = Logger;
-exports['default'] = Logger;
+exports["default"] = Logger;
 //# sourceMappingURL=index-browser-dev.cjs.js.map

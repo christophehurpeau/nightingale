@@ -16,5 +16,5 @@ function webProcessor(record, context) {
   }
 }
 
-exports['default'] = webProcessor;
+exports["default"] = webProcessor;
 //# sourceMappingURL=index-node12.cjs.js.map

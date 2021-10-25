@@ -11,12 +11,12 @@
   "engines": {
     "node": ">=12.10.0"
   },
-  "packageManager": "yarn@3.0.2",
+  "packageManager": "yarn@3.1.0",
   "workspaces": [
     "packages/*"
   ],
   "scripts": {
-    "build": "yarn workspaces foreach -Av run build && yarn run build:definitions && yarn run generate:docs",
+    "build": "yarn workspaces foreach -Avp --topological-dev run build && yarn run build:definitions && yarn run generate:docs",
     "build:definitions": "tsc -b tsconfig.build.json",
     "checks": "node scripts/check-packages.js",
     "generate:api": "typedoc --tsconfig tsconfig.doc.json",
@@ -52,14 +52,14 @@
   "devDependencies": {
     "@pob/commitlint-config": "3.1.1",
     "@pob/eslint-config": "45.1.0",
-    "@pob/eslint-config-typescript": "45.0.3",
+    "@pob/eslint-config-typescript": "45.1.0",
     "@pob/lerna-light": "4.1.0",
-    "@pob/root": "5.4.2",
+    "@pob/root": "5.5.0",
     "@types/node": "14.17.31",
     "check-package-dependencies": "2.0.2",
     "eslint": "7.32.0",
     "prettier": "2.4.1",
-    "typedoc": "0.22.4",
+    "typedoc": "0.22.6",
     "typescript": "4.4.4"
   }
 }

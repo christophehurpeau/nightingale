@@ -91,5 +91,5 @@ function createFindDebugLevel(debugValue) {
 }
 
 exports.createFindDebugLevel = createFindDebugLevel;
-exports['default'] = createFindDebugLevel;
+exports["default"] = createFindDebugLevel;
 //# sourceMappingURL=index-node12.cjs.js.map

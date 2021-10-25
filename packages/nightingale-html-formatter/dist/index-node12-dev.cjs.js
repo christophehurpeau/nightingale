@@ -20,6 +20,6 @@ function format(record) {
   return nightingaleFormatter.formatRecordToString(record, style);
 }
 
-exports['default'] = format;
+exports["default"] = format;
 exports.style = style;
 //# sourceMappingURL=index-node12-dev.cjs.js.map

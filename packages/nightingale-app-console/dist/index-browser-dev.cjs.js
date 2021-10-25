@@ -8,8 +8,7 @@ var nightingaleBrowserConsole = require('nightingale-browser-console');
 var ConsoleHandler = nightingaleBrowserConsole.BrowserConsoleHandler;
 var logger = new nightingale.Logger('app');
 var appLogger = logger;
-var appMinLevel = // eslint-disable-next-line unicorn/no-nested-ternary
-nightingale.Level.DEBUG;
+var appMinLevel = nightingale.Level.DEBUG;
 var libMinLevel = nightingale.Level.INFO;
 nightingale.configure(appMinLevel !== libMinLevel ? [{
   pattern: /^app(:|$)/,

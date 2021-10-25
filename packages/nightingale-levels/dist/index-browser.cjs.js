@@ -40,5 +40,5 @@ exports.Level = void 0;
 
 var Level = exports.Level;
 
-exports['default'] = Level;
+exports["default"] = Level;
 //# sourceMappingURL=index-browser.cjs.js.map

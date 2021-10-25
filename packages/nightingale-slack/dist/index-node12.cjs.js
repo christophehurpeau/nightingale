@@ -7,7 +7,7 @@ const nightingaleLevels = require('nightingale-levels');
 const markdownFormatter = require('nightingale-markdown-formatter');
 const rawFormatter = require('nightingale-raw-formatter');
 
-function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e['default'] : e; }
+function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e["default"] : e; }
 
 const markdownFormatter__default = /*#__PURE__*/_interopDefaultLegacy(markdownFormatter);
 const rawFormatter__default = /*#__PURE__*/_interopDefaultLegacy(rawFormatter);
@@ -62,5 +62,5 @@ class SlackHandler {
 
 exports.SlackHandler = SlackHandler;
 exports.createBody = createBody;
-exports['default'] = SlackHandler;
+exports["default"] = SlackHandler;
 //# sourceMappingURL=index-node12.cjs.js.map

@@ -4,7 +4,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 const formatterRaw = require('nightingale-raw-formatter');
 
-function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e['default'] : e; }
+function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e["default"] : e; }
 
 const formatterRaw__default = /*#__PURE__*/_interopDefaultLegacy(formatterRaw);
 
@@ -26,5 +26,5 @@ class StringHandler {
 }
 
 exports.StringHandler = StringHandler;
-exports['default'] = StringHandler;
+exports["default"] = StringHandler;
 //# sourceMappingURL=index-node12-dev.cjs.js.map

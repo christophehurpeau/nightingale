@@ -5,8 +5,7 @@ import { BrowserConsoleHandler } from 'nightingale-browser-console';
 const ConsoleHandler = BrowserConsoleHandler;
 const logger = new Logger('app');
 const appLogger = logger;
-const appMinLevel = // eslint-disable-next-line unicorn/no-nested-ternary
-Level.DEBUG;
+const appMinLevel = Level.DEBUG;
 const libMinLevel = Level.INFO;
 configure(appMinLevel !== libMinLevel ? [{
   pattern: /^app(:|$)/,

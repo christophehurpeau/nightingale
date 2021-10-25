@@ -111,5 +111,5 @@ function createFindDebugLevel(debugValue) {
 }
 
 exports.createFindDebugLevel = createFindDebugLevel;
-exports['default'] = createFindDebugLevel;
+exports["default"] = createFindDebugLevel;
 //# sourceMappingURL=index-browser.cjs.js.map

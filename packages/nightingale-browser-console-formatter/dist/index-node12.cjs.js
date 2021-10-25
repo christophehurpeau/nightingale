@@ -26,6 +26,6 @@ function createBrowserConsoleFormatter(theme = 'light') {
 const index = createBrowserConsoleFormatter('light');
 
 exports.createBrowserConsoleFormatter = createBrowserConsoleFormatter;
-exports['default'] = index;
+exports["default"] = index;
 exports.style = style;
 //# sourceMappingURL=index-node12.cjs.js.map

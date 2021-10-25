@@ -153,7 +153,7 @@ function listenUnhandledErrors(logger) {
 exports.Level = nightingaleLevels.Level;
 exports.levels = nightingaleLevels.Level;
 exports.Logger = nightingaleLogger.Logger;
-exports.default = nightingaleLogger.Logger;
+exports["default"] = nightingaleLogger.Logger;
 exports.addConfig = addConfig;
 exports.configure = configure;
 exports.listenUnhandledErrors = listenUnhandledErrors;

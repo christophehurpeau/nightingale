@@ -8,7 +8,7 @@ const nightingaleDebug = require('nightingale-debug');
 const formatterJSON = require('nightingale-json-formatter');
 const nightingaleLevels = require('nightingale-levels');
 
-function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e['default'] : e; }
+function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e["default"] : e; }
 
 const formatterANSI__default = /*#__PURE__*/_interopDefaultLegacy(formatterANSI);
 const consoleOutput__default = /*#__PURE__*/_interopDefaultLegacy(consoleOutput);
@@ -36,5 +36,5 @@ class ConsoleHandler {
 }
 
 exports.ConsoleHandler = ConsoleHandler;
-exports['default'] = ConsoleHandler;
+exports["default"] = ConsoleHandler;
 //# sourceMappingURL=index-node12-dev.cjs.js.map

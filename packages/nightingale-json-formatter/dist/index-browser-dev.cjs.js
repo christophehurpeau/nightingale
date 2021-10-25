@@ -43,5 +43,5 @@ function format(record) {
   });
 }
 
-exports['default'] = format;
+exports["default"] = format;
 //# sourceMappingURL=index-browser-dev.cjs.js.map

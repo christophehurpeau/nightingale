@@ -12,5 +12,5 @@ function consoleOutput(param, record) {
   }
 }
 
-exports['default'] = consoleOutput;
+exports["default"] = consoleOutput;
 //# sourceMappingURL=index-node12-dev.cjs.js.map

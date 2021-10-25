@@ -31,8 +31,7 @@ const appMinLevel =
   process.env.NIGHTINGALE_APP_MIN_LEVEL !== undefined &&
   process.env.NIGHTINGALE_APP_MIN_LEVEL !== ''
     ? Number(process.env.NIGHTINGALE_APP_MIN_LEVEL)
-    : // eslint-disable-next-line unicorn/no-nested-ternary
-    PRODUCTION
+    : PRODUCTION
     ? Level.INFO
     : Level.DEBUG;
 

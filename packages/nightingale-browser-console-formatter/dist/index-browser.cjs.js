@@ -38,6 +38,6 @@ function createBrowserConsoleFormatter(theme) {
 var index = createBrowserConsoleFormatter('light');
 
 exports.createBrowserConsoleFormatter = createBrowserConsoleFormatter;
-exports['default'] = index;
+exports["default"] = index;
 exports.style = style;
 //# sourceMappingURL=index-browser.cjs.js.map

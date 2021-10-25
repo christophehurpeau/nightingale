@@ -40,5 +40,5 @@ exports.Level = void 0;
 
 const Level = exports.Level;
 
-exports['default'] = Level;
+exports["default"] = Level;
 //# sourceMappingURL=index-node12-dev.cjs.js.map

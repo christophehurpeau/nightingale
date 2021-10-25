@@ -5,7 +5,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 var ansi = require('ansi-styles');
 var nightingaleFormatter = require('nightingale-formatter');
 
-function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e['default'] : e; }
+function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e["default"] : e; }
 
 var ansi__default = /*#__PURE__*/_interopDefaultLegacy(ansi);
 
@@ -64,6 +64,6 @@ function ansiFormat(record) {
   return nightingaleFormatter.formatRecordToString(record, style);
 }
 
-exports['default'] = ansiFormat;
+exports["default"] = ansiFormat;
 exports.style = style;
 //# sourceMappingURL=index-browser.cjs.js.map

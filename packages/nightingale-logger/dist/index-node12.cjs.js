@@ -7,13 +7,13 @@ const nightingaleLevels = require('nightingale-levels');
 
 function _interopNamespace(e) {
   if (e && e.__esModule) return e;
-  var n = Object.create(null);
+  const n = Object.create(null);
   if (e) {
-    Object.keys(e).forEach(function (k) {
+    for (const k in e) {
       n[k] = e[k];
-    });
+    }
   }
-  n['default'] = e;
+  n["default"] = e;
   return n;
 }
 
@@ -565,5 +565,5 @@ class Logger {
 
 exports.Level = nightingaleLevels.Level;
 exports.Logger = Logger;
-exports['default'] = Logger;
+exports["default"] = Logger;
 //# sourceMappingURL=index-node12.cjs.js.map

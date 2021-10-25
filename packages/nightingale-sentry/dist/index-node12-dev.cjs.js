@@ -8,13 +8,13 @@ const nightingaleLevels = require('nightingale-levels');
 
 function _interopNamespace(e) {
   if (e && e.__esModule) return e;
-  var n = Object.create(null);
+  const n = Object.create(null);
   if (e) {
-    Object.keys(e).forEach(function (k) {
+    for (const k in e) {
       n[k] = e[k];
-    });
+    }
   }
-  n['default'] = e;
+  n["default"] = e;
   return n;
 }
 
@@ -99,5 +99,5 @@ class SentryHandler {
 
 }
 
-exports['default'] = SentryHandler;
+exports["default"] = SentryHandler;
 //# sourceMappingURL=index-node12-dev.cjs.js.map

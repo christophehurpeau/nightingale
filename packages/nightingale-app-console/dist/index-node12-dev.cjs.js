@@ -10,8 +10,7 @@ const logger = new nightingale.Logger('app');
 const appLogger = logger;
 Error.stackTraceLimit = Infinity;
 nightingale.listenUnhandledErrors(logger);
-const appMinLevel = process.env.NIGHTINGALE_APP_MIN_LEVEL !== undefined && process.env.NIGHTINGALE_APP_MIN_LEVEL !== '' ? Number(process.env.NIGHTINGALE_APP_MIN_LEVEL) : // eslint-disable-next-line unicorn/no-nested-ternary
-nightingale.Level.DEBUG;
+const appMinLevel = process.env.NIGHTINGALE_APP_MIN_LEVEL !== undefined && process.env.NIGHTINGALE_APP_MIN_LEVEL !== '' ? Number(process.env.NIGHTINGALE_APP_MIN_LEVEL) : nightingale.Level.DEBUG;
 const libMinLevel = process.env.NIGHTINGALE_LIB_MIN_LEVEL !== undefined && process.env.NIGHTINGALE_LIB_MIN_LEVEL !== '' ? Number(process.env.NIGHTINGALE_LIB_MIN_LEVEL) : nightingale.Level.INFO;
 nightingale.configure(appMinLevel !== libMinLevel ? [{
   pattern: /^app(:|$)/,

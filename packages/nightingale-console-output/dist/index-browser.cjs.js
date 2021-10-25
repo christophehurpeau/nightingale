@@ -11,5 +11,5 @@ function consoleOutput(param, record) {
   (_console = console)[record.level >= nightingaleLevels.Level.ERROR ? 'error' : 'log'].apply(_console, param);
 }
 
-exports['default'] = consoleOutput;
+exports["default"] = consoleOutput;
 //# sourceMappingURL=index-browser.cjs.js.map

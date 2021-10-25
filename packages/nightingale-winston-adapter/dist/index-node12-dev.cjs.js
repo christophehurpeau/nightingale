@@ -4,7 +4,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 const levelNames = require('nightingale-level-names');
 
-function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e['default'] : e; }
+function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e["default"] : e; }
 
 const levelNames__default = /*#__PURE__*/_interopDefaultLegacy(levelNames);
 
@@ -34,5 +34,5 @@ class WinstonAdapterHandler {
 }
 
 exports.WinstonAdapterHandler = WinstonAdapterHandler;
-exports['default'] = WinstonAdapterHandler;
+exports["default"] = WinstonAdapterHandler;
 //# sourceMappingURL=index-node12-dev.cjs.js.map
