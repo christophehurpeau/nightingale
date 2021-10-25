@@ -2545,16 +2545,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pob/eslint-config-typescript@npm:45.0.3":
-  version: 45.0.3
-  resolution: "@pob/eslint-config-typescript@npm:45.0.3"
+"@pob/eslint-config-typescript@npm:45.1.0":
+  version: 45.1.0
+  resolution: "@pob/eslint-config-typescript@npm:45.1.0"
   dependencies:
-    "@pob/eslint-config": ^45.0.3
-    "@pob/use-eslint-plugin": ^45.0.0
+    "@pob/eslint-config": ^45.1.0
+    "@pob/use-eslint-plugin": ^45.1.0
     "@typescript-eslint/eslint-plugin": ^4.19.0
     "@typescript-eslint/parser": ^4.19.0
     eslint-config-airbnb-base: ^14.2.1
-    eslint-config-prettier: ^7.1.0
     eslint-plugin-import: ^2.22.1
     eslint-plugin-node: ^11.1.0
   peerDependencies:
@@ -2572,11 +2571,11 @@ __metadata:
       optional: true
     eslint-plugin-node:
       optional: true
-  checksum: 89ba3bd50e543d4581c77b17aa5fa6714c7eb027c2f07aa7c9a97e769a6d4c52d4ce621e25c73e7385f778fabf782b4476c2ff28bc5e6ea9b80186faf144f54b
+  checksum: 29419684be43e743d35967cea9b95b83bcdbacba4aea9f182743e9f52e7038757855839e7d50a51067c0d57d538f843c7c66bc5e8b04919bef0029ffdc35063f
   languageName: node
   linkType: hard
 
-"@pob/eslint-config@npm:45.1.0, @pob/eslint-config@npm:^45.0.3":
+"@pob/eslint-config@npm:45.1.0, @pob/eslint-config@npm:^45.1.0":
   version: 45.1.0
   resolution: "@pob/eslint-config@npm:45.1.0"
   dependencies:
@@ -2690,7 +2689,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pob/use-eslint-plugin@npm:^45.0.0, @pob/use-eslint-plugin@npm:^45.1.0":
+"@pob/use-eslint-plugin@npm:^45.1.0":
   version: 45.1.0
   resolution: "@pob/use-eslint-plugin@npm:45.1.0"
   checksum: f512be447413032c0307f89f3e554c620adaa68781adba87f933dc091b91fecb5e7c8987fd8662fe366c9ea4dc7f973ff58d1e6632407d85d541709a67c59eff
@@ -5027,17 +5026,6 @@ __metadata:
     eslint: ^5.16.0 || ^6.8.0 || ^7.2.0
     eslint-plugin-import: ^2.22.1
   checksum: 858bea748a3c8685b52fcf2488e6a0b964022f8387f4ee1e69cb707d4fda2a409f09eb8eea658bcd83fae3519967d10208ba7576dd3d3202b8cf0b9d1a6e21eb
-  languageName: node
-  linkType: hard
-
-"eslint-config-prettier@npm:^7.1.0":
-  version: 7.1.0
-  resolution: "eslint-config-prettier@npm:7.1.0"
-  peerDependencies:
-    eslint: ">=7.0.0"
-  bin:
-    eslint-config-prettier: bin/cli.js
-  checksum: ed912af994e9011d160449054959fdcaaea9ece12c10bedf654658042e8a7606d32b06f73ece1ed8cf83c9e6f1002e53b8680613b2aa9815c4defa8abe7bb5a9
   languageName: node
   linkType: hard
 
@@ -8398,7 +8386,7 @@ __metadata:
   dependencies:
     "@pob/commitlint-config": 3.1.1
     "@pob/eslint-config": 45.1.0
-    "@pob/eslint-config-typescript": 45.0.3
+    "@pob/eslint-config-typescript": 45.1.0
     "@pob/lerna-light": 4.1.0
     "@pob/root": 5.4.2
     "@types/node": 14.17.31
