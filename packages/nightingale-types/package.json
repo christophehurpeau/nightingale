@@ -111,7 +111,7 @@
     "@babel/preset-env": "7.15.8",
     "babel-preset-latest-node": "5.5.1",
     "babel-preset-modern-browsers": "15.0.2",
-    "pob-babel": "28.2.2",
+    "pob-babel": "28.4.0",
     "rollup": "2.58.3",
     "typescript": "4.4.4"
   }

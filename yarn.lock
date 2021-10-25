@@ -3847,9 +3847,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"babel-preset-pob-env@npm:^6.2.1":
-  version: 6.2.1
-  resolution: "babel-preset-pob-env@npm:6.2.1"
+"babel-preset-pob-env@npm:^6.3.0":
+  version: 6.3.0
+  resolution: "babel-preset-pob-env@npm:6.3.0"
   dependencies:
     "@babel/plugin-proposal-class-properties": ^7.14.5
     "@babel/plugin-proposal-nullish-coalescing-operator": ^7.14.5
@@ -3864,7 +3864,7 @@ __metadata:
     babel-preset-optimizations: ^2.0.0
   peerDependencies:
     "@babel/core": ^7.11.6
-  checksum: 255d77189a34db6156e4b0b06469165373b0d1770b8a64d532be91126d373409f61f4ba15aa7c4b6d004a97357875886cca761d617ff913b2cb06fcf0600a159
+  checksum: 12b4043c56619ebd47ea2b5840377c3317966b4b01680d90f3626f10ec4851a93248b7baa81ac33ea2e37f5d911cb65e5519c63717717ee3e21ba3fa5a4042ee
   languageName: node
   linkType: hard
 
@@ -8084,8 +8084,8 @@ __metadata:
     jest: 27.3.1
     nightingale-formatter: ^11.7.1
     nightingale-types: ^11.7.1
-    pob-babel: 28.2.2
-    pob-lcov-reporter: 5.1.1
+    pob-babel: 28.4.0
+    pob-lcov-reporter: 5.3.0
     rollup: 2.58.3
     typescript: 4.4.4
     xunit-file: 1.0.0
@@ -8104,7 +8104,7 @@ __metadata:
     nightingale: ^11.7.1
     nightingale-browser-console: ^11.7.1
     nightingale-console: ^11.7.1
-    pob-babel: 28.2.2
+    pob-babel: 28.4.0
     rollup: 2.58.3
     typescript: 4.4.4
   languageName: unknown
@@ -8120,7 +8120,7 @@ __metadata:
     nightingale: ^11.7.1
     nightingale-browser-console: ^11.7.1
     nightingale-react-native-console: ^11.7.1
-    pob-babel: 28.2.2
+    pob-babel: 28.4.0
     rollup: 2.58.3
     typescript: 4.4.4
   peerDependencies:
@@ -8146,8 +8146,8 @@ __metadata:
     nightingale-formatter: ^11.7.1
     nightingale-levels: ^11.7.1
     nightingale-types: ^11.7.1
-    pob-babel: 28.2.2
-    pob-lcov-reporter: 5.1.1
+    pob-babel: 28.4.0
+    pob-lcov-reporter: 5.3.0
     rollup: 2.58.3
     typescript: 4.4.4
     xunit-file: 1.0.0
@@ -8165,7 +8165,7 @@ __metadata:
     nightingale-console-output: ^11.7.1
     nightingale-debug: ^11.7.1
     nightingale-types: ^11.7.1
-    pob-babel: 28.2.2
+    pob-babel: 28.4.0
     rollup: 2.58.3
     typescript: 4.4.4
   languageName: unknown
@@ -8182,7 +8182,7 @@ __metadata:
     nightingale: ^11.7.1
     nightingale-console: ^11.7.1
     nightingale-sentry: ^11.7.1
-    pob-babel: 28.2.2
+    pob-babel: 28.4.0
     rollup: 2.58.3
     typescript: 4.4.4
   languageName: unknown
@@ -8199,7 +8199,7 @@ __metadata:
     babel-preset-modern-browsers: 15.0.2
     nightingale-levels: ^11.7.1
     nightingale-types: ^11.7.1
-    pob-babel: 28.2.2
+    pob-babel: 28.4.0
     rollup: 2.58.3
     typescript: 4.4.4
   languageName: unknown
@@ -8218,7 +8218,7 @@ __metadata:
     nightingale-json-formatter: ^11.7.1
     nightingale-levels: ^11.7.1
     nightingale-types: ^11.7.1
-    pob-babel: 28.2.2
+    pob-babel: 28.4.0
     rollup: 2.58.3
     typescript: 4.4.4
   languageName: unknown
@@ -8236,8 +8236,8 @@ __metadata:
     babel-preset-modern-browsers: 15.0.2
     jest: 27.3.1
     nightingale-levels: ^11.7.1
-    pob-babel: 28.2.2
-    pob-lcov-reporter: 5.1.1
+    pob-babel: 28.4.0
+    pob-lcov-reporter: 5.3.0
     rollup: 2.58.3
     typescript: 4.4.4
     xunit-file: 1.0.0
@@ -8257,7 +8257,7 @@ __metadata:
     nightingale-json-formatter: ^11.7.1
     nightingale-string: ^11.7.1
     nightingale-types: ^11.7.1
-    pob-babel: 28.2.2
+    pob-babel: 28.4.0
     rollup: 2.58.3
     typescript: 4.4.4
   languageName: unknown
@@ -8276,8 +8276,8 @@ __metadata:
     jest: 27.3.1
     nightingale-levels: ^11.7.1
     nightingale-types: ^11.7.1
-    pob-babel: 28.2.2
-    pob-lcov-reporter: 5.1.1
+    pob-babel: 28.4.0
+    pob-lcov-reporter: 5.3.0
     rollup: 2.58.3
     typescript: 4.4.4
     xunit-file: 1.0.0
@@ -8298,8 +8298,8 @@ __metadata:
     nightingale-formatter: ^11.7.1
     nightingale-levels: ^11.7.1
     nightingale-types: ^11.7.1
-    pob-babel: 28.2.2
-    pob-lcov-reporter: 5.1.1
+    pob-babel: 28.4.0
+    pob-lcov-reporter: 5.3.0
     rollup: 2.58.3
     typescript: 4.4.4
     xunit-file: 1.0.0
@@ -8320,8 +8320,8 @@ __metadata:
     nightingale-formatter: ^11.7.1
     nightingale-levels: ^11.7.1
     nightingale-types: ^11.7.1
-    pob-babel: 28.2.2
-    pob-lcov-reporter: 5.1.1
+    pob-babel: 28.4.0
+    pob-lcov-reporter: 5.3.0
     rollup: 2.58.3
     typescript: 4.4.4
     xunit-file: 1.0.0
@@ -8342,7 +8342,7 @@ __metadata:
     "@babel/preset-env": 7.15.8
     babel-preset-latest-node: 5.5.1
     babel-preset-modern-browsers: 15.0.2
-    pob-babel: 28.2.2
+    pob-babel: 28.4.0
     rollup: 2.58.3
     typescript: 4.4.4
   languageName: unknown
@@ -8362,8 +8362,8 @@ __metadata:
     jest: 27.3.1
     nightingale-levels: ^11.7.1
     nightingale-types: ^11.7.1
-    pob-babel: 28.2.2
-    pob-lcov-reporter: 5.1.1
+    pob-babel: 28.4.0
+    pob-lcov-reporter: 5.3.0
     rollup: 2.58.3
     typescript: 4.4.4
     xunit-file: 1.0.0
@@ -8384,8 +8384,8 @@ __metadata:
     nightingale-formatter: ^11.7.1
     nightingale-levels: ^11.7.1
     nightingale-types: ^11.7.1
-    pob-babel: 28.2.2
-    pob-lcov-reporter: 5.1.1
+    pob-babel: 28.4.0
+    pob-lcov-reporter: 5.3.0
     rollup: 2.58.3
     typescript: 4.4.4
     xunit-file: 1.0.0
@@ -8424,8 +8424,8 @@ __metadata:
     nightingale-formatter: ^11.7.1
     nightingale-levels: ^11.7.1
     nightingale-types: ^11.7.1
-    pob-babel: 28.2.2
-    pob-lcov-reporter: 5.1.1
+    pob-babel: 28.4.0
+    pob-lcov-reporter: 5.3.0
     rollup: 2.58.3
     typescript: 4.4.4
     xunit-file: 1.0.0
@@ -8442,7 +8442,7 @@ __metadata:
     nightingale-ansi-formatter: ^11.7.1
     nightingale-console-output: ^11.7.1
     nightingale-types: ^11.7.1
-    pob-babel: 28.2.2
+    pob-babel: 28.4.0
     rollup: 2.58.3
     typescript: 4.4.4
   languageName: unknown
@@ -8461,7 +8461,7 @@ __metadata:
     babel-preset-modern-browsers: 15.0.2
     nightingale-levels: ^11.7.1
     nightingale-types: ^11.7.1
-    pob-babel: 28.2.2
+    pob-babel: 28.4.0
     rollup: 2.58.3
     typescript: 4.4.4
   languageName: unknown
@@ -8481,8 +8481,8 @@ __metadata:
     nightingale-markdown-formatter: ^11.7.1
     nightingale-raw-formatter: ^11.7.1
     nightingale-types: ^11.7.1
-    pob-babel: 28.2.2
-    pob-lcov-reporter: 5.1.1
+    pob-babel: 28.4.0
+    pob-lcov-reporter: 5.3.0
     request: ^2.88.0
     rollup: 2.58.3
     typescript: 4.4.4
@@ -8498,7 +8498,7 @@ __metadata:
     babel-preset-latest-node: 5.5.1
     nightingale-raw-formatter: ^11.7.1
     nightingale-types: ^11.7.1
-    pob-babel: 28.2.2
+    pob-babel: 28.4.0
     rollup: 2.58.3
     typescript: 4.4.4
   languageName: unknown
@@ -8513,7 +8513,7 @@ __metadata:
     babel-preset-latest-node: 5.5.1
     babel-preset-modern-browsers: 15.0.2
     nightingale-levels: ^11.7.1
-    pob-babel: 28.2.2
+    pob-babel: 28.4.0
     rollup: 2.58.3
     typescript: 4.4.4
   languageName: unknown
@@ -8527,7 +8527,7 @@ __metadata:
     "@types/node": ">=12.0.0"
     babel-preset-latest-node: 5.5.1
     nightingale-types: ^11.7.1
-    pob-babel: 28.2.2
+    pob-babel: 28.4.0
     rollup: 2.58.3
     typescript: 4.4.4
   languageName: unknown
@@ -8543,7 +8543,7 @@ __metadata:
     babel-preset-modern-browsers: 15.0.2
     nightingale-level-names: ^11.7.1
     nightingale-types: ^11.7.1
-    pob-babel: 28.2.2
+    pob-babel: 28.4.0
     rollup: 2.58.3
     typescript: 4.4.4
   languageName: unknown
@@ -8565,8 +8565,8 @@ __metadata:
     nightingale-logger: ^11.7.1
     nightingale-string: 11.7.1
     nightingale-types: ^11.7.1
-    pob-babel: 28.2.2
-    pob-lcov-reporter: 5.1.1
+    pob-babel: 28.4.0
+    pob-lcov-reporter: 5.3.0
     rollup: 2.58.3
     typescript: 4.4.4
     xunit-file: 1.0.0
@@ -9408,9 +9408,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pob-babel@npm:28.2.2":
-  version: 28.2.2
-  resolution: "pob-babel@npm:28.2.2"
+"pob-babel@npm:28.4.0":
+  version: 28.4.0
+  resolution: "pob-babel@npm:28.4.0"
   dependencies:
     "@babel/plugin-transform-runtime": ^7.13.10
     "@rollup/plugin-babel": ^5.2.2
@@ -9418,7 +9418,7 @@ __metadata:
     "@rollup/plugin-node-resolve": ^13.0.0
     babel-preset-latest-node: ^5.5.1
     babel-preset-modern-browsers: ^15.0.2
-    babel-preset-pob-env: ^6.2.1
+    babel-preset-pob-env: ^6.3.0
     minimist-argv: ^1.1.0
     rollup: ^2.47.0
     rollup-config-external-dependencies: ^2.0.0
@@ -9430,18 +9430,18 @@ __metadata:
   bin:
     pob-build: bin/pob-build.js
     pob-watch: bin/pob-watch.js
-  checksum: 91b6862e464101ce0fc3e3195a7bb1162a73ab6df1ddd89b6ed17c7f7e2ac6c513aee900e44df825274e62aa520f71393637cf721aefea6fc060e91fe7a739c3
+  checksum: c47909c16c1c23d3613093da51161aef2076875e515c57a41b0d088a4cc19d00944f8ba67dc050e14356d63cd621f9563160ceea0b0caf7584c45d305f61507a
   languageName: node
   linkType: hard
 
-"pob-lcov-reporter@npm:5.1.1":
-  version: 5.1.1
-  resolution: "pob-lcov-reporter@npm:5.1.1"
+"pob-lcov-reporter@npm:5.3.0":
+  version: 5.3.0
+  resolution: "pob-lcov-reporter@npm:5.3.0"
   dependencies:
     istanbul-reports: ^3.0.2
   peerDependencies:
     jest: ^26.0.1 || ^27.0.6
-  checksum: b53c42c98021e85125501a0ab6f164140225019455d6caf80f80ff4c638aafb3b3c23dd65c917c88fe3926e787abe551c6df0e6fc3c555b02659c94878221da0
+  checksum: 6b12f6d0ac27c57f7a89f6ceb3659aa4c142ed47b207dab89d8d8047e512da90e7f2a1569cf054d3c178f9b04f424879e3215f3b24ec91044d56c30eb0574e15
   languageName: node
   linkType: hard
 
