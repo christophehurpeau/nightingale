@@ -54,7 +54,7 @@
     "@pob/eslint-config": "45.0.3",
     "@pob/eslint-config-typescript": "45.0.3",
     "@pob/lerna-light": "4.1.0",
-    "@pob/root": "5.4.2",
+    "@pob/root": "5.5.0",
     "@types/node": "14.17.31",
     "@typescript-eslint/eslint-plugin": "4.33.0",
     "@typescript-eslint/parser": "4.33.0",
