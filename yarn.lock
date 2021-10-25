@@ -3094,7 +3094,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/eslint-plugin@npm:4.31.2, @typescript-eslint/eslint-plugin@npm:^4.19.0":
+"@typescript-eslint/eslint-plugin@npm:^4.19.0":
   version: 4.31.2
   resolution: "@typescript-eslint/eslint-plugin@npm:4.31.2"
   dependencies:
@@ -3131,7 +3131,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/parser@npm:4.31.2, @typescript-eslint/parser@npm:^4.19.0":
+"@typescript-eslint/parser@npm:^4.19.0":
   version: 4.31.2
   resolution: "@typescript-eslint/parser@npm:4.31.2"
   dependencies:
@@ -5047,7 +5047,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-import-resolver-node@npm:0.3.6, eslint-import-resolver-node@npm:^0.3.6":
+"eslint-import-resolver-node@npm:^0.3.6":
   version: 0.3.6
   resolution: "eslint-import-resolver-node@npm:0.3.6"
   dependencies:
@@ -5079,7 +5079,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-import@npm:2.24.2, eslint-plugin-import@npm:^2.22.1":
+"eslint-plugin-import@npm:^2.22.1":
   version: 2.24.2
   resolution: "eslint-plugin-import@npm:2.24.2"
   dependencies:
@@ -5104,7 +5104,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-node@npm:11.1.0, eslint-plugin-node@npm:^11.1.0":
+"eslint-plugin-node@npm:^11.1.0":
   version: 11.1.0
   resolution: "eslint-plugin-node@npm:11.1.0"
   dependencies:
@@ -5117,28 +5117,6 @@ __metadata:
   peerDependencies:
     eslint: ">=5.16.0"
   checksum: 5804c4f8a6e721f183ef31d46fbe3b4e1265832f352810060e0502aeac7de034df83352fc88643b19641bb2163f2587f1bd4119aff0fd21e8d98c57c450e013b
-  languageName: node
-  linkType: hard
-
-"eslint-plugin-unicorn@npm:34.0.1":
-  version: 34.0.1
-  resolution: "eslint-plugin-unicorn@npm:34.0.1"
-  dependencies:
-    ci-info: ^3.2.0
-    clean-regexp: ^1.0.0
-    eslint-template-visitor: ^2.3.2
-    eslint-utils: ^3.0.0
-    is-builtin-module: ^3.1.0
-    lodash: ^4.17.21
-    pluralize: ^8.0.0
-    read-pkg-up: ^7.0.1
-    regexp-tree: ^0.1.23
-    reserved-words: ^0.1.2
-    safe-regex: ^2.1.1
-    semver: ^7.3.5
-  peerDependencies:
-    eslint: ">=7.28.0"
-  checksum: c0dd20f62f78104d21cb897bdee13f88277fc08ccaaad35382470e5d626af075e48bd7d0da564b7d656d3237fa7d3eee3063d07f5af4091bdce400c8b9c47601
   languageName: node
   linkType: hard
 
@@ -8384,14 +8362,8 @@ __metadata:
     "@pob/lerna-light": 4.1.0
     "@pob/root": 5.4.2
     "@types/node": 14.17.19
-    "@typescript-eslint/eslint-plugin": 4.31.2
-    "@typescript-eslint/parser": 4.31.2
     check-package-dependencies: 2.0.2
     eslint: 7.32.0
-    eslint-import-resolver-node: 0.3.6
-    eslint-plugin-import: 2.24.2
-    eslint-plugin-node: 11.1.0
-    eslint-plugin-unicorn: 34.0.1
     prettier: 2.4.1
     typedoc: 0.22.4
     typescript: 4.4.3
@@ -9870,13 +9842,6 @@ __metadata:
   version: 2.0.2
   resolution: "require-from-string@npm:2.0.2"
   checksum: a03ef6895445f33a4015300c426699bc66b2b044ba7b670aa238610381b56d3f07c686251740d575e22f4c87531ba662d06937508f0f3c0f1ddc04db3130560b
-  languageName: node
-  linkType: hard
-
-"reserved-words@npm:^0.1.2":
-  version: 0.1.2
-  resolution: "reserved-words@npm:0.1.2"
-  checksum: 72e80f71dcde1e2d697e102473ad6d597e1659118836092c63cc4db68a64857f07f509176d239c8675b24f7f03574336bf202a780cc1adb39574e2884d1fd1fa
   languageName: node
   linkType: hard
 
