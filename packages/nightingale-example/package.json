@@ -122,7 +122,7 @@
     "nightingale-types": "^11.7.1"
   },
   "devDependencies": {
-    "@babel/core": "7.15.8",
+    "@babel/core": "7.16.0",
     "@rollup/plugin-run": "2.1.0",
     "babel-preset-latest-node": "5.5.1",
     "pob-babel": "28.4.0",
