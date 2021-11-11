@@ -53,7 +53,7 @@
     "@pob/commitlint-config": "3.2.0",
     "@pob/eslint-config": "45.1.0",
     "@pob/eslint-config-typescript": "45.1.0",
-    "@pob/lerna-light": "4.1.0",
+    "@pob/lerna-light": "4.2.0",
     "@pob/root": "5.5.0",
     "@types/node": "14.17.33",
     "check-package-dependencies": "2.0.2",
