@@ -1,1 +1,4 @@
-yarn lint-staged -r
+#!/usr/bin/env sh
+. "$(dirname "$0")/_/husky.sh"
+
+yarn pob-root-lint-staged
