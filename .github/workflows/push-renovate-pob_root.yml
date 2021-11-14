@@ -26,7 +26,10 @@ jobs:
             v2-dependencies--${{ matrix.node-version }}-
 
       - name: Check Dependencies
-        run: yarn install --immutable --immutable-cache
+        # no immutable here
+        run: yarn install
+        env:
+          YARN_ENABLE_IMMUTABLE_INSTALLS: false
 
       - name: Run pob-root-postinstall
         run: yarn run pob-root-postinstall
@@ -41,5 +44,5 @@ jobs:
           git add .
           git -c user.name="Christophe Hurpeau" \
             -c user.email="christophehurpeau@users.noreply.github.com" \
-            commit -m "chore: update pob root" --author="github-actions[bot] <actions@github.com>"
+            commit -m "chore: update pob root" --author="github-actions[bot] <github-actions[bot]@users.noreply.github.com>"
           git push
