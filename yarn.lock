@@ -2603,7 +2603,33 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pob/eslint-config@npm:45.1.0, @pob/eslint-config@npm:^45.1.0":
+"@pob/eslint-config@npm:46.0.0":
+  version: 46.0.0
+  resolution: "@pob/eslint-config@npm:46.0.0"
+  dependencies:
+    "@pob/use-eslint-plugin": ^46.0.0
+    eslint-config-airbnb-base: ^14.2.1
+    eslint-config-prettier: ^8.0.0
+    eslint-plugin-import: ^2.22.1
+    eslint-plugin-node: ^11.1.0
+    eslint-plugin-unicorn: ^35.0.0
+  peerDependencies:
+    eslint: ^7.30.0
+    eslint-plugin-import: ^2.22.1
+    eslint-plugin-node: ^11.1.0
+    eslint-plugin-unicorn: ^35.0.0
+  peerDependenciesMeta:
+    eslint-plugin-import:
+      optional: true
+    eslint-plugin-node:
+      optional: true
+    eslint-plugin-unicorn:
+      optional: true
+  checksum: 83b4601a91a306bea0d9f98d08ca72af2b9e4b80ef700364b7d034e41f958ba26308342c62196e9752c428ac910d7759914cdfad60c2045f9ff1ef1cc9e14a1c
+  languageName: node
+  linkType: hard
+
+"@pob/eslint-config@npm:^45.1.0":
   version: 45.1.0
   resolution: "@pob/eslint-config@npm:45.1.0"
   dependencies:
@@ -2721,6 +2747,13 @@ __metadata:
   version: 45.1.0
   resolution: "@pob/use-eslint-plugin@npm:45.1.0"
   checksum: f512be447413032c0307f89f3e554c620adaa68781adba87f933dc091b91fecb5e7c8987fd8662fe366c9ea4dc7f973ff58d1e6632407d85d541709a67c59eff
+  languageName: node
+  linkType: hard
+
+"@pob/use-eslint-plugin@npm:^46.0.0":
+  version: 46.0.0
+  resolution: "@pob/use-eslint-plugin@npm:46.0.0"
+  checksum: fe1f3f93916369effbfb506d22a418bbe6dbe89682189b9779224ccfa957b721380b3bb8f052b2625dea56ea0bef2215159f71aac4e9284508ef6ecf755829af
   languageName: node
   linkType: hard
 
@@ -8473,7 +8506,7 @@ __metadata:
   resolution: "nightingale-monorepo@workspace:."
   dependencies:
     "@pob/commitlint-config": 3.2.0
-    "@pob/eslint-config": 45.1.0
+    "@pob/eslint-config": 46.0.0
     "@pob/eslint-config-typescript": 45.1.0
     "@pob/lerna-light": 4.2.0
     "@pob/root": 5.7.2
