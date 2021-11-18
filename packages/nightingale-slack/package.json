@@ -95,7 +95,7 @@
   },
   "devDependencies": {
     "@babel/core": "7.16.0",
-    "@types/jest": "27.0.2",
+    "@types/jest": "27.0.3",
     "@types/request": "2.48.7",
     "babel-jest": "27.3.1",
     "babel-preset-latest-node": "5.5.1",
