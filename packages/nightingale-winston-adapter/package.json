@@ -116,6 +116,6 @@
     "babel-preset-modern-browsers": "15.0.2",
     "pob-babel": "28.4.0",
     "rollup": "2.60.1",
-    "typescript": "4.4.4"
+    "typescript": "4.5.2"
   }
 }
