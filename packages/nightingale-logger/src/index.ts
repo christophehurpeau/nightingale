@@ -92,6 +92,10 @@ function getConfigForLoggerRecord(
   return global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD(key, recordLevel);
 }
 
+function isError(messageOrError: Error | string): messageOrError is Error {
+  return messageOrError instanceof Error;
+}
+
 /**
  * Interface that allows you to log records.
  * This records are treated by handlers
@@ -219,24 +223,37 @@ export class Logger {
    * Log a message
    */
   log<T extends Metadata>(
-    message: string,
+    messageOrError: string | Error,
     metadata?: T,
     level: Level = Level.INFO,
     options?: Options<T>,
   ): void {
-    const context = metadata?.context;
-    if (metadata) {
-      delete metadata.context;
+    const isMessageError = isError(messageOrError);
+
+    const message = isMessageError
+      ? `${messageOrError.name}: ${messageOrError.message}`
+      : messageOrError;
+
+    const extendedMetadata =
+      isMessageError &&
+      // eslint-disable-next-line unicorn/prefer-object-has-own
+      !(metadata && Object.prototype.hasOwnProperty.call(metadata, 'error'))
+        ? { ...metadata, error: messageOrError }
+        : metadata;
+
+    const context = extendedMetadata?.context;
+    if (extendedMetadata) {
+      delete extendedMetadata.context;
     }
 
-    const record: LogRecord<T> = {
+    const record: LogRecord<NonNullable<typeof extendedMetadata>> = {
       level,
       key: this.key,
       displayName: this.displayName,
       datetime: new Date(),
       message,
       context: context || this.contextObject,
-      metadata,
+      metadata: extendedMetadata as NonNullable<typeof extendedMetadata>,
       extra: {},
       ...options,
     };
@@ -247,55 +264,55 @@ export class Logger {
    * Log a trace message
    */
   trace<T extends Metadata>(
-    message: string,
+    messageOrError: string | Error,
     metadata?: T,
     metadataStyles?: MetadataStyles<T>,
   ): void {
-    this.log(message, metadata, Level.TRACE, { metadataStyles });
+    this.log(messageOrError, metadata, Level.TRACE, { metadataStyles });
   }
 
   /**
    * Log a debug message
    */
   debug<T extends Metadata>(
-    message: string,
+    messageOrError: string | Error,
     metadata?: T,
     metadataStyles?: MetadataStyles<T>,
   ): void {
-    this.log(message, metadata, Level.DEBUG, { metadataStyles });
+    this.log(messageOrError, metadata, Level.DEBUG, { metadataStyles });
   }
 
   /**
    * Notice an info message
    */
   notice<T extends Metadata>(
-    message: string,
+    messageOrError: string | Error,
     metadata?: T,
     metadataStyles?: MetadataStyles<T>,
   ): void {
-    this.log(message, metadata, Level.NOTICE, { metadataStyles });
+    this.log(messageOrError, metadata, Level.NOTICE, { metadataStyles });
   }
 
   /**
    * Log an info message
    */
   info<T extends Metadata>(
-    message: string,
+    messageOrError: string | Error,
     metadata?: T,
     metadataStyles?: MetadataStyles<T>,
   ): void {
-    this.log(message, metadata, Level.INFO, { metadataStyles });
+    this.log(messageOrError, metadata, Level.INFO, { metadataStyles });
   }
 
   /**
    * Log a warn message
    */
   warn<T extends Metadata>(
-    message: string,
+    messageOrError: string | Error,
     metadata?: T,
     metadataStyles?: MetadataStyles<T>,
   ): void {
-    this.log(message, metadata, Level.WARN, { metadataStyles });
+    this.log(messageOrError, metadata, Level.WARN, { metadataStyles });
   }
 
   /**
@@ -312,31 +329,22 @@ export class Logger {
    * ```
    */
   error<T extends Metadata>(
-    message: string | Error,
+    messageOrError: string | Error,
     metadata?: T,
     metadataStyles?: MetadataStyles<T>,
   ): void {
-    if (message instanceof Error) {
-      const extendedMetadata = {
-        ...metadata,
-        error: message,
-      };
-      message = `${extendedMetadata.error.name}: ${extendedMetadata.error.message}`;
-      this.log(message, extendedMetadata, Level.ERROR, { metadataStyles });
-    } else {
-      this.log(message, metadata, Level.ERROR, { metadataStyles });
-    }
+    this.log(messageOrError, metadata, Level.ERROR, { metadataStyles });
   }
 
   /**
    * Log an critical message
    */
   critical<T extends Metadata>(
-    message: string,
+    messageOrError: string | Error,
     metadata?: T,
     metadataStyles?: MetadataStyles<T>,
   ): void {
-    this.log(message, metadata, Level.CRITICAL, { metadataStyles });
+    this.log(messageOrError, metadata, Level.CRITICAL, { metadataStyles });
   }
 
   /**
@@ -353,22 +361,22 @@ export class Logger {
    * }
    */
   fatal<T extends Metadata>(
-    message: string,
+    messageOrError: string | Error,
     metadata?: T,
     metadataStyles?: MetadataStyles<T>,
   ): void {
-    this.log(message, metadata, Level.FATAL, { metadataStyles });
+    this.log(messageOrError, metadata, Level.FATAL, { metadataStyles });
   }
 
   /**
    * Log an alert message
    */
   alert<T extends Metadata>(
-    message: string,
+    messageOrError: string | Error,
     metadata?: T,
     metadataStyles?: MetadataStyles<T>,
   ): void {
-    this.log(message, metadata, Level.ALERT, { metadataStyles });
+    this.log(messageOrError, metadata, Level.ALERT, { metadataStyles });
   }
 
   /**
@@ -457,22 +465,22 @@ export class Logger {
    * Alias for infoFail
    */
   fail<T extends Metadata>(
-    message: string,
+    messageOrError: string | Error,
     metadata?: T,
     metadataStyles?: MetadataStyles<T>,
   ): void {
-    this.infoFail(message, metadata, metadataStyles);
+    this.infoFail(messageOrError, metadata, metadataStyles);
   }
 
   /**
    * Log an info fail message
    */
   infoFail<T extends Metadata>(
-    message: string,
+    messageOrError: string | Error,
     metadata?: T,
     metadataStyles?: MetadataStyles<T>,
   ): void {
-    this.log(message, metadata, Level.INFO, {
+    this.log(messageOrError, metadata, Level.INFO, {
       metadataStyles,
       symbol: '✖',
       styles: ['red', 'bold'],
@@ -483,11 +491,11 @@ export class Logger {
    * Log an debug fail message
    */
   debugFail<T extends Metadata>(
-    message: string,
+    messageOrError: string | Error,
     metadata?: T,
     metadataStyles?: MetadataStyles<T>,
   ): void {
-    this.log(message, metadata, Level.DEBUG, {
+    this.log(messageOrError, metadata, Level.DEBUG, {
       metadataStyles,
       symbol: '✖',
       styles: ['red'],

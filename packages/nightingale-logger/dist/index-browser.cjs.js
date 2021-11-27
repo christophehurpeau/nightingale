@@ -38,6 +38,10 @@ if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
 function getConfigForLoggerRecord(key, recordLevel) {
   return global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD(key, recordLevel);
 }
+
+function isError(messageOrError) {
+  return messageOrError instanceof Error;
+}
 /**
  * Interface that allows you to log records.
  * This records are treated by handlers
@@ -166,15 +170,21 @@ var Logger = /*#__PURE__*/function () {
    */
   ;
 
-  _proto.log = function log(message, metadata, level, options) {
+  _proto.log = function log(messageOrError, metadata, level, options) {
     if (level === void 0) {
       level = nightingaleLevels.Level.INFO;
     }
 
-    var context = metadata == null ? void 0 : metadata.context;
+    var isMessageError = isError(messageOrError);
+    var message = isMessageError ? `${messageOrError.name}: ${messageOrError.message}` : messageOrError;
+    var extendedMetadata = isMessageError && // eslint-disable-next-line unicorn/prefer-object-has-own
+    !Object.prototype.hasOwnProperty.call(metadata, 'error') ? _extends__default({}, metadata, {
+      error: messageOrError
+    }) : metadata;
+    var context = extendedMetadata == null ? void 0 : extendedMetadata.context;
 
-    if (metadata) {
-      delete metadata.context;
+    if (extendedMetadata) {
+      delete extendedMetadata.context;
     }
 
     var record = _extends__default({
@@ -184,7 +194,7 @@ var Logger = /*#__PURE__*/function () {
       datetime: new Date(),
       message,
       context: context || this.contextObject,
-      metadata,
+      metadata: extendedMetadata,
       extra: {}
     }, options);
 
@@ -195,8 +205,8 @@ var Logger = /*#__PURE__*/function () {
    */
   ;
 
-  _proto.trace = function trace(message, metadata, metadataStyles) {
-    this.log(message, metadata, nightingaleLevels.Level.TRACE, {
+  _proto.trace = function trace(messageOrError, metadata, metadataStyles) {
+    this.log(messageOrError, metadata, nightingaleLevels.Level.TRACE, {
       metadataStyles
     });
   }
@@ -205,8 +215,8 @@ var Logger = /*#__PURE__*/function () {
    */
   ;
 
-  _proto.debug = function debug(message, metadata, metadataStyles) {
-    this.log(message, metadata, nightingaleLevels.Level.DEBUG, {
+  _proto.debug = function debug(messageOrError, metadata, metadataStyles) {
+    this.log(messageOrError, metadata, nightingaleLevels.Level.DEBUG, {
       metadataStyles
     });
   }
@@ -215,8 +225,8 @@ var Logger = /*#__PURE__*/function () {
    */
   ;
 
-  _proto.notice = function notice(message, metadata, metadataStyles) {
-    this.log(message, metadata, nightingaleLevels.Level.NOTICE, {
+  _proto.notice = function notice(messageOrError, metadata, metadataStyles) {
+    this.log(messageOrError, metadata, nightingaleLevels.Level.NOTICE, {
       metadataStyles
     });
   }
@@ -225,8 +235,8 @@ var Logger = /*#__PURE__*/function () {
    */
   ;
 
-  _proto.info = function info(message, metadata, metadataStyles) {
-    this.log(message, metadata, nightingaleLevels.Level.INFO, {
+  _proto.info = function info(messageOrError, metadata, metadataStyles) {
+    this.log(messageOrError, metadata, nightingaleLevels.Level.INFO, {
       metadataStyles
     });
   }
@@ -235,8 +245,8 @@ var Logger = /*#__PURE__*/function () {
    */
   ;
 
-  _proto.warn = function warn(message, metadata, metadataStyles) {
-    this.log(message, metadata, nightingaleLevels.Level.WARN, {
+  _proto.warn = function warn(messageOrError, metadata, metadataStyles) {
+    this.log(messageOrError, metadata, nightingaleLevels.Level.WARN, {
       metadataStyles
     });
   }
@@ -255,29 +265,18 @@ var Logger = /*#__PURE__*/function () {
    */
   ;
 
-  _proto.error = function error(message, metadata, metadataStyles) {
-    if (message instanceof Error) {
-      var extendedMetadata = _extends__default({}, metadata, {
-        error: message
-      });
-
-      message = `${extendedMetadata.error.name}: ${extendedMetadata.error.message}`;
-      this.log(message, extendedMetadata, nightingaleLevels.Level.ERROR, {
-        metadataStyles
-      });
-    } else {
-      this.log(message, metadata, nightingaleLevels.Level.ERROR, {
-        metadataStyles
-      });
-    }
+  _proto.error = function error(messageOrError, metadata, metadataStyles) {
+    this.log(messageOrError, metadata, nightingaleLevels.Level.ERROR, {
+      metadataStyles
+    });
   }
   /**
    * Log an critical message
    */
   ;
 
-  _proto.critical = function critical(message, metadata, metadataStyles) {
-    this.log(message, metadata, nightingaleLevels.Level.CRITICAL, {
+  _proto.critical = function critical(messageOrError, metadata, metadataStyles) {
+    this.log(messageOrError, metadata, nightingaleLevels.Level.CRITICAL, {
       metadataStyles
     });
   }
@@ -296,8 +295,8 @@ var Logger = /*#__PURE__*/function () {
    */
   ;
 
-  _proto.fatal = function fatal(message, metadata, metadataStyles) {
-    this.log(message, metadata, nightingaleLevels.Level.FATAL, {
+  _proto.fatal = function fatal(messageOrError, metadata, metadataStyles) {
+    this.log(messageOrError, metadata, nightingaleLevels.Level.FATAL, {
       metadataStyles
     });
   }
@@ -306,8 +305,8 @@ var Logger = /*#__PURE__*/function () {
    */
   ;
 
-  _proto.alert = function alert(message, metadata, metadataStyles) {
-    this.log(message, metadata, nightingaleLevels.Level.ALERT, {
+  _proto.alert = function alert(messageOrError, metadata, metadataStyles) {
+    this.log(messageOrError, metadata, nightingaleLevels.Level.ALERT, {
       metadataStyles
     });
   }
@@ -364,16 +363,16 @@ var Logger = /*#__PURE__*/function () {
    */
   ;
 
-  _proto.fail = function fail(message, metadata, metadataStyles) {
-    this.infoFail(message, metadata, metadataStyles);
+  _proto.fail = function fail(messageOrError, metadata, metadataStyles) {
+    this.infoFail(messageOrError, metadata, metadataStyles);
   }
   /**
    * Log an info fail message
    */
   ;
 
-  _proto.infoFail = function infoFail(message, metadata, metadataStyles) {
-    this.log(message, metadata, nightingaleLevels.Level.INFO, {
+  _proto.infoFail = function infoFail(messageOrError, metadata, metadataStyles) {
+    this.log(messageOrError, metadata, nightingaleLevels.Level.INFO, {
       metadataStyles,
       symbol: '✖',
       styles: ['red', 'bold']
@@ -384,8 +383,8 @@ var Logger = /*#__PURE__*/function () {
    */
   ;
 
-  _proto.debugFail = function debugFail(message, metadata, metadataStyles) {
-    this.log(message, metadata, nightingaleLevels.Level.DEBUG, {
+  _proto.debugFail = function debugFail(messageOrError, metadata, metadataStyles) {
+    this.log(messageOrError, metadata, nightingaleLevels.Level.DEBUG, {
       metadataStyles,
       symbol: '✖',
       styles: ['red']
