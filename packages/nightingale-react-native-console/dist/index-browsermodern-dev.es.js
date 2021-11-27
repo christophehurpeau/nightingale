@@ -1,9 +1,13 @@
 import formatterANSI from 'nightingale-ansi-formatter';
-import consoleOutput from 'nightingale-console-output';
+
+function consoleOutput(param) {
+  // eslint-disable-next-line no-console
+  console.log(...param);
+}
 
 const createHandle = () => {
   return record => {
-    return consoleOutput([formatterANSI(record)], record);
+    consoleOutput([formatterANSI(record)]);
   };
 };
 

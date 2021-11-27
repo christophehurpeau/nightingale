@@ -1,6 +1,6 @@
-export { Level, Level as levels } from 'nightingale-levels';
 import { Logger } from 'nightingale-logger';
 export { Logger, Logger as default } from 'nightingale-logger';
+export { Level, Level as levels } from 'nightingale-levels';
 
 if (global.__NIGHTINGALE_GLOBAL_HANDLERS) {
   throw new Error('nightingale: update all to ^5.0.0');
@@ -138,13 +138,13 @@ function listenUnhandledErrors(logger) {
   }
 
   process.on('uncaughtException', function (error) {
-    return logger.error('uncaughtException', {
+    logger.error('uncaughtException', {
       error,
       unhandled: true
     });
   });
   process.on('unhandledRejection', function (error) {
-    return logger.error('unhandledRejection', {
+    logger.error('unhandledRejection', {
       error,
       unhandled: true
     });

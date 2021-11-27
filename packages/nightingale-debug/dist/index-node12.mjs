@@ -78,7 +78,7 @@ function createFindDebugLevel(debugValue) {
       return minLevel;
     }
 
-    if (debugValues.some(debugValue => debugValue(key))) {
+    if (debugValues.some(dv => dv(key))) {
       return skips.some(skip => skip(key)) ? minLevel : Level.ALL;
     }
 

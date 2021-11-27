@@ -1,6 +1,6 @@
-export { Level, Level as levels } from 'nightingale-levels';
 import { Logger } from 'nightingale-logger';
 export { Logger, Logger as default } from 'nightingale-logger';
+export { Level, Level as levels } from 'nightingale-levels';
 
 if (!global.__NIGHTINGALE_CONFIG) {
   global.__NIGHTINGALE_CONFIG = [];
@@ -120,14 +120,18 @@ if (global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
  */
 
 function listenUnhandledErrors(logger = new Logger('nightingale:listenUnhandledErrors', 'UnhandledErrors')) {
-  process.on('uncaughtException', error => logger.error('uncaughtException', {
-    error,
-    unhandled: true
-  }));
-  process.on('unhandledRejection', error => logger.error('unhandledRejection', {
-    error,
-    unhandled: true
-  }));
+  process.on('uncaughtException', error => {
+    logger.error('uncaughtException', {
+      error,
+      unhandled: true
+    });
+  });
+  process.on('unhandledRejection', error => {
+    logger.error('unhandledRejection', {
+      error,
+      unhandled: true
+    });
+  });
 }
 
 export { addConfig, configure, listenUnhandledErrors };

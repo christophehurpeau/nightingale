@@ -2,8 +2,8 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var nightingaleLevels = require('nightingale-levels');
 var nightingaleLogger = require('nightingale-logger');
+var nightingaleLevels = require('nightingale-levels');
 
 if (global.__NIGHTINGALE_GLOBAL_HANDLERS) {
   throw new Error('nightingale: update all to ^5.0.0');
@@ -141,23 +141,23 @@ function listenUnhandledErrors(logger) {
   }
 
   process.on('uncaughtException', function (error) {
-    return logger.error('uncaughtException', {
+    logger.error('uncaughtException', {
       error,
       unhandled: true
     });
   });
   process.on('unhandledRejection', function (error) {
-    return logger.error('unhandledRejection', {
+    logger.error('unhandledRejection', {
       error,
       unhandled: true
     });
   });
 }
 
-exports.Level = nightingaleLevels.Level;
-exports.levels = nightingaleLevels.Level;
 exports.Logger = nightingaleLogger.Logger;
 exports["default"] = nightingaleLogger.Logger;
+exports.Level = nightingaleLevels.Level;
+exports.levels = nightingaleLevels.Level;
 exports.addConfig = addConfig;
 exports.configure = configure;
 exports.listenUnhandledErrors = listenUnhandledErrors;

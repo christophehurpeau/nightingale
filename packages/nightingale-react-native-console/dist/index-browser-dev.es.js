@@ -1,9 +1,15 @@
 import formatterANSI from 'nightingale-ansi-formatter';
-import consoleOutput from 'nightingale-console-output';
+
+function consoleOutput(param) {
+  var _console;
+
+  // eslint-disable-next-line no-console
+  (_console = console).log.apply(_console, param);
+}
 
 var createHandle = function createHandle() {
   return function (record) {
-    return consoleOutput([formatterANSI(record)], record);
+    consoleOutput([formatterANSI(record)]);
   };
 };
 

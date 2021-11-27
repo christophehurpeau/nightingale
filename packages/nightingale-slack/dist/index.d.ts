@@ -1,7 +1,6 @@
 import type { Handle, Handler, Level } from 'nightingale-types';
 import type SlackConfig from './SlackConfig';
-import createBody from './createBody';
-export { createBody };
+export { default as createBody } from './createBody';
 export declare class SlackHandler implements Handler {
     minLevel: Level;
     handle: Handle;

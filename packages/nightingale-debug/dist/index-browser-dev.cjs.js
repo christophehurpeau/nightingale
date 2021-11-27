@@ -98,8 +98,8 @@ function createFindDebugLevel(debugValue) {
       return minLevel;
     }
 
-    if (debugValues.some(function (debugValue) {
-      return debugValue(key);
+    if (debugValues.some(function (dv) {
+      return dv(key);
     })) {
       return skips.some(function (skip) {
         return skip(key);

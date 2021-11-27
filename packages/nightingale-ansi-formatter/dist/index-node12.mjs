@@ -37,14 +37,14 @@ function style(styles, string) {
   } // eslint-disable-next-line unicorn/no-array-reduce
 
 
-  return styles.reduce((string, styleName) => {
-    const style = ansiStyles[styleName];
+  return styles.reduce((styledString, styleName) => {
+    const codePair = ansiStyles[styleName];
 
-    if (!style) {
+    if (!codePair) {
       throw new Error(`Unknown style: ${styleName}`);
     }
 
-    return style.open + string + style.close;
+    return codePair.open + styledString + codePair.close;
   }, string);
 }
 /**

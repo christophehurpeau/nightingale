@@ -175,12 +175,20 @@ function internalFormatValue(value, styleFn, styles, _ref) {
       styles = ['cyan'];
     } else {
       switch (typeofValue) {
+        case 'undefined':
+          styles = ['cyan'];
+          break;
+
         case 'boolean':
           styles = ['green'];
           break;
 
         case 'number':
           styles = ['yellow'];
+          break;
+
+        case 'bigint':
+          styles = ['red'];
           break;
 
         case 'string':
@@ -241,6 +249,10 @@ function internalFormatValue(value, styleFn, styles, _ref) {
         objects
       });
     }
+  } else if (typeofValue === 'bigint') {
+    stringValue = value.toString();
+  } else if (typeofValue === 'symbol') {
+    stringValue = value.toString();
   } else if (value instanceof Set) {
     var _name = value.constructor.name;
 
@@ -559,12 +571,12 @@ function formatRecordToString(record, style) {
     parts.push(message);
   }
 
-  var formatRecordObject = function formatRecordObject(key, object, styles) {
+  var formatRecordObject = function formatRecordObject(key, object, objectStyles) {
     if (!object) {
       return;
     }
 
-    var stringObject = formatObject(object, style, styles);
+    var stringObject = formatObject(object, style, objectStyles);
 
     if (!stringObject) {
       return;
