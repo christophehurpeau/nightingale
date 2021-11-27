@@ -167,7 +167,7 @@ class Logger {
     const isMessageError = isError(messageOrError);
     const message = isMessageError ? `${messageOrError.name}: ${messageOrError.message}` : messageOrError;
     const extendedMetadata = isMessageError && // eslint-disable-next-line unicorn/prefer-object-has-own
-    !Object.prototype.hasOwnProperty.call(metadata, 'error') ? { ...metadata,
+    !(metadata && Object.prototype.hasOwnProperty.call(metadata, 'error')) ? { ...metadata,
       error: messageOrError
     } : metadata;
     const context = extendedMetadata === null || extendedMetadata === void 0 ? void 0 : extendedMetadata.context;

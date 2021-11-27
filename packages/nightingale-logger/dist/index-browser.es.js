@@ -171,7 +171,7 @@ var Logger = /*#__PURE__*/function () {
     var isMessageError = isError(messageOrError);
     var message = isMessageError ? `${messageOrError.name}: ${messageOrError.message}` : messageOrError;
     var extendedMetadata = isMessageError && // eslint-disable-next-line unicorn/prefer-object-has-own
-    !Object.prototype.hasOwnProperty.call(metadata, 'error') ? _extends({}, metadata, {
+    !(metadata && Object.prototype.hasOwnProperty.call(metadata, 'error')) ? _extends({}, metadata, {
       error: messageOrError
     }) : metadata;
     var context = extendedMetadata == null ? void 0 : extendedMetadata.context;
