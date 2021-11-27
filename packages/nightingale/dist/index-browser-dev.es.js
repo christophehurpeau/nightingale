@@ -122,7 +122,7 @@ if (global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
       handlers: handlers.filter(function (handler) {
         return level >= handler.minLevel && (!handler.isHandling || handler.isHandling(level, key));
       }),
-      processors: processors
+      processors
     };
   };
 }
@@ -139,13 +139,13 @@ function listenUnhandledErrors(logger) {
 
   process.on('uncaughtException', function (error) {
     return logger.error('uncaughtException', {
-      error: error,
+      error,
       unhandled: true
     });
   });
   process.on('unhandledRejection', function (error) {
     return logger.error('unhandledRejection', {
-      error: error,
+      error,
       unhandled: true
     });
   });

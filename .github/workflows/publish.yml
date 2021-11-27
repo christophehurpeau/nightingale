@@ -1,0 +1,75 @@
+name: publish
+on:
+  workflow_dispatch:
+    inputs:
+      dry-run:
+        description: 'Dry run? (y/N)'
+        required: true
+        default: 'N'
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.GH_TOKEN }}
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: |
+            .yarn/unplugged
+            .yarn/build-state.yml
+            .yarn/install-state.gz
+          key: v2-dependencies--${{ matrix.node-version }}-${{ runner.OS }}-${{ hashFiles('yarn.lock') }}
+          restore-keys: |
+            v2-dependencies--${{ matrix.node-version }}-${{ runner.OS }}-
+            v2-dependencies--${{ matrix.node-version }}-
+
+      - name: Check Dependencies
+        run: yarn install --immutable --immutable-cache
+
+      - name: New version (dry run)
+        if: |
+          github.ref == 'refs/heads/main'
+          && contains(github.event.inputs.dry-run, 'y')
+        run: yarn lerna version --yes --no-push --conventional-commits --conventional-graduate --no-git-tag-version --loglevel=verbose
+
+      - name: Configure Git user
+        if: |
+          github.ref == 'refs/heads/main'
+          && contains(github.event.inputs.dry-run, 'y') == false
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+      - name: New version
+        if: |
+          github.ref == 'refs/heads/main'
+          && contains(github.event.inputs.dry-run, 'y') == false
+        run: |
+          yarn lerna version --yes --push --conventional-commits --conventional-graduate --create-release=github -m 'chore: release [skip ci]'
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          YARN_ENABLE_IMMUTABLE_INSTALLS: false
+
+      - uses: actions/setup-node@v2
+        if: |
+          github.ref == 'refs/heads/main'
+          && contains(github.event.inputs.dry-run, 'y') == false
+        with:
+          node-version: 14
+          registry-url: 'https://registry.npmjs.org'
+
+      - run: lerna publish from-git --no-verify-access --yes
+        if: |
+          github.ref == 'refs/heads/main'
+          && contains(github.event.inputs.dry-run, 'y') == false
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

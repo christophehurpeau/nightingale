@@ -4,7 +4,6 @@
 /samples
 /test
 /*.config.js
-.codeclimate.yml
 .yo-rc.json
 
 /.settings

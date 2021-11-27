@@ -5,9 +5,8 @@ import { ReactNativeConsoleHandler } from 'nightingale-react-native-console';
 // eslint-disable-next-line import/no-unresolved
 import { Platform } from 'react-native';
 
-export { configure, addConfig } from 'nightingale';
-
-export { Level, ReactNativeConsoleHandler };
+export { configure, addConfig, Level } from 'nightingale';
+export { ReactNativeConsoleHandler } from 'nightingale-react-native-console';
 
 export const appLogger = new Logger('app');
 

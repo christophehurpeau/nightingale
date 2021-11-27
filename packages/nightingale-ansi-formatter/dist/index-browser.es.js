@@ -41,7 +41,7 @@ function style(styles, string) {
     var style = ansiStyles[styleName];
 
     if (!style) {
-      throw new Error("Unknown style: " + styleName);
+      throw new Error(`Unknown style: ${styleName}`);
     }
 
     return style.open + string + style.close;

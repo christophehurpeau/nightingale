@@ -44,13 +44,13 @@ export function formatRecordToString<T extends Metadata>(
   const formatRecordObject = (
     key: string,
     object: Record<string, unknown> | undefined,
-    styles: ObjectStyles | undefined,
+    objectStyles: ObjectStyles | undefined,
   ): void => {
     if (!object) {
       return;
     }
 
-    const stringObject = formatObject(object, style, styles);
+    const stringObject = formatObject(object, style, objectStyles);
 
     if (!stringObject) {
       return;

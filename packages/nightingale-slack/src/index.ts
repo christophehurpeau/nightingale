@@ -9,7 +9,7 @@ import { post } from 'request';
 import type SlackConfig from './SlackConfig';
 import createBody from './createBody';
 
-export { createBody };
+export { default as createBody } from './createBody';
 
 const createHandler =
   (slackConfig: SlackConfig) =>

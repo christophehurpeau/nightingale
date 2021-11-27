@@ -10,8 +10,19 @@ function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'defau
 
 var _extends__default = /*#__PURE__*/_interopDefaultLegacy(_extends);
 
-var _mapToSentryLevel;
-var mapToSentryLevel = (_mapToSentryLevel = {}, _mapToSentryLevel[nightingaleLevels.Level.TRACE] = types.Severity.Debug, _mapToSentryLevel[nightingaleLevels.Level.DEBUG] = types.Severity.Debug, _mapToSentryLevel[nightingaleLevels.Level.INFO] = types.Severity.Info, _mapToSentryLevel[nightingaleLevels.Level.NOTICE] = types.Severity.Log, _mapToSentryLevel[nightingaleLevels.Level.WARNING] = types.Severity.Warning, _mapToSentryLevel[nightingaleLevels.Level.ERROR] = types.Severity.Error, _mapToSentryLevel[nightingaleLevels.Level.CRITICAL] = types.Severity.Critical, _mapToSentryLevel[nightingaleLevels.Level.FATAL] = types.Severity.Fatal, _mapToSentryLevel[nightingaleLevels.Level.EMERGENCY] = types.Severity.Critical, _mapToSentryLevel[nightingaleLevels.Level.ALL] = types.Severity.Error, _mapToSentryLevel);
+var mapToSentryLevel = {
+  [nightingaleLevels.Level.TRACE]: types.Severity.Debug,
+  [nightingaleLevels.Level.DEBUG]: types.Severity.Debug,
+  [nightingaleLevels.Level.INFO]: types.Severity.Info,
+  [nightingaleLevels.Level.NOTICE]: types.Severity.Log,
+  [nightingaleLevels.Level.WARNING]: types.Severity.Warning,
+  [nightingaleLevels.Level.ERROR]: types.Severity.Error,
+  [nightingaleLevels.Level.CRITICAL]: types.Severity.Critical,
+  [nightingaleLevels.Level.FATAL]: types.Severity.Fatal,
+  [nightingaleLevels.Level.EMERGENCY]: types.Severity.Critical,
+  // not a level
+  [nightingaleLevels.Level.ALL]: types.Severity.Error
+};
 
 var createHandler = function createHandler(Sentry, _temp) {
   var _ref = _temp === void 0 ? {} : _temp,

@@ -5,9 +5,9 @@ function style(styles, string) {
     return string;
   }
 
-  return "<span style=\"" + styles.map(function (styleName) {
+  return `<span style="${styles.map(function (styleName) {
     return styleToHtmlStyle[styleName].open;
-  }).join('; ') + "\">" + string + "</span>";
+  }).join('; ')}">${string}</span>`;
 }
 /**
  * @param {Object} record

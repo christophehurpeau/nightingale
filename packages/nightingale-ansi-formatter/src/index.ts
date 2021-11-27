@@ -2,7 +2,7 @@ import ansi from 'ansi-styles';
 import { styleToHexColor, formatRecordToString } from 'nightingale-formatter';
 import type { Styles, LogRecord, Metadata } from 'nightingale-types';
 
-export type { Styles };
+export type { Styles } from 'nightingale-types';
 
 interface CodePair {
   open: string;
@@ -51,14 +51,14 @@ export function style(styles: Styles, string: string): string {
   }
 
   // eslint-disable-next-line unicorn/no-array-reduce
-  return styles.reduce((string: string, styleName: string) => {
-    const style: CodePair | undefined = ansiStyles[styleName];
+  return styles.reduce((styledString: string, styleName: string) => {
+    const codePair: CodePair | undefined = ansiStyles[styleName];
 
-    if (!style) {
+    if (!codePair) {
       throw new Error(`Unknown style: ${styleName}`);
     }
 
-    return style.open + string + style.close;
+    return codePair.open + styledString + codePair.close;
   }, string);
 }
 

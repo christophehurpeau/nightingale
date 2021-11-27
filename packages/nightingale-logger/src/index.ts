@@ -11,7 +11,7 @@ import type {
   LogRecord,
 } from 'nightingale-types';
 
-export { Level };
+export { Level } from 'nightingale-levels';
 
 export interface Options<T extends Metadata> {
   symbol?: string;
@@ -687,7 +687,7 @@ export class Logger {
       }
     }
 
-    this.enter(fn, metadata, metadataStyles!);
+    this.enter(fn, metadata, metadataStyles);
     (callback as () => void)();
     this.exit(fn);
   }

@@ -11,12 +11,12 @@
   "engines": {
     "node": ">=12.10.0"
   },
-  "packageManager": "yarn@3.1.0",
+  "packageManager": "yarn@3.1.1",
   "workspaces": [
     "packages/*"
   ],
   "scripts": {
-    "build": "yarn workspaces foreach -Avp --topological-dev run build && yarn run build:definitions && yarn run generate:docs",
+    "build": "yarn workspaces foreach --parallel --topological-dev -Av run build && yarn run build:definitions && yarn run generate:docs",
     "build:definitions": "tsc -b tsconfig.build.json",
     "checks": "node scripts/check-packages.js",
     "generate:api": "typedoc --tsconfig tsconfig.doc.json",
@@ -26,8 +26,6 @@
     "lint:eslint": "eslint --report-unused-disable-directives --resolve-plugins-relative-to . --quiet .",
     "lint:prettier": "prettier --check .",
     "postinstall": "pob-root-postinstall",
-    "preversion": "yarn run lint && yarn run build && repository-check-dirty",
-    "release": "GH_TOKEN=$POB_GITHUB_TOKEN lerna version --conventional-commits --conventional-graduate --create-release=github -m 'chore: release' && lerna publish from-git",
     "test": "yarn workspaces foreach --parallel -Av run test",
     "tsc": "tsc -b",
     "watch": "yarn workspaces foreach --parallel --exclude \"*-example\" -Av run watch",
@@ -51,15 +49,15 @@
   },
   "devDependencies": {
     "@pob/commitlint-config": "3.2.0",
-    "@pob/eslint-config": "45.1.0",
-    "@pob/eslint-config-typescript": "45.1.0",
+    "@pob/eslint-config": "47.0.0",
+    "@pob/eslint-config-typescript": "47.0.1",
     "@pob/lerna-light": "4.2.0",
     "@pob/root": "5.7.2",
     "@types/node": "14.17.34",
     "check-package-dependencies": "2.0.2",
     "eslint": "7.32.0",
     "prettier": "2.5.0",
-    "typedoc": "0.22.6",
-    "typescript": "4.4.4"
+    "typedoc": "0.22.10",
+    "typescript": "4.5.2"
   }
 }

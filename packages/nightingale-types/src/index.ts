@@ -1,6 +1,6 @@
 import type { Level } from 'nightingale-levels';
 
-export type { Level };
+export { Level } from 'nightingale-levels';
 
 export type Styles = string[] | undefined;
 

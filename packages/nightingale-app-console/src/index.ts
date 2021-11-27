@@ -1,22 +1,14 @@
 import { PRODUCTION, POB_TARGET } from 'pob-babel';
-import {
-  Logger,
-  configure,
-  Level,
-  levels,
-  listenUnhandledErrors,
-} from 'nightingale';
+import { Logger, configure, Level, listenUnhandledErrors } from 'nightingale';
 import { BrowserConsoleHandler } from 'nightingale-browser-console';
 import { ConsoleHandler as TerminalConsoleHandler } from 'nightingale-console';
 
-export { configure, addConfig } from 'nightingale';
+export { configure, addConfig, levels, Level } from 'nightingale';
 
 export const ConsoleHandler:
   | typeof BrowserConsoleHandler
   | typeof TerminalConsoleHandler =
   POB_TARGET === 'browser' ? BrowserConsoleHandler : TerminalConsoleHandler;
-
-export { Level, levels };
 
 export const logger = new Logger('app');
 export const appLogger = logger;

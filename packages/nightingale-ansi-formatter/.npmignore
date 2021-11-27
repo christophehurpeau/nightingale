@@ -8,7 +8,7 @@
 /tsconfig.build.json
 /dist/tsbuildinfo
 babel.config.json
-.codeclimate.yml
+__snapshots__
 .yo-rc.json
 
 /.settings

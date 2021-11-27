@@ -35,5 +35,8 @@
     "singleQuote": true,
     "arrowParens": "always"
   },
-  "pob": {}
+  "pob": {},
+  "devDependencies": {
+    "typescript": "4.5.2"
+  }
 }

@@ -7,17 +7,17 @@ export function style(styles: Styles, string: string): string {
   }
 
   // eslint-disable-next-line unicorn/no-array-reduce
-  return styles.reduce((string, styleName) => {
+  return styles.reduce((part, styleName) => {
     switch (styleName) {
       case 'bold':
-        return `*${string}*`;
+        return `*${part}*`;
       case 'italic':
-        return `_${string}_`;
+        return `_${part}_`;
       case 'strikethrough':
-        return `~${string}~`;
+        return `~${part}~`;
     }
 
-    return string;
+    return part;
   }, string);
 }
 

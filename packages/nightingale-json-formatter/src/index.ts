@@ -18,18 +18,18 @@ function map2object(map: Map<unknown, unknown>): unknown {
 function stringify(value: unknown, space?: string | number): string {
   return JSON.stringify(
     value,
-    (key, value) => {
-      if (value instanceof Map) {
-        return map2object(value);
+    (key, objectValue) => {
+      if (objectValue instanceof Map) {
+        return map2object(objectValue);
       }
-      if (value instanceof Error) {
+      if (objectValue instanceof Error) {
         return {
-          message: value.message,
-          stack: value.stack,
+          message: objectValue.message,
+          stack: objectValue.stack,
         };
       }
 
-      return value as unknown;
+      return objectValue as unknown;
     },
     space,
   );
