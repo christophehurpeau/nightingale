@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [11.7.3](https://github.com/christophehurpeau/nightingale/compare/v11.7.2...v11.7.3) (2021-11-27)
+
+
+### Bug Fixes
+
+* **nightingale-react-native-console:** always use console.log ([ad93004](https://github.com/christophehurpeau/nightingale/commit/ad93004db380994a0e378d57a67e64414e02b9bf)), closes [#241](https://github.com/christophehurpeau/nightingale/issues/241)
+
+
+
+
+
 ## [11.7.2](https://github.com/christophehurpeau/nightingale/compare/v11.7.1...v11.7.2) (2021-11-27)
 
 **Note:** Version bump only for package nightingale-react-native-console

@@ -8238,7 +8238,7 @@ __metadata:
     babel-preset-modern-browsers: 15.0.2
     nightingale: ^11.7.2
     nightingale-browser-console: ^11.7.2
-    nightingale-react-native-console: ^11.7.2
+    nightingale-react-native-console: ^11.7.3
     pob-babel: 28.5.0
     rollup: 2.60.1
     typescript: 4.5.2
@@ -8553,7 +8553,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"nightingale-react-native-console@^11.7.2, nightingale-react-native-console@workspace:packages/nightingale-react-native-console":
+"nightingale-react-native-console@^11.7.3, nightingale-react-native-console@workspace:packages/nightingale-react-native-console":
   version: 0.0.0-use.local
   resolution: "nightingale-react-native-console@workspace:packages/nightingale-react-native-console"
   dependencies:
