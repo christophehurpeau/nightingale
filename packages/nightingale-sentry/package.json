@@ -1,6 +1,6 @@
 {
   "name": "nightingale-sentry",
-  "version": "11.7.2",
+  "version": "11.7.4",
   "description": "Sentry handler for nightingale",
   "keywords": [
     "nightingale",
@@ -110,7 +110,7 @@
     "@sentry/node": "^5.0.0 || ^6.1.0",
     "@sentry/types": "^5.0.0 || ^6.1.0",
     "nightingale-levels": "^11.7.2",
-    "nightingale-types": "^11.7.2"
+    "nightingale-types": "^11.7.4"
   },
   "devDependencies": {
     "@babel/core": "7.16.0",
