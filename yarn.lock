@@ -8561,7 +8561,6 @@ __metadata:
     "@babel/preset-env": 7.16.4
     babel-preset-modern-browsers: 15.0.2
     nightingale-ansi-formatter: ^11.7.2
-    nightingale-console-output: ^11.7.2
     nightingale-types: ^11.7.2
     pob-babel: 28.5.0
     rollup: 2.60.1

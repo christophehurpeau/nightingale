@@ -1,5 +1,4 @@
 import formatterANSI from 'nightingale-ansi-formatter';
-import consoleOutput from 'nightingale-console-output';
 import type {
   Level,
   Handle,
@@ -9,9 +8,17 @@ import type {
   Handler,
 } from 'nightingale-types';
 
+function consoleOutput<T extends Metadata>(
+  param: string | string[],
+  record: LogRecord<T>,
+): void {
+  // eslint-disable-next-line no-console
+  console.log(...param);
+}
+
 const createHandle = (): Handle => {
   return <T extends Metadata>(record: LogRecord<T>): void => {
-    return consoleOutput([formatterANSI(record)], record);
+    consoleOutput([formatterANSI(record)], record);
   };
 };
 

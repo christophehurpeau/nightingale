@@ -84,7 +84,6 @@
   },
   "dependencies": {
     "nightingale-ansi-formatter": "^11.7.2",
-    "nightingale-console-output": "^11.7.2",
     "nightingale-types": "^11.7.2"
   },
   "devDependencies": {
