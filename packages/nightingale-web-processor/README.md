@@ -19,7 +19,26 @@ npm install --save nightingale-web-processor
 ## Usage
 
 ```js
-import nightingaleWebProcessor from 'nightingale-web-processor';
+import Koa from 'koa';
+import webProcessor from 'nightingale-web-processor';
 
-console.log(nightingaleWebProcessor);
+configure([
+  {
+    key: 'app',
+    handlers: [new ConsoleHandler(Level.ALL)],
+    processors: [webProcessor],
+  },
+]);
+
+const app = new Koa();
+
+app.use((ctx, next) => {
+  ctx.logger = appLogger.context({ request: ctx.req });
+  return next();
+});
+
+app.use(async (ctx) => {
+  ctx.logger.info('got request !');
+  ctx.body = 'ok';
+});
 ```
