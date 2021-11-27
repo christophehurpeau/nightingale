@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [11.8.0](https://github.com/christophehurpeau/nightingale/compare/v11.7.4...v11.8.0) (2021-11-27)
+
+
+### Features
+
+* **nightingale-logger:** support passing Error to any of the basic methods ([c1fda3e](https://github.com/christophehurpeau/nightingale/commit/c1fda3e5686f4c86f96d2cb2581239d2394bcf39))
+
+
+
+
+
 ## [11.7.4](https://github.com/christophehurpeau/nightingale/compare/v11.7.3...v11.7.4) (2021-11-27)
 
 
