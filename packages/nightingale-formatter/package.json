@@ -1,6 +1,6 @@
 {
   "name": "nightingale-formatter",
-  "version": "11.7.1",
+  "version": "11.7.2",
   "description": "Nightingale formatter",
   "keywords": [
     "nightingale",
@@ -128,8 +128,8 @@
     ]
   },
   "dependencies": {
-    "nightingale-levels": "^11.7.1",
-    "nightingale-types": "^11.7.1"
+    "nightingale-levels": "^11.7.2",
+    "nightingale-types": "^11.7.2"
   },
   "devDependencies": {
     "@babel/core": "7.16.0",

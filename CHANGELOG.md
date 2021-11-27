@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [11.7.2](https://github.com/christophehurpeau/nightingale/compare/v11.7.1...v11.7.2) (2021-11-27)
+
+
+### Bug Fixes
+
+* support formatting symbol and bigint ([f4205b0](https://github.com/christophehurpeau/nightingale/commit/f4205b0add9d570e470f93ac525db1adbfacf1db))
+
+
+
+
+
 ## [11.7.1](https://github.com/christophehurpeau/nightingale/compare/v11.7.0...v11.7.1) (2021-06-29)
 
 

@@ -1,6 +1,6 @@
 {
   "name": "nightingale-slack",
-  "version": "11.7.1",
+  "version": "11.7.2",
   "description": "Slack handler for nightingale",
   "keywords": [
     "nightingale",
@@ -87,10 +87,10 @@
     ]
   },
   "dependencies": {
-    "nightingale-levels": "^11.7.1",
-    "nightingale-markdown-formatter": "^11.7.1",
-    "nightingale-raw-formatter": "^11.7.1",
-    "nightingale-types": "^11.7.1",
+    "nightingale-levels": "^11.7.2",
+    "nightingale-markdown-formatter": "^11.7.2",
+    "nightingale-raw-formatter": "^11.7.2",
+    "nightingale-types": "^11.7.2",
     "request": "^2.88.0"
   },
   "devDependencies": {

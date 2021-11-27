@@ -1,6 +1,6 @@
 {
   "name": "nightingale-browser-console-formatter",
-  "version": "11.7.1",
+  "version": "11.7.2",
   "description": "Nightingale Browser console formatter",
   "keywords": [
     "nightingale",
@@ -128,8 +128,8 @@
     ]
   },
   "dependencies": {
-    "nightingale-formatter": "^11.7.1",
-    "nightingale-types": "^11.7.1"
+    "nightingale-formatter": "^11.7.2",
+    "nightingale-types": "^11.7.2"
   },
   "devDependencies": {
     "@babel/core": "7.16.0",
@@ -139,7 +139,7 @@
     "babel-preset-latest-node": "5.5.1",
     "babel-preset-modern-browsers": "15.0.2",
     "jest": "27.3.1",
-    "nightingale-levels": "^11.7.1",
+    "nightingale-levels": "^11.7.2",
     "pob-babel": "28.5.0",
     "pob-lcov-reporter": "5.4.0",
     "rollup": "2.60.1",
