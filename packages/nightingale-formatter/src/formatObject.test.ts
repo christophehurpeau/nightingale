@@ -20,7 +20,10 @@ test('simple object', () => {
 
 test('simple without prototype', () => {
   expect(
-    formatObject(Object.assign(Object.create(null), { a: 1 }), styleFn),
+    formatObject(
+      Object.assign(Object.create(null) as Record<string, number>, { a: 1 }),
+      styleFn,
+    ),
   ).toBe('{ [styles:gray-light,bold]a:[/styles] [styles:yellow]1[/styles] }');
 });
 
@@ -41,6 +44,25 @@ test('long object', () => {
     ),
   ).toBe(
     '{\n  obj: { a: 10000000000000000000, b: 10000000000000000000, c: 10000000000000000000, d: 10000000000000000000, e: 10000000000000000000, f: 10000000000000000000 },\n}',
+  );
+});
+
+test('multiple values', () => {
+  expect(
+    formatObject(
+      {
+        // eslint-disable-next-line object-shorthand
+        undefined: undefined,
+        null: null,
+        number: 1,
+        string: 's',
+        bigInt: BigInt(1),
+        symbol: Symbol('symbol'),
+      },
+      styleFn,
+    ),
+  ).toBe(
+    '{ [styles:gray-light,bold]undefined:[/styles] [styles:cyan]undefined[/styles][styles:gray],[/styles] [styles:gray-light,bold]null:[/styles] [styles:cyan]null[/styles][styles:gray],[/styles] [styles:gray-light,bold]number:[/styles] [styles:yellow]1[/styles][styles:gray],[/styles] [styles:gray-light,bold]string:[/styles] [styles:orange]"s"[/styles][styles:gray],[/styles] [styles:gray-light,bold]bigInt:[/styles] [styles:red]1[/styles][styles:gray],[/styles] [styles:gray-light,bold]symbol:[/styles] [styles:magenta]Symbol(symbol)[/styles] }',
   );
 });
 

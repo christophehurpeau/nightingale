@@ -75,17 +75,26 @@ function internalFormatValue(
       styles = ['cyan'];
     } else {
       switch (typeofValue) {
+        case 'undefined':
+          styles = ['cyan'];
+          break;
         case 'boolean':
           styles = ['green'];
           break;
         case 'number':
           styles = ['yellow'];
           break;
+        case 'bigint':
+          styles = ['red'];
+          break;
         case 'string':
           styles = ['orange'];
           break;
         case 'symbol':
           styles = ['magenta'];
+          break;
+        case 'object':
+        case 'function':
           break;
       }
     }
@@ -143,6 +152,10 @@ function internalFormatValue(
         objects,
       });
     }
+  } else if (typeofValue === 'bigint') {
+    stringValue = (value as bigint).toString();
+  } else if (typeofValue === 'symbol') {
+    stringValue = (value as symbol).toString();
   } else if (value instanceof Set) {
     const name = value.constructor.name;
     if (depth >= maxDepth) {
