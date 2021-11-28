@@ -1,6 +1,6 @@
 {
   "name": "nightingale",
-  "version": "11.8.1",
+  "version": "11.9.0",
   "description": "Logger for browser and node",
   "keywords": [
     "logger"
@@ -129,7 +129,7 @@
   "dependencies": {
     "@types/node": ">=12.0.0",
     "nightingale-levels": "^11.7.2",
-    "nightingale-logger": "^11.8.1",
+    "nightingale-logger": "^11.9.0",
     "nightingale-types": "^11.7.4"
   },
   "devDependencies": {

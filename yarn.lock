@@ -10311,7 +10311,7 @@ __metadata:
     "@types/node": ">=12.0.0"
     babel-preset-latest-node: 5.5.1
     babel-preset-modern-browsers: 15.0.2
-    nightingale: ^11.8.1
+    nightingale: ^11.9.0
     nightingale-browser-console: ^11.7.4
     nightingale-console: ^11.7.4
     pob-babel: 28.5.0
@@ -10328,9 +10328,9 @@ __metadata:
     "@babel/preset-env": 7.16.4
     "@types/react-native": 0.66.6
     babel-preset-modern-browsers: 15.0.2
-    nightingale: ^11.8.1
+    nightingale: ^11.9.0
     nightingale-browser-console: ^11.7.4
-    nightingale-react-native-console: ^11.7.4
+    nightingale-react-native-console: ^11.9.0
     pob-babel: 28.5.0
     rollup: 2.60.1
     typescript: 4.5.2
@@ -10390,7 +10390,7 @@ __metadata:
     "@rollup/plugin-run": 2.1.0
     "@sentry/node": ^6.1.0
     babel-preset-latest-node: 5.5.1
-    nightingale: ^11.8.1
+    nightingale: ^11.9.0
     nightingale-console: ^11.7.4
     nightingale-sentry: ^11.7.4
     pob-babel: 28.5.0
@@ -10462,7 +10462,7 @@ __metadata:
     "@babel/core": 7.16.0
     "@rollup/plugin-run": 2.1.0
     babel-preset-latest-node: 5.5.1
-    nightingale: ^11.8.1
+    nightingale: ^11.9.0
     nightingale-console: ^11.7.4
     nightingale-console-output: ^11.7.4
     nightingale-json-formatter: ^11.7.4
@@ -10561,7 +10561,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"nightingale-logger@^11.8.1, nightingale-logger@workspace:packages/nightingale-logger":
+"nightingale-logger@^11.9.0, nightingale-logger@workspace:packages/nightingale-logger":
   version: 0.0.0-use.local
   resolution: "nightingale-logger@workspace:packages/nightingale-logger"
   dependencies:
@@ -10645,7 +10645,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"nightingale-react-native-console@^11.7.4, nightingale-react-native-console@workspace:packages/nightingale-react-native-console":
+"nightingale-react-native-console@^11.9.0, nightingale-react-native-console@workspace:packages/nightingale-react-native-console":
   version: 0.0.0-use.local
   resolution: "nightingale-react-native-console@workspace:packages/nightingale-react-native-console"
   dependencies:
@@ -10766,7 +10766,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"nightingale@^11.8.1, nightingale@workspace:packages/nightingale":
+"nightingale@^11.9.0, nightingale@workspace:packages/nightingale":
   version: 0.0.0-use.local
   resolution: "nightingale@workspace:packages/nightingale"
   dependencies:
@@ -10779,7 +10779,7 @@ __metadata:
     babel-preset-modern-browsers: 15.0.2
     jest: 27.3.1
     nightingale-levels: ^11.7.2
-    nightingale-logger: ^11.8.1
+    nightingale-logger: ^11.9.0
     nightingale-string: ^11.7.4
     nightingale-types: ^11.7.4
     pob-babel: 28.5.0
