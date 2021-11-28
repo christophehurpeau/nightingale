@@ -18,6 +18,8 @@ npm install --save nightingale nightingale-react-native-console
 
 ## Usage
 
+:warn: This logger is meant for dev only.
+
 ```js
 import { configure, Level } from 'nightingale';
 import ReactNativeConsoleHandler from 'nightingale-react-native-console';

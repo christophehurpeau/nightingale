@@ -1,8 +1,6 @@
 import { Logger, configure, Level } from 'nightingale';
 import { BrowserConsoleHandler } from 'nightingale-browser-console';
 import { ReactNativeConsoleHandler } from 'nightingale-react-native-console';
-// @ts-expect-error including @types/react-native causes conflicts
-// eslint-disable-next-line import/no-unresolved
 import { Platform } from 'react-native';
 
 export { configure, addConfig, Level } from 'nightingale';
