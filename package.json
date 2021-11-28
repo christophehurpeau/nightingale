@@ -23,7 +23,7 @@
     "generate:docs": "rm -Rf docs ; yarn run generate:api ; touch docs/.nojekyll",
     "generate:test-coverage": "lerna run --parallel --ignore \"*-example\" generate:test-coverage",
     "lint": "yarn run lint:prettier && yarn run lint:eslint",
-    "lint:eslint": "eslint --report-unused-disable-directives --resolve-plugins-relative-to . --quiet . --ignore-pattern packages/* && yarn workspaces foreach --parallel -Av run lint:eslint",
+    "lint:eslint": "NODE_OPTIONS=--max_old_space_size=4096 eslint --report-unused-disable-directives --resolve-plugins-relative-to . --quiet . --ignore-pattern packages/* && yarn workspaces foreach --parallel -Av run lint:eslint",
     "lint:prettier": "prettier --check .",
     "postinstall": "pob-root-postinstall",
     "test": "yarn workspaces foreach --parallel -Av run test",
