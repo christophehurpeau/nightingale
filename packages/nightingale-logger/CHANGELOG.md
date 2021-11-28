@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [11.8.1](https://github.com/christophehurpeau/nightingale/compare/v11.8.0...v11.8.1) (2021-11-28)
+
+
+### Bug Fixes
+
+* **nightingale-logger:** fix build ([fe7e3c9](https://github.com/christophehurpeau/nightingale/commit/fe7e3c9ef54a6c6957b244112af5f5438ed1950b))
+
+
+
+
+
 # [11.8.0](https://github.com/christophehurpeau/nightingale/compare/v11.7.4...v11.8.0) (2021-11-27)
 
 
