@@ -11,7 +11,6 @@ export const appLogger = new Logger('app');
 export const ReactNativeConsoleHandlerForPlatform:
   | typeof ReactNativeConsoleHandler
   | typeof BrowserConsoleHandler =
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
   Platform.OS === 'web' ? BrowserConsoleHandler : ReactNativeConsoleHandler;
 
 configure(

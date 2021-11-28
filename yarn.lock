@@ -10326,6 +10326,7 @@ __metadata:
   dependencies:
     "@babel/core": 7.16.0
     "@babel/preset-env": 7.16.4
+    "@types/react-native": 0.66.6
     babel-preset-modern-browsers: 15.0.2
     nightingale: ^11.8.1
     nightingale-browser-console: ^11.7.4
