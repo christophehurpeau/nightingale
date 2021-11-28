@@ -179,7 +179,7 @@ class Logger {
   log(messageOrError, metadata, level = nightingaleLevels.Level.INFO, options) {
     const isMessageError = isError(messageOrError);
     const message = isMessageError ? `${messageOrError.name}: ${messageOrError.message}` : messageOrError;
-    const extendedMetadata = isMessageError && // eslint-disable-next-line unicorn/prefer-object-has-own
+    const extendedMetadata = isMessageError && // eslint-disable-next-line unicorn/prefer-object-has-own -- TODO fix and add polyfill
     !(metadata && Object.prototype.hasOwnProperty.call(metadata, 'error')) ? { ...metadata,
       error: messageOrError
     } : metadata;

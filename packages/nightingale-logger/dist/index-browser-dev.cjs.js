@@ -181,7 +181,7 @@ var Logger = /*#__PURE__*/function () {
 
     var isMessageError = isError(messageOrError);
     var message = isMessageError ? `${messageOrError.name}: ${messageOrError.message}` : messageOrError;
-    var extendedMetadata = isMessageError && // eslint-disable-next-line unicorn/prefer-object-has-own
+    var extendedMetadata = isMessageError && // eslint-disable-next-line unicorn/prefer-object-has-own -- TODO fix and add polyfill
     !(metadata && Object.prototype.hasOwnProperty.call(metadata, 'error')) ? _extends__default({}, metadata, {
       error: messageOrError
     }) : metadata;
