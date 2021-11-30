@@ -10318,7 +10318,7 @@ __metadata:
     nightingale-types: ^11.7.4
     pob-babel: 28.6.0
     pob-lcov-reporter: 5.4.0
-    rollup: 2.60.1
+    rollup: 2.60.2
     typescript: 4.5.2
     xunit-file: 1.0.0
   languageName: unknown
@@ -10337,7 +10337,7 @@ __metadata:
     nightingale-browser-console: ^11.7.4
     nightingale-console: ^11.7.4
     pob-babel: 28.6.0
-    rollup: 2.60.1
+    rollup: 2.60.2
     typescript: 4.5.2
   languageName: unknown
   linkType: soft
@@ -10354,7 +10354,7 @@ __metadata:
     nightingale-browser-console: ^11.7.4
     nightingale-react-native-console: ^11.9.0
     pob-babel: 28.6.0
-    rollup: 2.60.1
+    rollup: 2.60.2
     typescript: 4.5.2
   peerDependencies:
     react-native: "*"
@@ -10381,7 +10381,7 @@ __metadata:
     nightingale-types: ^11.7.4
     pob-babel: 28.6.0
     pob-lcov-reporter: 5.4.0
-    rollup: 2.60.1
+    rollup: 2.60.2
     typescript: 4.5.2
     xunit-file: 1.0.0
   languageName: unknown
@@ -10399,7 +10399,7 @@ __metadata:
     nightingale-debug: ^11.7.4
     nightingale-types: ^11.7.4
     pob-babel: 28.6.0
-    rollup: 2.60.1
+    rollup: 2.60.2
     typescript: 4.5.2
   languageName: unknown
   linkType: soft
@@ -10416,7 +10416,7 @@ __metadata:
     nightingale-console: ^11.7.4
     nightingale-sentry: ^11.7.4
     pob-babel: 28.6.0
-    rollup: 2.60.1
+    rollup: 2.60.2
     typescript: 4.5.2
   languageName: unknown
   linkType: soft
@@ -10433,7 +10433,7 @@ __metadata:
     nightingale-levels: ^11.7.2
     nightingale-types: ^11.7.4
     pob-babel: 28.6.0
-    rollup: 2.60.1
+    rollup: 2.60.2
     typescript: 4.5.2
   languageName: unknown
   linkType: soft
@@ -10452,7 +10452,7 @@ __metadata:
     nightingale-levels: ^11.7.2
     nightingale-types: ^11.7.4
     pob-babel: 28.6.0
-    rollup: 2.60.1
+    rollup: 2.60.2
     typescript: 4.5.2
   languageName: unknown
   linkType: soft
@@ -10471,7 +10471,7 @@ __metadata:
     nightingale-levels: ^11.7.2
     pob-babel: 28.6.0
     pob-lcov-reporter: 5.4.0
-    rollup: 2.60.1
+    rollup: 2.60.2
     typescript: 4.5.2
     xunit-file: 1.0.0
   languageName: unknown
@@ -10491,7 +10491,7 @@ __metadata:
     nightingale-string: ^11.7.4
     nightingale-types: ^11.7.4
     pob-babel: 28.6.0
-    rollup: 2.60.1
+    rollup: 2.60.2
     typescript: 4.5.2
   languageName: unknown
   linkType: soft
@@ -10511,7 +10511,7 @@ __metadata:
     nightingale-types: ^11.7.4
     pob-babel: 28.6.0
     pob-lcov-reporter: 5.4.0
-    rollup: 2.60.1
+    rollup: 2.60.2
     typescript: 4.5.2
     xunit-file: 1.0.0
   languageName: unknown
@@ -10533,7 +10533,7 @@ __metadata:
     nightingale-types: ^11.7.4
     pob-babel: 28.6.0
     pob-lcov-reporter: 5.4.0
-    rollup: 2.60.1
+    rollup: 2.60.2
     typescript: 4.5.2
     xunit-file: 1.0.0
   languageName: unknown
@@ -10555,7 +10555,7 @@ __metadata:
     nightingale-types: ^11.7.4
     pob-babel: 28.6.0
     pob-lcov-reporter: 5.4.0
-    rollup: 2.60.1
+    rollup: 2.60.2
     typescript: 4.5.2
     xunit-file: 1.0.0
   languageName: unknown
@@ -10578,7 +10578,7 @@ __metadata:
     babel-preset-latest-node: 5.5.1
     babel-preset-modern-browsers: 15.0.2
     pob-babel: 28.6.0
-    rollup: 2.60.1
+    rollup: 2.60.2
     typescript: 4.5.2
   languageName: unknown
   linkType: soft
@@ -10599,7 +10599,7 @@ __metadata:
     nightingale-types: ^11.7.4
     pob-babel: 28.6.0
     pob-lcov-reporter: 5.4.0
-    rollup: 2.60.1
+    rollup: 2.60.2
     typescript: 4.5.2
     xunit-file: 1.0.0
   languageName: unknown
@@ -10621,7 +10621,7 @@ __metadata:
     nightingale-types: ^11.7.4
     pob-babel: 28.6.0
     pob-lcov-reporter: 5.4.0
-    rollup: 2.60.1
+    rollup: 2.60.2
     typescript: 4.5.2
     xunit-file: 1.0.0
   languageName: unknown
@@ -10661,7 +10661,7 @@ __metadata:
     nightingale-types: ^11.7.4
     pob-babel: 28.6.0
     pob-lcov-reporter: 5.4.0
-    rollup: 2.60.1
+    rollup: 2.60.2
     typescript: 4.5.2
     xunit-file: 1.0.0
   languageName: unknown
@@ -10680,7 +10680,7 @@ __metadata:
     pob-babel: 28.6.0
     react: 17.0.2
     react-native: 0.66.3
-    rollup: 2.60.1
+    rollup: 2.60.2
     typescript: 4.5.2
   peerDependencies:
     react-native: "*"
@@ -10701,7 +10701,7 @@ __metadata:
     nightingale-levels: ^11.7.2
     nightingale-types: ^11.7.4
     pob-babel: 28.6.0
-    rollup: 2.60.1
+    rollup: 2.60.2
     typescript: 4.5.2
   languageName: unknown
   linkType: soft
@@ -10723,7 +10723,7 @@ __metadata:
     pob-babel: 28.6.0
     pob-lcov-reporter: 5.4.0
     request: ^2.88.0
-    rollup: 2.60.1
+    rollup: 2.60.2
     typescript: 4.5.2
     xunit-file: 1.0.0
   languageName: unknown
@@ -10738,7 +10738,7 @@ __metadata:
     nightingale-raw-formatter: ^11.7.4
     nightingale-types: ^11.7.4
     pob-babel: 28.6.0
-    rollup: 2.60.1
+    rollup: 2.60.2
     typescript: 4.5.2
   languageName: unknown
   linkType: soft
@@ -10753,7 +10753,7 @@ __metadata:
     babel-preset-modern-browsers: 15.0.2
     nightingale-levels: ^11.7.2
     pob-babel: 28.6.0
-    rollup: 2.60.1
+    rollup: 2.60.2
     typescript: 4.5.2
   languageName: unknown
   linkType: soft
@@ -10767,7 +10767,7 @@ __metadata:
     babel-preset-latest-node: 5.5.1
     nightingale-types: ^11.7.4
     pob-babel: 28.6.0
-    rollup: 2.60.1
+    rollup: 2.60.2
     typescript: 4.5.2
   languageName: unknown
   linkType: soft
@@ -10783,7 +10783,7 @@ __metadata:
     nightingale-level-names: ^11.7.2
     nightingale-types: ^11.7.4
     pob-babel: 28.6.0
-    rollup: 2.60.1
+    rollup: 2.60.2
     typescript: 4.5.2
   languageName: unknown
   linkType: soft
@@ -10806,7 +10806,7 @@ __metadata:
     nightingale-types: ^11.7.4
     pob-babel: 28.6.0
     pob-lcov-reporter: 5.4.0
-    rollup: 2.60.1
+    rollup: 2.60.2
     typescript: 4.5.2
     xunit-file: 1.0.0
   languageName: unknown
@@ -12625,9 +12625,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rollup@npm:2.60.1, rollup@npm:^2.47.0":
-  version: 2.60.1
-  resolution: "rollup@npm:2.60.1"
+"rollup@npm:2.60.2, rollup@npm:^2.47.0":
+  version: 2.60.2
+  resolution: "rollup@npm:2.60.2"
   dependencies:
     fsevents: ~2.3.2
   dependenciesMeta:
@@ -12635,7 +12635,7 @@ __metadata:
       optional: true
   bin:
     rollup: dist/bin/rollup
-  checksum: 77d7980bd5e619075c7cc67ccbe63263c4e98bd4cc41d4d77d5d4b743cb954adc81d348e38049546645651e2d0e73feeafdcac4474bd8ea333bf5cb882f0bc0c
+  checksum: bcd41dfe8afb7e0d97ce2237752165bdda689bcce6321d96821d565de3e0c865a49b544923f315985be2bfde086f72b54aae4ae7c87f798b3cb9558a5bec4e65
   languageName: node
   linkType: hard
 
