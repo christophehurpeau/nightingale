@@ -48,7 +48,7 @@
     "@types/node": "Avoid problems in typescript with several versions of @types/node"
   },
   "devDependencies": {
-    "@pob/commitlint-config": "3.2.0",
+    "@pob/commitlint-config": "3.3.0",
     "@pob/eslint-config": "47.0.0",
     "@pob/eslint-config-typescript": "47.0.1",
     "@pob/lerna-light": "4.2.0",
