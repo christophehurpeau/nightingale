@@ -4945,9 +4945,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"check-package-dependencies@npm:2.1.0":
-  version: 2.1.0
-  resolution: "check-package-dependencies@npm:2.1.0"
+"check-package-dependencies@npm:2.2.1":
+  version: 2.2.1
+  resolution: "check-package-dependencies@npm:2.2.1"
   dependencies:
     chalk: ^4.1.0
     glob: ^7.1.6
@@ -4955,7 +4955,7 @@ __metadata:
     type-fest: ^2.0.0
   bin:
     check-package-dependencies: bin/check-package-dependencies.js
-  checksum: b1f77e8f69406d04dd156e23f36bc09104db752a9e3a86d176412adf6f9efab5f08d11c72cf0147e9b52e2c8ff31e9804a101c83dea4a41107fee39e2f3794ff
+  checksum: dbe8e14d41d66874a71d641176f2bd97b8140430f8ee54e02d9e014e8be79f05a3fa8c88f4dea9e099908b09aa19e0bef95413769e253bff36ef97bc232f4155
   languageName: node
   linkType: hard
 
@@ -10618,7 +10618,7 @@ __metadata:
     "@pob/lerna-light": 4.2.0
     "@pob/root": 5.9.0
     "@types/node": 14.18.0
-    check-package-dependencies: 2.1.0
+    check-package-dependencies: 2.2.1
     eslint: 7.32.0
     prettier: 2.5.1
     typedoc: 0.22.10
