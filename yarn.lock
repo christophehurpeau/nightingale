@@ -2767,11 +2767,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pob/eslint-config-typescript@npm:47.0.1":
-  version: 47.0.1
-  resolution: "@pob/eslint-config-typescript@npm:47.0.1"
+"@pob/eslint-config-typescript@npm:47.1.0":
+  version: 47.1.0
+  resolution: "@pob/eslint-config-typescript@npm:47.1.0"
   dependencies:
-    "@pob/eslint-config": ^47.0.0
+    "@pob/eslint-config": ^47.1.0
     "@pob/use-eslint-plugin": ^47.0.0
     "@typescript-eslint/eslint-plugin": ^5.3.1
     "@typescript-eslint/parser": ^5.3.1
@@ -2793,11 +2793,11 @@ __metadata:
       optional: true
     eslint-plugin-node:
       optional: true
-  checksum: 24fbcd770120724832b42184f59cf2229a472ccc18633861a71bff3ab25dd2fc2ce5d021d4881bcff901fbfb40b00ca4ab95d7844f5e740ce88cb42bb6c013c0
+  checksum: 079373efb88b80b6de43bf7c9e207ab7af9c83db48b705666fee201cc0282443d15b9dee78575f2495645655ddab259a1ea93808132bfdce144220d293d1d285
   languageName: node
   linkType: hard
 
-"@pob/eslint-config@npm:47.1.0, @pob/eslint-config@npm:^47.0.0":
+"@pob/eslint-config@npm:47.1.0, @pob/eslint-config@npm:^47.1.0":
   version: 47.1.0
   resolution: "@pob/eslint-config@npm:47.1.0"
   dependencies:
@@ -10614,7 +10614,7 @@ __metadata:
   dependencies:
     "@pob/commitlint-config": 3.3.0
     "@pob/eslint-config": 47.1.0
-    "@pob/eslint-config-typescript": 47.0.1
+    "@pob/eslint-config-typescript": 47.1.0
     "@pob/lerna-light": 4.2.0
     "@pob/root": 5.9.0
     "@types/node": 14.18.0
