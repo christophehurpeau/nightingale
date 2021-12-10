@@ -2797,9 +2797,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pob/eslint-config@npm:47.0.0, @pob/eslint-config@npm:^47.0.0":
-  version: 47.0.0
-  resolution: "@pob/eslint-config@npm:47.0.0"
+"@pob/eslint-config@npm:47.1.0, @pob/eslint-config@npm:^47.0.0":
+  version: 47.1.0
+  resolution: "@pob/eslint-config@npm:47.1.0"
   dependencies:
     "@pob/use-eslint-plugin": ^47.0.0
     eslint-config-airbnb-base: ^14.2.1
@@ -2819,7 +2819,7 @@ __metadata:
       optional: true
     eslint-plugin-unicorn:
       optional: true
-  checksum: f65caf90de061c993ea0371d84e34f95aa43c61c93eeb07b3f83687e0451748821864c374e63b2d99151f1b3275fb6912424a2d85bf16629e8625b4d45dc23a7
+  checksum: 85bbe997b7434d29f63152f34511ceb687470cec5681ce14eec7c079b95e59aa94c94c9b9a2fc3d7903024408b95b1b21c440b4230c53a6917333df9349b3db8
   languageName: node
   linkType: hard
 
@@ -10613,7 +10613,7 @@ __metadata:
   resolution: "nightingale-monorepo@workspace:."
   dependencies:
     "@pob/commitlint-config": 3.3.0
-    "@pob/eslint-config": 47.0.0
+    "@pob/eslint-config": 47.1.0
     "@pob/eslint-config-typescript": 47.0.1
     "@pob/lerna-light": 4.2.0
     "@pob/root": 5.9.0
