@@ -5632,22 +5632,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dateformat@npm:^1.0.12":
-  version: 1.0.12
-  resolution: "dateformat@npm:1.0.12"
-  dependencies:
-    get-stdin: ^4.0.1
-    meow: ^3.3.0
-  bin:
-    dateformat: bin/cli.js
-  checksum: 96f055302f8694a7cc35f95065196263921a06f183f5ad0a98879649d5e24e0fe104969007a401cdcde9e94dac33a330a249899a00abaf2c0877fb213fd309e7
-  languageName: node
-  linkType: hard
-
 "dateformat@npm:^3.0.0":
   version: 3.0.3
   resolution: "dateformat@npm:3.0.3"
   checksum: ca4911148abb09887bd9bdcd632c399b06f3ecad709a18eb594d289a1031982f441e08e281db77ffebcb2cbcbfa1ac578a7cbfbf8743f41009aa5adc1846ed34
+  languageName: node
+  linkType: hard
+
+"dateformat@npm:^4.6.2":
+  version: 4.6.3
+  resolution: "dateformat@npm:4.6.3"
+  checksum: c3aa0617c0a5b30595122bc8d1bee6276a9221e4d392087b41cbbdf175d9662ae0e50d0d6dcdf45caeac5153c4b5b0844265f8cd2b2245451e3da19e39e3b65d
   languageName: node
   linkType: hard
 
@@ -10301,7 +10296,7 @@ __metadata:
     pob-lcov-reporter: 5.4.0
     rollup: 2.61.0
     typescript: 4.5.3
-    xunit-file: 1.0.0
+    xunit-file: 2.0.0
   languageName: unknown
   linkType: soft
 
@@ -10364,7 +10359,7 @@ __metadata:
     pob-lcov-reporter: 5.4.0
     rollup: 2.61.0
     typescript: 4.5.3
-    xunit-file: 1.0.0
+    xunit-file: 2.0.0
   languageName: unknown
   linkType: soft
 
@@ -10454,7 +10449,7 @@ __metadata:
     pob-lcov-reporter: 5.4.0
     rollup: 2.61.0
     typescript: 4.5.3
-    xunit-file: 1.0.0
+    xunit-file: 2.0.0
   languageName: unknown
   linkType: soft
 
@@ -10494,7 +10489,7 @@ __metadata:
     pob-lcov-reporter: 5.4.0
     rollup: 2.61.0
     typescript: 4.5.3
-    xunit-file: 1.0.0
+    xunit-file: 2.0.0
   languageName: unknown
   linkType: soft
 
@@ -10516,7 +10511,7 @@ __metadata:
     pob-lcov-reporter: 5.4.0
     rollup: 2.61.0
     typescript: 4.5.3
-    xunit-file: 1.0.0
+    xunit-file: 2.0.0
   languageName: unknown
   linkType: soft
 
@@ -10538,7 +10533,7 @@ __metadata:
     pob-lcov-reporter: 5.4.0
     rollup: 2.61.0
     typescript: 4.5.3
-    xunit-file: 1.0.0
+    xunit-file: 2.0.0
   languageName: unknown
   linkType: soft
 
@@ -10582,7 +10577,7 @@ __metadata:
     pob-lcov-reporter: 5.4.0
     rollup: 2.61.0
     typescript: 4.5.3
-    xunit-file: 1.0.0
+    xunit-file: 2.0.0
   languageName: unknown
   linkType: soft
 
@@ -10604,7 +10599,7 @@ __metadata:
     pob-lcov-reporter: 5.4.0
     rollup: 2.61.0
     typescript: 4.5.3
-    xunit-file: 1.0.0
+    xunit-file: 2.0.0
   languageName: unknown
   linkType: soft
 
@@ -10644,7 +10639,7 @@ __metadata:
     pob-lcov-reporter: 5.4.0
     rollup: 2.61.0
     typescript: 4.5.3
-    xunit-file: 1.0.0
+    xunit-file: 2.0.0
   languageName: unknown
   linkType: soft
 
@@ -10706,7 +10701,7 @@ __metadata:
     request: ^2.88.0
     rollup: 2.61.0
     typescript: 4.5.3
-    xunit-file: 1.0.0
+    xunit-file: 2.0.0
   languageName: unknown
   linkType: soft
 
@@ -10789,7 +10784,7 @@ __metadata:
     pob-lcov-reporter: 5.4.0
     rollup: 2.61.0
     typescript: 4.5.3
-    xunit-file: 1.0.0
+    xunit-file: 2.0.0
   languageName: unknown
   linkType: soft
 
@@ -14731,13 +14726,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"xunit-file@npm:1.0.0":
-  version: 1.0.0
-  resolution: "xunit-file@npm:1.0.0"
+"xunit-file@npm:2.0.0":
+  version: 2.0.0
+  resolution: "xunit-file@npm:2.0.0"
   dependencies:
-    dateformat: ^1.0.12
-    mkdirp: ^0.5.1
-  checksum: cc895ff8535f8328cdc32f6b6b7f0094bf304063836077585885ebe6d75184ee47b8408810b91cfcd24ea5b9f96eb2bb1882fc6b1621cf7c8c37fb2eb99b5f4d
+    dateformat: ^4.6.2
+    mkdirp: ^1.0.4
+  checksum: 76c410237f63b7454f8ce241dc2009cd5afe3a1d1bf5b75a90a3fbb75c08949942a4d13c12f2fa9903f9c7add4eb5c79ac4c4ce4056d65fe885e7e90e6b7f652
   languageName: node
   linkType: hard
 
