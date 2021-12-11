@@ -99,9 +99,7 @@ const createHandler = <S extends SentryRequiredMethods>(
   };
 };
 
-export default class SentryHandler<S extends SentryRequiredMethods>
-  implements Handler
-{
+export class SentryHandler<S extends SentryRequiredMethods> implements Handler {
   minLevel: Level;
 
   handle: Handle;
