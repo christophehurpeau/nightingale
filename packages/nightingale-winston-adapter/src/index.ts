@@ -52,6 +52,3 @@ export class WinstonAdapterHandler implements Handler {
     };
   }
 }
-
-/** @deprecated use named export instead */
-export default WinstonAdapterHandler;

@@ -34,6 +34,3 @@ export class SlackHandler implements Handler {
     this.handle = createHandler(slackConfig);
   }
 }
-
-/** @deprecated use named export instead */
-export default SlackHandler;

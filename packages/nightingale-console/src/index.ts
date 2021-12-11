@@ -52,6 +52,3 @@ export class ConsoleHandler implements Handler {
     this.handle = createHandle(options.formatter, options.output);
   }
 }
-
-/** @deprecated use named export instead */
-export default ConsoleHandler;

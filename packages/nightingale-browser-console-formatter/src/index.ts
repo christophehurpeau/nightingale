@@ -32,6 +32,3 @@ export function createBrowserConsoleFormatter(
     return [string, ...args];
   };
 }
-
-/** @deprecated use createBrowserConsoleFormatter */
-export default createBrowserConsoleFormatter('light');

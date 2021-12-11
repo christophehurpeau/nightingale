@@ -52,6 +52,3 @@ export class BrowserConsoleHandler implements Handler {
     this.handle = createHandler(options.theme);
   }
 }
-
-/** @deprecated use named export instead */
-export default BrowserConsoleHandler;

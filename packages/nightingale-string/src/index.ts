@@ -19,6 +19,3 @@ export class StringHandler implements Handler {
     this._buffer += formatterRaw(record) + '\n';
   }
 }
-
-/** @deprecated use named export instead */
-export default StringHandler;

@@ -699,6 +699,3 @@ export class Logger {
     this.exit(fn);
   }
 }
-
-/** @deprecated use named export instead */
-export default Logger;

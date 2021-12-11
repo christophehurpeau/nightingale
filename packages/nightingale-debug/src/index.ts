@@ -98,6 +98,3 @@ export function createFindDebugLevel(
     return minLevel;
   };
 }
-
-/** @deprecated use named export instead */
-export default createFindDebugLevel;
