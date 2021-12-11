@@ -6,8 +6,7 @@ export { ReactNativeConsoleHandler } from 'nightingale-react-native-console';
 import { Platform } from 'react-native';
 
 var appLogger = new Logger('app');
-var ReactNativeConsoleHandlerForPlatform = // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-Platform.OS === 'web' ? BrowserConsoleHandler : ReactNativeConsoleHandler;
+var ReactNativeConsoleHandlerForPlatform = Platform.OS === 'web' ? BrowserConsoleHandler : ReactNativeConsoleHandler;
 configure(process.env.NODE_ENV === 'production' ? [] : [{
   pattern: /^app(:|$)/,
   handlers: [new ReactNativeConsoleHandlerForPlatform(Level.DEBUG)],

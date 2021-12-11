@@ -13,7 +13,7 @@
   "homepage": "https://github.com/christophehurpeau/nightingale",
   "type": "commonjs",
   "engines": {
-    "node": "^12.20.0 || ^14.13.1 || >=16.0.0"
+    "node": "^14.13.1 || >=16.0.0"
   },
   "browserslist": [
     "defaults",
@@ -22,7 +22,7 @@
     "not safari < 10",
     "not ios_saf < 10"
   ],
-  "main": "./dist/index-node12.cjs.js",
+  "main": "./dist/index-node14.cjs.js",
   "types": "./dist/index.d.ts",
   "module": "./dist/index-browser.es.js",
   "browser": "./dist/index-browser.es.js",
@@ -30,40 +30,25 @@
     "./package.json": "./package.json",
     ".": {
       "node": {
-        "development": {
-          "import": "./dist/index-node12-dev.mjs",
-          "require": "./dist/index-node12-dev.cjs.js"
-        },
-        "import": "./dist/index-node12.mjs",
-        "require": "./dist/index-node12.cjs.js"
+        "import": "./dist/index-node14.mjs",
+        "require": "./dist/index-node14.cjs.js"
       },
       "browser": {
         "browser:modern": {
-          "development": {
-            "import": "./dist/index-browsermodern-dev.es.js"
-          },
           "import": "./dist/index-browsermodern.es.js"
-        },
-        "development": {
-          "import": "./dist/index-browser-dev.es.js",
-          "require": "./dist/index-browser-dev.cjs.js"
         },
         "import": "./dist/index-browser.es.js",
         "require": "./dist/index-browser.cjs.js"
       }
     }
   },
-  "module:node": "./dist/index-node12.mjs",
-  "module:node-dev": "./dist/index-node12-dev.mjs",
-  "module:browser": "./dist/index-browser.es.js",
-  "module:browser-dev": "./dist/index-browser-dev.es.js",
+  "module:node": "./dist/index-node14.mjs",
   "module:modern-browsers": "./dist/index-browsermodern.es.js",
-  "module:modern-browsers-dev": "./dist/index-browsermodern-dev.es.js",
   "sideEffects": false,
   "scripts": {
     "build": "pob-build && yarn run build:definitions",
     "build:definitions": "tsc -p tsconfig.build.json",
-    "clean": "rm -Rf docs dist test/node6 coverage",
+    "clean": "rm -Rf dist",
     "lint": "yarn run lint:eslint",
     "lint:eslint": "cd ../.. && yarn run eslint --report-unused-disable-directives --resolve-plugins-relative-to . --quiet packages/nightingale-app-console",
     "watch": "pob-watch"
@@ -77,7 +62,7 @@
     "babelEnvs": [
       {
         "target": "node",
-        "version": "12",
+        "version": "14",
         "formats": [
           "cjs",
           "es"
@@ -103,7 +88,7 @@
     ]
   },
   "dependencies": {
-    "@types/node": ">=12.0.0",
+    "@types/node": ">=14.0.0",
     "nightingale": "^11.9.0",
     "nightingale-browser-console": "^11.7.4",
     "nightingale-console": "^11.7.4"
@@ -111,10 +96,8 @@
   "devDependencies": {
     "@babel/core": "7.16.0",
     "@babel/preset-env": "7.16.4",
-    "babel-preset-latest-node": "5.5.1",
     "babel-preset-modern-browsers": "15.0.2",
-    "pob-babel": "28.6.0",
-    "rollup": "2.61.1",
+    "pob-babel": "29.1.4",
     "typescript": "4.5.3"
   }
 }

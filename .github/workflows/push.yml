@@ -8,7 +8,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [12.x, 14.x, 16.x]
+        node-version: [14.x, 16.x]
 
     steps:
       - uses: actions/checkout@v2
@@ -36,17 +36,21 @@ jobs:
       - name: Checks
         run: yarn run checks
 
+      - name: Build
+        run: yarn run build
+        if: startsWith(matrix.node-version, '16.')
+
       - name: Prettier
         run: yarn run lint:prettier
-        if: startsWith(matrix.node-version, '14.')
+        if: startsWith(matrix.node-version, '16.')
 
       - name: Eslint
         run: yarn run lint:eslint
-        if: startsWith(matrix.node-version, '14.')
+        if: startsWith(matrix.node-version, '16.')
 
       - name: Typescript
         run: yarn run tsc
-        if: startsWith(matrix.node-version, '14.')
+        if: startsWith(matrix.node-version, '16.')
 
       - name: Test
         run: yarn run test
@@ -55,7 +59,7 @@ jobs:
 
       - name: Documentation
         run: yarn run generate:docs
-        if: startsWith(matrix.node-version, '14.')
+        if: startsWith(matrix.node-version, '16.')
         env:
           CI: true
 
@@ -63,8 +67,8 @@ jobs:
         uses: codecov/codecov-action@v2
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-        if: startsWith(matrix.node-version, '14.')
+        if: startsWith(matrix.node-version, '16.')
 
       - name: Check nothing was forgotten before commit
-        if: startsWith(matrix.node-version, '14.')
+        if: startsWith(matrix.node-version, '16.')
         run: yarn run repository-check-dirty

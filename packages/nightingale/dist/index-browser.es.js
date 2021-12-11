@@ -2,6 +2,11 @@ import { Logger } from 'nightingale-logger';
 export { Logger, Logger as default } from 'nightingale-logger';
 export { Level, Level as levels } from 'nightingale-levels';
 
+/// <reference types="pob-babel" />
+if (process.env.NODE_ENV !== "production" && global.__NIGHTINGALE_GLOBAL_HANDLERS) {
+  throw new Error('nightingale: update all to ^5.0.0');
+}
+
 if (!global.__NIGHTINGALE_CONFIG) {
   global.__NIGHTINGALE_CONFIG = [];
   global.__NIGHTINGALE_LOGGER_MAP_CACHE = new Map();

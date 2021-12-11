@@ -30,27 +30,18 @@
     ".": {
       "browser": {
         "browser:modern": {
-          "development": {
-            "import": "./dist/index-browsermodern-dev.es.js"
-          },
           "import": "./dist/index-browsermodern.es.js"
-        },
-        "development": {
-          "import": "./dist/index-browser-dev.es.js"
         },
         "import": "./dist/index-browser.es.js"
       }
     }
   },
-  "module:browser": "./dist/index-browser.es.js",
-  "module:browser-dev": "./dist/index-browser-dev.es.js",
   "module:modern-browsers": "./dist/index-browsermodern.es.js",
-  "module:modern-browsers-dev": "./dist/index-browsermodern-dev.es.js",
   "sideEffects": false,
   "scripts": {
     "build": "pob-build && yarn run build:definitions",
     "build:definitions": "tsc -p tsconfig.build.json",
-    "clean": "rm -Rf docs dist test/node6 coverage",
+    "clean": "rm -Rf dist",
     "lint": "yarn run lint:eslint",
     "lint:eslint": "cd ../.. && yarn run eslint --report-unused-disable-directives --resolve-plugins-relative-to . --quiet packages/nightingale-browser-console",
     "watch": "pob-watch"
@@ -90,8 +81,7 @@
     "@babel/core": "7.16.0",
     "@babel/preset-env": "7.16.4",
     "babel-preset-modern-browsers": "15.0.2",
-    "pob-babel": "28.6.0",
-    "rollup": "2.61.1",
+    "pob-babel": "29.1.4",
     "typescript": "4.5.3"
   }
 }

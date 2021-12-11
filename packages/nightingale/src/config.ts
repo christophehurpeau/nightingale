@@ -1,8 +1,7 @@
-import { POB_ENV } from 'pob-babel';
 import type { ComputedConfigForKey, Config } from 'nightingale-logger';
 import type { Handler } from 'nightingale-types';
 
-if (POB_ENV !== 'production' && global.__NIGHTINGALE_GLOBAL_HANDLERS) {
+if (__DEV__ && global.__NIGHTINGALE_GLOBAL_HANDLERS) {
   throw new Error('nightingale: update all to ^5.0.0');
 }
 

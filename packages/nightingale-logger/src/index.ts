@@ -1,5 +1,4 @@
 /* eslint-disable max-lines */
-import { PRODUCTION, POB_TARGET } from 'pob-babel';
 import * as util from 'util';
 import { Level } from 'nightingale-levels';
 import type {
@@ -117,7 +116,7 @@ export class Logger {
     this.key = key;
     this.displayName = displayName;
 
-    if (!PRODUCTION && key.includes('.')) {
+    if (__DEV__ && key.includes('.')) {
       throw new Error(
         `nightingale: \`.\` in key is no longer supported, use \`:\` instead (key: ${key})`,
       );
@@ -387,7 +386,7 @@ export class Logger {
     metadata?: T,
     metadataStyles?: MetadataStyles<T>,
   ): void {
-    if (POB_TARGET === 'browser') {
+    if (__POB_TARGET__ === 'browser') {
       throw new Error('Not supported for the browser. Prefer `debugger;`');
     } else {
       // Note: inspect is a special function for node:
@@ -409,7 +408,7 @@ export class Logger {
     metadata?: T,
     metadataStyles?: MetadataStyles<T>,
   ): void {
-    if (POB_TARGET === 'browser') {
+    if (__POB_TARGET__ === 'browser') {
       throw new Error('Not supported for the browser. Prefer `debugger;`');
     } else {
       const inspectedValue = util.inspect(varValue, { depth: 6 });

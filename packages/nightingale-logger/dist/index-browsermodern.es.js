@@ -49,6 +49,10 @@ class Logger {
   constructor(key, displayName) {
     this.key = key;
     this.displayName = displayName;
+
+    if (process.env.NODE_ENV !== "production" && key.includes('.')) {
+      throw new Error(`nightingale: \`.\` in key is no longer supported, use \`:\` instead (key: ${key})`);
+    }
   }
   /** @private */
 
