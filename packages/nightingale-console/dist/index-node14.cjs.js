@@ -2,7 +2,6 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const pobBabel = require('pob-babel');
 const formatterANSI = require('nightingale-ansi-formatter');
 const consoleOutput = require('nightingale-console-output');
 const nightingaleDebug = require('nightingale-debug');
@@ -15,7 +14,7 @@ const formatterANSI__default = /*#__PURE__*/_interopDefaultLegacy(formatterANSI)
 const consoleOutput__default = /*#__PURE__*/_interopDefaultLegacy(consoleOutput);
 const formatterJSON__default = /*#__PURE__*/_interopDefaultLegacy(formatterJSON);
 
-const defaultFormatter = pobBabel.POB_TARGET === 'node' && !process.stdout.isTTY && process.env.NIGHTINGALE_CONSOLE_FORMATTER !== 'ansi' ? formatterJSON__default : formatterANSI__default;
+const defaultFormatter = !process.stdout.isTTY && process.env.NIGHTINGALE_CONSOLE_FORMATTER !== 'ansi' ? formatterJSON__default : formatterANSI__default;
 
 const createHandle = (formatter = defaultFormatter, output = consoleOutput__default) => {
   return record => {

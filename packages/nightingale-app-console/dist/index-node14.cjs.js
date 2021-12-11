@@ -2,22 +2,16 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const pobBabel = require('pob-babel');
 const nightingale = require('nightingale');
-const nightingaleBrowserConsole = require('nightingale-browser-console');
 const nightingaleConsole = require('nightingale-console');
 
-const ConsoleHandler = pobBabel.POB_TARGET === 'browser' ? nightingaleBrowserConsole.BrowserConsoleHandler : nightingaleConsole.ConsoleHandler;
+const ConsoleHandler = nightingaleConsole.ConsoleHandler;
 const logger = new nightingale.Logger('app');
 const appLogger = logger;
-
-if (pobBabel.POB_TARGET !== 'browser') {
-  Error.stackTraceLimit = Infinity;
-  nightingale.listenUnhandledErrors(logger);
-}
-
-const appMinLevel = pobBabel.POB_TARGET !== 'browser' && process.env.NIGHTINGALE_APP_MIN_LEVEL !== undefined && process.env.NIGHTINGALE_APP_MIN_LEVEL !== '' ? Number(process.env.NIGHTINGALE_APP_MIN_LEVEL) : pobBabel.PRODUCTION ? nightingale.Level.INFO : nightingale.Level.DEBUG;
-const libMinLevel = pobBabel.POB_TARGET !== 'browser' && process.env.NIGHTINGALE_LIB_MIN_LEVEL !== undefined && process.env.NIGHTINGALE_LIB_MIN_LEVEL !== '' ? Number(process.env.NIGHTINGALE_LIB_MIN_LEVEL) : nightingale.Level.INFO;
+Error.stackTraceLimit = Infinity;
+nightingale.listenUnhandledErrors(logger);
+const appMinLevel = process.env.NIGHTINGALE_APP_MIN_LEVEL !== undefined && process.env.NIGHTINGALE_APP_MIN_LEVEL !== '' ? Number(process.env.NIGHTINGALE_APP_MIN_LEVEL) : process.env.NODE_ENV !== "production" ? nightingale.Level.DEBUG : nightingale.Level.INFO;
+const libMinLevel = process.env.NIGHTINGALE_LIB_MIN_LEVEL !== undefined && process.env.NIGHTINGALE_LIB_MIN_LEVEL !== '' ? Number(process.env.NIGHTINGALE_LIB_MIN_LEVEL) : nightingale.Level.INFO;
 nightingale.configure(appMinLevel !== libMinLevel ? [{
   pattern: /^app(:|$)/,
   handlers: [new ConsoleHandler(appMinLevel)],

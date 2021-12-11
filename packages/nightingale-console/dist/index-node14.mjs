@@ -1,11 +1,10 @@
-import { POB_TARGET } from 'pob-babel';
 import formatterANSI from 'nightingale-ansi-formatter';
 import consoleOutput from 'nightingale-console-output';
 import { createFindDebugLevel } from 'nightingale-debug';
 import formatterJSON from 'nightingale-json-formatter';
 import { Level } from 'nightingale-levels';
 
-const defaultFormatter = POB_TARGET === 'node' && !process.stdout.isTTY && process.env.NIGHTINGALE_CONSOLE_FORMATTER !== 'ansi' ? formatterJSON : formatterANSI;
+const defaultFormatter = !process.stdout.isTTY && process.env.NIGHTINGALE_CONSOLE_FORMATTER !== 'ansi' ? formatterJSON : formatterANSI;
 
 const createHandle = (formatter = defaultFormatter, output = consoleOutput) => {
   return record => {

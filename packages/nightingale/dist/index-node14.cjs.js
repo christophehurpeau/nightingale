@@ -5,7 +5,6 @@ Object.defineProperty(exports, '__esModule', { value: true });
 const nightingaleLogger = require('nightingale-logger');
 const nightingaleLevels = require('nightingale-levels');
 
-/// <reference types="pob-babel" />
 if (process.env.NODE_ENV !== "production" && global.__NIGHTINGALE_GLOBAL_HANDLERS) {
   throw new Error('nightingale: update all to ^5.0.0');
 }
