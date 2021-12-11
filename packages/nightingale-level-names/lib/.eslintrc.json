@@ -1,5 +1,21 @@
 {
   "root": true,
   "extends": ["@pob/eslint-config/node-commonjs"],
-  "ignorePatterns": ["*.d.ts"]
+  "ignorePatterns": ["*.d.ts"],
+  "overrides": [
+    {
+      "files": ["**/*.test.{mjs,js}", "__tests__/**/*.{mjs,js}"],
+      "env": {
+        "jest": true
+      },
+      "rules": {
+        "import/no-extraneous-dependencies": [
+          "error",
+          {
+            "devDependencies": true
+          }
+        ]
+      }
+    }
+  ]
 }
