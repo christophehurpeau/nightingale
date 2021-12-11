@@ -4909,9 +4909,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"check-package-dependencies@npm:2.2.1":
-  version: 2.2.1
-  resolution: "check-package-dependencies@npm:2.2.1"
+"check-package-dependencies@npm:3.0.0":
+  version: 3.0.0
+  resolution: "check-package-dependencies@npm:3.0.0"
   dependencies:
     chalk: ^4.1.0
     glob: ^7.1.6
@@ -4919,7 +4919,7 @@ __metadata:
     type-fest: ^2.0.0
   bin:
     check-package-dependencies: bin/check-package-dependencies.js
-  checksum: dbe8e14d41d66874a71d641176f2bd97b8140430f8ee54e02d9e014e8be79f05a3fa8c88f4dea9e099908b09aa19e0bef95413769e253bff36ef97bc232f4155
+  checksum: 77b19c77f4bfcdb03c3f01f2b3604d85b67a90cc8a1b1436f685c3fa44a3980c2c709944c1bd56940cf7baf570d0244c7efd8cfb1261796272328d62ee43b40d
   languageName: node
   linkType: hard
 
@@ -10529,7 +10529,7 @@ __metadata:
     "@pob/root": 6.0.0
     "@types/jest": 27.0.3
     "@types/node": 14.18.0
-    check-package-dependencies: 2.2.1
+    check-package-dependencies: 3.0.0
     eslint: 8.4.1
     jest: 27.4.4
     pob-lcov-reporter: 6.0.0
