@@ -57,6 +57,7 @@
   },
   "scripts": {
     "build": "pob-build",
+    "clean": "rm -Rf dist",
     "lint": "yarn run lint:eslint",
     "lint:eslint": "cd ../.. && yarn run eslint --report-unused-disable-directives --resolve-plugins-relative-to . --quiet packages/nightingale-example",
     "start": "pob-watch",
