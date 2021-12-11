@@ -10,7 +10,7 @@ export function getDebugString(): string {
   // https://developer.mozilla.org/en-US/docs/Web/API/URLUtils/search#Get_the_value_of_a_single_search_param
   const debugFromQueryString = decodeURI(
     querystring.replace(
-      // eslint-disable-next-line unicorn/no-unsafe-regex
+      // eslint-disable-next-line unicorn/no-unsafe-regex, prefer-regex-literals
       new RegExp('^(?:.*[&\\?]DEBUG(?:\\=([^&]*))?)?.*$', 'i'),
       '$1',
     ),
