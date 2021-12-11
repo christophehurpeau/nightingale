@@ -2823,9 +2823,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pob/lerna-light@npm:4.2.0":
-  version: 4.2.0
-  resolution: "@pob/lerna-light@npm:4.2.0"
+"@pob/lerna-light@npm:5.0.0":
+  version: 5.0.0
+  resolution: "@pob/lerna-light@npm:5.0.0"
   dependencies:
     "@lerna/changed": 4.0.0
     "@lerna/cli": 4.0.0
@@ -2835,7 +2835,7 @@ __metadata:
     "@lerna/version": 4.0.0
   bin:
     lerna: bin/cli.js
-  checksum: 514084b01aa2dea477d44c2a194f5c5f95d7e518bfeab9feb019d698696db49901528ccf85ceccce970b34e855ecd6bad1df92ab1963accdbccf6de1e3607086
+  checksum: 5a2e8e391b8a20fa9d2e4bc250dce03412810da4b97af778384b1aaa8349027de1ee0714693fba358f6d264495b5c2dad9f59941a3f2ca92b6f729967699a3db
   languageName: node
   linkType: hard
 
@@ -10615,7 +10615,7 @@ __metadata:
     "@pob/commitlint-config": 3.3.0
     "@pob/eslint-config": 47.1.0
     "@pob/eslint-config-typescript": 47.1.0
-    "@pob/lerna-light": 4.2.0
+    "@pob/lerna-light": 5.0.0
     "@pob/root": 5.9.0
     "@types/node": 14.18.0
     check-package-dependencies: 2.2.1
