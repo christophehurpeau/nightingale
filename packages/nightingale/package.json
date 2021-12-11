@@ -143,7 +143,7 @@
     "nightingale-string": "^11.7.4",
     "pob-babel": "28.6.0",
     "pob-lcov-reporter": "5.4.0",
-    "rollup": "2.61.0",
+    "rollup": "2.61.1",
     "typescript": "4.5.3",
     "xunit-file": "1.0.0"
   }
