@@ -8,6 +8,4 @@ export declare class WinstonAdapterHandler implements Handler {
     handle: Handle;
     constructor(winstonTransport: WinstonTransportType, minLevel: Level);
 }
-/** @deprecated use named export instead */
-export default WinstonAdapterHandler;
 //# sourceMappingURL=index.d.ts.map

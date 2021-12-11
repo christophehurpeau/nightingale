@@ -86,5 +86,5 @@ function createFindDebugLevel(debugValue) {
   };
 }
 
-export { createFindDebugLevel, createFindDebugLevel as default };
+export { createFindDebugLevel };
 //# sourceMappingURL=index-node14.mjs.map

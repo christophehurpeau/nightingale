@@ -51,5 +51,5 @@ class SlackHandler {
 
 }
 
-export { SlackHandler, createBody, SlackHandler as default };
+export { SlackHandler, createBody };
 //# sourceMappingURL=index-node14.mjs.map

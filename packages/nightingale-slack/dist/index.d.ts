@@ -6,6 +6,4 @@ export declare class SlackHandler implements Handler {
     handle: Handle;
     constructor(slackConfig: SlackConfig, minLevel: Level);
 }
-/** @deprecated use named export instead */
-export default SlackHandler;
 //# sourceMappingURL=index.d.ts.map

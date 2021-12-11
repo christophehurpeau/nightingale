@@ -6,6 +6,4 @@ export declare class StringHandler implements Handler {
     get string(): string;
     handle<T extends Metadata>(record: LogRecord<T>): void;
 }
-/** @deprecated use named export instead */
-export default StringHandler;
 //# sourceMappingURL=index.d.ts.map

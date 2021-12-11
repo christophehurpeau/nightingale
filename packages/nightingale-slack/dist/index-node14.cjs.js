@@ -62,5 +62,4 @@ class SlackHandler {
 
 exports.SlackHandler = SlackHandler;
 exports.createBody = createBody;
-exports["default"] = SlackHandler;
 //# sourceMappingURL=index-node14.cjs.js.map

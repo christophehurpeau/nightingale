@@ -33,11 +33,7 @@ function createBrowserConsoleFormatter(theme) {
     return [string].concat(args);
   };
 }
-/** @deprecated use createBrowserConsoleFormatter */
-
-var index = createBrowserConsoleFormatter('light');
 
 exports.createBrowserConsoleFormatter = createBrowserConsoleFormatter;
-exports["default"] = index;
 exports.style = style;
 //# sourceMappingURL=index-browser.cjs.js.map

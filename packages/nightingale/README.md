@@ -104,7 +104,7 @@ npm install --save nightingale nightingale-browser-console
 
 ```js
 import { configure, levels } from 'nightingale';
-import BrowserConsoleHandler from 'nightingale-browser-console';
+import { BrowserConsoleHandler } from 'nightingale-browser-console';
 
 configure([
   {
@@ -138,7 +138,7 @@ Values are minimatch patterns and separated by `,`.
 ```js
 import Koa from 'koa';
 import Logger, { configure, Level } from 'nightingale';
-import ConsoleHandler from 'nightinale-console';
+import { ConsoleHandler } from 'nightinale-console';
 import webProcessor from 'nightinale-web-processor';
 
 const app = new Koa();
@@ -227,9 +227,9 @@ configure([{ processors: [errorProcessor] }]);
 
 ```js
 import { addGlobalHandler, levels } from 'nightingale';
-import ErrorHandler from 'nightingale-sentry';
+import { SentryHandler } from 'nightingale-sentry';
 
-configure([{ handlers: [new ErrorHandler(Level.ERROR)] }]);
+configure([{ handlers: [new SentryHandler(Level.ERROR)] }]);
 ```
 
 ## Children
@@ -237,7 +237,7 @@ configure([{ handlers: [new ErrorHandler(Level.ERROR)] }]);
 You can create children.
 
 ```js
-import Logger from 'nightingale';
+import { Logger } from 'nightingale';
 const loggerApp = new Logger('app');
 const loggerMyService = loggerApp.child('myService');
 // loggerMyService key is `app.myService`
@@ -248,7 +248,7 @@ const loggerMyService = loggerApp.child('myService');
 You can use context to add data to each log.
 
 ```js
-import Logger from 'nightingale';
+import { Logger } from 'nightingale';
 const loggerMyService = new Logger('app.myService');
 
 export function someAction(arg1) {

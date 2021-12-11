@@ -561,5 +561,4 @@ var Logger = /*#__PURE__*/function () {
 
 exports.Level = nightingaleLevels.Level;
 exports.Logger = Logger;
-exports["default"] = Logger;
 //# sourceMappingURL=index-browser.cjs.js.map

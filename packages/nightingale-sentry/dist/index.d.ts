@@ -18,7 +18,7 @@ interface SentryRequiredMethods {
     captureException: typeof captureException;
     captureMessage: typeof captureMessage;
 }
-export default class SentryHandler<S extends SentryRequiredMethods> implements Handler {
+export declare class SentryHandler<S extends SentryRequiredMethods> implements Handler {
     minLevel: Level;
     handle: Handle;
     constructor(Sentry: string | S, minLevel: Level, options?: Options);

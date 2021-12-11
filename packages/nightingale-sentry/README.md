@@ -26,7 +26,7 @@ import {
   captureMessage,
 } from '@sentry/node';
 import { configure, Level, listenUnhandledErrors } from 'nightingale';
-import SentryHandler from 'nightingale-sentry';
+import { SentryHandler } from 'nightingale-sentry';
 
 listenUnhandledErrors();
 
@@ -93,7 +93,7 @@ import {
   captureMessage,
 } from '@sentry/browser';
 import { configure, Level } from 'nightingale';
-import SentryHandler from 'nightingale-sentry';
+import { SentryHandler } from 'nightingale-sentry';
 
 sentryInit({
   dsn: process.env.NODE_ENV === 'production' ? '__DSN__' : undefined,

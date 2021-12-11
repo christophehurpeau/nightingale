@@ -552,5 +552,5 @@ var Logger = /*#__PURE__*/function () {
   return Logger;
 }();
 
-export { Logger, Logger as default };
+export { Logger };
 //# sourceMappingURL=index-browser.es.js.map

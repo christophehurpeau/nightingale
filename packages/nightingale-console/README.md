@@ -20,7 +20,7 @@ npm install --save nightingale nightingale-console
 
 ```js
 import { configure, levels } from 'nightingale';
-import ConsoleHandler from 'nightingale-console';
+import { ConsoleHandler } from 'nightingale-console';
 
 configure([{ handlers: [new ConsoleHandler(Level.INFO)] }]);
 ```
@@ -29,7 +29,7 @@ configure([{ handlers: [new ConsoleHandler(Level.INFO)] }]);
 
 `DEBUG=* node .`
 
-```
+```js
 DEBUG='*'; # debug everything
 DEBUG=app # debug for logger with key 'app'
 DEBUG=app:* # debug for logger with key 'app' and all its children

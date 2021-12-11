@@ -29,9 +29,6 @@ function createBrowserConsoleFormatter(theme) {
     return [string].concat(args);
   };
 }
-/** @deprecated use createBrowserConsoleFormatter */
 
-var index = createBrowserConsoleFormatter('light');
-
-export { createBrowserConsoleFormatter, index as default, style };
+export { createBrowserConsoleFormatter, style };
 //# sourceMappingURL=index-browser.es.js.map

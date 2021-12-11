@@ -531,5 +531,5 @@ class Logger {
 
 }
 
-export { Logger, Logger as default };
+export { Logger };
 //# sourceMappingURL=index-browsermodern.es.js.map

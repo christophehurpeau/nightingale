@@ -1,7 +1,7 @@
 import * as Sentry from '@sentry/node';
 import { Logger, configure, Level, listenUnhandledErrors } from 'nightingale';
-import ConsoleHandler from 'nightingale-console';
-import SentryHandler from 'nightingale-sentry';
+import { ConsoleHandler } from 'nightingale-console';
+import { SentryHandler } from 'nightingale-sentry';
 
 if (!process.env.SENTRY_DSN) {
   throw new Error('SENTRY_DSN missing');

@@ -18,5 +18,5 @@ class StringHandler {
 
 }
 
-export { StringHandler, StringHandler as default };
+export { StringHandler };
 //# sourceMappingURL=index-node14.mjs.map

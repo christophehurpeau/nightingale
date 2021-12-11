@@ -9,7 +9,7 @@ function style(styles, string) {
     return string;
   }
 
-  return `<span style="${styles.map(styleName => nightingaleFormatter.styleToHtmlStyle[styleName].open).join('; ')}">${string}</span>`;
+  return `<span style="${styles.map(styleName => nightingaleFormatter.styleToHtmlStyleThemeLight[styleName].open).join('; ')}">${string}</span>`;
 }
 /**
  * @param {Object} record

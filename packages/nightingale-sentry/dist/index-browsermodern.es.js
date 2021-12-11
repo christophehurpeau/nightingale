@@ -71,5 +71,5 @@ class SentryHandler {
 
 }
 
-export { SentryHandler as default };
+export { SentryHandler };
 //# sourceMappingURL=index-browsermodern.es.js.map

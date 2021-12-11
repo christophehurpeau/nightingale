@@ -10,7 +10,7 @@ function style(styles, string) {
   }
 
   return `<span style="${styles.map(function (styleName) {
-    return nightingaleFormatter.styleToHtmlStyle[styleName].open;
+    return nightingaleFormatter.styleToHtmlStyleThemeLight[styleName].open;
   }).join('; ')}">${string}</span>`;
 }
 /**

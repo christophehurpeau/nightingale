@@ -20,7 +20,7 @@ npm install --save nightingale nightingale-slack
 
 ```js
 import { configure, Level } from 'nightingale';
-import SlackHandler from 'nightingale-slack';
+import { SlackHandler } from 'nightingale-slack';
 
 const slackErrorConfig = {
   webhookUrl: string,

@@ -257,6 +257,4 @@ export declare class Logger {
     wrap<T extends Metadata, Fn extends (...args: unknown[]) => unknown>(fn: Fn, metadata: T, callback: () => void): void;
     wrap<T extends Metadata, Fn extends (...args: unknown[]) => unknown>(fn: Fn, metadata: T, metadataStyles: MetadataStyles<T>, callback: () => void): void;
 }
-/** @deprecated use named export instead */
-export default Logger;
 //# sourceMappingURL=index.d.ts.map

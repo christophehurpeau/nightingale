@@ -1,5 +1,5 @@
 import { Logger } from 'nightingale-logger';
-export { Logger, Logger as default } from 'nightingale-logger';
+export { Logger } from 'nightingale-logger';
 export { Level, Level as levels } from 'nightingale-levels';
 
 if (process.env.NODE_ENV !== "production" && global.__NIGHTINGALE_GLOBAL_HANDLERS) {

@@ -26,5 +26,5 @@ class ConsoleHandler {
 
 }
 
-export { ConsoleHandler, ConsoleHandler as default };
+export { ConsoleHandler };
 //# sourceMappingURL=index-node14.mjs.map

@@ -1,7 +1,5 @@
 import { Logger } from 'nightingale-logger';
-export { 
-/** @deprecated use named export instead */
-Logger as default, Logger, } from 'nightingale-logger';
+export { Logger } from 'nightingale-logger';
 export { Level, Level as levels } from 'nightingale-levels';
 export { configure, addConfig } from './config';
 /**

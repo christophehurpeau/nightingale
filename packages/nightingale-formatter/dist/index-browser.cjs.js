@@ -604,7 +604,6 @@ exports.formatRecordToString = formatRecordToString;
 exports.levelToStyles = levelToStyles;
 exports.levelToSymbol = levelToSymbol;
 exports.styleToHexColor = styleToHexColor;
-exports.styleToHtmlStyle = styleToHtmlStyleThemeLight;
 exports.styleToHtmlStyleThemeDark = styleToHtmlStyleThemeDark;
 exports.styleToHtmlStyleThemeLight = styleToHtmlStyleThemeLight;
 //# sourceMappingURL=index-browser.cjs.js.map

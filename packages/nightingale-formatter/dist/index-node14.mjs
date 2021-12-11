@@ -566,5 +566,5 @@ function formatRecordToString(record, style) {
   return parts.join(' ');
 }
 
-export { formatObject, formatRecordToString, levelToStyles, levelToSymbol, styleToHexColor, styleToHtmlStyleThemeLight as styleToHtmlStyle, styleToHtmlStyleThemeDark, styleToHtmlStyleThemeLight };
+export { formatObject, formatRecordToString, levelToStyles, levelToSymbol, styleToHexColor, styleToHtmlStyleThemeDark, styleToHtmlStyleThemeLight };
 //# sourceMappingURL=index-node14.mjs.map

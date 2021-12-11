@@ -11,6 +11,5 @@ export declare class ConsoleHandler implements Handler {
     handle: Handle;
     constructor(minLevel: Level, options?: ConsoleHandlerOptions);
 }
-/** @deprecated use named export instead */
-export default ConsoleHandler;
+export {};
 //# sourceMappingURL=index.d.ts.map

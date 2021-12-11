@@ -569,5 +569,4 @@ class Logger {
 
 exports.Level = nightingaleLevels.Level;
 exports.Logger = Logger;
-exports["default"] = Logger;
 //# sourceMappingURL=index-node14.cjs.js.map

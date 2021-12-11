@@ -22,7 +22,7 @@ npm install --save nightingale nightingale-react-native-console
 
 ```js
 import { configure, Level } from 'nightingale';
-import ReactNativeConsoleHandler from 'nightingale-react-native-console';
+import { ReactNativeConsoleHandler } from 'nightingale-react-native-console';
 
 configure(
   process.env.NODE_ENV === 'production'

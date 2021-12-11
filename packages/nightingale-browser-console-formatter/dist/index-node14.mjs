@@ -17,9 +17,6 @@ function createBrowserConsoleFormatter(theme = 'light') {
     return [string, ...args];
   };
 }
-/** @deprecated use createBrowserConsoleFormatter */
 
-const index = createBrowserConsoleFormatter('light');
-
-export { createBrowserConsoleFormatter, index as default, style };
+export { createBrowserConsoleFormatter, style };
 //# sourceMappingURL=index-node14.mjs.map

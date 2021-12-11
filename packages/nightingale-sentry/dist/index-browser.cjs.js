@@ -91,5 +91,5 @@ var SentryHandler = function SentryHandler(Sentry, minLevel, options) {
   this.handle = createHandler(Sentry, options);
 };
 
-exports["default"] = SentryHandler;
+exports.SentryHandler = SentryHandler;
 //# sourceMappingURL=index-browser.cjs.js.map

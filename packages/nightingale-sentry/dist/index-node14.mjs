@@ -77,5 +77,5 @@ class SentryHandler {
 
 }
 
-export { SentryHandler as default };
+export { SentryHandler };
 //# sourceMappingURL=index-node14.mjs.map

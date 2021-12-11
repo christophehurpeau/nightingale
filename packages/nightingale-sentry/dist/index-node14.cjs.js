@@ -95,5 +95,5 @@ class SentryHandler {
 
 }
 
-exports["default"] = SentryHandler;
+exports.SentryHandler = SentryHandler;
 //# sourceMappingURL=index-node14.cjs.js.map

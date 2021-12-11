@@ -9,6 +9,5 @@ export declare class BrowserConsoleHandler implements Handler {
     isHandling: IsHandling;
     constructor(minLevel: Level, options?: BrowserConsoleHandlerOptions);
 }
-/** @deprecated use named export instead */
-export default BrowserConsoleHandler;
+export {};
 //# sourceMappingURL=index.d.ts.map

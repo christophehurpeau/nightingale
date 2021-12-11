@@ -1,4 +1,4 @@
-import { formatRecordToString, styleToHtmlStyle } from 'nightingale-formatter';
+import { formatRecordToString, styleToHtmlStyleThemeLight } from 'nightingale-formatter';
 
 function style(styles, string) {
   if (!styles || styles.length === 0 || !string) {
@@ -6,7 +6,7 @@ function style(styles, string) {
   }
 
   return `<span style="${styles.map(function (styleName) {
-    return styleToHtmlStyle[styleName].open;
+    return styleToHtmlStyleThemeLight[styleName].open;
   }).join('; ')}">${string}</span>`;
 }
 /**

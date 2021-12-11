@@ -1,11 +1,11 @@
-import { formatRecordToString, styleToHtmlStyle } from 'nightingale-formatter';
+import { formatRecordToString, styleToHtmlStyleThemeLight } from 'nightingale-formatter';
 
 function style(styles, string) {
   if (!styles || styles.length === 0 || !string) {
     return string;
   }
 
-  return `<span style="${styles.map(styleName => styleToHtmlStyle[styleName].open).join('; ')}">${string}</span>`;
+  return `<span style="${styles.map(styleName => styleToHtmlStyleThemeLight[styleName].open).join('; ')}">${string}</span>`;
 }
 /**
  * @param {Object} record

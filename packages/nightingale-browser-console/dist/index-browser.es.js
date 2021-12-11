@@ -59,5 +59,5 @@ var BrowserConsoleHandler = function BrowserConsoleHandler(minLevel, options) {
   this.handle = createHandler(options.theme);
 };
 
-export { BrowserConsoleHandler, BrowserConsoleHandler as default };
+export { BrowserConsoleHandler };
 //# sourceMappingURL=index-browser.es.js.map

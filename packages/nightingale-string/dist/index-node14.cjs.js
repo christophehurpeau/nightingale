@@ -27,5 +27,4 @@ class StringHandler {
 }
 
 exports.StringHandler = StringHandler;
-exports["default"] = StringHandler;
 //# sourceMappingURL=index-node14.cjs.js.map

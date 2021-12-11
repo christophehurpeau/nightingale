@@ -25,5 +25,5 @@ class WinstonAdapterHandler {
 
 }
 
-export { WinstonAdapterHandler, WinstonAdapterHandler as default };
+export { WinstonAdapterHandler };
 //# sourceMappingURL=index-node14.mjs.map

@@ -575,7 +575,6 @@ exports.formatRecordToString = formatRecordToString;
 exports.levelToStyles = levelToStyles;
 exports.levelToSymbol = levelToSymbol;
 exports.styleToHexColor = styleToHexColor;
-exports.styleToHtmlStyle = styleToHtmlStyleThemeLight;
 exports.styleToHtmlStyleThemeDark = styleToHtmlStyleThemeDark;
 exports.styleToHtmlStyleThemeLight = styleToHtmlStyleThemeLight;
 //# sourceMappingURL=index-node14.cjs.js.map

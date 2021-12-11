@@ -20,7 +20,7 @@ npm install --save nightingale-browser-console
 
 ```js
 import { configure, levels } from 'nightingale';
-import ConsoleHandler from 'nightingale-browser-console';
+import { ConsoleHandler } from 'nightingale-browser-console';
 
 configure([{ handlers: [new ConsoleHandler(Level.INFO)] }]);
 ```
@@ -29,37 +29,35 @@ configure([{ handlers: [new ConsoleHandler(Level.INFO)] }]);
 
 If you have a dark console theme, you can set this config in your localStorage :
 
-```
+```js
 localStorage.NIGHTINGALE_THEME = 'dark';
 ```
 
 You can also force this option:
 
-```
-import ConsoleHandler from 'nightingale-browser-console';
-
+```js
+import { ConsoleHandler } from 'nightingale-browser-console';
 
 configure([{ handlers: [new ConsoleHandler(Level.INFO, { theme: 'dark' })] }]);
-
 ```
 
 ## Debug
 
 ### with localStorage
 
-```
+```js
 localStorage.debug = '*'; // debug everything
 localStorage.debug = 'app'; // debug for logger with key 'app'
 localStorage.debug = 'app,nightingale'; // debug for logger with key 'app' and 'nightingale'
-localStorage.debug = '/^app/';  //debug for logger with key starting with 'app'
-localStorage.debug = '/^(app|nightingale$)/';  // debug for logger with key starting with 'app' and key 'nightingale'
+localStorage.debug = '/^app/'; //debug for logger with key starting with 'app'
+localStorage.debug = '/^(app|nightingale$)/'; // debug for logger with key starting with 'app' and key 'nightingale'
 localStorage.debug = '*,-app'; // debug everything except app
 localStorage.debug = '*,-app:*'; // debug everything except app and all its children
 ```
 
 ### with query, in the url
 
-```
+```js
 ?DEBUG='*'; // debug everything
 ?DEBUG=app // debug for logger with key 'app'
 ?DEBUG=app,nightingale // debug for logger with key 'app' and 'nightingale'
