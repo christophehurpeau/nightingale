@@ -1,6 +1,6 @@
 {
   "name": "nightingale",
-  "version": "11.9.0",
+  "version": "12.0.0",
   "description": "Logger for browser and node",
   "keywords": [
     "logger"
@@ -91,15 +91,15 @@
   },
   "dependencies": {
     "@types/node": ">=14.0.0",
-    "nightingale-levels": "^11.7.2",
-    "nightingale-logger": "^11.9.0",
-    "nightingale-types": "^11.7.4"
+    "nightingale-levels": "^12.0.0",
+    "nightingale-logger": "^12.0.0",
+    "nightingale-types": "^12.0.0"
   },
   "devDependencies": {
     "@babel/core": "7.16.0",
     "@babel/preset-env": "7.16.4",
     "babel-preset-modern-browsers": "15.0.2",
-    "nightingale-string": "^11.7.4",
+    "nightingale-string": "^12.0.0",
     "pob-babel": "29.3.0",
     "typescript": "4.5.3"
   }

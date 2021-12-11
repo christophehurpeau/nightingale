@@ -3,6 +3,40 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [12.0.0](https://github.com/christophehurpeau/nightingale/compare/v11.9.0...v12.0.0) (2021-12-11)
+
+
+### Bug Fixes
+
+* **nightingale-html-formatter:** use html light theme ([821cc7e](https://github.com/christophehurpeau/nightingale/commit/821cc7e05050b4a8fa48b555288518d4d12abee1))
+* fix import and order of plugin-run in rollup.config.mjs ([97b2c53](https://github.com/christophehurpeau/nightingale/commit/97b2c537d5e9ca7a52c2bc1eb66d889a009d6f44))
+* missed legacy pob-babel ([82a38fa](https://github.com/christophehurpeau/nightingale/commit/82a38fa9743cfac3347386800070fea44d533321))
+* typings ([2715620](https://github.com/christophehurpeau/nightingale/commit/271562032469125cf1ccb493db37117e60a0e54f))
+
+
+### Build System
+
+* node 14 and remove dev builds ([432ecd1](https://github.com/christophehurpeau/nightingale/commit/432ecd1faafd0419f57dea00fce560e4cccc207f))
+
+
+### Features
+
+* export SentryHandler as named export ([dae462e](https://github.com/christophehurpeau/nightingale/commit/dae462e9cd3ac9dd1593b98d46d2a768daf51049))
+* **nightingale-formatter:** remove deprecated styleToHtmlStyle export ([24e7391](https://github.com/christophehurpeau/nightingale/commit/24e73919fe1bdcd746deefab4f07506a6d83f567))
+* drop default exports ([8878e49](https://github.com/christophehurpeau/nightingale/commit/8878e492b94852fcb892fd6d12c02c15c31b38b9))
+
+
+### BREAKING CHANGES
+
+* requires to import SentryHandler as named import
+* **nightingale-formatter:** removed deprecated styleToHtmlStyle export
+* use named imports instead of default exports
+* requires node 14
+
+
+
+
+
 # [11.9.0](https://github.com/christophehurpeau/nightingale/compare/v11.8.1...v11.9.0) (2021-11-28)
 
 

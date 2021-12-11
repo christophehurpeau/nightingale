@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [12.0.0](https://github.com/christophehurpeau/nightingale/compare/v11.9.0...v12.0.0) (2021-12-11)
+
+
+### Build System
+
+* node 14 and remove dev builds ([432ecd1](https://github.com/christophehurpeau/nightingale/commit/432ecd1faafd0419f57dea00fce560e4cccc207f))
+
+
+### Features
+
+* **nightingale-formatter:** remove deprecated styleToHtmlStyle export ([24e7391](https://github.com/christophehurpeau/nightingale/commit/24e73919fe1bdcd746deefab4f07506a6d83f567))
+
+
+### BREAKING CHANGES
+
+* **nightingale-formatter:** removed deprecated styleToHtmlStyle export
+* requires node 14
+
+
+
+
+
 ## [11.7.4](https://github.com/christophehurpeau/nightingale/compare/v11.7.3...v11.7.4) (2021-11-27)
 
 

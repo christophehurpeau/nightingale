@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [12.0.0](https://github.com/christophehurpeau/nightingale/compare/v11.9.0...v12.0.0) (2021-12-11)
+
+
+### Bug Fixes
+
+* **nightingale-html-formatter:** use html light theme ([821cc7e](https://github.com/christophehurpeau/nightingale/commit/821cc7e05050b4a8fa48b555288518d4d12abee1))
+
+
+### Build System
+
+* node 14 and remove dev builds ([432ecd1](https://github.com/christophehurpeau/nightingale/commit/432ecd1faafd0419f57dea00fce560e4cccc207f))
+
+
+### BREAKING CHANGES
+
+* requires node 14
+
+
+
+
+
 ## [11.7.4](https://github.com/christophehurpeau/nightingale/compare/v11.7.3...v11.7.4) (2021-11-27)
 
 **Note:** Version bump only for package nightingale-html-formatter

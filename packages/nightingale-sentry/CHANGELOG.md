@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [12.0.0](https://github.com/christophehurpeau/nightingale/compare/v11.9.0...v12.0.0) (2021-12-11)
+
+
+### Build System
+
+* node 14 and remove dev builds ([432ecd1](https://github.com/christophehurpeau/nightingale/commit/432ecd1faafd0419f57dea00fce560e4cccc207f))
+
+
+### Features
+
+* export SentryHandler as named export ([dae462e](https://github.com/christophehurpeau/nightingale/commit/dae462e9cd3ac9dd1593b98d46d2a768daf51049))
+
+
+### BREAKING CHANGES
+
+* requires to import SentryHandler as named import
+* requires node 14
+
+
+
+
+
 ## [11.7.4](https://github.com/christophehurpeau/nightingale/compare/v11.7.3...v11.7.4) (2021-11-27)
 
 **Note:** Version bump only for package nightingale-sentry

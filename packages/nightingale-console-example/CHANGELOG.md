@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [12.0.0](https://github.com/christophehurpeau/nightingale/compare/v11.9.0...v12.0.0) (2021-12-11)
+
+
+### Bug Fixes
+
+* fix import and order of plugin-run in rollup.config.mjs ([97b2c53](https://github.com/christophehurpeau/nightingale/commit/97b2c537d5e9ca7a52c2bc1eb66d889a009d6f44))
+
+
+### Build System
+
+* node 14 and remove dev builds ([432ecd1](https://github.com/christophehurpeau/nightingale/commit/432ecd1faafd0419f57dea00fce560e4cccc207f))
+
+
+### BREAKING CHANGES
+
+* requires node 14
+
+
+
+
+
 # [11.9.0](https://github.com/christophehurpeau/nightingale/compare/v11.8.1...v11.9.0) (2021-11-28)
 
 **Note:** Version bump only for package nightingale-console-example
