@@ -1,4 +1,7 @@
-import { formatRecordToString, styleToHtmlStyle } from 'nightingale-formatter';
+import {
+  formatRecordToString,
+  styleToHtmlStyleThemeLight,
+} from 'nightingale-formatter';
 import type { Styles, LogRecord, Metadata } from 'nightingale-types';
 
 export function style(styles: Styles, string: string): string {
@@ -7,7 +10,7 @@ export function style(styles: Styles, string: string): string {
   }
 
   return `<span style="${styles
-    .map((styleName: string) => styleToHtmlStyle[styleName].open)
+    .map((styleName: string) => styleToHtmlStyleThemeLight[styleName].open)
     .join('; ')}">${string}</span>`;
 }
 
