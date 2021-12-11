@@ -1,8 +1,4 @@
-'use strict';
-
-const {
-  createCheckPackageWithWorkspaces,
-} = require('check-package-dependencies');
+import { createCheckPackageWithWorkspaces } from 'check-package-dependencies';
 
 createCheckPackageWithWorkspaces().checkRecommended({
   isLibrary: () => true,

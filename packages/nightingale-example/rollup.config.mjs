@@ -1,4 +1,4 @@
-import run from '@rollup/plugin-run';
+import run from 'pob-babel/plugin-run';
 import createRollupConfig from 'pob-babel/createRollupConfig.js';
 
 const watch = process.env.ROLLUP_WATCH === 'true';

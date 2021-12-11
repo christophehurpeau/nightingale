@@ -7,7 +7,7 @@
   "license": "ISC",
   "repository": "https://github.com/christophehurpeau/nightingale.git",
   "homepage": "https://github.com/christophehurpeau/nightingale",
-  "type": "commonjs",
+  "type": "module",
   "engines": {
     "node": ">=14.13.1"
   },
@@ -21,12 +21,12 @@
     "checks": "node scripts/check-packages.js",
     "generate:api": "typedoc --tsconfig tsconfig.doc.json",
     "generate:docs": "rm -Rf docs ; yarn run generate:api ; touch docs/.nojekyll",
-    "generate:test-coverage": "lerna run --parallel --ignore \"*-example\" generate:test-coverage",
+    "generate:test-coverage": "rm -Rf docs/coverage/ ; NODE_ENV=production BABEL_ENV=test NODE_OPTIONS=--experimental-vm-modules jest --coverage --coverageReporters=pob-lcov-reporter --coverageDirectory=docs/coverage/",
     "lint": "yarn run lint:prettier && yarn run lint:eslint",
     "lint:eslint": "NODE_OPTIONS=--max_old_space_size=4096 eslint --report-unused-disable-directives --resolve-plugins-relative-to . --quiet .",
     "lint:prettier": "prettier --check .",
     "postinstall": "pob-root-postinstall",
-    "test": "yarn workspaces foreach --parallel -Av run test",
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest",
     "tsc": "tsc -b",
     "watch": "yarn workspaces foreach --parallel --exclude \"*-example\" -Av run watch",
     "watch:lerna": "lerna run --parallel --ignore \"*-example\" watch"
@@ -41,6 +41,19 @@
       "@pob/commitlint-config"
     ]
   },
+  "jest": {
+    "moduleNameMapper": {
+      "^(nightingale-.*)$": "<rootDir>/packages/$1/src/index.ts"
+    },
+    "extensionsToTreatAsEsm": [
+      ".ts"
+    ],
+    "setupFiles": [
+      "pob-babel/setup-jest.cjs"
+    ],
+    "testEnvironment": "node",
+    "cacheDirectory": "./node_modules/.cache/jest"
+  },
   "resolutions": {
     "@types/node": "14.18.0"
   },
@@ -53,9 +66,12 @@
     "@pob/eslint-config-typescript": "47.1.0",
     "@pob/lerna-light": "5.0.0",
     "@pob/root": "6.0.0",
+    "@types/jest": "27.0.3",
     "@types/node": "14.18.0",
     "check-package-dependencies": "2.2.1",
     "eslint": "7.32.0",
+    "jest": "27.4.4",
+    "pob-lcov-reporter": "6.0.0",
     "prettier": "2.5.1",
     "typedoc": "0.22.10",
     "typescript": "4.5.3"
