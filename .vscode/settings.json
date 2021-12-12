@@ -17,7 +17,7 @@
   "eslint.workingDirectories": ["."],
   "eslint.options": {
     "resolvePluginsRelativeTo": ".",
-    "reportUnusedDisableDirectives": true
+    "reportUnusedDisableDirectives": "error"
   },
   "eslint.lintTask.enable": true,
 

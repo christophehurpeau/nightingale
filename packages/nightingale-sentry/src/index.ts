@@ -8,6 +8,7 @@ import type { User } from '@sentry/types';
 import { Severity } from '@sentry/types';
 import { Level } from 'nightingale-levels';
 import type { LogRecord, Handle, Metadata, Handler } from 'nightingale-types';
+import 'pob-babel';
 
 const mapToSentryLevel: Record<Level, Severity> = {
   [Level.TRACE]: Severity.Debug,

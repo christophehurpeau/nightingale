@@ -9,6 +9,7 @@ import type {
   Processor,
   LogRecord,
 } from 'nightingale-types';
+import 'pob-babel';
 
 export { Level } from 'nightingale-levels';
 

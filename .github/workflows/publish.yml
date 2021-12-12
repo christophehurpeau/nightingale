@@ -39,7 +39,7 @@ jobs:
         if: |
           github.ref == 'refs/heads/main'
           && contains(github.event.inputs.dry-run, 'y')
-        run: yarn lerna version --yes --no-push --conventional-commits --conventional-graduate --no-git-tag-version --loglevel=verbose
+        run: yarn lerna version --yes --no-push --exact --conventional-commits --conventional-graduate --no-git-tag-version --loglevel=verbose
 
       - name: Configure Git user
         if: |
@@ -54,7 +54,7 @@ jobs:
           github.ref == 'refs/heads/main'
           && contains(github.event.inputs.dry-run, 'y') == false
         run: |
-          yarn lerna version --yes --push --conventional-commits --conventional-graduate --create-release=github -m 'chore: release [skip ci]'
+          yarn lerna version --yes --push --exact --conventional-commits --conventional-graduate --create-release=github -m 'chore: release [skip ci]'
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           YARN_ENABLE_IMMUTABLE_INSTALLS: false

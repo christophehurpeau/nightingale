@@ -3,7 +3,7 @@ name: Commit changes on @pob/root update
 on:
   push:
     branches:
-      - 'renovate/typedoc'
+      - 'renovate/typedoc-**'
 
 jobs:
   run-install-and-commit-modified-files:

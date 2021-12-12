@@ -1,6 +1,7 @@
 import { Logger, configure, Level, listenUnhandledErrors } from 'nightingale';
 import { BrowserConsoleHandler } from 'nightingale-browser-console';
 import { ConsoleHandler as TerminalConsoleHandler } from 'nightingale-console';
+import 'pob-babel';
 
 export { configure, addConfig, levels, Level } from 'nightingale';
 
