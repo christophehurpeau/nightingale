@@ -35,7 +35,7 @@ jobs:
         run: yarn run pob-root-postinstall
 
       - name: Run pob update
-        run: POB_GITHUB_TOKEN=$GH_TOKEN npx pob update --force
+        run: npx pob update --force
 
       - name: Check for added or modified files
         id: git-check-modified
