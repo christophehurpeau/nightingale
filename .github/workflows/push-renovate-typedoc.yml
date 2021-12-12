@@ -3,7 +3,7 @@ name: Commit changes on @pob/root update
 on:
   push:
     branches:
-      - 'renovate/pob-root-**'
+      - 'renovate/typedoc'
 
 jobs:
   run-install-and-commit-modified-files:
@@ -28,8 +28,8 @@ jobs:
       - name: Check Dependencies
         run: yarn install --immutable --immutable-cache
 
-      - name: Run pob-root-postinstall
-        run: yarn run pob-root-postinstall
+      - name: Run generate:docs
+        run: yarn run generate:docs
 
       - name: Check for added or modified files
         id: git-check-modified
