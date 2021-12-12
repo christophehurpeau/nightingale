@@ -2758,11 +2758,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pob/eslint-config-typescript@npm:48.0.4":
-  version: 48.0.4
-  resolution: "@pob/eslint-config-typescript@npm:48.0.4"
+"@pob/eslint-config-typescript@npm:48.0.5":
+  version: 48.0.5
+  resolution: "@pob/eslint-config-typescript@npm:48.0.5"
   dependencies:
-    "@pob/eslint-config": ^48.0.4
+    "@pob/eslint-config": ^48.0.5
     "@pob/use-eslint-plugin": ^48.0.0
     "@typescript-eslint/eslint-plugin": ^5.3.1
     "@typescript-eslint/parser": ^5.3.1
@@ -2784,13 +2784,13 @@ __metadata:
       optional: true
     eslint-plugin-node:
       optional: true
-  checksum: 76deec84a11c725f8123219c24865f2d7113194cc5d55ef7c8f392da0fc21c1a3c1602f9a15e4dae1a9007de7eb47862e3e0ec7333d65b46f6f0c7fd96d4e3f4
+  checksum: 1b21984dc50f02a47d31f224cff86b7cb8ae88b9c691022310f5e207282f09230224a3146d5d62af68ad6db0be58fc41a3610097f05960a815a69a1b8b3f6619
   languageName: node
   linkType: hard
 
-"@pob/eslint-config@npm:48.0.4, @pob/eslint-config@npm:^48.0.4":
-  version: 48.0.4
-  resolution: "@pob/eslint-config@npm:48.0.4"
+"@pob/eslint-config@npm:48.0.5, @pob/eslint-config@npm:^48.0.5":
+  version: 48.0.5
+  resolution: "@pob/eslint-config@npm:48.0.5"
   dependencies:
     "@pob/use-eslint-plugin": ^48.0.0
     eslint-config-airbnb-base: ^15.0.0
@@ -2810,7 +2810,7 @@ __metadata:
       optional: true
     eslint-plugin-unicorn:
       optional: true
-  checksum: e889f528a5006d46c6c5260059dcc085e606a3c1771c2b8e9704338320ff69bbe4e30859a622da3ca8b9738536cd4a78c169db24962ab9fce51f18d744bd27a3
+  checksum: c35b08a87b3b0e1ff2426cd37103645558f191b12d54baced7d2e331e485969861427dc114b3c1e7a57ae594d8f869fec919315dc4c5275dd02432ade806fac8
   languageName: node
   linkType: hard
 
@@ -10523,8 +10523,8 @@ __metadata:
   resolution: "nightingale-monorepo@workspace:."
   dependencies:
     "@pob/commitlint-config": 4.0.0
-    "@pob/eslint-config": 48.0.4
-    "@pob/eslint-config-typescript": 48.0.4
+    "@pob/eslint-config": 48.0.5
+    "@pob/eslint-config-typescript": 48.0.5
     "@pob/lerna-light": 5.0.0
     "@pob/root": 6.1.0
     "@types/jest": 27.0.3
