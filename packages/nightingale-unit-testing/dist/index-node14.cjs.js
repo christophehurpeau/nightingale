@@ -9,7 +9,7 @@ const testMinLevel = process.env.NIGHTINGALE_TEST_MIN_LEVEL !== undefined && pro
 const libMinLevel = process.env.NIGHTINGALE_LIB_MIN_LEVEL !== undefined && process.env.NIGHTINGALE_LIB_MIN_LEVEL !== '' ? Number(process.env.NIGHTINGALE_LIB_MIN_LEVEL) : nightingale.Level.INFO;
 const testLogger = new nightingale.Logger('unit-testing');
 nightingale.configure([{
-  pattern: /^app(:|$)/,
+  pattern: /^unit-testing(:|$)/,
   handlers: [new nightingaleConsole.ConsoleHandler(testMinLevel)],
   stop: true
 }, {

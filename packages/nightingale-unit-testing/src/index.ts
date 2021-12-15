@@ -21,7 +21,7 @@ export const testLogger = new Logger('unit-testing');
 
 configure([
   {
-    pattern: /^app(:|$)/,
+    pattern: /^unit-testing(:|$)/,
     handlers: [new ConsoleHandler(testMinLevel)],
     stop: true,
   },
