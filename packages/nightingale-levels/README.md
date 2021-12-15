@@ -26,4 +26,4 @@ console.log(Level.INFO);
 
 ## List of levels
 
-see https://christophehurpeau.github.io/nightingale/enums/nightingale_levels_src.level.html
+see https://christophehurpeau.github.io/nightingale/enums/nightingale_levels_src.Level.html
