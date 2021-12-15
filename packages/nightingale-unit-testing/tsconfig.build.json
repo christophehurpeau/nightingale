@@ -1,0 +1,22 @@
+{
+  "extends": "./tsconfig.json",
+
+  "compilerOptions": {
+    "noEmit": false,
+    "emitDeclarationOnly": true,
+    "rootDirs": [],
+    "rootDir": "src",
+    "outDir": "dist",
+    "composite": true,
+    "tsBuildInfoFile": "dist/tsbuildinfo",
+    "isolatedModules": false,
+    "declaration": true,
+    "declarationMap": true
+  },
+
+  "exclude": ["dist/**", "src/**/*.test.ts", "src/**/__tests__/**"],
+  "references": [
+    { "path": "../nightingale-console/tsconfig.build.json" },
+    { "path": "../nightingale/tsconfig.build.json" }
+  ]
+}

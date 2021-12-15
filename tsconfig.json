@@ -25,6 +25,7 @@
     { "path": "packages/nightingale-app-console/tsconfig.json" },
     { "path": "packages/nightingale-app-react-native/tsconfig.json" },
     { "path": "packages/nightingale-console-example/tsconfig.json" },
-    { "path": "packages/nightingale-example/tsconfig.json" }
+    { "path": "packages/nightingale-example/tsconfig.json" },
+    { "path": "packages/nightingale-unit-testing/tsconfig.json" }
   ]
 }

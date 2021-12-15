@@ -38,7 +38,8 @@
         "nightingale-app-console",
         "nightingale-app-react-native",
         "nightingale-console-example",
-        "nightingale-example"
+        "nightingale-example",
+        "nightingale-unit-testing"
       ]
     },
     "renovate": {

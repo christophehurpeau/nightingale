@@ -41,11 +41,13 @@
     { "path": "packages/nightingale-string/tsconfig.build.json" },
     { "path": "packages/nightingale/tsconfig.build.json" },
     { "path": "packages/nightingale-app-console/tsconfig.build.json" },
-    { "path": "packages/nightingale-app-react-native/tsconfig.build.json" }
+    { "path": "packages/nightingale-app-react-native/tsconfig.build.json" },
+    { "path": "packages/nightingale-unit-testing/tsconfig.build.json" }
   ],
 
   "typedocOptions": {
     "entryPoints": [
+      "packages/nightingale-unit-testing/src/index.ts",
       "packages/nightingale-app-react-native/src/index.ts",
       "packages/nightingale-app-console/src/index.ts",
       "packages/nightingale/src/index.ts",
