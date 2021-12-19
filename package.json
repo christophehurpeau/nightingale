@@ -28,7 +28,7 @@
     "postinstall": "pob-root-postinstall",
     "test": "NODE_OPTIONS=--experimental-vm-modules jest",
     "tsc": "tsc -b",
-    "watch": "yarn workspaces foreach --parallel --exclude \"*-example\" -Av run watch",
+    "watch": "yarn workspaces foreach --parallel --jobs unlimited --interlaced --exclude \"*-example\" -Av run watch",
     "watch:lerna": "lerna run --parallel --ignore \"*-example\" watch"
   },
   "prettier": {

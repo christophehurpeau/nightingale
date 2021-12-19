@@ -10131,7 +10131,7 @@ __metadata:
     ansi-styles: ^4.0.0
     nightingale-formatter: 12.1.0
     nightingale-types: 12.1.0
-    pob-babel: 29.5.0
+    pob-babel: 29.5.1
     typescript: 4.5.4
   languageName: unknown
   linkType: soft
@@ -10147,7 +10147,7 @@ __metadata:
     nightingale: 12.1.0
     nightingale-browser-console: 12.1.0
     nightingale-console: 12.1.0
-    pob-babel: 29.5.0
+    pob-babel: 29.5.1
     typescript: 4.5.4
   languageName: unknown
   linkType: soft
@@ -10163,7 +10163,7 @@ __metadata:
     nightingale: 12.1.0
     nightingale-browser-console: 12.1.0
     nightingale-react-native-console: 12.1.0
-    pob-babel: 29.5.0
+    pob-babel: 29.5.1
     typescript: 4.5.4
   peerDependencies:
     react-native: "*"
@@ -10184,7 +10184,7 @@ __metadata:
     nightingale-formatter: 12.1.0
     nightingale-levels: 12.1.0
     nightingale-types: 12.1.0
-    pob-babel: 29.5.0
+    pob-babel: 29.5.1
     typescript: 4.5.4
   languageName: unknown
   linkType: soft
@@ -10200,7 +10200,7 @@ __metadata:
     nightingale-console-output: 12.1.0
     nightingale-debug: 12.1.0
     nightingale-types: 12.1.0
-    pob-babel: 29.5.0
+    pob-babel: 29.5.1
     typescript: 4.5.4
   languageName: unknown
   linkType: soft
@@ -10214,7 +10214,7 @@ __metadata:
     nightingale: 12.1.0
     nightingale-console: 12.1.0
     nightingale-sentry: 12.1.0
-    pob-babel: 29.5.0
+    pob-babel: 29.5.1
     typescript: 4.5.4
   languageName: unknown
   linkType: soft
@@ -10229,7 +10229,7 @@ __metadata:
     babel-preset-modern-browsers: 15.0.2
     nightingale-levels: 12.1.0
     nightingale-types: 12.1.0
-    pob-babel: 29.5.0
+    pob-babel: 29.5.1
     typescript: 4.5.4
   languageName: unknown
   linkType: soft
@@ -10246,7 +10246,7 @@ __metadata:
     nightingale-json-formatter: 12.1.0
     nightingale-levels: 12.1.0
     nightingale-types: 12.1.0
-    pob-babel: 29.5.0
+    pob-babel: 29.5.1
     typescript: 4.5.4
   languageName: unknown
   linkType: soft
@@ -10259,7 +10259,7 @@ __metadata:
     "@babel/preset-env": 7.16.5
     babel-preset-modern-browsers: 15.0.2
     nightingale-levels: 12.1.0
-    pob-babel: 29.5.0
+    pob-babel: 29.5.1
     typescript: 4.5.4
   languageName: unknown
   linkType: soft
@@ -10275,7 +10275,7 @@ __metadata:
     nightingale-json-formatter: 12.1.0
     nightingale-string: 12.1.0
     nightingale-types: 12.1.0
-    pob-babel: 29.5.0
+    pob-babel: 29.5.1
     typescript: 4.5.4
   languageName: unknown
   linkType: soft
@@ -10289,7 +10289,7 @@ __metadata:
     babel-preset-modern-browsers: 15.0.2
     nightingale-levels: 12.1.0
     nightingale-types: 12.1.0
-    pob-babel: 29.5.0
+    pob-babel: 29.5.1
     typescript: 4.5.4
   languageName: unknown
   linkType: soft
@@ -10304,7 +10304,7 @@ __metadata:
     nightingale-formatter: 12.1.0
     nightingale-levels: 12.1.0
     nightingale-types: 12.1.0
-    pob-babel: 29.5.0
+    pob-babel: 29.5.1
     typescript: 4.5.4
   languageName: unknown
   linkType: soft
@@ -10319,7 +10319,7 @@ __metadata:
     nightingale-formatter: 12.1.0
     nightingale-levels: 12.1.0
     nightingale-types: 12.1.0
-    pob-babel: 29.5.0
+    pob-babel: 29.5.1
     typescript: 4.5.4
   languageName: unknown
   linkType: soft
@@ -10339,7 +10339,7 @@ __metadata:
     "@babel/core": 7.16.5
     "@babel/preset-env": 7.16.5
     babel-preset-modern-browsers: 15.0.2
-    pob-babel: 29.5.0
+    pob-babel: 29.5.1
     typescript: 4.5.4
   languageName: unknown
   linkType: soft
@@ -10354,7 +10354,7 @@ __metadata:
     babel-preset-modern-browsers: 15.0.2
     nightingale-levels: 12.1.0
     nightingale-types: 12.1.0
-    pob-babel: 29.5.0
+    pob-babel: 29.5.1
     typescript: 4.5.4
   languageName: unknown
   linkType: soft
@@ -10369,7 +10369,7 @@ __metadata:
     nightingale-formatter: 12.1.0
     nightingale-levels: 12.1.0
     nightingale-types: 12.1.0
-    pob-babel: 29.5.0
+    pob-babel: 29.5.1
     typescript: 4.5.4
   languageName: unknown
   linkType: soft
@@ -10405,7 +10405,7 @@ __metadata:
     nightingale-formatter: 12.1.0
     nightingale-levels: 12.1.0
     nightingale-types: 12.1.0
-    pob-babel: 29.5.0
+    pob-babel: 29.5.1
     typescript: 4.5.4
   languageName: unknown
   linkType: soft
@@ -10420,7 +10420,7 @@ __metadata:
     babel-preset-modern-browsers: 15.0.2
     nightingale-ansi-formatter: 12.1.0
     nightingale-types: 12.1.0
-    pob-babel: 29.5.0
+    pob-babel: 29.5.1
     react: 17.0.2
     react-native: 0.66.4
     typescript: 4.5.4
@@ -10441,7 +10441,7 @@ __metadata:
     babel-preset-modern-browsers: 15.0.2
     nightingale-levels: 12.1.0
     nightingale-types: 12.1.0
-    pob-babel: 29.5.0
+    pob-babel: 29.5.1
     typescript: 4.5.4
   languageName: unknown
   linkType: soft
@@ -10456,7 +10456,7 @@ __metadata:
     nightingale-markdown-formatter: 12.1.0
     nightingale-raw-formatter: 12.1.0
     nightingale-types: 12.1.0
-    pob-babel: 29.5.0
+    pob-babel: 29.5.1
     request: ^2.88.0
     typescript: 4.5.4
   languageName: unknown
@@ -10469,7 +10469,7 @@ __metadata:
     "@babel/core": 7.16.5
     nightingale-raw-formatter: 12.1.0
     nightingale-types: 12.1.0
-    pob-babel: 29.5.0
+    pob-babel: 29.5.1
     typescript: 4.5.4
   languageName: unknown
   linkType: soft
@@ -10482,7 +10482,7 @@ __metadata:
     "@babel/preset-env": 7.16.5
     babel-preset-modern-browsers: 15.0.2
     nightingale-levels: 12.1.0
-    pob-babel: 29.5.0
+    pob-babel: 29.5.1
     typescript: 4.5.4
   languageName: unknown
   linkType: soft
@@ -10495,7 +10495,7 @@ __metadata:
     "@types/node": ">=14.0.0"
     nightingale: 12.1.0
     nightingale-console: 12.1.0
-    pob-babel: 29.5.0
+    pob-babel: 29.5.1
     typescript: 4.5.4
   languageName: unknown
   linkType: soft
@@ -10507,7 +10507,7 @@ __metadata:
     "@babel/core": 7.16.5
     "@types/node": ">=14.0.0"
     nightingale-types: 12.1.0
-    pob-babel: 29.5.0
+    pob-babel: 29.5.1
     typescript: 4.5.4
   languageName: unknown
   linkType: soft
@@ -10521,7 +10521,7 @@ __metadata:
     babel-preset-modern-browsers: 15.0.2
     nightingale-level-names: 12.1.0
     nightingale-types: 12.1.0
-    pob-babel: 29.5.0
+    pob-babel: 29.5.1
     typescript: 4.5.4
   languageName: unknown
   linkType: soft
@@ -10538,7 +10538,7 @@ __metadata:
     nightingale-logger: 12.1.0
     nightingale-string: 12.1.0
     nightingale-types: 12.1.0
-    pob-babel: 29.5.0
+    pob-babel: 29.5.1
     typescript: 4.5.4
   languageName: unknown
   linkType: soft
@@ -11525,9 +11525,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pob-babel@npm:29.5.0":
-  version: 29.5.0
-  resolution: "pob-babel@npm:29.5.0"
+"pob-babel@npm:29.5.1":
+  version: 29.5.1
+  resolution: "pob-babel@npm:29.5.1"
   dependencies:
     "@babel/core": ^7.16.5
     "@babel/plugin-transform-runtime": 7.16.5
@@ -11549,7 +11549,7 @@ __metadata:
     pob-build: bin/pob-build.js
     pob-watch: bin/pob-watch.js
     rollup: bin/rollup.cjs
-  checksum: 43ce7f0e4dc5fcbc6498f6c97c5cf45ce861bd4f6f687f1b2b9a4f1d6df6d576accf9f3fef02e6f02ccd827912f688a321f85dc13ee71ada776b03498a85da1a
+  checksum: ab7353e97f2e993c9889fe6eb2b8ea55bf8afb3eda2afdc4a94dfd78f815abcde441894387ee42a7f40a1e8a409dab5866afd0a932a31133ca59d5bcc6e759e0
   languageName: node
   linkType: hard
 

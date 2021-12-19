@@ -2,7 +2,7 @@ import { Logger } from 'nightingale-logger';
 export { Logger } from 'nightingale-logger';
 export { Level, Level as levels } from 'nightingale-levels';
 
-if (process.env.NODE_ENV !== "production" && global.__NIGHTINGALE_GLOBAL_HANDLERS) {
+if ((process.env.NODE_ENV !== "production") && global.__NIGHTINGALE_GLOBAL_HANDLERS) {
   throw new Error('nightingale: update all to ^5.0.0');
 }
 
