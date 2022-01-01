@@ -20,7 +20,7 @@ var getStackTrace = function getStackTrace(e) {
 
 function parsedStackToString(stack) {
   return stack.map(function (frame) {
-    return `  at ${frame.file}${frame.lineNumber ? `:${frame.lineNumber}${frame.column ? `:${frame.column}` : ''}` : ''}${frame.methodName ? ` in ${frame.methodName}` : ''}`;
+    return "  at " + frame.file + (frame.lineNumber ? ":" + frame.lineNumber + (frame.column ? ":" + frame.column : '') : '') + (frame.methodName ? " in " + frame.methodName : '');
   }).join('\n');
 }
 

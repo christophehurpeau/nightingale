@@ -9,13 +9,13 @@ function style(styles, string) {
   return styles.reduce(function (part, styleName) {
     switch (styleName) {
       case 'bold':
-        return `*${part}*`;
+        return "*" + part + "*";
 
       case 'italic':
-        return `_${part}_`;
+        return "_" + part + "_";
 
       case 'strikethrough':
-        return `~${part}~`;
+        return "~" + part + "~";
     }
 
     return part;

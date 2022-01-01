@@ -18,7 +18,7 @@ var style = function style(styleToHtmlStyle, args) {
     }).join('; '), htmlStyles.map(function (s) {
       return s.close;
     }).join('; '));
-    return `%c${string}%c`;
+    return "%c" + string + "%c";
   };
 };
 function createBrowserConsoleFormatter(theme) {

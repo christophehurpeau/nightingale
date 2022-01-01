@@ -49,7 +49,7 @@ function style(styles, string) {
     var codePair = ansiStyles[styleName];
 
     if (!codePair) {
-      throw new Error(`Unknown style: ${styleName}`);
+      throw new Error("Unknown style: " + styleName);
     }
 
     return codePair.open + styledString + codePair.close;

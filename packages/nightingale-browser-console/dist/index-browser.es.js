@@ -15,7 +15,7 @@ function getDebugString() {
 
   var debugFromQueryString = decodeURI(querystring.replace( // eslint-disable-next-line unicorn/no-unsafe-regex, prefer-regex-literals
   new RegExp('^(?:.*[&\\?]DEBUG(?:\\=([^&]*))?)?.*$', 'i'), '$1'));
-  return (debugFromLocalStorage ? `${debugFromLocalStorage},` : '') + debugFromQueryString;
+  return (debugFromLocalStorage ? debugFromLocalStorage + "," : '') + debugFromQueryString;
 }
 
 var findDebugLevel = function findDebugLevel(minLevel, key) {

@@ -2,19 +2,8 @@ import _extends from '@babel/runtime/helpers/esm/extends';
 import { Severity } from '@sentry/types';
 import { Level } from 'nightingale-levels';
 
-var mapToSentryLevel = {
-  [Level.TRACE]: Severity.Debug,
-  [Level.DEBUG]: Severity.Debug,
-  [Level.INFO]: Severity.Info,
-  [Level.NOTICE]: Severity.Log,
-  [Level.WARNING]: Severity.Warning,
-  [Level.ERROR]: Severity.Error,
-  [Level.CRITICAL]: Severity.Critical,
-  [Level.FATAL]: Severity.Fatal,
-  [Level.EMERGENCY]: Severity.Critical,
-  // not a level
-  [Level.ALL]: Severity.Error
-};
+var _mapToSentryLevel;
+var mapToSentryLevel = (_mapToSentryLevel = {}, _mapToSentryLevel[Level.TRACE] = Severity.Debug, _mapToSentryLevel[Level.DEBUG] = Severity.Debug, _mapToSentryLevel[Level.INFO] = Severity.Info, _mapToSentryLevel[Level.NOTICE] = Severity.Log, _mapToSentryLevel[Level.WARNING] = Severity.Warning, _mapToSentryLevel[Level.ERROR] = Severity.Error, _mapToSentryLevel[Level.CRITICAL] = Severity.Critical, _mapToSentryLevel[Level.FATAL] = Severity.Fatal, _mapToSentryLevel[Level.EMERGENCY] = Severity.Critical, _mapToSentryLevel[Level.ALL] = Severity.Error, _mapToSentryLevel);
 
 var createHandler = function createHandler(Sentry, _temp) {
   var _ref = _temp === void 0 ? {} : _temp,
