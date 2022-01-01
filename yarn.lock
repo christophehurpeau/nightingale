@@ -3429,15 +3429,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/request@npm:2.48.7":
-  version: 2.48.7
-  resolution: "@types/request@npm:2.48.7"
+"@types/request@npm:2.48.8":
+  version: 2.48.8
+  resolution: "@types/request@npm:2.48.8"
   dependencies:
     "@types/caseless": "*"
     "@types/node": "*"
     "@types/tough-cookie": "*"
     form-data: ^2.5.0
-  checksum: 83c2b682b19a74c7a507f5295a80b3ee85f0b64bc078cdc692ea9c1748ca9452cc739050889d2161f141f7ddac1b01790944ad05e08a6d4d9367fe7473cc6a87
+  checksum: 0b7754941e08205dce51635d894ec524df276d2b83ca13b9aab723f9281acecf1108841e9554494cb1cb60f6d6ddbb47ebea97392bcf2bf607f035b3a9b4af45
   languageName: node
   linkType: hard
 
@@ -10509,7 +10509,7 @@ __metadata:
   resolution: "nightingale-slack@workspace:packages/nightingale-slack"
   dependencies:
     "@babel/core": 7.16.7
-    "@types/request": 2.48.7
+    "@types/request": 2.48.8
     nightingale-levels: 12.1.0
     nightingale-markdown-formatter: 12.1.0
     nightingale-raw-formatter: 12.1.0
