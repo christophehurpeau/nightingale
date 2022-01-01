@@ -16,7 +16,7 @@
     "directory": "packages/nightingale-react-native-console"
   },
   "homepage": "https://github.com/christophehurpeau/nightingale",
-  "type": "commonjs",
+  "type": "module",
   "browserslist": [
     "defaults",
     "> 0.2%",

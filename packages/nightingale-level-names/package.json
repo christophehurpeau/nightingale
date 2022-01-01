@@ -13,14 +13,17 @@
     "directory": "packages/nightingale-level-names"
   },
   "homepage": "https://github.com/christophehurpeau/nightingale",
-  "type": "commonjs",
+  "type": "module",
   "engines": {
     "node": "^14.13.1 || >=16.0.0"
   },
-  "main": "./lib/index.js",
+  "main": "./lib/index.cjs",
   "types": "./lib/index.d.ts",
   "exports": {
-    ".": "./lib/index.js",
+    ".": {
+      "import": "./lib/index.js",
+      "require": "./lib/index.cjs"
+    },
     "./package.json": "./package.json"
   },
   "sideEffects": false,

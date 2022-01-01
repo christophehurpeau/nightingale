@@ -16,7 +16,7 @@
     "directory": "packages/nightingale-app-react-native"
   },
   "homepage": "https://github.com/christophehurpeau/nightingale",
-  "type": "commonjs",
+  "type": "module",
   "browserslist": [
     "defaults",
     "> 0.2%",

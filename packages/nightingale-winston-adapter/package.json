@@ -14,7 +14,7 @@
     "directory": "packages/nightingale-winston-adapter"
   },
   "homepage": "https://github.com/christophehurpeau/nightingale",
-  "type": "commonjs",
+  "type": "module",
   "engines": {
     "node": "^14.13.1 || >=16.0.0"
   },

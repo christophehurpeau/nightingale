@@ -1,6 +1,6 @@
 {
   "root": true,
-  "extends": ["@pob/eslint-config/root-commonjs"],
+  "extends": ["@pob/eslint-config/root-module"],
   "env": {
     "browser": true
   },
