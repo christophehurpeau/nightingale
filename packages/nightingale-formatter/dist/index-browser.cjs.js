@@ -9,27 +9,11 @@ function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'defau
 
 var _extends__default = /*#__PURE__*/_interopDefaultLegacy(_extends);
 
-var levelToStyles = {
-  [nightingaleLevels.Level.TRACE]: ['gray'],
-  [nightingaleLevels.Level.DEBUG]: ['gray'],
-  // [Level.INFO]: ['gray'],
-  [nightingaleLevels.Level.WARN]: ['yellow'],
-  [nightingaleLevels.Level.ERROR]: ['red', 'bold'],
-  [nightingaleLevels.Level.CRITICAL]: ['red', 'bold'],
-  [nightingaleLevels.Level.FATAL]: ['bgRed', 'white'],
-  [nightingaleLevels.Level.EMERGENCY]: ['bgRed', 'white']
-};
+var _levelToStyles;
+var levelToStyles = (_levelToStyles = {}, _levelToStyles[nightingaleLevels.Level.TRACE] = ['gray'], _levelToStyles[nightingaleLevels.Level.DEBUG] = ['gray'], _levelToStyles[nightingaleLevels.Level.WARN] = ['yellow'], _levelToStyles[nightingaleLevels.Level.ERROR] = ['red', 'bold'], _levelToStyles[nightingaleLevels.Level.CRITICAL] = ['red', 'bold'], _levelToStyles[nightingaleLevels.Level.FATAL] = ['bgRed', 'white'], _levelToStyles[nightingaleLevels.Level.EMERGENCY] = ['bgRed', 'white'], _levelToStyles);
 
-var levelToSymbol = {
-  [nightingaleLevels.Level.TRACE]: '•',
-  [nightingaleLevels.Level.DEBUG]: '•',
-  [nightingaleLevels.Level.INFO]: '→',
-  [nightingaleLevels.Level.WARN]: '⚠',
-  [nightingaleLevels.Level.ERROR]: '✖',
-  [nightingaleLevels.Level.CRITICAL]: '!',
-  [nightingaleLevels.Level.FATAL]: '‼',
-  [nightingaleLevels.Level.EMERGENCY]: '‼'
-};
+var _levelToSymbol;
+var levelToSymbol = (_levelToSymbol = {}, _levelToSymbol[nightingaleLevels.Level.TRACE] = '•', _levelToSymbol[nightingaleLevels.Level.DEBUG] = '•', _levelToSymbol[nightingaleLevels.Level.INFO] = '→', _levelToSymbol[nightingaleLevels.Level.WARN] = '⚠', _levelToSymbol[nightingaleLevels.Level.ERROR] = '✖', _levelToSymbol[nightingaleLevels.Level.CRITICAL] = '!', _levelToSymbol[nightingaleLevels.Level.FATAL] = '‼', _levelToSymbol[nightingaleLevels.Level.EMERGENCY] = '‼', _levelToSymbol);
 
 var styleToHexColor = {
   orange: 'ff5f00',
@@ -128,15 +112,15 @@ var styleToHtmlStyleThemeLight = {
     close: 'background: initial'
   },
   orange: {
-    open: `color: #${styleToHexColor.orange}`,
+    open: "color: #" + styleToHexColor.orange,
     close: 'color: currentcolor'
   },
   grayLight: {
-    open: `color: #${styleToHexColor.grayLight}`,
+    open: "color: #" + styleToHexColor.grayLight,
     close: 'color: currentcolor'
   },
   'gray-light': {
-    open: `color: #${styleToHexColor.grayLight}`,
+    open: "color: #" + styleToHexColor.grayLight,
     close: 'color: currentcolor'
   }
 };
@@ -224,10 +208,10 @@ function internalFormatValue(value, styleFn, styles, _ref) {
       stringValue = '{Object...}';
     } else {
       return internalFormatObject(value, styleFn, undefined, {
-        padding,
+        padding: padding,
         depth: depth + 1,
-        maxDepth,
-        objects
+        maxDepth: maxDepth,
+        objects: objects
       });
     }
   } else if (Array.isArray(value)) {
@@ -235,26 +219,26 @@ function internalFormatValue(value, styleFn, styles, _ref) {
       stringValue = '[Array...]';
     } else {
       return internalFormatArray(value, styleFn, {
-        padding,
+        padding: padding,
         depth: depth + 1,
-        maxDepth,
-        objects
+        maxDepth: maxDepth,
+        objects: objects
       });
     }
   } else if (value instanceof Error) {
     var stack = value.stack;
-    stringValue = stack != null && stack.startsWith(value.message) ? stack : `${value.message}\n${stack || ''}`;
+    stringValue = stack != null && stack.startsWith(value.message) ? stack : value.message + "\n" + (stack || '');
   } else if (value instanceof Map) {
     var name = value.constructor.name;
 
     if (depth >= maxDepth) {
-      stringValue = `{${name}...}`;
+      stringValue = "{" + name + "...}";
     } else {
       return internalFormatMap(name, value, styleFn, {
-        padding,
+        padding: padding,
         depth: depth + 1,
-        maxDepth,
-        objects
+        maxDepth: maxDepth,
+        objects: objects
       });
     }
   } else if (typeofValue === 'bigint') {
@@ -265,13 +249,13 @@ function internalFormatValue(value, styleFn, styles, _ref) {
     var _name = value.constructor.name;
 
     if (depth >= maxDepth) {
-      stringValue = `{${_name}...}`;
+      stringValue = "{" + _name + "...}";
     } else {
       return internalFormatSet(_name, value, styleFn, {
-        padding,
+        padding: padding,
         depth: depth + 1,
-        maxDepth,
-        objects
+        maxDepth: maxDepth,
+        objects: objects
       });
     }
   } else if (value instanceof WeakMap) {
@@ -284,8 +268,8 @@ function internalFormatValue(value, styleFn, styles, _ref) {
 
   var formattedValue = styleFn(styles, stringValue);
   return {
-    stringValue,
-    formattedValue
+    stringValue: stringValue,
+    formattedValue: formattedValue
   };
 }
 
@@ -293,8 +277,8 @@ var separator = ',';
 
 var internalFormatKey = function internalFormatKey(key, styleFn) {
   return {
-    stringKey: `${key}: `,
-    formattedKey: `${styleFn(['gray-light', 'bold'], `${key}:`)} `
+    stringKey: key + ": ",
+    formattedKey: styleFn(['gray-light', 'bold'], key + ":") + " "
   };
 };
 
@@ -311,8 +295,8 @@ var internalFormatMapKey = function internalFormatMapKey(key, styleFn, internalF
       formattedValue = _internalFormatValue.formattedValue;
 
   return {
-    stringKey: `${stringValue} => `,
-    formattedKey: `${styleFn(['gray-light', 'bold'], `${formattedValue}:`)} `
+    stringKey: stringValue + " => ",
+    formattedKey: styleFn(['gray-light', 'bold'], formattedValue + ":") + " "
   };
 };
 
@@ -337,10 +321,10 @@ var internalFormatIterator = function internalFormatIterator(values, styleFn, ob
     var key = _ref4.key,
         value = _ref4.value;
     var internalFormatParams = {
-      padding,
+      padding: padding,
       depth: depth + 1,
-      maxDepth,
-      objects
+      maxDepth: maxDepth,
+      objects: objects
     }; // key must be formatted before value (browser-formatter needs order)
 
     var _formatKey = formatKey(key, styleFn, internalFormatParams),
@@ -353,8 +337,8 @@ var internalFormatIterator = function internalFormatIterator(values, styleFn, ob
 
     if (stringValue && (stringValue.length > 80 || stringValue.includes('\n'))) {
       breakLine = true;
-      stringValue = stringValue.replace(/\n/g, `\n${padding}`);
-      formattedValue = formattedValue.replace(/\n/g, `\n${padding}`);
+      stringValue = stringValue.replace(/\n/g, "\n" + padding);
+      formattedValue = formattedValue.replace(/\n/g, "\n" + padding);
     }
 
     return {
@@ -365,15 +349,15 @@ var internalFormatIterator = function internalFormatIterator(values, styleFn, ob
   });
   return {
     stringValue: prefix + formattedValues.map(breakLine ? function (v) {
-      return `\n${padding}${v.stringValue}`;
+      return "\n" + padding + v.stringValue;
     } : function (fv) {
       return fv.stringValue;
     }).join(breakLine ? '\n' : ' ') + suffix,
-    formattedValue: `${prefix}${breakLine ? '' : prefixSuffixSpace}${formattedValues.map(breakLine ? function (v) {
-      return `\n${padding}${v.formattedValue}`;
+    formattedValue: "" + prefix + (breakLine ? '' : prefixSuffixSpace) + formattedValues.map(breakLine ? function (v) {
+      return "\n" + padding + v.formattedValue;
     } : function (v) {
       return v.formattedValue;
-    }).join(breakLine ? '' : ' ')}${breakLine ? ',\n' : prefixSuffixSpace}${suffix}`
+    }).join(breakLine ? '' : ' ') + (breakLine ? ',\n' : prefixSuffixSpace) + suffix
   };
 };
 
@@ -396,14 +380,14 @@ function internalFormatObject(object, styleFn, objectStyles, _ref5) {
   objects.add(object);
   var result = internalFormatIterator(keys.map(function (key) {
     return {
-      key,
+      key: key,
       value: object[key]
     };
   }), styleFn, objectStyles, {
-    padding,
-    depth,
-    maxDepth,
-    objects
+    padding: padding,
+    depth: depth,
+    maxDepth: maxDepth,
+    objects: objects
   }, {
     prefix: '{',
     suffix: '}',
@@ -420,28 +404,28 @@ function internalFormatMap(name, map, styleFn, _ref6) {
       objects = _ref6.objects;
 
   if (objects.has(map)) {
-    return sameRawFormattedValue(`{Circular ${name}}`);
+    return sameRawFormattedValue("{Circular " + name + "}");
   }
 
   var keys = [].concat(map.keys());
 
   if (keys.length === 0) {
-    return sameRawFormattedValue(`${name} {}`);
+    return sameRawFormattedValue(name + " {}");
   }
 
   objects.add(map);
   var result = internalFormatIterator(keys.map(function (key) {
     return {
-      key,
+      key: key,
       value: map.get(key)
     };
   }), styleFn, undefined, {
-    padding,
-    depth,
-    maxDepth,
-    objects
+    padding: padding,
+    depth: depth,
+    maxDepth: maxDepth,
+    objects: objects
   }, {
-    prefix: `${name} {`,
+    prefix: name + " {",
     suffix: '}',
     formatKey: internalFormatMapKey
   });
@@ -467,13 +451,13 @@ function internalFormatArray(array, styleFn, _ref7) {
   var result = internalFormatIterator(array.map(function (value) {
     return {
       key: undefined,
-      value
+      value: value
     };
   }), styleFn, undefined, {
-    padding,
-    depth,
-    maxDepth,
-    objects
+    padding: padding,
+    depth: depth,
+    maxDepth: maxDepth,
+    objects: objects
   }, {
     prefix: '[',
     suffix: ']',
@@ -491,28 +475,28 @@ function internalFormatSet(name, set, styleFn, _ref8) {
       objects = _ref8.objects;
 
   if (objects.has(set)) {
-    return sameRawFormattedValue(`{Circular ${name}}`);
+    return sameRawFormattedValue("{Circular " + name + "}");
   }
 
   var values = [].concat(set.values());
 
   if (values.length === 0) {
-    return sameRawFormattedValue(`${name} []`);
+    return sameRawFormattedValue(name + " []");
   }
 
   objects.add(set);
   var result = internalFormatIterator(values.map(function (value) {
     return {
       key: undefined,
-      value
+      value: value
     };
   }), styleFn, undefined, {
-    padding,
-    depth,
-    maxDepth,
-    objects
+    padding: padding,
+    depth: depth,
+    maxDepth: maxDepth,
+    objects: objects
   }, {
-    prefix: `${name} [`,
+    prefix: name + " [",
     suffix: ']',
     formatKey: internalNoKey
   });
@@ -532,8 +516,8 @@ function formatObject(object, styleFn, objectStyles, _temp) {
       maxDepth = _ref9$maxDepth === void 0 ? 10 : _ref9$maxDepth;
 
   var _internalFormatObject = internalFormatObject(object, styleFn, objectStyles, {
-    padding,
-    maxDepth,
+    padding: padding,
+    maxDepth: maxDepth,
     depth: 0,
     objects: new Set()
   }),
@@ -565,7 +549,7 @@ function formatRecordToString(record, style) {
 
   if (record.message) {
     if (message) {
-      message += ` ${record.message}`;
+      message += " " + record.message;
     } else {
       message = record.message;
     }

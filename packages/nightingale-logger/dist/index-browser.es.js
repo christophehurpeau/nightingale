@@ -21,7 +21,7 @@ if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
       handlers: handlers.filter(function (handler) {
         return level >= handler.minLevel && (!handler.isHandling || handler.isHandling(level, key));
       }),
-      processors
+      processors: processors
     };
   };
 }
@@ -53,7 +53,7 @@ var Logger = /*#__PURE__*/function () {
     this.displayName = displayName;
 
     if ((process.env.NODE_ENV !== "production") && key.includes('.')) {
-      throw new Error(`nightingale: \`.\` in key is no longer supported, use \`:\` instead (key: ${key})`);
+      throw new Error("nightingale: `.` in key is no longer supported, use `:` instead (key: " + key + ")");
     }
   }
   /** @private */
@@ -76,7 +76,7 @@ var Logger = /*#__PURE__*/function () {
   ;
 
   _proto.child = function child(childSuffixKey, childDisplayName) {
-    return new Logger(`${this.key}:${childSuffixKey}`, childDisplayName);
+    return new Logger(this.key + ":" + childSuffixKey, childDisplayName);
   }
   /**
    * Create a new Logger with the same key a this attached context
@@ -173,7 +173,7 @@ var Logger = /*#__PURE__*/function () {
     }
 
     var isMessageError = isError(messageOrError);
-    var message = isMessageError ? `${messageOrError.name}: ${messageOrError.message}` : messageOrError;
+    var message = isMessageError ? messageOrError.name + ": " + messageOrError.message : messageOrError;
     var extendedMetadata = isMessageError && // eslint-disable-next-line unicorn/prefer-object-has-own -- TODO fix and add polyfill
     !(metadata && Object.prototype.hasOwnProperty.call(metadata, 'error')) ? _extends({}, metadata, {
       error: messageOrError
@@ -185,11 +185,11 @@ var Logger = /*#__PURE__*/function () {
     }
 
     var record = _extends({
-      level,
+      level: level,
       key: this.key,
       displayName: this.displayName,
       datetime: new Date(),
-      message,
+      message: message,
       context: context || this.contextObject,
       metadata: extendedMetadata,
       extra: {}
@@ -204,7 +204,7 @@ var Logger = /*#__PURE__*/function () {
 
   _proto.trace = function trace(messageOrError, metadata, metadataStyles) {
     this.log(messageOrError, metadata, Level.TRACE, {
-      metadataStyles
+      metadataStyles: metadataStyles
     });
   }
   /**
@@ -214,7 +214,7 @@ var Logger = /*#__PURE__*/function () {
 
   _proto.debug = function debug(messageOrError, metadata, metadataStyles) {
     this.log(messageOrError, metadata, Level.DEBUG, {
-      metadataStyles
+      metadataStyles: metadataStyles
     });
   }
   /**
@@ -224,7 +224,7 @@ var Logger = /*#__PURE__*/function () {
 
   _proto.notice = function notice(messageOrError, metadata, metadataStyles) {
     this.log(messageOrError, metadata, Level.NOTICE, {
-      metadataStyles
+      metadataStyles: metadataStyles
     });
   }
   /**
@@ -234,7 +234,7 @@ var Logger = /*#__PURE__*/function () {
 
   _proto.info = function info(messageOrError, metadata, metadataStyles) {
     this.log(messageOrError, metadata, Level.INFO, {
-      metadataStyles
+      metadataStyles: metadataStyles
     });
   }
   /**
@@ -244,7 +244,7 @@ var Logger = /*#__PURE__*/function () {
 
   _proto.warn = function warn(messageOrError, metadata, metadataStyles) {
     this.log(messageOrError, metadata, Level.WARN, {
-      metadataStyles
+      metadataStyles: metadataStyles
     });
   }
   /**
@@ -264,7 +264,7 @@ var Logger = /*#__PURE__*/function () {
 
   _proto.error = function error(messageOrError, metadata, metadataStyles) {
     this.log(messageOrError, metadata, Level.ERROR, {
-      metadataStyles
+      metadataStyles: metadataStyles
     });
   }
   /**
@@ -274,7 +274,7 @@ var Logger = /*#__PURE__*/function () {
 
   _proto.critical = function critical(messageOrError, metadata, metadataStyles) {
     this.log(messageOrError, metadata, Level.CRITICAL, {
-      metadataStyles
+      metadataStyles: metadataStyles
     });
   }
   /**
@@ -294,7 +294,7 @@ var Logger = /*#__PURE__*/function () {
 
   _proto.fatal = function fatal(messageOrError, metadata, metadataStyles) {
     this.log(messageOrError, metadata, Level.FATAL, {
-      metadataStyles
+      metadataStyles: metadataStyles
     });
   }
   /**
@@ -304,7 +304,7 @@ var Logger = /*#__PURE__*/function () {
 
   _proto.alert = function alert(messageOrError, metadata, metadataStyles) {
     this.log(messageOrError, metadata, Level.ALERT, {
-      metadataStyles
+      metadataStyles: metadataStyles
     });
   }
   /**
@@ -338,7 +338,7 @@ var Logger = /*#__PURE__*/function () {
 
   _proto.infoSuccess = function infoSuccess(message, metadata, metadataStyles) {
     this.log(message, metadata, Level.INFO, {
-      metadataStyles,
+      metadataStyles: metadataStyles,
       symbol: '✔',
       styles: ['green', 'bold']
     });
@@ -350,7 +350,7 @@ var Logger = /*#__PURE__*/function () {
 
   _proto.debugSuccess = function debugSuccess(message, metadata, metadataStyles) {
     this.log(message, metadata, Level.DEBUG, {
-      metadataStyles,
+      metadataStyles: metadataStyles,
       symbol: '✔',
       styles: ['green']
     });
@@ -370,7 +370,7 @@ var Logger = /*#__PURE__*/function () {
 
   _proto.infoFail = function infoFail(messageOrError, metadata, metadataStyles) {
     this.log(messageOrError, metadata, Level.INFO, {
-      metadataStyles,
+      metadataStyles: metadataStyles,
       symbol: '✖',
       styles: ['red', 'bold']
     });
@@ -382,7 +382,7 @@ var Logger = /*#__PURE__*/function () {
 
   _proto.debugFail = function debugFail(messageOrError, metadata, metadataStyles) {
     this.log(messageOrError, metadata, Level.DEBUG, {
-      metadataStyles,
+      metadataStyles: metadataStyles,
       symbol: '✖',
       styles: ['red']
     });
@@ -399,7 +399,7 @@ var Logger = /*#__PURE__*/function () {
 
     if (message) {
       this.log(message, metadata, level, {
-        metadataStyles
+        metadataStyles: metadataStyles
       });
     }
 
@@ -427,19 +427,19 @@ var Logger = /*#__PURE__*/function () {
     var readableTime;
 
     if (diffTime < 1000) {
-      readableTime = `${diffTime}ms`;
+      readableTime = diffTime + "ms";
     } else {
       var seconds = diffTime > 1000 ? Math.floor(diffTime / 1000) : 0;
-      readableTime = `${seconds ? `${seconds}s and ` : ''}${diffTime - seconds * 1000}ms`;
+      readableTime = "" + (seconds ? seconds + "s and " : '') + (diffTime - seconds * 1000) + "ms";
     }
 
     var extendedMetadata = _extends({}, metadata, {
-      readableTime,
+      readableTime: readableTime,
       timeMs: diffTime
     });
 
     this.log(message, extendedMetadata, level, _extends({}, options, {
-      metadataStyles
+      metadataStyles: metadataStyles
     }));
   }
   /**
@@ -483,7 +483,7 @@ var Logger = /*#__PURE__*/function () {
     });
 
     this.log('enter', extendedMetadata, Level.TRACE, {
-      metadataStyles
+      metadataStyles: metadataStyles
     });
   }
   /**
@@ -508,7 +508,7 @@ var Logger = /*#__PURE__*/function () {
     });
 
     this.log('exit', extendedMetadata, Level.TRACE, {
-      metadataStyles
+      metadataStyles: metadataStyles
     });
   }
   /**
