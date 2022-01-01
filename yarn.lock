@@ -3374,10 +3374,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:14.18.3":
-  version: 14.18.3
-  resolution: "@types/node@npm:14.18.3"
-  checksum: 72275674a25b0e9d4fe213449d874fd3e8280a84d911a359d298d68b84550b6a3210d484dc2662b8eb6e0b1829f4dac5e60cb7c01ce78878b316305c798d1cbb
+"@types/node@npm:14.18.4":
+  version: 14.18.4
+  resolution: "@types/node@npm:14.18.4"
+  checksum: 12015baff875140579d4c8982a7c239685ceee3a7b0ea58e6d6918d001582a752bfbc13e5c06c745e2bb10261068e632929fdf3e013c98fba006cd0cc4c67bf9
   languageName: node
   linkType: hard
 
@@ -10442,7 +10442,7 @@ __metadata:
     "@pob/lerna-light": 5.1.0
     "@pob/root": 6.2.0
     "@types/jest": 27.4.0
-    "@types/node": 14.18.3
+    "@types/node": 14.18.4
     check-package-dependencies: 3.0.0
     eslint: 8.6.0
     jest: 27.4.5
