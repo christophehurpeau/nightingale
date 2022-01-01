@@ -1,7 +1,7 @@
 {
   "name": "nightingale-console-example",
   "private": true,
-  "version": "12.1.0",
+  "version": "12.1.1",
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (https://christophe.hurpeau.com)",
   "license": "ISC",
   "repository": {
@@ -73,9 +73,9 @@
   },
   "dependencies": {
     "@sentry/node": "^6.1.0",
-    "nightingale": "12.1.0",
-    "nightingale-console": "12.1.0",
-    "nightingale-sentry": "12.1.0"
+    "nightingale": "12.1.1",
+    "nightingale-console": "12.1.1",
+    "nightingale-sentry": "12.1.1"
   },
   "devDependencies": {
     "@babel/core": "7.16.7",

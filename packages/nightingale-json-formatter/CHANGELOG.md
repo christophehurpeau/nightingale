@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [12.1.1](https://github.com/christophehurpeau/nightingale/compare/v12.1.0...v12.1.1) (2022-01-01)
+
+
+### Bug Fixes
+
+* properly configure package type ([2e0cbf5](https://github.com/christophehurpeau/nightingale/commit/2e0cbf555bd3b9fa3c3851025452937f64408aa8))
+
+
+
+
+
 # [12.1.0](https://github.com/christophehurpeau/nightingale/compare/v12.0.1...v12.1.0) (2021-12-15)
 
 **Note:** Version bump only for package nightingale-json-formatter
