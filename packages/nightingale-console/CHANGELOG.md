@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [12.1.2](https://github.com/christophehurpeau/nightingale/compare/v12.1.1...v12.1.2) (2022-01-02)
+
+
+### Bug Fixes
+
+* main esm for jest which supports esm but not exports ([98789fa](https://github.com/christophehurpeau/nightingale/commit/98789fa490e723840fccc443584189b6905d871b))
+
+
+
+
+
 ## [12.1.1](https://github.com/christophehurpeau/nightingale/compare/v12.1.0...v12.1.1) (2022-01-01)
 
 
