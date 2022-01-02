@@ -18,7 +18,6 @@ jobs:
         with:
           path: |
             .yarn/unplugged
-            .yarn/build-state.yml
             .yarn/install-state.gz
           key: v2-dependencies--${{ matrix.node-version }}-${{ runner.OS }}-${{ hashFiles('yarn.lock') }}
           restore-keys: |
@@ -41,5 +40,5 @@ jobs:
           git add .
           git -c user.name="Christophe Hurpeau" \
             -c user.email="christophehurpeau@users.noreply.github.com" \
-            commit -m "chore: update pob root" --author="github-actions[bot] <actions@github.com>"
+            commit -m "style: prettier format" --author="github-actions[bot] <actions@github.com>"
           git push
