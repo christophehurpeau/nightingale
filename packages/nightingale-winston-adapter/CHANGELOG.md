@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [12.1.3](https://github.com/christophehurpeau/nightingale/compare/v12.1.2...v12.1.3) (2022-01-15)
+
+**Note:** Version bump only for package nightingale-winston-adapter
+
+
+
+
+
 ## [12.1.2](https://github.com/christophehurpeau/nightingale/compare/v12.1.1...v12.1.2) (2022-01-02)
 
 
