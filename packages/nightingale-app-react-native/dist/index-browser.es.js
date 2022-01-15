@@ -2,7 +2,6 @@ import { Logger, configure, Level } from 'nightingale';
 export { Level, addConfig, configure } from 'nightingale';
 import { BrowserConsoleHandler } from 'nightingale-browser-console';
 import { ReactNativeConsoleHandler } from 'nightingale-react-native-console';
-export { ReactNativeConsoleHandler } from 'nightingale-react-native-console';
 import { Platform } from 'react-native';
 
 var appLogger = new Logger('app');

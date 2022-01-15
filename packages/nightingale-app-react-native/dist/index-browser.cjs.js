@@ -20,7 +20,6 @@ nightingale.configure(process.env.NODE_ENV === 'production' ? [] : [{
 exports.Level = nightingale.Level;
 exports.addConfig = nightingale.addConfig;
 exports.configure = nightingale.configure;
-exports.ReactNativeConsoleHandler = nightingaleReactNativeConsole.ReactNativeConsoleHandler;
 exports.ReactNativeConsoleHandlerForPlatform = ReactNativeConsoleHandlerForPlatform;
 exports.appLogger = appLogger;
 //# sourceMappingURL=index-browser.cjs.js.map
