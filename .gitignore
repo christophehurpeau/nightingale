@@ -15,6 +15,13 @@ yarn-error.log*
 *.sublime-project
 *.sublime-workspace
 
+# generated documentation directory
+/docs
+
+# jest default coverage directory
+/coverage
+
+
 # Typescript
 tsbuildinfo
 

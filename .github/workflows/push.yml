@@ -51,13 +51,8 @@ jobs:
         run: yarn run tsc
         if: startsWith(matrix.node-version, '16.')
 
-      - name: Test
-        run: yarn run test
-        env:
-          CI: true
-
-      - name: Documentation
-        run: yarn run generate:docs
+      - name: Generate Test Coverage
+        run: yarn run test --coverage --coverageReporters=json --coverageReporters=text
         if: startsWith(matrix.node-version, '16.')
         env:
           CI: true

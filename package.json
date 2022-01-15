@@ -16,12 +16,11 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "yarn workspaces foreach --parallel --topological-dev -Av run build && yarn run build:definitions && yarn run generate:docs",
+    "build": "yarn workspaces foreach --parallel --topological-dev -Av run build && yarn run build:definitions",
     "build:definitions": "tsc -b tsconfig.build.json",
     "checks": "node scripts/check-packages.js",
     "generate:api": "typedoc --tsconfig tsconfig.doc.json",
-    "generate:docs": "rm -Rf docs ; yarn run generate:api ; touch docs/.nojekyll",
-    "generate:test-coverage": "rm -Rf docs/coverage/ ; NODE_ENV=production BABEL_ENV=test NODE_OPTIONS=--experimental-vm-modules jest --coverage --coverageReporters=pob-lcov-reporter --coverageDirectory=docs/coverage/",
+    "generate:test-coverage": "rm -Rf docs/coverage/ ; NODE_OPTIONS=--experimental-vm-modules jest --coverage --coverageReporters=lcov --coverageDirectory=docs/coverage/",
     "lint": "yarn run lint:prettier && yarn run lint:eslint",
     "lint:eslint": "NODE_OPTIONS=--max_old_space_size=4096 eslint --report-unused-disable-directives --resolve-plugins-relative-to . --quiet .",
     "lint:prettier": "prettier --check .",
@@ -75,7 +74,6 @@
     "check-package-dependencies": "3.0.0",
     "eslint": "8.6.0",
     "jest": "27.4.7",
-    "pob-lcov-reporter": "6.0.1",
     "prettier": "2.5.1",
     "typedoc": "0.22.10",
     "typescript": "4.5.4"
