@@ -1,0 +1,175 @@
+{
+  "extensions": {
+    "recommendations": [
+      "dbaeumer.vscode-eslint",
+      "EditorConfig.EditorConfig",
+      "esbenp.prettier-vscode"
+    ],
+    "unwantedRecommendations": []
+  },
+  "settings": {
+    "search.exclude": {
+      "**/.yarn": true
+    },
+    "typescript.tsdk": "node_modules/typescript/lib",
+    "typescript.enablePromptUseWorkspaceTsdk": true,
+    "editor.formatOnSave": true,
+    "eslint.codeActionsOnSave.mode": "all",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true,
+      "source.organizeImports": false
+    },
+    "jest.jestCommandLine": "NODE_OPTIONS=--experimental-vm-modules node_modules/.bin/jest",
+    "eslint.workingDirectories": ["."],
+    "eslint.options": {
+      "resolvePluginsRelativeTo": ".",
+      "reportUnusedDisableDirectives": "error"
+    },
+    "eslint.lintTask.enable": true,
+    "eslint.format.enable": false,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "jest.disabledWorkspaceFolders": [
+      "nightingale",
+      "nightingale-ansi-formatter",
+      "nightingale-app-console",
+      "nightingale-app-react-native",
+      "nightingale-browser-console",
+      "nightingale-browser-console-formatter",
+      "nightingale-console",
+      "nightingale-console-example",
+      "nightingale-console-output",
+      "nightingale-debug",
+      "nightingale-example",
+      "nightingale-formatter",
+      "nightingale-html-formatter",
+      "nightingale-json-formatter",
+      "nightingale-level-names",
+      "nightingale-levels",
+      "nightingale-logger",
+      "nightingale-markdown-formatter",
+      "nightingale-raw-formatter",
+      "nightingale-react-native-console",
+      "nightingale-sentry",
+      "nightingale-slack",
+      "nightingale-string",
+      "nightingale-types",
+      "nightingale-unit-testing",
+      "nightingale-web-processor",
+      "nightingale-winston-adapter"
+    ]
+  },
+  "folders": [
+    {
+      "name": "✨ root",
+      "path": ".."
+    },
+    {
+      "name": "nightingale",
+      "path": "../packages/nightingale"
+    },
+    {
+      "name": "nightingale-ansi-formatter",
+      "path": "../packages/nightingale-ansi-formatter"
+    },
+    {
+      "name": "nightingale-app-console",
+      "path": "../packages/nightingale-app-console"
+    },
+    {
+      "name": "nightingale-app-react-native",
+      "path": "../packages/nightingale-app-react-native"
+    },
+    {
+      "name": "nightingale-browser-console",
+      "path": "../packages/nightingale-browser-console"
+    },
+    {
+      "name": "nightingale-browser-console-formatter",
+      "path": "../packages/nightingale-browser-console-formatter"
+    },
+    {
+      "name": "nightingale-console",
+      "path": "../packages/nightingale-console"
+    },
+    {
+      "name": "nightingale-console-example",
+      "path": "../packages/nightingale-console-example"
+    },
+    {
+      "name": "nightingale-console-output",
+      "path": "../packages/nightingale-console-output"
+    },
+    {
+      "name": "nightingale-debug",
+      "path": "../packages/nightingale-debug"
+    },
+    {
+      "name": "nightingale-example",
+      "path": "../packages/nightingale-example"
+    },
+    {
+      "name": "nightingale-formatter",
+      "path": "../packages/nightingale-formatter"
+    },
+    {
+      "name": "nightingale-html-formatter",
+      "path": "../packages/nightingale-html-formatter"
+    },
+    {
+      "name": "nightingale-json-formatter",
+      "path": "../packages/nightingale-json-formatter"
+    },
+    {
+      "name": "nightingale-level-names",
+      "path": "../packages/nightingale-level-names"
+    },
+    {
+      "name": "nightingale-levels",
+      "path": "../packages/nightingale-levels"
+    },
+    {
+      "name": "nightingale-logger",
+      "path": "../packages/nightingale-logger"
+    },
+    {
+      "name": "nightingale-markdown-formatter",
+      "path": "../packages/nightingale-markdown-formatter"
+    },
+    {
+      "name": "nightingale-raw-formatter",
+      "path": "../packages/nightingale-raw-formatter"
+    },
+    {
+      "name": "nightingale-react-native-console",
+      "path": "../packages/nightingale-react-native-console"
+    },
+    {
+      "name": "nightingale-sentry",
+      "path": "../packages/nightingale-sentry"
+    },
+    {
+      "name": "nightingale-slack",
+      "path": "../packages/nightingale-slack"
+    },
+    {
+      "name": "nightingale-string",
+      "path": "../packages/nightingale-string"
+    },
+    {
+      "name": "nightingale-types",
+      "path": "../packages/nightingale-types"
+    },
+    {
+      "name": "nightingale-unit-testing",
+      "path": "../packages/nightingale-unit-testing"
+    },
+    {
+      "name": "nightingale-web-processor",
+      "path": "../packages/nightingale-web-processor"
+    },
+    {
+      "name": "nightingale-winston-adapter",
+      "path": "../packages/nightingale-winston-adapter"
+    }
+  ]
+}
