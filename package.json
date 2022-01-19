@@ -71,7 +71,7 @@
     "@pob/root": "6.4.0",
     "@types/jest": "27.4.0",
     "@types/node": "14.18.9",
-    "check-package-dependencies": "3.0.0",
+    "check-package-dependencies": "3.0.1",
     "eslint": "8.7.0",
     "jest": "27.4.7",
     "prettier": "2.5.1",
