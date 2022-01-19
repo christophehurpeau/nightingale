@@ -4824,9 +4824,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"check-package-dependencies@npm:3.0.1":
-  version: 3.0.1
-  resolution: "check-package-dependencies@npm:3.0.1"
+"check-package-dependencies@npm:3.0.2":
+  version: 3.0.2
+  resolution: "check-package-dependencies@npm:3.0.2"
   dependencies:
     chalk: ^4.1.0
     glob: ^7.1.6
@@ -4834,7 +4834,7 @@ __metadata:
     type-fest: ^2.0.0
   bin:
     check-package-dependencies: bin/check-package-dependencies.js
-  checksum: 9a04b600bf3e02602cca4f54de28bbd3a4670684978cba1d81e31f1e1bcd1f8010d4bb5db218b79be34a9ccf131ddff965e85e441efc9595a9e79816d697a5f7
+  checksum: cd0a95c165ca7f6e9920be8e89c9dc8fb3167b0255c169a65d67a8e57063f2012493931d1c3cd28c538f7d5d5c5775f049efa0bdd98f8f3cd142890bbd572906
   languageName: node
   linkType: hard
 
@@ -10353,7 +10353,7 @@ __metadata:
     "@pob/root": 6.4.0
     "@types/jest": 27.4.0
     "@types/node": 14.18.9
-    check-package-dependencies: 3.0.1
+    check-package-dependencies: 3.0.2
     eslint: 8.7.0
     jest: 27.4.7
     prettier: 2.5.1
