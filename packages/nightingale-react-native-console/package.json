@@ -82,7 +82,7 @@
   },
   "devDependencies": {
     "@babel/core": "7.16.10",
-    "@babel/preset-env": "7.16.10",
+    "@babel/preset-env": "7.16.11",
     "@types/react-native": "0.66.13",
     "babel-preset-modern-browsers": "15.0.2",
     "pob-babel": "29.7.0",
