@@ -76,6 +76,6 @@
     "jest": "27.4.7",
     "prettier": "2.5.1",
     "typedoc": "0.22.11",
-    "typescript": "4.5.4"
+    "typescript": "4.5.5"
   }
 }
