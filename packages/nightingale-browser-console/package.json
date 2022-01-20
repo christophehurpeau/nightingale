@@ -82,6 +82,6 @@
     "@babel/preset-env": "7.16.11",
     "babel-preset-modern-browsers": "15.0.2",
     "pob-babel": "29.7.0",
-    "typescript": "4.5.4"
+    "typescript": "4.5.5"
   }
 }
