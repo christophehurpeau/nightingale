@@ -90,7 +90,7 @@
     ]
   },
   "devDependencies": {
-    "@babel/core": "7.16.10",
+    "@babel/core": "7.16.12",
     "@babel/preset-env": "7.16.11",
     "babel-preset-modern-browsers": "15.0.2",
     "pob-babel": "29.7.0",

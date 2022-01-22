@@ -86,7 +86,7 @@
     "nightingale-types": "12.1.3"
   },
   "devDependencies": {
-    "@babel/core": "7.16.10",
+    "@babel/core": "7.16.12",
     "@babel/preset-env": "7.16.11",
     "pob-babel": "29.7.0",
     "typescript": "4.5.5"
