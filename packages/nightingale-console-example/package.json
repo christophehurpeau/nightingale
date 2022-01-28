@@ -79,7 +79,7 @@
   },
   "devDependencies": {
     "@babel/core": "7.16.12",
-    "pob-babel": "29.7.0",
+    "pob-babel": "29.8.0",
     "typescript": "4.5.5"
   }
 }
