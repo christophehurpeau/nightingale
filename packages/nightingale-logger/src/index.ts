@@ -236,7 +236,6 @@ export class Logger {
 
     const extendedMetadata =
       isMessageError &&
-      // eslint-disable-next-line unicorn/prefer-object-has-own -- TODO fix and add polyfill
       !(metadata && Object.prototype.hasOwnProperty.call(metadata, 'error'))
         ? { ...metadata, error: messageOrError }
         : metadata;
