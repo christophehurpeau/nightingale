@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">14.75% </span>
+                <span class="strong">16.12% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>9/61</span>
+                <span class='fraction'>10/62</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">11.36% </span>
+                <span class="strong">13.04% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>5/44</span>
+                <span class='fraction'>6/46</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">16.07% </span>
+                <span class="strong">17.54% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>9/56</span>
+                <span class='fraction'>10/57</span>
             </div>
         
             
@@ -188,8 +188,17 @@
 <a name='L123'></a><a href='#L123'>123</a>
 <a name='L124'></a><a href='#L124'>124</a>
 <a name='L125'></a><a href='#L125'>125</a>
-<a name='L126'></a><a href='#L126'>126</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L126'></a><a href='#L126'>126</a>
+<a name='L127'></a><a href='#L127'>127</a>
+<a name='L128'></a><a href='#L128'>128</a>
+<a name='L129'></a><a href='#L129'>129</a>
+<a name='L130'></a><a href='#L130'>130</a>
+<a name='L131'></a><a href='#L131'>131</a>
+<a name='L132'></a><a href='#L132'>132</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -202,6 +211,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -316,21 +328,27 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import type { ComputedConfigForKey, Config } from 'nightingale-logger';
 import type { Handler } from 'nightingale-types';
 &nbsp;
-<span class="missing-if-branch" title="if path not taken" >I</span>if (__DEV__ &amp;&amp; global.__NIGHTINGALE_GLOBAL_HANDLERS) {
+const globalOrWindow: typeof global =
+  typeof global !== 'undefined' ? global : (<span class="branch-1 cbranch-no" title="branch not covered" >window as typeof global)</span>;
+&nbsp;
+<span class="missing-if-branch" title="if path not taken" >I</span>if (__DEV__ &amp;&amp; globalOrWindow.__NIGHTINGALE_GLOBAL_HANDLERS) {
 <span class="cstat-no" title="statement not covered" >  throw new Error('nightingale: update all to ^5.0.0');</span>
 }
 &nbsp;
-if (!global.__NIGHTINGALE_CONFIG) {
-  global.__NIGHTINGALE_CONFIG = [];
-  global.__NIGHTINGALE_LOGGER_MAP_CACHE = new Map&lt;
+if (!globalOrWindow.__NIGHTINGALE_CONFIG) {
+  globalOrWindow.__NIGHTINGALE_CONFIG = [];
+  globalOrWindow.__NIGHTINGALE_LOGGER_MAP_CACHE = new Map&lt;
     string,
     ComputedConfigForKey
   &gt;();
-  global.__NIGHTINGALE_CONFIG_DEFAULT = { handlers: [], processors: [] };
+  globalOrWindow.__NIGHTINGALE_CONFIG_DEFAULT = {
+    handlers: [],
+    processors: [],
+  };
 }
 &nbsp;
 function <span class="fstat-no" title="function not covered" >clearCache(</span>): void {
-<span class="cstat-no" title="statement not covered" >  global.__NIGHTINGALE_LOGGER_MAP_CACHE.clear();</span>
+<span class="cstat-no" title="statement not covered" >  globalOrWindow.__NIGHTINGALE_LOGGER_MAP_CACHE.clear();</span>
 }
 &nbsp;
 function <span class="fstat-no" title="function not covered" >handleConfig(</span>config: Config): Config {
@@ -371,18 +389,18 @@ function <span class="fstat-no" title="function not covered" >handleConfig(</spa
 }
 &nbsp;
 export function <span class="fstat-no" title="function not covered" >configure(</span>config: Config[]): void {
-<span class="cstat-no" title="statement not covered" >  if (global.__NIGHTINGALE_CONFIG.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >  if (globalOrWindow.__NIGHTINGALE_CONFIG.length &gt; 0) {</span>
     // eslint-disable-next-line no-console
 <span class="cstat-no" title="statement not covered" >    console.log('nightingale: warning: config overridden');</span>
   }
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  clearCache();</span>
-<span class="cstat-no" title="statement not covered" >  global.__NIGHTINGALE_CONFIG = config.map(handleConfig);</span>
+<span class="cstat-no" title="statement not covered" >  globalOrWindow.__NIGHTINGALE_CONFIG = config.map(handleConfig);</span>
 }
 &nbsp;
 export function <span class="fstat-no" title="function not covered" >addConfig(</span>config: Config, unshift = <span class="branch-0 cbranch-no" title="branch not covered" >false)</span>: void {
 <span class="cstat-no" title="statement not covered" >  config = handleConfig(config);</span>
-<span class="cstat-no" title="statement not covered" >  global.__NIGHTINGALE_CONFIG[unshift ? 'unshift' : 'push'](config);</span>
+<span class="cstat-no" title="statement not covered" >  globalOrWindow.__NIGHTINGALE_CONFIG[unshift ? 'unshift' : 'push'](config);</span>
 <span class="cstat-no" title="statement not covered" >  clearCache();</span>
 }
 &nbsp;
@@ -392,10 +410,10 @@ const configIsForKey = <span class="fstat-no" title="function not covered" >(k</
 <span class="cstat-no" title="statement not covered" >  return true;</span>
 };
 &nbsp;
-global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = <span class="fstat-no" title="function not covered" >(</span>
+globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = <span class="fstat-no" title="function not covered" >(</span>
   key: string,
 ): ComputedConfigForKey =&gt; {
-  const globalCache = <span class="cstat-no" title="statement not covered" >global.__NIGHTINGALE_LOGGER_MAP_CACHE;</span>
+  const globalCache = <span class="cstat-no" title="statement not covered" >globalOrWindow.__NIGHTINGALE_LOGGER_MAP_CACHE;</span>
 &nbsp;
   const existingCache = <span class="cstat-no" title="statement not covered" >globalCache.get(key);</span>
 &nbsp;
@@ -408,7 +426,7 @@ global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = <span class="fstat-no" title="funct
     processors: [],
   };
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  global.__NIGHTINGALE_CONFIG</span>
+<span class="cstat-no" title="statement not covered" >  globalOrWindow.__NIGHTINGALE_CONFIG</span>
     .filter(configIsForKey(key))
     .some(<span class="fstat-no" title="function not covered" >(c</span>onfig: Config) =&gt; {
 <span class="cstat-no" title="statement not covered" >      if (config.handlers) <span class="cstat-no" title="statement not covered" >loggerConfig.handlers.push(...config.handlers);</span></span>
@@ -420,13 +438,13 @@ global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = <span class="fstat-no" title="funct
 <span class="cstat-no" title="statement not covered" >  return loggerConfig;</span>
 };
 &nbsp;
-if (global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
-  global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = <span class="fstat-no" title="function not covered" >(</span>
+if (globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
+  globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = <span class="fstat-no" title="function not covered" >(</span>
     key: string,
     level: number,
   ): ComputedConfigForKey =&gt; {
     const { handlers, processors }: ComputedConfigForKey =
-<span class="cstat-no" title="statement not covered" >      global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key);</span>
+<span class="cstat-no" title="statement not covered" >      globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key);</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    return {</span>
       handlers: handlers.filter(
@@ -445,7 +463,7 @@ if (global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Thu Feb 03 2022 01:16:57 GMT+0000 (Coordinated Universal Time)
+                at Thu Feb 03 2022 22:48:44 GMT+0000 (Coordinated Universal Time)
             </div>
         <script src="../../prettify.js"></script>
         <script>

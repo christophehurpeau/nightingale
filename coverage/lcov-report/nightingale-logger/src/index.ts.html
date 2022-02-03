@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">32.6% </span>
+                <span class="strong">33.33% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>30/92</span>
+                <span class='fraction'>31/93</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">39.58% </span>
+                <span class="strong">40% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>19/48</span>
+                <span class='fraction'>20/50</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">32.22% </span>
+                <span class="strong">32.6% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>29/90</span>
+                <span class='fraction'>30/92</span>
             </div>
         
             
@@ -764,7 +764,15 @@
 <a name='L699'></a><a href='#L699'>699</a>
 <a name='L700'></a><a href='#L700'>700</a>
 <a name='L701'></a><a href='#L701'>701</a>
-<a name='L702'></a><a href='#L702'>702</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L702'></a><a href='#L702'>702</a>
+<a name='L703'></a><a href='#L703'>703</a>
+<a name='L704'></a><a href='#L704'>704</a>
+<a name='L705'></a><a href='#L705'>705</a>
+<a name='L706'></a><a href='#L706'>706</a>
+<a name='L707'></a><a href='#L707'>707</a>
+<a name='L708'></a><a href='#L708'>708</a>
+<a name='L709'></a><a href='#L709'>709</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -825,18 +833,21 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -856,6 +867,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1525,20 +1539,24 @@ declare global {
   }
 }
 &nbsp;
-if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER) {
-  global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = <span class="fstat-no" title="function not covered" >()</span>: ComputedConfigForKey =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
-    handlers: [],
-    processors: [],
-  });
+const globalOrWindow: typeof global =
+  typeof global !== 'undefined' ? global : (<span class="branch-1 cbranch-no" title="branch not covered" >window as typeof global)</span>;
+&nbsp;
+if (!globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER) {
+  globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER =
+<span class="fstat-no" title="function not covered" >    ()</span>: ComputedConfigForKey =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
+      handlers: [],
+      processors: [],
+    });
 }
 &nbsp;
-if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
-  global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = <span class="fstat-no" title="function not covered" >(</span>
+if (!globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
+  globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = <span class="fstat-no" title="function not covered" >(</span>
     key: string,
     level: number,
   ): ComputedConfigForKey =&gt; {
     const { handlers, processors }: ComputedConfigForKey =
-<span class="cstat-no" title="statement not covered" >      global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key);</span>
+<span class="cstat-no" title="statement not covered" >      globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key);</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    return {</span>
       handlers: handlers.filter(
@@ -1556,7 +1574,10 @@ function <span class="fstat-no" title="function not covered" >getConfigForLogger
   key: string,
   recordLevel: Level,
 ): ComputedConfigForKey {
-<span class="cstat-no" title="statement not covered" >  return global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD(key, recordLevel);</span>
+<span class="cstat-no" title="statement not covered" >  return globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD(</span>
+    key,
+    recordLevel,
+  );
 }
 &nbsp;
 function isError(messageOrError: Error | string): messageOrError is Error {
@@ -1600,7 +1621,7 @@ export class Logger {
 &nbsp;
   /** @private */
 <span class="fstat-no" title="function not covered" >  ge</span>tConfig(): Readonly&lt;ComputedConfigForKey&gt; {
-<span class="cstat-no" title="statement not covered" >    return global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(this.key);</span>
+<span class="cstat-no" title="statement not covered" >    return globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(this.key);</span>
   }
 &nbsp;
   /**
@@ -2173,7 +2194,7 @@ export class Logger {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Thu Feb 03 2022 01:16:57 GMT+0000 (Coordinated Universal Time)
+                at Thu Feb 03 2022 22:48:44 GMT+0000 (Coordinated Universal Time)
             </div>
         <script src="../../prettify.js"></script>
         <script>
