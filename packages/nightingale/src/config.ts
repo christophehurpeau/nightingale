@@ -1,21 +1,27 @@
 import type { ComputedConfigForKey, Config } from 'nightingale-logger';
 import type { Handler } from 'nightingale-types';
 
-if (__DEV__ && global.__NIGHTINGALE_GLOBAL_HANDLERS) {
+const globalOrWindow: typeof global =
+  typeof global !== 'undefined' ? global : (window as typeof global);
+
+if (__DEV__ && globalOrWindow.__NIGHTINGALE_GLOBAL_HANDLERS) {
   throw new Error('nightingale: update all to ^5.0.0');
 }
 
-if (!global.__NIGHTINGALE_CONFIG) {
-  global.__NIGHTINGALE_CONFIG = [];
-  global.__NIGHTINGALE_LOGGER_MAP_CACHE = new Map<
+if (!globalOrWindow.__NIGHTINGALE_CONFIG) {
+  globalOrWindow.__NIGHTINGALE_CONFIG = [];
+  globalOrWindow.__NIGHTINGALE_LOGGER_MAP_CACHE = new Map<
     string,
     ComputedConfigForKey
   >();
-  global.__NIGHTINGALE_CONFIG_DEFAULT = { handlers: [], processors: [] };
+  globalOrWindow.__NIGHTINGALE_CONFIG_DEFAULT = {
+    handlers: [],
+    processors: [],
+  };
 }
 
 function clearCache(): void {
-  global.__NIGHTINGALE_LOGGER_MAP_CACHE.clear();
+  globalOrWindow.__NIGHTINGALE_LOGGER_MAP_CACHE.clear();
 }
 
 function handleConfig(config: Config): Config {
@@ -56,18 +62,18 @@ function handleConfig(config: Config): Config {
 }
 
 export function configure(config: Config[]): void {
-  if (global.__NIGHTINGALE_CONFIG.length > 0) {
+  if (globalOrWindow.__NIGHTINGALE_CONFIG.length > 0) {
     // eslint-disable-next-line no-console
     console.log('nightingale: warning: config overridden');
   }
 
   clearCache();
-  global.__NIGHTINGALE_CONFIG = config.map(handleConfig);
+  globalOrWindow.__NIGHTINGALE_CONFIG = config.map(handleConfig);
 }
 
 export function addConfig(config: Config, unshift = false): void {
   config = handleConfig(config);
-  global.__NIGHTINGALE_CONFIG[unshift ? 'unshift' : 'push'](config);
+  globalOrWindow.__NIGHTINGALE_CONFIG[unshift ? 'unshift' : 'push'](config);
   clearCache();
 }
 
@@ -77,10 +83,10 @@ const configIsForKey = (key: string) => (config: Config) => {
   return true;
 };
 
-global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = (
+globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = (
   key: string,
 ): ComputedConfigForKey => {
-  const globalCache = global.__NIGHTINGALE_LOGGER_MAP_CACHE;
+  const globalCache = globalOrWindow.__NIGHTINGALE_LOGGER_MAP_CACHE;
 
   const existingCache = globalCache.get(key);
 
@@ -93,7 +99,7 @@ global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = (
     processors: [],
   };
 
-  global.__NIGHTINGALE_CONFIG
+  globalOrWindow.__NIGHTINGALE_CONFIG
     .filter(configIsForKey(key))
     .some((config: Config) => {
       if (config.handlers) loggerConfig.handlers.push(...config.handlers);
@@ -105,13 +111,13 @@ global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = (
   return loggerConfig;
 };
 
-if (global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
-  global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = (
+if (globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
+  globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = (
     key: string,
     level: number,
   ): ComputedConfigForKey => {
     const { handlers, processors }: ComputedConfigForKey =
-      global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key);
+      globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key);
 
     return {
       handlers: handlers.filter(

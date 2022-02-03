@@ -2,8 +2,10 @@ import _extends from '@babel/runtime/helpers/esm/extends';
 import { Level } from 'nightingale-levels';
 export { Level } from 'nightingale-levels';
 
-if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER) {
-  global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = function () {
+var globalOrWindow = typeof global !== 'undefined' ? global : window;
+
+if (!globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER) {
+  globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = function () {
     return {
       handlers: [],
       processors: []
@@ -11,11 +13,11 @@ if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER) {
   };
 }
 
-if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
-  global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = function (key, level) {
-    var _global$__NIGHTINGALE = global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key),
-        handlers = _global$__NIGHTINGALE.handlers,
-        processors = _global$__NIGHTINGALE.processors;
+if (!globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
+  globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = function (key, level) {
+    var _globalOrWindow$__NIG = globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key),
+        handlers = _globalOrWindow$__NIG.handlers,
+        processors = _globalOrWindow$__NIG.processors;
 
     return {
       handlers: handlers.filter(function (handler) {
@@ -29,7 +31,7 @@ if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
 
 
 function getConfigForLoggerRecord(key, recordLevel) {
-  return global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD(key, recordLevel);
+  return globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD(key, recordLevel);
 }
 
 function isError(messageOrError) {
@@ -68,7 +70,7 @@ var Logger = /*#__PURE__*/function () {
   ;
 
   _proto.getConfig = function getConfig() {
-    return global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(this.key);
+    return globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(this.key);
   }
   /**
    * Create a child logger

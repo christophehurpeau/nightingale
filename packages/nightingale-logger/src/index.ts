@@ -58,20 +58,24 @@ declare global {
   }
 }
 
-if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER) {
-  global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = (): ComputedConfigForKey => ({
-    handlers: [],
-    processors: [],
-  });
+const globalOrWindow: typeof global =
+  typeof global !== 'undefined' ? global : (window as typeof global);
+
+if (!globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER) {
+  globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER =
+    (): ComputedConfigForKey => ({
+      handlers: [],
+      processors: [],
+    });
 }
 
-if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
-  global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = (
+if (!globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
+  globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = (
     key: string,
     level: number,
   ): ComputedConfigForKey => {
     const { handlers, processors }: ComputedConfigForKey =
-      global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key);
+      globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key);
 
     return {
       handlers: handlers.filter(
@@ -89,7 +93,10 @@ function getConfigForLoggerRecord(
   key: string,
   recordLevel: Level,
 ): ComputedConfigForKey {
-  return global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD(key, recordLevel);
+  return globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD(
+    key,
+    recordLevel,
+  );
 }
 
 function isError(messageOrError: Error | string): messageOrError is Error {
@@ -133,7 +140,7 @@ export class Logger {
 
   /** @private */
   getConfig(): Readonly<ComputedConfigForKey> {
-    return global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(this.key);
+    return globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(this.key);
   }
 
   /**

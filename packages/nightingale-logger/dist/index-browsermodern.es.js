@@ -2,20 +2,21 @@ import { Level } from 'nightingale-levels';
 export { Level } from 'nightingale-levels';
 
 /* eslint-disable max-lines */
+const globalOrWindow = typeof global !== 'undefined' ? global : window;
 
-if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER) {
-  global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = () => ({
+if (!globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER) {
+  globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = () => ({
     handlers: [],
     processors: []
   });
 }
 
-if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
-  global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = (key, level) => {
+if (!globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
+  globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = (key, level) => {
     const {
       handlers,
       processors
-    } = global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key);
+    } = globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key);
 
     return {
       handlers: handlers.filter(handler => level >= handler.minLevel && (!handler.isHandling || handler.isHandling(level, key))),
@@ -27,7 +28,7 @@ if (!global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
 
 
 function getConfigForLoggerRecord(key, recordLevel) {
-  return global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD(key, recordLevel);
+  return globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD(key, recordLevel);
 }
 
 function isError(messageOrError) {
@@ -64,7 +65,7 @@ class Logger {
 
 
   getConfig() {
-    return global.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(this.key);
+    return globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(this.key);
   }
   /**
    * Create a child logger
