@@ -43,12 +43,12 @@ jobs:
         run: yarn run lint:prettier
         if: startsWith(matrix.node-version, '16.')
 
-      - name: Eslint
-        run: yarn run lint:eslint
-        if: startsWith(matrix.node-version, '16.')
-
       - name: Typescript
         run: yarn run tsc
+        if: startsWith(matrix.node-version, '16.')
+
+      - name: Eslint
+        run: yarn run lint:eslint
         if: startsWith(matrix.node-version, '16.')
 
       - name: Generate Test Coverage
