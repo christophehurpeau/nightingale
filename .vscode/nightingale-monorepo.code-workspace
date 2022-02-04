@@ -11,7 +11,7 @@
     "search.exclude": {
       "**/.yarn": true
     },
-    "typescript.tsdk": "node_modules/typescript/lib",
+    "typescript.tsdk": "✨ root/node_modules/typescript/lib",
     "typescript.enablePromptUseWorkspaceTsdk": true,
     "editor.formatOnSave": true,
     "eslint.codeActionsOnSave.mode": "all",

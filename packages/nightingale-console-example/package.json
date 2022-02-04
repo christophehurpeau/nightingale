@@ -20,19 +20,19 @@
     ".": {
       "node": {
         "import": "./dist/index-node14.mjs",
-        "require": "./dist/index-node14.cjs.js"
+        "require": "./dist/index-node14.cjs"
       }
     },
     "./children": {
       "node": {
         "import": "./dist/children-node14.mjs",
-        "require": "./dist/children-node14.cjs.js"
+        "require": "./dist/children-node14.cjs"
       }
     },
     "./sentry": {
       "node": {
         "import": "./dist/sentry-node14.mjs",
-        "require": "./dist/sentry-node14.cjs.js"
+        "require": "./dist/sentry-node14.cjs"
       }
     }
   },
@@ -79,7 +79,7 @@
   },
   "devDependencies": {
     "@babel/core": "7.17.0",
-    "pob-babel": "29.8.0",
+    "pob-babel": "30.0.1",
     "typescript": "4.5.5"
   }
 }
