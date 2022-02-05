@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [12.1.4](https://github.com/christophehurpeau/nightingale/compare/v12.1.3...v12.1.4) (2022-02-05)
+
+**Note:** Version bump only for package nightingale-level-names
+
+
+
+
+
 ## [12.1.1](https://github.com/christophehurpeau/nightingale/compare/v12.1.0...v12.1.1) (2022-01-01)
 
 

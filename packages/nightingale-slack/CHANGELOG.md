@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [12.1.4](https://github.com/christophehurpeau/nightingale/compare/v12.1.3...v12.1.4) (2022-02-05)
+
+
+### Bug Fixes
+
+* cjs build ([2e24ac5](https://github.com/christophehurpeau/nightingale/commit/2e24ac5753ee386c5be9ca56796194ee598f10ff))
+
+
+
+
+
 ## [12.1.3](https://github.com/christophehurpeau/nightingale/compare/v12.1.2...v12.1.3) (2022-01-15)
 
 **Note:** Version bump only for package nightingale-slack
