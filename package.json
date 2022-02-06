@@ -16,9 +16,10 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "yarn workspaces foreach --parallel --topological-dev -Av run build && yarn run build:definitions",
+    "build": "yarn clean:build && rollup --config rollup.config.mjs && yarn run build:definitions",
     "build:definitions": "tsc -b tsconfig.build.json",
     "checks": "node scripts/check-packages.js",
+    "clean:build": "(rm -Rf packages/*/dist) || true",
     "generate:api": "typedoc --tsconfig tsconfig.doc.json",
     "generate:test-coverage": "rm -Rf docs/coverage/ ; NODE_OPTIONS=--experimental-vm-modules jest --coverage --coverageReporters=lcov --coverageDirectory=docs/coverage/",
     "lint": "yarn run lint:prettier && yarn run lint:eslint",
@@ -64,16 +65,18 @@
     "@types/node": "Avoid problems in typescript with several versions of @types/node"
   },
   "devDependencies": {
+    "@babel/core": "7.17.0",
     "@pob/commitlint-config": "4.1.0",
     "@pob/eslint-config": "48.1.1",
     "@pob/eslint-config-typescript": "48.1.1",
     "@pob/lerna-light": "5.1.0",
-    "@pob/root": "6.6.0",
+    "@pob/root": "6.6.1",
     "@types/jest": "27.4.0",
     "@types/node": "14.18.10",
     "check-package-dependencies": "3.1.0",
     "eslint": "8.8.0",
     "jest": "27.5.0",
+    "pob-babel": "31.0.0",
     "prettier": "2.5.1",
     "typedoc": "0.22.11",
     "typescript": "4.5.5"

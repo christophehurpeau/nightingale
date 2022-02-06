@@ -15,6 +15,9 @@
   },
   "homepage": "https://github.com/christophehurpeau/nightingale",
   "type": "module",
+  "engines": {
+    "node": "^14.13.1 || >=16.0.0"
+  },
   "browserslist": [
     "defaults",
     "> 0.2%",
@@ -39,12 +42,13 @@
   "module:modern-browsers": "./dist/index-browsermodern.es.js",
   "sideEffects": false,
   "scripts": {
-    "build": "pob-build && yarn run build:definitions",
+    "build": "yarn clean:build && rollup --config rollup.config.mjs && yarn run build:definitions",
     "build:definitions": "tsc -p tsconfig.build.json",
-    "clean": "rm -Rf dist",
+    "clean": "yarn clean:build",
+    "clean:build": "rm -Rf dist",
     "lint": "yarn run lint:eslint",
     "lint:eslint": "cd ../.. && yarn run eslint --report-unused-disable-directives --resolve-plugins-relative-to . --quiet packages/nightingale-browser-console",
-    "watch": "pob-watch"
+    "watch": "yarn clean:build && rollup --config rollup.config.mjs --watch"
   },
   "prettier": {
     "trailingComma": "all",
@@ -81,7 +85,7 @@
     "@babel/core": "7.17.0",
     "@babel/preset-env": "7.16.11",
     "babel-preset-modern-browsers": "15.0.2",
-    "pob-babel": "30.0.1",
+    "pob-babel": "31.0.0",
     "typescript": "4.5.5"
   }
 }

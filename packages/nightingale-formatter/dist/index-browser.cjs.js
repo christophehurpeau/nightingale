@@ -393,7 +393,7 @@ function internalFormatObject(object, styleFn, objectStyles, _ref5) {
     suffix: '}',
     formatKey: internalFormatKey
   });
-  objects.delete(object);
+  objects["delete"](object);
   return result;
 }
 
@@ -429,7 +429,7 @@ function internalFormatMap(name, map, styleFn, _ref6) {
     suffix: '}',
     formatKey: internalFormatMapKey
   });
-  objects.delete(map);
+  objects["delete"](map);
   return result;
 }
 
@@ -464,7 +464,7 @@ function internalFormatArray(array, styleFn, _ref7) {
     prefixSuffixSpace: '',
     formatKey: internalNoKey
   });
-  objects.delete(array);
+  objects["delete"](array);
   return result;
 }
 
@@ -500,7 +500,7 @@ function internalFormatSet(name, set, styleFn, _ref8) {
     suffix: ']',
     formatKey: internalNoKey
   });
-  objects.delete(set);
+  objects["delete"](set);
   return result;
 }
 
