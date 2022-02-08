@@ -30,16 +30,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/core@npm:7.17.0, @babel/core@npm:^7.1.0, @babel/core@npm:^7.1.6, @babel/core@npm:^7.12.3, @babel/core@npm:^7.14.0, @babel/core@npm:^7.16.5, @babel/core@npm:^7.7.2, @babel/core@npm:^7.8.0":
-  version: 7.17.0
-  resolution: "@babel/core@npm:7.17.0"
+"@babel/core@npm:7.17.2, @babel/core@npm:^7.1.0, @babel/core@npm:^7.1.6, @babel/core@npm:^7.12.3, @babel/core@npm:^7.14.0, @babel/core@npm:^7.16.5, @babel/core@npm:^7.7.2, @babel/core@npm:^7.8.0":
+  version: 7.17.2
+  resolution: "@babel/core@npm:7.17.2"
   dependencies:
     "@ampproject/remapping": ^2.0.0
     "@babel/code-frame": ^7.16.7
     "@babel/generator": ^7.17.0
     "@babel/helper-compilation-targets": ^7.16.7
     "@babel/helper-module-transforms": ^7.16.7
-    "@babel/helpers": ^7.17.0
+    "@babel/helpers": ^7.17.2
     "@babel/parser": ^7.17.0
     "@babel/template": ^7.16.7
     "@babel/traverse": ^7.17.0
@@ -49,7 +49,7 @@ __metadata:
     gensync: ^1.0.0-beta.2
     json5: ^2.1.2
     semver: ^6.3.0
-  checksum: b05ab50ee3234cf6ead6fc947fff1c577773040d88b6fea64efda046c3b87aa596c5bbfe2bd287680102bda620e5294625fe1350a54d800d09cca51435b70918
+  checksum: 68ab3459f41b41feb5cb263937f15e418e1c46998d482d1b6dfe34f78064765466cfd5b10205c22fb16b69dbd1d46e7a3c26c067884ca4eb514b3dac1e09a57f
   languageName: node
   linkType: hard
 
@@ -318,14 +318,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/helpers@npm:^7.17.0":
-  version: 7.17.0
-  resolution: "@babel/helpers@npm:7.17.0"
+"@babel/helpers@npm:^7.17.2":
+  version: 7.17.2
+  resolution: "@babel/helpers@npm:7.17.2"
   dependencies:
     "@babel/template": ^7.16.7
     "@babel/traverse": ^7.17.0
     "@babel/types": ^7.17.0
-  checksum: fed0b0d8fe1b0aef18a0dbc4a0683bbcb039fd3fcff09a4f5b2a1e8f5fc911368983a9a177610c4a88f35ed5c3f5d51bf971ff01596e6f384414dcee2de694a4
+  checksum: 5fa06bbf59636314fb4098bb2e70cf488e0fb6989553438abab90356357b79976102ac129fb16fc8186893c79e0809de1d90e3304426d6fcdb1750da2b6dff9d
   languageName: node
   linkType: hard
 
@@ -10081,7 +10081,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-ansi-formatter@workspace:packages/nightingale-ansi-formatter"
   dependencies:
-    "@babel/core": 7.17.0
+    "@babel/core": 7.17.2
     "@babel/preset-env": 7.16.11
     "@types/ansi-styles": ^3.2.1
     ansi-styles: ^4.0.0
@@ -10096,7 +10096,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-app-console@workspace:packages/nightingale-app-console"
   dependencies:
-    "@babel/core": 7.17.0
+    "@babel/core": 7.17.2
     "@babel/preset-env": 7.16.11
     "@types/node": ">=14.0.0"
     babel-preset-modern-browsers: 15.0.2
@@ -10112,7 +10112,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-app-react-native@workspace:packages/nightingale-app-react-native"
   dependencies:
-    "@babel/core": 7.17.0
+    "@babel/core": 7.17.2
     "@babel/preset-env": 7.16.11
     "@types/react-native": 0.66.15
     babel-preset-modern-browsers: 15.0.2
@@ -10134,7 +10134,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-browser-console-formatter@workspace:packages/nightingale-browser-console-formatter"
   dependencies:
-    "@babel/core": 7.17.0
+    "@babel/core": 7.17.2
     "@babel/preset-env": 7.16.11
     babel-preset-modern-browsers: 15.0.2
     nightingale-formatter: 12.1.4
@@ -10149,7 +10149,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-browser-console@workspace:packages/nightingale-browser-console"
   dependencies:
-    "@babel/core": 7.17.0
+    "@babel/core": 7.17.2
     "@babel/preset-env": 7.16.11
     babel-preset-modern-browsers: 15.0.2
     nightingale-browser-console-formatter: 12.1.4
@@ -10165,7 +10165,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-console-example@workspace:packages/nightingale-console-example"
   dependencies:
-    "@babel/core": 7.17.0
+    "@babel/core": 7.17.2
     "@sentry/node": ^6.1.0
     nightingale: 12.1.4
     nightingale-console: 12.1.4
@@ -10179,7 +10179,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-console-output@workspace:packages/nightingale-console-output"
   dependencies:
-    "@babel/core": 7.17.0
+    "@babel/core": 7.17.2
     "@babel/preset-env": 7.16.11
     "@types/node": ">=14.0.0"
     babel-preset-modern-browsers: 15.0.2
@@ -10194,7 +10194,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-console@workspace:packages/nightingale-console"
   dependencies:
-    "@babel/core": 7.17.0
+    "@babel/core": 7.17.2
     "@types/node": ">=14.0.0"
     nightingale-ansi-formatter: 12.1.4
     nightingale-console-output: 12.1.4
@@ -10211,7 +10211,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-debug@workspace:packages/nightingale-debug"
   dependencies:
-    "@babel/core": 7.17.0
+    "@babel/core": 7.17.2
     "@babel/preset-env": 7.16.11
     babel-preset-modern-browsers: 15.0.2
     nightingale-levels: 12.1.4
@@ -10224,7 +10224,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-example@workspace:packages/nightingale-example"
   dependencies:
-    "@babel/core": 7.17.0
+    "@babel/core": 7.17.2
     nightingale: 12.1.4
     nightingale-console: 12.1.4
     nightingale-console-output: 12.1.4
@@ -10240,7 +10240,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-formatter@workspace:packages/nightingale-formatter"
   dependencies:
-    "@babel/core": 7.17.0
+    "@babel/core": 7.17.2
     "@babel/preset-env": 7.16.11
     babel-preset-modern-browsers: 15.0.2
     nightingale-levels: 12.1.4
@@ -10254,7 +10254,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-html-formatter@workspace:packages/nightingale-html-formatter"
   dependencies:
-    "@babel/core": 7.17.0
+    "@babel/core": 7.17.2
     "@babel/preset-env": 7.16.11
     babel-preset-modern-browsers: 15.0.2
     nightingale-formatter: 12.1.4
@@ -10269,7 +10269,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-json-formatter@workspace:packages/nightingale-json-formatter"
   dependencies:
-    "@babel/core": 7.17.0
+    "@babel/core": 7.17.2
     "@babel/preset-env": 7.16.11
     babel-preset-modern-browsers: 15.0.2
     nightingale-formatter: 12.1.4
@@ -10292,7 +10292,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-levels@workspace:packages/nightingale-levels"
   dependencies:
-    "@babel/core": 7.17.0
+    "@babel/core": 7.17.2
     "@babel/preset-env": 7.16.11
     babel-preset-modern-browsers: 15.0.2
     pob-babel: 31.0.0
@@ -10304,7 +10304,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-logger@workspace:packages/nightingale-logger"
   dependencies:
-    "@babel/core": 7.17.0
+    "@babel/core": 7.17.2
     "@babel/preset-env": 7.16.11
     "@types/node": ">=14.0.0"
     babel-preset-modern-browsers: 15.0.2
@@ -10319,7 +10319,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-markdown-formatter@workspace:packages/nightingale-markdown-formatter"
   dependencies:
-    "@babel/core": 7.17.0
+    "@babel/core": 7.17.2
     "@babel/preset-env": 7.16.11
     babel-preset-modern-browsers: 15.0.2
     nightingale-formatter: 12.1.4
@@ -10334,7 +10334,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-monorepo@workspace:."
   dependencies:
-    "@babel/core": 7.17.0
+    "@babel/core": 7.17.2
     "@pob/commitlint-config": 4.1.0
     "@pob/eslint-config": 48.1.1
     "@pob/eslint-config-typescript": 48.1.1
@@ -10356,7 +10356,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-raw-formatter@workspace:packages/nightingale-raw-formatter"
   dependencies:
-    "@babel/core": 7.17.0
+    "@babel/core": 7.17.2
     "@babel/preset-env": 7.16.11
     babel-preset-modern-browsers: 15.0.2
     nightingale-formatter: 12.1.4
@@ -10371,7 +10371,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-react-native-console@workspace:packages/nightingale-react-native-console"
   dependencies:
-    "@babel/core": 7.17.0
+    "@babel/core": 7.17.2
     "@babel/preset-env": 7.16.11
     "@types/react-native": 0.66.15
     babel-preset-modern-browsers: 15.0.2
@@ -10390,7 +10390,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-sentry@workspace:packages/nightingale-sentry"
   dependencies:
-    "@babel/core": 7.17.0
+    "@babel/core": 7.17.2
     "@babel/preset-env": 7.16.11
     "@sentry/core": ^5.0.0 || ^6.1.0
     "@sentry/node": ^5.0.0 || ^6.1.0
@@ -10407,7 +10407,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-slack@workspace:packages/nightingale-slack"
   dependencies:
-    "@babel/core": 7.17.0
+    "@babel/core": 7.17.2
     "@types/request": 2.48.8
     nightingale-levels: 12.1.4
     nightingale-markdown-formatter: 12.1.4
@@ -10423,7 +10423,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-string@workspace:packages/nightingale-string"
   dependencies:
-    "@babel/core": 7.17.0
+    "@babel/core": 7.17.2
     nightingale-raw-formatter: 12.1.4
     nightingale-types: 12.1.4
     pob-babel: 31.0.0
@@ -10435,7 +10435,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-types@workspace:packages/nightingale-types"
   dependencies:
-    "@babel/core": 7.17.0
+    "@babel/core": 7.17.2
     "@babel/preset-env": 7.16.11
     babel-preset-modern-browsers: 15.0.2
     nightingale-levels: 12.1.4
@@ -10448,7 +10448,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-unit-testing@workspace:packages/nightingale-unit-testing"
   dependencies:
-    "@babel/core": 7.17.0
+    "@babel/core": 7.17.2
     "@types/node": ">=14.0.0"
     nightingale: 12.1.4
     nightingale-console: 12.1.4
@@ -10461,7 +10461,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-web-processor@workspace:packages/nightingale-web-processor"
   dependencies:
-    "@babel/core": 7.17.0
+    "@babel/core": 7.17.2
     "@types/node": ">=14.0.0"
     nightingale-types: 12.1.4
     pob-babel: 31.0.0
@@ -10473,7 +10473,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-winston-adapter@workspace:packages/nightingale-winston-adapter"
   dependencies:
-    "@babel/core": 7.17.0
+    "@babel/core": 7.17.2
     "@babel/preset-env": 7.16.11
     babel-preset-modern-browsers: 15.0.2
     nightingale-level-names: 12.1.4
@@ -10487,7 +10487,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale@workspace:packages/nightingale"
   dependencies:
-    "@babel/core": 7.17.0
+    "@babel/core": 7.17.2
     "@babel/preset-env": 7.16.11
     "@types/node": ">=14.0.0"
     babel-preset-modern-browsers: 15.0.2

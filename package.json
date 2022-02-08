@@ -65,7 +65,7 @@
     "@types/node": "Avoid problems in typescript with several versions of @types/node"
   },
   "devDependencies": {
-    "@babel/core": "7.17.0",
+    "@babel/core": "7.17.2",
     "@pob/commitlint-config": "4.1.0",
     "@pob/eslint-config": "48.1.1",
     "@pob/eslint-config-typescript": "48.1.1",
