@@ -2,7 +2,6 @@
   "extends": "./tsconfig.json",
 
   "compilerOptions": {
-    "rootDir": "src",
     "noEmit": false,
     "declaration": true,
     "declarationMap": true,
@@ -14,11 +13,11 @@
 
   "exclude": ["dist/**", "src/**/*.test.ts", "src/**/__tests__/**"],
   "references": [
-    { "path": "../nightingale-levels/tsconfig.build.json" },
-    { "path": "../nightingale-debug/tsconfig.build.json" },
-    { "path": "../nightingale-types/tsconfig.build.json" },
-    { "path": "../nightingale-console-output/tsconfig.build.json" },
-    { "path": "../nightingale-ansi-formatter/tsconfig.build.json" },
-    { "path": "../nightingale-json-formatter/tsconfig.build.json" }
+    { "path": "../../packages/nightingale-levels/tsconfig.json" },
+    { "path": "../../packages/nightingale-debug/tsconfig.json" },
+    { "path": "../../packages/nightingale-types/tsconfig.json" },
+    { "path": "../../packages/nightingale-console-output/tsconfig.json" },
+    { "path": "../../packages/nightingale-ansi-formatter/tsconfig.json" },
+    { "path": "../../packages/nightingale-json-formatter/tsconfig.json" }
   ]
 }

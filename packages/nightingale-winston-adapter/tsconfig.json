@@ -2,8 +2,8 @@
   "include": ["src/**/*.ts"],
   "compilerOptions": {
     "rootDir": "src",
-    "composite": true,
     "incremental": true,
+    "composite": true,
     "noEmit": false,
     "noEmitOnError": true,
     "declaration": true,
@@ -21,7 +21,7 @@
       "dom",
       "esnext"
     ] /* Polyfills are imported either by babel or with polyfill.io */,
-    // "jsx": "preserve",                     /* Specify JSX code generation: 'preserve', 'react-native', or 'react'. */
+    // "jsx": "react-jsx",                     /* 'react-jsx' is used with react/jsx-runtime (react >=17 || >= 16.14.0 | >= 15.7.0) */
     "isolatedModules": true /* Transpile each file as a separate module (similar to 'ts.transpileModule'). */,
 
     /* Enable all strict type-checking options. */
@@ -40,9 +40,15 @@
     "esModuleInterop": true /* Enables emit interoperability between CommonJS and ES Modules via creation of namespace objects for all imports. Implies 'allowSyntheticDefaultImports'. */,
     "baseUrl": "./src" /* Base directory to resolve non-absolute module names. */,
     "paths": {
+      "nightingale-level-names": [
+        "../../../packages/nightingale-level-names/lib"
+      ],
+      "nightingale-level-names/*": [
+        "../../../packages/nightingale-level-names/lib/*"
+      ],
       "nightingale-types": ["../../../packages/nightingale-types/src"],
       "nightingale-types/*": ["../../../packages/nightingale-types/src/*"]
     }
   },
-  "references": [{ "path": "../nightingale-types/tsconfig.json" }]
+  "references": [{ "path": "../../packages/nightingale-types/tsconfig.json" }]
 }

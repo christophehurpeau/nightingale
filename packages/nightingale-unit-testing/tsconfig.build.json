@@ -2,7 +2,6 @@
   "extends": "./tsconfig.json",
 
   "compilerOptions": {
-    "rootDir": "src",
     "noEmit": false,
     "declaration": true,
     "declarationMap": true,
@@ -14,7 +13,7 @@
 
   "exclude": ["dist/**", "src/**/*.test.ts", "src/**/__tests__/**"],
   "references": [
-    { "path": "../nightingale-console/tsconfig.build.json" },
-    { "path": "../nightingale/tsconfig.build.json" }
+    { "path": "../../packages/nightingale-console/tsconfig.json" },
+    { "path": "../../packages/nightingale/tsconfig.json" }
   ]
 }

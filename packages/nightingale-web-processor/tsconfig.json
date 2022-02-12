@@ -2,8 +2,8 @@
   "include": ["src/**/*.ts"],
   "compilerOptions": {
     "rootDir": "src",
-    "composite": true,
     "incremental": true,
+    "composite": true,
     "noEmit": false,
     "noEmitOnError": true,
     "declaration": true,
@@ -20,7 +20,7 @@
     "lib": [
       "esnext"
     ] /* Polyfills are imported either by babel or with polyfill.io */,
-    // "jsx": "preserve",                     /* Specify JSX code generation: 'preserve', 'react-native', or 'react'. */
+    // "jsx": "react-jsx",                     /* 'react-jsx' is used with react/jsx-runtime (react >=17 || >= 16.14.0 | >= 15.7.0) */
     "isolatedModules": true /* Transpile each file as a separate module (similar to 'ts.transpileModule'). */,
 
     /* Enable all strict type-checking options. */
@@ -43,5 +43,5 @@
       "nightingale-types/*": ["../../../packages/nightingale-types/src/*"]
     }
   },
-  "references": [{ "path": "../nightingale-types/tsconfig.json" }]
+  "references": [{ "path": "../../packages/nightingale-types/tsconfig.json" }]
 }
