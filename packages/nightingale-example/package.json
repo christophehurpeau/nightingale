@@ -58,7 +58,7 @@
   "scripts": {
     "build": "yarn clean:build && rollup --config rollup.config.mjs",
     "clean": "yarn clean:build",
-    "clean:build": "rm -Rf dist",
+    "clean:build": "rm -Rf build",
     "lint": "yarn run lint:eslint",
     "lint:eslint": "cd ../.. && yarn run eslint --report-unused-disable-directives --resolve-plugins-relative-to . --quiet packages/nightingale-example",
     "start": "yarn clean:build && rollup --config rollup.config.mjs --watch",
@@ -98,7 +98,7 @@
   },
   "devDependencies": {
     "@babel/core": "7.17.2",
-    "pob-babel": "32.0.1",
+    "pob-babel": "32.1.0",
     "typescript": "4.5.5"
   }
 }

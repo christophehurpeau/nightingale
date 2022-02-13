@@ -2,3 +2,4 @@ CHANGELOG.md
 /docs
 /.yarn/**/*
 /packages/*/dist
+/packages/*/build
