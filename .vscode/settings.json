@@ -5,6 +5,9 @@
   "typescript.tsdk": "node_modules/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": true,
 
+  // set yarn as package manager to run scripts and tasks
+  "npm.packageManager": "yarn",
+
   // save config
   "editor.formatOnSave": true,
   "eslint.codeActionsOnSave.mode": "all",
