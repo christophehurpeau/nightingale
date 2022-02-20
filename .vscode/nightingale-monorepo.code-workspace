@@ -13,6 +13,7 @@
     },
     "typescript.tsdk": "✨ root/node_modules/typescript/lib",
     "typescript.enablePromptUseWorkspaceTsdk": true,
+    "npm.packageManager": "yarn",
     "editor.formatOnSave": true,
     "eslint.codeActionsOnSave.mode": "all",
     "editor.codeActionsOnSave": {

@@ -18,42 +18,42 @@
     "./package.json": "./package.json",
     "./configure": {
       "node": {
-        "import": "./dist/configure-node14.mjs",
-        "require": "./dist/configure-node14.cjs"
+        "import": "./build/configure-node14.mjs",
+        "require": "./build/configure-node14.cjs"
       }
     },
     "./console": {
       "node": {
-        "import": "./dist/console-node14.mjs",
-        "require": "./dist/console-node14.cjs"
+        "import": "./build/console-node14.mjs",
+        "require": "./build/console-node14.cjs"
       }
     },
     "./debug": {
       "node": {
-        "import": "./dist/debug-node14.mjs",
-        "require": "./dist/debug-node14.cjs"
+        "import": "./build/debug-node14.mjs",
+        "require": "./build/debug-node14.cjs"
       }
     },
     "./errors": {
       "node": {
-        "import": "./dist/errors-node14.mjs",
-        "require": "./dist/errors-node14.cjs"
+        "import": "./build/errors-node14.mjs",
+        "require": "./build/errors-node14.cjs"
       }
     },
     "./jsonConsole": {
       "node": {
-        "import": "./dist/jsonConsole-node14.mjs",
-        "require": "./dist/jsonConsole-node14.cjs"
+        "import": "./build/jsonConsole-node14.mjs",
+        "require": "./build/jsonConsole-node14.cjs"
       }
     }
   },
-  "module:node": "./dist/index-node14.mjs",
+  "module:node": "./build/index-node14.mjs",
   "module:aliases-node": {
-    "./configure.js": "./dist/configure-node14.es.js",
-    "./console.js": "./dist/console-node14.es.js",
-    "./debug.js": "./dist/debug-node14.es.js",
-    "./errors.js": "./dist/errors-node14.es.js",
-    "./jsonConsole.js": "./dist/jsonConsole-node14.es.js"
+    "./configure.js": "./build/configure-node14.es.js",
+    "./console.js": "./build/console-node14.es.js",
+    "./debug.js": "./build/debug-node14.es.js",
+    "./errors.js": "./build/errors-node14.es.js",
+    "./jsonConsole.js": "./build/jsonConsole-node14.es.js"
   },
   "scripts": {
     "build": "yarn clean:build && rollup --config rollup.config.mjs",

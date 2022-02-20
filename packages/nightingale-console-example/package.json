@@ -14,32 +14,32 @@
   "engines": {
     "node": "^14.13.1 || >=16.0.0"
   },
-  "main": "./dist/index-node14.mjs",
+  "main": "./build/index-node14.mjs",
   "exports": {
     "./package.json": "./package.json",
     ".": {
       "node": {
-        "import": "./dist/index-node14.mjs",
-        "require": "./dist/index-node14.cjs"
+        "import": "./build/index-node14.mjs",
+        "require": "./build/index-node14.cjs"
       }
     },
     "./children": {
       "node": {
-        "import": "./dist/children-node14.mjs",
-        "require": "./dist/children-node14.cjs"
+        "import": "./build/children-node14.mjs",
+        "require": "./build/children-node14.cjs"
       }
     },
     "./sentry": {
       "node": {
-        "import": "./dist/sentry-node14.mjs",
-        "require": "./dist/sentry-node14.cjs"
+        "import": "./build/sentry-node14.mjs",
+        "require": "./build/sentry-node14.cjs"
       }
     }
   },
-  "module:node": "./dist/index-node14.mjs",
+  "module:node": "./build/index-node14.mjs",
   "module:aliases-node": {
-    "./children.js": "./dist/children-node14.es.js",
-    "./sentry.js": "./dist/sentry-node14.es.js"
+    "./children.js": "./build/children-node14.es.js",
+    "./sentry.js": "./build/sentry-node14.es.js"
   },
   "scripts": {
     "build": "yarn clean:build && rollup --config rollup.config.mjs",
