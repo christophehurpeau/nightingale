@@ -3433,12 +3433,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-native@npm:0.66.16":
-  version: 0.66.16
-  resolution: "@types/react-native@npm:0.66.16"
+"@types/react-native@npm:0.67.0":
+  version: 0.67.0
+  resolution: "@types/react-native@npm:0.67.0"
   dependencies:
     "@types/react": "*"
-  checksum: c8f8783bea1ab51086240fa84008ff00a4996bb56c7e642dc78400b60ea2bc1f0adb04f30a1f7a89c6f83bfe028380e8749c923d7b179d89b7fb5e2c05065e09
+  checksum: 3fc7b7be0b33bb9c09f9bdcfadb25b248b1b27d8c8e8ec5bffe976d15166f6a260a79d2c369534994e5e2a726994bf64890638280aaf7fbb1a68b9713372742a
   languageName: node
   linkType: hard
 
@@ -10149,7 +10149,7 @@ __metadata:
   dependencies:
     "@babel/core": 7.17.5
     "@babel/preset-env": 7.16.11
-    "@types/react-native": 0.66.16
+    "@types/react-native": 0.67.0
     babel-preset-modern-browsers: 15.0.2
     nightingale: 12.1.4
     nightingale-browser-console: 12.1.4
@@ -10408,7 +10408,7 @@ __metadata:
   dependencies:
     "@babel/core": 7.17.5
     "@babel/preset-env": 7.16.11
-    "@types/react-native": 0.66.16
+    "@types/react-native": 0.67.0
     babel-preset-modern-browsers: 15.0.2
     nightingale-ansi-formatter: 12.1.4
     nightingale-types: 12.1.4
