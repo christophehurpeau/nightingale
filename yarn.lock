@@ -2,7 +2,7 @@
 # Manual changes might be lost - proceed with caution!
 
 __metadata:
-  version: 5
+  version: 6
   cacheKey: 8
 
 "@ampproject/remapping@npm:^2.1.0":
@@ -2785,17 +2785,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pob/root@npm:6.11.0":
-  version: 6.11.0
-  resolution: "@pob/root@npm:6.11.0"
+"@pob/root@npm:6.12.0":
+  version: 6.12.0
+  resolution: "@pob/root@npm:6.12.0"
   dependencies:
     "@commitlint/cli": 16.2.1
     "@pob/pretty-eslint-config": 3.0.2
     "@pob/pretty-pkg": ^4.0.1
     husky: ^7.0.0
     json5: ^2.2.0
-    lint-staged: 12.3.4
-    pob-dependencies: 6.17.1
+    lint-staged: 12.3.5
+    pob-dependencies: 6.18.0
     prettier: 2.5.1
     repository-check-dirty: ^4.0.0
     semver: ^7.1.2
@@ -2808,7 +2808,7 @@ __metadata:
     pretty-pkg: bin/pretty-pkg.mjs
     repository-check-dirty: bin/repository-check-dirty.js
     yarnhook: bin/yarnhook.js
-  checksum: 845fa9a3c60eb4f41499468ca6b53abda383cbda19009936d73b590829b5e8c82d8e43d43442069951ebeda6f966e07d19fa660767881d52e55f3e6fcd0fb0e8
+  checksum: bc3e357e6c08eac4bc003a7477fc5a487476f3b3b1a8299337060f76cae3820e55778dccf60d55f3d5ddeed21ab7c1f522c14a58810253cd33d7b42a4e29b173
   languageName: node
   linkType: hard
 
@@ -9078,9 +9078,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lint-staged@npm:12.3.4":
-  version: 12.3.4
-  resolution: "lint-staged@npm:12.3.4"
+"lint-staged@npm:12.3.5":
+  version: 12.3.5
+  resolution: "lint-staged@npm:12.3.5"
   dependencies:
     cli-truncate: ^3.1.0
     colorette: ^2.0.16
@@ -9097,7 +9097,7 @@ __metadata:
     yaml: ^1.10.2
   bin:
     lint-staged: bin/lint-staged.js
-  checksum: 4e0b4b9da4183a0daeab35d41e4d243fb1270a39db997efa0c3745fa148a7a4b8b723a51cb757595fc8bb118796ca1465e67aede72f25e9ea48165aec36cec3b
+  checksum: 6653c7078b36741e521e5f309b56bb75db198a05cbdd188124ff82a290e352ade3eb1e6080265729e19711ac08d190e300874af00e4e540b57b3c8f0690e2573
   languageName: node
   linkType: hard
 
@@ -10374,7 +10374,7 @@ __metadata:
     "@pob/eslint-config": 49.0.0
     "@pob/eslint-config-typescript": 49.0.0
     "@pob/lerna-light": 5.1.0
-    "@pob/root": 6.11.0
+    "@pob/root": 6.12.0
     "@types/jest": 27.4.1
     "@types/node": 14.18.12
     check-package-dependencies: 3.2.0
@@ -11539,10 +11539,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pob-dependencies@npm:6.17.1":
-  version: 6.17.1
-  resolution: "pob-dependencies@npm:6.17.1"
-  checksum: 9ac741eab9b3054af679f0fc1a995bb7d759aaf6bc6288b92b2d0aa6476c925d6cb2d37df5962ea9715400840bce2f3abee8904f60a3d5a5cb32cdd760d7da8d
+"pob-dependencies@npm:6.18.0":
+  version: 6.18.0
+  resolution: "pob-dependencies@npm:6.18.0"
+  checksum: bd66df70f0985a2bb19430cad6a80408a090e8b5fc13a349cabd51fe670e52ffb79f90e4d8d3e1ffc6c34700c52f92a4a2260c54dd6a1c499c8a708bb41a9202
   languageName: node
   linkType: hard
 
@@ -13745,11 +13745,11 @@ __metadata:
 
 "typescript@patch:typescript@4.5.5#~builtin<compat/typescript>, typescript@patch:typescript@^4.4.3#~builtin<compat/typescript>":
   version: 4.5.5
-  resolution: "typescript@patch:typescript@npm%3A4.5.5#~builtin<compat/typescript>::version=4.5.5&hash=493e53"
+  resolution: "typescript@patch:typescript@npm%3A4.5.5#~builtin<compat/typescript>::version=4.5.5&hash=bda367"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: c05c318d79c690f101d7ffb34cd6c7d6bbd884d3af9cefe7749ad0cd6be43c7082f098280982ca945dcba23fde34a08fed9602bb26540936baf8c0520727d3ba
+  checksum: 858c61fa63f7274ca4aaaffeced854d550bf416cff6e558c4884041b3311fb662f476f167cf5c9f8680c607239797e26a2ee0bcc6467fbc05bfcb218e1c6c671
   languageName: node
   linkType: hard
 
