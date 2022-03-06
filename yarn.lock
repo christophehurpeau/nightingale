@@ -4592,6 +4592,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"brace-expansion@npm:^2.0.1":
+  version: 2.0.1
+  resolution: "brace-expansion@npm:2.0.1"
+  dependencies:
+    balanced-match: ^1.0.0
+  checksum: a61e7cd2e8a8505e9f0036b3b6108ba5e926b4b55089eeb5550cd04a471fe216c96d4fe7e4c7f995c728c554ae20ddfc4244cad10aef255e72b62930afd233d1
+  languageName: node
+  linkType: hard
+
 "braces@npm:^2.3.1":
   version: 2.3.2
   resolution: "braces@npm:2.3.2"
@@ -9434,7 +9443,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"marked@npm:^4.0.10":
+"marked@npm:^4.0.12":
   version: 4.0.12
   resolution: "marked@npm:4.0.12"
   bin:
@@ -9880,6 +9889,15 @@ __metadata:
   dependencies:
     brace-expansion: ^1.1.7
   checksum: e9e3772e4ea06ea3a888d39bc7690d3c812ee7e5a70c2d2f568ccadac0249a027f865589d19ad03ed937e6ca3b4ad35f85411db9670f7877d8fc2ed452f1cd37
+  languageName: node
+  linkType: hard
+
+"minimatch@npm:^5.0.1":
+  version: 5.0.1
+  resolution: "minimatch@npm:5.0.1"
+  dependencies:
+    brace-expansion: ^2.0.1
+  checksum: b34b98463da4754bc526b244d680c69d4d6089451ebe512edaf6dd9eeed0279399cfa3edb19233513b8f830bf4bfcad911dddcdf125e75074100d52f724774f0
   languageName: node
   linkType: hard
 
@@ -10382,7 +10400,7 @@ __metadata:
     jest: 27.5.1
     pob-babel: 32.2.0
     prettier: 2.5.1
-    typedoc: 0.22.12
+    typedoc: 0.22.13
     typescript: 4.5.5
   languageName: unknown
   linkType: soft
@@ -12610,7 +12628,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"shiki@npm:^0.10.0":
+"shiki@npm:^0.10.1":
   version: 0.10.1
   resolution: "shiki@npm:0.10.1"
   dependencies:
@@ -13716,20 +13734,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typedoc@npm:0.22.12":
-  version: 0.22.12
-  resolution: "typedoc@npm:0.22.12"
+"typedoc@npm:0.22.13":
+  version: 0.22.13
+  resolution: "typedoc@npm:0.22.13"
   dependencies:
     glob: ^7.2.0
     lunr: ^2.3.9
-    marked: ^4.0.10
-    minimatch: ^3.0.4
-    shiki: ^0.10.0
+    marked: ^4.0.12
+    minimatch: ^5.0.1
+    shiki: ^0.10.1
   peerDependencies:
-    typescript: 4.0.x || 4.1.x || 4.2.x || 4.3.x || 4.4.x || 4.5.x
+    typescript: 4.0.x || 4.1.x || 4.2.x || 4.3.x || 4.4.x || 4.5.x || 4.6.x
   bin:
     typedoc: bin/typedoc
-  checksum: 8e04851fed6ba125dad226df121386b66a4b79035ea2650cc1f311cc8b903d89bc2e82e5641327e647b68af4fb12e06305287f5e8abe25d3790e9ad8753ab5ed
+  checksum: e453114fbbb5e3e366bcfde40fc3f7d76a038dbc3953e6cc9c9dd8f9747048ed77c2d082671e91537fb26bb11f7fc5846f9568262adf0087b328b3f96a47a85a
   languageName: node
   linkType: hard
 
