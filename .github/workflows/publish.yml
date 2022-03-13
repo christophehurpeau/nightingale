@@ -16,7 +16,7 @@ jobs:
           token: ${{ secrets.GH_TOKEN }}
           fetch-depth: 0
 
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
           node-version: 14
 
@@ -58,7 +58,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           YARN_ENABLE_IMMUTABLE_INSTALLS: false
 
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         if: |
           github.ref == 'refs/heads/main'
           && contains(github.event.inputs.dry-run, 'y') == false
