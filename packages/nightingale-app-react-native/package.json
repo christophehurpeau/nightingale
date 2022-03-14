@@ -94,7 +94,7 @@
     "nightingale-react-native-console": "12.1.4"
   },
   "devDependencies": {
-    "@babel/core": "7.17.5",
+    "@babel/core": "7.17.7",
     "@babel/preset-env": "7.16.11",
     "@types/react-native": "0.67.3",
     "babel-preset-modern-browsers": "15.0.2",
