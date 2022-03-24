@@ -10425,7 +10425,7 @@ __metadata:
     nightingale-types: 12.1.4
     pob-babel: 32.2.0
     react: 17.0.2
-    react-native: 0.67.3
+    react-native: 0.67.4
     typescript: 4.6.2
   peerDependencies:
     react-native: "*"
@@ -11793,9 +11793,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native@npm:0.67.3":
-  version: 0.67.3
-  resolution: "react-native@npm:0.67.3"
+"react-native@npm:0.67.4":
+  version: 0.67.4
+  resolution: "react-native@npm:0.67.4"
   dependencies:
     "@jest/create-cache-key-function": ^27.0.1
     "@react-native-community/cli": ^6.0.0
@@ -11831,7 +11831,7 @@ __metadata:
     react: 17.0.2
   bin:
     react-native: cli.js
-  checksum: 340b2364a3541f21fe73cf3bf6aada79a40c206868d9419156f8505ae096312a4f2cad0078e45e65ce156e2061e978d8ba3cdd0ed0c4f68b0196586297b86124
+  checksum: 662cee2e5ddbfbaa2adfeaff42e6edc3b96a0116de2c75c2c73e605a87ff25d33319cf26349abbffef0c94ba9ba0c2231ddfd3568cbc2146bf715317370aa5e3
   languageName: node
   linkType: hard
 
