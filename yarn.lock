@@ -10124,7 +10124,7 @@ __metadata:
     nightingale-formatter: 12.1.4
     nightingale-types: 12.1.4
     pob-babel: 32.2.0
-    typescript: 4.6.2
+    typescript: 4.6.3
   languageName: unknown
   linkType: soft
 
@@ -10140,7 +10140,7 @@ __metadata:
     nightingale-browser-console: 12.1.4
     nightingale-console: 12.1.4
     pob-babel: 32.2.0
-    typescript: 4.6.2
+    typescript: 4.6.3
   languageName: unknown
   linkType: soft
 
@@ -10156,7 +10156,7 @@ __metadata:
     nightingale-browser-console: 12.1.4
     nightingale-react-native-console: 12.1.4
     pob-babel: 32.2.0
-    typescript: 4.6.2
+    typescript: 4.6.3
   peerDependencies:
     react-native: "*"
     react-native-web: "*"
@@ -10177,7 +10177,7 @@ __metadata:
     nightingale-levels: 12.1.4
     nightingale-types: 12.1.4
     pob-babel: 32.2.0
-    typescript: 4.6.2
+    typescript: 4.6.3
   languageName: unknown
   linkType: soft
 
@@ -10193,7 +10193,7 @@ __metadata:
     nightingale-debug: 12.1.4
     nightingale-types: 12.1.4
     pob-babel: 32.2.0
-    typescript: 4.6.2
+    typescript: 4.6.3
   languageName: unknown
   linkType: soft
 
@@ -10207,7 +10207,7 @@ __metadata:
     nightingale-console: 12.1.4
     nightingale-sentry: 12.1.4
     pob-babel: 32.2.0
-    typescript: 4.6.2
+    typescript: 4.6.3
   languageName: unknown
   linkType: soft
 
@@ -10222,7 +10222,7 @@ __metadata:
     nightingale-levels: 12.1.4
     nightingale-types: 12.1.4
     pob-babel: 32.2.0
-    typescript: 4.6.2
+    typescript: 4.6.3
   languageName: unknown
   linkType: soft
 
@@ -10239,7 +10239,7 @@ __metadata:
     nightingale-levels: 12.1.4
     nightingale-types: 12.1.4
     pob-babel: 32.2.0
-    typescript: 4.6.2
+    typescript: 4.6.3
   languageName: unknown
   linkType: soft
 
@@ -10252,7 +10252,7 @@ __metadata:
     babel-preset-modern-browsers: 15.0.2
     nightingale-levels: 12.1.4
     pob-babel: 32.2.0
-    typescript: 4.6.2
+    typescript: 4.6.3
   languageName: unknown
   linkType: soft
 
@@ -10268,7 +10268,7 @@ __metadata:
     nightingale-string: 12.1.4
     nightingale-types: 12.1.4
     pob-babel: 32.2.0
-    typescript: 4.6.2
+    typescript: 4.6.3
   languageName: unknown
   linkType: soft
 
@@ -10282,7 +10282,7 @@ __metadata:
     nightingale-levels: 12.1.4
     nightingale-types: 12.1.4
     pob-babel: 32.2.0
-    typescript: 4.6.2
+    typescript: 4.6.3
   languageName: unknown
   linkType: soft
 
@@ -10297,7 +10297,7 @@ __metadata:
     nightingale-levels: 12.1.4
     nightingale-types: 12.1.4
     pob-babel: 32.2.0
-    typescript: 4.6.2
+    typescript: 4.6.3
   languageName: unknown
   linkType: soft
 
@@ -10312,7 +10312,7 @@ __metadata:
     nightingale-levels: 12.1.4
     nightingale-types: 12.1.4
     pob-babel: 32.2.0
-    typescript: 4.6.2
+    typescript: 4.6.3
   languageName: unknown
   linkType: soft
 
@@ -10320,7 +10320,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-level-names@workspace:packages/nightingale-level-names"
   dependencies:
-    typescript: 4.6.2
+    typescript: 4.6.3
   languageName: unknown
   linkType: soft
 
@@ -10332,7 +10332,7 @@ __metadata:
     "@babel/preset-env": 7.16.11
     babel-preset-modern-browsers: 15.0.2
     pob-babel: 32.2.0
-    typescript: 4.6.2
+    typescript: 4.6.3
   languageName: unknown
   linkType: soft
 
@@ -10347,7 +10347,7 @@ __metadata:
     nightingale-levels: 12.1.4
     nightingale-types: 12.1.4
     pob-babel: 32.2.0
-    typescript: 4.6.2
+    typescript: 4.6.3
   languageName: unknown
   linkType: soft
 
@@ -10362,7 +10362,7 @@ __metadata:
     nightingale-levels: 12.1.4
     nightingale-types: 12.1.4
     pob-babel: 32.2.0
-    typescript: 4.6.2
+    typescript: 4.6.3
   languageName: unknown
   linkType: soft
 
@@ -10383,7 +10383,7 @@ __metadata:
     jest: 27.5.1
     pob-babel: 32.2.0
     typedoc: 0.22.14
-    typescript: 4.6.2
+    typescript: 4.6.3
   languageName: unknown
   linkType: soft
 
@@ -10398,7 +10398,7 @@ __metadata:
     nightingale-levels: 12.1.4
     nightingale-types: 12.1.4
     pob-babel: 32.2.0
-    typescript: 4.6.2
+    typescript: 4.6.3
   languageName: unknown
   linkType: soft
 
@@ -10415,7 +10415,7 @@ __metadata:
     pob-babel: 32.2.0
     react: 17.0.2
     react-native: 0.67.4
-    typescript: 4.6.2
+    typescript: 4.6.3
   peerDependencies:
     react-native: "*"
   languageName: unknown
@@ -10434,7 +10434,7 @@ __metadata:
     nightingale-levels: 12.1.4
     nightingale-types: 12.1.4
     pob-babel: 32.2.0
-    typescript: 4.6.2
+    typescript: 4.6.3
   languageName: unknown
   linkType: soft
 
@@ -10450,7 +10450,7 @@ __metadata:
     nightingale-types: 12.1.4
     pob-babel: 32.2.0
     request: ^2.88.0
-    typescript: 4.6.2
+    typescript: 4.6.3
   languageName: unknown
   linkType: soft
 
@@ -10462,7 +10462,7 @@ __metadata:
     nightingale-raw-formatter: 12.1.4
     nightingale-types: 12.1.4
     pob-babel: 32.2.0
-    typescript: 4.6.2
+    typescript: 4.6.3
   languageName: unknown
   linkType: soft
 
@@ -10475,7 +10475,7 @@ __metadata:
     babel-preset-modern-browsers: 15.0.2
     nightingale-levels: 12.1.4
     pob-babel: 32.2.0
-    typescript: 4.6.2
+    typescript: 4.6.3
   languageName: unknown
   linkType: soft
 
@@ -10488,7 +10488,7 @@ __metadata:
     nightingale: 12.1.4
     nightingale-console: 12.1.4
     pob-babel: 32.2.0
-    typescript: 4.6.2
+    typescript: 4.6.3
   languageName: unknown
   linkType: soft
 
@@ -10500,7 +10500,7 @@ __metadata:
     "@types/node": ">=14.0.0"
     nightingale-types: 12.1.4
     pob-babel: 32.2.0
-    typescript: 4.6.2
+    typescript: 4.6.3
   languageName: unknown
   linkType: soft
 
@@ -10514,7 +10514,7 @@ __metadata:
     nightingale-level-names: 12.1.4
     nightingale-types: 12.1.4
     pob-babel: 32.2.0
-    typescript: 4.6.2
+    typescript: 4.6.3
   languageName: unknown
   linkType: soft
 
@@ -10531,7 +10531,7 @@ __metadata:
     nightingale-string: 12.1.4
     nightingale-types: 12.1.4
     pob-babel: 32.2.0
-    typescript: 4.6.2
+    typescript: 4.6.3
   languageName: unknown
   linkType: soft
 
@@ -13742,23 +13742,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:4.6.2, typescript@npm:^4.4.3":
-  version: 4.6.2
-  resolution: "typescript@npm:4.6.2"
+"typescript@npm:4.6.3, typescript@npm:^4.4.3":
+  version: 4.6.3
+  resolution: "typescript@npm:4.6.3"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 8a44ed7e6f6c4cb1ebe8cf236ecda2fb119d84dcf0fbd77e707b2dfea1bbcfc4e366493a143513ce7f57203c75da9d4e20af6fe46de89749366351046be7577c
+  checksum: 255bb26c8cb846ca689dd1c3a56587af4f69055907aa2c154796ea28ee0dea871535b1c78f85a6212c77f2657843a269c3a742d09d81495b97b914bf7920415b
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@4.6.2#~builtin<compat/typescript>, typescript@patch:typescript@^4.4.3#~builtin<compat/typescript>":
-  version: 4.6.2
-  resolution: "typescript@patch:typescript@npm%3A4.6.2#~builtin<compat/typescript>::version=4.6.2&hash=bda367"
+"typescript@patch:typescript@4.6.3#~builtin<compat/typescript>, typescript@patch:typescript@^4.4.3#~builtin<compat/typescript>":
+  version: 4.6.3
+  resolution: "typescript@patch:typescript@npm%3A4.6.3#~builtin<compat/typescript>::version=4.6.3&hash=bda367"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 40b493a71747fb89fa70df104e2c4a5e284b43750af5bea024090a5261cefa387f7a9372411b13030f7bf5555cee4275443d08805642ae5c74ef76740854a4c7
+  checksum: 6bf45caf847062420592e711bc9c28bf5f9a9a7fa8245343b81493e4ededae33f1774009d1234d911422d1646a2c839f44e1a23ecb111b40a60ac2ea4c1482a8
   languageName: node
   linkType: hard
 
