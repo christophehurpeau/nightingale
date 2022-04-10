@@ -1468,13 +1468,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/cli@npm:16.2.1":
-  version: 16.2.1
-  resolution: "@commitlint/cli@npm:16.2.1"
+"@commitlint/cli@npm:16.2.3":
+  version: 16.2.3
+  resolution: "@commitlint/cli@npm:16.2.3"
   dependencies:
     "@commitlint/format": ^16.2.1
     "@commitlint/lint": ^16.2.1
-    "@commitlint/load": ^16.2.1
+    "@commitlint/load": ^16.2.3
     "@commitlint/read": ^16.2.1
     "@commitlint/types": ^16.2.1
     lodash: ^4.17.19
@@ -1483,7 +1483,7 @@ __metadata:
     yargs: ^17.0.0
   bin:
     commitlint: cli.js
-  checksum: da673e8e037f74b1a4257884d8f55fd6bfaf575283aa15b48a787090d3b81bdb49c8daa92aaa93208e1c026296c451e9d697d53380ea93a1a5c110a10e5794d0
+  checksum: e74a83389a736a87593cdc3665c820f1f8e837c9e834883d3e041b65cd6af85410fa65c1b0b8b1909d31eab3eadf4997e31a309af0fa0d211b6db21dc6fb917e
   languageName: node
   linkType: hard
 
@@ -1555,9 +1555,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/load@npm:^16.2.1":
-  version: 16.2.1
-  resolution: "@commitlint/load@npm:16.2.1"
+"@commitlint/load@npm:^16.2.3":
+  version: 16.2.3
+  resolution: "@commitlint/load@npm:16.2.3"
   dependencies:
     "@commitlint/config-validator": ^16.2.1
     "@commitlint/execute-rule": ^16.2.1
@@ -1570,7 +1570,7 @@ __metadata:
     lodash: ^4.17.19
     resolve-from: ^5.0.0
     typescript: ^4.4.3
-  checksum: 2b2fceff10c02ba61a5fa9c24a8f22156af0be6865a6b3b1543d93861d75b1552d7c86ce9cadd8598248387829feee26d0e0e646f3f0822e7a9bc74023e18fde
+  checksum: 11a34e018431c9639c84427305167a4f3a4ebffab0f42c681c5eba347690b444cf4ea3ce5fde953106b3d615a273b8b6afe34fd4f72fa480512d4f2297636191
   languageName: node
   linkType: hard
 
@@ -2751,54 +2751,55 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pob/pretty-eslint-config@npm:3.0.2":
-  version: 3.0.2
-  resolution: "@pob/pretty-eslint-config@npm:3.0.2"
+"@pob/pretty-eslint-config@npm:3.1.0":
+  version: 3.1.0
+  resolution: "@pob/pretty-eslint-config@npm:3.1.0"
   dependencies:
     "@pob/sort-eslint-config": ^3.0.1
     prettier: ^2.1.2
   bin:
     pretty-eslint-config: bin/pretty-eslint-config.js
-  checksum: 6517a7cae31fba9137c731a9e58a046a323aad6cd86aa65094e1dbae54a58ebfbf14e8b95defe835eb9a4a5860e86167977f61622eff3fa7a9d509457791c850
+  checksum: 9f895a7f5c2b61044907de99615adcfee038f59b3ef103db159d08c235b4609826c14f98a030f0afde8648b5034766234a2d7342a1c456aafacf3f88570911e9
   languageName: node
   linkType: hard
 
-"@pob/pretty-pkg@npm:^4.0.1":
-  version: 4.0.1
-  resolution: "@pob/pretty-pkg@npm:4.0.1"
+"@pob/pretty-pkg@npm:4.1.0":
+  version: 4.1.0
+  resolution: "@pob/pretty-pkg@npm:4.1.0"
   dependencies:
     "@pob/sort-pkg": ^4.0.1
     prettier: ^2.1.2
   bin:
     pretty-pkg: bin/pretty-pkg.js
-  checksum: 1c0fbc980926d816525220ea1c39537911afe459501ae989b5bfde6ebc861995d59699377c0a26b54571881d75b43a0d1aa0f685f028b5a5d10a54818ed369ef
+  checksum: 28b1f01e9e47495b5e8af5bd2a95a7fcfd764520dcca5928eca56e2a6b2b2cd2257e861e669fe564711e031b79c02f53f7e586ea0350952de1a24b4a9ec0679f
   languageName: node
   linkType: hard
 
-"@pob/root@npm:6.13.0":
-  version: 6.13.0
-  resolution: "@pob/root@npm:6.13.0"
+"@pob/root@npm:6.15.0":
+  version: 6.15.0
+  resolution: "@pob/root@npm:6.15.0"
   dependencies:
-    "@commitlint/cli": 16.2.1
-    "@pob/pretty-eslint-config": 3.0.2
-    "@pob/pretty-pkg": ^4.0.1
+    "@commitlint/cli": 16.2.3
+    "@pob/pretty-eslint-config": 3.1.0
+    "@pob/pretty-pkg": 4.1.0
     husky: ^7.0.0
     json5: ^2.2.0
-    lint-staged: 12.3.5
-    pob-dependencies: 6.20.0
-    prettier: 2.5.1
-    repository-check-dirty: ^4.0.0
+    lint-staged: 12.3.7
+    pob-dependencies: 6.23.0
+    prettier: 2.6.2
+    repository-check-dirty: 4.1.0
     semver: ^7.1.2
     which-pm-runs: 1.1.0
   bin:
     commitlint: bin/commitlint.js
     pob-root-lint-staged: bin/pob-root-lint-staged.mjs
     pob-root-postinstall: bin/pob-root-postinstall.js
+    prettier: bin/prettier.js
     pretty-eslint-config: bin/pretty-eslint-config.mjs
     pretty-pkg: bin/pretty-pkg.mjs
     repository-check-dirty: bin/repository-check-dirty.js
     yarnhook: bin/yarnhook.js
-  checksum: c286bf22fd70169fd54cbe27f54202eaa2ceb3f656daf5fc2eded66b5d8215f80454019c31f7530237e46866be154343eeccc490456cdc7921fd5ca7a471f2d3
+  checksum: f717b3f8db93440d292b089fae200e1d08383e1d538f640f7b1f4d5996e0e65cdb58452ce4f82c25c90178972d059d5577201b97ec738562df7fd2da7340c9f0
   languageName: node
   linkType: hard
 
@@ -9068,9 +9069,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lint-staged@npm:12.3.5":
-  version: 12.3.5
-  resolution: "lint-staged@npm:12.3.5"
+"lint-staged@npm:12.3.7":
+  version: 12.3.7
+  resolution: "lint-staged@npm:12.3.7"
   dependencies:
     cli-truncate: ^3.1.0
     colorette: ^2.0.16
@@ -9082,12 +9083,13 @@ __metadata:
     micromatch: ^4.0.4
     normalize-path: ^3.0.0
     object-inspect: ^1.12.0
+    pidtree: ^0.5.0
     string-argv: ^0.3.1
     supports-color: ^9.2.1
     yaml: ^1.10.2
   bin:
     lint-staged: bin/lint-staged.js
-  checksum: 6653c7078b36741e521e5f309b56bb75db198a05cbdd188124ff82a290e352ade3eb1e6080265729e19711ac08d190e300874af00e4e540b57b3c8f0690e2573
+  checksum: b595097556880eb2ab7ce2cf105047f6f22525ccfd608fbdc63ab243259aa36a26949576fadff673748fb885e7cb37ad3f4471d964ad54c1205d57a58999ba24
   languageName: node
   linkType: hard
 
@@ -10373,14 +10375,13 @@ __metadata:
     "@pob/eslint-config": 49.1.0
     "@pob/eslint-config-typescript": 49.2.1
     "@pob/lerna-light": 5.1.0
-    "@pob/root": 6.13.0
+    "@pob/root": 6.15.0
     "@types/jest": 27.4.1
     "@types/node": 14.18.12
     check-package-dependencies: 3.5.2
     eslint: 8.11.0
     jest: 27.5.1
     pob-babel: 32.2.0
-    prettier: 2.5.1
     typedoc: 0.22.14
     typescript: 4.6.2
   languageName: unknown
@@ -11429,6 +11430,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"pidtree@npm:^0.5.0":
+  version: 0.5.0
+  resolution: "pidtree@npm:0.5.0"
+  bin:
+    pidtree: bin/pidtree.js
+  checksum: 371cd14bbc9bdee2a6a44596dd521dd3565e223481e0b1afffdca3f1c29831850bfa7784114dc30d245d37e7d186cec035e036256b39f75d878d19498fe0df6a
+  languageName: node
+  linkType: hard
+
 "pify@npm:^2.3.0":
   version: 2.3.0
   resolution: "pify@npm:2.3.0"
@@ -11538,10 +11548,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pob-dependencies@npm:6.20.0":
-  version: 6.20.0
-  resolution: "pob-dependencies@npm:6.20.0"
-  checksum: 3b874b4baa0e99a6b9389d8db3ed72039c3a3dbe91741e8653c18ab7ed8ae494d3e58f713e6c932e3904c1ddb5f90a614b8fe59cff5501699060953d6a58bec9
+"pob-dependencies@npm:6.23.0":
+  version: 6.23.0
+  resolution: "pob-dependencies@npm:6.23.0"
+  checksum: 6fe661cd50fc099a75c18e2bd2033ffad36e49567ade5b73d56feb1e42d771496c9ebc3ca238d5b03d8d9308bb764820dde0039927f6369aedff5bcc0bf4d3a5
   languageName: node
   linkType: hard
 
@@ -11566,12 +11576,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:2.5.1, prettier@npm:^2.1.2":
-  version: 2.5.1
-  resolution: "prettier@npm:2.5.1"
+"prettier@npm:2.6.2, prettier@npm:^2.1.2":
+  version: 2.6.2
+  resolution: "prettier@npm:2.6.2"
   bin:
     prettier: bin-prettier.js
-  checksum: 21b9408476ea1c544b0e45d51ceb94a84789ff92095abb710942d780c862d0daebdb29972d47f6b4d0f7ebbfb0ffbf56cc2cfa3e3e9d1cca54864af185b15b66
+  checksum: 48d08dde8e9fb1f5bccdd205baa7f192e9fc8bc98f86e1b97d919de804e28c806b0e6cc685e4a88211aa7987fa9668f30baae19580d87ced3ed0f2ec6572106f
   languageName: node
   linkType: hard
 
@@ -12072,12 +12082,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"repository-check-dirty@npm:^4.0.0":
-  version: 4.0.0
-  resolution: "repository-check-dirty@npm:4.0.0"
+"repository-check-dirty@npm:4.1.0":
+  version: 4.1.0
+  resolution: "repository-check-dirty@npm:4.1.0"
   bin:
     repository-check-dirty: bin/repository-check-dirty.js
-  checksum: d2838a053c530a7ee31e1e5163d29c81ebc2368c47f1d8ab3d997af370943dd3304ca7125132b14353ff4a8fd7c893b63a11b5714b80677a3943a694a0b10eee
+  checksum: 6eae9795317d3c8a9d81793e0d0f8b5fe7f337380ca47c0d255b66a0b49c099ded218ed2481ed64d351b40beabcca3aba29ed25a83196b004dd83b45a5b60aa9
   languageName: node
   linkType: hard
 
