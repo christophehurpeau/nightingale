@@ -58,7 +58,7 @@ jobs:
           CI: true
 
       - name: Send results to codecov
-        uses: codecov/codecov-action@v2
+        uses: codecov/codecov-action@v3
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
         if: startsWith(matrix.node-version, '16.')
