@@ -2763,20 +2763,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pob/root@npm:6.15.0":
-  version: 6.15.0
-  resolution: "@pob/root@npm:6.15.0"
+"@pob/root@npm:6.16.0":
+  version: 6.16.0
+  resolution: "@pob/root@npm:6.16.0"
   dependencies:
     "@commitlint/cli": 16.2.3
     "@pob/pretty-eslint-config": 3.1.0
     "@pob/pretty-pkg": 4.1.0
-    husky: ^7.0.0
+    husky: ~7.0.4
     json5: ^2.2.0
-    lint-staged: 12.3.7
-    pob-dependencies: 6.23.0
+    lint-staged: 12.3.8
+    pob-dependencies: 6.24.0
     prettier: 2.6.2
     repository-check-dirty: 4.1.0
-    semver: ^7.1.2
+    semver: ^7.3.7
     which-pm-runs: 1.1.0
   bin:
     commitlint: bin/commitlint.js
@@ -2787,7 +2787,7 @@ __metadata:
     pretty-pkg: bin/pretty-pkg.mjs
     repository-check-dirty: bin/repository-check-dirty.js
     yarnhook: bin/yarnhook.js
-  checksum: f717b3f8db93440d292b089fae200e1d08383e1d538f640f7b1f4d5996e0e65cdb58452ce4f82c25c90178972d059d5577201b97ec738562df7fd2da7340c9f0
+  checksum: 9371782d206b5aa4aa0ae5d48d91fd877e13a34e8cee9f7cfa6ca10cea0235fcaf605dd30c9bd70e88f50d2deca080ebce8328cef99d919faa19a5a066972d18
   languageName: node
   linkType: hard
 
@@ -7444,7 +7444,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"husky@npm:^7.0.0":
+"husky@npm:~7.0.4":
   version: 7.0.4
   resolution: "husky@npm:7.0.4"
   bin:
@@ -9066,9 +9066,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lint-staged@npm:12.3.7":
-  version: 12.3.7
-  resolution: "lint-staged@npm:12.3.7"
+"lint-staged@npm:12.3.8":
+  version: 12.3.8
+  resolution: "lint-staged@npm:12.3.8"
   dependencies:
     cli-truncate: ^3.1.0
     colorette: ^2.0.16
@@ -9086,7 +9086,7 @@ __metadata:
     yaml: ^1.10.2
   bin:
     lint-staged: bin/lint-staged.js
-  checksum: b595097556880eb2ab7ce2cf105047f6f22525ccfd608fbdc63ab243259aa36a26949576fadff673748fb885e7cb37ad3f4471d964ad54c1205d57a58999ba24
+  checksum: af6a89ae4244e4eac7180c6e7da452f378fd156ff38eaa666ecbb78f1e2efb7f1a9fc766dcc1cdde2bd76e03da68e602056ca9d2f1c6e46cf10aa83d20bf4d49
   languageName: node
   linkType: hard
 
@@ -10365,7 +10365,7 @@ __metadata:
     "@pob/eslint-config": 49.1.0
     "@pob/eslint-config-typescript": 49.2.1
     "@pob/lerna-light": 5.1.0
-    "@pob/root": 6.15.0
+    "@pob/root": 6.16.0
     "@types/jest": 27.4.1
     "@types/node": 14.18.13
     check-package-dependencies: 3.5.2
@@ -11539,10 +11539,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pob-dependencies@npm:6.23.0":
-  version: 6.23.0
-  resolution: "pob-dependencies@npm:6.23.0"
-  checksum: 6fe661cd50fc099a75c18e2bd2033ffad36e49567ade5b73d56feb1e42d771496c9ebc3ca238d5b03d8d9308bb764820dde0039927f6369aedff5bcc0bf4d3a5
+"pob-dependencies@npm:6.24.0":
+  version: 6.24.0
+  resolution: "pob-dependencies@npm:6.24.0"
+  checksum: a234e094ade008292e1a73c05205ae0a78b815f551e80c6b5e9072ea50ee309bf1bae06f61269dbdc63c47c75ce8a1f0d39997de8f0e45da6098ee431ca978bf
   languageName: node
   linkType: hard
 
@@ -12467,7 +12467,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semver@npm:7.3.5, semver@npm:^7.1.1, semver@npm:^7.1.2, semver@npm:^7.1.3, semver@npm:^7.3.2, semver@npm:^7.3.4, semver@npm:^7.3.5":
+"semver@npm:7.3.5":
   version: 7.3.5
   resolution: "semver@npm:7.3.5"
   dependencies:
@@ -12484,6 +12484,17 @@ __metadata:
   bin:
     semver: ./bin/semver.js
   checksum: 1b26ecf6db9e8292dd90df4e781d91875c0dcc1b1909e70f5d12959a23c7eebb8f01ea581c00783bbee72ceeaad9505797c381756326073850dc36ed284b21b9
+  languageName: node
+  linkType: hard
+
+"semver@npm:^7.1.1, semver@npm:^7.1.3, semver@npm:^7.3.2, semver@npm:^7.3.4, semver@npm:^7.3.5, semver@npm:^7.3.7":
+  version: 7.3.7
+  resolution: "semver@npm:7.3.7"
+  dependencies:
+    lru-cache: ^6.0.0
+  bin:
+    semver: bin/semver.js
+  checksum: 2fa3e877568cd6ce769c75c211beaed1f9fce80b28338cadd9d0b6c40f2e2862bafd62c19a6cff42f3d54292b7c623277bcab8816a2b5521cf15210d43e75232
   languageName: node
   linkType: hard
 
