@@ -73,7 +73,7 @@
     "@pob/root": "6.16.0",
     "@types/jest": "27.4.1",
     "@types/node": "14.18.16",
-    "check-package-dependencies": "3.5.2",
+    "check-package-dependencies": "3.6.0",
     "eslint": "8.14.0",
     "jest": "27.5.1",
     "pob-babel": "32.2.0",
