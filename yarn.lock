@@ -4886,9 +4886,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"check-package-dependencies@npm:3.5.2":
-  version: 3.5.2
-  resolution: "check-package-dependencies@npm:3.5.2"
+"check-package-dependencies@npm:3.6.0":
+  version: 3.6.0
+  resolution: "check-package-dependencies@npm:3.6.0"
   dependencies:
     chalk: ^4.1.0
     glob: ^7.1.6
@@ -4896,7 +4896,7 @@ __metadata:
     type-fest: ^2.0.0
   bin:
     check-package-dependencies: bin/check-package-dependencies.js
-  checksum: 5af08118fa8cefec8267a29c0e2ec801dca0b64f8aebcfb97be7cdb5e89912ac913f3a18228542cfbae7fa4cca75e4209c12e678391832ff16c9a6956a6d398b
+  checksum: 5b52dd81c219a66db89b70b6d9f2e3b89e6bc9bf0a2cf410a297cefd288ba8440156cd413cf7d1dcb4ac08cc5ca7cc4a1f415f9b51e5668439b9c2076055811e
   languageName: node
   linkType: hard
 
@@ -10368,7 +10368,7 @@ __metadata:
     "@pob/root": 6.16.0
     "@types/jest": 27.4.1
     "@types/node": 14.18.16
-    check-package-dependencies: 3.5.2
+    check-package-dependencies: 3.6.0
     eslint: 8.14.0
     jest: 27.5.1
     pob-babel: 32.2.0
