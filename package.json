@@ -68,7 +68,7 @@
     "@babel/core": "7.17.9",
     "@pob/commitlint-config": "4.1.0",
     "@pob/eslint-config": "49.1.0",
-    "@pob/eslint-config-typescript": "49.2.1",
+    "@pob/eslint-config-typescript": "49.3.0",
     "@pob/lerna-light": "5.1.0",
     "@pob/root": "6.16.0",
     "@types/jest": "27.4.1",
