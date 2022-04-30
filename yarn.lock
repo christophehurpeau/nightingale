@@ -2821,9 +2821,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pob/root@npm:6.18.1":
-  version: 6.18.1
-  resolution: "@pob/root@npm:6.18.1"
+"@pob/root@npm:6.19.0":
+  version: 6.19.0
+  resolution: "@pob/root@npm:6.19.0"
   dependencies:
     "@commitlint/cli": 16.2.4
     "@pob/pretty-eslint-config": 3.2.0
@@ -2831,7 +2831,7 @@ __metadata:
     husky: ~7.0.4
     json5: ^2.2.1
     lint-staged: 12.4.1
-    pob-dependencies: 6.25.2
+    pob-dependencies: 6.26.0
     prettier: 2.6.2
     repository-check-dirty: 4.1.0
     semver: ^7.3.7
@@ -2846,7 +2846,7 @@ __metadata:
     pretty-pkg: bin/pretty-pkg.mjs
     repository-check-dirty: bin/repository-check-dirty.js
     yarnhook: bin/yarnhook.js
-  checksum: 9275103a346e96ed26a39ddcc8702cfe580f200580ef1fc7e1b0e02dfbdfca799a5246c30db71da4f4ed1df91238b5e627547dcd3fc12163286b5bb055e0a88c
+  checksum: d6f82e833e9463c9e08ea3dc078fe9ee6dfe19d2069d338a34a8e5ea6295e8ed6fd973b667bbbc1651dece569e82572bc3adec83d1e0c8d35ab4d42c9d493cc6
   languageName: node
   linkType: hard
 
@@ -10278,7 +10278,7 @@ __metadata:
     "@pob/eslint-config": 49.1.0
     "@pob/eslint-config-typescript": 49.3.0
     "@pob/lerna-light": 5.1.0
-    "@pob/root": 6.18.1
+    "@pob/root": 6.19.0
     "@types/jest": 27.4.1
     "@types/node": 14.18.16
     check-package-dependencies: 3.6.0
@@ -11423,10 +11423,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pob-dependencies@npm:6.25.2":
-  version: 6.25.2
-  resolution: "pob-dependencies@npm:6.25.2"
-  checksum: 50a0930f100427a401ea65bb193d7d121d13c68eb2fcfa2934c38d5ad9c325df89698519cf3318ede00e6112e416cf45c2b96304eef8f129bb777e23a7c15c8c
+"pob-dependencies@npm:6.26.0":
+  version: 6.26.0
+  resolution: "pob-dependencies@npm:6.26.0"
+  checksum: 1d454e0454c7bb09a282c0b0df1d668a303c9d9658deb352517e77bc82628ecf0679bb65a777cf859eac3995e34242f21a614770d28a768c021888ed523537e6
   languageName: node
   linkType: hard
 
