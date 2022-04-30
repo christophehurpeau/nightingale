@@ -1475,12 +1475,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/config-conventional@npm:^16.0.0":
-  version: 16.2.1
-  resolution: "@commitlint/config-conventional@npm:16.2.1"
+"@commitlint/config-conventional@npm:^16.2.4":
+  version: 16.2.4
+  resolution: "@commitlint/config-conventional@npm:16.2.4"
   dependencies:
     conventional-changelog-conventionalcommits: ^4.3.1
-  checksum: 23dac76a8fbe5624433e1c948bc53eaf0a60b77f418fe7f94eea8e17abf9605d7ae9418188d8c1a38c2e6d5cb865c8e2d0894826c3eb41fb052af95e79bc02d3
+  checksum: 211a322967c1eeee961eb0be9752782d16c025213520b7ada173d6b16050efe477778103f32b62361ad595b79ff6703694569d99705469cb2be0ac5ffba6465e
   languageName: node
   linkType: hard
 
@@ -2661,12 +2661,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pob/commitlint-config@npm:4.1.0":
-  version: 4.1.0
-  resolution: "@pob/commitlint-config@npm:4.1.0"
+"@pob/commitlint-config@npm:4.2.0":
+  version: 4.2.0
+  resolution: "@pob/commitlint-config@npm:4.2.0"
   dependencies:
-    "@commitlint/config-conventional": ^16.0.0
-  checksum: 52071a061c847507848f1c065167e3d81fa4ad5e991cc28af804ccd35b738cade54fbd18d5dee853349321232e74e7d79306342dd0f709ec44a6a6f836f308ff
+    "@commitlint/config-conventional": ^16.2.4
+  checksum: a097dadb5352e7130546ff101e2028de3df1fcd931fc314dfcd1cf1c5fe8f8954b84241de8265226bb9b2e23d31a734e4b6e4e10b3bbfa7d696e5c9dd4389867
   languageName: node
   linkType: hard
 
@@ -10361,7 +10361,7 @@ __metadata:
   resolution: "nightingale-monorepo@workspace:."
   dependencies:
     "@babel/core": 7.17.9
-    "@pob/commitlint-config": 4.1.0
+    "@pob/commitlint-config": 4.2.0
     "@pob/eslint-config": 49.1.0
     "@pob/eslint-config-typescript": 49.3.0
     "@pob/lerna-light": 5.1.0
