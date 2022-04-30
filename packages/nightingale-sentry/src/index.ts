@@ -1,3 +1,4 @@
+import { POB_TARGET } from 'pob-babel';
 import type {
   addBreadcrumb,
   captureException,
@@ -8,7 +9,6 @@ import type { User } from '@sentry/types';
 import { Severity } from '@sentry/types';
 import { Level } from 'nightingale-levels';
 import type { LogRecord, Handle, Metadata, Handler } from 'nightingale-types';
-import 'pob-babel';
 
 const mapToSentryLevel: Record<Level, Severity> = {
   [Level.TRACE]: Severity.Debug,
@@ -107,7 +107,7 @@ export class SentryHandler<S extends SentryRequiredMethods> implements Handler {
 
   constructor(Sentry: string | S, minLevel: Level, options?: Options) {
     this.minLevel = minLevel;
-    if (__POB_TARGET__ === 'node' && typeof Sentry === 'string') {
+    if (POB_TARGET === 'node' && typeof Sentry === 'string') {
       console.warn(
         'nightingale-sentry: Passing DSN directly is deprecated, pass Sentry instead and init in your app.',
       );

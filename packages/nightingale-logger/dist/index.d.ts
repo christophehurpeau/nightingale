@@ -1,6 +1,5 @@
 import { Level } from 'nightingale-levels';
 import type { Metadata, MetadataStyles, Styles, Handler, Processor, LogRecord } from 'nightingale-types';
-import 'pob-babel';
 export { Level } from 'nightingale-levels';
 export interface Options<T extends Metadata> {
     symbol?: string;

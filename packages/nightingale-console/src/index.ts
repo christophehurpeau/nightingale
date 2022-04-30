@@ -1,3 +1,4 @@
+import { POB_TARGET } from 'pob-babel';
 import formatterANSI from 'nightingale-ansi-formatter';
 import consoleOutput from 'nightingale-console-output';
 import { createFindDebugLevel } from 'nightingale-debug';
@@ -12,7 +13,7 @@ import type {
 } from 'nightingale-types';
 
 const defaultFormatter =
-  __POB_TARGET__ === 'node' &&
+  POB_TARGET === 'node' &&
   !process.stdout.isTTY &&
   process.env.NIGHTINGALE_CONSOLE_FORMATTER !== 'ansi'
     ? formatterJSON

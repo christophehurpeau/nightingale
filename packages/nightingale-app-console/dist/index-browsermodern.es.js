@@ -5,7 +5,7 @@ import { BrowserConsoleHandler } from 'nightingale-browser-console';
 const ConsoleHandler = BrowserConsoleHandler;
 const logger = new Logger('app');
 const appLogger = logger;
-const appMinLevel = (process.env.NODE_ENV !== "production") ? Level.DEBUG : Level.INFO;
+const appMinLevel = process.env.NODE_ENV !== "production" ? Level.DEBUG : Level.INFO;
 const libMinLevel = Level.INFO;
 configure(appMinLevel !== libMinLevel ? [{
   pattern: /^app(:|$)/,

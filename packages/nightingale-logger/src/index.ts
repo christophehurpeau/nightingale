@@ -1,4 +1,5 @@
 /* eslint-disable max-lines */
+import { POB_TARGET } from 'pob-babel';
 import * as util from 'util';
 import { Level } from 'nightingale-levels';
 import type {
@@ -9,7 +10,6 @@ import type {
   Processor,
   LogRecord,
 } from 'nightingale-types';
-import 'pob-babel';
 
 export { Level } from 'nightingale-levels';
 
@@ -393,7 +393,7 @@ export class Logger {
     metadata?: T,
     metadataStyles?: MetadataStyles<T>,
   ): void {
-    if (__POB_TARGET__ === 'browser') {
+    if (POB_TARGET === 'browser') {
       throw new Error('Not supported for the browser. Prefer `debugger;`');
     } else {
       // Note: inspect is a special function for node:
@@ -415,7 +415,7 @@ export class Logger {
     metadata?: T,
     metadataStyles?: MetadataStyles<T>,
   ): void {
-    if (__POB_TARGET__ === 'browser') {
+    if (POB_TARGET === 'browser') {
       throw new Error('Not supported for the browser. Prefer `debugger;`');
     } else {
       const inspectedValue = util.inspect(varValue, { depth: 6 });

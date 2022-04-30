@@ -2,7 +2,6 @@ import type { addBreadcrumb, captureException, captureMessage } from '@sentry/co
 import type { User } from '@sentry/types';
 import { Level } from 'nightingale-levels';
 import type { LogRecord, Handle, Metadata, Handler } from 'nightingale-types';
-import 'pob-babel';
 export interface MetadataWithError extends Metadata {
     error?: Error;
 }

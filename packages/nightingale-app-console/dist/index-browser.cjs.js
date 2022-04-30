@@ -8,7 +8,7 @@ var nightingaleBrowserConsole = require('nightingale-browser-console');
 var ConsoleHandler = nightingaleBrowserConsole.BrowserConsoleHandler;
 var logger = new nightingale.Logger('app');
 var appLogger = logger;
-var appMinLevel = (process.env.NODE_ENV !== "production") ? nightingale.Level.DEBUG : nightingale.Level.INFO;
+var appMinLevel = process.env.NODE_ENV !== "production" ? nightingale.Level.DEBUG : nightingale.Level.INFO;
 var libMinLevel = nightingale.Level.INFO;
 nightingale.configure(appMinLevel !== libMinLevel ? [{
   pattern: /^app(:|$)/,

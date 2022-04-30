@@ -1,25 +1,25 @@
+import { POB_TARGET } from 'pob-babel';
 import { Logger, configure, Level, listenUnhandledErrors } from 'nightingale';
 import { BrowserConsoleHandler } from 'nightingale-browser-console';
 import { ConsoleHandler as TerminalConsoleHandler } from 'nightingale-console';
-import 'pob-babel';
 
 export { configure, addConfig, levels, Level } from 'nightingale';
 
 export const ConsoleHandler:
   | typeof BrowserConsoleHandler
   | typeof TerminalConsoleHandler =
-  __POB_TARGET__ === 'browser' ? BrowserConsoleHandler : TerminalConsoleHandler;
+  POB_TARGET === 'browser' ? BrowserConsoleHandler : TerminalConsoleHandler;
 
 export const logger = new Logger('app');
 export const appLogger = logger;
 
-if (__POB_TARGET__ !== 'browser') {
+if (POB_TARGET !== 'browser') {
   Error.stackTraceLimit = Infinity;
   listenUnhandledErrors(logger);
 }
 
 const appMinLevel =
-  __POB_TARGET__ !== 'browser' &&
+  POB_TARGET !== 'browser' &&
   process.env.NIGHTINGALE_APP_MIN_LEVEL !== undefined &&
   process.env.NIGHTINGALE_APP_MIN_LEVEL !== ''
     ? Number(process.env.NIGHTINGALE_APP_MIN_LEVEL)
@@ -28,7 +28,7 @@ const appMinLevel =
     : Level.INFO;
 
 const libMinLevel =
-  __POB_TARGET__ !== 'browser' &&
+  POB_TARGET !== 'browser' &&
   process.env.NIGHTINGALE_LIB_MIN_LEVEL !== undefined &&
   process.env.NIGHTINGALE_LIB_MIN_LEVEL !== ''
     ? Number(process.env.NIGHTINGALE_LIB_MIN_LEVEL)

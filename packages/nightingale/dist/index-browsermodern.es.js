@@ -4,7 +4,7 @@ export { Level, Level as levels } from 'nightingale-levels';
 
 const globalOrWindow = typeof global !== 'undefined' ? global : window;
 
-if ((process.env.NODE_ENV !== "production") && globalOrWindow.__NIGHTINGALE_GLOBAL_HANDLERS) {
+if (process.env.NODE_ENV !== "production" && globalOrWindow.__NIGHTINGALE_GLOBAL_HANDLERS) {
   throw new Error('nightingale: update all to ^5.0.0');
 }
 

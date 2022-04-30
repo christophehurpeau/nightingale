@@ -5,7 +5,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 const nightingale = require('nightingale');
 const nightingaleConsole = require('nightingale-console');
 
-const testMinLevel = process.env.NIGHTINGALE_TEST_MIN_LEVEL !== undefined && process.env.NIGHTINGALE_TEST_MIN_LEVEL !== '' ? Number(process.env.NIGHTINGALE_TEST_MIN_LEVEL) : (process.env.NODE_ENV !== "production") ? nightingale.Level.DEBUG : nightingale.Level.INFO;
+const testMinLevel = process.env.NIGHTINGALE_TEST_MIN_LEVEL !== undefined && process.env.NIGHTINGALE_TEST_MIN_LEVEL !== '' ? Number(process.env.NIGHTINGALE_TEST_MIN_LEVEL) : process.env.NODE_ENV !== "production" ? nightingale.Level.DEBUG : nightingale.Level.INFO;
 const libMinLevel = process.env.NIGHTINGALE_LIB_MIN_LEVEL !== undefined && process.env.NIGHTINGALE_LIB_MIN_LEVEL !== '' ? Number(process.env.NIGHTINGALE_LIB_MIN_LEVEL) : nightingale.Level.INFO;
 const testLogger = new nightingale.Logger('unit-testing');
 nightingale.configure([{

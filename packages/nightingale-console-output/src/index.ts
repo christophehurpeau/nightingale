@@ -1,13 +1,13 @@
 /* eslint-disable no-console */
+import { POB_TARGET } from 'pob-babel';
 import { Level } from 'nightingale-levels';
 import type { LogRecord, Metadata } from 'nightingale-types';
-import 'pob-babel';
 
 export default function consoleOutput<T extends Metadata>(
   param: string | string[],
   record: LogRecord<T>,
 ): void {
-  if (__POB_TARGET__ !== 'browser') {
+  if (POB_TARGET !== 'browser') {
     const outKey = record.level >= Level.ERROR ? 'stderr' : 'stdout';
     process[outKey].write(`${param as string}\n`);
   } else {

@@ -24,7 +24,8 @@
     "generate:test-coverage": "rm -Rf docs/coverage/ ; NODE_OPTIONS=--experimental-vm-modules jest --coverage --coverageReporters=lcov --coverageDirectory=docs/coverage/",
     "lint": "yarn run lint:prettier && yarn run lint:eslint",
     "lint:eslint": "NODE_OPTIONS=--max_old_space_size=4096 eslint --report-unused-disable-directives --resolve-plugins-relative-to . --quiet .",
-    "lint:prettier": "prettier --check .",
+    "lint:prettier": "pob-root-prettier --check .",
+    "lint:prettier:fix": "pob-root-prettier --write .",
     "postinstall": "pob-root-postinstall",
     "test": "NODE_OPTIONS=--experimental-vm-modules jest",
     "tsc": "tsc -b",
@@ -48,9 +49,6 @@
     "extensionsToTreatAsEsm": [
       ".ts"
     ],
-    "setupFiles": [
-      "pob-babel/setup-jest.cjs"
-    ],
     "testEnvironment": "node",
     "cacheDirectory": "./node_modules/.cache/jest",
     "testMatch": [
@@ -65,18 +63,18 @@
     "@types/node": "Avoid problems in typescript with several versions of @types/node"
   },
   "devDependencies": {
-    "@babel/core": "7.17.9",
+    "@babel/core": "7.17.10",
     "@pob/commitlint-config": "4.2.0",
     "@pob/eslint-config": "49.1.0",
     "@pob/eslint-config-typescript": "49.3.0",
     "@pob/lerna-light": "5.1.0",
-    "@pob/root": "6.16.0",
+    "@pob/root": "6.18.1",
     "@types/jest": "27.4.1",
     "@types/node": "14.18.16",
     "check-package-dependencies": "3.6.0",
     "eslint": "8.14.0",
-    "jest": "27.5.1",
-    "pob-babel": "32.2.0",
+    "jest": "28.0.3",
+    "pob-babel": "33.2.1",
     "typedoc": "0.22.15",
     "typescript": "4.6.4"
   }
