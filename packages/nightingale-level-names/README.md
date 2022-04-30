@@ -8,6 +8,9 @@
 
 <p align="center">
   <a href="https://npmjs.org/package/nightingale-level-names"><img src="https://img.shields.io/npm/v/nightingale-level-names.svg?style=flat-square"></a>
+  <a href="https://npmjs.org/package/nightingale-level-names"><img src="https://img.shields.io/npm/dw/nightingale-level-names.svg?style=flat-square"></a>
+  <a href="https://npmjs.org/package/nightingale-level-names"><img src="https://img.shields.io/node/v/nightingale-level-names.svg?style=flat-square"></a>
+  <a href="https://npmjs.org/package/nightingale-level-names"><img src="https://img.shields.io/npm/types/nightingale-level-names.svg?style=flat-square"></a>
 </p>
 
 ## Install

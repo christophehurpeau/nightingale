@@ -8,6 +8,9 @@
 
 <p align="center">
   <a href="https://npmjs.org/package/nightingale-types"><img src="https://img.shields.io/npm/v/nightingale-types.svg?style=flat-square"></a>
+  <a href="https://npmjs.org/package/nightingale-types"><img src="https://img.shields.io/npm/dw/nightingale-types.svg?style=flat-square"></a>
+  <a href="https://npmjs.org/package/nightingale-types"><img src="https://img.shields.io/node/v/nightingale-types.svg?style=flat-square"></a>
+  <a href="https://npmjs.org/package/nightingale-types"><img src="https://img.shields.io/npm/types/nightingale-types.svg?style=flat-square"></a>
 </p>
 
 ## Install

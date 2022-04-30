@@ -14,18 +14,7 @@ jobs:
         with:
           node-version: 16
 
-      - name: Cache dependencies
-        uses: actions/cache@v3
-        with:
-          path: |
-            .yarn/unplugged
-            .yarn/install-state.gz
-          key: v2-dependencies--${{ matrix.node-version }}-${{ runner.OS }}-${{ hashFiles('yarn.lock') }}
-          restore-keys: |
-            v2-dependencies--${{ matrix.node-version }}-${{ runner.OS }}-
-            v2-dependencies--${{ matrix.node-version }}-
-
-      - name: Check Dependencies
+      - name: Install Dependencies
         run: yarn install --immutable --immutable-cache
 
       - name: Generate Typedoc

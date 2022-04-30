@@ -8,6 +8,9 @@
 
 <p align="center">
   <a href="https://npmjs.org/package/nightingale-winston-adapter"><img src="https://img.shields.io/npm/v/nightingale-winston-adapter.svg?style=flat-square"></a>
+  <a href="https://npmjs.org/package/nightingale-winston-adapter"><img src="https://img.shields.io/npm/dw/nightingale-winston-adapter.svg?style=flat-square"></a>
+  <a href="https://npmjs.org/package/nightingale-winston-adapter"><img src="https://img.shields.io/node/v/nightingale-winston-adapter.svg?style=flat-square"></a>
+  <a href="https://npmjs.org/package/nightingale-winston-adapter"><img src="https://img.shields.io/npm/types/nightingale-winston-adapter.svg?style=flat-square"></a>
 </p>
 
 ## Install

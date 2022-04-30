@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
 . "$(dirname "$0")/_/husky.sh"
 
-CI=true yarn test && yarn run checks
+yarn test --watchAll=false --changedSince=origin/main && yarn run checks
