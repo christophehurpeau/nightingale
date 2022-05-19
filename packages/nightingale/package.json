@@ -97,8 +97,8 @@
     "nightingale-types": "12.1.4"
   },
   "devDependencies": {
-    "@babel/core": "7.17.12",
-    "@babel/preset-env": "7.17.12",
+    "@babel/core": "7.18.0",
+    "@babel/preset-env": "7.18.0",
     "babel-preset-modern-browsers": "15.0.2",
     "nightingale-string": "12.1.4",
     "pob-babel": "33.3.0",
