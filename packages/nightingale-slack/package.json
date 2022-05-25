@@ -68,7 +68,7 @@
     "request": "^2.88.0"
   },
   "devDependencies": {
-    "@babel/core": "7.18.0",
+    "@babel/core": "7.18.2",
     "@types/request": "2.48.8",
     "pob-babel": "33.3.0",
     "typescript": "4.6.4"
