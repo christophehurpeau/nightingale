@@ -2790,12 +2790,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pob/eslint-config-typescript@npm:49.3.0":
-  version: 49.3.0
-  resolution: "@pob/eslint-config-typescript@npm:49.3.0"
+"@pob/eslint-config-typescript@npm:49.3.3":
+  version: 49.3.3
+  resolution: "@pob/eslint-config-typescript@npm:49.3.3"
   dependencies:
-    "@pob/eslint-config": 49.1.0
-    "@pob/use-eslint-plugin": 49.0.0
+    "@pob/eslint-config": 49.3.2
+    "@pob/use-eslint-plugin": 49.3.2
     "@typescript-eslint/eslint-plugin": ^5.18.0
     "@typescript-eslint/parser": ^5.18.0
     eslint-config-airbnb-base: ^15.0.0
@@ -2816,15 +2816,15 @@ __metadata:
       optional: true
     eslint-plugin-node:
       optional: true
-  checksum: 9fcd079ee96794d530542eca23d75b11936dc8c7c58399b53f75e8aaec5be6bd13d0840d1a2892001b2d778caaebea446eda7bc44311af524f6b83f1b303ddbc
+  checksum: eec6ff6f77e8c620b60d81ddd7c490aab6447e1c7c9c239a54eb0891951cdec5ac3aa53ba0d767c02683b5cbbdc7c4ded802c4e69a3e275b92fa8a5888375054
   languageName: node
   linkType: hard
 
-"@pob/eslint-config@npm:49.1.0":
-  version: 49.1.0
-  resolution: "@pob/eslint-config@npm:49.1.0"
+"@pob/eslint-config@npm:49.3.2":
+  version: 49.3.2
+  resolution: "@pob/eslint-config@npm:49.3.2"
   dependencies:
-    "@pob/use-eslint-plugin": 49.0.0
+    "@pob/use-eslint-plugin": 49.3.2
     eslint-config-airbnb-base: ^15.0.0
     eslint-config-prettier: ^8.3.0
     eslint-plugin-import: ^2.25.3
@@ -2842,7 +2842,7 @@ __metadata:
       optional: true
     eslint-plugin-unicorn:
       optional: true
-  checksum: 1be061e43423e550160f944e85fc42b69a5b2dc5613a96b5d20e264b0a11ea81fd8c0e6219f0004636bae8eeefefbdee7b3f8c90c0b5e26c2867be5195b078a4
+  checksum: 051e5a4fead029dc2f5a1207af179e2d5d4ef4cd94008e3fd2581d989d97cfb87e30b7c3cb542eed8b02894561ad2e4c83ac91ca681726d340cf070762759c12
   languageName: node
   linkType: hard
 
@@ -2937,10 +2937,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pob/use-eslint-plugin@npm:49.0.0":
-  version: 49.0.0
-  resolution: "@pob/use-eslint-plugin@npm:49.0.0"
-  checksum: b5cd8691c7fd4742077d5ee8240b2de6ec077ab5c3d87cd3ca806f3a7bc1dda2fbb5bee8075bc1de071b102cb420225311b48ced809c7c7ee79a01a510385c81
+"@pob/use-eslint-plugin@npm:49.3.2":
+  version: 49.3.2
+  resolution: "@pob/use-eslint-plugin@npm:49.3.2"
+  checksum: c4e4189ed7abbf3c3d9b8e601f58ce0775ff452adbd62211d45d5f03efe015213d55fe39a236537a9c9ca44b7e2918503c16efc40815738e71bde12d0f8ae999
   languageName: node
   linkType: hard
 
@@ -10398,8 +10398,8 @@ __metadata:
   dependencies:
     "@babel/core": 7.18.10
     "@pob/commitlint-config": 4.3.0
-    "@pob/eslint-config": 49.1.0
-    "@pob/eslint-config-typescript": 49.3.0
+    "@pob/eslint-config": 49.3.2
+    "@pob/eslint-config-typescript": 49.3.3
     "@pob/lerna-light": 5.2.0
     "@pob/root": 6.20.1
     "@types/jest": 28.1.6
