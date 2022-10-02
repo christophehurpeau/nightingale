@@ -13,7 +13,7 @@ export interface Options {
     shouldSendAsException?: <T extends MetadataWithError>(record: LogRecord<T>) => boolean;
     shouldSendAsBreadcrumb?: <T extends Metadata>(record: LogRecord<T>) => boolean;
 }
-interface SentryRequiredMethods {
+export interface SentryRequiredMethods {
     addBreadcrumb: typeof addBreadcrumb;
     captureException: typeof captureException;
     captureMessage: typeof captureMessage;
@@ -23,5 +23,4 @@ export declare class SentryHandler<S extends SentryRequiredMethods> implements H
     handle: Handle;
     constructor(Sentry: string | S, minLevel: Level, options?: Options);
 }
-export {};
 //# sourceMappingURL=index.d.ts.map

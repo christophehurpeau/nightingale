@@ -48,7 +48,7 @@
     "build": "yarn clean:build && rollup --config rollup.config.mjs && yarn run build:definitions",
     "build:definitions": "tsc -p tsconfig.build.json",
     "clean": "yarn clean:build",
-    "clean:build": "rm -Rf dist",
+    "clean:build": "pob-babel-clean-out dist",
     "lint": "yarn run lint:eslint",
     "lint:eslint": "cd ../.. && yarn run eslint --report-unused-disable-directives --resolve-plugins-relative-to . --quiet packages/nightingale-app-react-native",
     "watch": "yarn clean:build && rollup --config rollup.config.mjs --watch"
@@ -94,11 +94,11 @@
     "nightingale-react-native-console": "12.1.4"
   },
   "devDependencies": {
-    "@babel/core": "7.18.10",
-    "@babel/preset-env": "7.18.10",
+    "@babel/core": "7.19.3",
+    "@babel/preset-env": "7.19.3",
     "@types/react-native": "0.69.5",
     "babel-preset-modern-browsers": "15.0.2",
-    "pob-babel": "33.3.0",
-    "typescript": "4.6.4"
+    "pob-babel": "34.1.0",
+    "typescript": "4.8.4"
   }
 }

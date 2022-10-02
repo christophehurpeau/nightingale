@@ -135,6 +135,10 @@ var Logger = /*#__PURE__*/function () {
   ;
 
   _proto.extendsContext = function extendsContext(extendedContext) {
+    if (this.contextObject === undefined) {
+      throw new Error('Cannot extends context that does not exists. Use setContext(context) first.');
+    }
+
     Object.assign(this.contextObject, extendedContext);
   }
   /**

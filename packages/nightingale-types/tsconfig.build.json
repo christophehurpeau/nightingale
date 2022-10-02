@@ -7,6 +7,7 @@
     "declarationMap": true,
     "emitDeclarationOnly": true,
     "outDir": "dist",
+    "newLine": "lf",
     "composite": true,
     "tsBuildInfoFile": "dist/tsbuildinfo"
   },

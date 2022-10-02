@@ -49,7 +49,7 @@ export interface Options {
   ) => boolean;
 }
 
-interface SentryRequiredMethods {
+export interface SentryRequiredMethods {
   addBreadcrumb: typeof addBreadcrumb;
   captureException: typeof captureException;
   captureMessage: typeof captureMessage;

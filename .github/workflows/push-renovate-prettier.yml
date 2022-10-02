@@ -30,4 +30,4 @@ jobs:
           git -c user.name="Christophe Hurpeau" \
             -c user.email="christophehurpeau@users.noreply.github.com" \
             commit -m "style: prettier format" --author="github-actions[bot] <actions@github.com>"
-          git push
+          git push --no-verify

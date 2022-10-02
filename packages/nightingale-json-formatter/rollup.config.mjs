@@ -1,5 +1,7 @@
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
 import createRollupConfig from 'pob-babel/createRollupConfig.js';
 
 export default createRollupConfig({
-  cwd: new URL('.', import.meta.url).pathname,
+  cwd: dirname(fileURLToPath(import.meta.url)),
 });

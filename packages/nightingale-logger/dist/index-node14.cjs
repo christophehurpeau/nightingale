@@ -141,6 +141,10 @@ class Logger {
 
 
   extendsContext(extendedContext) {
+    if (this.contextObject === undefined) {
+      throw new Error('Cannot extends context that does not exists. Use setContext(context) first.');
+    }
+
     Object.assign(this.contextObject, extendedContext);
   }
   /**

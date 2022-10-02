@@ -4,11 +4,15 @@
 /samples
 /test
 /*.config.js
+/*.config.cjs
+/*.config.mjs
 /tsconfig.json
 /tsconfig.build.json
+/tsconfig.eslint.json
 /dist/tsbuildinfo
 babel.config.json
 __snapshots__
+/coverage
 .yo-rc.json
 
 /.settings
