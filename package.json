@@ -57,7 +57,7 @@
     ]
   },
   "resolutions": {
-    "@types/node": "14.18.24"
+    "@types/node": "14.18.31"
   },
   "resolutionsExplained": {
     "@types/node": "Avoid problems in typescript with several versions of @types/node"
@@ -70,7 +70,7 @@
     "@pob/lerna-light": "5.5.0",
     "@pob/root": "6.22.0",
     "@types/jest": "29.1.1",
-    "@types/node": "14.18.24",
+    "@types/node": "14.18.31",
     "check-package-dependencies": "3.10.0",
     "eslint": "8.24.0",
     "jest": "29.1.2",
