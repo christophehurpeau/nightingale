@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">33.33% </span>
+                <span class="strong">37.89% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>31/93</span>
+                <span class='fraction'>36/95</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">40% </span>
+                <span class="strong">42.3% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>20/50</span>
+                <span class='fraction'>22/52</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">30.95% </span>
+                <span class="strong">38.09% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>13/42</span>
+                <span class='fraction'>16/42</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">32.6% </span>
+                <span class="strong">37.23% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>30/92</span>
+                <span class='fraction'>35/94</span>
             </div>
         
             
@@ -771,7 +771,12 @@
 <a name='L706'></a><a href='#L706'>706</a>
 <a name='L707'></a><a href='#L707'>707</a>
 <a name='L708'></a><a href='#L708'>708</a>
-<a name='L709'></a><a href='#L709'>709</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L709'></a><a href='#L709'>709</a>
+<a name='L710'></a><a href='#L710'>710</a>
+<a name='L711'></a><a href='#L711'>711</a>
+<a name='L712'></a><a href='#L712'>712</a>
+<a name='L713'></a><a href='#L713'>713</a>
+<a name='L714'></a><a href='#L714'>714</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -894,10 +899,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -950,7 +955,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -959,14 +964,19 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1480,6 +1490,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/* eslint-disable max-lines */
+import { POB_TARGET } from 'pob-babel';
 import * as util from 'util';
 import { Level } from 'nightingale-levels';
 import type {
@@ -1490,7 +1501,6 @@ import type {
   Processor,
   LogRecord,
 } from 'nightingale-types';
-import 'pob-babel';
 &nbsp;
 export { Level } from 'nightingale-levels';
 &nbsp;
@@ -1657,8 +1667,8 @@ export class Logger {
   /**
    * Get the context of this logger
    */
-<span class="fstat-no" title="function not covered" >  ge</span>tContextObject(): Readonly&lt;Record&lt;string, unknown&gt;&gt; | undefined {
-<span class="cstat-no" title="statement not covered" >    return this.contextObject;</span>
+  getContextObject(): Readonly&lt;Record&lt;string, unknown&gt;&gt; | undefined {
+    return this.contextObject;
   }
 &nbsp;
   /**
@@ -1666,15 +1676,20 @@ export class Logger {
    *
    * @param {Object} context
    */
-<span class="fstat-no" title="function not covered" >  se</span>tContext(context: Record&lt;string, unknown&gt;): void {
-<span class="cstat-no" title="statement not covered" >    this.contextObject = context;</span>
+  setContext(context: Record&lt;string, unknown&gt;): void {
+    this.contextObject = context;
   }
 &nbsp;
   /**
    * Extends existing context of this logger
    */
-<span class="fstat-no" title="function not covered" >  ex</span>tendsContext(extendedContext: Record&lt;string, unknown&gt;): void {
-<span class="cstat-no" title="statement not covered" >    Object.assign(this.contextObject, extendedContext);</span>
+  extendsContext(extendedContext: Record&lt;string, unknown&gt;): void {
+    if (this.contextObject === undefined) {
+      throw new Error(
+        'Cannot extends context that does not exists. Use setContext(context) first.',
+      );
+    }
+    Object.assign(this.contextObject, extendedContext);
   }
 &nbsp;
   /**
@@ -1874,7 +1889,7 @@ export class Logger {
     metadata?: T,
     metadataStyles?: MetadataStyles&lt;T&gt;,
   ): void {
-<span class="cstat-no" title="statement not covered" >    if (__POB_TARGET__ === 'browser') {</span>
+<span class="cstat-no" title="statement not covered" >    if (POB_TARGET === 'browser') {</span>
 <span class="cstat-no" title="statement not covered" >      throw new Error('Not supported for the browser. Prefer `debugger;`');</span>
     } else {
       // Note: inspect is a special function for node:
@@ -1896,7 +1911,7 @@ export class Logger {
     metadata?: T,
     metadataStyles?: MetadataStyles&lt;T&gt;,
   ): void {
-<span class="cstat-no" title="statement not covered" >    if (__POB_TARGET__ === 'browser') {</span>
+<span class="cstat-no" title="statement not covered" >    if (POB_TARGET === 'browser') {</span>
 <span class="cstat-no" title="statement not covered" >      throw new Error('Not supported for the browser. Prefer `debugger;`');</span>
     } else {
       const inspectedValue = <span class="cstat-no" title="statement not covered" >util.inspect(varValue, { depth: 6 });</span>
@@ -2194,7 +2209,7 @@ export class Logger {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Sat Feb 12 2022 03:06:40 GMT+0000 (Coordinated Universal Time)
+                at Sun Oct 02 2022 20:10:12 GMT+0000 (Coordinated Universal Time)
             </div>
         <script src="../../prettify.js"></script>
         <script>
