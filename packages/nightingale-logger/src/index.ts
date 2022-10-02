@@ -193,6 +193,11 @@ export class Logger {
    * Extends existing context of this logger
    */
   extendsContext(extendedContext: Record<string, unknown>): void {
+    if (this.contextObject === undefined) {
+      throw new Error(
+        'Cannot extends context that does not exists. Use setContext(context) first.',
+      );
+    }
     Object.assign(this.contextObject, extendedContext);
   }
 
