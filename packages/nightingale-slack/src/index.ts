@@ -6,10 +6,10 @@ import type {
   Level,
 } from 'nightingale-types';
 import { post } from 'request';
-import type SlackConfig from './SlackConfig';
+import type { SlackConfig } from './SlackConfig';
 import createBody from './createBody';
 
-export { type default as SlackConfig } from './SlackConfig';
+export type { SlackConfig } from './SlackConfig';
 
 export { default as createBody } from './createBody';
 

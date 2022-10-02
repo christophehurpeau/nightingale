@@ -1,4 +1,4 @@
-export default interface SlackConfig {
+export interface SlackConfig {
   webhookUrl: string;
   channel?: string;
   username?: string;
