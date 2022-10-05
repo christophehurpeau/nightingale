@@ -100,7 +100,7 @@
     "@babel/preset-env": "7.19.3",
     "babel-preset-modern-browsers": "15.0.2",
     "nightingale-levels": "12.1.4",
-    "pob-babel": "34.1.0",
+    "pob-babel": "34.2.0",
     "typescript": "4.8.4"
   }
 }

@@ -97,7 +97,7 @@
     "@babel/core": "7.19.3",
     "@babel/preset-env": "7.19.3",
     "babel-preset-modern-browsers": "15.0.2",
-    "pob-babel": "34.1.0",
+    "pob-babel": "34.2.0",
     "typescript": "4.8.4"
   }
 }
