@@ -98,7 +98,7 @@
   },
   "devDependencies": {
     "@babel/core": "7.19.3",
-    "@babel/preset-env": "7.19.3",
+    "@babel/preset-env": "7.19.4",
     "babel-preset-modern-browsers": "15.0.2",
     "nightingale-string": "12.1.4",
     "pob-babel": "34.2.0",
