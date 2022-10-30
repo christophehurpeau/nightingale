@@ -44,6 +44,7 @@ jobs:
         run: |
           yarn lerna version --yes --push --exact --conventional-commits --conventional-graduate --create-release=github -m 'chore: release [skip ci]'
         env:
+          HUSKY: 0
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           YARN_ENABLE_IMMUTABLE_INSTALLS: false
 

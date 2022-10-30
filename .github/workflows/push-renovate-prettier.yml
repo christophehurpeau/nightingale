@@ -3,7 +3,7 @@ name: Run Prettier on renovate update
 on:
   push:
     branches:
-      - 'renovate/prettier-**'
+      - "renovate/prettier-**"
 
 jobs:
   run-prettier:

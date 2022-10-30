@@ -56,11 +56,7 @@
     "lint:eslint": "cd ../.. && yarn run eslint --report-unused-disable-directives --resolve-plugins-relative-to . --quiet packages/nightingale-types",
     "watch": "yarn clean:build && rollup --config rollup.config.mjs --watch"
   },
-  "prettier": {
-    "trailingComma": "all",
-    "singleQuote": true,
-    "arrowParens": "always"
-  },
+  "prettier": "@pob/root/prettier-config",
   "pob": {
     "babelEnvs": [
       {
@@ -97,7 +93,7 @@
     "@babel/core": "7.19.3",
     "@babel/preset-env": "7.19.4",
     "babel-preset-modern-browsers": "15.0.2",
-    "pob-babel": "34.2.0",
+    "pob-babel": "34.3.0",
     "typescript": "4.8.4"
   }
 }
