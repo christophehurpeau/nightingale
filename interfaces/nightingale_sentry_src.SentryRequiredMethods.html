@@ -21,7 +21,7 @@
 <ul class="tsd-hierarchy">
 <li><span class="target">SentryRequiredMethods</span></li></ul></section><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-sentry/src/index.ts#L52">packages/nightingale-sentry/src/index.ts:52</a></li></ul></aside>
+<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-sentry/src/index.ts#L49">packages/nightingale-sentry/src/index.ts:49</a></li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-index-accordion" open><summary class="tsd-accordion-summary tsd-index-summary">
@@ -37,13 +37,13 @@
 <h2>Properties</h2>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="addBreadcrumb" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>add<wbr/>Breadcrumb</span><a href="#addBreadcrumb" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none" id="icon-anchor-a"></path><path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" id="icon-anchor-b"></path><path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" id="icon-anchor-c"></path></svg></a></h3>
-<div class="tsd-signature">add<wbr/>Breadcrumb<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">(</span>breadcrumb<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Breadcrumb</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span></div>
+<div class="tsd-signature">add<wbr/>Breadcrumb<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">(</span>breadcrumb<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Breadcrumb</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">ReturnType</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Hub</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">&quot;addBreadcrumb&quot;</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span></div>
 <div class="tsd-type-declaration">
 <h4>Type declaration</h4>
 <ul class="tsd-parameters">
 <li class="tsd-parameter-signature">
 <ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-interface">
-<li class="tsd-signature" id="__type.__type-1"><span class="tsd-signature-symbol">(</span>breadcrumb<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Breadcrumb</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+<li class="tsd-signature" id="__type.__type-1"><span class="tsd-signature-symbol">(</span>breadcrumb<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Breadcrumb</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ReturnType</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Hub</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">&quot;addBreadcrumb&quot;</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">&gt;</span></li>
 <li class="tsd-description">
 <div class="tsd-comment tsd-typography"><p>Records a new breadcrumb which will be attached to future events.</p>
 <p>Breadcrumbs will be added to subsequent events to provide more context on
@@ -56,18 +56,18 @@ user&#39;s actions prior to an error or crash.</p>
 <h5>breadcrumb: <span class="tsd-signature-type">Breadcrumb</span></h5>
 <div class="tsd-comment tsd-typography"><p>The breadcrumb to record.</p>
 </div></li></ul></div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4></li></ul></li></ul></div><aside class="tsd-sources">
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ReturnType</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Hub</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">&quot;addBreadcrumb&quot;</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">&gt;</span></h4></li></ul></li></ul></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-sentry/src/index.ts#L53">packages/nightingale-sentry/src/index.ts:53</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-sentry/src/index.ts#L50">packages/nightingale-sentry/src/index.ts:50</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="captureException" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>capture<wbr/>Exception</span><a href="#captureException" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
-<div class="tsd-signature">capture<wbr/>Exception<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">(</span>exception<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, captureContext<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">CaptureContext</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span></div>
+<div class="tsd-signature">capture<wbr/>Exception<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">(</span>exception<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, captureContext<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">CaptureContext</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">ReturnType</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Hub</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">&quot;captureException&quot;</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span></div>
 <div class="tsd-type-declaration">
 <h4>Type declaration</h4>
 <ul class="tsd-parameters">
 <li class="tsd-parameter-signature">
 <ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-interface">
-<li class="tsd-signature" id="__type-2.__type-3"><span class="tsd-signature-symbol">(</span>exception<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, captureContext<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">CaptureContext</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+<li class="tsd-signature" id="__type-2.__type-3"><span class="tsd-signature-symbol">(</span>exception<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, captureContext<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">CaptureContext</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ReturnType</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Hub</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">&quot;captureException&quot;</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">&gt;</span></li>
 <li class="tsd-description">
 <div class="tsd-comment tsd-typography"><p>Captures an exception event and sends it to Sentry.</p>
 
@@ -81,19 +81,21 @@ user&#39;s actions prior to an error or crash.</p>
 <div class="tsd-comment tsd-typography"><p>An exception-like object.</p>
 </div></li>
 <li>
-<h5><code class="tsd-tag ts-flagOptional">Optional</code> captureContext: <span class="tsd-signature-type">CaptureContext</span></h5></li></ul></div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4></li></ul></li></ul></div><aside class="tsd-sources">
+<h5><code class="tsd-tag ts-flagOptional">Optional</code> captureContext: <span class="tsd-signature-type">CaptureContext</span></h5>
+<div class="tsd-comment tsd-typography"><p>Additional scope data to apply to exception event.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ReturnType</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Hub</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">&quot;captureException&quot;</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">&gt;</span></h4></li></ul></li></ul></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-sentry/src/index.ts#L54">packages/nightingale-sentry/src/index.ts:54</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-sentry/src/index.ts#L51">packages/nightingale-sentry/src/index.ts:51</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="captureMessage" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>capture<wbr/>Message</span><a href="#captureMessage" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
-<div class="tsd-signature">capture<wbr/>Message<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">(</span>message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, captureContext<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Severity</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">CaptureContext</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span></div>
+<div class="tsd-signature">capture<wbr/>Message<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">(</span>message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, captureContext<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">SeverityLevel</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">CaptureContext</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Severity</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">ReturnType</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Hub</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">&quot;captureMessage&quot;</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span></div>
 <div class="tsd-type-declaration">
 <h4>Type declaration</h4>
 <ul class="tsd-parameters">
 <li class="tsd-parameter-signature">
 <ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-interface">
-<li class="tsd-signature" id="__type-4.__type-5"><span class="tsd-signature-symbol">(</span>message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, captureContext<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Severity</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">CaptureContext</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+<li class="tsd-signature" id="__type-4.__type-5"><span class="tsd-signature-symbol">(</span>message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, captureContext<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">SeverityLevel</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">CaptureContext</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Severity</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ReturnType</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Hub</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">&quot;captureMessage&quot;</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">&gt;</span></li>
 <li class="tsd-description">
 <div class="tsd-comment tsd-typography"><p>Captures a message event and sends it to Sentry.</p>
 
@@ -107,10 +109,10 @@ user&#39;s actions prior to an error or crash.</p>
 <div class="tsd-comment tsd-typography"><p>The message to send to Sentry.</p>
 </div></li>
 <li>
-<h5><code class="tsd-tag ts-flagOptional">Optional</code> captureContext: <span class="tsd-signature-type">Severity</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">CaptureContext</span></h5></li></ul></div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4></li></ul></li></ul></div><aside class="tsd-sources">
+<h5><code class="tsd-tag ts-flagOptional">Optional</code> captureContext: <span class="tsd-signature-type">SeverityLevel</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">CaptureContext</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Severity</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ReturnType</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Hub</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">&quot;captureMessage&quot;</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">&gt;</span></h4></li></ul></li></ul></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-sentry/src/index.ts#L55">packages/nightingale-sentry/src/index.ts:55</a></li></ul></aside></section></section></div>
+<li>Defined in <a href="https://github.com/christophehurpeau/nightingale/blob/master/packages/nightingale-sentry/src/index.ts#L52">packages/nightingale-sentry/src/index.ts:52</a></li></ul></aside></section></section></div>
 <div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 <div class="tsd-navigation settings">
 <details class="tsd-index-accordion"><summary class="tsd-accordion-summary">
