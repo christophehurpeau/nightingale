@@ -41,7 +41,6 @@ test('passing error', () => {
   logger.log(error);
   expect(logger.addRecord).toHaveBeenNthCalledWith(1, {
     context: undefined,
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     datetime: expect.any(Date),
     displayName: undefined,
     extra: {},
