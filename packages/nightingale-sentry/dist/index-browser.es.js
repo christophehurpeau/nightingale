@@ -1,9 +1,8 @@
 import _extends from '@babel/runtime/helpers/esm/extends';
-import { Severity } from '@sentry/types';
 import { Level } from 'nightingale-levels';
 
 var _mapToSentryLevel;
-var mapToSentryLevel = (_mapToSentryLevel = {}, _mapToSentryLevel[Level.TRACE] = Severity.Debug, _mapToSentryLevel[Level.DEBUG] = Severity.Debug, _mapToSentryLevel[Level.INFO] = Severity.Info, _mapToSentryLevel[Level.NOTICE] = Severity.Log, _mapToSentryLevel[Level.WARNING] = Severity.Warning, _mapToSentryLevel[Level.ERROR] = Severity.Error, _mapToSentryLevel[Level.CRITICAL] = Severity.Critical, _mapToSentryLevel[Level.FATAL] = Severity.Fatal, _mapToSentryLevel[Level.EMERGENCY] = Severity.Critical, _mapToSentryLevel[Level.ALL] = Severity.Error, _mapToSentryLevel);
+var mapToSentryLevel = (_mapToSentryLevel = {}, _mapToSentryLevel[Level.TRACE] = 'debug', _mapToSentryLevel[Level.DEBUG] = 'debug', _mapToSentryLevel[Level.INFO] = 'info', _mapToSentryLevel[Level.NOTICE] = 'log', _mapToSentryLevel[Level.WARNING] = 'warning', _mapToSentryLevel[Level.ERROR] = 'error', _mapToSentryLevel[Level.CRITICAL] = 'fatal', _mapToSentryLevel[Level.FATAL] = 'fatal', _mapToSentryLevel[Level.EMERGENCY] = 'fatal', _mapToSentryLevel[Level.ALL] = 'error', _mapToSentryLevel);
 var createHandler = function createHandler(Sentry, _temp) {
   var _ref = _temp === void 0 ? {} : _temp,
     _ref$getUser = _ref.getUser,
@@ -41,7 +40,7 @@ var createHandler = function createHandler(Sentry, _temp) {
       var extraData = _extends({}, metadata, extra);
       delete extraData.error;
       Sentry.captureException(error, {
-        level: mapToSentryLevel[level] || Severity.Error,
+        level: mapToSentryLevel[level] || 'error',
         user: getUser(record),
         tags: _extends({
           loggerKey: key
@@ -50,7 +49,7 @@ var createHandler = function createHandler(Sentry, _temp) {
       });
     } else if (shouldSendAsBreadcrumb(record)) {
       Sentry.addBreadcrumb({
-        level: mapToSentryLevel[level] || Severity.Error,
+        level: mapToSentryLevel[level] || 'error',
         category: getBreadcrumbCategory(record),
         type: getBreadcrumbType(record),
         message: record.message,

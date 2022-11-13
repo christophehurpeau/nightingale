@@ -3,7 +3,6 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 var _extends = require('@babel/runtime/helpers/esm/extends');
-var types = require('@sentry/types');
 var nightingaleLevels = require('nightingale-levels');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e["default"] : e; }
@@ -11,7 +10,7 @@ function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'defau
 var _extends__default = /*#__PURE__*/_interopDefaultLegacy(_extends);
 
 var _mapToSentryLevel;
-var mapToSentryLevel = (_mapToSentryLevel = {}, _mapToSentryLevel[nightingaleLevels.Level.TRACE] = types.Severity.Debug, _mapToSentryLevel[nightingaleLevels.Level.DEBUG] = types.Severity.Debug, _mapToSentryLevel[nightingaleLevels.Level.INFO] = types.Severity.Info, _mapToSentryLevel[nightingaleLevels.Level.NOTICE] = types.Severity.Log, _mapToSentryLevel[nightingaleLevels.Level.WARNING] = types.Severity.Warning, _mapToSentryLevel[nightingaleLevels.Level.ERROR] = types.Severity.Error, _mapToSentryLevel[nightingaleLevels.Level.CRITICAL] = types.Severity.Critical, _mapToSentryLevel[nightingaleLevels.Level.FATAL] = types.Severity.Fatal, _mapToSentryLevel[nightingaleLevels.Level.EMERGENCY] = types.Severity.Critical, _mapToSentryLevel[nightingaleLevels.Level.ALL] = types.Severity.Error, _mapToSentryLevel);
+var mapToSentryLevel = (_mapToSentryLevel = {}, _mapToSentryLevel[nightingaleLevels.Level.TRACE] = 'debug', _mapToSentryLevel[nightingaleLevels.Level.DEBUG] = 'debug', _mapToSentryLevel[nightingaleLevels.Level.INFO] = 'info', _mapToSentryLevel[nightingaleLevels.Level.NOTICE] = 'log', _mapToSentryLevel[nightingaleLevels.Level.WARNING] = 'warning', _mapToSentryLevel[nightingaleLevels.Level.ERROR] = 'error', _mapToSentryLevel[nightingaleLevels.Level.CRITICAL] = 'fatal', _mapToSentryLevel[nightingaleLevels.Level.FATAL] = 'fatal', _mapToSentryLevel[nightingaleLevels.Level.EMERGENCY] = 'fatal', _mapToSentryLevel[nightingaleLevels.Level.ALL] = 'error', _mapToSentryLevel);
 var createHandler = function createHandler(Sentry, _temp) {
   var _ref = _temp === void 0 ? {} : _temp,
     _ref$getUser = _ref.getUser,
@@ -49,7 +48,7 @@ var createHandler = function createHandler(Sentry, _temp) {
       var extraData = _extends__default({}, metadata, extra);
       delete extraData.error;
       Sentry.captureException(error, {
-        level: mapToSentryLevel[level] || types.Severity.Error,
+        level: mapToSentryLevel[level] || 'error',
         user: getUser(record),
         tags: _extends__default({
           loggerKey: key
@@ -58,7 +57,7 @@ var createHandler = function createHandler(Sentry, _temp) {
       });
     } else if (shouldSendAsBreadcrumb(record)) {
       Sentry.addBreadcrumb({
-        level: mapToSentryLevel[level] || types.Severity.Error,
+        level: mapToSentryLevel[level] || 'error',
         category: getBreadcrumbCategory(record),
         type: getBreadcrumbType(record),
         message: record.message,

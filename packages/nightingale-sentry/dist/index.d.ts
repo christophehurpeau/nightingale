@@ -21,6 +21,6 @@ export interface SentryRequiredMethods {
 export declare class SentryHandler<S extends SentryRequiredMethods> implements Handler {
     minLevel: Level;
     handle: Handle;
-    constructor(Sentry: string | S, minLevel: Level, options?: Options);
+    constructor(Sentry: S, minLevel: Level, options?: Options);
 }
 //# sourceMappingURL=index.d.ts.map

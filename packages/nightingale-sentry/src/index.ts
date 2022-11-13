@@ -1,27 +1,24 @@
-import { POB_TARGET } from 'pob-babel';
 import type {
   addBreadcrumb,
   captureException,
   captureMessage,
 } from '@sentry/core';
-import * as SentryNode from '@sentry/node';
-import type { User } from '@sentry/types';
-import { Severity } from '@sentry/types';
+import type { User, SeverityLevel } from '@sentry/types';
 import { Level } from 'nightingale-levels';
 import type { LogRecord, Handle, Metadata, Handler } from 'nightingale-types';
 
-const mapToSentryLevel: Record<Level, Severity> = {
-  [Level.TRACE]: Severity.Debug,
-  [Level.DEBUG]: Severity.Debug,
-  [Level.INFO]: Severity.Info,
-  [Level.NOTICE]: Severity.Log,
-  [Level.WARNING]: Severity.Warning,
-  [Level.ERROR]: Severity.Error,
-  [Level.CRITICAL]: Severity.Critical,
-  [Level.FATAL]: Severity.Fatal,
-  [Level.EMERGENCY]: Severity.Critical,
+const mapToSentryLevel: Record<Level, SeverityLevel> = {
+  [Level.TRACE]: 'debug',
+  [Level.DEBUG]: 'debug',
+  [Level.INFO]: 'info',
+  [Level.NOTICE]: 'log',
+  [Level.WARNING]: 'warning',
+  [Level.ERROR]: 'error',
+  [Level.CRITICAL]: 'fatal',
+  [Level.FATAL]: 'fatal',
+  [Level.EMERGENCY]: 'fatal',
   // not a level
-  [Level.ALL]: Severity.Error,
+  [Level.ALL]: 'error',
 };
 
 export interface MetadataWithError extends Metadata {
@@ -79,7 +76,7 @@ const createHandler = <S extends SentryRequiredMethods>(
       delete extraData.error;
 
       Sentry.captureException(error, {
-        level: mapToSentryLevel[level] || Severity.Error,
+        level: mapToSentryLevel[level] || 'error',
         user: getUser(record),
         tags: {
           loggerKey: key,
@@ -89,7 +86,7 @@ const createHandler = <S extends SentryRequiredMethods>(
       });
     } else if (shouldSendAsBreadcrumb(record)) {
       Sentry.addBreadcrumb({
-        level: mapToSentryLevel[level] || Severity.Error,
+        level: mapToSentryLevel[level] || 'error',
         category: getBreadcrumbCategory(record),
         type: getBreadcrumbType(record),
         message: record.message,
@@ -105,16 +102,8 @@ export class SentryHandler<S extends SentryRequiredMethods> implements Handler {
 
   handle: Handle;
 
-  constructor(Sentry: string | S, minLevel: Level, options?: Options) {
+  constructor(Sentry: S, minLevel: Level, options?: Options) {
     this.minLevel = minLevel;
-    if (POB_TARGET === 'node' && typeof Sentry === 'string') {
-      console.warn(
-        'nightingale-sentry: Passing DSN directly is deprecated, pass Sentry instead and init in your app.',
-      );
-      SentryNode.init({ dsn: Sentry });
-      this.handle = createHandler(SentryNode, options);
-    } else {
-      this.handle = createHandler<S>(Sentry as S, options);
-    }
+    this.handle = createHandler<S>(Sentry, options);
   }
 }
