@@ -40,22 +40,23 @@ export interface Config {
 }
 
 declare global {
-  // eslint-disable-next-line @typescript-eslint/no-namespace
-  namespace NodeJS {
-    interface Global {
-      __NIGHTINGALE_CONFIG: Config[];
-      __NIGHTINGALE_LOGGER_MAP_CACHE: Map<string, ComputedConfigForKey>;
-      __NIGHTINGALE_CONFIG_DEFAULT: ComputedConfigForKey;
-      __NIGHTINGALE_GLOBAL_HANDLERS: unknown;
-      __NIGHTINGALE_GET_CONFIG_FOR_LOGGER: (
-        key: string,
-      ) => ComputedConfigForKey;
-      __NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD: (
-        key: string,
-        level: number,
-      ) => ComputedConfigForKey;
-    }
-  }
+  // eslint-disable-next-line vars-on-top, no-var
+  var __NIGHTINGALE_CONFIG: Config[];
+  // eslint-disable-next-line vars-on-top, no-var
+  var __NIGHTINGALE_LOGGER_MAP_CACHE: Map<string, ComputedConfigForKey>;
+  // eslint-disable-next-line vars-on-top, no-var
+  var __NIGHTINGALE_CONFIG_DEFAULT: ComputedConfigForKey;
+  // eslint-disable-next-line vars-on-top, no-var
+  var __NIGHTINGALE_GLOBAL_HANDLERS: unknown;
+  // eslint-disable-next-line vars-on-top, no-var
+  var __NIGHTINGALE_GET_CONFIG_FOR_LOGGER: (
+    key: string,
+  ) => ComputedConfigForKey;
+  // eslint-disable-next-line vars-on-top, no-var
+  var __NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD: (
+    key: string,
+    level: number,
+  ) => ComputedConfigForKey;
 }
 
 const globalOrWindow: typeof global =

@@ -24,16 +24,12 @@ export interface Config {
     stop?: boolean;
 }
 declare global {
-    namespace NodeJS {
-        interface Global {
-            __NIGHTINGALE_CONFIG: Config[];
-            __NIGHTINGALE_LOGGER_MAP_CACHE: Map<string, ComputedConfigForKey>;
-            __NIGHTINGALE_CONFIG_DEFAULT: ComputedConfigForKey;
-            __NIGHTINGALE_GLOBAL_HANDLERS: unknown;
-            __NIGHTINGALE_GET_CONFIG_FOR_LOGGER: (key: string) => ComputedConfigForKey;
-            __NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD: (key: string, level: number) => ComputedConfigForKey;
-        }
-    }
+    var __NIGHTINGALE_CONFIG: Config[];
+    var __NIGHTINGALE_LOGGER_MAP_CACHE: Map<string, ComputedConfigForKey>;
+    var __NIGHTINGALE_CONFIG_DEFAULT: ComputedConfigForKey;
+    var __NIGHTINGALE_GLOBAL_HANDLERS: unknown;
+    var __NIGHTINGALE_GET_CONFIG_FOR_LOGGER: (key: string) => ComputedConfigForKey;
+    var __NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD: (key: string, level: number) => ComputedConfigForKey;
 }
 /**
  * Interface that allows you to log records.
