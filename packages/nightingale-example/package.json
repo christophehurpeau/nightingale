@@ -12,48 +12,48 @@
   "homepage": "https://github.com/christophehurpeau/nightingale",
   "type": "module",
   "engines": {
-    "node": "^14.13.1 || >=16.0.0"
+    "node": ">=16.0.0"
   },
   "exports": {
     "./package.json": "./package.json",
     "./configure": {
       "node": {
-        "import": "./build/configure-node14.mjs",
-        "require": "./build/configure-node14.cjs"
+        "import": "./build/configure-node16.mjs",
+        "require": "./build/configure-node16.cjs"
       }
     },
     "./console": {
       "node": {
-        "import": "./build/console-node14.mjs",
-        "require": "./build/console-node14.cjs"
+        "import": "./build/console-node16.mjs",
+        "require": "./build/console-node16.cjs"
       }
     },
     "./debug": {
       "node": {
-        "import": "./build/debug-node14.mjs",
-        "require": "./build/debug-node14.cjs"
+        "import": "./build/debug-node16.mjs",
+        "require": "./build/debug-node16.cjs"
       }
     },
     "./errors": {
       "node": {
-        "import": "./build/errors-node14.mjs",
-        "require": "./build/errors-node14.cjs"
+        "import": "./build/errors-node16.mjs",
+        "require": "./build/errors-node16.cjs"
       }
     },
     "./jsonConsole": {
       "node": {
-        "import": "./build/jsonConsole-node14.mjs",
-        "require": "./build/jsonConsole-node14.cjs"
+        "import": "./build/jsonConsole-node16.mjs",
+        "require": "./build/jsonConsole-node16.cjs"
       }
     }
   },
-  "module:node": "./build/index-node14.mjs",
+  "module:node": "./build/index-node16.mjs",
   "module:aliases-node": {
-    "./configure.js": "./build/configure-node14.es.js",
-    "./console.js": "./build/console-node14.es.js",
-    "./debug.js": "./build/debug-node14.es.js",
-    "./errors.js": "./build/errors-node14.es.js",
-    "./jsonConsole.js": "./build/jsonConsole-node14.es.js"
+    "./configure.js": "./build/configure-node16.es.js",
+    "./console.js": "./build/console-node16.es.js",
+    "./debug.js": "./build/debug-node16.es.js",
+    "./errors.js": "./build/errors-node16.es.js",
+    "./jsonConsole.js": "./build/jsonConsole-node16.es.js"
   },
   "scripts": {
     "build": "yarn clean:build && rollup --config rollup.config.mjs",
@@ -64,16 +64,12 @@
     "start": "yarn clean:build && rollup --config rollup.config.mjs --watch",
     "watch": "pob-watch"
   },
-  "prettier": {
-    "trailingComma": "all",
-    "singleQuote": true,
-    "arrowParens": "always"
-  },
+  "prettier": "@pob/root/prettier-config",
   "pob": {
     "babelEnvs": [
       {
         "target": "node",
-        "version": "14",
+        "version": "16",
         "formats": [
           "cjs",
           "es"
@@ -97,8 +93,8 @@
     "nightingale-types": "12.1.4"
   },
   "devDependencies": {
-    "@babel/core": "7.19.3",
-    "pob-babel": "34.2.0",
+    "@babel/core": "7.20.2",
+    "pob-babel": "35.0.0",
     "typescript": "4.8.4"
   }
 }

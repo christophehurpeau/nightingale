@@ -34,24 +34,22 @@ var ansiStyles = {
 function style(styles, string) {
   if (!styles || styles.length === 0 || !string) {
     return string;
-  } // eslint-disable-next-line unicorn/no-array-reduce
+  }
 
-
+  // eslint-disable-next-line unicorn/no-array-reduce
   return styles.reduce(function (styledString, styleName) {
     var codePair = ansiStyles[styleName];
-
     if (!codePair) {
       throw new Error("Unknown style: " + styleName);
     }
-
     return codePair.open + styledString + codePair.close;
   }, string);
 }
+
 /**
  * @param {Object} record
  * @returns {string}
  */
-
 function ansiFormat(record) {
   return formatRecordToString(record, style);
 }

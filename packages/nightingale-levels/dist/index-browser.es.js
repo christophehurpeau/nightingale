@@ -18,7 +18,6 @@
  *
  */
 var Level;
-
 (function (Level) {
   Level[Level["ALL"] = 0] = "ALL";
   Level[Level["TRACE"] = 10] = "TRACE";
@@ -33,7 +32,6 @@ var Level;
   Level[Level["ALERT"] = 550] = "ALERT";
   Level[Level["EMERGENCY"] = 600] = "EMERGENCY";
 })(Level || (Level = {}));
-
 var Level$1 = Level;
 
 export { Level, Level$1 as default };

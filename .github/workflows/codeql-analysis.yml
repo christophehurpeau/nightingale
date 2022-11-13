@@ -1,4 +1,4 @@
-name: 'Code scanning - action'
+name: "Code scanning - action"
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     # The branches below must be a subset of the branches above
     branches: [master]
   schedule:
-    - cron: '0 14 * * 5'
+    - cron: "0 14 * * 5"
 
 jobs:
   CodeQL-Build:

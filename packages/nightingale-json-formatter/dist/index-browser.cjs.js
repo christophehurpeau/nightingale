@@ -9,29 +9,24 @@ function map2object(map) {
       // ignore key
       return;
     }
-
     object[String(key)] = value;
   });
   return object;
 }
-
 function stringify(value, space) {
   return JSON.stringify(value, function (key, objectValue) {
     if (objectValue instanceof Map) {
       return map2object(objectValue);
     }
-
     if (objectValue instanceof Error) {
       return {
         message: objectValue.message,
         stack: objectValue.stack
       };
     }
-
     return objectValue;
   }, space);
 }
-
 function format(record) {
   return stringify({
     key: record.key,

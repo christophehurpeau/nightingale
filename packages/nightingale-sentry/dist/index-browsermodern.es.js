@@ -14,7 +14,6 @@ const mapToSentryLevel = {
   // not a level
   [Level.ALL]: Severity.Error
 };
-
 const createHandler = (Sentry, {
   getUser = () => undefined,
   getTags = () => ({}),
@@ -22,7 +21,6 @@ const createHandler = (Sentry, {
   getBreadcrumbType = () => undefined,
   shouldSendAsException = record => {
     var _record$metadata;
-
     return ((_record$metadata = record.metadata) === null || _record$metadata === void 0 ? void 0 : _record$metadata.error) !== undefined && record.metadata.unhandled !== true;
   },
   shouldSendAsBreadcrumb = () => false
@@ -34,10 +32,10 @@ const createHandler = (Sentry, {
       metadata,
       extra
     } = record;
-
     if (shouldSendAsException(record)) {
       const error = (metadata === null || metadata === void 0 ? void 0 : metadata.error) || record.message;
-      const extraData = { ...metadata,
+      const extraData = {
+        ...metadata,
         ...extra
       };
       delete extraData.error;
@@ -62,13 +60,11 @@ const createHandler = (Sentry, {
     }
   };
 };
-
 class SentryHandler {
   constructor(Sentry, minLevel, options) {
     this.minLevel = minLevel;
     this.handle = createHandler(Sentry, options);
   }
-
 }
 
 export { SentryHandler };

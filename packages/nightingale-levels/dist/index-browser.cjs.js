@@ -22,7 +22,6 @@ Object.defineProperty(exports, '__esModule', { value: true });
  *
  */
 exports.Level = void 0;
-
 (function (Level) {
   Level[Level["ALL"] = 0] = "ALL";
   Level[Level["TRACE"] = 10] = "TRACE";
@@ -37,7 +36,6 @@ exports.Level = void 0;
   Level[Level["ALERT"] = 550] = "ALERT";
   Level[Level["EMERGENCY"] = 600] = "EMERGENCY";
 })(exports.Level || (exports.Level = {}));
-
 var Level = exports.Level;
 
 exports["default"] = Level;

@@ -8,7 +8,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14.x, 16.x]
+        node-version: [16.x, 18.x]
 
     steps:
       - uses: actions/checkout@v3
@@ -17,7 +17,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          registry-url: 'https://registry.npmjs.org'
+          registry-url: "https://registry.npmjs.org"
 
       - name: Install Dependencies
         run: yarn install --immutable --immutable-cache
@@ -27,23 +27,23 @@ jobs:
 
       - name: Build
         run: yarn run build
-        if: startsWith(matrix.node-version, '16.')
+        if: startsWith(matrix.node-version, '18.')
 
       - name: Prettier
         run: yarn run lint:prettier
-        if: startsWith(matrix.node-version, '16.')
+        if: startsWith(matrix.node-version, '18.')
 
       - name: Typescript
         run: yarn run tsc
-        if: startsWith(matrix.node-version, '16.')
+        if: startsWith(matrix.node-version, '18.')
 
       - name: Eslint
         run: yarn run lint:eslint
-        if: startsWith(matrix.node-version, '16.')
+        if: startsWith(matrix.node-version, '18.')
 
       - name: Generate Test Coverage
         run: yarn run test --coverage --coverageReporters=json --coverageReporters=text
-        if: startsWith(matrix.node-version, '16.')
+        if: startsWith(matrix.node-version, '18.')
         env:
           CI: true
 
@@ -51,8 +51,8 @@ jobs:
         uses: codecov/codecov-action@v3
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-        if: startsWith(matrix.node-version, '16.')
+        if: startsWith(matrix.node-version, '18.')
 
       - name: Check nothing was forgotten before commit
-        if: startsWith(matrix.node-version, '16.')
+        if: startsWith(matrix.node-version, '18.')
         run: yarn run repository-check-dirty

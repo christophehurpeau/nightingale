@@ -6,18 +6,15 @@ var nightingaleLevels = require('nightingale-levels');
 
 /* eslint-disable complexity */
 var specialRegexpChars = /[$()+.?[\\\]^{|}]/;
-
 var createTestFunctionFromRegexp = function createTestFunctionFromRegexp(regexp) {
   return function (string) {
     return regexp.test(string);
   };
 };
-
 var createTestFunctionFromRegexpString = function createTestFunctionFromRegexpString(value) {
   if (!value.endsWith('/')) throw new Error('Invalid RegExp DEBUG value');
   return createTestFunctionFromRegexp(new RegExp(value.slice(1, -1)));
 };
-
 var createTestFunctionFromValue = function createTestFunctionFromValue(value) {
   if (value.endsWith(':*')) {
     value = value.slice(0, -2);
@@ -25,24 +22,20 @@ var createTestFunctionFromValue = function createTestFunctionFromValue(value) {
       return string.startsWith(value);
     };
   }
-
   return function (string) {
     return string === value;
   };
 };
-
 function createFindDebugLevel(debugValue) {
   var isWildcard = false;
   var debugValues = [];
   var skips = [];
-
   if (!Array.isArray(debugValue)) {
     if (debugValue instanceof RegExp) {
       debugValues.push(createTestFunctionFromRegexp(debugValue));
       debugValue = undefined;
     } else if (debugValue) {
       debugValue = debugValue.trim();
-
       if (debugValue.startsWith('/')) {
         debugValues.push(createTestFunctionFromRegexpString(debugValue));
         debugValue = undefined;
@@ -51,20 +44,16 @@ function createFindDebugLevel(debugValue) {
       }
     }
   }
-
   if (debugValue) {
     debugValue.forEach(function (value) {
       if (specialRegexpChars.test(value)) {
         throw new Error("Invalid debug value: \"" + value + "\" (contains special chars)");
       }
-
       if (!value) return;
-
       if (value === '*') {
         isWildcard = true;
         return;
       }
-
       if (value.startsWith('-')) {
         skips.push(createTestFunctionFromValue(value.slice(1)));
       } else if (!isWildcard) {
@@ -72,7 +61,6 @@ function createFindDebugLevel(debugValue) {
       }
     });
   }
-
   if (isWildcard) {
     if (skips.length === 0) {
       return function () {
@@ -86,18 +74,15 @@ function createFindDebugLevel(debugValue) {
       };
     }
   }
-
   if (debugValues.length === 0) {
     return function (minLevel) {
       return minLevel;
     };
   }
-
   return function (minLevel, key) {
     if (minLevel === nightingaleLevels.Level.ALL || !key) {
       return minLevel;
     }
-
     if (debugValues.some(function (dv) {
       return dv(key);
     })) {
@@ -105,7 +90,6 @@ function createFindDebugLevel(debugValue) {
         return skip(key);
       }) ? minLevel : nightingaleLevels.Level.ALL;
     }
-
     return minLevel;
   };
 }

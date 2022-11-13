@@ -4,7 +4,6 @@ const style = (styleToHtmlStyle, args) => (styles, string) => {
   if (!styles || styles.length === 0 || !string) {
     return string;
   }
-
   const htmlStyles = styles.map(styleName => styleToHtmlStyle[styleName]);
   args.push(htmlStyles.map(s => s.open).join('; '), htmlStyles.map(s => s.close).join('; '));
   return `%c${string}%c`;

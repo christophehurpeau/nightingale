@@ -131,7 +131,8 @@ const styleToHtmlStyleThemeLight = {
     close: 'color: currentcolor'
   }
 };
-const styleToHtmlStyleThemeDark = { ...styleToHtmlStyleThemeLight,
+const styleToHtmlStyleThemeDark = {
+  ...styleToHtmlStyleThemeLight,
   black: styleToHtmlStyleThemeLight.white,
   bgBlack: styleToHtmlStyleThemeLight.bgWhite,
   white: styleToHtmlStyleThemeLight.black,
@@ -143,8 +144,8 @@ const styleToHtmlStyleThemeDark = { ...styleToHtmlStyleThemeLight,
 };
 
 /* eslint-disable max-lines, @typescript-eslint/no-use-before-define */
-const noStyleFn = (styles, value) => value;
 
+const noStyleFn = (styles, value) => value;
 function tryStringify(arg) {
   try {
     return JSON.stringify(arg).replace(/\\n/g, '\n');
@@ -152,12 +153,10 @@ function tryStringify(arg) {
     return '[Circular]';
   }
 }
-
 const sameRawFormattedValue = value => ({
   stringValue: value,
   formattedValue: value
 });
-
 function internalFormatValue(value, styleFn, styles, {
   padding,
   depth,
@@ -165,7 +164,6 @@ function internalFormatValue(value, styleFn, styles, {
   objects
 }) {
   const typeofValue = typeof value;
-
   if (!styles) {
     if (value == null) {
       styles = ['cyan'];
@@ -174,32 +172,25 @@ function internalFormatValue(value, styleFn, styles, {
         case 'undefined':
           styles = ['cyan'];
           break;
-
         case 'boolean':
           styles = ['green'];
           break;
-
         case 'number':
           styles = ['yellow'];
           break;
-
         case 'bigint':
           styles = ['red'];
           break;
-
         case 'string':
           styles = ['orange'];
           break;
-
         case 'symbol':
           styles = ['magenta'];
           break;
       }
     }
   }
-
   let stringValue;
-
   if (value === null) {
     stringValue = 'null';
   } else if (value === undefined) {
@@ -234,7 +225,6 @@ function internalFormatValue(value, styleFn, styles, {
     stringValue = stack !== null && stack !== void 0 && stack.startsWith(value.message) ? stack : `${value.message}\n${stack || ''}`;
   } else if (value instanceof Map) {
     const name = value.constructor.name;
-
     if (depth >= maxDepth) {
       stringValue = `{${name}...}`;
     } else {
@@ -251,7 +241,6 @@ function internalFormatValue(value, styleFn, styles, {
     stringValue = value.toString();
   } else if (value instanceof Set) {
     const name = value.constructor.name;
-
     if (depth >= maxDepth) {
       stringValue = `{${name}...}`;
     } else {
@@ -269,30 +258,25 @@ function internalFormatValue(value, styleFn, styles, {
   } else {
     stringValue = tryStringify(value);
   }
-
   const formattedValue = styleFn(styles, stringValue);
   return {
     stringValue,
     formattedValue
   };
 }
-
 const separator = ',';
-
 const internalFormatKey = (key, styleFn) => {
   return {
     stringKey: `${key}: `,
     formattedKey: `${styleFn(['gray-light', 'bold'], `${key}:`)} `
   };
 };
-
 const internalNoKey = () => {
   return {
     stringKey: '',
     formattedKey: ''
   };
 };
-
 const internalFormatMapKey = (key, styleFn, internalFormatParams) => {
   const {
     stringValue,
@@ -303,7 +287,6 @@ const internalFormatMapKey = (key, styleFn, internalFormatParams) => {
     formattedKey: `${styleFn(['gray-light', 'bold'], `${formattedValue}:`)} `
   };
 };
-
 const internalFormatIterator = (values, styleFn, objectStyles, {
   padding,
   depth,
@@ -316,9 +299,7 @@ const internalFormatIterator = (values, styleFn, objectStyles, {
   formatKey
 }) => {
   let breakLine = false;
-
   const formattedSeparator = () => styleFn(['gray'], separator);
-
   const valuesMaxIndex = values.length - 1;
   const formattedValues = values.map(({
     key,
@@ -329,8 +310,9 @@ const internalFormatIterator = (values, styleFn, objectStyles, {
       depth: depth + 1,
       maxDepth,
       objects
-    }; // key must be formatted before value (browser-formatter needs order)
+    };
 
+    // key must be formatted before value (browser-formatter needs order)
     const {
       stringKey,
       formattedKey
@@ -339,25 +321,23 @@ const internalFormatIterator = (values, styleFn, objectStyles, {
       stringValue,
       formattedValue
     } = internalFormatValue(value, styleFn, key && objectStyles ? objectStyles[key] : undefined, internalFormatParams);
-
     if (stringValue && (stringValue.length > 80 || stringValue.includes('\n'))) {
       breakLine = true;
       stringValue = stringValue.replace(/\n/g, `\n${padding}`);
       formattedValue = formattedValue.replace(/\n/g, `\n${padding}`);
     }
-
     return {
       stringValue: stringKey + stringValue + (index === valuesMaxIndex ? '' : separator),
-      formattedValue: formattedKey + formattedValue + (index === valuesMaxIndex ? '' : formattedSeparator()) // note: we need to format the separator for each values for browser-formatter
-
+      formattedValue: formattedKey + formattedValue + (index === valuesMaxIndex ? '' : formattedSeparator())
+      // note: we need to format the separator for each values for browser-formatter
     };
   });
+
   return {
     stringValue: prefix + formattedValues.map(breakLine ? v => `\n${padding}${v.stringValue}` : fv => fv.stringValue).join(breakLine ? '\n' : ' ') + suffix,
     formattedValue: `${prefix}${breakLine ? '' : prefixSuffixSpace}${formattedValues.map(breakLine ? v => `\n${padding}${v.formattedValue}` : v => v.formattedValue).join(breakLine ? '' : ' ')}${breakLine ? ',\n' : prefixSuffixSpace}${suffix}`
   };
 };
-
 function internalFormatObject(object, styleFn, objectStyles, {
   padding,
   depth,
@@ -367,13 +347,10 @@ function internalFormatObject(object, styleFn, objectStyles, {
   if (objects.has(object)) {
     return sameRawFormattedValue('{Circular Object}');
   }
-
   const keys = Object.keys(object);
-
   if (keys.length === 0) {
     return sameRawFormattedValue('{}');
   }
-
   objects.add(object);
   const result = internalFormatIterator(keys.map(key => ({
     key,
@@ -391,7 +368,6 @@ function internalFormatObject(object, styleFn, objectStyles, {
   objects.delete(object);
   return result;
 }
-
 function internalFormatMap(name, map, styleFn, {
   padding,
   depth,
@@ -401,13 +377,10 @@ function internalFormatMap(name, map, styleFn, {
   if (objects.has(map)) {
     return sameRawFormattedValue(`{Circular ${name}}`);
   }
-
   const keys = [...map.keys()];
-
   if (keys.length === 0) {
     return sameRawFormattedValue(`${name} {}`);
   }
-
   objects.add(map);
   const result = internalFormatIterator(keys.map(key => ({
     key,
@@ -425,7 +398,6 @@ function internalFormatMap(name, map, styleFn, {
   objects.delete(map);
   return result;
 }
-
 function internalFormatArray(array, styleFn, {
   padding,
   depth,
@@ -435,11 +407,9 @@ function internalFormatArray(array, styleFn, {
   if (objects.has(array)) {
     return sameRawFormattedValue('{Circular Array}');
   }
-
   if (array.length === 0) {
     return sameRawFormattedValue('[]');
   }
-
   objects.add(array);
   const result = internalFormatIterator(array.map(value => ({
     key: undefined,
@@ -458,7 +428,6 @@ function internalFormatArray(array, styleFn, {
   objects.delete(array);
   return result;
 }
-
 function internalFormatSet(name, set, styleFn, {
   padding,
   depth,
@@ -468,13 +437,10 @@ function internalFormatSet(name, set, styleFn, {
   if (objects.has(set)) {
     return sameRawFormattedValue(`{Circular ${name}}`);
   }
-
   const values = [...set.values()];
-
   if (values.length === 0) {
     return sameRawFormattedValue(`${name} []`);
   }
-
   objects.add(set);
   const result = internalFormatIterator(values.map(value => ({
     key: undefined,
@@ -492,7 +458,6 @@ function internalFormatSet(name, set, styleFn, {
   objects.delete(set);
   return result;
 }
-
 function formatObject(object, styleFn = noStyleFn, objectStyles, {
   padding = '  ',
   maxDepth = 10
@@ -505,23 +470,19 @@ function formatObject(object, styleFn = noStyleFn, objectStyles, {
     depth: 0,
     objects: new Set()
   });
-
   if (result === '{}') {
     return '';
   }
-
   return result;
 }
 
 function formatRecordToString(record, style) {
   const parts = [];
-
   if (record.displayName) {
     parts.push(style(['gray-light'], record.displayName));
   } else if (record.key) {
     parts.push(style(['gray-light'], record.key));
   }
-
   if (record.datetime) {
     parts.push(style(['gray', 'bold'], record.datetime.toTimeString().split(' ')[0]));
     /* new Date().toFormat('HH24:MI:SS') */
@@ -529,7 +490,6 @@ function formatRecordToString(record, style) {
 
   let message = record.symbol || levelToSymbol[record.level];
   const styles = record.styles || levelToStyles[record.level];
-
   if (record.message) {
     if (message) {
       message += ` ${record.message}`;
@@ -537,29 +497,22 @@ function formatRecordToString(record, style) {
       message = record.message;
     }
   }
-
   if (message) {
     if (styles) {
       message = style(styles, message);
     }
-
     parts.push(message);
   }
-
   const formatRecordObject = (key, object, objectStyles) => {
     if (!object) {
       return;
     }
-
     const stringObject = formatObject(object, style, objectStyles);
-
     if (!stringObject) {
       return;
     }
-
     parts.push(stringObject);
   };
-
   formatRecordObject('metadata', record.metadata, record.metadataStyles);
   formatRecordObject('extra', record.extra, undefined);
   formatRecordObject('context', record.context, undefined);

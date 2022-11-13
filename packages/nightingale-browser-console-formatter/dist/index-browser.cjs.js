@@ -9,7 +9,6 @@ var style = function style(styleToHtmlStyle, args) {
     if (!styles || styles.length === 0 || !string) {
       return string;
     }
-
     var htmlStyles = styles.map(function (styleName) {
       return styleToHtmlStyle[styleName];
     });
@@ -25,7 +24,6 @@ function createBrowserConsoleFormatter(theme) {
   if (theme === void 0) {
     theme = 'light';
   }
-
   var styleToHtmlStyle = theme === 'dark' ? nightingaleFormatter.styleToHtmlStyleThemeDark : nightingaleFormatter.styleToHtmlStyleThemeLight;
   return function format(record) {
     var args = [];

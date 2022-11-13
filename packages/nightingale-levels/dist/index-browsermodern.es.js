@@ -18,7 +18,6 @@
  *
  */
 let Level;
-
 (function (Level) {
   Level[Level["ALL"] = 0] = "ALL";
   Level[Level["TRACE"] = 10] = "TRACE";
@@ -33,7 +32,6 @@ let Level;
   Level[Level["ALERT"] = 550] = "ALERT";
   Level[Level["EMERGENCY"] = 600] = "EMERGENCY";
 })(Level || (Level = {}));
-
 const Level$1 = Level;
 
 export { Level, Level$1 as default };

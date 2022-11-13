@@ -1,4 +1,4 @@
-name: 'Create documentation and deploy to Github pages'
+name: "Create documentation and deploy to Github pages"
 on:
   push:
     branches:
