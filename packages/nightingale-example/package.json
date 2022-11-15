@@ -18,36 +18,30 @@
     "./package.json": "./package.json",
     "./configure": {
       "node": {
-        "import": "./build/configure-node16.mjs",
-        "require": "./build/configure-node16.cjs"
+        "import": "./build/configure-node16.mjs"
       }
     },
     "./console": {
       "node": {
-        "import": "./build/console-node16.mjs",
-        "require": "./build/console-node16.cjs"
+        "import": "./build/console-node16.mjs"
       }
     },
     "./debug": {
       "node": {
-        "import": "./build/debug-node16.mjs",
-        "require": "./build/debug-node16.cjs"
+        "import": "./build/debug-node16.mjs"
       }
     },
     "./errors": {
       "node": {
-        "import": "./build/errors-node16.mjs",
-        "require": "./build/errors-node16.cjs"
+        "import": "./build/errors-node16.mjs"
       }
     },
     "./jsonConsole": {
       "node": {
-        "import": "./build/jsonConsole-node16.mjs",
-        "require": "./build/jsonConsole-node16.cjs"
+        "import": "./build/jsonConsole-node16.mjs"
       }
     }
   },
-  "module:node": "./build/index-node16.mjs",
   "module:aliases-node": {
     "./configure.js": "./build/configure-node16.es.js",
     "./console.js": "./build/console-node16.es.js",
@@ -69,11 +63,7 @@
     "babelEnvs": [
       {
         "target": "node",
-        "version": "16",
-        "formats": [
-          "cjs",
-          "es"
-        ]
+        "version": "16"
       }
     ],
     "entries": [
@@ -94,7 +84,7 @@
   },
   "devDependencies": {
     "@babel/core": "7.20.2",
-    "pob-babel": "35.0.0",
-    "typescript": "4.8.4"
+    "pob-babel": "35.2.0",
+    "typescript": "4.9.3"
   }
 }

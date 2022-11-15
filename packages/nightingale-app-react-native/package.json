@@ -37,12 +37,10 @@
         "browser:modern": {
           "import": "./dist/index-browsermodern.es.js"
         },
-        "import": "./dist/index-browser.es.js",
-        "require": "./dist/index-browser.cjs.js"
+        "import": "./dist/index-browser.es.js"
       }
     }
   },
-  "module:modern-browsers": "./dist/index-browsermodern.es.js",
   "sideEffects": false,
   "scripts": {
     "build": "yarn clean:build && rollup --config rollup.config.mjs && yarn run build:definitions",
@@ -66,7 +64,6 @@
       {
         "target": "browser",
         "formats": [
-          "cjs",
           "es"
         ]
       }
@@ -94,7 +91,7 @@
     "@babel/preset-env": "7.20.2",
     "@types/react-native": "0.70.6",
     "babel-preset-modern-browsers": "15.0.2",
-    "pob-babel": "35.0.0",
-    "typescript": "4.8.4"
+    "pob-babel": "35.2.0",
+    "typescript": "4.9.3"
   }
 }

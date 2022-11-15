@@ -24,12 +24,10 @@
     "./package.json": "./package.json",
     ".": {
       "node": {
-        "import": "./dist/index-node16.mjs",
-        "require": "./dist/index-node16.cjs"
+        "import": "./dist/index-node16.mjs"
       }
     }
   },
-  "module:node": "./dist/index-node16.mjs",
   "sideEffects": false,
   "scripts": {
     "build": "yarn clean:build && rollup --config rollup.config.mjs && yarn run build:definitions",
@@ -45,11 +43,7 @@
     "babelEnvs": [
       {
         "target": "node",
-        "version": "16",
-        "formats": [
-          "cjs",
-          "es"
-        ]
+        "version": "16"
       }
     ],
     "entries": [
@@ -67,7 +61,7 @@
   },
   "devDependencies": {
     "@babel/core": "7.20.2",
-    "pob-babel": "35.0.0",
-    "typescript": "4.8.4"
+    "pob-babel": "35.2.0",
+    "typescript": "4.9.3"
   }
 }
