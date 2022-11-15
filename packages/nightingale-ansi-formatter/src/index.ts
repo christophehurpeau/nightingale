@@ -36,11 +36,11 @@ const ansiStyles: AnsiStyles = {
 
   // http://www.calmar.ws/vim/256-xterm-24bit-rgb-color-chart.html
   orange: {
-    open: ansi.color.ansi256.hex(styleToHexColor.orange),
+    open: ansi.color.ansi256(ansi.hexToAnsi256(styleToHexColor.orange)),
     close: ansi.color.close,
   },
   'gray-light': {
-    open: ansi.color.ansi256.hex(styleToHexColor['gray-light']),
+    open: ansi.color.ansi256(ansi.hexToAnsi256(styleToHexColor['gray-light'])),
     close: ansi.color.close,
   },
 };

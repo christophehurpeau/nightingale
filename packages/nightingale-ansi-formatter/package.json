@@ -72,8 +72,7 @@
     ]
   },
   "dependencies": {
-    "@types/ansi-styles": "^3.2.1",
-    "ansi-styles": "^4.0.0",
+    "ansi-styles": "^6.2.1",
     "nightingale-formatter": "12.1.4",
     "nightingale-types": "12.1.4"
   },

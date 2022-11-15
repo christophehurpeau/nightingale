@@ -3384,15 +3384,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/ansi-styles@npm:^3.2.1":
-  version: 3.2.1
-  resolution: "@types/ansi-styles@npm:3.2.1"
-  dependencies:
-    "@types/color-name": "*"
-  checksum: 1febabba242a0c3b8ed8fc6edb4af37e2b12c94d975b768ed433ff5eb4adbd71bca95ff5353527111b512b135a6c81b719f09b208d57c53f488e1c01bafb8c21
-  languageName: node
-  linkType: hard
-
 "@types/babel__core@npm:^7.1.14":
   version: 7.1.18
   resolution: "@types/babel__core@npm:7.1.18"
@@ -3438,13 +3429,6 @@ __metadata:
   version: 0.12.2
   resolution: "@types/caseless@npm:0.12.2"
   checksum: 430d15911184ad11e0a8aa21d1ec15fcc93b90b63570c37bf16ebd34457482bfc8de3f5eb6771e0ef986ce183270d4297823b0f492c346255967e78f7292388b
-  languageName: node
-  linkType: hard
-
-"@types/color-name@npm:*":
-  version: 1.1.1
-  resolution: "@types/color-name@npm:1.1.1"
-  checksum: b71fcad728cc68abcba1d405742134410c8f8eb3c2ef18113b047afca158ad23a4f2c229bcf71a38f4a818dead375c45b20db121d0e69259c2d81e97a740daa6
   languageName: node
   linkType: hard
 
@@ -3984,10 +3968,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ansi-styles@npm:^6.0.0":
-  version: 6.1.0
-  resolution: "ansi-styles@npm:6.1.0"
-  checksum: 7a7f8528c07a9d20c3a92bccd2b6bc3bb4d26e5cb775c02826921477377bd495d615d61f710d56216344b6238d1d11ef2b0348e146c5b128715578bfb3217229
+"ansi-styles@npm:^6.0.0, ansi-styles@npm:^6.2.1":
+  version: 6.2.1
+  resolution: "ansi-styles@npm:6.2.1"
+  checksum: ef940f2f0ced1a6347398da88a91da7930c33ecac3c77b72c5905f8b8fe402c52e6fde304ff5347f616e27a742da3f1dc76de98f6866c69251ad0b07a66776d9
   languageName: node
   linkType: hard
 
@@ -9945,8 +9929,7 @@ __metadata:
   dependencies:
     "@babel/core": 7.20.2
     "@babel/preset-env": 7.20.2
-    "@types/ansi-styles": ^3.2.1
-    ansi-styles: ^4.0.0
+    ansi-styles: ^6.2.1
     nightingale-formatter: 12.1.4
     nightingale-types: 12.1.4
     pob-babel: 35.2.0
