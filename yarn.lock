@@ -10058,7 +10058,7 @@ __metadata:
     "@babel/core": 7.20.2
     "@babel/preset-env": 7.20.2
     "@types/ansi-styles": ^3.2.1
-    ansi-styles: ^4.0.0
+    ansi-styles: ^6.0.0
     nightingale-formatter: 12.1.4
     nightingale-types: 12.1.4
     pob-babel: 35.2.0
