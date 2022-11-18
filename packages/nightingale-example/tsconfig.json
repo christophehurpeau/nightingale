@@ -2,15 +2,15 @@
   "include": ["src/**/*.ts"],
   "compilerOptions": {
     "rootDir": "src",
-    "incremental": true,
-    "composite": true,
-    "noEmit": false,
+    "newLine": "lf",
+    "outDir": "node_modules/.cache/tsc",
+    "tsBuildInfoFile": "node_modules/.cache/tsc/tsbuildinfo",
     "noEmitOnError": true,
     "declaration": true,
     "declarationMap": true,
     "emitDeclarationOnly": true,
-    "outDir": "node_modules/.cache/tsc",
-    "tsBuildInfoFile": "node_modules/.cache/tsc/tsbuildinfo",
+    "incremental": true,
+    "composite": true,
 
     /* No need to check .d.ts files */
     "skipLibCheck": true,

@@ -19,7 +19,7 @@
     "node": ">=16.0.0"
   },
   "main": "./dist/index-node16.mjs",
-  "types": "./dist/index.d.ts",
+  "types": "./dist/definitions/index.d.ts",
   "exports": {
     "./package.json": "./package.json",
     ".": {
@@ -31,11 +31,12 @@
   "sideEffects": false,
   "scripts": {
     "build": "yarn clean:build && rollup --config rollup.config.mjs && yarn run build:definitions",
-    "build:definitions": "tsc -p tsconfig.build.json",
+    "build:definitions": "tsc -p",
     "clean": "yarn clean:build",
     "clean:build": "pob-babel-clean-out dist",
     "lint": "yarn run lint:eslint",
-    "lint:eslint": "cd ../.. && yarn run eslint --report-unused-disable-directives --resolve-plugins-relative-to . --quiet packages/nightingale-slack",
+    "lint:eslint": "yarn ../.. run eslint --report-unused-disable-directives --resolve-plugins-relative-to . --quiet packages/nightingale-slack",
+    "test": "yarn ../../ run test -- packages/nightingale-slack",
     "watch": "yarn clean:build && rollup --config rollup.config.mjs --watch"
   },
   "prettier": "@pob/root/prettier-config",
@@ -60,7 +61,7 @@
   "devDependencies": {
     "@babel/core": "7.20.2",
     "@types/request": "2.48.8",
-    "pob-babel": "35.2.0",
+    "pob-babel": "35.3.0",
     "typescript": "4.9.3"
   }
 }

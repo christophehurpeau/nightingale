@@ -24,7 +24,7 @@ export interface ComputedConfigForKey {
   processors: Processor[];
 }
 
-interface ExtendedFunctionNameMetadata {
+export interface ExtendedFunctionNameMetadata {
   functionName: string;
 }
 
@@ -89,7 +89,6 @@ if (!globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
   };
 }
 
-/** @private */
 function getConfigForLoggerRecord(
   key: string,
   recordLevel: Level,

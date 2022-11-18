@@ -7,8 +7,7 @@
       "ignoreChanges": [
         "**/.yo-rc.json",
         "**/.eslintrc.json",
-        "**/tsconfig.json",
-        "**/tsconfig.build.json"
+        "**/tsconfig.json"
       ]
     }
   }

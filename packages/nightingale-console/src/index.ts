@@ -29,7 +29,7 @@ const createHandle = (
 };
 const findDebugLevel = createFindDebugLevel(process.env.DEBUG);
 
-interface ConsoleHandlerOptions {
+export interface ConsoleHandlerOptions {
   formatter?: <T extends Metadata>(record: LogRecord<T>) => string;
   output?: <T extends Metadata>(
     param: string | string[],

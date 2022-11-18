@@ -2,7 +2,7 @@
   "root": true,
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "project": "packages/nightingale-string/tsconfig.eslint.json"
+    "project": "packages/nightingale-string/tsconfig.json"
   },
   "plugins": ["@typescript-eslint"],
   "extends": [

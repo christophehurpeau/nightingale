@@ -27,7 +27,7 @@
     "not safari < 10",
     "not ios_saf < 10"
   ],
-  "types": "./dist/index.d.ts",
+  "types": "./dist/definitions/index.d.ts",
   "module": "./dist/index-browser.es.js",
   "browser": "./dist/index-browser.es.js",
   "exports": {
@@ -44,11 +44,11 @@
   "sideEffects": false,
   "scripts": {
     "build": "yarn clean:build && rollup --config rollup.config.mjs && yarn run build:definitions",
-    "build:definitions": "tsc -p tsconfig.build.json",
+    "build:definitions": "tsc -p",
     "clean": "yarn clean:build",
     "clean:build": "pob-babel-clean-out dist",
     "lint": "yarn run lint:eslint",
-    "lint:eslint": "cd ../.. && yarn run eslint --report-unused-disable-directives --resolve-plugins-relative-to . --quiet packages/nightingale-app-react-native",
+    "lint:eslint": "yarn ../.. run eslint --report-unused-disable-directives --resolve-plugins-relative-to . --quiet packages/nightingale-app-react-native",
     "watch": "yarn clean:build && rollup --config rollup.config.mjs --watch"
   },
   "prettier": "@pob/root/prettier-config",
@@ -56,16 +56,10 @@
     "babelEnvs": [
       {
         "target": "browser",
-        "version": "modern",
-        "formats": [
-          "es"
-        ]
+        "version": "modern"
       },
       {
-        "target": "browser",
-        "formats": [
-          "es"
-        ]
+        "target": "browser"
       }
     ],
     "entries": [
@@ -91,7 +85,7 @@
     "@babel/preset-env": "7.20.2",
     "@types/react-native": "0.70.6",
     "babel-preset-modern-browsers": "15.0.2",
-    "pob-babel": "35.2.0",
+    "pob-babel": "35.3.0",
     "typescript": "4.9.3"
   }
 }

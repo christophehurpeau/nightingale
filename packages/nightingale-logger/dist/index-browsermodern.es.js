@@ -21,8 +21,6 @@ if (!globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
     };
   };
 }
-
-/** @private */
 function getConfigForLoggerRecord(key, recordLevel) {
   return globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD(key, recordLevel);
 }

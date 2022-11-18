@@ -34,7 +34,7 @@ const createHandler = (theme: Theme = getDefaultTheme()): Handle => {
   };
 };
 
-interface BrowserConsoleHandlerOptions {
+export interface BrowserConsoleHandlerOptions {
   theme?: Theme;
 }
 
