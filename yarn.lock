@@ -1812,12 +1812,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jest/create-cache-key-function@npm:^29.0.3":
-  version: 29.3.1
-  resolution: "@jest/create-cache-key-function@npm:29.3.1"
+"@jest/create-cache-key-function@npm:^27.0.1":
+  version: 27.5.1
+  resolution: "@jest/create-cache-key-function@npm:27.5.1"
   dependencies:
-    "@jest/types": ^29.3.1
-  checksum: bd42cf62bd5fe6325125696057b53a312350496945987eeb35cd001acd4fd05e7b13b1697720aa05ab2ec427965667d10505188247d14025a385641964905f29
+    "@jest/types": ^27.5.1
+  checksum: a6c3a8c769aca6f66f5dc80f1c77e66980b4f213a6b2a15a92ba3595f032848a1261c06c9c798dcf2b672b1ffbefad5085af89d130548741c85ddbe0cf4284e7
   languageName: node
   linkType: hard
 
@@ -2967,7 +2967,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-native-community/cli-doctor@npm:^9.2.1":
+"@react-native-community/cli-doctor@npm:^9.3.0":
   version: 9.3.0
   resolution: "@react-native-community/cli-doctor@npm:9.3.0"
   dependencies:
@@ -2991,7 +2991,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-native-community/cli-hermes@npm:^9.2.1":
+"@react-native-community/cli-hermes@npm:^9.3.1":
   version: 9.3.1
   resolution: "@react-native-community/cli-hermes@npm:9.3.1"
   dependencies:
@@ -3004,22 +3004,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-native-community/cli-platform-android@npm:9.2.1":
-  version: 9.2.1
-  resolution: "@react-native-community/cli-platform-android@npm:9.2.1"
-  dependencies:
-    "@react-native-community/cli-tools": ^9.2.1
-    chalk: ^4.1.2
-    execa: ^1.0.0
-    fs-extra: ^8.1.0
-    glob: ^7.1.3
-    logkitty: ^0.7.1
-    slash: ^3.0.0
-  checksum: b62618bde64b23adc9c123d0a83f03788a5d2c451262cc4afb15f4cbb779e5f7c26111871df740c39ddf6010f0dc57f4df4274ea3bfcb5d1c261eb0959ee40b9
-  languageName: node
-  linkType: hard
-
-"@react-native-community/cli-platform-android@npm:^9.3.1":
+"@react-native-community/cli-platform-android@npm:9.3.1, @react-native-community/cli-platform-android@npm:^9.3.1":
   version: 9.3.1
   resolution: "@react-native-community/cli-platform-android@npm:9.3.1"
   dependencies:
@@ -3034,20 +3019,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-native-community/cli-platform-ios@npm:9.2.1":
-  version: 9.2.1
-  resolution: "@react-native-community/cli-platform-ios@npm:9.2.1"
-  dependencies:
-    "@react-native-community/cli-tools": ^9.2.1
-    chalk: ^4.1.2
-    execa: ^1.0.0
-    glob: ^7.1.3
-    ora: ^5.4.1
-  checksum: 7e7fc71d5dcc872059846d7405bd4fc615fecfff36a431512fd3a5e1f772e946b82f33c2d08f3a0d2ee0ba9a4fa152153efa72ae6c71a1caf7ff412fc59531df
-  languageName: node
-  linkType: hard
-
-"@react-native-community/cli-platform-ios@npm:^9.3.0":
+"@react-native-community/cli-platform-ios@npm:9.3.0, @react-native-community/cli-platform-ios@npm:^9.3.0":
   version: 9.3.0
   resolution: "@react-native-community/cli-platform-ios@npm:9.3.0"
   dependencies:
@@ -3121,15 +3093,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-native-community/cli@npm:9.2.1":
-  version: 9.2.1
-  resolution: "@react-native-community/cli@npm:9.2.1"
+"@react-native-community/cli@npm:9.3.2":
+  version: 9.3.2
+  resolution: "@react-native-community/cli@npm:9.3.2"
   dependencies:
     "@react-native-community/cli-clean": ^9.2.1
     "@react-native-community/cli-config": ^9.2.1
     "@react-native-community/cli-debugger-ui": ^9.0.0
-    "@react-native-community/cli-doctor": ^9.2.1
-    "@react-native-community/cli-hermes": ^9.2.1
+    "@react-native-community/cli-doctor": ^9.3.0
+    "@react-native-community/cli-hermes": ^9.3.1
     "@react-native-community/cli-plugin-metro": ^9.2.1
     "@react-native-community/cli-server-api": ^9.2.1
     "@react-native-community/cli-tools": ^9.2.1
@@ -3144,7 +3116,7 @@ __metadata:
     semver: ^6.3.0
   bin:
     react-native: build/bin.js
-  checksum: 9dfe8d258e9f36d339b8e9ebe22d276003b00a035d20ff4a3328ce3b923cd090e94f6a53aaab9869c9c29d46e5aa12317bae3f806890880a7f0235a01825e5e3
+  checksum: 474711ebfad0834e34026889004bc823b79817fc50fb9b614e987755b7073e251643d1078884d3b49f195c83b18bc32b0e608c512e3928fb0dec8dd6be42e180
   languageName: node
   linkType: hard
 
@@ -9923,15 +9895,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nightingale-ansi-formatter@12.1.4, nightingale-ansi-formatter@workspace:packages/nightingale-ansi-formatter":
+"nightingale-ansi-formatter@13.0.0, nightingale-ansi-formatter@workspace:packages/nightingale-ansi-formatter":
   version: 0.0.0-use.local
   resolution: "nightingale-ansi-formatter@workspace:packages/nightingale-ansi-formatter"
   dependencies:
     "@babel/core": 7.20.2
     "@babel/preset-env": 7.20.2
     ansi-styles: ^6.2.1
-    nightingale-formatter: 12.1.4
-    nightingale-types: 12.1.4
+    nightingale-formatter: 13.0.0
+    nightingale-types: 13.0.0
     pob-babel: 35.3.0
     typescript: 4.9.3
   languageName: unknown
@@ -9945,9 +9917,9 @@ __metadata:
     "@babel/preset-env": 7.20.2
     "@types/node": ">=16.0.0"
     babel-preset-modern-browsers: 15.0.2
-    nightingale: 12.1.4
-    nightingale-browser-console: 12.1.4
-    nightingale-console: 12.1.4
+    nightingale: 13.0.0
+    nightingale-browser-console: 13.0.0
+    nightingale-console: 13.0.0
     pob-babel: 35.3.0
     typescript: 4.9.3
   languageName: unknown
@@ -9961,9 +9933,9 @@ __metadata:
     "@babel/preset-env": 7.20.2
     "@types/react-native": 0.70.6
     babel-preset-modern-browsers: 15.0.2
-    nightingale: 12.1.4
-    nightingale-browser-console: 12.1.4
-    nightingale-react-native-console: 12.1.4
+    nightingale: 13.0.0
+    nightingale-browser-console: 13.0.0
+    nightingale-react-native-console: 13.0.0
     pob-babel: 35.3.0
     typescript: 4.9.3
   peerDependencies:
@@ -9975,32 +9947,32 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"nightingale-browser-console-formatter@12.1.4, nightingale-browser-console-formatter@workspace:packages/nightingale-browser-console-formatter":
+"nightingale-browser-console-formatter@13.0.0, nightingale-browser-console-formatter@workspace:packages/nightingale-browser-console-formatter":
   version: 0.0.0-use.local
   resolution: "nightingale-browser-console-formatter@workspace:packages/nightingale-browser-console-formatter"
   dependencies:
     "@babel/core": 7.20.2
     "@babel/preset-env": 7.20.2
     babel-preset-modern-browsers: 15.0.2
-    nightingale-formatter: 12.1.4
-    nightingale-levels: 12.1.4
-    nightingale-types: 12.1.4
+    nightingale-formatter: 13.0.0
+    nightingale-levels: 13.0.0
+    nightingale-types: 13.0.0
     pob-babel: 35.3.0
     typescript: 4.9.3
   languageName: unknown
   linkType: soft
 
-"nightingale-browser-console@12.1.4, nightingale-browser-console@workspace:packages/nightingale-browser-console":
+"nightingale-browser-console@13.0.0, nightingale-browser-console@workspace:packages/nightingale-browser-console":
   version: 0.0.0-use.local
   resolution: "nightingale-browser-console@workspace:packages/nightingale-browser-console"
   dependencies:
     "@babel/core": 7.20.2
     "@babel/preset-env": 7.20.2
     babel-preset-modern-browsers: 15.0.2
-    nightingale-browser-console-formatter: 12.1.4
-    nightingale-console-output: 12.1.4
-    nightingale-debug: 12.1.4
-    nightingale-types: 12.1.4
+    nightingale-browser-console-formatter: 13.0.0
+    nightingale-console-output: 13.0.0
+    nightingale-debug: 13.0.0
+    nightingale-types: 13.0.0
     pob-babel: 35.3.0
     typescript: 4.9.3
   languageName: unknown
@@ -10012,15 +9984,15 @@ __metadata:
   dependencies:
     "@babel/core": 7.20.2
     "@sentry/node": 7.19.0
-    nightingale: 12.1.4
-    nightingale-console: 12.1.4
-    nightingale-sentry: 12.1.4
+    nightingale: 13.0.0
+    nightingale-console: 13.0.0
+    nightingale-sentry: 13.0.0
     pob-babel: 35.3.0
     typescript: 4.9.3
   languageName: unknown
   linkType: soft
 
-"nightingale-console-output@12.1.4, nightingale-console-output@workspace:packages/nightingale-console-output":
+"nightingale-console-output@13.0.0, nightingale-console-output@workspace:packages/nightingale-console-output":
   version: 0.0.0-use.local
   resolution: "nightingale-console-output@workspace:packages/nightingale-console-output"
   dependencies:
@@ -10028,38 +10000,38 @@ __metadata:
     "@babel/preset-env": 7.20.2
     "@types/node": ">=16.0.0"
     babel-preset-modern-browsers: 15.0.2
-    nightingale-levels: 12.1.4
-    nightingale-types: 12.1.4
+    nightingale-levels: 13.0.0
+    nightingale-types: 13.0.0
     pob-babel: 35.3.0
     typescript: 4.9.3
   languageName: unknown
   linkType: soft
 
-"nightingale-console@12.1.4, nightingale-console@workspace:packages/nightingale-console":
+"nightingale-console@13.0.0, nightingale-console@workspace:packages/nightingale-console":
   version: 0.0.0-use.local
   resolution: "nightingale-console@workspace:packages/nightingale-console"
   dependencies:
     "@babel/core": 7.20.2
     "@types/node": ">=16.0.0"
-    nightingale-ansi-formatter: 12.1.4
-    nightingale-console-output: 12.1.4
-    nightingale-debug: 12.1.4
-    nightingale-json-formatter: 12.1.4
-    nightingale-levels: 12.1.4
-    nightingale-types: 12.1.4
+    nightingale-ansi-formatter: 13.0.0
+    nightingale-console-output: 13.0.0
+    nightingale-debug: 13.0.0
+    nightingale-json-formatter: 13.0.0
+    nightingale-levels: 13.0.0
+    nightingale-types: 13.0.0
     pob-babel: 35.3.0
     typescript: 4.9.3
   languageName: unknown
   linkType: soft
 
-"nightingale-debug@12.1.4, nightingale-debug@workspace:packages/nightingale-debug":
+"nightingale-debug@13.0.0, nightingale-debug@workspace:packages/nightingale-debug":
   version: 0.0.0-use.local
   resolution: "nightingale-debug@workspace:packages/nightingale-debug"
   dependencies:
     "@babel/core": 7.20.2
     "@babel/preset-env": 7.20.2
     babel-preset-modern-browsers: 15.0.2
-    nightingale-levels: 12.1.4
+    nightingale-levels: 13.0.0
     pob-babel: 35.3.0
     typescript: 4.9.3
   languageName: unknown
@@ -10070,26 +10042,26 @@ __metadata:
   resolution: "nightingale-example@workspace:packages/nightingale-example"
   dependencies:
     "@babel/core": 7.20.2
-    nightingale: 12.1.4
-    nightingale-console: 12.1.4
-    nightingale-console-output: 12.1.4
-    nightingale-json-formatter: 12.1.4
-    nightingale-string: 12.1.4
-    nightingale-types: 12.1.4
+    nightingale: 13.0.0
+    nightingale-console: 13.0.0
+    nightingale-console-output: 13.0.0
+    nightingale-json-formatter: 13.0.0
+    nightingale-string: 13.0.0
+    nightingale-types: 13.0.0
     pob-babel: 35.3.0
     typescript: 4.9.3
   languageName: unknown
   linkType: soft
 
-"nightingale-formatter@12.1.4, nightingale-formatter@workspace:packages/nightingale-formatter":
+"nightingale-formatter@13.0.0, nightingale-formatter@workspace:packages/nightingale-formatter":
   version: 0.0.0-use.local
   resolution: "nightingale-formatter@workspace:packages/nightingale-formatter"
   dependencies:
     "@babel/core": 7.20.2
     "@babel/preset-env": 7.20.2
     babel-preset-modern-browsers: 15.0.2
-    nightingale-levels: 12.1.4
-    nightingale-types: 12.1.4
+    nightingale-levels: 13.0.0
+    nightingale-types: 13.0.0
     pob-babel: 35.3.0
     typescript: 4.9.3
   languageName: unknown
@@ -10102,30 +10074,30 @@ __metadata:
     "@babel/core": 7.20.2
     "@babel/preset-env": 7.20.2
     babel-preset-modern-browsers: 15.0.2
-    nightingale-formatter: 12.1.4
-    nightingale-levels: 12.1.4
-    nightingale-types: 12.1.4
+    nightingale-formatter: 13.0.0
+    nightingale-levels: 13.0.0
+    nightingale-types: 13.0.0
     pob-babel: 35.3.0
     typescript: 4.9.3
   languageName: unknown
   linkType: soft
 
-"nightingale-json-formatter@12.1.4, nightingale-json-formatter@workspace:packages/nightingale-json-formatter":
+"nightingale-json-formatter@13.0.0, nightingale-json-formatter@workspace:packages/nightingale-json-formatter":
   version: 0.0.0-use.local
   resolution: "nightingale-json-formatter@workspace:packages/nightingale-json-formatter"
   dependencies:
     "@babel/core": 7.20.2
     "@babel/preset-env": 7.20.2
     babel-preset-modern-browsers: 15.0.2
-    nightingale-formatter: 12.1.4
-    nightingale-levels: 12.1.4
-    nightingale-types: 12.1.4
+    nightingale-formatter: 13.0.0
+    nightingale-levels: 13.0.0
+    nightingale-types: 13.0.0
     pob-babel: 35.3.0
     typescript: 4.9.3
   languageName: unknown
   linkType: soft
 
-"nightingale-level-names@12.1.4, nightingale-level-names@workspace:packages/nightingale-level-names":
+"nightingale-level-names@13.0.0, nightingale-level-names@workspace:packages/nightingale-level-names":
   version: 0.0.0-use.local
   resolution: "nightingale-level-names@workspace:packages/nightingale-level-names"
   dependencies:
@@ -10133,7 +10105,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"nightingale-levels@12.1.4, nightingale-levels@workspace:packages/nightingale-levels":
+"nightingale-levels@13.0.0, nightingale-levels@workspace:packages/nightingale-levels":
   version: 0.0.0-use.local
   resolution: "nightingale-levels@workspace:packages/nightingale-levels"
   dependencies:
@@ -10145,7 +10117,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"nightingale-logger@12.1.4, nightingale-logger@workspace:packages/nightingale-logger":
+"nightingale-logger@13.0.0, nightingale-logger@workspace:packages/nightingale-logger":
   version: 0.0.0-use.local
   resolution: "nightingale-logger@workspace:packages/nightingale-logger"
   dependencies:
@@ -10153,23 +10125,23 @@ __metadata:
     "@babel/preset-env": 7.20.2
     "@types/node": ">=16.0.0"
     babel-preset-modern-browsers: 15.0.2
-    nightingale-levels: 12.1.4
-    nightingale-types: 12.1.4
+    nightingale-levels: 13.0.0
+    nightingale-types: 13.0.0
     pob-babel: 35.3.0
     typescript: 4.9.3
   languageName: unknown
   linkType: soft
 
-"nightingale-markdown-formatter@12.1.4, nightingale-markdown-formatter@workspace:packages/nightingale-markdown-formatter":
+"nightingale-markdown-formatter@13.0.0, nightingale-markdown-formatter@workspace:packages/nightingale-markdown-formatter":
   version: 0.0.0-use.local
   resolution: "nightingale-markdown-formatter@workspace:packages/nightingale-markdown-formatter"
   dependencies:
     "@babel/core": 7.20.2
     "@babel/preset-env": 7.20.2
     babel-preset-modern-browsers: 15.0.2
-    nightingale-formatter: 12.1.4
-    nightingale-levels: 12.1.4
-    nightingale-types: 12.1.4
+    nightingale-formatter: 13.0.0
+    nightingale-levels: 13.0.0
+    nightingale-types: 13.0.0
     pob-babel: 35.3.0
     typescript: 4.9.3
   languageName: unknown
@@ -10196,22 +10168,22 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"nightingale-raw-formatter@12.1.4, nightingale-raw-formatter@workspace:packages/nightingale-raw-formatter":
+"nightingale-raw-formatter@13.0.0, nightingale-raw-formatter@workspace:packages/nightingale-raw-formatter":
   version: 0.0.0-use.local
   resolution: "nightingale-raw-formatter@workspace:packages/nightingale-raw-formatter"
   dependencies:
     "@babel/core": 7.20.2
     "@babel/preset-env": 7.20.2
     babel-preset-modern-browsers: 15.0.2
-    nightingale-formatter: 12.1.4
-    nightingale-levels: 12.1.4
-    nightingale-types: 12.1.4
+    nightingale-formatter: 13.0.0
+    nightingale-levels: 13.0.0
+    nightingale-types: 13.0.0
     pob-babel: 35.3.0
     typescript: 4.9.3
   languageName: unknown
   linkType: soft
 
-"nightingale-react-native-console@12.1.4, nightingale-react-native-console@workspace:packages/nightingale-react-native-console":
+"nightingale-react-native-console@13.0.0, nightingale-react-native-console@workspace:packages/nightingale-react-native-console":
   version: 0.0.0-use.local
   resolution: "nightingale-react-native-console@workspace:packages/nightingale-react-native-console"
   dependencies:
@@ -10219,18 +10191,18 @@ __metadata:
     "@babel/preset-env": 7.20.2
     "@types/react-native": 0.70.6
     babel-preset-modern-browsers: 15.0.2
-    nightingale-ansi-formatter: 12.1.4
-    nightingale-types: 12.1.4
+    nightingale-ansi-formatter: 13.0.0
+    nightingale-types: 13.0.0
     pob-babel: 35.3.0
-    react: 18.1.0
-    react-native: 0.70.5
+    react: 18.2.0
+    react-native: 0.70.6
     typescript: 4.9.3
   peerDependencies:
     react-native: "*"
   languageName: unknown
   linkType: soft
 
-"nightingale-sentry@12.1.4, nightingale-sentry@workspace:packages/nightingale-sentry":
+"nightingale-sentry@13.0.0, nightingale-sentry@workspace:packages/nightingale-sentry":
   version: 0.0.0-use.local
   resolution: "nightingale-sentry@workspace:packages/nightingale-sentry"
   dependencies:
@@ -10240,8 +10212,8 @@ __metadata:
     "@sentry/node": ^7.19.0
     "@sentry/types": ^7.19.0
     babel-preset-modern-browsers: 15.0.2
-    nightingale-levels: 12.1.4
-    nightingale-types: 12.1.4
+    nightingale-levels: 13.0.0
+    nightingale-types: 13.0.0
     pob-babel: 35.3.0
     typescript: 4.9.3
   languageName: unknown
@@ -10253,36 +10225,36 @@ __metadata:
   dependencies:
     "@babel/core": 7.20.2
     "@types/request": 2.48.8
-    nightingale-levels: 12.1.4
-    nightingale-markdown-formatter: 12.1.4
-    nightingale-raw-formatter: 12.1.4
-    nightingale-types: 12.1.4
+    nightingale-levels: 13.0.0
+    nightingale-markdown-formatter: 13.0.0
+    nightingale-raw-formatter: 13.0.0
+    nightingale-types: 13.0.0
     pob-babel: 35.3.0
     request: ^2.88.0
     typescript: 4.9.3
   languageName: unknown
   linkType: soft
 
-"nightingale-string@12.1.4, nightingale-string@workspace:packages/nightingale-string":
+"nightingale-string@13.0.0, nightingale-string@workspace:packages/nightingale-string":
   version: 0.0.0-use.local
   resolution: "nightingale-string@workspace:packages/nightingale-string"
   dependencies:
     "@babel/core": 7.20.2
-    nightingale-raw-formatter: 12.1.4
-    nightingale-types: 12.1.4
+    nightingale-raw-formatter: 13.0.0
+    nightingale-types: 13.0.0
     pob-babel: 35.3.0
     typescript: 4.9.3
   languageName: unknown
   linkType: soft
 
-"nightingale-types@12.1.4, nightingale-types@workspace:packages/nightingale-types":
+"nightingale-types@13.0.0, nightingale-types@workspace:packages/nightingale-types":
   version: 0.0.0-use.local
   resolution: "nightingale-types@workspace:packages/nightingale-types"
   dependencies:
     "@babel/core": 7.20.2
     "@babel/preset-env": 7.20.2
     babel-preset-modern-browsers: 15.0.2
-    nightingale-levels: 12.1.4
+    nightingale-levels: 13.0.0
     pob-babel: 35.3.0
     typescript: 4.9.3
   languageName: unknown
@@ -10294,8 +10266,8 @@ __metadata:
   dependencies:
     "@babel/core": 7.20.2
     "@types/node": ">=16.0.0"
-    nightingale: 12.1.4
-    nightingale-console: 12.1.4
+    nightingale: 13.0.0
+    nightingale-console: 13.0.0
     pob-babel: 35.3.0
     typescript: 4.9.3
   languageName: unknown
@@ -10307,7 +10279,7 @@ __metadata:
   dependencies:
     "@babel/core": 7.20.2
     "@types/node": ">=16.0.0"
-    nightingale-types: 12.1.4
+    nightingale-types: 13.0.0
     pob-babel: 35.3.0
     typescript: 4.9.3
   languageName: unknown
@@ -10320,14 +10292,14 @@ __metadata:
     "@babel/core": 7.20.2
     "@babel/preset-env": 7.20.2
     babel-preset-modern-browsers: 15.0.2
-    nightingale-level-names: 12.1.4
-    nightingale-types: 12.1.4
+    nightingale-level-names: 13.0.0
+    nightingale-types: 13.0.0
     pob-babel: 35.3.0
     typescript: 4.9.3
   languageName: unknown
   linkType: soft
 
-"nightingale@12.1.4, nightingale@workspace:packages/nightingale":
+"nightingale@13.0.0, nightingale@workspace:packages/nightingale":
   version: 0.0.0-use.local
   resolution: "nightingale@workspace:packages/nightingale"
   dependencies:
@@ -10335,10 +10307,10 @@ __metadata:
     "@babel/preset-env": 7.20.2
     "@types/node": ">=16.0.0"
     babel-preset-modern-browsers: 15.0.2
-    nightingale-levels: 12.1.4
-    nightingale-logger: 12.1.4
-    nightingale-string: 12.1.4
-    nightingale-types: 12.1.4
+    nightingale-levels: 13.0.0
+    nightingale-logger: 13.0.0
+    nightingale-string: 13.0.0
+    nightingale-types: 13.0.0
     pob-babel: 35.3.0
     typescript: 4.9.3
   languageName: unknown
@@ -11308,12 +11280,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"promise@npm:^8.0.3":
-  version: 8.1.0
-  resolution: "promise@npm:8.1.0"
+"promise@npm:^8.3.0":
+  version: 8.3.0
+  resolution: "promise@npm:8.3.0"
   dependencies:
     asap: ~2.0.6
-  checksum: 89b71a56154ed7d66a73236d8e8351a9c59adddba3929ecc845f75421ff37fc08ea0c67ad76cd5c0b0d81812c7d07a32bed27e7df5fcc960c6d68b0c1cd771f7
+  checksum: a69f0ddbddf78ffc529cffee7ad950d307347615970564b17988ce43fbe767af5c738a9439660b24a9a8cbea106c0dcbb6c2b20e23b7e96a8e89e5c2679e94d5
   languageName: node
   linkType: hard
 
@@ -11443,14 +11415,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native@npm:0.70.5":
-  version: 0.70.5
-  resolution: "react-native@npm:0.70.5"
+"react-native@npm:0.70.6":
+  version: 0.70.6
+  resolution: "react-native@npm:0.70.6"
   dependencies:
-    "@jest/create-cache-key-function": ^29.0.3
-    "@react-native-community/cli": 9.2.1
-    "@react-native-community/cli-platform-android": 9.2.1
-    "@react-native-community/cli-platform-ios": 9.2.1
+    "@jest/create-cache-key-function": ^27.0.1
+    "@react-native-community/cli": 9.3.2
+    "@react-native-community/cli-platform-android": 9.3.1
+    "@react-native-community/cli-platform-ios": 9.3.0
     "@react-native/assets": 1.0.0
     "@react-native/normalize-color": 2.0.0
     "@react-native/polyfills": 2.0.0
@@ -11467,7 +11439,7 @@ __metadata:
     mkdirp: ^0.5.1
     nullthrows: ^1.1.1
     pretty-format: ^26.5.2
-    promise: ^8.0.3
+    promise: ^8.3.0
     react-devtools-core: 4.24.0
     react-native-codegen: ^0.70.6
     react-native-gradle-plugin: ^0.70.3
@@ -11483,7 +11455,7 @@ __metadata:
     react: 18.1.0
   bin:
     react-native: cli.js
-  checksum: 5aca6e1dba32c450078117c874e368efa7e291fbf37263a30935e395475343ad78f87d4e41d12742cc16d9fcaebd5175a631962fc5d620daa312079782d0a66c
+  checksum: ae57e1b86f4e6950913f8b59732ab57d2dd1ee30af6c2ca68f88b03b8448cb01c51967b148550a8b8cb6d42ca9b73cead2e854b9ecc2f4b9d5d75fccff798846
   languageName: node
   linkType: hard
 
@@ -11506,12 +11478,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react@npm:18.1.0":
-  version: 18.1.0
-  resolution: "react@npm:18.1.0"
+"react@npm:18.2.0":
+  version: 18.2.0
+  resolution: "react@npm:18.2.0"
   dependencies:
     loose-envify: ^1.1.0
-  checksum: 5bb296b561b43ef2220395da4faac86c14a087c8c80e1a7598a5740f01ee605c11eaf249985c1e2000971c4cd32ccb46d40f00479bbd9fb6b1c7cf857393b7d4
+  checksum: 88e38092da8839b830cda6feef2e8505dec8ace60579e46aa5490fc3dc9bba0bd50336507dc166f43e3afc1c42939c09fe33b25fae889d6f402721dcd78fca1b
   languageName: node
   linkType: hard
 
