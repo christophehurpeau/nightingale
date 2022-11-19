@@ -1,6 +1,6 @@
 {
   "name": "nightingale-app-react-native",
-  "version": "12.1.4",
+  "version": "13.0.0",
   "description": "React Native and Expo logger for application",
   "keywords": [
     "nightingale",
@@ -76,9 +76,9 @@
     }
   },
   "dependencies": {
-    "nightingale": "12.1.4",
-    "nightingale-browser-console": "12.1.4",
-    "nightingale-react-native-console": "12.1.4"
+    "nightingale": "13.0.0",
+    "nightingale-browser-console": "13.0.0",
+    "nightingale-react-native-console": "13.0.0"
   },
   "devDependencies": {
     "@babel/core": "7.20.2",

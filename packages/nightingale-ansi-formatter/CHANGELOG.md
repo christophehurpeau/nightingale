@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [13.0.0](https://github.com/christophehurpeau/nightingale/compare/v12.1.4...v13.0.0) (2022-11-19)
+
+
+### Code Refactoring
+
+* drop node 14 and cjs ([9a8ca06](https://github.com/christophehurpeau/nightingale/commit/9a8ca064449ddc0d69e26543e21c2d522536c50a))
+
+
+### Features
+
+* build for node 16 ([30ae3e9](https://github.com/christophehurpeau/nightingale/commit/30ae3e9c455dbad793c2f704b9d860069dc80c32))
+* update ansi-styles ([74636db](https://github.com/christophehurpeau/nightingale/commit/74636dbbf890c3f12757b7bc38955c494829fd01))
+
+
+### BREAKING CHANGES
+
+* dropped node 14 and cjs
+* drop node 14
+
+
+
+
+
 ## [12.1.4](https://github.com/christophehurpeau/nightingale/compare/v12.1.3...v12.1.4) (2022-02-05)
 
 

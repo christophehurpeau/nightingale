@@ -3,6 +3,38 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [13.0.0](https://github.com/christophehurpeau/nightingale/compare/v12.1.4...v13.0.0) (2022-11-19)
+
+
+### Bug Fixes
+
+* fix eslint ([479f77d](https://github.com/christophehurpeau/nightingale/commit/479f77dd9b0c4ebc8befdcf955bd5a631baece6a))
+* fix node global declaration ([ab5100b](https://github.com/christophehurpeau/nightingale/commit/ab5100b9d63718b18c4f97c9a8d73907be325fe8))
+* **nightingale-logger:** add explicit error message when trying to extends undefined context ([1346bd5](https://github.com/christophehurpeau/nightingale/commit/1346bd5a70ca3df9e87c5a84154bd4b6d58217b4))
+
+
+### Code Refactoring
+
+* drop node 14 and cjs ([9a8ca06](https://github.com/christophehurpeau/nightingale/commit/9a8ca064449ddc0d69e26543e21c2d522536c50a))
+
+
+### Features
+
+* build for node 16 ([30ae3e9](https://github.com/christophehurpeau/nightingale/commit/30ae3e9c455dbad793c2f704b9d860069dc80c32))
+* **nightingale-sentry:** update to v7 ([0188b65](https://github.com/christophehurpeau/nightingale/commit/0188b65014dcc4a492d9b868e86fb08ee0954b87))
+* update ansi-styles ([74636db](https://github.com/christophehurpeau/nightingale/commit/74636dbbf890c3f12757b7bc38955c494829fd01))
+
+
+### BREAKING CHANGES
+
+* dropped node 14 and cjs
+* **nightingale-sentry:** remove deprecated token passed in constructor. Use Sentry object instead and init in the app.
+* drop node 14
+
+
+
+
+
 ## [12.1.4](https://github.com/christophehurpeau/nightingale/compare/v12.1.3...v12.1.4) (2022-02-05)
 
 

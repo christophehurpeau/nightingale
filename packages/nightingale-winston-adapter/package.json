@@ -1,6 +1,6 @@
 {
   "name": "nightingale-winston-adapter",
-  "version": "12.1.4",
+  "version": "13.0.0",
   "description": "Winston adapter handler for nightingale",
   "keywords": [
     "nightingale",
@@ -73,8 +73,8 @@
     ]
   },
   "dependencies": {
-    "nightingale-level-names": "12.1.4",
-    "nightingale-types": "12.1.4"
+    "nightingale-level-names": "13.0.0",
+    "nightingale-types": "13.0.0"
   },
   "devDependencies": {
     "@babel/core": "7.20.2",
