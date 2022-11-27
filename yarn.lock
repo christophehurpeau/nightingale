@@ -4894,17 +4894,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"check-package-dependencies@npm:3.10.0":
-  version: 3.10.0
-  resolution: "check-package-dependencies@npm:3.10.0"
+"check-package-dependencies@npm:3.11.0":
+  version: 3.11.0
+  resolution: "check-package-dependencies@npm:3.11.0"
   dependencies:
     chalk: ^4.1.0
     glob: ^8.0.0
     semver: ^7.3.4
-    type-fest: ^2.0.0
+    type-fest: ^3.0.0
   bin:
     check-package-dependencies: bin/check-package-dependencies.js
-  checksum: 1774a8852a4e89716325a59965c4babfeafb4ad3f28c2a4c56c7b57a1a5aeed83ef701c4b05dccfda86551d1f1244c673217016858d4838d984bfa116c981201
+  checksum: b6c64ab4b59e294e6d25c2fb3132fcd09154d10810972dd5ae42f9877cf1d2f7b8fade2cab8802c952fde7dccbbc86665976427d0ee797178e9b9690a553cb34
   languageName: node
   linkType: hard
 
@@ -10187,7 +10187,7 @@ __metadata:
     "@pob/root": 7.2.0
     "@types/jest": 29.2.3
     "@types/node": 18.11.9
-    check-package-dependencies: 3.10.0
+    check-package-dependencies: 3.11.0
     eslint: 8.28.0
     jest: 29.3.1
     pob-babel: 35.3.0
@@ -13140,10 +13140,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"type-fest@npm:^2.0.0":
-  version: 2.11.2
-  resolution: "type-fest@npm:2.11.2"
-  checksum: b36f73b9e739d4044f511fa3233eb36d365f5fbf5b120810ec5c6a31b8a6c7a2caeba2fb725491ccfb41a37aac8862e67f4383fc178a0c6074d27c424fe7c764
+"type-fest@npm:^3.0.0":
+  version: 3.2.0
+  resolution: "type-fest@npm:3.2.0"
+  checksum: 2668b62e8df6ae39074c93cb1e2c267c5f8a16d0d1bb693e71f2ea0b80da14eca5442edbcc5609d1099c49a4aaecda960d7fede3d3253b4126d2c6dfeb41b8c3
   languageName: node
   linkType: hard
 
