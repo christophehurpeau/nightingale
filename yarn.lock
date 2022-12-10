@@ -4894,17 +4894,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"check-package-dependencies@npm:3.11.0":
-  version: 3.11.0
-  resolution: "check-package-dependencies@npm:3.11.0"
+"check-package-dependencies@npm:4.0.0":
+  version: 4.0.0
+  resolution: "check-package-dependencies@npm:4.0.0"
   dependencies:
     chalk: ^4.1.0
     glob: ^8.0.0
+    import-meta-resolve: ^2.1.0
     semver: ^7.3.4
     type-fest: ^3.0.0
   bin:
     check-package-dependencies: bin/check-package-dependencies.js
-  checksum: b6c64ab4b59e294e6d25c2fb3132fcd09154d10810972dd5ae42f9877cf1d2f7b8fade2cab8802c952fde7dccbbc86665976427d0ee797178e9b9690a553cb34
+  checksum: b4378e245ff7a525da54f3ed433d3af0f3d72f586f0a30fc3a15b035045adacd487af951a50fbfc3f520f2b79d349bad6725a41cd3ebbaa1fba45bbbb7d3ef2d
   languageName: node
   linkType: hard
 
@@ -7442,6 +7443,13 @@ __metadata:
   bin:
     import-local-fixture: fixtures/cli.js
   checksum: bfcdb63b5e3c0e245e347f3107564035b128a414c4da1172a20dc67db2504e05ede4ac2eee1252359f78b0bfd7b19ef180aec427c2fce6493ae782d73a04cddd
+  languageName: node
+  linkType: hard
+
+"import-meta-resolve@npm:^2.1.0":
+  version: 2.2.0
+  resolution: "import-meta-resolve@npm:2.2.0"
+  checksum: 35a012c07bdaaed907ad150021b47a4bd8b2c77c88f02a2c5a15a5cb5c146072a94b6633cc528eaccf187bca12196c0fb2ff44a54b3b2a03bcf200511b3f1e50
   languageName: node
   linkType: hard
 
@@ -10187,7 +10195,7 @@ __metadata:
     "@pob/root": 7.2.0
     "@types/jest": 29.2.3
     "@types/node": 18.11.13
-    check-package-dependencies: 3.11.0
+    check-package-dependencies: 4.0.0
     eslint: 8.29.0
     jest: 29.3.1
     pob-babel: 35.3.0
