@@ -4863,6 +4863,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"chalk@npm:^5.2.0":
+  version: 5.2.0
+  resolution: "chalk@npm:5.2.0"
+  checksum: 03d8060277de6cf2fd567dc25fcf770593eb5bb85f460ce443e49255a30ff1242edd0c90a06a03803b0466ff0687a939b41db1757bec987113e83de89a003caa
+  languageName: node
+  linkType: hard
+
 "char-regex@npm:^1.0.2":
   version: 1.0.2
   resolution: "char-regex@npm:1.0.2"
@@ -4877,17 +4884,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"check-package-dependencies@npm:3.11.0":
-  version: 3.11.0
-  resolution: "check-package-dependencies@npm:3.11.0"
+"check-package-dependencies@npm:6.2.0":
+  version: 6.2.0
+  resolution: "check-package-dependencies@npm:6.2.0"
   dependencies:
-    chalk: ^4.1.0
+    chalk: ^5.2.0
     glob: ^8.0.0
-    semver: ^7.3.4
+    import-meta-resolve: ^2.1.0
+    semver: ^7.3.8
+    semver-utils: ^1.1.4
     type-fest: ^3.0.0
   bin:
     check-package-dependencies: bin/check-package-dependencies.js
-  checksum: b6c64ab4b59e294e6d25c2fb3132fcd09154d10810972dd5ae42f9877cf1d2f7b8fade2cab8802c952fde7dccbbc86665976427d0ee797178e9b9690a553cb34
+  checksum: 9c19f78449871d1446ae0fcf96270a45eb78c20adc494c17c1f716988a3d7897ac0b89bf34bb20afdd202252c454792658ab61210be83276a9634ee5ae3ca321
   languageName: node
   linkType: hard
 
@@ -7416,6 +7425,13 @@ __metadata:
   bin:
     import-local-fixture: fixtures/cli.js
   checksum: bfcdb63b5e3c0e245e347f3107564035b128a414c4da1172a20dc67db2504e05ede4ac2eee1252359f78b0bfd7b19ef180aec427c2fce6493ae782d73a04cddd
+  languageName: node
+  linkType: hard
+
+"import-meta-resolve@npm:^2.1.0":
+  version: 2.2.1
+  resolution: "import-meta-resolve@npm:2.2.1"
+  checksum: 8dd5ff7f6e96dea13653cbf79457588b9850949fde0412dba3cc944f8a61a155a3713d65878d903af6b0db7da960600ef66dfe994311743cdd49fe33dc91b0c5
   languageName: node
   linkType: hard
 
@@ -10226,7 +10242,7 @@ __metadata:
     "@pob/root": 7.3.0
     "@types/jest": 29.2.4
     "@types/node": 18.11.13
-    check-package-dependencies: 3.11.0
+    check-package-dependencies: 6.2.0
     eslint: 8.30.0
     jest: 29.3.1
     pob-babel: 35.4.0
@@ -12065,6 +12081,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"semver-utils@npm:^1.1.4":
+  version: 1.1.4
+  resolution: "semver-utils@npm:1.1.4"
+  checksum: 93fd955a30f5bdf532163d94981aa03dfbaddf29dad6388415b264c95d7046a6b47d947c6e3e37c0d7867ed3f024aa6e50fc308c9487378354e9d300c9dd68b6
+  languageName: node
+  linkType: hard
+
 "semver@npm:2 || 3 || 4 || 5, semver@npm:^5.5.0, semver@npm:^5.6.0":
   version: 5.7.1
   resolution: "semver@npm:5.7.1"
@@ -12074,7 +12097,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semver@npm:7.3.8, semver@npm:^7.0.0, semver@npm:^7.1.1, semver@npm:^7.3.4, semver@npm:^7.3.5, semver@npm:^7.3.7":
+"semver@npm:7.3.8, semver@npm:^7.0.0, semver@npm:^7.1.1, semver@npm:^7.3.4, semver@npm:^7.3.5, semver@npm:^7.3.7, semver@npm:^7.3.8":
   version: 7.3.8
   resolution: "semver@npm:7.3.8"
   dependencies:
