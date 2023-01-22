@@ -79,11 +79,11 @@
     "nightingale-types": "13.0.0"
   },
   "devDependencies": {
-    "@babel/core": "7.20.5",
+    "@babel/core": "7.20.7",
     "@babel/preset-env": "7.20.2",
     "babel-preset-modern-browsers": "15.0.2",
     "nightingale-string": "13.0.0",
-    "pob-babel": "35.3.0",
+    "pob-babel": "35.4.0",
     "typescript": "4.9.4"
   }
 }
