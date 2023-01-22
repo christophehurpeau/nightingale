@@ -78,7 +78,7 @@
     "nightingale-types": "13.0.0"
   },
   "devDependencies": {
-    "@babel/core": "7.20.7",
+    "@babel/core": "7.20.12",
     "@babel/preset-env": "7.20.2",
     "babel-preset-modern-browsers": "15.0.2",
     "nightingale-levels": "13.0.0",
