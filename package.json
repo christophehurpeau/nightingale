@@ -29,6 +29,7 @@
     "postinstall": "pob-root-postinstall",
     "test": "NODE_OPTIONS=--experimental-vm-modules jest",
     "tsc": "tsc -b",
+    "version": "YARN_ENABLE_IMMUTABLE_INSTALLS=false yarn && git add yarn.lock",
     "watch": "yarn clean:build && rollup --config rollup.config.mjs --watch",
     "watch:lerna": "lerna run --parallel --ignore \"*-example\" watch"
   },
@@ -48,24 +49,24 @@
     "testEnvironment": "node",
     "cacheDirectory": "./node_modules/.cache/jest",
     "testMatch": [
-      "<rootDir>/packages/*/(src|lib)/**/__tests__/**/*.(ts|js|cjs|mjs)",
-      "<rootDir>/packages/*/(src|lib)/**/*.test.(ts|js|cjs|mjs)"
+      "<rootDir>/packages/*/@(src|lib)/**/__tests__/**/*.(ts|js|cjs|mjs)",
+      "<rootDir>/packages/*/@(src|lib)/**/*.test.(ts|js|cjs|mjs)"
     ]
   },
   "devDependencies": {
-    "@babel/core": "7.20.5",
+    "@babel/core": "7.20.7",
     "@pob/commitlint-config": "5.1.0",
     "@pob/eslint-config": "50.0.0",
     "@pob/eslint-config-typescript": "50.0.0",
     "@pob/lerna-light": "6.1.0",
-    "@pob/root": "7.2.0",
+    "@pob/root": "7.3.0",
     "@types/jest": "29.2.4",
     "@types/node": "18.11.13",
     "check-package-dependencies": "3.11.0",
-    "eslint": "8.29.0",
+    "eslint": "8.30.0",
     "jest": "29.3.1",
-    "pob-babel": "35.3.0",
-    "typedoc": "0.23.21",
+    "pob-babel": "35.4.0",
+    "typedoc": "0.23.23",
     "typescript": "4.9.4"
   }
 }

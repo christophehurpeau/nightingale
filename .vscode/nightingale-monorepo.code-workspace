@@ -20,7 +20,6 @@
       "source.fixAll.eslint": true,
       "source.organizeImports": false
     },
-    "jest.jestCommandLine": "NODE_OPTIONS=--experimental-vm-modules node_modules/.bin/jest",
     "eslint.workingDirectories": ["."],
     "eslint.options": {
       "resolvePluginsRelativeTo": ".",
