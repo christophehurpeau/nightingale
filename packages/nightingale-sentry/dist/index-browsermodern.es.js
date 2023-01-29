@@ -29,11 +29,13 @@ const createHandler = (Sentry, {
       key,
       level,
       metadata,
-      extra
+      extra,
+      message
     } = record;
     if (shouldSendAsException(record)) {
       const error = (metadata === null || metadata === void 0 ? void 0 : metadata.error) || record.message;
       const extraData = {
+        nightingaleErrorMessage: message,
         ...metadata,
         ...extra
       };

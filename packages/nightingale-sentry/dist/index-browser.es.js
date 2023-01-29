@@ -34,10 +34,13 @@ var createHandler = function createHandler(Sentry, _temp) {
     var key = record.key,
       level = record.level,
       metadata = record.metadata,
-      extra = record.extra;
+      extra = record.extra,
+      message = record.message;
     if (shouldSendAsException(record)) {
       var error = (metadata == null ? void 0 : metadata.error) || record.message;
-      var extraData = _extends({}, metadata, extra);
+      var extraData = _extends({
+        nightingaleErrorMessage: message
+      }, metadata, extra);
       delete extraData.error;
       Sentry.captureException(error, {
         level: mapToSentryLevel[level] || 'error',

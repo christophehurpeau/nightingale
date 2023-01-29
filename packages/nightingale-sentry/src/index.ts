@@ -67,12 +67,16 @@ const createHandler = <S extends SentryRequiredMethods>(
   }: Options = {},
 ): Handle => {
   return <T extends MetadataWithError>(record: LogRecord<T>) => {
-    const { key, level, metadata, extra } = record;
+    const { key, level, metadata, extra, message } = record;
 
     if (shouldSendAsException(record)) {
       const error = metadata?.error || record.message;
 
-      const extraData: Record<string, unknown> = { ...metadata, ...extra };
+      const extraData: Record<string, unknown> = {
+        nightingaleErrorMessage: message,
+        ...metadata,
+        ...extra,
+      };
       delete extraData.error;
 
       Sentry.captureException(error, {
