@@ -1466,15 +1466,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/cli@npm:17.3.0":
-  version: 17.3.0
-  resolution: "@commitlint/cli@npm:17.3.0"
+"@commitlint/cli@npm:17.4.2":
+  version: 17.4.2
+  resolution: "@commitlint/cli@npm:17.4.2"
   dependencies:
-    "@commitlint/format": ^17.0.0
-    "@commitlint/lint": ^17.3.0
-    "@commitlint/load": ^17.3.0
-    "@commitlint/read": ^17.2.0
-    "@commitlint/types": ^17.0.0
+    "@commitlint/format": ^17.4.0
+    "@commitlint/lint": ^17.4.2
+    "@commitlint/load": ^17.4.2
+    "@commitlint/read": ^17.4.2
+    "@commitlint/types": ^17.4.0
     execa: ^5.0.0
     lodash.isfunction: ^3.0.9
     resolve-from: 5.0.0
@@ -1482,7 +1482,7 @@ __metadata:
     yargs: ^17.0.0
   bin:
     commitlint: cli.js
-  checksum: 9f544ea528198bbb8ee00c54dc68a4933c680bd6e995817b7acabe3352835ee77b7c86f522a0bb749684422d469365fdc86c134012c9b1c0af42a2e1ed3b342c
+  checksum: a2d0ecd2c5a770b3d3be1214020ed4298f3d7685f5c065ed2f1565b02b9a1608abd00d114c8b9b17e84741cde0d977bb2c2afc1074176565b6b63e9cde0d2e25
   languageName: node
   linkType: hard
 
@@ -1526,13 +1526,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/format@npm:^17.0.0":
-  version: 17.0.0
-  resolution: "@commitlint/format@npm:17.0.0"
+"@commitlint/format@npm:^17.4.0":
+  version: 17.4.0
+  resolution: "@commitlint/format@npm:17.4.0"
   dependencies:
-    "@commitlint/types": ^17.0.0
+    "@commitlint/types": ^17.4.0
     chalk: ^4.1.0
-  checksum: e54705bdc91741632bac6ae330ba5d08110ec7575900585f4947487e7189a3d586396a3da3f1622fd3b6a49be9af1f71519a1ffeaa562d4cc7349bde3846eb8a
+  checksum: 59dc069e587b99482944e404b9d140929421eb4f91716df200f921b2662a0ca9b25f8825bb07d0bc6ffe6f71796771b70ff0deb89a17831c9e4894d79e41b2b7
   languageName: node
   linkType: hard
 
@@ -1546,7 +1546,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/lint@npm:^17.3.0":
+"@commitlint/lint@npm:^17.4.2":
   version: 17.4.2
   resolution: "@commitlint/lint@npm:17.4.2"
   dependencies:
@@ -1558,7 +1558,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/load@npm:^17.3.0":
+"@commitlint/load@npm:^17.4.2":
   version: 17.4.2
   resolution: "@commitlint/load@npm:17.4.2"
   dependencies:
@@ -1598,16 +1598,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/read@npm:^17.2.0":
-  version: 17.2.0
-  resolution: "@commitlint/read@npm:17.2.0"
+"@commitlint/read@npm:^17.4.2":
+  version: 17.4.2
+  resolution: "@commitlint/read@npm:17.4.2"
   dependencies:
-    "@commitlint/top-level": ^17.0.0
-    "@commitlint/types": ^17.0.0
-    fs-extra: ^10.0.0
+    "@commitlint/top-level": ^17.4.0
+    "@commitlint/types": ^17.4.0
+    fs-extra: ^11.0.0
     git-raw-commits: ^2.0.0
     minimist: ^1.2.6
-  checksum: b2adcbe1f1853a0d6b477c245a22ce18eda0e15c47d0211aa141f5101acf84b77e4c9bace076021e8d0a78b3d05c1f7f4e04e550ea0317992b592686e07b81ac
+  checksum: ed509f913bd9790bb3abfde0886abdc4e2569eb7651e666d2d70705954f98f14e2c621ffe8ee17bb8a9bee36e65e4d4d01d5cd2792c8e08e69248d31808830fa
   languageName: node
   linkType: hard
 
@@ -1645,16 +1645,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/top-level@npm:^17.0.0":
-  version: 17.0.0
-  resolution: "@commitlint/top-level@npm:17.0.0"
+"@commitlint/top-level@npm:^17.4.0":
+  version: 17.4.0
+  resolution: "@commitlint/top-level@npm:17.4.0"
   dependencies:
     find-up: ^5.0.0
-  checksum: 2e43d021a63faee67aa0e63b86a3ab9347ccda1b81f1f0722841223bd6bf127de954933c2ca3172fac0a1ce07a8b3bed62ac8f4afa04d50281dc5f80b43b61fb
+  checksum: 14cd77e982d2dd7989718dafdbf7a2168a5fb387005e0686c2dfa9ffc36bb9a749e5d80a151884459e4d8c88564339688dca26e9c711abe043beeb3f30c3dfd6
   languageName: node
   linkType: hard
 
-"@commitlint/types@npm:^17.0.0, @commitlint/types@npm:^17.4.0":
+"@commitlint/types@npm:^17.4.0":
   version: 17.4.0
   resolution: "@commitlint/types@npm:17.4.0"
   dependencies:
@@ -2870,18 +2870,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pob/root@npm:7.3.0":
-  version: 7.3.0
-  resolution: "@pob/root@npm:7.3.0"
+"@pob/root@npm:7.4.0":
+  version: 7.4.0
+  resolution: "@pob/root@npm:7.4.0"
   dependencies:
-    "@commitlint/cli": 17.3.0
+    "@commitlint/cli": 17.4.2
     "@pob/pretty-eslint-config": 4.1.0
     "@pob/pretty-pkg": 5.1.0
     husky: ~8.0.1
     json5: ^2.2.2
     lint-staged: 13.1.0
-    pob-dependencies: 7.3.0
-    prettier: 2.8.1
+    pob-dependencies: 7.4.0
+    prettier: 2.8.3
     repository-check-dirty: 5.1.0
     semver: ^7.3.7
     which-pm-runs: 1.1.0
@@ -2894,7 +2894,7 @@ __metadata:
     pretty-eslint-config: bin/pretty-eslint-config.js
     pretty-pkg: bin/pretty-pkg.js
     repository-check-dirty: bin/repository-check-dirty.js
-  checksum: 66c942b553e22b453ba7d4c035fd973df797e54dd68ed0550834711c2374ded9bb27404270a2914a7ff00906eca4fceae79cf08449dd4a989e381089f2258943
+  checksum: b84f8e827d8e896fee45188b38d5678b0adac55ccc93e4a6ecfb83e5f8455101518942815808981de48aec2be02c612b059940265d18123c34563722af6b666b
   languageName: node
   linkType: hard
 
@@ -4503,9 +4503,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"babel-preset-pob-env@npm:9.1.1":
-  version: 9.1.1
-  resolution: "babel-preset-pob-env@npm:9.1.1"
+"babel-preset-pob-env@npm:9.1.2":
+  version: 9.1.2
+  resolution: "babel-preset-pob-env@npm:9.1.2"
   dependencies:
     "@babel/plugin-proposal-nullish-coalescing-operator": ^7.16.7
     "@babel/plugin-proposal-optional-chaining": ^7.16.7
@@ -4516,7 +4516,7 @@ __metadata:
     babel-preset-optimizations: ^2.0.0
   peerDependencies:
     "@babel/core": ^7.11.6
-  checksum: 0805a7f997ec1626b7da6adc8a2ede8653bf4396d342208f6daee968e7cbdeabaee3d02a3f95c221228ed08c1b097d05f137806ab017880342167bca8dc99027
+  checksum: 26c9901ff7f8a1b993b5a5a727f68e0990a6c75f10aec37eee58699335f953089eb1d872da541a84b92bdcafea66957fa904964a31d09c503215e53551e4f259
   languageName: node
   linkType: hard
 
@@ -6708,14 +6708,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fs-extra@npm:^10.0.0":
-  version: 10.0.0
-  resolution: "fs-extra@npm:10.0.0"
+"fs-extra@npm:^11.0.0":
+  version: 11.1.0
+  resolution: "fs-extra@npm:11.1.0"
   dependencies:
     graceful-fs: ^4.2.0
     jsonfile: ^6.0.1
     universalify: ^2.0.0
-  checksum: 5285a3d8f34b917cf2b66af8c231a40c1623626e9d701a20051d3337be16c6d7cac94441c8b3732d47a92a2a027886ca93c69b6a4ae6aee3c89650d2a8880c0a
+  checksum: 5ca476103fa1f5ff4a9b3c4f331548f8a3c1881edaae323a4415d3153b5dc11dc6a981c8d1dd93eec8367ceee27b53f8bd27eecbbf66ffcdd04927510c171e7f
   languageName: node
   linkType: hard
 
@@ -9995,8 +9995,8 @@ __metadata:
     ansi-styles: ^6.2.1
     nightingale-formatter: 13.0.0
     nightingale-types: 13.0.0
-    pob-babel: 35.4.0
-    typescript: 4.9.4
+    pob-babel: 35.5.0
+    typescript: 4.9.5
   languageName: unknown
   linkType: soft
 
@@ -10011,8 +10011,8 @@ __metadata:
     nightingale: 13.0.0
     nightingale-browser-console: 13.0.0
     nightingale-console: 13.0.0
-    pob-babel: 35.4.0
-    typescript: 4.9.4
+    pob-babel: 35.5.0
+    typescript: 4.9.5
   languageName: unknown
   linkType: soft
 
@@ -10027,8 +10027,8 @@ __metadata:
     nightingale: 13.0.0
     nightingale-browser-console: 13.0.0
     nightingale-react-native-console: 13.0.0
-    pob-babel: 35.4.0
-    typescript: 4.9.4
+    pob-babel: 35.5.0
+    typescript: 4.9.5
   peerDependencies:
     react-native: "*"
     react-native-web: "*"
@@ -10048,8 +10048,8 @@ __metadata:
     nightingale-formatter: 13.0.0
     nightingale-levels: 13.0.0
     nightingale-types: 13.0.0
-    pob-babel: 35.4.0
-    typescript: 4.9.4
+    pob-babel: 35.5.0
+    typescript: 4.9.5
   languageName: unknown
   linkType: soft
 
@@ -10064,8 +10064,8 @@ __metadata:
     nightingale-console-output: 13.0.0
     nightingale-debug: 13.0.0
     nightingale-types: 13.0.0
-    pob-babel: 35.4.0
-    typescript: 4.9.4
+    pob-babel: 35.5.0
+    typescript: 4.9.5
   languageName: unknown
   linkType: soft
 
@@ -10078,8 +10078,8 @@ __metadata:
     nightingale: 13.0.0
     nightingale-console: 13.0.0
     nightingale-sentry: 13.0.0
-    pob-babel: 35.4.0
-    typescript: 4.9.4
+    pob-babel: 35.5.0
+    typescript: 4.9.5
   languageName: unknown
   linkType: soft
 
@@ -10093,8 +10093,8 @@ __metadata:
     babel-preset-modern-browsers: 15.0.2
     nightingale-levels: 13.0.0
     nightingale-types: 13.0.0
-    pob-babel: 35.4.0
-    typescript: 4.9.4
+    pob-babel: 35.5.0
+    typescript: 4.9.5
   languageName: unknown
   linkType: soft
 
@@ -10110,8 +10110,8 @@ __metadata:
     nightingale-json-formatter: 13.0.0
     nightingale-levels: 13.0.0
     nightingale-types: 13.0.0
-    pob-babel: 35.4.0
-    typescript: 4.9.4
+    pob-babel: 35.5.0
+    typescript: 4.9.5
   languageName: unknown
   linkType: soft
 
@@ -10123,8 +10123,8 @@ __metadata:
     "@babel/preset-env": 7.20.2
     babel-preset-modern-browsers: 15.0.2
     nightingale-levels: 13.0.0
-    pob-babel: 35.4.0
-    typescript: 4.9.4
+    pob-babel: 35.5.0
+    typescript: 4.9.5
   languageName: unknown
   linkType: soft
 
@@ -10139,8 +10139,8 @@ __metadata:
     nightingale-json-formatter: 13.0.0
     nightingale-string: 13.0.0
     nightingale-types: 13.0.0
-    pob-babel: 35.4.0
-    typescript: 4.9.4
+    pob-babel: 35.5.0
+    typescript: 4.9.5
   languageName: unknown
   linkType: soft
 
@@ -10153,8 +10153,8 @@ __metadata:
     babel-preset-modern-browsers: 15.0.2
     nightingale-levels: 13.0.0
     nightingale-types: 13.0.0
-    pob-babel: 35.4.0
-    typescript: 4.9.4
+    pob-babel: 35.5.0
+    typescript: 4.9.5
   languageName: unknown
   linkType: soft
 
@@ -10168,8 +10168,8 @@ __metadata:
     nightingale-formatter: 13.0.0
     nightingale-levels: 13.0.0
     nightingale-types: 13.0.0
-    pob-babel: 35.4.0
-    typescript: 4.9.4
+    pob-babel: 35.5.0
+    typescript: 4.9.5
   languageName: unknown
   linkType: soft
 
@@ -10183,8 +10183,8 @@ __metadata:
     nightingale-formatter: 13.0.0
     nightingale-levels: 13.0.0
     nightingale-types: 13.0.0
-    pob-babel: 35.4.0
-    typescript: 4.9.4
+    pob-babel: 35.5.0
+    typescript: 4.9.5
   languageName: unknown
   linkType: soft
 
@@ -10192,7 +10192,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-level-names@workspace:packages/nightingale-level-names"
   dependencies:
-    typescript: 4.9.4
+    typescript: 4.9.5
   languageName: unknown
   linkType: soft
 
@@ -10203,8 +10203,8 @@ __metadata:
     "@babel/core": 7.20.12
     "@babel/preset-env": 7.20.2
     babel-preset-modern-browsers: 15.0.2
-    pob-babel: 35.4.0
-    typescript: 4.9.4
+    pob-babel: 35.5.0
+    typescript: 4.9.5
   languageName: unknown
   linkType: soft
 
@@ -10218,8 +10218,8 @@ __metadata:
     babel-preset-modern-browsers: 15.0.2
     nightingale-levels: 13.0.0
     nightingale-types: 13.0.0
-    pob-babel: 35.4.0
-    typescript: 4.9.4
+    pob-babel: 35.5.0
+    typescript: 4.9.5
   languageName: unknown
   linkType: soft
 
@@ -10233,8 +10233,8 @@ __metadata:
     nightingale-formatter: 13.0.0
     nightingale-levels: 13.0.0
     nightingale-types: 13.0.0
-    pob-babel: 35.4.0
-    typescript: 4.9.4
+    pob-babel: 35.5.0
+    typescript: 4.9.5
   languageName: unknown
   linkType: soft
 
@@ -10247,15 +10247,15 @@ __metadata:
     "@pob/eslint-config": 50.0.0
     "@pob/eslint-config-typescript": 50.0.0
     "@pob/lerna-light": 6.1.0
-    "@pob/root": 7.3.0
+    "@pob/root": 7.4.0
     "@types/jest": 29.4.0
     "@types/node": 18.11.18
     check-package-dependencies: 6.2.1
     eslint: 8.33.0
     jest: 29.4.1
-    pob-babel: 35.4.0
+    pob-babel: 35.5.0
     typedoc: 0.23.24
-    typescript: 4.9.4
+    typescript: 4.9.5
   languageName: unknown
   linkType: soft
 
@@ -10269,8 +10269,8 @@ __metadata:
     nightingale-formatter: 13.0.0
     nightingale-levels: 13.0.0
     nightingale-types: 13.0.0
-    pob-babel: 35.4.0
-    typescript: 4.9.4
+    pob-babel: 35.5.0
+    typescript: 4.9.5
   languageName: unknown
   linkType: soft
 
@@ -10284,10 +10284,10 @@ __metadata:
     babel-preset-modern-browsers: 15.0.2
     nightingale-ansi-formatter: 13.0.0
     nightingale-types: 13.0.0
-    pob-babel: 35.4.0
+    pob-babel: 35.5.0
     react: 18.1.0
     react-native: 0.70.5
-    typescript: 4.9.4
+    typescript: 4.9.5
   peerDependencies:
     react-native: "*"
   languageName: unknown
@@ -10305,8 +10305,8 @@ __metadata:
     babel-preset-modern-browsers: 15.0.2
     nightingale-levels: 13.0.0
     nightingale-types: 13.0.0
-    pob-babel: 35.4.0
-    typescript: 4.9.4
+    pob-babel: 35.5.0
+    typescript: 4.9.5
   languageName: unknown
   linkType: soft
 
@@ -10320,9 +10320,9 @@ __metadata:
     nightingale-markdown-formatter: 13.0.0
     nightingale-raw-formatter: 13.0.0
     nightingale-types: 13.0.0
-    pob-babel: 35.4.0
+    pob-babel: 35.5.0
     request: ^2.88.0
-    typescript: 4.9.4
+    typescript: 4.9.5
   languageName: unknown
   linkType: soft
 
@@ -10333,8 +10333,8 @@ __metadata:
     "@babel/core": 7.20.12
     nightingale-raw-formatter: 13.0.0
     nightingale-types: 13.0.0
-    pob-babel: 35.4.0
-    typescript: 4.9.4
+    pob-babel: 35.5.0
+    typescript: 4.9.5
   languageName: unknown
   linkType: soft
 
@@ -10346,8 +10346,8 @@ __metadata:
     "@babel/preset-env": 7.20.2
     babel-preset-modern-browsers: 15.0.2
     nightingale-levels: 13.0.0
-    pob-babel: 35.4.0
-    typescript: 4.9.4
+    pob-babel: 35.5.0
+    typescript: 4.9.5
   languageName: unknown
   linkType: soft
 
@@ -10359,8 +10359,8 @@ __metadata:
     "@types/node": ">=16.0.0"
     nightingale: 13.0.0
     nightingale-console: 13.0.0
-    pob-babel: 35.4.0
-    typescript: 4.9.4
+    pob-babel: 35.5.0
+    typescript: 4.9.5
   languageName: unknown
   linkType: soft
 
@@ -10371,8 +10371,8 @@ __metadata:
     "@babel/core": 7.20.12
     "@types/node": ">=16.0.0"
     nightingale-types: 13.0.0
-    pob-babel: 35.4.0
-    typescript: 4.9.4
+    pob-babel: 35.5.0
+    typescript: 4.9.5
   languageName: unknown
   linkType: soft
 
@@ -10385,8 +10385,8 @@ __metadata:
     babel-preset-modern-browsers: 15.0.2
     nightingale-level-names: 13.0.0
     nightingale-types: 13.0.0
-    pob-babel: 35.4.0
-    typescript: 4.9.4
+    pob-babel: 35.5.0
+    typescript: 4.9.5
   languageName: unknown
   linkType: soft
 
@@ -10402,8 +10402,8 @@ __metadata:
     nightingale-logger: 13.0.0
     nightingale-string: 13.0.0
     nightingale-types: 13.0.0
-    pob-babel: 35.4.0
-    typescript: 4.9.4
+    pob-babel: 35.5.0
+    typescript: 4.9.5
   languageName: unknown
   linkType: soft
 
@@ -11258,9 +11258,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pob-babel@npm:35.4.0":
-  version: 35.4.0
-  resolution: "pob-babel@npm:35.4.0"
+"pob-babel@npm:35.5.0":
+  version: 35.5.0
+  resolution: "pob-babel@npm:35.5.0"
   dependencies:
     "@babel/core": ^7.17.10
     "@babel/plugin-transform-runtime": 7.19.6
@@ -11269,13 +11269,13 @@ __metadata:
     "@rollup/plugin-node-resolve": 15.0.1
     "@rollup/plugin-run": 3.0.1
     babel-preset-modern-browsers: ^15.0.2
-    babel-preset-pob-env: 9.1.1
-    rollup: 3.9.0
+    babel-preset-pob-env: 9.1.2
+    rollup: 3.12.0
     rollup-config-external-dependencies: ^2.0.0
     semver: ^7.3.7
   peerDependencies:
     "@babel/core": ^7.16.5
-    rollup: 3.9.0
+    rollup: 3.12.0
     typescript: ^4.0.3
   peerDependenciesMeta:
     rollup:
@@ -11283,14 +11283,14 @@ __metadata:
   bin:
     pob-babel-clean-out: bin/pob-babel-clean-out.js
     rollup: bin/rollup.cjs
-  checksum: 02e26c90a4424c089e95bffb544235430d6535b4ca090714efcf76f03c3db38e2123f931bf103e719aad140b02aa61c20f16a0fd8ca5f4ee78a6e50af673d53c
+  checksum: de6d5906408a9b56d970b527627c3465887096d8f066a5ba0b4bd93eda3d6448536ac04775ddab150b597ed4765274826466c8a2c84e4e234dee082cd08656a7
   languageName: node
   linkType: hard
 
-"pob-dependencies@npm:7.3.0":
-  version: 7.3.0
-  resolution: "pob-dependencies@npm:7.3.0"
-  checksum: bb3851d07ec68437e07c0e62ac2b9fe6020c35d0362f717c696418bd804849d54d87efc609821561a1f5023656aeec812e3b70c68688c76e627fa68d95f92774
+"pob-dependencies@npm:7.4.0":
+  version: 7.4.0
+  resolution: "pob-dependencies@npm:7.4.0"
+  checksum: 0de295f762d257b01fcaa4f8918f265250dd17c43f5807100093750dc4ec6b764c525d751a0d7c4e170bc6a1e5e0c191200106f61f63b9d06dcecc8bf8928767
   languageName: node
   linkType: hard
 
@@ -11308,12 +11308,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:2.8.1, prettier@npm:^2.6.2":
-  version: 2.8.1
-  resolution: "prettier@npm:2.8.1"
+"prettier@npm:2.8.3, prettier@npm:^2.6.2":
+  version: 2.8.3
+  resolution: "prettier@npm:2.8.3"
   bin:
     prettier: bin-prettier.js
-  checksum: 4f21a0f1269f76fb36f54e9a8a1ea4c11e27478958bf860661fb4b6d7ac69aac1581f8724fa98ea3585e56d42a2ea317a17ff6e3324f40cb11ff9e20b73785cc
+  checksum: 92f2ceb522d454370e02082aa74ad27388672f7cee8975028b59517c069fe643bdc73e322675c8faf2ff173d7a626d1a6389f26b474000308e793aa25fff46e5
   languageName: node
   linkType: hard
 
@@ -12009,9 +12009,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rollup@npm:3.9.0":
-  version: 3.9.0
-  resolution: "rollup@npm:3.9.0"
+"rollup@npm:3.12.0":
+  version: 3.12.0
+  resolution: "rollup@npm:3.12.0"
   dependencies:
     fsevents: ~2.3.2
   dependenciesMeta:
@@ -12019,7 +12019,7 @@ __metadata:
       optional: true
   bin:
     rollup: dist/bin/rollup
-  checksum: b0ce4baa8db8ee77ab096a4e066b20fb0719efb9cbd84f230838517d35bf159311487112852cfa687126896b58084c8e6cb9ab222f7559c4b6138ca693d63439
+  checksum: 66182947ea74bd4777e1a02514124f49eacc6b123e23738cf31342f8e73b79e43da05671aebe6d5f55b5830ebf3dd11f2eaba1b98b8fc6a9e6d96fd4c3ecc534
   languageName: node
   linkType: hard
 
@@ -13215,23 +13215,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:4.9.4, typescript@npm:^4.6.4":
-  version: 4.9.4
-  resolution: "typescript@npm:4.9.4"
+"typescript@npm:4.9.5, typescript@npm:^4.6.4":
+  version: 4.9.5
+  resolution: "typescript@npm:4.9.5"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: e782fb9e0031cb258a80000f6c13530288c6d63f1177ed43f770533fdc15740d271554cdae86701c1dd2c83b082cea808b07e97fd68b38a172a83dbf9e0d0ef9
+  checksum: ee000bc26848147ad423b581bd250075662a354d84f0e06eb76d3b892328d8d4440b7487b5a83e851b12b255f55d71835b008a66cbf8f255a11e4400159237db
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@4.9.4#~builtin<compat/typescript>, typescript@patch:typescript@^4.6.4#~builtin<compat/typescript>":
-  version: 4.9.4
-  resolution: "typescript@patch:typescript@npm%3A4.9.4#~builtin<compat/typescript>::version=4.9.4&hash=ad5954"
+"typescript@patch:typescript@4.9.5#~builtin<compat/typescript>, typescript@patch:typescript@^4.6.4#~builtin<compat/typescript>":
+  version: 4.9.5
+  resolution: "typescript@patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=ad5954"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 1caaea6cb7f813e64345190fddc4e6c924d0b698ab81189b503763c4a18f7f5501c69362979d36e19c042d89d936443e768a78b0675690b35eb663d19e0eae71
+  checksum: 8f6260acc86b56bfdda6004bc53f32ea548f543e8baef7071c8e34d29d292f3e375c8416556c8de10b24deef6933cd1c16a8233dc84a3dd43a13a13265d0faab
   languageName: node
   linkType: hard
 
