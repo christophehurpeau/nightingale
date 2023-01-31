@@ -1466,15 +1466,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/cli@npm:17.3.0":
-  version: 17.3.0
-  resolution: "@commitlint/cli@npm:17.3.0"
+"@commitlint/cli@npm:17.4.2":
+  version: 17.4.2
+  resolution: "@commitlint/cli@npm:17.4.2"
   dependencies:
-    "@commitlint/format": ^17.0.0
-    "@commitlint/lint": ^17.3.0
-    "@commitlint/load": ^17.3.0
-    "@commitlint/read": ^17.2.0
-    "@commitlint/types": ^17.0.0
+    "@commitlint/format": ^17.4.0
+    "@commitlint/lint": ^17.4.2
+    "@commitlint/load": ^17.4.2
+    "@commitlint/read": ^17.4.2
+    "@commitlint/types": ^17.4.0
     execa: ^5.0.0
     lodash.isfunction: ^3.0.9
     resolve-from: 5.0.0
@@ -1482,7 +1482,7 @@ __metadata:
     yargs: ^17.0.0
   bin:
     commitlint: cli.js
-  checksum: 9f544ea528198bbb8ee00c54dc68a4933c680bd6e995817b7acabe3352835ee77b7c86f522a0bb749684422d469365fdc86c134012c9b1c0af42a2e1ed3b342c
+  checksum: a2d0ecd2c5a770b3d3be1214020ed4298f3d7685f5c065ed2f1565b02b9a1608abd00d114c8b9b17e84741cde0d977bb2c2afc1074176565b6b63e9cde0d2e25
   languageName: node
   linkType: hard
 
@@ -1526,13 +1526,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/format@npm:^17.0.0":
-  version: 17.0.0
-  resolution: "@commitlint/format@npm:17.0.0"
+"@commitlint/format@npm:^17.4.0":
+  version: 17.4.0
+  resolution: "@commitlint/format@npm:17.4.0"
   dependencies:
-    "@commitlint/types": ^17.0.0
+    "@commitlint/types": ^17.4.0
     chalk: ^4.1.0
-  checksum: e54705bdc91741632bac6ae330ba5d08110ec7575900585f4947487e7189a3d586396a3da3f1622fd3b6a49be9af1f71519a1ffeaa562d4cc7349bde3846eb8a
+  checksum: 59dc069e587b99482944e404b9d140929421eb4f91716df200f921b2662a0ca9b25f8825bb07d0bc6ffe6f71796771b70ff0deb89a17831c9e4894d79e41b2b7
   languageName: node
   linkType: hard
 
@@ -1546,7 +1546,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/lint@npm:^17.3.0":
+"@commitlint/lint@npm:^17.4.2":
   version: 17.4.2
   resolution: "@commitlint/lint@npm:17.4.2"
   dependencies:
@@ -1558,7 +1558,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/load@npm:^17.3.0":
+"@commitlint/load@npm:^17.4.2":
   version: 17.4.2
   resolution: "@commitlint/load@npm:17.4.2"
   dependencies:
@@ -1598,16 +1598,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/read@npm:^17.2.0":
-  version: 17.2.0
-  resolution: "@commitlint/read@npm:17.2.0"
+"@commitlint/read@npm:^17.4.2":
+  version: 17.4.2
+  resolution: "@commitlint/read@npm:17.4.2"
   dependencies:
-    "@commitlint/top-level": ^17.0.0
-    "@commitlint/types": ^17.0.0
-    fs-extra: ^10.0.0
+    "@commitlint/top-level": ^17.4.0
+    "@commitlint/types": ^17.4.0
+    fs-extra: ^11.0.0
     git-raw-commits: ^2.0.0
     minimist: ^1.2.6
-  checksum: b2adcbe1f1853a0d6b477c245a22ce18eda0e15c47d0211aa141f5101acf84b77e4c9bace076021e8d0a78b3d05c1f7f4e04e550ea0317992b592686e07b81ac
+  checksum: ed509f913bd9790bb3abfde0886abdc4e2569eb7651e666d2d70705954f98f14e2c621ffe8ee17bb8a9bee36e65e4d4d01d5cd2792c8e08e69248d31808830fa
   languageName: node
   linkType: hard
 
@@ -1645,16 +1645,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/top-level@npm:^17.0.0":
-  version: 17.0.0
-  resolution: "@commitlint/top-level@npm:17.0.0"
+"@commitlint/top-level@npm:^17.4.0":
+  version: 17.4.0
+  resolution: "@commitlint/top-level@npm:17.4.0"
   dependencies:
     find-up: ^5.0.0
-  checksum: 2e43d021a63faee67aa0e63b86a3ab9347ccda1b81f1f0722841223bd6bf127de954933c2ca3172fac0a1ce07a8b3bed62ac8f4afa04d50281dc5f80b43b61fb
+  checksum: 14cd77e982d2dd7989718dafdbf7a2168a5fb387005e0686c2dfa9ffc36bb9a749e5d80a151884459e4d8c88564339688dca26e9c711abe043beeb3f30c3dfd6
   languageName: node
   linkType: hard
 
-"@commitlint/types@npm:^17.0.0, @commitlint/types@npm:^17.4.0":
+"@commitlint/types@npm:^17.4.0":
   version: 17.4.0
   resolution: "@commitlint/types@npm:17.4.0"
   dependencies:
@@ -2870,18 +2870,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pob/root@npm:7.3.0":
-  version: 7.3.0
-  resolution: "@pob/root@npm:7.3.0"
+"@pob/root@npm:7.4.0":
+  version: 7.4.0
+  resolution: "@pob/root@npm:7.4.0"
   dependencies:
-    "@commitlint/cli": 17.3.0
+    "@commitlint/cli": 17.4.2
     "@pob/pretty-eslint-config": 4.1.0
     "@pob/pretty-pkg": 5.1.0
     husky: ~8.0.1
     json5: ^2.2.2
     lint-staged: 13.1.0
-    pob-dependencies: 7.3.0
-    prettier: 2.8.1
+    pob-dependencies: 7.4.0
+    prettier: 2.8.3
     repository-check-dirty: 5.1.0
     semver: ^7.3.7
     which-pm-runs: 1.1.0
@@ -2894,7 +2894,7 @@ __metadata:
     pretty-eslint-config: bin/pretty-eslint-config.js
     pretty-pkg: bin/pretty-pkg.js
     repository-check-dirty: bin/repository-check-dirty.js
-  checksum: 66c942b553e22b453ba7d4c035fd973df797e54dd68ed0550834711c2374ded9bb27404270a2914a7ff00906eca4fceae79cf08449dd4a989e381089f2258943
+  checksum: b84f8e827d8e896fee45188b38d5678b0adac55ccc93e4a6ecfb83e5f8455101518942815808981de48aec2be02c612b059940265d18123c34563722af6b666b
   languageName: node
   linkType: hard
 
@@ -6708,14 +6708,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fs-extra@npm:^10.0.0":
-  version: 10.0.0
-  resolution: "fs-extra@npm:10.0.0"
+"fs-extra@npm:^11.0.0":
+  version: 11.1.0
+  resolution: "fs-extra@npm:11.1.0"
   dependencies:
     graceful-fs: ^4.2.0
     jsonfile: ^6.0.1
     universalify: ^2.0.0
-  checksum: 5285a3d8f34b917cf2b66af8c231a40c1623626e9d701a20051d3337be16c6d7cac94441c8b3732d47a92a2a027886ca93c69b6a4ae6aee3c89650d2a8880c0a
+  checksum: 5ca476103fa1f5ff4a9b3c4f331548f8a3c1881edaae323a4415d3153b5dc11dc6a981c8d1dd93eec8367ceee27b53f8bd27eecbbf66ffcdd04927510c171e7f
   languageName: node
   linkType: hard
 
@@ -10247,7 +10247,7 @@ __metadata:
     "@pob/eslint-config": 50.0.0
     "@pob/eslint-config-typescript": 50.0.0
     "@pob/lerna-light": 6.1.0
-    "@pob/root": 7.3.0
+    "@pob/root": 7.4.0
     "@types/jest": 29.4.0
     "@types/node": 18.11.18
     check-package-dependencies: 6.2.1
@@ -11287,10 +11287,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pob-dependencies@npm:7.3.0":
-  version: 7.3.0
-  resolution: "pob-dependencies@npm:7.3.0"
-  checksum: bb3851d07ec68437e07c0e62ac2b9fe6020c35d0362f717c696418bd804849d54d87efc609821561a1f5023656aeec812e3b70c68688c76e627fa68d95f92774
+"pob-dependencies@npm:7.4.0":
+  version: 7.4.0
+  resolution: "pob-dependencies@npm:7.4.0"
+  checksum: 0de295f762d257b01fcaa4f8918f265250dd17c43f5807100093750dc4ec6b764c525d751a0d7c4e170bc6a1e5e0c191200106f61f63b9d06dcecc8bf8928767
   languageName: node
   linkType: hard
 
@@ -11308,12 +11308,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:2.8.1, prettier@npm:^2.6.2":
-  version: 2.8.1
-  resolution: "prettier@npm:2.8.1"
+"prettier@npm:2.8.3, prettier@npm:^2.6.2":
+  version: 2.8.3
+  resolution: "prettier@npm:2.8.3"
   bin:
     prettier: bin-prettier.js
-  checksum: 4f21a0f1269f76fb36f54e9a8a1ea4c11e27478958bf860661fb4b6d7ac69aac1581f8724fa98ea3585e56d42a2ea317a17ff6e3324f40cb11ff9e20b73785cc
+  checksum: 92f2ceb522d454370e02082aa74ad27388672f7cee8975028b59517c069fe643bdc73e322675c8faf2ff173d7a626d1a6389f26b474000308e793aa25fff46e5
   languageName: node
   linkType: hard
 
