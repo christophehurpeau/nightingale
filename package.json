@@ -61,7 +61,7 @@
     "@pob/lerna-light": "6.1.0",
     "@pob/root": "7.4.0",
     "@types/jest": "29.4.0",
-    "@types/node": "18.11.18",
+    "@types/node": "18.11.19",
     "check-package-dependencies": "6.2.1",
     "eslint": "8.33.0",
     "jest": "29.4.1",
