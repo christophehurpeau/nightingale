@@ -4923,9 +4923,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"check-package-dependencies@npm:6.2.1":
-  version: 6.2.1
-  resolution: "check-package-dependencies@npm:6.2.1"
+"check-package-dependencies@npm:6.3.1":
+  version: 6.3.1
+  resolution: "check-package-dependencies@npm:6.3.1"
   dependencies:
     chalk: ^5.2.0
     glob: ^8.0.0
@@ -4934,8 +4934,8 @@ __metadata:
     semver-utils: ^1.1.4
     type-fest: ^3.0.0
   bin:
-    check-package-dependencies: bin/check-package-dependencies.js
-  checksum: be2df00f87a41ce6c03da6ff3d30afe684df2cea9d69ac0a45b40bd4e04e6c226233475c5c2b8600c7a91363b2ce62a6992b955aa235fee0191b8316b373d8d3
+    check-package-dependencies: bin/check-package-dependencies.mjs
+  checksum: 922399c6371fd741d619af34edbdf301e0f0e111bfeadcaefecfc1ae9d84a101fbb0abe985e2f8e1582537a40c577a72021f756e5be517afbb2b28ee83361067
   languageName: node
   linkType: hard
 
@@ -10291,7 +10291,7 @@ __metadata:
     "@pob/root": 7.4.0
     "@types/jest": 29.4.1
     "@types/node": 18.15.2
-    check-package-dependencies: 6.2.1
+    check-package-dependencies: 6.3.1
     eslint: 8.36.0
     jest: 29.5.0
     pob-babel: 35.5.0
