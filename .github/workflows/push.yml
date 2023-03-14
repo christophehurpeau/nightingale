@@ -1,23 +1,17 @@
-name: Node CI
+name: Push CI
 
 on: [push]
 
 jobs:
-  build:
+  checks:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [16.x, 18.x]
 
     steps:
       - uses: actions/checkout@v3
 
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+      - uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node-version }}
-          registry-url: "https://registry.npmjs.org"
+          node-version: 18
 
       - name: Install Dependencies
         run: yarn install --immutable --immutable-cache
@@ -25,34 +19,74 @@ jobs:
       - name: Checks
         run: yarn run checks
 
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install Dependencies
+        run: yarn install --immutable --immutable-cache
+
       - name: Build
         run: yarn run build
-        if: startsWith(matrix.node-version, '18.')
+
+      - name: Check nothing was forgotten before commit
+        run: yarn run repository-check-dirty
+
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install Dependencies
+        run: yarn install --immutable --immutable-cache
 
       - name: Prettier
         run: yarn run lint:prettier
-        if: startsWith(matrix.node-version, '18.')
 
       - name: Typescript
         run: yarn run tsc
-        if: startsWith(matrix.node-version, '18.')
 
       - name: Eslint
         run: yarn run lint:eslint
-        if: startsWith(matrix.node-version, '18.')
+
+  test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16, 18]
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install Dependencies
+        run: yarn install --immutable --immutable-cache
+
+      - name: Test
+        run: yarn run test
+        if: matrix.node-version != 18
 
       - name: Generate Test Coverage
         run: yarn run test --coverage --coverageReporters=json --coverageReporters=text
-        if: startsWith(matrix.node-version, '18.')
-        env:
-          CI: true
+        if: matrix.node-version == 18
 
       - name: Send results to codecov
         uses: codecov/codecov-action@v3
+        if: matrix.node-version == 18
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-        if: startsWith(matrix.node-version, '18.')
-
-      - name: Check nothing was forgotten before commit
-        if: startsWith(matrix.node-version, '18.')
-        run: yarn run repository-check-dirty
