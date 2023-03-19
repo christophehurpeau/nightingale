@@ -56,8 +56,8 @@
   "devDependencies": {
     "@babel/core": "7.20.12",
     "@pob/commitlint-config": "5.1.1",
-    "@pob/eslint-config": "50.0.0",
-    "@pob/eslint-config-typescript": "50.0.0",
+    "@pob/eslint-config": "50.0.1",
+    "@pob/eslint-config-typescript": "50.0.1",
     "@pob/lerna-light": "6.2.0",
     "@pob/root": "7.4.0",
     "@types/jest": "29.5.0",
