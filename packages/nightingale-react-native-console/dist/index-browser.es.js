@@ -39,7 +39,7 @@ var createHandle = function createHandle() {
           _ref.codeFrame;
         error.stack = parsedStackToString(stack);
         consoleOutput([formatterANSI(record)]);
-      })["catch"](function () {
+      }).catch(function () {
         consoleOutput([formatterANSI(record)]);
       });
     } else {

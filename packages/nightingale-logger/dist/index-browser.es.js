@@ -376,13 +376,14 @@ var Logger = /*#__PURE__*/function () {
     if (level === void 0) {
       level = Level.DEBUG;
     }
-    var now = Date.now();
+    var now = Date.now(),
+      seconds;
     var diffTime = now - startTime;
     var readableTime;
     if (diffTime < 1000) {
       readableTime = diffTime + "ms";
     } else {
-      var seconds = diffTime > 1000 ? Math.floor(diffTime / 1000) : 0;
+      seconds = diffTime > 1000 ? Math.floor(diffTime / 1000) : 0;
       readableTime = "" + (seconds ? seconds + "s and " : '') + (diffTime - seconds * 1000) + "ms";
     }
     var extendedMetadata = _extends({}, metadata, {

@@ -22,7 +22,7 @@ export const style =
   };
 
 export function createBrowserConsoleFormatter(
-  theme: 'light' | 'dark' = 'light',
+  theme: 'dark' | 'light' = 'light',
 ): <T extends Metadata>(record: LogRecord<T>) => string[] {
   const styleToHtmlStyle: StyleToHtmlStyle =
     theme === 'dark' ? styleToHtmlStyleThemeDark : styleToHtmlStyleThemeLight;

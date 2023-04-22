@@ -43,7 +43,7 @@ function parsedStackToString(stack: any[]): string {
 }
 
 function consoleOutput<T extends Metadata>(
-  param: string | string[],
+  param: string[] | string,
   record: LogRecord<T>,
 ): void {
   // eslint-disable-next-line no-console

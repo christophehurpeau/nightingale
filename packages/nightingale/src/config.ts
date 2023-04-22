@@ -1,5 +1,5 @@
 import type { ComputedConfigForKey, Config } from 'nightingale-logger';
-import type { Handler } from 'nightingale-types';
+import type { Handler, Level } from 'nightingale-types';
 
 const globalOrWindow: typeof global =
   typeof global !== 'undefined' ? global : (window as typeof global);
@@ -114,7 +114,7 @@ globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = (
 if (globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
   globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = (
     key: string,
-    level: number,
+    level: Level,
   ): ComputedConfigForKey => {
     const { handlers, processors }: ComputedConfigForKey =
       globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key);

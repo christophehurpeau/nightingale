@@ -4,7 +4,7 @@ import { Level } from 'nightingale-levels';
 const specialRegexpChars = /[$()+.?[\\\]^{|}]/;
 
 type TestFunction = (string: string) => boolean;
-export type DebugValueType = string | RegExp | string[];
+export type DebugValueType = RegExp | string[] | string;
 
 const createTestFunctionFromRegexp =
   (regexp: RegExp): TestFunction =>

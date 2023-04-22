@@ -15,7 +15,7 @@ import { getDebugString } from './debug';
 const findDebugLevel = (minLevel: Level, key: string): Level =>
   createFindDebugLevel(getDebugString())(minLevel, key);
 
-type Theme = 'light' | 'dark';
+type Theme = 'dark' | 'light';
 
 const getDefaultTheme = (): Theme => {
   try {

@@ -27,10 +27,9 @@ function consoleOutput(param) {
 }
 const createHandle = () => {
   return record => {
-    var _record$metadata, _record$metadata2;
-    const error = (_record$metadata = record.metadata) === null || _record$metadata === void 0 ? void 0 : _record$metadata.error;
+    const error = record.metadata?.error;
     if (error && error instanceof Error) {
-      (_record$metadata2 = record.metadata) === null || _record$metadata2 === void 0 ? true : delete _record$metadata2.error;
+      delete record.metadata?.error;
       symbolicateStackTrace(getStackTrace(error)).then(({
         stack,
         codeFrame
@@ -46,8 +45,8 @@ const createHandle = () => {
   };
 };
 class ReactNativeConsoleHandler {
-  minLevel = 0;
   constructor(minLevel) {
+    this.minLevel = 0;
     this.minLevel = minLevel;
     this.isHandling = level => level >= minLevel;
     this.handle = createHandle();

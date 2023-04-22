@@ -44,5 +44,4 @@ export declare enum Level {
     /** Emergency: system is unusable */
     EMERGENCY = 600
 }
-export default Level;
 //# sourceMappingURL=index.d.ts.map

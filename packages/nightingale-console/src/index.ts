@@ -32,7 +32,7 @@ const findDebugLevel = createFindDebugLevel(process.env.DEBUG);
 export interface ConsoleHandlerOptions {
   formatter?: <T extends Metadata>(record: LogRecord<T>) => string;
   output?: <T extends Metadata>(
-    param: string | string[],
+    param: string[] | string,
     record: LogRecord<T>,
   ) => void;
   // compat with nightingale-app-console, not used yet

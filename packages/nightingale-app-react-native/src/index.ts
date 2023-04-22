@@ -8,8 +8,8 @@ export { configure, addConfig, Level } from 'nightingale';
 export const appLogger = new Logger('app');
 
 export const ReactNativeConsoleHandlerForPlatform:
-  | typeof ReactNativeConsoleHandler
-  | typeof BrowserConsoleHandler =
+  | typeof BrowserConsoleHandler
+  | typeof ReactNativeConsoleHandler =
   Platform.OS === 'web' ? BrowserConsoleHandler : ReactNativeConsoleHandler;
 
 configure(

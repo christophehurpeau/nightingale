@@ -16,15 +16,15 @@
   "homepage": "https://github.com/christophehurpeau/nightingale",
   "type": "module",
   "engines": {
-    "node": ">=16.0.0"
+    "node": ">=18.0.0"
   },
-  "main": "./dist/index-node16.mjs",
+  "main": "./dist/index-node18.mjs",
   "types": "./dist/definitions/index.d.ts",
   "exports": {
     "./package.json": "./package.json",
     ".": {
       "node": {
-        "import": "./dist/index-node16.mjs"
+        "import": "./dist/index-node18.mjs"
       }
     }
   },
@@ -43,7 +43,7 @@
     "babelEnvs": [
       {
         "target": "node",
-        "version": "16"
+        "version": "18"
       }
     ],
     "entries": [
@@ -51,7 +51,7 @@
     ]
   },
   "dependencies": {
-    "@types/node": ">=16.0.0",
+    "@types/node": ">=18.0.0",
     "nightingale-ansi-formatter": "13.0.0",
     "nightingale-console-output": "13.0.0",
     "nightingale-debug": "13.0.0",
@@ -60,8 +60,8 @@
     "nightingale-types": "13.0.0"
   },
   "devDependencies": {
-    "@babel/core": "7.20.12",
-    "pob-babel": "35.5.0",
-    "typescript": "4.9.5"
+    "@babel/core": "7.21.4",
+    "pob-babel": "35.8.0",
+    "typescript": "5.0.4"
   }
 }

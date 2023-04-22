@@ -149,7 +149,10 @@ function internalFormatValue(value, styleFn, styles, _ref) {
   var padding = _ref.padding,
     depth = _ref.depth,
     maxDepth = _ref.maxDepth,
-    objects = _ref.objects;
+    objects = _ref.objects,
+    stack,
+    name,
+    _name;
   var typeofValue = typeof value;
   if (!styles) {
     if (value == null) {
@@ -208,10 +211,10 @@ function internalFormatValue(value, styleFn, styles, _ref) {
       });
     }
   } else if (value instanceof Error) {
-    var stack = value.stack;
+    stack = value.stack;
     stringValue = stack != null && stack.startsWith(value.message) ? stack : value.message + "\n" + (stack || '');
   } else if (value instanceof Map) {
-    var name = value.constructor.name;
+    name = value.constructor.name;
     if (depth >= maxDepth) {
       stringValue = "{" + name + "...}";
     } else {
@@ -227,7 +230,7 @@ function internalFormatValue(value, styleFn, styles, _ref) {
   } else if (typeofValue === 'symbol') {
     stringValue = value.toString();
   } else if (value instanceof Set) {
-    var _name = value.constructor.name;
+    _name = value.constructor.name;
     if (depth >= maxDepth) {
       stringValue = "{" + _name + "...}";
     } else {
@@ -358,7 +361,7 @@ function internalFormatObject(object, styleFn, objectStyles, _ref5) {
     suffix: '}',
     formatKey: internalFormatKey
   });
-  objects["delete"](object);
+  objects.delete(object);
   return result;
 }
 function internalFormatMap(name, map, styleFn, _ref6) {
@@ -389,7 +392,7 @@ function internalFormatMap(name, map, styleFn, _ref6) {
     suffix: '}',
     formatKey: internalFormatMapKey
   });
-  objects["delete"](map);
+  objects.delete(map);
   return result;
 }
 function internalFormatArray(array, styleFn, _ref7) {
@@ -420,7 +423,7 @@ function internalFormatArray(array, styleFn, _ref7) {
     prefixSuffixSpace: '',
     formatKey: internalNoKey
   });
-  objects["delete"](array);
+  objects.delete(array);
   return result;
 }
 function internalFormatSet(name, set, styleFn, _ref8) {
@@ -451,7 +454,7 @@ function internalFormatSet(name, set, styleFn, _ref8) {
     suffix: ']',
     formatKey: internalNoKey
   });
-  objects["delete"](set);
+  objects.delete(set);
   return result;
 }
 function formatObject(object, styleFn, objectStyles, _temp) {

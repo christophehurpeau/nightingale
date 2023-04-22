@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-duplicate-enum-values */
+
 /**
  * @enum {number} List of Levels
  *
@@ -45,5 +47,3 @@ export enum Level {
   /** Emergency: system is unusable */
   EMERGENCY = 600,
 }
-
-export default Level;

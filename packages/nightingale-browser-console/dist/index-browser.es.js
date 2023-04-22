@@ -22,8 +22,9 @@ var findDebugLevel = function findDebugLevel(minLevel, key) {
   return createFindDebugLevel(getDebugString())(minLevel, key);
 };
 var getDefaultTheme = function getDefaultTheme() {
+  var configInLocalStorage;
   try {
-    var configInLocalStorage = localStorage.getItem('NIGHTINGALE_THEME');
+    configInLocalStorage = localStorage.getItem('NIGHTINGALE_THEME');
     if (configInLocalStorage && configInLocalStorage === 'dark') {
       return configInLocalStorage;
     }

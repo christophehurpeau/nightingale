@@ -16,6 +16,9 @@
     "source.organizeImports": false
   },
 
+  // jest
+  "jest.jestCommandLine": "NODE_OPTIONS=--experimental-vm-modules node_modules/.bin/jest",
+
   // eslint config
   "eslint.workingDirectories": ["."],
   "eslint.options": {

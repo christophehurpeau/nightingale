@@ -1,4 +1,16 @@
 #!/usr/bin/env sh
 . "$(dirname "$0")/_/husky.sh"
 
-yarn test --watchAll=false --changedSince=origin/main && yarn run checks
+# z40 is the value matching the empty blob/commit/tree SHA (zero x 40)
+z40=0000000000000000000000000000000000000000
+branch_ref=$(git symbolic-ref HEAD)
+
+while read local_ref local_sha remote_ref remote_sha
+do
+  # Skip if branch deletion
+  if [ "$local_sha" != "$z40" ]; then
+    if [ "$local_ref" = "$branch_ref" ]; then
+      yarn test --watchAll=false --changedSince=origin/main && yarn run checks
+    fi
+  fi
+done

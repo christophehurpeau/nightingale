@@ -35,10 +35,12 @@ var createHandler = function createHandler(Sentry, _temp) {
       level = record.level,
       metadata = record.metadata,
       extra = record.extra,
-      message = record.message;
+      message = record.message,
+      error,
+      extraData;
     if (shouldSendAsException(record)) {
-      var error = (metadata == null ? void 0 : metadata.error) || record.message;
-      var extraData = _extends({
+      error = (metadata == null ? void 0 : metadata.error) || record.message;
+      extraData = _extends({
         nightingaleErrorMessage: message
       }, metadata, extra);
       delete extraData.error;

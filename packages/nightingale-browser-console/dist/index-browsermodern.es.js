@@ -3,8 +3,7 @@ import consoleOutput from 'nightingale-console-output';
 import { createFindDebugLevel } from 'nightingale-debug';
 
 function getDebugString() {
-  var _document$location;
-  const querystring = (_document$location = document.location) === null || _document$location === void 0 ? void 0 : _document$location.search;
+  const querystring = document.location?.search;
   const debugFromLocalStorage = window.localStorage && localStorage.getItem('debug') || '';
   if (!querystring) {
     return debugFromLocalStorage;
@@ -35,8 +34,8 @@ const createHandler = (theme = getDefaultTheme()) => {
   };
 };
 class BrowserConsoleHandler {
-  minLevel = 0;
   constructor(minLevel, options = {}) {
+    this.minLevel = 0;
     this.isHandling = (level, key) => level >= findDebugLevel(minLevel, key);
     this.handle = createHandler(options.theme);
   }

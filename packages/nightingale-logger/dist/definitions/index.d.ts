@@ -95,27 +95,27 @@ export declare class Logger {
     /**
      * Log a message
      */
-    log<T extends Metadata>(messageOrError: string | Error, metadata?: T, level?: Level, options?: Options<T>): void;
+    log<T extends Metadata>(messageOrError: Error | string, metadata?: T, level?: Level, options?: Options<T>): void;
     /**
      * Log a trace message
      */
-    trace<T extends Metadata>(messageOrError: string | Error, metadata?: T, metadataStyles?: MetadataStyles<T>): void;
+    trace<T extends Metadata>(messageOrError: Error | string, metadata?: T, metadataStyles?: MetadataStyles<T>): void;
     /**
      * Log a debug message
      */
-    debug<T extends Metadata>(messageOrError: string | Error, metadata?: T, metadataStyles?: MetadataStyles<T>): void;
+    debug<T extends Metadata>(messageOrError: Error | string, metadata?: T, metadataStyles?: MetadataStyles<T>): void;
     /**
      * Notice an info message
      */
-    notice<T extends Metadata>(messageOrError: string | Error, metadata?: T, metadataStyles?: MetadataStyles<T>): void;
+    notice<T extends Metadata>(messageOrError: Error | string, metadata?: T, metadataStyles?: MetadataStyles<T>): void;
     /**
      * Log an info message
      */
-    info<T extends Metadata>(messageOrError: string | Error, metadata?: T, metadataStyles?: MetadataStyles<T>): void;
+    info<T extends Metadata>(messageOrError: Error | string, metadata?: T, metadataStyles?: MetadataStyles<T>): void;
     /**
      * Log a warn message
      */
-    warn<T extends Metadata>(messageOrError: string | Error, metadata?: T, metadataStyles?: MetadataStyles<T>): void;
+    warn<T extends Metadata>(messageOrError: Error | string, metadata?: T, metadataStyles?: MetadataStyles<T>): void;
     /**
      * Log an error message
      *
@@ -129,11 +129,11 @@ export declare class Logger {
      * }
      * ```
      */
-    error<T extends Metadata>(messageOrError: string | Error, metadata?: T, metadataStyles?: MetadataStyles<T>): void;
+    error<T extends Metadata>(messageOrError: Error | string, metadata?: T, metadataStyles?: MetadataStyles<T>): void;
     /**
      * Log an critical message
      */
-    critical<T extends Metadata>(messageOrError: string | Error, metadata?: T, metadataStyles?: MetadataStyles<T>): void;
+    critical<T extends Metadata>(messageOrError: Error | string, metadata?: T, metadataStyles?: MetadataStyles<T>): void;
     /**
      * Log a fatal message
      *
@@ -147,11 +147,11 @@ export declare class Logger {
      *   process.exit(1);
      * }
      */
-    fatal<T extends Metadata>(messageOrError: string | Error, metadata?: T, metadataStyles?: MetadataStyles<T>): void;
+    fatal<T extends Metadata>(messageOrError: Error | string, metadata?: T, metadataStyles?: MetadataStyles<T>): void;
     /**
      * Log an alert message
      */
-    alert<T extends Metadata>(messageOrError: string | Error, metadata?: T, metadataStyles?: MetadataStyles<T>): void;
+    alert<T extends Metadata>(messageOrError: Error | string, metadata?: T, metadataStyles?: MetadataStyles<T>): void;
     /**
      * Log an inspected value
      */
@@ -175,15 +175,15 @@ export declare class Logger {
     /**
      * Alias for infoFail
      */
-    fail<T extends Metadata>(messageOrError: string | Error, metadata?: T, metadataStyles?: MetadataStyles<T>): void;
+    fail<T extends Metadata>(messageOrError: Error | string, metadata?: T, metadataStyles?: MetadataStyles<T>): void;
     /**
      * Log an info fail message
      */
-    infoFail<T extends Metadata>(messageOrError: string | Error, metadata?: T, metadataStyles?: MetadataStyles<T>): void;
+    infoFail<T extends Metadata>(messageOrError: Error | string, metadata?: T, metadataStyles?: MetadataStyles<T>): void;
     /**
      * Log an debug fail message
      */
-    debugFail<T extends Metadata>(messageOrError: string | Error, metadata?: T, metadataStyles?: MetadataStyles<T>): void;
+    debugFail<T extends Metadata>(messageOrError: Error | string, metadata?: T, metadataStyles?: MetadataStyles<T>): void;
     /**
      * @returns {number} time to pass to timeEnd
      */
@@ -218,7 +218,7 @@ export declare class Logger {
      * ```
      *
      */
-    enter<T extends Metadata, Fn extends (...args: unknown[]) => unknown>(fn: Fn, metadata?: T, metadataStyles?: MetadataStyles<T & ExtendedFunctionNameMetadata>): void;
+    enter<T extends Metadata, Fn extends (...args: unknown[]) => unknown>(fn: Fn, metadata?: T, metadataStyles?: MetadataStyles<ExtendedFunctionNameMetadata & T>): void;
     /**
      * Log an exit in a function
      *
@@ -233,7 +233,7 @@ export declare class Logger {
      * }
      * ```
      */
-    exit<T extends Metadata, Fn extends (...args: unknown[]) => unknown>(fn: Fn, metadata?: T, metadataStyles?: MetadataStyles<T & ExtendedFunctionNameMetadata>): void;
+    exit<T extends Metadata, Fn extends (...args: unknown[]) => unknown>(fn: Fn, metadata?: T, metadataStyles?: MetadataStyles<ExtendedFunctionNameMetadata & T>): void;
     /**
      * Wrap around a function to log enter and exit of a function
      *

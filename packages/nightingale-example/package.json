@@ -12,42 +12,35 @@
   "homepage": "https://github.com/christophehurpeau/nightingale",
   "type": "module",
   "engines": {
-    "node": ">=16.0.0"
+    "node": ">=18.0.0"
   },
   "exports": {
     "./package.json": "./package.json",
     "./configure": {
       "node": {
-        "import": "./build/configure-node16.mjs"
+        "import": "./build/configure-node18.mjs"
       }
     },
     "./console": {
       "node": {
-        "import": "./build/console-node16.mjs"
+        "import": "./build/console-node18.mjs"
       }
     },
     "./debug": {
       "node": {
-        "import": "./build/debug-node16.mjs"
+        "import": "./build/debug-node18.mjs"
       }
     },
     "./errors": {
       "node": {
-        "import": "./build/errors-node16.mjs"
+        "import": "./build/errors-node18.mjs"
       }
     },
     "./jsonConsole": {
       "node": {
-        "import": "./build/jsonConsole-node16.mjs"
+        "import": "./build/jsonConsole-node18.mjs"
       }
     }
-  },
-  "module:aliases-node": {
-    "./configure.js": "./build/configure-node16.es.js",
-    "./console.js": "./build/console-node16.es.js",
-    "./debug.js": "./build/debug-node16.es.js",
-    "./errors.js": "./build/errors-node16.es.js",
-    "./jsonConsole.js": "./build/jsonConsole-node16.es.js"
   },
   "scripts": {
     "build": "yarn clean:build && rollup --config rollup.config.mjs",
@@ -63,7 +56,7 @@
     "babelEnvs": [
       {
         "target": "node",
-        "version": "16"
+        "version": "18"
       }
     ],
     "entries": [
@@ -83,8 +76,8 @@
     "nightingale-types": "13.0.0"
   },
   "devDependencies": {
-    "@babel/core": "7.20.12",
-    "pob-babel": "35.5.0",
-    "typescript": "4.9.5"
+    "@babel/core": "7.21.4",
+    "pob-babel": "35.8.0",
+    "typescript": "5.0.4"
   }
 }

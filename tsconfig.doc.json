@@ -12,7 +12,7 @@
     "module": "esnext",
     "lib": ["dom", "esnext"],
     "skipLibCheck": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "esModuleInterop": true
   },
 

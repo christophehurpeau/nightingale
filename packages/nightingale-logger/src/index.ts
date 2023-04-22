@@ -73,7 +73,7 @@ if (!globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER) {
 if (!globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
   globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = (
     key: string,
-    level: number,
+    level: Level,
   ): ComputedConfigForKey => {
     const { handlers, processors }: ComputedConfigForKey =
       globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key);
@@ -235,7 +235,7 @@ export class Logger {
    * Log a message
    */
   log<T extends Metadata>(
-    messageOrError: string | Error,
+    messageOrError: Error | string,
     metadata?: T,
     level: Level = Level.INFO,
     options?: Options<T>,
@@ -275,7 +275,7 @@ export class Logger {
    * Log a trace message
    */
   trace<T extends Metadata>(
-    messageOrError: string | Error,
+    messageOrError: Error | string,
     metadata?: T,
     metadataStyles?: MetadataStyles<T>,
   ): void {
@@ -286,7 +286,7 @@ export class Logger {
    * Log a debug message
    */
   debug<T extends Metadata>(
-    messageOrError: string | Error,
+    messageOrError: Error | string,
     metadata?: T,
     metadataStyles?: MetadataStyles<T>,
   ): void {
@@ -297,7 +297,7 @@ export class Logger {
    * Notice an info message
    */
   notice<T extends Metadata>(
-    messageOrError: string | Error,
+    messageOrError: Error | string,
     metadata?: T,
     metadataStyles?: MetadataStyles<T>,
   ): void {
@@ -308,7 +308,7 @@ export class Logger {
    * Log an info message
    */
   info<T extends Metadata>(
-    messageOrError: string | Error,
+    messageOrError: Error | string,
     metadata?: T,
     metadataStyles?: MetadataStyles<T>,
   ): void {
@@ -319,7 +319,7 @@ export class Logger {
    * Log a warn message
    */
   warn<T extends Metadata>(
-    messageOrError: string | Error,
+    messageOrError: Error | string,
     metadata?: T,
     metadataStyles?: MetadataStyles<T>,
   ): void {
@@ -340,7 +340,7 @@ export class Logger {
    * ```
    */
   error<T extends Metadata>(
-    messageOrError: string | Error,
+    messageOrError: Error | string,
     metadata?: T,
     metadataStyles?: MetadataStyles<T>,
   ): void {
@@ -351,7 +351,7 @@ export class Logger {
    * Log an critical message
    */
   critical<T extends Metadata>(
-    messageOrError: string | Error,
+    messageOrError: Error | string,
     metadata?: T,
     metadataStyles?: MetadataStyles<T>,
   ): void {
@@ -372,7 +372,7 @@ export class Logger {
    * }
    */
   fatal<T extends Metadata>(
-    messageOrError: string | Error,
+    messageOrError: Error | string,
     metadata?: T,
     metadataStyles?: MetadataStyles<T>,
   ): void {
@@ -383,7 +383,7 @@ export class Logger {
    * Log an alert message
    */
   alert<T extends Metadata>(
-    messageOrError: string | Error,
+    messageOrError: Error | string,
     metadata?: T,
     metadataStyles?: MetadataStyles<T>,
   ): void {
@@ -476,7 +476,7 @@ export class Logger {
    * Alias for infoFail
    */
   fail<T extends Metadata>(
-    messageOrError: string | Error,
+    messageOrError: Error | string,
     metadata?: T,
     metadataStyles?: MetadataStyles<T>,
   ): void {
@@ -487,7 +487,7 @@ export class Logger {
    * Log an info fail message
    */
   infoFail<T extends Metadata>(
-    messageOrError: string | Error,
+    messageOrError: Error | string,
     metadata?: T,
     metadataStyles?: MetadataStyles<T>,
   ): void {
@@ -502,7 +502,7 @@ export class Logger {
    * Log an debug fail message
    */
   debugFail<T extends Metadata>(
-    messageOrError: string | Error,
+    messageOrError: Error | string,
     metadata?: T,
     metadataStyles?: MetadataStyles<T>,
   ): void {
@@ -617,7 +617,7 @@ export class Logger {
   enter<T extends Metadata, Fn extends (...args: unknown[]) => unknown>(
     fn: Fn,
     metadata?: T,
-    metadataStyles?: MetadataStyles<T & ExtendedFunctionNameMetadata>,
+    metadataStyles?: MetadataStyles<ExtendedFunctionNameMetadata & T>,
   ): void {
     const extendedMetadata = {
       ...metadata,
@@ -643,7 +643,7 @@ export class Logger {
   exit<T extends Metadata, Fn extends (...args: unknown[]) => unknown>(
     fn: Fn,
     metadata?: T,
-    metadataStyles?: MetadataStyles<T & ExtendedFunctionNameMetadata>,
+    metadataStyles?: MetadataStyles<ExtendedFunctionNameMetadata & T>,
   ): void {
     const extendedMetadata = {
       ...metadata,

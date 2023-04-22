@@ -35,26 +35,26 @@
     "forceConsistentCasingInFileNames": true,
 
     /* Module Resolution Options */
-    "moduleResolution": "node" /* Specify module resolution strategy: 'node' (Node.js) or 'classic' (TypeScript pre-1.6). */,
+    "moduleResolution": "bundler" /* Specify module resolution strategy. */,
     "allowSyntheticDefaultImports": true /* Allow default imports from modules with no default export. This does not affect code emit, just typechecking. */,
     "esModuleInterop": true /* Enables emit interoperability between CommonJS and ES Modules via creation of namespace objects for all imports. Implies 'allowSyntheticDefaultImports'. */,
-    "baseUrl": "./src" /* Base directory to resolve non-absolute module names. */,
+
     "paths": {
-      "nightingale-debug": ["../../../packages/nightingale-debug/src"],
-      "nightingale-debug/*": ["../../../packages/nightingale-debug/src/*"],
-      "nightingale-types": ["../../../packages/nightingale-types/src"],
-      "nightingale-types/*": ["../../../packages/nightingale-types/src/*"],
+      "nightingale-debug": ["../../packages/nightingale-debug/src"],
+      "nightingale-debug/*": ["../../packages/nightingale-debug/src/*"],
+      "nightingale-types": ["../../packages/nightingale-types/src"],
+      "nightingale-types/*": ["../../packages/nightingale-types/src/*"],
       "nightingale-console-output": [
-        "../../../packages/nightingale-console-output/src"
+        "../../packages/nightingale-console-output/src"
       ],
       "nightingale-console-output/*": [
-        "../../../packages/nightingale-console-output/src/*"
+        "../../packages/nightingale-console-output/src/*"
       ],
       "nightingale-browser-console-formatter": [
-        "../../../packages/nightingale-browser-console-formatter/src"
+        "../../packages/nightingale-browser-console-formatter/src"
       ],
       "nightingale-browser-console-formatter/*": [
-        "../../../packages/nightingale-browser-console-formatter/src/*"
+        "../../packages/nightingale-browser-console-formatter/src/*"
       ]
     }
   },

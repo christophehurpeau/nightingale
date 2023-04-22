@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-duplicate-enum-values */
+
 /**
  * @enum {number} List of Levels
  *
@@ -32,7 +34,6 @@ var Level;
   Level[Level["ALERT"] = 550] = "ALERT";
   Level[Level["EMERGENCY"] = 600] = "EMERGENCY";
 })(Level || (Level = {}));
-var Level$1 = Level;
 
-export { Level, Level$1 as default };
+export { Level };
 //# sourceMappingURL=index-browser.es.js.map

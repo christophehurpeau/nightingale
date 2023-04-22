@@ -15,7 +15,7 @@ function map2object(map: Map<unknown, unknown>): unknown {
   return object;
 }
 
-function stringify(value: unknown, space?: string | number): string {
+function stringify(value: unknown, space?: number | string): string {
   return JSON.stringify(
     value,
     (key, objectValue) => {
