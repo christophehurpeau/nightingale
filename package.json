@@ -65,7 +65,7 @@
     "eslint": "8.39.0",
     "jest": "29.5.0",
     "pob-babel": "35.8.0",
-    "typedoc": "0.24.5",
+    "typedoc": "0.24.6",
     "typescript": "5.0.4"
   }
 }
