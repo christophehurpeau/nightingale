@@ -78,10 +78,10 @@
   "devDependencies": {
     "@babel/core": "7.21.4",
     "@babel/preset-env": "7.21.4",
-    "@types/react-native": "0.70.6",
+    "@types/react-native": "0.72.2",
     "pob-babel": "35.8.0",
     "react": "18.1.0",
-    "react-native": "0.70.5",
+    "react-native": "0.72.0",
     "typescript": "5.1.3"
   }
 }
