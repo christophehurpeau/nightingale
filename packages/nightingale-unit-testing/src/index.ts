@@ -1,4 +1,3 @@
-import { IS_DEV } from 'pob-babel';
 import { configure, Level, Logger } from 'nightingale';
 import { ConsoleHandler } from 'nightingale-console';
 
@@ -8,7 +7,7 @@ const testMinLevel =
   process.env.NIGHTINGALE_TEST_MIN_LEVEL !== undefined &&
   process.env.NIGHTINGALE_TEST_MIN_LEVEL !== ''
     ? Number(process.env.NIGHTINGALE_TEST_MIN_LEVEL)
-    : IS_DEV
+    : process.env.NODE_ENV !== 'production'
     ? Level.DEBUG
     : Level.INFO;
 

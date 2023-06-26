@@ -1,4 +1,4 @@
-import { POB_TARGET, IS_DEV } from 'pob-babel';
+import { POB_TARGET } from 'pob-babel';
 import { Logger, configure, Level, listenUnhandledErrors } from 'nightingale';
 import { BrowserConsoleHandler } from 'nightingale-browser-console';
 import { ConsoleHandler as TerminalConsoleHandler } from 'nightingale-console';
@@ -23,7 +23,7 @@ const appMinLevel =
   process.env.NIGHTINGALE_APP_MIN_LEVEL !== undefined &&
   process.env.NIGHTINGALE_APP_MIN_LEVEL !== ''
     ? Number(process.env.NIGHTINGALE_APP_MIN_LEVEL)
-    : IS_DEV
+    : process.env.NODE_ENV !== 'production'
     ? Level.DEBUG
     : Level.INFO;
 
