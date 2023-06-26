@@ -1,5 +1,5 @@
 /* eslint-disable max-lines */
-import { POB_TARGET } from 'pob-babel';
+import { POB_TARGET, IS_DEV } from 'pob-babel';
 import * as util from 'util';
 import { Level } from 'nightingale-levels';
 import type {
@@ -124,7 +124,7 @@ export class Logger {
     this.key = key;
     this.displayName = displayName;
 
-    if (__DEV__ && key.includes('.')) {
+    if (IS_DEV && key.includes('.')) {
       throw new Error(
         `nightingale: \`.\` in key is no longer supported, use \`:\` instead (key: ${key})`,
       );
