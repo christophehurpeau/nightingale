@@ -3,6 +3,7 @@ import { Level } from 'nightingale-levels';
 export { Level } from 'nightingale-levels';
 
 /* eslint-disable max-lines */
+
 const globalOrWindow = typeof global !== 'undefined' ? global : window;
 if (!globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER) {
   globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = () => ({

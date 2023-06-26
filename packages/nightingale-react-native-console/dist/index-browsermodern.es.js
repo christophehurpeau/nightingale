@@ -4,6 +4,8 @@ import parseErrorStack from 'react-native/Libraries/Core/Devtools/parseErrorStac
 import symbolicateStackTrace from 'react-native/Libraries/Core/Devtools/symbolicateStackTrace';
 
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/restrict-template-expressions */
 const getStackTrace = e => {
   // eslint-disable-next-line no-prototype-builtins
   if (Platform.hasOwnProperty('constants')) {
@@ -45,8 +47,8 @@ const createHandle = () => {
   };
 };
 class ReactNativeConsoleHandler {
+  minLevel = 0;
   constructor(minLevel) {
-    this.minLevel = 0;
     this.minLevel = minLevel;
     this.isHandling = level => level >= minLevel;
     this.handle = createHandle();

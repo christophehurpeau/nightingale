@@ -34,8 +34,8 @@ const createHandler = (theme = getDefaultTheme()) => {
   };
 };
 class BrowserConsoleHandler {
+  minLevel = 0;
   constructor(minLevel, options = {}) {
-    this.minLevel = 0;
     this.isHandling = (level, key) => level >= findDebugLevel(minLevel, key);
     this.handle = createHandler(options.theme);
   }
