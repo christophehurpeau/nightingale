@@ -23,7 +23,7 @@ const appMinLevel =
   process.env.NIGHTINGALE_APP_MIN_LEVEL !== undefined &&
   process.env.NIGHTINGALE_APP_MIN_LEVEL !== ''
     ? Number(process.env.NIGHTINGALE_APP_MIN_LEVEL)
-    : __DEV__
+    : process.env.NODE_ENV !== 'production'
     ? Level.DEBUG
     : Level.INFO;
 

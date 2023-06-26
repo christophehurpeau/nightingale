@@ -45,7 +45,7 @@ var Logger = /*#__PURE__*/function () {
   function Logger(key, displayName) {
     this.key = key;
     this.displayName = displayName;
-    if (process.env.NODE_ENV !== "production" && key.includes('.')) {
+    if (process.env.NODE_ENV !== 'production' && key.includes('.')) {
       throw new Error("nightingale: `.` in key is no longer supported, use `:` instead (key: " + key + ")");
     }
   }
