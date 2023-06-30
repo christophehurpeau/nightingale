@@ -4,6 +4,8 @@ import parseErrorStack from 'react-native/Libraries/Core/Devtools/parseErrorStac
 import symbolicateStackTrace from 'react-native/Libraries/Core/Devtools/symbolicateStackTrace';
 
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/restrict-template-expressions */
 var getStackTrace = function getStackTrace(e) {
   // eslint-disable-next-line no-prototype-builtins
   if (Platform.hasOwnProperty('constants')) {
@@ -31,13 +33,13 @@ function consoleOutput(param) {
 var createHandle = function createHandle() {
   return function (record) {
     var _record$metadata, _record$metadata2;
-    var error = (_record$metadata = record.metadata) == null ? void 0 : _record$metadata.error;
-    if (error && error instanceof Error) {
+    var metadataError = (_record$metadata = record.metadata) == null ? void 0 : _record$metadata.error;
+    if (metadataError && metadataError instanceof Error) {
       (_record$metadata2 = record.metadata) == null ? true : delete _record$metadata2.error;
-      symbolicateStackTrace(getStackTrace(error)).then(function (_ref) {
+      symbolicateStackTrace(getStackTrace(metadataError)).then(function (_ref) {
         var stack = _ref.stack;
           _ref.codeFrame;
-        error.stack = parsedStackToString(stack);
+        metadataError.stack = parsedStackToString(stack);
         consoleOutput([formatterANSI(record)]);
       }).catch(function () {
         consoleOutput([formatterANSI(record)]);

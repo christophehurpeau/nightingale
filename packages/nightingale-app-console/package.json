@@ -13,7 +13,7 @@
   "homepage": "https://github.com/christophehurpeau/nightingale",
   "type": "module",
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=18.12.0"
   },
   "browserslist": {
     "production": [
@@ -78,9 +78,9 @@
     "nightingale-console": "13.0.0"
   },
   "devDependencies": {
-    "@babel/core": "7.21.4",
-    "@babel/preset-env": "7.21.4",
-    "pob-babel": "35.8.0",
+    "@babel/core": "7.22.5",
+    "@babel/preset-env": "7.22.5",
+    "pob-babel": "36.1.0",
     "typescript": "5.1.6"
   }
 }

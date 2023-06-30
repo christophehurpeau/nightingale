@@ -52,15 +52,15 @@ function consoleOutput<T extends Metadata>(
 
 const createHandle = (): Handle => {
   return <T extends Metadata>(record: LogRecord<T>): void => {
-    const error = record.metadata?.error;
-    if (error && error instanceof Error) {
+    const metadataError = record.metadata?.error;
+    if (metadataError && metadataError instanceof Error) {
       delete record.metadata?.error;
-      symbolicateStackTrace(getStackTrace(error))
+      symbolicateStackTrace(getStackTrace(metadataError))
         .then(({ stack, codeFrame }: any) => {
-          error.stack = parsedStackToString(stack);
+          metadataError.stack = parsedStackToString(stack);
           consoleOutput([formatterANSI(record)], record);
         })
-        .catch((err) => {
+        .catch((error) => {
           consoleOutput([formatterANSI(record)], record);
         });
     } else {

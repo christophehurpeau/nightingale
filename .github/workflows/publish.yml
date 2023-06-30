@@ -56,7 +56,7 @@ jobs:
           node-version: 18
           registry-url: "https://registry.npmjs.org"
 
-      - run: lerna publish from-git --no-verify-access --yes
+      - run: yarn lerna publish from-git --no-verify-access --yes
         if: |
           github.ref == 'refs/heads/main'
           && contains(github.event.inputs.dry-run, 'y') == false

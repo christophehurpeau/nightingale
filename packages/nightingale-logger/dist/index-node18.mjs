@@ -1,4 +1,4 @@
-import * as util from 'util';
+import * as util from 'node:util';
 import { Level } from 'nightingale-levels';
 export { Level } from 'nightingale-levels';
 
