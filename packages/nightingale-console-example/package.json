@@ -18,16 +18,19 @@
   "exports": {
     "./package.json": "./package.json",
     ".": {
+      "type": "./build/definitions/index.d.ts",
       "node": {
         "import": "./build/index-node18.mjs"
       }
     },
     "./children": {
+      "type": "./build/definitions/index.d.ts",
       "node": {
         "import": "./build/children-node18.mjs"
       }
     },
     "./sentry": {
+      "type": "./build/definitions/index.d.ts",
       "node": {
         "import": "./build/sentry-node18.mjs"
       }

@@ -17,26 +17,31 @@
   "exports": {
     "./package.json": "./package.json",
     "./configure": {
+      "type": "./build/definitions/index.d.ts",
       "node": {
         "import": "./build/configure-node18.mjs"
       }
     },
     "./console": {
+      "type": "./build/definitions/index.d.ts",
       "node": {
         "import": "./build/console-node18.mjs"
       }
     },
     "./debug": {
+      "type": "./build/definitions/index.d.ts",
       "node": {
         "import": "./build/debug-node18.mjs"
       }
     },
     "./errors": {
+      "type": "./build/definitions/index.d.ts",
       "node": {
         "import": "./build/errors-node18.mjs"
       }
     },
     "./jsonConsole": {
+      "type": "./build/definitions/index.d.ts",
       "node": {
         "import": "./build/jsonConsole-node18.mjs"
       }

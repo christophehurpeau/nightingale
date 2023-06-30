@@ -33,6 +33,7 @@
   "exports": {
     "./package.json": "./package.json",
     ".": {
+      "type": "./dist/definitions/index.d.ts",
       "node": {
         "import": "./dist/index-node18.mjs"
       },
