@@ -1,6 +1,6 @@
 {
   "name": "nightingale-react-native-console",
-  "version": "13.0.0",
+  "version": "14.0.0",
   "description": "React Native and Expo handler for nightingale",
   "keywords": [
     "nightingale",
@@ -72,8 +72,8 @@
     "react-native": "*"
   },
   "dependencies": {
-    "nightingale-ansi-formatter": "13.0.0",
-    "nightingale-types": "13.0.0"
+    "nightingale-ansi-formatter": "14.0.0",
+    "nightingale-types": "14.0.0"
   },
   "devDependencies": {
     "@babel/core": "7.22.5",

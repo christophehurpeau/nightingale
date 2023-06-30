@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [14.0.0](https://github.com/christophehurpeau/nightingale/compare/v13.0.0...v14.0.0) (2023-06-30)
+
+
+### ⚠ BREAKING CHANGES
+
+* **deps:** require node 18 
+* requires node 18
+
+### Features
+
+* **nightingale-sentry:** add message in additional data ([4349dc9](https://github.com/christophehurpeau/nightingale/commit/4349dc9bd6cad2070a976033c62e77d5e99113f7))
+* requires node 18 ([4452b11](https://github.com/christophehurpeau/nightingale/commit/4452b116188e58c293be85e462e04922f7ad51f0))
+
+
+### Miscellaneous Chores
+
+* **deps:** update dependency @pob/root to v8 ([#760](https://github.com/christophehurpeau/nightingale/issues/760)) ([22dc3cc](https://github.com/christophehurpeau/nightingale/commit/22dc3cceabdfd465d04ee36fec8fdac31febab69))
+
+
+
 # [13.0.0](https://github.com/christophehurpeau/nightingale/compare/v12.1.4...v13.0.0) (2022-11-19)
 
 

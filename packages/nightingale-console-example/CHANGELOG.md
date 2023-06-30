@@ -3,6 +3,40 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [14.0.0](https://github.com/christophehurpeau/nightingale/compare/v13.0.0...v14.0.0) (2023-06-30)
+
+
+### ⚠ BREAKING CHANGES
+
+* **deps:** require node 18 
+* requires node 18
+
+### Features
+
+* **deps:** update dependency @sentry/node to v7.20.0 ([#625](https://github.com/christophehurpeau/nightingale/issues/625)) ([9a12c64](https://github.com/christophehurpeau/nightingale/commit/9a12c64abb775014dfa9c2075dd8145736f38059))
+* **deps:** update dependency @sentry/node to v7.31.1 ([#627](https://github.com/christophehurpeau/nightingale/issues/627)) ([f83e11f](https://github.com/christophehurpeau/nightingale/commit/f83e11ffd640996407da26336db23476375bbbe3))
+* **deps:** update dependency @sentry/node to v7.32.1 ([#648](https://github.com/christophehurpeau/nightingale/issues/648)) ([452952f](https://github.com/christophehurpeau/nightingale/commit/452952f0d64f5c957209d9fd231372c06efd5ea0))
+* **deps:** update dependency @sentry/node to v7.34.0 ([#654](https://github.com/christophehurpeau/nightingale/issues/654)) ([b21c3ba](https://github.com/christophehurpeau/nightingale/commit/b21c3ba0a358c3dbc31e4d57bdeae98aef504aeb))
+* **deps:** update dependency @sentry/node to v7.35.0 ([#659](https://github.com/christophehurpeau/nightingale/issues/659)) ([f1da643](https://github.com/christophehurpeau/nightingale/commit/f1da643e3c88951371d11f54188331eba7921973))
+* **deps:** update dependency @sentry/node to v7.36.0 ([#660](https://github.com/christophehurpeau/nightingale/issues/660)) ([9fca112](https://github.com/christophehurpeau/nightingale/commit/9fca1125754ec1dade940425e9eab5db41420fe6))
+* **deps:** update dependency @sentry/node to v7.37.0 ([#666](https://github.com/christophehurpeau/nightingale/issues/666)) ([46920f2](https://github.com/christophehurpeau/nightingale/commit/46920f2a953252590922c882df97b806ed234e9e))
+* **deps:** update dependency @sentry/node to v7.39.0 ([#678](https://github.com/christophehurpeau/nightingale/issues/678)) ([7e60ec4](https://github.com/christophehurpeau/nightingale/commit/7e60ec435d2ce779f453bcf0a3a2678501ce6afa))
+* **deps:** update dependency @sentry/node to v7.41.0 ([#681](https://github.com/christophehurpeau/nightingale/issues/681)) ([9ad5055](https://github.com/christophehurpeau/nightingale/commit/9ad5055c338bac494ccba679a548555a2966ac4b))
+* **deps:** update dependency @sentry/node to v7.43.0 ([#697](https://github.com/christophehurpeau/nightingale/issues/697)) ([fe3fd73](https://github.com/christophehurpeau/nightingale/commit/fe3fd73c116c50a95507b72af5a17bbafe4cde05))
+* **deps:** update dependency @sentry/node to v7.48.0 ([#717](https://github.com/christophehurpeau/nightingale/issues/717)) ([ef248a4](https://github.com/christophehurpeau/nightingale/commit/ef248a4e2af8bb7f7e33c67c6d383c414de89e3b))
+* **deps:** update dependency @sentry/node to v7.51.0 ([#725](https://github.com/christophehurpeau/nightingale/issues/725)) ([42c243d](https://github.com/christophehurpeau/nightingale/commit/42c243d33673f31ff2c5cc1094b1e49e7b6047bd))
+* **deps:** update dependency @sentry/node to v7.53.1 ([#740](https://github.com/christophehurpeau/nightingale/issues/740)) ([664a2e0](https://github.com/christophehurpeau/nightingale/commit/664a2e0b60db68b869bb08fd4d8dc46798a5a2dc))
+* **deps:** update dependency @sentry/node to v7.55.0 ([#755](https://github.com/christophehurpeau/nightingale/issues/755)) ([53b8bef](https://github.com/christophehurpeau/nightingale/commit/53b8befefd3710e856c88617d92a6df36e9d43d7))
+* **deps:** update dependency @sentry/node to v7.56.0 ([#758](https://github.com/christophehurpeau/nightingale/issues/758)) ([cd68ae4](https://github.com/christophehurpeau/nightingale/commit/cd68ae402fd0cec89e43d9ffeac10627732c8d35))
+* requires node 18 ([4452b11](https://github.com/christophehurpeau/nightingale/commit/4452b116188e58c293be85e462e04922f7ad51f0))
+
+
+### Miscellaneous Chores
+
+* **deps:** update dependency @pob/root to v8 ([#760](https://github.com/christophehurpeau/nightingale/issues/760)) ([22dc3cc](https://github.com/christophehurpeau/nightingale/commit/22dc3cceabdfd465d04ee36fec8fdac31febab69))
+
+
+
 # [13.0.0](https://github.com/christophehurpeau/nightingale/compare/v12.1.4...v13.0.0) (2022-11-19)
 
 
