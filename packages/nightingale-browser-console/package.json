@@ -33,7 +33,7 @@
   "exports": {
     "./package.json": "./package.json",
     ".": {
-      "type": "./dist/definitions/index.d.ts",
+      "types": "./dist/definitions/index.d.ts",
       "browser": {
         "browser:modern": {
           "import": "./dist/index-browsermodern.es.js"
