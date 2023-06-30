@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [14.0.1](https://github.com/christophehurpeau/nightingale/compare/v14.0.0...v14.0.1) (2023-06-30)
+
+
+### Bug Fixes
+
+* add missing type in exports for latest typescript ([8897fd6](https://github.com/christophehurpeau/nightingale/commit/8897fd6fcbd25975482fd1549277b73ed725e53c))
+
+
+
 ## [14.0.0](https://github.com/christophehurpeau/nightingale/compare/v13.0.0...v14.0.0) (2023-06-30)
 
 

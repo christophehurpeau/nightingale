@@ -1,6 +1,6 @@
 {
   "name": "nightingale-console",
-  "version": "14.0.0",
+  "version": "14.0.1",
   "description": "Console handler for nightingale",
   "keywords": [
     "nightingale",
@@ -53,12 +53,12 @@
   },
   "dependencies": {
     "@types/node": ">=18.0.0",
-    "nightingale-ansi-formatter": "14.0.0",
-    "nightingale-console-output": "14.0.0",
-    "nightingale-debug": "14.0.0",
-    "nightingale-json-formatter": "14.0.0",
-    "nightingale-levels": "14.0.0",
-    "nightingale-types": "14.0.0"
+    "nightingale-ansi-formatter": "14.0.1",
+    "nightingale-console-output": "14.0.1",
+    "nightingale-debug": "14.0.1",
+    "nightingale-json-formatter": "14.0.1",
+    "nightingale-levels": "14.0.1",
+    "nightingale-types": "14.0.1"
   },
   "devDependencies": {
     "@babel/core": "7.22.5",
