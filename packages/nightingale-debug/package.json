@@ -15,7 +15,7 @@
   "homepage": "https://github.com/christophehurpeau/nightingale",
   "type": "module",
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=18.12.0"
   },
   "browserslist": {
     "production": [
