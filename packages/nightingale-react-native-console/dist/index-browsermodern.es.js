@@ -29,14 +29,14 @@ function consoleOutput(param) {
 }
 const createHandle = () => {
   return record => {
-    const error = record.metadata?.error;
-    if (error && error instanceof Error) {
+    const metadataError = record.metadata?.error;
+    if (metadataError && metadataError instanceof Error) {
       delete record.metadata?.error;
-      symbolicateStackTrace(getStackTrace(error)).then(({
+      symbolicateStackTrace(getStackTrace(metadataError)).then(({
         stack,
         codeFrame
       }) => {
-        error.stack = parsedStackToString(stack);
+        metadataError.stack = parsedStackToString(stack);
         consoleOutput([formatterANSI(record)]);
       }).catch(() => {
         consoleOutput([formatterANSI(record)]);
