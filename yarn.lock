@@ -2989,12 +2989,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pob/commitlint-config@npm:6.0.0":
-  version: 6.0.0
-  resolution: "@pob/commitlint-config@npm:6.0.0"
+"@pob/commitlint-config@npm:6.0.1":
+  version: 6.0.1
+  resolution: "@pob/commitlint-config@npm:6.0.1"
   dependencies:
     "@commitlint/config-conventional": ^17.2.0
-  checksum: caafa8615d3ea069a36037201cb2b252865b269f955fd64a38444eb539cb4927664804dc8ff1978f9715305b9dba2bfb8da15f7c0c1ed3973d29d237b5ff120a
+  checksum: 86855e528a338b61eaa2e7ff153432d5e7d1da2d26f20be516c4254d6e2a9c20899189a2179002362fc17709b9c0fa6228b45e64a62537bcffae246200df04e6
   languageName: node
   linkType: hard
 
@@ -3052,57 +3052,57 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pob/lerna-light@npm:7.0.0":
-  version: 7.0.0
-  resolution: "@pob/lerna-light@npm:7.0.0"
+"@pob/lerna-light@npm:7.0.1":
+  version: 7.0.1
+  resolution: "@pob/lerna-light@npm:7.0.1"
   dependencies:
     "@lerna/cli": 5.5.4
     "@lerna/publish": 5.5.4
     "@lerna/version": 5.5.4
   bin:
     lerna: bin/cli.cjs
-  checksum: 02770c1d580f7d684092756d5d9fb60eeca8b2dfc2ef1ef2bfa17899bf441669ae844464316c733dba8ba5bc1f9b025b6142a29e591f960f7005ccbf604f8b5f
+  checksum: c62e3c834b3bdb60fbad00c3657fcd263eb432bc0b68544422f55b86eaee0c51fe2bf70ef4414e81a9bd7a86f07448b347c871d477b7f32175451080b5b251be
   languageName: node
   linkType: hard
 
-"@pob/pretty-eslint-config@npm:5.0.0":
-  version: 5.0.0
-  resolution: "@pob/pretty-eslint-config@npm:5.0.0"
+"@pob/pretty-eslint-config@npm:5.1.0":
+  version: 5.1.0
+  resolution: "@pob/pretty-eslint-config@npm:5.1.0"
   dependencies:
-    "@pob/sort-eslint-config": 5.0.0
+    "@pob/sort-eslint-config": 5.0.1
     prettier: ^2.6.2
   bin:
     pretty-eslint-config: bin/pretty-eslint-config.js
-  checksum: de0aed66ec9c422e08b283309b673ed1e1a75f3a3f55bc73bea23cc1445722cee19cca50ebb31a386e2a36bb3a7605e052cb47e7a7aa21e9f029c921d5f9d61e
+  checksum: 7c8f3379919de00f05937ac24457e1341c4fba7b94688bb640e3f9c5dc9dbcb0fd01eae78d65edee8e85df89724a3662e09e3eeb83b6e4a51bf352d8d6e46b7f
   languageName: node
   linkType: hard
 
-"@pob/pretty-pkg@npm:6.0.0":
-  version: 6.0.0
-  resolution: "@pob/pretty-pkg@npm:6.0.0"
+"@pob/pretty-pkg@npm:6.1.0":
+  version: 6.1.0
+  resolution: "@pob/pretty-pkg@npm:6.1.0"
   dependencies:
-    "@pob/sort-pkg": 6.0.0
+    "@pob/sort-pkg": 6.0.1
     prettier: ^2.6.2
   bin:
     pretty-pkg: bin/pretty-pkg.js
-  checksum: 20394f29e6d38ffb714c1da32e8bd145476c1b0fa911a815ffe8b7e350366d48fd616ed943585501245331d75ea98754544346e4e66ded2c862cdc9f8cfaf1ff
+  checksum: 285728216f8d9f976dc6440998352d9f6d8dd82bed0feef8af5766ec50d19ad94213fea01ebcc460f5eb417c1e428c1149ed2b79c6dd27eb6d653454601e5f38
   languageName: node
   linkType: hard
 
-"@pob/root@npm:8.0.1":
-  version: 8.0.1
-  resolution: "@pob/root@npm:8.0.1"
+"@pob/root@npm:8.1.0":
+  version: 8.1.0
+  resolution: "@pob/root@npm:8.1.0"
   dependencies:
     "@commitlint/cli": 17.6.6
-    "@pob/pretty-eslint-config": 5.0.0
-    "@pob/pretty-pkg": 6.0.0
+    "@pob/pretty-eslint-config": 5.1.0
+    "@pob/pretty-pkg": 6.1.0
     conventional-changelog-conventionalcommits: ^6.0.0
     husky: ~8.0.1
     json5: ^2.2.2
-    lint-staged: 13.2.2
-    pob-dependencies: 8.1.0
+    lint-staged: 13.2.3
+    pob-dependencies: 8.2.0
     prettier: 2.8.8
-    repository-check-dirty: 6.0.0
+    repository-check-dirty: 6.1.0
     semver: ^7.3.7
     which-pm-runs: 1.1.0
   bin:
@@ -3114,32 +3114,32 @@ __metadata:
     pretty-eslint-config: bin/pretty-eslint-config.js
     pretty-pkg: bin/pretty-pkg.js
     repository-check-dirty: bin/repository-check-dirty.js
-  checksum: 86c12b0668a04f52f9fe46a757bdf210cf29b06cf8d0ccf2edd38a3fc6cff4941e3d1930bf8ba3d98ae3850e0df7bb207e62e6b575b67d10a6b8dfa0da2123a0
+  checksum: 64a964f883a7fcb5b02342be063fe6419ccd6f3d40a782fc8c165e3f15437333b7ff473bf12e9843cee75db5224281f7af3f948decf2e71be2ffe48446aebb4e
   languageName: node
   linkType: hard
 
-"@pob/sort-eslint-config@npm:5.0.0":
-  version: 5.0.0
-  resolution: "@pob/sort-eslint-config@npm:5.0.0"
+"@pob/sort-eslint-config@npm:5.0.1":
+  version: 5.0.1
+  resolution: "@pob/sort-eslint-config@npm:5.0.1"
   dependencies:
-    "@pob/sort-object": 6.0.0
-  checksum: 33443b9ec05427494a3604337e0727c5799c9d3c125ff08a8d01aede58a732dad5fbb0db4a58e9e2146f7aca29854fc5615280fe49b029da81bb19511e368745
+    "@pob/sort-object": 6.0.1
+  checksum: fa11a57c80a2973e78ba538e0947d9b9def872261a64108c87594f625494ec3510e5c717a4cf8c7dbd5b63d2f660f1e1613c0ea03d0c0bc7c47189798112e937
   languageName: node
   linkType: hard
 
-"@pob/sort-object@npm:6.0.0":
-  version: 6.0.0
-  resolution: "@pob/sort-object@npm:6.0.0"
-  checksum: 6f281106e81535b8d112e1f98fbf7dc84d72b8ff862f8dab9b3f411710a21d4140596e06b634fc5712ab67485f5d9abd6810755a5a7c245463920926b5e85c06
+"@pob/sort-object@npm:6.0.1":
+  version: 6.0.1
+  resolution: "@pob/sort-object@npm:6.0.1"
+  checksum: 0eef4f00fe3f3da9fd30b7177fa0b21e87f9a72d89515fc6329c615df6074787834ca1e5c3a8e8f37d396f8e4f4dba4ef42f85cd356f1c8863bf0c9c2f258f70
   languageName: node
   linkType: hard
 
-"@pob/sort-pkg@npm:6.0.0":
-  version: 6.0.0
-  resolution: "@pob/sort-pkg@npm:6.0.0"
+"@pob/sort-pkg@npm:6.0.1":
+  version: 6.0.1
+  resolution: "@pob/sort-pkg@npm:6.0.1"
   dependencies:
-    "@pob/sort-object": 6.0.0
-  checksum: 7d0589256acd5aac0c401ea34d8b5939f3b4889ff57ca7d5e2cc1fc1aaefbd6edf954909f9866c8d8974780775ba2af66b6fef3b9ffdd0b5b85a0644c7160051
+    "@pob/sort-object": 6.0.1
+  checksum: 3330e3422c7ba9805b2266b35fde9080f6061eafa55691f73ae31862e446c31b5fd5a209187c055ef651b6e337c848fb5a19c4d6fc63bf0fd3d86dd7de7fc247
   languageName: node
   linkType: hard
 
@@ -4479,10 +4479,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"babel-plugin-fix-class-properties-uninitialized@npm:7.0.0":
-  version: 7.0.0
-  resolution: "babel-plugin-fix-class-properties-uninitialized@npm:7.0.0"
-  checksum: 88c63824b73f3c9af23371d266a434fa1172998b8a03c88f6ae9df7e82b8fd7b636717cd18cb6cbff8163a90f907683859e06cef943c945c2356573d201bc5c4
+"babel-plugin-fix-class-properties-uninitialized@npm:7.0.1":
+  version: 7.0.1
+  resolution: "babel-plugin-fix-class-properties-uninitialized@npm:7.0.1"
+  checksum: 6d0a34fdc18c2f32d8d9eae548a5fd882f41ca294f1b1e6935db97e2f32a447ef5356c081c04e4801130f25616edb0a259595fdb40864fe1c6a58fa25c36344d
   languageName: node
   linkType: hard
 
@@ -4705,20 +4705,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"babel-preset-pob-env@npm:10.0.0":
-  version: 10.0.0
-  resolution: "babel-preset-pob-env@npm:10.0.0"
+"babel-preset-pob-env@npm:10.1.0":
+  version: 10.1.0
+  resolution: "babel-preset-pob-env@npm:10.1.0"
   dependencies:
     "@babel/plugin-proposal-nullish-coalescing-operator": ^7.16.7
     "@babel/plugin-proposal-optional-chaining": ^7.16.7
     "@babel/plugin-transform-modules-commonjs": ^7.17.9
     "@babel/preset-typescript": ^7.16.7
     babel-plugin-discard-module-references: ^1.1.2
-    babel-plugin-fix-class-properties-uninitialized: 7.0.0
+    babel-plugin-fix-class-properties-uninitialized: 7.0.1
     babel-preset-optimizations: ^2.0.0
   peerDependencies:
     "@babel/core": ^7.11.6
-  checksum: 07114d81b244df0a5eb9f87e2716a96bc8366f173061444c73088fea8d2cba4eb32d5394e1d583178883324a37ab053e22a8e5007f2e01f2802ed2d2c47d2949
+  checksum: 95621efcf26e20f001aa98c0bd6270ff7e503343015defdf52a7c91b1e9ae523c84e201f35efd99ab3caf7c12018a6e7178098076e444c734328698d086fb3b6
   languageName: node
   linkType: hard
 
@@ -8811,9 +8811,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lint-staged@npm:13.2.2":
-  version: 13.2.2
-  resolution: "lint-staged@npm:13.2.2"
+"lint-staged@npm:13.2.3":
+  version: 13.2.3
+  resolution: "lint-staged@npm:13.2.3"
   dependencies:
     chalk: 5.2.0
     cli-truncate: ^3.1.0
@@ -8830,7 +8830,7 @@ __metadata:
     yaml: ^2.2.2
   bin:
     lint-staged: bin/lint-staged.js
-  checksum: f34f6e2e85e827364658ab8717bf8b35239473c2d4959d746b053a4cf158ac657348444c755820a8ef3eac2d4753a37c52e9db3e201ee20b085f26d2f2fbc9ed
+  checksum: ff51a1e33072f488b28b938ed47323816a1ff278ef6d0e5cbe1704b292773a6c8ce945b504eae3a9b5702917a979523a741f17023e16077bd5fa35be687cc067
   languageName: node
   linkType: hard
 
@@ -9866,7 +9866,7 @@ __metadata:
     ansi-styles: ^6.2.1
     nightingale-formatter: 13.0.0
     nightingale-types: 13.0.0
-    pob-babel: 36.0.0
+    pob-babel: 36.1.0
     typescript: 5.1.6
   languageName: unknown
   linkType: soft
@@ -9881,7 +9881,7 @@ __metadata:
     nightingale: 13.0.0
     nightingale-browser-console: 13.0.0
     nightingale-console: 13.0.0
-    pob-babel: 36.0.0
+    pob-babel: 36.1.0
     typescript: 5.1.6
   languageName: unknown
   linkType: soft
@@ -9895,7 +9895,7 @@ __metadata:
     nightingale: 13.0.0
     nightingale-browser-console: 13.0.0
     nightingale-react-native-console: 13.0.0
-    pob-babel: 36.0.0
+    pob-babel: 36.1.0
     typescript: 5.1.6
   peerDependencies:
     react-native: "*"
@@ -9915,7 +9915,7 @@ __metadata:
     nightingale-formatter: 13.0.0
     nightingale-levels: 13.0.0
     nightingale-types: 13.0.0
-    pob-babel: 36.0.0
+    pob-babel: 36.1.0
     typescript: 5.1.6
   languageName: unknown
   linkType: soft
@@ -9930,7 +9930,7 @@ __metadata:
     nightingale-console-output: 13.0.0
     nightingale-debug: 13.0.0
     nightingale-types: 13.0.0
-    pob-babel: 36.0.0
+    pob-babel: 36.1.0
     typescript: 5.1.6
   languageName: unknown
   linkType: soft
@@ -9944,7 +9944,7 @@ __metadata:
     nightingale: 13.0.0
     nightingale-console: 13.0.0
     nightingale-sentry: 13.0.0
-    pob-babel: 36.0.0
+    pob-babel: 36.1.0
     typescript: 5.1.6
   languageName: unknown
   linkType: soft
@@ -9958,7 +9958,7 @@ __metadata:
     "@types/node": ">=18.0.0"
     nightingale-levels: 13.0.0
     nightingale-types: 13.0.0
-    pob-babel: 36.0.0
+    pob-babel: 36.1.0
     typescript: 5.1.6
   languageName: unknown
   linkType: soft
@@ -9975,7 +9975,7 @@ __metadata:
     nightingale-json-formatter: 13.0.0
     nightingale-levels: 13.0.0
     nightingale-types: 13.0.0
-    pob-babel: 36.0.0
+    pob-babel: 36.1.0
     typescript: 5.1.6
   languageName: unknown
   linkType: soft
@@ -9987,7 +9987,7 @@ __metadata:
     "@babel/core": 7.22.5
     "@babel/preset-env": 7.22.5
     nightingale-levels: 13.0.0
-    pob-babel: 36.0.0
+    pob-babel: 36.1.0
     typescript: 5.1.6
   languageName: unknown
   linkType: soft
@@ -10003,7 +10003,7 @@ __metadata:
     nightingale-json-formatter: 13.0.0
     nightingale-string: 13.0.0
     nightingale-types: 13.0.0
-    pob-babel: 36.0.0
+    pob-babel: 36.1.0
     typescript: 5.1.6
   languageName: unknown
   linkType: soft
@@ -10016,7 +10016,7 @@ __metadata:
     "@babel/preset-env": 7.22.5
     nightingale-levels: 13.0.0
     nightingale-types: 13.0.0
-    pob-babel: 36.0.0
+    pob-babel: 36.1.0
     typescript: 5.1.6
   languageName: unknown
   linkType: soft
@@ -10030,7 +10030,7 @@ __metadata:
     nightingale-formatter: 13.0.0
     nightingale-levels: 13.0.0
     nightingale-types: 13.0.0
-    pob-babel: 36.0.0
+    pob-babel: 36.1.0
     typescript: 5.1.6
   languageName: unknown
   linkType: soft
@@ -10044,7 +10044,7 @@ __metadata:
     nightingale-formatter: 13.0.0
     nightingale-levels: 13.0.0
     nightingale-types: 13.0.0
-    pob-babel: 36.0.0
+    pob-babel: 36.1.0
     typescript: 5.1.6
   languageName: unknown
   linkType: soft
@@ -10063,7 +10063,7 @@ __metadata:
   dependencies:
     "@babel/core": 7.22.5
     "@babel/preset-env": 7.22.5
-    pob-babel: 36.0.0
+    pob-babel: 36.1.0
     typescript: 5.1.6
   languageName: unknown
   linkType: soft
@@ -10077,7 +10077,7 @@ __metadata:
     "@types/node": ">=18.0.0"
     nightingale-levels: 13.0.0
     nightingale-types: 13.0.0
-    pob-babel: 36.0.0
+    pob-babel: 36.1.0
     typescript: 5.1.6
   languageName: unknown
   linkType: soft
@@ -10091,7 +10091,7 @@ __metadata:
     nightingale-formatter: 13.0.0
     nightingale-levels: 13.0.0
     nightingale-types: 13.0.0
-    pob-babel: 36.0.0
+    pob-babel: 36.1.0
     typescript: 5.1.6
   languageName: unknown
   linkType: soft
@@ -10101,17 +10101,17 @@ __metadata:
   resolution: "nightingale-monorepo@workspace:."
   dependencies:
     "@babel/core": 7.22.5
-    "@pob/commitlint-config": 6.0.0
+    "@pob/commitlint-config": 6.0.1
     "@pob/eslint-config": 51.0.0
     "@pob/eslint-config-typescript": 51.0.0
-    "@pob/lerna-light": 7.0.0
-    "@pob/root": 8.0.1
+    "@pob/lerna-light": 7.0.1
+    "@pob/root": 8.1.0
     "@types/jest": 29.5.2
     "@types/node": 18.16.18
     check-package-dependencies: 6.4.1
     eslint: 8.43.0
     jest: 29.5.0
-    pob-babel: 36.0.0
+    pob-babel: 36.1.0
     typedoc: 0.24.8
     typescript: 5.1.6
   languageName: unknown
@@ -10126,7 +10126,7 @@ __metadata:
     nightingale-formatter: 13.0.0
     nightingale-levels: 13.0.0
     nightingale-types: 13.0.0
-    pob-babel: 36.0.0
+    pob-babel: 36.1.0
     typescript: 5.1.6
   languageName: unknown
   linkType: soft
@@ -10139,7 +10139,7 @@ __metadata:
     "@babel/preset-env": 7.22.5
     nightingale-ansi-formatter: 13.0.0
     nightingale-types: 13.0.0
-    pob-babel: 36.0.0
+    pob-babel: 36.1.0
     react: 18.2.0
     react-native: 0.72.0
     typescript: 5.1.6
@@ -10159,7 +10159,7 @@ __metadata:
     "@sentry/types": ^7.19.0
     nightingale-levels: 13.0.0
     nightingale-types: 13.0.0
-    pob-babel: 36.0.0
+    pob-babel: 36.1.0
     typescript: 5.1.6
   languageName: unknown
   linkType: soft
@@ -10174,7 +10174,7 @@ __metadata:
     nightingale-markdown-formatter: 13.0.0
     nightingale-raw-formatter: 13.0.0
     nightingale-types: 13.0.0
-    pob-babel: 36.0.0
+    pob-babel: 36.1.0
     request: ^2.88.0
     typescript: 5.1.6
   languageName: unknown
@@ -10187,7 +10187,7 @@ __metadata:
     "@babel/core": 7.22.5
     nightingale-raw-formatter: 13.0.0
     nightingale-types: 13.0.0
-    pob-babel: 36.0.0
+    pob-babel: 36.1.0
     typescript: 5.1.6
   languageName: unknown
   linkType: soft
@@ -10199,7 +10199,7 @@ __metadata:
     "@babel/core": 7.22.5
     "@babel/preset-env": 7.22.5
     nightingale-levels: 13.0.0
-    pob-babel: 36.0.0
+    pob-babel: 36.1.0
     typescript: 5.1.6
   languageName: unknown
   linkType: soft
@@ -10212,7 +10212,7 @@ __metadata:
     "@types/node": ">=18.0.0"
     nightingale: 13.0.0
     nightingale-console: 13.0.0
-    pob-babel: 36.0.0
+    pob-babel: 36.1.0
     typescript: 5.1.6
   languageName: unknown
   linkType: soft
@@ -10224,7 +10224,7 @@ __metadata:
     "@babel/core": 7.22.5
     "@types/node": ">=18.0.0"
     nightingale-types: 13.0.0
-    pob-babel: 36.0.0
+    pob-babel: 36.1.0
     typescript: 5.1.6
   languageName: unknown
   linkType: soft
@@ -10237,7 +10237,7 @@ __metadata:
     "@babel/preset-env": 7.22.5
     nightingale-level-names: 13.0.0
     nightingale-types: 13.0.0
-    pob-babel: 36.0.0
+    pob-babel: 36.1.0
     typescript: 5.1.6
   languageName: unknown
   linkType: soft
@@ -10253,7 +10253,7 @@ __metadata:
     nightingale-logger: 13.0.0
     nightingale-string: 13.0.0
     nightingale-types: 13.0.0
-    pob-babel: 36.0.0
+    pob-babel: 36.1.0
     typescript: 5.1.6
   languageName: unknown
   linkType: soft
@@ -11074,9 +11074,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pob-babel@npm:36.0.0":
-  version: 36.0.0
-  resolution: "pob-babel@npm:36.0.0"
+"pob-babel@npm:36.1.0":
+  version: 36.1.0
+  resolution: "pob-babel@npm:36.1.0"
   dependencies:
     "@babel/core": ^7.17.10
     "@babel/plugin-transform-runtime": 7.22.5
@@ -11084,13 +11084,13 @@ __metadata:
     "@rollup/plugin-json": 6.0.0
     "@rollup/plugin-node-resolve": 15.1.0
     "@rollup/plugin-run": 3.0.1
-    babel-preset-pob-env: 10.0.0
-    rollup: 3.25.3
+    babel-preset-pob-env: 10.1.0
+    rollup: 3.26.0
     rollup-config-external-dependencies: ^2.0.0
     semver: ^7.3.7
   peerDependencies:
     "@babel/core": ^7.16.5
-    rollup: 3.25.3
+    rollup: 3.26.0
     typescript: ^4.0.3 || ^5.0.0
   peerDependenciesMeta:
     rollup:
@@ -11098,14 +11098,14 @@ __metadata:
   bin:
     pob-babel-clean-out: bin/pob-babel-clean-out.js
     rollup: bin/rollup.cjs
-  checksum: 1f1446b3c8e88204a6b40393e00e3d2fdef8dca9ae25d5a334abf6a733fd49b5606e2f125553368ba1c9cf0fe41c5b64e0192d9b06708516ed133b78a74f849c
+  checksum: 10e1a75892d4f0a95130980c26d5a2ef37f5a59150a1125a91fd39cd86b9cf53d15805b25ae3259c32c2d3c0399479e5e4a16098cacf0c68e06b2c9246e338b2
   languageName: node
   linkType: hard
 
-"pob-dependencies@npm:8.1.0":
-  version: 8.1.0
-  resolution: "pob-dependencies@npm:8.1.0"
-  checksum: b7c4ede381866f7770790b2c575d250965ddf2dbedc0208a18133fc3e4c09c734af047a33a152a8ba9e01c4e32bdf68933f89d1fadc1a5efbb7a5ef6d6c4dbab
+"pob-dependencies@npm:8.2.0":
+  version: 8.2.0
+  resolution: "pob-dependencies@npm:8.2.0"
+  checksum: c6d384099ecaf2d14a5b49e6d74a39506a0f81f14ae60c901e2792278f20f47945966863295ebec899eecb9c9436b1ea7689931a79aedb5e3f60e858aebad0f4
   languageName: node
   linkType: hard
 
@@ -11604,12 +11604,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"repository-check-dirty@npm:6.0.0":
-  version: 6.0.0
-  resolution: "repository-check-dirty@npm:6.0.0"
+"repository-check-dirty@npm:6.1.0":
+  version: 6.1.0
+  resolution: "repository-check-dirty@npm:6.1.0"
   bin:
     repository-check-dirty: bin/repository-check-dirty.js
-  checksum: 81d78cb75023bf2345bd466e6a2b482b8e73cb76bccc6e627843d08fb7d97b8c585eecdf0d961997d31cca3102374880fc0ec1b02117e2e03c8c7dba683ecb97
+  checksum: 6c0473d8c198c2949963d13e560bd9f1815abc13dd91772ec9b9de0f19ef23d993934a61f4f8af14ad72d4a6f6aaedc378f54c352c6052c00d94a62109aaba88
   languageName: node
   linkType: hard
 
@@ -11794,9 +11794,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rollup@npm:3.25.3":
-  version: 3.25.3
-  resolution: "rollup@npm:3.25.3"
+"rollup@npm:3.26.0":
+  version: 3.26.0
+  resolution: "rollup@npm:3.26.0"
   dependencies:
     fsevents: ~2.3.2
   dependenciesMeta:
@@ -11804,7 +11804,7 @@ __metadata:
       optional: true
   bin:
     rollup: dist/bin/rollup
-  checksum: 397965706bb46a217e2815995133c11ce9a843e7b80018a91594d36d7a7708fe3a33acd1635deaa3138c42918397f38b32ca975951519fdfe3b4201875ecfd3d
+  checksum: 2d00f1ec8f5b3e84b005b7158446aacfbe669b61a55cea26d4cfb7014fed9169d78dffa8f845c8ef2c8cbc596b9de6e9f925597b87e7ef9b7de4c7da21f188ad
   languageName: node
   linkType: hard
 
