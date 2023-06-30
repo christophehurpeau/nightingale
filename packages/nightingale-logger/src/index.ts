@@ -1,6 +1,6 @@
 /* eslint-disable max-lines */
+import * as util from 'node:util';
 import { POB_TARGET } from 'pob-babel';
-import * as util from 'util';
 import { Level } from 'nightingale-levels';
 import type {
   Metadata,
