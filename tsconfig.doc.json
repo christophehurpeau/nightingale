@@ -1,5 +1,5 @@
 {
-  "include": ["packages/*/src/**/*.ts"],
+  "files": [],
 
   "exclude": [
     "**/node_modules/**",
