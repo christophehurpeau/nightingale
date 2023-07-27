@@ -9677,15 +9677,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nightingale-ansi-formatter@14.0.2, nightingale-ansi-formatter@workspace:packages/nightingale-ansi-formatter":
+"nightingale-ansi-formatter@14.1.0, nightingale-ansi-formatter@workspace:packages/nightingale-ansi-formatter":
   version: 0.0.0-use.local
   resolution: "nightingale-ansi-formatter@workspace:packages/nightingale-ansi-formatter"
   dependencies:
     "@babel/core": 7.22.9
     "@babel/preset-env": 7.22.9
     ansi-styles: ^6.2.1
-    nightingale-formatter: 14.0.2
-    nightingale-types: 14.0.2
+    nightingale-formatter: 14.1.0
+    nightingale-types: 14.1.0
     pob-babel: 36.2.0
     typescript: 5.1.6
   languageName: unknown
@@ -9698,9 +9698,9 @@ __metadata:
     "@babel/core": 7.22.9
     "@babel/preset-env": 7.22.9
     "@types/node": ">=18.0.0"
-    nightingale: 14.0.2
-    nightingale-browser-console: 14.0.2
-    nightingale-console: 14.0.2
+    nightingale: 14.1.0
+    nightingale-browser-console: 14.1.0
+    nightingale-console: 14.1.0
     pob-babel: 36.2.0
     typescript: 5.1.6
   languageName: unknown
@@ -9712,9 +9712,9 @@ __metadata:
   dependencies:
     "@babel/core": 7.22.9
     "@babel/preset-env": 7.22.9
-    nightingale: 14.0.2
-    nightingale-browser-console: 14.0.2
-    nightingale-react-native-console: 14.0.2
+    nightingale: 14.1.0
+    nightingale-browser-console: 14.1.0
+    nightingale-react-native-console: 14.1.0
     pob-babel: 36.2.0
     typescript: 5.1.6
   peerDependencies:
@@ -9726,30 +9726,30 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"nightingale-browser-console-formatter@14.0.2, nightingale-browser-console-formatter@workspace:packages/nightingale-browser-console-formatter":
+"nightingale-browser-console-formatter@14.1.0, nightingale-browser-console-formatter@workspace:packages/nightingale-browser-console-formatter":
   version: 0.0.0-use.local
   resolution: "nightingale-browser-console-formatter@workspace:packages/nightingale-browser-console-formatter"
   dependencies:
     "@babel/core": 7.22.9
     "@babel/preset-env": 7.22.9
-    nightingale-formatter: 14.0.2
-    nightingale-levels: 14.0.2
-    nightingale-types: 14.0.2
+    nightingale-formatter: 14.1.0
+    nightingale-levels: 14.1.0
+    nightingale-types: 14.1.0
     pob-babel: 36.2.0
     typescript: 5.1.6
   languageName: unknown
   linkType: soft
 
-"nightingale-browser-console@14.0.2, nightingale-browser-console@workspace:packages/nightingale-browser-console":
+"nightingale-browser-console@14.1.0, nightingale-browser-console@workspace:packages/nightingale-browser-console":
   version: 0.0.0-use.local
   resolution: "nightingale-browser-console@workspace:packages/nightingale-browser-console"
   dependencies:
     "@babel/core": 7.22.9
     "@babel/preset-env": 7.22.9
-    nightingale-browser-console-formatter: 14.0.2
-    nightingale-console-output: 14.0.2
-    nightingale-debug: 14.0.2
-    nightingale-types: 14.0.2
+    nightingale-browser-console-formatter: 14.1.0
+    nightingale-console-output: 14.1.0
+    nightingale-debug: 14.1.0
+    nightingale-types: 14.1.0
     pob-babel: 36.2.0
     typescript: 5.1.6
   languageName: unknown
@@ -9761,52 +9761,52 @@ __metadata:
   dependencies:
     "@babel/core": 7.22.9
     "@sentry/node": 7.60.0
-    nightingale: 14.0.2
-    nightingale-console: 14.0.2
-    nightingale-sentry: 14.0.2
+    nightingale: 14.1.0
+    nightingale-console: 14.1.0
+    nightingale-sentry: 14.1.0
     pob-babel: 36.2.0
     typescript: 5.1.6
   languageName: unknown
   linkType: soft
 
-"nightingale-console-output@14.0.2, nightingale-console-output@workspace:packages/nightingale-console-output":
+"nightingale-console-output@14.1.0, nightingale-console-output@workspace:packages/nightingale-console-output":
   version: 0.0.0-use.local
   resolution: "nightingale-console-output@workspace:packages/nightingale-console-output"
   dependencies:
     "@babel/core": 7.22.9
     "@babel/preset-env": 7.22.9
     "@types/node": ">=18.0.0"
-    nightingale-levels: 14.0.2
-    nightingale-types: 14.0.2
+    nightingale-levels: 14.1.0
+    nightingale-types: 14.1.0
     pob-babel: 36.2.0
     typescript: 5.1.6
   languageName: unknown
   linkType: soft
 
-"nightingale-console@14.0.2, nightingale-console@workspace:packages/nightingale-console":
+"nightingale-console@14.1.0, nightingale-console@workspace:packages/nightingale-console":
   version: 0.0.0-use.local
   resolution: "nightingale-console@workspace:packages/nightingale-console"
   dependencies:
     "@babel/core": 7.22.9
     "@types/node": ">=18.0.0"
-    nightingale-ansi-formatter: 14.0.2
-    nightingale-console-output: 14.0.2
-    nightingale-debug: 14.0.2
-    nightingale-json-formatter: 14.0.2
-    nightingale-levels: 14.0.2
-    nightingale-types: 14.0.2
+    nightingale-ansi-formatter: 14.1.0
+    nightingale-console-output: 14.1.0
+    nightingale-debug: 14.1.0
+    nightingale-json-formatter: 14.1.0
+    nightingale-levels: 14.1.0
+    nightingale-types: 14.1.0
     pob-babel: 36.2.0
     typescript: 5.1.6
   languageName: unknown
   linkType: soft
 
-"nightingale-debug@14.0.2, nightingale-debug@workspace:packages/nightingale-debug":
+"nightingale-debug@14.1.0, nightingale-debug@workspace:packages/nightingale-debug":
   version: 0.0.0-use.local
   resolution: "nightingale-debug@workspace:packages/nightingale-debug"
   dependencies:
     "@babel/core": 7.22.9
     "@babel/preset-env": 7.22.9
-    nightingale-levels: 14.0.2
+    nightingale-levels: 14.1.0
     pob-babel: 36.2.0
     typescript: 5.1.6
   languageName: unknown
@@ -9817,26 +9817,26 @@ __metadata:
   resolution: "nightingale-example@workspace:packages/nightingale-example"
   dependencies:
     "@babel/core": 7.22.9
-    nightingale: 14.0.2
-    nightingale-console: 14.0.2
-    nightingale-console-output: 14.0.2
-    nightingale-json-formatter: 14.0.2
-    nightingale-slack: 14.0.2
-    nightingale-string: 14.0.2
-    nightingale-types: 14.0.2
+    nightingale: 14.1.0
+    nightingale-console: 14.1.0
+    nightingale-console-output: 14.1.0
+    nightingale-json-formatter: 14.1.0
+    nightingale-slack: 14.1.0
+    nightingale-string: 14.1.0
+    nightingale-types: 14.1.0
     pob-babel: 36.2.0
     typescript: 5.1.6
   languageName: unknown
   linkType: soft
 
-"nightingale-formatter@14.0.2, nightingale-formatter@workspace:packages/nightingale-formatter":
+"nightingale-formatter@14.1.0, nightingale-formatter@workspace:packages/nightingale-formatter":
   version: 0.0.0-use.local
   resolution: "nightingale-formatter@workspace:packages/nightingale-formatter"
   dependencies:
     "@babel/core": 7.22.9
     "@babel/preset-env": 7.22.9
-    nightingale-levels: 14.0.2
-    nightingale-types: 14.0.2
+    nightingale-levels: 14.1.0
+    nightingale-types: 14.1.0
     pob-babel: 36.2.0
     typescript: 5.1.6
   languageName: unknown
@@ -9848,23 +9848,23 @@ __metadata:
   dependencies:
     "@babel/core": 7.22.9
     "@babel/preset-env": 7.22.9
-    nightingale-formatter: 14.0.2
-    nightingale-levels: 14.0.2
-    nightingale-types: 14.0.2
+    nightingale-formatter: 14.1.0
+    nightingale-levels: 14.1.0
+    nightingale-types: 14.1.0
     pob-babel: 36.2.0
     typescript: 5.1.6
   languageName: unknown
   linkType: soft
 
-"nightingale-json-formatter@14.0.2, nightingale-json-formatter@workspace:packages/nightingale-json-formatter":
+"nightingale-json-formatter@14.1.0, nightingale-json-formatter@workspace:packages/nightingale-json-formatter":
   version: 0.0.0-use.local
   resolution: "nightingale-json-formatter@workspace:packages/nightingale-json-formatter"
   dependencies:
     "@babel/core": 7.22.9
     "@babel/preset-env": 7.22.9
-    nightingale-formatter: 14.0.2
-    nightingale-levels: 14.0.2
-    nightingale-types: 14.0.2
+    nightingale-formatter: 14.1.0
+    nightingale-levels: 14.1.0
+    nightingale-types: 14.1.0
     pob-babel: 36.2.0
     typescript: 5.1.6
   languageName: unknown
@@ -9878,7 +9878,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"nightingale-levels@14.0.2, nightingale-levels@workspace:packages/nightingale-levels":
+"nightingale-levels@14.1.0, nightingale-levels@workspace:packages/nightingale-levels":
   version: 0.0.0-use.local
   resolution: "nightingale-levels@workspace:packages/nightingale-levels"
   dependencies:
@@ -9889,29 +9889,29 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"nightingale-logger@14.0.2, nightingale-logger@workspace:packages/nightingale-logger":
+"nightingale-logger@14.1.0, nightingale-logger@workspace:packages/nightingale-logger":
   version: 0.0.0-use.local
   resolution: "nightingale-logger@workspace:packages/nightingale-logger"
   dependencies:
     "@babel/core": 7.22.9
     "@babel/preset-env": 7.22.9
     "@types/node": ">=18.0.0"
-    nightingale-levels: 14.0.2
-    nightingale-types: 14.0.2
+    nightingale-levels: 14.1.0
+    nightingale-types: 14.1.0
     pob-babel: 36.2.0
     typescript: 5.1.6
   languageName: unknown
   linkType: soft
 
-"nightingale-markdown-formatter@14.0.2, nightingale-markdown-formatter@workspace:packages/nightingale-markdown-formatter":
+"nightingale-markdown-formatter@14.1.0, nightingale-markdown-formatter@workspace:packages/nightingale-markdown-formatter":
   version: 0.0.0-use.local
   resolution: "nightingale-markdown-formatter@workspace:packages/nightingale-markdown-formatter"
   dependencies:
     "@babel/core": 7.22.9
     "@babel/preset-env": 7.22.9
-    nightingale-formatter: 14.0.2
-    nightingale-levels: 14.0.2
-    nightingale-types: 14.0.2
+    nightingale-formatter: 14.1.0
+    nightingale-levels: 14.1.0
+    nightingale-types: 14.1.0
     pob-babel: 36.2.0
     typescript: 5.1.6
   languageName: unknown
@@ -9938,28 +9938,28 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"nightingale-raw-formatter@14.0.2, nightingale-raw-formatter@workspace:packages/nightingale-raw-formatter":
+"nightingale-raw-formatter@14.1.0, nightingale-raw-formatter@workspace:packages/nightingale-raw-formatter":
   version: 0.0.0-use.local
   resolution: "nightingale-raw-formatter@workspace:packages/nightingale-raw-formatter"
   dependencies:
     "@babel/core": 7.22.9
     "@babel/preset-env": 7.22.9
-    nightingale-formatter: 14.0.2
-    nightingale-levels: 14.0.2
-    nightingale-types: 14.0.2
+    nightingale-formatter: 14.1.0
+    nightingale-levels: 14.1.0
+    nightingale-types: 14.1.0
     pob-babel: 36.2.0
     typescript: 5.1.6
   languageName: unknown
   linkType: soft
 
-"nightingale-react-native-console@14.0.2, nightingale-react-native-console@workspace:packages/nightingale-react-native-console":
+"nightingale-react-native-console@14.1.0, nightingale-react-native-console@workspace:packages/nightingale-react-native-console":
   version: 0.0.0-use.local
   resolution: "nightingale-react-native-console@workspace:packages/nightingale-react-native-console"
   dependencies:
     "@babel/core": 7.22.9
     "@babel/preset-env": 7.22.9
-    nightingale-ansi-formatter: 14.0.2
-    nightingale-types: 14.0.2
+    nightingale-ansi-formatter: 14.1.0
+    nightingale-types: 14.1.0
     pob-babel: 36.2.0
     react: 18.2.0
     react-native: 0.72.3
@@ -9969,7 +9969,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"nightingale-sentry@14.0.2, nightingale-sentry@workspace:packages/nightingale-sentry":
+"nightingale-sentry@14.1.0, nightingale-sentry@workspace:packages/nightingale-sentry":
   version: 0.0.0-use.local
   resolution: "nightingale-sentry@workspace:packages/nightingale-sentry"
   dependencies:
@@ -9978,48 +9978,48 @@ __metadata:
     "@sentry/core": ^7.19.0
     "@sentry/node": ^7.19.0
     "@sentry/types": ^7.19.0
-    nightingale-levels: 14.0.2
-    nightingale-types: 14.0.2
+    nightingale-levels: 14.1.0
+    nightingale-types: 14.1.0
     pob-babel: 36.2.0
     typescript: 5.1.6
   languageName: unknown
   linkType: soft
 
-"nightingale-slack@14.0.2, nightingale-slack@workspace:packages/nightingale-slack":
+"nightingale-slack@14.1.0, nightingale-slack@workspace:packages/nightingale-slack":
   version: 0.0.0-use.local
   resolution: "nightingale-slack@workspace:packages/nightingale-slack"
   dependencies:
     "@babel/core": 7.22.9
     "@types/node": 18.17.1
     "@types/node-fetch": 2.6.4
-    nightingale-levels: 14.0.2
-    nightingale-markdown-formatter: 14.0.2
-    nightingale-raw-formatter: 14.0.2
-    nightingale-types: 14.0.2
+    nightingale-levels: 14.1.0
+    nightingale-markdown-formatter: 14.1.0
+    nightingale-raw-formatter: 14.1.0
+    nightingale-types: 14.1.0
     pob-babel: 36.2.0
     typescript: 5.1.6
   languageName: unknown
   linkType: soft
 
-"nightingale-string@14.0.2, nightingale-string@workspace:packages/nightingale-string":
+"nightingale-string@14.1.0, nightingale-string@workspace:packages/nightingale-string":
   version: 0.0.0-use.local
   resolution: "nightingale-string@workspace:packages/nightingale-string"
   dependencies:
     "@babel/core": 7.22.9
-    nightingale-raw-formatter: 14.0.2
-    nightingale-types: 14.0.2
+    nightingale-raw-formatter: 14.1.0
+    nightingale-types: 14.1.0
     pob-babel: 36.2.0
     typescript: 5.1.6
   languageName: unknown
   linkType: soft
 
-"nightingale-types@14.0.2, nightingale-types@workspace:packages/nightingale-types":
+"nightingale-types@14.1.0, nightingale-types@workspace:packages/nightingale-types":
   version: 0.0.0-use.local
   resolution: "nightingale-types@workspace:packages/nightingale-types"
   dependencies:
     "@babel/core": 7.22.9
     "@babel/preset-env": 7.22.9
-    nightingale-levels: 14.0.2
+    nightingale-levels: 14.1.0
     pob-babel: 36.2.0
     typescript: 5.1.6
   languageName: unknown
@@ -10031,8 +10031,8 @@ __metadata:
   dependencies:
     "@babel/core": 7.22.9
     "@types/node": ">=18.0.0"
-    nightingale: 14.0.2
-    nightingale-console: 14.0.2
+    nightingale: 14.1.0
+    nightingale-console: 14.1.0
     pob-babel: 36.2.0
     typescript: 5.1.6
   languageName: unknown
@@ -10044,7 +10044,7 @@ __metadata:
   dependencies:
     "@babel/core": 7.22.9
     "@types/node": ">=18.0.0"
-    nightingale-types: 14.0.2
+    nightingale-types: 14.1.0
     pob-babel: 36.2.0
     typescript: 5.1.6
   languageName: unknown
@@ -10057,23 +10057,23 @@ __metadata:
     "@babel/core": 7.22.9
     "@babel/preset-env": 7.22.9
     nightingale-level-names: 14.0.0
-    nightingale-types: 14.0.2
+    nightingale-types: 14.1.0
     pob-babel: 36.2.0
     typescript: 5.1.6
   languageName: unknown
   linkType: soft
 
-"nightingale@14.0.2, nightingale@workspace:packages/nightingale":
+"nightingale@14.1.0, nightingale@workspace:packages/nightingale":
   version: 0.0.0-use.local
   resolution: "nightingale@workspace:packages/nightingale"
   dependencies:
     "@babel/core": 7.22.9
     "@babel/preset-env": 7.22.9
     "@types/node": ">=18.0.0"
-    nightingale-levels: 14.0.2
-    nightingale-logger: 14.0.2
-    nightingale-string: 14.0.2
-    nightingale-types: 14.0.2
+    nightingale-levels: 14.1.0
+    nightingale-logger: 14.1.0
+    nightingale-string: 14.1.0
+    nightingale-types: 14.1.0
     pob-babel: 36.2.0
     typescript: 5.1.6
   languageName: unknown

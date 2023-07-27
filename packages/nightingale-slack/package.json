@@ -1,6 +1,6 @@
 {
   "name": "nightingale-slack",
-  "version": "14.0.2",
+  "version": "14.1.0",
   "description": "Slack handler for nightingale",
   "keywords": [
     "nightingale",
@@ -53,10 +53,10 @@
     ]
   },
   "dependencies": {
-    "nightingale-levels": "14.0.2",
-    "nightingale-markdown-formatter": "14.0.2",
-    "nightingale-raw-formatter": "14.0.2",
-    "nightingale-types": "14.0.2"
+    "nightingale-levels": "14.1.0",
+    "nightingale-markdown-formatter": "14.1.0",
+    "nightingale-raw-formatter": "14.1.0",
+    "nightingale-types": "14.1.0"
   },
   "devDependencies": {
     "@babel/core": "7.22.9",
