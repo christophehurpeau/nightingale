@@ -35,7 +35,7 @@ var createHandle = function createHandle() {
     var _record$metadata, _record$metadata2;
     var metadataError = (_record$metadata = record.metadata) == null ? void 0 : _record$metadata.error;
     if (metadataError && metadataError instanceof Error) {
-      (_record$metadata2 = record.metadata) == null ? true : delete _record$metadata2.error;
+      (_record$metadata2 = record.metadata) == null || delete _record$metadata2.error;
       symbolicateStackTrace(getStackTrace(metadataError)).then(function (_ref) {
         var stack = _ref.stack;
           _ref.codeFrame;
