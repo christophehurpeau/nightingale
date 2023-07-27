@@ -85,7 +85,7 @@
     "@babel/core": "7.22.5",
     "@babel/preset-env": "7.22.5",
     "nightingale-string": "14.0.2",
-    "pob-babel": "36.1.0",
+    "pob-babel": "36.2.0",
     "typescript": "5.1.6"
   }
 }

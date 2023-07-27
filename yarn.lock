@@ -9874,7 +9874,7 @@ __metadata:
     ansi-styles: ^6.2.1
     nightingale-formatter: 14.0.2
     nightingale-types: 14.0.2
-    pob-babel: 36.1.0
+    pob-babel: 36.2.0
     typescript: 5.1.6
   languageName: unknown
   linkType: soft
@@ -9889,7 +9889,7 @@ __metadata:
     nightingale: 14.0.2
     nightingale-browser-console: 14.0.2
     nightingale-console: 14.0.2
-    pob-babel: 36.1.0
+    pob-babel: 36.2.0
     typescript: 5.1.6
   languageName: unknown
   linkType: soft
@@ -9903,7 +9903,7 @@ __metadata:
     nightingale: 14.0.2
     nightingale-browser-console: 14.0.2
     nightingale-react-native-console: 14.0.2
-    pob-babel: 36.1.0
+    pob-babel: 36.2.0
     typescript: 5.1.6
   peerDependencies:
     react-native: "*"
@@ -9923,7 +9923,7 @@ __metadata:
     nightingale-formatter: 14.0.2
     nightingale-levels: 14.0.2
     nightingale-types: 14.0.2
-    pob-babel: 36.1.0
+    pob-babel: 36.2.0
     typescript: 5.1.6
   languageName: unknown
   linkType: soft
@@ -9938,7 +9938,7 @@ __metadata:
     nightingale-console-output: 14.0.2
     nightingale-debug: 14.0.2
     nightingale-types: 14.0.2
-    pob-babel: 36.1.0
+    pob-babel: 36.2.0
     typescript: 5.1.6
   languageName: unknown
   linkType: soft
@@ -9952,7 +9952,7 @@ __metadata:
     nightingale: 14.0.2
     nightingale-console: 14.0.2
     nightingale-sentry: 14.0.2
-    pob-babel: 36.1.0
+    pob-babel: 36.2.0
     typescript: 5.1.6
   languageName: unknown
   linkType: soft
@@ -9966,7 +9966,7 @@ __metadata:
     "@types/node": ">=18.0.0"
     nightingale-levels: 14.0.2
     nightingale-types: 14.0.2
-    pob-babel: 36.1.0
+    pob-babel: 36.2.0
     typescript: 5.1.6
   languageName: unknown
   linkType: soft
@@ -9983,7 +9983,7 @@ __metadata:
     nightingale-json-formatter: 14.0.2
     nightingale-levels: 14.0.2
     nightingale-types: 14.0.2
-    pob-babel: 36.1.0
+    pob-babel: 36.2.0
     typescript: 5.1.6
   languageName: unknown
   linkType: soft
@@ -9995,7 +9995,7 @@ __metadata:
     "@babel/core": 7.22.5
     "@babel/preset-env": 7.22.5
     nightingale-levels: 14.0.2
-    pob-babel: 36.1.0
+    pob-babel: 36.2.0
     typescript: 5.1.6
   languageName: unknown
   linkType: soft
@@ -10011,7 +10011,7 @@ __metadata:
     nightingale-json-formatter: 14.0.2
     nightingale-string: 14.0.2
     nightingale-types: 14.0.2
-    pob-babel: 36.1.0
+    pob-babel: 36.2.0
     typescript: 5.1.6
   languageName: unknown
   linkType: soft
@@ -10024,7 +10024,7 @@ __metadata:
     "@babel/preset-env": 7.22.5
     nightingale-levels: 14.0.2
     nightingale-types: 14.0.2
-    pob-babel: 36.1.0
+    pob-babel: 36.2.0
     typescript: 5.1.6
   languageName: unknown
   linkType: soft
@@ -10038,7 +10038,7 @@ __metadata:
     nightingale-formatter: 14.0.2
     nightingale-levels: 14.0.2
     nightingale-types: 14.0.2
-    pob-babel: 36.1.0
+    pob-babel: 36.2.0
     typescript: 5.1.6
   languageName: unknown
   linkType: soft
@@ -10052,7 +10052,7 @@ __metadata:
     nightingale-formatter: 14.0.2
     nightingale-levels: 14.0.2
     nightingale-types: 14.0.2
-    pob-babel: 36.1.0
+    pob-babel: 36.2.0
     typescript: 5.1.6
   languageName: unknown
   linkType: soft
@@ -10071,7 +10071,7 @@ __metadata:
   dependencies:
     "@babel/core": 7.22.5
     "@babel/preset-env": 7.22.5
-    pob-babel: 36.1.0
+    pob-babel: 36.2.0
     typescript: 5.1.6
   languageName: unknown
   linkType: soft
@@ -10085,7 +10085,7 @@ __metadata:
     "@types/node": ">=18.0.0"
     nightingale-levels: 14.0.2
     nightingale-types: 14.0.2
-    pob-babel: 36.1.0
+    pob-babel: 36.2.0
     typescript: 5.1.6
   languageName: unknown
   linkType: soft
@@ -10099,7 +10099,7 @@ __metadata:
     nightingale-formatter: 14.0.2
     nightingale-levels: 14.0.2
     nightingale-types: 14.0.2
-    pob-babel: 36.1.0
+    pob-babel: 36.2.0
     typescript: 5.1.6
   languageName: unknown
   linkType: soft
@@ -10119,7 +10119,7 @@ __metadata:
     check-package-dependencies: 6.7.0
     eslint: 8.45.0
     jest: 29.6.2
-    pob-babel: 36.1.0
+    pob-babel: 36.2.0
     typedoc: 0.24.8
     typescript: 5.1.6
   languageName: unknown
@@ -10134,7 +10134,7 @@ __metadata:
     nightingale-formatter: 14.0.2
     nightingale-levels: 14.0.2
     nightingale-types: 14.0.2
-    pob-babel: 36.1.0
+    pob-babel: 36.2.0
     typescript: 5.1.6
   languageName: unknown
   linkType: soft
@@ -10147,7 +10147,7 @@ __metadata:
     "@babel/preset-env": 7.22.5
     nightingale-ansi-formatter: 14.0.2
     nightingale-types: 14.0.2
-    pob-babel: 36.1.0
+    pob-babel: 36.2.0
     react: 18.2.0
     react-native: 0.72.0
     typescript: 5.1.6
@@ -10167,7 +10167,7 @@ __metadata:
     "@sentry/types": ^7.19.0
     nightingale-levels: 14.0.2
     nightingale-types: 14.0.2
-    pob-babel: 36.1.0
+    pob-babel: 36.2.0
     typescript: 5.1.6
   languageName: unknown
   linkType: soft
@@ -10182,7 +10182,7 @@ __metadata:
     nightingale-markdown-formatter: 14.0.2
     nightingale-raw-formatter: 14.0.2
     nightingale-types: 14.0.2
-    pob-babel: 36.1.0
+    pob-babel: 36.2.0
     request: ^2.88.0
     typescript: 5.1.6
   languageName: unknown
@@ -10195,7 +10195,7 @@ __metadata:
     "@babel/core": 7.22.5
     nightingale-raw-formatter: 14.0.2
     nightingale-types: 14.0.2
-    pob-babel: 36.1.0
+    pob-babel: 36.2.0
     typescript: 5.1.6
   languageName: unknown
   linkType: soft
@@ -10207,7 +10207,7 @@ __metadata:
     "@babel/core": 7.22.5
     "@babel/preset-env": 7.22.5
     nightingale-levels: 14.0.2
-    pob-babel: 36.1.0
+    pob-babel: 36.2.0
     typescript: 5.1.6
   languageName: unknown
   linkType: soft
@@ -10220,7 +10220,7 @@ __metadata:
     "@types/node": ">=18.0.0"
     nightingale: 14.0.2
     nightingale-console: 14.0.2
-    pob-babel: 36.1.0
+    pob-babel: 36.2.0
     typescript: 5.1.6
   languageName: unknown
   linkType: soft
@@ -10232,7 +10232,7 @@ __metadata:
     "@babel/core": 7.22.5
     "@types/node": ">=18.0.0"
     nightingale-types: 14.0.2
-    pob-babel: 36.1.0
+    pob-babel: 36.2.0
     typescript: 5.1.6
   languageName: unknown
   linkType: soft
@@ -10245,7 +10245,7 @@ __metadata:
     "@babel/preset-env": 7.22.5
     nightingale-level-names: 14.0.0
     nightingale-types: 14.0.2
-    pob-babel: 36.1.0
+    pob-babel: 36.2.0
     typescript: 5.1.6
   languageName: unknown
   linkType: soft
@@ -10261,7 +10261,7 @@ __metadata:
     nightingale-logger: 14.0.2
     nightingale-string: 14.0.2
     nightingale-types: 14.0.2
-    pob-babel: 36.1.0
+    pob-babel: 36.2.0
     typescript: 5.1.6
   languageName: unknown
   linkType: soft
@@ -11082,9 +11082,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pob-babel@npm:36.1.0":
-  version: 36.1.0
-  resolution: "pob-babel@npm:36.1.0"
+"pob-babel@npm:36.2.0":
+  version: 36.2.0
+  resolution: "pob-babel@npm:36.2.0"
   dependencies:
     "@babel/core": ^7.17.10
     "@babel/plugin-transform-runtime": 7.22.5
@@ -11093,12 +11093,12 @@ __metadata:
     "@rollup/plugin-node-resolve": 15.1.0
     "@rollup/plugin-run": 3.0.1
     babel-preset-pob-env: 10.1.0
-    rollup: 3.26.0
+    rollup: 3.26.1
     rollup-config-external-dependencies: ^2.0.0
     semver: ^7.3.7
   peerDependencies:
-    "@babel/core": ^7.16.5
-    rollup: 3.26.0
+    "@babel/core": ^7.17.10
+    rollup: 3.26.1
     typescript: ^4.0.3 || ^5.0.0
   peerDependenciesMeta:
     rollup:
@@ -11106,7 +11106,7 @@ __metadata:
   bin:
     pob-babel-clean-out: bin/pob-babel-clean-out.js
     rollup: bin/rollup.cjs
-  checksum: 10e1a75892d4f0a95130980c26d5a2ef37f5a59150a1125a91fd39cd86b9cf53d15805b25ae3259c32c2d3c0399479e5e4a16098cacf0c68e06b2c9246e338b2
+  checksum: 1a34b1b0567e991fff8005c9198781acc0c420e33007d26ff111bae8b3cb7ca14484f4e41f3065bdbd02ac0b62f1aa2a818d7c8d5be1a4993e28f9bb9ee797f9
   languageName: node
   linkType: hard
 
@@ -11802,9 +11802,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rollup@npm:3.26.0":
-  version: 3.26.0
-  resolution: "rollup@npm:3.26.0"
+"rollup@npm:3.26.1":
+  version: 3.26.1
+  resolution: "rollup@npm:3.26.1"
   dependencies:
     fsevents: ~2.3.2
   dependenciesMeta:
@@ -11812,7 +11812,7 @@ __metadata:
       optional: true
   bin:
     rollup: dist/bin/rollup
-  checksum: 2d00f1ec8f5b3e84b005b7158446aacfbe669b61a55cea26d4cfb7014fed9169d78dffa8f845c8ef2c8cbc596b9de6e9f925597b87e7ef9b7de4c7da21f188ad
+  checksum: 3fd4f88510ec1b54b07309ee63b7b363a1cd4ed6d05e93ec0e883a73df1ffe8bb88169538cb4f2c1ec2d4a7340216f9a8b4b8ce7c2ee054ded725f39d9e3ba36
   languageName: node
   linkType: hard
 
