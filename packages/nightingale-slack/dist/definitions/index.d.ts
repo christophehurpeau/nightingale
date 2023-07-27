@@ -2,6 +2,9 @@ import type { Handle, Handler, Level } from 'nightingale-types';
 import type { SlackConfig } from './SlackConfig';
 export type { SlackConfig } from './SlackConfig';
 export { default as createBody } from './createBody';
+declare global {
+    const fetch: typeof import('node-fetch').default;
+}
 export declare class SlackHandler implements Handler {
     minLevel: Level;
     handle: Handle;

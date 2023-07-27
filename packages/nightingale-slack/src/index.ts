@@ -5,7 +5,6 @@ import type {
   Handler,
   Level,
 } from 'nightingale-types';
-import { post } from 'request';
 import type { SlackConfig } from './SlackConfig';
 import createBody from './createBody';
 
@@ -13,17 +12,23 @@ export type { SlackConfig } from './SlackConfig';
 
 export { default as createBody } from './createBody';
 
+// temp fix for global fetch: https://github.com/DefinitelyTyped/DefinitelyTyped/issues/60924
+declare global {
+  // eslint-disable-next-line @typescript-eslint/consistent-type-imports
+  const fetch: typeof import('node-fetch').default;
+}
+
 const createHandler =
   (slackConfig: SlackConfig) =>
   <T extends Metadata>(record: LogRecord<T>) => {
     const body = createBody(record, slackConfig);
 
-    post({ url: slackConfig.webhookUrl, body, json: true }).on(
-      'error',
-      (err2: Error) => {
-        console.error(err2.stack);
-      },
-    );
+    fetch(slackConfig.webhookUrl, {
+      method: 'POST',
+      body: JSON.stringify(body),
+    }).catch((error: Error) => {
+      console.error(error.stack);
+    });
   };
 
 export class SlackHandler implements Handler {

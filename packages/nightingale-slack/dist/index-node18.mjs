@@ -1,4 +1,3 @@
-import { post } from 'request';
 import { Level } from 'nightingale-levels';
 import markdownFormatter from 'nightingale-markdown-formatter';
 import rawFormatter from 'nightingale-raw-formatter';
@@ -32,14 +31,15 @@ function createBody(record, slackConfig) {
   };
 }
 
+// temp fix for global fetch: https://github.com/DefinitelyTyped/DefinitelyTyped/issues/60924
+
 const createHandler = slackConfig => record => {
   const body = createBody(record, slackConfig);
-  post({
-    url: slackConfig.webhookUrl,
-    body,
-    json: true
-  }).on('error', err2 => {
-    console.error(err2.stack);
+  fetch(slackConfig.webhookUrl, {
+    method: 'POST',
+    body: JSON.stringify(body)
+  }).catch(error => {
+    console.error(error.stack);
   });
 };
 class SlackHandler {

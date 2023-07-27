@@ -56,12 +56,12 @@
     "nightingale-levels": "14.0.2",
     "nightingale-markdown-formatter": "14.0.2",
     "nightingale-raw-formatter": "14.0.2",
-    "nightingale-types": "14.0.2",
-    "request": "^2.88.0"
+    "nightingale-types": "14.0.2"
   },
   "devDependencies": {
     "@babel/core": "7.22.9",
-    "@types/request": "2.48.8",
+    "@types/node": "18.17.1",
+    "@types/node-fetch": "2.6.4",
     "pob-babel": "36.2.0",
     "typescript": "5.1.6"
   }

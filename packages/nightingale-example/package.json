@@ -69,7 +69,8 @@
       "console",
       "debug",
       "errors",
-      "jsonConsole"
+      "jsonConsole",
+      "slack"
     ]
   },
   "dependencies": {
@@ -77,6 +78,7 @@
     "nightingale-console": "14.0.2",
     "nightingale-console-output": "14.0.2",
     "nightingale-json-formatter": "14.0.2",
+    "nightingale-slack": "14.0.2",
     "nightingale-string": "14.0.2",
     "nightingale-types": "14.0.2"
   },
