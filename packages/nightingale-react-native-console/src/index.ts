@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/restrict-template-expressions */
 import formatterANSI from 'nightingale-ansi-formatter';
 import type {
   Level,
