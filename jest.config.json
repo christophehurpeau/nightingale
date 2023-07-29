@@ -1,0 +1,9 @@
+{
+  "cacheDirectory": "./node_modules/.cache/jest",
+  "testEnvironment": "node",
+  "testMatch": [
+    "<rootDir>/packages/*/@(src|lib)/**/__tests__/**/*.(ts|js|cjs|mjs)",
+    "<rootDir>/packages/*/@(src|lib)/**/*.test.(ts|js|cjs|mjs)"
+  ],
+  "extensionsToTreatAsEsm": [".ts"]
+}

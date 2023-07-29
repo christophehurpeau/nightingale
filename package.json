@@ -41,17 +41,6 @@
       "@pob/commitlint-config"
     ]
   },
-  "jest": {
-    "cacheDirectory": "./node_modules/.cache/jest",
-    "testEnvironment": "node",
-    "testMatch": [
-      "<rootDir>/packages/*/@(src|lib)/**/__tests__/**/*.(ts|js|cjs|mjs)",
-      "<rootDir>/packages/*/@(src|lib)/**/*.test.(ts|js|cjs|mjs)"
-    ],
-    "extensionsToTreatAsEsm": [
-      ".ts"
-    ]
-  },
   "devDependencies": {
     "@babel/core": "7.22.9",
     "@pob/commitlint-config": "6.0.1",
