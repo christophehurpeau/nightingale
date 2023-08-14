@@ -47,7 +47,7 @@
     "@pob/eslint-config": "51.0.0",
     "@pob/eslint-config-typescript": "51.0.0",
     "@pob/lerna-light": "7.0.1",
-    "@pob/root": "8.1.1",
+    "@pob/root": "8.2.0",
     "@types/jest": "29.5.3",
     "@types/node": "18.17.5",
     "check-package-dependencies": "6.7.0",
