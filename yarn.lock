@@ -39,26 +39,26 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/core@npm:7.22.10, @babel/core@npm:^7.11.6, @babel/core@npm:^7.12.3, @babel/core@npm:^7.13.16, @babel/core@npm:^7.17.10, @babel/core@npm:^7.20.0":
-  version: 7.22.10
-  resolution: "@babel/core@npm:7.22.10"
+"@babel/core@npm:7.22.11, @babel/core@npm:^7.11.6, @babel/core@npm:^7.12.3, @babel/core@npm:^7.13.16, @babel/core@npm:^7.17.10, @babel/core@npm:^7.20.0":
+  version: 7.22.11
+  resolution: "@babel/core@npm:7.22.11"
   dependencies:
     "@ampproject/remapping": ^2.2.0
     "@babel/code-frame": ^7.22.10
     "@babel/generator": ^7.22.10
     "@babel/helper-compilation-targets": ^7.22.10
     "@babel/helper-module-transforms": ^7.22.9
-    "@babel/helpers": ^7.22.10
-    "@babel/parser": ^7.22.10
+    "@babel/helpers": ^7.22.11
+    "@babel/parser": ^7.22.11
     "@babel/template": ^7.22.5
-    "@babel/traverse": ^7.22.10
-    "@babel/types": ^7.22.10
+    "@babel/traverse": ^7.22.11
+    "@babel/types": ^7.22.11
     convert-source-map: ^1.7.0
     debug: ^4.1.0
     gensync: ^1.0.0-beta.2
-    json5: ^2.2.2
+    json5: ^2.2.3
     semver: ^6.3.1
-  checksum: cc4efa09209fe1f733cf512e9e4bb50870b191ab2dee8014e34cd6e731f204e48476cc53b4bbd0825d4d342304d577ae43ff5fd8ab3896080673c343321acb32
+  checksum: f258b2539ea2e5bfe55a708c2f3e1093a1b4744f12becc35abeb896037b66210de9a8ad6296a706046d5dc3a24e564362b73a9b814e5bfe500c8baab60c22d2e
   languageName: node
   linkType: hard
 
@@ -313,14 +313,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/helpers@npm:^7.22.10":
-  version: 7.22.10
-  resolution: "@babel/helpers@npm:7.22.10"
+"@babel/helpers@npm:^7.22.11":
+  version: 7.22.11
+  resolution: "@babel/helpers@npm:7.22.11"
   dependencies:
     "@babel/template": ^7.22.5
-    "@babel/traverse": ^7.22.10
-    "@babel/types": ^7.22.10
-  checksum: 3b1219e362df390b6c5d94b75a53fc1c2eb42927ced0b8022d6a29b833a839696206b9bdad45b4805d05591df49fc16b6fb7db758c9c2ecfe99e3e94cb13020f
+    "@babel/traverse": ^7.22.11
+    "@babel/types": ^7.22.11
+  checksum: 93186544228b5e371486466ec3b86a77cce91beeff24a5670ca8ec46d50328f7700dab82d532351286e9d68624dc51d6d71589b051dd9535e44be077a43ec013
   languageName: node
   linkType: hard
 
@@ -335,12 +335,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/parser@npm:^7.1.0, @babel/parser@npm:^7.13.16, @babel/parser@npm:^7.14.7, @babel/parser@npm:^7.20.0, @babel/parser@npm:^7.22.10, @babel/parser@npm:^7.22.5":
-  version: 7.22.10
-  resolution: "@babel/parser@npm:7.22.10"
+"@babel/parser@npm:^7.1.0, @babel/parser@npm:^7.13.16, @babel/parser@npm:^7.14.7, @babel/parser@npm:^7.20.0, @babel/parser@npm:^7.22.11, @babel/parser@npm:^7.22.5":
+  version: 7.22.11
+  resolution: "@babel/parser@npm:7.22.11"
   bin:
     parser: ./bin/babel-parser.js
-  checksum: af51567b7d3cdf523bc608eae057397486c7fa6c2e5753027c01fe5c36f0767b2d01ce3049b222841326cc5b8c7fda1d810ac1a01af0a97bb04679e2ef9f7049
+  checksum: 332079ed09794d3685343e9fc39c6a12dcb6ea589119f2135952cdef2424296786bb609a33f6dfa9be271797bbf8339f1865118418ea50b32a0c701734c96664
   languageName: node
   linkType: hard
 
@@ -1573,9 +1573,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/traverse@npm:^7.20.0, @babel/traverse@npm:^7.22.10, @babel/traverse@npm:^7.22.5":
-  version: 7.22.10
-  resolution: "@babel/traverse@npm:7.22.10"
+"@babel/traverse@npm:^7.20.0, @babel/traverse@npm:^7.22.11, @babel/traverse@npm:^7.22.5":
+  version: 7.22.11
+  resolution: "@babel/traverse@npm:7.22.11"
   dependencies:
     "@babel/code-frame": ^7.22.10
     "@babel/generator": ^7.22.10
@@ -1583,22 +1583,22 @@ __metadata:
     "@babel/helper-function-name": ^7.22.5
     "@babel/helper-hoist-variables": ^7.22.5
     "@babel/helper-split-export-declaration": ^7.22.6
-    "@babel/parser": ^7.22.10
-    "@babel/types": ^7.22.10
+    "@babel/parser": ^7.22.11
+    "@babel/types": ^7.22.11
     debug: ^4.1.0
     globals: ^11.1.0
-  checksum: 9f7b358563bfb0f57ac4ed639f50e5c29a36b821a1ce1eea0c7db084f5b925e3275846d0de63bde01ca407c85d9804e0efbe370d92cd2baaafde3bd13b0f4cdb
+  checksum: 4ad62d548ca8b95dbf45bae16cc167428f174f3c837d55a5878b1f17bdbc8b384d6df741dc7c461b62c04d881cf25644d3ab885909ba46e3ac43224e2b15b504
   languageName: node
   linkType: hard
 
-"@babel/types@npm:^7.0.0, @babel/types@npm:^7.17.0, @babel/types@npm:^7.20.0, @babel/types@npm:^7.22.10, @babel/types@npm:^7.22.5, @babel/types@npm:^7.3.0, @babel/types@npm:^7.3.3, @babel/types@npm:^7.4.4, @babel/types@npm:^7.8.3":
-  version: 7.22.10
-  resolution: "@babel/types@npm:7.22.10"
+"@babel/types@npm:^7.0.0, @babel/types@npm:^7.17.0, @babel/types@npm:^7.20.0, @babel/types@npm:^7.22.10, @babel/types@npm:^7.22.11, @babel/types@npm:^7.22.5, @babel/types@npm:^7.3.0, @babel/types@npm:^7.3.3, @babel/types@npm:^7.4.4, @babel/types@npm:^7.8.3":
+  version: 7.22.11
+  resolution: "@babel/types@npm:7.22.11"
   dependencies:
     "@babel/helper-string-parser": ^7.22.5
     "@babel/helper-validator-identifier": ^7.22.5
     to-fast-properties: ^2.0.0
-  checksum: 095c4f4b7503fa816e4094113f0ec2351ef96ff32012010b771693066ff628c7c664b21c6bd3fb93aeb46fe7c61f6b3a3c9e4ed0034d6a2481201c417371c8af
+  checksum: 431a6446896adb62c876d0fe75263835735d3c974aae05356a87eb55f087c20a777028cf08eadcace7993e058bbafe3b21ce2119363222c6cef9eedd7a204810
   languageName: node
   linkType: hard
 
@@ -8549,7 +8549,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"json5@npm:^2.2.2":
+"json5@npm:^2.2.2, json5@npm:^2.2.3":
   version: 2.2.3
   resolution: "json5@npm:2.2.3"
   bin:
@@ -9711,7 +9711,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-ansi-formatter@workspace:packages/nightingale-ansi-formatter"
   dependencies:
-    "@babel/core": 7.22.10
+    "@babel/core": 7.22.11
     "@babel/preset-env": 7.22.10
     ansi-styles: ^6.2.1
     nightingale-formatter: 14.1.0
@@ -9725,7 +9725,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-app-console@workspace:packages/nightingale-app-console"
   dependencies:
-    "@babel/core": 7.22.10
+    "@babel/core": 7.22.11
     "@babel/preset-env": 7.22.10
     "@types/node": ">=18.0.0"
     nightingale: 14.1.0
@@ -9740,7 +9740,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-app-react-native@workspace:packages/nightingale-app-react-native"
   dependencies:
-    "@babel/core": 7.22.10
+    "@babel/core": 7.22.11
     "@babel/preset-env": 7.22.10
     nightingale: 14.1.0
     nightingale-browser-console: 14.1.0
@@ -9760,7 +9760,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-browser-console-formatter@workspace:packages/nightingale-browser-console-formatter"
   dependencies:
-    "@babel/core": 7.22.10
+    "@babel/core": 7.22.11
     "@babel/preset-env": 7.22.10
     nightingale-formatter: 14.1.0
     nightingale-levels: 14.1.0
@@ -9774,7 +9774,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-browser-console@workspace:packages/nightingale-browser-console"
   dependencies:
-    "@babel/core": 7.22.10
+    "@babel/core": 7.22.11
     "@babel/preset-env": 7.22.10
     nightingale-browser-console-formatter: 14.1.0
     nightingale-console-output: 14.1.0
@@ -9789,7 +9789,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-console-example@workspace:packages/nightingale-console-example"
   dependencies:
-    "@babel/core": 7.22.10
+    "@babel/core": 7.22.11
     "@sentry/node": 7.60.0
     nightingale: 14.1.0
     nightingale-console: 14.1.0
@@ -9803,7 +9803,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-console-output@workspace:packages/nightingale-console-output"
   dependencies:
-    "@babel/core": 7.22.10
+    "@babel/core": 7.22.11
     "@babel/preset-env": 7.22.10
     "@types/node": ">=18.0.0"
     nightingale-levels: 14.1.0
@@ -9817,7 +9817,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-console@workspace:packages/nightingale-console"
   dependencies:
-    "@babel/core": 7.22.10
+    "@babel/core": 7.22.11
     "@types/node": ">=18.0.0"
     nightingale-ansi-formatter: 14.1.0
     nightingale-console-output: 14.1.0
@@ -9834,7 +9834,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-debug@workspace:packages/nightingale-debug"
   dependencies:
-    "@babel/core": 7.22.10
+    "@babel/core": 7.22.11
     "@babel/preset-env": 7.22.10
     nightingale-levels: 14.1.0
     pob-babel: 36.2.0
@@ -9846,7 +9846,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-example@workspace:packages/nightingale-example"
   dependencies:
-    "@babel/core": 7.22.10
+    "@babel/core": 7.22.11
     nightingale: 14.1.0
     nightingale-console: 14.1.0
     nightingale-console-output: 14.1.0
@@ -9863,7 +9863,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-formatter@workspace:packages/nightingale-formatter"
   dependencies:
-    "@babel/core": 7.22.10
+    "@babel/core": 7.22.11
     "@babel/preset-env": 7.22.10
     nightingale-levels: 14.1.0
     nightingale-types: 14.1.0
@@ -9876,7 +9876,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-html-formatter@workspace:packages/nightingale-html-formatter"
   dependencies:
-    "@babel/core": 7.22.10
+    "@babel/core": 7.22.11
     "@babel/preset-env": 7.22.10
     nightingale-formatter: 14.1.0
     nightingale-levels: 14.1.0
@@ -9890,7 +9890,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-json-formatter@workspace:packages/nightingale-json-formatter"
   dependencies:
-    "@babel/core": 7.22.10
+    "@babel/core": 7.22.11
     "@babel/preset-env": 7.22.10
     nightingale-formatter: 14.1.0
     nightingale-levels: 14.1.0
@@ -9912,7 +9912,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-levels@workspace:packages/nightingale-levels"
   dependencies:
-    "@babel/core": 7.22.10
+    "@babel/core": 7.22.11
     "@babel/preset-env": 7.22.10
     pob-babel: 36.2.0
     typescript: 5.1.6
@@ -9923,7 +9923,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-logger@workspace:packages/nightingale-logger"
   dependencies:
-    "@babel/core": 7.22.10
+    "@babel/core": 7.22.11
     "@babel/preset-env": 7.22.10
     "@types/node": ">=18.0.0"
     nightingale-levels: 14.1.0
@@ -9937,7 +9937,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-markdown-formatter@workspace:packages/nightingale-markdown-formatter"
   dependencies:
-    "@babel/core": 7.22.10
+    "@babel/core": 7.22.11
     "@babel/preset-env": 7.22.10
     nightingale-formatter: 14.1.0
     nightingale-levels: 14.1.0
@@ -9951,7 +9951,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-monorepo@workspace:."
   dependencies:
-    "@babel/core": 7.22.10
+    "@babel/core": 7.22.11
     "@pob/commitlint-config": 6.0.1
     "@pob/eslint-config": 51.0.0
     "@pob/eslint-config-typescript": 51.0.0
@@ -9972,7 +9972,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-raw-formatter@workspace:packages/nightingale-raw-formatter"
   dependencies:
-    "@babel/core": 7.22.10
+    "@babel/core": 7.22.11
     "@babel/preset-env": 7.22.10
     nightingale-formatter: 14.1.0
     nightingale-levels: 14.1.0
@@ -9986,7 +9986,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-react-native-console@workspace:packages/nightingale-react-native-console"
   dependencies:
-    "@babel/core": 7.22.10
+    "@babel/core": 7.22.11
     "@babel/preset-env": 7.22.10
     nightingale-ansi-formatter: 14.1.0
     nightingale-types: 14.1.0
@@ -10003,7 +10003,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-sentry@workspace:packages/nightingale-sentry"
   dependencies:
-    "@babel/core": 7.22.10
+    "@babel/core": 7.22.11
     "@babel/preset-env": 7.22.10
     "@sentry/core": ^7.19.0
     "@sentry/node": ^7.19.0
@@ -10019,7 +10019,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-slack@workspace:packages/nightingale-slack"
   dependencies:
-    "@babel/core": 7.22.10
+    "@babel/core": 7.22.11
     "@types/node": 18.17.9
     "@types/node-fetch": 2.6.4
     nightingale-levels: 14.1.0
@@ -10035,7 +10035,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-string@workspace:packages/nightingale-string"
   dependencies:
-    "@babel/core": 7.22.10
+    "@babel/core": 7.22.11
     nightingale-raw-formatter: 14.1.0
     nightingale-types: 14.1.0
     pob-babel: 36.2.0
@@ -10047,7 +10047,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-types@workspace:packages/nightingale-types"
   dependencies:
-    "@babel/core": 7.22.10
+    "@babel/core": 7.22.11
     "@babel/preset-env": 7.22.10
     nightingale-levels: 14.1.0
     pob-babel: 36.2.0
@@ -10059,7 +10059,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-unit-testing@workspace:packages/nightingale-unit-testing"
   dependencies:
-    "@babel/core": 7.22.10
+    "@babel/core": 7.22.11
     "@types/node": ">=18.0.0"
     nightingale: 14.1.0
     nightingale-console: 14.1.0
@@ -10072,7 +10072,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-web-processor@workspace:packages/nightingale-web-processor"
   dependencies:
-    "@babel/core": 7.22.10
+    "@babel/core": 7.22.11
     "@types/node": ">=18.0.0"
     nightingale-types: 14.1.0
     pob-babel: 36.2.0
@@ -10084,7 +10084,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-winston-adapter@workspace:packages/nightingale-winston-adapter"
   dependencies:
-    "@babel/core": 7.22.10
+    "@babel/core": 7.22.11
     "@babel/preset-env": 7.22.10
     nightingale-level-names: 14.0.0
     nightingale-types: 14.1.0
@@ -10097,7 +10097,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale@workspace:packages/nightingale"
   dependencies:
-    "@babel/core": 7.22.10
+    "@babel/core": 7.22.11
     "@babel/preset-env": 7.22.10
     "@types/node": ">=18.0.0"
     nightingale-levels: 14.1.0
