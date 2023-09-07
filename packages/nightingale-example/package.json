@@ -17,33 +17,39 @@
   "exports": {
     "./package.json": "./package.json",
     "./configure": {
-      "types": "./build/definitions/index.d.ts",
+      "types": "./src/configure.ts",
       "node": {
         "import": "./build/configure-node18.mjs"
       }
     },
     "./console": {
-      "types": "./build/definitions/index.d.ts",
+      "types": "./src/console.ts",
       "node": {
         "import": "./build/console-node18.mjs"
       }
     },
     "./debug": {
-      "types": "./build/definitions/index.d.ts",
+      "types": "./src/debug.ts",
       "node": {
         "import": "./build/debug-node18.mjs"
       }
     },
     "./errors": {
-      "types": "./build/definitions/index.d.ts",
+      "types": "./src/errors.ts",
       "node": {
         "import": "./build/errors-node18.mjs"
       }
     },
     "./jsonConsole": {
-      "types": "./build/definitions/index.d.ts",
+      "types": "./src/jsonConsole.ts",
       "node": {
         "import": "./build/jsonConsole-node18.mjs"
+      }
+    },
+    "./slack": {
+      "types": "./src/slack.ts",
+      "node": {
+        "import": "./build/slack-node18.mjs"
       }
     }
   },
@@ -84,7 +90,7 @@
   },
   "devDependencies": {
     "@babel/core": "7.22.15",
-    "pob-babel": "36.2.0",
+    "pob-babel": "36.3.0",
     "typescript": "5.2.2"
   }
 }

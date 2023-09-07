@@ -3,9 +3,10 @@ on:
   workflow_dispatch:
     inputs:
       dry-run:
-        description: "Dry run? (y/N)"
+        description: "Dry run"
         required: true
-        default: "N"
+        type: boolean
+        default: false
 
 jobs:
   publish:
@@ -24,23 +25,16 @@ jobs:
         run: yarn install --immutable --immutable-cache
 
       - name: New version (dry run)
-        if: |
-          github.ref == 'refs/heads/main'
-          && contains(github.event.inputs.dry-run, 'y')
+        if: github.ref == 'refs/heads/main' && inputs.dry-run
         run: yarn lerna version --yes --no-push --exact --conventional-commits --conventional-graduate --changelog-preset conventional-changelog-conventionalcommits --no-git-tag-version --loglevel=verbose
-
       - name: Configure Git user
-        if: |
-          github.ref == 'refs/heads/main'
-          && contains(github.event.inputs.dry-run, 'y') == false
+        if: github.ref == 'refs/heads/main' && !inputs.dry-run
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
 
       - name: New version
-        if: |
-          github.ref == 'refs/heads/main'
-          && contains(github.event.inputs.dry-run, 'y') == false
+        if: github.ref == 'refs/heads/main' && !inputs.dry-run
         run: |
           yarn lerna version --yes --push --exact --conventional-commits --conventional-graduate --changelog-preset conventional-changelog-conventionalcommits --create-release=github -m 'chore: release [skip ci]'
         env:
@@ -49,16 +43,12 @@ jobs:
           YARN_ENABLE_IMMUTABLE_INSTALLS: false
 
       - uses: actions/setup-node@v3
-        if: |
-          github.ref == 'refs/heads/main'
-          && contains(github.event.inputs.dry-run, 'y') == false
+        if: github.ref == 'refs/heads/main' && !inputs.dry-run
         with:
           node-version: 18
           registry-url: "https://registry.npmjs.org"
 
       - run: yarn lerna publish from-git --no-verify-access --yes
-        if: |
-          github.ref == 'refs/heads/main'
-          && contains(github.event.inputs.dry-run, 'y') == false
+        if: github.ref == 'refs/heads/main' && !inputs.dry-run
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

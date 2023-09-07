@@ -4,12 +4,8 @@
     "rootDir": "src",
     "baseUrl": "" /* Base directory to resolve non-absolute module names. */,
     "newLine": "lf",
-    "outDir": "node_modules/.cache/tsc",
+    "noEmit": true,
     "tsBuildInfoFile": "node_modules/.cache/tsc/tsbuildinfo",
-    "noEmitOnError": true,
-    "declaration": true,
-    "declarationMap": true,
-    "emitDeclarationOnly": true,
     "incremental": true,
     "composite": true,
 
@@ -57,6 +53,8 @@
       ],
       "nightingale-console": ["../../packages/nightingale-console/src"],
       "nightingale-console/*": ["../../packages/nightingale-console/src/*"],
+      "nightingale-slack": ["../../packages/nightingale-slack/src"],
+      "nightingale-slack/*": ["../../packages/nightingale-slack/src/*"],
       "nightingale-string": ["../../packages/nightingale-string/src"],
       "nightingale-string/*": ["../../packages/nightingale-string/src/*"],
       "nightingale": ["../../packages/nightingale/src"],
@@ -68,6 +66,7 @@
     { "path": "../../packages/nightingale-console-output/tsconfig.json" },
     { "path": "../../packages/nightingale-json-formatter/tsconfig.json" },
     { "path": "../../packages/nightingale-console/tsconfig.json" },
+    { "path": "../../packages/nightingale-slack/tsconfig.json" },
     { "path": "../../packages/nightingale-string/tsconfig.json" },
     { "path": "../../packages/nightingale/tsconfig.json" }
   ]

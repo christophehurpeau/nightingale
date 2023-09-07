@@ -18,19 +18,19 @@
   "exports": {
     "./package.json": "./package.json",
     ".": {
-      "types": "./build/definitions/index.d.ts",
+      "types": "./src/index.ts",
       "node": {
         "import": "./build/index-node18.mjs"
       }
     },
     "./children": {
-      "types": "./build/definitions/index.d.ts",
+      "types": "./src/children.ts",
       "node": {
         "import": "./build/children-node18.mjs"
       }
     },
     "./sentry": {
-      "types": "./build/definitions/index.d.ts",
+      "types": "./src/sentry.ts",
       "node": {
         "import": "./build/sentry-node18.mjs"
       }
@@ -67,7 +67,7 @@
   },
   "devDependencies": {
     "@babel/core": "7.22.15",
-    "pob-babel": "36.2.0",
+    "pob-babel": "36.3.0",
     "typescript": "5.2.2"
   }
 }
