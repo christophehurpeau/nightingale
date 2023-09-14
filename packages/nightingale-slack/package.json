@@ -59,7 +59,7 @@
     "nightingale-types": "14.1.0"
   },
   "devDependencies": {
-    "@babel/core": "7.22.17",
+    "@babel/core": "7.22.19",
     "@types/node": "18.17.15",
     "@types/whatwg-fetch": "0.0.33",
     "pob-babel": "36.3.0",
