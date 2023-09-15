@@ -3752,10 +3752,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:18.17.15":
-  version: 18.17.15
-  resolution: "@types/node@npm:18.17.15"
-  checksum: eed11d4398ccdb999a4c65658ee75de621a4ad57aece48ed2fb8803b1e2711fadf58d8aefbdb0a447d69cf3cba602ca32fe0fc92077575950a796e1dc13baa0f
+"@types/node@npm:18.17.16":
+  version: 18.17.16
+  resolution: "@types/node@npm:18.17.16"
+  checksum: 8f9dbaf4a67a14110e2a0d805f9b57f3a5cda774dbcb7b1e7973efe31d5eeea358482dbe36a5bfadb0dde99f065f1ae0531f25a032f015871aa0b2896eb3c4ae
   languageName: node
   linkType: hard
 
@@ -10040,7 +10040,7 @@ __metadata:
     "@pob/lerna-light": 7.0.1
     "@pob/root": 8.2.0
     "@types/jest": 29.5.4
-    "@types/node": 18.17.15
+    "@types/node": 18.17.16
     check-package-dependencies: 6.7.0
     eslint: 8.49.0
     jest: 29.7.0
@@ -10102,7 +10102,7 @@ __metadata:
   resolution: "nightingale-slack@workspace:packages/nightingale-slack"
   dependencies:
     "@babel/core": 7.22.19
-    "@types/node": 18.17.15
+    "@types/node": 18.17.16
     "@types/whatwg-fetch": 0.0.33
     nightingale-levels: 14.1.0
     nightingale-markdown-formatter: 14.1.0
