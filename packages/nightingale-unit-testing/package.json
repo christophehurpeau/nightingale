@@ -54,7 +54,7 @@
     "nightingale-console": "14.1.0"
   },
   "devDependencies": {
-    "@babel/core": "7.23.0",
+    "@babel/core": "7.23.2",
     "pob-babel": "36.3.0",
     "typescript": "5.2.2"
   }
