@@ -46,7 +46,7 @@
     "@pob/commitlint-config": "6.0.2",
     "@pob/eslint-config": "51.0.0",
     "@pob/eslint-config-typescript": "51.0.0",
-    "@pob/lerna-light": "7.0.1",
+    "@pob/lerna-light": "8.0.1",
     "@pob/root": "8.2.2",
     "@types/jest": "29.5.6",
     "@types/node": "18.18.6",
