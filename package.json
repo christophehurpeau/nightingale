@@ -48,7 +48,7 @@
     "@types/jest": "29.5.7",
     "@types/node": "20.8.10",
     "check-package-dependencies": "6.8.0",
-    "eslint": "8.52.0",
+    "eslint": "8.53.0",
     "jest": "29.7.0",
     "pob-babel": "36.4.4",
     "typedoc": "0.25.2",
