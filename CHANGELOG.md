@@ -8,11 +8,15 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Features
 
-* **deps:** update dependency @sentry/node to v7.77.0 ([#785](https://github.com/christophehurpeau/nightingale/issues/785)) ([ebcbe5b](https://github.com/christophehurpeau/nightingale/commit/ebcbe5b2a6f489ea5aeb27fc2071d2736dedac68))* nightingale-app-react-native add listenReactNativeUnhandledErrors ([88d2b0c](https://github.com/christophehurpeau/nightingale/commit/88d2b0c03873c994ba0e002601762264c741734f))* **nightingale:** improve unhandled error display ([a56473e](https://github.com/christophehurpeau/nightingale/commit/a56473e2eb09267c19f12ba7a3d89bccec21d3c5))
+* **deps:** update dependency @sentry/node to v7.77.0 ([#785](https://github.com/christophehurpeau/nightingale/issues/785)) ([ebcbe5b](https://github.com/christophehurpeau/nightingale/commit/ebcbe5b2a6f489ea5aeb27fc2071d2736dedac68))
+* nightingale-app-react-native add listenReactNativeUnhandledErrors ([88d2b0c](https://github.com/christophehurpeau/nightingale/commit/88d2b0c03873c994ba0e002601762264c741734f))
+* **nightingale:** improve unhandled error display ([a56473e](https://github.com/christophehurpeau/nightingale/commit/a56473e2eb09267c19f12ba7a3d89bccec21d3c5))
 
 ### Bug Fixes
 
-* **nightingale-formatter:** fix duplicate name and message in error stack ([bf4faf6](https://github.com/christophehurpeau/nightingale/commit/bf4faf655afd80ae0040f8627ad1bff1ff558f90))* **nightingale-react-native-console:** fix stack log ([edcc9b5](https://github.com/christophehurpeau/nightingale/commit/edcc9b593655bee8edb743c6214b34590f0ff118))* update plugin-conventional-version ([9b108ff](https://github.com/christophehurpeau/nightingale/commit/9b108ffe8f8c66c7c78bc739d346b3277651fdfd))
+* **nightingale-formatter:** fix duplicate name and message in error stack ([bf4faf6](https://github.com/christophehurpeau/nightingale/commit/bf4faf655afd80ae0040f8627ad1bff1ff558f90))
+* **nightingale-react-native-console:** fix stack log ([edcc9b5](https://github.com/christophehurpeau/nightingale/commit/edcc9b593655bee8edb743c6214b34590f0ff118))
+* update plugin-conventional-version ([9b108ff](https://github.com/christophehurpeau/nightingale/commit/9b108ffe8f8c66c7c78bc739d346b3277651fdfd))
 
 ## [14.1.0](https://github.com/christophehurpeau/nightingale/compare/v14.0.2...v14.1.0) (2023-07-27)
 
@@ -52,7 +56,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### ⚠ BREAKING CHANGES
 
-* **deps:** require node 18 
+* **deps:** require node 18
 * requires node 18
 
 ### Features
