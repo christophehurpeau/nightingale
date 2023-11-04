@@ -9460,12 +9460,12 @@ __metadata:
   linkType: hard
 
 "react-devtools-core@npm:^4.27.2":
-  version: 4.27.8
-  resolution: "react-devtools-core@npm:4.27.8"
+  version: 4.28.5
+  resolution: "react-devtools-core@npm:4.28.5"
   dependencies:
     shell-quote: "npm:^1.6.1"
     ws: "npm:^7"
-  checksum: e9d623ac71cd7b4229b714be6b1cb22802ce48cc876e3e7295a84188d4d43fb8d619fb1019299a3a54ba36d795d18a39d04c0a4a438e84a4ef3c4ce1e62ec708
+  checksum: 1d71f9b69b8f557a752ba778a20eee9d33bf4393546dd32c96fa034a4b7cc4053f1ac4fccf1ed686a18e1149aa94c26f6d6c3a2c131c958a504199e8503d9ee1
   languageName: node
   linkType: hard
 
