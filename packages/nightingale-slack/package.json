@@ -30,6 +30,10 @@
     }
   },
   "sideEffects": false,
+  "files": [
+    "src",
+    "dist"
+  ],
   "scripts": {
     "build": "yarn clean:build && rollup --config rollup.config.mjs && yarn run build:definitions",
     "build:definitions": "tsc -p tsconfig.json",
@@ -62,7 +66,7 @@
     "@babel/core": "7.23.2",
     "@types/node": "18.18.6",
     "@types/whatwg-fetch": "0.0.33",
-    "pob-babel": "36.3.0",
+    "pob-babel": "36.4.4",
     "typescript": "5.2.2"
   }
 }

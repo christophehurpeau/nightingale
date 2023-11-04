@@ -8,7 +8,7 @@
 
 <h1>Packages</h1>
 
-This repository is a monorepo that we manage using [Lerna](https://github.com/lerna/lerna).
+This repository is a monorepo that we manage using [Yarn Workspaces](https://yarnpkg.com/features/workspaces).
 
 | Package                                                                                 | Version                                                                                                                                                                            | Description                                   |
 | --------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------- |

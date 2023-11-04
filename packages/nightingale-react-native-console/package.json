@@ -45,6 +45,10 @@
     }
   },
   "sideEffects": false,
+  "files": [
+    "src",
+    "dist"
+  ],
   "scripts": {
     "build": "yarn clean:build && rollup --config rollup.config.mjs && yarn run build:definitions",
     "build:definitions": "tsc -p tsconfig.json",
@@ -79,7 +83,7 @@
   "devDependencies": {
     "@babel/core": "7.23.2",
     "@babel/preset-env": "7.23.2",
-    "pob-babel": "36.3.0",
+    "pob-babel": "36.4.4",
     "react": "18.2.0",
     "react-native": "0.72.3",
     "typescript": "5.2.2"

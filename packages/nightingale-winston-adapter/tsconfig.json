@@ -4,7 +4,7 @@
     "rootDir": "src",
     "newLine": "lf",
     "outDir": "dist/definitions",
-    "tsBuildInfoFile": "dist/definitions/tsbuildinfo",
+    "tsBuildInfoFile": "node_modules/.cache/tsc/tsbuildinfo",
     "noEmitOnError": true,
     "declaration": true,
     "declarationMap": true,
