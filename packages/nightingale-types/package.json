@@ -1,6 +1,6 @@
 {
   "name": "nightingale-types",
-  "version": "14.1.0",
+  "version": "14.2.0",
   "description": "Nightingale types for typescript",
   "keywords": [
     "logger"
@@ -79,7 +79,7 @@
     ]
   },
   "dependencies": {
-    "nightingale-levels": "14.1.0"
+    "nightingale-levels": "14.2.0"
   },
   "devDependencies": {
     "@babel/core": "7.23.2",

@@ -1,7 +1,17 @@
-# Change Log
+# Changelog
 
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## [14.2.0](https://github.com/christophehurpeau/nightingale/compare/v14.1.0...v14.2.0) (2023-11-04)
+
+
+### Bug Fixes
+
+* **nightingale-react-native-console:** fix stack log ([edcc9b5](https://github.com/christophehurpeau/nightingale/commit/edcc9b593655bee8edb743c6214b34590f0ff118))
+Version bump for dependency: nightingale-ansi-formatter
+Version bump for dependency: nightingale-types
+
 
 ## [14.1.0](https://github.com/christophehurpeau/nightingale/compare/v14.0.2...v14.1.0) (2023-07-27)
 

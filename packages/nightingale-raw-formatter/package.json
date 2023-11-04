@@ -1,6 +1,6 @@
 {
   "name": "nightingale-raw-formatter",
-  "version": "14.1.0",
+  "version": "14.2.0",
   "description": "Nightingale Raw formatter",
   "keywords": [
     "nightingale",
@@ -81,13 +81,13 @@
     ]
   },
   "dependencies": {
-    "nightingale-formatter": "14.1.0",
-    "nightingale-types": "14.1.0"
+    "nightingale-formatter": "14.2.0",
+    "nightingale-types": "14.2.0"
   },
   "devDependencies": {
     "@babel/core": "7.23.2",
     "@babel/preset-env": "7.23.2",
-    "nightingale-levels": "14.1.0",
+    "nightingale-levels": "14.2.0",
     "pob-babel": "36.4.4",
     "typescript": "5.2.2"
   }

@@ -1,7 +1,18 @@
-# Change Log
+# Changelog
 
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## [14.2.0](https://github.com/christophehurpeau/nightingale/compare/v14.1.0...v14.2.0) (2023-11-04)
+
+
+### Features
+
+* **deps:** update dependency @sentry/node to v7.77.0 ([#785](https://github.com/christophehurpeau/nightingale/issues/785)) ([ebcbe5b](https://github.com/christophehurpeau/nightingale/commit/ebcbe5b2a6f489ea5aeb27fc2071d2736dedac68))
+Version bump for dependency: nightingale
+Version bump for dependency: nightingale-console
+Version bump for dependency: nightingale-sentry
+
 
 ## [14.1.0](https://github.com/christophehurpeau/nightingale/compare/v14.0.2...v14.1.0) (2023-07-27)
 

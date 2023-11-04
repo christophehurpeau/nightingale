@@ -1,7 +1,18 @@
-# Change Log
+# Changelog
 
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## [14.2.0](https://github.com/christophehurpeau/nightingale/compare/v14.1.0...v14.2.0) (2023-11-04)
+
+
+### Features
+
+* nightingale-app-react-native add listenReactNativeUnhandledErrors ([88d2b0c](https://github.com/christophehurpeau/nightingale/commit/88d2b0c03873c994ba0e002601762264c741734f))
+Version bump for dependency: nightingale
+Version bump for dependency: nightingale-browser-console
+Version bump for dependency: nightingale-react-native-console
+
 
 ## [14.1.0](https://github.com/christophehurpeau/nightingale/compare/v14.0.2...v14.1.0) (2023-07-27)
 

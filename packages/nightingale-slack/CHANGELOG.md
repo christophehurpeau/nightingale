@@ -1,7 +1,17 @@
-# Change Log
+# Changelog
 
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## [14.2.0](https://github.com/christophehurpeau/nightingale/compare/v14.1.0...v14.2.0) (2023-11-04)
+
+Note: no notable changes
+
+Version bump for dependency: nightingale-levels
+Version bump for dependency: nightingale-markdown-formatter
+Version bump for dependency: nightingale-raw-formatter
+Version bump for dependency: nightingale-types
+
 
 ## [14.1.0](https://github.com/christophehurpeau/nightingale/compare/v14.0.2...v14.1.0) (2023-07-27)
 
