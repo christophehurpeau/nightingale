@@ -1,7 +1,7 @@
 {
   "name": "nightingale-monorepo",
   "private": true,
-  "version": "0.0.0",
+  "version": "14.1.0",
   "description": "Logger for browser and node, see [nightingale](packages/nightingale) to get started !",
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (https://christophe.hurpeau.com)",
   "license": "ISC",
@@ -31,8 +31,7 @@
     "test:coverage": "NODE_OPTIONS=--experimental-vm-modules jest --coverage --coverageReporters=json --coverageReporters=text",
     "test:watch": "NODE_OPTIONS=--experimental-vm-modules jest --watch",
     "tsc": "tsc -b",
-    "watch": "yarn clean:build && rollup --config rollup.config.mjs --watch",
-    "watch:lerna": "lerna run --parallel --ignore \"*-example\" watch"
+    "watch": "yarn clean:build && rollup --config rollup.config.mjs --watch"
   },
   "prettier": "@pob/root/prettier-config",
   "commitlint": {
@@ -46,10 +45,10 @@
     "@pob/eslint-config": "51.1.2",
     "@pob/eslint-config-typescript": "51.1.2",
     "@pob/root": "8.4.2",
-    "@types/jest": "29.5.6",
-    "@types/node": "18.18.6",
+    "@types/jest": "29.5.7",
+    "@types/node": "20.8.10",
     "check-package-dependencies": "6.8.0",
-    "eslint": "8.52.0",
+    "eslint": "8.53.0",
     "jest": "29.7.0",
     "pob-babel": "36.4.4",
     "typedoc": "0.25.2",

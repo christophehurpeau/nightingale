@@ -15,9 +15,15 @@ export function listenUnhandledErrors(
   ),
 ): void {
   process.on('uncaughtException', (error) => {
-    logger.error('uncaughtException', { error, unhandled: true });
+    logger.error(error, {
+      unhandled: true,
+      type: 'uncaughtException',
+    });
   });
   process.on('unhandledRejection', (error) => {
-    logger.error('unhandledRejection', { error, unhandled: true });
+    logger.error(error as Error, {
+      unhandled: true,
+      type: 'unhandledRejection',
+    });
   });
 }

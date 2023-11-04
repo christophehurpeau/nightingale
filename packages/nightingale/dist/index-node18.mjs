@@ -103,15 +103,15 @@ if (globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
  */
 function listenUnhandledErrors(logger = new Logger('nightingale:listenUnhandledErrors', 'UnhandledErrors')) {
   process.on('uncaughtException', error => {
-    logger.error('uncaughtException', {
-      error,
-      unhandled: true
+    logger.error(error, {
+      unhandled: true,
+      type: 'uncaughtException'
     });
   });
   process.on('unhandledRejection', error => {
-    logger.error('unhandledRejection', {
-      error,
-      unhandled: true
+    logger.error(error, {
+      unhandled: true,
+      type: 'unhandledRejection'
     });
   });
 }
