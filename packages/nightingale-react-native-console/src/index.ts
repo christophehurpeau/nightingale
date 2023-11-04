@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/restrict-template-expressions */
+
 import formatterANSI from 'nightingale-ansi-formatter';
 import type {
   Level,
@@ -54,13 +54,13 @@ const createHandle = (): Handle => {
   return <T extends Metadata>(record: LogRecord<T>): void => {
     const metadataError = record.metadata?.error;
     if (metadataError && metadataError instanceof Error) {
-      delete record.metadata?.error;
       symbolicateStackTrace(getStackTrace(metadataError))
         .then(({ stack, codeFrame }: any) => {
           metadataError.stack = parsedStackToString(stack);
           consoleOutput([formatterANSI(record)], record);
         })
         .catch((error) => {
+          metadataError.stack = undefined;
           consoleOutput([formatterANSI(record)], record);
         });
     } else {
