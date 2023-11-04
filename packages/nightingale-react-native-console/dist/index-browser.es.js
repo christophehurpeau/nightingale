@@ -5,7 +5,7 @@ import symbolicateStackTrace from 'react-native/Libraries/Core/Devtools/symbolic
 
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/restrict-template-expressions */
+
 var getStackTrace = function getStackTrace(e) {
   // eslint-disable-next-line no-prototype-builtins
   if (Platform.hasOwnProperty('constants')) {
@@ -32,16 +32,16 @@ function consoleOutput(param) {
 }
 var createHandle = function createHandle() {
   return function (record) {
-    var _record$metadata, _record$metadata2;
+    var _record$metadata;
     var metadataError = (_record$metadata = record.metadata) == null ? void 0 : _record$metadata.error;
     if (metadataError && metadataError instanceof Error) {
-      (_record$metadata2 = record.metadata) == null || delete _record$metadata2.error;
       symbolicateStackTrace(getStackTrace(metadataError)).then(function (_ref) {
         var stack = _ref.stack;
           _ref.codeFrame;
         metadataError.stack = parsedStackToString(stack);
         consoleOutput([formatterANSI(record)]);
       }).catch(function () {
+        metadataError.stack = undefined;
         consoleOutput([formatterANSI(record)]);
       });
     } else {

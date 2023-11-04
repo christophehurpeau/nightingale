@@ -5,7 +5,7 @@ import symbolicateStackTrace from 'react-native/Libraries/Core/Devtools/symbolic
 
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/restrict-template-expressions */
+
 const getStackTrace = e => {
   // eslint-disable-next-line no-prototype-builtins
   if (Platform.hasOwnProperty('constants')) {
@@ -31,7 +31,6 @@ const createHandle = () => {
   return record => {
     const metadataError = record.metadata?.error;
     if (metadataError && metadataError instanceof Error) {
-      delete record.metadata?.error;
       symbolicateStackTrace(getStackTrace(metadataError)).then(({
         stack,
         codeFrame
@@ -39,6 +38,7 @@ const createHandle = () => {
         metadataError.stack = parsedStackToString(stack);
         consoleOutput([formatterANSI(record)]);
       }).catch(() => {
+        metadataError.stack = undefined;
         consoleOutput([formatterANSI(record)]);
       });
     } else {
