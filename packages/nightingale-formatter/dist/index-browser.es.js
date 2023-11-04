@@ -212,7 +212,7 @@ function internalFormatValue(value, styleFn, styles, _ref) {
     }
   } else if (value instanceof Error) {
     stack = value.stack;
-    stringValue = stack != null && stack.startsWith(value.message) ? stack : value.message + "\n" + (stack || '');
+    stringValue = stack != null && stack.startsWith(value.message) || stack != null && stack.startsWith(value.name + ": " + value.message) ? stack : value.message + "\n" + (stack || '');
   } else if (value instanceof Map) {
     name = value.constructor.name;
     if (depth >= maxDepth) {
