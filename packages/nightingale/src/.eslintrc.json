@@ -7,6 +7,9 @@
   "plugins": ["@typescript-eslint"],
   "extends": ["@pob/eslint-config-typescript"],
   "ignorePatterns": ["*.d.ts"],
+  "rules": {
+    "@typescript-eslint/max-params": "warn"
+  },
   "overrides": [
     {
       "files": ["**/*.test.ts", "__tests__/**/*.ts"],
