@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [14.2.1](https://github.com/christophehurpeau/nightingale/compare/v14.2.0...v14.2.1) (2023-11-05)
+
+Note: no notable changes
+
+Version bump for dependency: nightingale
+Version bump for dependency: nightingale-console
+Version bump for dependency: nightingale-console-output
+Version bump for dependency: nightingale-json-formatter
+Version bump for dependency: nightingale-slack
+Version bump for dependency: nightingale-string
+Version bump for dependency: nightingale-types
+
+
 ## [14.2.0](https://github.com/christophehurpeau/nightingale/compare/v14.1.0...v14.2.0) (2023-11-04)
 
 Note: no notable changes

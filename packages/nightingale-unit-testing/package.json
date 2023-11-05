@@ -1,6 +1,6 @@
 {
   "name": "nightingale-unit-testing",
-  "version": "14.2.0",
+  "version": "14.2.1",
   "description": "nightingale default config for unit testing",
   "keywords": [],
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (https://christophe.hurpeau.com)",
@@ -54,8 +54,8 @@
   },
   "dependencies": {
     "@types/node": ">=18.0.0",
-    "nightingale": "14.2.0",
-    "nightingale-console": "14.2.0"
+    "nightingale": "14.2.1",
+    "nightingale-console": "14.2.1"
   },
   "devDependencies": {
     "@babel/core": "7.23.2",

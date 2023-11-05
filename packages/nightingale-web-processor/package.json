@@ -1,6 +1,6 @@
 {
   "name": "nightingale-web-processor",
-  "version": "14.2.0",
+  "version": "14.2.1",
   "description": "Nightingale web processor",
   "keywords": [
     "nightingale",
@@ -57,7 +57,7 @@
   },
   "dependencies": {
     "@types/node": ">=18.0.0",
-    "nightingale-types": "14.2.0"
+    "nightingale-types": "14.2.1"
   },
   "devDependencies": {
     "@babel/core": "7.23.2",
