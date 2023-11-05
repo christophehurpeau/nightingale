@@ -2765,90 +2765,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rollup/rollup-android-arm-eabi@npm:4.3.0":
-  version: 4.3.0
-  resolution: "@rollup/rollup-android-arm-eabi@npm:4.3.0"
-  conditions: os=android & cpu=arm
-  languageName: node
-  linkType: hard
-
-"@rollup/rollup-android-arm64@npm:4.3.0":
-  version: 4.3.0
-  resolution: "@rollup/rollup-android-arm64@npm:4.3.0"
-  conditions: os=android & cpu=arm64
-  languageName: node
-  linkType: hard
-
-"@rollup/rollup-darwin-arm64@npm:4.3.0":
-  version: 4.3.0
-  resolution: "@rollup/rollup-darwin-arm64@npm:4.3.0"
-  conditions: os=darwin & cpu=arm64
-  languageName: node
-  linkType: hard
-
-"@rollup/rollup-darwin-x64@npm:4.3.0":
-  version: 4.3.0
-  resolution: "@rollup/rollup-darwin-x64@npm:4.3.0"
-  conditions: os=darwin & cpu=x64
-  languageName: node
-  linkType: hard
-
-"@rollup/rollup-linux-arm-gnueabihf@npm:4.3.0":
-  version: 4.3.0
-  resolution: "@rollup/rollup-linux-arm-gnueabihf@npm:4.3.0"
-  conditions: os=linux & cpu=arm
-  languageName: node
-  linkType: hard
-
-"@rollup/rollup-linux-arm64-gnu@npm:4.3.0":
-  version: 4.3.0
-  resolution: "@rollup/rollup-linux-arm64-gnu@npm:4.3.0"
-  conditions: os=linux & cpu=arm64 & libc=glibc
-  languageName: node
-  linkType: hard
-
-"@rollup/rollup-linux-arm64-musl@npm:4.3.0":
-  version: 4.3.0
-  resolution: "@rollup/rollup-linux-arm64-musl@npm:4.3.0"
-  conditions: os=linux & cpu=arm64 & libc=musl
-  languageName: node
-  linkType: hard
-
-"@rollup/rollup-linux-x64-gnu@npm:4.3.0":
-  version: 4.3.0
-  resolution: "@rollup/rollup-linux-x64-gnu@npm:4.3.0"
-  conditions: os=linux & cpu=x64 & libc=glibc
-  languageName: node
-  linkType: hard
-
-"@rollup/rollup-linux-x64-musl@npm:4.3.0":
-  version: 4.3.0
-  resolution: "@rollup/rollup-linux-x64-musl@npm:4.3.0"
-  conditions: os=linux & cpu=x64 & libc=musl
-  languageName: node
-  linkType: hard
-
-"@rollup/rollup-win32-arm64-msvc@npm:4.3.0":
-  version: 4.3.0
-  resolution: "@rollup/rollup-win32-arm64-msvc@npm:4.3.0"
-  conditions: os=win32 & cpu=arm64
-  languageName: node
-  linkType: hard
-
-"@rollup/rollup-win32-ia32-msvc@npm:4.3.0":
-  version: 4.3.0
-  resolution: "@rollup/rollup-win32-ia32-msvc@npm:4.3.0"
-  conditions: os=win32 & cpu=ia32
-  languageName: node
-  linkType: hard
-
-"@rollup/rollup-win32-x64-msvc@npm:4.3.0":
-  version: 4.3.0
-  resolution: "@rollup/rollup-win32-x64-msvc@npm:4.3.0"
-  conditions: os=win32 & cpu=x64
-  languageName: node
-  linkType: hard
-
 "@sentry-internal/tracing@npm:7.77.0":
   version: 7.77.0
   resolution: "@sentry-internal/tracing@npm:7.77.0"
@@ -8332,7 +8248,7 @@ __metadata:
     ansi-styles: "npm:^6.2.1"
     nightingale-formatter: "npm:14.2.0"
     nightingale-types: "npm:14.2.0"
-    pob-babel: "npm:36.6.0"
+    pob-babel: "npm:36.6.1"
     typescript: "npm:5.2.2"
   languageName: unknown
   linkType: soft
@@ -8347,7 +8263,7 @@ __metadata:
     nightingale: "npm:14.2.0"
     nightingale-browser-console: "npm:14.2.0"
     nightingale-console: "npm:14.2.0"
-    pob-babel: "npm:36.6.0"
+    pob-babel: "npm:36.6.1"
     typescript: "npm:5.2.2"
   languageName: unknown
   linkType: soft
@@ -8361,7 +8277,7 @@ __metadata:
     nightingale: "npm:14.2.0"
     nightingale-browser-console: "npm:14.2.0"
     nightingale-react-native-console: "npm:14.2.0"
-    pob-babel: "npm:36.6.0"
+    pob-babel: "npm:36.6.1"
     typescript: "npm:5.2.2"
   peerDependencies:
     react-native: "*"
@@ -8381,7 +8297,7 @@ __metadata:
     nightingale-formatter: "npm:14.2.0"
     nightingale-levels: "npm:14.2.0"
     nightingale-types: "npm:14.2.0"
-    pob-babel: "npm:36.6.0"
+    pob-babel: "npm:36.6.1"
     typescript: "npm:5.2.2"
   languageName: unknown
   linkType: soft
@@ -8396,7 +8312,7 @@ __metadata:
     nightingale-console-output: "npm:14.2.0"
     nightingale-debug: "npm:14.2.0"
     nightingale-types: "npm:14.2.0"
-    pob-babel: "npm:36.6.0"
+    pob-babel: "npm:36.6.1"
     typescript: "npm:5.2.2"
   languageName: unknown
   linkType: soft
@@ -8410,7 +8326,7 @@ __metadata:
     nightingale: "npm:14.2.0"
     nightingale-console: "npm:14.2.0"
     nightingale-sentry: "npm:14.2.0"
-    pob-babel: "npm:36.6.0"
+    pob-babel: "npm:36.6.1"
     typescript: "npm:5.2.2"
   languageName: unknown
   linkType: soft
@@ -8424,7 +8340,7 @@ __metadata:
     "@types/node": "npm:>=18.0.0"
     nightingale-levels: "npm:14.2.0"
     nightingale-types: "npm:14.2.0"
-    pob-babel: "npm:36.6.0"
+    pob-babel: "npm:36.6.1"
     typescript: "npm:5.2.2"
   languageName: unknown
   linkType: soft
@@ -8441,7 +8357,7 @@ __metadata:
     nightingale-json-formatter: "npm:14.2.0"
     nightingale-levels: "npm:14.2.0"
     nightingale-types: "npm:14.2.0"
-    pob-babel: "npm:36.6.0"
+    pob-babel: "npm:36.6.1"
     typescript: "npm:5.2.2"
   languageName: unknown
   linkType: soft
@@ -8453,7 +8369,7 @@ __metadata:
     "@babel/core": "npm:7.23.2"
     "@babel/preset-env": "npm:7.23.2"
     nightingale-levels: "npm:14.2.0"
-    pob-babel: "npm:36.6.0"
+    pob-babel: "npm:36.6.1"
     typescript: "npm:5.2.2"
   languageName: unknown
   linkType: soft
@@ -8470,7 +8386,7 @@ __metadata:
     nightingale-slack: "npm:14.2.0"
     nightingale-string: "npm:14.2.0"
     nightingale-types: "npm:14.2.0"
-    pob-babel: "npm:36.6.0"
+    pob-babel: "npm:36.6.1"
     typescript: "npm:5.2.2"
   languageName: unknown
   linkType: soft
@@ -8483,7 +8399,7 @@ __metadata:
     "@babel/preset-env": "npm:7.23.2"
     nightingale-levels: "npm:14.2.0"
     nightingale-types: "npm:14.2.0"
-    pob-babel: "npm:36.6.0"
+    pob-babel: "npm:36.6.1"
     typescript: "npm:5.2.2"
   languageName: unknown
   linkType: soft
@@ -8497,7 +8413,7 @@ __metadata:
     nightingale-formatter: "npm:14.2.0"
     nightingale-levels: "npm:14.2.0"
     nightingale-types: "npm:14.2.0"
-    pob-babel: "npm:36.6.0"
+    pob-babel: "npm:36.6.1"
     typescript: "npm:5.2.2"
   languageName: unknown
   linkType: soft
@@ -8511,7 +8427,7 @@ __metadata:
     nightingale-formatter: "npm:14.2.0"
     nightingale-levels: "npm:14.2.0"
     nightingale-types: "npm:14.2.0"
-    pob-babel: "npm:36.6.0"
+    pob-babel: "npm:36.6.1"
     typescript: "npm:5.2.2"
   languageName: unknown
   linkType: soft
@@ -8530,7 +8446,7 @@ __metadata:
   dependencies:
     "@babel/core": "npm:7.23.2"
     "@babel/preset-env": "npm:7.23.2"
-    pob-babel: "npm:36.6.0"
+    pob-babel: "npm:36.6.1"
     typescript: "npm:5.2.2"
   languageName: unknown
   linkType: soft
@@ -8544,7 +8460,7 @@ __metadata:
     "@types/node": "npm:>=18.0.0"
     nightingale-levels: "npm:14.2.0"
     nightingale-types: "npm:14.2.0"
-    pob-babel: "npm:36.6.0"
+    pob-babel: "npm:36.6.1"
     typescript: "npm:5.2.2"
   languageName: unknown
   linkType: soft
@@ -8558,7 +8474,7 @@ __metadata:
     nightingale-formatter: "npm:14.2.0"
     nightingale-levels: "npm:14.2.0"
     nightingale-types: "npm:14.2.0"
-    pob-babel: "npm:36.6.0"
+    pob-babel: "npm:36.6.1"
     typescript: "npm:5.2.2"
   languageName: unknown
   linkType: soft
@@ -8577,7 +8493,7 @@ __metadata:
     check-package-dependencies: "npm:6.8.0"
     eslint: "npm:8.53.0"
     jest: "npm:29.7.0"
-    pob-babel: "npm:36.6.0"
+    pob-babel: "npm:36.6.1"
     typedoc: "npm:0.25.3"
     typescript: "npm:5.2.2"
   languageName: unknown
@@ -8592,7 +8508,7 @@ __metadata:
     nightingale-formatter: "npm:14.2.0"
     nightingale-levels: "npm:14.2.0"
     nightingale-types: "npm:14.2.0"
-    pob-babel: "npm:36.6.0"
+    pob-babel: "npm:36.6.1"
     typescript: "npm:5.2.2"
   languageName: unknown
   linkType: soft
@@ -8605,7 +8521,7 @@ __metadata:
     "@babel/preset-env": "npm:7.23.2"
     nightingale-ansi-formatter: "npm:14.2.0"
     nightingale-types: "npm:14.2.0"
-    pob-babel: "npm:36.6.0"
+    pob-babel: "npm:36.6.1"
     react: "npm:18.2.0"
     react-native: "npm:0.72.6"
     typescript: "npm:5.2.2"
@@ -8625,7 +8541,7 @@ __metadata:
     "@sentry/types": "npm:^7.19.0"
     nightingale-levels: "npm:14.2.0"
     nightingale-types: "npm:14.2.0"
-    pob-babel: "npm:36.6.0"
+    pob-babel: "npm:36.6.1"
     typescript: "npm:5.2.2"
   languageName: unknown
   linkType: soft
@@ -8640,7 +8556,7 @@ __metadata:
     nightingale-markdown-formatter: "npm:14.2.0"
     nightingale-raw-formatter: "npm:14.2.0"
     nightingale-types: "npm:14.2.0"
-    pob-babel: "npm:36.6.0"
+    pob-babel: "npm:36.6.1"
     typescript: "npm:5.2.2"
   languageName: unknown
   linkType: soft
@@ -8652,7 +8568,7 @@ __metadata:
     "@babel/core": "npm:7.23.2"
     nightingale-raw-formatter: "npm:14.2.0"
     nightingale-types: "npm:14.2.0"
-    pob-babel: "npm:36.6.0"
+    pob-babel: "npm:36.6.1"
     typescript: "npm:5.2.2"
   languageName: unknown
   linkType: soft
@@ -8664,7 +8580,7 @@ __metadata:
     "@babel/core": "npm:7.23.2"
     "@babel/preset-env": "npm:7.23.2"
     nightingale-levels: "npm:14.2.0"
-    pob-babel: "npm:36.6.0"
+    pob-babel: "npm:36.6.1"
     typescript: "npm:5.2.2"
   languageName: unknown
   linkType: soft
@@ -8677,7 +8593,7 @@ __metadata:
     "@types/node": "npm:>=18.0.0"
     nightingale: "npm:14.2.0"
     nightingale-console: "npm:14.2.0"
-    pob-babel: "npm:36.6.0"
+    pob-babel: "npm:36.6.1"
     typescript: "npm:5.2.2"
   languageName: unknown
   linkType: soft
@@ -8689,7 +8605,7 @@ __metadata:
     "@babel/core": "npm:7.23.2"
     "@types/node": "npm:>=18.0.0"
     nightingale-types: "npm:14.2.0"
-    pob-babel: "npm:36.6.0"
+    pob-babel: "npm:36.6.1"
     typescript: "npm:5.2.2"
   languageName: unknown
   linkType: soft
@@ -8702,7 +8618,7 @@ __metadata:
     "@babel/preset-env": "npm:7.23.2"
     nightingale-level-names: "npm:14.2.0"
     nightingale-types: "npm:14.2.0"
-    pob-babel: "npm:36.6.0"
+    pob-babel: "npm:36.6.1"
     typescript: "npm:5.2.2"
   languageName: unknown
   linkType: soft
@@ -8718,7 +8634,7 @@ __metadata:
     nightingale-logger: "npm:14.2.0"
     nightingale-string: "npm:14.2.0"
     nightingale-types: "npm:14.2.0"
-    pob-babel: "npm:36.6.0"
+    pob-babel: "npm:36.6.1"
     typescript: "npm:5.2.2"
   languageName: unknown
   linkType: soft
@@ -9268,9 +9184,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pob-babel@npm:36.6.0":
-  version: 36.6.0
-  resolution: "pob-babel@npm:36.6.0"
+"pob-babel@npm:36.6.1":
+  version: 36.6.1
+  resolution: "pob-babel@npm:36.6.1"
   dependencies:
     "@babel/core": "npm:^7.17.10"
     "@babel/plugin-transform-runtime": "npm:7.23.2"
@@ -9279,12 +9195,12 @@ __metadata:
     "@rollup/plugin-node-resolve": "npm:15.2.3"
     "@rollup/plugin-run": "npm:3.0.2"
     babel-preset-pob-env: "npm:10.2.0"
-    rollup: "npm:4.3.0"
+    rollup: "npm:3.29.4"
     rollup-config-external-dependencies: "npm:^2.0.0"
     semver: "npm:^7.3.7"
   peerDependencies:
     "@babel/core": ^7.17.10
-    rollup: 4.3.0
+    rollup: 3.29.4
     typescript: ^4.0.3 || ^5.0.0
   peerDependenciesMeta:
     rollup:
@@ -9292,7 +9208,7 @@ __metadata:
   bin:
     pob-babel-clean-out: ./bin/pob-babel-clean-out.js
     rollup: ./bin/rollup.cjs
-  checksum: 1ed6c0091c03929c2f57a5ad023aa9d62522a02462e6920ecbe9615516da39478ac7ef35f5003d1a4ff1953b6556c2e16f85db32947a52a588d0607dbaaccb21
+  checksum: e489e357a4fea6e7cd4501bfb9e311b8429493df54f06050abb3ca652b2320e8363157f7d38628e00e923c54ddd05573a210aebb8e0c2b9895e74e58dfcf74ff
   languageName: node
   linkType: hard
 
@@ -9885,53 +9801,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rollup@npm:4.3.0":
-  version: 4.3.0
-  resolution: "rollup@npm:4.3.0"
+"rollup@npm:3.29.4":
+  version: 3.29.4
+  resolution: "rollup@npm:3.29.4"
   dependencies:
-    "@rollup/rollup-android-arm-eabi": "npm:4.3.0"
-    "@rollup/rollup-android-arm64": "npm:4.3.0"
-    "@rollup/rollup-darwin-arm64": "npm:4.3.0"
-    "@rollup/rollup-darwin-x64": "npm:4.3.0"
-    "@rollup/rollup-linux-arm-gnueabihf": "npm:4.3.0"
-    "@rollup/rollup-linux-arm64-gnu": "npm:4.3.0"
-    "@rollup/rollup-linux-arm64-musl": "npm:4.3.0"
-    "@rollup/rollup-linux-x64-gnu": "npm:4.3.0"
-    "@rollup/rollup-linux-x64-musl": "npm:4.3.0"
-    "@rollup/rollup-win32-arm64-msvc": "npm:4.3.0"
-    "@rollup/rollup-win32-ia32-msvc": "npm:4.3.0"
-    "@rollup/rollup-win32-x64-msvc": "npm:4.3.0"
     fsevents: "npm:~2.3.2"
   dependenciesMeta:
-    "@rollup/rollup-android-arm-eabi":
-      optional: true
-    "@rollup/rollup-android-arm64":
-      optional: true
-    "@rollup/rollup-darwin-arm64":
-      optional: true
-    "@rollup/rollup-darwin-x64":
-      optional: true
-    "@rollup/rollup-linux-arm-gnueabihf":
-      optional: true
-    "@rollup/rollup-linux-arm64-gnu":
-      optional: true
-    "@rollup/rollup-linux-arm64-musl":
-      optional: true
-    "@rollup/rollup-linux-x64-gnu":
-      optional: true
-    "@rollup/rollup-linux-x64-musl":
-      optional: true
-    "@rollup/rollup-win32-arm64-msvc":
-      optional: true
-    "@rollup/rollup-win32-ia32-msvc":
-      optional: true
-    "@rollup/rollup-win32-x64-msvc":
-      optional: true
     fsevents:
       optional: true
   bin:
     rollup: dist/bin/rollup
-  checksum: d96b4e383930c560d56483abdf0b44ff90e065a9d1af6f089972103951824fc6f69d2799e2165c4275d616be3a92c869981d9cdcb8aa22fa63b2276a45f28286
+  checksum: 65eddf84bf389ea8e4d4c1614b1c6a298d08f8ae785c0c087e723a879190c8aaddbab4aa3b8a0524551b9036750c9f8bfea27b377798accfd2ba5084ceff5aaa
   languageName: node
   linkType: hard
 
