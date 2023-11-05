@@ -10,7 +10,7 @@ do
   # Skip if branch deletion
   if [ "$local_sha" != "$z40" ]; then
     if [ "$local_ref" = "$branch_ref" ]; then
-      yarn test --watchAll=false --changedSince=origin/main && yarn run checks
+      yarn run checks && yarn run lint && yarn test --watchAll=false --changedSince=origin/main
     fi
   fi
 done

@@ -12,44 +12,44 @@
   "homepage": "https://github.com/christophehurpeau/nightingale",
   "type": "module",
   "engines": {
-    "node": ">=18.12.0"
+    "node": ">=20.9.0"
   },
   "exports": {
     "./package.json": "./package.json",
     "./configure": {
       "types": "./src/configure.ts",
       "node": {
-        "import": "./build/configure-node18.mjs"
+        "import": "./build/configure-node20.mjs"
       }
     },
     "./console": {
       "types": "./src/console.ts",
       "node": {
-        "import": "./build/console-node18.mjs"
+        "import": "./build/console-node20.mjs"
       }
     },
     "./debug": {
       "types": "./src/debug.ts",
       "node": {
-        "import": "./build/debug-node18.mjs"
+        "import": "./build/debug-node20.mjs"
       }
     },
     "./errors": {
       "types": "./src/errors.ts",
       "node": {
-        "import": "./build/errors-node18.mjs"
+        "import": "./build/errors-node20.mjs"
       }
     },
     "./jsonConsole": {
       "types": "./src/jsonConsole.ts",
       "node": {
-        "import": "./build/jsonConsole-node18.mjs"
+        "import": "./build/jsonConsole-node20.mjs"
       }
     },
     "./slack": {
       "types": "./src/slack.ts",
       "node": {
-        "import": "./build/slack-node18.mjs"
+        "import": "./build/slack-node20.mjs"
       }
     }
   },
@@ -67,7 +67,8 @@
     "babelEnvs": [
       {
         "target": "node",
-        "version": "18"
+        "version": "20",
+        "omitVersionInFileName": true
       }
     ],
     "entries": [
@@ -90,7 +91,7 @@
   },
   "devDependencies": {
     "@babel/core": "7.23.2",
-    "pob-babel": "36.4.4",
+    "pob-babel": "36.6.0",
     "typescript": "5.2.2"
   }
 }
