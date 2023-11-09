@@ -63,7 +63,7 @@
     "nightingale-types": "14.2.1"
   },
   "devDependencies": {
-    "@babel/core": "7.23.2",
+    "@babel/core": "7.23.3",
     "@types/node": "20.8.10",
     "pob-babel": "36.6.1",
     "typescript": "5.2.2"
