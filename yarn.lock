@@ -4166,19 +4166,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"check-package-dependencies@npm:6.8.0":
-  version: 6.8.0
-  resolution: "check-package-dependencies@npm:6.8.0"
+"check-package-dependencies@npm:7.0.0":
+  version: 7.0.0
+  resolution: "check-package-dependencies@npm:7.0.0"
   dependencies:
     chalk: "npm:^5.2.0"
     glob: "npm:^10.0.0"
-    import-meta-resolve: "npm:^3.0.0"
+    import-meta-resolve: "npm:^4.0.0"
     semver: "npm:^7.5.4"
     semver-utils: "npm:^1.1.4"
     type-fest: "npm:^4.0.0"
   bin:
-    check-package-dependencies: bin/check-package-dependencies.mjs
-  checksum: d45fff8912723bed69b6f7779b0a1a410c3992d5f29241ef9be873723c76d9c343a07b21b07aca631e471a553b0a7c9c466b1169d0330f11be862498d6d30952
+    check-package-dependencies: ./bin/check-package-dependencies.mjs
+  checksum: 8e46b6fd7d9625d531eaba715901ce9e3d456439e65ff0f4b5d3e7dc8caf4153fa9fdba00bb595b33504f6a30b565eb54c3dd612e073248c926670530fddcaaa
   languageName: node
   linkType: hard
 
@@ -6136,10 +6136,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"import-meta-resolve@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "import-meta-resolve@npm:3.0.0"
-  checksum: fd1810e01576216f080e55fec345e6c451e4f012d0089e96abf53e9466ac3ece05aaef2402dea50f2b9b859486773bebbd5b08221e1bf347e942969a084bb685
+"import-meta-resolve@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "import-meta-resolve@npm:4.0.0"
+  checksum: 709375e01f8c3a87b7870991ca29c630d71bb7e22b7bb0f622613173d87b41b4043b4a983800e6d38ab3867496a46f82d30df0cbc2e55792c91c23193eea67a1
   languageName: node
   linkType: hard
 
@@ -8502,7 +8502,7 @@ __metadata:
     "@pob/root": "npm:8.6.0"
     "@types/jest": "npm:29.5.8"
     "@types/node": "npm:20.8.10"
-    check-package-dependencies: "npm:6.8.0"
+    check-package-dependencies: "npm:7.0.0"
     eslint: "npm:8.53.0"
     jest: "npm:29.7.0"
     pob-babel: "npm:36.6.1"
