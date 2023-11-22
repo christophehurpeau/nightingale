@@ -46,7 +46,7 @@
     "@pob/eslint-config-typescript": "51.1.2",
     "@pob/root": "8.6.0",
     "@types/jest": "29.5.10",
-    "@types/node": "20.9.3",
+    "@types/node": "20.9.4",
     "check-package-dependencies": "7.0.0",
     "eslint": "8.54.0",
     "jest": "29.7.0",
