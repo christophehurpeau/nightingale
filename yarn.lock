@@ -8261,7 +8261,7 @@ __metadata:
     nightingale-formatter: "npm:14.2.1"
     nightingale-types: "npm:14.2.1"
     pob-babel: "npm:36.6.1"
-    typescript: "npm:5.2.2"
+    typescript: "npm:5.3.2"
   languageName: unknown
   linkType: soft
 
@@ -8276,7 +8276,7 @@ __metadata:
     nightingale-browser-console: "npm:14.2.1"
     nightingale-console: "npm:14.2.1"
     pob-babel: "npm:36.6.1"
-    typescript: "npm:5.2.2"
+    typescript: "npm:5.3.2"
   languageName: unknown
   linkType: soft
 
@@ -8290,7 +8290,7 @@ __metadata:
     nightingale-browser-console: "npm:14.2.1"
     nightingale-react-native-console: "npm:14.2.1"
     pob-babel: "npm:36.6.1"
-    typescript: "npm:5.2.2"
+    typescript: "npm:5.3.2"
   peerDependencies:
     react-native: "*"
     react-native-web: "*"
@@ -8310,7 +8310,7 @@ __metadata:
     nightingale-levels: "npm:14.2.1"
     nightingale-types: "npm:14.2.1"
     pob-babel: "npm:36.6.1"
-    typescript: "npm:5.2.2"
+    typescript: "npm:5.3.2"
   languageName: unknown
   linkType: soft
 
@@ -8325,7 +8325,7 @@ __metadata:
     nightingale-debug: "npm:14.2.1"
     nightingale-types: "npm:14.2.1"
     pob-babel: "npm:36.6.1"
-    typescript: "npm:5.2.2"
+    typescript: "npm:5.3.2"
   languageName: unknown
   linkType: soft
 
@@ -8339,7 +8339,7 @@ __metadata:
     nightingale-console: "npm:14.2.1"
     nightingale-sentry: "npm:14.2.1"
     pob-babel: "npm:36.6.1"
-    typescript: "npm:5.2.2"
+    typescript: "npm:5.3.2"
   languageName: unknown
   linkType: soft
 
@@ -8353,7 +8353,7 @@ __metadata:
     nightingale-levels: "npm:14.2.1"
     nightingale-types: "npm:14.2.1"
     pob-babel: "npm:36.6.1"
-    typescript: "npm:5.2.2"
+    typescript: "npm:5.3.2"
   languageName: unknown
   linkType: soft
 
@@ -8370,7 +8370,7 @@ __metadata:
     nightingale-levels: "npm:14.2.1"
     nightingale-types: "npm:14.2.1"
     pob-babel: "npm:36.6.1"
-    typescript: "npm:5.2.2"
+    typescript: "npm:5.3.2"
   languageName: unknown
   linkType: soft
 
@@ -8382,7 +8382,7 @@ __metadata:
     "@babel/preset-env": "npm:7.23.3"
     nightingale-levels: "npm:14.2.1"
     pob-babel: "npm:36.6.1"
-    typescript: "npm:5.2.2"
+    typescript: "npm:5.3.2"
   languageName: unknown
   linkType: soft
 
@@ -8399,7 +8399,7 @@ __metadata:
     nightingale-string: "npm:14.2.1"
     nightingale-types: "npm:14.2.1"
     pob-babel: "npm:36.6.1"
-    typescript: "npm:5.2.2"
+    typescript: "npm:5.3.2"
   languageName: unknown
   linkType: soft
 
@@ -8412,7 +8412,7 @@ __metadata:
     nightingale-levels: "npm:14.2.1"
     nightingale-types: "npm:14.2.1"
     pob-babel: "npm:36.6.1"
-    typescript: "npm:5.2.2"
+    typescript: "npm:5.3.2"
   languageName: unknown
   linkType: soft
 
@@ -8426,7 +8426,7 @@ __metadata:
     nightingale-levels: "npm:14.2.1"
     nightingale-types: "npm:14.2.1"
     pob-babel: "npm:36.6.1"
-    typescript: "npm:5.2.2"
+    typescript: "npm:5.3.2"
   languageName: unknown
   linkType: soft
 
@@ -8440,7 +8440,7 @@ __metadata:
     nightingale-levels: "npm:14.2.1"
     nightingale-types: "npm:14.2.1"
     pob-babel: "npm:36.6.1"
-    typescript: "npm:5.2.2"
+    typescript: "npm:5.3.2"
   languageName: unknown
   linkType: soft
 
@@ -8448,7 +8448,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-level-names@workspace:packages/nightingale-level-names"
   dependencies:
-    typescript: "npm:5.2.2"
+    typescript: "npm:5.3.2"
   languageName: unknown
   linkType: soft
 
@@ -8459,7 +8459,7 @@ __metadata:
     "@babel/core": "npm:7.23.3"
     "@babel/preset-env": "npm:7.23.3"
     pob-babel: "npm:36.6.1"
-    typescript: "npm:5.2.2"
+    typescript: "npm:5.3.2"
   languageName: unknown
   linkType: soft
 
@@ -8473,7 +8473,7 @@ __metadata:
     nightingale-levels: "npm:14.2.1"
     nightingale-types: "npm:14.2.1"
     pob-babel: "npm:36.6.1"
-    typescript: "npm:5.2.2"
+    typescript: "npm:5.3.2"
   languageName: unknown
   linkType: soft
 
@@ -8487,7 +8487,7 @@ __metadata:
     nightingale-levels: "npm:14.2.1"
     nightingale-types: "npm:14.2.1"
     pob-babel: "npm:36.6.1"
-    typescript: "npm:5.2.2"
+    typescript: "npm:5.3.2"
   languageName: unknown
   linkType: soft
 
@@ -8507,7 +8507,7 @@ __metadata:
     jest: "npm:29.7.0"
     pob-babel: "npm:36.6.1"
     typedoc: "npm:0.25.4"
-    typescript: "npm:5.2.2"
+    typescript: "npm:5.3.2"
   languageName: unknown
   linkType: soft
 
@@ -8521,7 +8521,7 @@ __metadata:
     nightingale-levels: "npm:14.2.1"
     nightingale-types: "npm:14.2.1"
     pob-babel: "npm:36.6.1"
-    typescript: "npm:5.2.2"
+    typescript: "npm:5.3.2"
   languageName: unknown
   linkType: soft
 
@@ -8536,7 +8536,7 @@ __metadata:
     pob-babel: "npm:36.6.1"
     react: "npm:18.2.0"
     react-native: "npm:0.72.6"
-    typescript: "npm:5.2.2"
+    typescript: "npm:5.3.2"
   peerDependencies:
     react-native: "*"
   languageName: unknown
@@ -8554,7 +8554,7 @@ __metadata:
     nightingale-levels: "npm:14.2.1"
     nightingale-types: "npm:14.2.1"
     pob-babel: "npm:36.6.1"
-    typescript: "npm:5.2.2"
+    typescript: "npm:5.3.2"
   languageName: unknown
   linkType: soft
 
@@ -8569,7 +8569,7 @@ __metadata:
     nightingale-raw-formatter: "npm:14.2.1"
     nightingale-types: "npm:14.2.1"
     pob-babel: "npm:36.6.1"
-    typescript: "npm:5.2.2"
+    typescript: "npm:5.3.2"
   languageName: unknown
   linkType: soft
 
@@ -8581,7 +8581,7 @@ __metadata:
     nightingale-raw-formatter: "npm:14.2.1"
     nightingale-types: "npm:14.2.1"
     pob-babel: "npm:36.6.1"
-    typescript: "npm:5.2.2"
+    typescript: "npm:5.3.2"
   languageName: unknown
   linkType: soft
 
@@ -8593,7 +8593,7 @@ __metadata:
     "@babel/preset-env": "npm:7.23.3"
     nightingale-levels: "npm:14.2.1"
     pob-babel: "npm:36.6.1"
-    typescript: "npm:5.2.2"
+    typescript: "npm:5.3.2"
   languageName: unknown
   linkType: soft
 
@@ -8606,7 +8606,7 @@ __metadata:
     nightingale: "npm:14.2.1"
     nightingale-console: "npm:14.2.1"
     pob-babel: "npm:36.6.1"
-    typescript: "npm:5.2.2"
+    typescript: "npm:5.3.2"
   languageName: unknown
   linkType: soft
 
@@ -8618,7 +8618,7 @@ __metadata:
     "@types/node": "npm:>=18.0.0"
     nightingale-types: "npm:14.2.1"
     pob-babel: "npm:36.6.1"
-    typescript: "npm:5.2.2"
+    typescript: "npm:5.3.2"
   languageName: unknown
   linkType: soft
 
@@ -8631,7 +8631,7 @@ __metadata:
     nightingale-level-names: "npm:14.2.0"
     nightingale-types: "npm:14.2.1"
     pob-babel: "npm:36.6.1"
-    typescript: "npm:5.2.2"
+    typescript: "npm:5.3.2"
   languageName: unknown
   linkType: soft
 
@@ -8647,7 +8647,7 @@ __metadata:
     nightingale-string: "npm:14.2.1"
     nightingale-types: "npm:14.2.1"
     pob-babel: "npm:36.6.1"
-    typescript: "npm:5.2.2"
+    typescript: "npm:5.3.2"
   languageName: unknown
   linkType: soft
 
@@ -10768,23 +10768,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:5.2.2":
-  version: 5.2.2
-  resolution: "typescript@npm:5.2.2"
+"typescript@npm:5.3.2":
+  version: 5.3.2
+  resolution: "typescript@npm:5.3.2"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 91ae3e6193d0ddb8656d4c418a033f0f75dec5e077ebbc2bd6d76439b93f35683936ee1bdc0e9cf94ec76863aa49f27159b5788219b50e1cd0cd6d110aa34b07
+  checksum: d7dbe1fbe19039e36a65468ea64b5d338c976550394ba576b7af9c68ed40c0bc5d12ecce390e4b94b287a09a71bd3229f19c2d5680611f35b7c53a3898791159
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A5.2.2#optional!builtin<compat/typescript>":
-  version: 5.2.2
-  resolution: "typescript@patch:typescript@npm%3A5.2.2#optional!builtin<compat/typescript>::version=5.2.2&hash=f3b441"
+"typescript@patch:typescript@npm%3A5.3.2#optional!builtin<compat/typescript>":
+  version: 5.3.2
+  resolution: "typescript@patch:typescript@npm%3A5.3.2#optional!builtin<compat/typescript>::version=5.3.2&hash=e012d7"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 062c1cee1990e6b9419ce8a55162b8dc917eb87f807e4de0327dbc1c2fa4e5f61bc0dd4e034d38ff541d1ed0479b53bcee8e4de3a4075c51a1724eb6216cb6f5
+  checksum: 73c8bad74e732d93211c9d77f28b03307e2f5fc6a0afc73f4b783261ab567686a16d6ae958bdaef383a00be1b0b8c8b6741dd6ca3d13af4963fa7e47456d49c7
   languageName: node
   linkType: hard
 
