@@ -2777,53 +2777,53 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sentry-internal/tracing@npm:7.77.0":
-  version: 7.77.0
-  resolution: "@sentry-internal/tracing@npm:7.77.0"
+"@sentry-internal/tracing@npm:7.82.0":
+  version: 7.82.0
+  resolution: "@sentry-internal/tracing@npm:7.82.0"
   dependencies:
-    "@sentry/core": "npm:7.77.0"
-    "@sentry/types": "npm:7.77.0"
-    "@sentry/utils": "npm:7.77.0"
-  checksum: 9cb934de672436402c2b32bcf586a318dedf85a2039d5728f364cbdc7d33fdb6d277aa20257614d24666c1b78aacbd8416aa4689ea1596751a0d398dde77f443
+    "@sentry/core": "npm:7.82.0"
+    "@sentry/types": "npm:7.82.0"
+    "@sentry/utils": "npm:7.82.0"
+  checksum: 8c7b4ba380024477f2fd04f1c24083c089f50a5354697d7b4752a155dd0f28c62605e66304117fd2fe88e223bcfc4474507e4cdb22baafa013215c4a441f63f5
   languageName: node
   linkType: hard
 
-"@sentry/core@npm:7.77.0, @sentry/core@npm:^7.19.0":
-  version: 7.77.0
-  resolution: "@sentry/core@npm:7.77.0"
+"@sentry/core@npm:7.82.0, @sentry/core@npm:^7.19.0":
+  version: 7.82.0
+  resolution: "@sentry/core@npm:7.82.0"
   dependencies:
-    "@sentry/types": "npm:7.77.0"
-    "@sentry/utils": "npm:7.77.0"
-  checksum: 59c468ef1cf9f035bb302bcc89f509916d0b19550cac296da83f526c0c779d53dbc5a0eb1c363d2e6ce46d2356c898d4fdecc8956e5c5c7d8dadb3470dbd5147
+    "@sentry/types": "npm:7.82.0"
+    "@sentry/utils": "npm:7.82.0"
+  checksum: 98e0c30e8585251c7912cc04d312c0e993efd6bc589919fc6a62e710e1fb5ca65fb4b6612eb476bcae50febc579232eb5639f7173ccda41ffb8a1e5cfd59f347
   languageName: node
   linkType: hard
 
-"@sentry/node@npm:7.77.0, @sentry/node@npm:^7.19.0":
-  version: 7.77.0
-  resolution: "@sentry/node@npm:7.77.0"
+"@sentry/node@npm:7.82.0, @sentry/node@npm:^7.19.0":
+  version: 7.82.0
+  resolution: "@sentry/node@npm:7.82.0"
   dependencies:
-    "@sentry-internal/tracing": "npm:7.77.0"
-    "@sentry/core": "npm:7.77.0"
-    "@sentry/types": "npm:7.77.0"
-    "@sentry/utils": "npm:7.77.0"
+    "@sentry-internal/tracing": "npm:7.82.0"
+    "@sentry/core": "npm:7.82.0"
+    "@sentry/types": "npm:7.82.0"
+    "@sentry/utils": "npm:7.82.0"
     https-proxy-agent: "npm:^5.0.0"
-  checksum: 35eb2db0d05763d41b09025d7b636784c3408aeb006534cf8f35ac0d679bbe147535323b24c6066a1305a7cceaaaaeda40e2afafe63e06325fc2de18ae9f9990
+  checksum: cffd6027c50a75c49b6507e361110a4b5f2808a7c49441f2b465e8cd2eee1493c34d107ae9dadae7b7b21c529ed021ba8175978ce593ddc7c43fd408f833d8d5
   languageName: node
   linkType: hard
 
-"@sentry/types@npm:7.77.0, @sentry/types@npm:^7.19.0":
-  version: 7.77.0
-  resolution: "@sentry/types@npm:7.77.0"
-  checksum: 004a914efdcc3f15a23187340895dfb5aa6add6903f159ea3bab7f5e594967123c4921de1365bfa1e1c75ee6ece36f6b0b5e9b9756c0c1ed931bbf51274b653c
+"@sentry/types@npm:7.82.0, @sentry/types@npm:^7.19.0":
+  version: 7.82.0
+  resolution: "@sentry/types@npm:7.82.0"
+  checksum: c9f4c2f1dac3725fe43c0682ff76249b5860e085745ac3f688dda083f3abcdd2bd7717d005554ad9c174a65a4b5867c073c47baa97b1df2fb530526e18ab912c
   languageName: node
   linkType: hard
 
-"@sentry/utils@npm:7.77.0":
-  version: 7.77.0
-  resolution: "@sentry/utils@npm:7.77.0"
+"@sentry/utils@npm:7.82.0":
+  version: 7.82.0
+  resolution: "@sentry/utils@npm:7.82.0"
   dependencies:
-    "@sentry/types": "npm:7.77.0"
-  checksum: 958a60c85584321ab9c52add6c17774334605731f78a60544b0de0dfa5180610d30659adb211d6b6d6b06ca191bc13085da1919a8223f428b2e952515a5b7e4b
+    "@sentry/types": "npm:7.82.0"
+  checksum: f4af4d3fd6e8ce8790c2ea7442ab2e356cc52793b5eae75ca75adc2dd378e00dfb67e1d4eb99950e946c8c1dd5abb63a7c01c8533ca60383126b877c05e97d4f
   languageName: node
   linkType: hard
 
@@ -8334,7 +8334,7 @@ __metadata:
   resolution: "nightingale-console-example@workspace:packages/nightingale-console-example"
   dependencies:
     "@babel/core": "npm:7.23.3"
-    "@sentry/node": "npm:7.77.0"
+    "@sentry/node": "npm:7.82.0"
     nightingale: "npm:14.2.1"
     nightingale-console: "npm:14.2.1"
     nightingale-sentry: "npm:14.2.1"
