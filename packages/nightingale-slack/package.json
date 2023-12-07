@@ -64,7 +64,7 @@
   },
   "devDependencies": {
     "@babel/core": "7.23.3",
-    "@types/node": "20.10.3",
+    "@types/node": "20.10.4",
     "pob-babel": "36.6.1",
     "typescript": "5.3.3"
   }
