@@ -6,7 +6,7 @@ import symbolicateStackTrace from 'react-native/Libraries/Core/Devtools/symbolic
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 
-var getStackTrace = function getStackTrace(e) {
+const getStackTrace = e => {
   // eslint-disable-next-line no-prototype-builtins
   if (Platform.hasOwnProperty('constants')) {
     // RN version >= 0.63
@@ -21,26 +21,24 @@ var getStackTrace = function getStackTrace(e) {
   else return parseErrorStack(e);
 };
 function parsedStackToString(stack) {
-  return stack.map(function (frame) {
-    return "  at " + frame.file + (frame.lineNumber ? ":" + frame.lineNumber + (frame.column ? ":" + frame.column : '') : '') + (frame.methodName ? " in " + frame.methodName : '');
-  }).join('\n');
+  return stack.map(frame => `  at ${frame.file}${frame.lineNumber ? `:${frame.lineNumber}${frame.column ? `:${frame.column}` : ''}` : ''}${frame.methodName ? ` in ${frame.methodName}` : ''}`).join('\n');
 }
 function consoleOutput(param) {
-  var _console;
   // eslint-disable-next-line no-console
-  (_console = console).log.apply(_console, param);
+  console.log(...param);
 }
-var createHandle = function createHandle() {
-  return function (record) {
+const createHandle = () => {
+  return record => {
     var _record$metadata;
-    var metadataError = (_record$metadata = record.metadata) == null ? void 0 : _record$metadata.error;
+    const metadataError = (_record$metadata = record.metadata) == null ? void 0 : _record$metadata.error;
     if (metadataError && metadataError instanceof Error) {
-      symbolicateStackTrace(getStackTrace(metadataError)).then(function (_ref) {
-        var stack = _ref.stack;
-          _ref.codeFrame;
+      symbolicateStackTrace(getStackTrace(metadataError)).then(({
+        stack,
+        codeFrame
+      }) => {
         metadataError.stack = parsedStackToString(stack);
         consoleOutput([formatterANSI(record)]);
-      }).catch(function () {
+      }).catch(() => {
         metadataError.stack = undefined;
         consoleOutput([formatterANSI(record)]);
       });
@@ -49,14 +47,14 @@ var createHandle = function createHandle() {
     }
   };
 };
-var ReactNativeConsoleHandler = function ReactNativeConsoleHandler(minLevel) {
-  this.minLevel = 0;
-  this.minLevel = minLevel;
-  this.isHandling = function (level) {
-    return level >= minLevel;
-  };
-  this.handle = createHandle();
-};
+class ReactNativeConsoleHandler {
+  constructor(minLevel) {
+    this.minLevel = 0;
+    this.minLevel = minLevel;
+    this.isHandling = level => level >= minLevel;
+    this.handle = createHandle();
+  }
+}
 
 export { ReactNativeConsoleHandler };
 //# sourceMappingURL=index-browser.es.js.map

@@ -332,7 +332,6 @@ const internalFormatIterator = (values, styleFn, objectStyles, {
       // note: we need to format the separator for each values for browser-formatter
     };
   });
-
   return {
     stringValue: prefix + formattedValues.map(breakLine ? v => `\n${padding}${v.stringValue}` : fv => fv.stringValue).join(breakLine ? '\n' : ' ') + suffix,
     formattedValue: `${prefix}${breakLine ? '' : prefixSuffixSpace}${formattedValues.map(breakLine ? v => `\n${padding}${v.formattedValue}` : v => v.formattedValue).join(breakLine ? '' : ' ')}${breakLine ? ',\n' : prefixSuffixSpace}${suffix}`
@@ -487,7 +486,6 @@ function formatRecordToString(record, style) {
     parts.push(style(['gray', 'bold'], record.datetime.toTimeString().split(' ')[0]));
     /* new Date().toFormat('HH24:MI:SS') */
   }
-
   let message = record.symbol || levelToSymbol[record.level];
   const styles = record.styles || levelToStyles[record.level];
   if (record.message) {

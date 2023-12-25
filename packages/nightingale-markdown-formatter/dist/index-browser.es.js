@@ -6,14 +6,14 @@ function style(styles, string) {
   }
 
   // eslint-disable-next-line unicorn/no-array-reduce
-  return styles.reduce(function (part, styleName) {
+  return styles.reduce((part, styleName) => {
     switch (styleName) {
       case 'bold':
-        return "*" + part + "*";
+        return `*${part}*`;
       case 'italic':
-        return "_" + part + "_";
+        return `_${part}_`;
       case 'strikethrough':
-        return "~" + part + "~";
+        return `~${part}~`;
     }
     return part;
   }, string);

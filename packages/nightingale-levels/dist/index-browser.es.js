@@ -19,8 +19,7 @@
  * </ul>
  *
  */
-var Level;
-(function (Level) {
+let Level = /*#__PURE__*/function (Level) {
   Level[Level["ALL"] = 0] = "ALL";
   Level[Level["TRACE"] = 10] = "TRACE";
   Level[Level["DEBUG"] = 100] = "DEBUG";
@@ -33,7 +32,8 @@ var Level;
   Level[Level["FATAL"] = 550] = "FATAL";
   Level[Level["ALERT"] = 550] = "ALERT";
   Level[Level["EMERGENCY"] = 600] = "EMERGENCY";
-})(Level || (Level = {}));
+  return Level;
+}({});
 
 export { Level };
 //# sourceMappingURL=index-browser.es.js.map

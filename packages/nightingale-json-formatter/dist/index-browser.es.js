@@ -1,6 +1,6 @@
 function map2object(map) {
-  var object = {};
-  map.forEach(function (value, key) {
+  const object = {};
+  map.forEach((value, key) => {
     if (typeof key === 'object') {
       // ignore key
       return;
@@ -10,7 +10,7 @@ function map2object(map) {
   return object;
 }
 function stringify(value, space) {
-  return JSON.stringify(value, function (key, objectValue) {
+  return JSON.stringify(value, (key, objectValue) => {
     if (objectValue instanceof Map) {
       return map2object(objectValue);
     }

@@ -10,7 +10,7 @@ class TestableStringLogger extends Logger {
     this.stringHandler = new StringHandler(Level.ALL);
   }
 
-  protected getHandlersAndProcessors(): ComputedConfigForKey {
+  protected override getHandlersAndProcessors(): ComputedConfigForKey {
     return {
       handlers: [this.stringHandler],
       processors: [],

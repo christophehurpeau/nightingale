@@ -1,7 +1,7 @@
 import ansi from 'ansi-styles';
 import { styleToHexColor, formatRecordToString } from 'nightingale-formatter';
 
-var ansiStyles = {
+const ansiStyles = {
   black: ansi.black,
   red: ansi.red,
   green: ansi.green,
@@ -37,10 +37,10 @@ function style(styles, string) {
   }
 
   // eslint-disable-next-line unicorn/no-array-reduce
-  return styles.reduce(function (styledString, styleName) {
-    var codePair = ansiStyles[styleName];
+  return styles.reduce((styledString, styleName) => {
+    const codePair = ansiStyles[styleName];
     if (!codePair) {
-      throw new Error("Unknown style: " + styleName);
+      throw new Error(`Unknown style: ${styleName}`);
     }
     return codePair.open + styledString + codePair.close;
   }, string);

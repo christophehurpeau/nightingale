@@ -37,9 +37,6 @@
     ".": {
       "types": "./dist/definitions/index.d.ts",
       "browser": {
-        "browser:modern": {
-          "import": "./dist/index-browsermodern.es.js"
-        },
         "import": "./dist/index-browser.es.js"
       }
     }
@@ -62,10 +59,6 @@
   "pob": {
     "babelEnvs": [
       {
-        "target": "browser",
-        "version": "modern"
-      },
-      {
         "target": "browser"
       }
     ],
@@ -81,9 +74,9 @@
     "nightingale-types": "14.2.1"
   },
   "devDependencies": {
-    "@babel/core": "7.23.3",
-    "@babel/preset-env": "7.23.3",
-    "pob-babel": "36.6.1",
+    "@babel/core": "7.23.6",
+    "@babel/preset-env": "7.23.6",
+    "pob-babel": "38.0.0",
     "react": "18.2.0",
     "react-native": "0.72.6",
     "typescript": "5.3.3"

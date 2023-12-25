@@ -39,9 +39,6 @@
         "import": "./dist/index-node18.mjs"
       },
       "browser": {
-        "browser:modern": {
-          "import": "./dist/index-browsermodern.es.js"
-        },
         "import": "./dist/index-browser.es.js"
       }
     }
@@ -69,10 +66,6 @@
         "version": "18"
       },
       {
-        "target": "browser",
-        "version": "modern"
-      },
-      {
         "target": "browser"
       }
     ],
@@ -85,9 +78,9 @@
     "nightingale-types": "14.2.1"
   },
   "devDependencies": {
-    "@babel/core": "7.23.3",
-    "@babel/preset-env": "7.23.3",
-    "pob-babel": "36.6.1",
+    "@babel/core": "7.23.6",
+    "@babel/preset-env": "7.23.6",
+    "pob-babel": "38.0.0",
     "typescript": "5.3.3"
   }
 }

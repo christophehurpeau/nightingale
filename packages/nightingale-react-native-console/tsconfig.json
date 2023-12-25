@@ -1,8 +1,11 @@
 {
+  "extends": [
+    "@pob/root/tsconfigs/strict.json",
+    "@pob/root/tsconfigs/targets/rollup-babel-with-dom.json"
+  ],
   "include": ["src/**/*.ts"],
   "compilerOptions": {
     "rootDir": "src",
-    "newLine": "lf",
     "outDir": "dist/definitions",
     "tsBuildInfoFile": "node_modules/.cache/tsc/tsbuildinfo",
     "noEmitOnError": true,
@@ -11,33 +14,6 @@
     "emitDeclarationOnly": true,
     "incremental": true,
     "composite": true,
-
-    /* No need to check .d.ts files */
-    "skipLibCheck": true,
-
-    "target": "esnext" /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017','ES2018' or 'ESNEXT'. */,
-    "module": "esnext" /* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', or 'ESNext'. */,
-    "lib": [
-      "dom",
-      "esnext"
-    ] /* Polyfills are imported either by babel or with polyfill.io */,
-    // "jsx": "react-jsx",                     /* 'react-jsx' is used with react/jsx-runtime (react >=17 || >= 16.14.0 | >= 15.7.0) */
-    "isolatedModules": true /* Transpile each file as a separate module (similar to 'ts.transpileModule'). */,
-
-    /* Enable all strict type-checking options. */
-    "strict": true,
-
-    /* Additional Checks */
-    "noUnusedLocals": true /* Report errors on unused locals. */,
-    "noUnusedParameters": false /* Report errors on unused parameters. */,
-    "noImplicitReturns": true /* Report error when not all code paths in function return a value. */,
-    "noFallthroughCasesInSwitch": true /* Report errors for fallthrough cases in switch statement. */,
-    "forceConsistentCasingInFileNames": true,
-
-    /* Module Resolution Options */
-    "moduleResolution": "bundler" /* Specify module resolution strategy. */,
-    "allowSyntheticDefaultImports": true /* Allow default imports from modules with no default export. This does not affect code emit, just typechecking. */,
-    "esModuleInterop": true /* Enables emit interoperability between CommonJS and ES Modules via creation of namespace objects for all imports. Implies 'allowSyntheticDefaultImports'. */,
 
     "paths": {
       "nightingale-types": ["../../packages/nightingale-types/src"],
