@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [15.0.0](https://github.com/christophehurpeau/nightingale/compare/v14.2.1...v15.0.0) (2023-12-25)
+
+
+### ⚠ BREAKING CHANGES
+
+* update babel and drop browser modern version
+
+### Features
+
+* **deps:** update dependency @sentry/node to v7.82.0 ([#859](https://github.com/christophehurpeau/nightingale/issues/859)) ([f61b54c](https://github.com/christophehurpeau/nightingale/commit/f61b54c72f5438fb37d5c3d44e010956c9e265a8))
+* update babel and drop browser modern version ([5c76abc](https://github.com/christophehurpeau/nightingale/commit/5c76abc8bfb595a617fc4c8b795dae7e674ea664))
+
+
+### Bug Fixes
+
+* remove unused dependency @sentry/node ([82b190b](https://github.com/christophehurpeau/nightingale/commit/82b190ba3659308874f24ca759961dc9a84b8964))
+
+
 ## [14.2.1](https://github.com/christophehurpeau/nightingale/compare/v14.2.0...v14.2.1) (2023-11-05)
 
 

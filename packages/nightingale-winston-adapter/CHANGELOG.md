@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [15.0.0](https://github.com/christophehurpeau/nightingale/compare/v14.2.1...v15.0.0) (2023-12-25)
+
+
+### ⚠ BREAKING CHANGES
+
+* update babel and drop browser modern version
+
+### Features
+
+* update babel and drop browser modern version ([5c76abc](https://github.com/christophehurpeau/nightingale/commit/5c76abc8bfb595a617fc4c8b795dae7e674ea664))
+
+Version bump for dependency: nightingale-level-names
+Version bump for dependency: nightingale-types
+
+
 ## [14.2.1](https://github.com/christophehurpeau/nightingale/compare/v14.2.0...v14.2.1) (2023-11-05)
 
 Note: no notable changes
