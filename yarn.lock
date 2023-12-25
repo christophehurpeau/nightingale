@@ -2798,7 +2798,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sentry/node@npm:7.82.0, @sentry/node@npm:^7.19.0":
+"@sentry/node@npm:7.82.0":
   version: 7.82.0
   resolution: "@sentry/node@npm:7.82.0"
   dependencies:
@@ -8548,7 +8548,6 @@ __metadata:
     "@babel/core": "npm:7.23.3"
     "@babel/preset-env": "npm:7.23.3"
     "@sentry/core": "npm:^7.19.0"
-    "@sentry/node": "npm:^7.19.0"
     "@sentry/types": "npm:^7.19.0"
     nightingale-levels: "npm:14.2.1"
     nightingale-types: "npm:14.2.1"

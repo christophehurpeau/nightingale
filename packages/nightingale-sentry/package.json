@@ -81,7 +81,6 @@
   },
   "dependencies": {
     "@sentry/core": "^7.19.0",
-    "@sentry/node": "^7.19.0",
     "@sentry/types": "^7.19.0",
     "nightingale-levels": "14.2.1",
     "nightingale-types": "14.2.1"
