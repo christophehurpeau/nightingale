@@ -61,7 +61,7 @@
     ]
   },
   "dependencies": {
-    "@sentry/node": "7.82.0",
+    "@sentry/node": "7.91.0",
     "nightingale": "15.0.0",
     "nightingale-console": "15.0.0",
     "nightingale-sentry": "15.0.0"
