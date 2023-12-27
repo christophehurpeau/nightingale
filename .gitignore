@@ -17,7 +17,9 @@ yarn-error.log*
 # generated documentation directory
 /docs
 
-# jest default coverage directory
+# tsimp cache
+/.tsimp
+# default coverage directory
 /coverage
 
 # Typescript
