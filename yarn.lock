@@ -2413,9 +2413,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pob/root@npm:8.11.1":
-  version: 8.11.1
-  resolution: "@pob/root@npm:8.11.1"
+"@pob/root@npm:8.12.0":
+  version: 8.12.0
+  resolution: "@pob/root@npm:8.12.0"
   dependencies:
     "@commitlint/cli": "npm:18.4.3"
     "@pob/pretty-eslint-config": "npm:5.3.0"
@@ -2425,7 +2425,7 @@ __metadata:
     husky: "npm:~8.0.1"
     json5: "npm:^2.2.2"
     lint-staged: "npm:15.2.0"
-    pob-dependencies: "npm:10.2.0"
+    pob-dependencies: "npm:10.3.0"
     prettier: "npm:2.8.8"
     repository-check-dirty: "npm:6.3.0"
     semver: "npm:^7.3.7"
@@ -2439,7 +2439,7 @@ __metadata:
     pretty-eslint-config: ./bin/pretty-eslint-config.js
     pretty-pkg: ./bin/pretty-pkg.js
     repository-check-dirty: ./bin/repository-check-dirty.js
-  checksum: 01cb1dec6bc67bd2132f4abe60d6b5a23b9ebbe191ecfd06172787ea785dd86c8c97bfa69494a24cf595ed2db03b278c51159c3157e207c38c6a1178b71dbfb6
+  checksum: b4976630c6856a158e7bdf823755b77fb14711ee2feb45ba047c41d074d0b56a3c542b8caa4a6cf56f7456a18fd5d1ab61bc37b216212229d00c07af4fb1c8b6
   languageName: node
   linkType: hard
 
@@ -8536,7 +8536,7 @@ __metadata:
     "@pob/commitlint-config": "npm:6.3.0"
     "@pob/eslint-config": "npm:51.2.2"
     "@pob/eslint-config-typescript": "npm:51.2.2"
-    "@pob/root": "npm:8.11.1"
+    "@pob/root": "npm:8.12.0"
     "@types/jest": "npm:29.5.11"
     "@types/node": "npm:20.10.5"
     check-package-dependencies: "npm:7.0.0"
@@ -9261,10 +9261,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pob-dependencies@npm:10.2.0":
-  version: 10.2.0
-  resolution: "pob-dependencies@npm:10.2.0"
-  checksum: 678341423f7e43ba531bb3c28abdcd07c500898194bfef397253cf147ae773420a5e0a709318072b1516d8cadb455313be4b0c73402c9758159914c4b87a80d1
+"pob-dependencies@npm:10.3.0":
+  version: 10.3.0
+  resolution: "pob-dependencies@npm:10.3.0"
+  checksum: fb069ec24a8b76d502b5f45f0eefe16724edad8a63f1f45c34eabfde1d370ba3895584f2e4b9fb8739c574880aef5031e17e990d5618b9fa824444e570030a70
   languageName: node
   linkType: hard
 
