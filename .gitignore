@@ -17,8 +17,6 @@ yarn-error.log*
 # generated documentation directory
 /docs
 
-# tsimp cache
-/.tsimp
 # default coverage directory
 /coverage
 
