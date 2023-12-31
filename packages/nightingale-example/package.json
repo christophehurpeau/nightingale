@@ -62,7 +62,6 @@
     "start": "yarn clean:build && rollup --config rollup.config.mjs --watch",
     "watch": "pob-watch"
   },
-  "prettier": "@pob/root/prettier-config",
   "pob": {
     "babelEnvs": [
       {
@@ -80,6 +79,7 @@
       "slack"
     ]
   },
+  "prettier": "@pob/root/prettier-config",
   "dependencies": {
     "nightingale": "15.0.0",
     "nightingale-console": "15.0.0",
@@ -91,7 +91,7 @@
   },
   "devDependencies": {
     "@babel/core": "7.23.7",
-    "pob-babel": "38.0.1",
+    "pob-babel": "38.0.2",
     "typescript": "5.3.3"
   }
 }

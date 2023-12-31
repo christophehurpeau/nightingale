@@ -27,7 +27,7 @@ jobs:
         run: yarn typedoc --tsconfig tsconfig.doc.json
 
       - name: Generate Coverage
-        run: yarn test --coverage --coverageReporters=lcov --coverageDirectory=docs/coverage/
+        run: yarn test:coverage:lcov --coverageDirectory=docs/coverage/
 
       - name: Create nojekyll
         run: touch docs/.nojekyll

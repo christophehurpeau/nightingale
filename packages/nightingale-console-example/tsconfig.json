@@ -12,6 +12,8 @@
     "incremental": true,
     "composite": true,
 
+    "resolveJsonModule": true,
+
     "paths": {
       "nightingale-sentry": ["../../packages/nightingale-sentry/src"],
       "nightingale-sentry/*": ["../../packages/nightingale-sentry/src/*"],

@@ -2,6 +2,7 @@
   "root": true,
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
+    "EXPERIMENTAL_useProjectService": true,
     "project": "packages/nightingale-react-native-console/tsconfig.json"
   },
   "plugins": ["@typescript-eslint"],

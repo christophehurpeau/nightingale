@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - "renovate/prettier-**"
+      - "renovate/major-prettier"
 
 jobs:
   run-prettier:

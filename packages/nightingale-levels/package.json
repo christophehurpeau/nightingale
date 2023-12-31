@@ -17,15 +17,7 @@
   "engines": {
     "node": ">=18.12.0"
   },
-  "browserslist": {
-    "production": [
-      "defaults",
-      "> 0.2%",
-      "not ie < 12",
-      "not safari < 10",
-      "not ios_saf < 10"
-    ]
-  },
+  "sideEffects": false,
   "main": "./dist/index-node18.mjs",
   "types": "./dist/definitions/index.d.ts",
   "module": "./dist/index-browser.es.js",
@@ -42,7 +34,6 @@
       }
     }
   },
-  "sideEffects": false,
   "files": [
     "src",
     "dist"
@@ -56,7 +47,15 @@
     "lint:eslint": "yarn ../.. run eslint --report-unused-disable-directives --resolve-plugins-relative-to . --quiet packages/nightingale-levels",
     "watch": "yarn clean:build && rollup --config rollup.config.mjs --watch"
   },
-  "prettier": "@pob/root/prettier-config",
+  "browserslist": {
+    "production": [
+      "defaults",
+      "> 0.2%",
+      "not ie < 12",
+      "not safari < 10",
+      "not ios_saf < 10"
+    ]
+  },
   "pob": {
     "babelEnvs": [
       {
@@ -71,10 +70,11 @@
       "index"
     ]
   },
+  "prettier": "@pob/root/prettier-config",
   "devDependencies": {
     "@babel/core": "7.23.7",
     "@babel/preset-env": "7.23.7",
-    "pob-babel": "38.0.1",
+    "pob-babel": "38.0.2",
     "typescript": "5.3.3"
   }
 }

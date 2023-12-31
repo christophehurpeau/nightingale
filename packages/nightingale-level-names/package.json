@@ -17,6 +17,7 @@
   "engines": {
     "node": ">=18.12.0"
   },
+  "sideEffects": false,
   "main": "./lib/index.cjs",
   "types": "./lib/index.d.ts",
   "exports": {
@@ -27,7 +28,6 @@
     },
     "./package.json": "./package.json"
   },
-  "sideEffects": false,
   "files": [
     "lib"
   ],
@@ -37,8 +37,8 @@
     "lint": "yarn run lint:eslint",
     "lint:eslint": "yarn ../.. run eslint --report-unused-disable-directives --resolve-plugins-relative-to . --quiet packages/nightingale-level-names"
   },
-  "prettier": "@pob/root/prettier-config",
   "pob": {},
+  "prettier": "@pob/root/prettier-config",
   "devDependencies": {
     "typescript": "5.3.3"
   }

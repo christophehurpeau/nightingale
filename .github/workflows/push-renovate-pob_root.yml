@@ -5,6 +5,7 @@ on:
     branches:
       - "renovate/pob-root"
       - "renovate/pob-root-**"
+      - "renovate/major-pob-root"
 
 jobs:
   run-install-and-commit-modified-files:
