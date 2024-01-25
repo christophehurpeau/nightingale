@@ -67,7 +67,7 @@
     "nightingale-sentry": "15.0.0"
   },
   "devDependencies": {
-    "@babel/core": "7.23.7",
+    "@babel/core": "7.23.9",
     "pob-babel": "38.0.2",
     "typescript": "5.3.3"
   }
