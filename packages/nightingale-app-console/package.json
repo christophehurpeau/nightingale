@@ -76,8 +76,8 @@
     "nightingale-console": "15.0.0"
   },
   "devDependencies": {
-    "@babel/core": "7.23.7",
-    "@babel/preset-env": "7.23.8",
+    "@babel/core": "7.23.9",
+    "@babel/preset-env": "7.23.9",
     "pob-babel": "38.0.2",
     "typescript": "5.3.3"
   }
