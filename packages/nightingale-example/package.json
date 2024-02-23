@@ -19,37 +19,37 @@
     "./configure": {
       "types": "./src/configure.ts",
       "node": {
-        "import": "./build/configure-node20.mjs"
+        "import": "./build/configure-node.mjs"
       }
     },
     "./console": {
       "types": "./src/console.ts",
       "node": {
-        "import": "./build/console-node20.mjs"
+        "import": "./build/console-node.mjs"
       }
     },
     "./debug": {
       "types": "./src/debug.ts",
       "node": {
-        "import": "./build/debug-node20.mjs"
+        "import": "./build/debug-node.mjs"
       }
     },
     "./errors": {
       "types": "./src/errors.ts",
       "node": {
-        "import": "./build/errors-node20.mjs"
+        "import": "./build/errors-node.mjs"
       }
     },
     "./jsonConsole": {
       "types": "./src/jsonConsole.ts",
       "node": {
-        "import": "./build/jsonConsole-node20.mjs"
+        "import": "./build/jsonConsole-node.mjs"
       }
     },
     "./slack": {
       "types": "./src/slack.ts",
       "node": {
-        "import": "./build/slack-node20.mjs"
+        "import": "./build/slack-node.mjs"
       }
     }
   },
