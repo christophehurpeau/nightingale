@@ -2320,11 +2320,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pob/eslint-config-typescript@npm:54.0.0":
-  version: 54.0.0
-  resolution: "@pob/eslint-config-typescript@npm:54.0.0"
+"@pob/eslint-config-typescript@npm:54.0.1":
+  version: 54.0.1
+  resolution: "@pob/eslint-config-typescript@npm:54.0.1"
   dependencies:
-    "@pob/eslint-config": "npm:54.0.0"
+    "@pob/eslint-config": "npm:54.0.1"
     "@typescript-eslint/eslint-plugin": "npm:^6.21.0"
     "@typescript-eslint/parser": "npm:^6.21.0"
     eslint-config-airbnb-base: "npm:^15.0.0"
@@ -2345,13 +2345,13 @@ __metadata:
       optional: true
     eslint-plugin-n:
       optional: true
-  checksum: 10c0/c3f3c85b83398d1a0389c33755dfbfc2c63c49ef3e647c3eea1e13ca0fef31352ddf8a95c4144b575cbd6a742d51ba0de75dfaf58d3bb1eae763566b24cd0399
+  checksum: 10c0/5e876ef680ecb20273b895d6f5cdbb812424b82d8b848de1b7fc849d5a3c47fa161783fb785ab0877913efb18c57dc7ac55c3ddc1a7e3f99b84977cc9e6d0437
   languageName: node
   linkType: hard
 
-"@pob/eslint-config@npm:54.0.0":
-  version: 54.0.0
-  resolution: "@pob/eslint-config@npm:54.0.0"
+"@pob/eslint-config@npm:54.0.1":
+  version: 54.0.1
+  resolution: "@pob/eslint-config@npm:54.0.1"
   dependencies:
     eslint-config-airbnb-base: "npm:^15.0.0"
     eslint-config-prettier: "npm:^9.1.0"
@@ -2370,7 +2370,7 @@ __metadata:
       optional: true
     eslint-plugin-unicorn:
       optional: true
-  checksum: 10c0/3e45a6b34b4ef8cc974e0377e9bd24556ccabad2acc6c313489df7f636438c9774c2127a57efc09e6850eec719b67f3dd0db61902796645c969a7a832cf7545a
+  checksum: 10c0/cf1775fefcb9b0b04f57a04874590c0c4ec3f1c9063cb061673d3ed6363b487dff77c3f84557369d872cd473699dde5aa693f045d61a142de12f0f6f99d89dc0
   languageName: node
   linkType: hard
 
@@ -8526,8 +8526,8 @@ __metadata:
   dependencies:
     "@babel/core": "npm:7.23.9"
     "@pob/commitlint-config": "npm:6.3.1"
-    "@pob/eslint-config": "npm:54.0.0"
-    "@pob/eslint-config-typescript": "npm:54.0.0"
+    "@pob/eslint-config": "npm:54.0.1"
+    "@pob/eslint-config-typescript": "npm:54.0.1"
     "@pob/root": "npm:9.2.0"
     "@types/jest": "npm:29.5.12"
     "@types/node": "npm:20.11.20"
