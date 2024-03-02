@@ -74,8 +74,8 @@
     "nightingale-types": "15.0.0"
   },
   "devDependencies": {
-    "@babel/core": "7.23.9",
-    "@babel/preset-env": "7.23.9",
+    "@babel/core": "7.24.0",
+    "@babel/preset-env": "7.24.0",
     "pob-babel": "38.0.3",
     "react": "18.2.0",
     "react-native": "0.72.6",
