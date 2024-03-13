@@ -82,6 +82,6 @@
     "@babel/preset-env": "7.24.0",
     "nightingale-levels": "15.0.0",
     "pob-babel": "38.0.3",
-    "typescript": "5.3.3"
+    "typescript": "5.4.2"
   }
 }
