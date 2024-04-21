@@ -2348,11 +2348,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pob/eslint-config-typescript@npm:55.2.0":
-  version: 55.2.0
-  resolution: "@pob/eslint-config-typescript@npm:55.2.0"
+"@pob/eslint-config-typescript@npm:55.2.1":
+  version: 55.2.1
+  resolution: "@pob/eslint-config-typescript@npm:55.2.1"
   dependencies:
-    "@pob/eslint-config": "npm:55.2.0"
+    "@pob/eslint-config": "npm:55.2.1"
     "@typescript-eslint/eslint-plugin": "npm:^7.7.0"
     "@typescript-eslint/parser": "npm:^7.7.0"
     eslint-plugin-import: "npm:^2.29.1"
@@ -2372,13 +2372,13 @@ __metadata:
       optional: true
     eslint-plugin-n:
       optional: true
-  checksum: 10c0/28aaa1ebec94d10a3f9c60eddd669cd1dc3dcd09c7eb7d1e49d09d442f7035ae4594f8c8de91c33fc3520ecbdf4d825de490059f1ebd1bd71e236663ad456fb3
+  checksum: 10c0/b31da2566ebb30e514b47577b2291a99e3e9083f697767d815fd59c13c326dbecaf02610430c43f1329442a886fb9f3a4d7c4e391b7f07f408d9ac2a4abe2ef1
   languageName: node
   linkType: hard
 
-"@pob/eslint-config@npm:55.2.0":
-  version: 55.2.0
-  resolution: "@pob/eslint-config@npm:55.2.0"
+"@pob/eslint-config@npm:55.2.1":
+  version: 55.2.1
+  resolution: "@pob/eslint-config@npm:55.2.1"
   dependencies:
     confusing-browser-globals: "npm:^1.0.11"
     eslint-plugin-import: "npm:^2.29.1"
@@ -2396,7 +2396,7 @@ __metadata:
       optional: true
     eslint-plugin-unicorn:
       optional: true
-  checksum: 10c0/8effd0f0cd4d8bb80cec7e3d8bcc1991bb463d109096cd0a7ece1dc4a414cb04e65dcf9509101efd5f41dfa006770c46e4a54e6ab581edb35a63679b4ddd797e
+  checksum: 10c0/43e3c81577f0f93e6314c8cba38c109d430338f0ad364ac53f18f34e83c4ac8be4d81911c2c90480bf72a09d03256153356fd3f16874d3e980261546a627942a
   languageName: node
   linkType: hard
 
@@ -8553,8 +8553,8 @@ __metadata:
   dependencies:
     "@babel/core": "npm:7.24.4"
     "@pob/commitlint-config": "npm:6.3.1"
-    "@pob/eslint-config": "npm:55.2.0"
-    "@pob/eslint-config-typescript": "npm:55.2.0"
+    "@pob/eslint-config": "npm:55.2.1"
+    "@pob/eslint-config-typescript": "npm:55.2.1"
     "@pob/root": "npm:9.2.0"
     "@types/jest": "npm:29.5.12"
     "@types/node": "npm:20.12.7"
