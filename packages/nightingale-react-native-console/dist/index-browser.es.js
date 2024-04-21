@@ -4,7 +4,6 @@ import parseErrorStack from 'react-native/Libraries/Core/Devtools/parseErrorStac
 import symbolicateStackTrace from 'react-native/Libraries/Core/Devtools/symbolicateStackTrace';
 
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 
 const getStackTrace = e => {
   // eslint-disable-next-line no-prototype-builtins

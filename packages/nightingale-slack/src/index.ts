@@ -20,8 +20,8 @@ const createHandler =
     fetch(slackConfig.webhookUrl, {
       method: 'POST',
       body: JSON.stringify(body),
-    }).catch((error: Error) => {
-      console.error(error.stack);
+    }).catch((error: unknown) => {
+      console.error(error);
     });
   };
 

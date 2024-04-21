@@ -37,7 +37,7 @@ const createHandler = slackConfig => record => {
     method: 'POST',
     body: JSON.stringify(body)
   }).catch(error => {
-    console.error(error.stack);
+    console.error(error);
   });
 };
 class SlackHandler {

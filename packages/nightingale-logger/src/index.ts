@@ -1,4 +1,3 @@
-/* eslint-disable max-lines */
 import * as util from 'node:util';
 import { POB_TARGET } from 'pob-babel';
 import { Level } from 'nightingale-levels';
@@ -40,19 +39,19 @@ export interface Config {
 }
 
 declare global {
-  // eslint-disable-next-line vars-on-top, no-var
+  // eslint-disable-next-line no-var
   var __NIGHTINGALE_CONFIG: Config[];
-  // eslint-disable-next-line vars-on-top, no-var
+  // eslint-disable-next-line no-var
   var __NIGHTINGALE_LOGGER_MAP_CACHE: Map<string, ComputedConfigForKey>;
-  // eslint-disable-next-line vars-on-top, no-var
+  // eslint-disable-next-line no-var
   var __NIGHTINGALE_CONFIG_DEFAULT: ComputedConfigForKey;
-  // eslint-disable-next-line vars-on-top, no-var
+  // eslint-disable-next-line no-var
   var __NIGHTINGALE_GLOBAL_HANDLERS: unknown;
-  // eslint-disable-next-line vars-on-top, no-var
+  // eslint-disable-next-line no-var
   var __NIGHTINGALE_GET_CONFIG_FOR_LOGGER: (
     key: string,
   ) => ComputedConfigForKey;
-  // eslint-disable-next-line vars-on-top, no-var
+  // eslint-disable-next-line no-var
   var __NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD: (
     key: string,
     level: number,
@@ -60,7 +59,7 @@ declare global {
 }
 
 const globalOrWindow: typeof global =
-  typeof global !== 'undefined' ? global : (window as typeof global);
+  typeof global !== 'undefined' ? global : window;
 
 if (!globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER) {
   globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER =
@@ -247,8 +246,7 @@ export class Logger {
       : messageOrError;
 
     const extendedMetadata =
-      isMessageError &&
-      !(metadata && Object.prototype.hasOwnProperty.call(metadata, 'error'))
+      isMessageError && !(metadata && Object.hasOwn(metadata, 'error'))
         ? { ...metadata, error: messageOrError }
         : metadata;
 

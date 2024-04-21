@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 
 import formatterANSI from 'nightingale-ansi-formatter';
 import type {
@@ -11,6 +10,7 @@ import type {
   Handler,
 } from 'nightingale-types';
 import { Platform } from 'react-native';
+import type { StackFrame } from 'react-native/Libraries/Core/Devtools/parseErrorStack';
 import parseErrorStack from 'react-native/Libraries/Core/Devtools/parseErrorStack';
 import symbolicateStackTrace from 'react-native/Libraries/Core/Devtools/symbolicateStackTrace';
 
@@ -29,7 +29,7 @@ const getStackTrace = (e: Error): any => {
   else return parseErrorStack(e);
 };
 
-function parsedStackToString(stack: any[]): string {
+function parsedStackToString(stack: StackFrame[]): string {
   return stack
     .map(
       (frame) =>
@@ -59,7 +59,7 @@ const createHandle = (): Handle => {
           metadataError.stack = parsedStackToString(stack);
           consoleOutput([formatterANSI(record)], record);
         })
-        .catch((error) => {
+        .catch((error: unknown) => {
           metadataError.stack = undefined;
           consoleOutput([formatterANSI(record)], record);
         });

@@ -10,7 +10,6 @@ class JSONHandler implements Handler {
     this.minLevel = minLevel;
   }
 
-  // eslint-disable-next-line @typescript-eslint/class-methods-use-this
   handle<T extends Metadata>(record: LogRecord<T>): void {
     consoleOutput(jsonFormatter(record), record);
   }

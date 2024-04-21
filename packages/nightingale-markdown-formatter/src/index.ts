@@ -15,6 +15,8 @@ export function style(styles: Styles, string: string): string {
         return `_${part}_`;
       case 'strikethrough':
         return `~${part}~`;
+
+      // no default
     }
 
     return part;

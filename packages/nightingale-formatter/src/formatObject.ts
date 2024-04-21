@@ -1,4 +1,4 @@
-/* eslint-disable max-lines, @typescript-eslint/no-use-before-define */
+/* eslint-disable @typescript-eslint/no-use-before-define */
 import type { Styles } from 'nightingale-types';
 
 export interface FormatObjectOptions {
@@ -95,6 +95,7 @@ function internalFormatValue(
           break;
         case 'object':
         case 'function':
+        default:
           break;
       }
     }

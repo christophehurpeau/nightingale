@@ -2,7 +2,6 @@ import * as util from 'node:util';
 import { Level } from 'nightingale-levels';
 export { Level } from 'nightingale-levels';
 
-/* eslint-disable max-lines */
 const globalOrWindow = typeof global !== 'undefined' ? global : window;
 if (!globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER) {
   globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = () => ({
@@ -148,7 +147,7 @@ class Logger {
   log(messageOrError, metadata, level = Level.INFO, options) {
     const isMessageError = isError(messageOrError);
     const message = isMessageError ? `${messageOrError.name}: ${messageOrError.message}` : messageOrError;
-    const extendedMetadata = isMessageError && !(metadata && Object.prototype.hasOwnProperty.call(metadata, 'error')) ? {
+    const extendedMetadata = isMessageError && !(metadata && Object.hasOwn(metadata, 'error')) ? {
       ...metadata,
       error: messageOrError
     } : metadata;

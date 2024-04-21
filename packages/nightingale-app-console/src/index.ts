@@ -18,14 +18,16 @@ if (POB_TARGET !== 'browser') {
   listenUnhandledErrors(logger);
 }
 
-const appMinLevel =
-  POB_TARGET !== 'browser' &&
-  process.env.NIGHTINGALE_APP_MIN_LEVEL !== undefined &&
-  process.env.NIGHTINGALE_APP_MIN_LEVEL !== ''
-    ? Number(process.env.NIGHTINGALE_APP_MIN_LEVEL)
-    : process.env.NODE_ENV !== 'production'
-    ? Level.DEBUG
-    : Level.INFO;
+const appMinLevel = (() => {
+  if (
+    POB_TARGET !== 'browser' &&
+    process.env.NIGHTINGALE_APP_MIN_LEVEL !== undefined &&
+    process.env.NIGHTINGALE_APP_MIN_LEVEL !== ''
+  ) {
+    return Number(process.env.NIGHTINGALE_APP_MIN_LEVEL);
+  }
+  return process.env.NODE_ENV !== 'production' ? Level.DEBUG : Level.INFO;
+})();
 
 const libMinLevel =
   POB_TARGET !== 'browser' &&

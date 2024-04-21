@@ -143,7 +143,7 @@ const styleToHtmlStyleThemeDark = {
   }
 };
 
-/* eslint-disable max-lines, @typescript-eslint/no-use-before-define */
+/* eslint-disable @typescript-eslint/no-use-before-define */
 
 const noStyleFn = (styles, value) => value;
 function tryStringify(arg) {

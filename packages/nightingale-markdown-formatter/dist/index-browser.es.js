@@ -14,6 +14,8 @@ function style(styles, string) {
         return `_${part}_`;
       case 'strikethrough':
         return `~${part}~`;
+
+      // no default
     }
     return part;
   }, string);
