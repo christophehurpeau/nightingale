@@ -6,7 +6,10 @@
     "project": "packages/nightingale-markdown-formatter/tsconfig.json"
   },
   "plugins": ["@typescript-eslint"],
-  "extends": ["@pob/eslint-config-typescript"],
+  "extends": [
+    "@pob/eslint-config-typescript",
+    "@pob/eslint-config-typescript/node"
+  ],
   "ignorePatterns": ["*.d.ts"],
   "overrides": [
     {
