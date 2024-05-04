@@ -17,7 +17,7 @@ jobs:
         run: corepack enable
 
       - name: Install Dependencies
-        run: yarn install --immutable --immutable-cache
+        run: yarn install --immutable
 
       - name: Checks
         run: yarn run checks
@@ -36,7 +36,7 @@ jobs:
         run: corepack enable
 
       - name: Install Dependencies
-        run: yarn install --immutable --immutable-cache
+        run: yarn install --immutable
 
       - name: Build
         run: yarn run build
@@ -58,7 +58,7 @@ jobs:
         run: corepack enable
 
       - name: Install Dependencies
-        run: yarn install --immutable --immutable-cache
+        run: yarn install --immutable
 
       - name: Prettier
         run: yarn run lint:prettier
@@ -87,7 +87,7 @@ jobs:
         run: corepack enable
 
       - name: Install Dependencies
-        run: yarn install --immutable --immutable-cache
+        run: yarn install --immutable
 
       - name: Test
         run: yarn run test
@@ -98,7 +98,7 @@ jobs:
         if: matrix.node-version == 18
 
       - name: Send results to codecov
-        uses: codecov/codecov-action@v3
+        uses: codecov/codecov-action@v4
         if: matrix.node-version == 18
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
