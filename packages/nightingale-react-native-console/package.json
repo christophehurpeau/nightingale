@@ -76,7 +76,7 @@
   "devDependencies": {
     "@babel/core": "7.24.5",
     "@babel/preset-env": "7.24.5",
-    "pob-babel": "38.1.0",
+    "pob-babel": "38.1.1",
     "react": "18.3.0",
     "react-native": "0.72.6",
     "typescript": "5.4.5"
