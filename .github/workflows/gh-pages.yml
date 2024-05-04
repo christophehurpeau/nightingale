@@ -18,7 +18,7 @@ jobs:
         run: corepack enable
 
       - name: Install Dependencies
-        run: yarn install --immutable --immutable-cache
+        run: yarn install --immutable
 
       - name: Run tsc for tsc cache
         run: yarn tsc
