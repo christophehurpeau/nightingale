@@ -2422,9 +2422,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pob/root@npm:9.4.3":
-  version: 9.4.3
-  resolution: "@pob/root@npm:9.4.3"
+"@pob/root@npm:9.5.0":
+  version: 9.5.0
+  resolution: "@pob/root@npm:9.5.0"
   dependencies:
     "@commitlint/cli": "npm:18.6.1"
     "@pob/pretty-eslint-config": "npm:5.4.0"
@@ -2434,9 +2434,9 @@ __metadata:
     husky: "npm:~9.0.11"
     json5: "npm:^2.2.2"
     lint-staged: "npm:15.2.2"
-    pob-dependencies: "npm:11.2.3"
+    pob-dependencies: "npm:11.2.4"
     prettier: "npm:2.8.8"
-    repository-check-dirty: "npm:6.3.1"
+    repository-check-dirty: "npm:6.3.2"
     semver: "npm:^7.3.7"
     which-pm-runs: "npm:1.1.0"
   bin:
@@ -2448,7 +2448,7 @@ __metadata:
     pretty-eslint-config: ./bin/pretty-eslint-config.js
     pretty-pkg: ./bin/pretty-pkg.js
     repository-check-dirty: ./bin/repository-check-dirty.js
-  checksum: 10/8943d765730be1fcc2db130ce4c97aada7a3708bf3ea08c76af7debb79455085f35032d906da22466b2594e797461c9a8de988180353eebdba91b5fac88bc2df
+  checksum: 10/35111918fb21b866f345850ba73bb47da39b1446fce068756e982bf6dd47bbb76cf088d5955d3a0068c5787504a9f0277ecbbc4ab164fb8a0f4b8464394b99fe
   languageName: node
   linkType: hard
 
@@ -8517,7 +8517,7 @@ __metadata:
     "@pob/commitlint-config": "npm:6.3.3"
     "@pob/eslint-config": "npm:55.2.1"
     "@pob/eslint-config-typescript": "npm:55.2.1"
-    "@pob/root": "npm:9.4.3"
+    "@pob/root": "npm:9.5.0"
     "@types/jest": "npm:29.5.12"
     "@types/node": "npm:20.12.8"
     check-package-dependencies: "npm:7.1.1"
@@ -9231,10 +9231,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pob-dependencies@npm:11.2.3":
-  version: 11.2.3
-  resolution: "pob-dependencies@npm:11.2.3"
-  checksum: 10/daef16388e9bea2b6821a4962518fdc1b7faa3b11cd8df59dd65a8c9889ec0d34cdc3bbe1ce50e032cf85b9d0e97243e3fa940464d39554182f44d3730ce58ae
+"pob-dependencies@npm:11.2.4":
+  version: 11.2.4
+  resolution: "pob-dependencies@npm:11.2.4"
+  checksum: 10/bc159e32b9a58fb96c03640d2f1adf64c098dca7b4a6502ee8e9aa8398ea303144d6da535d8d278d5026377778ea1d514a063eb4c6bb7745252c1e83dc13f35e
   languageName: node
   linkType: hard
 
@@ -9641,12 +9641,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"repository-check-dirty@npm:6.3.1":
-  version: 6.3.1
-  resolution: "repository-check-dirty@npm:6.3.1"
+"repository-check-dirty@npm:6.3.2":
+  version: 6.3.2
+  resolution: "repository-check-dirty@npm:6.3.2"
   bin:
     repository-check-dirty: ./bin/repository-check-dirty.js
-  checksum: 10/8e4dac3c4d1cf2474ab5f92f3006dca8d7bb0c60e8ffbc89f48bdcda4dcfc8cb3be7828169bfe498baff643b47d01a93a162f1c5b5085b76d957e6498b3dcef3
+  checksum: 10/b39a21957fa10dd90cfaaac4da628feaf78590e0b1a657b30d650ed517d671d0fdf91b65e234de727754a68134259965c7a077a11cf1fa3607815c640b83ed7b
   languageName: node
   linkType: hard
 
