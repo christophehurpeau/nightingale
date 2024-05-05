@@ -1079,7 +1079,7 @@
 import { Level } from 'nightingale-levels';
 export { Level } from 'nightingale-levels';
 &nbsp;
-const globalOrWindow = typeof global !== 'undefined' ? global : <span class="branch-1 cbranch-no" title="branch not covered" >window;</span>
+const globalOrWindow = typeof global !== "undefined" ? global : <span class="branch-1 cbranch-no" title="branch not covered" >window;</span>
 <span class="missing-if-branch" title="else path not taken" >E</span>if (!globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER) {
   globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = <span class="fstat-no" title="function not covered" >()</span> =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
     handlers: [],
@@ -1119,7 +1119,7 @@ class Logger {
   constructor(key, displayName) {
     this.key = key;
     this.displayName = displayName;
-    <span class="missing-if-branch" title="if path not taken" >I</span>if (process.env.NODE_ENV !== 'production' &amp;&amp; key.includes('.')) {
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (process.env.NODE_ENV !== "production" &amp;&amp; key.includes(".")) {
 <span class="cstat-no" title="statement not covered" >      throw new Error(`nightingale: \`.\` in key is no longer supported, use \`:\` instead (key: ${key})`);</span>
     }
   }
@@ -1185,7 +1185,7 @@ class Logger {
    */
 <span class="fstat-no" title="function not covered" >  ex</span>tendsContext(extendedContext) {
 <span class="cstat-no" title="statement not covered" >    if (this.contextObject === undefined) {</span>
-<span class="cstat-no" title="statement not covered" >      throw new Error('Cannot extends context that does not exists. Use setContext(context) first.');</span>
+<span class="cstat-no" title="statement not covered" >      throw new Error("Cannot extends context that does not exists. Use setContext(context) first.");</span>
     }
 <span class="cstat-no" title="statement not covered" >    Object.assign(this.contextObject, extendedContext);</span>
   }
@@ -1203,7 +1203,7 @@ class Logger {
     <span class="missing-if-branch" title="if path not taken" >I</span>if (handlers.length === 0) {
 <span class="cstat-no" title="statement not covered" >      if (record.level &gt; Level.ERROR) {</span>
         // eslint-disable-next-line no-console
-<span class="cstat-no" title="statement not covered" >        console.log('[nightingale] no logger for &gt; error level.', {</span>
+<span class="cstat-no" title="statement not covered" >        console.log("[nightingale] no logger for &gt; error level.", {</span>
           key: record.key,
           message: record.message
         });
@@ -1224,7 +1224,7 @@ class Logger {
   log(messageOrError, metadata, level = Level.INFO, options) {
     const isMessageError = isError(messageOrError);
     const message = isMessageError ? <span class="branch-0 cbranch-no" title="branch not covered" >`${messageOrError.name}: ${messageOrError.message}` </span>: messageOrError;
-    const extendedMetadata = isMessageError &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >!(metadata &amp;&amp; Object.hasOwn(metadata, 'error')) </span>? <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+    const extendedMetadata = isMessageError &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >!(metadata &amp;&amp; Object.hasOwn(metadata, "error")) </span>? <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
       ...metadata,
       error: messageOrError
     } : metadata;
@@ -1359,7 +1359,7 @@ class Logger {
       });
 <span class="cstat-no" title="statement not covered" >      this.log(inspectedValue, metadata, Level.DEBUG, {</span>
         metadataStyles,
-        styles: ['gray']
+        styles: ["gray"]
       });
     }
   }
@@ -1374,7 +1374,7 @@ class Logger {
       });
 <span class="cstat-no" title="statement not covered" >      this.log(`${varName} = ${inspectedValue}`, metadata, Level.DEBUG, {</span>
         metadataStyles,
-        styles: ['cyan']
+        styles: ["cyan"]
       });
     }
   }
@@ -1392,8 +1392,8 @@ class Logger {
   infoSuccess(message, metadata, metadataStyles) {
     this.log(message, metadata, Level.INFO, {
       metadataStyles,
-      symbol: '✔',
-      styles: ['green', 'bold']
+      symbol: "✔",
+      styles: ["green", "bold"]
     });
   }
 &nbsp;
@@ -1403,8 +1403,8 @@ class Logger {
 <span class="fstat-no" title="function not covered" >  de</span>bugSuccess(message, metadata, metadataStyles) {
 <span class="cstat-no" title="statement not covered" >    this.log(message, metadata, Level.DEBUG, {</span>
       metadataStyles,
-      symbol: '✔',
-      styles: ['green']
+      symbol: "✔",
+      styles: ["green"]
     });
   }
 &nbsp;
@@ -1421,8 +1421,8 @@ class Logger {
 <span class="fstat-no" title="function not covered" >  in</span>foFail(messageOrError, metadata, metadataStyles) {
 <span class="cstat-no" title="statement not covered" >    this.log(messageOrError, metadata, Level.INFO, {</span>
       metadataStyles,
-      symbol: '✖',
-      styles: ['red', 'bold']
+      symbol: "✖",
+      styles: ["red", "bold"]
     });
   }
 &nbsp;
@@ -1432,8 +1432,8 @@ class Logger {
 <span class="fstat-no" title="function not covered" >  de</span>bugFail(messageOrError, metadata, metadataStyles) {
 <span class="cstat-no" title="statement not covered" >    this.log(messageOrError, metadata, Level.DEBUG, {</span>
       metadataStyles,
-      symbol: '✖',
-      styles: ['red']
+      symbol: "✖",
+      styles: ["red"]
     });
   }
 &nbsp;
@@ -1466,7 +1466,7 @@ class Logger {
 <span class="cstat-no" title="statement not covered" >      readableTime = `${diffTime}ms`;</span>
     } else {
       const seconds = <span class="cstat-no" title="statement not covered" >diffTime &gt; 1000 ? Math.floor(diffTime / 1000) : 0;</span>
-<span class="cstat-no" title="statement not covered" >      readableTime = `${seconds ? `${seconds}s and ` : ''}${diffTime - seconds * 1000}ms`;</span>
+<span class="cstat-no" title="statement not covered" >      readableTime = `${seconds ? `${seconds}s and ` : ""}${diffTime - seconds * 1000}ms`;</span>
     }
     const extendedMetadata = <span class="cstat-no" title="statement not covered" >{</span>
       ...metadata,
@@ -1491,8 +1491,8 @@ class Logger {
    */
 <span class="fstat-no" title="function not covered" >  in</span>foSuccessTimeEnd(time, message, metadata, metadataStyles) {
 <span class="cstat-no" title="statement not covered" >    this.timeEnd(time, message, metadata, metadataStyles, Level.INFO, {</span>
-      symbol: '✔',
-      styles: ['green', 'bold']
+      symbol: "✔",
+      styles: ["green", "bold"]
     });
   }
 &nbsp;
@@ -1515,7 +1515,7 @@ class Logger {
       ...metadata,
       functionName: fn.name
     };
-<span class="cstat-no" title="statement not covered" >    this.log('enter', extendedMetadata, Level.TRACE, {</span>
+<span class="cstat-no" title="statement not covered" >    this.log("enter", extendedMetadata, Level.TRACE, {</span>
       metadataStyles
     });
   }
@@ -1539,7 +1539,7 @@ class Logger {
       ...metadata,
       functionName: fn.name
     };
-<span class="cstat-no" title="statement not covered" >    this.log('exit', extendedMetadata, Level.TRACE, {</span>
+<span class="cstat-no" title="statement not covered" >    this.log("exit", extendedMetadata, Level.TRACE, {</span>
       metadataStyles
     });
   }
@@ -1563,11 +1563,11 @@ class Logger {
 <span class="fstat-no" title="function not covered" >  wr</span>ap(fn, option1, option2, callback) {
     let metadata;
     let metadataStyles;
-<span class="cstat-no" title="statement not covered" >    if (typeof option1 === 'function') {</span>
+<span class="cstat-no" title="statement not covered" >    if (typeof option1 === "function") {</span>
 <span class="cstat-no" title="statement not covered" >      callback = option1;</span>
     } else {
 <span class="cstat-no" title="statement not covered" >      metadata = option1;</span>
-<span class="cstat-no" title="statement not covered" >      if (typeof option2 === 'function') {</span>
+<span class="cstat-no" title="statement not covered" >      if (typeof option2 === "function") {</span>
 <span class="cstat-no" title="statement not covered" >        callback = option2;</span>
       } else {
 <span class="cstat-no" title="statement not covered" >        metadataStyles = option2;</span>
@@ -1588,7 +1588,7 @@ export { Logger };
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Sun May 05 2024 14:07:16 GMT+0000 (Coordinated Universal Time)
+                at Sun May 05 2024 18:59:33 GMT+0000 (Coordinated Universal Time)
             </div>
         <script src="../../prettify.js"></script>
         <script>

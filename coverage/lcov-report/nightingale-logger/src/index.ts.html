@@ -1485,9 +1485,9 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import * as util from 'node:util';
-import { POB_TARGET } from 'pob-babel';
-import { Level } from 'nightingale-levels';
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import * as util from "node:util";
+import { POB_TARGET } from "pob-babel";
+import { Level } from "nightingale-levels";
 import type {
   Metadata,
   MetadataStyles,
@@ -1495,9 +1495,9 @@ import type {
   Handler,
   Processor,
   LogRecord,
-} from 'nightingale-types';
+} from "nightingale-types";
 &nbsp;
-export { Level } from 'nightingale-levels';
+export { Level } from "nightingale-levels";
 &nbsp;
 export interface Options&lt;T extends Metadata&gt; {
   symbol?: string;
@@ -1536,17 +1536,17 @@ declare global {
   var __NIGHTINGALE_GLOBAL_HANDLERS: unknown;
   // eslint-disable-next-line no-var
   var __NIGHTINGALE_GET_CONFIG_FOR_LOGGER: (
-    key: string,
+    key: string
   ) =&gt; ComputedConfigForKey;
   // eslint-disable-next-line no-var
   var __NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD: (
     key: string,
-    level: number,
+    level: number
   ) =&gt; ComputedConfigForKey;
 }
 &nbsp;
 const globalOrWindow: typeof global =
-  typeof global !== 'undefined' ? global : <span class="branch-1 cbranch-no" title="branch not covered" >window;</span>
+  typeof global !== "undefined" ? global : <span class="branch-1 cbranch-no" title="branch not covered" >window;</span>
 &nbsp;
 <span class="missing-if-branch" title="else path not taken" >E</span>if (!globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER) {
   globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER =
@@ -1559,7 +1559,7 @@ const globalOrWindow: typeof global =
 <span class="missing-if-branch" title="else path not taken" >E</span>if (!globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
   globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = <span class="fstat-no" title="function not covered" >(</span>
     key: string,
-    level: Level,
+    level: Level
   ): ComputedConfigForKey =&gt; {
     const { handlers, processors }: ComputedConfigForKey =
 <span class="cstat-no" title="statement not covered" >      globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key);</span>
@@ -1568,7 +1568,7 @@ const globalOrWindow: typeof global =
       handlers: handlers.filter(
 <span class="fstat-no" title="function not covered" >        (h</span>andler) =&gt;
 <span class="cstat-no" title="statement not covered" >          level &gt;= handler.minLevel &amp;&amp;</span>
-          (!handler.isHandling || handler.isHandling(level, key)),
+          (!handler.isHandling || handler.isHandling(level, key))
       ),
       processors,
     };
@@ -1577,11 +1577,11 @@ const globalOrWindow: typeof global =
 &nbsp;
 function <span class="fstat-no" title="function not covered" >getConfigForLoggerRecord(</span>
   key: string,
-  recordLevel: Level,
+  recordLevel: Level
 ): ComputedConfigForKey {
 <span class="cstat-no" title="statement not covered" >  return globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD(</span>
     key,
-    recordLevel,
+    recordLevel
   );
 }
 &nbsp;
@@ -1610,16 +1610,16 @@ export class Logger {
     this.key = key;
     this.displayName = displayName;
 &nbsp;
-    <span class="missing-if-branch" title="if path not taken" >I</span>if (process.env.NODE_ENV !== 'production' &amp;&amp; key.includes('.')) {
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (process.env.NODE_ENV !== "production" &amp;&amp; key.includes(".")) {
 <span class="cstat-no" title="statement not covered" >      throw new Error(</span>
-        `nightingale: \`.\` in key is no longer supported, use \`:\` instead (key: ${key})`,
+        `nightingale: \`.\` in key is no longer supported, use \`:\` instead (key: ${key})`
       );
     }
   }
 &nbsp;
   /** @private */
 <span class="fstat-no" title="function not covered" >  pr</span>otected getHandlersAndProcessors(
-    recordLevel: number,
+    recordLevel: number
   ): ComputedConfigForKey {
 <span class="cstat-no" title="statement not covered" >    return getConfigForLoggerRecord(this.key, recordLevel);</span>
   }
@@ -1681,7 +1681,7 @@ export class Logger {
   extendsContext(extendedContext: Record&lt;string, unknown&gt;): void {
     if (this.contextObject === undefined) {
       throw new Error(
-        'Cannot extends context that does not exists. Use setContext(context) first.',
+        "Cannot extends context that does not exists. Use setContext(context) first."
       );
     }
     Object.assign(this.contextObject, extendedContext);
@@ -1694,13 +1694,13 @@ export class Logger {
    */
 <span class="fstat-no" title="function not covered" >  ad</span>dRecord&lt;T extends Metadata&gt;(record: Readonly&lt;LogRecord&lt;T&gt;&gt;): void {
     const { handlers, processors } = <span class="cstat-no" title="statement not covered" >this.getHandlersAndProcessors(</span>
-      record.level,
+      record.level
     );
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    if (handlers.length === 0) {</span>
 <span class="cstat-no" title="statement not covered" >      if (record.level &gt; Level.ERROR) {</span>
         // eslint-disable-next-line no-console
-<span class="cstat-no" title="statement not covered" >        console.log('[nightingale] no logger for &gt; error level.', {</span>
+<span class="cstat-no" title="statement not covered" >        console.log("[nightingale] no logger for &gt; error level.", {</span>
           key: record.key,
           message: record.message,
         });
@@ -1724,7 +1724,7 @@ export class Logger {
     messageOrError: Error | string,
     metadata?: T,
     level: Level = Level.INFO,
-    options?: Options&lt;T&gt;,
+    options?: Options&lt;T&gt;
   ): void {
     const isMessageError = isError(messageOrError);
 &nbsp;
@@ -1733,7 +1733,7 @@ export class Logger {
       : <span class="branch-1 cbranch-no" title="branch not covered" >messageOrError;</span>
 &nbsp;
     const extendedMetadata =
-      isMessageError &amp;&amp; !(metadata &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >Object.hasOwn(metadata, 'error'))</span>
+      isMessageError &amp;&amp; !(metadata &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >Object.hasOwn(metadata, "error"))</span>
         ? { ...metadata, error: messageOrError }
         : <span class="branch-1 cbranch-no" title="branch not covered" >metadata;</span>
 &nbsp;
@@ -1762,7 +1762,7 @@ export class Logger {
 <span class="fstat-no" title="function not covered" >  tr</span>ace&lt;T extends Metadata&gt;(
     messageOrError: Error | string,
     metadata?: T,
-    metadataStyles?: MetadataStyles&lt;T&gt;,
+    metadataStyles?: MetadataStyles&lt;T&gt;
   ): void {
 <span class="cstat-no" title="statement not covered" >    this.log(messageOrError, metadata, Level.TRACE, { metadataStyles });</span>
   }
@@ -1773,7 +1773,7 @@ export class Logger {
 <span class="fstat-no" title="function not covered" >  de</span>bug&lt;T extends Metadata&gt;(
     messageOrError: Error | string,
     metadata?: T,
-    metadataStyles?: MetadataStyles&lt;T&gt;,
+    metadataStyles?: MetadataStyles&lt;T&gt;
   ): void {
 <span class="cstat-no" title="statement not covered" >    this.log(messageOrError, metadata, Level.DEBUG, { metadataStyles });</span>
   }
@@ -1784,7 +1784,7 @@ export class Logger {
 <span class="fstat-no" title="function not covered" >  no</span>tice&lt;T extends Metadata&gt;(
     messageOrError: Error | string,
     metadata?: T,
-    metadataStyles?: MetadataStyles&lt;T&gt;,
+    metadataStyles?: MetadataStyles&lt;T&gt;
   ): void {
 <span class="cstat-no" title="statement not covered" >    this.log(messageOrError, metadata, Level.NOTICE, { metadataStyles });</span>
   }
@@ -1795,7 +1795,7 @@ export class Logger {
 <span class="fstat-no" title="function not covered" >  in</span>fo&lt;T extends Metadata&gt;(
     messageOrError: Error | string,
     metadata?: T,
-    metadataStyles?: MetadataStyles&lt;T&gt;,
+    metadataStyles?: MetadataStyles&lt;T&gt;
   ): void {
 <span class="cstat-no" title="statement not covered" >    this.log(messageOrError, metadata, Level.INFO, { metadataStyles });</span>
   }
@@ -1806,7 +1806,7 @@ export class Logger {
 <span class="fstat-no" title="function not covered" >  wa</span>rn&lt;T extends Metadata&gt;(
     messageOrError: Error | string,
     metadata?: T,
-    metadataStyles?: MetadataStyles&lt;T&gt;,
+    metadataStyles?: MetadataStyles&lt;T&gt;
   ): void {
 <span class="cstat-no" title="statement not covered" >    this.log(messageOrError, metadata, Level.WARN, { metadataStyles });</span>
   }
@@ -1827,7 +1827,7 @@ export class Logger {
 <span class="fstat-no" title="function not covered" >  er</span>ror&lt;T extends Metadata&gt;(
     messageOrError: Error | string,
     metadata?: T,
-    metadataStyles?: MetadataStyles&lt;T&gt;,
+    metadataStyles?: MetadataStyles&lt;T&gt;
   ): void {
 <span class="cstat-no" title="statement not covered" >    this.log(messageOrError, metadata, Level.ERROR, { metadataStyles });</span>
   }
@@ -1838,7 +1838,7 @@ export class Logger {
 <span class="fstat-no" title="function not covered" >  cr</span>itical&lt;T extends Metadata&gt;(
     messageOrError: Error | string,
     metadata?: T,
-    metadataStyles?: MetadataStyles&lt;T&gt;,
+    metadataStyles?: MetadataStyles&lt;T&gt;
   ): void {
 <span class="cstat-no" title="statement not covered" >    this.log(messageOrError, metadata, Level.CRITICAL, { metadataStyles });</span>
   }
@@ -1859,7 +1859,7 @@ export class Logger {
 <span class="fstat-no" title="function not covered" >  fa</span>tal&lt;T extends Metadata&gt;(
     messageOrError: Error | string,
     metadata?: T,
-    metadataStyles?: MetadataStyles&lt;T&gt;,
+    metadataStyles?: MetadataStyles&lt;T&gt;
   ): void {
 <span class="cstat-no" title="statement not covered" >    this.log(messageOrError, metadata, Level.FATAL, { metadataStyles });</span>
   }
@@ -1870,7 +1870,7 @@ export class Logger {
 <span class="fstat-no" title="function not covered" >  al</span>ert&lt;T extends Metadata&gt;(
     messageOrError: Error | string,
     metadata?: T,
-    metadataStyles?: MetadataStyles&lt;T&gt;,
+    metadataStyles?: MetadataStyles&lt;T&gt;
   ): void {
 <span class="cstat-no" title="statement not covered" >    this.log(messageOrError, metadata, Level.ALERT, { metadataStyles });</span>
   }
@@ -1881,17 +1881,17 @@ export class Logger {
 <span class="fstat-no" title="function not covered" >  in</span>spectValue&lt;T extends Metadata&gt;(
     value: unknown,
     metadata?: T,
-    metadataStyles?: MetadataStyles&lt;T&gt;,
+    metadataStyles?: MetadataStyles&lt;T&gt;
   ): void {
-<span class="cstat-no" title="statement not covered" >    if (POB_TARGET === 'browser') {</span>
-<span class="cstat-no" title="statement not covered" >      throw new Error('Not supported for the browser. Prefer `debugger;`');</span>
+<span class="cstat-no" title="statement not covered" >    if (POB_TARGET === "browser") {</span>
+<span class="cstat-no" title="statement not covered" >      throw new Error("Not supported for the browser. Prefer `debugger;`");</span>
     } else {
       // Note: inspect is a special function for node:
       // https://github.com/nodejs/node/blob/a1bda1b4deb08dfb3e06cb778f0db40023b18318/lib/util.js#L210
       const inspectedValue = <span class="cstat-no" title="statement not covered" >util.inspect(value, { depth: 6 });</span>
 <span class="cstat-no" title="statement not covered" >      this.log(inspectedValue, metadata, Level.DEBUG, {</span>
         metadataStyles,
-        styles: ['gray'],
+        styles: ["gray"],
       });
     }
   }
@@ -1903,15 +1903,15 @@ export class Logger {
     varName: string,
     varValue: unknown,
     metadata?: T,
-    metadataStyles?: MetadataStyles&lt;T&gt;,
+    metadataStyles?: MetadataStyles&lt;T&gt;
   ): void {
-<span class="cstat-no" title="statement not covered" >    if (POB_TARGET === 'browser') {</span>
-<span class="cstat-no" title="statement not covered" >      throw new Error('Not supported for the browser. Prefer `debugger;`');</span>
+<span class="cstat-no" title="statement not covered" >    if (POB_TARGET === "browser") {</span>
+<span class="cstat-no" title="statement not covered" >      throw new Error("Not supported for the browser. Prefer `debugger;`");</span>
     } else {
       const inspectedValue = <span class="cstat-no" title="statement not covered" >util.inspect(varValue, { depth: 6 });</span>
 <span class="cstat-no" title="statement not covered" >      this.log(`${varName} = ${inspectedValue}`, metadata, Level.DEBUG, {</span>
         metadataStyles,
-        styles: ['cyan'],
+        styles: ["cyan"],
       });
     }
   }
@@ -1922,7 +1922,7 @@ export class Logger {
 <span class="fstat-no" title="function not covered" >  su</span>ccess&lt;T extends Metadata&gt;(
     message: string,
     metadata?: T,
-    metadataStyles?: MetadataStyles&lt;T&gt;,
+    metadataStyles?: MetadataStyles&lt;T&gt;
   ): void {
 <span class="cstat-no" title="statement not covered" >    this.infoSuccess(message, metadata, metadataStyles);</span>
   }
@@ -1933,12 +1933,12 @@ export class Logger {
 <span class="fstat-no" title="function not covered" >  in</span>foSuccess&lt;T extends Metadata&gt;(
     message: string,
     metadata?: T,
-    metadataStyles?: MetadataStyles&lt;T&gt;,
+    metadataStyles?: MetadataStyles&lt;T&gt;
   ): void {
 <span class="cstat-no" title="statement not covered" >    this.log(message, metadata, Level.INFO, {</span>
       metadataStyles,
-      symbol: '✔',
-      styles: ['green', 'bold'],
+      symbol: "✔",
+      styles: ["green", "bold"],
     });
   }
 &nbsp;
@@ -1948,12 +1948,12 @@ export class Logger {
 <span class="fstat-no" title="function not covered" >  de</span>bugSuccess&lt;T extends Metadata&gt;(
     message: string,
     metadata?: T,
-    metadataStyles?: MetadataStyles&lt;T&gt;,
+    metadataStyles?: MetadataStyles&lt;T&gt;
   ): void {
 <span class="cstat-no" title="statement not covered" >    this.log(message, metadata, Level.DEBUG, {</span>
       metadataStyles,
-      symbol: '✔',
-      styles: ['green'],
+      symbol: "✔",
+      styles: ["green"],
     });
   }
 &nbsp;
@@ -1963,7 +1963,7 @@ export class Logger {
 <span class="fstat-no" title="function not covered" >  fa</span>il&lt;T extends Metadata&gt;(
     messageOrError: Error | string,
     metadata?: T,
-    metadataStyles?: MetadataStyles&lt;T&gt;,
+    metadataStyles?: MetadataStyles&lt;T&gt;
   ): void {
 <span class="cstat-no" title="statement not covered" >    this.infoFail(messageOrError, metadata, metadataStyles);</span>
   }
@@ -1974,12 +1974,12 @@ export class Logger {
 <span class="fstat-no" title="function not covered" >  in</span>foFail&lt;T extends Metadata&gt;(
     messageOrError: Error | string,
     metadata?: T,
-    metadataStyles?: MetadataStyles&lt;T&gt;,
+    metadataStyles?: MetadataStyles&lt;T&gt;
   ): void {
 <span class="cstat-no" title="statement not covered" >    this.log(messageOrError, metadata, Level.INFO, {</span>
       metadataStyles,
-      symbol: '✖',
-      styles: ['red', 'bold'],
+      symbol: "✖",
+      styles: ["red", "bold"],
     });
   }
 &nbsp;
@@ -1989,12 +1989,12 @@ export class Logger {
 <span class="fstat-no" title="function not covered" >  de</span>bugFail&lt;T extends Metadata&gt;(
     messageOrError: Error | string,
     metadata?: T,
-    metadataStyles?: MetadataStyles&lt;T&gt;,
+    metadataStyles?: MetadataStyles&lt;T&gt;
   ): void {
 <span class="cstat-no" title="statement not covered" >    this.log(messageOrError, metadata, Level.DEBUG, {</span>
       metadataStyles,
-      symbol: '✖',
-      styles: ['red'],
+      symbol: "✖",
+      styles: ["red"],
     });
   }
 &nbsp;
@@ -2005,7 +2005,7 @@ export class Logger {
     message?: string,
     metadata?: T,
     metadataStyles?: MetadataStyles&lt;T&gt;,
-    level: number = <span class="branch-0 cbranch-no" title="branch not covered" >Level.DEBUG,</span>
+    level: number = <span class="branch-0 cbranch-no" title="branch not covered" >Level.DEBUG</span>
   ): number {
 <span class="cstat-no" title="statement not covered" >    if (message) {</span>
 <span class="cstat-no" title="statement not covered" >      this.log(message, metadata, level, { metadataStyles });</span>
@@ -2017,7 +2017,7 @@ export class Logger {
 <span class="fstat-no" title="function not covered" >  in</span>foTime&lt;T extends Metadata&gt;(
     message?: string,
     metadata?: T,
-    metadataStyles?: MetadataStyles&lt;T&gt;,
+    metadataStyles?: MetadataStyles&lt;T&gt;
   ): number {
 <span class="cstat-no" title="statement not covered" >    return this.time(message, metadata, metadataStyles, Level.INFO);</span>
   }
@@ -2034,7 +2034,7 @@ export class Logger {
     metadata?: T,
     metadataStyles?: MetadataStyles&lt;T&gt;,
     level: number = <span class="branch-0 cbranch-no" title="branch not covered" >Level.DEBUG,</span>
-    options?: Options&lt;T&gt;,
+    options?: Options&lt;T&gt;
   ): void {
     const now = <span class="cstat-no" title="statement not covered" >Date.now();</span>
 &nbsp;
@@ -2046,7 +2046,7 @@ export class Logger {
     } else {
       const seconds = <span class="cstat-no" title="statement not covered" >diffTime &gt; 1000 ? Math.floor(diffTime / 1000) : 0;</span>
       const ms = <span class="cstat-no" title="statement not covered" >diffTime - seconds * 1000;</span>
-<span class="cstat-no" title="statement not covered" >      readableTime = `${seconds ? `${seconds}s and ` : ''}${ms}ms`;</span>
+<span class="cstat-no" title="statement not covered" >      readableTime = `${seconds ? `${seconds}s and ` : ""}${ms}ms`;</span>
     }
 &nbsp;
     const extendedMetadata = <span class="cstat-no" title="statement not covered" >{</span>
@@ -2065,7 +2065,7 @@ export class Logger {
     time: number,
     message: string,
     metadata?: T,
-    metadataStyles?: MetadataStyles&lt;T&gt;,
+    metadataStyles?: MetadataStyles&lt;T&gt;
   ): void {
 <span class="cstat-no" title="statement not covered" >    this.timeEnd(time, message, metadata, metadataStyles, Level.INFO);</span>
   }
@@ -2077,11 +2077,11 @@ export class Logger {
     time: number,
     message: string,
     metadata?: T,
-    metadataStyles?: MetadataStyles&lt;T&gt;,
+    metadataStyles?: MetadataStyles&lt;T&gt;
   ): void {
 <span class="cstat-no" title="statement not covered" >    this.timeEnd(time, message, metadata, metadataStyles, Level.INFO, {</span>
-      symbol: '✔',
-      styles: ['green', 'bold'],
+      symbol: "✔",
+      styles: ["green", "bold"],
     });
   }
 &nbsp;
@@ -2102,13 +2102,13 @@ export class Logger {
 <span class="fstat-no" title="function not covered" >  en</span>ter&lt;T extends Metadata, Fn extends (...args: unknown[]) =&gt; unknown&gt;(
     fn: Fn,
     metadata?: T,
-    metadataStyles?: MetadataStyles&lt;ExtendedFunctionNameMetadata &amp; T&gt;,
+    metadataStyles?: MetadataStyles&lt;ExtendedFunctionNameMetadata &amp; T&gt;
   ): void {
     const extendedMetadata = <span class="cstat-no" title="statement not covered" >{</span>
       ...metadata,
       functionName: fn.name,
     };
-<span class="cstat-no" title="statement not covered" >    this.log('enter', extendedMetadata, Level.TRACE, { metadataStyles });</span>
+<span class="cstat-no" title="statement not covered" >    this.log("enter", extendedMetadata, Level.TRACE, { metadataStyles });</span>
   }
 &nbsp;
   /**
@@ -2128,13 +2128,13 @@ export class Logger {
 <span class="fstat-no" title="function not covered" >  ex</span>it&lt;T extends Metadata, Fn extends (...args: unknown[]) =&gt; unknown&gt;(
     fn: Fn,
     metadata?: T,
-    metadataStyles?: MetadataStyles&lt;ExtendedFunctionNameMetadata &amp; T&gt;,
+    metadataStyles?: MetadataStyles&lt;ExtendedFunctionNameMetadata &amp; T&gt;
   ): void {
     const extendedMetadata = <span class="cstat-no" title="statement not covered" >{</span>
       ...metadata,
       functionName: fn.name,
     };
-<span class="cstat-no" title="statement not covered" >    this.log('exit', extendedMetadata, Level.TRACE, { metadataStyles });</span>
+<span class="cstat-no" title="statement not covered" >    this.log("exit", extendedMetadata, Level.TRACE, { metadataStyles });</span>
   }
 &nbsp;
   /**
@@ -2154,37 +2154,37 @@ export class Logger {
    */
   wrap&lt;Fn extends (...args: unknown[]) =&gt; unknown&gt;(
     fn: Fn,
-    callback: () =&gt; void,
+    callback: () =&gt; void
   ): void;
 &nbsp;
   wrap&lt;T extends Metadata, Fn extends (...args: unknown[]) =&gt; unknown&gt;(
     fn: Fn,
     metadata: T,
-    callback: () =&gt; void,
+    callback: () =&gt; void
   ): void;
 &nbsp;
   wrap&lt;T extends Metadata, Fn extends (...args: unknown[]) =&gt; unknown&gt;(
     fn: Fn,
     metadata: T,
     metadataStyles: MetadataStyles&lt;T&gt;,
-    callback: () =&gt; void,
+    callback: () =&gt; void
   ): void;
 &nbsp;
 <span class="fstat-no" title="function not covered" >  wr</span>ap&lt;T extends Metadata, Fn extends (...args: unknown[]) =&gt; unknown&gt;(
     fn: Fn,
     option1: T | (() =&gt; void),
     option2?: MetadataStyles&lt;T&gt; | (() =&gt; void),
-    callback?: () =&gt; void,
+    callback?: () =&gt; void
   ): void {
     let metadata: T | undefined;
     let metadataStyles: MetadataStyles&lt;T&gt; | undefined;
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (typeof option1 === 'function') {</span>
+<span class="cstat-no" title="statement not covered" >    if (typeof option1 === "function") {</span>
 <span class="cstat-no" title="statement not covered" >      callback = option1;</span>
     } else {
 <span class="cstat-no" title="statement not covered" >      metadata = option1;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      if (typeof option2 === 'function') {</span>
+<span class="cstat-no" title="statement not covered" >      if (typeof option2 === "function") {</span>
 <span class="cstat-no" title="statement not covered" >        callback = option2;</span>
       } else {
 <span class="cstat-no" title="statement not covered" >        metadataStyles = option2;</span>
@@ -2203,7 +2203,7 @@ export class Logger {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Sun May 05 2024 14:07:16 GMT+0000 (Coordinated Universal Time)
+                at Sun May 05 2024 18:59:33 GMT+0000 (Coordinated Universal Time)
             </div>
         <script src="../../prettify.js"></script>
         <script>

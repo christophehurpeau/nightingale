@@ -988,7 +988,7 @@
 <span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/* eslint-disable @typescript-eslint/no-use-before-define */
-import type { Styles } from 'nightingale-types';
+import type { Styles } from "nightingale-types";
 &nbsp;
 export interface FormatObjectOptions {
   padding?: string;
@@ -1016,7 +1016,7 @@ interface FormattedKey {
 type FormatKey&lt;Key&gt; = (
   key: Key,
   styleFn: StyleFn,
-  internalFormatParams: InternalFormatParams,
+  internalFormatParams: InternalFormatParams
 ) =&gt; FormattedKey;
 &nbsp;
 interface Value&lt;Key&gt; {
@@ -1040,9 +1040,9 @@ interface InternalFormatIteratorParams&lt;Key&gt; {
 &nbsp;
 function tryStringify(arg: unknown): string {
   try {
-    return JSON.stringify(arg).replace(/\\n/g, '\n');
+    return JSON.stringify(arg).replace(/\\n/g, "\n");
   } catch {
-<span class="cstat-no" title="statement not covered" >    return '[Circular]';</span>
+<span class="cstat-no" title="statement not covered" >    return "[Circular]";</span>
   }
 }
 &nbsp;
@@ -1055,35 +1055,35 @@ function internalFormatValue(
   value: unknown,
   styleFn: StyleFn,
   styles: Styles,
-  { padding, depth, maxDepth, objects }: InternalFormatParams,
+  { padding, depth, maxDepth, objects }: InternalFormatParams
 ): FormattedValue {
   const typeofValue = typeof value;
 &nbsp;
   <span class="missing-if-branch" title="else path not taken" >E</span>if (!styles) {
     if (value == null) {
-      styles = ['cyan'];
+      styles = ["cyan"];
     } else {
       switch (typeofValue) {
-<span class="branch-0 cbranch-no" title="branch not covered" >        case 'undefined':</span>
-<span class="cstat-no" title="statement not covered" >          styles = ['cyan'];</span>
+<span class="branch-0 cbranch-no" title="branch not covered" >        case "undefined":</span>
+<span class="cstat-no" title="statement not covered" >          styles = ["cyan"];</span>
 <span class="cstat-no" title="statement not covered" >          break;</span>
-<span class="branch-1 cbranch-no" title="branch not covered" >        case 'boolean':</span>
-<span class="cstat-no" title="statement not covered" >          styles = ['green'];</span>
+<span class="branch-1 cbranch-no" title="branch not covered" >        case "boolean":</span>
+<span class="cstat-no" title="statement not covered" >          styles = ["green"];</span>
 <span class="cstat-no" title="statement not covered" >          break;</span>
-        case 'number':
-          styles = ['yellow'];
+        case "number":
+          styles = ["yellow"];
           break;
-        case 'bigint':
-          styles = ['red'];
+        case "bigint":
+          styles = ["red"];
           break;
-        case 'string':
-          styles = ['orange'];
+        case "string":
+          styles = ["orange"];
           break;
-        case 'symbol':
-          styles = ['magenta'];
+        case "symbol":
+          styles = ["magenta"];
           break;
-        case 'object':
-        case 'function':
+        case "object":
+        case "function":
         default:
           break;
       }
@@ -1092,15 +1092,15 @@ function internalFormatValue(
 &nbsp;
   let stringValue: string;
   if (value === null) {
-    stringValue = 'null';
+    stringValue = "null";
   } else if (value === undefined) {
-    stringValue = 'undefined';
-  } else <span class="missing-if-branch" title="if path not taken" >I</span>if (typeofValue === 'boolean') {
+    stringValue = "undefined";
+  } else <span class="missing-if-branch" title="if path not taken" >I</span>if (typeofValue === "boolean") {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
 <span class="cstat-no" title="statement not covered" >    stringValue = (value as any).toString() as string;</span>
   } else if ((value as () =&gt; unknown).constructor === Object) {
     <span class="missing-if-branch" title="if path not taken" >I</span>if (depth &gt;= maxDepth) {
-<span class="cstat-no" title="statement not covered" >      stringValue = '{Object...}';</span>
+<span class="cstat-no" title="statement not covered" >      stringValue = "{Object...}";</span>
     } else {
       return internalFormatObject(
         value as Record&lt;string, unknown&gt;,
@@ -1111,12 +1111,12 @@ function internalFormatValue(
           depth: depth + 1,
           maxDepth,
           objects,
-        },
+        }
       );
     }
   } else if (Array.isArray(value)) {
     <span class="missing-if-branch" title="if path not taken" >I</span>if (depth &gt;= maxDepth) {
-<span class="cstat-no" title="statement not covered" >      stringValue = '[Array...]';</span>
+<span class="cstat-no" title="statement not covered" >      stringValue = "[Array...]";</span>
     } else {
       return internalFormatArray(value, styleFn, {
         padding,
@@ -1131,7 +1131,7 @@ function internalFormatValue(
       stack?.startsWith(value.message) ||
       stack?.startsWith(`${value.name}: ${value.message}`)
         ? stack
-        : `${value.message}\n${stack || ''}`;
+        : `${value.message}\n${stack || ""}`;
   } else if (value instanceof Map) {
     const name = value.constructor.name;
     <span class="missing-if-branch" title="if path not taken" >I</span>if (depth &gt;= maxDepth) {
@@ -1144,9 +1144,9 @@ function internalFormatValue(
         objects,
       });
     }
-  } else if (typeofValue === 'bigint') {
+  } else if (typeofValue === "bigint") {
     stringValue = (value as bigint).toString();
-  } else if (typeofValue === 'symbol') {
+  } else if (typeofValue === "symbol") {
     stringValue = (value as symbol).toString();
   } else if (value instanceof Set) {
     const name = value.constructor.name;
@@ -1161,9 +1161,9 @@ function internalFormatValue(
       });
     }
   } else <span class="missing-if-branch" title="if path not taken" >I</span>if (value instanceof WeakMap) {
-<span class="cstat-no" title="statement not covered" >    stringValue = '{WeakMap...}';</span>
+<span class="cstat-no" title="statement not covered" >    stringValue = "{WeakMap...}";</span>
   } else <span class="missing-if-branch" title="if path not taken" >I</span>if (value instanceof WeakSet) {
-<span class="cstat-no" title="statement not covered" >    stringValue = '{WeakSet...}';</span>
+<span class="cstat-no" title="statement not covered" >    stringValue = "{WeakSet...}";</span>
   } else {
     stringValue = tryStringify(value);
   }
@@ -1176,41 +1176,41 @@ function internalFormatValue(
   };
 }
 &nbsp;
-const separator = ',';
+const separator = ",";
 &nbsp;
 const internalFormatKey: FormatKey&lt;string&gt; = (
   key: string,
   styleFn: StyleFn,
-  internalFormatParams: InternalFormatParams,
+  internalFormatParams: InternalFormatParams
 ): FormattedKey =&gt; {
   return {
     stringKey: `${key}: `,
-    formattedKey: `${styleFn(['gray-light', 'bold'], `${key}:`)} `,
+    formattedKey: `${styleFn(["gray-light", "bold"], `${key}:`)} `,
   };
 };
 &nbsp;
 const internalNoKey: FormatKey&lt;undefined&gt; = (
   key: string | undefined,
   styleFn: StyleFn,
-  internalFormatParams: InternalFormatParams,
+  internalFormatParams: InternalFormatParams
 ): FormattedKey =&gt; {
-  return { stringKey: '', formattedKey: '' };
+  return { stringKey: "", formattedKey: "" };
 };
 &nbsp;
 const internalFormatMapKey: FormatKey&lt;unknown&gt; = (
   key: unknown,
   styleFn: StyleFn,
-  internalFormatParams: InternalFormatParams,
+  internalFormatParams: InternalFormatParams
 ): FormattedKey =&gt; {
   const { stringValue, formattedValue } = internalFormatValue(
     key,
     noStyleFn,
     undefined,
-    internalFormatParams,
+    internalFormatParams
   );
   return {
     stringKey: `${stringValue} =&gt; `,
-    formattedKey: `${styleFn(['gray-light', 'bold'], `${formattedValue}:`)} `,
+    formattedKey: `${styleFn(["gray-light", "bold"], `${formattedValue}:`)} `,
   };
 };
 &nbsp;
@@ -1222,12 +1222,12 @@ const internalFormatIterator = &lt;Key&gt;(
   {
     prefix,
     suffix,
-    prefixSuffixSpace = ' ',
+    prefixSuffixSpace = " ",
     formatKey,
-  }: InternalFormatIteratorParams&lt;Key&gt;,
+  }: InternalFormatIteratorParams&lt;Key&gt;
 ): FormattedValue =&gt; {
   let breakLine = false;
-  const formattedSeparator = (): string =&gt; styleFn(['gray'], separator);
+  const formattedSeparator = (): string =&gt; styleFn(["gray"], separator);
 &nbsp;
   const valuesMaxIndex = values.length - 1;
   const formattedValues: FormattedValue[] = values.map(
@@ -1244,7 +1244,7 @@ const internalFormatIterator = &lt;Key&gt;(
       const { stringKey, formattedKey } = formatKey(
         key,
         styleFn,
-        internalFormatParams,
+        internalFormatParams
       );
 &nbsp;
       let { stringValue, formattedValue } = internalFormatValue(
@@ -1253,12 +1253,12 @@ const internalFormatIterator = &lt;Key&gt;(
         key &amp;&amp; objectStyles
           ? <span class="branch-0 cbranch-no" title="branch not covered" >objectStyles[key as unknown as string]</span>
           : undefined,
-        internalFormatParams,
+        internalFormatParams
       );
 &nbsp;
       if (
         stringValue &amp;&amp;
-        (stringValue.length &gt; 80 || stringValue.includes('\n'))
+        (stringValue.length &gt; 80 || stringValue.includes("\n"))
       ) {
         breakLine = true;
         stringValue = stringValue.replace(/\n/g, `\n${padding}`);
@@ -1267,14 +1267,14 @@ const internalFormatIterator = &lt;Key&gt;(
 &nbsp;
       return {
         stringValue:
-          stringKey + stringValue + (index === valuesMaxIndex ? '' : separator),
+          stringKey + stringValue + (index === valuesMaxIndex ? "" : separator),
         formattedValue:
           formattedKey +
           formattedValue +
-          (index === valuesMaxIndex ? '' : formattedSeparator()),
+          (index === valuesMaxIndex ? "" : formattedSeparator()),
         // note: we need to format the separator for each values for browser-formatter
       };
-    },
+    }
   );
 &nbsp;
   return {
@@ -1284,20 +1284,20 @@ const internalFormatIterator = &lt;Key&gt;(
         .map(
           breakLine
             ? (v) =&gt; `\n${padding}${v.stringValue}`
-            : (fv) =&gt; fv.stringValue,
+            : (fv) =&gt; fv.stringValue
         )
-        .join(breakLine ? '\n' : ' ') +
+        .join(breakLine ? "\n" : " ") +
       suffix,
     formattedValue: `${prefix}${
-      breakLine ? '' : prefixSuffixSpace
+      breakLine ? "" : prefixSuffixSpace
     }${formattedValues
       .map(
         breakLine
           ? (v) =&gt; `\n${padding}${v.formattedValue}`
-          : (v) =&gt; v.formattedValue,
+          : (v) =&gt; v.formattedValue
       )
-      .join(breakLine ? '' : ' ')}${
-      breakLine ? ',\n' : prefixSuffixSpace
+      .join(breakLine ? "" : " ")}${
+      breakLine ? ",\n" : prefixSuffixSpace
     }${suffix}`,
   };
 };
@@ -1306,15 +1306,15 @@ function internalFormatObject(
   object: Record&lt;string, unknown&gt;,
   styleFn: StyleFn,
   objectStyles: ObjectStyles | undefined,
-  { padding, depth, maxDepth, objects }: InternalFormatParams,
+  { padding, depth, maxDepth, objects }: InternalFormatParams
 ): FormattedValue {
   if (objects.has(object)) {
-    return sameRawFormattedValue('{Circular Object}');
+    return sameRawFormattedValue("{Circular Object}");
   }
 &nbsp;
   const keys: string[] = Object.keys(object);
   if (keys.length === 0) {
-    return sameRawFormattedValue('{}');
+    return sameRawFormattedValue("{}");
   }
 &nbsp;
   objects.add(object);
@@ -1324,7 +1324,7 @@ function internalFormatObject(
     styleFn,
     objectStyles,
     { padding, depth, maxDepth, objects },
-    { prefix: '{', suffix: '}', formatKey: internalFormatKey },
+    { prefix: "{", suffix: "}", formatKey: internalFormatKey }
   );
 &nbsp;
   objects.delete(object);
@@ -1336,7 +1336,7 @@ function internalFormatMap(
   name: string,
   map: Map&lt;unknown, unknown&gt;,
   styleFn: StyleFn,
-  { padding, depth, maxDepth, objects }: InternalFormatParams,
+  { padding, depth, maxDepth, objects }: InternalFormatParams
 ): FormattedValue {
   <span class="missing-if-branch" title="if path not taken" >I</span>if (objects.has(map)) {
 <span class="cstat-no" title="statement not covered" >    return sameRawFormattedValue(`{Circular ${name}}`);</span>
@@ -1354,7 +1354,7 @@ function internalFormatMap(
     styleFn,
     undefined,
     { padding, depth, maxDepth, objects },
-    { prefix: `${name} {`, suffix: '}', formatKey: internalFormatMapKey },
+    { prefix: `${name} {`, suffix: "}", formatKey: internalFormatMapKey }
   );
 &nbsp;
   objects.delete(map);
@@ -1365,14 +1365,14 @@ function internalFormatMap(
 function internalFormatArray(
   array: unknown[],
   styleFn: StyleFn,
-  { padding, depth, maxDepth, objects }: InternalFormatParams,
+  { padding, depth, maxDepth, objects }: InternalFormatParams
 ): FormattedValue {
   <span class="missing-if-branch" title="if path not taken" >I</span>if (objects.has(array)) {
-<span class="cstat-no" title="statement not covered" >    return sameRawFormattedValue('{Circular Array}');</span>
+<span class="cstat-no" title="statement not covered" >    return sameRawFormattedValue("{Circular Array}");</span>
   }
 &nbsp;
   if (array.length === 0) {
-    return sameRawFormattedValue('[]');
+    return sameRawFormattedValue("[]");
   }
 &nbsp;
   objects.add(array);
@@ -1383,11 +1383,11 @@ function internalFormatArray(
     undefined,
     { padding, depth, maxDepth, objects },
     {
-      prefix: '[',
-      suffix: ']',
-      prefixSuffixSpace: '',
+      prefix: "[",
+      suffix: "]",
+      prefixSuffixSpace: "",
       formatKey: internalNoKey,
-    },
+    }
   );
 &nbsp;
   objects.delete(array);
@@ -1399,7 +1399,7 @@ function internalFormatSet(
   name: string,
   set: Set&lt;unknown&gt;,
   styleFn: StyleFn,
-  { padding, depth, maxDepth, objects }: InternalFormatParams,
+  { padding, depth, maxDepth, objects }: InternalFormatParams
 ): FormattedValue {
   <span class="missing-if-branch" title="if path not taken" >I</span>if (objects.has(set)) {
 <span class="cstat-no" title="statement not covered" >    return sameRawFormattedValue(`{Circular ${name}}`);</span>
@@ -1417,7 +1417,7 @@ function internalFormatSet(
     styleFn,
     undefined,
     { padding, depth, maxDepth, objects },
-    { prefix: `${name} [`, suffix: ']', formatKey: internalNoKey },
+    { prefix: `${name} [`, suffix: "]", formatKey: internalNoKey }
   );
 &nbsp;
   objects.delete(set);
@@ -1429,7 +1429,7 @@ export function formatObject(
   object: Record&lt;string, unknown&gt;,
   styleFn: StyleFn = noStyleFn,
   objectStyles?: ObjectStyles,
-  { padding = '  ', maxDepth = 10 }: FormatObjectOptions = {},
+  { padding = "  ", maxDepth = 10 }: FormatObjectOptions = {}
 ): string {
   const { formattedValue: result } = internalFormatObject(
     object,
@@ -1440,11 +1440,11 @@ export function formatObject(
       maxDepth,
       depth: 0,
       objects: new Set(),
-    },
+    }
   );
 &nbsp;
-  if (result === '{}') {
-    return '';
+  if (result === "{}") {
+    return "";
   }
 &nbsp;
   return result;
@@ -1456,7 +1456,7 @@ export function formatObject(
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Sun May 05 2024 14:07:16 GMT+0000 (Coordinated Universal Time)
+                at Sun May 05 2024 18:59:33 GMT+0000 (Coordinated Universal Time)
             </div>
         <script src="../../prettify.js"></script>
         <script>

@@ -1108,134 +1108,134 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Level } from 'nightingale-levels';
 &nbsp;
 const levelToStyles = {
-  [Level.TRACE]: ['gray'],
-  [Level.DEBUG]: ['gray'],
+  [Level.TRACE]: ["gray"],
+  [Level.DEBUG]: ["gray"],
   // [Level.INFO]: ['gray'],
-  [Level.WARN]: ['yellow'],
-  [Level.ERROR]: ['red', 'bold'],
-  [Level.CRITICAL]: ['red', 'bold'],
-  [Level.FATAL]: ['bgRed', 'white'],
-  [Level.EMERGENCY]: ['bgRed', 'white']
+  [Level.WARN]: ["yellow"],
+  [Level.ERROR]: ["red", "bold"],
+  [Level.CRITICAL]: ["red", "bold"],
+  [Level.FATAL]: ["bgRed", "white"],
+  [Level.EMERGENCY]: ["bgRed", "white"]
 };
 &nbsp;
 const levelToSymbol = {
-  [Level.TRACE]: '•',
-  [Level.DEBUG]: '•',
-  [Level.INFO]: '→',
-  [Level.WARN]: '⚠',
-  [Level.ERROR]: '✖',
-  [Level.CRITICAL]: '!',
-  [Level.FATAL]: '‼',
-  [Level.EMERGENCY]: '‼'
+  [Level.TRACE]: "•",
+  [Level.DEBUG]: "•",
+  [Level.INFO]: "→",
+  [Level.WARN]: "⚠",
+  [Level.ERROR]: "✖",
+  [Level.CRITICAL]: "!",
+  [Level.FATAL]: "‼",
+  [Level.EMERGENCY]: "‼"
 };
 &nbsp;
 const styleToHexColor = {
-  orange: 'ff5f00',
-  grayLight: '808080',
-  'gray-light': '808080'
+  orange: "ff5f00",
+  grayLight: "808080",
+  "gray-light": "808080"
 };
 &nbsp;
 const styleToHtmlStyleThemeLight = {
   // text style
   bold: {
-    open: 'font-weight: bold',
-    close: 'font-weight: normal'
+    open: "font-weight: bold",
+    close: "font-weight: normal"
   },
   italic: {
-    open: 'font-style: italic',
-    close: 'font-style: normal'
+    open: "font-style: italic",
+    close: "font-style: normal"
   },
   underline: {
-    open: 'text-decoration: underline',
-    close: 'text-decoration: none'
+    open: "text-decoration: underline",
+    close: "text-decoration: none"
   },
   inverse: {
-    open: 'unicode-bidi: bidi-override; direction: rtl',
-    close: 'unicode-bidi: normal; direction: ltr'
+    open: "unicode-bidi: bidi-override; direction: rtl",
+    close: "unicode-bidi: normal; direction: ltr"
   },
   strikethrough: {
-    open: 'text-decoration: line-through',
-    close: 'text-decoration: none'
+    open: "text-decoration: line-through",
+    close: "text-decoration: none"
   },
   black: {
-    open: 'color: black',
-    close: 'color: currentcolor'
+    open: "color: black",
+    close: "color: currentcolor"
   },
   red: {
-    open: 'color: #ff0020',
-    close: 'color: currentcolor'
+    open: "color: #ff0020",
+    close: "color: currentcolor"
   },
   green: {
-    open: 'color: #00b317',
-    close: 'color: currentcolor'
+    open: "color: #00b317",
+    close: "color: currentcolor"
   },
   yellow: {
-    open: 'color: #ffcc00',
-    close: 'color: currentcolor'
+    open: "color: #ffcc00",
+    close: "color: currentcolor"
   },
   blue: {
-    open: 'color: #00a0ff',
-    close: 'color: currentcolor'
+    open: "color: #00a0ff",
+    close: "color: currentcolor"
   },
   magenta: {
-    open: 'color: #ff00a0',
-    close: 'color: currentcolor'
+    open: "color: #ff00a0",
+    close: "color: currentcolor"
   },
   cyan: {
-    open: 'color: #00cfd8',
-    close: 'color: currentcolor'
+    open: "color: #00cfd8",
+    close: "color: currentcolor"
   },
   white: {
-    open: 'color: white',
-    close: 'color: currentcolor'
+    open: "color: white",
+    close: "color: currentcolor"
   },
   gray: {
-    open: 'color: gray',
-    close: 'color: currentcolor'
+    open: "color: gray",
+    close: "color: currentcolor"
   },
   bgBlack: {
-    open: 'background: black',
-    close: 'background: initial'
+    open: "background: black",
+    close: "background: initial"
   },
   bgRed: {
-    open: 'background: #ff0020',
-    close: 'background: initial'
+    open: "background: #ff0020",
+    close: "background: initial"
   },
   bgGreen: {
-    open: 'background: #00b317',
-    close: 'background: initial'
+    open: "background: #00b317",
+    close: "background: initial"
   },
   bgYellow: {
-    open: 'background: #ffcc00',
-    close: 'background: initial'
+    open: "background: #ffcc00",
+    close: "background: initial"
   },
   bgBlue: {
-    open: 'background: #00a0ff',
-    close: 'background: initial'
+    open: "background: #00a0ff",
+    close: "background: initial"
   },
   bgMagenta: {
-    open: 'background: #ff00a0',
-    close: 'background: initial'
+    open: "background: #ff00a0",
+    close: "background: initial"
   },
   bgCyan: {
-    open: 'background: #00cfd8',
-    close: 'background: initial'
+    open: "background: #00cfd8",
+    close: "background: initial"
   },
   bgWhite: {
-    open: 'background: white',
-    close: 'background: initial'
+    open: "background: white",
+    close: "background: initial"
   },
   orange: {
     open: `color: #${styleToHexColor.orange}`,
-    close: 'color: currentcolor'
+    close: "color: currentcolor"
   },
   grayLight: {
     open: `color: #${styleToHexColor.grayLight}`,
-    close: 'color: currentcolor'
+    close: "color: currentcolor"
   },
-  'gray-light': {
+  "gray-light": {
     open: `color: #${styleToHexColor.grayLight}`,
-    close: 'color: currentcolor'
+    close: "color: currentcolor"
   }
 };
 const styleToHtmlStyleThemeDark = {
@@ -1245,8 +1245,8 @@ const styleToHtmlStyleThemeDark = {
   white: styleToHtmlStyleThemeLight.black,
   bgWhite: styleToHtmlStyleThemeLight.bgBlack,
   gray: {
-    open: 'color: lightgray',
-    close: 'color: currentcolor'
+    open: "color: lightgray",
+    close: "color: currentcolor"
   }
 };
 &nbsp;
@@ -1255,9 +1255,9 @@ const styleToHtmlStyleThemeDark = {
 const noStyleFn = <span class="fstat-no" title="function not covered" >(s</span>tyles, value) =&gt; <span class="cstat-no" title="statement not covered" >value;</span>
 function <span class="fstat-no" title="function not covered" >tryStringify(</span>arg) {
 <span class="cstat-no" title="statement not covered" >  try {</span>
-<span class="cstat-no" title="statement not covered" >    return JSON.stringify(arg).replace(/\\n/g, '\n');</span>
+<span class="cstat-no" title="statement not covered" >    return JSON.stringify(arg).replace(/\\n/g, "\n");</span>
   } catch {
-<span class="cstat-no" title="statement not covered" >    return '[Circular]';</span>
+<span class="cstat-no" title="statement not covered" >    return "[Circular]";</span>
   }
 }
 const sameRawFormattedValue = value =&gt; ({
@@ -1273,41 +1273,41 @@ function internalFormatValue(value, styleFn, styles, {
   const typeofValue = typeof value;
   <span class="missing-if-branch" title="else path not taken" >E</span>if (!styles) {
     <span class="missing-if-branch" title="if path not taken" >I</span>if (value == null) {
-<span class="cstat-no" title="statement not covered" >      styles = ['cyan'];</span>
+<span class="cstat-no" title="statement not covered" >      styles = ["cyan"];</span>
     } else {
       switch (typeofValue) {
-<span class="branch-0 cbranch-no" title="branch not covered" >        case 'undefined':</span>
-<span class="cstat-no" title="statement not covered" >          styles = ['cyan'];</span>
+<span class="branch-0 cbranch-no" title="branch not covered" >        case "undefined":</span>
+<span class="cstat-no" title="statement not covered" >          styles = ["cyan"];</span>
 <span class="cstat-no" title="statement not covered" >          break;</span>
-        case 'boolean':
-          styles = ['green'];
+        case "boolean":
+          styles = ["green"];
           break;
-<span class="branch-2 cbranch-no" title="branch not covered" >        case 'number':</span>
-<span class="cstat-no" title="statement not covered" >          styles = ['yellow'];</span>
+<span class="branch-2 cbranch-no" title="branch not covered" >        case "number":</span>
+<span class="cstat-no" title="statement not covered" >          styles = ["yellow"];</span>
 <span class="cstat-no" title="statement not covered" >          break;</span>
-<span class="branch-3 cbranch-no" title="branch not covered" >        case 'bigint':</span>
-<span class="cstat-no" title="statement not covered" >          styles = ['red'];</span>
+<span class="branch-3 cbranch-no" title="branch not covered" >        case "bigint":</span>
+<span class="cstat-no" title="statement not covered" >          styles = ["red"];</span>
 <span class="cstat-no" title="statement not covered" >          break;</span>
-<span class="branch-4 cbranch-no" title="branch not covered" >        case 'string':</span>
-<span class="cstat-no" title="statement not covered" >          styles = ['orange'];</span>
+<span class="branch-4 cbranch-no" title="branch not covered" >        case "string":</span>
+<span class="cstat-no" title="statement not covered" >          styles = ["orange"];</span>
 <span class="cstat-no" title="statement not covered" >          break;</span>
-<span class="branch-5 cbranch-no" title="branch not covered" >        case 'symbol':</span>
-<span class="cstat-no" title="statement not covered" >          styles = ['magenta'];</span>
+<span class="branch-5 cbranch-no" title="branch not covered" >        case "symbol":</span>
+<span class="cstat-no" title="statement not covered" >          styles = ["magenta"];</span>
 <span class="cstat-no" title="statement not covered" >          break;</span>
       }
     }
   }
   let stringValue;
   <span class="missing-if-branch" title="if path not taken" >I</span>if (value === null) {
-<span class="cstat-no" title="statement not covered" >    stringValue = 'null';</span>
+<span class="cstat-no" title="statement not covered" >    stringValue = "null";</span>
   } else <span class="missing-if-branch" title="if path not taken" >I</span>if (value === undefined) {
-<span class="cstat-no" title="statement not covered" >    stringValue = 'undefined';</span>
-  } else if (typeofValue === 'boolean') {
+<span class="cstat-no" title="statement not covered" >    stringValue = "undefined";</span>
+  } else if (typeofValue === "boolean") {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
     stringValue = value.toString();
   } else <span class="cstat-no" title="statement not covered" ><span class="missing-if-branch" title="else path not taken" >E</span>if (value.constructor === Object) {</span>
 <span class="cstat-no" title="statement not covered" >    if (depth &gt;= maxDepth) {</span>
-<span class="cstat-no" title="statement not covered" >      stringValue = '{Object...}';</span>
+<span class="cstat-no" title="statement not covered" >      stringValue = "{Object...}";</span>
     } else {
 <span class="cstat-no" title="statement not covered" >      return internalFormatObject(value, styleFn, undefined, {</span>
         padding,
@@ -1318,7 +1318,7 @@ function internalFormatValue(value, styleFn, styles, {
     }
   } else <span class="cstat-no" title="statement not covered" >if (Array.isArray(value)) {</span>
 <span class="cstat-no" title="statement not covered" >    if (depth &gt;= maxDepth) {</span>
-<span class="cstat-no" title="statement not covered" >      stringValue = '[Array...]';</span>
+<span class="cstat-no" title="statement not covered" >      stringValue = "[Array...]";</span>
     } else {
 <span class="cstat-no" title="statement not covered" >      return internalFormatArray(value, styleFn, {</span>
         padding,
@@ -1329,7 +1329,7 @@ function internalFormatValue(value, styleFn, styles, {
     }
   } else <span class="cstat-no" title="statement not covered" >if (value instanceof Error) {</span>
     const stack = <span class="cstat-no" title="statement not covered" >value.stack;</span>
-<span class="cstat-no" title="statement not covered" >    stringValue = stack?.startsWith(value.message) || stack?.startsWith(`${value.name}: ${value.message}`) ? stack : `${value.message}\n${stack || ''}`;</span>
+<span class="cstat-no" title="statement not covered" >    stringValue = stack?.startsWith(value.message) || stack?.startsWith(`${value.name}: ${value.message}`) ? stack : `${value.message}\n${stack || ""}`;</span>
   } else <span class="cstat-no" title="statement not covered" >if (value instanceof Map) {</span>
     const name = <span class="cstat-no" title="statement not covered" >value.constructor.name;</span>
 <span class="cstat-no" title="statement not covered" >    if (depth &gt;= maxDepth) {</span>
@@ -1342,9 +1342,9 @@ function internalFormatValue(value, styleFn, styles, {
         objects
       });
     }
-  } else <span class="cstat-no" title="statement not covered" >if (typeofValue === 'bigint') {</span>
+  } else <span class="cstat-no" title="statement not covered" >if (typeofValue === "bigint") {</span>
 <span class="cstat-no" title="statement not covered" >    stringValue = value.toString();</span>
-  } else <span class="cstat-no" title="statement not covered" >if (typeofValue === 'symbol') {</span>
+  } else <span class="cstat-no" title="statement not covered" >if (typeofValue === "symbol") {</span>
 <span class="cstat-no" title="statement not covered" >    stringValue = value.toString();</span>
   } else <span class="cstat-no" title="statement not covered" >if (value instanceof Set) {</span>
     const name = <span class="cstat-no" title="statement not covered" >value.constructor.name;</span>
@@ -1359,9 +1359,9 @@ function internalFormatValue(value, styleFn, styles, {
       });
     }
   } else <span class="cstat-no" title="statement not covered" >if (value instanceof WeakMap) {</span>
-<span class="cstat-no" title="statement not covered" >    stringValue = '{WeakMap...}';</span>
+<span class="cstat-no" title="statement not covered" >    stringValue = "{WeakMap...}";</span>
   } else <span class="cstat-no" title="statement not covered" >if (value instanceof WeakSet) {</span>
-<span class="cstat-no" title="statement not covered" >    stringValue = '{WeakSet...}';</span>
+<span class="cstat-no" title="statement not covered" >    stringValue = "{WeakSet...}";</span>
   } else {
 <span class="cstat-no" title="statement not covered" >    stringValue = tryStringify(value);</span>
   }
@@ -1371,17 +1371,17 @@ function internalFormatValue(value, styleFn, styles, {
     formattedValue
   };
 }
-const separator = ',';
+const separator = ",";
 const internalFormatKey = (key, styleFn) =&gt; {
   return {
     stringKey: `${key}: `,
-    formattedKey: `${styleFn(['gray-light', 'bold'], `${key}:`)} `
+    formattedKey: `${styleFn(["gray-light", "bold"], `${key}:`)} `
   };
 };
 const internalNoKey = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
 <span class="cstat-no" title="statement not covered" >  return {</span>
-    stringKey: '',
-    formattedKey: ''
+    stringKey: "",
+    formattedKey: ""
   };
 };
 const internalFormatMapKey = <span class="fstat-no" title="function not covered" >(k</span>ey, styleFn, internalFormatParams) =&gt; {
@@ -1391,7 +1391,7 @@ const internalFormatMapKey = <span class="fstat-no" title="function not covered"
   } = <span class="cstat-no" title="statement not covered" >internalFormatValue(key, noStyleFn, undefined, internalFormatParams);</span>
 <span class="cstat-no" title="statement not covered" >  return {</span>
     stringKey: `${stringValue} =&gt; `,
-    formattedKey: `${styleFn(['gray-light', 'bold'], `${formattedValue}:`)} `
+    formattedKey: `${styleFn(["gray-light", "bold"], `${formattedValue}:`)} `
   };
 };
 const internalFormatIterator = (values, styleFn, objectStyles, {
@@ -1402,11 +1402,11 @@ const internalFormatIterator = (values, styleFn, objectStyles, {
 }, {
   prefix,
   suffix,
-  prefixSuffixSpace = ' ',
+  prefixSuffixSpace = " ",
   formatKey
 }) =&gt; {
   let breakLine = false;
-  const formattedSeparator = <span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >styleFn(['gray'], separator);</span>
+  const formattedSeparator = <span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >styleFn(["gray"], separator);</span>
   const valuesMaxIndex = values.length - 1;
   const formattedValues = values.map(({
     key,
@@ -1428,20 +1428,20 @@ const internalFormatIterator = (values, styleFn, objectStyles, {
       stringValue,
       formattedValue
     } = internalFormatValue(value, styleFn, key &amp;&amp; objectStyles ? <span class="branch-0 cbranch-no" title="branch not covered" >objectStyles[key] </span>: undefined, internalFormatParams);
-    <span class="missing-if-branch" title="if path not taken" >I</span>if (stringValue &amp;&amp; (stringValue.length &gt; 80 || stringValue.includes('\n'))) {
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (stringValue &amp;&amp; (stringValue.length &gt; 80 || stringValue.includes("\n"))) {
 <span class="cstat-no" title="statement not covered" >      breakLine = true;</span>
 <span class="cstat-no" title="statement not covered" >      stringValue = stringValue.replace(/\n/g, `\n${padding}`);</span>
 <span class="cstat-no" title="statement not covered" >      formattedValue = formattedValue.replace(/\n/g, `\n${padding}`);</span>
     }
     return {
-      stringValue: stringKey + stringValue + (index === valuesMaxIndex ? '' : <span class="branch-1 cbranch-no" title="branch not covered" >separator)</span>,
-      formattedValue: formattedKey + formattedValue + (index === valuesMaxIndex ? '' : <span class="branch-1 cbranch-no" title="branch not covered" >formattedSeparator())</span>
+      stringValue: stringKey + stringValue + (index === valuesMaxIndex ? "" : <span class="branch-1 cbranch-no" title="branch not covered" >separator)</span>,
+      formattedValue: formattedKey + formattedValue + (index === valuesMaxIndex ? "" : <span class="branch-1 cbranch-no" title="branch not covered" >formattedSeparator())</span>
       // note: we need to format the separator for each values for browser-formatter
     };
   });
   return {
-    stringValue: prefix + formattedValues.map(breakLine ? <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >v </span>=&gt; <span class="cstat-no" title="statement not covered" >`\n${padding}${v.stringValue}` </span></span>: fv =&gt; fv.stringValue).join(breakLine ? <span class="branch-0 cbranch-no" title="branch not covered" >'\n' </span>: ' ') + suffix,
-    formattedValue: `${prefix}${breakLine ? <span class="branch-0 cbranch-no" title="branch not covered" >'' </span>: prefixSuffixSpace}${formattedValues.map(breakLine ? <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >v </span>=&gt; <span class="cstat-no" title="statement not covered" >`\n${padding}${v.formattedValue}` </span></span>: v =&gt; v.formattedValue).join(breakLine ? <span class="branch-0 cbranch-no" title="branch not covered" >'' </span>: ' ')}${breakLine ? <span class="branch-0 cbranch-no" title="branch not covered" >',\n' </span>: prefixSuffixSpace}${suffix}`
+    stringValue: prefix + formattedValues.map(breakLine ? <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >v </span>=&gt; <span class="cstat-no" title="statement not covered" >`\n${padding}${v.stringValue}` </span></span>: fv =&gt; fv.stringValue).join(breakLine ? <span class="branch-0 cbranch-no" title="branch not covered" >"\n" </span>: " ") + suffix,
+    formattedValue: `${prefix}${breakLine ? <span class="branch-0 cbranch-no" title="branch not covered" >"" </span>: prefixSuffixSpace}${formattedValues.map(breakLine ? <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >v </span>=&gt; <span class="cstat-no" title="statement not covered" >`\n${padding}${v.formattedValue}` </span></span>: v =&gt; v.formattedValue).join(breakLine ? <span class="branch-0 cbranch-no" title="branch not covered" >"" </span>: " ")}${breakLine ? <span class="branch-0 cbranch-no" title="branch not covered" >",\n" </span>: prefixSuffixSpace}${suffix}`
   };
 };
 function internalFormatObject(object, styleFn, objectStyles, {
@@ -1451,11 +1451,11 @@ function internalFormatObject(object, styleFn, objectStyles, {
   objects
 }) {
   <span class="missing-if-branch" title="if path not taken" >I</span>if (objects.has(object)) {
-<span class="cstat-no" title="statement not covered" >    return sameRawFormattedValue('{Circular Object}');</span>
+<span class="cstat-no" title="statement not covered" >    return sameRawFormattedValue("{Circular Object}");</span>
   }
   const keys = Object.keys(object);
   if (keys.length === 0) {
-    return sameRawFormattedValue('{}');
+    return sameRawFormattedValue("{}");
   }
   objects.add(object);
   const result = internalFormatIterator(keys.map(key =&gt; ({
@@ -1467,8 +1467,8 @@ function internalFormatObject(object, styleFn, objectStyles, {
     maxDepth,
     objects
   }, {
-    prefix: '{',
-    suffix: '}',
+    prefix: "{",
+    suffix: "}",
     formatKey: internalFormatKey
   });
   objects.delete(object);
@@ -1498,7 +1498,7 @@ function <span class="fstat-no" title="function not covered" >internalFormatMap(
     objects
   }, {
     prefix: `${name} {`,
-    suffix: '}',
+    suffix: "}",
     formatKey: internalFormatMapKey
   });
 <span class="cstat-no" title="statement not covered" >  objects.delete(map);</span>
@@ -1511,10 +1511,10 @@ function <span class="fstat-no" title="function not covered" >internalFormatArra
   objects
 }) {
 <span class="cstat-no" title="statement not covered" >  if (objects.has(array)) {</span>
-<span class="cstat-no" title="statement not covered" >    return sameRawFormattedValue('{Circular Array}');</span>
+<span class="cstat-no" title="statement not covered" >    return sameRawFormattedValue("{Circular Array}");</span>
   }
 <span class="cstat-no" title="statement not covered" >  if (array.length === 0) {</span>
-<span class="cstat-no" title="statement not covered" >    return sameRawFormattedValue('[]');</span>
+<span class="cstat-no" title="statement not covered" >    return sameRawFormattedValue("[]");</span>
   }
 <span class="cstat-no" title="statement not covered" >  objects.add(array);</span>
   const result = <span class="cstat-no" title="statement not covered" >internalFormatIterator(array.map(<span class="fstat-no" title="function not covered" >va</span>lue =&gt; (<span class="cstat-no" title="statement not covered" >{</span></span>
@@ -1526,9 +1526,9 @@ function <span class="fstat-no" title="function not covered" >internalFormatArra
     maxDepth,
     objects
   }, {
-    prefix: '[',
-    suffix: ']',
-    prefixSuffixSpace: '',
+    prefix: "[",
+    suffix: "]",
+    prefixSuffixSpace: "",
     formatKey: internalNoKey
   });
 <span class="cstat-no" title="statement not covered" >  objects.delete(array);</span>
@@ -1558,14 +1558,14 @@ function <span class="fstat-no" title="function not covered" >internalFormatSet(
     objects
   }, {
     prefix: `${name} [`,
-    suffix: ']',
+    suffix: "]",
     formatKey: internalNoKey
   });
 <span class="cstat-no" title="statement not covered" >  objects.delete(set);</span>
 <span class="cstat-no" title="statement not covered" >  return result;</span>
 }
 function formatObject(object, styleFn = <span class="branch-0 cbranch-no" title="branch not covered" >noStyleFn,</span> objectStyles, {
-  padding = '  ',
+  padding = "  ",
   maxDepth = 10
 } = {}) {
   const {
@@ -1576,8 +1576,8 @@ function formatObject(object, styleFn = <span class="branch-0 cbranch-no" title=
     depth: 0,
     objects: new Set()
   });
-  if (result === '{}') {
-    return '';
+  if (result === "{}") {
+    return "";
   }
   return result;
 }
@@ -1585,12 +1585,12 @@ function formatObject(object, styleFn = <span class="branch-0 cbranch-no" title=
 function formatRecordToString(record, style) {
   const parts = [];
   <span class="missing-if-branch" title="if path not taken" >I</span>if (record.displayName) {
-<span class="cstat-no" title="statement not covered" >    parts.push(style(['gray-light'], record.displayName));</span>
+<span class="cstat-no" title="statement not covered" >    parts.push(style(["gray-light"], record.displayName));</span>
   } else if (record.key) {
-    parts.push(style(['gray-light'], record.key));
+    parts.push(style(["gray-light"], record.key));
   }
   <span class="missing-if-branch" title="else path not taken" >E</span>if (record.datetime) {
-    parts.push(style(['gray', 'bold'], record.datetime.toTimeString().split(' ')[0]));
+    parts.push(style(["gray", "bold"], record.datetime.toTimeString().split(" ")[0]));
     /* new Date().toFormat('HH24:MI:SS') */
   }
   let message = record.symbol || levelToSymbol[record.level];
@@ -1618,10 +1618,10 @@ function formatRecordToString(record, style) {
     }
     parts.push(stringObject);
   };
-  formatRecordObject('metadata', record.metadata, record.metadataStyles);
-  formatRecordObject('extra', record.extra, undefined);
-  formatRecordObject('context', record.context, undefined);
-  return parts.join(' ');
+  formatRecordObject("metadata", record.metadata, record.metadataStyles);
+  formatRecordObject("extra", record.extra, undefined);
+  formatRecordObject("context", record.context, undefined);
+  return parts.join(" ");
 }
 &nbsp;
 export { formatObject, formatRecordToString, levelToStyles, levelToSymbol, styleToHexColor, styleToHtmlStyleThemeDark, styleToHtmlStyleThemeLight };
@@ -1633,7 +1633,7 @@ export { formatObject, formatRecordToString, levelToStyles, levelToSymbol, style
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Sun May 05 2024 14:07:16 GMT+0000 (Coordinated Universal Time)
+                at Sun May 05 2024 18:59:33 GMT+0000 (Coordinated Universal Time)
             </div>
         <script src="../../prettify.js"></script>
         <script>

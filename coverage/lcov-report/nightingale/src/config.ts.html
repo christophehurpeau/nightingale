@@ -331,17 +331,17 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import type { ComputedConfigForKey, Config } from 'nightingale-logger';
-import type { Handler, Level } from 'nightingale-types';
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import type { ComputedConfigForKey, Config } from "nightingale-logger";
+import type { Handler, Level } from "nightingale-types";
 &nbsp;
 const globalOrWindow: typeof global =
-  typeof global !== 'undefined' ? global : (<span class="branch-1 cbranch-no" title="branch not covered" >window as typeof global)</span>;
+  typeof global !== "undefined" ? global : (<span class="branch-1 cbranch-no" title="branch not covered" >window as typeof global)</span>;
 &nbsp;
 <span class="missing-if-branch" title="if path not taken" >I</span>if (
-  process.env.NODE_ENV !== 'production' &amp;&amp;
+  process.env.NODE_ENV !== "production" &amp;&amp;
   globalOrWindow.__NIGHTINGALE_GLOBAL_HANDLERS
 ) {
-<span class="cstat-no" title="statement not covered" >  throw new Error('nightingale: update all to ^5.0.0');</span>
+<span class="cstat-no" title="statement not covered" >  throw new Error("nightingale: update all to ^5.0.0");</span>
 }
 &nbsp;
 <span class="missing-if-branch" title="else path not taken" >E</span>if (!globalOrWindow.__NIGHTINGALE_CONFIG) {
@@ -363,14 +363,14 @@ function <span class="fstat-no" title="function not covered" >clearCache(</span>
 function <span class="fstat-no" title="function not covered" >handleConfig(</span>config: Config): Config {
 <span class="cstat-no" title="statement not covered" >  if (config.keys) {</span>
 <span class="cstat-no" title="statement not covered" >    if (config.pattern) {</span>
-<span class="cstat-no" title="statement not covered" >      throw new Error('Cannot have key and pattern for the same config');</span>
+<span class="cstat-no" title="statement not covered" >      throw new Error("Cannot have key and pattern for the same config");</span>
     }
 <span class="cstat-no" title="statement not covered" >    if (config.key) {</span>
-<span class="cstat-no" title="statement not covered" >      throw new Error('Cannot have key and keys for the same config');</span>
+<span class="cstat-no" title="statement not covered" >      throw new Error("Cannot have key and keys for the same config");</span>
     }
   } else <span class="cstat-no" title="statement not covered" >if (config.key) {</span>
 <span class="cstat-no" title="statement not covered" >    if (config.pattern) {</span>
-<span class="cstat-no" title="statement not covered" >      throw new Error('Cannot have key and pattern for the same config');</span>
+<span class="cstat-no" title="statement not covered" >      throw new Error("Cannot have key and pattern for the same config");</span>
     }
 <span class="cstat-no" title="statement not covered" >    config.keys = [config.key];</span>
 <span class="cstat-no" title="statement not covered" >    delete config.key;</span>
@@ -378,7 +378,7 @@ function <span class="fstat-no" title="function not covered" >handleConfig(</spa
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  if (config.handler) {</span>
 <span class="cstat-no" title="statement not covered" >    if (config.handlers) {</span>
-<span class="cstat-no" title="statement not covered" >      throw new Error('Cannot have handler and handlers for the same config');</span>
+<span class="cstat-no" title="statement not covered" >      throw new Error("Cannot have handler and handlers for the same config");</span>
     }
 <span class="cstat-no" title="statement not covered" >    config.handlers = [config.handler];</span>
 <span class="cstat-no" title="statement not covered" >    delete config.handler;</span>
@@ -387,7 +387,7 @@ function <span class="fstat-no" title="function not covered" >handleConfig(</spa
 <span class="cstat-no" title="statement not covered" >  if (config.processor) {</span>
 <span class="cstat-no" title="statement not covered" >    if (config.processors) {</span>
 <span class="cstat-no" title="statement not covered" >      throw new Error(</span>
-        'Cannot have processors and processors for the same config',
+        "Cannot have processors and processors for the same config"
       );
     }
 <span class="cstat-no" title="statement not covered" >    config.processors = [config.processor];</span>
@@ -400,7 +400,7 @@ function <span class="fstat-no" title="function not covered" >handleConfig(</spa
 export function <span class="fstat-no" title="function not covered" >configure(</span>config: Config[]): void {
 <span class="cstat-no" title="statement not covered" >  if (globalOrWindow.__NIGHTINGALE_CONFIG.length &gt; 0) {</span>
     // eslint-disable-next-line no-console
-<span class="cstat-no" title="statement not covered" >    console.log('nightingale: warning: config overridden');</span>
+<span class="cstat-no" title="statement not covered" >    console.log("nightingale: warning: config overridden");</span>
   }
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  clearCache();</span>
@@ -409,7 +409,7 @@ export function <span class="fstat-no" title="function not covered" >configure(<
 &nbsp;
 export function <span class="fstat-no" title="function not covered" >addConfig(</span>config: Config, unshift = <span class="branch-0 cbranch-no" title="branch not covered" >false)</span>: void {
 <span class="cstat-no" title="statement not covered" >  config = handleConfig(config);</span>
-<span class="cstat-no" title="statement not covered" >  globalOrWindow.__NIGHTINGALE_CONFIG[unshift ? 'unshift' : 'push'](config);</span>
+<span class="cstat-no" title="statement not covered" >  globalOrWindow.__NIGHTINGALE_CONFIG[unshift ? "unshift" : "push"](config);</span>
 <span class="cstat-no" title="statement not covered" >  clearCache();</span>
 }
 &nbsp;
@@ -420,7 +420,7 @@ const configIsForKey = <span class="fstat-no" title="function not covered" >(k</
 };
 &nbsp;
 globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = <span class="fstat-no" title="function not covered" >(</span>
-  key: string,
+  key: string
 ): ComputedConfigForKey =&gt; {
   const globalCache = <span class="cstat-no" title="statement not covered" >globalOrWindow.__NIGHTINGALE_LOGGER_MAP_CACHE;</span>
 &nbsp;
@@ -450,7 +450,7 @@ globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = <span class="fstat-no" titl
 <span class="missing-if-branch" title="else path not taken" >E</span>if (globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
   globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = <span class="fstat-no" title="function not covered" >(</span>
     key: string,
-    level: Level,
+    level: Level
   ): ComputedConfigForKey =&gt; {
     const { handlers, processors }: ComputedConfigForKey =
 <span class="cstat-no" title="statement not covered" >      globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key);</span>
@@ -459,7 +459,7 @@ globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = <span class="fstat-no" titl
       handlers: handlers.filter(
 <span class="fstat-no" title="function not covered" >        (h</span>andler: Handler) =&gt;
 <span class="cstat-no" title="statement not covered" >          level &gt;= handler.minLevel &amp;&amp;</span>
-          (!handler.isHandling || handler.isHandling(level, key)),
+          (!handler.isHandling || handler.isHandling(level, key))
       ),
       processors,
     };
@@ -472,7 +472,7 @@ globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = <span class="fstat-no" titl
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Sun May 05 2024 14:07:16 GMT+0000 (Coordinated Universal Time)
+                at Sun May 05 2024 18:59:33 GMT+0000 (Coordinated Universal Time)
             </div>
         <script src="../../prettify.js"></script>
         <script>
