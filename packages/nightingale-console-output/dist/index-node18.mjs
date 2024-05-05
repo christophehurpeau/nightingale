@@ -4,7 +4,7 @@ import { Level } from 'nightingale-levels';
 
 function consoleOutput(param, record) {
   {
-    const outKey = record.level >= Level.ERROR ? 'stderr' : 'stdout';
+    const outKey = record.level >= Level.ERROR ? "stderr" : "stdout";
     process[outKey].write(`${param}\n`);
   }
 }

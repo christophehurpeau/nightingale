@@ -1,6 +1,6 @@
-import { createBrowserConsoleFormatter } from 'nightingale-browser-console-formatter';
-import consoleOutput from 'nightingale-console-output';
-import { createFindDebugLevel } from 'nightingale-debug';
+import { createBrowserConsoleFormatter } from "nightingale-browser-console-formatter";
+import consoleOutput from "nightingale-console-output";
+import { createFindDebugLevel } from "nightingale-debug";
 import type {
   Level,
   Handle,
@@ -8,23 +8,23 @@ import type {
   LogRecord,
   Metadata,
   Handler,
-} from 'nightingale-types';
-import { getDebugString } from './debug';
+} from "nightingale-types";
+import { getDebugString } from "./debug";
 
 // debug string can change any time (localStorage), so we need a new object each time.
 const findDebugLevel = (minLevel: Level, key: string): Level =>
   createFindDebugLevel(getDebugString())(minLevel, key);
 
-type Theme = 'dark' | 'light';
+type Theme = "dark" | "light";
 
 const getDefaultTheme = (): Theme => {
   try {
-    const configInLocalStorage = localStorage.getItem('NIGHTINGALE_THEME');
-    if (configInLocalStorage && configInLocalStorage === 'dark') {
+    const configInLocalStorage = localStorage.getItem("NIGHTINGALE_THEME");
+    if (configInLocalStorage && configInLocalStorage === "dark") {
       return configInLocalStorage;
     }
   } catch {}
-  return 'light';
+  return "light";
 };
 
 const createHandler = (theme: Theme = getDefaultTheme()): Handle => {

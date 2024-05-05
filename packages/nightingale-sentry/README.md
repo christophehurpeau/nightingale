@@ -27,14 +27,14 @@ import {
   addBreadcrumb,
   captureException,
   captureMessage,
-} from '@sentry/node';
-import { configure, Level, listenUnhandledErrors } from 'nightingale';
-import { SentryHandler } from 'nightingale-sentry';
+} from "@sentry/node";
+import { configure, Level, listenUnhandledErrors } from "nightingale";
+import { SentryHandler } from "nightingale-sentry";
 
 listenUnhandledErrors();
 
 sentryInit({
-  dsn: process.env.NODE_ENV === 'production' ? '__DSN__' : undefined,
+  dsn: process.env.NODE_ENV === "production" ? "__DSN__" : undefined,
   // ...
 });
 
@@ -49,7 +49,7 @@ configure([
           // shouldSendAsBreadcrumb: (record) => false,
           // getUser: ({ context }) => context.user && { id: context.user.id },
           // getTags: ({ context }) => context.tags,
-        },
+        }
       ),
     ],
   },
@@ -64,12 +64,12 @@ import {
   addBreadcrumb,
   captureException,
   captureMessage,
-} from '@sentry/browser';
-import { addConfig, Level } from 'nightingale-app';
-import SentryHandler from 'nightingale-sentry';
+} from "@sentry/browser";
+import { addConfig, Level } from "nightingale-app";
+import SentryHandler from "nightingale-sentry";
 
 sentryInit({
-  dsn: process.env.NODE_ENV === 'production' ? '__DSN__' : undefined,
+  dsn: process.env.NODE_ENV === "production" ? "__DSN__" : undefined,
   // ...
 });
 
@@ -78,11 +78,11 @@ addConfig(
     handlers: [
       new SentryHandler(
         { addBreadcrumb, captureException, captureMessage },
-        Level.ERROR,
+        Level.ERROR
       ),
     ],
   },
-  true,
+  true
 );
 ```
 
@@ -94,12 +94,12 @@ import {
   addBreadcrumb,
   captureException,
   captureMessage,
-} from '@sentry/browser';
-import { configure, Level } from 'nightingale';
-import { SentryHandler } from 'nightingale-sentry';
+} from "@sentry/browser";
+import { configure, Level } from "nightingale";
+import { SentryHandler } from "nightingale-sentry";
 
 sentryInit({
-  dsn: process.env.NODE_ENV === 'production' ? '__DSN__' : undefined,
+  dsn: process.env.NODE_ENV === "production" ? "__DSN__" : undefined,
   // ...
 });
 
@@ -119,7 +119,7 @@ configure([
           getBreadcrumbCategory: (record) =>
             record.metadata?.breadcrumbCategory,
           getBreadcrumbType: (record) => record.metadata?.breadcrumbType,
-        },
+        }
       ),
     ],
   },

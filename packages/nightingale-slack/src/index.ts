@@ -4,13 +4,13 @@ import type {
   Metadata,
   Handler,
   Level,
-} from 'nightingale-types';
-import type { SlackConfig } from './SlackConfig';
-import createBody from './createBody';
+} from "nightingale-types";
+import type { SlackConfig } from "./SlackConfig";
+import createBody from "./createBody";
 
-export type { SlackConfig } from './SlackConfig';
+export type { SlackConfig } from "./SlackConfig";
 
-export { default as createBody } from './createBody';
+export { default as createBody } from "./createBody";
 
 const createHandler =
   (slackConfig: SlackConfig) =>
@@ -18,7 +18,7 @@ const createHandler =
     const body = createBody(record, slackConfig);
 
     fetch(slackConfig.webhookUrl, {
-      method: 'POST',
+      method: "POST",
       body: JSON.stringify(body),
     }).catch((error: unknown) => {
       console.error(error);

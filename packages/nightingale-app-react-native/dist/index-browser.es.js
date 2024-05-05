@@ -4,16 +4,16 @@ import { BrowserConsoleHandler } from 'nightingale-browser-console';
 import { ReactNativeConsoleHandler } from 'nightingale-react-native-console';
 import { Platform } from 'react-native';
 
-const appLogger = new Logger('app');
-const ReactNativeConsoleHandlerForPlatform = Platform.OS === 'web' ? BrowserConsoleHandler : ReactNativeConsoleHandler;
-configure(process.env.NODE_ENV === 'production' ? [] : [{
+const appLogger = new Logger("app");
+const ReactNativeConsoleHandlerForPlatform = Platform.OS === "web" ? BrowserConsoleHandler : ReactNativeConsoleHandler;
+configure(process.env.NODE_ENV === "production" ? [] : [{
   pattern: /^app(:|$)/,
   handlers: [new ReactNativeConsoleHandlerForPlatform(Level.DEBUG)],
   stop: true
 }, {
   handlers: [new ReactNativeConsoleHandlerForPlatform(Level.INFO)]
 }]);
-function listenReactNativeUnhandledErrors(logger = new Logger('nightingale:listenReactNativeUnhandledErrors', 'UnhandledErrors')) {
+function listenReactNativeUnhandledErrors(logger = new Logger("nightingale:listenReactNativeUnhandledErrors", "UnhandledErrors")) {
   var _global;
   // Check if Hermes is available and is being used for promises
   // React Native v0.63 and v0.64 include global.HermesInternal but not 'hasPromise'
@@ -23,26 +23,26 @@ function listenReactNativeUnhandledErrors(logger = new Logger('nightingale:liste
       onUnhandled: (id, rejection) => {
         logger.error(rejection, {
           unhandled: true,
-          type: 'promiseRejectionTracker',
+          type: "promiseRejectionTracker",
           id
         });
       }
     });
   } else {
-    throw new Error('Only Hermes is supported.');
+    throw new Error("Only Hermes is supported.");
   }
   const globalHander = ErrorUtils.getGlobalHandler();
   ErrorUtils.setGlobalHandler((error, isFatal) => {
     if (isFatal) {
       logger.fatal(error, {
         unhandled: true,
-        type: 'globalHandler',
+        type: "globalHandler",
         isFatal
       });
     } else {
       logger.error(error, {
         unhandled: true,
-        type: 'globalHandler',
+        type: "globalHandler",
         isFatal
       });
     }

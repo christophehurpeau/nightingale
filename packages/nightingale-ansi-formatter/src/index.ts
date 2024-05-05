@@ -1,8 +1,8 @@
-import ansi from 'ansi-styles';
-import { styleToHexColor, formatRecordToString } from 'nightingale-formatter';
-import type { Styles, LogRecord, Metadata } from 'nightingale-types';
+import ansi from "ansi-styles";
+import { styleToHexColor, formatRecordToString } from "nightingale-formatter";
+import type { Styles, LogRecord, Metadata } from "nightingale-types";
 
-export type { Styles } from 'nightingale-types';
+export type { Styles } from "nightingale-types";
 
 interface CodePair {
   open: string;
@@ -39,8 +39,8 @@ const ansiStyles: AnsiStyles = {
     open: ansi.color.ansi256(ansi.hexToAnsi256(styleToHexColor.orange)),
     close: ansi.color.close,
   },
-  'gray-light': {
-    open: ansi.color.ansi256(ansi.hexToAnsi256(styleToHexColor['gray-light'])),
+  "gray-light": {
+    open: ansi.color.ansi256(ansi.hexToAnsi256(styleToHexColor["gray-light"])),
     close: ansi.color.close,
   },
 };
@@ -67,7 +67,7 @@ export function style(styles: Styles, string: string): string {
  * @returns {string}
  */
 export default function ansiFormat<T extends Metadata>(
-  record: LogRecord<T>,
+  record: LogRecord<T>
 ): string {
   return formatRecordToString(record, style);
 }

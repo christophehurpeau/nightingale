@@ -2,23 +2,23 @@ import type {
   addBreadcrumb,
   captureException,
   captureMessage,
-} from '@sentry/core';
-import type { User, SeverityLevel } from '@sentry/types';
-import { Level } from 'nightingale-levels';
-import type { LogRecord, Handle, Metadata, Handler } from 'nightingale-types';
+} from "@sentry/core";
+import type { User, SeverityLevel } from "@sentry/types";
+import { Level } from "nightingale-levels";
+import type { LogRecord, Handle, Metadata, Handler } from "nightingale-types";
 
 const mapToSentryLevel: Record<Level, SeverityLevel> = {
-  [Level.TRACE]: 'debug',
-  [Level.DEBUG]: 'debug',
-  [Level.INFO]: 'info',
-  [Level.NOTICE]: 'log',
-  [Level.WARNING]: 'warning',
-  [Level.ERROR]: 'error',
-  [Level.CRITICAL]: 'fatal',
-  [Level.FATAL]: 'fatal',
-  [Level.EMERGENCY]: 'fatal',
+  [Level.TRACE]: "debug",
+  [Level.DEBUG]: "debug",
+  [Level.INFO]: "info",
+  [Level.NOTICE]: "log",
+  [Level.WARNING]: "warning",
+  [Level.ERROR]: "error",
+  [Level.CRITICAL]: "fatal",
+  [Level.FATAL]: "fatal",
+  [Level.EMERGENCY]: "fatal",
   // not a level
-  [Level.ALL]: 'error',
+  [Level.ALL]: "error",
 };
 
 export interface MetadataWithError extends Metadata {
@@ -27,22 +27,22 @@ export interface MetadataWithError extends Metadata {
 
 export interface Options {
   getUser?: <T extends MetadataWithError>(
-    record: LogRecord<T>,
+    record: LogRecord<T>
   ) => User | undefined;
   getTags?: <T extends MetadataWithError>(
-    record: LogRecord<T>,
+    record: LogRecord<T>
   ) => Record<string, string>;
   getBreadcrumbCategory?: <T extends Metadata>(
-    record: LogRecord<T>,
+    record: LogRecord<T>
   ) => string | undefined;
   getBreadcrumbType?: <T extends Metadata>(
-    record: LogRecord<T>,
+    record: LogRecord<T>
   ) => string | undefined;
   shouldSendAsException?: <T extends MetadataWithError>(
-    record: LogRecord<T>,
+    record: LogRecord<T>
   ) => boolean;
   shouldSendAsBreadcrumb?: <T extends Metadata>(
-    record: LogRecord<T>,
+    record: LogRecord<T>
   ) => boolean;
 }
 
@@ -64,7 +64,7 @@ const createHandler = <S extends SentryRequiredMethods>(
       record.metadata.unhandled !== true,
     shouldSendAsBreadcrumb = <T extends Metadata>(record: LogRecord<T>) =>
       false,
-  }: Options = {},
+  }: Options = {}
 ): Handle => {
   return <T extends MetadataWithError>(record: LogRecord<T>) => {
     const { key, level, metadata, extra, message } = record;
@@ -80,7 +80,7 @@ const createHandler = <S extends SentryRequiredMethods>(
       delete extraData.error;
 
       Sentry.captureException(error, {
-        level: mapToSentryLevel[level] || 'error',
+        level: mapToSentryLevel[level] || "error",
         user: getUser(record),
         tags: {
           loggerKey: key,
@@ -90,7 +90,7 @@ const createHandler = <S extends SentryRequiredMethods>(
       });
     } else if (shouldSendAsBreadcrumb(record)) {
       Sentry.addBreadcrumb({
-        level: mapToSentryLevel[level] || 'error',
+        level: mapToSentryLevel[level] || "error",
         category: getBreadcrumbCategory(record),
         type: getBreadcrumbType(record),
         message: record.message,

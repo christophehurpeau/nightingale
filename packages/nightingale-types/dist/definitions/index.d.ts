@@ -1,5 +1,5 @@
-import type { Level } from 'nightingale-levels';
-export { Level } from 'nightingale-levels';
+import type { Level } from "nightingale-levels";
+export { Level } from "nightingale-levels";
 export type Styles = string[] | undefined;
 export interface Metadata {
     context?: Record<string, unknown>;

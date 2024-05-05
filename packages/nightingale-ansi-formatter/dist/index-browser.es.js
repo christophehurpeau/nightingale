@@ -26,8 +26,8 @@ const ansiStyles = {
     open: ansi.color.ansi256(ansi.hexToAnsi256(styleToHexColor.orange)),
     close: ansi.color.close
   },
-  'gray-light': {
-    open: ansi.color.ansi256(ansi.hexToAnsi256(styleToHexColor['gray-light'])),
+  "gray-light": {
+    open: ansi.color.ansi256(ansi.hexToAnsi256(styleToHexColor["gray-light"])),
     close: ansi.color.close
   }
 };

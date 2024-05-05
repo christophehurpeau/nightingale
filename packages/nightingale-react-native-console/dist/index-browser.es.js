@@ -7,7 +7,7 @@ import symbolicateStackTrace from 'react-native/Libraries/Core/Devtools/symbolic
 
 const getStackTrace = e => {
   // eslint-disable-next-line no-prototype-builtins
-  if (Platform.hasOwnProperty('constants')) {
+  if (Platform.hasOwnProperty("constants")) {
     // RN version >= 0.63
     if (Platform.constants.reactNativeVersion.minor >= 64) {
       // RN version >= 0.64 -> Stacktrace as string
@@ -20,7 +20,7 @@ const getStackTrace = e => {
   else return parseErrorStack(e);
 };
 function parsedStackToString(stack) {
-  return stack.map(frame => `  at ${frame.file}${frame.lineNumber ? `:${frame.lineNumber}${frame.column ? `:${frame.column}` : ''}` : ''}${frame.methodName ? ` in ${frame.methodName}` : ''}`).join('\n');
+  return stack.map(frame => `  at ${frame.file}${frame.lineNumber ? `:${frame.lineNumber}${frame.column ? `:${frame.column}` : ""}` : ""}${frame.methodName ? ` in ${frame.methodName}` : ""}`).join("\n");
 }
 function consoleOutput(param) {
   // eslint-disable-next-line no-console

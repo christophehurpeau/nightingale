@@ -1,15 +1,15 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { jest } from '@jest/globals';
-import { Logger } from '.';
+import { jest } from "@jest/globals";
+import { Logger } from ".";
 
-test('key argument', () => {
-  const key = 'test';
+test("key argument", () => {
+  const key = "test";
   const logger = new Logger(key);
   expect(logger.key).toBe(key);
 });
 
-test('extends context', () => {
-  const key = 'test';
+test("extends context", () => {
+  const key = "test";
   const logger = new Logger(key);
   const context = { test1: true, test2: false };
   logger.setContext(context);
@@ -23,20 +23,20 @@ test('extends context', () => {
   });
 });
 
-test('extends undefined context', () => {
-  const key = 'test';
+test("extends undefined context", () => {
+  const key = "test";
   const logger = new Logger(key);
   expect(logger.getContextObject()).toBe(undefined);
   expect(() => {
     logger.extendsContext({ test: true });
   }).toThrow(
-    'Cannot extends context that does not exists. Use setContext(context) first.',
+    "Cannot extends context that does not exists. Use setContext(context) first."
   );
 });
 
-test('passing error', () => {
-  const error = new Error('Test');
-  const logger = new Logger('test');
+test("passing error", () => {
+  const error = new Error("Test");
+  const logger = new Logger("test");
   logger.addRecord = jest.fn();
   logger.log(error);
   expect(logger.addRecord).toHaveBeenNthCalledWith(1, {
@@ -45,9 +45,9 @@ test('passing error', () => {
     datetime: expect.any(Date),
     displayName: undefined,
     extra: {},
-    key: 'test',
+    key: "test",
     level: 200,
-    message: 'Error: Test',
+    message: "Error: Test",
     metadata: { error },
   });
 });

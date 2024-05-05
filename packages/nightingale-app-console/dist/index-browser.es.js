@@ -3,10 +3,10 @@ export { Level, addConfig, configure, levels } from 'nightingale';
 import { BrowserConsoleHandler } from 'nightingale-browser-console';
 
 const ConsoleHandler = BrowserConsoleHandler;
-const logger = new Logger('app');
+const logger = new Logger("app");
 const appLogger = logger;
 const appMinLevel = (() => {
-  return process.env.NODE_ENV !== 'production' ? Level.DEBUG : Level.INFO;
+  return process.env.NODE_ENV !== "production" ? Level.DEBUG : Level.INFO;
 })();
 const libMinLevel = Level.INFO;
 configure(appMinLevel !== libMinLevel ? [{

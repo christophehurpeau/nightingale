@@ -1,6 +1,6 @@
-import type { Level } from 'nightingale-levels';
+import type { Level } from "nightingale-levels";
 
-export { Level } from 'nightingale-levels';
+export { Level } from "nightingale-levels";
 
 export type Styles = string[] | undefined;
 
@@ -27,7 +27,7 @@ export interface LogRecord<T extends Metadata> {
 
 export type IsHandling = (level: Level, key: string) => boolean;
 export type Handle = <T extends Metadata>(
-  record: Readonly<LogRecord<T>>,
+  record: Readonly<LogRecord<T>>
   // eslint-disable-next-line @typescript-eslint/no-invalid-void-type
 ) => false | void;
 
@@ -39,5 +39,5 @@ export interface Handler {
 
 export type Processor = <T extends Metadata>(
   record: Readonly<LogRecord<T>>,
-  context?: Record<string, unknown>,
+  context?: Record<string, unknown>
 ) => void;

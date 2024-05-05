@@ -15,7 +15,7 @@ npm install --save nightingale-example
 ## Usage
 
 ```js
-import nightingaleExample from 'nightingale-example';
+import nightingaleExample from "nightingale-example";
 
 console.log(nightingaleExample);
 ```

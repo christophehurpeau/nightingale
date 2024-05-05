@@ -22,7 +22,7 @@ npm install --save nightingale-console-output
 ## Usage
 
 ```js
-import nightingaleConsoleOutput from 'nightingale-console-output';
+import nightingaleConsoleOutput from "nightingale-console-output";
 
 console.log(nightingaleConsoleOutput);
 ```

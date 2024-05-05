@@ -23,5 +23,5 @@ npm install --save nightingale-raw-formatter
 ## Usage
 
 ```js
-import rawFormatter from 'nightingale-raw-formatter';
+import rawFormatter from "nightingale-raw-formatter";
 ```

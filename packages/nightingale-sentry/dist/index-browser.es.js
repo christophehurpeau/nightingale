@@ -1,17 +1,17 @@
 import { Level } from 'nightingale-levels';
 
 const mapToSentryLevel = {
-  [Level.TRACE]: 'debug',
-  [Level.DEBUG]: 'debug',
-  [Level.INFO]: 'info',
-  [Level.NOTICE]: 'log',
-  [Level.WARNING]: 'warning',
-  [Level.ERROR]: 'error',
-  [Level.CRITICAL]: 'fatal',
-  [Level.FATAL]: 'fatal',
-  [Level.EMERGENCY]: 'fatal',
+  [Level.TRACE]: "debug",
+  [Level.DEBUG]: "debug",
+  [Level.INFO]: "info",
+  [Level.NOTICE]: "log",
+  [Level.WARNING]: "warning",
+  [Level.ERROR]: "error",
+  [Level.CRITICAL]: "fatal",
+  [Level.FATAL]: "fatal",
+  [Level.EMERGENCY]: "fatal",
   // not a level
-  [Level.ALL]: 'error'
+  [Level.ALL]: "error"
 };
 const createHandler = (Sentry, {
   getUser = () => undefined,
@@ -41,7 +41,7 @@ const createHandler = (Sentry, {
       };
       delete extraData.error;
       Sentry.captureException(error, {
-        level: mapToSentryLevel[level] || 'error',
+        level: mapToSentryLevel[level] || "error",
         user: getUser(record),
         tags: {
           loggerKey: key,
@@ -51,7 +51,7 @@ const createHandler = (Sentry, {
       });
     } else if (shouldSendAsBreadcrumb(record)) {
       Sentry.addBreadcrumb({
-        level: mapToSentryLevel[level] || 'error',
+        level: mapToSentryLevel[level] || "error",
         category: getBreadcrumbCategory(record),
         type: getBreadcrumbType(record),
         message: record.message,

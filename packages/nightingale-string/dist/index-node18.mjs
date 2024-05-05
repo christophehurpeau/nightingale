@@ -2,7 +2,7 @@ import formatterRaw from 'nightingale-raw-formatter';
 
 /* eslint-disable prefer-template */
 class StringHandler {
-  _buffer = '';
+  _buffer = "";
   constructor(minLevel) {
     this.minLevel = minLevel;
   }
@@ -10,7 +10,7 @@ class StringHandler {
     return this._buffer;
   }
   handle(record) {
-    this._buffer += formatterRaw(record) + '\n';
+    this._buffer += formatterRaw(record) + "\n";
   }
 }
 

@@ -30,5 +30,5 @@ import {
   styleToHexColor,
   formatObject,
   formatRecordToString,
-} from 'nightingale-formatter';
+} from "nightingale-formatter";
 ```

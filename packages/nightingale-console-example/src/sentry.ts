@@ -1,10 +1,10 @@
-import * as Sentry from '@sentry/node';
-import { Logger, configure, Level, listenUnhandledErrors } from 'nightingale';
-import { ConsoleHandler } from 'nightingale-console';
-import { SentryHandler } from 'nightingale-sentry';
+import * as Sentry from "@sentry/node";
+import { Logger, configure, Level, listenUnhandledErrors } from "nightingale";
+import { ConsoleHandler } from "nightingale-console";
+import { SentryHandler } from "nightingale-sentry";
 
 if (!process.env.SENTRY_DSN) {
-  throw new Error('SENTRY_DSN missing');
+  throw new Error("SENTRY_DSN missing");
 }
 
 Sentry.init({
@@ -23,14 +23,14 @@ configure([
 ]);
 listenUnhandledErrors();
 
-const logger = new Logger('nightingale:console');
+const logger = new Logger("nightingale:console");
 
-logger.debug('test');
-logger.info('test');
-logger.warn('test');
-logger.error(new Error('Test error with breadcrumbs'));
+logger.debug("test");
+logger.info("test");
+logger.warn("test");
+logger.error(new Error("Test error with breadcrumbs"));
 
 // eslint-disable-next-line @typescript-eslint/no-floating-promises, no-new
 new Promise((resolve, reject) => {
-  reject(new Error('Testing uncaught error'));
+  reject(new Error("Testing uncaught error"));
 });

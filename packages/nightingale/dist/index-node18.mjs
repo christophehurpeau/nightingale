@@ -2,9 +2,9 @@ import { Logger } from 'nightingale-logger';
 export { Logger } from 'nightingale-logger';
 export { Level, Level as levels } from 'nightingale-levels';
 
-const globalOrWindow = typeof global !== 'undefined' ? global : window;
-if (process.env.NODE_ENV !== 'production' && globalOrWindow.__NIGHTINGALE_GLOBAL_HANDLERS) {
-  throw new Error('nightingale: update all to ^5.0.0');
+const globalOrWindow = typeof global !== "undefined" ? global : window;
+if (process.env.NODE_ENV !== "production" && globalOrWindow.__NIGHTINGALE_GLOBAL_HANDLERS) {
+  throw new Error("nightingale: update all to ^5.0.0");
 }
 if (!globalOrWindow.__NIGHTINGALE_CONFIG) {
   globalOrWindow.__NIGHTINGALE_CONFIG = [];
@@ -20,28 +20,28 @@ function clearCache() {
 function handleConfig(config) {
   if (config.keys) {
     if (config.pattern) {
-      throw new Error('Cannot have key and pattern for the same config');
+      throw new Error("Cannot have key and pattern for the same config");
     }
     if (config.key) {
-      throw new Error('Cannot have key and keys for the same config');
+      throw new Error("Cannot have key and keys for the same config");
     }
   } else if (config.key) {
     if (config.pattern) {
-      throw new Error('Cannot have key and pattern for the same config');
+      throw new Error("Cannot have key and pattern for the same config");
     }
     config.keys = [config.key];
     delete config.key;
   }
   if (config.handler) {
     if (config.handlers) {
-      throw new Error('Cannot have handler and handlers for the same config');
+      throw new Error("Cannot have handler and handlers for the same config");
     }
     config.handlers = [config.handler];
     delete config.handler;
   }
   if (config.processor) {
     if (config.processors) {
-      throw new Error('Cannot have processors and processors for the same config');
+      throw new Error("Cannot have processors and processors for the same config");
     }
     config.processors = [config.processor];
     delete config.processor;
@@ -51,14 +51,14 @@ function handleConfig(config) {
 function configure(config) {
   if (globalOrWindow.__NIGHTINGALE_CONFIG.length > 0) {
     // eslint-disable-next-line no-console
-    console.log('nightingale: warning: config overridden');
+    console.log("nightingale: warning: config overridden");
   }
   clearCache();
   globalOrWindow.__NIGHTINGALE_CONFIG = config.map(handleConfig);
 }
 function addConfig(config, unshift = false) {
   config = handleConfig(config);
-  globalOrWindow.__NIGHTINGALE_CONFIG[unshift ? 'unshift' : 'push'](config);
+  globalOrWindow.__NIGHTINGALE_CONFIG[unshift ? "unshift" : "push"](config);
   clearCache();
 }
 const configIsForKey = key => config => {
@@ -101,17 +101,17 @@ if (globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
  * listen to uncaughtException and unhandledRejection
  * @param {Logger} [logger]
  */
-function listenUnhandledErrors(logger = new Logger('nightingale:listenUnhandledErrors', 'UnhandledErrors')) {
-  process.on('uncaughtException', error => {
+function listenUnhandledErrors(logger = new Logger("nightingale:listenUnhandledErrors", "UnhandledErrors")) {
+  process.on("uncaughtException", error => {
     logger.error(error, {
       unhandled: true,
-      type: 'uncaughtException'
+      type: "uncaughtException"
     });
   });
-  process.on('unhandledRejection', error => {
+  process.on("unhandledRejection", error => {
     logger.error(error, {
       unhandled: true,
-      type: 'unhandledRejection'
+      type: "unhandledRejection"
     });
   });
 }

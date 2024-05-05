@@ -1,12 +1,12 @@
-import { Level } from 'nightingale-levels';
-import format from '.';
+import { Level } from "nightingale-levels";
+import format from ".";
 
-test('format record', () => {
+test("format record", () => {
   const record = {
-    key: 'record.key',
+    key: "record.key",
     level: Level.INFO,
     datetime: new Date(2000, 1, 1, 1, 0, 0),
-    message: 'record.message',
+    message: "record.message",
     metadata: {},
     extra: {},
   };
@@ -14,13 +14,13 @@ test('format record', () => {
   expect(format(record)).toBe(JSON.stringify(record));
 });
 
-test('format error', () => {
-  const error = new Error('test message');
+test("format error", () => {
+  const error = new Error("test message");
   const record = {
-    key: 'record.key',
+    key: "record.key",
     level: Level.INFO,
     datetime: new Date(2000, 1, 1, 1, 0, 0),
-    message: 'record.message',
+    message: "record.message",
     metadata: {
       error,
     },
@@ -30,23 +30,23 @@ test('format error', () => {
   expect(format(record)).toBe(
     JSON.stringify({
       ...record,
-      metadata: { error: { message: 'test message', stack: error.stack } },
-    }),
+      metadata: { error: { message: "test message", stack: error.stack } },
+    })
   );
 });
 
-test('format map', () => {
+test("format map", () => {
   const map = new Map<unknown, unknown>([
-    [1, 'value1'],
-    ['2', 'value2'],
-    ['3', 3],
-    [{}, 'ignore value'],
+    [1, "value1"],
+    ["2", "value2"],
+    ["3", 3],
+    [{}, "ignore value"],
   ]);
   const record = {
-    key: 'record.key',
+    key: "record.key",
     level: Level.INFO,
     datetime: new Date(2000, 1, 1, 1, 0, 0),
-    message: 'record.message',
+    message: "record.message",
     metadata: {
       map,
     },
@@ -56,7 +56,7 @@ test('format map', () => {
   expect(format(record)).toBe(
     JSON.stringify({
       ...record,
-      metadata: { map: { '1': 'value1', '2': 'value2', '3': 3 } },
-    }),
+      metadata: { map: { "1": "value1", "2": "value2", "3": 3 } },
+    })
   );
 });

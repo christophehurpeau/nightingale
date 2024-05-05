@@ -5,11 +5,11 @@ const style = (styleToHtmlStyle, args) => (styles, string) => {
     return string;
   }
   const htmlStyles = styles.map(styleName => styleToHtmlStyle[styleName]);
-  args.push(htmlStyles.map(s => s.open).join('; '), htmlStyles.map(s => s.close).join('; '));
+  args.push(htmlStyles.map(s => s.open).join("; "), htmlStyles.map(s => s.close).join("; "));
   return `%c${string}%c`;
 };
-function createBrowserConsoleFormatter(theme = 'light') {
-  const styleToHtmlStyle = theme === 'dark' ? styleToHtmlStyleThemeDark : styleToHtmlStyleThemeLight;
+function createBrowserConsoleFormatter(theme = "light") {
+  const styleToHtmlStyle = theme === "dark" ? styleToHtmlStyleThemeDark : styleToHtmlStyleThemeLight;
   return function format(record) {
     const args = [];
     const string = formatRecordToString(record, style(styleToHtmlStyle, args));

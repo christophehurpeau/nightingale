@@ -1,25 +1,25 @@
-import { configure, Level, Logger } from 'nightingale';
-import { ConsoleHandler } from 'nightingale-console';
+import { configure, Level, Logger } from "nightingale";
+import { ConsoleHandler } from "nightingale-console";
 
-export { configure, addConfig, levels, Level, Logger } from 'nightingale';
+export { configure, addConfig, levels, Level, Logger } from "nightingale";
 
 const testMinLevel = (() => {
   if (
     process.env.NIGHTINGALE_TEST_MIN_LEVEL !== undefined &&
-    process.env.NIGHTINGALE_TEST_MIN_LEVEL !== ''
+    process.env.NIGHTINGALE_TEST_MIN_LEVEL !== ""
   ) {
     return Number(process.env.NIGHTINGALE_TEST_MIN_LEVEL);
   }
-  return process.env.NODE_ENV !== 'production' ? Level.DEBUG : Level.INFO;
+  return process.env.NODE_ENV !== "production" ? Level.DEBUG : Level.INFO;
 })();
 
 const libMinLevel =
   process.env.NIGHTINGALE_LIB_MIN_LEVEL !== undefined &&
-  process.env.NIGHTINGALE_LIB_MIN_LEVEL !== ''
+  process.env.NIGHTINGALE_LIB_MIN_LEVEL !== ""
     ? Number(process.env.NIGHTINGALE_LIB_MIN_LEVEL)
     : Level.INFO;
 
-export const testLogger = new Logger('unit-testing');
+export const testLogger = new Logger("unit-testing");
 
 configure([
   {

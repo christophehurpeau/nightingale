@@ -2,7 +2,6 @@
   "root": true,
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "EXPERIMENTAL_useProjectService": true,
     "project": "packages/nightingale-slack/tsconfig.json"
   },
   "plugins": ["@typescript-eslint"],

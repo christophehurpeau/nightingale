@@ -4,7 +4,7 @@ function style(styles, string) {
   if (!styles || styles.length === 0 || !string) {
     return string;
   }
-  return `<span style="${styles.map(styleName => styleToHtmlStyleThemeLight[styleName].open).join('; ')}">${string}</span>`;
+  return `<span style="${styles.map(styleName => styleToHtmlStyleThemeLight[styleName].open).join("; ")}">${string}</span>`;
 }
 
 /**

@@ -1,12 +1,12 @@
-import type { ComputedConfigForKey } from 'nightingale-logger';
-import { StringHandler } from 'nightingale-string';
-import { Logger, Level } from '.';
+import type { ComputedConfigForKey } from "nightingale-logger";
+import { StringHandler } from "nightingale-string";
+import { Logger, Level } from ".";
 
 class TestableStringLogger extends Logger {
   private readonly stringHandler: StringHandler;
 
   constructor() {
-    super('');
+    super("");
     this.stringHandler = new StringHandler(Level.ALL);
   }
 
@@ -22,50 +22,50 @@ class TestableStringLogger extends Logger {
   }
 }
 
-test('log method', () => {
+test("log method", () => {
   const logger = new TestableStringLogger();
-  logger.log('log()');
-  expect(logger.string.slice(9)).toBe('→ log()\n');
+  logger.log("log()");
+  expect(logger.string.slice(9)).toBe("→ log()\n");
 });
 
-test('info method', () => {
+test("info method", () => {
   const logger = new TestableStringLogger();
-  logger.info('info()');
-  expect(logger.string.slice(9)).toBe('→ info()\n');
+  logger.info("info()");
+  expect(logger.string.slice(9)).toBe("→ info()\n");
 });
 
-test('warn method', () => {
+test("warn method", () => {
   const logger = new TestableStringLogger();
-  logger.warn('warn()');
-  expect(logger.string.slice(9)).toBe('⚠ warn()\n');
+  logger.warn("warn()");
+  expect(logger.string.slice(9)).toBe("⚠ warn()\n");
 });
 
-test('error method', () => {
+test("error method", () => {
   const logger = new TestableStringLogger();
-  logger.error('error()');
-  expect(logger.string.slice(9)).toBe('✖ error()\n');
+  logger.error("error()");
+  expect(logger.string.slice(9)).toBe("✖ error()\n");
 });
 
-test('alert method', () => {
+test("alert method", () => {
   const logger = new TestableStringLogger();
-  logger.alert('alert()');
-  expect(logger.string.slice(9)).toBe('‼ alert()\n');
+  logger.alert("alert()");
+  expect(logger.string.slice(9)).toBe("‼ alert()\n");
 });
 
-test('fatal method', () => {
+test("fatal method", () => {
   const logger = new TestableStringLogger();
-  logger.fatal('fatal()');
-  expect(logger.string.slice(9)).toBe('‼ fatal()\n');
+  logger.fatal("fatal()");
+  expect(logger.string.slice(9)).toBe("‼ fatal()\n");
 });
 
-test('debug method', () => {
+test("debug method", () => {
   const logger = new TestableStringLogger();
-  logger.debug('debug()');
-  expect(logger.string.slice(9)).toBe('• debug()\n');
+  logger.debug("debug()");
+  expect(logger.string.slice(9)).toBe("• debug()\n");
 });
 
-test('success method', () => {
+test("success method", () => {
   const logger = new TestableStringLogger();
-  logger.success('success()');
-  expect(logger.string.slice(9)).toBe('✔ success()\n');
+  logger.success("success()");
+  expect(logger.string.slice(9)).toBe("✔ success()\n");
 });

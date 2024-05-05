@@ -24,11 +24,11 @@ npm install --save nightingale nightingale-react-native-console
 :warn: This logger is meant for dev only.
 
 ```js
-import { configure, Level } from 'nightingale';
-import { ReactNativeConsoleHandler } from 'nightingale-react-native-console';
+import { configure, Level } from "nightingale";
+import { ReactNativeConsoleHandler } from "nightingale-react-native-console";
 
 configure(
-  process.env.NODE_ENV === 'production'
+  process.env.NODE_ENV === "production"
     ? []
     : [
         {
@@ -39,7 +39,7 @@ configure(
         {
           handlers: [new ReactNativeConsoleHandler(Level.INFO)],
         },
-      ],
+      ]
 );
 ```
 

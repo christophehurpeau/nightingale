@@ -1,4 +1,4 @@
-import { createCheckPackageWithWorkspaces } from 'check-package-dependencies';
+import { createCheckPackageWithWorkspaces } from "check-package-dependencies";
 
 await createCheckPackageWithWorkspaces({
   isLibrary: () => true,

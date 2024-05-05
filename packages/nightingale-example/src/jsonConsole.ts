@@ -1,7 +1,7 @@
-import { Logger, configure, Level } from 'nightingale';
-import consoleOutput from 'nightingale-console-output';
-import jsonFormatter from 'nightingale-json-formatter';
-import type { Handler, LogRecord, Metadata } from 'nightingale-types';
+import { Logger, configure, Level } from "nightingale";
+import consoleOutput from "nightingale-console-output";
+import jsonFormatter from "nightingale-json-formatter";
+import type { Handler, LogRecord, Metadata } from "nightingale-types";
 
 class JSONHandler implements Handler {
   minLevel: Level;
@@ -21,13 +21,13 @@ configure([
   },
 ]);
 
-const logger = new Logger('app');
+const logger = new Logger("app");
 
-logger.log('test');
+logger.log("test");
 
 const timeStarted = logger.time();
 setTimeout(() => {
-  logger.timeEnd(timeStarted, 'time measured');
+  logger.timeEnd(timeStarted, "time measured");
 }, 2000);
 
-logger.success('Listening', { port: 3000 }, { port: ['yellow'] });
+logger.success("Listening", { port: 3000 }, { port: ["yellow"] });

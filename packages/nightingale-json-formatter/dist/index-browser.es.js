@@ -1,7 +1,7 @@
 function map2object(map) {
   const object = {};
   map.forEach((value, key) => {
-    if (typeof key === 'object') {
+    if (typeof key === "object") {
       // ignore key
       return;
     }

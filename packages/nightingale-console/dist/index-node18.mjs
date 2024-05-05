@@ -4,7 +4,7 @@ import { createFindDebugLevel } from 'nightingale-debug';
 import formatterJSON from 'nightingale-json-formatter';
 import { Level } from 'nightingale-levels';
 
-const defaultFormatter = !process.stdout.isTTY && process.env.NIGHTINGALE_CONSOLE_FORMATTER !== 'ansi' ? formatterJSON : formatterANSI;
+const defaultFormatter = !process.stdout.isTTY && process.env.NIGHTINGALE_CONSOLE_FORMATTER !== "ansi" ? formatterJSON : formatterANSI;
 const createHandle = (formatter = defaultFormatter, output = consoleOutput) => {
   return record => {
     output(formatter(record), record);

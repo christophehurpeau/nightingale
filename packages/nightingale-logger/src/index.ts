@@ -1,6 +1,6 @@
-import * as util from 'node:util';
-import { POB_TARGET } from 'pob-babel';
-import { Level } from 'nightingale-levels';
+import * as util from "node:util";
+import { POB_TARGET } from "pob-babel";
+import { Level } from "nightingale-levels";
 import type {
   Metadata,
   MetadataStyles,
@@ -8,9 +8,9 @@ import type {
   Handler,
   Processor,
   LogRecord,
-} from 'nightingale-types';
+} from "nightingale-types";
 
-export { Level } from 'nightingale-levels';
+export { Level } from "nightingale-levels";
 
 export interface Options<T extends Metadata> {
   symbol?: string;
@@ -49,17 +49,17 @@ declare global {
   var __NIGHTINGALE_GLOBAL_HANDLERS: unknown;
   // eslint-disable-next-line no-var
   var __NIGHTINGALE_GET_CONFIG_FOR_LOGGER: (
-    key: string,
+    key: string
   ) => ComputedConfigForKey;
   // eslint-disable-next-line no-var
   var __NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD: (
     key: string,
-    level: number,
+    level: number
   ) => ComputedConfigForKey;
 }
 
 const globalOrWindow: typeof global =
-  typeof global !== 'undefined' ? global : window;
+  typeof global !== "undefined" ? global : window;
 
 if (!globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER) {
   globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER =
@@ -72,7 +72,7 @@ if (!globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER) {
 if (!globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
   globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = (
     key: string,
-    level: Level,
+    level: Level
   ): ComputedConfigForKey => {
     const { handlers, processors }: ComputedConfigForKey =
       globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key);
@@ -81,7 +81,7 @@ if (!globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
       handlers: handlers.filter(
         (handler) =>
           level >= handler.minLevel &&
-          (!handler.isHandling || handler.isHandling(level, key)),
+          (!handler.isHandling || handler.isHandling(level, key))
       ),
       processors,
     };
@@ -90,11 +90,11 @@ if (!globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
 
 function getConfigForLoggerRecord(
   key: string,
-  recordLevel: Level,
+  recordLevel: Level
 ): ComputedConfigForKey {
   return globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD(
     key,
-    recordLevel,
+    recordLevel
   );
 }
 
@@ -123,16 +123,16 @@ export class Logger {
     this.key = key;
     this.displayName = displayName;
 
-    if (process.env.NODE_ENV !== 'production' && key.includes('.')) {
+    if (process.env.NODE_ENV !== "production" && key.includes(".")) {
       throw new Error(
-        `nightingale: \`.\` in key is no longer supported, use \`:\` instead (key: ${key})`,
+        `nightingale: \`.\` in key is no longer supported, use \`:\` instead (key: ${key})`
       );
     }
   }
 
   /** @private */
   protected getHandlersAndProcessors(
-    recordLevel: number,
+    recordLevel: number
   ): ComputedConfigForKey {
     return getConfigForLoggerRecord(this.key, recordLevel);
   }
@@ -194,7 +194,7 @@ export class Logger {
   extendsContext(extendedContext: Record<string, unknown>): void {
     if (this.contextObject === undefined) {
       throw new Error(
-        'Cannot extends context that does not exists. Use setContext(context) first.',
+        "Cannot extends context that does not exists. Use setContext(context) first."
       );
     }
     Object.assign(this.contextObject, extendedContext);
@@ -207,13 +207,13 @@ export class Logger {
    */
   addRecord<T extends Metadata>(record: Readonly<LogRecord<T>>): void {
     const { handlers, processors } = this.getHandlersAndProcessors(
-      record.level,
+      record.level
     );
 
     if (handlers.length === 0) {
       if (record.level > Level.ERROR) {
         // eslint-disable-next-line no-console
-        console.log('[nightingale] no logger for > error level.', {
+        console.log("[nightingale] no logger for > error level.", {
           key: record.key,
           message: record.message,
         });
@@ -237,7 +237,7 @@ export class Logger {
     messageOrError: Error | string,
     metadata?: T,
     level: Level = Level.INFO,
-    options?: Options<T>,
+    options?: Options<T>
   ): void {
     const isMessageError = isError(messageOrError);
 
@@ -246,7 +246,7 @@ export class Logger {
       : messageOrError;
 
     const extendedMetadata =
-      isMessageError && !(metadata && Object.hasOwn(metadata, 'error'))
+      isMessageError && !(metadata && Object.hasOwn(metadata, "error"))
         ? { ...metadata, error: messageOrError }
         : metadata;
 
@@ -275,7 +275,7 @@ export class Logger {
   trace<T extends Metadata>(
     messageOrError: Error | string,
     metadata?: T,
-    metadataStyles?: MetadataStyles<T>,
+    metadataStyles?: MetadataStyles<T>
   ): void {
     this.log(messageOrError, metadata, Level.TRACE, { metadataStyles });
   }
@@ -286,7 +286,7 @@ export class Logger {
   debug<T extends Metadata>(
     messageOrError: Error | string,
     metadata?: T,
-    metadataStyles?: MetadataStyles<T>,
+    metadataStyles?: MetadataStyles<T>
   ): void {
     this.log(messageOrError, metadata, Level.DEBUG, { metadataStyles });
   }
@@ -297,7 +297,7 @@ export class Logger {
   notice<T extends Metadata>(
     messageOrError: Error | string,
     metadata?: T,
-    metadataStyles?: MetadataStyles<T>,
+    metadataStyles?: MetadataStyles<T>
   ): void {
     this.log(messageOrError, metadata, Level.NOTICE, { metadataStyles });
   }
@@ -308,7 +308,7 @@ export class Logger {
   info<T extends Metadata>(
     messageOrError: Error | string,
     metadata?: T,
-    metadataStyles?: MetadataStyles<T>,
+    metadataStyles?: MetadataStyles<T>
   ): void {
     this.log(messageOrError, metadata, Level.INFO, { metadataStyles });
   }
@@ -319,7 +319,7 @@ export class Logger {
   warn<T extends Metadata>(
     messageOrError: Error | string,
     metadata?: T,
-    metadataStyles?: MetadataStyles<T>,
+    metadataStyles?: MetadataStyles<T>
   ): void {
     this.log(messageOrError, metadata, Level.WARN, { metadataStyles });
   }
@@ -340,7 +340,7 @@ export class Logger {
   error<T extends Metadata>(
     messageOrError: Error | string,
     metadata?: T,
-    metadataStyles?: MetadataStyles<T>,
+    metadataStyles?: MetadataStyles<T>
   ): void {
     this.log(messageOrError, metadata, Level.ERROR, { metadataStyles });
   }
@@ -351,7 +351,7 @@ export class Logger {
   critical<T extends Metadata>(
     messageOrError: Error | string,
     metadata?: T,
-    metadataStyles?: MetadataStyles<T>,
+    metadataStyles?: MetadataStyles<T>
   ): void {
     this.log(messageOrError, metadata, Level.CRITICAL, { metadataStyles });
   }
@@ -372,7 +372,7 @@ export class Logger {
   fatal<T extends Metadata>(
     messageOrError: Error | string,
     metadata?: T,
-    metadataStyles?: MetadataStyles<T>,
+    metadataStyles?: MetadataStyles<T>
   ): void {
     this.log(messageOrError, metadata, Level.FATAL, { metadataStyles });
   }
@@ -383,7 +383,7 @@ export class Logger {
   alert<T extends Metadata>(
     messageOrError: Error | string,
     metadata?: T,
-    metadataStyles?: MetadataStyles<T>,
+    metadataStyles?: MetadataStyles<T>
   ): void {
     this.log(messageOrError, metadata, Level.ALERT, { metadataStyles });
   }
@@ -394,17 +394,17 @@ export class Logger {
   inspectValue<T extends Metadata>(
     value: unknown,
     metadata?: T,
-    metadataStyles?: MetadataStyles<T>,
+    metadataStyles?: MetadataStyles<T>
   ): void {
-    if (POB_TARGET === 'browser') {
-      throw new Error('Not supported for the browser. Prefer `debugger;`');
+    if (POB_TARGET === "browser") {
+      throw new Error("Not supported for the browser. Prefer `debugger;`");
     } else {
       // Note: inspect is a special function for node:
       // https://github.com/nodejs/node/blob/a1bda1b4deb08dfb3e06cb778f0db40023b18318/lib/util.js#L210
       const inspectedValue = util.inspect(value, { depth: 6 });
       this.log(inspectedValue, metadata, Level.DEBUG, {
         metadataStyles,
-        styles: ['gray'],
+        styles: ["gray"],
       });
     }
   }
@@ -416,15 +416,15 @@ export class Logger {
     varName: string,
     varValue: unknown,
     metadata?: T,
-    metadataStyles?: MetadataStyles<T>,
+    metadataStyles?: MetadataStyles<T>
   ): void {
-    if (POB_TARGET === 'browser') {
-      throw new Error('Not supported for the browser. Prefer `debugger;`');
+    if (POB_TARGET === "browser") {
+      throw new Error("Not supported for the browser. Prefer `debugger;`");
     } else {
       const inspectedValue = util.inspect(varValue, { depth: 6 });
       this.log(`${varName} = ${inspectedValue}`, metadata, Level.DEBUG, {
         metadataStyles,
-        styles: ['cyan'],
+        styles: ["cyan"],
       });
     }
   }
@@ -435,7 +435,7 @@ export class Logger {
   success<T extends Metadata>(
     message: string,
     metadata?: T,
-    metadataStyles?: MetadataStyles<T>,
+    metadataStyles?: MetadataStyles<T>
   ): void {
     this.infoSuccess(message, metadata, metadataStyles);
   }
@@ -446,12 +446,12 @@ export class Logger {
   infoSuccess<T extends Metadata>(
     message: string,
     metadata?: T,
-    metadataStyles?: MetadataStyles<T>,
+    metadataStyles?: MetadataStyles<T>
   ): void {
     this.log(message, metadata, Level.INFO, {
       metadataStyles,
-      symbol: '✔',
-      styles: ['green', 'bold'],
+      symbol: "✔",
+      styles: ["green", "bold"],
     });
   }
 
@@ -461,12 +461,12 @@ export class Logger {
   debugSuccess<T extends Metadata>(
     message: string,
     metadata?: T,
-    metadataStyles?: MetadataStyles<T>,
+    metadataStyles?: MetadataStyles<T>
   ): void {
     this.log(message, metadata, Level.DEBUG, {
       metadataStyles,
-      symbol: '✔',
-      styles: ['green'],
+      symbol: "✔",
+      styles: ["green"],
     });
   }
 
@@ -476,7 +476,7 @@ export class Logger {
   fail<T extends Metadata>(
     messageOrError: Error | string,
     metadata?: T,
-    metadataStyles?: MetadataStyles<T>,
+    metadataStyles?: MetadataStyles<T>
   ): void {
     this.infoFail(messageOrError, metadata, metadataStyles);
   }
@@ -487,12 +487,12 @@ export class Logger {
   infoFail<T extends Metadata>(
     messageOrError: Error | string,
     metadata?: T,
-    metadataStyles?: MetadataStyles<T>,
+    metadataStyles?: MetadataStyles<T>
   ): void {
     this.log(messageOrError, metadata, Level.INFO, {
       metadataStyles,
-      symbol: '✖',
-      styles: ['red', 'bold'],
+      symbol: "✖",
+      styles: ["red", "bold"],
     });
   }
 
@@ -502,12 +502,12 @@ export class Logger {
   debugFail<T extends Metadata>(
     messageOrError: Error | string,
     metadata?: T,
-    metadataStyles?: MetadataStyles<T>,
+    metadataStyles?: MetadataStyles<T>
   ): void {
     this.log(messageOrError, metadata, Level.DEBUG, {
       metadataStyles,
-      symbol: '✖',
-      styles: ['red'],
+      symbol: "✖",
+      styles: ["red"],
     });
   }
 
@@ -518,7 +518,7 @@ export class Logger {
     message?: string,
     metadata?: T,
     metadataStyles?: MetadataStyles<T>,
-    level: number = Level.DEBUG,
+    level: number = Level.DEBUG
   ): number {
     if (message) {
       this.log(message, metadata, level, { metadataStyles });
@@ -530,7 +530,7 @@ export class Logger {
   infoTime<T extends Metadata>(
     message?: string,
     metadata?: T,
-    metadataStyles?: MetadataStyles<T>,
+    metadataStyles?: MetadataStyles<T>
   ): number {
     return this.time(message, metadata, metadataStyles, Level.INFO);
   }
@@ -547,7 +547,7 @@ export class Logger {
     metadata?: T,
     metadataStyles?: MetadataStyles<T>,
     level: number = Level.DEBUG,
-    options?: Options<T>,
+    options?: Options<T>
   ): void {
     const now = Date.now();
 
@@ -559,7 +559,7 @@ export class Logger {
     } else {
       const seconds = diffTime > 1000 ? Math.floor(diffTime / 1000) : 0;
       const ms = diffTime - seconds * 1000;
-      readableTime = `${seconds ? `${seconds}s and ` : ''}${ms}ms`;
+      readableTime = `${seconds ? `${seconds}s and ` : ""}${ms}ms`;
     }
 
     const extendedMetadata = {
@@ -578,7 +578,7 @@ export class Logger {
     time: number,
     message: string,
     metadata?: T,
-    metadataStyles?: MetadataStyles<T>,
+    metadataStyles?: MetadataStyles<T>
   ): void {
     this.timeEnd(time, message, metadata, metadataStyles, Level.INFO);
   }
@@ -590,11 +590,11 @@ export class Logger {
     time: number,
     message: string,
     metadata?: T,
-    metadataStyles?: MetadataStyles<T>,
+    metadataStyles?: MetadataStyles<T>
   ): void {
     this.timeEnd(time, message, metadata, metadataStyles, Level.INFO, {
-      symbol: '✔',
-      styles: ['green', 'bold'],
+      symbol: "✔",
+      styles: ["green", "bold"],
     });
   }
 
@@ -615,13 +615,13 @@ export class Logger {
   enter<T extends Metadata, Fn extends (...args: unknown[]) => unknown>(
     fn: Fn,
     metadata?: T,
-    metadataStyles?: MetadataStyles<ExtendedFunctionNameMetadata & T>,
+    metadataStyles?: MetadataStyles<ExtendedFunctionNameMetadata & T>
   ): void {
     const extendedMetadata = {
       ...metadata,
       functionName: fn.name,
     };
-    this.log('enter', extendedMetadata, Level.TRACE, { metadataStyles });
+    this.log("enter", extendedMetadata, Level.TRACE, { metadataStyles });
   }
 
   /**
@@ -641,13 +641,13 @@ export class Logger {
   exit<T extends Metadata, Fn extends (...args: unknown[]) => unknown>(
     fn: Fn,
     metadata?: T,
-    metadataStyles?: MetadataStyles<ExtendedFunctionNameMetadata & T>,
+    metadataStyles?: MetadataStyles<ExtendedFunctionNameMetadata & T>
   ): void {
     const extendedMetadata = {
       ...metadata,
       functionName: fn.name,
     };
-    this.log('exit', extendedMetadata, Level.TRACE, { metadataStyles });
+    this.log("exit", extendedMetadata, Level.TRACE, { metadataStyles });
   }
 
   /**
@@ -667,37 +667,37 @@ export class Logger {
    */
   wrap<Fn extends (...args: unknown[]) => unknown>(
     fn: Fn,
-    callback: () => void,
+    callback: () => void
   ): void;
 
   wrap<T extends Metadata, Fn extends (...args: unknown[]) => unknown>(
     fn: Fn,
     metadata: T,
-    callback: () => void,
+    callback: () => void
   ): void;
 
   wrap<T extends Metadata, Fn extends (...args: unknown[]) => unknown>(
     fn: Fn,
     metadata: T,
     metadataStyles: MetadataStyles<T>,
-    callback: () => void,
+    callback: () => void
   ): void;
 
   wrap<T extends Metadata, Fn extends (...args: unknown[]) => unknown>(
     fn: Fn,
     option1: T | (() => void),
     option2?: MetadataStyles<T> | (() => void),
-    callback?: () => void,
+    callback?: () => void
   ): void {
     let metadata: T | undefined;
     let metadataStyles: MetadataStyles<T> | undefined;
 
-    if (typeof option1 === 'function') {
+    if (typeof option1 === "function") {
       callback = option1;
     } else {
       metadata = option1;
 
-      if (typeof option2 === 'function') {
+      if (typeof option2 === "function") {
         callback = option2;
       } else {
         metadataStyles = option2;

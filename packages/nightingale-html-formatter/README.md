@@ -23,5 +23,5 @@ npm install --save nightingale-html-formatter
 ## Usage
 
 ```js
-import htmlFormatter from 'nightingale-html-formatter';
+import htmlFormatter from "nightingale-html-formatter";
 ```

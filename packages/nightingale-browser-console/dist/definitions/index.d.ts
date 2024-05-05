@@ -1,5 +1,5 @@
-import type { Level, Handle, IsHandling, Handler } from 'nightingale-types';
-type Theme = 'dark' | 'light';
+import type { Level, Handle, IsHandling, Handler } from "nightingale-types";
+type Theme = "dark" | "light";
 export interface BrowserConsoleHandlerOptions {
     theme?: Theme;
 }

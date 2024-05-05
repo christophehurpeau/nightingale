@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 
-import formatterANSI from 'nightingale-ansi-formatter';
+import formatterANSI from "nightingale-ansi-formatter";
 import type {
   Level,
   Handle,
@@ -8,15 +8,15 @@ import type {
   LogRecord,
   Metadata,
   Handler,
-} from 'nightingale-types';
-import { Platform } from 'react-native';
-import type { StackFrame } from 'react-native/Libraries/Core/Devtools/parseErrorStack';
-import parseErrorStack from 'react-native/Libraries/Core/Devtools/parseErrorStack';
-import symbolicateStackTrace from 'react-native/Libraries/Core/Devtools/symbolicateStackTrace';
+} from "nightingale-types";
+import { Platform } from "react-native";
+import type { StackFrame } from "react-native/Libraries/Core/Devtools/parseErrorStack";
+import parseErrorStack from "react-native/Libraries/Core/Devtools/parseErrorStack";
+import symbolicateStackTrace from "react-native/Libraries/Core/Devtools/symbolicateStackTrace";
 
 const getStackTrace = (e: Error): any => {
   // eslint-disable-next-line no-prototype-builtins
-  if (Platform.hasOwnProperty('constants')) {
+  if (Platform.hasOwnProperty("constants")) {
     // RN version >= 0.63
     if (Platform.constants.reactNativeVersion.minor >= 64) {
       // RN version >= 0.64 -> Stacktrace as string
@@ -35,16 +35,16 @@ function parsedStackToString(stack: StackFrame[]): string {
       (frame) =>
         `  at ${frame.file}${
           frame.lineNumber
-            ? `:${frame.lineNumber}${frame.column ? `:${frame.column}` : ''}`
-            : ''
-        }${frame.methodName ? ` in ${frame.methodName}` : ''}`,
+            ? `:${frame.lineNumber}${frame.column ? `:${frame.column}` : ""}`
+            : ""
+        }${frame.methodName ? ` in ${frame.methodName}` : ""}`
     )
-    .join('\n');
+    .join("\n");
 }
 
 function consoleOutput<T extends Metadata>(
   param: string[] | string,
-  record: LogRecord<T>,
+  record: LogRecord<T>
 ): void {
   // eslint-disable-next-line no-console
   console.log(...param);

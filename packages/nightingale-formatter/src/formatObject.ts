@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
-import type { Styles } from 'nightingale-types';
+import type { Styles } from "nightingale-types";
 
 export interface FormatObjectOptions {
   padding?: string;
@@ -27,7 +27,7 @@ interface FormattedKey {
 type FormatKey<Key> = (
   key: Key,
   styleFn: StyleFn,
-  internalFormatParams: InternalFormatParams,
+  internalFormatParams: InternalFormatParams
 ) => FormattedKey;
 
 interface Value<Key> {
@@ -51,9 +51,9 @@ interface InternalFormatIteratorParams<Key> {
 
 function tryStringify(arg: unknown): string {
   try {
-    return JSON.stringify(arg).replace(/\\n/g, '\n');
+    return JSON.stringify(arg).replace(/\\n/g, "\n");
   } catch {
-    return '[Circular]';
+    return "[Circular]";
   }
 }
 
@@ -66,35 +66,35 @@ function internalFormatValue(
   value: unknown,
   styleFn: StyleFn,
   styles: Styles,
-  { padding, depth, maxDepth, objects }: InternalFormatParams,
+  { padding, depth, maxDepth, objects }: InternalFormatParams
 ): FormattedValue {
   const typeofValue = typeof value;
 
   if (!styles) {
     if (value == null) {
-      styles = ['cyan'];
+      styles = ["cyan"];
     } else {
       switch (typeofValue) {
-        case 'undefined':
-          styles = ['cyan'];
+        case "undefined":
+          styles = ["cyan"];
           break;
-        case 'boolean':
-          styles = ['green'];
+        case "boolean":
+          styles = ["green"];
           break;
-        case 'number':
-          styles = ['yellow'];
+        case "number":
+          styles = ["yellow"];
           break;
-        case 'bigint':
-          styles = ['red'];
+        case "bigint":
+          styles = ["red"];
           break;
-        case 'string':
-          styles = ['orange'];
+        case "string":
+          styles = ["orange"];
           break;
-        case 'symbol':
-          styles = ['magenta'];
+        case "symbol":
+          styles = ["magenta"];
           break;
-        case 'object':
-        case 'function':
+        case "object":
+        case "function":
         default:
           break;
       }
@@ -103,15 +103,15 @@ function internalFormatValue(
 
   let stringValue: string;
   if (value === null) {
-    stringValue = 'null';
+    stringValue = "null";
   } else if (value === undefined) {
-    stringValue = 'undefined';
-  } else if (typeofValue === 'boolean') {
+    stringValue = "undefined";
+  } else if (typeofValue === "boolean") {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
     stringValue = (value as any).toString() as string;
   } else if ((value as () => unknown).constructor === Object) {
     if (depth >= maxDepth) {
-      stringValue = '{Object...}';
+      stringValue = "{Object...}";
     } else {
       return internalFormatObject(
         value as Record<string, unknown>,
@@ -122,12 +122,12 @@ function internalFormatValue(
           depth: depth + 1,
           maxDepth,
           objects,
-        },
+        }
       );
     }
   } else if (Array.isArray(value)) {
     if (depth >= maxDepth) {
-      stringValue = '[Array...]';
+      stringValue = "[Array...]";
     } else {
       return internalFormatArray(value, styleFn, {
         padding,
@@ -142,7 +142,7 @@ function internalFormatValue(
       stack?.startsWith(value.message) ||
       stack?.startsWith(`${value.name}: ${value.message}`)
         ? stack
-        : `${value.message}\n${stack || ''}`;
+        : `${value.message}\n${stack || ""}`;
   } else if (value instanceof Map) {
     const name = value.constructor.name;
     if (depth >= maxDepth) {
@@ -155,9 +155,9 @@ function internalFormatValue(
         objects,
       });
     }
-  } else if (typeofValue === 'bigint') {
+  } else if (typeofValue === "bigint") {
     stringValue = (value as bigint).toString();
-  } else if (typeofValue === 'symbol') {
+  } else if (typeofValue === "symbol") {
     stringValue = (value as symbol).toString();
   } else if (value instanceof Set) {
     const name = value.constructor.name;
@@ -172,9 +172,9 @@ function internalFormatValue(
       });
     }
   } else if (value instanceof WeakMap) {
-    stringValue = '{WeakMap...}';
+    stringValue = "{WeakMap...}";
   } else if (value instanceof WeakSet) {
-    stringValue = '{WeakSet...}';
+    stringValue = "{WeakSet...}";
   } else {
     stringValue = tryStringify(value);
   }
@@ -187,41 +187,41 @@ function internalFormatValue(
   };
 }
 
-const separator = ',';
+const separator = ",";
 
 const internalFormatKey: FormatKey<string> = (
   key: string,
   styleFn: StyleFn,
-  internalFormatParams: InternalFormatParams,
+  internalFormatParams: InternalFormatParams
 ): FormattedKey => {
   return {
     stringKey: `${key}: `,
-    formattedKey: `${styleFn(['gray-light', 'bold'], `${key}:`)} `,
+    formattedKey: `${styleFn(["gray-light", "bold"], `${key}:`)} `,
   };
 };
 
 const internalNoKey: FormatKey<undefined> = (
   key: string | undefined,
   styleFn: StyleFn,
-  internalFormatParams: InternalFormatParams,
+  internalFormatParams: InternalFormatParams
 ): FormattedKey => {
-  return { stringKey: '', formattedKey: '' };
+  return { stringKey: "", formattedKey: "" };
 };
 
 const internalFormatMapKey: FormatKey<unknown> = (
   key: unknown,
   styleFn: StyleFn,
-  internalFormatParams: InternalFormatParams,
+  internalFormatParams: InternalFormatParams
 ): FormattedKey => {
   const { stringValue, formattedValue } = internalFormatValue(
     key,
     noStyleFn,
     undefined,
-    internalFormatParams,
+    internalFormatParams
   );
   return {
     stringKey: `${stringValue} => `,
-    formattedKey: `${styleFn(['gray-light', 'bold'], `${formattedValue}:`)} `,
+    formattedKey: `${styleFn(["gray-light", "bold"], `${formattedValue}:`)} `,
   };
 };
 
@@ -233,12 +233,12 @@ const internalFormatIterator = <Key>(
   {
     prefix,
     suffix,
-    prefixSuffixSpace = ' ',
+    prefixSuffixSpace = " ",
     formatKey,
-  }: InternalFormatIteratorParams<Key>,
+  }: InternalFormatIteratorParams<Key>
 ): FormattedValue => {
   let breakLine = false;
-  const formattedSeparator = (): string => styleFn(['gray'], separator);
+  const formattedSeparator = (): string => styleFn(["gray"], separator);
 
   const valuesMaxIndex = values.length - 1;
   const formattedValues: FormattedValue[] = values.map(
@@ -255,7 +255,7 @@ const internalFormatIterator = <Key>(
       const { stringKey, formattedKey } = formatKey(
         key,
         styleFn,
-        internalFormatParams,
+        internalFormatParams
       );
 
       let { stringValue, formattedValue } = internalFormatValue(
@@ -264,12 +264,12 @@ const internalFormatIterator = <Key>(
         key && objectStyles
           ? objectStyles[key as unknown as string]
           : undefined,
-        internalFormatParams,
+        internalFormatParams
       );
 
       if (
         stringValue &&
-        (stringValue.length > 80 || stringValue.includes('\n'))
+        (stringValue.length > 80 || stringValue.includes("\n"))
       ) {
         breakLine = true;
         stringValue = stringValue.replace(/\n/g, `\n${padding}`);
@@ -278,14 +278,14 @@ const internalFormatIterator = <Key>(
 
       return {
         stringValue:
-          stringKey + stringValue + (index === valuesMaxIndex ? '' : separator),
+          stringKey + stringValue + (index === valuesMaxIndex ? "" : separator),
         formattedValue:
           formattedKey +
           formattedValue +
-          (index === valuesMaxIndex ? '' : formattedSeparator()),
+          (index === valuesMaxIndex ? "" : formattedSeparator()),
         // note: we need to format the separator for each values for browser-formatter
       };
-    },
+    }
   );
 
   return {
@@ -295,20 +295,20 @@ const internalFormatIterator = <Key>(
         .map(
           breakLine
             ? (v) => `\n${padding}${v.stringValue}`
-            : (fv) => fv.stringValue,
+            : (fv) => fv.stringValue
         )
-        .join(breakLine ? '\n' : ' ') +
+        .join(breakLine ? "\n" : " ") +
       suffix,
     formattedValue: `${prefix}${
-      breakLine ? '' : prefixSuffixSpace
+      breakLine ? "" : prefixSuffixSpace
     }${formattedValues
       .map(
         breakLine
           ? (v) => `\n${padding}${v.formattedValue}`
-          : (v) => v.formattedValue,
+          : (v) => v.formattedValue
       )
-      .join(breakLine ? '' : ' ')}${
-      breakLine ? ',\n' : prefixSuffixSpace
+      .join(breakLine ? "" : " ")}${
+      breakLine ? ",\n" : prefixSuffixSpace
     }${suffix}`,
   };
 };
@@ -317,15 +317,15 @@ function internalFormatObject(
   object: Record<string, unknown>,
   styleFn: StyleFn,
   objectStyles: ObjectStyles | undefined,
-  { padding, depth, maxDepth, objects }: InternalFormatParams,
+  { padding, depth, maxDepth, objects }: InternalFormatParams
 ): FormattedValue {
   if (objects.has(object)) {
-    return sameRawFormattedValue('{Circular Object}');
+    return sameRawFormattedValue("{Circular Object}");
   }
 
   const keys: string[] = Object.keys(object);
   if (keys.length === 0) {
-    return sameRawFormattedValue('{}');
+    return sameRawFormattedValue("{}");
   }
 
   objects.add(object);
@@ -335,7 +335,7 @@ function internalFormatObject(
     styleFn,
     objectStyles,
     { padding, depth, maxDepth, objects },
-    { prefix: '{', suffix: '}', formatKey: internalFormatKey },
+    { prefix: "{", suffix: "}", formatKey: internalFormatKey }
   );
 
   objects.delete(object);
@@ -347,7 +347,7 @@ function internalFormatMap(
   name: string,
   map: Map<unknown, unknown>,
   styleFn: StyleFn,
-  { padding, depth, maxDepth, objects }: InternalFormatParams,
+  { padding, depth, maxDepth, objects }: InternalFormatParams
 ): FormattedValue {
   if (objects.has(map)) {
     return sameRawFormattedValue(`{Circular ${name}}`);
@@ -365,7 +365,7 @@ function internalFormatMap(
     styleFn,
     undefined,
     { padding, depth, maxDepth, objects },
-    { prefix: `${name} {`, suffix: '}', formatKey: internalFormatMapKey },
+    { prefix: `${name} {`, suffix: "}", formatKey: internalFormatMapKey }
   );
 
   objects.delete(map);
@@ -376,14 +376,14 @@ function internalFormatMap(
 function internalFormatArray(
   array: unknown[],
   styleFn: StyleFn,
-  { padding, depth, maxDepth, objects }: InternalFormatParams,
+  { padding, depth, maxDepth, objects }: InternalFormatParams
 ): FormattedValue {
   if (objects.has(array)) {
-    return sameRawFormattedValue('{Circular Array}');
+    return sameRawFormattedValue("{Circular Array}");
   }
 
   if (array.length === 0) {
-    return sameRawFormattedValue('[]');
+    return sameRawFormattedValue("[]");
   }
 
   objects.add(array);
@@ -394,11 +394,11 @@ function internalFormatArray(
     undefined,
     { padding, depth, maxDepth, objects },
     {
-      prefix: '[',
-      suffix: ']',
-      prefixSuffixSpace: '',
+      prefix: "[",
+      suffix: "]",
+      prefixSuffixSpace: "",
       formatKey: internalNoKey,
-    },
+    }
   );
 
   objects.delete(array);
@@ -410,7 +410,7 @@ function internalFormatSet(
   name: string,
   set: Set<unknown>,
   styleFn: StyleFn,
-  { padding, depth, maxDepth, objects }: InternalFormatParams,
+  { padding, depth, maxDepth, objects }: InternalFormatParams
 ): FormattedValue {
   if (objects.has(set)) {
     return sameRawFormattedValue(`{Circular ${name}}`);
@@ -428,7 +428,7 @@ function internalFormatSet(
     styleFn,
     undefined,
     { padding, depth, maxDepth, objects },
-    { prefix: `${name} [`, suffix: ']', formatKey: internalNoKey },
+    { prefix: `${name} [`, suffix: "]", formatKey: internalNoKey }
   );
 
   objects.delete(set);
@@ -440,7 +440,7 @@ export function formatObject(
   object: Record<string, unknown>,
   styleFn: StyleFn = noStyleFn,
   objectStyles?: ObjectStyles,
-  { padding = '  ', maxDepth = 10 }: FormatObjectOptions = {},
+  { padding = "  ", maxDepth = 10 }: FormatObjectOptions = {}
 ): string {
   const { formattedValue: result } = internalFormatObject(
     object,
@@ -451,11 +451,11 @@ export function formatObject(
       maxDepth,
       depth: 0,
       objects: new Set(),
-    },
+    }
   );
 
-  if (result === '{}') {
-    return '';
+  if (result === "{}") {
+    return "";
   }
 
   return result;

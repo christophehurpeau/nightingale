@@ -1,10 +1,10 @@
-import type { LogRecord, Metadata } from 'nightingale-types';
+import type { LogRecord, Metadata } from "nightingale-types";
 
 function map2object(map: Map<unknown, unknown>): unknown {
   const object: Record<string, unknown> = {};
 
   map.forEach((value, key) => {
-    if (typeof key === 'object') {
+    if (typeof key === "object") {
       // ignore key
       return;
     }
@@ -31,12 +31,12 @@ function stringify(value: unknown, space?: number | string): string {
 
       return objectValue as unknown;
     },
-    space,
+    space
   );
 }
 
 export default function format<T extends Metadata>(
-  record: LogRecord<T>,
+  record: LogRecord<T>
 ): string {
   return stringify({
     key: record.key,

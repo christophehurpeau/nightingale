@@ -1,5 +1,5 @@
-import type { IncomingMessage } from 'node:http';
-import type { LogRecord, Metadata } from 'nightingale-types';
+import type { IncomingMessage } from "node:http";
+import type { LogRecord, Metadata } from "nightingale-types";
 
 export interface ContextWithOptionalRequest {
   request?: IncomingMessage;
@@ -7,7 +7,7 @@ export interface ContextWithOptionalRequest {
 
 export default function webProcessor<T extends Metadata>(
   record: LogRecord<T>,
-  context?: ContextWithOptionalRequest,
+  context?: ContextWithOptionalRequest
 ): void {
   const request = context?.request;
   if (request) {
@@ -17,7 +17,7 @@ export default function webProcessor<T extends Metadata>(
       method: request.method,
       server: request.headers.host,
       ip:
-        request.headers['x-forwarded-for'] || request.connection.remoteAddress,
+        request.headers["x-forwarded-for"] || request.connection.remoteAddress,
     });
   }
 }

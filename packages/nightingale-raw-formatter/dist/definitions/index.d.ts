@@ -1,4 +1,4 @@
-import type { LogRecord, Metadata, Styles } from 'nightingale-types';
+import type { LogRecord, Metadata, Styles } from "nightingale-types";
 export declare function style(styles: Styles, value: string): string;
 /**
  * @param {Object} record

@@ -8,11 +8,11 @@ function style(styles, string) {
   // eslint-disable-next-line unicorn/no-array-reduce
   return styles.reduce((part, styleName) => {
     switch (styleName) {
-      case 'bold':
+      case "bold":
         return `*${part}*`;
-      case 'italic':
+      case "italic":
         return `_${part}_`;
-      case 'strikethrough':
+      case "strikethrough":
         return `~${part}~`;
 
       // no default

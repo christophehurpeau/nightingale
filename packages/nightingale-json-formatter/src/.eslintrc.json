@@ -2,7 +2,6 @@
   "root": true,
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "EXPERIMENTAL_useProjectService": true,
     "project": "packages/nightingale-json-formatter/tsconfig.json"
   },
   "plugins": ["@typescript-eslint"],

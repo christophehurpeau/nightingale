@@ -1,8 +1,8 @@
-import { Logger, configure, Level } from 'nightingale';
-import { SlackHandler } from 'nightingale-slack';
+import { Logger, configure, Level } from "nightingale";
+import { SlackHandler } from "nightingale-slack";
 
 if (!process.env.WEBHOOK_URL) {
-  throw new Error('Missing WEBHOOK_URL environment variable');
+  throw new Error("Missing WEBHOOK_URL environment variable");
 }
 
 configure([
@@ -12,12 +12,12 @@ configure([
         {
           webhookUrl: process.env.WEBHOOK_URL,
         },
-        Level.ALL,
+        Level.ALL
       ),
     ],
   },
 ]);
 
-const logger = new Logger('app');
+const logger = new Logger("app");
 
-logger.success('Test', { value: 1 });
+logger.success("Test", { value: 1 });

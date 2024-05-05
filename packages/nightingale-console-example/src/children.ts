@@ -1,14 +1,14 @@
-import { Logger, configure, Level } from 'nightingale';
-import { ConsoleHandler } from 'nightingale-console';
+import { Logger, configure, Level } from "nightingale";
+import { ConsoleHandler } from "nightingale-console";
 
 configure([{ handlers: [new ConsoleHandler(Level.INFO)] }]);
 
-const nightingaleLogger = new Logger('nightingale');
+const nightingaleLogger = new Logger("nightingale");
 
 nightingaleLogger.setContext({ nightingale: true });
-nightingaleLogger.info('test');
+nightingaleLogger.info("test");
 
-const logger = nightingaleLogger.child('console');
+const logger = nightingaleLogger.child("console");
 logger.setContext({ nightingaleConsole: true });
 
-logger.info('test');
+logger.info("test");

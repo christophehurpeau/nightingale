@@ -22,8 +22,8 @@ npm install --save nightingale-level-names
 ## Usage
 
 ```js
-import Level from 'nightingale-Levels';
-import levelNames from 'nightingale-level-names';
+import Level from "nightingale-Levels";
+import levelNames from "nightingale-level-names";
 
 console.log(levelNames.get(Level.TRACE));
 console.log(levelNames.get(Level.DEBUG));

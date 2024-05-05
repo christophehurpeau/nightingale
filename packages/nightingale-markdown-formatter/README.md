@@ -23,5 +23,5 @@ npm install --save nightingale-markdown-formatter
 ## Usage
 
 ```js
-import markdownFormatter from 'nightingale-markdown-formatter';
+import markdownFormatter from "nightingale-markdown-formatter";
 ```

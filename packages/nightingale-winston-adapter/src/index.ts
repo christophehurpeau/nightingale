@@ -1,12 +1,12 @@
 /* eslint-disable camelcase */
-import levelNames from 'nightingale-level-names';
+import levelNames from "nightingale-level-names";
 import type {
   LogRecord,
   Level,
   Handle,
   Metadata,
   Handler,
-} from 'nightingale-types';
+} from "nightingale-types";
 
 export type LogCallback = (err: Error | null) => void;
 
@@ -15,7 +15,7 @@ export interface WinstonTransportType {
     level: number,
     message: string,
     metadata: Record<string, unknown>,
-    callback: LogCallback,
+    callback: LogCallback
   ) => void;
 }
 
@@ -46,7 +46,7 @@ export class WinstonAdapterHandler implements Handler {
           }
 
           // resolve();
-        },
+        }
       );
       // });
     };

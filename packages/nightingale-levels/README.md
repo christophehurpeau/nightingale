@@ -22,7 +22,7 @@ npm install --save nightingale-levels
 ## Usage
 
 ```js
-import { Level } from 'nightingale-levels';
+import { Level } from "nightingale-levels";
 
 console.log(Level.INFO);
 ```

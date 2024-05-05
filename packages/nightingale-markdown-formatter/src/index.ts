@@ -1,5 +1,5 @@
-import { formatRecordToString } from 'nightingale-formatter';
-import type { Styles, LogRecord, Metadata } from 'nightingale-types';
+import { formatRecordToString } from "nightingale-formatter";
+import type { Styles, LogRecord, Metadata } from "nightingale-types";
 
 export function style(styles: Styles, string: string): string {
   if (!styles || styles.length === 0 || !string) {
@@ -9,11 +9,11 @@ export function style(styles: Styles, string: string): string {
   // eslint-disable-next-line unicorn/no-array-reduce
   return styles.reduce((part, styleName) => {
     switch (styleName) {
-      case 'bold':
+      case "bold":
         return `*${part}*`;
-      case 'italic':
+      case "italic":
         return `_${part}_`;
-      case 'strikethrough':
+      case "strikethrough":
         return `~${part}~`;
 
       // no default
@@ -24,7 +24,7 @@ export function style(styles: Styles, string: string): string {
 }
 
 export default function format<T extends Metadata>(
-  record: LogRecord<T>,
+  record: LogRecord<T>
 ): string {
   return formatRecordToString(record, style);
 }

@@ -1,11 +1,11 @@
 /* eslint-disable prefer-template */
-import formatterRaw from 'nightingale-raw-formatter';
-import type { Handler, Level, LogRecord, Metadata } from 'nightingale-types';
+import formatterRaw from "nightingale-raw-formatter";
+import type { Handler, Level, LogRecord, Metadata } from "nightingale-types";
 
 export class StringHandler implements Handler {
   readonly minLevel: Level;
 
-  private _buffer = '';
+  private _buffer = "";
 
   constructor(minLevel: Level) {
     this.minLevel = minLevel;
@@ -16,6 +16,6 @@ export class StringHandler implements Handler {
   }
 
   handle<T extends Metadata>(record: LogRecord<T>): void {
-    this._buffer += formatterRaw(record) + '\n';
+    this._buffer += formatterRaw(record) + "\n";
   }
 }

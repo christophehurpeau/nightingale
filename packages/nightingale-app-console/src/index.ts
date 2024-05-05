@@ -1,38 +1,38 @@
-import { POB_TARGET } from 'pob-babel';
-import { Logger, configure, Level, listenUnhandledErrors } from 'nightingale';
-import { BrowserConsoleHandler } from 'nightingale-browser-console';
-import { ConsoleHandler as TerminalConsoleHandler } from 'nightingale-console';
+import { POB_TARGET } from "pob-babel";
+import { Logger, configure, Level, listenUnhandledErrors } from "nightingale";
+import { BrowserConsoleHandler } from "nightingale-browser-console";
+import { ConsoleHandler as TerminalConsoleHandler } from "nightingale-console";
 
-export { configure, addConfig, levels, Level } from 'nightingale';
+export { configure, addConfig, levels, Level } from "nightingale";
 
 export const ConsoleHandler:
   | typeof BrowserConsoleHandler
   | typeof TerminalConsoleHandler =
-  POB_TARGET === 'browser' ? BrowserConsoleHandler : TerminalConsoleHandler;
+  POB_TARGET === "browser" ? BrowserConsoleHandler : TerminalConsoleHandler;
 
-export const logger = new Logger('app');
+export const logger = new Logger("app");
 export const appLogger = logger;
 
-if (POB_TARGET !== 'browser') {
+if (POB_TARGET !== "browser") {
   Error.stackTraceLimit = Infinity;
   listenUnhandledErrors(logger);
 }
 
 const appMinLevel = (() => {
   if (
-    POB_TARGET !== 'browser' &&
+    POB_TARGET !== "browser" &&
     process.env.NIGHTINGALE_APP_MIN_LEVEL !== undefined &&
-    process.env.NIGHTINGALE_APP_MIN_LEVEL !== ''
+    process.env.NIGHTINGALE_APP_MIN_LEVEL !== ""
   ) {
     return Number(process.env.NIGHTINGALE_APP_MIN_LEVEL);
   }
-  return process.env.NODE_ENV !== 'production' ? Level.DEBUG : Level.INFO;
+  return process.env.NODE_ENV !== "production" ? Level.DEBUG : Level.INFO;
 })();
 
 const libMinLevel =
-  POB_TARGET !== 'browser' &&
+  POB_TARGET !== "browser" &&
   process.env.NIGHTINGALE_LIB_MIN_LEVEL !== undefined &&
-  process.env.NIGHTINGALE_LIB_MIN_LEVEL !== ''
+  process.env.NIGHTINGALE_LIB_MIN_LEVEL !== ""
     ? Number(process.env.NIGHTINGALE_LIB_MIN_LEVEL)
     : Level.INFO;
 
@@ -52,5 +52,5 @@ configure(
         {
           handlers: [new ConsoleHandler(libMinLevel)],
         },
-      ],
+      ]
 );

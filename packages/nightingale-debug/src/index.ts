@@ -1,5 +1,5 @@
 /* eslint-disable complexity */
-import { Level } from 'nightingale-levels';
+import { Level } from "nightingale-levels";
 
 const specialRegexpChars = /[$()+.?[\\\]^{|}]/;
 
@@ -12,12 +12,12 @@ const createTestFunctionFromRegexp =
     regexp.test(string);
 
 const createTestFunctionFromRegexpString = (value: string): TestFunction => {
-  if (!value.endsWith('/')) throw new Error('Invalid RegExp DEBUG value');
+  if (!value.endsWith("/")) throw new Error("Invalid RegExp DEBUG value");
   return createTestFunctionFromRegexp(new RegExp(value.slice(1, -1)));
 };
 
 const createTestFunctionFromValue = (value: string): TestFunction => {
-  if (value.endsWith(':*')) {
+  if (value.endsWith(":*")) {
     value = value.slice(0, -2);
     return (string: string) => string.startsWith(value);
   }
@@ -28,7 +28,7 @@ const createTestFunctionFromValue = (value: string): TestFunction => {
 export type FindDebugLevel = (minLevel: Level, key: string) => Level;
 
 export function createFindDebugLevel(
-  debugValue?: DebugValueType,
+  debugValue?: DebugValueType
 ): FindDebugLevel {
   let isWildcard = false;
   const debugValues: TestFunction[] = [];
@@ -41,7 +41,7 @@ export function createFindDebugLevel(
     } else if (debugValue) {
       debugValue = debugValue.trim();
 
-      if (debugValue.startsWith('/')) {
+      if (debugValue.startsWith("/")) {
         debugValues.push(createTestFunctionFromRegexpString(debugValue));
         debugValue = undefined;
       } else {
@@ -54,18 +54,18 @@ export function createFindDebugLevel(
     (debugValue as string[]).forEach((value) => {
       if (specialRegexpChars.test(value)) {
         throw new Error(
-          `Invalid debug value: "${value}" (contains special chars)`,
+          `Invalid debug value: "${value}" (contains special chars)`
         );
       }
 
       if (!value) return;
 
-      if (value === '*') {
+      if (value === "*") {
         isWildcard = true;
         return;
       }
 
-      if (value.startsWith('-')) {
+      if (value.startsWith("-")) {
         skips.push(createTestFunctionFromValue(value.slice(1)));
       } else if (!isWildcard) {
         debugValues.push(createTestFunctionFromValue(value));

@@ -4,11 +4,11 @@ import { Level } from 'nightingale-levels';
 const specialRegexpChars = /[$()+.?[\\\]^{|}]/;
 const createTestFunctionFromRegexp = regexp => string => regexp.test(string);
 const createTestFunctionFromRegexpString = value => {
-  if (!value.endsWith('/')) throw new Error('Invalid RegExp DEBUG value');
+  if (!value.endsWith("/")) throw new Error("Invalid RegExp DEBUG value");
   return createTestFunctionFromRegexp(new RegExp(value.slice(1, -1)));
 };
 const createTestFunctionFromValue = value => {
-  if (value.endsWith(':*')) {
+  if (value.endsWith(":*")) {
     value = value.slice(0, -2);
     return string => string.startsWith(value);
   }
@@ -24,7 +24,7 @@ function createFindDebugLevel(debugValue) {
       debugValue = undefined;
     } else if (debugValue) {
       debugValue = debugValue.trim();
-      if (debugValue.startsWith('/')) {
+      if (debugValue.startsWith("/")) {
         debugValues.push(createTestFunctionFromRegexpString(debugValue));
         debugValue = undefined;
       } else {
@@ -38,11 +38,11 @@ function createFindDebugLevel(debugValue) {
         throw new Error(`Invalid debug value: "${value}" (contains special chars)`);
       }
       if (!value) return;
-      if (value === '*') {
+      if (value === "*") {
         isWildcard = true;
         return;
       }
-      if (value.startsWith('-')) {
+      if (value.startsWith("-")) {
         skips.push(createTestFunctionFromValue(value.slice(1)));
       } else if (!isWildcard) {
         debugValues.push(createTestFunctionFromValue(value));

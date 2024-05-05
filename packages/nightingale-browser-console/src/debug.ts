@@ -1,7 +1,7 @@
 export function getDebugString(): string {
   const querystring = document.location?.search;
   const debugFromLocalStorage =
-    (window.localStorage && localStorage.getItem('debug')) || '';
+    (window.localStorage && localStorage.getItem("debug")) || "";
 
   if (!querystring) {
     return debugFromLocalStorage;
@@ -11,13 +11,13 @@ export function getDebugString(): string {
   const debugFromQueryString = decodeURI(
     querystring.replace(
       // eslint-disable-next-line prefer-regex-literals
-      new RegExp('^(?:.*[&\\?]DEBUG(?:\\=([^&]*))?)?.*$', 'i'),
-      '$1',
-    ),
+      new RegExp("^(?:.*[&\\?]DEBUG(?:\\=([^&]*))?)?.*$", "i"),
+      "$1"
+    )
   );
 
   return (
-    (debugFromLocalStorage ? `${debugFromLocalStorage},` : '') +
+    (debugFromLocalStorage ? `${debugFromLocalStorage},` : "") +
     debugFromQueryString
   );
 }

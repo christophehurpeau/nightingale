@@ -1,7 +1,7 @@
 import { Level } from 'nightingale-levels';
 export { Level } from 'nightingale-levels';
 
-const globalOrWindow = typeof global !== 'undefined' ? global : window;
+const globalOrWindow = typeof global !== "undefined" ? global : window;
 if (!globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER) {
   globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = () => ({
     handlers: [],
@@ -41,7 +41,7 @@ class Logger {
   constructor(key, displayName) {
     this.key = key;
     this.displayName = displayName;
-    if (process.env.NODE_ENV !== 'production' && key.includes('.')) {
+    if (process.env.NODE_ENV !== "production" && key.includes(".")) {
       throw new Error(`nightingale: \`.\` in key is no longer supported, use \`:\` instead (key: ${key})`);
     }
   }
@@ -107,7 +107,7 @@ class Logger {
    */
   extendsContext(extendedContext) {
     if (this.contextObject === undefined) {
-      throw new Error('Cannot extends context that does not exists. Use setContext(context) first.');
+      throw new Error("Cannot extends context that does not exists. Use setContext(context) first.");
     }
     Object.assign(this.contextObject, extendedContext);
   }
@@ -125,7 +125,7 @@ class Logger {
     if (handlers.length === 0) {
       if (record.level > Level.ERROR) {
         // eslint-disable-next-line no-console
-        console.log('[nightingale] no logger for > error level.', {
+        console.log("[nightingale] no logger for > error level.", {
           key: record.key,
           message: record.message
         });
@@ -146,7 +146,7 @@ class Logger {
   log(messageOrError, metadata, level = Level.INFO, options) {
     const isMessageError = isError(messageOrError);
     const message = isMessageError ? `${messageOrError.name}: ${messageOrError.message}` : messageOrError;
-    const extendedMetadata = isMessageError && !(metadata && Object.hasOwn(metadata, 'error')) ? {
+    const extendedMetadata = isMessageError && !(metadata && Object.hasOwn(metadata, "error")) ? {
       ...metadata,
       error: messageOrError
     } : metadata;
@@ -273,14 +273,14 @@ class Logger {
    * Log an inspected value
    */
   inspectValue() {
-    throw new Error('Not supported for the browser. Prefer `debugger;`');
+    throw new Error("Not supported for the browser. Prefer `debugger;`");
   }
 
   /**
    * Log a debugged var
    */
   inspectVar() {
-    throw new Error('Not supported for the browser. Prefer `debugger;`');
+    throw new Error("Not supported for the browser. Prefer `debugger;`");
   }
 
   /**
@@ -296,8 +296,8 @@ class Logger {
   infoSuccess(message, metadata, metadataStyles) {
     this.log(message, metadata, Level.INFO, {
       metadataStyles,
-      symbol: '✔',
-      styles: ['green', 'bold']
+      symbol: "✔",
+      styles: ["green", "bold"]
     });
   }
 
@@ -307,8 +307,8 @@ class Logger {
   debugSuccess(message, metadata, metadataStyles) {
     this.log(message, metadata, Level.DEBUG, {
       metadataStyles,
-      symbol: '✔',
-      styles: ['green']
+      symbol: "✔",
+      styles: ["green"]
     });
   }
 
@@ -325,8 +325,8 @@ class Logger {
   infoFail(messageOrError, metadata, metadataStyles) {
     this.log(messageOrError, metadata, Level.INFO, {
       metadataStyles,
-      symbol: '✖',
-      styles: ['red', 'bold']
+      symbol: "✖",
+      styles: ["red", "bold"]
     });
   }
 
@@ -336,8 +336,8 @@ class Logger {
   debugFail(messageOrError, metadata, metadataStyles) {
     this.log(messageOrError, metadata, Level.DEBUG, {
       metadataStyles,
-      symbol: '✖',
-      styles: ['red']
+      symbol: "✖",
+      styles: ["red"]
     });
   }
 
@@ -370,7 +370,7 @@ class Logger {
       readableTime = `${diffTime}ms`;
     } else {
       const seconds = diffTime > 1000 ? Math.floor(diffTime / 1000) : 0;
-      readableTime = `${seconds ? `${seconds}s and ` : ''}${diffTime - seconds * 1000}ms`;
+      readableTime = `${seconds ? `${seconds}s and ` : ""}${diffTime - seconds * 1000}ms`;
     }
     const extendedMetadata = {
       ...metadata,
@@ -395,8 +395,8 @@ class Logger {
    */
   infoSuccessTimeEnd(time, message, metadata, metadataStyles) {
     this.timeEnd(time, message, metadata, metadataStyles, Level.INFO, {
-      symbol: '✔',
-      styles: ['green', 'bold']
+      symbol: "✔",
+      styles: ["green", "bold"]
     });
   }
 
@@ -419,7 +419,7 @@ class Logger {
       ...metadata,
       functionName: fn.name
     };
-    this.log('enter', extendedMetadata, Level.TRACE, {
+    this.log("enter", extendedMetadata, Level.TRACE, {
       metadataStyles
     });
   }
@@ -443,7 +443,7 @@ class Logger {
       ...metadata,
       functionName: fn.name
     };
-    this.log('exit', extendedMetadata, Level.TRACE, {
+    this.log("exit", extendedMetadata, Level.TRACE, {
       metadataStyles
     });
   }
@@ -467,11 +467,11 @@ class Logger {
   wrap(fn, option1, option2, callback) {
     let metadata;
     let metadataStyles;
-    if (typeof option1 === 'function') {
+    if (typeof option1 === "function") {
       callback = option1;
     } else {
       metadata = option1;
-      if (typeof option2 === 'function') {
+      if (typeof option2 === "function") {
         callback = option2;
       } else {
         metadataStyles = option2;

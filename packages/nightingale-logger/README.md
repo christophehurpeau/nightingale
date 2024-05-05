@@ -33,11 +33,11 @@ npm install --save nightingale-logger
 ## Usage
 
 ```js
-import Logger from 'nightingale-logger';
+import Logger from "nightingale-logger";
 
-const logger = new Logger('mylib');
+const logger = new Logger("mylib");
 
-logger.info('This is a log');
-logger.warn('This is a warning !');
-logger.success('It works !');
+logger.info("This is a log");
+logger.warn("This is a warning !");
+logger.success("It works !");
 ```

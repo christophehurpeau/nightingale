@@ -1,8 +1,8 @@
-import { Logger } from 'nightingale-logger';
+import { Logger } from "nightingale-logger";
 
-export { Logger } from 'nightingale-logger';
-export { Level, Level as levels } from 'nightingale-levels';
-export { configure, addConfig } from './config';
+export { Logger } from "nightingale-logger";
+export { Level, Level as levels } from "nightingale-levels";
+export { configure, addConfig } from "./config";
 
 /**
  * listen to uncaughtException and unhandledRejection
@@ -10,20 +10,20 @@ export { configure, addConfig } from './config';
  */
 export function listenUnhandledErrors(
   logger: Logger = new Logger(
-    'nightingale:listenUnhandledErrors',
-    'UnhandledErrors',
-  ),
+    "nightingale:listenUnhandledErrors",
+    "UnhandledErrors"
+  )
 ): void {
-  process.on('uncaughtException', (error) => {
+  process.on("uncaughtException", (error) => {
     logger.error(error, {
       unhandled: true,
-      type: 'uncaughtException',
+      type: "uncaughtException",
     });
   });
-  process.on('unhandledRejection', (error) => {
+  process.on("unhandledRejection", (error) => {
     logger.error(error as Error, {
       unhandled: true,
-      type: 'unhandledRejection',
+      type: "unhandledRejection",
     });
   });
 }

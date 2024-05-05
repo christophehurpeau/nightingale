@@ -1,14 +1,14 @@
-import type { ComputedConfigForKey, Config } from 'nightingale-logger';
-import type { Handler, Level } from 'nightingale-types';
+import type { ComputedConfigForKey, Config } from "nightingale-logger";
+import type { Handler, Level } from "nightingale-types";
 
 const globalOrWindow: typeof global =
-  typeof global !== 'undefined' ? global : (window as typeof global);
+  typeof global !== "undefined" ? global : (window as typeof global);
 
 if (
-  process.env.NODE_ENV !== 'production' &&
+  process.env.NODE_ENV !== "production" &&
   globalOrWindow.__NIGHTINGALE_GLOBAL_HANDLERS
 ) {
-  throw new Error('nightingale: update all to ^5.0.0');
+  throw new Error("nightingale: update all to ^5.0.0");
 }
 
 if (!globalOrWindow.__NIGHTINGALE_CONFIG) {
@@ -30,14 +30,14 @@ function clearCache(): void {
 function handleConfig(config: Config): Config {
   if (config.keys) {
     if (config.pattern) {
-      throw new Error('Cannot have key and pattern for the same config');
+      throw new Error("Cannot have key and pattern for the same config");
     }
     if (config.key) {
-      throw new Error('Cannot have key and keys for the same config');
+      throw new Error("Cannot have key and keys for the same config");
     }
   } else if (config.key) {
     if (config.pattern) {
-      throw new Error('Cannot have key and pattern for the same config');
+      throw new Error("Cannot have key and pattern for the same config");
     }
     config.keys = [config.key];
     delete config.key;
@@ -45,7 +45,7 @@ function handleConfig(config: Config): Config {
 
   if (config.handler) {
     if (config.handlers) {
-      throw new Error('Cannot have handler and handlers for the same config');
+      throw new Error("Cannot have handler and handlers for the same config");
     }
     config.handlers = [config.handler];
     delete config.handler;
@@ -54,7 +54,7 @@ function handleConfig(config: Config): Config {
   if (config.processor) {
     if (config.processors) {
       throw new Error(
-        'Cannot have processors and processors for the same config',
+        "Cannot have processors and processors for the same config"
       );
     }
     config.processors = [config.processor];
@@ -67,7 +67,7 @@ function handleConfig(config: Config): Config {
 export function configure(config: Config[]): void {
   if (globalOrWindow.__NIGHTINGALE_CONFIG.length > 0) {
     // eslint-disable-next-line no-console
-    console.log('nightingale: warning: config overridden');
+    console.log("nightingale: warning: config overridden");
   }
 
   clearCache();
@@ -76,7 +76,7 @@ export function configure(config: Config[]): void {
 
 export function addConfig(config: Config, unshift = false): void {
   config = handleConfig(config);
-  globalOrWindow.__NIGHTINGALE_CONFIG[unshift ? 'unshift' : 'push'](config);
+  globalOrWindow.__NIGHTINGALE_CONFIG[unshift ? "unshift" : "push"](config);
   clearCache();
 }
 
@@ -87,7 +87,7 @@ const configIsForKey = (key: string) => (config: Config) => {
 };
 
 globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = (
-  key: string,
+  key: string
 ): ComputedConfigForKey => {
   const globalCache = globalOrWindow.__NIGHTINGALE_LOGGER_MAP_CACHE;
 
@@ -117,7 +117,7 @@ globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = (
 if (globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
   globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = (
     key: string,
-    level: Level,
+    level: Level
   ): ComputedConfigForKey => {
     const { handlers, processors }: ComputedConfigForKey =
       globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key);
@@ -126,7 +126,7 @@ if (globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
       handlers: handlers.filter(
         (handler: Handler) =>
           level >= handler.minLevel &&
-          (!handler.isHandling || handler.isHandling(level, key)),
+          (!handler.isHandling || handler.isHandling(level, key))
       ),
       processors,
     };
