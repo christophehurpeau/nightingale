@@ -23,16 +23,16 @@ npm install --save winston-logstash # example with winston-logstash
 ## How to use
 
 ```js
-import { addGlobalHandler, Level } from 'nightingale';
-import WinstonAdapterHandler from 'nightingale-winston-adapter';
-import LogStash from 'winston-logstash';
+import { addGlobalHandler, Level } from "nightingale";
+import WinstonAdapterHandler from "nightingale-winston-adapter";
+import LogStash from "winston-logstash";
 
 // create transport
 const logmaticTransport = new Logstash({
   port: 0000,
-  host: 'api.logmatic.io',
-  meta: { logmaticKey: 'xxxxxxxx' },
-  node_name: 'my node name',
+  host: "api.logmatic.io",
+  meta: { logmaticKey: "xxxxxxxx" },
+  node_name: "my node name",
 });
 
 // add the transport as a nightingale handler for all loggers

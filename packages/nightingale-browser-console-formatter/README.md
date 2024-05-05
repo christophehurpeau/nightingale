@@ -23,5 +23,5 @@ npm install --save nightingale-browser-console-formatter
 ## Usage
 
 ```js
-import browserConsoleFormatter from 'nightingale-browser-console-formatter';
+import browserConsoleFormatter from "nightingale-browser-console-formatter";
 ```

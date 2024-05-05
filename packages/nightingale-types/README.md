@@ -22,5 +22,5 @@ npm install --save nightingale-types
 ## Usage
 
 ```js
-import type { Level } from 'nightingale-types';
+import type { Level } from "nightingale-types";
 ```

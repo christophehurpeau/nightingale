@@ -22,16 +22,16 @@ npm install --save nightingale-app-console
 ## Usage
 
 ```js
-import { appLogger } from 'nightingale-app-console';
+import { appLogger } from "nightingale-app-console";
 
-appLogger.info('hello');
+appLogger.info("hello");
 ```
 
 ## Create children
 
 ```js
-const myServiceLogger = appLogger.child('services:myService');
-myServiceLogger.debug('started');
+const myServiceLogger = appLogger.child("services:myService");
+myServiceLogger.debug("started");
 ```
 
 ### The Logger class

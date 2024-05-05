@@ -26,7 +26,7 @@ In your source file, use [nightingale-logger](https://www.npmjs.com/package/nigh
 In `test-setup` for example:
 
 ```js
-import 'nightingale-unit-testing';
+import "nightingale-unit-testing";
 ```
 
 By default, only log above 'ERROR' are displayed
@@ -56,12 +56,12 @@ NIGHTINGALE_LIB_MIN_LEVEL=200 DEBUG='my-lib' npm test
 ## Logging in tests
 
 ```js
-import { testLogger } from 'nightingale-unit-testing';
+import { testLogger } from "nightingale-unit-testing";
 
-it('should test something', () => {
-  const value = 'hello world';
+it("should test something", () => {
+  const value = "hello world";
   testLogger.inspectValue(value);
-  expect(value).toBe('hello world');
+  expect(value).toBe("hello world");
 });
 ```
 

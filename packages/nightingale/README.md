@@ -40,15 +40,15 @@ npm install --save nightingale nightingale-console
 ```
 
 ```js
-import Logger, { configure, Level } from 'nightingale';
-import ConsoleHandler from 'nightingale-console';
+import Logger, { configure, Level } from "nightingale";
+import ConsoleHandler from "nightingale-console";
 
 configure([
   {
     handlers: [new ConsoleHandler(Level.WARN)],
   },
   {
-    keys: ['mylib', 'myotherlib'],
+    keys: ["mylib", "myotherlib"],
     handlers: [new ConsoleHandler(Level.ALL)],
   },
   {
@@ -63,12 +63,12 @@ configure([
 ]);
 
 // in one of your controllers
-const logger = new Logger('app.controllers');
-logger.debug('This is a log'); // will not be displayed
+const logger = new Logger("app.controllers");
+logger.debug("This is a log"); // will not be displayed
 
 // in your server.js file
-const logger = new Logger('app.server');
-logger.debug('This is a log'); // will be displayed
+const logger = new Logger("app.server");
+logger.debug("This is a log"); // will be displayed
 ```
 
 You can configure several handlers with different `Level`, like console, slack, sentry.
@@ -76,8 +76,8 @@ You can configure several handlers with different `Level`, like console, slack, 
 Ensure the configure is always called before the first log! For example:
 
 ```js
-import './configure-logger';
-import './myApp';
+import "./configure-logger";
+import "./myApp";
 ```
 
 ### In a library
@@ -87,13 +87,13 @@ npm install --save nightingale-logger
 ```
 
 ```js
-import Logger from 'nightingale-logger';
+import Logger from "nightingale-logger";
 
-const logger = new Logger('mylib');
+const logger = new Logger("mylib");
 
-logger.info('This is a log');
-logger.warn('This is a warning !');
-logger.success('It works !');
+logger.info("This is a log");
+logger.warn("This is a warning !");
+logger.success("It works !");
 ```
 
 ### In the browser
@@ -107,12 +107,12 @@ npm install --save nightingale nightingale-browser-console
 ![browser log example](https://static.hurpeau.com/images/npm/nightingale/log_in_firefox.png)
 
 ```js
-import { configure, levels } from 'nightingale';
-import { BrowserConsoleHandler } from 'nightingale-browser-console';
+import { configure, levels } from "nightingale";
+import { BrowserConsoleHandler } from "nightingale-browser-console";
 
 configure([
   {
-    key: 'app',
+    key: "app",
     handlers: [new BrowserConsoleHandler(Level.INFO)],
   },
 ]);
@@ -140,28 +140,28 @@ Values are minimatch patterns and separated by `,`.
 ### Add information on a request
 
 ```js
-import Koa from 'koa';
-import Logger, { configure, Level } from 'nightingale';
-import { ConsoleHandler } from 'nightinale-console';
-import webProcessor from 'nightinale-web-processor';
+import Koa from "koa";
+import Logger, { configure, Level } from "nightingale";
+import { ConsoleHandler } from "nightinale-console";
+import webProcessor from "nightinale-web-processor";
 
 const app = new Koa();
-const logger = new Logger('app');
+const logger = new Logger("app");
 
 configure([
   {
-    key: 'app',
+    key: "app",
     handlers: [new ConsoleHandler(Level.ALL)],
     processors: [webProcessor],
   },
 ]);
 
 app.use(async (ctx) => {
-  logger.info('something to log !', { context: ctx });
+  logger.info("something to log !", { context: ctx });
 });
 
 app.use(async (ctx) => {
-  ctx.logger.info('something to log !', { context: ctx });
+  ctx.logger.info("something to log !", { context: ctx });
 });
 ```
 
@@ -207,7 +207,7 @@ Add extra data in the record
 ## Extends Logger
 
 ```js
-import { Logger } from 'nightingale';
+import { Logger } from "nightingale";
 
 class MyCustomLogger extends Logger {
   myCustomMethod(message) {
@@ -215,14 +215,14 @@ class MyCustomLogger extends Logger {
   }
 }
 
-const logger = new MyCustomLogger('app');
+const logger = new MyCustomLogger("app");
 ```
 
 ## Global processors
 
 ```js
-import { configure } from 'nightingale';
-import errorProcessor from './myErrorProcessor';
+import { configure } from "nightingale";
+import errorProcessor from "./myErrorProcessor";
 
 configure([{ processors: [errorProcessor] }]);
 ```
@@ -230,8 +230,8 @@ configure([{ processors: [errorProcessor] }]);
 ## Global handlers
 
 ```js
-import { addGlobalHandler, levels } from 'nightingale';
-import { SentryHandler } from 'nightingale-sentry';
+import { addGlobalHandler, levels } from "nightingale";
+import { SentryHandler } from "nightingale-sentry";
 
 configure([{ handlers: [new SentryHandler(Level.ERROR)] }]);
 ```
@@ -241,9 +241,9 @@ configure([{ handlers: [new SentryHandler(Level.ERROR)] }]);
 You can create children.
 
 ```js
-import { Logger } from 'nightingale';
-const loggerApp = new Logger('app');
-const loggerMyService = loggerApp.child('myService');
+import { Logger } from "nightingale";
+const loggerApp = new Logger("app");
+const loggerMyService = loggerApp.child("myService");
 // loggerMyService key is `app.myService`
 ```
 
@@ -252,13 +252,13 @@ const loggerMyService = loggerApp.child('myService');
 You can use context to add data to each log.
 
 ```js
-import { Logger } from 'nightingale';
-const loggerMyService = new Logger('app.myService');
+import { Logger } from "nightingale";
+const loggerMyService = new Logger("app.myService");
 
 export function someAction(arg1) {
   const logger = loggerMyService.context({ arg1 });
-  logger.info('starting');
+  logger.info("starting");
   // do stuff
-  logger.info('done');
+  logger.info("done");
 }
 ```

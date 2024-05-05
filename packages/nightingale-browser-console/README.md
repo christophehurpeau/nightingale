@@ -22,8 +22,8 @@ npm install --save nightingale-browser-console
 ## Usage
 
 ```js
-import { configure, levels } from 'nightingale';
-import { ConsoleHandler } from 'nightingale-browser-console';
+import { configure, levels } from "nightingale";
+import { ConsoleHandler } from "nightingale-browser-console";
 
 configure([{ handlers: [new ConsoleHandler(Level.INFO)] }]);
 ```
@@ -33,15 +33,15 @@ configure([{ handlers: [new ConsoleHandler(Level.INFO)] }]);
 If you have a dark console theme, you can set this config in your localStorage :
 
 ```js
-localStorage.NIGHTINGALE_THEME = 'dark';
+localStorage.NIGHTINGALE_THEME = "dark";
 ```
 
 You can also force this option:
 
 ```js
-import { ConsoleHandler } from 'nightingale-browser-console';
+import { ConsoleHandler } from "nightingale-browser-console";
 
-configure([{ handlers: [new ConsoleHandler(Level.INFO, { theme: 'dark' })] }]);
+configure([{ handlers: [new ConsoleHandler(Level.INFO, { theme: "dark" })] }]);
 ```
 
 ## Debug
@@ -49,13 +49,13 @@ configure([{ handlers: [new ConsoleHandler(Level.INFO, { theme: 'dark' })] }]);
 ### with localStorage
 
 ```js
-localStorage.debug = '*'; // debug everything
-localStorage.debug = 'app'; // debug for logger with key 'app'
-localStorage.debug = 'app,nightingale'; // debug for logger with key 'app' and 'nightingale'
-localStorage.debug = '/^app/'; //debug for logger with key starting with 'app'
-localStorage.debug = '/^(app|nightingale$)/'; // debug for logger with key starting with 'app' and key 'nightingale'
-localStorage.debug = '*,-app'; // debug everything except app
-localStorage.debug = '*,-app:*'; // debug everything except app and all its children
+localStorage.debug = "*"; // debug everything
+localStorage.debug = "app"; // debug for logger with key 'app'
+localStorage.debug = "app,nightingale"; // debug for logger with key 'app' and 'nightingale'
+localStorage.debug = "/^app/"; //debug for logger with key starting with 'app'
+localStorage.debug = "/^(app|nightingale$)/"; // debug for logger with key starting with 'app' and key 'nightingale'
+localStorage.debug = "*,-app"; // debug everything except app
+localStorage.debug = "*,-app:*"; // debug everything except app and all its children
 ```
 
 ### with query, in the url

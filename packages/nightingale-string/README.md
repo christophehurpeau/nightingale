@@ -22,5 +22,5 @@ npm install --save nightingale-string
 ## Usage
 
 ```js
-import nightingaleString from 'nightingale-string';
+import nightingaleString from "nightingale-string";
 ```

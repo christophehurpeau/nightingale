@@ -23,5 +23,5 @@ npm install --save nightingale-json-formatter
 ## Usage
 
 ```js
-import jsonFormatter from 'nightingale-json-formatter';
+import jsonFormatter from "nightingale-json-formatter";
 ```

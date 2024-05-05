@@ -27,14 +27,14 @@ import {
   addBreadcrumb,
   captureException,
   captureMessage,
-} from '@sentry/node';
-import { configure, Level, listenUnhandledErrors } from 'nightingale';
-import { SentryHandler } from 'nightingale-sentry';
+} from "@sentry/node";
+import { configure, Level, listenUnhandledErrors } from "nightingale";
+import { SentryHandler } from "nightingale-sentry";
 
 listenUnhandledErrors();
 
 sentryInit({
-  dsn: process.env.NODE_ENV === 'production' ? '__DSN__' : undefined,
+  dsn: process.env.NODE_ENV === "production" ? "__DSN__" : undefined,
   // ...
 });
 
@@ -64,12 +64,12 @@ import {
   addBreadcrumb,
   captureException,
   captureMessage,
-} from '@sentry/browser';
-import { addConfig, Level } from 'nightingale-app';
-import SentryHandler from 'nightingale-sentry';
+} from "@sentry/browser";
+import { addConfig, Level } from "nightingale-app";
+import SentryHandler from "nightingale-sentry";
 
 sentryInit({
-  dsn: process.env.NODE_ENV === 'production' ? '__DSN__' : undefined,
+  dsn: process.env.NODE_ENV === "production" ? "__DSN__" : undefined,
   // ...
 });
 
@@ -94,12 +94,12 @@ import {
   addBreadcrumb,
   captureException,
   captureMessage,
-} from '@sentry/browser';
-import { configure, Level } from 'nightingale';
-import { SentryHandler } from 'nightingale-sentry';
+} from "@sentry/browser";
+import { configure, Level } from "nightingale";
+import { SentryHandler } from "nightingale-sentry";
 
 sentryInit({
-  dsn: process.env.NODE_ENV === 'production' ? '__DSN__' : undefined,
+  dsn: process.env.NODE_ENV === "production" ? "__DSN__" : undefined,
   // ...
 });
 

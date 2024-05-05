@@ -23,5 +23,5 @@ npm install --save nightingale-ansi-formatter
 ## Usage
 
 ```js
-import ansiFormatter from 'nightingale-ansi-formatter';
+import ansiFormatter from "nightingale-ansi-formatter";
 ```
