@@ -1016,7 +1016,7 @@ interface FormattedKey {
 type FormatKey&lt;Key&gt; = (
   key: Key,
   styleFn: StyleFn,
-  internalFormatParams: InternalFormatParams
+  internalFormatParams: InternalFormatParams,
 ) =&gt; FormattedKey;
 &nbsp;
 interface Value&lt;Key&gt; {
@@ -1055,7 +1055,7 @@ function internalFormatValue(
   value: unknown,
   styleFn: StyleFn,
   styles: Styles,
-  { padding, depth, maxDepth, objects }: InternalFormatParams
+  { padding, depth, maxDepth, objects }: InternalFormatParams,
 ): FormattedValue {
   const typeofValue = typeof value;
 &nbsp;
@@ -1111,7 +1111,7 @@ function internalFormatValue(
           depth: depth + 1,
           maxDepth,
           objects,
-        }
+        },
       );
     }
   } else if (Array.isArray(value)) {
@@ -1181,7 +1181,7 @@ const separator = ",";
 const internalFormatKey: FormatKey&lt;string&gt; = (
   key: string,
   styleFn: StyleFn,
-  internalFormatParams: InternalFormatParams
+  internalFormatParams: InternalFormatParams,
 ): FormattedKey =&gt; {
   return {
     stringKey: `${key}: `,
@@ -1192,7 +1192,7 @@ const internalFormatKey: FormatKey&lt;string&gt; = (
 const internalNoKey: FormatKey&lt;undefined&gt; = (
   key: string | undefined,
   styleFn: StyleFn,
-  internalFormatParams: InternalFormatParams
+  internalFormatParams: InternalFormatParams,
 ): FormattedKey =&gt; {
   return { stringKey: "", formattedKey: "" };
 };
@@ -1200,13 +1200,13 @@ const internalNoKey: FormatKey&lt;undefined&gt; = (
 const internalFormatMapKey: FormatKey&lt;unknown&gt; = (
   key: unknown,
   styleFn: StyleFn,
-  internalFormatParams: InternalFormatParams
+  internalFormatParams: InternalFormatParams,
 ): FormattedKey =&gt; {
   const { stringValue, formattedValue } = internalFormatValue(
     key,
     noStyleFn,
     undefined,
-    internalFormatParams
+    internalFormatParams,
   );
   return {
     stringKey: `${stringValue} =&gt; `,
@@ -1224,7 +1224,7 @@ const internalFormatIterator = &lt;Key&gt;(
     suffix,
     prefixSuffixSpace = " ",
     formatKey,
-  }: InternalFormatIteratorParams&lt;Key&gt;
+  }: InternalFormatIteratorParams&lt;Key&gt;,
 ): FormattedValue =&gt; {
   let breakLine = false;
   const formattedSeparator = (): string =&gt; styleFn(["gray"], separator);
@@ -1244,7 +1244,7 @@ const internalFormatIterator = &lt;Key&gt;(
       const { stringKey, formattedKey } = formatKey(
         key,
         styleFn,
-        internalFormatParams
+        internalFormatParams,
       );
 &nbsp;
       let { stringValue, formattedValue } = internalFormatValue(
@@ -1253,7 +1253,7 @@ const internalFormatIterator = &lt;Key&gt;(
         key &amp;&amp; objectStyles
           ? <span class="branch-0 cbranch-no" title="branch not covered" >objectStyles[key as unknown as string]</span>
           : undefined,
-        internalFormatParams
+        internalFormatParams,
       );
 &nbsp;
       if (
@@ -1274,7 +1274,7 @@ const internalFormatIterator = &lt;Key&gt;(
           (index === valuesMaxIndex ? "" : formattedSeparator()),
         // note: we need to format the separator for each values for browser-formatter
       };
-    }
+    },
   );
 &nbsp;
   return {
@@ -1284,7 +1284,7 @@ const internalFormatIterator = &lt;Key&gt;(
         .map(
           breakLine
             ? (v) =&gt; `\n${padding}${v.stringValue}`
-            : (fv) =&gt; fv.stringValue
+            : (fv) =&gt; fv.stringValue,
         )
         .join(breakLine ? "\n" : " ") +
       suffix,
@@ -1294,7 +1294,7 @@ const internalFormatIterator = &lt;Key&gt;(
       .map(
         breakLine
           ? (v) =&gt; `\n${padding}${v.formattedValue}`
-          : (v) =&gt; v.formattedValue
+          : (v) =&gt; v.formattedValue,
       )
       .join(breakLine ? "" : " ")}${
       breakLine ? ",\n" : prefixSuffixSpace
@@ -1306,7 +1306,7 @@ function internalFormatObject(
   object: Record&lt;string, unknown&gt;,
   styleFn: StyleFn,
   objectStyles: ObjectStyles | undefined,
-  { padding, depth, maxDepth, objects }: InternalFormatParams
+  { padding, depth, maxDepth, objects }: InternalFormatParams,
 ): FormattedValue {
   if (objects.has(object)) {
     return sameRawFormattedValue("{Circular Object}");
@@ -1324,7 +1324,7 @@ function internalFormatObject(
     styleFn,
     objectStyles,
     { padding, depth, maxDepth, objects },
-    { prefix: "{", suffix: "}", formatKey: internalFormatKey }
+    { prefix: "{", suffix: "}", formatKey: internalFormatKey },
   );
 &nbsp;
   objects.delete(object);
@@ -1336,7 +1336,7 @@ function internalFormatMap(
   name: string,
   map: Map&lt;unknown, unknown&gt;,
   styleFn: StyleFn,
-  { padding, depth, maxDepth, objects }: InternalFormatParams
+  { padding, depth, maxDepth, objects }: InternalFormatParams,
 ): FormattedValue {
   <span class="missing-if-branch" title="if path not taken" >I</span>if (objects.has(map)) {
 <span class="cstat-no" title="statement not covered" >    return sameRawFormattedValue(`{Circular ${name}}`);</span>
@@ -1354,7 +1354,7 @@ function internalFormatMap(
     styleFn,
     undefined,
     { padding, depth, maxDepth, objects },
-    { prefix: `${name} {`, suffix: "}", formatKey: internalFormatMapKey }
+    { prefix: `${name} {`, suffix: "}", formatKey: internalFormatMapKey },
   );
 &nbsp;
   objects.delete(map);
@@ -1365,7 +1365,7 @@ function internalFormatMap(
 function internalFormatArray(
   array: unknown[],
   styleFn: StyleFn,
-  { padding, depth, maxDepth, objects }: InternalFormatParams
+  { padding, depth, maxDepth, objects }: InternalFormatParams,
 ): FormattedValue {
   <span class="missing-if-branch" title="if path not taken" >I</span>if (objects.has(array)) {
 <span class="cstat-no" title="statement not covered" >    return sameRawFormattedValue("{Circular Array}");</span>
@@ -1387,7 +1387,7 @@ function internalFormatArray(
       suffix: "]",
       prefixSuffixSpace: "",
       formatKey: internalNoKey,
-    }
+    },
   );
 &nbsp;
   objects.delete(array);
@@ -1399,7 +1399,7 @@ function internalFormatSet(
   name: string,
   set: Set&lt;unknown&gt;,
   styleFn: StyleFn,
-  { padding, depth, maxDepth, objects }: InternalFormatParams
+  { padding, depth, maxDepth, objects }: InternalFormatParams,
 ): FormattedValue {
   <span class="missing-if-branch" title="if path not taken" >I</span>if (objects.has(set)) {
 <span class="cstat-no" title="statement not covered" >    return sameRawFormattedValue(`{Circular ${name}}`);</span>
@@ -1417,7 +1417,7 @@ function internalFormatSet(
     styleFn,
     undefined,
     { padding, depth, maxDepth, objects },
-    { prefix: `${name} [`, suffix: "]", formatKey: internalNoKey }
+    { prefix: `${name} [`, suffix: "]", formatKey: internalNoKey },
   );
 &nbsp;
   objects.delete(set);
@@ -1429,7 +1429,7 @@ export function formatObject(
   object: Record&lt;string, unknown&gt;,
   styleFn: StyleFn = noStyleFn,
   objectStyles?: ObjectStyles,
-  { padding = "  ", maxDepth = 10 }: FormatObjectOptions = {}
+  { padding = "  ", maxDepth = 10 }: FormatObjectOptions = {},
 ): string {
   const { formattedValue: result } = internalFormatObject(
     object,
@@ -1440,7 +1440,7 @@ export function formatObject(
       maxDepth,
       depth: 0,
       objects: new Set(),
-    }
+    },
   );
 &nbsp;
   if (result === "{}") {
@@ -1456,7 +1456,7 @@ export function formatObject(
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Wed Jun 05 2024 11:19:48 GMT+0000 (Coordinated Universal Time)
+                at Fri Jun 07 2024 21:25:56 GMT+0000 (Coordinated Universal Time)
             </div>
         <script src="../../prettify.js"></script>
         <script>
