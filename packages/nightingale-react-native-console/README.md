@@ -39,7 +39,7 @@ configure(
         {
           handlers: [new ReactNativeConsoleHandler(Level.INFO)],
         },
-      ]
+      ],
 );
 ```
 

@@ -63,13 +63,7 @@
     "watch": "pob-watch"
   },
   "pob": {
-    "babelEnvs": [
-      {
-        "target": "node",
-        "version": "20",
-        "omitVersionInFileName": true
-      }
-    ],
+    "bundler": "rollup-babel",
     "entries": [
       "configure",
       "console",
@@ -77,6 +71,13 @@
       "errors",
       "jsonConsole",
       "slack"
+    ],
+    "envs": [
+      {
+        "target": "node",
+        "version": "20",
+        "omitVersionInFileName": true
+      }
     ]
   },
   "prettier": "@pob/root/prettier-config",
@@ -91,7 +92,7 @@
   },
   "devDependencies": {
     "@babel/core": "7.24.5",
-    "pob-babel": "38.1.3",
+    "pob-babel": "39.0.0",
     "typescript": "5.4.5"
   }
 }

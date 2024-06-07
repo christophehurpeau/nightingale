@@ -30,7 +30,7 @@ jobs:
 
       - name: New version (dry run)
         if: github.ref == 'refs/heads/main' && inputs.dry-run
-        run: yarn version --dry-run
+        run: yarn yarn-version version --dry-run
       - name: Configure Git user
         if: github.ref == 'refs/heads/main' && !inputs.dry-run
         run: |
@@ -40,7 +40,7 @@ jobs:
       - name: New version
         if: github.ref == 'refs/heads/main' && !inputs.dry-run
         run: |
-          yarn version --create-release=github  -m 'chore: release %v [skip ci]'
+          yarn yarn-version version --create-release=github  -m 'chore: release %v [skip ci]'
         env:
           HUSKY: 0
           GH_TOKEN: ${{ secrets.GH_TOKEN }}

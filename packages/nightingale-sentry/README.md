@@ -49,7 +49,7 @@ configure([
           // shouldSendAsBreadcrumb: (record) => false,
           // getUser: ({ context }) => context.user && { id: context.user.id },
           // getTags: ({ context }) => context.tags,
-        }
+        },
       ),
     ],
   },
@@ -78,11 +78,11 @@ addConfig(
     handlers: [
       new SentryHandler(
         { addBreadcrumb, captureException, captureMessage },
-        Level.ERROR
+        Level.ERROR,
       ),
     ],
   },
-  true
+  true,
 );
 ```
 
@@ -119,7 +119,7 @@ configure([
           getBreadcrumbCategory: (record) =>
             record.metadata?.breadcrumbCategory,
           getBreadcrumbType: (record) => record.metadata?.breadcrumbType,
-        }
+        },
       ),
     ],
   },
