@@ -31,12 +31,12 @@ function stringify(value: unknown, space?: number | string): string {
 
       return objectValue as unknown;
     },
-    space
+    space,
   );
 }
 
 export default function format<T extends Metadata>(
-  record: LogRecord<T>
+  record: LogRecord<T>,
 ): string {
   return stringify({
     key: record.key,

@@ -67,7 +67,7 @@ export function style(styles: Styles, string: string): string {
  * @returns {string}
  */
 export default function ansiFormat<T extends Metadata>(
-  record: LogRecord<T>
+  record: LogRecord<T>,
 ): string {
   return formatRecordToString(record, style);
 }

@@ -54,7 +54,7 @@ function handleConfig(config: Config): Config {
   if (config.processor) {
     if (config.processors) {
       throw new Error(
-        "Cannot have processors and processors for the same config"
+        "Cannot have processors and processors for the same config",
       );
     }
     config.processors = [config.processor];
@@ -87,7 +87,7 @@ const configIsForKey = (key: string) => (config: Config) => {
 };
 
 globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = (
-  key: string
+  key: string,
 ): ComputedConfigForKey => {
   const globalCache = globalOrWindow.__NIGHTINGALE_LOGGER_MAP_CACHE;
 
@@ -117,7 +117,7 @@ globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = (
 if (globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
   globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD = (
     key: string,
-    level: Level
+    level: Level,
   ): ComputedConfigForKey => {
     const { handlers, processors }: ComputedConfigForKey =
       globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER(key);
@@ -126,7 +126,7 @@ if (globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD) {
       handlers: handlers.filter(
         (handler: Handler) =>
           level >= handler.minLevel &&
-          (!handler.isHandling || handler.isHandling(level, key))
+          (!handler.isHandling || handler.isHandling(level, key)),
       ),
       processors,
     };

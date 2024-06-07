@@ -21,7 +21,7 @@ const defaultFormatter =
 
 const createHandle = (
   formatter = defaultFormatter,
-  output = consoleOutput
+  output = consoleOutput,
 ): Handle => {
   return <T extends Metadata>(record: LogRecord<T>): void => {
     output(formatter(record), record);
@@ -33,7 +33,7 @@ export interface ConsoleHandlerOptions {
   formatter?: <T extends Metadata>(record: LogRecord<T>) => string;
   output?: <T extends Metadata>(
     param: string[] | string,
-    record: LogRecord<T>
+    record: LogRecord<T>,
   ) => void;
   // compat with nightingale-app-console, not used yet
   theme?: "dark" | "light";

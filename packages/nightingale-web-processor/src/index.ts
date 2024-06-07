@@ -7,7 +7,7 @@ export interface ContextWithOptionalRequest {
 
 export default function webProcessor<T extends Metadata>(
   record: LogRecord<T>,
-  context?: ContextWithOptionalRequest
+  context?: ContextWithOptionalRequest,
 ): void {
   const request = context?.request;
   if (request) {

@@ -12,8 +12,8 @@ export function getDebugString(): string {
     querystring.replace(
       // eslint-disable-next-line prefer-regex-literals
       new RegExp("^(?:.*[&\\?]DEBUG(?:\\=([^&]*))?)?.*$", "i"),
-      "$1"
-    )
+      "$1",
+    ),
   );
 
   return (

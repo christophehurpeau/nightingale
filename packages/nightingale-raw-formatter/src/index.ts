@@ -10,7 +10,7 @@ export function style(styles: Styles, value: string): string {
  * @returns {string}
  */
 export default function format<T extends Metadata>(
-  record: LogRecord<T>
+  record: LogRecord<T>,
 ): string {
   return formatRecordToString(record, style);
 }

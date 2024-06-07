@@ -31,7 +31,7 @@ test("format error", () => {
     JSON.stringify({
       ...record,
       metadata: { error: { message: "test message", stack: error.stack } },
-    })
+    }),
   );
 });
 
@@ -57,6 +57,6 @@ test("format map", () => {
     JSON.stringify({
       ...record,
       metadata: { map: { "1": "value1", "2": "value2", "3": 3 } },
-    })
+    }),
   );
 });

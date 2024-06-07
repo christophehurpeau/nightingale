@@ -15,7 +15,7 @@ export interface WinstonTransportType {
     level: number,
     message: string,
     metadata: Record<string, unknown>,
-    callback: LogCallback
+    callback: LogCallback,
   ) => void;
 }
 
@@ -46,7 +46,7 @@ export class WinstonAdapterHandler implements Handler {
           }
 
           // resolve();
-        }
+        },
       );
       // });
     };

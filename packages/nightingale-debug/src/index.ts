@@ -28,7 +28,7 @@ const createTestFunctionFromValue = (value: string): TestFunction => {
 export type FindDebugLevel = (minLevel: Level, key: string) => Level;
 
 export function createFindDebugLevel(
-  debugValue?: DebugValueType
+  debugValue?: DebugValueType,
 ): FindDebugLevel {
   let isWildcard = false;
   const debugValues: TestFunction[] = [];
@@ -54,7 +54,7 @@ export function createFindDebugLevel(
     (debugValue as string[]).forEach((value) => {
       if (specialRegexpChars.test(value)) {
         throw new Error(
-          `Invalid debug value: "${value}" (contains special chars)`
+          `Invalid debug value: "${value}" (contains special chars)`,
         );
       }
 

@@ -52,5 +52,5 @@ configure(
         {
           handlers: [new ConsoleHandler(libMinLevel)],
         },
-      ]
+      ],
 );

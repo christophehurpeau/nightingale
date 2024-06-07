@@ -27,22 +27,22 @@ export interface MetadataWithError extends Metadata {
 
 export interface Options {
   getUser?: <T extends MetadataWithError>(
-    record: LogRecord<T>
+    record: LogRecord<T>,
   ) => User | undefined;
   getTags?: <T extends MetadataWithError>(
-    record: LogRecord<T>
+    record: LogRecord<T>,
   ) => Record<string, string>;
   getBreadcrumbCategory?: <T extends Metadata>(
-    record: LogRecord<T>
+    record: LogRecord<T>,
   ) => string | undefined;
   getBreadcrumbType?: <T extends Metadata>(
-    record: LogRecord<T>
+    record: LogRecord<T>,
   ) => string | undefined;
   shouldSendAsException?: <T extends MetadataWithError>(
-    record: LogRecord<T>
+    record: LogRecord<T>,
   ) => boolean;
   shouldSendAsBreadcrumb?: <T extends Metadata>(
-    record: LogRecord<T>
+    record: LogRecord<T>,
   ) => boolean;
 }
 
@@ -64,7 +64,7 @@ const createHandler = <S extends SentryRequiredMethods>(
       record.metadata.unhandled !== true,
     shouldSendAsBreadcrumb = <T extends Metadata>(record: LogRecord<T>) =>
       false,
-  }: Options = {}
+  }: Options = {},
 ): Handle => {
   return <T extends MetadataWithError>(record: LogRecord<T>) => {
     const { key, level, metadata, extra, message } = record;

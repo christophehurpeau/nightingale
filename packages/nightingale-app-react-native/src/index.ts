@@ -24,14 +24,14 @@ configure(
         {
           handlers: [new ReactNativeConsoleHandlerForPlatform(Level.INFO)],
         },
-      ]
+      ],
 );
 
 export function listenReactNativeUnhandledErrors(
   logger: Logger = new Logger(
     "nightingale:listenReactNativeUnhandledErrors",
-    "UnhandledErrors"
-  )
+    "UnhandledErrors",
+  ),
 ): void {
   // Check if Hermes is available and is being used for promises
   // React Native v0.63 and v0.64 include global.HermesInternal but not 'hasPromise'

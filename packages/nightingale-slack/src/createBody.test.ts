@@ -14,28 +14,28 @@ const record = {
 test("keep channel", () => {
   const testChannel = "testChannel";
   expect(createBody(record, { webhookUrl, channel: testChannel }).channel).toBe(
-    testChannel
+    testChannel,
   );
 });
 
 test("keep username", () => {
   const testUsername = "testUsername";
   expect(
-    createBody(record, { webhookUrl, username: testUsername }).username
+    createBody(record, { webhookUrl, username: testUsername }).username,
   ).toBe(testUsername);
 });
 
 test("keep iconUrl", () => {
   const testIconUrl = "testIconUrl";
   expect(
-    createBody(record, { webhookUrl, iconUrl: testIconUrl }).icon_url
+    createBody(record, { webhookUrl, iconUrl: testIconUrl }).icon_url,
   ).toBe(testIconUrl);
 });
 
 test("keep iconEmoji", () => {
   const testIconEmoji = "testIconEmoji";
   expect(
-    createBody(record, { webhookUrl, iconEmoji: testIconEmoji }).icon_emoji
+    createBody(record, { webhookUrl, iconEmoji: testIconEmoji }).icon_emoji,
   ).toBe(testIconEmoji);
 });
 

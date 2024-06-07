@@ -6,7 +6,7 @@ import { levelToSymbol } from "./levelToSymbol";
 
 export function formatRecordToString<T extends Metadata>(
   record: LogRecord<T>,
-  style: StyleFn
+  style: StyleFn,
 ): string {
   const parts: string[] = [];
 
@@ -18,7 +18,7 @@ export function formatRecordToString<T extends Metadata>(
 
   if (record.datetime) {
     parts.push(
-      style(["gray", "bold"], record.datetime.toTimeString().split(" ")[0])
+      style(["gray", "bold"], record.datetime.toTimeString().split(" ")[0]),
     );
     /* new Date().toFormat('HH24:MI:SS') */
   }
@@ -44,7 +44,7 @@ export function formatRecordToString<T extends Metadata>(
   const formatRecordObject = (
     key: string,
     object: Record<string, unknown> | undefined,
-    objectStyles: ObjectStyles | undefined
+    objectStyles: ObjectStyles | undefined,
   ): void => {
     if (!object) {
       return;

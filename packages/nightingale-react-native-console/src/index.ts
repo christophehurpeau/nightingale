@@ -37,14 +37,14 @@ function parsedStackToString(stack: StackFrame[]): string {
           frame.lineNumber
             ? `:${frame.lineNumber}${frame.column ? `:${frame.column}` : ""}`
             : ""
-        }${frame.methodName ? ` in ${frame.methodName}` : ""}`
+        }${frame.methodName ? ` in ${frame.methodName}` : ""}`,
     )
     .join("\n");
 }
 
 function consoleOutput<T extends Metadata>(
   param: string[] | string,
-  record: LogRecord<T>
+  record: LogRecord<T>,
 ): void {
   // eslint-disable-next-line no-console
   console.log(...param);

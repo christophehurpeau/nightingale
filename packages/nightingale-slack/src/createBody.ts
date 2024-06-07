@@ -18,7 +18,7 @@ const levelToSlackColor: Record<number, string> = {
 
 export default function createBody<T extends Metadata>(
   record: LogRecord<T>,
-  slackConfig: SlackConfig
+  slackConfig: SlackConfig,
 ): Record<string, unknown> {
   const markdown = markdownFormatter(record);
   const raw = rawFormatter(record);

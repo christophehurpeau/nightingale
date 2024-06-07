@@ -12,7 +12,7 @@ configure([
         {
           webhookUrl: process.env.WEBHOOK_URL,
         },
-        Level.ALL
+        Level.ALL,
       ),
     ],
   },

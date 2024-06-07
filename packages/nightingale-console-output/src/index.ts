@@ -5,7 +5,7 @@ import type { LogRecord, Metadata } from "nightingale-types";
 
 export default function consoleOutput<T extends Metadata>(
   param: string[] | string,
-  record: LogRecord<T>
+  record: LogRecord<T>,
 ): void {
   if (POB_TARGET !== "browser") {
     const outKey = record.level >= Level.ERROR ? "stderr" : "stdout";

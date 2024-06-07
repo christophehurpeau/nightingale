@@ -10,7 +10,7 @@ const formatWithDarkTheme = createBrowserConsoleFormatter("dark");
 test("style: blue bold color", () => {
   const args: string[] = [];
   expect(style(styleToHtmlStyle, args)(["blue", "bold"], "test")).toBe(
-    "%ctest%c"
+    "%ctest%c",
   );
   expect(args).toEqual([
     "color: #00a0ff; font-weight: bold",

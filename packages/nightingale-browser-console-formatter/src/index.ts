@@ -16,13 +16,13 @@ export const style =
     const htmlStyles = styles.map((styleName) => styleToHtmlStyle[styleName]);
     args.push(
       htmlStyles.map((s) => s.open).join("; "),
-      htmlStyles.map((s) => s.close).join("; ")
+      htmlStyles.map((s) => s.close).join("; "),
     );
     return `%c${string}%c`;
   };
 
 export function createBrowserConsoleFormatter(
-  theme: "dark" | "light" = "light"
+  theme: "dark" | "light" = "light",
 ): <T extends Metadata>(record: LogRecord<T>) => string[] {
   const styleToHtmlStyle: StyleToHtmlStyle =
     theme === "dark" ? styleToHtmlStyleThemeDark : styleToHtmlStyleThemeLight;

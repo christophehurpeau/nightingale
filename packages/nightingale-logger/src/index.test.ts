@@ -30,7 +30,7 @@ test("extends undefined context", () => {
   expect(() => {
     logger.extendsContext({ test: true });
   }).toThrow(
-    "Cannot extends context that does not exists. Use setContext(context) first."
+    "Cannot extends context that does not exists. Use setContext(context) first.",
   );
 });
 

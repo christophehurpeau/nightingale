@@ -11,8 +11,8 @@ export { configure, addConfig } from "./config";
 export function listenUnhandledErrors(
   logger: Logger = new Logger(
     "nightingale:listenUnhandledErrors",
-    "UnhandledErrors"
-  )
+    "UnhandledErrors",
+  ),
 ): void {
   process.on("uncaughtException", (error) => {
     logger.error(error, {

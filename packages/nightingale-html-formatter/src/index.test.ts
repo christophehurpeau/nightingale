@@ -3,7 +3,7 @@ import format, { style } from ".";
 
 test("blue bold color", () => {
   expect(style(["blue", "bold"], "test")).toBe(
-    '<span style="color: #00a0ff; font-weight: bold">test</span>'
+    '<span style="color: #00a0ff; font-weight: bold">test</span>',
   );
 });
 
@@ -18,6 +18,6 @@ test("format simple message", () => {
   };
 
   expect(format(record)).toBe(
-    '<span style="color: #808080">record.key</span> <span style="color: gray; font-weight: bold">01:00:00</span> → record.message'
+    '<span style="color: #808080">record.key</span> <span style="color: gray; font-weight: bold">01:00:00</span> → record.message',
   );
 });
