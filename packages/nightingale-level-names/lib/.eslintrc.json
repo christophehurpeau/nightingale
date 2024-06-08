@@ -4,7 +4,11 @@
   "ignorePatterns": ["*.d.ts"],
   "overrides": [
     {
-      "files": ["**/*.test.{cjs,js}", "__tests__/**/*.{cjs,js}"],
+      "files": [
+        "**/*.test.{cjs,js}",
+        "__tests__/**/*.{cjs,js}",
+        "**/__mocks__/**/*.{cjs,js}"
+      ],
       "env": {
         "jest": true
       },
