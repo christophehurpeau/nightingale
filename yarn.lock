@@ -8898,7 +8898,7 @@ __metadata:
     eslint: "npm:8.57.0"
     jest: "npm:29.7.0"
     pob-babel: "npm:40.0.0"
-    typedoc: "npm:0.26.1"
+    typedoc: "npm:0.26.2"
     typescript: "npm:5.4.5"
   languageName: unknown
   linkType: soft
@@ -11231,9 +11231,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typedoc@npm:0.26.1":
-  version: 0.26.1
-  resolution: "typedoc@npm:0.26.1"
+"typedoc@npm:0.26.2":
+  version: 0.26.2
+  resolution: "typedoc@npm:0.26.2"
   dependencies:
     lunr: "npm:^2.3.9"
     markdown-it: "npm:^14.1.0"
@@ -11244,7 +11244,7 @@ __metadata:
     typescript: 4.6.x || 4.7.x || 4.8.x || 4.9.x || 5.0.x || 5.1.x || 5.2.x || 5.3.x || 5.4.x || 5.5.x
   bin:
     typedoc: bin/typedoc
-  checksum: 10c0/8e19811d5c97ba8f750b4a122223c6ff24e91deae30964310186f2fc270c8a32a94e223bfb9e59e5e2c7eb65e2a613a736ec4a21e8584c00dedae9221dcfd008
+  checksum: 10c0/ef4d89d550c26f09a30f4eeb33ffd02a0ee6386f98b879a60cf0366aa4f0106951155b8e9e0c2d2a47df654f358bb71cd7d9cd603b8a6ba0e62285b14474797c
   languageName: node
   linkType: hard
 
