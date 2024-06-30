@@ -1,0 +1,1 @@
+export { ConsoleHandler } from "nightingale";

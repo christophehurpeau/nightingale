@@ -1,6 +1,5 @@
-import { Level, Logger, configure } from 'nightingale';
+import { Level, Logger, configure, ConsoleHandler } from 'nightingale';
 export { Level, Logger, addConfig, configure, levels } from 'nightingale';
-import { ConsoleHandler } from 'nightingale-console';
 
 const testMinLevel = (() => {
   if (process.env.NIGHTINGALE_TEST_MIN_LEVEL !== undefined && process.env.NIGHTINGALE_TEST_MIN_LEVEL !== "") {

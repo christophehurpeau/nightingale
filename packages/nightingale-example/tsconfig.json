@@ -17,35 +17,15 @@
     "paths": {
       "nightingale-types": ["../../packages/nightingale-types/src"],
       "nightingale-types/*": ["../../packages/nightingale-types/src/*"],
-      "nightingale-console-output": [
-        "../../packages/nightingale-console-output/src"
-      ],
-      "nightingale-console-output/*": [
-        "../../packages/nightingale-console-output/src/*"
-      ],
-      "nightingale-json-formatter": [
-        "../../packages/nightingale-json-formatter/src"
-      ],
-      "nightingale-json-formatter/*": [
-        "../../packages/nightingale-json-formatter/src/*"
-      ],
-      "nightingale-console": ["../../packages/nightingale-console/src"],
-      "nightingale-console/*": ["../../packages/nightingale-console/src/*"],
-      "nightingale-slack": ["../../packages/nightingale-slack/src"],
-      "nightingale-slack/*": ["../../packages/nightingale-slack/src/*"],
-      "nightingale-string": ["../../packages/nightingale-string/src"],
-      "nightingale-string/*": ["../../packages/nightingale-string/src/*"],
       "nightingale": ["../../packages/nightingale/src"],
-      "nightingale/*": ["../../packages/nightingale/src/*"]
+      "nightingale/*": ["../../packages/nightingale/src/*"],
+      "nightingale-slack": ["../../packages/nightingale-slack/src"],
+      "nightingale-slack/*": ["../../packages/nightingale-slack/src/*"]
     }
   },
   "references": [
     { "path": "../../packages/nightingale-types/tsconfig.json" },
-    { "path": "../../packages/nightingale-console-output/tsconfig.json" },
-    { "path": "../../packages/nightingale-json-formatter/tsconfig.json" },
-    { "path": "../../packages/nightingale-console/tsconfig.json" },
-    { "path": "../../packages/nightingale-slack/tsconfig.json" },
-    { "path": "../../packages/nightingale-string/tsconfig.json" },
-    { "path": "../../packages/nightingale/tsconfig.json" }
+    { "path": "../../packages/nightingale/tsconfig.json" },
+    { "path": "../../packages/nightingale-slack/tsconfig.json" }
   ]
 }

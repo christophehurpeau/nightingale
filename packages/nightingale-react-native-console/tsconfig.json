@@ -18,16 +18,12 @@
     "paths": {
       "nightingale-types": ["../../packages/nightingale-types/src"],
       "nightingale-types/*": ["../../packages/nightingale-types/src/*"],
-      "nightingale-ansi-formatter": [
-        "../../packages/nightingale-ansi-formatter/src"
-      ],
-      "nightingale-ansi-formatter/*": [
-        "../../packages/nightingale-ansi-formatter/src/*"
-      ]
+      "nightingale": ["../../packages/nightingale/src"],
+      "nightingale/*": ["../../packages/nightingale/src/*"]
     }
   },
   "references": [
     { "path": "../../packages/nightingale-types/tsconfig.json" },
-    { "path": "../../packages/nightingale-ansi-formatter/tsconfig.json" }
+    { "path": "../../packages/nightingale/tsconfig.json" }
   ]
 }

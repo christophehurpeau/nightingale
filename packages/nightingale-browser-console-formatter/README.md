@@ -3,7 +3,7 @@
 </h3>
 
 <p align="center">
-  Nightingale Browser console formatter
+  Deprecated: use NightingaleBrowserConsoleFormatter from nightingale
 </p>
 
 <p align="center">
@@ -17,11 +17,14 @@
 ## Install
 
 ```sh
-npm install --save nightingale-browser-console-formatter
+npm install --save nightingale
 ```
 
 ## Usage
 
 ```js
-import browserConsoleFormatter from "nightingale-browser-console-formatter";
+import { NightingaleBrowserConsoleFormatter } from "nightingale";
+
+const formatter = new NightingaleBrowserConsoleFormatter("light");
+formatter.format(record);
 ```

@@ -72,9 +72,7 @@
   "prettier": "@pob/root/prettier-config",
   "dependencies": {
     "@types/node": ">=18.0.0",
-    "nightingale": "15.0.0",
-    "nightingale-browser-console": "15.0.0",
-    "nightingale-console": "15.0.0"
+    "nightingale": "15.0.0"
   },
   "devDependencies": {
     "@babel/core": "7.24.5",

@@ -3,7 +3,7 @@
 </h3>
 
 <p align="center">
-  String handler for nightingale
+  Deprecated, use String from nightingale instead
 </p>
 
 <p align="center">
@@ -16,11 +16,11 @@
 ## Install
 
 ```sh
-npm install --save nightingale-string
+npm install --save nightingale
 ```
 
 ## Usage
 
 ```js
-import nightingaleString from "nightingale-string";
+import { StringHandler } from "nightingale";
 ```
