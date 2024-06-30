@@ -1,0 +1,1 @@
+export { BrowserConsoleHandler } from "nightingale";

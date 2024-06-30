@@ -75,6 +75,7 @@
   "prettier": "@pob/root/prettier-config",
   "dependencies": {
     "@types/node": ">=18.0.0",
+    "ansi-styles": "^6.2.1",
     "nightingale-levels": "15.0.0",
     "nightingale-logger": "15.0.0",
     "nightingale-types": "15.0.0"
@@ -82,7 +83,6 @@
   "devDependencies": {
     "@babel/core": "7.24.5",
     "@babel/preset-env": "7.24.5",
-    "nightingale-string": "15.0.0",
     "pob-babel": "40.0.1",
     "typescript": "5.4.5"
   }
