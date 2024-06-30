@@ -83,11 +83,7 @@
   "prettier": "@pob/root/prettier-config",
   "dependencies": {
     "nightingale": "15.0.0",
-    "nightingale-console": "15.0.0",
-    "nightingale-console-output": "15.0.0",
-    "nightingale-json-formatter": "15.0.0",
     "nightingale-slack": "15.0.0",
-    "nightingale-string": "15.0.0",
     "nightingale-types": "15.0.0"
   },
   "devDependencies": {

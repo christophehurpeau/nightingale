@@ -3,7 +3,7 @@
 </h3>
 
 <p align="center">
-  Nightingale formatter
+  Deprecated: use nightingale package instead
 </p>
 
 <p align="center">

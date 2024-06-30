@@ -1,7 +1,12 @@
 import { POB_TARGET } from "pob-babel";
-import { Logger, configure, Level, listenUnhandledErrors } from "nightingale";
-import { BrowserConsoleHandler } from "nightingale-browser-console";
-import { ConsoleHandler as TerminalConsoleHandler } from "nightingale-console";
+import {
+  Logger,
+  configure,
+  Level,
+  listenUnhandledErrors,
+  BrowserConsoleHandler,
+  ConsoleHandler as TerminalConsoleHandler,
+} from "nightingale";
 
 export { configure, addConfig, levels, Level } from "nightingale";
 

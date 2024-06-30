@@ -71,7 +71,7 @@
     "react-native": "*"
   },
   "dependencies": {
-    "nightingale-ansi-formatter": "15.0.0",
+    "nightingale": "15.0.0",
     "nightingale-types": "15.0.0"
   },
   "devDependencies": {

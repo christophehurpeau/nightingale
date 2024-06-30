@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 
-import formatterANSI from "nightingale-ansi-formatter";
+import { ANSIFormatter } from "nightingale";
 import type {
   Level,
   Handle,
@@ -57,14 +57,14 @@ const createHandle = (): Handle => {
       symbolicateStackTrace(getStackTrace(metadataError))
         .then(({ stack, codeFrame }: any) => {
           metadataError.stack = parsedStackToString(stack);
-          consoleOutput([formatterANSI(record)], record);
+          consoleOutput([ANSIFormatter.format(record)], record);
         })
         .catch((error: unknown) => {
           metadataError.stack = undefined;
-          consoleOutput([formatterANSI(record)], record);
+          consoleOutput([ANSIFormatter.format(record)], record);
         });
     } else {
-      consoleOutput([formatterANSI(record)], record);
+      consoleOutput([ANSIFormatter.format(record)], record);
     }
   };
 };

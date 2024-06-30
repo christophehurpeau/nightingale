@@ -1,7 +1,5 @@
 /* eslint-disable camelcase */
-import { Level } from "nightingale-levels";
-import markdownFormatter from "nightingale-markdown-formatter";
-import rawFormatter from "nightingale-raw-formatter";
+import { RawFormatter, MarkdownFormatter, Level } from "nightingale";
 import type { LogRecord, Metadata } from "nightingale-types";
 import type { SlackConfig } from "./SlackConfig";
 
@@ -20,8 +18,8 @@ export default function createBody<T extends Metadata>(
   record: LogRecord<T>,
   slackConfig: SlackConfig,
 ): Record<string, unknown> {
-  const markdown = markdownFormatter(record);
-  const raw = rawFormatter(record);
+  const markdown = MarkdownFormatter.format(record);
+  const raw = RawFormatter.format(record);
 
   return {
     channel: slackConfig.channel,

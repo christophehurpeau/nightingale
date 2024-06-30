@@ -3,7 +3,7 @@
 </h3>
 
 <p align="center">
-  Nightingale Raw formatter
+  Deprecated: use RawFormatter from nightingale
 </p>
 
 <p align="center">
@@ -17,11 +17,13 @@
 ## Install
 
 ```sh
-npm install --save nightingale-raw-formatter
+npm install --save nightingale
 ```
 
 ## Usage
 
 ```js
-import rawFormatter from "nightingale-raw-formatter";
+import { RawFormatter } from "nightingale";
+
+RawFormatter.format(record);
 ```
