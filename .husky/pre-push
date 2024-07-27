@@ -1,5 +1,3 @@
-#!/usr/bin/env sh
-
 # z40 is the value matching the empty blob/commit/tree SHA (zero x 40)
 z40=0000000000000000000000000000000000000000
 branch_ref=$(git symbolic-ref HEAD)

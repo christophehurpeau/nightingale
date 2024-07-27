@@ -2559,16 +2559,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pob/pretty-pkg@npm:8.0.0":
-  version: 8.0.0
-  resolution: "@pob/pretty-pkg@npm:8.0.0"
+"@pob/pretty-pkg@npm:8.1.0":
+  version: 8.1.0
+  resolution: "@pob/pretty-pkg@npm:8.1.0"
   dependencies:
-    "@pob/sort-pkg": "npm:7.2.0"
+    "@pob/sort-pkg": "npm:7.3.0"
     glob: "npm:^10.0.0"
     prettier: "npm:^3.2.5"
   bin:
     pretty-pkg: ./bin/pretty-pkg.js
-  checksum: 10c0/0f75b364ab6ef7d01cd49700660bb4ee832579d3538f28d0daf2695dfa36e1598c03714689623e1ce1d567d5e3a95f3d15da37bf60a307073101dce4a2236e06
+  checksum: 10c0/7f439758bc5268b2138e7d43d92c37cb38fe57e080b9e8b9565873c4568fc23b2d9205fb2abf06c48afeb9af4b0d5dd0fc54d2585b2e220e82cc86401239e0bb
   languageName: node
   linkType: hard
 
@@ -2584,24 +2584,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pob/root@npm:12.1.1":
-  version: 12.1.1
-  resolution: "@pob/root@npm:12.1.1"
+"@pob/root@npm:12.2.0":
+  version: 12.2.0
+  resolution: "@pob/root@npm:12.2.0"
   dependencies:
     "@commitlint/cli": "npm:19.3.0"
     "@pob/pretty-eslint-config": "npm:6.0.0"
-    "@pob/pretty-pkg": "npm:8.0.0"
+    "@pob/pretty-pkg": "npm:8.1.0"
     conventional-changelog-conventionalcommits: "npm:^8.0.0"
     cosmiconfig: "npm:^9.0.0"
-    husky: "npm:~9.0.11"
+    husky: "npm:~9.1.0"
     json5: "npm:^2.2.2"
-    lint-staged: "npm:15.2.5"
-    pob-dependencies: "npm:13.1.0"
-    prettier: "npm:3.3.1"
+    lint-staged: "npm:15.2.7"
+    pob-dependencies: "npm:13.2.0"
+    prettier: "npm:3.3.3"
     repository-check-dirty: "npm:7.0.0"
     semver: "npm:^7.3.7"
     which-pm-runs: "npm:1.1.0"
-    yarn-version: "npm:2.1.1"
+    yarn-version: "npm:2.2.0"
   bin:
     commitlint: ./bin/commitlint.js
     pob-root-lint-staged: ./bin/pob-root-lint-staged.js
@@ -2612,7 +2612,7 @@ __metadata:
     pretty-pkg: ./bin/pretty-pkg.js
     repository-check-dirty: ./bin/repository-check-dirty.js
     yarn-version: ./bin/yarn-version.js
-  checksum: 10c0/c7f091c425720934a8335284d32a4a01668e2d7c3326791e0c4570e0c1477f0ac01dc3783e915d823f3fef0a42d7a1d12a0b25d6febb0693327839cb5754fe6c
+  checksum: 10c0/865ba98d50594d223e98431aa9a5cc653ed5f80d8632f1f142111538b6aa88a1122aa26892e16ab8604b6bb7c47a0c7ea1594838de93065da8d8ea9a8a65ba57
   languageName: node
   linkType: hard
 
@@ -2632,12 +2632,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pob/sort-pkg@npm:7.2.0":
-  version: 7.2.0
-  resolution: "@pob/sort-pkg@npm:7.2.0"
+"@pob/sort-pkg@npm:7.3.0":
+  version: 7.3.0
+  resolution: "@pob/sort-pkg@npm:7.3.0"
   dependencies:
     "@pob/sort-object": "npm:6.3.1"
-  checksum: 10c0/e7a0ca2c877d08848e360ddd84ccc4eab0de0de5c1ae134151eca46c6bac5db33e8e058cf46e9396a379513830dfaf9b84af1badefc3eeb36eeb98203479e84a
+  checksum: 10c0/ca409280b8906e72ac2edeef50faa00fe141a9e145298a6b427cd1d2909425cadc9ba529395e0d1465d6b66c367bc2feb95924879a2fa188ec0e2f8cebae6967
   languageName: node
   linkType: hard
 
@@ -6690,12 +6690,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"husky@npm:~9.0.11":
-  version: 9.0.11
-  resolution: "husky@npm:9.0.11"
+"husky@npm:~9.1.0":
+  version: 9.1.3
+  resolution: "husky@npm:9.1.3"
   bin:
-    husky: bin.mjs
-  checksum: 10c0/2c787dcf74a837fc9a4fea7da907509d4bd9a289f4ea10ecc9d86279e4d4542b0f5f6443a619bccae19e265f2677172cc2b86aae5c932a35a330cc227d914605
+    husky: bin.js
+  checksum: 10c0/3fb8657ff97f529dab0b9a0afa6b818ec604f60c39abc13e8e3f4263ea30a3aa6fff7a1b625b8a53700899ce0ea2f5f656981c46b8f1837cfd84ddb6da883fb2
   languageName: node
   linkType: hard
 
@@ -8068,9 +8068,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lint-staged@npm:15.2.5":
-  version: 15.2.5
-  resolution: "lint-staged@npm:15.2.5"
+"lint-staged@npm:15.2.7":
+  version: 15.2.7
+  resolution: "lint-staged@npm:15.2.7"
   dependencies:
     chalk: "npm:~5.3.0"
     commander: "npm:~12.1.0"
@@ -8084,7 +8084,7 @@ __metadata:
     yaml: "npm:~2.4.2"
   bin:
     lint-staged: bin/lint-staged.js
-  checksum: 10c0/89c54489783510f86df15756659facade82e849c0cbfb564fe047b82be91c5d2b1b5608a4bfc5237bd7b9fd0e1206e66aa3e4f8cad3ac51e37a098b8492c2fa6
+  checksum: 10c0/c14399f9782ae222a1748144254f24b5b9afc816dc8840bd02d50f523c6582796ff18410767eb1a73cf1a83bc6e492dea7b1c4f0912bf3e434c068221f13c878
   languageName: node
   linkType: hard
 
@@ -9212,7 +9212,7 @@ __metadata:
     "@pob/commitlint-config": "npm:6.4.0"
     "@pob/eslint-config": "npm:56.1.0"
     "@pob/eslint-config-typescript": "npm:56.1.0"
-    "@pob/root": "npm:12.1.1"
+    "@pob/root": "npm:12.2.0"
     "@types/jest": "npm:29.5.12"
     "@types/node": "npm:20.14.12"
     check-package-dependencies: "npm:7.2.0"
@@ -9981,10 +9981,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pob-dependencies@npm:13.1.0":
-  version: 13.1.0
-  resolution: "pob-dependencies@npm:13.1.0"
-  checksum: 10c0/f1bacbd9f3dea195dfb0d113aa390a9f9e69bce8a5623a51eb705e965b7ecea30685b2a6051ab169998b3db0bfcfa2f3bb8ed4010414f3472f9ff46119d0ca38
+"pob-dependencies@npm:13.2.0":
+  version: 13.2.0
+  resolution: "pob-dependencies@npm:13.2.0"
+  checksum: 10c0/2b4cd535b66d44e359183539116e450551e9116d2d788b0cc7c37ffa2f73671c4e2de7f3525215bcc06bf5417702ab93b8d2668ba2464fba1668e61684034678
   languageName: node
   linkType: hard
 
@@ -10002,12 +10002,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:3.3.1, prettier@npm:^3.2.5":
-  version: 3.3.1
-  resolution: "prettier@npm:3.3.1"
+"prettier@npm:3.3.3, prettier@npm:^3.2.5":
+  version: 3.3.3
+  resolution: "prettier@npm:3.3.3"
   bin:
     prettier: bin/prettier.cjs
-  checksum: 10c0/c25a709c9f0be670dc6bcb190b622347e1dbeb6c3e7df8b0711724cb64d8647c60b839937a4df4df18e9cfb556c2b08ca9d24d9645eb5488a7fc032a2c4d5cb3
+  checksum: 10c0/b85828b08e7505716324e4245549b9205c0cacb25342a030ba8885aba2039a115dbcf75a0b7ca3b37bc9d101ee61fab8113fc69ca3359f2a226f1ecc07ad2e26
   languageName: node
   linkType: hard
 
@@ -10768,12 +10768,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semver@npm:7.6.2, semver@npm:^7.3.5, semver@npm:^7.3.7, semver@npm:^7.5.2, semver@npm:^7.5.3, semver@npm:^7.5.4, semver@npm:^7.6.0":
-  version: 7.6.2
-  resolution: "semver@npm:7.6.2"
+"semver@npm:7.6.3, semver@npm:^7.3.5, semver@npm:^7.3.7, semver@npm:^7.5.2, semver@npm:^7.5.3, semver@npm:^7.5.4, semver@npm:^7.6.0":
+  version: 7.6.3
+  resolution: "semver@npm:7.6.3"
   bin:
     semver: bin/semver.js
-  checksum: 10c0/97d3441e97ace8be4b1976433d1c32658f6afaff09f143e52c593bae7eef33de19e3e369c88bd985ce1042c6f441c80c6803078d1de2a9988080b66684cbb30c
+  checksum: 10c0/88f33e148b210c153873cb08cfe1e281d518aaa9a666d4d148add6560db5cd3c582f3a08ccb91f38d5f379ead256da9931234ed122057f40bb5766e65e58adaf
   languageName: node
   linkType: hard
 
@@ -12227,14 +12227,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"yarn-version@npm:2.1.1":
-  version: 2.1.1
-  resolution: "yarn-version@npm:2.1.1"
+"yarn-version@npm:2.2.0":
+  version: 2.2.0
+  resolution: "yarn-version@npm:2.2.0"
   dependencies:
     "@conventional-changelog/git-client": "npm:1.0.1"
     "@npmcli/map-workspaces": "npm:3.0.6"
     "@octokit/rest": "npm:20.1.1"
-    "@pob/pretty-pkg": "npm:8.0.0"
+    "@pob/pretty-pkg": "npm:8.1.0"
     commander: "npm:12.1.0"
     conventional-changelog-conventionalcommits: "npm:8.0.0"
     conventional-changelog-core: "npm:8.0.0"
@@ -12245,10 +12245,10 @@ __metadata:
     hosted-git-info: "npm:^7.0.2"
     nightingale: "npm:15.0.0"
     nightingale-console: "npm:15.0.0"
-    semver: "npm:7.6.2"
+    semver: "npm:7.6.3"
   bin:
     yarn-version: ./build/index-node18.mjs
-  checksum: 10c0/0a47639fe3f98ee419dc86f2ce485f0345d3f0d57f9d18ca77af4f46cfa09f847296f9d54b97a1415badb251d74f5e9c1424f7ca6dfec36494773a92ef44ee14
+  checksum: 10c0/8835128bcc4168000b5640476693fd972dd31a084d615c241fb18a45de36720ca22e550daab55543ed24f049912c96b4ca2524d9d00a3c52c9afc912b8270273
   languageName: node
   linkType: hard
 

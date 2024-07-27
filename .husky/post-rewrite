@@ -1,5 +1,3 @@
-#!/usr/bin/env sh
-
 if [ -n "$(git diff HEAD@{1}..HEAD@{0} -- yarn.lock)" ]; then
   yarn install --immutable || true
 fi
