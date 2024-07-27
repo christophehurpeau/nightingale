@@ -40,8 +40,7 @@ npm install --save nightingale nightingale-console
 ```
 
 ```js
-import Logger, { configure, Level } from "nightingale";
-import ConsoleHandler from "nightingale-console";
+import { configure, Logger, Level, ConsoleHandler } from "nightingale";
 
 configure([
   {
@@ -165,40 +164,188 @@ app.use(async (ctx) => {
 });
 ```
 
-## More info
-
-### Handler
+## Handler
 
 How a log is processed: has a layout and an output.
 Also define a minimum level.
 
+### Included handlers
+
+#### ConsoleHandler
+
+Log using `console`.
+
+```js
+import { configure, levels, ConsoleHandler } from "nightingale";
+
+configure([
+  {
+    key: "app",
+    handlers: [new ConsoleHandler(Level.INFO)],
+  },
+]);
+```
+
+**DEBUG**
+
+`DEBUG=* node .`
+
+```js
+DEBUG='*'; # debug everything
+DEBUG=app # debug for logger with key 'app'
+DEBUG=app:* # debug for logger with key 'app' and all its children
+DEBUG=app,nightingale # debug for logger with key 'app' and 'nightingale'
+DEBUG=/^app/ # debug for logger with key starting with 'app'
+DEBUG=/^(app|nightingale$)/ # debug for logger with key starting with 'app' and key 'nightingale'
+DEBUG='*,-app'; # debug everything except app
+DEBUG='*,-app:*'; # debug everything except app and all its children
+```
+
+**Use source maps to display error stack trace**
+
+Since node 12.12.0, you can use `--enable-source-maps` while running node.
+
+![error with source maps](https://static.hurpeau.com/images/npm/nightingale/screenshot-errors-with-source-maps.png)
+
+#### BrowserConsoleHandler
+
+**Usage**
+
+```js
+import { configure, levels } from "nightingale";
+import { ConsoleHandler } from "nightingale-browser-console";
+
+configure([{ handlers: [new ConsoleHandler(Level.INFO)] }]);
+```
+
+**Theme**
+
+If you have a dark console theme, you can set this config in your localStorage :
+
+```js
+localStorage.NIGHTINGALE_THEME = "dark";
+```
+
+You can also force this option:
+
+```js
+import { ConsoleHandler } from "nightingale-browser-console";
+
+configure([{ handlers: [new ConsoleHandler(Level.INFO, { theme: "dark" })] }]);
+```
+
+**Debug with localStorage**
+
+```js
+localStorage.debug = "*"; // debug everything
+localStorage.debug = "app"; // debug for logger with key 'app'
+localStorage.debug = "app,nightingale"; // debug for logger with key 'app' and 'nightingale'
+localStorage.debug = "/^app/"; //debug for logger with key starting with 'app'
+localStorage.debug = "/^(app|nightingale$)/"; // debug for logger with key starting with 'app' and key 'nightingale'
+localStorage.debug = "*,-app"; // debug everything except app
+localStorage.debug = "*,-app:*"; // debug everything except app and all its children
+```
+
+**Debug with query, in the url**
+
+```js
+?DEBUG='*'; // debug everything
+?DEBUG=app // debug for logger with key 'app'
+?DEBUG=app,nightingale // debug for logger with key 'app' and 'nightingale'
+?DEBUG=/^app/  // debug for logger with key starting with 'app'
+?DEBUG=/^(app|nightingale$)/  // debug for logger with key starting with 'app' and key 'nightingale'
+?DEBUG=*,-app // debug everything except app
+?DEBUG=*,-app:* // debug everything except app and all its children
+```
+
+**Use source maps to display error stack trace**
+
+In production:
+
+Send your log to an external tool like [sentry](https://sentry.io/). Sentry allows you to send the source maps after building (if you use webpack, you can use `hidden-source-map` to generate `.map` files, send them to sentry, and remove them so they are not accessible).
+
+In development:
+
+- Configure your build tool to generate sourcemaps. For webpack: use proper [`devtool` configuration](https://webpack.js.org/configuration/devtool/). For best stack trace, use `source-map` but it's the slowest option.
+- Make sure your project uses [source-map-support](https://www.npmjs.com/package/source-map-support) or similar tool. If not, you can install and simply import `source-map-support/register`.
+
+#### StringHandler
+
+Useful for testing purposes
+
+```js
+import { configure, levels, StringHandler } from "nightingale";
+import { BrowserConsoleHandler } from "nightingale-browser-console";
+
+const stringHandler = new StringHandler(Level.INFO);
+
+configure([
+  {
+    key: "app",
+    handlers: [stringHandler],
+  },
+]);
+
+console.log(stringHandler.string);
+```
+
+### More handlers
+
 You can find handlers [on npm](https://www.npmjs.com/search?q=nightingale-handler)
 
-- [ConsoleHandler](https://npmjs.org/package/nightingale-console)
-- [BrowserConsoleHandler](https://npmjs.org/package/nightingale-browser-console)
-- [StringHandler](https://npmjs.org/package/nightingale-string)
 - [SlackHandler](https://npmjs.org/package/nightingale-slack)
 - [ReactNativeConsoleHandler](https://npmjs.org/package/nightingale-react-native-console)
 - [WinstonAdapterHandler](https://npmjs.org/package/nightingale-winston-adapter)
 
 ### Formatter
 
-You can find formatters [on npm](https://www.npmjs.com/search?q=nightingale-formatter)
-
 How the record is formatted, with its colors.
 
+### Included formatters
+
+#### Raw
+
+```js
+import { RawFormatter } from "nightingale";
+
+RawFormatter.format(record);
+```
+
+#### Markdown
+
+```js
+import { MarkdownFormatter } from "nightingale";
+
+MarkdownFormatter.format(record);
+```
+
+#### JSON
+
+```js
+import { JSONFormatter } from "nightingale";
+
+JSONFormatter.format(record);
+```
+
+### More formatters
+
+You can find formatters [on npm](https://www.npmjs.com/search?q=nightingale-formatter)
+
 - [AnsiFormatter](https://npmjs.org/package/nightingale-ansi-formatter)
-- [JsonFormatter](https://npmjs.org/package/nightingale-json-formatter)
-- [MarkdownFormatter](https://npmjs.org/package/nightingale-markdown-formatter)
 
 ### Output
 
 Where the log is sent: console, file, ...
 
-You can find outputs [on npm](https://www.npmjs.com/search?q=nightingale-output)
+### Included handlers
 
-- [console](https://npmjs.org/package/nightingale-console-output)
-- [file](https://npmjs.org/package/nightingale-file-output)
+#### consoleOutput
+
+Output using `console.log/error` or `process.stdout/stderr`
+
+### More outputs
+
+You can find outputs [on npm](https://www.npmjs.com/search?q=nightingale-output)
 
 ### Processor
 

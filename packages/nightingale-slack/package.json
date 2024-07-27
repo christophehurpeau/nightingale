@@ -58,9 +58,7 @@
   },
   "prettier": "@pob/root/prettier-config",
   "dependencies": {
-    "nightingale-levels": "15.0.0",
-    "nightingale-markdown-formatter": "15.0.0",
-    "nightingale-raw-formatter": "15.0.0",
+    "nightingale": "15.0.0",
     "nightingale-types": "15.0.0"
   },
   "devDependencies": {

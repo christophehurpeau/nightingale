@@ -1,5 +1,4 @@
-import { Logger } from "nightingale";
-import { BrowserConsoleHandler } from "nightingale-browser-console";
+import { Logger, BrowserConsoleHandler } from "nightingale";
 import { ReactNativeConsoleHandler } from "nightingale-react-native-console";
 export { configure, addConfig, Level } from "nightingale";
 export declare const appLogger: Logger;

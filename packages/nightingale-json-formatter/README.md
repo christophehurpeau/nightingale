@@ -3,7 +3,7 @@
 </h3>
 
 <p align="center">
-  Nightingale JSON formatter
+  Deprecated: use JSONFormatter from nightingale
 </p>
 
 <p align="center">
@@ -17,11 +17,13 @@
 ## Install
 
 ```sh
-npm install --save nightingale-json-formatter
+npm install --save nightingale
 ```
 
 ## Usage
 
 ```js
-import jsonFormatter from "nightingale-json-formatter";
+import { JSONFormatter } from "nightingale";
+
+JSONFormatter.format(record);
 ```

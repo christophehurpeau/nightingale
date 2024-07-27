@@ -16,14 +16,9 @@
     "composite": true,
 
     "paths": {
-      "nightingale-console": ["../../packages/nightingale-console/src"],
-      "nightingale-console/*": ["../../packages/nightingale-console/src/*"],
       "nightingale": ["../../packages/nightingale/src"],
       "nightingale/*": ["../../packages/nightingale/src/*"]
     }
   },
-  "references": [
-    { "path": "../../packages/nightingale-console/tsconfig.json" },
-    { "path": "../../packages/nightingale/tsconfig.json" }
-  ]
+  "references": [{ "path": "../../packages/nightingale/tsconfig.json" }]
 }
