@@ -46,7 +46,7 @@
     "@pob/commitlint-config": "6.4.0",
     "@pob/eslint-config": "56.1.0",
     "@pob/eslint-config-typescript": "56.1.0",
-    "@pob/root": "12.2.0",
+    "@pob/root": "12.4.0",
     "@types/jest": "29.5.12",
     "@types/node": "20.14.15",
     "check-package-dependencies": "7.2.0",
