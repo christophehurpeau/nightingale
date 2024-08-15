@@ -80,6 +80,6 @@
     "pob-babel": "40.0.1",
     "react": "18.2.0",
     "react-native": "0.72.6",
-    "typescript": "5.4.5"
+    "typescript": "5.5.4"
   }
 }
