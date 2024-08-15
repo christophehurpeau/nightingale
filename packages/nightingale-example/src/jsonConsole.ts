@@ -1,6 +1,10 @@
-import { Logger, configure, Level } from "nightingale";
-import consoleOutput from "nightingale-console-output";
-import jsonFormatter from "nightingale-json-formatter";
+import {
+  Logger,
+  configure,
+  Level,
+  consoleOutput,
+  JSONFormatter,
+} from "nightingale";
 import type { Handler, LogRecord, Metadata } from "nightingale-types";
 
 class JSONHandler implements Handler {
@@ -11,7 +15,7 @@ class JSONHandler implements Handler {
   }
 
   handle<T extends Metadata>(record: LogRecord<T>): void {
-    consoleOutput(jsonFormatter(record), record);
+    consoleOutput(JSONFormatter.format(record), record);
   }
 }
 

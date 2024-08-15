@@ -21,15 +21,12 @@
       "nightingale-types": ["../../packages/nightingale-types/src"],
       "nightingale-types/*": ["../../packages/nightingale-types/src/*"],
       "nightingale-logger": ["../../packages/nightingale-logger/src"],
-      "nightingale-logger/*": ["../../packages/nightingale-logger/src/*"],
-      "nightingale-string": ["../../packages/nightingale-string/src"],
-      "nightingale-string/*": ["../../packages/nightingale-string/src/*"]
+      "nightingale-logger/*": ["../../packages/nightingale-logger/src/*"]
     }
   },
   "references": [
     { "path": "../../packages/nightingale-levels/tsconfig.json" },
     { "path": "../../packages/nightingale-types/tsconfig.json" },
-    { "path": "../../packages/nightingale-logger/tsconfig.json" },
-    { "path": "../../packages/nightingale-string/tsconfig.json" }
+    { "path": "../../packages/nightingale-logger/tsconfig.json" }
   ]
 }

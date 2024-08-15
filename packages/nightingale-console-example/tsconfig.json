@@ -17,15 +17,14 @@
     "paths": {
       "nightingale-sentry": ["../../packages/nightingale-sentry/src"],
       "nightingale-sentry/*": ["../../packages/nightingale-sentry/src/*"],
-      "nightingale-console": ["../../packages/nightingale-console/src"],
-      "nightingale-console/*": ["../../packages/nightingale-console/src/*"],
       "nightingale": ["../../packages/nightingale/src"],
-      "nightingale/*": ["../../packages/nightingale/src/*"]
+      "nightingale/*": ["../../packages/nightingale/src/*"],
+      "nightingale-console": ["../../packages/nightingale-console/lib"],
+      "nightingale-console/*": ["../../packages/nightingale-console/lib/*"]
     }
   },
   "references": [
     { "path": "../../packages/nightingale-sentry/tsconfig.json" },
-    { "path": "../../packages/nightingale-console/tsconfig.json" },
     { "path": "../../packages/nightingale/tsconfig.json" }
   ]
 }

@@ -1,6 +1,5 @@
-import { Logger, listenUnhandledErrors, Level, configure } from 'nightingale';
+import { Logger, listenUnhandledErrors, Level, configure, ConsoleHandler as ConsoleHandler$1 } from 'nightingale';
 export { Level, addConfig, configure, levels } from 'nightingale';
-import { ConsoleHandler as ConsoleHandler$1 } from 'nightingale-console';
 
 const ConsoleHandler = ConsoleHandler$1;
 const logger = new Logger("app");

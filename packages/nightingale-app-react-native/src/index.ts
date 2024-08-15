@@ -1,5 +1,4 @@
-import { Logger, configure, Level } from "nightingale";
-import { BrowserConsoleHandler } from "nightingale-browser-console";
+import { Logger, configure, Level, BrowserConsoleHandler } from "nightingale";
 import { ReactNativeConsoleHandler } from "nightingale-react-native-console";
 import { Platform } from "react-native";
 
@@ -36,7 +35,7 @@ export function listenReactNativeUnhandledErrors(
   // Check if Hermes is available and is being used for promises
   // React Native v0.63 and v0.64 include global.HermesInternal but not 'hasPromise'
   if (
-    global?.HermesInternal?.hasPromise?.() &&
+    global.HermesInternal.hasPromise?.() &&
     global.HermesInternal.enablePromiseRejectionTracker
   ) {
     global.HermesInternal.enablePromiseRejectionTracker({

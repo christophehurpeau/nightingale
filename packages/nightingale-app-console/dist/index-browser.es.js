@@ -1,6 +1,5 @@
-import { Logger, Level, configure } from 'nightingale';
+import { Logger, Level, configure, BrowserConsoleHandler } from 'nightingale';
 export { Level, addConfig, configure, levels } from 'nightingale';
-import { BrowserConsoleHandler } from 'nightingale-browser-console';
 
 const ConsoleHandler = BrowserConsoleHandler;
 const logger = new Logger("app");

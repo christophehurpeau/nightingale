@@ -78,7 +78,6 @@
   },
   "dependencies": {
     "nightingale": "15.0.0",
-    "nightingale-browser-console": "15.0.0",
     "nightingale-react-native-console": "15.0.0"
   },
   "devDependencies": {

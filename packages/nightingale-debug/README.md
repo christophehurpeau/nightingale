@@ -3,7 +3,7 @@
 </h3>
 
 <p align="center">
-  Nightingale debug
+  Deprecated: use createFindDebugLevel from nightingale instead
 </p>
 
 <p align="center">
@@ -17,13 +17,13 @@
 ## Install
 
 ```sh
-npm install --save nightingale-debug
+npm install --save nightingale
 ```
 
 ## Used by:
 
-- [nightingale-console](https://npmjs.org/package/nightingale-console)
-- [nightingale-browser-console](https://npmjs.org/package/nightingale-browser-console)
+- ConsoleHandler
+- BrowserConsoleHandler
 
 ## Usage with nodejs
 

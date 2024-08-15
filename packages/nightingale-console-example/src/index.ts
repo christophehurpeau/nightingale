@@ -1,5 +1,10 @@
-import { Logger, configure, Level, listenUnhandledErrors } from "nightingale";
-import { ConsoleHandler } from "nightingale-console";
+import {
+  Logger,
+  configure,
+  Level,
+  listenUnhandledErrors,
+  ConsoleHandler,
+} from "nightingale";
 
 configure([{ handlers: [new ConsoleHandler(Level.INFO)] }]);
 listenUnhandledErrors();

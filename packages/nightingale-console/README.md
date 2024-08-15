@@ -3,7 +3,7 @@
 </h3>
 
 <p align="center">
-  Console handler for nightingale
+  Deprecated: use ConsoleHandler from nightingale
 </p>
 
 <p align="center">
@@ -16,35 +16,13 @@
 ## Install
 
 ```sh
-npm install --save nightingale nightingale-console
+npm install --save nightingale
 ```
 
 ## Usage
 
 ```js
-import { configure, levels } from "nightingale";
-import { ConsoleHandler } from "nightingale-console";
+import { configure, levels, ConsoleHandler } from "nightingale";
 
 configure([{ handlers: [new ConsoleHandler(Level.INFO)] }]);
 ```
-
-## Debug
-
-`DEBUG=* node .`
-
-```js
-DEBUG='*'; # debug everything
-DEBUG=app # debug for logger with key 'app'
-DEBUG=app:* # debug for logger with key 'app' and all its children
-DEBUG=app,nightingale # debug for logger with key 'app' and 'nightingale'
-DEBUG=/^app/ # debug for logger with key starting with 'app'
-DEBUG=/^(app|nightingale$)/ # debug for logger with key starting with 'app' and key 'nightingale'
-DEBUG='*,-app'; # debug everything except app
-DEBUG='*,-app:*'; # debug everything except app and all its children
-```
-
-## Use source maps to display error stack trace
-
-Since node 12.12.0, you can use `--enable-source-maps` while running node.
-
-![error with source maps](https://static.hurpeau.com/images/npm/nightingale/screenshot-errors-with-source-maps.png)

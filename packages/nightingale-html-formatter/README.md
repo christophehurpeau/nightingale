@@ -3,7 +3,7 @@
 </h3>
 
 <p align="center">
-  Nightingale HTML formatter
+  Deprecated: use HTMLFormatter from nightingale instead.
 </p>
 
 <p align="center">
@@ -17,11 +17,13 @@
 ## Install
 
 ```sh
-npm install --save nightingale-html-formatter
+npm install --save nightingale
 ```
 
 ## Usage
 
 ```js
-import htmlFormatter from "nightingale-html-formatter";
+import { HTMLFormatter } from "nightingale";
+
+HTMLFormatter.format(record);
 ```

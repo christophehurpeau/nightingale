@@ -1,7 +1,7 @@
 {
   "name": "nightingale-console",
   "version": "15.0.0",
-  "description": "Console handler for nightingale",
+  "description": "Deprecated: use ConsoleHandler from nightingale",
   "keywords": [
     "nightingale",
     "nightingale-handler"
@@ -19,8 +19,8 @@
     "node": ">=18.12.0"
   },
   "sideEffects": false,
-  "main": "./dist/index-node18.mjs",
-  "types": "./dist/definitions/index.d.ts",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
   "exports": {
     "./package.json": "./package.json",
     ".": {
@@ -31,43 +31,17 @@
     }
   },
   "files": [
-    "src",
-    "dist"
+    "lib"
   ],
   "scripts": {
-    "build": "yarn clean:build && rollup --config rollup.config.mjs && yarn run build:definitions",
-    "build:definitions": "tsc -p tsconfig.json",
     "clean": "yarn clean:build",
-    "clean:build": "pob-babel-clean-out dist",
     "lint": "yarn run lint:eslint",
     "lint:eslint": "yarn ../.. run eslint --report-unused-disable-directives --resolve-plugins-relative-to . --quiet packages/nightingale-console",
     "watch": "yarn clean:build && rollup --config rollup.config.mjs --watch"
   },
-  "pob": {
-    "bundler": "rollup-babel",
-    "entries": [
-      "index"
-    ],
-    "envs": [
-      {
-        "target": "node",
-        "version": "18"
-      }
-    ]
-  },
+  "pob": {},
   "prettier": "@pob/root/prettier-config",
   "dependencies": {
-    "@types/node": ">=18.0.0",
-    "nightingale-ansi-formatter": "15.0.0",
-    "nightingale-console-output": "15.0.0",
-    "nightingale-debug": "15.0.0",
-    "nightingale-json-formatter": "15.0.0",
-    "nightingale-levels": "15.0.0",
-    "nightingale-types": "15.0.0"
-  },
-  "devDependencies": {
-    "@babel/core": "7.24.5",
-    "pob-babel": "40.0.1",
-    "typescript": "5.4.5"
+    "nightingale": "15.0.0"
   }
 }

@@ -1,4 +1,4 @@
-import formatterANSI from 'nightingale-ansi-formatter';
+import { ANSIFormatter } from 'nightingale';
 import { Platform } from 'react-native';
 import parseErrorStack from 'react-native/Libraries/Core/Devtools/parseErrorStack';
 import symbolicateStackTrace from 'react-native/Libraries/Core/Devtools/symbolicateStackTrace';
@@ -36,13 +36,13 @@ const createHandle = () => {
         codeFrame
       }) => {
         metadataError.stack = parsedStackToString(stack);
-        consoleOutput([formatterANSI(record)]);
+        consoleOutput([ANSIFormatter.format(record)]);
       }).catch(() => {
         metadataError.stack = undefined;
-        consoleOutput([formatterANSI(record)]);
+        consoleOutput([ANSIFormatter.format(record)]);
       });
     } else {
-      consoleOutput([formatterANSI(record)]);
+      consoleOutput([ANSIFormatter.format(record)]);
     }
   };
 };

@@ -1,0 +1,1 @@
+export { StringHandler } from "nightingale";

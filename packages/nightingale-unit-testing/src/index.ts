@@ -1,5 +1,4 @@
-import { configure, Level, Logger } from "nightingale";
-import { ConsoleHandler } from "nightingale-console";
+import { ConsoleHandler, configure, Level, Logger } from "nightingale";
 
 export { configure, addConfig, levels, Level, Logger } from "nightingale";
 

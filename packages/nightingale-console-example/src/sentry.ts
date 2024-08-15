@@ -1,6 +1,11 @@
 import * as Sentry from "@sentry/node";
-import { Logger, configure, Level, listenUnhandledErrors } from "nightingale";
-import { ConsoleHandler } from "nightingale-console";
+import {
+  Logger,
+  configure,
+  Level,
+  listenUnhandledErrors,
+  ConsoleHandler,
+} from "nightingale";
 import { SentryHandler } from "nightingale-sentry";
 
 if (!process.env.SENTRY_DSN) {

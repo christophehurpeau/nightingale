@@ -1,6 +1,4 @@
-import { Level } from 'nightingale-levels';
-import markdownFormatter from 'nightingale-markdown-formatter';
-import rawFormatter from 'nightingale-raw-formatter';
+import { MarkdownFormatter, RawFormatter, Level } from 'nightingale';
 
 /* eslint-disable camelcase */
 const levelToSlackColor = {
@@ -14,8 +12,8 @@ const levelToSlackColor = {
   [Level.EMERGENCY]: "danger"
 };
 function createBody(record, slackConfig) {
-  const markdown = markdownFormatter(record);
-  const raw = rawFormatter(record);
+  const markdown = MarkdownFormatter.format(record);
+  const raw = RawFormatter.format(record);
   return {
     channel: slackConfig.channel,
     username: slackConfig.username,

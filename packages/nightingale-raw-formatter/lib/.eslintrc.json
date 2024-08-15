@@ -1,0 +1,25 @@
+{
+  "root": true,
+  "extends": ["@pob/eslint-config/node-module"],
+  "ignorePatterns": ["*.d.ts"],
+  "overrides": [
+    {
+      "files": [
+        "**/*.test.{cjs,js}",
+        "__tests__/**/*.{cjs,js}",
+        "**/__mocks__/**/*.{cjs,js}"
+      ],
+      "env": {
+        "jest": true
+      },
+      "rules": {
+        "import/no-extraneous-dependencies": [
+          "error",
+          {
+            "devDependencies": true
+          }
+        ]
+      }
+    }
+  ]
+}
