@@ -78,7 +78,7 @@
     "@babel/core": "7.25.2",
     "@babel/preset-env": "7.25.4",
     "pob-babel": "41.0.2",
-    "react": "18.2.0",
+    "react": "18.3.1",
     "react-native": "0.75.2",
     "typescript": "5.5.4"
   }
