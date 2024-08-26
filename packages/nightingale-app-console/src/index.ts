@@ -1,4 +1,3 @@
-import { POB_TARGET } from "pob-babel";
 import {
   Logger,
   configure,
@@ -7,6 +6,7 @@ import {
   BrowserConsoleHandler,
   ConsoleHandler as TerminalConsoleHandler,
 } from "nightingale";
+import { POB_TARGET } from "pob-babel";
 
 export { configure, addConfig, levels, Level } from "nightingale";
 

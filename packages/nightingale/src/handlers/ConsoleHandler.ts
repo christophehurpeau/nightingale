@@ -1,4 +1,3 @@
-import { POB_TARGET } from "pob-babel";
 import { Level } from "nightingale-levels";
 import type {
   IsHandling,
@@ -7,6 +6,7 @@ import type {
   Metadata,
   Handler,
 } from "nightingale-types";
+import { POB_TARGET } from "pob-babel";
 import { createFindDebugLevel } from "../debug/debug";
 import { ANSIFormatter } from "../formatters/ANSIFormatter";
 import { JSONFormatter } from "../formatters/JSONFormatter";

@@ -321,7 +321,7 @@ function internalFormatValue(value, styleFn, styles, {
     }
   } else if (value instanceof Error) {
     const stack = value.stack;
-    stringValue = stack != null && stack.startsWith(value.message) || stack != null && stack.startsWith(`${value.name}: ${value.message}`) ? stack : `${value.message}\n${stack || ""}`;
+    stringValue = stack?.startsWith(value.message) || stack?.startsWith(`${value.name}: ${value.message}`) ? stack : `${value.message}\n${stack || ""}`;
   } else if (value instanceof Map) {
     const name = value.constructor.name;
     if (depth >= maxDepth) {
@@ -839,7 +839,6 @@ class BrowserConsoleFormatter {
 }
 
 /* eslint-disable no-console */
-
 function consoleOutput(param, record) {
   console[record.level >= Level.ERROR ? "error" : "log"](...param);
 }
@@ -847,8 +846,8 @@ function consoleOutput(param, record) {
 /* eslint-disable prefer-template */
 
 class StringHandler {
+  _buffer = "";
   constructor(minLevel) {
-    this._buffer = "";
     this.minLevel = minLevel;
   }
   get string() {
@@ -891,8 +890,8 @@ const createHandler = (theme = getDefaultTheme()) => {
   };
 };
 class BrowserConsoleHandler {
+  minLevel = 0;
   constructor(minLevel, options = {}) {
-    this.minLevel = 0;
     this.isHandling = (level, key) => level >= findDebugLevel$1(minLevel, key);
     this.handle = createHandler(options.theme);
   }
@@ -906,8 +905,8 @@ const createHandle = (formatter = defaultFormatter, output = consoleOutput) => {
 };
 const findDebugLevel = createFindDebugLevel(process.env.DEBUG);
 class ConsoleHandler {
+  minLevel = (() => Level.ALL)();
   constructor(minLevel, options = {}) {
-    this.minLevel = Level.ALL;
     this.minLevel = minLevel;
     this.isHandling = (level, key) => level >= findDebugLevel(minLevel, key);
     this.handle = createHandle(options.formatter, options.output);

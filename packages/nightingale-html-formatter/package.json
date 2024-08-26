@@ -39,7 +39,7 @@
   "scripts": {
     "clean": "yarn clean:build",
     "lint": "yarn run lint:eslint",
-    "lint:eslint": "yarn ../.. run eslint --report-unused-disable-directives --resolve-plugins-relative-to . --quiet packages/nightingale-html-formatter",
+    "lint:eslint": "yarn ../.. run eslint --quiet packages/nightingale-html-formatter",
     "test": "yarn ../../ run test -- packages/nightingale-html-formatter",
     "watch": "yarn clean:build && rollup --config rollup.config.mjs --watch"
   },

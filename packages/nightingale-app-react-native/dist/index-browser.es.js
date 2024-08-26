@@ -15,7 +15,7 @@ configure(process.env.NODE_ENV === "production" ? [] : [{
 function listenReactNativeUnhandledErrors(logger = new Logger("nightingale:listenReactNativeUnhandledErrors", "UnhandledErrors")) {
   // Check if Hermes is available and is being used for promises
   // React Native v0.63 and v0.64 include global.HermesInternal but not 'hasPromise'
-  if (global.HermesInternal.hasPromise != null && global.HermesInternal.hasPromise() && global.HermesInternal.enablePromiseRejectionTracker) {
+  if (global.HermesInternal.hasPromise?.() && global.HermesInternal.enablePromiseRejectionTracker) {
     global.HermesInternal.enablePromiseRejectionTracker({
       allRejections: true,
       onUnhandled: (id, rejection) => {

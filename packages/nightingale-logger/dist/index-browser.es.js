@@ -150,7 +150,7 @@ class Logger {
       ...metadata,
       error: messageOrError
     } : metadata;
-    const context = extendedMetadata == null ? void 0 : extendedMetadata.context;
+    const context = extendedMetadata?.context;
     if (extendedMetadata) {
       delete extendedMetadata.context;
     }

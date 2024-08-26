@@ -34,7 +34,7 @@
   "scripts": {
     "clean": "yarn clean:build",
     "lint": "yarn run lint:eslint",
-    "lint:eslint": "yarn ../.. run eslint --report-unused-disable-directives --resolve-plugins-relative-to . --quiet packages/nightingale-browser-console",
+    "lint:eslint": "yarn ../.. run eslint --quiet packages/nightingale-browser-console",
     "watch": "yarn clean:build && rollup --config rollup.config.mjs --watch"
   },
   "pob": {},

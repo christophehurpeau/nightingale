@@ -1,5 +1,4 @@
 import * as util from "node:util";
-import { POB_TARGET } from "pob-babel";
 import { Level } from "nightingale-levels";
 import type {
   Metadata,
@@ -9,6 +8,7 @@ import type {
   Processor,
   LogRecord,
 } from "nightingale-types";
+import { POB_TARGET } from "pob-babel";
 
 export { Level } from "nightingale-levels";
 

@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
-import { POB_TARGET } from "pob-babel";
 import { Level } from "nightingale-levels";
 import type { LogRecord, Metadata } from "nightingale-types";
+import { POB_TARGET } from "pob-babel";
 
 export function consoleOutput<T extends Metadata>(
   param: string[] | string,

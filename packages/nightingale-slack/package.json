@@ -40,7 +40,7 @@
     "clean": "yarn clean:build",
     "clean:build": "pob-babel-clean-out dist",
     "lint": "yarn run lint:eslint",
-    "lint:eslint": "yarn ../.. run eslint --report-unused-disable-directives --resolve-plugins-relative-to . --quiet packages/nightingale-slack",
+    "lint:eslint": "yarn ../.. run eslint --quiet packages/nightingale-slack",
     "test": "yarn ../../ run test -- packages/nightingale-slack",
     "watch": "yarn clean:build && rollup --config rollup.config.mjs --watch"
   },
@@ -62,9 +62,9 @@
     "nightingale-types": "15.0.0"
   },
   "devDependencies": {
-    "@babel/core": "7.24.5",
+    "@babel/core": "7.25.2",
     "@types/node": "20.14.15",
-    "pob-babel": "40.0.1",
-    "typescript": "5.4.5"
+    "pob-babel": "41.0.2",
+    "typescript": "5.5.4"
   }
 }

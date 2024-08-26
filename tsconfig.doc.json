@@ -37,7 +37,6 @@
       "packages/nightingale-unit-testing/src/index.ts",
       "packages/nightingale-slack/src/index.ts",
       "packages/nightingale-react-native-console/src/index.ts",
-      "packages/nightingale-browser-console/src/index.ts",
       "packages/nightingale-app-console/src/index.ts",
       "packages/nightingale/src/index.ts",
       "packages/nightingale-winston-adapter/src/index.ts",

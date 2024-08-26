@@ -94,11 +94,14 @@ jobs:
         if: matrix.node-version != 18
 
       - name: Generate Test Coverage
-        run: yarn run test:coverage
+        run: yarn run test:coverage:json
         if: matrix.node-version == 18
+        env:
+          CI: true
 
       - name: Send results to codecov
         uses: codecov/codecov-action@v4
         if: matrix.node-version == 18
         with:
+          fail_ci_if_error: true
           token: ${{ secrets.CODECOV_TOKEN }}
