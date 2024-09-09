@@ -2453,24 +2453,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pob/eslint-config-typescript@npm:58.0.2":
-  version: 58.0.2
-  resolution: "@pob/eslint-config-typescript@npm:58.0.2"
+"@pob/eslint-config-typescript@npm:58.1.0":
+  version: 58.1.0
+  resolution: "@pob/eslint-config-typescript@npm:58.1.0"
   dependencies:
-    "@pob/eslint-config": "npm:58.0.2"
+    "@pob/eslint-config": "npm:58.1.0"
     "@typescript-eslint/eslint-plugin": "npm:^8.1.0"
     "@typescript-eslint/parser": "npm:^8.1.0"
     eslint-plugin-import: "npm:^2.29.1"
     typescript-eslint: "npm:^8.1.0"
   peerDependencies:
     eslint: ^9.9.0
-  checksum: 10c0/1fd7e1f6b744e998fdd79deea0de7df107ac7f82cda3a45032cc4a9cfd0f0a8e3e1d15de9dcaa1a7fed4e009e1cd7dc03d27027ca83cfddc1659dd19ea55150e
+  checksum: 10c0/bfcf7676f669d30ecaa2f70ea2c8b4418c1b8f667c45d38d29089418cb75eac4088e69b1ff9ddaf5feae35c0b3fecb9eff8551da7716d7861330959fd5230599
   languageName: node
   linkType: hard
 
-"@pob/eslint-config@npm:58.0.2":
-  version: 58.0.2
-  resolution: "@pob/eslint-config@npm:58.0.2"
+"@pob/eslint-config@npm:58.1.0":
+  version: 58.1.0
+  resolution: "@pob/eslint-config@npm:58.1.0"
   dependencies:
     "@eslint/compat": "npm:^1.1.1"
     "@eslint/eslintrc": "npm:3.1.0"
@@ -2482,7 +2482,7 @@ __metadata:
     eslint-plugin-unicorn: "npm:^55.0.0"
   peerDependencies:
     eslint: ^9.9.0
-  checksum: 10c0/8ea52990f1e25c6edb9336974de0aa17d97d1935c81125b08aaa5f59d87beaf5120cce55ebaec02afec197591f344baddaa7dcfd1a22f6198a9a15f247b7efdb
+  checksum: 10c0/85a27bd32f842a957ef77c8dd50b0d86c94bac05eba17e02e26a60b9eb3560e107a80573ed511c20768a83cd13dce4e71948832030d790f36340c784d609fdf8
   languageName: node
   linkType: hard
 
@@ -9165,8 +9165,8 @@ __metadata:
   dependencies:
     "@babel/core": "npm:7.25.2"
     "@pob/commitlint-config": "npm:7.0.0"
-    "@pob/eslint-config": "npm:58.0.2"
-    "@pob/eslint-config-typescript": "npm:58.0.2"
+    "@pob/eslint-config": "npm:58.1.0"
+    "@pob/eslint-config-typescript": "npm:58.1.0"
     "@pob/root": "npm:13.2.0"
     "@types/jest": "npm:29.5.12"
     "@types/node": "npm:20.16.5"
