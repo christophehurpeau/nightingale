@@ -3237,10 +3237,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@shikijs/core@npm:1.9.1":
-  version: 1.9.1
-  resolution: "@shikijs/core@npm:1.9.1"
-  checksum: 10c0/70523a0fc2e8d32da6f35e640c854cb3ae3cb7202bcab2f08c92b8925ea4b2c19ec6df55c5cfd50d586bc3a3a5156945db720962ed66a3e624c2ef241aebe6ce
+"@shikijs/core@npm:1.16.2":
+  version: 1.16.2
+  resolution: "@shikijs/core@npm:1.16.2"
+  dependencies:
+    "@shikijs/vscode-textmate": "npm:^9.2.0"
+    "@types/hast": "npm:^3.0.4"
+  checksum: 10c0/1fe12b7db380194d21b8c8c64897a29b2b3b6ef69db6e6ddce784faf8bd54ce2040f152802c95e55654b3f286b07af1d6f2017b40a241236a8647567b4bdcad0
+  languageName: node
+  linkType: hard
+
+"@shikijs/vscode-textmate@npm:^9.2.0":
+  version: 9.2.0
+  resolution: "@shikijs/vscode-textmate@npm:9.2.0"
+  checksum: 10c0/9f89e02bd930953bb15ad50b079ac15e1704cdc4f7d1d188f6d1eea87cf74e5dced59cd724ba9466116158eec75b71117fcd9915757a7615856d0ed366957704
   languageName: node
   linkType: hard
 
@@ -3365,6 +3375,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/hast@npm:^3.0.4":
+  version: 3.0.4
+  resolution: "@types/hast@npm:3.0.4"
+  dependencies:
+    "@types/unist": "npm:*"
+  checksum: 10c0/3249781a511b38f1d330fd1e3344eed3c4e7ea8eff82e835d35da78e637480d36fad37a78be5a7aed8465d237ad0446abc1150859d0fde395354ea634decf9f7
+  languageName: node
+  linkType: hard
+
 "@types/istanbul-lib-coverage@npm:*, @types/istanbul-lib-coverage@npm:^2.0.0, @types/istanbul-lib-coverage@npm:^2.0.1":
   version: 2.0.4
   resolution: "@types/istanbul-lib-coverage@npm:2.0.4"
@@ -3457,6 +3476,13 @@ __metadata:
   version: 2.0.1
   resolution: "@types/stack-utils@npm:2.0.1"
   checksum: 10c0/3327ee919a840ffe907bbd5c1d07dfd79137dd9732d2d466cf717ceec5bb21f66296173c53bb56cff95fae4185b9cd6770df3e9745fe4ba528bbc4975f54d13f
+  languageName: node
+  linkType: hard
+
+"@types/unist@npm:*":
+  version: 3.0.3
+  resolution: "@types/unist@npm:3.0.3"
+  checksum: 10c0/2b1e4adcab78388e088fcc3c0ae8700f76619dbcb4741d7d201f87e2cb346bfc29a89003cfea2d76c996e1061452e14fcd737e8b25aacf949c1f2d6b2bc3dd60
   languageName: node
   linkType: hard
 
@@ -9148,7 +9174,7 @@ __metadata:
     eslint: "npm:9.10.0"
     jest: "npm:29.7.0"
     pob-babel: "npm:41.0.2"
-    typedoc: "npm:0.26.6"
+    typedoc: "npm:0.26.7"
     typescript: "npm:5.5.4"
   languageName: unknown
   linkType: soft
@@ -10855,12 +10881,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"shiki@npm:^1.9.1":
-  version: 1.9.1
-  resolution: "shiki@npm:1.9.1"
+"shiki@npm:^1.16.2":
+  version: 1.16.2
+  resolution: "shiki@npm:1.16.2"
   dependencies:
-    "@shikijs/core": "npm:1.9.1"
-  checksum: 10c0/a9d58279a015f6ab9c2a849d90c23545062f15d6e18d4402f463c41fc7d51992d1d478f9d43b33bf1c1310d56cc0caee90d25a42e4453d4e522166b41409956e
+    "@shikijs/core": "npm:1.16.2"
+    "@shikijs/vscode-textmate": "npm:^9.2.0"
+    "@types/hast": "npm:^3.0.4"
+  checksum: 10c0/504cf61924ecb38cc826a933e73f7f5673f0be811e68b235ace204436ddb61b675ea1b9d8234fe14814d016a6ac222ed53e89e2267e6d6e08855ef6734ce04df
   languageName: node
   linkType: hard
 
@@ -11589,20 +11617,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typedoc@npm:0.26.6":
-  version: 0.26.6
-  resolution: "typedoc@npm:0.26.6"
+"typedoc@npm:0.26.7":
+  version: 0.26.7
+  resolution: "typedoc@npm:0.26.7"
   dependencies:
     lunr: "npm:^2.3.9"
     markdown-it: "npm:^14.1.0"
     minimatch: "npm:^9.0.5"
-    shiki: "npm:^1.9.1"
-    yaml: "npm:^2.4.5"
+    shiki: "npm:^1.16.2"
+    yaml: "npm:^2.5.1"
   peerDependencies:
-    typescript: 4.6.x || 4.7.x || 4.8.x || 4.9.x || 5.0.x || 5.1.x || 5.2.x || 5.3.x || 5.4.x || 5.5.x
+    typescript: 4.6.x || 4.7.x || 4.8.x || 4.9.x || 5.0.x || 5.1.x || 5.2.x || 5.3.x || 5.4.x || 5.5.x || 5.6.x
   bin:
     typedoc: bin/typedoc
-  checksum: 10c0/95e7aefd500d057e0b73afbe4e76d9ddb2617516f890fbe5ce690bddfccc2f73a6279eb7d6e510347ca8347078d7cbbbdf416b9432b156708eaf1a1f34f7a4f0
+  checksum: 10c0/36a73dc08670478d34e9232f4f95b928ca51010e5926dbe22bd5582e9ead914ec7628e73f02488811f79b685abca8f1211c6cf879313cf1122a5ea7eb1bbaf5a
   languageName: node
   linkType: hard
 
@@ -12096,12 +12124,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"yaml@npm:^2.2.1, yaml@npm:^2.4.5, yaml@npm:~2.5.0":
-  version: 2.5.0
-  resolution: "yaml@npm:2.5.0"
+"yaml@npm:^2.2.1, yaml@npm:^2.5.1, yaml@npm:~2.5.0":
+  version: 2.5.1
+  resolution: "yaml@npm:2.5.1"
   bin:
     yaml: bin.mjs
-  checksum: 10c0/771a1df083c8217cf04ef49f87244ae2dd7d7457094425e793b8f056159f167602ce172aa32d6bca21f787d24ec724aee3cecde938f6643564117bd151452631
+  checksum: 10c0/40fba5682898dbeeb3319e358a968fe886509fab6f58725732a15f8dda3abac509f91e76817c708c9959a15f786f38ff863c1b88062d7c1162c5334a7d09cb4a
   languageName: node
   linkType: hard
 
