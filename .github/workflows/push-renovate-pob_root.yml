@@ -34,7 +34,7 @@ jobs:
 
       - name: Check for added or modified files
         id: git-check-modified
-        run: echo ::set-output name=modified::$(if [[ -z $(git status -s) ]]; then echo "false"; else echo "true"; fi)
+        run: if [[ -z $(git status -s) ]]; then echo "modified=false" >> $GITHUB_OUTPUT ; else echo "modified=true"; fi
 
       - name: Commit report
         if: steps.git-check-modified.outputs.modified == 'true'
