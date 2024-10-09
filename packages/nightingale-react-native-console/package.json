@@ -79,7 +79,7 @@
     "@babel/preset-env": "7.25.7",
     "pob-babel": "41.1.0",
     "react": "18.3.1",
-    "react-native": "0.75.2",
+    "react-native": "0.75.4",
     "typescript": "5.6.3"
   }
 }
