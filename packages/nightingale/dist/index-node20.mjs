@@ -936,4 +936,4 @@ function listenUnhandledErrors(logger = new Logger("nightingale:listenUnhandledE
 }
 
 export { ANSIFormatter, BrowserConsoleFormatter, BrowserConsoleHandler, ConsoleHandler, HTMLFormatter, JSONFormatter, MarkdownFormatter, RawFormatter, StringHandler, addConfig, configure, consoleOutput, createFindDebugLevel, formatObject, formatRecordToString, levelToStyles, levelToSymbol, listenUnhandledErrors, styleToHexColor, styleToHtmlStyleThemeDark, styleToHtmlStyleThemeLight };
-//# sourceMappingURL=index-node18.mjs.map
+//# sourceMappingURL=index-node20.mjs.map

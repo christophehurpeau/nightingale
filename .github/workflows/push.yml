@@ -11,7 +11,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
 
       - name: Enable Corepack
         run: corepack enable
@@ -30,7 +30,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
 
       - name: Enable Corepack
         run: corepack enable
@@ -52,7 +52,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
 
       - name: Enable Corepack
         run: corepack enable
@@ -74,7 +74,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [18, 20]
+        node-version: [20, 22]
 
     steps:
       - uses: actions/checkout@v4
@@ -100,7 +100,7 @@ jobs:
           CI: true
 
       - name: Send results to codecov
-        uses: codecov/codecov-action@v4
+        uses: codecov/codecov-action@v5
         if: matrix.node-version == 18
         with:
           fail_ci_if_error: true
