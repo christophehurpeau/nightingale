@@ -4609,19 +4609,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"check-package-dependencies@npm:7.2.0":
-  version: 7.2.0
-  resolution: "check-package-dependencies@npm:7.2.0"
+"check-package-dependencies@npm:8.0.1":
+  version: 8.0.1
+  resolution: "check-package-dependencies@npm:8.0.1"
   dependencies:
     chalk: "npm:^5.2.0"
-    glob: "npm:^10.0.0"
-    import-meta-resolve: "npm:^4.0.0"
+    import-meta-resolve: "npm:^4.1.0"
+    jsonc-parser: "npm:^3.3.1"
     semver: "npm:^7.5.4"
     semver-utils: "npm:^1.1.4"
+    tslib: "npm:^2.8.1"
     type-fest: "npm:^4.0.0"
   bin:
     check-package-dependencies: ./bin/check-package-dependencies.mjs
-  checksum: 10c0/4f10e53953f5f3888f6e3769e5df405909e3eaffb1c82807c209de6e07684080887586b16f0e8671ff44b33f3c0adf2c45b94f45f753606e5cbe1dcabacb34f4
+  checksum: 10c0/402e4db2a1b6965b2f922992ffee2a41f7f189e7818bc57c2d2e96ea2658b5a46cbf993006723c9f2796c7f025753c9618165f9a6a3de66f4e3cb1c5c1e71918
   languageName: node
   linkType: hard
 
@@ -6836,10 +6837,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"import-meta-resolve@npm:^4.0.0":
-  version: 4.0.0
-  resolution: "import-meta-resolve@npm:4.0.0"
-  checksum: 10c0/709375e01f8c3a87b7870991ca29c630d71bb7e22b7bb0f622613173d87b41b4043b4a983800e6d38ab3867496a46f82d30df0cbc2e55792c91c23193eea67a1
+"import-meta-resolve@npm:^4.0.0, import-meta-resolve@npm:^4.1.0":
+  version: 4.1.0
+  resolution: "import-meta-resolve@npm:4.1.0"
+  checksum: 10c0/42f3284b0460635ddf105c4ad99c6716099c3ce76702602290ad5cbbcd295700cbc04e4bdf47bacf9e3f1a4cec2e1ff887dabc20458bef398f9de22ddff45ef5
   languageName: node
   linkType: hard
 
@@ -8045,6 +8046,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"jsonc-parser@npm:^3.3.1":
+  version: 3.3.1
+  resolution: "jsonc-parser@npm:3.3.1"
+  checksum: 10c0/269c3ae0a0e4f907a914bf334306c384aabb9929bd8c99f909275ebd5c2d3bc70b9bcd119ad794f339dec9f24b6a4ee9cd5a8ab2e6435e730ad4075388fc2ab6
+  languageName: node
+  linkType: hard
+
 "jsonfile@npm:^4.0.0":
   version: 4.0.0
   resolution: "jsonfile@npm:4.0.0"
@@ -9153,7 +9161,7 @@ __metadata:
     "@pob/root": "npm:13.4.1"
     "@types/jest": "npm:29.5.14"
     "@types/node": "npm:22.10.0"
-    check-package-dependencies: "npm:7.2.0"
+    check-package-dependencies: "npm:8.0.1"
     eslint: "npm:9.14.0"
     jest: "npm:29.7.0"
     pob-babel: "npm:41.1.0"
@@ -11518,10 +11526,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tslib@npm:^2.0.1":
-  version: 2.6.2
-  resolution: "tslib@npm:2.6.2"
-  checksum: 10c0/e03a8a4271152c8b26604ed45535954c0a45296e32445b4b87f8a5abdb2421f40b59b4ca437c4346af0f28179780d604094eb64546bee2019d903d01c6c19bdb
+"tslib@npm:^2.0.1, tslib@npm:^2.8.1":
+  version: 2.8.1
+  resolution: "tslib@npm:2.8.1"
+  checksum: 10c0/9c4759110a19c53f992d9aae23aac5ced636e99887b51b9e61def52611732872ff7668757d4e4c61f19691e36f4da981cd9485e869b4a7408d689f6bf1f14e62
   languageName: node
   linkType: hard
 
