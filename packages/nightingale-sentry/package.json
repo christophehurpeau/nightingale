@@ -83,6 +83,6 @@
     "@babel/core": "7.26.0",
     "@babel/preset-env": "7.26.0",
     "pob-babel": "42.2.0",
-    "typescript": "5.7.2"
+    "typescript": "5.7.3"
   }
 }
