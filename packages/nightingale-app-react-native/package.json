@@ -81,8 +81,8 @@
     "nightingale-react-native-console": "15.0.0"
   },
   "devDependencies": {
-    "@babel/core": "7.26.0",
-    "@babel/preset-env": "7.26.0",
+    "@babel/core": "7.26.7",
+    "@babel/preset-env": "7.26.7",
     "pob-babel": "42.2.0",
     "typescript": "5.7.3"
   }
