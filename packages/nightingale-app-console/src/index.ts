@@ -1,10 +1,10 @@
 import {
-  Logger,
-  configure,
-  Level,
-  listenUnhandledErrors,
   BrowserConsoleHandler,
+  Level,
+  Logger,
   ConsoleHandler as TerminalConsoleHandler,
+  configure,
+  listenUnhandledErrors,
 } from "nightingale";
 import { POB_TARGET } from "pob-babel";
 

@@ -6,7 +6,7 @@ function webProcessor(record, context) {
       url: request.url,
       method: request.method,
       server: request.headers.host,
-      ip: request.headers["x-forwarded-for"] || request.connection.remoteAddress
+      ip: request.headers["x-forwarded-for"] || request.socket.remoteAddress
     });
   }
 }

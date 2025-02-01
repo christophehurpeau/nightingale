@@ -1,9 +1,9 @@
 import {
+  ConsoleHandler,
+  Level,
   Logger,
   configure,
-  Level,
   listenUnhandledErrors,
-  ConsoleHandler,
 } from "nightingale";
 
 configure([{ handlers: [new ConsoleHandler(Level.INFO)] }]);

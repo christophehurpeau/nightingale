@@ -9,6 +9,7 @@ function map2object(map: Map<unknown, unknown>): unknown {
       return;
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-base-to-string
     object[String(key)] = value;
   });
 

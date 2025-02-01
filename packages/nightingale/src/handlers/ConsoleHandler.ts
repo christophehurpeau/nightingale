@@ -1,10 +1,10 @@
 import { Level } from "nightingale-levels";
 import type {
-  IsHandling,
   Handle,
+  Handler,
+  IsHandling,
   LogRecord,
   Metadata,
-  Handler,
 } from "nightingale-types";
 import { POB_TARGET } from "pob-babel";
 import { createFindDebugLevel } from "../debug/debug";

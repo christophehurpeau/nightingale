@@ -1,4 +1,4 @@
-import type { Level, Handle, IsHandling, Handler } from "nightingale-types";
+import type { Handle, Handler, IsHandling, Level } from "nightingale-types";
 export declare class ReactNativeConsoleHandler implements Handler {
     minLevel: Level;
     handle: Handle;

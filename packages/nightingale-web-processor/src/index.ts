@@ -16,8 +16,7 @@ export default function webProcessor<T extends Metadata>(
       url: request.url,
       method: request.method,
       server: request.headers.host,
-      ip:
-        request.headers["x-forwarded-for"] || request.connection.remoteAddress,
+      ip: request.headers["x-forwarded-for"] || request.socket.remoteAddress,
     });
   }
 }

@@ -2,12 +2,12 @@
 
 import { ANSIFormatter } from "nightingale";
 import type {
-  Level,
   Handle,
+  Handler,
   IsHandling,
+  Level,
   LogRecord,
   Metadata,
-  Handler,
 } from "nightingale-types";
 import { Platform } from "react-native";
 import type { StackFrame } from "react-native/Libraries/Core/Devtools/parseErrorStack";
@@ -47,7 +47,7 @@ function consoleOutput<T extends Metadata>(
   record: LogRecord<T>,
 ): void {
   // eslint-disable-next-line no-console
-  console.log(...param);
+  console.log(...(param as string[]));
 }
 
 const createHandle = (): Handle => {

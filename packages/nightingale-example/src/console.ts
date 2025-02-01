@@ -1,4 +1,4 @@
-import { Logger, configure, Level, ConsoleHandler } from "nightingale";
+import { ConsoleHandler, Level, Logger, configure } from "nightingale";
 
 const logger = new Logger("console");
 

@@ -2,7 +2,7 @@ import * as util from 'node:util';
 import { Level } from 'nightingale-levels';
 export { Level } from 'nightingale-levels';
 
-const globalOrWindow = typeof global !== "undefined" ? global : window;
+const globalOrWindow = typeof globalThis !== "undefined" ? globalThis : globalThis;
 if (!globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER) {
   globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER = () => ({
     handlers: [],

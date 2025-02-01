@@ -1,11 +1,11 @@
 /* eslint-disable camelcase */
 import levelNames from "nightingale-level-names";
 import type {
-  LogRecord,
-  Level,
   Handle,
-  Metadata,
   Handler,
+  Level,
+  LogRecord,
+  Metadata,
 } from "nightingale-types";
 
 export type LogCallback = (err: Error | null) => void;

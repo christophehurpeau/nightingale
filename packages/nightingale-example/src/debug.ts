@@ -1,4 +1,4 @@
-import { Logger, configure, Level, ConsoleHandler } from "nightingale";
+import { ConsoleHandler, Level, Logger, configure } from "nightingale";
 
 configure([
   { handlers: [new ConsoleHandler(Level.ALL)] },

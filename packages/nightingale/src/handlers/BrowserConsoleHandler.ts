@@ -1,10 +1,10 @@
 import type {
-  Level,
   Handle,
+  Handler,
   IsHandling,
+  Level,
   LogRecord,
   Metadata,
-  Handler,
 } from "nightingale-types";
 import { createFindDebugLevel } from "../debug/debug";
 import { BrowserConsoleFormatter } from "../formatters/BrowserConsoleFormatter";
@@ -13,7 +13,8 @@ import { consoleOutput } from "../outputs/consoleOutput";
 export function getDebugString(): string {
   const querystring = document.location.search;
   const debugFromLocalStorage =
-    (window.localStorage && localStorage.getItem("debug")) || "";
+    // eslint-disable-next-line unicorn/prefer-global-this, @typescript-eslint/no-unnecessary-condition
+    window.localStorage?.getItem("debug") || "";
 
   if (!querystring) {
     return debugFromLocalStorage;
@@ -22,8 +23,8 @@ export function getDebugString(): string {
   // https://developer.mozilla.org/en-US/docs/Web/API/URLUtils/search#Get_the_value_of_a_single_search_param
   const debugFromQueryString = decodeURI(
     querystring.replace(
-      // eslint-disable-next-line prefer-regex-literals
-      new RegExp("^(?:.*[&\\?]DEBUG(?:\\=([^&]*))?)?.*$", "i"),
+      // eslint-disable-next-line prefer-regex-literals, regexp/no-super-linear-backtracking
+      new RegExp("^(?:.*[&?]DEBUG(?:=([^&]*))?)?.*$", "i"),
       "$1",
     ),
   );

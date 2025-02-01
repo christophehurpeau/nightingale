@@ -31,6 +31,8 @@ function createBody(record, slackConfig) {
 
 const createHandler = slackConfig => record => {
   const body = createBody(record, slackConfig);
+
+  // eslint-disable-next-line n/no-unsupported-features/node-builtins
   fetch(slackConfig.webhookUrl, {
     method: "POST",
     body: JSON.stringify(body)

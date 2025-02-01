@@ -1,4 +1,4 @@
-import { Logger, configure, Level } from "nightingale";
+import { Level, Logger, configure } from "nightingale";
 import { SlackHandler } from "nightingale-slack";
 
 if (!process.env.WEBHOOK_URL) {

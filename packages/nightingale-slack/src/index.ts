@@ -1,9 +1,9 @@
 import type {
-  LogRecord,
   Handle,
-  Metadata,
   Handler,
   Level,
+  LogRecord,
+  Metadata,
 } from "nightingale-types";
 import type { SlackConfig } from "./SlackConfig";
 import createBody from "./createBody";
@@ -17,6 +17,7 @@ const createHandler =
   <T extends Metadata>(record: LogRecord<T>) => {
     const body = createBody(record, slackConfig);
 
+    // eslint-disable-next-line n/no-unsupported-features/node-builtins
     fetch(slackConfig.webhookUrl, {
       method: "POST",
       body: JSON.stringify(body),

@@ -11,6 +11,8 @@ export function consoleOutput<T extends Metadata>(
     const outKey = record.level >= Level.ERROR ? "stderr" : "stdout";
     process[outKey].write(`${param as string}\n`);
   } else {
-    console[record.level >= Level.ERROR ? "error" : "log"](...param);
+    console[record.level >= Level.ERROR ? "error" : "log"](
+      ...(param as string[]),
+    );
   }
 }

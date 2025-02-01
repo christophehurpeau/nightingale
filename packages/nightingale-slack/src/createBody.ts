@@ -1,5 +1,5 @@
 /* eslint-disable camelcase */
-import { RawFormatter, MarkdownFormatter, Level } from "nightingale";
+import { Level, MarkdownFormatter, RawFormatter } from "nightingale";
 import type { LogRecord, Metadata } from "nightingale-types";
 import type { SlackConfig } from "./SlackConfig";
 

@@ -1,10 +1,10 @@
 import * as Sentry from "@sentry/node";
 import {
+  ConsoleHandler,
+  Level,
   Logger,
   configure,
-  Level,
   listenUnhandledErrors,
-  ConsoleHandler,
 } from "nightingale";
 import { SentryHandler } from "nightingale-sentry";
 

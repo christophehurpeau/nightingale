@@ -3,9 +3,9 @@ import type {
   captureException,
   captureMessage,
 } from "@sentry/core";
-import type { User, SeverityLevel } from "@sentry/types";
+import type { SeverityLevel, User } from "@sentry/types";
 import { Level } from "nightingale-levels";
-import type { LogRecord, Handle, Metadata, Handler } from "nightingale-types";
+import type { Handle, Handler, LogRecord, Metadata } from "nightingale-types";
 
 const mapToSentryLevel: Record<Level, SeverityLevel> = {
   [Level.TRACE]: "debug",

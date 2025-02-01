@@ -1,12 +1,12 @@
 import * as util from "node:util";
 import { Level } from "nightingale-levels";
 import type {
+  Handler,
+  LogRecord,
   Metadata,
   MetadataStyles,
-  Styles,
-  Handler,
   Processor,
-  LogRecord,
+  Styles,
 } from "nightingale-types";
 import { POB_TARGET } from "pob-babel";
 
@@ -58,8 +58,8 @@ declare global {
   ) => ComputedConfigForKey;
 }
 
-const globalOrWindow: typeof global =
-  typeof global !== "undefined" ? global : window;
+const globalOrWindow: typeof globalThis =
+  typeof globalThis !== "undefined" ? globalThis : globalThis;
 
 if (!globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER) {
   globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER =

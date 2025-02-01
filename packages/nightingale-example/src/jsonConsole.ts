@@ -1,9 +1,9 @@
 import {
+  JSONFormatter,
+  Level,
   Logger,
   configure,
-  Level,
   consoleOutput,
-  JSONFormatter,
 } from "nightingale";
 import type { Handler, LogRecord, Metadata } from "nightingale-types";
 

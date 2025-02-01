@@ -1,11 +1,11 @@
 import {
-  levelToStyles,
-  levelToSymbol,
-  styleToHtmlStyleThemeLight,
-  styleToHtmlStyleThemeDark,
-  styleToHexColor,
   formatObject,
   formatRecordToString,
+  levelToStyles,
+  levelToSymbol,
+  styleToHexColor,
+  styleToHtmlStyleThemeDark,
+  styleToHtmlStyleThemeLight,
 } from ".";
 
 describe("test exports", () => {

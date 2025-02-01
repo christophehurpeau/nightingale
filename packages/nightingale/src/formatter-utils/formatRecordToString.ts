@@ -1,5 +1,5 @@
 import type { LogRecord, Metadata } from "nightingale-types";
-import type { StyleFn, ObjectStyles } from "./formatObject";
+import type { ObjectStyles, StyleFn } from "./formatObject";
 import { formatObject } from "./formatObject";
 import { levelToStyles } from "./levelToStyles";
 import { levelToSymbol } from "./levelToSymbol";
