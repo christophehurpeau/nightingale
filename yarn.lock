@@ -3013,7 +3013,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sentry/core@npm:7.120.3, @sentry/core@npm:^7.19.0":
+"@sentry/core@npm:7.120.3, @sentry/core@npm:^7.120.3":
   version: 7.120.3
   resolution: "@sentry/core@npm:7.120.3"
   dependencies:
@@ -3048,7 +3048,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sentry/types@npm:7.120.3, @sentry/types@npm:^7.19.0":
+"@sentry/types@npm:7.120.3, @sentry/types@npm:^7.120.3":
   version: 7.120.3
   resolution: "@sentry/types@npm:7.120.3"
   checksum: 10c0/f7c4a46c72dd66a88053d579ad5a0137eaf6882dfe5e942828e750ad80fd8fe98ceec1a6328dfcf31f5a56849dda8ee27f7419125f905f19751119b9662dbdcb
@@ -8811,8 +8811,8 @@ __metadata:
   dependencies:
     "@babel/core": "npm:7.26.7"
     "@babel/preset-env": "npm:7.26.7"
-    "@sentry/core": "npm:^7.19.0"
-    "@sentry/types": "npm:^7.19.0"
+    "@sentry/core": "npm:^7.120.3"
+    "@sentry/types": "npm:^7.120.3"
     nightingale-levels: "npm:15.0.0"
     nightingale-types: "npm:15.0.0"
     pob-babel: "npm:42.3.0"
