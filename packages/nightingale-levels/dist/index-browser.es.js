@@ -20,17 +20,30 @@
  *
  */
 let Level = /*#__PURE__*/function (Level) {
+  /** Log everything. Not a level. */
   Level[Level["ALL"] = 0] = "ALL";
+  /** Trace information */
   Level[Level["TRACE"] = 10] = "TRACE";
+  /** Detailed debug information */
   Level[Level["DEBUG"] = 100] = "DEBUG";
+  /** Interesting events */
   Level[Level["INFO"] = 200] = "INFO";
+  /** Normal but significant events */
   Level[Level["NOTICE"] = 250] = "NOTICE";
+  /** Exceptional occurrences that are not errors (Use of deprecated APIs) */
   Level[Level["WARN"] = 300] = "WARN";
+  /** Alias for WARN */
   Level[Level["WARNING"] = 300] = "WARNING";
+  /** Runtime errors that do not require immediate action but should be logged and monitored */
   Level[Level["ERROR"] = 400] = "ERROR";
+  /** Critical conditions. Example: Application component unavailable, unexpected exception */
   Level[Level["CRITICAL"] = 500] = "CRITICAL";
+  /** Action must be taken immediately. Example: Entire website down, database unavailable, etc
+   * This should trigger the SMS alerts and wake you up */
   Level[Level["FATAL"] = 550] = "FATAL";
+  /** Alias for FATAL */
   Level[Level["ALERT"] = 550] = "ALERT";
+  /** Emergency: system is unusable */
   Level[Level["EMERGENCY"] = 600] = "EMERGENCY";
   return Level;
 }({});
