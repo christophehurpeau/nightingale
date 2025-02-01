@@ -29,7 +29,7 @@ function listenReactNativeUnhandledErrors(logger = new Logger("nightingale:liste
   } else {
     throw new Error("Only Hermes is supported.");
   }
-  const globalHander = ErrorUtils.getGlobalHandler();
+  const globalHandler = ErrorUtils.getGlobalHandler();
   ErrorUtils.setGlobalHandler((error, isFatal) => {
     if (isFatal) {
       logger.fatal(error, {
@@ -44,8 +44,8 @@ function listenReactNativeUnhandledErrors(logger = new Logger("nightingale:liste
         isFatal
       });
     }
-    if (globalHander) {
-      globalHander(error, isFatal);
+    if (globalHandler) {
+      globalHandler(error, isFatal);
     }
   });
 }

@@ -52,7 +52,7 @@ export function listenReactNativeUnhandledErrors(
     throw new Error("Only Hermes is supported.");
   }
 
-  const globalHander = ErrorUtils.getGlobalHandler();
+  const globalHandler = ErrorUtils.getGlobalHandler();
 
   ErrorUtils.setGlobalHandler((error: Error, isFatal?: boolean) => {
     if (isFatal) {
@@ -61,8 +61,8 @@ export function listenReactNativeUnhandledErrors(
       logger.error(error, { unhandled: true, type: "globalHandler", isFatal });
     }
 
-    if (globalHander) {
-      globalHander(error, isFatal);
+    if (globalHandler) {
+      globalHandler(error, isFatal);
     }
   });
 }

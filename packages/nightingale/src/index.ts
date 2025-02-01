@@ -3,7 +3,6 @@ import { Logger } from "nightingale-logger";
 export { Logger } from "nightingale-logger";
 export { Level, Level as levels } from "nightingale-levels";
 export { configure, addConfig } from "./config";
-
 export * from "./formatter-utils";
 export { createFindDebugLevel } from "./debug/debug";
 export { RawFormatter } from "./formatters/RawFormatter";
