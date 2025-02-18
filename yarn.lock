@@ -1478,7 +1478,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/config-conventional@npm:^19.6.0":
+"@commitlint/config-conventional@npm:^19.7.1":
   version: 19.7.1
   resolution: "@commitlint/config-conventional@npm:19.7.1"
   dependencies:
@@ -2410,12 +2410,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pob/commitlint-config@npm:9.1.0":
-  version: 9.1.0
-  resolution: "@pob/commitlint-config@npm:9.1.0"
+"@pob/commitlint-config@npm:9.1.1":
+  version: 9.1.1
+  resolution: "@pob/commitlint-config@npm:9.1.1"
   dependencies:
-    "@commitlint/config-conventional": "npm:^19.6.0"
-  checksum: 10c0/8b7b23f74f2a5752a3a0f7a2021956db90f3a3b20a4ea9df61be5d252a0e11ef0b5e04fb22d3b1bc1ffb444505baae0c6b54bad4cda96cf76b67b1639f78ee4e
+    "@commitlint/config-conventional": "npm:^19.7.1"
+  checksum: 10c0/51b0bac9a414e009477ad9f0cb7e58d43af72b57a71ca63644616d0bf967d676dd68e32f91d5920c8a27badfab9aa0a482fbc01410570a8879873b53b282e604
   languageName: node
   linkType: hard
 
@@ -8654,7 +8654,7 @@ __metadata:
   resolution: "nightingale-monorepo@workspace:."
   dependencies:
     "@babel/core": "npm:7.26.9"
-    "@pob/commitlint-config": "npm:9.1.0"
+    "@pob/commitlint-config": "npm:9.1.1"
     "@pob/eslint-config": "npm:59.6.0"
     "@pob/eslint-config-typescript": "npm:59.6.0"
     "@pob/root": "npm:15.2.0"
