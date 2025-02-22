@@ -52,7 +52,7 @@
     "check-package-dependencies": "9.2.0",
     "eslint": "9.21.0",
     "jest": "29.7.0",
-    "pob-babel": "42.3.0",
+    "pob-babel": "43.3.0",
     "typedoc": "0.27.8",
     "typescript": "5.7.3"
   }
