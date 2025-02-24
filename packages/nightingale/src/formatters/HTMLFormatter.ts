@@ -1,5 +1,8 @@
 import type { Styles } from "nightingale-types";
-import type { NightingaleFormatter } from "../formatter-utils";
+import type {
+  NightingaleFormatter,
+  StyleToHtmlStyle,
+} from "../formatter-utils";
 import {
   formatRecordToString,
   styleToHtmlStyleThemeLight,
@@ -11,7 +14,10 @@ export function style(styles: Styles, string: string): string {
   }
 
   return `<span style="${styles
-    .map((styleName: string) => styleToHtmlStyleThemeLight[styleName].open)
+    .map(
+      (styleName) =>
+        styleToHtmlStyleThemeLight[styleName as keyof StyleToHtmlStyle].open,
+    )
     .join("; ")}">${string}</span>`;
 }
 

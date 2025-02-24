@@ -15,6 +15,11 @@ jobs:
         with:
           token: ${{ secrets.GH_TOKEN }}
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          check-latest: true
+
       - name: Enable Corepack
         run: corepack enable
 
@@ -44,3 +49,5 @@ jobs:
             -c user.email="christophehurpeau@users.noreply.github.com" \
             commit -m "chore: update pob root" --author="github-actions[bot] <github-actions[bot]@users.noreply.github.com>"
           git push --no-verify
+        env:
+          YARN_ENABLE_IMMUTABLE_INSTALLS: false

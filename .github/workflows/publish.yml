@@ -7,6 +7,11 @@ on:
         required: true
         type: boolean
         default: false
+      allow-no-tags:
+        description: "Allow no tags"
+        required: false
+        type: boolean
+        default: false
 
 jobs:
   release:
@@ -15,12 +20,22 @@ jobs:
       - uses: actions/checkout@v4
         with:
           token: ${{ secrets.GH_TOKEN }}
-          fetch-depth: 200
+          fetch-depth: 0
           fetch-tags: true
 
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+          check-latest: true
+
+      - name: Check git tags
+        if: github.ref == 'refs/heads/main' && !inputs.allow-no-tags
+        run: |
+          tags=$(git tag)
+          if [ -z "$tags" ]; then
+            echo "No git tags found"
+            exit 1
+          fi
 
       - name: Enable Corepack
         run: corepack enable

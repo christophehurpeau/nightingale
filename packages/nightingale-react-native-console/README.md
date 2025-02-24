@@ -1,16 +1,16 @@
-<h3 align="center">
+<h1 align="center">
   nightingale-react-native-console
-</h3>
+</h1>
 
 <p align="center">
   React Native and Expo handler for nightingale
 </p>
 
 <p align="center">
-  <a href="https://npmjs.org/package/nightingale-react-native-console"><img src="https://img.shields.io/npm/v/nightingale-react-native-console.svg?style=flat-square"></a>
-  <a href="https://npmjs.org/package/nightingale-react-native-console"><img src="https://img.shields.io/npm/dw/nightingale-react-native-console.svg?style=flat-square"></a>
-  <a href="https://npmjs.org/package/nightingale-react-native-console"><img src="https://img.shields.io/node/v/nightingale-react-native-console.svg?style=flat-square"></a>
-  <a href="https://npmjs.org/package/nightingale-react-native-console"><img src="https://img.shields.io/npm/types/nightingale-react-native-console.svg?style=flat-square"></a>
+  <a href="https://npmjs.org/package/nightingale-react-native-console"><img src="https://img.shields.io/npm/v/nightingale-react-native-console.svg?style=flat-square" alt="npm version"></a>
+  <a href="https://npmjs.org/package/nightingale-react-native-console"><img src="https://img.shields.io/npm/dw/nightingale-react-native-console.svg?style=flat-square" alt="npm downloads"></a>
+  <a href="https://npmjs.org/package/nightingale-react-native-console"><img src="https://img.shields.io/node/v/nightingale-react-native-console.svg?style=flat-square" alt="node version"></a>
+  <a href="https://npmjs.org/package/nightingale-react-native-console"><img src="https://img.shields.io/npm/types/nightingale-react-native-console.svg?style=flat-square" alt="types"></a>
 </p>
 
 ## Install

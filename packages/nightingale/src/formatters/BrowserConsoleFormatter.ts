@@ -14,7 +14,10 @@ export const style =
       return string;
     }
 
-    const htmlStyles = styles.map((styleName) => styleToHtmlStyle[styleName]);
+    const htmlStyles = styles.map(
+      (styleName) => styleToHtmlStyle[styleName as keyof StyleToHtmlStyle],
+    );
+
     args.push(
       htmlStyles.map((s) => s.open).join("; "),
       htmlStyles.map((s) => s.close).join("; "),

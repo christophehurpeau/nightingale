@@ -12,6 +12,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+          check-latest: true
 
       - name: Enable Corepack
         run: corepack enable
@@ -31,6 +32,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+          check-latest: true
 
       - name: Enable Corepack
         run: corepack enable
@@ -53,6 +55,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+          check-latest: true
 
       - name: Enable Corepack
         run: corepack enable
@@ -82,6 +85,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
+          check-latest: true
 
       - name: Enable Corepack
         run: corepack enable
@@ -91,17 +95,17 @@ jobs:
 
       - name: Test
         run: yarn run test
-        if: matrix.node-version != 18
+        if: matrix.node-version != 22
 
       - name: Generate Test Coverage
         run: yarn run test:coverage:json
-        if: matrix.node-version == 18
+        if: matrix.node-version == 22
         env:
           CI: true
 
       - name: Send results to codecov
         uses: codecov/codecov-action@v5
-        if: matrix.node-version == 18
+        if: matrix.node-version == 22 && github.actor != 'dependabot[bot]'
         with:
           fail_ci_if_error: true
           token: ${{ secrets.CODECOV_TOKEN }}

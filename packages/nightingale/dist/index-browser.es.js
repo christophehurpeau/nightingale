@@ -582,10 +582,10 @@ function formatRecordToString(record, style) {
     parts.push(style(["gray-light"], record.key));
   }
   if (record.datetime) {
-    parts.push(style(["gray", "bold"], record.datetime.toTimeString().split(" ")[0]));
+    parts.push(style(["gray", "bold"], record.datetime.toTimeString().split(" ", 2)[0]));
     /* new Date().toFormat('HH24:MI:SS') */
   }
-  let message = record.symbol || levelToSymbol[record.level];
+  let message = record.symbol || levelToSymbol[record.level] || "";
   const styles = record.styles || levelToStyles[record.level];
   if (record.message) {
     if (message) {

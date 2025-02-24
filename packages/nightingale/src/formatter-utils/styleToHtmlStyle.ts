@@ -5,9 +5,7 @@ export interface HtmlStyle {
   readonly close: string;
 }
 
-export type StyleToHtmlStyle = Readonly<Record<string, HtmlStyle>>;
-
-export const styleToHtmlStyleThemeLight: StyleToHtmlStyle = {
+export const styleToHtmlStyleThemeLight = {
   // text style
   bold: { open: "font-weight: bold", close: "font-weight: normal" },
   italic: { open: "font-style: italic", close: "font-style: normal" },
@@ -55,7 +53,11 @@ export const styleToHtmlStyleThemeLight: StyleToHtmlStyle = {
     open: `color: #${styleToHexColor.grayLight}`,
     close: "color: currentcolor",
   },
-};
+} as const;
+
+export type StyleToHtmlStyle = Readonly<
+  Record<keyof typeof styleToHtmlStyleThemeLight, HtmlStyle>
+>;
 
 export const styleToHtmlStyleThemeDark: StyleToHtmlStyle = {
   ...styleToHtmlStyleThemeLight,
