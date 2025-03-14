@@ -43,7 +43,7 @@
   "prettier": "@pob/root/prettier-config",
   "devDependencies": {
     "@babel/core": "7.26.10",
-    "@pob/commitlint-config": "9.1.1",
+    "@pob/commitlint-config": "9.1.2",
     "@pob/eslint-config": "59.8.0",
     "@pob/eslint-config-typescript": "59.8.0",
     "@pob/root": "16.7.0",
