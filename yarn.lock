@@ -40,7 +40,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/core@npm:7.26.10, @babel/core@npm:^7.11.6, @babel/core@npm:^7.12.3, @babel/core@npm:^7.24.7, @babel/core@npm:^7.25.2, @babel/core@npm:^7.26.9":
+"@babel/core@npm:7.26.10, @babel/core@npm:^7.11.6, @babel/core@npm:^7.12.3, @babel/core@npm:^7.24.7, @babel/core@npm:^7.25.2, @babel/core@npm:^7.26.10":
   version: 7.26.10
   resolution: "@babel/core@npm:7.26.10"
   dependencies:
@@ -128,7 +128,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/helper-define-polyfill-provider@npm:^0.6.1, @babel/helper-define-polyfill-provider@npm:^0.6.2, @babel/helper-define-polyfill-provider@npm:^0.6.3":
+"@babel/helper-define-polyfill-provider@npm:^0.6.1, @babel/helper-define-polyfill-provider@npm:^0.6.3":
   version: 0.6.3
   resolution: "@babel/helper-define-polyfill-provider@npm:0.6.3"
   dependencies:
@@ -1125,19 +1125,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/plugin-transform-runtime@npm:7.26.9, @babel/plugin-transform-runtime@npm:^7.24.7":
-  version: 7.26.9
-  resolution: "@babel/plugin-transform-runtime@npm:7.26.9"
+"@babel/plugin-transform-runtime@npm:7.26.10, @babel/plugin-transform-runtime@npm:^7.24.7":
+  version: 7.26.10
+  resolution: "@babel/plugin-transform-runtime@npm:7.26.10"
   dependencies:
     "@babel/helper-module-imports": "npm:^7.25.9"
     "@babel/helper-plugin-utils": "npm:^7.26.5"
     babel-plugin-polyfill-corejs2: "npm:^0.4.10"
-    babel-plugin-polyfill-corejs3: "npm:^0.10.6"
+    babel-plugin-polyfill-corejs3: "npm:^0.11.0"
     babel-plugin-polyfill-regenerator: "npm:^0.6.1"
     semver: "npm:^6.3.1"
   peerDependencies:
     "@babel/core": ^7.0.0-0
-  checksum: 10c0/2c4d77d0671badc7fd53dcd7015df5db892712436c7e9740ffb2f5b85e8591e5bfe208f78dff402b4ee2d55d0f7a3c0a1102c683f333f4ee0cfa62f68ea68842
+  checksum: 10c0/4b70a63b904a3f7faa6ca95f9034d2f29330764820b06cf1814dda4ab0482b233a28241e98d8497bc1690dd31972e72861d8534ae0e37f26e04637e7d615e43d
   languageName: node
   linkType: hard
 
@@ -2770,9 +2770,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rollup/plugin-node-resolve@npm:16.0.0":
-  version: 16.0.0
-  resolution: "@rollup/plugin-node-resolve@npm:16.0.0"
+"@rollup/plugin-node-resolve@npm:16.0.1":
+  version: 16.0.1
+  resolution: "@rollup/plugin-node-resolve@npm:16.0.1"
   dependencies:
     "@rollup/pluginutils": "npm:^5.0.1"
     "@types/resolve": "npm:1.20.2"
@@ -2784,7 +2784,7 @@ __metadata:
   peerDependenciesMeta:
     rollup:
       optional: true
-  checksum: 10c0/b63deb6fc14b37070ccaffacc8c10c9720f28ce7632f4fe2ee77064c0c79bcc3fe060fb77160e673c9fd847307252f25a2983030bd54f1888324063c69ae1399
+  checksum: 10c0/54d33282321492fafec29b49c66dd1efd90c72a24f9d1569dcb57a72ab8de8a782810f39fdb917b96ec6a598c18f3416588b419bf7af331793a010de1fe28c60
   languageName: node
   linkType: hard
 
@@ -3909,18 +3909,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"babel-plugin-polyfill-corejs3@npm:^0.10.6":
-  version: 0.10.6
-  resolution: "babel-plugin-polyfill-corejs3@npm:0.10.6"
-  dependencies:
-    "@babel/helper-define-polyfill-provider": "npm:^0.6.2"
-    core-js-compat: "npm:^3.38.0"
-  peerDependencies:
-    "@babel/core": ^7.4.0 || ^8.0.0-0 <8.0.0
-  checksum: 10c0/3a69220471b07722c2ae6537310bf26b772514e12b601398082965459c838be70a0ca70b0662f0737070654ff6207673391221d48599abb4a2b27765206d9f79
-  languageName: node
-  linkType: hard
-
 "babel-plugin-polyfill-corejs3@npm:^0.11.0":
   version: 0.11.1
   resolution: "babel-plugin-polyfill-corejs3@npm:0.11.1"
@@ -4024,9 +4012,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"babel-preset-pob-env@npm:15.2.1":
-  version: 15.2.1
-  resolution: "babel-preset-pob-env@npm:15.2.1"
+"babel-preset-pob-env@npm:15.2.2":
+  version: 15.2.2
+  resolution: "babel-preset-pob-env@npm:15.2.2"
   dependencies:
     "@babel/plugin-transform-modules-commonjs": "npm:^7.26.3"
     "@babel/preset-typescript": "npm:^7.26.0"
@@ -4035,7 +4023,7 @@ __metadata:
     babel-preset-optimizations: "npm:^2.0.0"
   peerDependencies:
     "@babel/core": ^7.23.2
-  checksum: 10c0/5972c506cd193ba4eb8950961e47505ed4bd50b5bf8d150a0a8222bd3935fd2fa357ceeca3baa5b4d7a719c6f39cefa9c6faa37063d25ed989fd3bf9678ddfb5
+  checksum: 10c0/d71f013c11d3164c36c8ac02ca52efd8b42b625627f6887df331e9f3adec97621c956b34fbdeeb8f8ea81e38db67314a6fb950f3809d455dbc58134311b1e75a
   languageName: node
   linkType: hard
 
@@ -4616,7 +4604,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"core-js-compat@npm:^3.38.0, core-js-compat@npm:^3.40.0":
+"core-js-compat@npm:^3.40.0":
   version: 3.40.0
   resolution: "core-js-compat@npm:3.40.0"
   dependencies:
@@ -8482,7 +8470,7 @@ __metadata:
     "@babel/preset-env": "npm:7.26.9"
     "@types/node": "npm:>=20.0.0"
     nightingale: "npm:15.0.0"
-    pob-babel: "npm:43.3.0"
+    pob-babel: "npm:43.4.0"
     typescript: "npm:5.7.3"
   languageName: unknown
   linkType: soft
@@ -8495,7 +8483,7 @@ __metadata:
     "@babel/preset-env": "npm:7.26.9"
     nightingale: "npm:15.0.0"
     nightingale-react-native-console: "npm:15.0.0"
-    pob-babel: "npm:43.3.0"
+    pob-babel: "npm:43.4.0"
     typescript: "npm:5.7.3"
   peerDependencies:
     react-native: "*"
@@ -8531,7 +8519,7 @@ __metadata:
     nightingale: "npm:15.0.0"
     nightingale-console: "npm:15.0.0"
     nightingale-sentry: "npm:15.0.0"
-    pob-babel: "npm:43.3.0"
+    pob-babel: "npm:43.4.0"
     typescript: "npm:5.7.3"
   languageName: unknown
   linkType: soft
@@ -8568,7 +8556,7 @@ __metadata:
     nightingale: "npm:15.0.0"
     nightingale-slack: "npm:15.0.0"
     nightingale-types: "npm:15.0.0"
-    pob-babel: "npm:43.3.0"
+    pob-babel: "npm:43.4.0"
     typescript: "npm:5.7.3"
   languageName: unknown
   linkType: soft
@@ -8612,7 +8600,7 @@ __metadata:
   dependencies:
     "@babel/core": "npm:7.26.10"
     "@babel/preset-env": "npm:7.26.9"
-    pob-babel: "npm:43.3.0"
+    pob-babel: "npm:43.4.0"
     typescript: "npm:5.7.3"
   languageName: unknown
   linkType: soft
@@ -8626,7 +8614,7 @@ __metadata:
     "@types/node": "npm:>=20.0.0"
     nightingale-levels: "npm:15.0.0"
     nightingale-types: "npm:15.0.0"
-    pob-babel: "npm:43.3.0"
+    pob-babel: "npm:43.4.0"
     typescript: "npm:5.7.3"
   languageName: unknown
   linkType: soft
@@ -8653,7 +8641,7 @@ __metadata:
     check-package-dependencies: "npm:10.0.0"
     eslint: "npm:9.22.0"
     jest: "npm:29.7.0"
-    pob-babel: "npm:43.3.0"
+    pob-babel: "npm:43.4.0"
     typedoc: "npm:0.27.9"
     typescript: "npm:5.7.3"
   languageName: unknown
@@ -8677,7 +8665,7 @@ __metadata:
     "@babel/preset-env": "npm:7.26.9"
     nightingale: "npm:15.0.0"
     nightingale-types: "npm:15.0.0"
-    pob-babel: "npm:43.3.0"
+    pob-babel: "npm:43.4.0"
     react: "npm:18.3.1"
     react-native: "npm:0.77.0"
     typescript: "npm:5.7.3"
@@ -8696,7 +8684,7 @@ __metadata:
     "@sentry/types": "npm:^7.120.3"
     nightingale-levels: "npm:15.0.0"
     nightingale-types: "npm:15.0.0"
-    pob-babel: "npm:43.3.0"
+    pob-babel: "npm:43.4.0"
     typescript: "npm:5.7.3"
   languageName: unknown
   linkType: soft
@@ -8709,7 +8697,7 @@ __metadata:
     "@types/node": "npm:22.13.10"
     nightingale: "npm:15.0.0"
     nightingale-types: "npm:15.0.0"
-    pob-babel: "npm:43.3.0"
+    pob-babel: "npm:43.4.0"
     typescript: "npm:5.7.3"
   languageName: unknown
   linkType: soft
@@ -8729,7 +8717,7 @@ __metadata:
     "@babel/core": "npm:7.26.10"
     "@babel/preset-env": "npm:7.26.9"
     nightingale-levels: "npm:15.0.0"
-    pob-babel: "npm:43.3.0"
+    pob-babel: "npm:43.4.0"
     typescript: "npm:5.7.3"
   languageName: unknown
   linkType: soft
@@ -8741,7 +8729,7 @@ __metadata:
     "@babel/core": "npm:7.26.10"
     "@types/node": "npm:>=20.0.0"
     nightingale: "npm:15.0.0"
-    pob-babel: "npm:43.3.0"
+    pob-babel: "npm:43.4.0"
     typescript: "npm:5.7.3"
   languageName: unknown
   linkType: soft
@@ -8753,7 +8741,7 @@ __metadata:
     "@babel/core": "npm:7.26.10"
     "@types/node": "npm:>=20.0.0"
     nightingale-types: "npm:15.0.0"
-    pob-babel: "npm:43.3.0"
+    pob-babel: "npm:43.4.0"
     typescript: "npm:5.7.3"
   languageName: unknown
   linkType: soft
@@ -8766,7 +8754,7 @@ __metadata:
     "@babel/preset-env": "npm:7.26.9"
     nightingale-level-names: "npm:15.0.0"
     nightingale-types: "npm:15.0.0"
-    pob-babel: "npm:43.3.0"
+    pob-babel: "npm:43.4.0"
     typescript: "npm:5.7.3"
   languageName: unknown
   linkType: soft
@@ -8782,7 +8770,7 @@ __metadata:
     nightingale-levels: "npm:15.0.0"
     nightingale-logger: "npm:15.0.0"
     nightingale-types: "npm:15.0.0"
-    pob-babel: "npm:43.3.0"
+    pob-babel: "npm:43.4.0"
     typescript: "npm:5.7.3"
   languageName: unknown
   linkType: soft
@@ -9384,23 +9372,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pob-babel@npm:43.3.0":
-  version: 43.3.0
-  resolution: "pob-babel@npm:43.3.0"
+"pob-babel@npm:43.4.0":
+  version: 43.4.0
+  resolution: "pob-babel@npm:43.4.0"
   dependencies:
-    "@babel/core": "npm:^7.26.9"
-    "@babel/plugin-transform-runtime": "npm:7.26.9"
+    "@babel/core": "npm:^7.26.10"
+    "@babel/plugin-transform-runtime": "npm:7.26.10"
     "@pob/rollup": "npm:6.1.0"
     "@rollup/plugin-babel": "npm:6.0.4"
     "@rollup/plugin-json": "npm:6.1.0"
-    "@rollup/plugin-node-resolve": "npm:16.0.0"
+    "@rollup/plugin-node-resolve": "npm:16.0.1"
     "@rollup/plugin-run": "npm:3.1.0"
-    babel-preset-pob-env: "npm:15.2.1"
+    babel-preset-pob-env: "npm:15.2.2"
     rollup: "npm:4.33.0"
     rollup-config-external-dependencies: "npm:^3.0.1"
     semver: "npm:^7.3.7"
   peerDependencies:
-    "@babel/core": ^7.26.9
+    "@babel/core": ^7.26.10
     rollup: 4.33.0
     typescript: ^4.0.3 || ^5.0.0
   peerDependenciesMeta:
@@ -9409,7 +9397,7 @@ __metadata:
   bin:
     pob-babel-clean-out: ./bin/pob-babel-clean-out.js
     rollup: ./bin/rollup.cjs
-  checksum: 10c0/054419762f4f4634d8f5d0fff1bdb65fac8abaa1f2f29adac44cfbd4c1e7490df35503778204f123e2e5042bd4ef02c6c1ff655aa82dde286c6fe2fb86408f2a
+  checksum: 10c0/184f1360dbb7ef2bf5073f34d234395daf0fc8ab5a2f27e6d6a2766f812557235b71e82a903752dec56e51ea3c0728b9aedd3a7a2c513e5e0f2e6dcfa32ea385
   languageName: node
   linkType: hard
 
