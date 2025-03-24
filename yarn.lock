@@ -3212,12 +3212,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:22.13.11, @types/node@npm:>=20.0.0":
-  version: 22.13.11
-  resolution: "@types/node@npm:22.13.11"
+"@types/node@npm:*, @types/node@npm:22.13.12, @types/node@npm:>=20.0.0":
+  version: 22.13.12
+  resolution: "@types/node@npm:22.13.12"
   dependencies:
     undici-types: "npm:~6.20.0"
-  checksum: 10c0/f6ee33d36372242535c38640fe7550a6640d8a775ec19b55bfc11775b521cba072d892ca92a912332ce01b317293d645c1bf767f3f882ec719f2404a3d2a5b96
+  checksum: 10c0/c360ee830faf6e5de0a77459c06f5320d166d8d981547bb0e2d921057e3b71ce44bc8c0ede25ee69c7575445d424121c158bc2a059da3c80f0275a1ca4ab4a00
   languageName: node
   linkType: hard
 
@@ -8637,7 +8637,7 @@ __metadata:
     "@pob/eslint-config-typescript": "npm:59.8.1"
     "@pob/root": "npm:16.9.0"
     "@types/jest": "npm:29.5.14"
-    "@types/node": "npm:22.13.11"
+    "@types/node": "npm:22.13.12"
     check-package-dependencies: "npm:10.1.0"
     eslint: "npm:9.23.0"
     jest: "npm:29.7.0"
@@ -8694,7 +8694,7 @@ __metadata:
   resolution: "nightingale-slack@workspace:packages/nightingale-slack"
   dependencies:
     "@babel/core": "npm:7.26.10"
-    "@types/node": "npm:22.13.11"
+    "@types/node": "npm:22.13.12"
     nightingale: "npm:15.0.0"
     nightingale-types: "npm:15.0.0"
     pob-babel: "npm:43.4.0"
