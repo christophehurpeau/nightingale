@@ -18,6 +18,6 @@ export declare class LoggerCLI extends Logger {
     noticeJsonOnly(messageOrError: string, metadata: Record<string, unknown>): void;
     infoJsonOnly(messageOrError: string, metadata: Record<string, unknown>): void;
     warnJsonOnly(messageOrError: string, metadata: Record<string, unknown>): void;
-    group(name: string, fn: () => void): void;
+    group<T, Result extends Awaited<T> | Promise<T>>(name: string, fn: () => Result): Result extends Promise<infer V> ? Promise<V> : Awaited<T>;
 }
 //# sourceMappingURL=LoggerCLI.d.ts.map

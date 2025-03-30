@@ -991,11 +991,18 @@ class LoggerCLI extends Logger {
   }
   group(name, fn) {
     if (this.json) {
-      fn();
+      return fn();
     } else {
       console.group(name);
-      fn();
-      console.groupEnd();
+      const result = fn();
+      if (result instanceof Promise) {
+        return result.finally(() => {
+          console.groupEnd();
+        });
+      } else {
+        console.groupEnd();
+        return result;
+      }
     }
   }
 }

@@ -79,13 +79,25 @@ export class LoggerCLI extends Logger {
     }
   }
 
-  group(name: string, fn: () => void): void {
+  group<T, Result extends Awaited<T> | Promise<T>>(
+    name: string,
+    fn: () => Result,
+  ): Result extends Promise<infer V> ? Promise<V> : Awaited<T> {
     if (this.json) {
-      fn();
+      return fn() as Result extends Promise<infer V> ? Promise<V> : Awaited<T>;
     } else {
       console.group(name);
-      fn();
-      console.groupEnd();
+      const result = fn();
+      if (result instanceof Promise) {
+        return result.finally(() => {
+          console.groupEnd();
+        }) as Result extends Promise<infer V> ? Promise<V> : never;
+      } else {
+        console.groupEnd();
+        return result as Result extends Promise<infer V>
+          ? Promise<V>
+          : Awaited<T>;
+      }
     }
   }
 }
