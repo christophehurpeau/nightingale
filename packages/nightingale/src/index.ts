@@ -15,6 +15,8 @@ export { consoleOutput } from "./outputs/consoleOutput";
 export { StringHandler } from "./handlers/StringHandler";
 export { BrowserConsoleHandler } from "./handlers/BrowserConsoleHandler";
 export { ConsoleHandler } from "./handlers/ConsoleHandler";
+export { ConsoleCLIHandler } from "./handlers/ConsoleCLIHandler";
+export { LoggerCLI } from "./loggers/LoggerCLI";
 
 /**
  * listen to uncaughtException and unhandledRejection

@@ -1,4 +1,4 @@
-import { Logger } from 'nightingale-logger';
+import { Logger, Level as Level$1 } from 'nightingale-logger';
 export { Logger } from 'nightingale-logger';
 import { Level } from 'nightingale-levels';
 export { Level, Level as levels } from 'nightingale-levels';
@@ -880,7 +880,7 @@ function getDebugString() {
 }
 
 // debug string can change any time (localStorage), so we need a new object each time.
-const findDebugLevel$1 = (minLevel, key) => createFindDebugLevel(getDebugString())(minLevel, key);
+const findDebugLevel$2 = (minLevel, key) => createFindDebugLevel(getDebugString())(minLevel, key);
 const getDefaultTheme = () => {
   try {
     const configInLocalStorage = localStorage.getItem("NIGHTINGALE_THEME");
@@ -899,24 +899,104 @@ const createHandler = (theme = getDefaultTheme()) => {
 class BrowserConsoleHandler {
   minLevel = 0;
   constructor(minLevel, options = {}) {
-    this.isHandling = (level, key) => level >= findDebugLevel$1(minLevel, key);
+    this.isHandling = (level, key) => level >= findDebugLevel$2(minLevel, key);
     this.handle = createHandler(options.theme);
   }
 }
 
 const defaultFormatter = !process.stdout.isTTY && process.env.NIGHTINGALE_CONSOLE_FORMATTER !== "ansi" ? JSONFormatter.format : ANSIFormatter.format;
-const createHandle = (formatter = defaultFormatter, output = consoleOutput) => {
+const createHandle$1 = (formatter = defaultFormatter, output = consoleOutput) => {
+  return record => {
+    output(formatter(record), record);
+  };
+};
+const findDebugLevel$1 = createFindDebugLevel(process.env.DEBUG);
+class ConsoleHandler {
+  minLevel = Level.ALL;
+  constructor(minLevel, options = {}) {
+    this.minLevel = minLevel;
+    this.isHandling = (level, key) => level >= findDebugLevel$1(minLevel, key);
+    this.handle = createHandle$1(options.formatter, options.output);
+  }
+}
+
+/* eslint-disable no-console */
+function cliConsoleOutput(param, record) {
+  console[record.level >= Level.ERROR ? "error" : "log"](param);
+}
+
+const createHandle = ({
+  json
+}) => {
+  const formatter = json ? JSONFormatter.format : ANSIFormatter.format;
+  const output = json ? consoleOutput : cliConsoleOutput;
   return record => {
     output(formatter(record), record);
   };
 };
 const findDebugLevel = createFindDebugLevel(process.env.DEBUG);
-class ConsoleHandler {
+class ConsoleCLIHandler {
   minLevel = Level.ALL;
   constructor(minLevel, options = {}) {
     this.minLevel = minLevel;
     this.isHandling = (level, key) => level >= findDebugLevel(minLevel, key);
-    this.handle = createHandle(options.formatter, options.output);
+    this.handle = createHandle(options);
+  }
+}
+
+class LoggerCLI extends Logger {
+  processors = [];
+  constructor(key, {
+    displayName,
+    processors,
+    json = false
+  } = {}) {
+    super(key, displayName);
+    this.handlers = [new ConsoleCLIHandler(Level$1.INFO, {
+      json
+    })];
+    this.processors = processors ?? [];
+    this.json = json;
+  }
+  getHandlersAndProcessors() {
+    return {
+      handlers: this.handlers,
+      processors: this.processors
+    };
+  }
+  logJsonOnly(messageOrError, metadata, level = Level$1.INFO) {
+    if (this.json) {
+      this.log(messageOrError, metadata, level);
+    }
+  }
+  debugJsonOnly(messageOrError, metadata) {
+    if (this.json) {
+      this.debug(messageOrError, metadata);
+    }
+  }
+  noticeJsonOnly(messageOrError, metadata) {
+    if (this.json) {
+      this.notice(messageOrError, metadata);
+    }
+  }
+  infoJsonOnly(messageOrError, metadata) {
+    if (this.json) {
+      this.info(messageOrError, metadata);
+    }
+  }
+  warnJsonOnly(messageOrError, metadata) {
+    if (this.json) {
+      this.warn(messageOrError, metadata);
+    }
+  }
+  group(name, fn) {
+    if (this.json) {
+      fn();
+    } else {
+      console.group(name);
+      fn();
+      console.groupEnd();
+    }
   }
 }
 
@@ -939,5 +1019,5 @@ function listenUnhandledErrors(logger = new Logger("nightingale:listenUnhandledE
   });
 }
 
-export { ANSIFormatter, BrowserConsoleFormatter, BrowserConsoleHandler, ConsoleHandler, HTMLFormatter, JSONFormatter, MarkdownFormatter, RawFormatter, StringHandler, addConfig, configure, consoleOutput, createFindDebugLevel, formatObject, formatRecordToString, levelToStyles, levelToSymbol, listenUnhandledErrors, styleToHexColor, styleToHtmlStyleThemeDark, styleToHtmlStyleThemeLight };
+export { ANSIFormatter, BrowserConsoleFormatter, BrowserConsoleHandler, ConsoleCLIHandler, ConsoleHandler, HTMLFormatter, JSONFormatter, LoggerCLI, MarkdownFormatter, RawFormatter, StringHandler, addConfig, configure, consoleOutput, createFindDebugLevel, formatObject, formatRecordToString, levelToStyles, levelToSymbol, listenUnhandledErrors, styleToHexColor, styleToHtmlStyleThemeDark, styleToHtmlStyleThemeLight };
 //# sourceMappingURL=index-node20.mjs.map

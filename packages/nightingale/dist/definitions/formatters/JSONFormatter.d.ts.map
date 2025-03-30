@@ -1,1 +1,1 @@
-{"version":3,"file":"JSONFormatter.d.ts","sourceRoot":"","sources":["../../../src/formatters/JSONFormatter.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,oBAAoB,EAAE,MAAM,oBAAoB,CAAC;AAsC/D,eAAO,MAAM,aAAa,EAAE,oBAW3B,CAAC"}
+{"version":3,"file":"JSONFormatter.d.ts","sourceRoot":"","sources":["../../../src/formatters/JSONFormatter.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,oBAAoB,EAAE,MAAM,oBAAoB,CAAC;AAsC/D,eAAO,MAAM,aAAa,EAAE,oBAW3B,CAAC;AAEF,eAAO,MAAM,gBAAgB,EAAE,oBAU9B,CAAC"}
