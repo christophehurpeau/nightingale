@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [16.0.0](https://github.com/christophehurpeau/nightingale/compare/v15.0.0...v16.0.0) (2025-03-30)
+
+### ⚠ BREAKING CHANGES
+
+* drop node 18
+
+### Features
+
+* add LoggerCLI ([f13942b](https://github.com/christophehurpeau/nightingale/commit/f13942baf4ec5582dadda8aafb719ee59ca92398))
+* drop node 18 ([1b11a55](https://github.com/christophehurpeau/nightingale/commit/1b11a55dd24c9435be50519a748316079f554414))
+
+Version bump for dependency: nightingale
+Version bump for dependency: nightingale-slack
+Version bump for dependency: nightingale-types
+
+
 ## [15.0.0](https://github.com/christophehurpeau/nightingale/compare/v14.2.1...v15.0.0) (2023-12-25)
 
 

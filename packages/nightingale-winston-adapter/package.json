@@ -1,6 +1,6 @@
 {
   "name": "nightingale-winston-adapter",
-  "version": "15.0.0",
+  "version": "16.0.0",
   "description": "Winston adapter handler for nightingale",
   "keywords": [
     "nightingale",
@@ -74,8 +74,8 @@
   },
   "prettier": "@pob/root/prettier-config",
   "dependencies": {
-    "nightingale-level-names": "15.0.0",
-    "nightingale-types": "15.0.0"
+    "nightingale-level-names": "16.0.0",
+    "nightingale-types": "16.0.0"
   },
   "devDependencies": {
     "@babel/core": "7.26.10",

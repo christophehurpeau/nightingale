@@ -3212,7 +3212,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:22.13.14, @types/node@npm:>=20.0.0":
+"@types/node@npm:*, @types/node@npm:22.13.14, @types/node@npm:>=18.0.0, @types/node@npm:>=20.0.0":
   version: 22.13.14
   resolution: "@types/node@npm:22.13.14"
   dependencies:
@@ -8454,11 +8454,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"nightingale-ansi-formatter@npm:15.0.0":
+  version: 15.0.0
+  resolution: "nightingale-ansi-formatter@npm:15.0.0"
+  dependencies:
+    ansi-styles: "npm:^6.2.1"
+    nightingale-formatter: "npm:15.0.0"
+    nightingale-types: "npm:15.0.0"
+  checksum: 10c0/dd48acd43caa51ffe3e83363d6cd4d93c505f312140657ff96d5bb92fbf1eacdbd3e2b4856b1a9f0130e5f0da75264af6412db29bff0598ce26dd46a2baee844
+  languageName: node
+  linkType: hard
+
 "nightingale-ansi-formatter@workspace:packages/nightingale-ansi-formatter":
   version: 0.0.0-use.local
   resolution: "nightingale-ansi-formatter@workspace:packages/nightingale-ansi-formatter"
   dependencies:
-    nightingale: "npm:15.0.0"
+    nightingale: "npm:16.0.0"
   languageName: unknown
   linkType: soft
 
@@ -8469,7 +8480,7 @@ __metadata:
     "@babel/core": "npm:7.26.10"
     "@babel/preset-env": "npm:7.26.9"
     "@types/node": "npm:>=20.0.0"
-    nightingale: "npm:15.0.0"
+    nightingale: "npm:16.0.0"
     pob-babel: "npm:43.4.0"
     typescript: "npm:5.8.2"
   languageName: unknown
@@ -8481,8 +8492,8 @@ __metadata:
   dependencies:
     "@babel/core": "npm:7.26.10"
     "@babel/preset-env": "npm:7.26.9"
-    nightingale: "npm:15.0.0"
-    nightingale-react-native-console: "npm:15.0.0"
+    nightingale: "npm:16.0.0"
+    nightingale-react-native-console: "npm:16.0.0"
     pob-babel: "npm:43.4.0"
     typescript: "npm:5.8.2"
   peerDependencies:
@@ -8498,7 +8509,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-browser-console-formatter@workspace:packages/nightingale-browser-console-formatter"
   dependencies:
-    nightingale: "npm:15.0.0"
+    nightingale: "npm:16.0.0"
   languageName: unknown
   linkType: soft
 
@@ -8506,7 +8517,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-browser-console@workspace:packages/nightingale-browser-console"
   dependencies:
-    nightingale: "npm:15.0.0"
+    nightingale: "npm:16.0.0"
   languageName: unknown
   linkType: soft
 
@@ -8516,35 +8527,70 @@ __metadata:
   dependencies:
     "@babel/core": "npm:7.26.10"
     "@sentry/node": "npm:7.120.3"
-    nightingale: "npm:15.0.0"
-    nightingale-console: "npm:15.0.0"
-    nightingale-sentry: "npm:15.0.0"
+    nightingale: "npm:16.0.0"
+    nightingale-console: "npm:16.0.0"
+    nightingale-sentry: "npm:16.0.0"
     pob-babel: "npm:43.4.0"
     typescript: "npm:5.8.2"
   languageName: unknown
   linkType: soft
 
+"nightingale-console-output@npm:15.0.0":
+  version: 15.0.0
+  resolution: "nightingale-console-output@npm:15.0.0"
+  dependencies:
+    "@types/node": "npm:>=18.0.0"
+    nightingale-levels: "npm:15.0.0"
+    nightingale-types: "npm:15.0.0"
+  checksum: 10c0/5456824a125e5b97da3601bb90930293df460a7c3f63a5f420e43ee8e296df6351a1ef8c309351bd76eecbe52d33f0eb219d298c20d409c44b558f13362ec234
+  languageName: node
+  linkType: hard
+
 "nightingale-console-output@workspace:packages/nightingale-console-output":
   version: 0.0.0-use.local
   resolution: "nightingale-console-output@workspace:packages/nightingale-console-output"
   dependencies:
-    nightingale: "npm:15.0.0"
+    nightingale: "npm:16.0.0"
   languageName: unknown
   linkType: soft
 
-"nightingale-console@npm:15.0.0, nightingale-console@workspace:packages/nightingale-console":
+"nightingale-console@npm:15.0.0":
+  version: 15.0.0
+  resolution: "nightingale-console@npm:15.0.0"
+  dependencies:
+    "@types/node": "npm:>=18.0.0"
+    nightingale-ansi-formatter: "npm:15.0.0"
+    nightingale-console-output: "npm:15.0.0"
+    nightingale-debug: "npm:15.0.0"
+    nightingale-json-formatter: "npm:15.0.0"
+    nightingale-levels: "npm:15.0.0"
+    nightingale-types: "npm:15.0.0"
+  checksum: 10c0/292ded876f29bb2e8c278b62fc8adcc6c94f4db3677e9acdf2375221c3660e5c6448a36beff2a6ae78360fdf0063ca3f2a94b2668cec035c4e16bf0c6aa7cbc8
+  languageName: node
+  linkType: hard
+
+"nightingale-console@npm:16.0.0, nightingale-console@workspace:packages/nightingale-console":
   version: 0.0.0-use.local
   resolution: "nightingale-console@workspace:packages/nightingale-console"
   dependencies:
-    nightingale: "npm:15.0.0"
+    nightingale: "npm:16.0.0"
   languageName: unknown
   linkType: soft
+
+"nightingale-debug@npm:15.0.0":
+  version: 15.0.0
+  resolution: "nightingale-debug@npm:15.0.0"
+  dependencies:
+    nightingale-levels: "npm:15.0.0"
+  checksum: 10c0/8d4f0347d901a1b84e3bf2422e415969f15f7209e26bd34b3df2aa78b33144e5b53882965da44a4022e99bf0c159372b001ce13f9a0d1d65422a08288efd9814
+  languageName: node
+  linkType: hard
 
 "nightingale-debug@workspace:packages/nightingale-debug":
   version: 0.0.0-use.local
   resolution: "nightingale-debug@workspace:packages/nightingale-debug"
   dependencies:
-    nightingale: "npm:15.0.0"
+    nightingale: "npm:16.0.0"
   languageName: unknown
   linkType: soft
 
@@ -8553,19 +8599,29 @@ __metadata:
   resolution: "nightingale-example@workspace:packages/nightingale-example"
   dependencies:
     "@babel/core": "npm:7.26.10"
-    nightingale: "npm:15.0.0"
-    nightingale-slack: "npm:15.0.0"
-    nightingale-types: "npm:15.0.0"
+    nightingale: "npm:16.0.0"
+    nightingale-slack: "npm:16.0.0"
+    nightingale-types: "npm:16.0.0"
     pob-babel: "npm:43.4.0"
     typescript: "npm:5.8.2"
   languageName: unknown
   linkType: soft
 
+"nightingale-formatter@npm:15.0.0":
+  version: 15.0.0
+  resolution: "nightingale-formatter@npm:15.0.0"
+  dependencies:
+    nightingale-levels: "npm:15.0.0"
+    nightingale-types: "npm:15.0.0"
+  checksum: 10c0/24b19b94c74f6b69ef42eafc2ffb03817109db95258271c81003f53cf640edbd239157ee6a3bb3d439d574ff66fdc69e5d5694538fa66c77165043d131c6265d
+  languageName: node
+  linkType: hard
+
 "nightingale-formatter@workspace:packages/nightingale-formatter":
   version: 0.0.0-use.local
   resolution: "nightingale-formatter@workspace:packages/nightingale-formatter"
   dependencies:
-    nightingale: "npm:15.0.0"
+    nightingale: "npm:16.0.0"
   languageName: unknown
   linkType: soft
 
@@ -8573,20 +8629,30 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-html-formatter@workspace:packages/nightingale-html-formatter"
   dependencies:
-    nightingale: "npm:15.0.0"
-    nightingale-levels: "npm:15.0.0"
+    nightingale: "npm:16.0.0"
+    nightingale-levels: "npm:16.0.0"
   languageName: unknown
   linkType: soft
+
+"nightingale-json-formatter@npm:15.0.0":
+  version: 15.0.0
+  resolution: "nightingale-json-formatter@npm:15.0.0"
+  dependencies:
+    nightingale-formatter: "npm:15.0.0"
+    nightingale-types: "npm:15.0.0"
+  checksum: 10c0/6e23aeb2e07eade92172f6e5406fa27e25c565b85bd7c5cb941d4317f7e3772cc944ab6cdaa6af6834e3bbcf401de768bbefff235dd92dfc056fd5dd8a0df4d7
+  languageName: node
+  linkType: hard
 
 "nightingale-json-formatter@workspace:packages/nightingale-json-formatter":
   version: 0.0.0-use.local
   resolution: "nightingale-json-formatter@workspace:packages/nightingale-json-formatter"
   dependencies:
-    nightingale: "npm:15.0.0"
+    nightingale: "npm:16.0.0"
   languageName: unknown
   linkType: soft
 
-"nightingale-level-names@npm:15.0.0, nightingale-level-names@workspace:packages/nightingale-level-names":
+"nightingale-level-names@npm:16.0.0, nightingale-level-names@workspace:packages/nightingale-level-names":
   version: 0.0.0-use.local
   resolution: "nightingale-level-names@workspace:packages/nightingale-level-names"
   dependencies:
@@ -8594,7 +8660,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"nightingale-levels@npm:15.0.0, nightingale-levels@workspace:packages/nightingale-levels":
+"nightingale-levels@npm:15.0.0":
+  version: 15.0.0
+  resolution: "nightingale-levels@npm:15.0.0"
+  checksum: 10c0/cb1e770e43554bc7697a07dc02167f309ef9e298efe449929c1809ebc39bbdf42e663cae0e35133dbf1e72149a2c48bc85d0f311fa74481e18bd79ec3eca3695
+  languageName: node
+  linkType: hard
+
+"nightingale-levels@npm:16.0.0, nightingale-levels@workspace:packages/nightingale-levels":
   version: 0.0.0-use.local
   resolution: "nightingale-levels@workspace:packages/nightingale-levels"
   dependencies:
@@ -8605,15 +8678,26 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"nightingale-logger@npm:15.0.0, nightingale-logger@workspace:packages/nightingale-logger":
+"nightingale-logger@npm:15.0.0":
+  version: 15.0.0
+  resolution: "nightingale-logger@npm:15.0.0"
+  dependencies:
+    "@types/node": "npm:>=18.0.0"
+    nightingale-levels: "npm:15.0.0"
+    nightingale-types: "npm:15.0.0"
+  checksum: 10c0/6e04928bf51c7aa1821af8b7c0ae1d9ae18b5ed33b6429b1d57bd1e434eba0ce1c004c0c985376f5fe4844e50248067f3167639073ebb5e94e2002f3d7d53c3c
+  languageName: node
+  linkType: hard
+
+"nightingale-logger@npm:16.0.0, nightingale-logger@workspace:packages/nightingale-logger":
   version: 0.0.0-use.local
   resolution: "nightingale-logger@workspace:packages/nightingale-logger"
   dependencies:
     "@babel/core": "npm:7.26.10"
     "@babel/preset-env": "npm:7.26.9"
     "@types/node": "npm:>=20.0.0"
-    nightingale-levels: "npm:15.0.0"
-    nightingale-types: "npm:15.0.0"
+    nightingale-levels: "npm:16.0.0"
+    nightingale-types: "npm:16.0.0"
     pob-babel: "npm:43.4.0"
     typescript: "npm:5.8.2"
   languageName: unknown
@@ -8623,7 +8707,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-markdown-formatter@workspace:packages/nightingale-markdown-formatter"
   dependencies:
-    nightingale: "npm:15.0.0"
+    nightingale: "npm:16.0.0"
   languageName: unknown
   linkType: soft
 
@@ -8651,20 +8735,20 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-raw-formatter@workspace:packages/nightingale-raw-formatter"
   dependencies:
-    nightingale: "npm:15.0.0"
-    nightingale-levels: "npm:15.0.0"
-    nightingale-types: "npm:15.0.0"
+    nightingale: "npm:16.0.0"
+    nightingale-levels: "npm:16.0.0"
+    nightingale-types: "npm:16.0.0"
   languageName: unknown
   linkType: soft
 
-"nightingale-react-native-console@npm:15.0.0, nightingale-react-native-console@workspace:packages/nightingale-react-native-console":
+"nightingale-react-native-console@npm:16.0.0, nightingale-react-native-console@workspace:packages/nightingale-react-native-console":
   version: 0.0.0-use.local
   resolution: "nightingale-react-native-console@workspace:packages/nightingale-react-native-console"
   dependencies:
     "@babel/core": "npm:7.26.10"
     "@babel/preset-env": "npm:7.26.9"
-    nightingale: "npm:15.0.0"
-    nightingale-types: "npm:15.0.0"
+    nightingale: "npm:16.0.0"
+    nightingale-types: "npm:16.0.0"
     pob-babel: "npm:43.4.0"
     react: "npm:18.3.1"
     react-native: "npm:0.77.0"
@@ -8674,7 +8758,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"nightingale-sentry@npm:15.0.0, nightingale-sentry@workspace:packages/nightingale-sentry":
+"nightingale-sentry@npm:16.0.0, nightingale-sentry@workspace:packages/nightingale-sentry":
   version: 0.0.0-use.local
   resolution: "nightingale-sentry@workspace:packages/nightingale-sentry"
   dependencies:
@@ -8682,21 +8766,21 @@ __metadata:
     "@babel/preset-env": "npm:7.26.9"
     "@sentry/core": "npm:^7.120.3"
     "@sentry/types": "npm:^7.120.3"
-    nightingale-levels: "npm:15.0.0"
-    nightingale-types: "npm:15.0.0"
+    nightingale-levels: "npm:16.0.0"
+    nightingale-types: "npm:16.0.0"
     pob-babel: "npm:43.4.0"
     typescript: "npm:5.8.2"
   languageName: unknown
   linkType: soft
 
-"nightingale-slack@npm:15.0.0, nightingale-slack@workspace:packages/nightingale-slack":
+"nightingale-slack@npm:16.0.0, nightingale-slack@workspace:packages/nightingale-slack":
   version: 0.0.0-use.local
   resolution: "nightingale-slack@workspace:packages/nightingale-slack"
   dependencies:
     "@babel/core": "npm:7.26.10"
     "@types/node": "npm:22.13.14"
-    nightingale: "npm:15.0.0"
-    nightingale-types: "npm:15.0.0"
+    nightingale: "npm:16.0.0"
+    nightingale-types: "npm:16.0.0"
     pob-babel: "npm:43.4.0"
     typescript: "npm:5.8.2"
   languageName: unknown
@@ -8706,17 +8790,26 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-string@workspace:packages/nightingale-string"
   dependencies:
-    nightingale: "npm:15.0.0"
+    nightingale: "npm:16.0.0"
   languageName: unknown
   linkType: soft
 
-"nightingale-types@npm:15.0.0, nightingale-types@workspace:packages/nightingale-types":
+"nightingale-types@npm:15.0.0":
+  version: 15.0.0
+  resolution: "nightingale-types@npm:15.0.0"
+  dependencies:
+    nightingale-levels: "npm:15.0.0"
+  checksum: 10c0/f3d7cc5b1e0f8a8d77f8fed50f25577dfa12c351363e8184e7d279936b27e729e0813cd4ffb683209175522b16bba178a55485c48a991370a48692f5d0f4f2a4
+  languageName: node
+  linkType: hard
+
+"nightingale-types@npm:16.0.0, nightingale-types@workspace:packages/nightingale-types":
   version: 0.0.0-use.local
   resolution: "nightingale-types@workspace:packages/nightingale-types"
   dependencies:
     "@babel/core": "npm:7.26.10"
     "@babel/preset-env": "npm:7.26.9"
-    nightingale-levels: "npm:15.0.0"
+    nightingale-levels: "npm:16.0.0"
     pob-babel: "npm:43.4.0"
     typescript: "npm:5.8.2"
   languageName: unknown
@@ -8728,7 +8821,7 @@ __metadata:
   dependencies:
     "@babel/core": "npm:7.26.10"
     "@types/node": "npm:>=20.0.0"
-    nightingale: "npm:15.0.0"
+    nightingale: "npm:16.0.0"
     pob-babel: "npm:43.4.0"
     typescript: "npm:5.8.2"
   languageName: unknown
@@ -8740,7 +8833,7 @@ __metadata:
   dependencies:
     "@babel/core": "npm:7.26.10"
     "@types/node": "npm:>=20.0.0"
-    nightingale-types: "npm:15.0.0"
+    nightingale-types: "npm:16.0.0"
     pob-babel: "npm:43.4.0"
     typescript: "npm:5.8.2"
   languageName: unknown
@@ -8752,14 +8845,26 @@ __metadata:
   dependencies:
     "@babel/core": "npm:7.26.10"
     "@babel/preset-env": "npm:7.26.9"
-    nightingale-level-names: "npm:15.0.0"
-    nightingale-types: "npm:15.0.0"
+    nightingale-level-names: "npm:16.0.0"
+    nightingale-types: "npm:16.0.0"
     pob-babel: "npm:43.4.0"
     typescript: "npm:5.8.2"
   languageName: unknown
   linkType: soft
 
-"nightingale@npm:15.0.0, nightingale@workspace:packages/nightingale":
+"nightingale@npm:15.0.0":
+  version: 15.0.0
+  resolution: "nightingale@npm:15.0.0"
+  dependencies:
+    "@types/node": "npm:>=18.0.0"
+    nightingale-levels: "npm:15.0.0"
+    nightingale-logger: "npm:15.0.0"
+    nightingale-types: "npm:15.0.0"
+  checksum: 10c0/6219790ffb9339ac74244a4a708ee94a713c87d6077fb30f5bafa575f41b7d1d04b603149f4b6b3b59c1bfeadbf828cd4d138fa379808a567179a62f9214367b
+  languageName: node
+  linkType: hard
+
+"nightingale@npm:16.0.0, nightingale@workspace:packages/nightingale":
   version: 0.0.0-use.local
   resolution: "nightingale@workspace:packages/nightingale"
   dependencies:
@@ -8767,9 +8872,9 @@ __metadata:
     "@babel/preset-env": "npm:7.26.9"
     "@types/node": "npm:>=20.0.0"
     ansi-styles: "npm:^6.2.1"
-    nightingale-levels: "npm:15.0.0"
-    nightingale-logger: "npm:15.0.0"
-    nightingale-types: "npm:15.0.0"
+    nightingale-levels: "npm:16.0.0"
+    nightingale-logger: "npm:16.0.0"
+    nightingale-types: "npm:16.0.0"
     pob-babel: "npm:43.4.0"
     typescript: "npm:5.8.2"
   languageName: unknown

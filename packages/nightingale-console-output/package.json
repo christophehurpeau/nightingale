@@ -1,6 +1,6 @@
 {
   "name": "nightingale-console-output",
-  "version": "15.0.0",
+  "version": "16.0.0",
   "description": "Nightingale console output",
   "keywords": [
     "nightingale",
@@ -37,6 +37,6 @@
   "pob": {},
   "prettier": "@pob/root/prettier-config",
   "dependencies": {
-    "nightingale": "15.0.0"
+    "nightingale": "16.0.0"
   }
 }

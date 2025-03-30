@@ -1,6 +1,6 @@
 {
   "name": "nightingale-unit-testing",
-  "version": "15.0.0",
+  "version": "16.0.0",
   "description": "nightingale default config for unit testing",
   "keywords": [],
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (https://christophe.hurpeau.com)",
@@ -55,7 +55,7 @@
   "prettier": "@pob/root/prettier-config",
   "dependencies": {
     "@types/node": ">=20.0.0",
-    "nightingale": "15.0.0"
+    "nightingale": "16.0.0"
   },
   "devDependencies": {
     "@babel/core": "7.26.10",

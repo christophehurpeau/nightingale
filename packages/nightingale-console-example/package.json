@@ -1,7 +1,7 @@
 {
   "name": "nightingale-console-example",
   "private": true,
-  "version": "15.0.0",
+  "version": "16.0.0",
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (https://christophe.hurpeau.com)",
   "license": "ISC",
   "repository": {
@@ -63,9 +63,9 @@
   "prettier": "@pob/root/prettier-config",
   "dependencies": {
     "@sentry/node": "7.120.3",
-    "nightingale": "15.0.0",
-    "nightingale-console": "15.0.0",
-    "nightingale-sentry": "15.0.0"
+    "nightingale": "16.0.0",
+    "nightingale-console": "16.0.0",
+    "nightingale-sentry": "16.0.0"
   },
   "devDependencies": {
     "@babel/core": "7.26.10",

@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [16.0.0](https://github.com/christophehurpeau/nightingale/compare/v15.0.0...v16.0.0) (2025-03-30)
+
+### ⚠ BREAKING CHANGES
+
+* drop node 18
+
+### Features
+
+* **deps:** update dependency @sentry/node to v7.108.0 ([#899](https://github.com/christophehurpeau/nightingale/issues/899)) ([e750b4d](https://github.com/christophehurpeau/nightingale/commit/e750b4de5503a03443c0cb25069ad3fa3b662d85))
+* **deps:** update dependency @sentry/node to v7.109.0 ([#952](https://github.com/christophehurpeau/nightingale/issues/952)) ([12082c3](https://github.com/christophehurpeau/nightingale/commit/12082c3785fc0d2fa8c25e18af2d92e4983e9f2b))
+* **deps:** update dependency @sentry/node to v7.110.0 ([#966](https://github.com/christophehurpeau/nightingale/issues/966)) ([df14f07](https://github.com/christophehurpeau/nightingale/commit/df14f076d3d737a4accdff1bbb20c0123b376065))
+* **deps:** update dependency @sentry/node to v7.120.2 ([#967](https://github.com/christophehurpeau/nightingale/issues/967)) ([9356203](https://github.com/christophehurpeau/nightingale/commit/9356203117346ab83bc73becb1f606c924348bcb))
+* **deps:** update dependency @sentry/node to v7.91.0 ([#877](https://github.com/christophehurpeau/nightingale/issues/877)) ([072156e](https://github.com/christophehurpeau/nightingale/commit/072156e9d28d1e684108a25a21e49bc60c68b608))
+* drop node 18 ([1b11a55](https://github.com/christophehurpeau/nightingale/commit/1b11a55dd24c9435be50519a748316079f554414))
+
+### Bug Fixes
+
+* **deps:** update dependency @sentry/node to v7.120.3 ([#1115](https://github.com/christophehurpeau/nightingale/issues/1115)) ([75a5915](https://github.com/christophehurpeau/nightingale/commit/75a5915d8da047857769e83d94e6e2c0f664019b))
+
+Version bump for dependency: nightingale
+Version bump for dependency: nightingale-console
+Version bump for dependency: nightingale-sentry
+
+
 ## [15.0.0](https://github.com/christophehurpeau/nightingale/compare/v14.2.1...v15.0.0) (2023-12-25)
 
 

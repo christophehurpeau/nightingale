@@ -1,6 +1,6 @@
 {
   "name": "nightingale-browser-console",
-  "version": "15.0.0",
+  "version": "16.0.0",
   "description": "Deprecated: use BrowserConsoleHandler from nightingale",
   "keywords": [
     "nightingale",
@@ -40,6 +40,6 @@
   "pob": {},
   "prettier": "@pob/root/prettier-config",
   "dependencies": {
-    "nightingale": "15.0.0"
+    "nightingale": "16.0.0"
   }
 }
