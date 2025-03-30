@@ -22,15 +22,7 @@
   "types": "./lib/index.d.ts",
   "exports": {
     "./package.json": "./package.json",
-    ".": {
-      "types": "./dist/definitions/index.d.ts",
-      "node": {
-        "import": "./dist/index-node18.mjs"
-      },
-      "browser": {
-        "import": "./dist/index-browser.es.js"
-      }
-    }
+    ".": "./lib/index.js"
   },
   "files": [
     "lib"

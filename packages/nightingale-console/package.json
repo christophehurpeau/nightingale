@@ -23,12 +23,7 @@
   "types": "./lib/index.d.ts",
   "exports": {
     "./package.json": "./package.json",
-    ".": {
-      "types": "./dist/definitions/index.d.ts",
-      "node": {
-        "import": "./dist/index-node18.mjs"
-      }
-    }
+    ".": "./lib/index.js"
   },
   "files": [
     "lib"
