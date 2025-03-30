@@ -60,13 +60,13 @@ test("multiple values", () => {
         string: "s",
         bigInt: BigInt(1),
         symbol: Symbol("symbol"),
-        date: new Date(2000, 1, 1),
+        date: new Date(Date.UTC(2000, 1, 1, 1, 0, 0)),
         function: function test() {},
       },
       styleFn,
     ),
   ).toBe(
-    '{ [styles:dim,bold]undefined:[/styles] [styles:dim]undefined[/styles][styles:gray],[/styles] [styles:dim,bold]null:[/styles] [styles:bold]null[/styles][styles:gray],[/styles] [styles:dim,bold]number:[/styles] [styles:yellow]1[/styles][styles:gray],[/styles] [styles:dim,bold]string:[/styles] [styles:orange]"s"[/styles][styles:gray],[/styles] [styles:dim,bold]bigInt:[/styles] [styles:yellow,bold][BigInt: 1][/styles][styles:gray],[/styles] [styles:dim,bold]symbol:[/styles] [styles:magenta]Symbol(symbol)[/styles][styles:gray],[/styles] [styles:dim,bold]date:[/styles] [styles:magenta][Date: 2000-01-31T23:00:00.000Z][/styles][styles:gray],[/styles] [styles:dim,bold]function:[/styles] [styles:blue][Function: test][/styles] }',
+    '{ [styles:dim,bold]undefined:[/styles] [styles:dim]undefined[/styles][styles:gray],[/styles] [styles:dim,bold]null:[/styles] [styles:bold]null[/styles][styles:gray],[/styles] [styles:dim,bold]number:[/styles] [styles:yellow]1[/styles][styles:gray],[/styles] [styles:dim,bold]string:[/styles] [styles:orange]"s"[/styles][styles:gray],[/styles] [styles:dim,bold]bigInt:[/styles] [styles:yellow,bold][BigInt: 1][/styles][styles:gray],[/styles] [styles:dim,bold]symbol:[/styles] [styles:magenta]Symbol(symbol)[/styles][styles:gray],[/styles] [styles:dim,bold]date:[/styles] [styles:magenta][Date: 2000-02-01T01:00:00.000Z][/styles][styles:gray],[/styles] [styles:dim,bold]function:[/styles] [styles:blue][Function: test][/styles] }',
   );
 });
 
@@ -157,9 +157,9 @@ test("simple set", () => {
 });
 
 test("date", () => {
-  const date = new Date(2020, 1, 1);
+  const date = new Date(Date.UTC(2020, 1, 1, 1, 0, 0));
   expect(formatObject({ a: date }, styleFn)).toBe(
-    "{ [styles:dim,bold]a:[/styles] [styles:magenta][Date: 2020-01-31T23:00:00.000Z][/styles] }",
+    "{ [styles:dim,bold]a:[/styles] [styles:magenta][Date: 2020-02-01T01:00:00.000Z][/styles] }",
   );
 });
 
