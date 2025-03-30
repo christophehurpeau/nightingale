@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 import type { Styles } from "nightingale-types";
+import { formatStyles } from "./formatStyles";
 
 export interface FormatObjectOptions {
   padding?: string;
@@ -62,6 +63,57 @@ const sameRawFormattedValue = (value: string): FormattedValue => ({
   formattedValue: value,
 });
 
+const numericSeparator = "_";
+
+const formatIntegerValue = (integerAsString: string): string => {
+  let result = "";
+  let i = integerAsString.length;
+  const start = integerAsString.startsWith("-") ? 1 : 0;
+  for (; i >= start + 4; i -= 3) {
+    result = `${numericSeparator}${integerAsString.slice(i - 3, i)}${result}`;
+  }
+  return i === integerAsString.length
+    ? integerAsString
+    : `${integerAsString.slice(0, i)}${result}`;
+};
+
+const formatDecimalIntegerValue = (integerAsString: string): string => {
+  let result = "";
+  let i = 0;
+  for (; i < integerAsString.length - 3; i += 3) {
+    result += `${integerAsString.slice(i, i + 3)}${numericSeparator}`;
+  }
+  return i === 0 ? integerAsString : `${result}${integerAsString.slice(i)}`;
+};
+
+const formatNumberValue = (value: number): string => {
+  if (Number.isNaN(value)) {
+    return "NaN";
+  }
+  if (value === Number.POSITIVE_INFINITY) {
+    return "+Infinity";
+  }
+  if (value === Number.NEGATIVE_INFINITY) {
+    return "-Infinity";
+  }
+  if (value === Number.EPSILON) {
+    return "Epsilon";
+  }
+  if (Object.is(value, -0)) {
+    return "-0";
+  }
+  const integer = Math.trunc(value);
+  const integerAsString = integer.toString();
+  if (integer === value) {
+    if (integerAsString.includes("e")) {
+      return integerAsString;
+    }
+    return formatIntegerValue(integerAsString);
+  } else {
+    return `${formatIntegerValue(integerAsString)}.${formatDecimalIntegerValue(String(value).slice(integerAsString.length + 1))}`;
+  }
+};
+
 function internalFormatValue(
   value: unknown,
   styleFn: StyleFn,
@@ -71,30 +123,42 @@ function internalFormatValue(
   const typeofValue = typeof value;
 
   if (!styles) {
-    if (value == null) {
-      styles = ["cyan"];
+    if (value === null) {
+      styles = ["bold"];
     } else {
       switch (typeofValue) {
-        case "undefined":
-          styles = ["cyan"];
+        case "bigint":
+          styles = formatStyles.bigint;
           break;
         case "boolean":
-          styles = ["green"];
+          styles = formatStyles.boolean;
+          break;
+        case "undefined":
+          styles = formatStyles.undefined;
           break;
         case "number":
-          styles = ["yellow"];
-          break;
-        case "bigint":
-          styles = ["red"];
+          styles = formatStyles.number;
           break;
         case "string":
-          styles = ["orange"];
+          styles = formatStyles.string;
           break;
         case "symbol":
-          styles = ["magenta"];
+          styles = formatStyles.symbol;
           break;
         case "object":
+          if (value instanceof Date) {
+            styles = formatStyles.date;
+          }
+          if (value instanceof RegExp) {
+            styles = formatStyles.regexp;
+          }
+          if (value instanceof Error) {
+            styles = formatStyles.error;
+          }
+          break;
         case "function":
+          styles = formatStyles.function;
+          break;
         default:
           break;
       }
@@ -106,6 +170,8 @@ function internalFormatValue(
     stringValue = "null";
   } else if (value === undefined) {
     stringValue = "undefined";
+  } else if (typeofValue === "number") {
+    stringValue = formatNumberValue(value as number);
   } else if (typeofValue === "boolean") {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
     stringValue = (value as any).toString() as string;
@@ -156,7 +222,7 @@ function internalFormatValue(
       });
     }
   } else if (typeofValue === "bigint") {
-    stringValue = (value as bigint).toString();
+    stringValue = `[BigInt: ${(value as bigint).toString()}]`;
   } else if (typeofValue === "symbol") {
     stringValue = (value as symbol).toString();
   } else if (value instanceof Set) {
@@ -175,6 +241,12 @@ function internalFormatValue(
     stringValue = "{WeakMap...}";
   } else if (value instanceof WeakSet) {
     stringValue = "{WeakSet...}";
+  } else if (value instanceof Date) {
+    stringValue = `[Date: ${value.toISOString()}]`;
+  } else if (value instanceof RegExp) {
+    stringValue = `[RegExp: ${value.toString()}]`;
+  } else if (typeof value === "function") {
+    stringValue = `[Function: ${value.name}]`;
   } else {
     stringValue = tryStringify(value);
   }
@@ -196,7 +268,7 @@ const internalFormatKey: FormatKey<string> = (
 ): FormattedKey => {
   return {
     stringKey: `${key}: `,
-    formattedKey: `${styleFn(["gray-light", "bold"], `${key}:`)} `,
+    formattedKey: `${styleFn(["dim", "bold"], `${key}:`)} `,
   };
 };
 
@@ -221,7 +293,7 @@ const internalFormatMapKey: FormatKey<unknown> = (
   );
   return {
     stringKey: `${stringValue} => `,
-    formattedKey: `${styleFn(["gray-light", "bold"], `${formattedValue}:`)} `,
+    formattedKey: `${styleFn(["dim", "bold"], `${formattedValue}:`)} `,
   };
 };
 

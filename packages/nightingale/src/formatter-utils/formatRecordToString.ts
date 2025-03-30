@@ -11,9 +11,9 @@ export function formatRecordToString<T extends Metadata>(
   const parts: string[] = [];
 
   if (record.displayName) {
-    parts.push(style(["gray-light"], record.displayName));
+    parts.push(style(["dim"], record.displayName));
   } else if (record.key) {
-    parts.push(style(["gray-light"], record.key));
+    parts.push(style(["dim"], record.key));
   }
 
   if (record.datetime) {

@@ -1,3 +1,5 @@
+// eslint-disable-next-line n/no-unsupported-features/node-builtins
+import { describe } from "node:test";
 import type { Styles } from "nightingale-types";
 import { formatObject } from "./formatObject";
 
@@ -14,7 +16,7 @@ const noStyleFn = (styles: Styles, value: string): string => value;
 
 test("simple object", () => {
   expect(formatObject({ a: 1 }, styleFn)).toBe(
-    "{ [styles:gray-light,bold]a:[/styles] [styles:yellow]1[/styles] }",
+    "{ [styles:dim,bold]a:[/styles] [styles:yellow]1[/styles] }",
   );
 });
 
@@ -24,7 +26,7 @@ test("simple without prototype", () => {
       Object.assign(Object.create(null) as Record<string, number>, { a: 1 }),
       styleFn,
     ),
-  ).toBe("{ [styles:gray-light,bold]a:[/styles] [styles:yellow]1[/styles] }");
+  ).toBe("{ [styles:dim,bold]a:[/styles] [styles:yellow]1[/styles] }");
 });
 
 test("long object", () => {
@@ -43,7 +45,7 @@ test("long object", () => {
       noStyleFn,
     ),
   ).toBe(
-    "{\n  obj: { a: 10000000000000000000, b: 10000000000000000000, c: 10000000000000000000, d: 10000000000000000000, e: 10000000000000000000, f: 10000000000000000000 },\n}",
+    "{\n  obj: { a: 10_000_000_000_000_000_000, b: 10_000_000_000_000_000_000, c: 10_000_000_000_000_000_000, d: 10_000_000_000_000_000_000, e: 10_000_000_000_000_000_000, f: 10_000_000_000_000_000_000 },\n}",
   );
 });
 
@@ -58,11 +60,13 @@ test("multiple values", () => {
         string: "s",
         bigInt: BigInt(1),
         symbol: Symbol("symbol"),
+        date: new Date(2000, 1, 1),
+        function: function test() {},
       },
       styleFn,
     ),
   ).toBe(
-    '{ [styles:gray-light,bold]undefined:[/styles] [styles:cyan]undefined[/styles][styles:gray],[/styles] [styles:gray-light,bold]null:[/styles] [styles:cyan]null[/styles][styles:gray],[/styles] [styles:gray-light,bold]number:[/styles] [styles:yellow]1[/styles][styles:gray],[/styles] [styles:gray-light,bold]string:[/styles] [styles:orange]"s"[/styles][styles:gray],[/styles] [styles:gray-light,bold]bigInt:[/styles] [styles:red]1[/styles][styles:gray],[/styles] [styles:gray-light,bold]symbol:[/styles] [styles:magenta]Symbol(symbol)[/styles] }',
+    '{ [styles:dim,bold]undefined:[/styles] [styles:dim]undefined[/styles][styles:gray],[/styles] [styles:dim,bold]null:[/styles] [styles:bold]null[/styles][styles:gray],[/styles] [styles:dim,bold]number:[/styles] [styles:yellow]1[/styles][styles:gray],[/styles] [styles:dim,bold]string:[/styles] [styles:orange]"s"[/styles][styles:gray],[/styles] [styles:dim,bold]bigInt:[/styles] [styles:yellow,bold][BigInt: 1][/styles][styles:gray],[/styles] [styles:dim,bold]symbol:[/styles] [styles:magenta]Symbol(symbol)[/styles][styles:gray],[/styles] [styles:dim,bold]date:[/styles] [styles:magenta][Date: 2000-01-31T23:00:00.000Z][/styles][styles:gray],[/styles] [styles:dim,bold]function:[/styles] [styles:blue][Function: test][/styles] }',
   );
 });
 
@@ -135,8 +139,8 @@ test("objects with breaking lines in array", () => {
   expect(formatObject({ a: [obj, obj] }, noStyleFn)).toBe(
     `{
   a: [
-    { a: 10000000000000000000, b: 10000000000000000000, c: 10000000000000000000, d: 10000000000000000000, e: 10000000000000000000, f: 10000000000000000000 },
-    { a: 10000000000000000000, b: 10000000000000000000, c: 10000000000000000000, d: 10000000000000000000, e: 10000000000000000000, f: 10000000000000000000 },
+    { a: 10_000_000_000_000_000_000, b: 10_000_000_000_000_000_000, c: 10_000_000_000_000_000_000, d: 10_000_000_000_000_000_000, e: 10_000_000_000_000_000_000, f: 10_000_000_000_000_000_000 },
+    { a: 10_000_000_000_000_000_000, b: 10_000_000_000_000_000_000, c: 10_000_000_000_000_000_000, d: 10_000_000_000_000_000_000, e: 10_000_000_000_000_000_000, f: 10_000_000_000_000_000_000 },
   ],
 }`,
   );
@@ -150,4 +154,63 @@ test("simple set", () => {
   expect(formatObject({ a: new Set(["value1", "value2"]) }, noStyleFn)).toBe(
     '{ a: Set [ "value1", "value2" ] }',
   );
+});
+
+test("date", () => {
+  const date = new Date(2020, 1, 1);
+  expect(formatObject({ a: date }, styleFn)).toBe(
+    "{ [styles:dim,bold]a:[/styles] [styles:magenta][Date: 2020-01-31T23:00:00.000Z][/styles] }",
+  );
+});
+
+test("function", () => {
+  const fn = () => {};
+  expect(formatObject({ a: fn }, styleFn)).toBe(
+    "{ [styles:dim,bold]a:[/styles] [styles:blue][Function: a][/styles] }",
+  );
+});
+
+describe("number", () => {
+  test("-0", () => {
+    expect(formatObject({ a: -0 }, styleFn)).toBe(
+      "{ [styles:dim,bold]a:[/styles] [styles:yellow]-0[/styles] }",
+    );
+  });
+
+  test("NaN", () => {
+    expect(formatObject({ a: NaN }, styleFn)).toBe(
+      "{ [styles:dim,bold]a:[/styles] [styles:yellow]NaN[/styles] }",
+    );
+  });
+
+  test("Infinity", () => {
+    expect(formatObject({ a: Infinity }, styleFn)).toBe(
+      "{ [styles:dim,bold]a:[/styles] [styles:yellow]+Infinity[/styles] }",
+    );
+  });
+  test("-Infinity", () => {
+    expect(formatObject({ a: -Infinity }, styleFn)).toBe(
+      "{ [styles:dim,bold]a:[/styles] [styles:yellow]-Infinity[/styles] }",
+    );
+  });
+  test("BigInt", () => {
+    expect(formatObject({ a: BigInt(1) }, styleFn)).toBe(
+      "{ [styles:dim,bold]a:[/styles] [styles:yellow,bold][BigInt: 1][/styles] }",
+    );
+  });
+  test("exponential", () => {
+    expect(formatObject({ a: 1e100 }, styleFn)).toBe(
+      "{ [styles:dim,bold]a:[/styles] [styles:yellow]1e+100[/styles] }",
+    );
+  });
+  test("long number", () => {
+    expect(formatObject({ a: 10_000_000_000_000_000_000 }, styleFn)).toBe(
+      "{ [styles:dim,bold]a:[/styles] [styles:yellow]10_000_000_000_000_000_000[/styles] }",
+    );
+  });
+  test("long number with decimal", () => {
+    expect(formatObject({ a: 10_000.123_12 }, styleFn)).toBe(
+      "{ [styles:dim,bold]a:[/styles] [styles:yellow]10_000.123_12[/styles] }",
+    );
+  });
 });

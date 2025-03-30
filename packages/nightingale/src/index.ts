@@ -17,6 +17,7 @@ export { BrowserConsoleHandler } from "./handlers/BrowserConsoleHandler";
 export { ConsoleHandler } from "./handlers/ConsoleHandler";
 export { ConsoleCLIHandler } from "./handlers/ConsoleCLIHandler";
 export { LoggerCLI } from "./loggers/LoggerCLI";
+export { formatStyles } from "./formatter-utils/formatStyles";
 
 /**
  * listen to uncaughtException and unhandledRejection

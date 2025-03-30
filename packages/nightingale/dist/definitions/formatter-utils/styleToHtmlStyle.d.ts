@@ -59,6 +59,10 @@ export declare const styleToHtmlStyleThemeLight: {
         readonly open: "color: gray";
         readonly close: "color: currentcolor";
     };
+    readonly dim: {
+        readonly open: "color: #808080";
+        readonly close: "color: currentcolor";
+    };
     readonly bgBlack: {
         readonly open: "background: black";
         readonly close: "background: initial";
@@ -93,14 +97,6 @@ export declare const styleToHtmlStyleThemeLight: {
     };
     readonly orange: {
         readonly open: "color: #ff5f00";
-        readonly close: "color: currentcolor";
-    };
-    readonly grayLight: {
-        readonly open: "color: #808080";
-        readonly close: "color: currentcolor";
-    };
-    readonly "gray-light": {
-        readonly open: "color: #808080";
         readonly close: "color: currentcolor";
     };
 };

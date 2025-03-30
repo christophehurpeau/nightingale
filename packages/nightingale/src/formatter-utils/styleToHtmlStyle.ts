@@ -31,6 +31,7 @@ export const styleToHtmlStyleThemeLight = {
   cyan: { open: "color: #00cfd8", close: "color: currentcolor" },
   white: { open: "color: white", close: "color: currentcolor" },
   gray: { open: "color: gray", close: "color: currentcolor" },
+  dim: { open: "color: #808080", close: "color: currentcolor" },
 
   bgBlack: { open: "background: black", close: "background: initial" },
   bgRed: { open: "background: #ff0020", close: "background: initial" },
@@ -43,14 +44,6 @@ export const styleToHtmlStyleThemeLight = {
 
   orange: {
     open: `color: #${styleToHexColor.orange}`,
-    close: "color: currentcolor",
-  },
-  grayLight: {
-    open: `color: #${styleToHexColor.grayLight}`,
-    close: "color: currentcolor",
-  },
-  "gray-light": {
-    open: `color: #${styleToHexColor.grayLight}`,
     close: "color: currentcolor",
   },
 } as const;

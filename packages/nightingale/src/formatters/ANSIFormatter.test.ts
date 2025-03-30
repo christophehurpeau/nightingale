@@ -22,6 +22,6 @@ test("format simple message", () => {
       datetime: new Date(2000, 1, 1, 1, 1, 1),
     }).replace(/\u001B/g, "ESC"),
   ).toBe(
-    "ESC[38;5;244mtestESC[39m ESC[1mESC[90m01:01:01ESC[39mESC[22m ESC[90m• testESC[39m",
+    "ESC[2mtestESC[22m ESC[1mESC[90m01:01:01ESC[39mESC[22m ESC[90m• testESC[39m",
   );
 });

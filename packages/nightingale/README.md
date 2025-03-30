@@ -409,3 +409,12 @@ export function someAction(arg1) {
   logger.info("done");
 }
 ```
+
+## Customize format styles
+
+```js
+import { formatStyles } from "nightingale";
+
+formatStyles.bigint = ["green", "bold"]; // instead of default ["yellow", "bold"]
+formatStyles.number = ["green"]; // instead of default ["yellow"]
+```

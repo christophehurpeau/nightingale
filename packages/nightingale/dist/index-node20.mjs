@@ -122,9 +122,7 @@ const levelToSymbol = {
 };
 
 const styleToHexColor = {
-  orange: "ff5f00",
-  grayLight: "808080",
-  "gray-light": "808080"
+  orange: "ff5f00"
 };
 
 const styleToHtmlStyleThemeLight = {
@@ -185,6 +183,10 @@ const styleToHtmlStyleThemeLight = {
     open: "color: gray",
     close: "color: currentcolor"
   },
+  dim: {
+    open: "color: #808080",
+    close: "color: currentcolor"
+  },
   bgBlack: {
     open: "background: black",
     close: "background: initial"
@@ -220,14 +222,6 @@ const styleToHtmlStyleThemeLight = {
   orange: {
     open: `color: #${styleToHexColor.orange}`,
     close: "color: currentcolor"
-  },
-  grayLight: {
-    open: `color: #${styleToHexColor.grayLight}`,
-    close: "color: currentcolor"
-  },
-  "gray-light": {
-    open: `color: #${styleToHexColor.grayLight}`,
-    close: "color: currentcolor"
   }
 };
 const styleToHtmlStyleThemeDark = {
@@ -240,6 +234,22 @@ const styleToHtmlStyleThemeDark = {
     open: "color: lightgray",
     close: "color: currentcolor"
   }
+};
+
+/* eslint sort-keys: error */
+
+const formatStyles = {
+  bigint: ["yellow", "bold"],
+  boolean: ["green"],
+  date: ["magenta"],
+  error: ["red"],
+  function: ["blue"],
+  null: ["bold"],
+  number: ["yellow"],
+  regexp: ["magenta"],
+  string: ["orange"],
+  symbol: ["magenta"],
+  undefined: ["dim"]
 };
 
 /* eslint-disable @typescript-eslint/no-use-before-define */
@@ -256,6 +266,51 @@ const sameRawFormattedValue = value => ({
   stringValue: value,
   formattedValue: value
 });
+const numericSeparator = "_";
+const formatIntegerValue = integerAsString => {
+  let result = "";
+  let i = integerAsString.length;
+  const start = integerAsString.startsWith("-") ? 1 : 0;
+  for (; i >= start + 4; i -= 3) {
+    result = `${numericSeparator}${integerAsString.slice(i - 3, i)}${result}`;
+  }
+  return i === integerAsString.length ? integerAsString : `${integerAsString.slice(0, i)}${result}`;
+};
+const formatDecimalIntegerValue = integerAsString => {
+  let result = "";
+  let i = 0;
+  for (; i < integerAsString.length - 3; i += 3) {
+    result += `${integerAsString.slice(i, i + 3)}${numericSeparator}`;
+  }
+  return i === 0 ? integerAsString : `${result}${integerAsString.slice(i)}`;
+};
+const formatNumberValue = value => {
+  if (Number.isNaN(value)) {
+    return "NaN";
+  }
+  if (value === Number.POSITIVE_INFINITY) {
+    return "+Infinity";
+  }
+  if (value === Number.NEGATIVE_INFINITY) {
+    return "-Infinity";
+  }
+  if (value === Number.EPSILON) {
+    return "Epsilon";
+  }
+  if (Object.is(value, -0)) {
+    return "-0";
+  }
+  const integer = Math.trunc(value);
+  const integerAsString = integer.toString();
+  if (integer === value) {
+    if (integerAsString.includes("e")) {
+      return integerAsString;
+    }
+    return formatIntegerValue(integerAsString);
+  } else {
+    return `${formatIntegerValue(integerAsString)}.${formatDecimalIntegerValue(String(value).slice(integerAsString.length + 1))}`;
+  }
+};
 function internalFormatValue(value, styleFn, styles, {
   padding,
   depth,
@@ -264,27 +319,41 @@ function internalFormatValue(value, styleFn, styles, {
 }) {
   const typeofValue = typeof value;
   if (!styles) {
-    if (value == null) {
-      styles = ["cyan"];
+    if (value === null) {
+      styles = ["bold"];
     } else {
       switch (typeofValue) {
-        case "undefined":
-          styles = ["cyan"];
+        case "bigint":
+          styles = formatStyles.bigint;
           break;
         case "boolean":
-          styles = ["green"];
+          styles = formatStyles.boolean;
+          break;
+        case "undefined":
+          styles = formatStyles.undefined;
           break;
         case "number":
-          styles = ["yellow"];
-          break;
-        case "bigint":
-          styles = ["red"];
+          styles = formatStyles.number;
           break;
         case "string":
-          styles = ["orange"];
+          styles = formatStyles.string;
           break;
         case "symbol":
-          styles = ["magenta"];
+          styles = formatStyles.symbol;
+          break;
+        case "object":
+          if (value instanceof Date) {
+            styles = formatStyles.date;
+          }
+          if (value instanceof RegExp) {
+            styles = formatStyles.regexp;
+          }
+          if (value instanceof Error) {
+            styles = formatStyles.error;
+          }
+          break;
+        case "function":
+          styles = formatStyles.function;
           break;
       }
     }
@@ -294,6 +363,8 @@ function internalFormatValue(value, styleFn, styles, {
     stringValue = "null";
   } else if (value === undefined) {
     stringValue = "undefined";
+  } else if (typeofValue === "number") {
+    stringValue = formatNumberValue(value);
   } else if (typeofValue === "boolean") {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
     stringValue = value.toString();
@@ -335,7 +406,7 @@ function internalFormatValue(value, styleFn, styles, {
       });
     }
   } else if (typeofValue === "bigint") {
-    stringValue = value.toString();
+    stringValue = `[BigInt: ${value.toString()}]`;
   } else if (typeofValue === "symbol") {
     stringValue = value.toString();
   } else if (value instanceof Set) {
@@ -354,6 +425,12 @@ function internalFormatValue(value, styleFn, styles, {
     stringValue = "{WeakMap...}";
   } else if (value instanceof WeakSet) {
     stringValue = "{WeakSet...}";
+  } else if (value instanceof Date) {
+    stringValue = `[Date: ${value.toISOString()}]`;
+  } else if (value instanceof RegExp) {
+    stringValue = `[RegExp: ${value.toString()}]`;
+  } else if (typeof value === "function") {
+    stringValue = `[Function: ${value.name}]`;
   } else {
     stringValue = tryStringify(value);
   }
@@ -367,7 +444,7 @@ const separator = ",";
 const internalFormatKey = (key, styleFn) => {
   return {
     stringKey: `${key}: `,
-    formattedKey: `${styleFn(["gray-light", "bold"], `${key}:`)} `
+    formattedKey: `${styleFn(["dim", "bold"], `${key}:`)} `
   };
 };
 const internalNoKey = () => {
@@ -383,7 +460,7 @@ const internalFormatMapKey = (key, styleFn, internalFormatParams) => {
   } = internalFormatValue(key, noStyleFn, undefined, internalFormatParams);
   return {
     stringKey: `${stringValue} => `,
-    formattedKey: `${styleFn(["gray-light", "bold"], `${formattedValue}:`)} `
+    formattedKey: `${styleFn(["dim", "bold"], `${formattedValue}:`)} `
   };
 };
 const internalFormatIterator = (values, styleFn, objectStyles, {
@@ -577,9 +654,9 @@ function formatObject(object, styleFn = noStyleFn, objectStyles, {
 function formatRecordToString(record, style) {
   const parts = [];
   if (record.displayName) {
-    parts.push(style(["gray-light"], record.displayName));
+    parts.push(style(["dim"], record.displayName));
   } else if (record.key) {
-    parts.push(style(["gray-light"], record.key));
+    parts.push(style(["dim"], record.key));
   }
   if (record.datetime) {
     parts.push(style(["gray", "bold"], record.datetime.toTimeString().split(" ", 2)[0]));
@@ -771,6 +848,7 @@ const ansiStyles = {
   cyan: ansi.cyan,
   white: ansi.white,
   gray: ansi.gray,
+  dim: ansi.dim,
   bgBlack: ansi.bgBlack,
   bgRed: ansi.bgRed,
   bgGreen: ansi.bgGreen,
@@ -784,10 +862,6 @@ const ansiStyles = {
   // http://www.calmar.ws/vim/256-xterm-24bit-rgb-color-chart.html
   orange: {
     open: ansi.color.ansi256(ansi.hexToAnsi256(styleToHexColor.orange)),
-    close: ansi.color.close
-  },
-  "gray-light": {
-    open: ansi.color.ansi256(ansi.hexToAnsi256(styleToHexColor["gray-light"])),
     close: ansi.color.close
   }
 };
@@ -1026,5 +1100,5 @@ function listenUnhandledErrors(logger = new Logger("nightingale:listenUnhandledE
   });
 }
 
-export { ANSIFormatter, BrowserConsoleFormatter, BrowserConsoleHandler, ConsoleCLIHandler, ConsoleHandler, HTMLFormatter, JSONFormatter, LoggerCLI, MarkdownFormatter, RawFormatter, StringHandler, addConfig, configure, consoleOutput, createFindDebugLevel, formatObject, formatRecordToString, levelToStyles, levelToSymbol, listenUnhandledErrors, styleToHexColor, styleToHtmlStyleThemeDark, styleToHtmlStyleThemeLight };
+export { ANSIFormatter, BrowserConsoleFormatter, BrowserConsoleHandler, ConsoleCLIHandler, ConsoleHandler, HTMLFormatter, JSONFormatter, LoggerCLI, MarkdownFormatter, RawFormatter, StringHandler, addConfig, configure, consoleOutput, createFindDebugLevel, formatObject, formatRecordToString, formatStyles, levelToStyles, levelToSymbol, listenUnhandledErrors, styleToHexColor, styleToHtmlStyleThemeDark, styleToHtmlStyleThemeLight };
 //# sourceMappingURL=index-node20.mjs.map
