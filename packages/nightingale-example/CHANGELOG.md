@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [16.2.0](https://github.com/christophehurpeau/nightingale/compare/v16.1.0...v16.2.0) (2025-03-30)
+
+### Features
+
+* improve format object and allow overriding styles ([f9e787c](https://github.com/christophehurpeau/nightingale/commit/f9e787c13bc0c3eeb57a70dfc31ca95ab40ce56b)), closes [#284](https://github.com/christophehurpeau/nightingale/issues/284)
+
+Version bump for dependency: nightingale
+Version bump for dependency: nightingale-slack
+
+
 ## [16.1.0](https://github.com/christophehurpeau/nightingale/compare/v16.0.0...v16.1.0) (2025-03-30)
 
 ### Features
