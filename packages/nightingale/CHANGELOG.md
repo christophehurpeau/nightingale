@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [16.1.0](https://github.com/christophehurpeau/nightingale/compare/v16.0.0...v16.1.0) (2025-03-30)
+
+### Features
+
+* support async in logger cli group ([e27d763](https://github.com/christophehurpeau/nightingale/commit/e27d7638538690b73f45a286cc4c5bdba759f159))
+
 ## [16.0.0](https://github.com/christophehurpeau/nightingale/compare/v15.0.0...v16.0.0) (2025-03-30)
 
 ### ⚠ BREAKING CHANGES

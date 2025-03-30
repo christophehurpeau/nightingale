@@ -3,6 +3,11 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [16.1.0](https://github.com/christophehurpeau/nightingale/compare/v16.0.0...v16.1.0) (2025-03-30)
+
+Version bump for dependency: nightingale
+
+
 ## [16.0.0](https://github.com/christophehurpeau/nightingale/compare/v15.0.0...v16.0.0) (2025-03-30)
 
 ### ⚠ BREAKING CHANGES
