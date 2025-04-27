@@ -80,7 +80,7 @@
   "devDependencies": {
     "@babel/core": "7.26.10",
     "@babel/preset-env": "7.26.9",
-    "pob-babel": "43.4.1",
+    "pob-babel": "43.5.0",
     "typescript": "5.8.3"
   }
 }
