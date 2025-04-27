@@ -1767,7 +1767,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eslint/plugin-kit@npm:^0.2.5, @eslint/plugin-kit@npm:^0.2.8":
+"@eslint/plugin-kit@npm:^0.2.5, @eslint/plugin-kit@npm:^0.2.7, @eslint/plugin-kit@npm:^0.2.8":
   version: 0.2.8
   resolution: "@eslint/plugin-kit@npm:0.2.8"
   dependencies:
@@ -4249,19 +4249,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"check-package-dependencies@npm:10.1.0":
-  version: 10.1.0
-  resolution: "check-package-dependencies@npm:10.1.0"
+"check-package-dependencies@npm:10.2.0":
+  version: 10.2.0
+  resolution: "check-package-dependencies@npm:10.2.0"
   dependencies:
-    "@eslint/plugin-kit": "npm:^0.2.5"
+    "@eslint/plugin-kit": "npm:^0.2.7"
     jsonc-parser: "npm:^3.3.1"
     semver: "npm:^7.7.1"
     semver-utils: "npm:^1.1.4"
     tslib: "npm:^2.8.1"
-    type-fest: "npm:^4.35.0"
+    type-fest: "npm:^4.37.0"
   bin:
     check-package-dependencies: ./bin/check-package-dependencies.mjs
-  checksum: 10c0/405549157c24012545a7dede1b3e7389d54749874d44322c6cb109992f8b46f38412f414f6aa632c5a6e956d4df5ac74be72c2fd94658fd1f66f897a5a96efed
+  checksum: 10c0/1552355b679bae712ac3692d73f805779b8a5bcf1bb05fde713737340c26faea44cbdc45d6bd2ae072c904c061b88d0e38ce4ef5ea15e6a08294981a2a29a1bd
   languageName: node
   linkType: hard
 
@@ -8742,7 +8742,7 @@ __metadata:
     "@pob/root": "npm:16.9.0"
     "@types/jest": "npm:29.5.14"
     "@types/node": "npm:22.15.2"
-    check-package-dependencies: "npm:10.1.0"
+    check-package-dependencies: "npm:10.2.0"
     eslint: "npm:9.25.1"
     jest: "npm:29.7.0"
     pob-babel: "npm:43.4.0"
@@ -11048,10 +11048,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"type-fest@npm:^4.35.0, type-fest@npm:^4.6.0, type-fest@npm:^4.7.1":
-  version: 4.35.0
-  resolution: "type-fest@npm:4.35.0"
-  checksum: 10c0/7032a8a940c33d45947a4ff0f74e3aa43b6fd8bb4745b32bba8e61ee47c0dd088cacd102f8377e9e889362e1ae8e0292b64a4c0698c1e42fd297bf6f8899d220
+"type-fest@npm:^4.37.0, type-fest@npm:^4.6.0, type-fest@npm:^4.7.1":
+  version: 4.40.1
+  resolution: "type-fest@npm:4.40.1"
+  checksum: 10c0/590cb7d4dcd3da83efe49b5b52cd041661f6fa29f18cb76650fe1fdeb4090688e92955656e9d981e606abb13d25c0418be8c6c6504d80e87fe18dc9ca0888392
   languageName: node
   linkType: hard
 
