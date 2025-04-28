@@ -22,6 +22,12 @@
         "import": "./build/configure-node.mjs"
       }
     },
+    "./cli": {
+      "types": "./src/cli.ts",
+      "node": {
+        "import": "./build/cli-node.mjs"
+      }
+    },
     "./console": {
       "types": "./src/console.ts",
       "node": {
