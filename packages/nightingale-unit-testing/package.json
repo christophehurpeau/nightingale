@@ -58,7 +58,7 @@
     "nightingale": "16.2.0"
   },
   "devDependencies": {
-    "@babel/core": "7.26.10",
+    "@babel/core": "7.27.1",
     "pob-babel": "43.5.0",
     "typescript": "5.8.3"
   }
