@@ -2,6 +2,7 @@ import { Level } from "nightingale-levels";
 import type { Handle, Handler, IsHandling } from "nightingale-types";
 export interface ConsoleCLIHandlerOptions {
     json?: boolean;
+    noColor?: boolean;
 }
 export declare class ConsoleCLIHandler implements Handler {
     minLevel: Level;

@@ -997,9 +997,14 @@ function cliConsoleOutput(param, record) {
 }
 
 const createHandle = ({
-  json
+  json,
+  noColor = process.env.NO_COLOR === "1" || process.env.NO_COLOR === "true"
 }) => {
-  const formatter = json ? JSONFormatter.format : ANSIFormatter.format;
+  const formatter = (() => {
+    if (json) return JSONFormatter.format;
+    if (noColor) return RawFormatter.format;
+    return ANSIFormatter.format;
+  })();
   const output = json ? consoleOutput : cliConsoleOutput;
   return record => {
     output(formatter(record), record);
@@ -1020,11 +1025,13 @@ class LoggerCLI extends Logger {
   constructor(key, {
     displayName,
     processors,
-    json = false
+    json = false,
+    noColor
   } = {}) {
     super(key, displayName);
     this.handlers = [new ConsoleCLIHandler(Level$1.INFO, {
-      json
+      json,
+      noColor
     })];
     this.processors = processors ?? [];
     this.json = json;
@@ -1075,6 +1082,9 @@ class LoggerCLI extends Logger {
         return result;
       }
     }
+  }
+  separator() {
+    console.log();
   }
 }
 
