@@ -8,6 +8,7 @@ export interface LoggerCLIOptions {
   handlers?: Handler[];
   processors?: Processor[];
   json?: boolean;
+  noColor?: boolean;
 }
 
 export class LoggerCLI extends Logger {
@@ -16,10 +17,10 @@ export class LoggerCLI extends Logger {
   private json: boolean;
   constructor(
     key: string,
-    { displayName, processors, json = false }: LoggerCLIOptions = {},
+    { displayName, processors, json = false, noColor }: LoggerCLIOptions = {},
   ) {
     super(key, displayName);
-    this.handlers = [new ConsoleCLIHandler(Level.INFO, { json })];
+    this.handlers = [new ConsoleCLIHandler(Level.INFO, { json, noColor })];
     this.processors = processors ?? [];
     this.json = json;
   }
@@ -99,5 +100,24 @@ export class LoggerCLI extends Logger {
           : Awaited<T>;
       }
     }
+  }
+
+  separator(): void {
+    console.log();
+  }
+}
+
+export class LoggerCLIString extends LoggerCLI {
+  constructor(
+    key: string,
+    {
+      displayName,
+      handlers,
+      processors,
+      json = false,
+      noColor = false,
+    }: LoggerCLIOptions = {},
+  ) {
+    super(key, { displayName, handlers, processors, json, noColor });
   }
 }
