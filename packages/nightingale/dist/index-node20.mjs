@@ -996,7 +996,7 @@ class ConsoleHandler {
 
 /* eslint-disable no-console */
 function cliConsoleOutput(param, record) {
-  console[record.level >= Level.ERROR ? "error" : "log"](param[0]);
+  console[record.level >= Level.ERROR ? "error" : "log"](...param);
 }
 
 const createHandle = ({
