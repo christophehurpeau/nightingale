@@ -7,7 +7,7 @@ import { levelToSymbol } from "./levelToSymbol";
 export function formatRecordToString<T extends Metadata>(
   record: LogRecord<T>,
   style: StyleFn,
-): string {
+): [string, ...string[]] {
   const parts: string[] = [];
 
   if (record.displayName) {
@@ -63,5 +63,5 @@ export function formatRecordToString<T extends Metadata>(
   formatRecordObject("extra", record.extra, undefined);
   formatRecordObject("context", record.context, undefined);
 
-  return parts.join(" ");
+  return [parts.join(" ")];
 }

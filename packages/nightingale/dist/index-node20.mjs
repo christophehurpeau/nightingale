@@ -690,7 +690,7 @@ function formatRecordToString(record, style) {
   formatRecordObject("metadata", record.metadata, record.metadataStyles);
   formatRecordObject("extra", record.extra, undefined);
   formatRecordObject("context", record.context, undefined);
-  return parts.join(" ");
+  return [parts.join(" ")];
 }
 
 /* eslint-disable complexity */
@@ -827,14 +827,14 @@ function stringify(value, space) {
 }
 const JSONFormatter = {
   format(record) {
-    return stringify({
+    return [stringify({
       key: record.key,
       level: record.level,
       datetime: record.datetime,
       message: record.message,
       metadata: record.metadata,
       extra: record.extra
-    });
+    })];
   }
 };
 
@@ -909,7 +909,7 @@ class BrowserConsoleFormatter {
   }
   format(record) {
     const args = [];
-    const string = formatRecordToString(record, style(this.styleToHtmlStyle, args));
+    const string = formatRecordToString(record, style(this.styleToHtmlStyle, args))[0];
     return [string, ...args];
   }
 }
@@ -918,7 +918,7 @@ class BrowserConsoleFormatter {
 function consoleOutput(param, record) {
   {
     const outKey = record.level >= Level.ERROR ? "stderr" : "stdout";
-    process[outKey].write(`${param}\n`);
+    process[outKey].write(`${param[0]}\n`);
   }
 }
 
@@ -933,7 +933,7 @@ class StringHandler {
     return this._buffer;
   }
   handle(record) {
-    this._buffer += RawFormatter.format(record) + "\n";
+    this._buffer += RawFormatter.format(record)[0] + "\n";
   }
 }
 
@@ -996,7 +996,7 @@ class ConsoleHandler {
 
 /* eslint-disable no-console */
 function cliConsoleOutput(param, record) {
-  console[record.level >= Level.ERROR ? "error" : "log"](param);
+  console[record.level >= Level.ERROR ? "error" : "log"](param[0]);
 }
 
 const createHandle = ({

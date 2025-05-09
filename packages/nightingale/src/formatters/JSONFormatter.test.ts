@@ -11,7 +11,7 @@ test("format record", () => {
     extra: {},
   };
 
-  expect(JSONFormatter.format(record)).toBe(JSON.stringify(record));
+  expect(JSONFormatter.format(record)).toStrictEqual([JSON.stringify(record)]);
 });
 
 test("format error", () => {
@@ -27,12 +27,12 @@ test("format error", () => {
     extra: {},
   };
 
-  expect(JSONFormatter.format(record)).toBe(
+  expect(JSONFormatter.format(record)).toStrictEqual([
     JSON.stringify({
       ...record,
       metadata: { error: { message: "test message", stack: error.stack } },
     }),
-  );
+  ]);
 });
 
 test("format map", () => {
@@ -53,10 +53,10 @@ test("format map", () => {
     extra: {},
   };
 
-  expect(JSONFormatter.format(record)).toBe(
+  expect(JSONFormatter.format(record)).toStrictEqual([
     JSON.stringify({
       ...record,
       metadata: { map: { "1": "value1", "2": "value2", "3": 3 } },
     }),
-  );
+  ]);
 });

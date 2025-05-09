@@ -15,5 +15,7 @@ test("format simple message", () => {
     extra: {},
   };
 
-  expect(MarkdownFormatter.format(record)).toBe("record.key *01:00:00* → test");
+  expect(MarkdownFormatter.format(record)).toStrictEqual([
+    "record.key *01:00:00* → test",
+  ]);
 });

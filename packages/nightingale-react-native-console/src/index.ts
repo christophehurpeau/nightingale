@@ -43,11 +43,11 @@ function parsedStackToString(stack: StackFrame[]): string {
 }
 
 function consoleOutput<T extends Metadata>(
-  param: string[] | string,
+  param: string[],
   record: LogRecord<T>,
 ): void {
   // eslint-disable-next-line no-console
-  console.log(...(param as string[]));
+  console.log(...param);
 }
 
 const createHandle = (): Handle => {
@@ -57,14 +57,14 @@ const createHandle = (): Handle => {
       symbolicateStackTrace(getStackTrace(metadataError))
         .then(({ stack, codeFrame }: any) => {
           metadataError.stack = parsedStackToString(stack);
-          consoleOutput([ANSIFormatter.format(record)], record);
+          consoleOutput(ANSIFormatter.format(record), record);
         })
         .catch((error: unknown) => {
           metadataError.stack = undefined;
-          consoleOutput([ANSIFormatter.format(record)], record);
+          consoleOutput(ANSIFormatter.format(record), record);
         });
     } else {
-      consoleOutput([ANSIFormatter.format(record)], record);
+      consoleOutput(ANSIFormatter.format(record), record);
     }
   };
 };

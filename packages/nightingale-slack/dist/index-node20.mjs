@@ -20,10 +20,10 @@ function createBody(record, slackConfig) {
     icon_url: slackConfig.iconUrl,
     icon_emoji: slackConfig.iconEmoji,
     attachments: [{
-      fallback: raw,
+      fallback: raw[0],
       title: record.message,
       color: levelToSlackColor[record.level],
-      text: markdown,
+      text: markdown[0],
       mrkdwn_in: ["text"]
     }]
   };

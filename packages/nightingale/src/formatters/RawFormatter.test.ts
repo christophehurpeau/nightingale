@@ -15,7 +15,7 @@ test("format simple message", () => {
     extra: {},
   };
 
-  expect(RawFormatter.format(record)).toBe(
+  expect(RawFormatter.format(record)).toStrictEqual([
     "record.key 01:00:00 → record.message",
-  );
+  ]);
 });

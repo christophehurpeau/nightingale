@@ -8,6 +8,7 @@ import type {
 } from "nightingale-types";
 import { POB_TARGET } from "pob-babel";
 import { createFindDebugLevel } from "../debug/debug";
+import type { NightingaleFormatter } from "../formatter-utils";
 import { ANSIFormatter } from "../formatters/ANSIFormatter";
 import { JSONFormatter } from "../formatters/JSONFormatter";
 import { consoleOutput } from "../outputs/consoleOutput";
@@ -30,7 +31,7 @@ const createHandle = (
 const findDebugLevel = createFindDebugLevel(process.env.DEBUG);
 
 export interface ConsoleHandlerOptions {
-  formatter?: <T extends Metadata>(record: LogRecord<T>) => string;
+  formatter?: NightingaleFormatter["format"];
   output?: <T extends Metadata>(
     param: string[] | string,
     record: LogRecord<T>,

@@ -38,25 +38,29 @@ function stringify(value: unknown, space?: number | string): string {
 
 export const JSONFormatter: NightingaleFormatter = {
   format(record) {
-    return stringify({
-      key: record.key,
-      level: record.level,
-      datetime: record.datetime,
-      message: record.message,
-      metadata: record.metadata,
-      extra: record.extra,
-    });
+    return [
+      stringify({
+        key: record.key,
+        level: record.level,
+        datetime: record.datetime,
+        message: record.message,
+        metadata: record.metadata,
+        extra: record.extra,
+      }),
+    ];
   },
 };
 
 export const JSONCLIFormatter: NightingaleFormatter = {
   format(record) {
-    return stringify({
-      key: record.key,
-      time: record.datetime.toTimeString().split(" ", 2)[0]!,
-      message: record.message,
-      ...record.metadata,
-      ...record.extra,
-    });
+    return [
+      stringify({
+        key: record.key,
+        time: record.datetime.toTimeString().split(" ", 2)[0]!,
+        message: record.message,
+        ...record.metadata,
+        ...record.extra,
+      }),
+    ];
   },
 };

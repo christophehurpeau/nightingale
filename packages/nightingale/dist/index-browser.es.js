@@ -690,7 +690,7 @@ function formatRecordToString(record, style) {
   formatRecordObject("metadata", record.metadata, record.metadataStyles);
   formatRecordObject("extra", record.extra, undefined);
   formatRecordObject("context", record.context, undefined);
-  return parts.join(" ");
+  return [parts.join(" ")];
 }
 
 /* eslint-disable complexity */
@@ -827,14 +827,14 @@ function stringify(value, space) {
 }
 const JSONFormatter = {
   format(record) {
-    return stringify({
+    return [stringify({
       key: record.key,
       level: record.level,
       datetime: record.datetime,
       message: record.message,
       metadata: record.metadata,
       extra: record.extra
-    });
+    })];
   }
 };
 
@@ -909,7 +909,7 @@ class BrowserConsoleFormatter {
   }
   format(record) {
     const args = [];
-    const string = formatRecordToString(record, style(this.styleToHtmlStyle, args));
+    const string = formatRecordToString(record, style(this.styleToHtmlStyle, args))[0];
     return [string, ...args];
   }
 }
@@ -930,7 +930,7 @@ class StringHandler {
     return this._buffer;
   }
   handle(record) {
-    this._buffer += RawFormatter.format(record) + "\n";
+    this._buffer += RawFormatter.format(record)[0] + "\n";
   }
 }
 

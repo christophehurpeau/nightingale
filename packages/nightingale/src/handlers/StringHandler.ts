@@ -16,6 +16,6 @@ export class StringHandler implements Handler {
   }
 
   handle<T extends Metadata>(record: LogRecord<T>): void {
-    this._buffer += RawFormatter.format(record) + "\n";
+    this._buffer += RawFormatter.format(record)[0] + "\n";
   }
 }

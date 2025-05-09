@@ -35,13 +35,13 @@ const createHandle = () => {
         codeFrame
       }) => {
         metadataError.stack = parsedStackToString(stack);
-        consoleOutput([ANSIFormatter.format(record)]);
+        consoleOutput(ANSIFormatter.format(record));
       }).catch(() => {
         metadataError.stack = undefined;
-        consoleOutput([ANSIFormatter.format(record)]);
+        consoleOutput(ANSIFormatter.format(record));
       });
     } else {
-      consoleOutput([ANSIFormatter.format(record)]);
+      consoleOutput(ANSIFormatter.format(record));
     }
   };
 };

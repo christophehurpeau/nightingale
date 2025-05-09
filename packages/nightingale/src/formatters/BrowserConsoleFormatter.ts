@@ -5,7 +5,7 @@ import {
   styleToHtmlStyleThemeDark,
   styleToHtmlStyleThemeLight,
 } from "../formatter-utils";
-import type { StringArrayNightingaleFormatter } from "../formatter-utils";
+import type { NightingaleFormatter } from "../formatter-utils";
 
 export const style =
   (styleToHtmlStyle: StyleToHtmlStyle, args: string[]) =>
@@ -25,21 +25,19 @@ export const style =
     return `%c${string}%c`;
   };
 
-export class BrowserConsoleFormatter
-  implements StringArrayNightingaleFormatter
-{
+export class BrowserConsoleFormatter implements NightingaleFormatter {
   styleToHtmlStyle: StyleToHtmlStyle;
   constructor(theme: "dark" | "light" = "light") {
     this.styleToHtmlStyle =
       theme === "dark" ? styleToHtmlStyleThemeDark : styleToHtmlStyleThemeLight;
   }
 
-  format<T extends Metadata>(record: LogRecord<T>): string[] {
+  format<T extends Metadata>(record: LogRecord<T>): [string, ...string[]] {
     const args: string[] = [];
     const string = formatRecordToString(
       record,
       style(this.styleToHtmlStyle, args),
-    );
+    )[0];
     return [string, ...args];
   }
 }

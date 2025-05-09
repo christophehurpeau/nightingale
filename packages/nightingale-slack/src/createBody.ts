@@ -28,10 +28,10 @@ export default function createBody<T extends Metadata>(
     icon_emoji: slackConfig.iconEmoji,
     attachments: [
       {
-        fallback: raw,
+        fallback: raw[0],
         title: record.message,
         color: levelToSlackColor[record.level],
-        text: markdown,
+        text: markdown[0],
         mrkdwn_in: ["text"],
       },
     ],

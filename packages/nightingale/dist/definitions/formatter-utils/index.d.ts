@@ -7,9 +7,6 @@ export { styleToHexColor } from "./styleToHexColor";
 export { formatObject } from "./formatObject";
 export { formatRecordToString } from "./formatRecordToString";
 export interface NightingaleFormatter {
-    format: <T extends Metadata>(record: LogRecord<T>) => string;
-}
-export interface StringArrayNightingaleFormatter {
-    format: <T extends Metadata>(record: LogRecord<T>) => string[];
+    format: <T extends Metadata>(record: LogRecord<T>) => [string, ...string[]];
 }
 //# sourceMappingURL=index.d.ts.map

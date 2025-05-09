@@ -17,7 +17,7 @@ test("format simple message", () => {
     extra: {},
   };
 
-  expect(HTMLFormatter.format(record)).toBe(
+  expect(HTMLFormatter.format(record)).toStrictEqual([
     '<span style="color: #808080">record.key</span> <span style="color: gray; font-weight: bold">01:00:00</span> → record.message',
-  );
+  ]);
 });
