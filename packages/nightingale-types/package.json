@@ -76,7 +76,7 @@
     "nightingale-levels": "16.0.0"
   },
   "devDependencies": {
-    "@babel/core": "7.27.1",
+    "@babel/core": "7.27.3",
     "@babel/preset-env": "7.27.2",
     "pob-babel": "43.5.0",
     "typescript": "5.8.3"
