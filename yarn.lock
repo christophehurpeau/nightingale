@@ -1644,7 +1644,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eslint/plugin-kit@npm:^0.2.5, @eslint/plugin-kit@npm:^0.2.7":
+"@eslint/plugin-kit@npm:^0.2.5":
   version: 0.2.8
   resolution: "@eslint/plugin-kit@npm:0.2.8"
   dependencies:
@@ -4060,19 +4060,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"check-package-dependencies@npm:10.2.0":
-  version: 10.2.0
-  resolution: "check-package-dependencies@npm:10.2.0"
+"check-package-dependencies@npm:10.2.1":
+  version: 10.2.1
+  resolution: "check-package-dependencies@npm:10.2.1"
   dependencies:
-    "@eslint/plugin-kit": "npm:^0.2.7"
+    "@eslint/plugin-kit": "npm:^0.3.1"
     jsonc-parser: "npm:^3.3.1"
-    semver: "npm:^7.7.1"
+    semver: "npm:^7.0.0"
     semver-utils: "npm:^1.1.4"
     tslib: "npm:^2.8.1"
     type-fest: "npm:^4.37.0"
   bin:
     check-package-dependencies: ./bin/check-package-dependencies.mjs
-  checksum: 10c0/1552355b679bae712ac3692d73f805779b8a5bcf1bb05fde713737340c26faea44cbdc45d6bd2ae072c904c061b88d0e38ce4ef5ea15e6a08294981a2a29a1bd
+  checksum: 10c0/dee1dc32fc467d1313498cbeafdfec908388e33154fe871a97ea4ba443a4e70e8dbca914daed18fc88fe09b4676f41b49e702cceb709f045f66c61218a9e4c79
   languageName: node
   linkType: hard
 
@@ -8435,7 +8435,7 @@ __metadata:
     "@pob/root": "npm:16.9.0"
     "@types/jest": "npm:29.5.14"
     "@types/node": "npm:22.15.29"
-    check-package-dependencies: "npm:10.2.0"
+    check-package-dependencies: "npm:10.2.1"
     eslint: "npm:9.28.0"
     jest: "npm:29.7.0"
     pob-babel: "npm:43.5.0"
@@ -9868,7 +9868,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semver@npm:7.7.1, semver@npm:^7.1.1, semver@npm:^7.1.3, semver@npm:^7.3.5, semver@npm:^7.3.7, semver@npm:^7.5.2, semver@npm:^7.5.3, semver@npm:^7.5.4, semver@npm:^7.6.0, semver@npm:^7.6.3, semver@npm:^7.7.1":
+"semver@npm:7.7.1":
   version: 7.7.1
   resolution: "semver@npm:7.7.1"
   bin:
@@ -9883,6 +9883,15 @@ __metadata:
   bin:
     semver: bin/semver.js
   checksum: 10c0/e3d79b609071caa78bcb6ce2ad81c7966a46a7431d9d58b8800cfa9cb6a63699b3899a0e4bcce36167a284578212d9ae6942b6929ba4aa5015c079a67751d42d
+  languageName: node
+  linkType: hard
+
+"semver@npm:^7.0.0, semver@npm:^7.1.1, semver@npm:^7.1.3, semver@npm:^7.3.5, semver@npm:^7.3.7, semver@npm:^7.5.2, semver@npm:^7.5.3, semver@npm:^7.5.4, semver@npm:^7.6.0, semver@npm:^7.6.3, semver@npm:^7.7.1":
+  version: 7.7.2
+  resolution: "semver@npm:7.7.2"
+  bin:
+    semver: bin/semver.js
+  checksum: 10c0/aca305edfbf2383c22571cb7714f48cadc7ac95371b4b52362fb8eeffdfbc0de0669368b82b2b15978f8848f01d7114da65697e56cd8c37b0dab8c58e543f9ea
   languageName: node
   linkType: hard
 
