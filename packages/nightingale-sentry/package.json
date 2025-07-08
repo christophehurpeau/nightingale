@@ -74,8 +74,8 @@
   },
   "prettier": "@pob/root/prettier-config",
   "dependencies": {
-    "@sentry/core": "^7.120.3",
-    "@sentry/types": "^7.120.3",
+    "@sentry/core": "^9.0.0",
+    "@sentry/types": "^9.0.0",
     "nightingale-levels": "16.0.0",
     "nightingale-types": "16.0.0"
   },
