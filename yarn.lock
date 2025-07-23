@@ -4060,9 +4060,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"check-package-dependencies@npm:10.3.0":
-  version: 10.3.0
-  resolution: "check-package-dependencies@npm:10.3.0"
+"check-package-dependencies@npm:10.4.0":
+  version: 10.4.0
+  resolution: "check-package-dependencies@npm:10.4.0"
   dependencies:
     "@eslint/plugin-kit": "npm:^0.3.1"
     jsonc-parser: "npm:^3.3.1"
@@ -4072,7 +4072,7 @@ __metadata:
     type-fest: "npm:^4.37.0"
   bin:
     check-package-dependencies: ./bin/check-package-dependencies.mjs
-  checksum: 10c0/25178e33bcfc8280f8b76c1adfe39d5db344567a1dbcd5f5efc24195d1c4244d82ece64dc21a834737de1fd63701a29527c31a787e087092b533bad9c06ec144
+  checksum: 10c0/7f9897609e7b219d3abdca74625f70eb7172ab045700ff658f91344d2ea03adfba02802b58c6a3ab81d1ebcdc89fdc7841f757cefaba1bba76284218c5b9da7b
   languageName: node
   linkType: hard
 
@@ -8419,7 +8419,7 @@ __metadata:
     "@pob/root": "npm:16.9.0"
     "@types/jest": "npm:29.5.14"
     "@types/node": "npm:22.15.34"
-    check-package-dependencies: "npm:10.3.0"
+    check-package-dependencies: "npm:10.4.0"
     eslint: "npm:9.28.0"
     jest: "npm:29.7.0"
     pob-babel: "npm:43.6.1"
