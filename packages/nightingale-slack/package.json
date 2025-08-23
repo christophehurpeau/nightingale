@@ -64,7 +64,7 @@
   },
   "devDependencies": {
     "@pob/rollup-esbuild": "6.7.0",
-    "@types/node": "22.15.34",
+    "@types/node": "22.17.2",
     "typescript": "5.9.2"
   }
 }
