@@ -55,6 +55,6 @@
     "eslint": "9.34.0",
     "jest": "30.0.5",
     "typedoc": "0.28.10",
-    "typescript": "5.8.3"
+    "typescript": "5.9.2"
   }
 }
