@@ -22,6 +22,12 @@
         "import": "./build/configure-node.mjs"
       }
     },
+    "./cli": {
+      "types": "./src/cli.ts",
+      "node": {
+        "import": "./build/cli-node.mjs"
+      }
+    },
     "./console": {
       "types": "./src/console.ts",
       "node": {
@@ -56,14 +62,14 @@
   "scripts": {
     "build": "yarn clean:build && rollup --config rollup.config.mjs",
     "clean": "yarn clean:build",
-    "clean:build": "pob-babel-clean-out build",
+    "clean:build": "pob-esbuild-clean-out build",
     "lint": "yarn run lint:eslint",
     "lint:eslint": "yarn ../.. run eslint --quiet packages/nightingale-example",
     "start": "yarn clean:build && rollup --config rollup.config.mjs --watch",
     "watch": "pob-watch"
   },
   "pob": {
-    "bundler": "rollup-babel",
+    "bundler": "rollup-esbuild",
     "entries": [
       "configure",
       "cli",
@@ -79,7 +85,8 @@
         "version": "22",
         "omitVersionInFileName": true
       }
-    ]
+    ],
+    "typescript": true
   },
   "prettier": "@pob/root/prettier-config",
   "dependencies": {
@@ -88,8 +95,7 @@
     "nightingale-types": "16.0.0"
   },
   "devDependencies": {
-    "@babel/core": "7.27.7",
-    "pob-babel": "43.6.1",
+    "@pob/rollup-esbuild": "6.7.0",
     "typescript": "5.8.3"
   }
 }

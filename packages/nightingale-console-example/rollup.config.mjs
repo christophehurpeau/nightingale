@@ -1,7 +1,7 @@
 import { dirname } from "node:path";
 import { fileURLToPath } from "node:url";
-import createRollupConfig from "pob-babel/createRollupConfig.js";
-import run from "pob-babel/plugin-run.cjs";
+import createRollupConfig from "@pob/rollup-esbuild/createRollupConfig.js";
+import run from "@pob/rollup-esbuild/plugin-run.cjs";
 
 const watch = process.env.ROLLUP_WATCH === "true";
 

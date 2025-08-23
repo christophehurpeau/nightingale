@@ -1,0 +1,1 @@
+{"version":3,"file":"ConsoleHandler.target-node.d.ts","sourceRoot":"","sources":["../../src/ConsoleHandler.target-node.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,cAAc,IAAI,sBAAsB,EAAE,MAAM,aAAa,CAAC;AACvE,OAAO,KAAK,EAAE,qBAAqB,EAAE,MAAM,aAAa,CAAC;AAEzD,eAAO,MAAM,cAAc,EACvB,OAAO,qBAAqB,GAC5B,OAAO,sBAA+C,CAAC"}

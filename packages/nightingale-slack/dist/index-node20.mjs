@@ -1,6 +1,5 @@
-import { MarkdownFormatter, RawFormatter, Level } from 'nightingale';
+import { Level, MarkdownFormatter, RawFormatter } from 'nightingale';
 
-/* eslint-disable camelcase */
 const levelToSlackColor = {
   [Level.TRACE]: "#808080",
   [Level.DEBUG]: "#808080",
@@ -19,28 +18,30 @@ function createBody(record, slackConfig) {
     username: slackConfig.username,
     icon_url: slackConfig.iconUrl,
     icon_emoji: slackConfig.iconEmoji,
-    attachments: [{
-      fallback: raw[0],
-      title: record.message,
-      color: levelToSlackColor[record.level],
-      text: markdown[0],
-      mrkdwn_in: ["text"]
-    }]
+    attachments: [
+      {
+        fallback: raw[0],
+        title: record.message,
+        color: levelToSlackColor[record.level],
+        text: markdown[0],
+        mrkdwn_in: ["text"]
+      }
+    ]
   };
 }
 
-const createHandler = slackConfig => record => {
+const createHandler = (slackConfig) => (record) => {
   const body = createBody(record, slackConfig);
-
-  // eslint-disable-next-line n/no-unsupported-features/node-builtins
   fetch(slackConfig.webhookUrl, {
     method: "POST",
     body: JSON.stringify(body)
-  }).catch(error => {
+  }).catch((error) => {
     console.error(error);
   });
 };
 class SlackHandler {
+  minLevel;
+  handle;
   constructor(slackConfig, minLevel) {
     this.minLevel = minLevel;
     this.handle = createHandler(slackConfig);

@@ -1,7 +1,7 @@
 {
   "extends": [
     "@pob/root/tsconfigs/strict.json",
-    "@pob/root/tsconfigs/targets/rollup-babel.json"
+    "@pob/root/tsconfigs/targets/rollup-node-20.json"
   ],
   "include": ["src/**/*.ts"],
   "compilerOptions": {

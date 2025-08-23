@@ -1,43 +1,32 @@
 import { ANSIFormatter } from 'nightingale';
-import { Platform } from 'react-native';
+import { Platform } from 'react-native-web';
 import parseErrorStack from 'react-native/Libraries/Core/Devtools/parseErrorStack';
 import symbolicateStackTrace from 'react-native/Libraries/Core/Devtools/symbolicateStackTrace';
 
-/* eslint-disable @typescript-eslint/no-unsafe-argument */
-
-const getStackTrace = e => {
-  // eslint-disable-next-line no-prototype-builtins
+const getStackTrace = (e) => {
   if (Platform.hasOwnProperty("constants")) {
-    // RN version >= 0.63
     if (Platform.constants.reactNativeVersion.minor >= 64) {
-      // RN version >= 0.64 -> Stacktrace as string
       return parseErrorStack(e.stack);
-    }
-    // RN version == 0.63 -> Stacktrace as string
-    else return parseErrorStack(e);
-  }
-  // RN version < 0.63 -> Stacktrace as string
-  else return parseErrorStack(e);
+    } else return parseErrorStack(e);
+  } else return parseErrorStack(e);
 };
 function parsedStackToString(stack) {
-  return stack.map(frame => `  at ${frame.file}${frame.lineNumber ? `:${frame.lineNumber}${frame.column ? `:${frame.column}` : ""}` : ""}${frame.methodName ? ` in ${frame.methodName}` : ""}`).join("\n");
+  return stack.map(
+    (frame) => `  at ${frame.file}${frame.lineNumber ? `:${frame.lineNumber}${frame.column ? `:${frame.column}` : ""}` : ""}${frame.methodName ? ` in ${frame.methodName}` : ""}`
+  ).join("\n");
 }
-function consoleOutput(param) {
-  // eslint-disable-next-line no-console
+function consoleOutput(param, record) {
   console.log(...param);
 }
 const createHandle = () => {
-  return record => {
+  return (record) => {
     const metadataError = record.metadata?.error;
     if (metadataError && metadataError instanceof Error) {
-      symbolicateStackTrace(getStackTrace(metadataError)).then(({
-        stack,
-        codeFrame
-      }) => {
+      symbolicateStackTrace(getStackTrace(metadataError)).then(({ stack, codeFrame }) => {
         metadataError.stack = parsedStackToString(stack);
         consoleOutput(ANSIFormatter.format(record));
-      }).catch(() => {
-        metadataError.stack = undefined;
+      }).catch((error) => {
+        metadataError.stack = void 0;
         consoleOutput(ANSIFormatter.format(record));
       });
     } else {
@@ -46,10 +35,10 @@ const createHandle = () => {
   };
 };
 class ReactNativeConsoleHandler {
-  minLevel = 0;
   constructor(minLevel) {
+    this.minLevel = 0;
     this.minLevel = minLevel;
-    this.isHandling = level => level >= minLevel;
+    this.isHandling = (level) => level >= minLevel;
     this.handle = createHandle();
   }
 }

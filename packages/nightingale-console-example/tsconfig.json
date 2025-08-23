@@ -1,7 +1,7 @@
 {
   "extends": [
     "@pob/root/tsconfigs/strict.json",
-    "@pob/root/tsconfigs/targets/rollup-babel.json"
+    "@pob/root/tsconfigs/targets/rollup-node-22.json"
   ],
   "include": ["src/**/*.ts"],
   "compilerOptions": {
@@ -10,7 +10,6 @@
     "noEmit": true,
     "tsBuildInfoFile": "node_modules/.cache/tsc/tsbuildinfo",
     "incremental": true,
-    "composite": true,
 
     "resolveJsonModule": true,
 

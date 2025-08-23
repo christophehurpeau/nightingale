@@ -3,8 +3,7 @@
     "lib": {
       "documentation": false,
       "testing": {
-        "codecov": true,
-        "ci": true
+        "codecov": true
       }
     },
     "project": {

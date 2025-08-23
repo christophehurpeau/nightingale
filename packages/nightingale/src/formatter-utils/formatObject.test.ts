@@ -1,5 +1,3 @@
-// eslint-disable-next-line n/no-unsupported-features/node-builtins
-import { describe } from "node:test";
 import type { Styles } from "nightingale-types";
 import { formatObject } from "./formatObject";
 
@@ -166,7 +164,7 @@ test("date", () => {
 test("function", () => {
   const fn = () => {};
   expect(formatObject({ a: fn }, styleFn)).toBe(
-    "{ [styles:dim,bold]a:[/styles] [styles:blue][Function: a][/styles] }",
+    "{ [styles:dim,bold]a:[/styles] [styles:blue][Function: fn][/styles] }",
   );
 });
 

@@ -1,4 +1,3 @@
-import * as util from "node:util";
 import { Level } from "nightingale-levels";
 import type {
   Handler,
@@ -8,7 +7,7 @@ import type {
   Processor,
   Styles,
 } from "nightingale-types";
-import { POB_TARGET } from "pob-babel";
+import { inspectValue } from "./inspectValue";
 
 export { Level } from "nightingale-levels";
 
@@ -39,19 +38,18 @@ export interface Config {
 }
 
 declare global {
-  // eslint-disable-next-line no-var
   var __NIGHTINGALE_CONFIG: Config[];
-  // eslint-disable-next-line no-var
+
   var __NIGHTINGALE_LOGGER_MAP_CACHE: Map<string, ComputedConfigForKey>;
-  // eslint-disable-next-line no-var
+
   var __NIGHTINGALE_CONFIG_DEFAULT: ComputedConfigForKey;
-  // eslint-disable-next-line no-var
+
   var __NIGHTINGALE_GLOBAL_HANDLERS: unknown;
-  // eslint-disable-next-line no-var
+
   var __NIGHTINGALE_GET_CONFIG_FOR_LOGGER: (
     key: string,
   ) => ComputedConfigForKey;
-  // eslint-disable-next-line no-var
+
   var __NIGHTINGALE_GET_CONFIG_FOR_LOGGER_RECORD: (
     key: string,
     level: number,
@@ -396,17 +394,11 @@ export class Logger {
     metadata?: T,
     metadataStyles?: MetadataStyles<T>,
   ): void {
-    if (POB_TARGET === "browser") {
-      throw new Error("Not supported for the browser. Prefer `debugger;`");
-    } else {
-      // Note: inspect is a special function for node:
-      // https://github.com/nodejs/node/blob/a1bda1b4deb08dfb3e06cb778f0db40023b18318/lib/util.js#L210
-      const inspectedValue = util.inspect(value, { depth: 6 });
-      this.log(inspectedValue, metadata, Level.DEBUG, {
-        metadataStyles,
-        styles: ["gray"],
-      });
-    }
+    const inspectedValue = inspectValue(value);
+    this.log(inspectedValue, metadata, Level.DEBUG, {
+      metadataStyles,
+      styles: ["gray"],
+    });
   }
 
   /**
@@ -418,15 +410,11 @@ export class Logger {
     metadata?: T,
     metadataStyles?: MetadataStyles<T>,
   ): void {
-    if (POB_TARGET === "browser") {
-      throw new Error("Not supported for the browser. Prefer `debugger;`");
-    } else {
-      const inspectedValue = util.inspect(varValue, { depth: 6 });
-      this.log(`${varName} = ${inspectedValue}`, metadata, Level.DEBUG, {
-        metadataStyles,
-        styles: ["cyan"],
-      });
-    }
+    const inspectedValue = inspectValue(varValue);
+    this.log(`${varName} = ${inspectedValue}`, metadata, Level.DEBUG, {
+      metadataStyles,
+      styles: ["cyan"],
+    });
   }
 
   /**

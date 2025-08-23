@@ -14,21 +14,15 @@ const mapToSentryLevel = {
   [Level.ALL]: "error"
 };
 const createHandler = (Sentry, {
-  getUser = () => undefined,
+  getUser = () => void 0,
   getTags = () => ({}),
-  getBreadcrumbCategory = () => undefined,
-  getBreadcrumbType = () => undefined,
-  shouldSendAsException = record => record.metadata?.error !== undefined && record.metadata.unhandled !== true,
-  shouldSendAsBreadcrumb = () => false
+  getBreadcrumbCategory = () => void 0,
+  getBreadcrumbType = () => void 0,
+  shouldSendAsException = (record) => record.metadata?.error !== void 0 && record.metadata.unhandled !== true,
+  shouldSendAsBreadcrumb = (record) => false
 } = {}) => {
-  return record => {
-    const {
-      key,
-      level,
-      metadata,
-      extra,
-      message
-    } = record;
+  return (record) => {
+    const { key, level, metadata, extra, message } = record;
     if (shouldSendAsException(record)) {
       const error = metadata?.error || record.message;
       const extraData = {

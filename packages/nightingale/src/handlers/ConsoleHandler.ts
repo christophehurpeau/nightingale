@@ -6,19 +6,10 @@ import type {
   LogRecord,
   Metadata,
 } from "nightingale-types";
-import { POB_TARGET } from "pob-babel";
 import { createFindDebugLevel } from "../debug/debug";
 import type { NightingaleFormatter } from "../formatter-utils";
-import { ANSIFormatter } from "../formatters/ANSIFormatter";
-import { JSONFormatter } from "../formatters/JSONFormatter";
 import { consoleOutput } from "../outputs/consoleOutput";
-
-const defaultFormatter =
-  POB_TARGET === "node" &&
-  !process.stdout.isTTY &&
-  process.env.NIGHTINGALE_CONSOLE_FORMATTER !== "ansi"
-    ? JSONFormatter.format
-    : ANSIFormatter.format;
+import { defaultFormatter } from "./defaultFormatter";
 
 const createHandle = (
   formatter = defaultFormatter,
