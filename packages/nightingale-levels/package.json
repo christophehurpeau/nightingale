@@ -75,6 +75,6 @@
   "prettier": "@pob/root/prettier-config",
   "devDependencies": {
     "@pob/rollup-esbuild": "6.7.0",
-    "typescript": "5.8.3"
+    "typescript": "5.9.2"
   }
 }
