@@ -44,7 +44,7 @@
   "devDependencies": {
     "@babel/core": "7.28.3",
     "@babel/preset-typescript": "7.27.1",
-    "@pob/commitlint-config": "9.2.0",
+    "@pob/commitlint-config": "10.0.0",
     "@pob/eslint-config": "59.8.1",
     "@pob/eslint-config-typescript": "59.8.1",
     "@pob/rollup-esbuild": "6.7.0",
