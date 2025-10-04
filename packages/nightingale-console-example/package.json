@@ -63,7 +63,7 @@
   },
   "prettier": "@pob/root/prettier-config",
   "dependencies": {
-    "@sentry/node": "7.120.3",
+    "@sentry/node": "10.17.0",
     "nightingale": "16.2.0",
     "nightingale-console": "16.2.0",
     "nightingale-sentry": "16.0.0"
