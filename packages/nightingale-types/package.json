@@ -1,6 +1,6 @@
 {
   "name": "nightingale-types",
-  "version": "16.0.0",
+  "version": "17.0.0",
   "description": "Nightingale types for typescript",
   "keywords": [
     "logger"
@@ -77,7 +77,7 @@
   },
   "prettier": "@pob/root/prettier-config",
   "dependencies": {
-    "nightingale-levels": "16.0.0"
+    "nightingale-levels": "17.0.0"
   },
   "devDependencies": {
     "@pob/rollup-esbuild": "6.7.0",

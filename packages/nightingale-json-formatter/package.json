@@ -1,6 +1,6 @@
 {
   "name": "nightingale-json-formatter",
-  "version": "16.2.0",
+  "version": "17.0.0",
   "description": "Deprecated: use JSONFormatter from nightingale",
   "keywords": [
     "nightingale",
@@ -41,6 +41,6 @@
   "pob": {},
   "prettier": "@pob/root/prettier-config",
   "dependencies": {
-    "nightingale": "16.2.0"
+    "nightingale": "17.0.0"
   }
 }

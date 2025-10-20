@@ -1,6 +1,6 @@
 {
   "name": "nightingale-app-react-native",
-  "version": "16.2.0",
+  "version": "17.0.0",
   "description": "React Native and Expo logger for application",
   "keywords": [
     "nightingale",
@@ -81,8 +81,8 @@
     }
   },
   "dependencies": {
-    "nightingale": "16.2.0",
-    "nightingale-react-native-console": "16.2.0"
+    "nightingale": "17.0.0",
+    "nightingale-react-native-console": "17.0.0"
   },
   "devDependencies": {
     "@pob/rollup-esbuild": "6.7.0",

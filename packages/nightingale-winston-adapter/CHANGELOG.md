@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [17.0.0](https://github.com/christophehurpeau/nightingale/compare/v16.2.0...v17.0.0) (2025-10-20)
+
+### Features
+
+* add export for react-native ([4098304](https://github.com/christophehurpeau/nightingale/commit/4098304ff9b6665930b7316fe05e0baf0b2e3fe5))
+
+Version bump for dependency: nightingale-level-names
+Version bump for dependency: nightingale-types
+
+
 ## [16.0.0](https://github.com/christophehurpeau/nightingale/compare/v15.0.0...v16.0.0) (2025-03-30)
 
 ### ⚠ BREAKING CHANGES

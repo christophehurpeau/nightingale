@@ -1,6 +1,6 @@
 {
   "name": "nightingale-slack",
-  "version": "16.2.0",
+  "version": "17.0.0",
   "description": "Slack handler for nightingale",
   "keywords": [
     "nightingale",
@@ -59,8 +59,8 @@
   },
   "prettier": "@pob/root/prettier-config",
   "dependencies": {
-    "nightingale": "16.2.0",
-    "nightingale-types": "16.0.0"
+    "nightingale": "17.0.0",
+    "nightingale-types": "17.0.0"
   },
   "devDependencies": {
     "@pob/rollup-esbuild": "6.7.0",

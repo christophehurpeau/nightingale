@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [17.0.0](https://github.com/christophehurpeau/nightingale/compare/v16.2.0...v17.0.0) (2025-10-20)
+
+### ⚠ BREAKING CHANGES
+
+* harmonize formatter return type
+
+### Features
+
+* add export for react-native ([4098304](https://github.com/christophehurpeau/nightingale/commit/4098304ff9b6665930b7316fe05e0baf0b2e3fe5))
+* add LoggerCLIString and noColor option ([9778654](https://github.com/christophehurpeau/nightingale/commit/9778654497fc132146cacd02c2fb37b542f459fc))
+* harmonize formatter return type ([62771db](https://github.com/christophehurpeau/nightingale/commit/62771db963ee6a48de0a05a41aa4f5f09ac14d19))
+
+Version bump for dependency: nightingale-levels
+Version bump for dependency: nightingale-logger
+Version bump for dependency: nightingale-types
+
+
 ## [16.2.0](https://github.com/christophehurpeau/nightingale/compare/v16.1.0...v16.2.0) (2025-03-30)
 
 ### Features
