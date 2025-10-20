@@ -26,6 +26,9 @@
     "./package.json": "./package.json",
     ".": {
       "types": "./dist/definitions/index.d.ts",
+      "react-native": {
+        "import": "./dist/index-browser.es.js"
+      },
       "node": {
         "import": "./dist/index-node20.mjs"
       },

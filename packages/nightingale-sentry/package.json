@@ -30,6 +30,9 @@
       "node": {
         "import": "./dist/index-node20.mjs"
       },
+      "react-native": {
+        "import": "./dist/index-browser.es.js"
+      },
       "browser": {
         "import": "./dist/index-browser.es.js"
       }
