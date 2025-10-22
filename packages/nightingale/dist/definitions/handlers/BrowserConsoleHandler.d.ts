@@ -1,5 +1,4 @@
 import type { Handle, Handler, IsHandling, Level } from "nightingale-types";
-export declare function getDebugString(): string;
 type Theme = "dark" | "light";
 export interface BrowserConsoleHandlerOptions {
     theme?: Theme;

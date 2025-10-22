@@ -820,9 +820,7 @@ class BrowserConsoleFormatter {
 }
 
 function consoleOutput(param, record) {
-  const outKey = record.level >= Level.ERROR ? "stderr" : "stdout";
-  process[outKey].write(`${param[0]}
-`);
+  console[record.level >= Level.ERROR ? "error" : "log"](...param);
 }
 
 class StringHandler {
@@ -867,7 +865,7 @@ class BrowserConsoleHandler {
   }
 }
 
-const defaultFormatter = !process.stdout.isTTY && process.env.NIGHTINGALE_CONSOLE_FORMATTER !== "ansi" ? JSONFormatter.format : ANSIFormatter.format;
+const defaultFormatter = ANSIFormatter.format;
 
 const createHandle$1 = (formatter = defaultFormatter, output = consoleOutput) => {
   return (record) => {
@@ -991,4 +989,4 @@ function listenUnhandledErrors(logger = new Logger(
 }
 
 export { ANSIFormatter, BrowserConsoleFormatter, BrowserConsoleHandler, ConsoleCLIHandler, ConsoleHandler, HTMLFormatter, JSONFormatter, LoggerCLI, MarkdownFormatter, RawFormatter, StringHandler, addConfig, configure, consoleOutput, createFindDebugLevel, formatObject, formatRecordToString, formatStyles, levelToStyles, levelToSymbol, listenUnhandledErrors, styleToHexColor, styleToHtmlStyleThemeDark, styleToHtmlStyleThemeLight };
-//# sourceMappingURL=index-node20.mjs.map
+//# sourceMappingURL=index-react-native.es.js.map

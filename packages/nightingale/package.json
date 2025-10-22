@@ -27,7 +27,7 @@
     ".": {
       "types": "./dist/definitions/index.d.ts",
       "react-native": {
-        "import": "./dist/index-browser.es.js"
+        "import": "./dist/index-react-native.es.js"
       },
       "node": {
         "import": "./dist/index-node20.mjs"
@@ -66,6 +66,9 @@
       "index"
     ],
     "envs": [
+      {
+        "target": "react-native"
+      },
       {
         "target": "node",
         "version": "20"
