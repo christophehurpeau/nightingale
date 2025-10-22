@@ -1,6 +1,6 @@
 {
   "name": "nightingale-string",
-  "version": "17.0.0",
+  "version": "17.0.1",
   "description": "Deprecated, use String from nightingale instead",
   "keywords": [
     "nightingale",
@@ -40,6 +40,6 @@
   "pob": {},
   "prettier": "@pob/root/prettier-config",
   "dependencies": {
-    "nightingale": "17.0.0"
+    "nightingale": "17.0.1"
   }
 }

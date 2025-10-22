@@ -1,6 +1,6 @@
 {
   "name": "nightingale-markdown-formatter",
-  "version": "17.0.0",
+  "version": "17.0.1",
   "description": "Deprecated: use MarkdownFormatter from nightingale",
   "keywords": [
     "nightingale",
@@ -41,6 +41,6 @@
   "pob": {},
   "prettier": "@pob/root/prettier-config",
   "dependencies": {
-    "nightingale": "17.0.0"
+    "nightingale": "17.0.1"
   }
 }

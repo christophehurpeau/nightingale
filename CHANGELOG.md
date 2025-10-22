@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [17.0.1](https://github.com/christophehurpeau/nightingale/compare/v17.0.0...v17.0.1) (2025-10-22)
+
+### Bug Fixes
+
+* move getDebugString to web only file ([621066e](https://github.com/christophehurpeau/nightingale/commit/621066ed0ee7e287fd78eba652809e1c8159594c))
+
 ## [17.0.0](https://github.com/christophehurpeau/nightingale/compare/v16.2.0...v17.0.0) (2025-10-20)
 
 ### ⚠ BREAKING CHANGES

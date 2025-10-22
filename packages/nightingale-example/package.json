@@ -1,7 +1,7 @@
 {
   "name": "nightingale-example",
   "private": true,
-  "version": "17.0.0",
+  "version": "17.0.1",
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (https://christophe.hurpeau.com)",
   "license": "ISC",
   "repository": {
@@ -90,8 +90,8 @@
   },
   "prettier": "@pob/root/prettier-config",
   "dependencies": {
-    "nightingale": "17.0.0",
-    "nightingale-slack": "17.0.0",
+    "nightingale": "17.0.1",
+    "nightingale-slack": "17.0.1",
     "nightingale-types": "17.0.0"
   },
   "devDependencies": {
