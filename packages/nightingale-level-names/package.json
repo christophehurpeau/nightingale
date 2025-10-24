@@ -15,7 +15,7 @@
   "homepage": "https://github.com/christophehurpeau/nightingale",
   "type": "module",
   "engines": {
-    "node": ">=20.11.0"
+    "node": ">=22.18.0"
   },
   "sideEffects": false,
   "main": "./lib/index.cjs",
@@ -40,6 +40,6 @@
   "pob": {},
   "prettier": "@pob/root/prettier-config",
   "devDependencies": {
-    "typescript": "5.9.2"
+    "typescript": "5.9.3"
   }
 }

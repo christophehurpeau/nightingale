@@ -12,7 +12,7 @@
   "homepage": "https://github.com/christophehurpeau/nightingale",
   "type": "module",
   "engines": {
-    "node": ">=22.14.0"
+    "node": ">=22.18.0"
   },
   "exports": {
     "./package.json": "./package.json",
@@ -95,7 +95,7 @@
     "nightingale-types": "17.0.0"
   },
   "devDependencies": {
-    "@pob/rollup-esbuild": "6.7.0",
-    "typescript": "5.9.2"
+    "@pob/rollup-esbuild": "7.2.0",
+    "typescript": "5.9.3"
   }
 }

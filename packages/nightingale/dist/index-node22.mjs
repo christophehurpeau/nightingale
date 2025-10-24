@@ -991,4 +991,4 @@ function listenUnhandledErrors(logger = new Logger(
 }
 
 export { ANSIFormatter, BrowserConsoleFormatter, BrowserConsoleHandler, ConsoleCLIHandler, ConsoleHandler, HTMLFormatter, JSONFormatter, LoggerCLI, MarkdownFormatter, RawFormatter, StringHandler, addConfig, configure, consoleOutput, createFindDebugLevel, formatObject, formatRecordToString, formatStyles, levelToStyles, levelToSymbol, listenUnhandledErrors, styleToHexColor, styleToHtmlStyleThemeDark, styleToHtmlStyleThemeLight };
-//# sourceMappingURL=index-node20.mjs.map
+//# sourceMappingURL=index-node22.mjs.map

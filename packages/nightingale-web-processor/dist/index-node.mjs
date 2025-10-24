@@ -12,4 +12,4 @@ function webProcessor(record, context) {
 }
 
 export { webProcessor as default };
-//# sourceMappingURL=index-node20.mjs.map
+//# sourceMappingURL=index-node.mjs.map

@@ -1,7 +1,7 @@
 import type { ComputedConfigForKey } from "nightingale-logger";
 import { Level, Logger } from "nightingale-logger";
 import type { Handler, Processor } from "nightingale-types";
-import { ConsoleCLIHandler } from "../handlers/ConsoleCLIHandler";
+import { ConsoleCLIHandler } from "../handlers/ConsoleCLIHandler.ts";
 
 export interface LoggerCLIOptions {
   displayName?: string;

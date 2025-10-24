@@ -1,5 +1,5 @@
 import { Level } from "nightingale-levels";
-import { RawFormatter, style } from "./RawFormatter";
+import { RawFormatter, style } from "./RawFormatter.ts";
 
 test("style: blue bold color", () => {
   expect(style(["blue", "bold"], "test")).toBe("test");

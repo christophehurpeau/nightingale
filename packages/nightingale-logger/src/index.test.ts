@@ -1,6 +1,6 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { jest } from "@jest/globals";
-import { Logger } from ".";
+import { Logger } from "./index.ts";
 
 test("key argument", () => {
   const key = "test";

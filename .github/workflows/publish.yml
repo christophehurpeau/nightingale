@@ -17,13 +17,16 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           token: ${{ secrets.GH_TOKEN }}
           fetch-depth: 0
           fetch-tags: true
 
-      - uses: actions/setup-node@v4
+      - name: Enable Corepack
+        run: corepack enable
+
+      - uses: actions/setup-node@v5
         with:
           node-version: 22
           check-latest: true
@@ -36,9 +39,6 @@ jobs:
             echo "No git tags found"
             exit 1
           fi
-
-      - name: Enable Corepack
-        run: corepack enable
 
       - name: Install Dependencies
         run: yarn install --immutable

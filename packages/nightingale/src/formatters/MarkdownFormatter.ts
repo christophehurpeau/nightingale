@@ -1,6 +1,6 @@
 import type { Styles } from "nightingale-types";
 import type { NightingaleFormatter } from "../formatter-utils";
-import { formatRecordToString } from "../formatter-utils";
+import { formatRecordToString } from "../formatter-utils/index.ts";
 
 export function style(styles: Styles, string: string): string {
   if (!styles || styles.length === 0 || !string) {

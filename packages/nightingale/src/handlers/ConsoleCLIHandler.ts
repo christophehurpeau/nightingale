@@ -6,12 +6,12 @@ import type {
   LogRecord,
   Metadata,
 } from "nightingale-types";
-import { createFindDebugLevel } from "../debug/debug";
-import { ANSIFormatter } from "../formatters/ANSIFormatter";
-import { JSONFormatter } from "../formatters/JSONFormatter";
-import { RawFormatter } from "../formatters/RawFormatter";
-import { cliConsoleOutput } from "../outputs/cliConsoleOutput";
-import { consoleOutput } from "../outputs/consoleOutput";
+import { createFindDebugLevel } from "../debug/debug.ts";
+import { ANSIFormatter } from "../formatters/ANSIFormatter.ts";
+import { JSONFormatter } from "../formatters/JSONFormatter.ts";
+import { RawFormatter } from "../formatters/RawFormatter.ts";
+import { cliConsoleOutput } from "../outputs/cliConsoleOutput.ts";
+import { consoleOutput } from "../outputs/consoleOutput.ts";
 
 const createHandle = ({
   json,

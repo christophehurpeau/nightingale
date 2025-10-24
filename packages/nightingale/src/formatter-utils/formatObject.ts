@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 import type { Styles } from "nightingale-types";
-import { formatStyles } from "./formatStyles";
+import { formatStyles } from "./formatStyles.ts";
 
 export interface FormatObjectOptions {
   padding?: string;

@@ -1,5 +1,5 @@
 import { Level } from "nightingale-levels";
-import { MarkdownFormatter, style } from "./MarkdownFormatter";
+import { MarkdownFormatter, style } from "./MarkdownFormatter.ts";
 
 test("style: blue bold color", () => {
   expect(style(["blue", "bold"], "test")).toBe("*test*");

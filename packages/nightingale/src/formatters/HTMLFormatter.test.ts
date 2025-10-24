@@ -1,5 +1,5 @@
 import { Level } from "nightingale-levels";
-import { HTMLFormatter, style } from "./HTMLFormatter";
+import { HTMLFormatter, style } from "./HTMLFormatter.ts";
 
 test("blue bold color", () => {
   expect(style(["blue", "bold"], "test")).toBe(

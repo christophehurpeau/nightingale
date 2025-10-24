@@ -1,4 +1,4 @@
-import { LoggerCLIString } from "./LoggerCLI";
+import { LoggerCLIString } from "./LoggerCLI.ts";
 
 describe("LoggerCLI", () => {
   test("LoggerCLIString", () => {

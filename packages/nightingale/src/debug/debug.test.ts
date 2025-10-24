@@ -1,5 +1,5 @@
 import { Level } from "nightingale-levels";
-import { createFindDebugLevel } from "./debug";
+import { createFindDebugLevel } from "./debug.ts";
 
 describe("created with undefined", () => {
   const findDebugLevel = createFindDebugLevel();

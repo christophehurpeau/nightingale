@@ -16,10 +16,10 @@
   "homepage": "https://github.com/christophehurpeau/nightingale",
   "type": "module",
   "engines": {
-    "node": ">=20.11.0"
+    "node": ">=22.18.0"
   },
   "sideEffects": false,
-  "main": "./dist/index-node20.mjs",
+  "main": "./dist/index-node22.mjs",
   "types": "./dist/definitions/index.d.ts",
   "module": "./dist/index-browser.es.js",
   "browser": "./dist/index-browser.es.js",
@@ -28,10 +28,10 @@
     ".": {
       "types": "./dist/definitions/index.d.ts",
       "node": {
-        "import": "./dist/index-node20.mjs"
+        "import": "./dist/index-node22.mjs"
       },
       "react-native": {
-        "import": "./dist/index-browser.es.js"
+        "import": "./dist/index-react-native.es.js"
       },
       "browser": {
         "import": "./dist/index-browser.es.js"
@@ -68,7 +68,10 @@
     "envs": [
       {
         "target": "node",
-        "version": "20"
+        "version": "22"
+      },
+      {
+        "target": "react-native"
       },
       {
         "target": "browser"
@@ -84,7 +87,7 @@
     "nightingale-types": "17.0.0"
   },
   "devDependencies": {
-    "@pob/rollup-esbuild": "6.7.0",
-    "typescript": "5.9.2"
+    "@pob/rollup-esbuild": "7.2.0",
+    "typescript": "5.9.3"
   }
 }

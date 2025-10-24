@@ -1,6 +1,6 @@
 import type { ComputedConfigForKey } from "nightingale-logger";
-import { StringHandler } from "./handlers/StringHandler";
-import { Level, Logger } from ".";
+import { StringHandler } from "./handlers/StringHandler.ts";
+import { Level, Logger } from "./index.ts";
 
 class TestableStringLogger extends Logger {
   private readonly stringHandler: StringHandler;

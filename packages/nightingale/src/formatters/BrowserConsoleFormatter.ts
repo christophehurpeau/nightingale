@@ -1,11 +1,11 @@
 import type { StyleToHtmlStyle } from "nightingale";
 import type { LogRecord, Metadata, Styles } from "nightingale-types";
+import type { NightingaleFormatter } from "../formatter-utils";
 import {
   formatRecordToString,
   styleToHtmlStyleThemeDark,
   styleToHtmlStyleThemeLight,
-} from "../formatter-utils";
-import type { NightingaleFormatter } from "../formatter-utils";
+} from "../formatter-utils/index.ts";
 
 export const style =
   (styleToHtmlStyle: StyleToHtmlStyle, args: string[]) =>

@@ -1,7 +1,7 @@
 import type { StyleToHtmlStyle } from "nightingale";
 import { Level } from "nightingale-levels";
-import { styleToHtmlStyleThemeLight } from "../formatter-utils";
-import { BrowserConsoleFormatter, style } from "./BrowserConsoleFormatter";
+import { styleToHtmlStyleThemeLight } from "../formatter-utils/index.ts";
+import { BrowserConsoleFormatter, style } from "./BrowserConsoleFormatter.ts";
 
 const styleToHtmlStyle: StyleToHtmlStyle = styleToHtmlStyleThemeLight;
 const formatterWithLightTheme = new BrowserConsoleFormatter("light");

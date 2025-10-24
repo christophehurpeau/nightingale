@@ -1,12 +1,9 @@
 import { Level } from 'nightingale-levels';
 export { Level } from 'nightingale-levels';
-import * as util from 'node:util';
 
-const inspectValue = (value) => (
-  // Note: inspect is a special function for node:
-  // https://github.com/nodejs/node/blob/a1bda1b4deb08dfb3e06cb778f0db40023b18318/lib/util.js#L210
-  util.inspect(value, { depth: 6 })
-);
+const inspectValue = (value) => {
+  throw new Error("Not supported for the browser. Prefer `debugger;`");
+};
 
 const globalOrWindow = typeof globalThis !== "undefined" ? globalThis : globalThis;
 if (!globalOrWindow.__NIGHTINGALE_GET_CONFIG_FOR_LOGGER) {
@@ -239,7 +236,7 @@ class Logger {
    * Log an inspected value
    */
   inspectValue(value, metadata, metadataStyles) {
-    const inspectedValue = inspectValue(value);
+    const inspectedValue = inspectValue();
     this.log(inspectedValue, metadata, Level.DEBUG, {
       metadataStyles,
       styles: ["gray"]
@@ -249,7 +246,7 @@ class Logger {
    * Log a debugged var
    */
   inspectVar(varName, varValue, metadata, metadataStyles) {
-    const inspectedValue = inspectValue(varValue);
+    const inspectedValue = inspectValue();
     this.log(`${varName} = ${inspectedValue}`, metadata, Level.DEBUG, {
       metadataStyles,
       styles: ["cyan"]
@@ -420,4 +417,4 @@ class Logger {
 }
 
 export { Logger };
-//# sourceMappingURL=index-node20.mjs.map
+//# sourceMappingURL=index-react-native.es.js.map

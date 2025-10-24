@@ -6,10 +6,10 @@ import type {
   LogRecord,
   Metadata,
 } from "nightingale-types";
-import { createFindDebugLevel } from "../debug/debug";
-import { getDebugString } from "../debug/getDebugString";
-import { BrowserConsoleFormatter } from "../formatters/BrowserConsoleFormatter";
-import { consoleOutput } from "../outputs/consoleOutput";
+import { createFindDebugLevel } from "../debug/debug.ts";
+import { getDebugString } from "../debug/getDebugString.ts";
+import { BrowserConsoleFormatter } from "../formatters/BrowserConsoleFormatter.ts";
+import { consoleOutput } from "../outputs/consoleOutput.ts";
 
 // debug string can change any time (localStorage), so we need a new object each time.
 const findDebugLevel = (minLevel: Level, key: string): Level =>

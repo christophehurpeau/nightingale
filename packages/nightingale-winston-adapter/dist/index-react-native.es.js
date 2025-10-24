@@ -25,4 +25,4 @@ class WinstonAdapterHandler {
 }
 
 export { WinstonAdapterHandler };
-//# sourceMappingURL=index-node20.mjs.map
+//# sourceMappingURL=index-react-native.es.js.map

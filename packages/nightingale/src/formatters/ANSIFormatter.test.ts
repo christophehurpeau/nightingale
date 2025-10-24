@@ -1,5 +1,5 @@
 /* eslint-disable no-control-regex */
-import { ANSIFormatter, style } from "./ANSIFormatter";
+import { ANSIFormatter, style } from "./ANSIFormatter.ts";
 
 test("style: blue bold color", () => {
   expect(style(["blue", "bold"], "test").replace(/\u001B/g, "ESC")).toBe(

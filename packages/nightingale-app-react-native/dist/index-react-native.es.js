@@ -1,7 +1,7 @@
 import { Logger, BrowserConsoleHandler, configure, Level } from 'nightingale';
 export { Level, addConfig, configure } from 'nightingale';
 import { ReactNativeConsoleHandler } from 'nightingale-react-native-console';
-import { Platform } from 'react-native-web';
+import { Platform } from 'react-native';
 
 const appLogger = new Logger("app");
 const ReactNativeConsoleHandlerForPlatform = Platform.OS === "web" ? BrowserConsoleHandler : ReactNativeConsoleHandler;
@@ -49,4 +49,4 @@ function listenReactNativeUnhandledErrors(logger = new Logger(
 }
 
 export { ReactNativeConsoleHandlerForPlatform, appLogger, listenReactNativeUnhandledErrors };
-//# sourceMappingURL=index-browser.es.js.map
+//# sourceMappingURL=index-react-native.es.js.map

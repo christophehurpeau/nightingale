@@ -6,7 +6,7 @@ import type {
 import {
   formatRecordToString,
   styleToHtmlStyleThemeLight,
-} from "../formatter-utils";
+} from "../formatter-utils/index.ts";
 
 export function style(styles: Styles, string: string): string {
   if (!styles || styles.length === 0 || !string) {

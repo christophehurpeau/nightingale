@@ -49,4 +49,4 @@ class SlackHandler {
 }
 
 export { SlackHandler, createBody };
-//# sourceMappingURL=index-node20.mjs.map
+//# sourceMappingURL=index-node.mjs.map

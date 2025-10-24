@@ -1,6 +1,6 @@
 /* eslint-disable prefer-template */
 import type { Handler, Level, LogRecord, Metadata } from "nightingale-types";
-import { RawFormatter } from "../formatters/RawFormatter";
+import { RawFormatter } from "../formatters/RawFormatter.ts";
 
 export class StringHandler implements Handler {
   readonly minLevel: Level;

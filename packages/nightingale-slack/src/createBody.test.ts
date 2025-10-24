@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
 import { Level } from "nightingale";
-import createBody from "./createBody";
+import createBody from "./createBody.ts";
 
 const webhookUrl = "webhookUrl";
 const record = {

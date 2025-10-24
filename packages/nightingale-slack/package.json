@@ -16,17 +16,17 @@
   "homepage": "https://github.com/christophehurpeau/nightingale",
   "type": "module",
   "engines": {
-    "node": ">=20.11.0"
+    "node": ">=22.18.0"
   },
   "sideEffects": false,
-  "main": "./dist/index-node20.mjs",
+  "main": "./dist/index-node.mjs",
   "types": "./dist/definitions/index.d.ts",
   "exports": {
     "./package.json": "./package.json",
     ".": {
       "types": "./dist/definitions/index.d.ts",
       "node": {
-        "import": "./dist/index-node20.mjs"
+        "import": "./dist/index-node.mjs"
       }
     }
   },
@@ -52,7 +52,8 @@
     "envs": [
       {
         "target": "node",
-        "version": "20"
+        "version": "22",
+        "omitVersionInFileName": true
       }
     ],
     "typescript": true
@@ -63,8 +64,8 @@
     "nightingale-types": "17.0.0"
   },
   "devDependencies": {
-    "@pob/rollup-esbuild": "6.7.0",
+    "@pob/rollup-esbuild": "7.2.0",
     "@types/node": "22.18.12",
-    "typescript": "5.9.2"
+    "typescript": "5.9.3"
   }
 }

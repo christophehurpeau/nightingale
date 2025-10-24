@@ -1,6 +1,6 @@
 import { Level, Logger, configure } from "nightingale";
-import { ConsoleHandler } from "./ConsoleHandler";
-import { setup } from "./setup";
+import { ConsoleHandler } from "./ConsoleHandler.ts";
+import { setup } from "./setup.ts";
 
 export { configure, addConfig, levels, Level } from "nightingale";
 

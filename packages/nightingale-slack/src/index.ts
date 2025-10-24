@@ -5,19 +5,18 @@ import type {
   LogRecord,
   Metadata,
 } from "nightingale-types";
-import type { SlackConfig } from "./SlackConfig";
-import createBody from "./createBody";
+import type { SlackConfig } from "./SlackConfig.ts";
+import createBody from "./createBody.ts";
 
 export type { SlackConfig } from "./SlackConfig";
 
-export { default as createBody } from "./createBody";
+export { default as createBody } from "./createBody.ts";
 
 const createHandler =
   (slackConfig: SlackConfig) =>
   <T extends Metadata>(record: LogRecord<T>) => {
     const body = createBody(record, slackConfig);
 
-    // eslint-disable-next-line n/no-unsupported-features/node-builtins
     fetch(slackConfig.webhookUrl, {
       method: "POST",
       body: JSON.stringify(body),

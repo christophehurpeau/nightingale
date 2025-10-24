@@ -1,4 +1,4 @@
-import { styleToHexColor } from "./styleToHexColor";
+import { styleToHexColor } from "./styleToHexColor.ts";
 
 export interface HtmlStyle {
   readonly open: string;

@@ -6,7 +6,7 @@ import {
   styleToHexColor,
   styleToHtmlStyleThemeDark,
   styleToHtmlStyleThemeLight,
-} from ".";
+} from "./index.ts";
 
 describe("test exports", () => {
   test("levelToStyles", () => {

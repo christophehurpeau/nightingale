@@ -1,15 +1,15 @@
 import type { LogRecord, Metadata } from "nightingale-types";
 
-export { levelToStyles } from "./levelToStyles";
-export { levelToSymbol } from "./levelToSymbol";
+export { levelToStyles } from "./levelToStyles.ts";
+export { levelToSymbol } from "./levelToSymbol.ts";
 export {
   styleToHtmlStyleThemeDark,
   styleToHtmlStyleThemeLight,
-} from "./styleToHtmlStyle";
-export type { StyleToHtmlStyle } from "./styleToHtmlStyle";
-export { styleToHexColor } from "./styleToHexColor";
-export { formatObject } from "./formatObject";
-export { formatRecordToString } from "./formatRecordToString";
+} from "./styleToHtmlStyle.ts";
+export type { StyleToHtmlStyle } from "./styleToHtmlStyle.ts";
+export { styleToHexColor } from "./styleToHexColor.ts";
+export { formatObject } from "./formatObject.ts";
+export { formatRecordToString } from "./formatRecordToString.ts";
 
 export interface NightingaleFormatter {
   format: <T extends Metadata>(record: LogRecord<T>) => [string, ...string[]];

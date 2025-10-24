@@ -7,7 +7,7 @@ import type {
   Processor,
   Styles,
 } from "nightingale-types";
-import { inspectValue } from "./inspectValue";
+import { inspectValue } from "./inspectValue.ts";
 
 export { Level } from "nightingale-levels";
 

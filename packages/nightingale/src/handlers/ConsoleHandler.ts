@@ -6,10 +6,10 @@ import type {
   LogRecord,
   Metadata,
 } from "nightingale-types";
-import { createFindDebugLevel } from "../debug/debug";
+import { createFindDebugLevel } from "../debug/debug.ts";
 import type { NightingaleFormatter } from "../formatter-utils";
-import { consoleOutput } from "../outputs/consoleOutput";
-import { defaultFormatter } from "./defaultFormatter";
+import { consoleOutput } from "../outputs/consoleOutput.ts";
+import { defaultFormatter } from "./defaultFormatter.ts";
 
 const createHandle = (
   formatter = defaultFormatter,

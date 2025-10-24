@@ -1,5 +1,5 @@
 import { Level } from "nightingale-levels";
-import { JSONFormatter } from "./JSONFormatter";
+import { JSONFormatter } from "./JSONFormatter.ts";
 
 test("format record", () => {
   const record = {
