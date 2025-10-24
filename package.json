@@ -8,7 +8,7 @@
   "repository": "https://github.com/christophehurpeau/nightingale.git",
   "homepage": "https://github.com/christophehurpeau/nightingale",
   "type": "module",
-  "packageManager": "yarn@4.9.3",
+  "packageManager": "yarn@4.10.3",
   "engines": {
     "node": ">=22.18.0"
   },
