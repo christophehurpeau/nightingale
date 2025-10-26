@@ -60,7 +60,7 @@
     "nightingale": "17.0.1"
   },
   "devDependencies": {
-    "@pob/rollup-esbuild": "7.2.0",
+    "@pob/rollup-esbuild": "7.3.0",
     "typescript": "5.9.3"
   }
 }
