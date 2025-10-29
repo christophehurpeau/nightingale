@@ -3122,10 +3122,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ansi-styles@npm:^6.1.0, ansi-styles@npm:^6.2.1":
-  version: 6.2.1
-  resolution: "ansi-styles@npm:6.2.1"
-  checksum: 10c0/5d1ec38c123984bcedd996eac680d548f31828bd679a66db2bdf11844634dde55fec3efa9c6bb1d89056a5e79c1ac540c4c784d592ea1d25028a92227d2f2d5c
+"ansi-styles@npm:^6.1.0, ansi-styles@npm:^6.2.1, ansi-styles@npm:^6.2.3":
+  version: 6.2.3
+  resolution: "ansi-styles@npm:6.2.3"
+  checksum: 10c0/23b8a4ce14e18fb854693b95351e286b771d23d8844057ed2e7d083cd3e708376c3323707ec6a24365f7d7eda3ca00327fe04092e29e551499ec4c8b7bfac868
   languageName: node
   linkType: hard
 
@@ -8234,7 +8234,7 @@ __metadata:
   dependencies:
     "@pob/rollup-esbuild": "npm:7.3.0"
     "@types/node": "npm:>=22.0.0"
-    ansi-styles: "npm:^6.2.1"
+    ansi-styles: "npm:^6.2.3"
     nightingale-levels: "npm:17.0.0"
     nightingale-logger: "npm:17.0.0"
     nightingale-types: "npm:17.0.0"
