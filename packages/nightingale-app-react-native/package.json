@@ -18,7 +18,7 @@
   "homepage": "https://github.com/christophehurpeau/nightingale",
   "type": "module",
   "engines": {
-    "node": ">=22.18.0"
+    "node": ">=24.11.0"
   },
   "sideEffects": false,
   "types": "./dist/definitions/index.d.ts",

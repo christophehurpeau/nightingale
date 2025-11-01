@@ -13,7 +13,7 @@
   "homepage": "https://github.com/christophehurpeau/nightingale",
   "type": "module",
   "engines": {
-    "node": ">=22.18.0"
+    "node": ">=24.11.0"
   },
   "sideEffects": false,
   "main": "./dist/index-node22.mjs",
@@ -78,7 +78,7 @@
   },
   "prettier": "@pob/root/prettier-config",
   "dependencies": {
-    "@types/node": ">=22.0.0",
+    "@types/node": ">=24.9.2",
     "nightingale": "17.0.1"
   },
   "devDependencies": {
