@@ -48,7 +48,7 @@
     "@pob/rollup-esbuild": "7.3.2",
     "@pob/root": "19.7.1",
     "@types/jest": "30.0.0",
-    "@types/node": "22.18.13",
+    "@types/node": "22.19.1",
     "check-package-dependencies": "10.5.0",
     "eslint": "9.39.1",
     "jest": "30.2.0",
