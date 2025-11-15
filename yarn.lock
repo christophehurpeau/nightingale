@@ -2988,12 +2988,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:22.18.13, @types/node@npm:>=22.0.0":
-  version: 22.18.13
-  resolution: "@types/node@npm:22.18.13"
+"@types/node@npm:*, @types/node@npm:>=22.19.1":
+  version: 24.10.1
+  resolution: "@types/node@npm:24.10.1"
   dependencies:
-    undici-types: "npm:~6.21.0"
-  checksum: 10c0/4d97b447274f6e566fc5afb464146e9db77b5892c318364eb927b13441e6dbf9fe0ec9d1ed2cb6b5e7e85f5154a5ff52913d2cfc4b952bcf19fb0ddaaff5e533
+    undici-types: "npm:~7.16.0"
+  checksum: 10c0/d6bca7a78f550fbb376f236f92b405d676003a8a09a1b411f55920ef34286ee3ee51f566203920e835478784df52662b5b2af89159d9d319352e9ea21801c002
   languageName: node
   linkType: hard
 
@@ -3001,6 +3001,15 @@ __metadata:
   version: 14.18.30
   resolution: "@types/node@npm:14.18.30"
   checksum: 10c0/d3c800a4ea6124c4a055453f37fb45b3530d857c1852e76efb513515c329eedbd99a60531ba4cb066fe24361ead1cd2a70d8d092f50344427e1b2d91fd43f32e
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:22.19.1":
+  version: 22.19.1
+  resolution: "@types/node@npm:22.19.1"
+  dependencies:
+    undici-types: "npm:~6.21.0"
+  checksum: 10c0/6edd93aea86da740cb7872626839cd6f4a67a049d3a3a6639cb592c620ec591408a30989ab7410008d1a0b2d4985ce50f1e488e79c033e4476d3bec6833b0a2f
   languageName: node
   linkType: hard
 
@@ -8349,7 +8358,7 @@ __metadata:
   resolution: "nightingale-app-console@workspace:packages/nightingale-app-console"
   dependencies:
     "@pob/rollup-esbuild": "npm:7.3.2"
-    "@types/node": "npm:>=22.0.0"
+    "@types/node": "npm:>=22.19.1"
     nightingale: "npm:17.0.1"
     typescript: "npm:5.9.3"
   languageName: unknown
@@ -8485,7 +8494,7 @@ __metadata:
   resolution: "nightingale-logger@workspace:packages/nightingale-logger"
   dependencies:
     "@pob/rollup-esbuild": "npm:7.3.2"
-    "@types/node": "npm:>=22.0.0"
+    "@types/node": "npm:>=22.19.1"
     nightingale-levels: "npm:17.0.0"
     nightingale-types: "npm:17.0.0"
     typescript: "npm:5.9.3"
@@ -8511,7 +8520,7 @@ __metadata:
     "@pob/rollup-esbuild": "npm:7.3.2"
     "@pob/root": "npm:19.7.1"
     "@types/jest": "npm:30.0.0"
-    "@types/node": "npm:22.18.13"
+    "@types/node": "npm:22.19.1"
     check-package-dependencies: "npm:10.5.0"
     eslint: "npm:9.39.1"
     jest: "npm:30.2.0"
@@ -8566,7 +8575,7 @@ __metadata:
   resolution: "nightingale-slack@workspace:packages/nightingale-slack"
   dependencies:
     "@pob/rollup-esbuild": "npm:7.3.2"
-    "@types/node": "npm:22.18.13"
+    "@types/node": "npm:22.19.1"
     nightingale: "npm:17.0.1"
     nightingale-types: "npm:17.0.0"
     typescript: "npm:5.9.3"
@@ -8596,7 +8605,7 @@ __metadata:
   resolution: "nightingale-unit-testing@workspace:packages/nightingale-unit-testing"
   dependencies:
     "@pob/rollup-esbuild": "npm:7.3.2"
-    "@types/node": "npm:>=22.0.0"
+    "@types/node": "npm:>=22.19.1"
     nightingale: "npm:17.0.1"
     typescript: "npm:5.9.3"
   languageName: unknown
@@ -8607,7 +8616,7 @@ __metadata:
   resolution: "nightingale-web-processor@workspace:packages/nightingale-web-processor"
   dependencies:
     "@pob/rollup-esbuild": "npm:7.3.2"
-    "@types/node": "npm:>=22.0.0"
+    "@types/node": "npm:>=22.19.1"
     nightingale-types: "npm:17.0.0"
     typescript: "npm:5.9.3"
   languageName: unknown
@@ -8629,7 +8638,7 @@ __metadata:
   resolution: "nightingale@workspace:packages/nightingale"
   dependencies:
     "@pob/rollup-esbuild": "npm:7.3.2"
-    "@types/node": "npm:>=22.0.0"
+    "@types/node": "npm:>=22.19.1"
     ansi-styles: "npm:^6.2.1"
     nightingale-levels: "npm:17.0.0"
     nightingale-logger: "npm:17.0.0"
@@ -10872,6 +10881,13 @@ __metadata:
   version: 6.21.0
   resolution: "undici-types@npm:6.21.0"
   checksum: 10c0/c01ed51829b10aa72fc3ce64b747f8e74ae9b60eafa19a7b46ef624403508a54c526ffab06a14a26b3120d055e1104d7abe7c9017e83ced038ea5cf52f8d5e04
+  languageName: node
+  linkType: hard
+
+"undici-types@npm:~7.16.0":
+  version: 7.16.0
+  resolution: "undici-types@npm:7.16.0"
+  checksum: 10c0/3033e2f2b5c9f1504bdc5934646cb54e37ecaca0f9249c983f7b1fc2e87c6d18399ebb05dc7fd5419e02b2e915f734d872a65da2e3eeed1813951c427d33cc9a
   languageName: node
   linkType: hard
 

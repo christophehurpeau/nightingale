@@ -81,7 +81,7 @@
   },
   "prettier": "@pob/root/prettier-config",
   "dependencies": {
-    "@types/node": ">=22.0.0",
+    "@types/node": ">=22.19.1",
     "ansi-styles": "^6.2.1",
     "nightingale-levels": "17.0.0",
     "nightingale-logger": "17.0.0",
