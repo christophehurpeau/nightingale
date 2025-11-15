@@ -81,7 +81,7 @@
   },
   "prettier": "@pob/root/prettier-config",
   "peerDependencies": {
-    "@sentry/core": ">=7.0.0"
+    "@sentry/core": ">=7.120.4"
   },
   "dependencies": {
     "nightingale-levels": "17.0.0",
