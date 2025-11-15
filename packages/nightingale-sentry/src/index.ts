@@ -1,9 +1,10 @@
 import type {
+  SeverityLevel,
+  User,
   addBreadcrumb,
   captureException,
   captureMessage,
 } from "@sentry/core";
-import type { SeverityLevel, User } from "@sentry/types";
 import { Level } from "nightingale-levels";
 import type { Handle, Handler, LogRecord, Metadata } from "nightingale-types";
 
