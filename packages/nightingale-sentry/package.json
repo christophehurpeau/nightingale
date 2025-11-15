@@ -1,6 +1,6 @@
 {
   "name": "nightingale-sentry",
-  "version": "17.0.0",
+  "version": "18.0.0",
   "description": "Sentry handler for nightingale",
   "keywords": [
     "nightingale",
@@ -84,8 +84,8 @@
     "@sentry/core": ">=7.0.0"
   },
   "dependencies": {
-    "nightingale-levels": "17.0.0",
-    "nightingale-types": "17.0.0"
+    "nightingale-levels": "18.0.0",
+    "nightingale-types": "18.0.0"
   },
   "devDependencies": {
     "@pob/rollup-esbuild": "7.3.2",

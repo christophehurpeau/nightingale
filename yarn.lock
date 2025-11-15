@@ -3004,6 +3004,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/node@npm:>=20.0.0":
+  version: 24.10.1
+  resolution: "@types/node@npm:24.10.1"
+  dependencies:
+    undici-types: "npm:~7.16.0"
+  checksum: 10c0/d6bca7a78f550fbb376f236f92b405d676003a8a09a1b411f55920ef34286ee3ee51f566203920e835478784df52662b5b2af89159d9d319352e9ea21801c002
+  languageName: node
+  linkType: hard
+
 "@types/pg-pool@npm:2.0.6":
   version: 2.0.6
   resolution: "@types/pg-pool@npm:2.0.6"
@@ -8340,7 +8349,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-ansi-formatter@workspace:packages/nightingale-ansi-formatter"
   dependencies:
-    nightingale: "npm:17.0.1"
+    nightingale: "npm:18.0.0"
   languageName: unknown
   linkType: soft
 
@@ -8350,7 +8359,7 @@ __metadata:
   dependencies:
     "@pob/rollup-esbuild": "npm:7.3.2"
     "@types/node": "npm:>=22.0.0"
-    nightingale: "npm:17.0.1"
+    nightingale: "npm:18.0.0"
     typescript: "npm:5.9.3"
   languageName: unknown
   linkType: soft
@@ -8360,8 +8369,8 @@ __metadata:
   resolution: "nightingale-app-react-native@workspace:packages/nightingale-app-react-native"
   dependencies:
     "@pob/rollup-esbuild": "npm:7.3.2"
-    nightingale: "npm:17.0.1"
-    nightingale-react-native-console: "npm:17.0.1"
+    nightingale: "npm:18.0.0"
+    nightingale-react-native-console: "npm:18.0.0"
     typescript: "npm:5.9.3"
   peerDependencies:
     react-native: "*"
@@ -8376,7 +8385,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-browser-console-formatter@workspace:packages/nightingale-browser-console-formatter"
   dependencies:
-    nightingale: "npm:17.0.1"
+    nightingale: "npm:18.0.0"
   languageName: unknown
   linkType: soft
 
@@ -8384,7 +8393,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-browser-console@workspace:packages/nightingale-browser-console"
   dependencies:
-    nightingale: "npm:17.0.1"
+    nightingale: "npm:18.0.0"
   languageName: unknown
   linkType: soft
 
@@ -8395,9 +8404,9 @@ __metadata:
     "@pob/rollup-esbuild": "npm:7.3.2"
     "@sentry/core": "npm:10.25.0"
     "@sentry/node": "npm:10.25.0"
-    nightingale: "npm:17.0.1"
-    nightingale-console: "npm:17.0.1"
-    nightingale-sentry: "npm:17.0.0"
+    nightingale: "npm:18.0.0"
+    nightingale-console: "npm:18.0.0"
+    nightingale-sentry: "npm:18.0.0"
     typescript: "npm:5.9.3"
   languageName: unknown
   linkType: soft
@@ -8406,15 +8415,15 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-console-output@workspace:packages/nightingale-console-output"
   dependencies:
-    nightingale: "npm:17.0.1"
+    nightingale: "npm:18.0.0"
   languageName: unknown
   linkType: soft
 
-"nightingale-console@npm:17.0.1, nightingale-console@workspace:packages/nightingale-console":
+"nightingale-console@npm:18.0.0, nightingale-console@workspace:packages/nightingale-console":
   version: 0.0.0-use.local
   resolution: "nightingale-console@workspace:packages/nightingale-console"
   dependencies:
-    nightingale: "npm:17.0.1"
+    nightingale: "npm:18.0.0"
   languageName: unknown
   linkType: soft
 
@@ -8422,7 +8431,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-debug@workspace:packages/nightingale-debug"
   dependencies:
-    nightingale: "npm:17.0.1"
+    nightingale: "npm:18.0.0"
   languageName: unknown
   linkType: soft
 
@@ -8431,9 +8440,9 @@ __metadata:
   resolution: "nightingale-example@workspace:packages/nightingale-example"
   dependencies:
     "@pob/rollup-esbuild": "npm:7.3.2"
-    nightingale: "npm:17.0.1"
-    nightingale-slack: "npm:17.0.1"
-    nightingale-types: "npm:17.0.0"
+    nightingale: "npm:18.0.0"
+    nightingale-slack: "npm:18.0.0"
+    nightingale-types: "npm:18.0.0"
     typescript: "npm:5.9.3"
   languageName: unknown
   linkType: soft
@@ -8442,7 +8451,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-formatter@workspace:packages/nightingale-formatter"
   dependencies:
-    nightingale: "npm:17.0.1"
+    nightingale: "npm:18.0.0"
   languageName: unknown
   linkType: soft
 
@@ -8450,8 +8459,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-html-formatter@workspace:packages/nightingale-html-formatter"
   dependencies:
-    nightingale: "npm:17.0.1"
-    nightingale-levels: "npm:17.0.0"
+    nightingale: "npm:18.0.0"
+    nightingale-levels: "npm:18.0.0"
   languageName: unknown
   linkType: soft
 
@@ -8459,11 +8468,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-json-formatter@workspace:packages/nightingale-json-formatter"
   dependencies:
-    nightingale: "npm:17.0.1"
+    nightingale: "npm:18.0.0"
   languageName: unknown
   linkType: soft
 
-"nightingale-level-names@npm:17.0.0, nightingale-level-names@workspace:packages/nightingale-level-names":
+"nightingale-level-names@npm:18.0.0, nightingale-level-names@workspace:packages/nightingale-level-names":
   version: 0.0.0-use.local
   resolution: "nightingale-level-names@workspace:packages/nightingale-level-names"
   dependencies:
@@ -8471,7 +8480,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"nightingale-levels@npm:17.0.0, nightingale-levels@workspace:packages/nightingale-levels":
+"nightingale-levels@npm:17.0.0":
+  version: 17.0.0
+  resolution: "nightingale-levels@npm:17.0.0"
+  checksum: 10c0/a2f2768af9177b6cd5d3db902dfbefa2969623b7f2a68748fe3b3a77f516e7638840c245adf5c3ef230647e59ddcf7ca34286eb862b488a829bd6cd59bd6917a
+  languageName: node
+  linkType: hard
+
+"nightingale-levels@npm:18.0.0, nightingale-levels@workspace:packages/nightingale-levels":
   version: 0.0.0-use.local
   resolution: "nightingale-levels@workspace:packages/nightingale-levels"
   dependencies:
@@ -8480,14 +8496,25 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"nightingale-logger@npm:17.0.0, nightingale-logger@workspace:packages/nightingale-logger":
+"nightingale-logger@npm:17.0.0":
+  version: 17.0.0
+  resolution: "nightingale-logger@npm:17.0.0"
+  dependencies:
+    "@types/node": "npm:>=20.0.0"
+    nightingale-levels: "npm:17.0.0"
+    nightingale-types: "npm:17.0.0"
+  checksum: 10c0/c26f0acadd8af3821abd6b9b9d3fc6c19e18521d1faa9ef1454b53a2c0f3b5deea819f9024cfd880b427598c531a2e0967a002b2aa8b102680e4ab8bb1fc8db8
+  languageName: node
+  linkType: hard
+
+"nightingale-logger@npm:18.0.0, nightingale-logger@workspace:packages/nightingale-logger":
   version: 0.0.0-use.local
   resolution: "nightingale-logger@workspace:packages/nightingale-logger"
   dependencies:
     "@pob/rollup-esbuild": "npm:7.3.2"
     "@types/node": "npm:>=22.0.0"
-    nightingale-levels: "npm:17.0.0"
-    nightingale-types: "npm:17.0.0"
+    nightingale-levels: "npm:18.0.0"
+    nightingale-types: "npm:18.0.0"
     typescript: "npm:5.9.3"
   languageName: unknown
   linkType: soft
@@ -8496,7 +8523,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-markdown-formatter@workspace:packages/nightingale-markdown-formatter"
   dependencies:
-    nightingale: "npm:17.0.1"
+    nightingale: "npm:18.0.0"
   languageName: unknown
   linkType: soft
 
@@ -8524,19 +8551,19 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-raw-formatter@workspace:packages/nightingale-raw-formatter"
   dependencies:
-    nightingale: "npm:17.0.1"
-    nightingale-levels: "npm:17.0.0"
-    nightingale-types: "npm:17.0.0"
+    nightingale: "npm:18.0.0"
+    nightingale-levels: "npm:18.0.0"
+    nightingale-types: "npm:18.0.0"
   languageName: unknown
   linkType: soft
 
-"nightingale-react-native-console@npm:17.0.1, nightingale-react-native-console@workspace:packages/nightingale-react-native-console":
+"nightingale-react-native-console@npm:18.0.0, nightingale-react-native-console@workspace:packages/nightingale-react-native-console":
   version: 0.0.0-use.local
   resolution: "nightingale-react-native-console@workspace:packages/nightingale-react-native-console"
   dependencies:
     "@pob/rollup-esbuild": "npm:7.3.2"
-    nightingale: "npm:17.0.1"
-    nightingale-types: "npm:17.0.0"
+    nightingale: "npm:18.0.0"
+    nightingale-types: "npm:18.0.0"
     react: "npm:19.1.0"
     react-dom: "npm:19.1.0"
     react-native: "npm:0.80.0"
@@ -8547,28 +8574,28 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"nightingale-sentry@npm:17.0.0, nightingale-sentry@workspace:packages/nightingale-sentry":
+"nightingale-sentry@npm:18.0.0, nightingale-sentry@workspace:packages/nightingale-sentry":
   version: 0.0.0-use.local
   resolution: "nightingale-sentry@workspace:packages/nightingale-sentry"
   dependencies:
     "@pob/rollup-esbuild": "npm:7.3.2"
     "@sentry/core": "npm:10.25.0"
-    nightingale-levels: "npm:17.0.0"
-    nightingale-types: "npm:17.0.0"
+    nightingale-levels: "npm:18.0.0"
+    nightingale-types: "npm:18.0.0"
     typescript: "npm:5.9.3"
   peerDependencies:
     "@sentry/core": ">=7.0.0"
   languageName: unknown
   linkType: soft
 
-"nightingale-slack@npm:17.0.1, nightingale-slack@workspace:packages/nightingale-slack":
+"nightingale-slack@npm:18.0.0, nightingale-slack@workspace:packages/nightingale-slack":
   version: 0.0.0-use.local
   resolution: "nightingale-slack@workspace:packages/nightingale-slack"
   dependencies:
     "@pob/rollup-esbuild": "npm:7.3.2"
     "@types/node": "npm:22.18.13"
-    nightingale: "npm:17.0.1"
-    nightingale-types: "npm:17.0.0"
+    nightingale: "npm:18.0.0"
+    nightingale-types: "npm:18.0.0"
     typescript: "npm:5.9.3"
   languageName: unknown
   linkType: soft
@@ -8577,16 +8604,25 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-string@workspace:packages/nightingale-string"
   dependencies:
-    nightingale: "npm:17.0.1"
+    nightingale: "npm:18.0.0"
   languageName: unknown
   linkType: soft
 
-"nightingale-types@npm:17.0.0, nightingale-types@workspace:packages/nightingale-types":
+"nightingale-types@npm:17.0.0":
+  version: 17.0.0
+  resolution: "nightingale-types@npm:17.0.0"
+  dependencies:
+    nightingale-levels: "npm:17.0.0"
+  checksum: 10c0/9dd9b19a50ecb0656f47ddbcc05abf727f3da6a2ff163de24c56dfc1f29bc53d0ede4d1a7ce134851d2c232d61c373ea435c3cc0e19784cab2b2d432e7643771
+  languageName: node
+  linkType: hard
+
+"nightingale-types@npm:18.0.0, nightingale-types@workspace:packages/nightingale-types":
   version: 0.0.0-use.local
   resolution: "nightingale-types@workspace:packages/nightingale-types"
   dependencies:
     "@pob/rollup-esbuild": "npm:7.3.2"
-    nightingale-levels: "npm:17.0.0"
+    nightingale-levels: "npm:18.0.0"
     typescript: "npm:5.9.3"
   languageName: unknown
   linkType: soft
@@ -8597,7 +8633,7 @@ __metadata:
   dependencies:
     "@pob/rollup-esbuild": "npm:7.3.2"
     "@types/node": "npm:>=22.0.0"
-    nightingale: "npm:17.0.1"
+    nightingale: "npm:18.0.0"
     typescript: "npm:5.9.3"
   languageName: unknown
   linkType: soft
@@ -8608,7 +8644,7 @@ __metadata:
   dependencies:
     "@pob/rollup-esbuild": "npm:7.3.2"
     "@types/node": "npm:>=22.0.0"
-    nightingale-types: "npm:17.0.0"
+    nightingale-types: "npm:18.0.0"
     typescript: "npm:5.9.3"
   languageName: unknown
   linkType: soft
@@ -8618,22 +8654,35 @@ __metadata:
   resolution: "nightingale-winston-adapter@workspace:packages/nightingale-winston-adapter"
   dependencies:
     "@pob/rollup-esbuild": "npm:7.3.2"
-    nightingale-level-names: "npm:17.0.0"
-    nightingale-types: "npm:17.0.0"
+    nightingale-level-names: "npm:18.0.0"
+    nightingale-types: "npm:18.0.0"
     typescript: "npm:5.9.3"
   languageName: unknown
   linkType: soft
 
-"nightingale@npm:17.0.1, nightingale@workspace:packages/nightingale":
+"nightingale@npm:17.0.1":
+  version: 17.0.1
+  resolution: "nightingale@npm:17.0.1"
+  dependencies:
+    "@types/node": "npm:>=20.0.0"
+    ansi-styles: "npm:^6.2.1"
+    nightingale-levels: "npm:17.0.0"
+    nightingale-logger: "npm:17.0.0"
+    nightingale-types: "npm:17.0.0"
+  checksum: 10c0/fd73460c4a20120944dddb48bbc9585b041680792b7ffe6ec8485ab3825d8a9083762150af5c2add0bf786d29ce1e69c21120e23d270e7f8c8feec0a0b60888f
+  languageName: node
+  linkType: hard
+
+"nightingale@npm:18.0.0, nightingale@workspace:packages/nightingale":
   version: 0.0.0-use.local
   resolution: "nightingale@workspace:packages/nightingale"
   dependencies:
     "@pob/rollup-esbuild": "npm:7.3.2"
     "@types/node": "npm:>=22.0.0"
     ansi-styles: "npm:^6.2.3"
-    nightingale-levels: "npm:17.0.0"
-    nightingale-logger: "npm:17.0.0"
-    nightingale-types: "npm:17.0.0"
+    nightingale-levels: "npm:18.0.0"
+    nightingale-logger: "npm:18.0.0"
+    nightingale-types: "npm:18.0.0"
     typescript: "npm:5.9.3"
   languageName: unknown
   linkType: soft
@@ -10872,6 +10921,13 @@ __metadata:
   version: 6.21.0
   resolution: "undici-types@npm:6.21.0"
   checksum: 10c0/c01ed51829b10aa72fc3ce64b747f8e74ae9b60eafa19a7b46ef624403508a54c526ffab06a14a26b3120d055e1104d7abe7c9017e83ced038ea5cf52f8d5e04
+  languageName: node
+  linkType: hard
+
+"undici-types@npm:~7.16.0":
+  version: 7.16.0
+  resolution: "undici-types@npm:7.16.0"
+  checksum: 10c0/3033e2f2b5c9f1504bdc5934646cb54e37ecaca0f9249c983f7b1fc2e87c6d18399ebb05dc7fd5419e02b2e915f734d872a65da2e3eeed1813951c427d33cc9a
   languageName: node
   linkType: hard
 

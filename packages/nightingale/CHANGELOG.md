@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [18.0.0](https://github.com/christophehurpeau/nightingale/compare/v17.0.1...v18.0.0) (2025-11-15)
+
+### ⚠ BREAKING CHANGES
+
+* drop node 20
+
+### Features
+
+* update dependencies
+
+### Bug Fixes
+
+* **deps:** update dependency ansi-styles to ^6.2.3 ([#1272](https://github.com/christophehurpeau/nightingale/issues/1272))
+
+Version bump for dependency: nightingale-levels
+Version bump for dependency: nightingale-logger
+Version bump for dependency: nightingale-types
+
+
 ## [17.0.1](https://github.com/christophehurpeau/nightingale/compare/v17.0.0...v17.0.1) (2025-10-22)
 
 ### Bug Fixes

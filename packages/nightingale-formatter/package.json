@@ -1,6 +1,6 @@
 {
   "name": "nightingale-formatter",
-  "version": "17.0.1",
+  "version": "18.0.0",
   "description": "Deprecated: use nightingale package instead",
   "keywords": [
     "nightingale",
@@ -41,6 +41,6 @@
   "pob": {},
   "prettier": "@pob/root/prettier-config",
   "dependencies": {
-    "nightingale": "17.0.1"
+    "nightingale": "18.0.0"
   }
 }

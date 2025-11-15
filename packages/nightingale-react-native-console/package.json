@@ -1,6 +1,6 @@
 {
   "name": "nightingale-react-native-console",
-  "version": "17.0.1",
+  "version": "18.0.0",
   "description": "React Native and Expo handler for nightingale",
   "keywords": [
     "nightingale",
@@ -72,8 +72,8 @@
     "react-native": "*"
   },
   "dependencies": {
-    "nightingale": "17.0.1",
-    "nightingale-types": "17.0.0"
+    "nightingale": "18.0.0",
+    "nightingale-types": "18.0.0"
   },
   "devDependencies": {
     "@pob/rollup-esbuild": "7.3.2",
