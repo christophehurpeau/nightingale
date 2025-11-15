@@ -80,7 +80,7 @@
   },
   "prettier": "@pob/root/prettier-config",
   "devDependencies": {
-    "@pob/rollup-esbuild": "7.3.0",
+    "@pob/rollup-esbuild": "7.3.2",
     "typescript": "5.9.3"
   }
 }

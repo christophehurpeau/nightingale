@@ -26,7 +26,7 @@ jobs:
       - name: Enable Corepack
         run: corepack enable
 
-      - uses: actions/setup-node@v5
+      - uses: actions/setup-node@v6
         with:
           node-version: 22
           check-latest: true
@@ -46,6 +46,7 @@ jobs:
       - name: New version (dry run)
         if: github.ref == 'refs/heads/main' && inputs.dry-run
         run: yarn yarn-version version --dry-run
+
       - name: Configure Git user
         if: github.ref == 'refs/heads/main' && !inputs.dry-run
         run: |

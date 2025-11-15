@@ -71,7 +71,7 @@
     "nightingale-react-native-console": "17.0.1"
   },
   "devDependencies": {
-    "@pob/rollup-esbuild": "7.3.0",
+    "@pob/rollup-esbuild": "7.3.2",
     "typescript": "5.9.3"
   }
 }

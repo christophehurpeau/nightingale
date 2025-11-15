@@ -67,11 +67,11 @@
     ],
     "envs": [
       {
-        "target": "node",
-        "version": "22"
+        "target": "react-native"
       },
       {
-        "target": "react-native"
+        "target": "node",
+        "version": "22"
       },
       {
         "target": "browser"
@@ -88,7 +88,7 @@
     "nightingale-types": "17.0.0"
   },
   "devDependencies": {
-    "@pob/rollup-esbuild": "7.3.0",
+    "@pob/rollup-esbuild": "7.3.2",
     "typescript": "5.9.3"
   }
 }

@@ -16,14 +16,14 @@
     "node": ">=22.18.0"
   },
   "sideEffects": false,
-  "main": "./dist/index-node22.mjs",
+  "main": "./dist/index-node.mjs",
   "types": "./dist/definitions/index.d.ts",
   "exports": {
     "./package.json": "./package.json",
     ".": {
       "types": "./dist/definitions/index.d.ts",
       "node": {
-        "import": "./dist/index-node22.mjs"
+        "import": "./dist/index-node.mjs"
       }
     }
   },
@@ -60,7 +60,7 @@
     "nightingale": "17.0.1"
   },
   "devDependencies": {
-    "@pob/rollup-esbuild": "7.3.0",
+    "@pob/rollup-esbuild": "7.3.2",
     "typescript": "5.9.3"
   }
 }
