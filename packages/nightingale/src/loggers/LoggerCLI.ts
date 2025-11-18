@@ -5,7 +5,6 @@ import { ConsoleCLIHandler } from "../handlers/ConsoleCLIHandler.ts";
 
 export interface LoggerCLIOptions {
   displayName?: string;
-  handlers?: Handler[];
   processors?: Processor[];
   json?: boolean;
   noColor?: boolean;
@@ -104,20 +103,5 @@ export class LoggerCLI extends Logger {
 
   separator(): void {
     console.log();
-  }
-}
-
-export class LoggerCLIString extends LoggerCLI {
-  constructor(
-    key: string,
-    {
-      displayName,
-      handlers,
-      processors,
-      json = false,
-      noColor = false,
-    }: LoggerCLIOptions = {},
-  ) {
-    super(key, { displayName, handlers, processors, json, noColor });
   }
 }

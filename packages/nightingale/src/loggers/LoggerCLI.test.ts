@@ -1,4 +1,4 @@
-import { LoggerCLIString } from "./LoggerCLI.ts";
+import { LoggerCLI } from "./LoggerCLI.ts";
 
 const consoleLogSpy = import.meta.jest
   .spyOn(console, "log")
@@ -12,12 +12,12 @@ describe("LoggerCLI", () => {
     consoleLogSpy.mockRestore();
   });
 
-  test("LoggerCLIString", () => {
+  test("LoggerCLI", () => {
     import.meta.jest.useFakeTimers({
       now: new Date("2023-10-01T10:57:49.000Z"),
     });
 
-    const logger = new LoggerCLIString("test", { noColor: true });
+    const logger = new LoggerCLI("test", { noColor: true });
     logger.info("Test message", { key: "value" });
 
     expect(consoleLogSpy).toHaveBeenCalledWith(
@@ -25,7 +25,7 @@ describe("LoggerCLI", () => {
     );
   });
 
-  test("LoggerCLIString JSON", () => {
+  test("LoggerCLI JSON", () => {
     import.meta.jest.useFakeTimers({
       now: new Date("2023-10-01T10:57:49.000Z"),
     });
@@ -34,7 +34,7 @@ describe("LoggerCLI", () => {
       .spyOn(console, "log")
       .mockImplementation(() => {});
 
-    const logger = new LoggerCLIString("test", { noColor: true, json: true });
+    const logger = new LoggerCLI("test", { noColor: true, json: true });
 
     logger.info("Test message", { key: "value" });
 

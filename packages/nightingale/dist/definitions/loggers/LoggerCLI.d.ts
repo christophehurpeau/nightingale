@@ -1,9 +1,8 @@
 import type { ComputedConfigForKey } from "nightingale-logger";
 import { Level, Logger } from "nightingale-logger";
-import type { Handler, Processor } from "nightingale-types";
+import type { Processor } from "nightingale-types";
 export interface LoggerCLIOptions {
     displayName?: string;
-    handlers?: Handler[];
     processors?: Processor[];
     json?: boolean;
     noColor?: boolean;
@@ -21,8 +20,5 @@ export declare class LoggerCLI extends Logger {
     warnJsonOnly(messageOrError: string, metadata: Record<string, unknown>): void;
     group<T, Result extends Awaited<T> | Promise<T>>(name: string, fn: () => Result): Result extends Promise<infer V> ? Promise<V> : Awaited<T>;
     separator(): void;
-}
-export declare class LoggerCLIString extends LoggerCLI {
-    constructor(key: string, { displayName, handlers, processors, json, noColor, }?: LoggerCLIOptions);
 }
 //# sourceMappingURL=LoggerCLI.d.ts.map
