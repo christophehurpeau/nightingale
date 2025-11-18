@@ -734,6 +734,19 @@ const JSONFormatter = {
     ];
   }
 };
+const JSONCLIFormatter = {
+  format(record) {
+    return [
+      stringify({
+        key: record.key,
+        time: record.datetime.toTimeString().split(" ", 2)[0],
+        message: record.message,
+        ...record.metadata,
+        ...record.extra
+      })
+    ];
+  }
+};
 
 const ansiStyles = {
   black: ansi.black,
@@ -891,7 +904,7 @@ const createHandle = ({
   noColor = process.env.NO_COLOR === "1" || process.env.NO_COLOR === "true"
 }) => {
   const formatter = (() => {
-    if (json) return JSONFormatter.format;
+    if (json) return JSONCLIFormatter.format;
     if (noColor) return RawFormatter.format;
     return ANSIFormatter.format;
   })();

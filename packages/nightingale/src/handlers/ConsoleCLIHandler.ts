@@ -8,7 +8,7 @@ import type {
 } from "nightingale-types";
 import { createFindDebugLevel } from "../debug/debug.ts";
 import { ANSIFormatter } from "../formatters/ANSIFormatter.ts";
-import { JSONFormatter } from "../formatters/JSONFormatter.ts";
+import { JSONCLIFormatter } from "../formatters/JSONFormatter.ts";
 import { RawFormatter } from "../formatters/RawFormatter.ts";
 import { cliConsoleOutput } from "../outputs/cliConsoleOutput.ts";
 import { consoleOutput } from "../outputs/consoleOutput.ts";
@@ -18,7 +18,7 @@ const createHandle = ({
   noColor = process.env.NO_COLOR === "1" || process.env.NO_COLOR === "true",
 }: ConsoleCLIHandlerOptions): Handle => {
   const formatter = (() => {
-    if (json) return JSONFormatter.format;
+    if (json) return JSONCLIFormatter.format;
     if (noColor) return RawFormatter.format;
     return ANSIFormatter.format;
   })();
