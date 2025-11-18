@@ -1,6 +1,6 @@
 {
   "name": "nightingale-html-formatter",
-  "version": "18.0.0",
+  "version": "18.1.0",
   "description": "Deprecated: use HTMLFormatter from nightingale instead.",
   "keywords": [
     "nightingale",
@@ -41,7 +41,7 @@
   "pob": {},
   "prettier": "@pob/root/prettier-config",
   "dependencies": {
-    "nightingale": "18.0.0"
+    "nightingale": "18.1.0"
   },
   "devDependencies": {
     "nightingale-levels": "18.0.0"

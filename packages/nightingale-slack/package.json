@@ -1,6 +1,6 @@
 {
   "name": "nightingale-slack",
-  "version": "18.0.0",
+  "version": "18.1.0",
   "description": "Slack handler for nightingale",
   "keywords": [
     "nightingale",
@@ -60,7 +60,7 @@
   },
   "prettier": "@pob/root/prettier-config",
   "dependencies": {
-    "nightingale": "18.0.0",
+    "nightingale": "18.1.0",
     "nightingale-types": "18.0.0"
   },
   "devDependencies": {

@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [18.1.0](https://github.com/christophehurpeau/nightingale/compare/v18.0.0...v18.1.0) (2025-11-18)
+
+### Features
+
+* **deps:** update dependency @types/node to v22.19.1 ([#1277](https://github.com/christophehurpeau/nightingale/issues/1277))
+
+Version bump for dependency: nightingale
+
+
 ## [18.0.0](https://github.com/christophehurpeau/nightingale/compare/v17.0.1...v18.0.0) (2025-11-15)
 
 ### ⚠ BREAKING CHANGES

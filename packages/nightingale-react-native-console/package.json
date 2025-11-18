@@ -1,6 +1,6 @@
 {
   "name": "nightingale-react-native-console",
-  "version": "18.0.0",
+  "version": "18.1.0",
   "description": "React Native and Expo handler for nightingale",
   "keywords": [
     "nightingale",
@@ -72,7 +72,7 @@
     "react-native": "*"
   },
   "dependencies": {
-    "nightingale": "18.0.0",
+    "nightingale": "18.1.0",
     "nightingale-types": "18.0.0"
   },
   "devDependencies": {

@@ -1,6 +1,6 @@
 {
   "name": "nightingale-app-console",
-  "version": "18.0.0",
+  "version": "18.1.0",
   "description": "nightingale default config and logger for app",
   "keywords": [],
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (https://christophe.hurpeau.com)",
@@ -79,7 +79,7 @@
   "prettier": "@pob/root/prettier-config",
   "dependencies": {
     "@types/node": ">=22.19.1",
-    "nightingale": "18.0.0"
+    "nightingale": "18.1.0"
   },
   "devDependencies": {
     "@pob/rollup-esbuild": "7.3.2",
