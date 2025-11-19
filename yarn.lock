@@ -2250,9 +2250,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pob/root@npm:19.7.1":
-  version: 19.7.1
-  resolution: "@pob/root@npm:19.7.1"
+"@pob/root@npm:19.8.0":
+  version: 19.8.0
+  resolution: "@pob/root@npm:19.8.0"
   dependencies:
     "@commitlint/format": "npm:20.0.0"
     "@commitlint/lint": "npm:20.0.0"
@@ -2260,18 +2260,17 @@ __metadata:
     "@pob/pretty-pkg": "npm:13.1.0"
     conventional-changelog-conventionalcommits: "npm:^9.1.0"
     conventional-changelog-writer: "npm:^8.2.0"
-    conventional-commits-filter: "npm:^5.0.0"
     conventional-commits-parser: "npm:^6.2.1"
     cosmiconfig: "npm:^9.0.0"
     husky: "npm:~9.1.7"
     json5: "npm:^2.2.3"
     lint-staged: "npm:16.2.6"
-    pob-dependencies: "npm:20.5.1"
+    pob-dependencies: "npm:20.6.0"
     prettier: "npm:3.6.2"
     repository-check-dirty: "npm:11.0.0"
     semver: "npm:^7.7.3"
     which-pm-runs: "npm:1.1.0"
-    yarn-version: "npm:8.6.1"
+    yarn-version: "npm:8.7.0"
   bin:
     pob-check-commit-msg: ./bin/pob-check-commit-msg.js
     pob-root-lint-staged: ./bin/pob-root-lint-staged.js
@@ -2281,7 +2280,7 @@ __metadata:
     pretty-pkg: ./bin/pretty-pkg.js
     repository-check-dirty: ./bin/repository-check-dirty.js
     yarn-version: ./bin/yarn-version.js
-  checksum: 10c0/a20d108ba78630be1cc6ba870fbfd4386c43f42f1870361afe21822a9e5762b9401b58f860fb9da7b67cbe2dcff1a74625b88297ee9b3bc33159fe46e93d562f
+  checksum: 10c0/7df318c3d4c26734c9009272cfc80cee7770f71cb62516478cb3f709bb712a5d81334cf7d47aa35d0b5911db00e81fb395d38f233ed86216f40a61a88516ffe8
   languageName: node
   linkType: hard
 
@@ -2988,7 +2987,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:>=20.0.0, @types/node@npm:>=22.19.1":
+"@types/node@npm:*, @types/node@npm:>=22.19.1":
   version: 24.10.1
   resolution: "@types/node@npm:24.10.1"
   dependencies:
@@ -8480,13 +8479,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"nightingale-levels@npm:17.0.0":
-  version: 17.0.0
-  resolution: "nightingale-levels@npm:17.0.0"
-  checksum: 10c0/a2f2768af9177b6cd5d3db902dfbefa2969623b7f2a68748fe3b3a77f516e7638840c245adf5c3ef230647e59ddcf7ca34286eb862b488a829bd6cd59bd6917a
-  languageName: node
-  linkType: hard
-
 "nightingale-levels@npm:18.0.0, nightingale-levels@workspace:packages/nightingale-levels":
   version: 0.0.0-use.local
   resolution: "nightingale-levels@workspace:packages/nightingale-levels"
@@ -8495,17 +8487,6 @@ __metadata:
     typescript: "npm:5.9.3"
   languageName: unknown
   linkType: soft
-
-"nightingale-logger@npm:17.0.0":
-  version: 17.0.0
-  resolution: "nightingale-logger@npm:17.0.0"
-  dependencies:
-    "@types/node": "npm:>=20.0.0"
-    nightingale-levels: "npm:17.0.0"
-    nightingale-types: "npm:17.0.0"
-  checksum: 10c0/c26f0acadd8af3821abd6b9b9d3fc6c19e18521d1faa9ef1454b53a2c0f3b5deea819f9024cfd880b427598c531a2e0967a002b2aa8b102680e4ab8bb1fc8db8
-  languageName: node
-  linkType: hard
 
 "nightingale-logger@npm:18.1.0, nightingale-logger@workspace:packages/nightingale-logger":
   version: 0.0.0-use.local
@@ -8536,7 +8517,7 @@ __metadata:
     "@pob/eslint-config": "npm:62.0.0"
     "@pob/eslint-config-typescript": "npm:62.0.0"
     "@pob/rollup-esbuild": "npm:7.4.0"
-    "@pob/root": "npm:19.7.1"
+    "@pob/root": "npm:19.8.0"
     "@types/jest": "npm:30.0.0"
     "@types/node": "npm:22.19.1"
     check-package-dependencies: "npm:10.5.0"
@@ -8608,15 +8589,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"nightingale-types@npm:17.0.0":
-  version: 17.0.0
-  resolution: "nightingale-types@npm:17.0.0"
-  dependencies:
-    nightingale-levels: "npm:17.0.0"
-  checksum: 10c0/9dd9b19a50ecb0656f47ddbcc05abf727f3da6a2ff163de24c56dfc1f29bc53d0ede4d1a7ce134851d2c232d61c373ea435c3cc0e19784cab2b2d432e7643771
-  languageName: node
-  linkType: hard
-
 "nightingale-types@npm:18.0.0, nightingale-types@workspace:packages/nightingale-types":
   version: 0.0.0-use.local
   resolution: "nightingale-types@workspace:packages/nightingale-types"
@@ -8659,19 +8631,6 @@ __metadata:
     typescript: "npm:5.9.3"
   languageName: unknown
   linkType: soft
-
-"nightingale@npm:17.0.1":
-  version: 17.0.1
-  resolution: "nightingale@npm:17.0.1"
-  dependencies:
-    "@types/node": "npm:>=20.0.0"
-    ansi-styles: "npm:^6.2.1"
-    nightingale-levels: "npm:17.0.0"
-    nightingale-logger: "npm:17.0.0"
-    nightingale-types: "npm:17.0.0"
-  checksum: 10c0/fd73460c4a20120944dddb48bbc9585b041680792b7ffe6ec8485ab3825d8a9083762150af5c2add0bf786d29ce1e69c21120e23d270e7f8c8feec0a0b60888f
-  languageName: node
-  linkType: hard
 
 "nightingale@npm:18.1.0, nightingale@workspace:packages/nightingale":
   version: 0.0.0-use.local
@@ -9224,10 +9183,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pob-dependencies@npm:20.5.1":
-  version: 20.5.1
-  resolution: "pob-dependencies@npm:20.5.1"
-  checksum: 10c0/a60a006079ebe36499e66e5ee3306667a394e58539ddd55e0776979d368a89325a400d8cd4042acd3996f1f792568b4869244f5cbad76c74f7e4594d00f7bfb9
+"pob-dependencies@npm:20.6.0":
+  version: 20.6.0
+  resolution: "pob-dependencies@npm:20.6.0"
+  checksum: 10c0/7008b7b6ae12d64edb12ba2a048a030989d45f16f7495c351b1c3416784b7d9f1ae28040d56e428eb5d123224bb5980f0feddd97f185f4e3e66be96d6a0a873a
   languageName: node
   linkType: hard
 
@@ -11394,9 +11353,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"yarn-version@npm:8.6.1":
-  version: 8.6.1
-  resolution: "yarn-version@npm:8.6.1"
+"yarn-version@npm:8.7.0":
+  version: 8.7.0
+  resolution: "yarn-version@npm:8.7.0"
   dependencies:
     "@npmcli/map-workspaces": "npm:5.0.1"
     "@octokit/rest": "npm:22.0.1"
@@ -11406,11 +11365,11 @@ __metadata:
     conventional-changelog-preset-loader: "npm:5.0.0"
     conventional-changelog-writer: "npm:8.2.0"
     conventional-commits-parser: "npm:6.2.1"
-    nightingale: "npm:17.0.1"
+    nightingale: "npm:18.1.0"
     semver: "npm:7.7.3"
   bin:
     yarn-version: ./dist/index-node.mjs
-  checksum: 10c0/febc65d5ccb9086ee2419deb02547c9791d8a9bfd530e85d0c7c0563e74e0ad8751b69d88598c6fab0be023f2a188517c2dbcbb50c1ea33d3f30b393c486894b
+  checksum: 10c0/66a6b7a7b9891a25f42742829610713f862ef1c3e9df2f352d7584ca89a1a2a2fd64bfc70513c4d84d35ea7c4c8cb8ad4fe0ba3dd0424a2fae854bf4200bf7da
   languageName: node
   linkType: hard
 
