@@ -21,16 +21,15 @@
     "checks": "node scripts/check-packages.js",
     "clean:build": "yarn workspaces foreach --parallel -A run clean:build",
     "generate:api": "typedoc --tsconfig tsconfig.doc.json",
-    "generate:test-coverage": "rm -Rf docs/coverage/ ; NODE_OPTIONS=--experimental-vm-modules jest --coverage --coverageReporters=lcov --coverageDirectory=docs/coverage/",
     "lint": "yarn run lint:prettier && yarn run lint:eslint",
     "lint:eslint": "NODE_OPTIONS=--max_old_space_size=4096 eslint --quiet .",
     "lint:prettier": "pob-root-prettier --check .",
     "lint:prettier:fix": "pob-root-prettier --write .",
     "postinstall": "pob-root-postinstall",
-    "test": "TZ=UTC NODE_OPTIONS=--experimental-vm-modules jest",
-    "test:coverage": "TZ=UTC NODE_OPTIONS=--experimental-vm-modules jest --coverage --coverageReporters=json --coverageReporters=text",
-    "test:coverage:json": "TZ=UTC NODE_OPTIONS=--experimental-vm-modules jest --coverage --coverageReporters=json",
-    "test:watch": "TZ=UTC NODE_OPTIONS=--experimental-vm-modules jest --watch",
+    "test": "TZ=UTC vitest",
+    "test:coverage": "TZ=UTC POB_VITEST_COVERAGE=json,text vitest run --coverage",
+    "test:coverage:json": "TZ=UTC POB_VITEST_COVERAGE=json vitest run --coverage",
+    "test:watch": "TZ=UTC vitest --watch",
     "tsc": "tsc -b",
     "watch": "yarn clean:build && rollup --config rollup.config.mjs --watch"
   },
@@ -41,18 +40,16 @@
   },
   "prettier": "@pob/root/prettier-config",
   "devDependencies": {
-    "@babel/core": "7.28.5",
-    "@babel/preset-typescript": "7.28.5",
     "@pob/eslint-config": "62.0.0",
     "@pob/eslint-config-typescript": "62.0.0",
     "@pob/rollup-esbuild": "7.4.0",
-    "@pob/root": "19.7.1",
-    "@types/jest": "30.0.0",
+    "@pob/root": "19.8.0",
     "@types/node": "22.19.1",
+    "@vitest/coverage-v8": "4.0.10",
     "check-package-dependencies": "10.5.0",
     "eslint": "9.39.1",
-    "jest": "30.2.0",
     "typedoc": "0.28.14",
-    "typescript": "5.9.3"
+    "typescript": "5.9.3",
+    "vitest": "4.0.10"
   }
 }

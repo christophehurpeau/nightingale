@@ -1,4 +1,5 @@
 /* eslint-disable no-control-regex */
+import { expect, test } from "vitest";
 import { ANSIFormatter, style } from "./ANSIFormatter.ts";
 
 test("style: blue bold color", () => {

@@ -16,9 +16,6 @@
     "source.organizeImports": "never"
   },
 
-  // jest
-  "jest.jestCommandLine": "NODE_OPTIONS=--experimental-vm-modules node_modules/.bin/jest",
-
   // extension eslint config
   "eslint.workingDirectories": ["."],
   "eslint.useFlatConfig": true,

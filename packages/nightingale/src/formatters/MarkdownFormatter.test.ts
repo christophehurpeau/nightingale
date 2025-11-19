@@ -1,3 +1,4 @@
+import { expect, test } from "vitest";
 import { Level } from "nightingale-levels";
 import { MarkdownFormatter, style } from "./MarkdownFormatter.ts";
 

@@ -1,3 +1,4 @@
+import { describe, expect, test } from "vitest";
 import { Level } from "nightingale-levels";
 import { createFindDebugLevel } from "./debug.ts";
 

@@ -1,8 +1,7 @@
+import { afterAll, beforeEach, describe, expect, test, vi } from "vitest";
 import { LoggerCLI } from "./LoggerCLI.ts";
 
-const consoleLogSpy = import.meta.jest
-  .spyOn(console, "log")
-  .mockImplementation(() => {});
+const consoleLogSpy = vi.spyOn(console, "log").mockImplementation(() => {});
 
 describe("LoggerCLI", () => {
   beforeEach(() => {
@@ -13,7 +12,7 @@ describe("LoggerCLI", () => {
   });
 
   test("LoggerCLI", () => {
-    import.meta.jest.useFakeTimers({
+    vi.useFakeTimers({
       now: new Date("2023-10-01T10:57:49.000Z"),
     });
 
@@ -26,13 +25,11 @@ describe("LoggerCLI", () => {
   });
 
   test("LoggerCLI JSON", () => {
-    import.meta.jest.useFakeTimers({
+    vi.useFakeTimers({
       now: new Date("2023-10-01T10:57:49.000Z"),
     });
 
-    const consoleLogSpy = import.meta.jest
-      .spyOn(console, "log")
-      .mockImplementation(() => {});
+    const consoleLogSpy = vi.spyOn(console, "log").mockImplementation(() => {});
 
     const logger = new LoggerCLI("test", { noColor: true, json: true });
 

@@ -1,3 +1,4 @@
+import { expect, test } from "vitest";
 import type { ComputedConfigForKey } from "nightingale-logger";
 import { StringHandler } from "./handlers/StringHandler.ts";
 import { Level, Logger } from "./index.ts";

@@ -1,3 +1,4 @@
+import { expect, test } from "vitest";
 import type { StyleToHtmlStyle } from "nightingale";
 import { Level } from "nightingale-levels";
 import { styleToHtmlStyleThemeLight } from "../formatter-utils/index.ts";

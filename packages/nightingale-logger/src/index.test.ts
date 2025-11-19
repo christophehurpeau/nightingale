@@ -1,5 +1,4 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
-import { jest } from "@jest/globals";
+import { expect, test, vi } from "vitest";
 import { Logger } from "./index.ts";
 
 test("key argument", () => {
@@ -37,7 +36,7 @@ test("extends undefined context", () => {
 test("passing error", () => {
   const error = new Error("Test");
   const logger = new Logger("test");
-  logger.addRecord = jest.fn();
+  logger.addRecord = vi.fn();
   logger.log(error);
   expect(logger.addRecord).toHaveBeenNthCalledWith(1, {
     context: undefined,
