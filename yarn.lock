@@ -7422,7 +7422,7 @@ __metadata:
     nightingale-types: "npm:18.0.0"
     typescript: "npm:5.9.3"
   peerDependencies:
-    "@sentry/core": ">=7.0.0"
+    "@sentry/core": ">=7.120.4"
   languageName: unknown
   linkType: soft
 
