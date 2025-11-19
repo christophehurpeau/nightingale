@@ -45,7 +45,7 @@
     "@babel/preset-typescript": "7.28.5",
     "@pob/eslint-config": "62.0.0",
     "@pob/eslint-config-typescript": "62.0.0",
-    "@pob/rollup-esbuild": "7.3.2",
+    "@pob/rollup-esbuild": "7.4.0",
     "@pob/root": "19.7.1",
     "@types/jest": "30.0.0",
     "@types/node": "22.19.1",
