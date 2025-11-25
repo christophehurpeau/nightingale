@@ -42,7 +42,7 @@
   "devDependencies": {
     "@pob/eslint-config": "62.0.0",
     "@pob/eslint-config-typescript": "62.0.0",
-    "@pob/rollup-esbuild": "7.4.0",
+    "@pob/rollup-esbuild": "7.4.1",
     "@pob/root": "19.8.0",
     "@types/node": "22.19.1",
     "@vitest/coverage-v8": "4.0.12",

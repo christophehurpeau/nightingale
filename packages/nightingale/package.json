@@ -88,7 +88,7 @@
     "nightingale-types": "18.0.0"
   },
   "devDependencies": {
-    "@pob/rollup-esbuild": "7.4.0",
+    "@pob/rollup-esbuild": "7.4.1",
     "typescript": "5.9.3"
   }
 }

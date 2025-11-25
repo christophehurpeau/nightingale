@@ -76,7 +76,7 @@
     "nightingale-types": "18.0.0"
   },
   "devDependencies": {
-    "@pob/rollup-esbuild": "7.4.0",
+    "@pob/rollup-esbuild": "7.4.1",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-native": "0.80.0",
