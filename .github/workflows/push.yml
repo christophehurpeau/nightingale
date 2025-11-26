@@ -1,5 +1,6 @@
 name: Push CI
-
+permissions:
+  contents: read
 on: [push]
 
 jobs:

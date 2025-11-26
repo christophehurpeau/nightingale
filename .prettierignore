@@ -1,6 +1,6 @@
 CHANGELOG.md
-/.yarnrc.yml
 /docs
+/.yarnrc.yml
 /.yarn/**/*
 /packages/*/dist
 /packages/*/build
