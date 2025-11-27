@@ -45,11 +45,11 @@
     "@pob/rollup-esbuild": "7.4.1",
     "@pob/root": "19.8.0",
     "@types/node": "22.19.1",
-    "@vitest/coverage-v8": "4.0.13",
+    "@vitest/coverage-v8": "4.0.14",
     "check-package-dependencies": "10.5.0",
     "eslint": "9.39.1",
     "typedoc": "0.28.14",
     "typescript": "5.9.3",
-    "vitest": "4.0.13"
+    "vitest": "4.0.14"
   }
 }
