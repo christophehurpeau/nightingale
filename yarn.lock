@@ -2205,6 +2205,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@sentry/core@npm:10.30.0":
+  version: 10.30.0
+  resolution: "@sentry/core@npm:10.30.0"
+  checksum: 10c0/91cfc25e34f6a16b6d20558fb267298eb83e0d92d01b8507e2583b56409139e82b92680753ca1b8f99510c7081a1923a4a29c3dbb53871534b45a5700b79720c
+  languageName: node
+  linkType: hard
+
 "@sentry/node-core@npm:10.25.0":
   version: 10.25.0
   resolution: "@sentry/node-core@npm:10.25.0"
@@ -7269,7 +7276,7 @@ __metadata:
   resolution: "nightingale-console-example@workspace:packages/nightingale-console-example"
   dependencies:
     "@pob/rollup-esbuild": "npm:7.4.2"
-    "@sentry/core": "npm:10.25.0"
+    "@sentry/core": "npm:10.30.0"
     "@sentry/node": "npm:10.25.0"
     nightingale: "npm:18.1.0"
     nightingale-console: "npm:18.1.0"
@@ -7426,12 +7433,12 @@ __metadata:
   resolution: "nightingale-sentry@workspace:packages/nightingale-sentry"
   dependencies:
     "@pob/rollup-esbuild": "npm:7.4.2"
-    "@sentry/core": "npm:10.25.0"
+    "@sentry/core": "npm:10.30.0"
     nightingale-levels: "npm:18.0.0"
     nightingale-types: "npm:18.0.0"
     typescript: "npm:5.9.3"
   peerDependencies:
-    "@sentry/core": ">=7.0.0"
+    "@sentry/core": ">=7.120.4"
   languageName: unknown
   linkType: soft
 
