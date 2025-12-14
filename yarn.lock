@@ -2516,12 +2516,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:>=22.19.1":
-  version: 24.10.1
-  resolution: "@types/node@npm:24.10.1"
+"@types/node@npm:*, @types/node@npm:>=24.10.4":
+  version: 25.0.2
+  resolution: "@types/node@npm:25.0.2"
   dependencies:
     undici-types: "npm:~7.16.0"
-  checksum: 10c0/d6bca7a78f550fbb376f236f92b405d676003a8a09a1b411f55920ef34286ee3ee51f566203920e835478784df52662b5b2af89159d9d319352e9ea21801c002
+  checksum: 10c0/12c4044bf2e46ba3d313ddf6256ee3c88e336a62d129fe788eeab8ff2631b3df51eb31ade4cdc04552fbe51e285f0663c49b60c78acd31da2b9f2c86a84347e3
   languageName: node
   linkType: hard
 
@@ -2532,12 +2532,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:22.19.1":
-  version: 22.19.1
-  resolution: "@types/node@npm:22.19.1"
+"@types/node@npm:24.10.4":
+  version: 24.10.4
+  resolution: "@types/node@npm:24.10.4"
   dependencies:
-    undici-types: "npm:~6.21.0"
-  checksum: 10c0/6edd93aea86da740cb7872626839cd6f4a67a049d3a3a6639cb592c620ec591408a30989ab7410008d1a0b2d4985ce50f1e488e79c033e4476d3bec6833b0a2f
+    undici-types: "npm:~7.16.0"
+  checksum: 10c0/069639cb7233ee747df1897b5e784f6b6c5da765c96c94773c580aac888fa1a585048d2a6e95eb8302d89c7a9df75801c8b5a0b7d0221d4249059cf09a5f4228
   languageName: node
   linkType: hard
 
@@ -7225,7 +7225,7 @@ __metadata:
   resolution: "nightingale-app-console@workspace:packages/nightingale-app-console"
   dependencies:
     "@pob/rollup-esbuild": "npm:7.4.2"
-    "@types/node": "npm:>=22.19.1"
+    "@types/node": "npm:>=24.10.4"
     nightingale: "npm:18.1.0"
     typescript: "npm:5.9.3"
   languageName: unknown
@@ -7361,7 +7361,7 @@ __metadata:
   resolution: "nightingale-logger@workspace:packages/nightingale-logger"
   dependencies:
     "@pob/rollup-esbuild": "npm:7.4.2"
-    "@types/node": "npm:>=22.19.1"
+    "@types/node": "npm:>=24.10.4"
     nightingale-levels: "npm:18.0.0"
     nightingale-types: "npm:18.0.0"
     typescript: "npm:5.9.3"
@@ -7384,7 +7384,7 @@ __metadata:
     "@pob/eslint-config-typescript": "npm:62.0.0"
     "@pob/rollup-esbuild": "npm:7.4.2"
     "@pob/root": "npm:19.8.0"
-    "@types/node": "npm:22.19.1"
+    "@types/node": "npm:24.10.4"
     "@vitest/coverage-v8": "npm:4.0.15"
     check-package-dependencies: "npm:10.5.0"
     eslint: "npm:9.39.1"
@@ -7440,7 +7440,7 @@ __metadata:
   resolution: "nightingale-slack@workspace:packages/nightingale-slack"
   dependencies:
     "@pob/rollup-esbuild": "npm:7.4.2"
-    "@types/node": "npm:22.19.1"
+    "@types/node": "npm:24.10.4"
     nightingale: "npm:18.1.0"
     nightingale-types: "npm:18.0.0"
     typescript: "npm:5.9.3"
@@ -7470,7 +7470,7 @@ __metadata:
   resolution: "nightingale-unit-testing@workspace:packages/nightingale-unit-testing"
   dependencies:
     "@pob/rollup-esbuild": "npm:7.4.2"
-    "@types/node": "npm:>=22.19.1"
+    "@types/node": "npm:>=24.10.4"
     nightingale: "npm:18.1.0"
     typescript: "npm:5.9.3"
   languageName: unknown
@@ -7481,7 +7481,7 @@ __metadata:
   resolution: "nightingale-web-processor@workspace:packages/nightingale-web-processor"
   dependencies:
     "@pob/rollup-esbuild": "npm:7.4.2"
-    "@types/node": "npm:>=22.19.1"
+    "@types/node": "npm:>=24.10.4"
     nightingale-types: "npm:18.0.0"
     typescript: "npm:5.9.3"
   languageName: unknown
@@ -7503,7 +7503,7 @@ __metadata:
   resolution: "nightingale@workspace:packages/nightingale"
   dependencies:
     "@pob/rollup-esbuild": "npm:7.4.2"
-    "@types/node": "npm:>=22.19.1"
+    "@types/node": "npm:>=24.10.4"
     ansi-styles: "npm:^6.2.3"
     nightingale-levels: "npm:18.0.0"
     nightingale-logger: "npm:18.1.0"
@@ -9702,13 +9702,6 @@ __metadata:
     has-symbols: "npm:^1.1.0"
     which-boxed-primitive: "npm:^1.1.1"
   checksum: 10c0/7dbd35ab02b0e05fe07136c72cb9355091242455473ec15057c11430129bab38b7b3624019b8778d02a881c13de44d63cd02d122ee782fb519e1de7775b5b982
-  languageName: node
-  linkType: hard
-
-"undici-types@npm:~6.21.0":
-  version: 6.21.0
-  resolution: "undici-types@npm:6.21.0"
-  checksum: 10c0/c01ed51829b10aa72fc3ce64b747f8e74ae9b60eafa19a7b46ef624403508a54c526ffab06a14a26b3120d055e1104d7abe7c9017e83ced038ea5cf52f8d5e04
   languageName: node
   linkType: hard
 
