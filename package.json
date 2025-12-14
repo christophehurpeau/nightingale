@@ -47,7 +47,7 @@
     "@types/node": "24.10.4",
     "@vitest/coverage-v8": "4.0.15",
     "check-package-dependencies": "10.5.0",
-    "eslint": "9.39.1",
+    "eslint": "9.39.2",
     "typedoc": "0.28.15",
     "typescript": "5.9.3",
     "vitest": "4.0.15"
