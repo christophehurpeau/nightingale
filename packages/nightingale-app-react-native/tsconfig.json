@@ -1,7 +1,7 @@
 {
   "extends": [
     "@pob/root/tsconfigs/strict.json",
-    "@pob/root/tsconfigs/targets/rollup-es2015.json"
+    "@pob/root/tsconfigs/targets/rollup-es2015-with-dom.json"
   ],
   "include": ["src/**/*.ts"],
   "compilerOptions": {
@@ -17,17 +17,8 @@
 
     "paths": {
       "nightingale": ["../../packages/nightingale/src"],
-      "nightingale/*": ["../../packages/nightingale/src/*"],
-      "nightingale-react-native-console": [
-        "../../packages/nightingale-react-native-console/src"
-      ],
-      "nightingale-react-native-console/*": [
-        "../../packages/nightingale-react-native-console/src/*"
-      ]
+      "nightingale/*": ["../../packages/nightingale/src/*"]
     }
   },
-  "references": [
-    { "path": "../../packages/nightingale/tsconfig.json" },
-    { "path": "../../packages/nightingale-react-native-console/tsconfig.json" }
-  ]
+  "references": [{ "path": "../../packages/nightingale/tsconfig.json" }]
 }

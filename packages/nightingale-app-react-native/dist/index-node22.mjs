@@ -91,4 +91,4 @@ function listenReactNativeUnhandledErrors(logger = new Logger(
 }
 
 export { ReactNativeConsoleHandler, ReactNativeConsoleHandlerForPlatform, appLogger, listenReactNativeUnhandledErrors };
-//# sourceMappingURL=index-react-native.es.js.map
+//# sourceMappingURL=index-node22.mjs.map

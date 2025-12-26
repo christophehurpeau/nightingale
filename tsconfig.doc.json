@@ -25,18 +25,16 @@
     { "path": "packages/nightingale-winston-adapter/tsconfig.json" },
     { "path": "packages/nightingale/tsconfig.json" },
     { "path": "packages/nightingale-app-console/tsconfig.json" },
-    { "path": "packages/nightingale-react-native-console/tsconfig.json" },
+    { "path": "packages/nightingale-app-react-native/tsconfig.json" },
     { "path": "packages/nightingale-slack/tsconfig.json" },
-    { "path": "packages/nightingale-unit-testing/tsconfig.json" },
-    { "path": "packages/nightingale-app-react-native/tsconfig.json" }
+    { "path": "packages/nightingale-unit-testing/tsconfig.json" }
   ],
 
   "typedocOptions": {
     "entryPoints": [
-      "packages/nightingale-app-react-native/src/index.ts",
       "packages/nightingale-unit-testing/src/index.ts",
       "packages/nightingale-slack/src/index.ts",
-      "packages/nightingale-react-native-console/src/index.ts",
+      "packages/nightingale-app-react-native/src/index.ts",
       "packages/nightingale-app-console/src/index.ts",
       "packages/nightingale/src/index.ts",
       "packages/nightingale-winston-adapter/src/index.ts",

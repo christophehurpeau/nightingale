@@ -1,8 +1,17 @@
+/* eslint-disable unicorn/prefer-global-this */
+
 import { BrowserConsoleHandler, Level, Logger, configure } from "nightingale";
-import { ReactNativeConsoleHandler } from "nightingale-react-native-console";
 import { Platform } from "react-native";
+import { ReactNativeConsoleHandler } from "./ReactNativeConsoleHandler.native.ts";
+
+export { ReactNativeConsoleHandler } from "./ReactNativeConsoleHandler.native.ts";
 
 export { configure, addConfig, Level } from "nightingale";
+
+interface HermesInternalInterface {
+  hasPromise?: () => boolean;
+  enablePromiseRejectionTracker?: (options: any) => void;
+}
 
 export const appLogger = new Logger("app");
 
@@ -32,13 +41,18 @@ export function listenReactNativeUnhandledErrors(
     "UnhandledErrors",
   ),
 ): void {
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+  const HermesInternal = (global as any).HermesInternal as
+    | HermesInternalInterface
+    | null
+    | undefined;
   // Check if Hermes is available and is being used for promises
   // React Native v0.63 and v0.64 include global.HermesInternal but not 'hasPromise'
   if (
-    globalThis.HermesInternal.hasPromise?.() &&
-    globalThis.HermesInternal.enablePromiseRejectionTracker
+    HermesInternal?.hasPromise?.() &&
+    HermesInternal.enablePromiseRejectionTracker
   ) {
-    globalThis.HermesInternal.enablePromiseRejectionTracker({
+    HermesInternal.enablePromiseRejectionTracker({
       allRejections: true,
       onUnhandled: (id: number, rejection: Error) => {
         logger.error(rejection, {

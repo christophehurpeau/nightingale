@@ -24,6 +24,7 @@
         "nightingale",
         "nightingale-ansi-formatter",
         "nightingale-app-console",
+        "nightingale-app-react-native",
         "nightingale-browser-console",
         "nightingale-browser-console-formatter",
         "nightingale-console",
@@ -34,13 +35,12 @@
         "nightingale-json-formatter",
         "nightingale-markdown-formatter",
         "nightingale-raw-formatter",
-        "nightingale-react-native-console",
         "nightingale-slack",
         "nightingale-string",
         "nightingale-unit-testing",
-        "nightingale-app-react-native",
         "nightingale-console-example",
-        "nightingale-example"
+        "nightingale-example",
+        "nightingale-react-native-console"
       ]
     },
     "renovate": {

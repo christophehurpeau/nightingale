@@ -1,6 +1,6 @@
 import { expect, test } from "vitest";
-import type { StyleToHtmlStyle } from "nightingale";
 import { Level } from "nightingale-levels";
+import type { StyleToHtmlStyle } from "nightingale";
 import { styleToHtmlStyleThemeLight } from "../formatter-utils/index.ts";
 import { BrowserConsoleFormatter, style } from "./BrowserConsoleFormatter.ts";
 

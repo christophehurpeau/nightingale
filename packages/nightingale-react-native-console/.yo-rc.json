@@ -1,8 +1,10 @@
 {
   "pob": {
     "lib": {
-      "documentation": false,
-      "testing": false
+      "testing": {
+        "codecov": true
+      },
+      "documentation": false
     },
     "project": {
       "type": "lib"

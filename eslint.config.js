@@ -5,7 +5,7 @@ export default [
   {
     files: ["**/*.test.ts"],
     settings: {
-      "import/core-modules": ["vitest"],
+      "import-x/core-modules": ["vitest"],
     },
   },
 ];

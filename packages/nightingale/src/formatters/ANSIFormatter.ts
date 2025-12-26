@@ -1,6 +1,6 @@
 import ansi from "ansi-styles";
-import type { NightingaleFormatter } from "nightingale";
 import type { Styles } from "nightingale-types";
+import type { NightingaleFormatter } from "nightingale";
 import {
   formatRecordToString,
   styleToHexColor,

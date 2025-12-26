@@ -5,4 +5,4 @@ export declare class ReactNativeConsoleHandler implements Handler {
     isHandling: IsHandling;
     constructor(minLevel: Level);
 }
-//# sourceMappingURL=index.d.ts.map
+//# sourceMappingURL=ReactNativeConsoleHandler.native.d.ts.map

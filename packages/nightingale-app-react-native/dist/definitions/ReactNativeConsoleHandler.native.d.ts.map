@@ -1,0 +1,1 @@
+{"version":3,"file":"ReactNativeConsoleHandler.native.d.ts","sourceRoot":"","sources":["../../src/ReactNativeConsoleHandler.native.ts"],"names":[],"mappings":"AAGA,OAAO,KAAK,EACV,MAAM,EACN,OAAO,EACP,UAAU,EACV,KAAK,EAGN,MAAM,mBAAmB,CAAC;AA6D3B,qBAAa,yBAA0B,YAAW,OAAO;IACvD,QAAQ,EAAE,KAAK,CAAK;IAEpB,MAAM,EAAE,MAAM,CAAC;IAEf,UAAU,EAAE,UAAU,CAAC;gBAEX,QAAQ,EAAE,KAAK;CAK5B"}

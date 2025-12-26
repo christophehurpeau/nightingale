@@ -1,6 +1,6 @@
 import { ANSIFormatter, Logger, BrowserConsoleHandler, configure, Level } from 'nightingale';
 export { Level, addConfig, configure } from 'nightingale';
-import { Platform } from 'react-native';
+import { Platform } from 'react-native-web';
 import parseErrorStack from 'react-native/Libraries/Core/Devtools/parseErrorStack';
 import symbolicateStackTrace from 'react-native/Libraries/Core/Devtools/symbolicateStackTrace';
 
@@ -91,4 +91,4 @@ function listenReactNativeUnhandledErrors(logger = new Logger(
 }
 
 export { ReactNativeConsoleHandler, ReactNativeConsoleHandlerForPlatform, appLogger, listenReactNativeUnhandledErrors };
-//# sourceMappingURL=index-react-native.es.js.map
+//# sourceMappingURL=index-browser.es.js.map
