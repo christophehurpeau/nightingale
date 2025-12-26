@@ -79,7 +79,7 @@
     "@pob/rollup-esbuild": "7.4.2",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "react-native": "0.80.0",
+    "react-native": "0.83.1",
     "react-native-web": "0.21.2",
     "typescript": "5.9.3"
   }
