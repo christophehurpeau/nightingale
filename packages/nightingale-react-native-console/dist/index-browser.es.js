@@ -12,7 +12,7 @@ const getStackTrace = (e) => {
 };
 function parsedStackToString(stack) {
   return stack.map(
-    (frame) => `  at ${frame.file}${frame.lineNumber ? `:${frame.lineNumber}${frame.column ? `:${frame.column}` : ""}` : ""}${frame.methodName ? ` in ${frame.methodName}` : ""}`
+    (frame) => `  at ${frame.file ?? "unknown"}${frame.lineNumber ? `:${frame.lineNumber}${frame.column ? `:${frame.column}` : ""}` : ""}${frame.methodName ? ` in ${frame.methodName}` : ""}`
   ).join("\n");
 }
 function consoleOutput(param, record) {
