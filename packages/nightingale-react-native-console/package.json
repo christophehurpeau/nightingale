@@ -77,8 +77,8 @@
   },
   "devDependencies": {
     "@pob/rollup-esbuild": "7.4.2",
-    "react": "19.2.0",
-    "react-dom": "19.2.0",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
     "react-native": "0.83.1",
     "react-native-web": "0.21.2",
     "typescript": "5.9.3"
