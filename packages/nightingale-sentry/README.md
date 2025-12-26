@@ -187,9 +187,9 @@ If you see only one version, everything is good ! You can skip this.
 Now add these in you package's devDependencies:
 
 ```
-    "@sentry/core": "5.28.0",
-    "@sentry/node": "5.28.0",
-    "@sentry/types": "5.28.0",
+    "@sentry/core": "10.32.1",
+    "@sentry/node": "10.32.1",
+    "@sentry/types": "10.32.1",
 ```
 
 If you use yarn 1, also add [`yarn-deduplicate`](https://www.npmjs.com/package/yarn-deduplicate), then run:

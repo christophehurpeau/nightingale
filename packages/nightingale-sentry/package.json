@@ -89,7 +89,7 @@
   },
   "devDependencies": {
     "@pob/rollup-esbuild": "7.4.2",
-    "@sentry/core": "10.25.0",
+    "@sentry/core": "10.32.1",
     "typescript": "5.9.3"
   }
 }
