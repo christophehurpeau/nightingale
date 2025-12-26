@@ -34,8 +34,8 @@
   "scripts": {
     "clean": "yarn clean:build",
     "lint": "yarn run lint:eslint",
-    "lint:eslint": "yarn ../.. run eslint --quiet packages/nightingale-browser-console-formatter",
-    "test": "yarn ../../ run test -- packages/nightingale-browser-console-formatter",
+    "lint:eslint": "yarn '../..' run eslint --quiet 'packages/nightingale-browser-console-formatter'",
+    "test": "yarn '../..' run test -- 'packages/nightingale-browser-console-formatter'",
     "watch": "yarn clean:build && rollup --config rollup.config.mjs --watch"
   },
   "pob": {},

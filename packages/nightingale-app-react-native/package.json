@@ -41,7 +41,7 @@
     "clean": "yarn clean:build",
     "clean:build": "pob-esbuild-clean-out dist",
     "lint": "yarn run lint:eslint",
-    "lint:eslint": "yarn ../.. run eslint --quiet packages/nightingale-app-react-native",
+    "lint:eslint": "yarn '../..' run eslint --quiet 'packages/nightingale-app-react-native'",
     "watch": "yarn clean:build && rollup --config rollup.config.mjs --watch"
   },
   "pob": {

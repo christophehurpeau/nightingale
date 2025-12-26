@@ -48,7 +48,7 @@
     "clean": "yarn clean:build",
     "clean:build": "pob-esbuild-clean-out dist",
     "lint": "yarn run lint:eslint",
-    "lint:eslint": "yarn ../.. run eslint --quiet packages/nightingale-winston-adapter",
+    "lint:eslint": "yarn '../..' run eslint --quiet 'packages/nightingale-winston-adapter'",
     "watch": "yarn clean:build && rollup --config rollup.config.mjs --watch"
   },
   "browserslist": {

@@ -6,13 +6,16 @@ on:
       - "renovate/prettier-**"
       - "renovate/major-prettier"
 
+permissions:
+  contents: write
+
 jobs:
   run-prettier:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
-          token: ${{ secrets.GH_TOKEN }}
+          ssh-key: ${{ secrets.PUSH_DEPLOY_KEY }}
 
       - name: Enable Corepack
         run: corepack enable

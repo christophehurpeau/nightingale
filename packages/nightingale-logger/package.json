@@ -47,8 +47,8 @@
     "clean": "yarn clean:build",
     "clean:build": "pob-esbuild-clean-out dist",
     "lint": "yarn run lint:eslint",
-    "lint:eslint": "yarn ../.. run eslint --quiet packages/nightingale-logger",
-    "test": "yarn ../../ run test -- packages/nightingale-logger",
+    "lint:eslint": "yarn '../..' run eslint --quiet 'packages/nightingale-logger'",
+    "test": "yarn '../..' run test -- 'packages/nightingale-logger'",
     "watch": "yarn clean:build && rollup --config rollup.config.mjs --watch"
   },
   "browserslist": {
@@ -81,7 +81,7 @@
   },
   "prettier": "@pob/root/prettier-config",
   "dependencies": {
-    "@types/node": ">=24.10.4",
+    "@types/node": ">=22.0.0",
     "nightingale-levels": "18.0.0",
     "nightingale-types": "18.0.0"
   },

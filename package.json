@@ -8,7 +8,7 @@
   "repository": "https://github.com/christophehurpeau/nightingale.git",
   "homepage": "https://github.com/christophehurpeau/nightingale",
   "type": "module",
-  "packageManager": "yarn@4.11.0",
+  "packageManager": "yarn@4.12.0",
   "engines": {
     "node": ">=22.18.0"
   },
@@ -43,13 +43,13 @@
     "@pob/eslint-config": "62.0.0",
     "@pob/eslint-config-typescript": "62.0.0",
     "@pob/rollup-esbuild": "7.4.2",
-    "@pob/root": "19.8.0",
+    "@pob/root": "20.4.2",
     "@types/node": "24.10.4",
-    "@vitest/coverage-v8": "4.0.16",
+    "@vitest/coverage-v8": "4.0.10",
     "check-package-dependencies": "10.5.0",
     "eslint": "9.39.2",
     "typedoc": "0.28.15",
     "typescript": "5.9.3",
-    "vitest": "4.0.16"
+    "vitest": "4.0.10"
   }
 }

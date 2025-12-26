@@ -47,7 +47,7 @@
     "clean": "yarn clean:build",
     "clean:build": "pob-esbuild-clean-out dist",
     "lint": "yarn run lint:eslint",
-    "lint:eslint": "yarn ../.. run eslint --quiet packages/nightingale-types",
+    "lint:eslint": "yarn '../..' run eslint --quiet 'packages/nightingale-types'",
     "watch": "yarn clean:build && rollup --config rollup.config.mjs --watch"
   },
   "browserslist": {

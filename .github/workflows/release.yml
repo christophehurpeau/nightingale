@@ -13,13 +13,17 @@ on:
         type: boolean
         default: false
 
+permissions:
+  id-token: write # Required for OIDC
+  contents: write
+
 jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
-          token: ${{ secrets.GH_TOKEN }}
+          ssh-key: ${{ secrets.PUSH_DEPLOY_KEY }}
           fetch-depth: 0
           fetch-tags: true
 
@@ -30,6 +34,7 @@ jobs:
         with:
           node-version: 22
           check-latest: true
+          registry-url: "https://registry.npmjs.org"
 
       - name: Check git tags
         if: github.ref == 'refs/heads/main' && !inputs.allow-no-tags
@@ -45,7 +50,7 @@ jobs:
 
       - name: New version (dry run)
         if: github.ref == 'refs/heads/main' && inputs.dry-run
-        run: yarn yarn-version version --dry-run
+        run: yarn run pob-version --dry-run
 
       - name: Configure Git user
         if: github.ref == 'refs/heads/main' && !inputs.dry-run
@@ -56,21 +61,21 @@ jobs:
       - name: New version
         if: github.ref == 'refs/heads/main' && !inputs.dry-run
         run: |
-          yarn yarn-version version --create-release=github  -m 'chore: release %v [skip ci]'
+          yarn run pob-version --create-release=github  -m 'chore: release %v [skip ci]'
         env:
-          HUSKY: 0
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          POB_GIT_HOOKS: 0
           YARN_ENABLE_IMMUTABLE_INSTALLS: false
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Publish to npm
+        if: github.ref == 'refs/heads/main' && !inputs.dry-run
         run: |
-          if [ -z "$NODE_AUTH_TOKEN" ]; then
-            echo "Missing env variable NODE_AUTH_TOKEN"
+          if [ -z "$NPM_AUTH_TOKEN" ]; then
+            echo "Missing env variable NPM_AUTH_TOKEN"
             exit 1
           fi
           echo >> ./.yarnrc.yml
-          echo "npmAuthToken: $NODE_AUTH_TOKEN" >> ./.yarnrc.yml
+          echo "npmAuthToken: $NPM_AUTH_TOKEN" >> ./.yarnrc.yml
           yarn workspaces foreach --all --parallel --no-private npm publish --tolerate-republish
-        if: github.ref == 'refs/heads/main' && !inputs.dry-run
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

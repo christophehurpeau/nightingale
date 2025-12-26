@@ -35,7 +35,7 @@
     "build": "yarn run build:definitions",
     "build:definitions": "tsc --lib esnext --noEmit --skipLibCheck ./lib/index.d.ts",
     "lint": "yarn run lint:eslint",
-    "lint:eslint": "yarn ../.. run eslint --quiet packages/nightingale-level-names"
+    "lint:eslint": "yarn '../..' run eslint --quiet 'packages/nightingale-level-names'"
   },
   "pob": {},
   "prettier": "@pob/root/prettier-config",

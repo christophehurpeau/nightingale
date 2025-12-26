@@ -5,13 +5,16 @@ on:
     branches:
       - "renovate/rollup-**"
 
+permissions:
+  contents: write
+
 jobs:
   run-rollup-build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
-          token: ${{ secrets.GH_TOKEN }}
+          ssh-key: ${{ secrets.PUSH_DEPLOY_KEY }}
 
       - name: Enable Corepack
         run: corepack enable

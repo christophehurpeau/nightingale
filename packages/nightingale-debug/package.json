@@ -33,8 +33,8 @@
   "scripts": {
     "clean": "yarn clean:build",
     "lint": "yarn run lint:eslint",
-    "lint:eslint": "yarn ../.. run eslint --quiet packages/nightingale-debug",
-    "test": "yarn ../../ run test -- packages/nightingale-debug",
+    "lint:eslint": "yarn '../..' run eslint --quiet 'packages/nightingale-debug'",
+    "test": "yarn '../..' run test -- 'packages/nightingale-debug'",
     "watch": "yarn clean:build && rollup --config rollup.config.mjs --watch"
   },
   "pob": {},
