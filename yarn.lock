@@ -2317,7 +2317,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:>=22.0.0":
+"@types/node@npm:*, @types/node@npm:>=22.19.3":
   version: 25.0.3
   resolution: "@types/node@npm:25.0.3"
   dependencies:
@@ -6879,7 +6879,7 @@ __metadata:
   resolution: "nightingale-app-console@workspace:packages/nightingale-app-console"
   dependencies:
     "@pob/rollup-esbuild": "npm:7.4.2"
-    "@types/node": "npm:>=22.0.0"
+    "@types/node": "npm:>=22.19.3"
     nightingale: "npm:18.1.0"
     typescript: "npm:5.9.3"
   languageName: unknown
@@ -7015,7 +7015,7 @@ __metadata:
   resolution: "nightingale-logger@workspace:packages/nightingale-logger"
   dependencies:
     "@pob/rollup-esbuild": "npm:7.4.2"
-    "@types/node": "npm:>=22.0.0"
+    "@types/node": "npm:>=22.19.3"
     nightingale-levels: "npm:18.0.0"
     nightingale-types: "npm:18.0.0"
     typescript: "npm:5.9.3"
@@ -7124,7 +7124,7 @@ __metadata:
   resolution: "nightingale-unit-testing@workspace:packages/nightingale-unit-testing"
   dependencies:
     "@pob/rollup-esbuild": "npm:7.4.2"
-    "@types/node": "npm:>=22.0.0"
+    "@types/node": "npm:>=22.19.3"
     nightingale: "npm:18.1.0"
     typescript: "npm:5.9.3"
   languageName: unknown
@@ -7135,7 +7135,7 @@ __metadata:
   resolution: "nightingale-web-processor@workspace:packages/nightingale-web-processor"
   dependencies:
     "@pob/rollup-esbuild": "npm:7.4.2"
-    "@types/node": "npm:>=22.0.0"
+    "@types/node": "npm:>=22.19.3"
     nightingale-types: "npm:18.0.0"
     typescript: "npm:5.9.3"
   languageName: unknown
@@ -7157,7 +7157,7 @@ __metadata:
   resolution: "nightingale@workspace:packages/nightingale"
   dependencies:
     "@pob/rollup-esbuild": "npm:7.4.2"
-    "@types/node": "npm:>=22.0.0"
+    "@types/node": "npm:>=22.19.3"
     ansi-styles: "npm:^6.2.3"
     nightingale-levels: "npm:18.0.0"
     nightingale-logger: "npm:18.1.0"
