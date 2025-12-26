@@ -33,7 +33,7 @@ function parsedStackToString(stack: StackFrame[]): string {
   return stack
     .map(
       (frame) =>
-        `  at ${frame.file}${
+        `  at ${frame.file ?? "unknown"}${
           frame.lineNumber
             ? `:${frame.lineNumber}${frame.column ? `:${frame.column}` : ""}`
             : ""
