@@ -20,13 +20,13 @@ const getStackTrace = (e: Error): any => {
     // RN version >= 0.63
     if (Platform.constants.reactNativeVersion.minor >= 64) {
       // RN version >= 0.64 -> Stacktrace as string
-      return parseErrorStack(e.stack as unknown as any);
+      return parseErrorStack(e.stack);
     }
     // RN version == 0.63 -> Stacktrace as string
-    else return parseErrorStack(e);
+    else return parseErrorStack(e as unknown as string);
   }
   // RN version < 0.63 -> Stacktrace as string
-  else return parseErrorStack(e);
+  else return parseErrorStack(e as unknown as string);
 };
 
 function parsedStackToString(stack: StackFrame[]): string {
