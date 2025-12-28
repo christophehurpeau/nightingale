@@ -1,7 +1,7 @@
-import pobTypescriptConfig from "@pob/eslint-config-typescript";
+import pobConfig from "@pob/eslint-config";
 
 export default [
-  ...pobTypescriptConfig(import.meta.url).configs.node,
+  ...pobConfig(import.meta.url).configs.node,
   {
     files: ["**/*.test.ts"],
     settings: {

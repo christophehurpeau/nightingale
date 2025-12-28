@@ -1451,43 +1451,34 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pob/eslint-config-typescript@npm:64.2.0":
-  version: 64.2.0
-  resolution: "@pob/eslint-config-typescript@npm:64.2.0"
-  dependencies:
-    "@pob/eslint-config": "npm:64.2.0"
-    "@typescript-eslint/eslint-plugin": "npm:^8.43.0"
-    "@typescript-eslint/parser": "npm:^8.43.0"
-    eslint-plugin-import-x: "npm:^4.16.1"
-    typescript-eslint: "npm:^8.43.0"
-  peerDependencies:
-    eslint: ^9.39.1
-    typescript: ">=5.0.0 <6.0.0"
-  checksum: 10c0/ebb63464e6cf54ccbcf4c9c4f14e8d6bc28c14e62491c94c8153e592a302d5fea14a0cb57182ff9d36ff0692286a35124080180dbb9ac4df2bba3e783e47c91b
-  languageName: node
-  linkType: hard
-
-"@pob/eslint-config@npm:64.2.0":
-  version: 64.2.0
-  resolution: "@pob/eslint-config@npm:64.2.0"
+"@pob/eslint-config@npm:65.0.2":
+  version: 65.0.2
+  resolution: "@pob/eslint-config@npm:65.0.2"
   dependencies:
     "@eslint/js": "npm:^9.39.1"
     "@eslint/json": "npm:^0.14.0"
-    "@pob/eslint-plugin": "npm:64.2.0"
+    "@pob/eslint-plugin": "npm:65.0.1"
+    "@typescript-eslint/eslint-plugin": "npm:^8.43.0"
+    "@typescript-eslint/parser": "npm:^8.43.0"
     confusing-browser-globals: "npm:^1.0.11"
     eslint-plugin-import-x: "npm:^4.16.1"
     eslint-plugin-n: "npm:^17.23.1"
     eslint-plugin-regexp: "npm:^2.10.0"
     eslint-plugin-unicorn: "npm:^62.0.0"
+    typescript-eslint: "npm:^8.43.0"
   peerDependencies:
     eslint: ^9.39.1
-  checksum: 10c0/12948f52c49c415127ad22368e0c2830ef0f35613225d783cb0ded06521139be56d35ca8534f4a34978419b7385ae364088633c283da0f530695513bfa73e861
+    typescript: ">=5.0.0 <6.0.0"
+  peerDependenciesMeta:
+    typescript:
+      optional: true
+  checksum: 10c0/9f3e19cd3c44ab35d8cae54a71c0b9830eef33dfda549115f858ae03cb0767bec312c31b76b12f207e62f39995f4ecfe7ee53cc3ec058477e81bf07876a078fa
   languageName: node
   linkType: hard
 
-"@pob/eslint-plugin@npm:64.2.0":
-  version: 64.2.0
-  resolution: "@pob/eslint-plugin@npm:64.2.0"
+"@pob/eslint-plugin@npm:65.0.1":
+  version: 65.0.1
+  resolution: "@pob/eslint-plugin@npm:65.0.1"
   dependencies:
     "@typescript-eslint/utils": "npm:8.43.0"
     eslint-plugin-react: "npm:^7.37.5"
@@ -1497,7 +1488,7 @@ __metadata:
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 10c0/83af9609c327b7d3a33e0146ae0f64d4df1272cfbaeb7a3089d91bc1735b947fa6b4b761bba5af30261f0f4a830ba052937502c1b3f0f4e5400c7a47fda19eb3
+  checksum: 10c0/3ae2c12ae8cdf42dd7183bbe330082e9ea02099d281aac3530453355f33b43896656ff2da62587d93a500bfe5d8e6c1a428319c7bdfd625f4a3d0f9ecafc8a13
   languageName: node
   linkType: hard
 
@@ -6929,8 +6920,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-monorepo@workspace:."
   dependencies:
-    "@pob/eslint-config": "npm:64.2.0"
-    "@pob/eslint-config-typescript": "npm:64.2.0"
+    "@pob/eslint-config": "npm:65.0.2"
     "@pob/rollup-esbuild": "npm:7.4.2"
     "@pob/root": "npm:20.4.2"
     "@types/node": "npm:24.10.4"

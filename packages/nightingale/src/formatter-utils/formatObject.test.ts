@@ -163,7 +163,7 @@ test("date", () => {
 });
 
 test("function", () => {
-  const fn = () => {};
+  const fn = (): void => {};
   expect(formatObject({ a: fn }, styleFn)).toBe(
     "{ [styles:dim,bold]a:[/styles] [styles:blue][Function: fn][/styles] }",
   );
