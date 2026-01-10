@@ -1451,9 +1451,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pob/eslint-config@npm:65.0.2":
-  version: 65.0.2
-  resolution: "@pob/eslint-config@npm:65.0.2"
+"@pob/eslint-config@npm:65.0.3":
+  version: 65.0.3
+  resolution: "@pob/eslint-config@npm:65.0.3"
   dependencies:
     "@eslint/js": "npm:^9.39.1"
     "@eslint/json": "npm:^0.14.0"
@@ -1472,7 +1472,7 @@ __metadata:
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 10c0/9f3e19cd3c44ab35d8cae54a71c0b9830eef33dfda549115f858ae03cb0767bec312c31b76b12f207e62f39995f4ecfe7ee53cc3ec058477e81bf07876a078fa
+  checksum: 10c0/651659c89d613425ef3ad3453038f5496a9e2f24c7ab7a7cdf22cfd829911e05a3337bf4c5c1b058c872275afc0a7e6338aa2404fc841bff655faf87d27038f5
   languageName: node
   linkType: hard
 
@@ -6920,7 +6920,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-monorepo@workspace:."
   dependencies:
-    "@pob/eslint-config": "npm:65.0.2"
+    "@pob/eslint-config": "npm:65.0.3"
     "@pob/rollup-esbuild": "npm:7.4.2"
     "@pob/root": "npm:20.4.2"
     "@types/node": "npm:24.10.4"
