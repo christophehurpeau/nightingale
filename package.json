@@ -40,7 +40,7 @@
   },
   "prettier": "@pob/root/prettier-config",
   "devDependencies": {
-    "@pob/eslint-config": "65.0.3",
+    "@pob/eslint-config": "65.0.5",
     "@pob/rollup-esbuild": "7.4.2",
     "@pob/root": "20.4.2",
     "@types/node": "24.10.4",
