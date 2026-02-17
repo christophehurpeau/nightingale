@@ -81,7 +81,7 @@
   },
   "prettier": "@pob/root/prettier-config",
   "peerDependencies": {
-    "@sentry/core": ">=10.0.0"
+    "@sentry/core": ">=10.39.0"
   },
   "dependencies": {
     "nightingale-levels": "18.0.0",
@@ -89,7 +89,7 @@
   },
   "devDependencies": {
     "@pob/rollup-esbuild": "7.4.2",
-    "@sentry/core": "10.32.1",
+    "@sentry/core": "10.39.0",
     "typescript": "5.9.3"
   }
 }
