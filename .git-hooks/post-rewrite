@@ -1,4 +1,9 @@
-if [ -n "$(git diff HEAD@{1}..HEAD@{0} -- yarn.lock)" ]; then
+#!/usr/bin/env sh
+[ "$POB_GIT_HOOKS" = "2" ] && set -x
+[ "$POB_GIT_HOOKS" = "0" ] && exit 0
+[ "$HUSKY" = "0" ] && exit 0
+
+if [ -n "$(git diff HEAD@{1}..HEAD@{0} -- yarn.lock)" ] | [ "$1" = "rebase" ]; then
   yarn config set logFilters --json '[
     {"code": "YN0002","level": "discard"},
     {"code": "YN0007","level": "discard"},
