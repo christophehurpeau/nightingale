@@ -1506,14 +1506,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pob/pretty-pkg@npm:13.2.2":
-  version: 13.2.2
-  resolution: "@pob/pretty-pkg@npm:13.2.2"
+"@pob/pretty-pkg@npm:13.2.3":
+  version: 13.2.3
+  resolution: "@pob/pretty-pkg@npm:13.2.3"
   dependencies:
-    "@pob/sort-pkg": "npm:12.1.1"
+    "@pob/sort-pkg": "npm:12.1.2"
   bin:
     pretty-pkg: ./bin/pretty-pkg.js
-  checksum: 10c0/84858d3ef9491946b001cfdd0cd5cd2aae52433539f894ef7006d4dae5605f5e388ddbbfe497678fb2d8fc436ad6d3e1f0e74c7c73cd481f9ad08b08efc54819
+  checksum: 10c0/4544f798d939e9ac831d178a6e6ea7bd5104eb748d119cd6cb9752f776a3900523e85b42e4fb39d23a21b23fef358ec6798e15d98af3a9261b8be5d3f3029e18
   languageName: node
   linkType: hard
 
@@ -1554,21 +1554,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pob/root@npm:22.1.0":
-  version: 22.1.0
-  resolution: "@pob/root@npm:22.1.0"
+"@pob/root@npm:22.2.0":
+  version: 22.2.0
+  resolution: "@pob/root@npm:22.2.0"
   dependencies:
     "@commitlint/format": "npm:20.4.0"
     "@commitlint/lint": "npm:20.4.2"
     "@commitlint/types": "npm:20.4.0"
-    "@pob/pretty-pkg": "npm:13.2.2"
-    "@pob/version": "npm:2.1.0"
+    "@pob/pretty-pkg": "npm:13.2.3"
+    "@pob/version": "npm:2.2.0"
     conventional-changelog-conventionalcommits: "npm:^9.1.0"
     conventional-changelog-writer: "npm:^8.2.0"
     conventional-commits-parser: "npm:^6.2.1"
     json5: "npm:^2.2.3"
     lint-staged: "npm:16.2.7"
-    pob-dependencies: "npm:22.1.0"
+    pob-dependencies: "npm:22.2.0"
     prettier: "npm:3.8.1"
     semver: "npm:^7.7.3"
   bin:
@@ -1581,31 +1581,31 @@ __metadata:
     pretty-pkg: ./bin/pretty-pkg.js
     repository-check-dirty: ./bin/repository-check-dirty.js
     yarn-version: ./bin/pob-version.js
-  checksum: 10c0/41ae1e6f19a2f620ebb7ace6ef1afc3cfbc2e979e19199bf664f327901ed651ff4055e6cb645d979b1ccd2f9c473c3da8011dad6b5c06e2849d0eb2d91db864c
+  checksum: 10c0/2f3713e85fefe36ae1ae7cb9aab53c370d07cb01df6037d053e728c974748d769cb11b3ceb0735855544321901c1ebeea5ea46491dda58dec1023aea9de78fe9
   languageName: node
   linkType: hard
 
-"@pob/sort-object@npm:10.1.1":
-  version: 10.1.1
-  resolution: "@pob/sort-object@npm:10.1.1"
-  checksum: 10c0/04d84a092332d2da57a215e6a76fd12f7dbfdfc740f5887a758fb69f01c1d6896993589849b1804e33135c38dbcd470bcc92684d928f91df4c37d8c0786ad451
+"@pob/sort-object@npm:10.1.2":
+  version: 10.1.2
+  resolution: "@pob/sort-object@npm:10.1.2"
+  checksum: 10c0/122542b5589c9c1e1bce5ae37a6d89315e9f50cd18be610f4d1239c3b5c1a573be54421c9fb49e8c9d7edb73f1fc5f5e6e18e58a3608da67088fa6e44d25ffaf
   languageName: node
   linkType: hard
 
-"@pob/sort-pkg@npm:12.1.1":
-  version: 12.1.1
-  resolution: "@pob/sort-pkg@npm:12.1.1"
+"@pob/sort-pkg@npm:12.1.2":
+  version: 12.1.2
+  resolution: "@pob/sort-pkg@npm:12.1.2"
   dependencies:
-    "@pob/sort-object": "npm:10.1.1"
-  checksum: 10c0/a5734a0d333edd53deb06f34dd7b6c47c723ed8d3351dd219c8fc4a8094b79baed683b87c25d48423c7144960ad59a1aea4fa7d7b2fed37a8c487f94d0b0390e
+    "@pob/sort-object": "npm:10.1.2"
+  checksum: 10c0/853198093c406b744861c933a2a5d03f8f42662530fd9b806ee0ff26cb87755d1a4225a4b151538ad69d5b89871070b2b540968f8f1c536332aba88ca017a05e
   languageName: node
   linkType: hard
 
-"@pob/version@npm:2.1.0":
-  version: 2.1.0
-  resolution: "@pob/version@npm:2.1.0"
+"@pob/version@npm:2.2.0":
+  version: 2.2.0
+  resolution: "@pob/version@npm:2.2.0"
   dependencies:
-    commander: "npm:14.0.2"
+    commander: "npm:14.0.3"
     conventional-changelog-conventionalcommits: "npm:9.1.0"
     conventional-changelog-preset-loader: "npm:5.0.0"
     conventional-changelog-writer: "npm:8.2.0"
@@ -1614,7 +1614,7 @@ __metadata:
     semver: "npm:7.7.4"
   bin:
     pob-version: ./dist/index-node.mjs
-  checksum: 10c0/a9edc98500aa85ca11c3bf7781f47dac1ad90d56208e39fb17316a330bdfca256571bf5e02bdd5edd5902b973d26e704f42741488dd6c0db162568701eeff90e
+  checksum: 10c0/2adb92b565a72f319393063e79154bfb6524434feea1fbeba43ca03f2caa05fe70606d7f484dd82cc11c2516cb12c285c19dc07afc5b2c9cd2a297f71f025d5c
   languageName: node
   linkType: hard
 
@@ -3552,10 +3552,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"commander@npm:14.0.2, commander@npm:^14.0.2":
-  version: 14.0.2
-  resolution: "commander@npm:14.0.2"
-  checksum: 10c0/245abd1349dbad5414cb6517b7b5c584895c02c4f7836ff5395f301192b8566f9796c82d7bd6c92d07eba8775fe4df86602fca5d86d8d10bcc2aded1e21c2aeb
+"commander@npm:14.0.3, commander@npm:^14.0.2":
+  version: 14.0.3
+  resolution: "commander@npm:14.0.3"
+  checksum: 10c0/755652564bbf56ff2ff083313912b326450d3f8d8c85f4b71416539c9a05c3c67dbd206821ca72635bf6b160e2afdefcb458e86b317827d5cb333b69ce7f1a24
   languageName: node
   linkType: hard
 
@@ -6788,7 +6788,7 @@ __metadata:
   dependencies:
     "@pob/eslint-config": "npm:65.2.0"
     "@pob/rollup-esbuild": "npm:8.1.1"
-    "@pob/root": "npm:22.1.0"
+    "@pob/root": "npm:22.2.0"
     "@types/node": "npm:24.10.4"
     "@vitest/coverage-v8": "npm:4.0.18"
     check-package-dependencies: "npm:10.5.0"
@@ -7313,10 +7313,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pob-dependencies@npm:22.1.0":
-  version: 22.1.0
-  resolution: "pob-dependencies@npm:22.1.0"
-  checksum: 10c0/aeb9a929f50f03d33d01b063a07b9f2f5d55741597f93f7d4ea20c2d8d9f9fb4fca05051f8f30aa99d55cc1a4b9dc874fc5faaf4542691f12774021f59603c30
+"pob-dependencies@npm:22.2.0":
+  version: 22.2.0
+  resolution: "pob-dependencies@npm:22.2.0"
+  checksum: 10c0/269f735a99072f2637ffecd759070be8039d04943411e455398074f3dff9a56742d0fd20992adf13e3e58eba7f0c0eecd207bf3b7f8d6c45bd818d8301b8c7a1
   languageName: node
   linkType: hard
 
