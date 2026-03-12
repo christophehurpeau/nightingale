@@ -1517,11 +1517,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pob/rollup-esbuild@npm:8.1.0":
-  version: 8.1.0
-  resolution: "@pob/rollup-esbuild@npm:8.1.0"
+"@pob/rollup-esbuild@npm:8.1.1":
+  version: 8.1.1
+  resolution: "@pob/rollup-esbuild@npm:8.1.1"
   dependencies:
-    "@pob/rollup": "npm:7.3.3"
+    "@pob/rollup": "npm:7.3.4"
     "@rollup/plugin-node-resolve": "npm:16.0.3"
     "@rollup/plugin-replace": "npm:6.0.3"
     "@rollup/plugin-run": "npm:3.1.0"
@@ -1538,19 +1538,19 @@ __metadata:
   bin:
     pob-esbuild-clean-out: ./bin/pob-esbuild-clean-out.js
     rollup: ./bin/rollup.cjs
-  checksum: 10c0/69e1a949dafd2b5b01207104b839f81df90ea5d6a54f5411adb663fffb850f50993aecf89f70e1f8579d0220659b0380b06a8e3e61bc3203b6771532b64b912f
+  checksum: 10c0/648a614f725b586b6a3d0b4d6d6f13ccd9940754b2549d0583445b5b8ec027b805b1ec941f60c8d1e68bafb9b27f3c4d735784b2fc809fd262d39b43ddaa3def
   languageName: node
   linkType: hard
 
-"@pob/rollup@npm:7.3.3":
-  version: 7.3.3
-  resolution: "@pob/rollup@npm:7.3.3"
+"@pob/rollup@npm:7.3.4":
+  version: 7.3.4
+  resolution: "@pob/rollup@npm:7.3.4"
   dependencies:
     rollup: "npm:4.59.0"
   bin:
     pob-rollup-clean-out: ./bin/pob-rollup-clean-out.js
     rollup: ./bin/rollup.cjs
-  checksum: 10c0/5c884762b2a85e62786779de86dbce64fb0ddf4cd6343170380ee814b7ca61f235c29a723853569a09a9fb1406e0b6acbd47356dd7a3814fc55980f10c5dada7
+  checksum: 10c0/c45d47dcdba6aa00c615769637702eb55c0ba6b328bcf62fb4516c9120040245470abeb2906222504943df7a8bb951e04ad75db19032fe55a8ce908552b8f39f
   languageName: node
   linkType: hard
 
@@ -6630,7 +6630,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-app-console@workspace:packages/nightingale-app-console"
   dependencies:
-    "@pob/rollup-esbuild": "npm:8.1.0"
+    "@pob/rollup-esbuild": "npm:8.1.1"
     "@types/node": "npm:>=22.0.0"
     nightingale: "npm:18.1.0"
     typescript: "npm:5.9.3"
@@ -6641,7 +6641,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-app-react-native@workspace:packages/nightingale-app-react-native"
   dependencies:
-    "@pob/rollup-esbuild": "npm:8.1.0"
+    "@pob/rollup-esbuild": "npm:8.1.1"
     nightingale: "npm:18.1.0"
     react-native: "npm:0.83.1"
     typescript: "npm:5.9.3"
@@ -6674,7 +6674,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-console-example@workspace:packages/nightingale-console-example"
   dependencies:
-    "@pob/rollup-esbuild": "npm:8.1.0"
+    "@pob/rollup-esbuild": "npm:8.1.1"
     "@sentry/core": "npm:10.32.1"
     "@sentry/node": "npm:10.32.1"
     nightingale: "npm:18.1.0"
@@ -6712,7 +6712,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-example@workspace:packages/nightingale-example"
   dependencies:
-    "@pob/rollup-esbuild": "npm:8.1.0"
+    "@pob/rollup-esbuild": "npm:8.1.1"
     nightingale: "npm:18.1.0"
     nightingale-slack: "npm:18.1.0"
     nightingale-types: "npm:18.0.0"
@@ -6757,7 +6757,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-levels@workspace:packages/nightingale-levels"
   dependencies:
-    "@pob/rollup-esbuild": "npm:8.1.0"
+    "@pob/rollup-esbuild": "npm:8.1.1"
     typescript: "npm:5.9.3"
   languageName: unknown
   linkType: soft
@@ -6766,7 +6766,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-logger@workspace:packages/nightingale-logger"
   dependencies:
-    "@pob/rollup-esbuild": "npm:8.1.0"
+    "@pob/rollup-esbuild": "npm:8.1.1"
     "@types/node": "npm:>=22.0.0"
     nightingale-levels: "npm:18.0.0"
     nightingale-types: "npm:18.0.0"
@@ -6787,7 +6787,7 @@ __metadata:
   resolution: "nightingale-monorepo@workspace:."
   dependencies:
     "@pob/eslint-config": "npm:65.2.0"
-    "@pob/rollup-esbuild": "npm:8.1.0"
+    "@pob/rollup-esbuild": "npm:8.1.1"
     "@pob/root": "npm:22.1.0"
     "@types/node": "npm:24.10.4"
     "@vitest/coverage-v8": "npm:4.0.18"
@@ -6823,7 +6823,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-sentry@workspace:packages/nightingale-sentry"
   dependencies:
-    "@pob/rollup-esbuild": "npm:8.1.0"
+    "@pob/rollup-esbuild": "npm:8.1.1"
     "@sentry/core": "npm:10.32.1"
     nightingale-levels: "npm:18.0.0"
     nightingale-types: "npm:18.0.0"
@@ -6837,7 +6837,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-slack@workspace:packages/nightingale-slack"
   dependencies:
-    "@pob/rollup-esbuild": "npm:8.1.0"
+    "@pob/rollup-esbuild": "npm:8.1.1"
     "@types/node": "npm:24.10.4"
     nightingale: "npm:18.1.0"
     nightingale-types: "npm:18.0.0"
@@ -6857,7 +6857,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-types@workspace:packages/nightingale-types"
   dependencies:
-    "@pob/rollup-esbuild": "npm:8.1.0"
+    "@pob/rollup-esbuild": "npm:8.1.1"
     nightingale-levels: "npm:18.0.0"
     typescript: "npm:5.9.3"
   languageName: unknown
@@ -6867,7 +6867,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-unit-testing@workspace:packages/nightingale-unit-testing"
   dependencies:
-    "@pob/rollup-esbuild": "npm:8.1.0"
+    "@pob/rollup-esbuild": "npm:8.1.1"
     "@types/node": "npm:>=22.0.0"
     nightingale: "npm:18.1.0"
     typescript: "npm:5.9.3"
@@ -6878,7 +6878,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-web-processor@workspace:packages/nightingale-web-processor"
   dependencies:
-    "@pob/rollup-esbuild": "npm:8.1.0"
+    "@pob/rollup-esbuild": "npm:8.1.1"
     "@types/node": "npm:>=22.0.0"
     nightingale-types: "npm:18.0.0"
     typescript: "npm:5.9.3"
@@ -6889,7 +6889,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale-winston-adapter@workspace:packages/nightingale-winston-adapter"
   dependencies:
-    "@pob/rollup-esbuild": "npm:8.1.0"
+    "@pob/rollup-esbuild": "npm:8.1.1"
     nightingale-level-names: "npm:18.0.0"
     nightingale-types: "npm:18.0.0"
     typescript: "npm:5.9.3"
@@ -6900,7 +6900,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nightingale@workspace:packages/nightingale"
   dependencies:
-    "@pob/rollup-esbuild": "npm:8.1.0"
+    "@pob/rollup-esbuild": "npm:8.1.1"
     "@types/node": "npm:>=22.0.0"
     ansi-styles: "npm:^6.2.3"
     nightingale-levels: "npm:18.0.0"
