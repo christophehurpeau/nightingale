@@ -41,7 +41,7 @@
   "prettier": "@pob/root/prettier-config",
   "devDependencies": {
     "@pob/eslint-config": "65.2.0",
-    "@pob/rollup-esbuild": "8.1.0",
+    "@pob/rollup-esbuild": "8.1.1",
     "@pob/root": "22.1.0",
     "@types/node": "24.10.4",
     "@vitest/coverage-v8": "4.0.18",
