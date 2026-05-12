@@ -105,7 +105,7 @@ jobs:
           CI: true
 
       - name: Send results to codecov
-        uses: codecov/codecov-action@v5
+        uses: codecov/codecov-action@v6
         if: matrix.node-version == 22 && github.actor != 'dependabot[bot]'
         with:
           fail_ci_if_error: true
