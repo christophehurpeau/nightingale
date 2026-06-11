@@ -87,6 +87,6 @@
   },
   "devDependencies": {
     "@pob/rollup-esbuild": "8.1.2",
-    "typescript": "5.9.3"
+    "typescript": "6.0.3"
   }
 }
