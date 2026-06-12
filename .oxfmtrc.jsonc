@@ -1,0 +1,13 @@
+{
+  "$schema": "./node_modules/oxfmt/configuration_schema.json",
+  "printWidth": 80,
+  "sortPackageJson": { "sortScripts": true },
+  "ignorePatterns": [
+    "/docs",
+    "/.yarnrc.yml",
+    "/.yarn/**/*",
+    "/packages/*/dist",
+    "/packages/*/build",
+    "CHANGELOG.md",
+  ],
+}

@@ -15,8 +15,7 @@ jobs:
 
       - uses: actions/setup-node@v6
         with:
-          node-version: 22
-          check-latest: true
+          node-version: 24
 
       - name: Install Dependencies
         run: yarn install --immutable
@@ -35,8 +34,7 @@ jobs:
 
       - uses: actions/setup-node@v6
         with:
-          node-version: 22
-          check-latest: true
+          node-version: 24
 
       - name: Install Dependencies
         run: yarn install --immutable
@@ -45,7 +43,7 @@ jobs:
         run: yarn run build
 
       - name: Check nothing was forgotten before commit
-        run: yarn run repository-check-dirty
+        run: yarn repository-check-dirty
 
   lint:
     runs-on: ubuntu-latest
@@ -58,14 +56,13 @@ jobs:
 
       - uses: actions/setup-node@v6
         with:
-          node-version: 22
-          check-latest: true
+          node-version: 24
 
       - name: Install Dependencies
         run: yarn install --immutable
 
-      - name: Prettier
-        run: yarn run lint:prettier
+      - name: Format
+        run: yarn run format:check
 
       - name: Typescript
         run: yarn run tsc
@@ -78,7 +75,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [22]
+        node-version: [22, 24]
 
     steps:
       - uses: actions/checkout@v6
@@ -89,24 +86,23 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: ${{ matrix.node-version }}
-          check-latest: true
 
       - name: Install Dependencies
         run: yarn install --immutable
 
       - name: Test
         run: yarn run test
-        if: matrix.node-version != 22
+        if: matrix.node-version != 24
 
       - name: Generate Test Coverage
         run: yarn run test:coverage:json
-        if: matrix.node-version == 22
+        if: matrix.node-version == 24
         env:
           CI: true
 
       - name: Send results to codecov
-        uses: codecov/codecov-action@v5
-        if: matrix.node-version == 22 && github.actor != 'dependabot[bot]'
+        uses: codecov/codecov-action@v6
+        if: matrix.node-version == 24 && github.actor != 'dependabot[bot]'
         with:
           fail_ci_if_error: true
           token: ${{ secrets.CODECOV_TOKEN }}

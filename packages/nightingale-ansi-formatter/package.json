@@ -6,18 +6,21 @@
     "nightingale",
     "nightingale-formatter"
   ],
-  "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
+  "homepage": "https://github.com/christophehurpeau/nightingale",
+  "bugs": {
+    "url": "https://github.com/christophehurpeau/nightingale/issues"
+  },
   "license": "ISC",
+  "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
   "repository": {
     "type": "git",
     "url": "https://github.com/christophehurpeau/nightingale.git",
     "directory": "packages/nightingale-ansi-formatter"
   },
-  "homepage": "https://github.com/christophehurpeau/nightingale",
+  "files": [
+    "lib"
+  ],
   "type": "module",
-  "engines": {
-    "node": ">=22.18.0"
-  },
   "sideEffects": false,
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
@@ -28,9 +31,6 @@
       "default": "./lib/index.js"
     }
   },
-  "files": [
-    "lib"
-  ],
   "scripts": {
     "clean": "yarn clean:build",
     "lint": "yarn run lint:eslint",
@@ -38,9 +38,11 @@
     "test": "yarn '../..' run test -- 'packages/nightingale-ansi-formatter'",
     "watch": "yarn clean:build && rollup --config rollup.config.mjs --watch"
   },
-  "pob": {},
-  "prettier": "@pob/root/prettier-config",
   "dependencies": {
     "nightingale": "18.1.0"
-  }
+  },
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "pob": {}
 }
