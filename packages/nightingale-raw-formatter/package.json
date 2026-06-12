@@ -1,6 +1,6 @@
 {
   "name": "nightingale-raw-formatter",
-  "version": "18.1.0",
+  "version": "18.2.0",
   "description": "Deprecated: use RawFormatter from nightingale",
   "keywords": [
     "nightingale",
@@ -39,11 +39,11 @@
     "watch": "yarn clean:build && rollup --config rollup.config.mjs --watch"
   },
   "dependencies": {
-    "nightingale": "18.1.0",
-    "nightingale-types": "18.0.0"
+    "nightingale": "18.2.0",
+    "nightingale-types": "18.2.0"
   },
   "devDependencies": {
-    "nightingale-levels": "18.0.0"
+    "nightingale-levels": "18.2.0"
   },
   "engines": {
     "node": ">=22.18.0"

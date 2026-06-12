@@ -1,6 +1,6 @@
 {
   "name": "nightingale-web-processor",
-  "version": "18.1.0",
+  "version": "18.2.0",
   "description": "Nightingale web processor",
   "keywords": [
     "nightingale",
@@ -46,7 +46,7 @@
   },
   "dependencies": {
     "@types/node": ">=22.0.0",
-    "nightingale-types": "18.0.0"
+    "nightingale-types": "18.2.0"
   },
   "devDependencies": {
     "@pob/rollup-esbuild": "9.1.1",

@@ -1,6 +1,6 @@
 {
   "name": "nightingale-unit-testing",
-  "version": "18.1.0",
+  "version": "18.2.0",
   "description": "nightingale default config for unit testing",
   "keywords": [],
   "homepage": "https://github.com/christophehurpeau/nightingale",
@@ -43,7 +43,7 @@
   },
   "dependencies": {
     "@types/node": ">=22.0.0",
-    "nightingale": "18.1.0"
+    "nightingale": "18.2.0"
   },
   "devDependencies": {
     "@pob/rollup-esbuild": "9.1.1",

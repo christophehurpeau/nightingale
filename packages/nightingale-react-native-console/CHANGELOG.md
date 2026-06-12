@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [18.2.0](https://github.com/christophehurpeau/nightingale/compare/v18.1.0...v18.2.0) (2026-06-12)
+
+### Features
+
+* update nightingale-app-react-native package and deprecate nightingale-react-native-console
+
+### Bug Fixes
+
+* cast error stack to string for compatibility with React Native versions
+
+Version bump for dependency: nightingale-app-react-native
+
+
 ## [18.1.0](https://github.com/christophehurpeau/nightingale/compare/v18.0.0...v18.1.0) (2025-11-18)
 
 Version bump for dependency: nightingale

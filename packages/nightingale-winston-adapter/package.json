@@ -1,6 +1,6 @@
 {
   "name": "nightingale-winston-adapter",
-  "version": "18.0.0",
+  "version": "18.2.0",
   "description": "Winston adapter handler for nightingale",
   "keywords": [
     "nightingale",
@@ -53,8 +53,8 @@
     "watch": "yarn clean:build && rollup --config rollup.config.mjs --watch"
   },
   "dependencies": {
-    "nightingale-level-names": "18.0.0",
-    "nightingale-types": "18.0.0"
+    "nightingale-level-names": "18.2.0",
+    "nightingale-types": "18.2.0"
   },
   "devDependencies": {
     "@pob/rollup-esbuild": "9.1.1",

@@ -3,6 +3,11 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [18.2.0](https://github.com/christophehurpeau/nightingale/compare/v18.1.0...v18.2.0) (2026-06-12)
+
+Note: no notable changes
+
+
 ## [18.0.0](https://github.com/christophehurpeau/nightingale/compare/v17.0.1...v18.0.0) (2025-11-15)
 
 ### ⚠ BREAKING CHANGES

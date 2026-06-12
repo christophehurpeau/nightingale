@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [18.2.0](https://github.com/christophehurpeau/nightingale/compare/v18.1.0...v18.2.0) (2026-06-12)
+
+### Features
+
+* **deps:** update sentry-javascript monorepo to >=10.57.0 ([#1276](https://github.com/christophehurpeau/nightingale/issues/1276))
+* update nightingale-app-react-native package and deprecate nightingale-react-native-console
+
+### Bug Fixes
+
+* cast error stack to string for compatibility with React Native versions
+* cleanup LoggerCLIString
+* **deps:** update dependency @types/node to >=22.19.1 ([#1280](https://github.com/christophehurpeau/nightingale/issues/1280))
+* **deps:** update dependency @types/node to v24.10.4 ([#1269](https://github.com/christophehurpeau/nightingale/issues/1269))
+
 ## [18.1.0](https://github.com/christophehurpeau/nightingale/compare/v18.0.0...v18.1.0) (2025-11-18)
 
 ### Features

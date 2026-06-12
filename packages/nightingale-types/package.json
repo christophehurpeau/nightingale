@@ -1,6 +1,6 @@
 {
   "name": "nightingale-types",
-  "version": "18.0.0",
+  "version": "18.2.0",
   "description": "Nightingale types for typescript",
   "keywords": [
     "logger"
@@ -52,7 +52,7 @@
     "watch": "yarn clean:build && rollup --config rollup.config.mjs --watch"
   },
   "dependencies": {
-    "nightingale-levels": "18.0.0"
+    "nightingale-levels": "18.2.0"
   },
   "devDependencies": {
     "@pob/rollup-esbuild": "9.1.1",

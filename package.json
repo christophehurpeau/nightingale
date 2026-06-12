@@ -1,6 +1,6 @@
 {
   "name": "nightingale-monorepo",
-  "version": "18.1.0",
+  "version": "18.2.0",
   "private": true,
   "description": "Logger for browser and node, see [nightingale](packages/nightingale) to get started !",
   "homepage": "https://github.com/christophehurpeau/nightingale",

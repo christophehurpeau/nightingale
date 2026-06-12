@@ -1,6 +1,6 @@
 {
   "name": "nightingale-app-react-native",
-  "version": "18.1.0",
+  "version": "18.2.0",
   "description": "React Native and Expo logger for application",
   "keywords": [
     "expo",
@@ -55,7 +55,7 @@
     "watch": "yarn clean:build && rollup --config rollup.config.mjs --watch"
   },
   "dependencies": {
-    "nightingale": "18.1.0"
+    "nightingale": "18.2.0"
   },
   "devDependencies": {
     "@pob/rollup-esbuild": "9.1.1",

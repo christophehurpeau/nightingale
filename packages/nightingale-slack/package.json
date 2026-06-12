@@ -1,6 +1,6 @@
 {
   "name": "nightingale-slack",
-  "version": "18.1.0",
+  "version": "18.2.0",
   "description": "Slack handler for nightingale",
   "keywords": [
     "nightingale",
@@ -46,8 +46,8 @@
     "watch": "yarn clean:build && rollup --config rollup.config.mjs --watch"
   },
   "dependencies": {
-    "nightingale": "18.1.0",
-    "nightingale-types": "18.0.0"
+    "nightingale": "18.2.0",
+    "nightingale-types": "18.2.0"
   },
   "devDependencies": {
     "@pob/rollup-esbuild": "9.1.1",

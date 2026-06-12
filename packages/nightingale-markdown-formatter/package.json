@@ -1,6 +1,6 @@
 {
   "name": "nightingale-markdown-formatter",
-  "version": "18.1.0",
+  "version": "18.2.0",
   "description": "Deprecated: use MarkdownFormatter from nightingale",
   "keywords": [
     "nightingale",
@@ -39,7 +39,7 @@
     "watch": "yarn clean:build && rollup --config rollup.config.mjs --watch"
   },
   "dependencies": {
-    "nightingale": "18.1.0"
+    "nightingale": "18.2.0"
   },
   "engines": {
     "node": ">=22.18.0"

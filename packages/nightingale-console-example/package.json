@@ -1,6 +1,6 @@
 {
   "name": "nightingale-console-example",
-  "version": "18.1.0",
+  "version": "18.2.0",
   "private": true,
   "homepage": "https://github.com/christophehurpeau/nightingale",
   "license": "ISC",
@@ -46,9 +46,9 @@
   "dependencies": {
     "@sentry/core": "10.57.0",
     "@sentry/node": "10.57.0",
-    "nightingale": "18.1.0",
-    "nightingale-console": "18.1.0",
-    "nightingale-sentry": "18.0.0"
+    "nightingale": "18.2.0",
+    "nightingale-console": "18.2.0",
+    "nightingale-sentry": "18.2.0"
   },
   "devDependencies": {
     "@pob/rollup-esbuild": "9.1.1",

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [18.2.0](https://github.com/christophehurpeau/nightingale/compare/v18.1.0...v18.2.0) (2026-06-12)
+
+### Features
+
+* **deps:** update sentry-javascript monorepo to >=10.57.0 ([#1276](https://github.com/christophehurpeau/nightingale/issues/1276))
+
+Version bump for dependency: nightingale
+Version bump for dependency: nightingale-console
+Version bump for dependency: nightingale-sentry
+
+
 ## [18.1.0](https://github.com/christophehurpeau/nightingale/compare/v18.0.0...v18.1.0) (2025-11-18)
 
 Version bump for dependency: nightingale

@@ -1,6 +1,6 @@
 {
   "name": "nightingale-react-native-console",
-  "version": "18.1.0",
+  "version": "18.2.0",
   "description": "Deprecated: React Native and Expo handler for nightingale",
   "keywords": [
     "expo",
@@ -41,7 +41,7 @@
     "watch": "yarn clean:build && rollup --config rollup.config.mjs --watch"
   },
   "dependencies": {
-    "nightingale-app-react-native": "18.1.0"
+    "nightingale-app-react-native": "18.2.0"
   },
   "peerDependencies": {
     "react-native": "*"
