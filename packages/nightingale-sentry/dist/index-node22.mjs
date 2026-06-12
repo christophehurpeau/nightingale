@@ -53,6 +53,8 @@ const createHandler = (Sentry, {
   };
 };
 class SentryHandler {
+  minLevel;
+  handle;
   constructor(Sentry, minLevel, options) {
     this.minLevel = minLevel;
     this.handle = createHandler(Sentry, options);

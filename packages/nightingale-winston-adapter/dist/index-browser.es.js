@@ -1,6 +1,8 @@
 import levelNames from 'nightingale-level-names';
 
 class WinstonAdapterHandler {
+  minLevel;
+  handle;
   constructor(winstonTransport, minLevel) {
     this.minLevel = minLevel;
     this.handle = (record) => {

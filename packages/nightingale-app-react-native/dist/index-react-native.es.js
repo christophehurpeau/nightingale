@@ -36,8 +36,10 @@ const createHandle = () => {
   };
 };
 class ReactNativeConsoleHandler {
+  minLevel = 0;
+  handle;
+  isHandling;
   constructor(minLevel) {
-    this.minLevel = 0;
     this.minLevel = minLevel;
     this.isHandling = (level) => level >= minLevel;
     this.handle = createHandle();

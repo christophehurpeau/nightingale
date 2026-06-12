@@ -33,6 +33,9 @@ function isError(messageOrError) {
   return messageOrError instanceof Error;
 }
 class Logger {
+  contextObject;
+  key;
+  displayName;
   /**
    * Create a new Logger
    *

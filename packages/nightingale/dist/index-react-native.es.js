@@ -819,6 +819,7 @@ const style = (styleToHtmlStyle, args) => (styles, string) => {
   return `%c${string}%c`;
 };
 class BrowserConsoleFormatter {
+  styleToHtmlStyle;
   constructor(theme = "light") {
     this.styleToHtmlStyle = theme === "dark" ? styleToHtmlStyleThemeDark : styleToHtmlStyleThemeLight;
   }
@@ -837,8 +838,9 @@ function consoleOutput(param, record) {
 }
 
 class StringHandler {
+  minLevel;
+  _buffer = "";
   constructor(minLevel) {
-    this._buffer = "";
     this.minLevel = minLevel;
   }
   get string() {
@@ -871,8 +873,10 @@ const createHandler = (theme = getDefaultTheme()) => {
   };
 };
 class BrowserConsoleHandler {
+  minLevel = 0;
+  handle;
+  isHandling;
   constructor(minLevel, options = {}) {
-    this.minLevel = 0;
     this.isHandling = (level, key) => level >= findDebugLevel$2(minLevel, key);
     this.handle = createHandler(options.theme);
   }
@@ -887,8 +891,10 @@ const createHandle$1 = (formatter = defaultFormatter, output = consoleOutput) =>
 };
 const findDebugLevel$1 = createFindDebugLevel(process.env.DEBUG);
 class ConsoleHandler {
+  minLevel = Level.ALL;
+  isHandling;
+  handle;
   constructor(minLevel, options = {}) {
-    this.minLevel = Level.ALL;
     this.minLevel = minLevel;
     this.isHandling = (level, key) => level >= findDebugLevel$1(minLevel, key);
     this.handle = createHandle$1(options.formatter, options.output);
@@ -915,8 +921,10 @@ const createHandle = ({
 };
 const findDebugLevel = createFindDebugLevel(process.env.DEBUG);
 class ConsoleCLIHandler {
+  minLevel = Level.ALL;
+  isHandling;
+  handle;
   constructor(minLevel, options = {}) {
-    this.minLevel = Level.ALL;
     this.minLevel = minLevel;
     this.isHandling = (level, key) => level >= findDebugLevel(minLevel, key);
     this.handle = createHandle(options);
@@ -924,9 +932,11 @@ class ConsoleCLIHandler {
 }
 
 class LoggerCLI extends Logger {
+  handlers;
+  processors = [];
+  json;
   constructor(key, { displayName, processors, json = false, noColor } = {}) {
     super(key, displayName);
-    this.processors = [];
     this.handlers = [new ConsoleCLIHandler(Level$1.INFO, { json, noColor })];
     this.processors = processors ?? [];
     this.json = json;

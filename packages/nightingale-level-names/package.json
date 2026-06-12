@@ -5,18 +5,21 @@
   "keywords": [
     "logger"
   ],
-  "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
+  "homepage": "https://github.com/christophehurpeau/nightingale",
+  "bugs": {
+    "url": "https://github.com/christophehurpeau/nightingale/issues"
+  },
   "license": "ISC",
+  "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
   "repository": {
     "type": "git",
     "url": "https://github.com/christophehurpeau/nightingale.git",
     "directory": "packages/nightingale-level-names"
   },
-  "homepage": "https://github.com/christophehurpeau/nightingale",
+  "files": [
+    "lib"
+  ],
   "type": "module",
-  "engines": {
-    "node": ">=22.18.0"
-  },
   "sideEffects": false,
   "main": "./lib/index.cjs",
   "types": "./lib/index.d.ts",
@@ -28,18 +31,17 @@
     },
     "./package.json": "./package.json"
   },
-  "files": [
-    "lib"
-  ],
   "scripts": {
     "build": "yarn run build:definitions",
     "build:definitions": "tsc --lib esnext --noEmit --skipLibCheck ./lib/index.d.ts",
     "lint": "yarn run lint:eslint",
     "lint:eslint": "yarn '../..' run eslint --quiet 'packages/nightingale-level-names'"
   },
-  "pob": {},
-  "prettier": "@pob/root/prettier-config",
   "devDependencies": {
-    "typescript": "5.9.3"
-  }
+    "typescript": "6.0.3"
+  },
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "pob": {}
 }

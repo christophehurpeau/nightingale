@@ -2,7 +2,7 @@ import type { ComputedConfigForKey, Config } from "nightingale-logger";
 import type { Handler, Level } from "nightingale-types";
 
 const globalOrWindow: typeof global =
-  typeof global !== "undefined" ? global : (window as typeof global);
+  typeof global !== "undefined" ? global : window;
 
 if (
   process.env.NODE_ENV !== "production" &&

@@ -260,7 +260,7 @@ export class Logger {
       datetime: new Date(),
       message,
       context: context || this.contextObject,
-      metadata: extendedMetadata as NonNullable<typeof extendedMetadata>,
+      metadata: extendedMetadata,
       extra: {},
       ...options,
     };

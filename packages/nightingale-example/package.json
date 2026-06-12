@@ -1,19 +1,16 @@
 {
   "name": "nightingale-example",
-  "private": true,
   "version": "18.1.0",
-  "author": "Christophe Hurpeau <christophe@hurpeau.com> (https://christophe.hurpeau.com)",
+  "private": true,
+  "homepage": "https://github.com/christophehurpeau/nightingale",
   "license": "ISC",
+  "author": "Christophe Hurpeau <christophe@hurpeau.com> (https://christophe.hurpeau.com)",
   "repository": {
     "type": "git",
     "url": "https://github.com/christophehurpeau/nightingale.git",
     "directory": "packages/nightingale-example"
   },
-  "homepage": "https://github.com/christophehurpeau/nightingale",
   "type": "module",
-  "engines": {
-    "node": ">=22.18.0"
-  },
   "exports": {
     "./package.json": "./package.json",
     "./configure": {
@@ -60,13 +57,26 @@
     }
   },
   "scripts": {
-    "build": "yarn clean:build && rollup --config rollup.config.mjs",
-    "clean": "yarn clean:build",
+    "build": "yarn run clean:build && rollup --config rollup.config.mjs",
+    "clean": "yarn run clean:build",
     "clean:build": "pob-esbuild-clean-out build",
     "lint": "yarn run lint:eslint",
     "lint:eslint": "yarn '../..' run eslint --quiet 'packages/nightingale-example'",
-    "start": "yarn clean:build && rollup --config rollup.config.mjs --watch",
+    "start": "yarn run clean:build && rollup --config rollup.config.mjs --watch",
+    "tsc": "tsc",
     "watch": "pob-watch"
+  },
+  "dependencies": {
+    "nightingale": "18.1.0",
+    "nightingale-slack": "18.1.0",
+    "nightingale-types": "18.0.0"
+  },
+  "devDependencies": {
+    "@pob/rollup-esbuild": "9.1.1",
+    "typescript": "6.0.3"
+  },
+  "engines": {
+    "node": ">=24.14.1"
   },
   "pob": {
     "bundler": "rollup-esbuild",
@@ -82,20 +92,10 @@
     "envs": [
       {
         "target": "node",
-        "version": "22",
+        "version": "24",
         "omitVersionInFileName": true
       }
     ],
     "typescript": true
-  },
-  "prettier": "@pob/root/prettier-config",
-  "dependencies": {
-    "nightingale": "18.1.0",
-    "nightingale-slack": "18.1.0",
-    "nightingale-types": "18.0.0"
-  },
-  "devDependencies": {
-    "@pob/rollup-esbuild": "8.1.2",
-    "typescript": "5.9.3"
   }
 }
