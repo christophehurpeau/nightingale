@@ -58,11 +58,11 @@
   },
   "devDependencies": {
     "@pob/rollup-esbuild": "9.1.1",
-    "@sentry/core": "10.57.0",
+    "@sentry/core": "10.63.0",
     "typescript": "6.0.3"
   },
   "peerDependencies": {
-    "@sentry/core": ">=10.57.0"
+    "@sentry/core": ">=10.63.0"
   },
   "browserslist": {
     "production": [
