@@ -4,7 +4,7 @@
 
 <h3>📦 Packages</h3>
 
-This repository is a monorepo that we manage using [Yarn Workspaces](https://yarnpkg.com/features/workspaces).
+This repository is a monorepo using workspaces.
 
 | Package                                                                                 | Version                                                                                                                                                                            | Description                                                         |
 | --------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------- |

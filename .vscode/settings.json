@@ -1,12 +1,10 @@
 {
-  "search.exclude": {
-    "**/.yarn": true
-  },
-  "typescript.tsdk": "node_modules/typescript/lib",
-  "typescript.enablePromptUseWorkspaceTsdk": true,
+  // typescript 7 is provided by the TypeScriptTeam.native-preview extension.
+  // "typescript" resolves to the typescript 6 api package, which has no
+  // tsserver, so it cannot be used as "typescript.tsdk".
 
-  // set yarn as package manager to run scripts and tasks
-  "npm.packageManager": "yarn",
+  // set pnpm as package manager to run scripts and tasks
+  "npm.packageManager": "pnpm",
 
   // save config
   "editor.formatOnSave": true,

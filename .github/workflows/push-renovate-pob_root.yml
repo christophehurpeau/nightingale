@@ -14,25 +14,27 @@ jobs:
   run-install-and-commit-modified-files:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           ssh-key: ${{ secrets.PUSH_DEPLOY_KEY }}
 
-      - name: Enable Corepack
-        run: corepack enable
+      - name: Install pnpm
+        uses: pnpm/action-setup@v6
+        with:
+          version: 11
 
-      - uses: actions/setup-node@v6
+      - uses: actions/setup-node@v7
         with:
           node-version: 24
 
       - name: Install Dependencies
         # no immutable here
-        run: yarn install
+        run: pnpm install
         env:
           YARN_ENABLE_IMMUTABLE_INSTALLS: false
 
       - name: Run pob-root-postinstall
-        run: yarn pob-root-postinstall
+        run: pnpm exec pob-root-postinstall
 
       - name: Run pob update
         run: npx pob update --force

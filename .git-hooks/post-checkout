@@ -3,16 +3,6 @@
 [ "$POB_GIT_HOOKS" = "0" ] && exit 0
 [ "$HUSKY" = "0" ] && exit 0
 
-if [ -n "$(git diff HEAD@{1}..HEAD@{0} -- yarn.lock)" ]; then
-  yarn config set logFilters --json '[
-    {"code": "YN0002","level": "discard"},
-    {"code": "YN0007","level": "discard"},
-    {"code": "YN0008","level": "discard"},
-    {"code": "YN0013","level": "discard"},
-    {"code": "YN0018","level": "discard"},
-    {"code": "YN0060","level": "discard"},
-    {"code": "YN0061","level": "discard"}
-  ]' > /dev/null
-  yarn install --immutable || true
-  yarn config unset logFilters > /dev/null
+if [ -n "$(git diff HEAD@{1}..HEAD@{0} -- pnpm-lock.yaml)" ]; then
+  pnpm install --frozen-lockfile || true
 fi

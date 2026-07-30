@@ -3,4 +3,4 @@
 [ "$POB_GIT_HOOKS" = "0" ] && exit 0
 [ "$HUSKY" = "0" ] && exit 0
 
-yarn pob-root-lint-staged
+pnpm exec pob-root-lint-staged

@@ -4,71 +4,56 @@ permissions:
 on: [push]
 
 jobs:
-  checks:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v6
-
-      - name: Enable Corepack
-        run: corepack enable
-
-      - uses: actions/setup-node@v6
-        with:
-          node-version: 24
-
-      - name: Install Dependencies
-        run: yarn install --immutable
-
-      - name: Checks
-        run: yarn run checks
-
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
-      - name: Enable Corepack
-        run: corepack enable
+      - name: Install pnpm
+        uses: pnpm/action-setup@v6
+        with:
+          version: 11
 
-      - uses: actions/setup-node@v6
+      - uses: actions/setup-node@v7
         with:
           node-version: 24
 
       - name: Install Dependencies
-        run: yarn install --immutable
+        run: pnpm install --frozen-lockfile
 
       - name: Build
-        run: yarn run build
+        run: pnpm run build
 
       - name: Check nothing was forgotten before commit
-        run: yarn repository-check-dirty
+        run: pnpm exec repository-check-dirty
 
   lint:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
-      - name: Enable Corepack
-        run: corepack enable
+      - name: Install pnpm
+        uses: pnpm/action-setup@v6
+        with:
+          version: 11
 
-      - uses: actions/setup-node@v6
+      - uses: actions/setup-node@v7
         with:
           node-version: 24
 
       - name: Install Dependencies
-        run: yarn install --immutable
+        run: pnpm install --frozen-lockfile
 
       - name: Format
-        run: yarn run format:check
+        run: pnpm run format:check
 
       - name: Typescript
-        run: yarn run tsc
+        run: pnpm run tsc
 
       - name: Eslint
-        run: yarn run lint:eslint
+        run: pnpm run lint:eslint
 
   test:
     runs-on: ubuntu-latest
@@ -78,24 +63,26 @@ jobs:
         node-version: [22, 24]
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
-      - name: Enable Corepack
-        run: corepack enable
+      - name: Install pnpm
+        uses: pnpm/action-setup@v6
+        with:
+          version: 11
 
-      - uses: actions/setup-node@v6
+      - uses: actions/setup-node@v7
         with:
           node-version: ${{ matrix.node-version }}
 
       - name: Install Dependencies
-        run: yarn install --immutable
+        run: pnpm install --frozen-lockfile
 
       - name: Test
-        run: yarn run test
+        run: pnpm run test
         if: matrix.node-version != 24
 
       - name: Generate Test Coverage
-        run: yarn run test:coverage:json
+        run: pnpm run test:coverage:generate
         if: matrix.node-version == 24
         env:
           CI: true

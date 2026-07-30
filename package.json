@@ -15,37 +15,34 @@
   ],
   "type": "module",
   "scripts": {
-    "build": "yarn run clean:build && rollup --config rollup.config.mjs && yarn run build:definitions",
+    "build": "pnpm run clean:build && rollup --config rollup.config.mjs && pnpm run build:definitions",
     "build:definitions": "tsc -b",
-    "checks": "node scripts/check-packages.js",
-    "clean:build": "yarn workspaces foreach --parallel -Av run clean:build",
+    "clean:build": "pnpm -r --parallel run clean:build",
     "format": "oxfmt",
     "format:check": "oxfmt --check .",
     "generate:api": "typedoc --tsconfig tsconfig.doc.json",
-    "lint": "yarn run format && yarn run lint:eslint",
+    "lint": "pnpm run format && pnpm run lint:eslint",
     "lint:eslint": "NODE_OPTIONS=--max_old_space_size=4096 eslint --quiet .",
-    "lint:prettier": "pob-root-prettier --check .",
-    "lint:prettier:fix": "pob-root-prettier --write .",
-    "postinstall": "pob-root-postinstall",
+    "prepare": "pob-root-postinstall",
     "test": "TZ=UTC vitest",
     "test:coverage": "TZ=UTC POB_VITEST_COVERAGE=json,text vitest run --coverage",
-    "test:coverage:json": "TZ=UTC POB_VITEST_COVERAGE=json vitest run --coverage",
+    "test:coverage:generate": "TZ=UTC POB_VITEST_COVERAGE=json vitest run --coverage",
     "test:watch": "TZ=UTC vitest --watch",
     "tsc": "tsc -b",
-    "watch": "yarn run clean:build && rollup --config rollup.config.mjs --watch"
+    "watch": "pnpm run clean:build && rollup --config rollup.config.mjs --watch"
   },
   "devDependencies": {
-    "@pob/eslint-config": "65.4.3",
-    "@pob/rollup-esbuild": "9.1.1",
-    "@pob/root": "24.3.0",
+    "@pob/eslint-config": "67.1.1",
+    "@pob/rollup-esbuild": "10.0.0",
+    "@pob/root": "27.2.1",
     "@types/node": "24.10.4",
-    "@vitest/coverage-v8": "4.1.8",
-    "check-package-dependencies": "11.1.1",
-    "eslint": "10.4.0",
-    "typedoc": "0.28.19",
-    "typescript": "6.0.3",
-    "vite": "8.0.16",
-    "vitest": "4.1.8"
+    "@typescript/native": "npm:typescript@7.0.2",
+    "@vitest/coverage-v8": "4.1.10",
+    "eslint": "10.8.0",
+    "typedoc": "0.28.20",
+    "typescript": "npm:@typescript/typescript6@6.0.2",
+    "vite": "8.1.5",
+    "vitest": "4.1.10"
   },
   "commitlint": {
     "extends": [
@@ -53,7 +50,7 @@
     ]
   },
   "engines": {
-    "node": ">=22.18.0"
-  },
-  "packageManager": "yarn@4.16.0"
+    "node": ">=22.18.0",
+    "pnpm": ">= 11.0.0"
+  }
 }

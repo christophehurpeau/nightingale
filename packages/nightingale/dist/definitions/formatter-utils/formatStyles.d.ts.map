@@ -1,1 +1,1 @@
-{"version":3,"file":"formatStyles.d.ts","sourceRoot":"","sources":["../../../src/formatter-utils/formatStyles.ts"],"names":[],"mappings":"AAEA,eAAO,MAAM,YAAY;;;;;;;;;;;;CAYxB,CAAC"}
+{"version":3,"file":"formatStyles.d.ts","sourceRoot":"","sources":["../../../src/formatter-utils/formatStyles.ts"],"names":[],"mappings":"AAEA,eAAO,MAAM,YAAY;IACvB,MAAM;IACN,OAAO;IACP,IAAI;IACJ,KAAK;IACL,QAAQ;IACR,IAAI;IACJ,MAAM;IACN,MAAM;IACN,MAAM;IACN,MAAM;IACN,SAAS;CACV,CAAC"}
