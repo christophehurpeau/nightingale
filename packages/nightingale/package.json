@@ -54,7 +54,7 @@
   },
   "dependencies": {
     "@types/node": ">=22.0.0",
-    "ansi-styles": "^6.2.3",
+    "ansi-styles": "^7.0.0",
     "nightingale-levels": "18.2.0",
     "nightingale-logger": "18.2.0",
     "nightingale-types": "18.2.0"
