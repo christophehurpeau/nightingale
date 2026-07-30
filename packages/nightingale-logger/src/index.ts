@@ -26,6 +26,11 @@ export interface ExtendedFunctionNameMetadata {
   functionName: string;
 }
 
+export interface ExtendedTimeMetadata {
+  readableTime: string;
+  timeMs: number;
+}
+
 export interface Config {
   handler?: Handler;
   handlers?: Handler[];
@@ -533,9 +538,9 @@ export class Logger {
     startTime: number,
     message: string,
     metadata?: T,
-    metadataStyles?: MetadataStyles<T>,
+    metadataStyles?: MetadataStyles<ExtendedTimeMetadata & T>,
     level: number = Level.DEBUG,
-    options?: Options<T>,
+    options?: Options<ExtendedTimeMetadata & T>,
   ): void {
     const now = Date.now();
 
@@ -556,7 +561,10 @@ export class Logger {
       timeMs: diffTime,
     };
 
-    this.log(message, extendedMetadata, level, { ...options, metadataStyles });
+    this.log(message, extendedMetadata, level, {
+      ...options,
+      metadataStyles,
+    });
   }
 
   /**
@@ -566,7 +574,7 @@ export class Logger {
     time: number,
     message: string,
     metadata?: T,
-    metadataStyles?: MetadataStyles<T>,
+    metadataStyles?: MetadataStyles<ExtendedTimeMetadata & T>,
   ): void {
     this.timeEnd(time, message, metadata, metadataStyles, Level.INFO);
   }
@@ -578,7 +586,7 @@ export class Logger {
     time: number,
     message: string,
     metadata?: T,
-    metadataStyles?: MetadataStyles<T>,
+    metadataStyles?: MetadataStyles<ExtendedTimeMetadata & T>,
   ): void {
     this.timeEnd(time, message, metadata, metadataStyles, Level.INFO, {
       symbol: "✔",

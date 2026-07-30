@@ -13,6 +13,10 @@ export interface ComputedConfigForKey {
 export interface ExtendedFunctionNameMetadata {
     functionName: string;
 }
+export interface ExtendedTimeMetadata {
+    readableTime: string;
+    timeMs: number;
+}
 export interface Config {
     handler?: Handler;
     handlers?: Handler[];
@@ -195,15 +199,15 @@ export declare class Logger {
      * was called, then logs out the difference
      * and deletes the original record
      */
-    timeEnd<T extends Metadata>(startTime: number, message: string, metadata?: T, metadataStyles?: MetadataStyles<T>, level?: number, options?: Options<T>): void;
+    timeEnd<T extends Metadata>(startTime: number, message: string, metadata?: T, metadataStyles?: MetadataStyles<ExtendedTimeMetadata & T>, level?: number, options?: Options<ExtendedTimeMetadata & T>): void;
     /**
      * Like timeEnd, but with INFO level
      */
-    infoTimeEnd<T extends Metadata>(time: number, message: string, metadata?: T, metadataStyles?: MetadataStyles<T>): void;
+    infoTimeEnd<T extends Metadata>(time: number, message: string, metadata?: T, metadataStyles?: MetadataStyles<ExtendedTimeMetadata & T>): void;
     /**
      * Like timeEnd, but with INFO level
      */
-    infoSuccessTimeEnd<T extends Metadata>(time: number, message: string, metadata?: T, metadataStyles?: MetadataStyles<T>): void;
+    infoSuccessTimeEnd<T extends Metadata>(time: number, message: string, metadata?: T, metadataStyles?: MetadataStyles<ExtendedTimeMetadata & T>): void;
     /**
      * Log an enter in a function
      *

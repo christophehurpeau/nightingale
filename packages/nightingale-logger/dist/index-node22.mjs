@@ -344,7 +344,10 @@ class Logger {
       readableTime,
       timeMs: diffTime
     };
-    this.log(message, extendedMetadata, level, { ...options, metadataStyles });
+    this.log(message, extendedMetadata, level, {
+      ...options,
+      metadataStyles
+    });
   }
   /**
    * Like timeEnd, but with INFO level
