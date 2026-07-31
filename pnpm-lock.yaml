@@ -61,8 +61,8 @@ importers:
         version: 18.2.0
     devDependencies:
       '@pob/rollup-esbuild':
-        specifier: 9.2.0
-        version: 9.2.0(rollup@4.60.4)(supports-color@8.1.1)(typescript@6.0.3)
+        specifier: 10.0.0
+        version: 10.0.0(rollup@4.60.4)(supports-color@8.1.1)(typescript@6.0.3)
       typescript:
         specifier: 6.0.3
         version: 6.0.3
@@ -83,8 +83,8 @@ importers:
         version: 18.2.0
     devDependencies:
       '@pob/rollup-esbuild':
-        specifier: 9.2.0
-        version: 9.2.0(rollup@4.60.4)(supports-color@8.1.1)(typescript@6.0.3)
+        specifier: 10.0.0
+        version: 10.0.0(rollup@4.60.4)(supports-color@8.1.1)(typescript@6.0.3)
       typescript:
         specifier: 6.0.3
         version: 6.0.3
@@ -99,8 +99,8 @@ importers:
         version: 0.21.2(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
     devDependencies:
       '@pob/rollup-esbuild':
-        specifier: 9.2.0
-        version: 9.2.0(rollup@4.60.4)(supports-color@8.1.1)(typescript@6.0.3)
+        specifier: 10.0.0
+        version: 10.0.0(rollup@4.60.4)(supports-color@8.1.1)(typescript@6.0.3)
       react-native:
         specifier: 0.83.1
         version: 0.83.1(@babel/core@7.29.7(supports-color@8.1.1))(react@19.2.8)(supports-color@8.1.1)
@@ -145,8 +145,8 @@ importers:
         version: 18.2.0(@sentry/core@10.57.0)
     devDependencies:
       '@pob/rollup-esbuild':
-        specifier: 9.2.0
-        version: 9.2.0(rollup@4.60.4)(supports-color@8.1.1)(typescript@6.0.3)
+        specifier: 10.0.0
+        version: 10.0.0(rollup@4.60.4)(supports-color@8.1.1)(typescript@6.0.3)
       typescript:
         specifier: 6.0.3
         version: 6.0.3
@@ -176,8 +176,8 @@ importers:
         version: 18.2.0
     devDependencies:
       '@pob/rollup-esbuild':
-        specifier: 9.2.0
-        version: 9.2.0(rollup@4.60.4)(supports-color@8.1.1)(typescript@6.0.3)
+        specifier: 10.0.0
+        version: 10.0.0(rollup@4.60.4)(supports-color@8.1.1)(typescript@6.0.3)
       typescript:
         specifier: 6.0.3
         version: 6.0.3
@@ -213,8 +213,8 @@ importers:
   packages/nightingale-levels:
     devDependencies:
       '@pob/rollup-esbuild':
-        specifier: 9.2.0
-        version: 9.2.0(rollup@4.60.4)(supports-color@8.1.1)(typescript@6.0.3)
+        specifier: 10.0.0
+        version: 10.0.0(rollup@4.60.4)(supports-color@8.1.1)(typescript@6.0.3)
       typescript:
         specifier: 6.0.3
         version: 6.0.3
@@ -232,8 +232,8 @@ importers:
         version: 18.2.0
     devDependencies:
       '@pob/rollup-esbuild':
-        specifier: 9.2.0
-        version: 9.2.0(rollup@4.60.4)(supports-color@8.1.1)(typescript@6.0.3)
+        specifier: 10.0.0
+        version: 10.0.0(rollup@4.60.4)(supports-color@8.1.1)(typescript@6.0.3)
       typescript:
         specifier: 6.0.3
         version: 6.0.3
@@ -276,8 +276,8 @@ importers:
         version: 18.2.0
     devDependencies:
       '@pob/rollup-esbuild':
-        specifier: 9.2.0
-        version: 9.2.0(rollup@4.60.4)(supports-color@8.1.1)(typescript@6.0.3)
+        specifier: 10.0.0
+        version: 10.0.0(rollup@4.60.4)(supports-color@8.1.1)(typescript@6.0.3)
       '@sentry/core':
         specifier: 10.57.0
         version: 10.57.0
@@ -295,8 +295,8 @@ importers:
         version: 18.2.0
     devDependencies:
       '@pob/rollup-esbuild':
-        specifier: 9.2.0
-        version: 9.2.0(rollup@4.60.4)(supports-color@8.1.1)(typescript@6.0.3)
+        specifier: 10.0.0
+        version: 10.0.0(rollup@4.60.4)(supports-color@8.1.1)(typescript@6.0.3)
       '@types/node':
         specifier: 24.10.4
         version: 24.10.4
@@ -317,8 +317,8 @@ importers:
         version: 18.2.0
     devDependencies:
       '@pob/rollup-esbuild':
-        specifier: 9.2.0
-        version: 9.2.0(rollup@4.60.4)(supports-color@8.1.1)(typescript@6.0.3)
+        specifier: 10.0.0
+        version: 10.0.0(rollup@4.60.4)(supports-color@8.1.1)(typescript@6.0.3)
       typescript:
         specifier: 6.0.3
         version: 6.0.3
@@ -333,8 +333,8 @@ importers:
         version: 18.2.0
     devDependencies:
       '@pob/rollup-esbuild':
-        specifier: 9.2.0
-        version: 9.2.0(rollup@4.60.4)(supports-color@8.1.1)(typescript@6.0.3)
+        specifier: 10.0.0
+        version: 10.0.0(rollup@4.60.4)(supports-color@8.1.1)(typescript@6.0.3)
       typescript:
         specifier: 6.0.3
         version: 6.0.3
@@ -349,8 +349,8 @@ importers:
         version: 18.2.0
     devDependencies:
       '@pob/rollup-esbuild':
-        specifier: 9.2.0
-        version: 9.2.0(rollup@4.60.4)(supports-color@8.1.1)(typescript@6.0.3)
+        specifier: 10.0.0
+        version: 10.0.0(rollup@4.60.4)(supports-color@8.1.1)(typescript@6.0.3)
       typescript:
         specifier: 6.0.3
         version: 6.0.3
@@ -365,8 +365,8 @@ importers:
         version: 18.2.0
     devDependencies:
       '@pob/rollup-esbuild':
-        specifier: 9.2.0
-        version: 9.2.0(rollup@4.60.4)(supports-color@8.1.1)(typescript@6.0.3)
+        specifier: 10.0.0
+        version: 10.0.0(rollup@4.60.4)(supports-color@8.1.1)(typescript@6.0.3)
       typescript:
         specifier: 6.0.3
         version: 6.0.3
@@ -1078,17 +1078,6 @@ packages:
     peerDependencies:
       rollup: 4.60.4
       typescript: ^4.0.3 || ^5.0.0 || ^6.0.0 || ^7.0.0
-    peerDependenciesMeta:
-      rollup:
-        optional: true
-
-  '@pob/rollup-esbuild@9.2.0':
-    resolution: {integrity: sha512-eYGzJp4fOia6Lb+PWH7yiujj7fkz+y50Q/ygcdeEhW/TgFHFcyx7wHxghRxld7MqsVsdW2auawPL/l/JuDMi/Q==}
-    engines: {node: '>=22.18.0'}
-    hasBin: true
-    peerDependencies:
-      rollup: 4.60.4
-      typescript: ^4.0.3 || ^5.0.0 || ^6.0.0
     peerDependenciesMeta:
       rollup:
         optional: true
@@ -4966,7 +4955,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@pob/rollup-esbuild@9.2.0(rollup@4.60.4)(supports-color@8.1.1)(typescript@6.0.3)':
+  '@pob/rollup-esbuild@10.0.0(rollup@4.60.4)(supports-color@8.1.1)(typescript@6.0.3)':
     dependencies:
       '@pob/rollup': 8.1.2
       '@rollup/plugin-node-resolve': 16.0.3(rollup@4.60.4)
