@@ -58,7 +58,7 @@
     "nightingale": "18.2.0"
   },
   "devDependencies": {
-    "@pob/rollup-esbuild": "9.2.0",
+    "@pob/rollup-esbuild": "10.0.0",
     "react-native": "0.83.1",
     "typescript": "6.0.3"
   },
