@@ -9,11 +9,11 @@ importers:
   .:
     devDependencies:
       '@pob/eslint-config':
-        specifier: 67.1.1
-        version: 67.1.1(@typescript-eslint/utils@8.65.0(@typescript/typescript6@6.0.2)(eslint@10.8.1(supports-color@8.1.1))(supports-color@8.1.1))(@typescript/typescript6@6.0.2)(eslint@10.8.1(supports-color@8.1.1))(supports-color@8.1.1)
+        specifier: 67.12.0
+        version: 67.12.0(@typescript-eslint/utils@8.65.0(@typescript/typescript6@6.0.2)(eslint@10.8.1(supports-color@8.1.1))(supports-color@8.1.1))(@typescript/typescript6@6.0.2)(eslint@10.8.1(supports-color@8.1.1))(supports-color@8.1.1)
       '@pob/rollup-esbuild':
         specifier: 10.0.0
-        version: 10.0.0(@typescript/typescript6@6.0.2)(rollup@4.60.4)(supports-color@8.1.1)
+        version: 10.0.0(@typescript/typescript6@6.0.2)(supports-color@8.1.1)
       '@pob/root':
         specifier: 27.2.1
         version: 27.2.1(@typescript-eslint/utils@8.65.0(@typescript/typescript6@6.0.2)(eslint@10.8.1(supports-color@8.1.1))(supports-color@8.1.1))(@typescript/typescript6@6.0.2)(eslint@10.8.1(supports-color@8.1.1))(supports-color@8.1.1)
@@ -62,7 +62,7 @@ importers:
     devDependencies:
       '@pob/rollup-esbuild':
         specifier: 10.0.0
-        version: 10.0.0(rollup@4.60.4)(supports-color@8.1.1)(typescript@6.0.3)
+        version: 10.0.0(supports-color@8.1.1)(typescript@6.0.3)
       typescript:
         specifier: 6.0.3
         version: 6.0.3
@@ -84,7 +84,7 @@ importers:
     devDependencies:
       '@pob/rollup-esbuild':
         specifier: 10.0.0
-        version: 10.0.0(rollup@4.60.4)(supports-color@8.1.1)(typescript@6.0.3)
+        version: 10.0.0(supports-color@8.1.1)(typescript@6.0.3)
       typescript:
         specifier: 6.0.3
         version: 6.0.3
@@ -100,7 +100,7 @@ importers:
     devDependencies:
       '@pob/rollup-esbuild':
         specifier: 10.0.0
-        version: 10.0.0(rollup@4.60.4)(supports-color@8.1.1)(typescript@6.0.3)
+        version: 10.0.0(supports-color@8.1.1)(typescript@6.0.3)
       react-native:
         specifier: 0.83.1
         version: 0.83.1(@babel/core@7.29.7(supports-color@8.1.1))(react@19.2.8)(supports-color@8.1.1)
@@ -146,7 +146,7 @@ importers:
     devDependencies:
       '@pob/rollup-esbuild':
         specifier: 10.0.0
-        version: 10.0.0(rollup@4.60.4)(supports-color@8.1.1)(typescript@6.0.3)
+        version: 10.0.0(supports-color@8.1.1)(typescript@6.0.3)
       typescript:
         specifier: 6.0.3
         version: 6.0.3
@@ -177,7 +177,7 @@ importers:
     devDependencies:
       '@pob/rollup-esbuild':
         specifier: 10.0.0
-        version: 10.0.0(rollup@4.60.4)(supports-color@8.1.1)(typescript@6.0.3)
+        version: 10.0.0(supports-color@8.1.1)(typescript@6.0.3)
       typescript:
         specifier: 6.0.3
         version: 6.0.3
@@ -214,7 +214,7 @@ importers:
     devDependencies:
       '@pob/rollup-esbuild':
         specifier: 10.0.0
-        version: 10.0.0(rollup@4.60.4)(supports-color@8.1.1)(typescript@6.0.3)
+        version: 10.0.0(supports-color@8.1.1)(typescript@6.0.3)
       typescript:
         specifier: 6.0.3
         version: 6.0.3
@@ -233,7 +233,7 @@ importers:
     devDependencies:
       '@pob/rollup-esbuild':
         specifier: 10.0.0
-        version: 10.0.0(rollup@4.60.4)(supports-color@8.1.1)(typescript@6.0.3)
+        version: 10.0.0(supports-color@8.1.1)(typescript@6.0.3)
       typescript:
         specifier: 6.0.3
         version: 6.0.3
@@ -277,7 +277,7 @@ importers:
     devDependencies:
       '@pob/rollup-esbuild':
         specifier: 10.0.0
-        version: 10.0.0(rollup@4.60.4)(supports-color@8.1.1)(typescript@6.0.3)
+        version: 10.0.0(supports-color@8.1.1)(typescript@6.0.3)
       '@sentry/core':
         specifier: 10.57.0
         version: 10.57.0
@@ -296,7 +296,7 @@ importers:
     devDependencies:
       '@pob/rollup-esbuild':
         specifier: 10.0.0
-        version: 10.0.0(rollup@4.60.4)(supports-color@8.1.1)(typescript@6.0.3)
+        version: 10.0.0(supports-color@8.1.1)(typescript@6.0.3)
       '@types/node':
         specifier: 24.10.4
         version: 24.10.4
@@ -318,7 +318,7 @@ importers:
     devDependencies:
       '@pob/rollup-esbuild':
         specifier: 10.0.0
-        version: 10.0.0(rollup@4.60.4)(supports-color@8.1.1)(typescript@6.0.3)
+        version: 10.0.0(supports-color@8.1.1)(typescript@6.0.3)
       typescript:
         specifier: 6.0.3
         version: 6.0.3
@@ -334,7 +334,7 @@ importers:
     devDependencies:
       '@pob/rollup-esbuild':
         specifier: 10.0.0
-        version: 10.0.0(rollup@4.60.4)(supports-color@8.1.1)(typescript@6.0.3)
+        version: 10.0.0(supports-color@8.1.1)(typescript@6.0.3)
       typescript:
         specifier: 6.0.3
         version: 6.0.3
@@ -350,7 +350,7 @@ importers:
     devDependencies:
       '@pob/rollup-esbuild':
         specifier: 10.0.0
-        version: 10.0.0(rollup@4.60.4)(supports-color@8.1.1)(typescript@6.0.3)
+        version: 10.0.0(supports-color@8.1.1)(typescript@6.0.3)
       typescript:
         specifier: 6.0.3
         version: 6.0.3
@@ -366,7 +366,7 @@ importers:
     devDependencies:
       '@pob/rollup-esbuild':
         specifier: 10.0.0
-        version: 10.0.0(rollup@4.60.4)(supports-color@8.1.1)(typescript@6.0.3)
+        version: 10.0.0(supports-color@8.1.1)(typescript@6.0.3)
       typescript:
         specifier: 6.0.3
         version: 6.0.3
@@ -1052,8 +1052,28 @@ packages:
       typescript:
         optional: true
 
+  '@pob/eslint-config@67.12.0':
+    resolution: {integrity: sha512-fvAgQvI/91LtpBys8SP0FM1zMlMuDGMsZ61i42SsaWpArRV0GdPloBHCn7W6XrCCeVJRucUUuiGx1ezIhskYLg==}
+    engines: {node: '>=22.18.0'}
+    peerDependencies:
+      eslint: ^10.8.0
+      typescript: '>=5.0.0 <8.0.0'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+
   '@pob/eslint-plugin@66.1.1':
     resolution: {integrity: sha512-u4089ISgG6nnebnzPN3CgawdtTnL59h5OdWT0B+AqSIDLlysZOEcOxAyHDxa2HKXZ/xbTyxv0iMuduNV/3+8Bg==}
+    engines: {node: '>=22.18.0'}
+    peerDependencies:
+      eslint: ^10.0.2
+      typescript: '>=5.0.0 <8.0.0'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+
+  '@pob/eslint-plugin@66.5.0':
+    resolution: {integrity: sha512-D7YketV0Sr28vd9FpoTtLQX/u+rIBvkOETiz6sO/vDbNw1yjsht4LqkuxrRpquVQ+3AxshUbEQocz4jLUia/Vg==}
     engines: {node: '>=22.18.0'}
     peerDependencies:
       eslint: ^10.0.2
@@ -1067,11 +1087,7 @@ packages:
     engines: {node: '>=22.18.0'}
     hasBin: true
     peerDependencies:
-      rollup: 4.60.4
       typescript: ^4.0.3 || ^5.0.0 || ^6.0.0 || ^7.0.0
-    peerDependenciesMeta:
-      rollup:
-        optional: true
 
   '@pob/rollup@8.1.2':
     resolution: {integrity: sha512-0lZ54n98PFs0DBuhGtyUSj/dtgmELadnEHOlkz09nK3jL9pw6gdSO8Jz5Lk0Z3COceRN+hlklf1ByK76O//a0A==}
@@ -2188,6 +2204,16 @@ packages:
     hasBin: true
     peerDependencies:
       eslint: ^10.6.0
+    peerDependenciesMeta:
+      eslint:
+        optional: true
+
+  check-package-dependencies@13.2.0:
+    resolution: {integrity: sha512-zw/RZHpkd9owcQ7yOvM1SWz95LWpbPhqG6m8tMoHtC5uq03hxOIKiQkmMDSMyZ8D/fMcmdVf7+XKjYL/1NNEnA==}
+    engines: {node: '>=22.18.0'}
+    hasBin: true
+    peerDependencies:
+      eslint: ^10.8.0
     peerDependenciesMeta:
       eslint:
         optional: true
@@ -4463,7 +4489,7 @@ snapshots:
 
   '@commitlint/format@21.0.1':
     dependencies:
-      '@commitlint/types': 21.2.0
+      '@commitlint/types': 21.0.1
       picocolors: 1.1.1
 
   '@commitlint/is-ignored@21.2.0':
@@ -4476,7 +4502,7 @@ snapshots:
       '@commitlint/is-ignored': 21.2.0
       '@commitlint/parse': 21.2.0
       '@commitlint/rules': 21.2.0
-      '@commitlint/types': 21.2.0
+      '@commitlint/types': 21.0.1
 
   '@commitlint/message@21.2.0': {}
 
@@ -4893,6 +4919,28 @@ snapshots:
       - eslint-import-resolver-node
       - supports-color
 
+  '@pob/eslint-config@67.12.0(@typescript-eslint/utils@8.65.0(@typescript/typescript6@6.0.2)(eslint@10.8.1(supports-color@8.1.1))(supports-color@8.1.1))(@typescript/typescript6@6.0.2)(eslint@10.8.1(supports-color@8.1.1))(supports-color@8.1.1)':
+    dependencies:
+      '@eslint/js': 10.0.1(eslint@10.8.1(supports-color@8.1.1))
+      '@eslint/json': 1.2.0
+      '@pob/eslint-plugin': 66.5.0(@typescript/typescript6@6.0.2)(eslint@10.8.1(supports-color@8.1.1))(supports-color@8.1.1)
+      '@typescript-eslint/eslint-plugin': 8.63.0(@typescript-eslint/parser@8.63.0(@typescript/typescript6@6.0.2)(eslint@10.8.1(supports-color@8.1.1))(supports-color@8.1.1))(@typescript/typescript6@6.0.2)(eslint@10.8.1(supports-color@8.1.1))(supports-color@8.1.1)
+      '@typescript-eslint/parser': 8.63.0(@typescript/typescript6@6.0.2)(eslint@10.8.1(supports-color@8.1.1))(supports-color@8.1.1)
+      check-package-dependencies: 13.2.0(eslint@10.8.1(supports-color@8.1.1))
+      confusing-browser-globals: 1.0.11
+      eslint: 10.8.1(supports-color@8.1.1)
+      eslint-plugin-import-x: 4.17.1(@typescript-eslint/utils@8.65.0(@typescript/typescript6@6.0.2)(eslint@10.8.1(supports-color@8.1.1))(supports-color@8.1.1))(eslint@10.8.1(supports-color@8.1.1))(supports-color@8.1.1)
+      eslint-plugin-n: 17.24.0(@typescript/typescript6@6.0.2)(eslint@10.8.1(supports-color@8.1.1))
+      eslint-plugin-regexp: 3.1.1(eslint@10.8.1(supports-color@8.1.1))
+      eslint-plugin-unicorn: 64.0.0(eslint@10.8.1(supports-color@8.1.1))
+      typescript-eslint: 8.65.0(@typescript/typescript6@6.0.2)(eslint@10.8.1(supports-color@8.1.1))(supports-color@8.1.1)
+    optionalDependencies:
+      typescript: '@typescript/typescript6@6.0.2'
+    transitivePeerDependencies:
+      - '@typescript-eslint/utils'
+      - eslint-import-resolver-node
+      - supports-color
+
   '@pob/eslint-plugin@66.1.1(@typescript/typescript6@6.0.2)(eslint@10.8.1(supports-color@8.1.1))(supports-color@8.1.1)':
     dependencies:
       '@typescript-eslint/utils': 8.63.0(@typescript/typescript6@6.0.2)(eslint@10.8.1(supports-color@8.1.1))(supports-color@8.1.1)
@@ -4903,33 +4951,41 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@pob/rollup-esbuild@10.0.0(@typescript/typescript6@6.0.2)(rollup@4.60.4)(supports-color@8.1.1)':
+  '@pob/eslint-plugin@66.5.0(@typescript/typescript6@6.0.2)(eslint@10.8.1(supports-color@8.1.1))(supports-color@8.1.1)':
     dependencies:
-      '@pob/rollup': 8.1.2
-      '@rollup/plugin-node-resolve': 16.0.3(rollup@4.60.4)
-      '@rollup/plugin-replace': 6.0.3(rollup@4.60.4)
-      '@rollup/plugin-run': 3.1.0(rollup@4.60.4)
-      esbuild: 0.28.1
-      rollup-config-external-dependencies: 3.0.1
-      rollup-plugin-esbuild: 6.2.1(esbuild@0.28.1)(rollup@4.60.4)(supports-color@8.1.1)
-      typescript: '@typescript/typescript6@6.0.2'
+      '@typescript-eslint/utils': 8.63.0(@typescript/typescript6@6.0.2)(eslint@10.8.1(supports-color@8.1.1))(supports-color@8.1.1)
+      eslint: 10.8.1(supports-color@8.1.1)
+      eslint-plugin-react: 7.37.5(eslint@10.8.1(supports-color@8.1.1))
     optionalDependencies:
-      rollup: 4.60.4
+      typescript: '@typescript/typescript6@6.0.2'
     transitivePeerDependencies:
       - supports-color
 
-  '@pob/rollup-esbuild@10.0.0(rollup@4.60.4)(supports-color@8.1.1)(typescript@6.0.3)':
+  '@pob/rollup-esbuild@10.0.0(@typescript/typescript6@6.0.2)(supports-color@8.1.1)':
     dependencies:
       '@pob/rollup': 8.1.2
       '@rollup/plugin-node-resolve': 16.0.3(rollup@4.60.4)
       '@rollup/plugin-replace': 6.0.3(rollup@4.60.4)
       '@rollup/plugin-run': 3.1.0(rollup@4.60.4)
       esbuild: 0.28.1
+      rollup: 4.60.4
+      rollup-config-external-dependencies: 3.0.1
+      rollup-plugin-esbuild: 6.2.1(esbuild@0.28.1)(rollup@4.60.4)(supports-color@8.1.1)
+      typescript: '@typescript/typescript6@6.0.2'
+    transitivePeerDependencies:
+      - supports-color
+
+  '@pob/rollup-esbuild@10.0.0(supports-color@8.1.1)(typescript@6.0.3)':
+    dependencies:
+      '@pob/rollup': 8.1.2
+      '@rollup/plugin-node-resolve': 16.0.3(rollup@4.60.4)
+      '@rollup/plugin-replace': 6.0.3(rollup@4.60.4)
+      '@rollup/plugin-run': 3.1.0(rollup@4.60.4)
+      esbuild: 0.28.1
+      rollup: 4.60.4
       rollup-config-external-dependencies: 3.0.1
       rollup-plugin-esbuild: 6.2.1(esbuild@0.28.1)(rollup@4.60.4)(supports-color@8.1.1)
       typescript: 6.0.3
-    optionalDependencies:
-      rollup: 4.60.4
     transitivePeerDependencies:
       - supports-color
 
@@ -5403,8 +5459,8 @@ snapshots:
 
   '@typescript-eslint/project-service@8.63.0(@typescript/typescript6@6.0.2)(supports-color@8.1.1)':
     dependencies:
-      '@typescript-eslint/tsconfig-utils': 8.65.0(@typescript/typescript6@6.0.2)
-      '@typescript-eslint/types': 8.65.0
+      '@typescript-eslint/tsconfig-utils': 8.63.0(@typescript/typescript6@6.0.2)
+      '@typescript-eslint/types': 8.63.0
       debug: 4.4.3(supports-color@8.1.1)
       typescript: '@typescript/typescript6@6.0.2'
     transitivePeerDependencies:
@@ -5971,6 +6027,16 @@ snapshots:
   change-case@5.4.4: {}
 
   check-package-dependencies@12.2.0(eslint@10.8.1(supports-color@8.1.1)):
+    dependencies:
+      '@eslint/plugin-kit': 0.7.2
+      jsonc-parser: 3.3.1
+      semver: 7.8.5
+      semver-utils: 1.1.4
+      type-fest: 5.8.0
+    optionalDependencies:
+      eslint: 10.8.1(supports-color@8.1.1)
+
+  check-package-dependencies@13.2.0(eslint@10.8.1(supports-color@8.1.1)):
     dependencies:
       '@eslint/plugin-kit': 0.7.2
       jsonc-parser: 3.3.1
@@ -7280,7 +7346,7 @@ snapshots:
       '@babel/types': 7.29.7
       flow-enums-runtime: 0.0.6
       invariant: 2.2.4
-      metro-symbolicate: 0.83.7(supports-color@8.1.1)
+      metro-symbolicate: 0.83.7
       nullthrows: 1.1.1
       ob1: 0.83.7
       source-map: 0.5.7
@@ -7288,7 +7354,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  metro-symbolicate@0.83.7(supports-color@8.1.1):
+  metro-symbolicate@0.83.7:
     dependencies:
       flow-enums-runtime: 0.0.6
       invariant: 2.2.4
@@ -7296,8 +7362,6 @@ snapshots:
       nullthrows: 1.1.1
       source-map: 0.5.7
       vlq: 1.0.1
-    transitivePeerDependencies:
-      - supports-color
 
   metro-transform-plugins@0.83.7(supports-color@8.1.1):
     dependencies:
@@ -7361,7 +7425,7 @@ snapshots:
       metro-resolver: 0.83.7
       metro-runtime: 0.83.7
       metro-source-map: 0.83.7(supports-color@8.1.1)
-      metro-symbolicate: 0.83.7(supports-color@8.1.1)
+      metro-symbolicate: 0.83.7
       metro-transform-plugins: 0.83.7(supports-color@8.1.1)
       metro-transform-worker: 0.83.7(supports-color@8.1.1)
       mime-types: 3.0.2
