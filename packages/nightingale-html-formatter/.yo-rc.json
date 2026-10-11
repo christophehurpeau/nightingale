@@ -4,7 +4,8 @@
       "testing": {
         "codecov": true
       },
-      "documentation": false
+      "documentation": false,
+      "e2e": false
     },
     "project": {
       "type": "lib"

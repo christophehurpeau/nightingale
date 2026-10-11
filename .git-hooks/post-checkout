@@ -3,6 +3,15 @@
 [ "$POB_GIT_HOOKS" = "0" ] && exit 0
 [ "$HUSKY" = "0" ] && exit 0
 
+if [ "$1" = "0000000000000000000000000000000000000000" ]; then
+  if [ -x scripts/setup-worktree.sh ]; then
+    ./scripts/setup-worktree.sh || true
+  else
+    pnpm install --frozen-lockfile || true
+  fi
+  exit 0
+fi
+
 if [ -n "$(git diff HEAD@{1}..HEAD@{0} -- pnpm-lock.yaml)" ]; then
   pnpm install --frozen-lockfile || true
 fi

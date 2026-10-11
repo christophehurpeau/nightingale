@@ -57,12 +57,13 @@
     }
   },
   "scripts": {
-    "build": "yarn run clean:build && rollup --config rollup.config.mjs",
-    "clean": "yarn run clean:build",
+    "build": "pnpm run clean:build && rollup --config rollup.config.mjs",
+    "clean": "pnpm run clean:build",
     "clean:build": "pob-esbuild-clean-out build",
-    "lint": "yarn run lint:eslint",
-    "lint:eslint": "yarn '../..' run eslint --quiet 'packages/nightingale-example'",
-    "start": "yarn run clean:build && rollup --config rollup.config.mjs --watch",
+    "lint": "pnpm run lint:oxlint && pnpm run lint:eslint",
+    "lint:eslint": "pnpm --dir '../..' exec eslint --quiet 'packages/nightingale-example'",
+    "lint:oxlint": "pnpm --dir '../..' exec oxlint --quiet 'packages/nightingale-example'",
+    "start": "pnpm run clean:build && rollup --config rollup.config.mjs --watch",
     "tsc": "tsc",
     "watch": "pob-watch"
   },
@@ -72,8 +73,9 @@
     "nightingale-types": "18.2.0"
   },
   "devDependencies": {
-    "@pob/rollup-esbuild": "10.0.0",
-    "typescript": "6.0.3"
+    "@pob/rollup-esbuild": "10.2.0",
+    "@typescript/native": "npm:typescript@7.0.2",
+    "typescript": "npm:@typescript/typescript6@6.0.2"
   },
   "engines": {
     "node": ">=24.14.1"
