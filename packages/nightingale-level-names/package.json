@@ -32,13 +32,15 @@
     "./package.json": "./package.json"
   },
   "scripts": {
-    "build": "yarn run build:definitions",
+    "build": "pnpm run build:definitions",
     "build:definitions": "tsc --lib esnext --noEmit --skipLibCheck ./lib/index.d.ts",
-    "lint": "yarn run lint:eslint",
-    "lint:eslint": "yarn '../..' run eslint --quiet 'packages/nightingale-level-names'"
+    "lint": "pnpm run lint:oxlint && pnpm run lint:eslint",
+    "lint:eslint": "pnpm --dir '../..' exec eslint --quiet 'packages/nightingale-level-names'",
+    "lint:oxlint": "pnpm --dir '../..' exec oxlint --quiet 'packages/nightingale-level-names'"
   },
   "devDependencies": {
-    "typescript": "6.0.3"
+    "@typescript/native": "npm:typescript@7.0.2",
+    "typescript": "npm:@typescript/typescript6@6.0.2"
   },
   "engines": {
     "node": ">=22.18.0"

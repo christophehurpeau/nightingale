@@ -1,4 +1,4 @@
-/* eslint-disable camelcase */
+/* oxlint-disable eslint-js/camelcase -- Slack API field names */
 import { expect, test } from "vitest";
 import { Level } from "nightingale";
 import createBody from "./createBody.ts";

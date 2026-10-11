@@ -33,9 +33,10 @@
   },
   "scripts": {
     "clean": "yarn clean:build",
-    "lint": "yarn run lint:eslint",
-    "lint:eslint": "yarn '../..' run eslint --quiet 'packages/nightingale-json-formatter'",
-    "test": "yarn '../..' run test -- 'packages/nightingale-json-formatter'",
+    "lint": "pnpm run lint:oxlint && pnpm run lint:eslint",
+    "lint:eslint": "pnpm --dir '../..' exec eslint --quiet 'packages/nightingale-json-formatter'",
+    "lint:oxlint": "pnpm --dir '../..' exec oxlint --quiet 'packages/nightingale-json-formatter'",
+    "test": "pnpm run --dir '../..' test -- 'packages/nightingale-json-formatter'",
     "watch": "yarn clean:build && rollup --config rollup.config.mjs --watch"
   },
   "dependencies": {

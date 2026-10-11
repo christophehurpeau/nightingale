@@ -2,5 +2,225 @@
   // See https://go.microsoft.com/fwlink/?LinkId=733558
   // for the documentation about the tasks.json format
   "version": "2.0.0",
-  "tasks": []
+  "tasks": [
+    {
+      "label": "git: main",
+      "type": "shell",
+      "command": "git main",
+      "group": {
+        "kind": "none"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "presentation": {
+        "close": true,
+        "panel": "dedicated"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "build",
+      "problemMatcher": [],
+      "type": "npm",
+      "script": "build",
+      "group": "build",
+      "presentation": {
+        "panel": "dedicated",
+        "group": "build",
+        "clear": true,
+        "isBackground": false
+      }
+    },
+    {
+      "label": "build:definitions",
+      "problemMatcher": [],
+      "type": "npm",
+      "script": "build:definitions",
+      "group": "build",
+      "presentation": {
+        "panel": "dedicated",
+        "group": "build",
+        "clear": true,
+        "isBackground": false
+      }
+    },
+    {
+      "label": "clean:build",
+      "problemMatcher": [],
+      "type": "npm",
+      "script": "clean:build",
+      "presentation": {
+        "panel": "dedicated",
+        "clear": true,
+        "isBackground": false
+      }
+    },
+    {
+      "label": "format",
+      "problemMatcher": [],
+      "type": "npm",
+      "script": "format",
+      "presentation": {
+        "panel": "dedicated",
+        "clear": true,
+        "isBackground": false
+      }
+    },
+    {
+      "label": "format:check",
+      "problemMatcher": [],
+      "type": "npm",
+      "script": "format:check",
+      "presentation": {
+        "panel": "dedicated",
+        "clear": true,
+        "isBackground": false
+      }
+    },
+    {
+      "label": "generate:api",
+      "problemMatcher": [],
+      "type": "npm",
+      "script": "generate:api",
+      "presentation": {
+        "panel": "dedicated",
+        "clear": true,
+        "isBackground": false
+      }
+    },
+    {
+      "label": "lint",
+      "group": "test",
+      "dependsOn": ["lint:eslint", "lint:oxlint", "tsc"]
+    },
+    {
+      "label": "lint:eslint",
+      "problemMatcher": ["$eslint-stylish"],
+      "type": "npm",
+      "script": "lint:eslint",
+      "group": "test",
+      "presentation": {
+        "close": true,
+        "revealProblems": "onProblem",
+        "panel": "dedicated",
+        "group": "test",
+        "clear": true,
+        "isBackground": false
+      }
+    },
+    {
+      "label": "lint:oxlint",
+      "problemMatcher": [],
+      "type": "npm",
+      "script": "lint:oxlint",
+      "group": "test",
+      "presentation": {
+        "panel": "dedicated",
+        "group": "test",
+        "clear": true,
+        "isBackground": false
+      }
+    },
+    {
+      "label": "prepare",
+      "problemMatcher": [],
+      "type": "npm",
+      "script": "prepare",
+      "presentation": {
+        "panel": "dedicated",
+        "clear": true,
+        "isBackground": false
+      }
+    },
+    {
+      "label": "test",
+      "problemMatcher": [],
+      "type": "npm",
+      "script": "test",
+      "group": "test",
+      "presentation": {
+        "panel": "dedicated",
+        "group": "test",
+        "clear": true,
+        "isBackground": false
+      }
+    },
+    {
+      "label": "test:coverage",
+      "problemMatcher": [],
+      "type": "npm",
+      "script": "test:coverage",
+      "group": "test",
+      "presentation": {
+        "panel": "dedicated",
+        "group": "test",
+        "clear": true,
+        "isBackground": false
+      }
+    },
+    {
+      "label": "test:coverage:generate",
+      "problemMatcher": [],
+      "type": "npm",
+      "script": "test:coverage:generate",
+      "group": "test",
+      "presentation": {
+        "panel": "dedicated",
+        "group": "test",
+        "clear": true,
+        "isBackground": false
+      }
+    },
+    {
+      "label": "test:watch",
+      "problemMatcher": {
+        "owner": "vitest-watch",
+        "pattern": {
+          "regexp": ".*"
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "RERUN",
+          "endsPattern": "Waiting for file changes"
+        }
+      },
+      "type": "npm",
+      "script": "test:watch",
+      "group": "test",
+      "presentation": {
+        "panel": "dedicated",
+        "group": "test",
+        "clear": true,
+        "isBackground": true
+      }
+    },
+    {
+      "label": "tsc",
+      "problemMatcher": ["$tsc"],
+      "type": "npm",
+      "script": "tsc",
+      "group": "test",
+      "presentation": {
+        "close": true,
+        "revealProblems": "onProblem",
+        "panel": "dedicated",
+        "group": "test",
+        "clear": true,
+        "isBackground": false
+      }
+    },
+    {
+      "label": "watch",
+      "problemMatcher": [],
+      "type": "npm",
+      "script": "watch",
+      "presentation": {
+        "panel": "dedicated",
+        "clear": true,
+        "isBackground": false
+      },
+      "isBackground": true
+    }
+  ]
 }

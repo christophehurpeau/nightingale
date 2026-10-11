@@ -1,4 +1,4 @@
-/* eslint-disable camelcase */
+/* oxlint-disable eslint-js/camelcase -- level_name field of the log metadata */
 import levelNames from "nightingale-level-names";
 import type {
   Handle,

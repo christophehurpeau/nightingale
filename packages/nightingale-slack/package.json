@@ -35,13 +35,14 @@
     }
   },
   "scripts": {
-    "build": "yarn run clean:build && rollup --config rollup.config.mjs && yarn run build:definitions",
+    "build": "pnpm run clean:build && rollup --config rollup.config.mjs && pnpm run build:definitions",
     "build:definitions": "tsc -p tsconfig.json",
     "clean": "yarn clean:build",
     "clean:build": "pob-esbuild-clean-out dist",
-    "lint": "yarn run lint:eslint",
-    "lint:eslint": "yarn '../..' run eslint --quiet 'packages/nightingale-slack'",
-    "test": "yarn '../..' run test -- 'packages/nightingale-slack'",
+    "lint": "pnpm run lint:oxlint && pnpm run lint:eslint",
+    "lint:eslint": "pnpm --dir '../..' exec eslint --quiet 'packages/nightingale-slack'",
+    "lint:oxlint": "pnpm --dir '../..' exec oxlint --quiet 'packages/nightingale-slack'",
+    "test": "pnpm run --dir '../..' test -- 'packages/nightingale-slack'",
     "tsc": "tsc",
     "watch": "yarn clean:build && rollup --config rollup.config.mjs --watch"
   },
@@ -50,9 +51,10 @@
     "nightingale-types": "18.2.0"
   },
   "devDependencies": {
-    "@pob/rollup-esbuild": "10.0.0",
+    "@pob/rollup-esbuild": "10.2.0",
     "@types/node": "24.10.4",
-    "typescript": "6.0.3"
+    "@typescript/native": "npm:typescript@7.0.2",
+    "typescript": "npm:@typescript/typescript6@6.0.2"
   },
   "engines": {
     "node": ">=22.18.0"

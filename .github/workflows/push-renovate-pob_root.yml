@@ -20,8 +20,6 @@ jobs:
 
       - name: Install pnpm
         uses: pnpm/action-setup@v6
-        with:
-          version: 11
 
       - uses: actions/setup-node@v7
         with:
@@ -37,7 +35,7 @@ jobs:
         run: pnpm exec pob-root-postinstall
 
       - name: Run pob update
-        run: npx pob update --force
+        run: pnpm dlx pob update --force
         env:
           YARN_ENABLE_IMMUTABLE_INSTALLS: false
 
