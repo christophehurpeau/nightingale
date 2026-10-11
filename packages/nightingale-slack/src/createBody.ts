@@ -1,4 +1,4 @@
-/* eslint-disable camelcase */
+/* oxlint-disable eslint-js/camelcase -- Slack API field names */
 import { Level, MarkdownFormatter, RawFormatter } from "nightingale";
 import type { LogRecord, Metadata } from "nightingale-types";
 import type { SlackConfig } from "./SlackConfig";
