@@ -2,6 +2,11 @@
   Logger for browser and node, see [nightingale](packages/nightingale) to get started !
 </h1>
 
+## Support
+
+If Nightingale is useful to you, you can [support my work on Patreon](https://www.patreon.com/christophehurpeau).
+Your support helps me dedicate more time to maintaining and improving my open source projects.
+
 <h3>📦 Packages</h3>
 
 This repository is a monorepo using workspaces.
