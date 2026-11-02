@@ -1,4 +1,4 @@
-/* eslint-disable unicorn/prefer-global-this */
+/* oxlint-disable unicorn/prefer-global-this */
 
 import { BrowserConsoleHandler, Level, Logger, configure } from "nightingale";
 import { Platform } from "react-native";
@@ -41,7 +41,7 @@ export function listenReactNativeUnhandledErrors(
     "UnhandledErrors",
   ),
 ): void {
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+  // oxlint-disable-next-line typescript/no-unsafe-member-access
   const HermesInternal = (global as any).HermesInternal as
     | HermesInternalInterface
     | null

@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-duplicate-enum-values */
+/* oxlint-disable typescript/no-duplicate-enum-values */
 
 /**
  * @enum {number} List of Levels

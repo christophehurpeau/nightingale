@@ -1,4 +1,4 @@
-/* eslint-disable no-control-regex */
+/* oxlint-disable no-control-regex */
 import { expect, test } from "vitest";
 import { ANSIFormatter, style } from "./ANSIFormatter.ts";
 

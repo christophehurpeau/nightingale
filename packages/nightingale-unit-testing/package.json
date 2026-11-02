@@ -32,22 +32,26 @@
     }
   },
   "scripts": {
-    "build": "yarn run clean:build && rollup --config rollup.config.mjs && yarn run build:definitions",
-    "build:definitions": "tsc -p tsconfig.json",
+    "build": "pnpm run clean:build && rollup --config rollup.config.mjs && pnpm run build:definitions",
+    "build:definitions": "tsrs -p tsconfig.json",
     "clean": "yarn clean:build",
     "clean:build": "pob-esbuild-clean-out dist",
-    "lint": "yarn run lint:eslint",
-    "lint:eslint": "yarn '../..' run eslint --quiet 'packages/nightingale-unit-testing'",
-    "tsc": "tsc",
+    "lint": "pnpm run lint:oxlint && pnpm run lint:eslint",
+    "lint:eslint": "pnpm --dir '../..' exec eslint --quiet 'packages/nightingale-unit-testing'",
+    "lint:oxlint": "pnpm --dir '../..' exec oxlint --quiet 'packages/nightingale-unit-testing'",
+    "tsc": "tsrs",
+    "tsc:go": "tsc",
     "watch": "yarn clean:build && rollup --config rollup.config.mjs --watch"
   },
   "dependencies": {
     "@types/node": ">=22.0.0",
-    "nightingale": "18.2.0"
+    "nightingale": "workspace:*"
   },
   "devDependencies": {
-    "@pob/rollup-esbuild": "10.2.0",
-    "typescript": "6.0.3"
+    "@pob/rollup-esbuild": "11.1.0",
+    "@typescript/native": "npm:typescript@7.0.2",
+    "tsrs": "0.18.0-ts7.1.0-dev.20260929",
+    "typescript": "npm:@typescript/typescript6@6.0.2"
   },
   "engines": {
     "node": ">=22.18.0"

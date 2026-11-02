@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-use-before-define */
+/* oxlint-disable no-use-before-define */
 import type { Styles } from "nightingale-types";
 import { formatStyles } from "./formatStyles.ts";
 
@@ -173,7 +173,7 @@ function internalFormatValue(
   } else if (typeofValue === "number") {
     stringValue = formatNumberValue(value as number);
   } else if (typeofValue === "boolean") {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
+    // oxlint-disable-next-line typescript/no-unsafe-member-access, typescript/no-unsafe-call
     stringValue = (value as any).toString() as string;
   } else if ((value as () => unknown).constructor === Object) {
     if (depth >= maxDepth) {

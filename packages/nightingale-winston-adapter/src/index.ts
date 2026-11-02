@@ -1,4 +1,4 @@
-/* eslint-disable camelcase */
+/* oxlint-disable eslint-js/camelcase */
 import levelNames from "nightingale-level-names";
 import type {
   Handle,
@@ -40,7 +40,7 @@ export class WinstonAdapterHandler implements Handler {
         },
         (err) => {
           if (err) {
-            // eslint-disable-next-line no-console
+            // oxlint-disable-next-line no-console
             console.warn(err);
             // return reject(err);
           }

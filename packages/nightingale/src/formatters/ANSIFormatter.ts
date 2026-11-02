@@ -51,7 +51,7 @@ export function style(styles: Styles, string: string): string {
     return string;
   }
 
-  // eslint-disable-next-line unicorn/no-array-reduce
+  // oxlint-disable-next-line unicorn/no-array-reduce
   return styles.reduce((styledString: string, styleName: string) => {
     const codePair: CodePair | undefined = ansiStyles[styleName];
 
