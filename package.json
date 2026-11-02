@@ -16,41 +16,51 @@
   "type": "module",
   "scripts": {
     "build": "pnpm run clean:build && rollup --config rollup.config.mjs && pnpm run build:definitions",
-    "build:definitions": "tsc -b",
+    "build:definitions": "tsrs -b",
     "clean:build": "pnpm -r --parallel run clean:build",
     "format": "oxfmt",
     "format:check": "oxfmt --check .",
     "generate:api": "typedoc --tsconfig tsconfig.doc.json",
-    "lint": "pnpm run format && pnpm run lint:eslint",
+    "lint": "pnpm run format && pnpm run lint:oxlint && pnpm run lint:eslint",
     "lint:eslint": "NODE_OPTIONS=--max_old_space_size=4096 eslint --quiet .",
+    "lint:oxlint": "oxlint --quiet",
     "prepare": "pob-root-postinstall",
     "test": "TZ=UTC vitest",
     "test:coverage": "TZ=UTC POB_VITEST_COVERAGE=json,text vitest run --coverage",
     "test:coverage:generate": "TZ=UTC POB_VITEST_COVERAGE=json vitest run --coverage",
     "test:watch": "TZ=UTC vitest --watch",
-    "tsc": "tsc -b",
+    "tsc": "tsrs -b",
+    "tsc:go": "tsc -b",
     "watch": "pnpm run clean:build && rollup --config rollup.config.mjs --watch"
   },
   "devDependencies": {
-    "@pob/eslint-config": "67.1.1",
-    "@pob/rollup-esbuild": "10.2.0",
-    "@pob/root": "27.17.0",
+    "@pob/eslint-config": "68.0.0",
+    "@pob/rollup-esbuild": "11.1.0",
+    "@pob/root": "28.2.0",
     "@types/node": "24.10.4",
     "@typescript/native": "npm:typescript@7.0.2",
-    "@vitest/coverage-v8": "4.1.12",
+    "@vitest/coverage-v8": "5.0.5",
     "eslint": "10.13.0",
+    "tsrs": "0.18.0-ts7.1.0-dev.20260929",
     "typedoc": "0.28.20",
     "typescript": "npm:@typescript/typescript6@6.0.2",
     "vite": "8.3.4",
-    "vitest": "4.1.12"
+    "vitest": "5.0.5"
   },
   "commitlint": {
     "extends": [
       "@pob/root/commitlint-config"
     ]
   },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "^12.0.0",
+      "onFail": "ignore"
+    }
+  },
   "engines": {
     "node": ">=22.18.0",
-    "pnpm": ">= 11.0.0"
+    "pnpm": ">= 12.0.0"
   }
 }

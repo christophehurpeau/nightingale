@@ -52,7 +52,7 @@ test("multiple values", () => {
   expect(
     formatObject(
       {
-        // eslint-disable-next-line object-shorthand
+        // oxlint-disable-next-line object-shorthand
         undefined: undefined,
         null: null,
         number: 1,

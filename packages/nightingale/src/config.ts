@@ -66,7 +66,7 @@ function handleConfig(config: Config): Config {
 
 export function configure(config: Config[]): void {
   if (globalOrWindow.__NIGHTINGALE_CONFIG.length > 0) {
-    // eslint-disable-next-line no-console
+    // oxlint-disable-next-line no-console
     console.log("nightingale: warning: config overridden");
   }
 

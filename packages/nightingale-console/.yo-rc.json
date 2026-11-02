@@ -3,7 +3,8 @@
     "lib": {
       "documentation": false,
       "testing": false,
-      "examples": true
+      "examples": true,
+      "e2e": false
     },
     "project": {
       "type": "lib"

@@ -1,2 +1,0 @@
-export declare const defaultFormatter: <T extends import("nightingale-types").Metadata>(record: import("nightingale-types").LogRecord<T>) => [string, ...string[]];
-//# sourceMappingURL=defaultFormatter.target-node.d.ts.map

@@ -28,7 +28,7 @@ export interface LogRecord<T extends Metadata> {
 export type IsHandling = (level: Level, key: string) => boolean;
 export type Handle = <T extends Metadata>(
   record: Readonly<LogRecord<T>>,
-  // eslint-disable-next-line @typescript-eslint/no-invalid-void-type
+  // oxlint-disable-next-line typescript/no-invalid-void-type
 ) => false | void;
 
 export interface Handler {

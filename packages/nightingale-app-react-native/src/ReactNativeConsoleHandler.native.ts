@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unsafe-argument */
+/* oxlint-disable typescript/no-unsafe-argument */
 
 import { ANSIFormatter } from "nightingale";
 import type {
@@ -15,7 +15,7 @@ import parseErrorStack from "react-native/Libraries/Core/Devtools/parseErrorStac
 import symbolicateStackTrace from "react-native/Libraries/Core/Devtools/symbolicateStackTrace";
 
 const getStackTrace = (e: Error): any => {
-  // eslint-disable-next-line no-prototype-builtins
+  // oxlint-disable-next-line no-prototype-builtins
   if (Platform.hasOwnProperty("constants")) {
     // RN version >= 0.63
     if (Platform.constants.reactNativeVersion.minor >= 64) {
@@ -46,7 +46,7 @@ function consoleOutput<T extends Metadata>(
   param: string[],
   record: LogRecord<T>,
 ): void {
-  // eslint-disable-next-line no-console
+  // oxlint-disable-next-line no-console
   console.log(...param);
 }
 

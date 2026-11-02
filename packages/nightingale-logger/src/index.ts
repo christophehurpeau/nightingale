@@ -215,7 +215,7 @@ export class Logger {
 
     if (handlers.length === 0) {
       if (record.level > Level.ERROR) {
-        // eslint-disable-next-line no-console
+        // oxlint-disable-next-line no-console
         console.log("[nightingale] no logger for > error level.", {
           key: record.key,
           message: record.message,

@@ -35,7 +35,7 @@ logger.info("test");
 logger.warn("test");
 logger.error(new Error("Test error with breadcrumbs"));
 
-// eslint-disable-next-line @typescript-eslint/no-floating-promises, no-new
+// oxlint-disable-next-line typescript/no-floating-promises, no-new
 new Promise((resolve, reject) => {
   reject(new Error("Testing uncaught error"));
 });

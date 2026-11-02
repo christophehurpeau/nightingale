@@ -1,4 +1,4 @@
-/* eslint-disable prefer-template */
+/* oxlint-disable prefer-template */
 import type { Handler, Level, LogRecord, Metadata } from "nightingale-types";
 import { RawFormatter } from "../formatters/RawFormatter.ts";
 

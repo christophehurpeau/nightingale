@@ -1,4 +1,3 @@
-/* eslint-disable complexity */
 import { Level } from "nightingale-levels";
 
 const specialRegexpChars = /[$()+.?[\\\]^{|}]/;

@@ -15,7 +15,7 @@ logger.debug("test");
 logger.info("test");
 logger.warn("test");
 
-// eslint-disable-next-line @typescript-eslint/no-floating-promises, no-new
+// oxlint-disable-next-line typescript/no-floating-promises, no-new
 new Promise((resolve, reject) => {
   reject(new Error("Testing uncaught error"));
 });

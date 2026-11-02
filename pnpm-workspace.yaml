@@ -2,17 +2,16 @@ allowBuilds:
   esbuild: true
   unrs-resolver: true
 dedupePeerDependents: true
-minimumReleaseAge: 4320
+minimumReleaseAge: 3600
 minimumReleaseAgeExclude:
   - "@pob/*"
+  - pob
   - pob-dependencies
   - check-package-dependencies
   - alouette
   - alouette-icons
   - nightingale
   - nightingale-logger
-  # Renovate security update: vitest@4.1.11
-  - vitest@4.1.11
 nodeLinker: hoisted
 packages:
   - packages/*
