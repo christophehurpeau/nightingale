@@ -54,7 +54,7 @@
     "watch": "yarn clean:build && rollup --config rollup.config.mjs --watch"
   },
   "dependencies": {
-    "nightingale-levels": "18.2.0"
+    "nightingale-levels": "workspace:*"
   },
   "devDependencies": {
     "@pob/rollup-esbuild": "11.1.0",

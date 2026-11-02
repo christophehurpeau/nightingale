@@ -69,9 +69,9 @@
     "watch": "pob-watch"
   },
   "dependencies": {
-    "nightingale": "18.2.0",
-    "nightingale-slack": "18.2.0",
-    "nightingale-types": "18.2.0"
+    "nightingale": "workspace:*",
+    "nightingale-slack": "workspace:*",
+    "nightingale-types": "workspace:*"
   },
   "devDependencies": {
     "@pob/rollup-esbuild": "11.1.0",

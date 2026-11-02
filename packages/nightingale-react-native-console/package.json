@@ -42,7 +42,7 @@
     "watch": "yarn clean:build && rollup --config rollup.config.mjs --watch"
   },
   "dependencies": {
-    "nightingale-app-react-native": "18.2.0"
+    "nightingale-app-react-native": "workspace:*"
   },
   "peerDependencies": {
     "react-native": "*"

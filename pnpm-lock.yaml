@@ -54,14 +54,14 @@ importers:
         specifier: ^7.0.0
         version: 7.0.0
       nightingale-levels:
-        specifier: 18.2.0
-        version: 18.2.0
+        specifier: workspace:*
+        version: link:../nightingale-levels
       nightingale-logger:
-        specifier: 18.2.0
-        version: 18.2.0
+        specifier: workspace:*
+        version: link:../nightingale-logger
       nightingale-types:
-        specifier: 18.2.0
-        version: 18.2.0
+        specifier: workspace:*
+        version: link:../nightingale-types
     devDependencies:
       '@pob/rollup-esbuild':
         specifier: 11.1.0
@@ -79,8 +79,8 @@ importers:
   packages/nightingale-ansi-formatter:
     dependencies:
       nightingale:
-        specifier: 18.2.0
-        version: 18.2.0
+        specifier: workspace:*
+        version: link:../nightingale
 
   packages/nightingale-app-console:
     dependencies:
@@ -88,8 +88,8 @@ importers:
         specifier: '>=22.0.0'
         version: 24.10.4
       nightingale:
-        specifier: 18.2.0
-        version: 18.2.0
+        specifier: workspace:*
+        version: link:../nightingale
     devDependencies:
       '@pob/rollup-esbuild':
         specifier: 11.1.0
@@ -107,8 +107,8 @@ importers:
   packages/nightingale-app-react-native:
     dependencies:
       nightingale:
-        specifier: 18.2.0
-        version: 18.2.0
+        specifier: workspace:*
+        version: link:../nightingale
       react-native-web:
         specifier: '*'
         version: 0.21.2(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
@@ -132,20 +132,20 @@ importers:
   packages/nightingale-browser-console:
     dependencies:
       nightingale:
-        specifier: 18.2.0
-        version: 18.2.0
+        specifier: workspace:*
+        version: link:../nightingale
 
   packages/nightingale-browser-console-formatter:
     dependencies:
       nightingale:
-        specifier: 18.2.0
-        version: 18.2.0
+        specifier: workspace:*
+        version: link:../nightingale
 
   packages/nightingale-console:
     dependencies:
       nightingale:
-        specifier: 18.2.0
-        version: 18.2.0
+        specifier: workspace:*
+        version: link:../nightingale
 
   packages/nightingale-console-example:
     dependencies:
@@ -156,14 +156,14 @@ importers:
         specifier: 10.57.0
         version: 10.57.0(supports-color@8.1.1)
       nightingale:
-        specifier: 18.2.0
-        version: 18.2.0
+        specifier: workspace:*
+        version: link:../nightingale
       nightingale-console:
-        specifier: 18.2.0
-        version: 18.2.0
+        specifier: workspace:*
+        version: link:../nightingale-console
       nightingale-sentry:
-        specifier: 18.2.0
-        version: 18.2.0(@sentry/core@10.57.0)
+        specifier: workspace:*
+        version: link:../nightingale-sentry
     devDependencies:
       '@pob/rollup-esbuild':
         specifier: 11.1.0
@@ -181,26 +181,26 @@ importers:
   packages/nightingale-console-output:
     dependencies:
       nightingale:
-        specifier: 18.2.0
-        version: 18.2.0
+        specifier: workspace:*
+        version: link:../nightingale
 
   packages/nightingale-debug:
     dependencies:
       nightingale:
-        specifier: 18.2.0
-        version: 18.2.0
+        specifier: workspace:*
+        version: link:../nightingale
 
   packages/nightingale-example:
     dependencies:
       nightingale:
-        specifier: 18.2.0
-        version: 18.2.0
+        specifier: workspace:*
+        version: link:../nightingale
       nightingale-slack:
-        specifier: 18.2.0
-        version: 18.2.0
+        specifier: workspace:*
+        version: link:../nightingale-slack
       nightingale-types:
-        specifier: 18.2.0
-        version: 18.2.0
+        specifier: workspace:*
+        version: link:../nightingale-types
     devDependencies:
       '@pob/rollup-esbuild':
         specifier: 11.1.0
@@ -218,24 +218,24 @@ importers:
   packages/nightingale-formatter:
     dependencies:
       nightingale:
-        specifier: 18.2.0
-        version: 18.2.0
+        specifier: workspace:*
+        version: link:../nightingale
 
   packages/nightingale-html-formatter:
     dependencies:
       nightingale:
-        specifier: 18.2.0
-        version: 18.2.0
+        specifier: workspace:*
+        version: link:../nightingale
     devDependencies:
       nightingale-levels:
-        specifier: 18.2.0
-        version: 18.2.0
+        specifier: workspace:*
+        version: link:../nightingale-levels
 
   packages/nightingale-json-formatter:
     dependencies:
       nightingale:
-        specifier: 18.2.0
-        version: 18.2.0
+        specifier: workspace:*
+        version: link:../nightingale
 
   packages/nightingale-level-names:
     devDependencies:
@@ -270,11 +270,11 @@ importers:
         specifier: '>=22.0.0'
         version: 24.10.4
       nightingale-levels:
-        specifier: 18.2.0
-        version: 18.2.0
+        specifier: workspace:*
+        version: link:../nightingale-levels
       nightingale-types:
-        specifier: 18.2.0
-        version: 18.2.0
+        specifier: workspace:*
+        version: link:../nightingale-types
     devDependencies:
       '@pob/rollup-esbuild':
         specifier: 11.1.0
@@ -292,27 +292,27 @@ importers:
   packages/nightingale-markdown-formatter:
     dependencies:
       nightingale:
-        specifier: 18.2.0
-        version: 18.2.0
+        specifier: workspace:*
+        version: link:../nightingale
 
   packages/nightingale-raw-formatter:
     dependencies:
       nightingale:
-        specifier: 18.2.0
-        version: 18.2.0
+        specifier: workspace:*
+        version: link:../nightingale
       nightingale-types:
-        specifier: 18.2.0
-        version: 18.2.0
+        specifier: workspace:*
+        version: link:../nightingale-types
     devDependencies:
       nightingale-levels:
-        specifier: 18.2.0
-        version: 18.2.0
+        specifier: workspace:*
+        version: link:../nightingale-levels
 
   packages/nightingale-react-native-console:
     dependencies:
       nightingale-app-react-native:
-        specifier: 18.2.0
-        version: 18.2.0(react-native-web@0.21.2(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-native@0.83.1(@babel/core@7.29.7(supports-color@8.1.1))(react@19.2.8)(supports-color@8.1.1))
+        specifier: workspace:*
+        version: link:../nightingale-app-react-native
       react-native:
         specifier: '*'
         version: 0.83.1(@babel/core@7.29.7(supports-color@8.1.1))(react@19.2.8)(supports-color@8.1.1)
@@ -320,11 +320,11 @@ importers:
   packages/nightingale-sentry:
     dependencies:
       nightingale-levels:
-        specifier: 18.2.0
-        version: 18.2.0
+        specifier: workspace:*
+        version: link:../nightingale-levels
       nightingale-types:
-        specifier: 18.2.0
-        version: 18.2.0
+        specifier: workspace:*
+        version: link:../nightingale-types
     devDependencies:
       '@pob/rollup-esbuild':
         specifier: 11.1.0
@@ -345,11 +345,11 @@ importers:
   packages/nightingale-slack:
     dependencies:
       nightingale:
-        specifier: 18.2.0
-        version: 18.2.0
+        specifier: workspace:*
+        version: link:../nightingale
       nightingale-types:
-        specifier: 18.2.0
-        version: 18.2.0
+        specifier: workspace:*
+        version: link:../nightingale-types
     devDependencies:
       '@pob/rollup-esbuild':
         specifier: 11.1.0
@@ -370,14 +370,14 @@ importers:
   packages/nightingale-string:
     dependencies:
       nightingale:
-        specifier: 18.2.0
-        version: 18.2.0
+        specifier: workspace:*
+        version: link:../nightingale
 
   packages/nightingale-types:
     dependencies:
       nightingale-levels:
-        specifier: 18.2.0
-        version: 18.2.0
+        specifier: workspace:*
+        version: link:../nightingale-levels
     devDependencies:
       '@pob/rollup-esbuild':
         specifier: 11.1.0
@@ -398,8 +398,8 @@ importers:
         specifier: '>=22.0.0'
         version: 24.10.4
       nightingale:
-        specifier: 18.2.0
-        version: 18.2.0
+        specifier: workspace:*
+        version: link:../nightingale
     devDependencies:
       '@pob/rollup-esbuild':
         specifier: 11.1.0
@@ -420,8 +420,8 @@ importers:
         specifier: '>=22.0.0'
         version: 24.10.4
       nightingale-types:
-        specifier: 18.2.0
-        version: 18.2.0
+        specifier: workspace:*
+        version: link:../nightingale-types
     devDependencies:
       '@pob/rollup-esbuild':
         specifier: 11.1.0
@@ -439,11 +439,11 @@ importers:
   packages/nightingale-winston-adapter:
     dependencies:
       nightingale-level-names:
-        specifier: 18.2.0
-        version: 18.2.0
+        specifier: workspace:*
+        version: link:../nightingale-level-names
       nightingale-types:
-        specifier: 18.2.0
-        version: 18.2.0
+        specifier: workspace:*
+        version: link:../nightingale-types
     devDependencies:
       '@pob/rollup-esbuild':
         specifier: 11.1.0
@@ -1858,10 +1858,6 @@ packages:
     resolution: {integrity: sha512-xyLtl9DUBBFrcJS4x2pIqGLH68/tC2uOa4Z7pUteW09D3bXnnXUom4dyPikzWgB7llmIc1zoeI3aoUdC4rPK/Q==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@typescript-eslint/types@8.65.0':
-    resolution: {integrity: sha512-JSSwWNy+H0E/01jJEM+hrX6N0OFDzFzeIhHFSAS01tlVaevpG8cFyYRPhS5yjGOvBUx3sqQHVMjCL1CAZZMxBg==}
-    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
-
   '@typescript-eslint/typescript-estree@8.63.0':
     resolution: {integrity: sha512-ygBkU+B7ex5UI/gKhaqexWev79uISfIv7XQCRNYO/jmD8rGLPyWLAb3KMRT6nd8Gt9bmUBi9+iX6tBdYfOY81Q==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
@@ -3221,40 +3217,12 @@ packages:
     resolution: {integrity: sha512-8Ofs/AUQh8MaEcrlq5xOX0CQ9ypTF5dl78mjlMNfOK08fzpgTHQRQPBxcPlEtIw0yRpws+Zo/3r+5WRby7u3Gg==}
     engines: {node: '>= 0.6'}
 
-  nightingale-app-react-native@18.2.0:
-    resolution: {integrity: sha512-M+E6fneXWn2n8zkaMu0zd7XjFnnjPbqFtE/7R0VnwazjXVKBs7mRDWUt2ehkIcpci3jRUQZT5FhHZXBnTE9Bhw==}
-    engines: {node: '>=22.18.0'}
-    peerDependencies:
-      react-native: '*'
-      react-native-web: '*'
-    peerDependenciesMeta:
-      react-native-web:
-        optional: true
-
-  nightingale-console@18.2.0:
-    resolution: {integrity: sha512-Yt32EuoK8/QDvYyhL2vrWbWtp9klI5XtXqf0OowcPZF989Svwu6VzPJhkUoim0vcSX0eQnouV6b7SZ/y+ljmRA==}
-    engines: {node: '>=22.18.0'}
-
-  nightingale-level-names@18.2.0:
-    resolution: {integrity: sha512-b1of8SAnwtVv+6iRbFwyIN52fjS4DR9gyUDOQCJpbLRG0nh0Fschlfvl/rZKn5TYcqLuT8i0D8wisMvrKkDWvg==}
-    engines: {node: '>=22.18.0'}
-
   nightingale-levels@18.2.0:
     resolution: {integrity: sha512-kl3OKYQCWjcTvlTDgwBq2QcRajmEyD5VV9jf2sHF27SOgY/Fhf2YxSzeqFO6u+GSyU1uNMD9xg2N04949022aA==}
     engines: {node: '>=22.18.0'}
 
   nightingale-logger@18.2.0:
     resolution: {integrity: sha512-ni7Qztw3bb2GTuNyyo0YxHEDaUNL14lP/fhJOjNFUqK8nc9ZGpBWmdp3+3MKrZbonEEvK7vkHo8ktTb+grqsOQ==}
-    engines: {node: '>=22.18.0'}
-
-  nightingale-sentry@18.2.0:
-    resolution: {integrity: sha512-eadLcq+NjY+Sp4zgtbejXhDKTc/fJ9yFb95F29y+MWsIvfuiddV9kwemL2sovIhmIdnnB6DmXh55wdVmFofVJA==}
-    engines: {node: '>=22.18.0'}
-    peerDependencies:
-      '@sentry/core': '>=10.57.0'
-
-  nightingale-slack@18.2.0:
-    resolution: {integrity: sha512-OgP2fOE4cMUCsS45wrAFKUflfPRYXKHd7Oy5esK1sofogvSQhy5ucCurTrpg6UBKRt+j7K6G23OObxcvlBgKQQ==}
     engines: {node: '>=22.18.0'}
 
   nightingale-types@18.2.0:
@@ -5155,8 +5123,6 @@ snapshots:
 
   '@typescript-eslint/types@8.63.0': {}
 
-  '@typescript-eslint/types@8.65.0': {}
-
   '@typescript-eslint/typescript-estree@8.63.0(@typescript/typescript6@6.0.2)(supports-color@8.1.1)':
     dependencies:
       '@typescript-eslint/project-service': 8.63.0(@typescript/typescript6@6.0.2)(supports-color@8.1.1)
@@ -5763,7 +5729,7 @@ snapshots:
 
   eslint-plugin-import-x@4.17.1(@typescript-eslint/utils@8.63.0(@typescript/typescript6@6.0.2)(eslint@10.13.0(supports-color@8.1.1))(supports-color@8.1.1))(eslint@10.13.0(supports-color@8.1.1))(supports-color@8.1.1):
     dependencies:
-      '@typescript-eslint/types': 8.65.0
+      '@typescript-eslint/types': 8.63.0
       comment-parser: 1.4.7
       debug: 4.4.3(supports-color@8.1.1)
       eslint: 10.13.0(supports-color@8.1.1)
@@ -6567,36 +6533,12 @@ snapshots:
 
   negotiator@1.0.0: {}
 
-  nightingale-app-react-native@18.2.0(react-native-web@0.21.2(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-native@0.83.1(@babel/core@7.29.7(supports-color@8.1.1))(react@19.2.8)(supports-color@8.1.1)):
-    dependencies:
-      nightingale: 18.2.0
-      react-native: 0.83.1(@babel/core@7.29.7(supports-color@8.1.1))(react@19.2.8)(supports-color@8.1.1)
-    optionalDependencies:
-      react-native-web: 0.21.2(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
-
-  nightingale-console@18.2.0:
-    dependencies:
-      nightingale: 18.2.0
-
-  nightingale-level-names@18.2.0: {}
-
   nightingale-levels@18.2.0: {}
 
   nightingale-logger@18.2.0:
     dependencies:
       '@types/node': 24.10.4
       nightingale-levels: 18.2.0
-      nightingale-types: 18.2.0
-
-  nightingale-sentry@18.2.0(@sentry/core@10.57.0):
-    dependencies:
-      '@sentry/core': 10.57.0
-      nightingale-levels: 18.2.0
-      nightingale-types: 18.2.0
-
-  nightingale-slack@18.2.0:
-    dependencies:
-      nightingale: 18.2.0
       nightingale-types: 18.2.0
 
   nightingale-types@18.2.0:

@@ -56,8 +56,8 @@
   },
   "dependencies": {
     "@types/node": ">=22.0.0",
-    "nightingale-levels": "18.2.0",
-    "nightingale-types": "18.2.0"
+    "nightingale-levels": "workspace:*",
+    "nightingale-types": "workspace:*"
   },
   "devDependencies": {
     "@pob/rollup-esbuild": "11.1.0",

@@ -40,10 +40,10 @@
     "watch": "yarn clean:build && rollup --config rollup.config.mjs --watch"
   },
   "dependencies": {
-    "nightingale": "18.2.0"
+    "nightingale": "workspace:*"
   },
   "devDependencies": {
-    "nightingale-levels": "18.2.0"
+    "nightingale-levels": "workspace:*"
   },
   "engines": {
     "node": ">=22.18.0"
