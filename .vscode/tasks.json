@@ -7,9 +7,16 @@
       "label": "git: main",
       "type": "shell",
       "command": "git main",
-      "group": { "kind": "none" },
-      "options": { "cwd": "${workspaceFolder}" },
-      "presentation": { "close": true, "panel": "dedicated" },
+      "group": {
+        "kind": "none"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "presentation": {
+        "close": true,
+        "panel": "dedicated"
+      },
       "problemMatcher": []
     },
     {
@@ -169,7 +176,9 @@
       "label": "test:watch",
       "problemMatcher": {
         "owner": "vitest-watch",
-        "pattern": { "regexp": ".*" },
+        "pattern": {
+          "regexp": ".*"
+        },
         "background": {
           "activeOnStart": true,
           "beginsPattern": "RERUN",
