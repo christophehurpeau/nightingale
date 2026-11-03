@@ -4,9 +4,15 @@
     "@pob/root/tsconfigs/strict.json",
     "@pob/root/tsconfigs/targets/rollup-node-24.json"
   ],
-  "include": ["src/**/*.ts"],
+  "include": [
+    "src/**/*.ts",
+    "./*.ts",
+    "scripts/**/*.ts",
+    "scripts/**/*.mts",
+    "scripts/**/*.cts"
+  ],
   "compilerOptions": {
-    "rootDir": "src",
+    "rootDir": ".",
     "noEmit": true,
     "tsBuildInfoFile": "node_modules/.cache/tsc/tsbuildinfo",
     "incremental": true,

@@ -12,6 +12,8 @@ minimumReleaseAgeExclude:
   - alouette-icons
   - nightingale
   - nightingale-logger
+  - nightingale-levels
+  - nightingale-types
 nodeLinker: hoisted
 packages:
   - packages/*
