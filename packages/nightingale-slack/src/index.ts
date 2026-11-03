@@ -8,7 +8,7 @@ import type {
 import type { SlackConfig } from "./SlackConfig.ts";
 import createBody from "./createBody.ts";
 
-export type { SlackConfig } from "./SlackConfig";
+export type { SlackConfig } from "./SlackConfig.ts";
 
 export { default as createBody } from "./createBody.ts";
 
