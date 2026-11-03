@@ -54,7 +54,7 @@
     "watch": "yarn clean:build && rollup --config rollup.config.mjs --watch"
   },
   "devDependencies": {
-    "@pob/rollup-esbuild": "11.2.0",
+    "@pob/rollup-esbuild": "11.3.0",
     "@typescript/native": "npm:typescript@7.0.2",
     "tsrs": "0.18.0-ts7.1.0-dev.20260929",
     "typescript": "npm:@typescript/typescript6@6.0.2"
@@ -69,7 +69,7 @@
     ]
   },
   "engines": {
-    "node": ">=22.18.0"
+    "node": "^22.18.0 || >=24.14.1"
   },
   "pob": {
     "bundler": "rollup-esbuild",

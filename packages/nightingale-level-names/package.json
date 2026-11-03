@@ -44,7 +44,7 @@
     "typescript": "npm:@typescript/typescript6@6.0.2"
   },
   "engines": {
-    "node": ">=22.18.0"
+    "node": "^22.18.0 || >=24.14.1"
   },
   "pob": {}
 }
