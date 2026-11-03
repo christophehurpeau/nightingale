@@ -15,8 +15,8 @@ importers:
         specifier: 11.1.0
         version: 11.1.0(@typescript/typescript6@6.0.2)(supports-color@8.1.1)
       '@pob/root':
-        specifier: 28.2.0
-        version: 28.2.0
+        specifier: 28.2.2
+        version: 28.2.2
       '@types/node':
         specifier: 24.10.4
         version: 24.10.4
@@ -636,8 +636,8 @@ packages:
     resolution: {integrity: sha512-Ng4nRj/LBAOvc+GQu7bsFW4/fL89LvZ14OOC/ERLbUpnG6QBwWRzY/1oXGwPs3C8YHWjJObin4kLYo2YeEn70w==}
     engines: {node: '>=22.12.0'}
 
-  '@commitlint/lint@21.2.3':
-    resolution: {integrity: sha512-lUZcSuVLLEDkhge9ERk8Rp+FXQtrUhCK+h328BFnzKXrTuXGdqiYMEpTlNWdZaOrjyMhMJaz354ZaWEGJxcLeg==}
+  '@commitlint/lint@21.2.4':
+    resolution: {integrity: sha512-HR8SGl1oEGfi/cqyBipanVY0a9CfEzIcJjPC37t7oQedaUUngw3d5E17g5Cfr2S3p6KsZM7UOHFq5fXHLRh7DQ==}
     engines: {node: '>=22.12.0'}
 
   '@commitlint/message@21.2.0':
@@ -1316,8 +1316,8 @@ packages:
     engines: {node: '>=22.18.0'}
     hasBin: true
 
-  '@pob/root@28.2.0':
-    resolution: {integrity: sha512-0I/C61QEN3a32Xkb9FcMNWevwXEFrQMaBT35pQnpO7FSvbRWB173bNLw/OAPaZ5Dp/LGUwm6P9MrzxXNvvvVOA==}
+  '@pob/root@28.2.2':
+    resolution: {integrity: sha512-jIZv1cXqPZbewFNdt65+QouyxcUoF2dxzJeujNeCja8LQwvp4J6PMSdjNu94/0xOPzU02j1tQe3RAiWC/UXihw==}
     engines: {node: '>=22.18.0'}
     hasBin: true
 
@@ -4165,7 +4165,7 @@ snapshots:
       '@commitlint/types': 21.2.3
       semver: 7.8.5
 
-  '@commitlint/lint@21.2.3':
+  '@commitlint/lint@21.2.4':
     dependencies:
       '@commitlint/is-ignored': 21.2.3
       '@commitlint/parse': 21.2.3
@@ -4676,10 +4676,10 @@ snapshots:
     dependencies:
       rollup: 4.60.4
 
-  '@pob/root@28.2.0':
+  '@pob/root@28.2.2':
     dependencies:
       '@commitlint/format': 21.2.3
-      '@commitlint/lint': 21.2.3
+      '@commitlint/lint': 21.2.4
       '@commitlint/types': 21.2.3
       '@pob/version': 8.2.0
       conventional-changelog-conventionalcommits: 10.4.1
