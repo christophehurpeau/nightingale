@@ -1,4 +1,4 @@
-import type { NightingaleFormatter } from "../formatter-utils";
+import type { NightingaleFormatter } from "../formatter-utils/index.ts";
 
 function map2object(map: Map<unknown, unknown>): unknown {
   const object: Record<string, unknown> = {};

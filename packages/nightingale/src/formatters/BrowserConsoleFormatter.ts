@@ -1,6 +1,6 @@
 import type { LogRecord, Metadata, Styles } from "nightingale-types";
 import type { StyleToHtmlStyle } from "nightingale";
-import type { NightingaleFormatter } from "../formatter-utils";
+import type { NightingaleFormatter } from "../formatter-utils/index.ts";
 import {
   formatRecordToString,
   styleToHtmlStyleThemeDark,

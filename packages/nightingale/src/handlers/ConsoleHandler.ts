@@ -7,7 +7,7 @@ import type {
   Metadata,
 } from "nightingale-types";
 import { createFindDebugLevel } from "../debug/debug.ts";
-import type { NightingaleFormatter } from "../formatter-utils";
+import type { NightingaleFormatter } from "../formatter-utils/index.ts";
 import { consoleOutput } from "../outputs/consoleOutput.ts";
 import { defaultFormatter } from "./defaultFormatter.ts";
 

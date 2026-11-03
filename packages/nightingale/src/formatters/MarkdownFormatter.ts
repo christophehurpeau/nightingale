@@ -1,5 +1,5 @@
 import type { Styles } from "nightingale-types";
-import type { NightingaleFormatter } from "../formatter-utils";
+import type { NightingaleFormatter } from "../formatter-utils/index.ts";
 import { formatRecordToString } from "../formatter-utils/index.ts";
 
 export function style(styles: Styles, string: string): string {

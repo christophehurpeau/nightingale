@@ -2,7 +2,7 @@ import type { Styles } from "nightingale-types";
 import type {
   NightingaleFormatter,
   StyleToHtmlStyle,
-} from "../formatter-utils";
+} from "../formatter-utils/index.ts";
 import {
   formatRecordToString,
   styleToHtmlStyleThemeLight,

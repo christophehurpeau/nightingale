@@ -1,7 +1,7 @@
 /* oxlint-disable eslint-js/camelcase */
 import { Level, MarkdownFormatter, RawFormatter } from "nightingale";
 import type { LogRecord, Metadata } from "nightingale-types";
-import type { SlackConfig } from "./SlackConfig";
+import type { SlackConfig } from "./SlackConfig.ts";
 
 const levelToSlackColor: Record<number, string> = {
   [Level.TRACE]: "#808080",
