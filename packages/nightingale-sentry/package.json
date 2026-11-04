@@ -60,13 +60,13 @@
   },
   "devDependencies": {
     "@pob/rollup-esbuild": "11.4.0",
-    "@sentry/core": "10.57.0",
+    "@sentry/core": "11.10.0",
     "@typescript/native": "npm:typescript@7.0.2",
     "tsrs": "0.18.0-ts7.1.0-dev.20260929",
     "typescript": "npm:@typescript/typescript6@6.0.2"
   },
   "peerDependencies": {
-    "@sentry/core": ">=10.57.0"
+    "@sentry/core": ">=11.10.0"
   },
   "browserslist": {
     "production": [
