@@ -52,7 +52,7 @@
     "nightingale-types": "workspace:*"
   },
   "devDependencies": {
-    "@pob/rollup-esbuild": "11.3.0",
+    "@pob/rollup-esbuild": "11.4.0",
     "@types/node": "24.10.4",
     "@typescript/native": "npm:typescript@7.0.2",
     "tsrs": "0.18.0-ts7.1.0-dev.20260929",

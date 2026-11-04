@@ -12,8 +12,8 @@ importers:
         specifier: 68.4.0
         version: 68.4.0(@typescript-eslint/utils@8.63.0(@typescript/typescript6@6.0.2)(eslint@10.14.0(supports-color@8.1.1))(supports-color@8.1.1))(@typescript/typescript6@6.0.2)(eslint@10.14.0(supports-color@8.1.1))(supports-color@8.1.1)(ts-declaration-location@1.0.7(@typescript/typescript6@6.0.2))
       '@pob/rollup-esbuild':
-        specifier: 11.3.0
-        version: 11.3.0(@typescript/typescript6@6.0.2)(supports-color@8.1.1)
+        specifier: 11.4.0
+        version: 11.4.0(@typescript/typescript6@6.0.2)(supports-color@8.1.1)
       '@pob/root':
         specifier: 28.6.1
         version: 28.6.1
@@ -64,8 +64,8 @@ importers:
         version: link:../nightingale-types
     devDependencies:
       '@pob/rollup-esbuild':
-        specifier: 11.3.0
-        version: 11.3.0(@typescript/typescript6@6.0.2)(supports-color@8.1.1)
+        specifier: 11.4.0
+        version: 11.4.0(@typescript/typescript6@6.0.2)(supports-color@8.1.1)
       '@typescript/native':
         specifier: npm:typescript@7.0.2
         version: typescript@7.0.2
@@ -92,8 +92,8 @@ importers:
         version: link:../nightingale
     devDependencies:
       '@pob/rollup-esbuild':
-        specifier: 11.3.0
-        version: 11.3.0(@typescript/typescript6@6.0.2)(supports-color@8.1.1)
+        specifier: 11.4.0
+        version: 11.4.0(@typescript/typescript6@6.0.2)(supports-color@8.1.1)
       '@typescript/native':
         specifier: npm:typescript@7.0.2
         version: typescript@7.0.2
@@ -114,8 +114,8 @@ importers:
         version: 0.21.2(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
     devDependencies:
       '@pob/rollup-esbuild':
-        specifier: 11.3.0
-        version: 11.3.0(@typescript/typescript6@6.0.2)(supports-color@8.1.1)
+        specifier: 11.4.0
+        version: 11.4.0(@typescript/typescript6@6.0.2)(supports-color@8.1.1)
       '@typescript/native':
         specifier: npm:typescript@7.0.2
         version: typescript@7.0.2
@@ -166,8 +166,8 @@ importers:
         version: link:../nightingale-sentry
     devDependencies:
       '@pob/rollup-esbuild':
-        specifier: 11.3.0
-        version: 11.3.0(@typescript/typescript6@6.0.2)(supports-color@8.1.1)
+        specifier: 11.4.0
+        version: 11.4.0(@typescript/typescript6@6.0.2)(supports-color@8.1.1)
       '@typescript/native':
         specifier: npm:typescript@7.0.2
         version: typescript@7.0.2
@@ -203,8 +203,8 @@ importers:
         version: link:../nightingale-types
     devDependencies:
       '@pob/rollup-esbuild':
-        specifier: 11.3.0
-        version: 11.3.0(@typescript/typescript6@6.0.2)(supports-color@8.1.1)
+        specifier: 11.4.0
+        version: 11.4.0(@typescript/typescript6@6.0.2)(supports-color@8.1.1)
       '@typescript/native':
         specifier: npm:typescript@7.0.2
         version: typescript@7.0.2
@@ -252,8 +252,8 @@ importers:
   packages/nightingale-levels:
     devDependencies:
       '@pob/rollup-esbuild':
-        specifier: 11.3.0
-        version: 11.3.0(@typescript/typescript6@6.0.2)(supports-color@8.1.1)
+        specifier: 11.4.0
+        version: 11.4.0(@typescript/typescript6@6.0.2)(supports-color@8.1.1)
       '@typescript/native':
         specifier: npm:typescript@7.0.2
         version: typescript@7.0.2
@@ -277,8 +277,8 @@ importers:
         version: link:../nightingale-types
     devDependencies:
       '@pob/rollup-esbuild':
-        specifier: 11.3.0
-        version: 11.3.0(@typescript/typescript6@6.0.2)(supports-color@8.1.1)
+        specifier: 11.4.0
+        version: 11.4.0(@typescript/typescript6@6.0.2)(supports-color@8.1.1)
       '@typescript/native':
         specifier: npm:typescript@7.0.2
         version: typescript@7.0.2
@@ -327,8 +327,8 @@ importers:
         version: link:../nightingale-types
     devDependencies:
       '@pob/rollup-esbuild':
-        specifier: 11.3.0
-        version: 11.3.0(@typescript/typescript6@6.0.2)(supports-color@8.1.1)
+        specifier: 11.4.0
+        version: 11.4.0(@typescript/typescript6@6.0.2)(supports-color@8.1.1)
       '@sentry/core':
         specifier: 10.57.0
         version: 10.57.0
@@ -352,8 +352,8 @@ importers:
         version: link:../nightingale-types
     devDependencies:
       '@pob/rollup-esbuild':
-        specifier: 11.3.0
-        version: 11.3.0(@typescript/typescript6@6.0.2)(supports-color@8.1.1)
+        specifier: 11.4.0
+        version: 11.4.0(@typescript/typescript6@6.0.2)(supports-color@8.1.1)
       '@types/node':
         specifier: 24.10.4
         version: 24.10.4
@@ -380,8 +380,8 @@ importers:
         version: link:../nightingale-levels
     devDependencies:
       '@pob/rollup-esbuild':
-        specifier: 11.3.0
-        version: 11.3.0(@typescript/typescript6@6.0.2)(supports-color@8.1.1)
+        specifier: 11.4.0
+        version: 11.4.0(@typescript/typescript6@6.0.2)(supports-color@8.1.1)
       '@typescript/native':
         specifier: npm:typescript@7.0.2
         version: typescript@7.0.2
@@ -402,8 +402,8 @@ importers:
         version: link:../nightingale
     devDependencies:
       '@pob/rollup-esbuild':
-        specifier: 11.3.0
-        version: 11.3.0(@typescript/typescript6@6.0.2)(supports-color@8.1.1)
+        specifier: 11.4.0
+        version: 11.4.0(@typescript/typescript6@6.0.2)(supports-color@8.1.1)
       '@typescript/native':
         specifier: npm:typescript@7.0.2
         version: typescript@7.0.2
@@ -424,8 +424,8 @@ importers:
         version: link:../nightingale-types
     devDependencies:
       '@pob/rollup-esbuild':
-        specifier: 11.3.0
-        version: 11.3.0(@typescript/typescript6@6.0.2)(supports-color@8.1.1)
+        specifier: 11.4.0
+        version: 11.4.0(@typescript/typescript6@6.0.2)(supports-color@8.1.1)
       '@typescript/native':
         specifier: npm:typescript@7.0.2
         version: typescript@7.0.2
@@ -446,8 +446,8 @@ importers:
         version: link:../nightingale-types
     devDependencies:
       '@pob/rollup-esbuild':
-        specifier: 11.3.0
-        version: 11.3.0(@typescript/typescript6@6.0.2)(supports-color@8.1.1)
+        specifier: 11.4.0
+        version: 11.4.0(@typescript/typescript6@6.0.2)(supports-color@8.1.1)
       '@typescript/native':
         specifier: npm:typescript@7.0.2
         version: typescript@7.0.2
@@ -1311,9 +1311,9 @@ packages:
       typescript:
         optional: true
 
-  '@pob/rollup-esbuild@11.3.0':
-    resolution: {integrity: sha512-wSmhxmhR5h3izGy+AzWARrBfDrrPZqFcyfgfAv4QbW6WKlck7mdHjtKhyHeE9HEqzSQ6Lql4UPOe+nzp341OFA==}
-    engines: {node: ^22.18.0 || >=24.14.1}
+  '@pob/rollup-esbuild@11.4.0':
+    resolution: {integrity: sha512-nqa1F6dRfaBztG8wtS9HC0z0aWddgB1o51LQt1kiOfM9PLazGlkQ3wOEfTaXgxhTqj0Lo7ijeXRRd6G9KO7P+g==}
+    engines: {node: ^22.23.4 || ^24.22.1 || >=26.13.0}
     hasBin: true
     peerDependencies:
       rollup: 4.67.3
@@ -1322,9 +1322,9 @@ packages:
       rollup:
         optional: true
 
-  '@pob/rollup@8.6.0':
-    resolution: {integrity: sha512-1oaD9Iz7hbOakuxgQdYN1THwIeMNaLFAh6caDqk5QT7frRsXnnmJAtkpxwYj5fdTguckLuKYYzoHKFc2wq5Hjg==}
-    engines: {node: ^22.18.0 || >=24.14.1}
+  '@pob/rollup@8.7.0':
+    resolution: {integrity: sha512-3KvDRoPwhRRiIWLrr3ienqec9f83HVjMR3Pi51BSr37L0vkJGOtx2L38MADOuZHQzo38qWqUpGcOncuX/1IvaQ==}
+    engines: {node: ^22.23.4 || ^24.22.1 || >=26.13.0}
     hasBin: true
 
   '@pob/root@28.6.1':
@@ -4835,9 +4835,9 @@ snapshots:
     optionalDependencies:
       typescript: '@typescript/typescript6@6.0.2'
 
-  '@pob/rollup-esbuild@11.3.0(@typescript/typescript6@6.0.2)(supports-color@8.1.1)':
+  '@pob/rollup-esbuild@11.4.0(@typescript/typescript6@6.0.2)(supports-color@8.1.1)':
     dependencies:
-      '@pob/rollup': 8.6.0
+      '@pob/rollup': 8.7.0
       '@rollup/plugin-node-resolve': 16.0.3(rollup@4.67.3)
       '@rollup/plugin-replace': 6.0.3(rollup@4.67.3)
       '@rollup/plugin-run': 3.1.0(rollup@4.67.3)
@@ -4849,7 +4849,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@pob/rollup@8.6.0':
+  '@pob/rollup@8.7.0':
     dependencies:
       rollup: 4.67.3
 
