@@ -15,8 +15,8 @@ importers:
         specifier: 11.4.0
         version: 11.4.0(@typescript/typescript6@6.0.2)(supports-color@8.1.1)
       '@pob/root':
-        specifier: 28.6.1
-        version: 28.6.1
+        specifier: 28.7.0
+        version: 28.7.0
       '@types/node':
         specifier: 24.10.4
         version: 24.10.4
@@ -1413,14 +1413,14 @@ packages:
     engines: {node: ^22.23.4 || ^24.22.1 || >=26.13.0}
     hasBin: true
 
-  '@pob/root@28.6.1':
-    resolution: {integrity: sha512-Baq1/jyf390TFTrjfcslP6+YEWMlSZrFBxg/4PLEDb8Qb/M9MxRr9DZyXo00/Rl2FRLnpeknavqmqQoa5pzZ1A==}
-    engines: {node: ^22.18.0 || >=24.14.1}
+  '@pob/root@28.7.0':
+    resolution: {integrity: sha512-bbR8+CMkRsxc6LYSoKEpJk68qNse3Re8m9aBTUyn3vZN33tzY4HHIAqNZEeW5fW/IffiGTHhuxTWnzX7nkjLIA==}
+    engines: {node: ^22.23.4 || ^24.22.1 || >=26.13.0}
     hasBin: true
 
-  '@pob/version@8.4.0':
-    resolution: {integrity: sha512-FSp3YaMCO5vj9hooyRs57ogDCYDfBwO4UH+rODOyoOs4stfhvxNQyB6g54Lmfj9k7pZCPZbcTX01g7DqgzvjXA==}
-    engines: {node: '>=24.14.1'}
+  '@pob/version@8.5.0':
+    resolution: {integrity: sha512-bF2jO6YNySiQQfoDcNnsFEVXcpYMXqoeKR8ut2p+/VsIOOoHqtSwmft4mzfooA/E2i9stMJLnZqo+MZ1KfR97A==}
+    engines: {node: ^24.22.1 || >=26.13.0}
     hasBin: true
 
   '@react-native/assets-registry@0.83.1':
@@ -2497,9 +2497,9 @@ packages:
     resolution: {integrity: sha512-Vw8qHK3bZM9y/P10u3Vib8o/DdkvA2OtPtZvD871QKjy74Wj1WSKFILMPRPSdUSx5RFK1arlJzEtA4PkFgnbuA==}
     engines: {node: '>=18'}
 
-  commander@14.0.3:
-    resolution: {integrity: sha512-H+y0Jo/T1RZ9qPP4Eh1pkcQcLRglraJaSLoyOtHxu6AapkjWVCy2Sit1QQ4x3Dng8qDlSsZEet7g5Pq06MvTgw==}
-    engines: {node: '>=20'}
+  commander@15.0.0:
+    resolution: {integrity: sha512-z67u4ZhzCL/Tydu1lJARtEZYWbWaN7oYLHbsuzocr6y4N6WZAagG3RQ4FW61V1/0+jImpj293XfrcYnd1qxtPg==}
+    engines: {node: '>=22.12.0'}
 
   commander@2.20.3:
     resolution: {integrity: sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==}
@@ -3635,9 +3635,9 @@ packages:
     resolution: {integrity: sha512-Nc3IT5yHzflTfbjgqWcCPpo7DaKy4FnpB0l/zCAW0Tc7jxAiuqSxHasntB3D7887LSrA93kDJ9IXovxJYxyLCA==}
     engines: {node: '>=4'}
 
-  pob-dependencies@28.6.0:
-    resolution: {integrity: sha512-dTGptTqvZlUwAE/auf+3CWFaMqCNjHmVEhv2fVJEsJh6xuIYooJxCJmS9dCVZrCLBpWKeNvP1m8LPJ+ae/ob/w==}
-    engines: {node: ^22.18.0 || >=24.14.1}
+  pob-dependencies@28.7.0:
+    resolution: {integrity: sha512-Ddxx42gxxLLHGeOVwhbsRa+w8BHnod4zc4IMOv5SSga+ZWLhtIpbP0OvUDbYQNDiFe3l8i7pbZynHosSbh+Qng==}
+    engines: {node: ^22.23.4 || ^24.22.1 || >=26.13.0}
 
   postcss-value-parser@4.2.0:
     resolution: {integrity: sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ==}
@@ -4965,12 +4965,12 @@ snapshots:
     dependencies:
       rollup: 4.67.3
 
-  '@pob/root@28.6.1':
+  '@pob/root@28.7.0':
     dependencies:
       '@commitlint/format': 21.2.3
       '@commitlint/lint': 21.2.4
       '@commitlint/types': 21.2.3
-      '@pob/version': 8.4.0
+      '@pob/version': 8.5.0
       conventional-changelog-conventionalcommits: 10.4.1
       conventional-changelog-writer: 9.3.0
       conventional-commits-parser: 7.1.3
@@ -4980,16 +4980,16 @@ snapshots:
       oxlint: 1.90.0(oxlint-tsgolint@7.0.2005)
       oxlint-tsgolint: 7.0.2005
       picomatch: 4.0.7
-      pob-dependencies: 28.6.0
+      pob-dependencies: 28.7.0
       semver: 7.8.5
     transitivePeerDependencies:
       - '@astrojs/compiler-rs'
       - svelte
       - vite-plus
 
-  '@pob/version@8.4.0':
+  '@pob/version@8.5.0':
     dependencies:
-      commander: 14.0.3
+      commander: 15.0.0
       conventional-changelog-conventionalcommits: 10.4.1
       conventional-changelog-preset-loader: 6.0.1
       conventional-changelog-writer: 9.3.0
@@ -5903,7 +5903,7 @@ snapshots:
 
   commander@12.1.0: {}
 
-  commander@14.0.3: {}
+  commander@15.0.0: {}
 
   commander@2.20.3: {}
 
@@ -7250,7 +7250,7 @@ snapshots:
 
   pluralize@8.0.0: {}
 
-  pob-dependencies@28.6.0: {}
+  pob-dependencies@28.7.0: {}
 
   postcss-value-parser@4.2.0: {}
 
