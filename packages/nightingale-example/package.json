@@ -76,11 +76,11 @@
   "devDependencies": {
     "@pob/rollup-esbuild": "11.4.0",
     "@typescript/native": "npm:typescript@7.0.2",
-    "tsrs": "0.18.0-ts7.1.0-dev.20260929",
+    "tsrs": "0.20.1-ts7.1.0-beta",
     "typescript": "npm:@typescript/typescript6@6.0.2"
   },
   "engines": {
-    "node": ">=24.14.1"
+    "node": "^24.22.1 || >=26.13.0"
   },
   "pob": {
     "bundler": "rollup-esbuild",
