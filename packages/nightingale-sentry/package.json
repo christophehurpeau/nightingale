@@ -60,7 +60,7 @@
   },
   "devDependencies": {
     "@pob/rollup-esbuild": "11.4.0",
-    "@sentry/core": "11.10.0",
+    "@sentry/core": "11.11.0",
     "@typescript/native": "npm:typescript@7.0.2",
     "tsrs": "0.20.1-ts7.1.0-beta",
     "typescript": "npm:@typescript/typescript6@6.0.2"
