@@ -1,3 +1,12 @@
 {
-  "extends": ["config:js-lib", "github>christophehurpeau/renovate-presets"]
+  "extends": ["config:js-lib", "github>christophehurpeau/renovate-presets"],
+  "packageRules": [
+    {
+      "description": "nightingale-sentry's published peer range `@sentry/core` (>=10.57.0) already accepts newer versions: do not raise its minimum, it would drop v10 consumers. devDependencies keep updating. Remove when a nightingale-sentry major dropping v10 is planned.",
+      "matchManagers": ["npm"],
+      "matchDepTypes": ["peerDependencies"],
+      "matchPackageNames": ["@sentry/*"],
+      "rangeStrategy": "replace"
+    }
+  ]
 }
