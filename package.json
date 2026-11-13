@@ -34,17 +34,17 @@
     "watch": "pnpm run clean:build && rollup --config rollup.config.mjs --watch"
   },
   "devDependencies": {
-    "@pob/eslint-config": "68.4.0",
-    "@pob/rollup-esbuild": "11.4.0",
-    "@pob/root": "28.7.0",
+    "@pob/eslint-config": "68.5.0",
+    "@pob/rollup-esbuild": "11.5.0",
+    "@pob/root": "28.8.0",
     "@types/node": "24.10.4",
     "@typescript/native": "npm:typescript@7.0.2",
     "@vitest/coverage-v8": "5.1.0",
     "eslint": "10.14.0",
-    "tsrs": "0.20.1-ts7.1.0-beta",
+    "tsrs": "0.24.0-ts7.1.0-beta",
     "typedoc": "0.28.20",
     "typescript": "npm:@typescript/typescript6@6.0.2",
-    "vite": "8.3.7",
+    "vite": "8.3.8",
     "vitest": "5.1.0"
   },
   "commitlint": {
