@@ -15,8 +15,8 @@ importers:
         specifier: 11.5.0
         version: 11.5.0(@typescript/typescript6@6.0.2)(supports-color@8.1.1)
       '@pob/root':
-        specifier: 28.8.0
-        version: 28.8.0
+        specifier: 28.8.1
+        version: 28.8.1
       '@types/node':
         specifier: 24.10.4
         version: 24.10.4
@@ -30,8 +30,8 @@ importers:
         specifier: 10.14.0
         version: 10.14.0(supports-color@8.1.1)
       tsrs:
-        specifier: 0.24.0-ts7.1.0-beta
-        version: 0.24.0-ts7.1.0-beta
+        specifier: 0.25.0-ts7.1.0-beta
+        version: 0.25.0-ts7.1.0-beta
       typedoc:
         specifier: 0.28.20
         version: 0.28.20(@typescript/typescript6@6.0.2)
@@ -70,8 +70,8 @@ importers:
         specifier: npm:typescript@7.0.2
         version: typescript@7.0.2
       tsrs:
-        specifier: 0.24.0-ts7.1.0-beta
-        version: 0.24.0-ts7.1.0-beta
+        specifier: 0.25.0-ts7.1.0-beta
+        version: 0.25.0-ts7.1.0-beta
       typescript:
         specifier: npm:@typescript/typescript6@6.0.2
         version: '@typescript/typescript6@6.0.2'
@@ -98,8 +98,8 @@ importers:
         specifier: npm:typescript@7.0.2
         version: typescript@7.0.2
       tsrs:
-        specifier: 0.24.0-ts7.1.0-beta
-        version: 0.24.0-ts7.1.0-beta
+        specifier: 0.25.0-ts7.1.0-beta
+        version: 0.25.0-ts7.1.0-beta
       typescript:
         specifier: npm:@typescript/typescript6@6.0.2
         version: '@typescript/typescript6@6.0.2'
@@ -123,8 +123,8 @@ importers:
         specifier: 0.83.1
         version: 0.83.1(@babel/core@7.29.7(supports-color@8.1.1))(react@19.2.8)(supports-color@8.1.1)
       tsrs:
-        specifier: 0.24.0-ts7.1.0-beta
-        version: 0.24.0-ts7.1.0-beta
+        specifier: 0.25.0-ts7.1.0-beta
+        version: 0.25.0-ts7.1.0-beta
       typescript:
         specifier: npm:@typescript/typescript6@6.0.2
         version: '@typescript/typescript6@6.0.2'
@@ -172,8 +172,8 @@ importers:
         specifier: npm:typescript@7.0.2
         version: typescript@7.0.2
       tsrs:
-        specifier: 0.24.0-ts7.1.0-beta
-        version: 0.24.0-ts7.1.0-beta
+        specifier: 0.25.0-ts7.1.0-beta
+        version: 0.25.0-ts7.1.0-beta
       typescript:
         specifier: npm:@typescript/typescript6@6.0.2
         version: '@typescript/typescript6@6.0.2'
@@ -209,8 +209,8 @@ importers:
         specifier: npm:typescript@7.0.2
         version: typescript@7.0.2
       tsrs:
-        specifier: 0.24.0-ts7.1.0-beta
-        version: 0.24.0-ts7.1.0-beta
+        specifier: 0.25.0-ts7.1.0-beta
+        version: 0.25.0-ts7.1.0-beta
       typescript:
         specifier: npm:@typescript/typescript6@6.0.2
         version: '@typescript/typescript6@6.0.2'
@@ -243,8 +243,8 @@ importers:
         specifier: npm:typescript@7.0.2
         version: typescript@7.0.2
       tsrs:
-        specifier: 0.24.0-ts7.1.0-beta
-        version: 0.24.0-ts7.1.0-beta
+        specifier: 0.25.0-ts7.1.0-beta
+        version: 0.25.0-ts7.1.0-beta
       typescript:
         specifier: npm:@typescript/typescript6@6.0.2
         version: '@typescript/typescript6@6.0.2'
@@ -258,8 +258,8 @@ importers:
         specifier: npm:typescript@7.0.2
         version: typescript@7.0.2
       tsrs:
-        specifier: 0.24.0-ts7.1.0-beta
-        version: 0.24.0-ts7.1.0-beta
+        specifier: 0.25.0-ts7.1.0-beta
+        version: 0.25.0-ts7.1.0-beta
       typescript:
         specifier: npm:@typescript/typescript6@6.0.2
         version: '@typescript/typescript6@6.0.2'
@@ -283,8 +283,8 @@ importers:
         specifier: npm:typescript@7.0.2
         version: typescript@7.0.2
       tsrs:
-        specifier: 0.24.0-ts7.1.0-beta
-        version: 0.24.0-ts7.1.0-beta
+        specifier: 0.25.0-ts7.1.0-beta
+        version: 0.25.0-ts7.1.0-beta
       typescript:
         specifier: npm:@typescript/typescript6@6.0.2
         version: '@typescript/typescript6@6.0.2'
@@ -336,8 +336,8 @@ importers:
         specifier: npm:typescript@7.0.2
         version: typescript@7.0.2
       tsrs:
-        specifier: 0.24.0-ts7.1.0-beta
-        version: 0.24.0-ts7.1.0-beta
+        specifier: 0.25.0-ts7.1.0-beta
+        version: 0.25.0-ts7.1.0-beta
       typescript:
         specifier: npm:@typescript/typescript6@6.0.2
         version: '@typescript/typescript6@6.0.2'
@@ -361,8 +361,8 @@ importers:
         specifier: npm:typescript@7.0.2
         version: typescript@7.0.2
       tsrs:
-        specifier: 0.24.0-ts7.1.0-beta
-        version: 0.24.0-ts7.1.0-beta
+        specifier: 0.25.0-ts7.1.0-beta
+        version: 0.25.0-ts7.1.0-beta
       typescript:
         specifier: npm:@typescript/typescript6@6.0.2
         version: '@typescript/typescript6@6.0.2'
@@ -386,8 +386,8 @@ importers:
         specifier: npm:typescript@7.0.2
         version: typescript@7.0.2
       tsrs:
-        specifier: 0.24.0-ts7.1.0-beta
-        version: 0.24.0-ts7.1.0-beta
+        specifier: 0.25.0-ts7.1.0-beta
+        version: 0.25.0-ts7.1.0-beta
       typescript:
         specifier: npm:@typescript/typescript6@6.0.2
         version: '@typescript/typescript6@6.0.2'
@@ -408,8 +408,8 @@ importers:
         specifier: npm:typescript@7.0.2
         version: typescript@7.0.2
       tsrs:
-        specifier: 0.24.0-ts7.1.0-beta
-        version: 0.24.0-ts7.1.0-beta
+        specifier: 0.25.0-ts7.1.0-beta
+        version: 0.25.0-ts7.1.0-beta
       typescript:
         specifier: npm:@typescript/typescript6@6.0.2
         version: '@typescript/typescript6@6.0.2'
@@ -430,8 +430,8 @@ importers:
         specifier: npm:typescript@7.0.2
         version: typescript@7.0.2
       tsrs:
-        specifier: 0.24.0-ts7.1.0-beta
-        version: 0.24.0-ts7.1.0-beta
+        specifier: 0.25.0-ts7.1.0-beta
+        version: 0.25.0-ts7.1.0-beta
       typescript:
         specifier: npm:@typescript/typescript6@6.0.2
         version: '@typescript/typescript6@6.0.2'
@@ -452,8 +452,8 @@ importers:
         specifier: npm:typescript@7.0.2
         version: typescript@7.0.2
       tsrs:
-        specifier: 0.24.0-ts7.1.0-beta
-        version: 0.24.0-ts7.1.0-beta
+        specifier: 0.25.0-ts7.1.0-beta
+        version: 0.25.0-ts7.1.0-beta
       typescript:
         specifier: npm:@typescript/typescript6@6.0.2
         version: '@typescript/typescript6@6.0.2'
@@ -1221,33 +1221,33 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@oxlint-tsgolint/darwin-arm64@7.0.2006':
-    resolution: {integrity: sha512-uc0MEHXZUDW23Zmo5X28eSNeSnP17jKnh9GiehpVZqhfy99ks8spyXT5Llar3tjDN7ppnQN0Qd9FK6WNkdD+fQ==}
+  '@oxlint-tsgolint/darwin-arm64@7.0.2007':
+    resolution: {integrity: sha512-bjNxPFyu1wNK74epHzXrtVLrj7oEuB8jQvJZDSia2d5EZ/0YgnyhI37E9U530IUZlNCqlTWjko1iT3CKAYF9+A==}
     cpu: [arm64]
     os: [darwin]
 
-  '@oxlint-tsgolint/darwin-x64@7.0.2006':
-    resolution: {integrity: sha512-+x1/pa3S3VMC9cif8XKTOCQUuqRT+wu1Ix+FK5svXa2xbXCuE7+4S0SfmuSnK/mk9AI5+xBxZFhILxmCPUZ1hA==}
+  '@oxlint-tsgolint/darwin-x64@7.0.2007':
+    resolution: {integrity: sha512-dCd7mzk2FeTaU46LLeXy5mQyEFICaPqlew/LpehNzEuL86D0jTYlwZHbibRqdRrvkSNgq1szz/7014FIHgyV1g==}
     cpu: [x64]
     os: [darwin]
 
-  '@oxlint-tsgolint/linux-arm64@7.0.2006':
-    resolution: {integrity: sha512-90v7HX8m54kHXn5DpjNEN18Fb7xwJMREe/wji3USyAf9pTMv7a3qZ3cPoLViIcIzxPLmkcYZIs1j1H3Z2gbVLA==}
+  '@oxlint-tsgolint/linux-arm64@7.0.2007':
+    resolution: {integrity: sha512-qb0XUQXuTmQ8H++zsx/tQitG0/fU3BE16KGp1qXExeDgRzEc7WIlCuN1i+rmA40lty9gQs+x3a73BFODVhTZqA==}
     cpu: [arm64]
     os: [linux]
 
-  '@oxlint-tsgolint/linux-x64@7.0.2006':
-    resolution: {integrity: sha512-/k0wsEqHiA5dWBJYuld3Vecv6bIhKCasxpho/aFkvh870Qox33MuTkKUGWIVm/njAxw7W4pu1a/Xfa3jwuKuPQ==}
+  '@oxlint-tsgolint/linux-x64@7.0.2007':
+    resolution: {integrity: sha512-75vx0067HSgxq/HEZzlHwqhcujn3bshg43fVLTx604jZdZZMQfPVCcxTh2RTEShP7ACT1PRty6vboZlWh5RtEA==}
     cpu: [x64]
     os: [linux]
 
-  '@oxlint-tsgolint/win32-arm64@7.0.2006':
-    resolution: {integrity: sha512-CQT5sqcLZLNZSWLzUUEjQmp74UX8h1agp3ZJ8pfRktHbx6gfBa8a7CjrnRrZ9VXlwnXVkpw7m5KBO6y+S5MQRA==}
+  '@oxlint-tsgolint/win32-arm64@7.0.2007':
+    resolution: {integrity: sha512-6zl7I+BvScfOPtnPtSEP5JA+z8NkDPGd47YnQChL5lLF/Dzs7Rasr1G+q0zGlQcP8OEgW43hW4QlUTXxPfD13Q==}
     cpu: [arm64]
     os: [win32]
 
-  '@oxlint-tsgolint/win32-x64@7.0.2006':
-    resolution: {integrity: sha512-VZsGowXcp3vQNkjoGeVCOTf4aGrRpRk6bBJWhefnJVPr6z+dX+LKqqHfwaqnFvg66Q2iJpXqklRW38YO21ee+Q==}
+  '@oxlint-tsgolint/win32-x64@7.0.2007':
+    resolution: {integrity: sha512-VptFHYhBm0SIWCUkx89hmTrKVOQsDg0iB1YE3EBlvRRtCHGUd3pU1kMxPBg1wOd83ZMmIn7zB6maBROtpmrP5g==}
     cpu: [x64]
     os: [win32]
 
@@ -1409,8 +1409,8 @@ packages:
     engines: {node: ^22.23.4 || ^24.22.1 || >=26.13.0}
     hasBin: true
 
-  '@pob/root@28.8.0':
-    resolution: {integrity: sha512-USBv/AKOqsfRsK4x3nEoANeYXPY0R1F+k7WzgmXXqnni8WlLIGwIY6LnQrwaNSuZp7KNfVSb3MZsan2DVBNDBg==}
+  '@pob/root@28.8.1':
+    resolution: {integrity: sha512-u41EoF18l7YL44EE6T8E8BvZ1AOoL+gr9AHcd9MTLazpE9QNBsqzecLm81noeEix9EO+Lf0CsU2K6wDaMo/nzw==}
     engines: {node: ^22.23.4 || ^24.22.1 || >=26.13.0}
     hasBin: true
 
@@ -1822,48 +1822,54 @@ packages:
   '@sinonjs/fake-timers@10.3.0':
     resolution: {integrity: sha512-V4BG07kuYSUkTCSBHG8G8TNhM+F19jXFWnQtzj+we8DrkpSBCee9Z3Ms8yiGer/dlmhe35/Xdgyo3/0rQKg7YA==}
 
-  '@tsrs/darwin-arm64@0.24.0-ts7.1.0-beta':
-    resolution: {integrity: sha512-GxGPRieCGIXevJgGlbne9pRqkfAN+VmBQvBHWWcF8rXLNX9yCxYo78/a7Auqjf723b4eFTlM5mgkclUit/Fu9w==}
+  '@tsrs/darwin-arm64@0.25.0-ts7.1.0-beta':
+    resolution: {integrity: sha512-+pYoQ+AqpdUolO4kJBQlQmwxJOoc5INuusw/2AZnR4frfnyVGza+gEn0br8Z0LOk7nklQuILuMKH93BU3hpHvA==}
     engines: {node: '>=16.20.0'}
     cpu: [arm64]
     os: [darwin]
 
-  '@tsrs/darwin-x64@0.24.0-ts7.1.0-beta':
-    resolution: {integrity: sha512-TrXdOyEq++blyYp6KphoHGmsGxAn1flYzjm0peLEI3c88z1UQa+pKkcuPgZ6FOxTW6fSaT9572n21kz+0bWi/g==}
+  '@tsrs/darwin-x64@0.25.0-ts7.1.0-beta':
+    resolution: {integrity: sha512-MnD5Bv48TdIcTpNavsg7PV6RUuwAKhozJ29CZDlKq6oZwGjGulcQLI3Sok6MvvCG7U6v4l9RONKO8BhNXCytvQ==}
     engines: {node: '>=16.20.0'}
     cpu: [x64]
     os: [darwin]
 
-  '@tsrs/linux-arm64-gnu@0.24.0-ts7.1.0-beta':
-    resolution: {integrity: sha512-Ph5NK0vnaR4gnBW2LgrZsUPx4mKF+9tCQUYZFOHmny6SMojSsm/5GCiBu0sHZEZhmyIqq8UbineUEA7T0QImnw==}
+  '@tsrs/linux-arm64-gnu@0.25.0-ts7.1.0-beta':
+    resolution: {integrity: sha512-Mc/YuFQa7APDuX39UMr8NMQHKkCOmEx8SfUXVnew7eljJHKnUkpLHpoQFQA0aKnzIqDAxnNudXhIWB0DjZEX2A==}
     engines: {node: '>=16.20.0'}
     cpu: [arm64]
     os: [linux]
     libc: [glibc]
 
-  '@tsrs/linux-arm64-musl@0.24.0-ts7.1.0-beta':
-    resolution: {integrity: sha512-vjgx8wGuAVSOPLlb2eVQpQVolImZa7vsH/1kvYOaokcP/KZXVUmHzgroxK0t9gxJ0SXvT4VKNjWZ+t+4tDNu1A==}
+  '@tsrs/linux-arm64-musl@0.25.0-ts7.1.0-beta':
+    resolution: {integrity: sha512-ZTZxIv/W4qiqDBCXcDlr8ma76JCO0DQHbUukuhpSpKHz3E2m5FCwLcra/NTqAVniyLU6/RjIOCIcDRpVQvq6cQ==}
     engines: {node: '>=16.20.0'}
     cpu: [arm64]
     os: [linux]
     libc: [musl]
 
-  '@tsrs/linux-x64-gnu@0.24.0-ts7.1.0-beta':
-    resolution: {integrity: sha512-tj1SNWBnJoBUzU2zrD18tUu3h6o36FXQGPpmIXsADHSfU5H9pVQdK/QzPIO76rb72P7foXHluE+xGTXXf8nNaA==}
+  '@tsrs/linux-x64-gnu@0.25.0-ts7.1.0-beta':
+    resolution: {integrity: sha512-dGRvubxWQXNP3aow+RLgFAbW3pR4oQ+UPfwrSgdggKCKKL9sAPr8nFGYM50JWAiqGQYSwRJl48AzIC7bHuQ2cQ==}
     engines: {node: '>=16.20.0'}
     cpu: [x64]
     os: [linux]
     libc: [glibc]
 
-  '@tsrs/linux-x64-musl@0.24.0-ts7.1.0-beta':
-    resolution: {integrity: sha512-sizu0EdGw9ITqEaZKg60TDhDk5PXT9RzVkCdesBjk/BZhS0BVU2cRhvoRBmDbk+2vCUgW14j+Otg3tl+002qNQ==}
+  '@tsrs/linux-x64-musl@0.25.0-ts7.1.0-beta':
+    resolution: {integrity: sha512-zm89HYpXAv36XuXrEsfxAEmGTehY5K0L27+tFmJzxX2CqLwki0AX4FGA78Fy97x8Yk8kOR8FJO2xTvSW9vXBIg==}
     engines: {node: '>=16.20.0'}
     cpu: [x64]
     os: [linux]
     libc: [musl]
 
-  '@tsrs/win32-x64@0.24.0-ts7.1.0-beta':
-    resolution: {integrity: sha512-WAbzgd5JBOauQ/oL6DTdGEh09tM/q8tlGAcRORskhPK7eIQVVa8Js2pc7DVW0XokWTSADeD9v6HKtU2Ge0r/fQ==}
+  '@tsrs/win32-arm64@0.25.0-ts7.1.0-beta':
+    resolution: {integrity: sha512-fVqAnHvFD2vxIHxVJEeQq9W63QZUW6WLy1+qFVuMUdM5ViURhjzcuLgOx8EIGqp6qOqFDpuAlNPQmjUpTXYg2g==}
+    engines: {node: '>=16.20.0'}
+    cpu: [arm64]
+    os: [win32]
+
+  '@tsrs/win32-x64@0.25.0-ts7.1.0-beta':
+    resolution: {integrity: sha512-BfRCSI5E0LQ3kim43dBqX3Dq3dmRUI2aMWLGcgUxbTEkyvsESX01tM7u31flzRRajw3zVZwVB95kh5xvUeIOkA==}
     engines: {node: '>=16.20.0'}
     cpu: [x64]
     os: [win32]
@@ -3568,8 +3574,8 @@ packages:
       vite-plus:
         optional: true
 
-  oxlint-tsgolint@7.0.2006:
-    resolution: {integrity: sha512-5B3UtH71kycPHUC1kFEIffivEAs49SUmkJuHZOZnTY0NPj4legp0bcsCQucuLVNCoJzDucS68P2C4WIhP+LypQ==}
+  oxlint-tsgolint@7.0.2007:
+    resolution: {integrity: sha512-i8X2qf6VVqFzoNVP34joMKuZpO6T2uXMOgKJaSPFc6p+E3FTnbIGPRbI8K4ZApmtDTMu2CIeGfpzeK1zzGwfnA==}
     hasBin: true
 
   oxlint@1.93.0:
@@ -3653,8 +3659,8 @@ packages:
     resolution: {integrity: sha512-Nc3IT5yHzflTfbjgqWcCPpo7DaKy4FnpB0l/zCAW0Tc7jxAiuqSxHasntB3D7887LSrA93kDJ9IXovxJYxyLCA==}
     engines: {node: '>=4'}
 
-  pob-dependencies@28.8.0:
-    resolution: {integrity: sha512-wh3YcbThMxm8nxuzn9OsCw82sZF2wAYjw2K9LrJOV4r/4Hcl6hB4JcIeBl9Xmadttk8kS9wcihhJZEvFvX6GKA==}
+  pob-dependencies@28.8.1:
+    resolution: {integrity: sha512-x9Xwj62VGHccTFNNQn8AOuctFWGZnxC+q3ZG6bfZ2QOBol8vlLPI07RcR9uq5APcN9XvTnH2r/7Ngg2h1GHydw==}
     engines: {node: ^22.23.4 || ^24.22.1 || >=26.13.0}
 
   postcss-value-parser@4.2.0:
@@ -3999,8 +4005,8 @@ packages:
   tslib@2.8.1:
     resolution: {integrity: sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==}
 
-  tsrs@0.24.0-ts7.1.0-beta:
-    resolution: {integrity: sha512-Iy7q93qfRHcI0Y31IKx6fCsDQCsSjtrT01PIgOVolBXPJTMdm84oH1pEYyAMPQ/SnRqWDSWI8wEUHbv6e9TmHA==}
+  tsrs@0.25.0-ts7.1.0-beta:
+    resolution: {integrity: sha512-J7eAkkriIwHExX2TzwTW6flJ/fmg3U+FDQwmTUkvaYmo02iva69YPmxFaCXGYIlsED3l1Aa62hSsEDJewBrIKA==}
     engines: {node: '>=16.20.0'}
     hasBin: true
 
@@ -4864,22 +4870,22 @@ snapshots:
   '@oxfmt/binding-win32-x64-msvc@0.78.0':
     optional: true
 
-  '@oxlint-tsgolint/darwin-arm64@7.0.2006':
+  '@oxlint-tsgolint/darwin-arm64@7.0.2007':
     optional: true
 
-  '@oxlint-tsgolint/darwin-x64@7.0.2006':
+  '@oxlint-tsgolint/darwin-x64@7.0.2007':
     optional: true
 
-  '@oxlint-tsgolint/linux-arm64@7.0.2006':
+  '@oxlint-tsgolint/linux-arm64@7.0.2007':
     optional: true
 
-  '@oxlint-tsgolint/linux-x64@7.0.2006':
+  '@oxlint-tsgolint/linux-x64@7.0.2007':
     optional: true
 
-  '@oxlint-tsgolint/win32-arm64@7.0.2006':
+  '@oxlint-tsgolint/win32-arm64@7.0.2007':
     optional: true
 
-  '@oxlint-tsgolint/win32-x64@7.0.2006':
+  '@oxlint-tsgolint/win32-x64@7.0.2007':
     optional: true
 
   '@oxlint/binding-android-arm-eabi@1.93.0':
@@ -4982,7 +4988,7 @@ snapshots:
     dependencies:
       rollup: 4.68.2
 
-  '@pob/root@28.8.0':
+  '@pob/root@28.8.1':
     dependencies:
       '@commitlint/format': 21.2.3
       '@commitlint/lint': 21.2.4
@@ -4994,10 +5000,10 @@ snapshots:
       json5: 2.2.3
       lint-staged: 17.6.0
       oxfmt: 0.78.0
-      oxlint: 1.93.0(oxlint-tsgolint@7.0.2006)
-      oxlint-tsgolint: 7.0.2006
+      oxlint: 1.93.0(oxlint-tsgolint@7.0.2007)
+      oxlint-tsgolint: 7.0.2007
       picomatch: 4.0.7
-      pob-dependencies: 28.8.0
+      pob-dependencies: 28.8.1
       semver: 7.8.6
     transitivePeerDependencies:
       - '@astrojs/compiler-rs'
@@ -5316,25 +5322,28 @@ snapshots:
     dependencies:
       '@sinonjs/commons': 3.0.1
 
-  '@tsrs/darwin-arm64@0.24.0-ts7.1.0-beta':
+  '@tsrs/darwin-arm64@0.25.0-ts7.1.0-beta':
     optional: true
 
-  '@tsrs/darwin-x64@0.24.0-ts7.1.0-beta':
+  '@tsrs/darwin-x64@0.25.0-ts7.1.0-beta':
     optional: true
 
-  '@tsrs/linux-arm64-gnu@0.24.0-ts7.1.0-beta':
+  '@tsrs/linux-arm64-gnu@0.25.0-ts7.1.0-beta':
     optional: true
 
-  '@tsrs/linux-arm64-musl@0.24.0-ts7.1.0-beta':
+  '@tsrs/linux-arm64-musl@0.25.0-ts7.1.0-beta':
     optional: true
 
-  '@tsrs/linux-x64-gnu@0.24.0-ts7.1.0-beta':
+  '@tsrs/linux-x64-gnu@0.25.0-ts7.1.0-beta':
     optional: true
 
-  '@tsrs/linux-x64-musl@0.24.0-ts7.1.0-beta':
+  '@tsrs/linux-x64-musl@0.25.0-ts7.1.0-beta':
     optional: true
 
-  '@tsrs/win32-x64@0.24.0-ts7.1.0-beta':
+  '@tsrs/win32-arm64@0.25.0-ts7.1.0-beta':
+    optional: true
+
+  '@tsrs/win32-x64@0.25.0-ts7.1.0-beta':
     optional: true
 
   '@tybys/wasm-util@0.10.3':
@@ -7202,16 +7211,16 @@ snapshots:
       '@oxfmt/binding-win32-ia32-msvc': 0.78.0
       '@oxfmt/binding-win32-x64-msvc': 0.78.0
 
-  oxlint-tsgolint@7.0.2006:
+  oxlint-tsgolint@7.0.2007:
     optionalDependencies:
-      '@oxlint-tsgolint/darwin-arm64': 7.0.2006
-      '@oxlint-tsgolint/darwin-x64': 7.0.2006
-      '@oxlint-tsgolint/linux-arm64': 7.0.2006
-      '@oxlint-tsgolint/linux-x64': 7.0.2006
-      '@oxlint-tsgolint/win32-arm64': 7.0.2006
-      '@oxlint-tsgolint/win32-x64': 7.0.2006
+      '@oxlint-tsgolint/darwin-arm64': 7.0.2007
+      '@oxlint-tsgolint/darwin-x64': 7.0.2007
+      '@oxlint-tsgolint/linux-arm64': 7.0.2007
+      '@oxlint-tsgolint/linux-x64': 7.0.2007
+      '@oxlint-tsgolint/win32-arm64': 7.0.2007
+      '@oxlint-tsgolint/win32-x64': 7.0.2007
 
-  oxlint@1.93.0(oxlint-tsgolint@7.0.2006):
+  oxlint@1.93.0(oxlint-tsgolint@7.0.2007):
     optionalDependencies:
       '@oxlint/binding-android-arm-eabi': 1.93.0
       '@oxlint/binding-android-arm64': 1.93.0
@@ -7232,7 +7241,7 @@ snapshots:
       '@oxlint/binding-win32-arm64-msvc': 1.93.0
       '@oxlint/binding-win32-ia32-msvc': 1.93.0
       '@oxlint/binding-win32-x64-msvc': 1.93.0
-      oxlint-tsgolint: 7.0.2006
+      oxlint-tsgolint: 7.0.2007
 
   p-limit@2.3.0:
     dependencies:
@@ -7283,7 +7292,7 @@ snapshots:
 
   pluralize@8.0.0: {}
 
-  pob-dependencies@28.8.0: {}
+  pob-dependencies@28.8.1: {}
 
   postcss-value-parser@4.2.0: {}
 
@@ -7674,15 +7683,16 @@ snapshots:
   tslib@2.8.1:
     optional: true
 
-  tsrs@0.24.0-ts7.1.0-beta:
+  tsrs@0.25.0-ts7.1.0-beta:
     optionalDependencies:
-      '@tsrs/darwin-arm64': 0.24.0-ts7.1.0-beta
-      '@tsrs/darwin-x64': 0.24.0-ts7.1.0-beta
-      '@tsrs/linux-arm64-gnu': 0.24.0-ts7.1.0-beta
-      '@tsrs/linux-arm64-musl': 0.24.0-ts7.1.0-beta
-      '@tsrs/linux-x64-gnu': 0.24.0-ts7.1.0-beta
-      '@tsrs/linux-x64-musl': 0.24.0-ts7.1.0-beta
-      '@tsrs/win32-x64': 0.24.0-ts7.1.0-beta
+      '@tsrs/darwin-arm64': 0.25.0-ts7.1.0-beta
+      '@tsrs/darwin-x64': 0.25.0-ts7.1.0-beta
+      '@tsrs/linux-arm64-gnu': 0.25.0-ts7.1.0-beta
+      '@tsrs/linux-arm64-musl': 0.25.0-ts7.1.0-beta
+      '@tsrs/linux-x64-gnu': 0.25.0-ts7.1.0-beta
+      '@tsrs/linux-x64-musl': 0.25.0-ts7.1.0-beta
+      '@tsrs/win32-arm64': 0.25.0-ts7.1.0-beta
+      '@tsrs/win32-x64': 0.25.0-ts7.1.0-beta
 
   type-check@0.4.0:
     dependencies:
