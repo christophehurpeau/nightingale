@@ -46,8 +46,8 @@
     "watch": "pob-watch"
   },
   "dependencies": {
-    "@sentry/core": "11.12.0",
-    "@sentry/node": "11.12.0",
+    "@sentry/core": "11.13.0",
+    "@sentry/node": "11.13.0",
     "nightingale": "workspace:*",
     "nightingale-console": "workspace:*",
     "nightingale-sentry": "workspace:*"
